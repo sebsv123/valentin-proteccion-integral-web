@@ -7,10 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
-    name: Build & Deploy
+  build:
+    name: Build & Validate
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
@@ -24,12 +23,3 @@ jobs:
 
       - name: Build (Static Export)
         run: npm run build
-
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
-          working-directory: ./
