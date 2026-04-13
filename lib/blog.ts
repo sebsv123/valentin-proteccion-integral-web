@@ -24,6 +24,102 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'tipos-de-seguros-de-vida',
+    title: '¿Qué tipos de seguros de vida existen? Guía honesta 2026',
+    excerpt: 'Temporal, vida entera, hipotecario, ahorro, invalidez... Todos los tipos de seguro de vida explicados sin marcas ni jerga, con lo que nadie te suele contar antes de contratar.',
+    image: '/images/blog/blog_vida_hipoteca_1776077585025.png',
+    imageAlt: 'Familia protegida en su hogar disfrutando de tranquilidad',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '18 min',
+    metaTitle: '¿Qué tipos de seguros de vida existen? Guía honesta 2026',
+    metaDescription: 'Temporal, vida entera, hipotecario, ahorro, invalidez... Todos los tipos de seguro de vida explicados sin marcas ni jerga.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Todo lo que necesitas saber antes de contratar',
+        content: [
+          'Si buscas una lista de productos con nombres bonitos y bullets de características, hay cientos de artículos que hacen exactamente eso. Este no es uno de ellos.',
+          'Lo que vas a encontrar aquí es una explicación honesta de todos los tipos de seguro de vida que existen en España, para qué sirve cada uno de verdad y, igual de importante, cuándo no tiene sentido contratarlo. Incluyendo la parte que los bancos y las grandes aseguradoras prefieren que no leas.',
+          'Existen dos grandes familias: los de riesgo (protegen ante fallecimiento o invalidez) y los de ahorro (acumulan capital a largo plazo).',
+        ],
+      },
+      {
+        heading: 'Los seguros de vida de riesgo: protección cuando algo va mal',
+        content: [
+          '• Seguro temporal de fallecimiento: El más contratado. Cubre un periodo determinado (10, 20 o 30 años). Ideal para proteger a hijos menores o cubrir deudas hipotecarias. Es el más asequible: por menos de 10 €/mes puedes tener una cobertura seria.',
+          '• Seguro de vida entera: Cubre toda la vida sin fecha de caducidad. Es más caro pero garantiza que la prestación se pagará en algún momento. Útil para planificación de herencias o gastos de decesos.',
+          '• Seguro de invalidez o incapacidad: El gran olvidado y el más necesario. Te protege a ti cuando sigues estando pero ya no puedes generar ingresos por enfermedad o accidente. Vital para autónomos.',
+          '• Seguro de dependencia: Cubre los gastos si necesitas ayuda de terceros para vivir. Recomendado a partir de los 50-55 años para planificar el futuro sin depender de los hijos.',
+        ],
+      },
+      {
+        heading: 'El seguro vinculado a la hipoteca: la trampa bancaria',
+        content: [
+          'Es el tipo de seguro que más malentendidos genera. El banco suele exigirlo para bonificar el interés, pero hay cuatro verdades que debes conocer:',
+          '1. El beneficiario es el banco, no tu familia. La deuda se cancela pero tu familia no recibe capital.',
+          '2. Suele ser entre un 30% y un 50% más caro que contratarlo fuera del banco.',
+          '3. Desde 2019, NO están permitidos los seguros obligatorios con la entidad. Tienes derecho a elegir.',
+          '4. Si te cobraron prima única financiada (un solo pago de miles de euros al inicio), podrías reclamar el exceso pagado.',
+        ],
+      },
+      {
+        heading: 'Seguros de vida de ahorro y mixtos',
+        content: [
+          '• PIAS (Plan Individual de Ahorro Sistemático): Ideal para jubilación si buscas exención fiscal al convertirlo en renta vitalicia.',
+          '• PPA (Plan de Previsión Asegurado): El equivalente al plan de pensiones con capital garantizado. Reduce tu base imponible en el IRPF.',
+          '• SIALP: Ahorro flexible a 5 años con rendimientos exentos de impuestos.',
+          '• Unit Linked: El seguro que invierte en fondos. Potencial de mayor rentabilidad pero con riesgo asumido por el cliente.',
+          '• Seguros Mixtos: Combinan fallecimiento y ahorro en una sola cuota. Son los más caros pero los más completos.',
+        ],
+      },
+      {
+        heading: 'Precios orientativos en España para 2026',
+        content: [
+          '• 25–30 años: ~35 € – 65 € al año (100.000 € capital)',
+          '• 31–40 años: ~55 € – 120 € al año',
+          '• 41–50 años: ~95 € – 220 € al año',
+          '• 51–60 años: ~180 € – 420 € al año',
+          'Recuerda que el cuestionario de salud es el factor clave. Declarar con precisión evita que la aseguradora deniegue el pago en el futuro.',
+        ],
+      },
+    ],
+    tips: [
+      'No asumas que el seguro del banco es la mejor opción sin comparar.',
+      'La cobertura de invalidez es tan importante como la de fallecimiento.',
+      'El PIAS es excelente si buscas una jubilación tranquila libre de impuestos.',
+      'Si tienes hijos pequeños, el seguro temporal es tu prioridad número uno.',
+    ],
+    faqs: [
+      {
+        question: '¿Qué diferencia hay entre seguro temporal y vida entera?',
+        answer: 'El temporal cubre un plazo (ej. 20 años) y termina. El vida entera garantiza el pago en algún momento futuro sin límite de fecha, siendo por ello más costoso.',
+      },
+      {
+        question: '¿Estoy obligado a contratar el seguro con mi banco?',
+        answer: 'No. Por ley desde 2019 puedes elegir cualquier aseguradora externa. El banco solo puede ofrecerte bonificaciones si eliges el suyo, pero no obligarte.',
+      },
+      {
+        question: '¿Un seguro de vida cubre la invalidez?',
+        answer: 'Depende de la póliza. Muchos incluyen la incapacidad permanente absoluta como cobertura adicional. Es fundamental revisarlo al contratar.',
+      },
+      {
+        question: '¿Qué diferencia hay entre PIAS y Plan de Pensiones?',
+        answer: 'El plan de pensiones desgrava hoy (aportación), el PIAS desgrava mañana (rescate como renta vitalicia). Son complementarios en una buena planificación.',
+      },
+      {
+        question: '¿Cuánto capital debería contratar?',
+        answer: 'La recomendación es entre 3 y 5 veces tu salario anual, más el importe pendiente de tu hipoteca u otras deudas importantes.',
+      },
+      {
+        question: '¿Puedo cambiar de seguro si ya tengo uno?',
+        answer: 'Sí, pero conviene revisar tu salud actual antes de cancelar el anterior para evitar exclusiones o periodos de carencia en la nueva póliza.',
+      },
+    ],
+  },
+  {
     slug: 'ventajas-mediador-de-seguros',
     title: '¿Cuáles son las ventajas de tener un mediador de seguros? | Guía 2026',
     excerpt: 'Contratar un seguro es fácil. Usarlo cuando lo necesitas, no tanto. Descubre qué cambia cuando tienes un mediador de seguros de tu lado y por qué importa más de lo que crees.',
