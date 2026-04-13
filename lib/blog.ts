@@ -24,6 +24,99 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'seguros-salud-cubren-recien-nacidos',
+    title: '¿Los seguros de salud cubren a los recién nacidos? Guía completa 2026',
+    excerpt: '¿Tu bebé está cubierto desde que nace? Depende de cuándo avises, si el parto fue por el seguro y qué compañía tienes. Todo explicado sin tecnicismos, con los plazos que importan.',
+    image: '/images/blog/blog_vida_hipoteca_1776077585025.png',
+    imageAlt: 'Familia protegiendo y cuidando a su recién nacido',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '20 min',
+    metaTitle: '¿Los seguros de salud cubren a los recién nacidos? Guía completa 2026',
+    metaDescription: '¿Tu bebé está cubierto desde que nace? Plazos de alta, cobertura UCI neonatal y alta sin carencias en seguros de salud privados.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Todo lo que necesitas saber antes (y después) de que nazca tu bebé',
+        content: [
+          'Cuando nace un bebé, la lista de cosas urgentes es larga. Dar de alta al recién nacido en el seguro de salud no suena como algo que no pueda esperar, pero tiene un plazo crítico.',
+          'Si el alta se gestiona dentro de ese plazo (normalmente 15-30 días), el bebé entra sin cuestionario médico y sin carencias, incluso si nació con complicaciones.',
+          'Este artículo explica qué cubre el seguro desde el nacimiento, cuánto dura la cobertura automática y qué ocurre en los escenarios que nadie te suele contar.',
+        ],
+      },
+      {
+        heading: 'La cobertura automática inicial',
+        content: [
+          'Si la madre tiene seguro con maternidad y el parto es cubierto por la compañía, el bebé suele tener cobertura provisional automática:',
+          '• Duración: Según la compañía, cubre desde las primeras 48 horas hasta los primeros 28-30 días de vida.',
+          '• Qué incluye: Mientras el bebé está ingresado con la madre, está protegido. Al alta oficial de la madre, esa cobertura provisional termina.',
+          'Importante: Este periodo es una ventana para gestionar el trámite formal de inclusión. No es la cobertura permanente del pequeño.',
+        ],
+      },
+      {
+        heading: 'El plazo crítico para el alta definitiva',
+        content: [
+          'Para que la cobertura sea plena e inmediata, debes comunicar el alta en un plazo de entre 15 y 30 días desde el nacimiento:',
+          '1. Inclusión sin cuestionario: La aseguradora acepta al bebé independientemente de su estado de salud al nacer.',
+          '2. Sin periodos de carencia: Podrá usar pediatra, especialistas y hospitalización desde el minuto uno.',
+          'Si se te pasa el plazo: El bebé se tratará como un "nuevo asegurado estándar", lo que implica rellenar cuestionario de salud y esperar las carencias habituales (meses).',
+        ],
+      },
+      {
+        heading: '¿Qué pasa si el bebé necesita UCI neonatal?',
+        content: [
+          'Es la mayor angustia para los padres. Si el alta se hace en plazo y el parto fue privado:',
+          '• Los gastos de incubadora e ingreso neonatal están cubiertos bajo la póliza de la madre durante el internamiento inicial (hasta un límite de días, suele ser 28).',
+          '• Una vez incluido en su propia póliza, las posibles condiciones detectadas al nacer quedan cubiertas de por vida como parte de su historial asegurado.',
+          'Si el parto fue en la sanidad pública, consulta con tu asesor: algunas compañías permiten igualmente el alta favorable si llevas asegurado más de 10 meses.',
+        ],
+      },
+      {
+        heading: 'Cómo incluir al bebé paso a paso',
+        content: [
+          '1. Llama a tu aseguradora o usa el área de cliente online tan pronto como puedas tras el parto.',
+          '2. Apporta el certificado de nacimiento o el libro de familia.',
+          '3. Elige entre incluirlo en tu póliza familiar (suele ser más barato por descuentos) o contratar una individual para el bebé.',
+          '4. Solicita confirmación por escrito de que el alta se ha procesado sin carencias ni exclusiones.',
+        ],
+      },
+    ],
+    tips: [
+      'No esperes a salir del hospital para avisar a tu seguro: los primeros días en casa son caóticos.',
+      'Verifica si tu póliza tiene carencia de maternidad antes de quedarte embarazada.',
+      'Elige una póliza con cuadro médico amplio en pediatría: será el servicio que más uses.',
+      'La telemedicina pediátrica 24h es una salvación para dudas nocturnas en los primeros meses.',
+    ],
+    faqs: [
+      {
+        question: '¿Qué plazo tengo para dar de alta al recién nacido?',
+        answer: 'Entre 15 y 30 días desde el nacimiento, dependiendo de la aseguradora. Cumplir este plazo es vital para entrar sin carencias.',
+      },
+      {
+        question: '¿El seguro cubre la UCI neonatal?',
+        answer: 'Sí, suele estar cubierto bajo la póliza de la madre durante el ingreso inicial y el primer mes, si el parto fue por el seguro privado.',
+      },
+      {
+        question: '¿Puedo asegurar al bebé si yo no tengo seguro médico?',
+        answer: 'Sí, puedes contratar una póliza individual para él, pero tendrá que pasar un cuestionario de salud estándar.',
+      },
+      {
+        question: '¿Qué pasa si el parto fue en un hospital público?',
+        answer: 'La cobertura automática inicial no se activa, pero muchas compañías permiten el alta sin carencias si se solicita en plazo y los padres llevan tiempo asegurados.',
+      },
+      {
+        question: '¿Qué incluye la pediatría de libre elección?',
+        answer: 'Poder elegir al pediatra que quieras dentro del cuadro médico y tener continuidad: siempre el mismo profesional cuidando de tu hijo.',
+      },
+      {
+        question: '¿Tengo que pagar más por el bebé desde el día 1?',
+        answer: 'Sí, una vez formalizado el alta, el recibo aumentará proporcionalmente (suele haber descuentos por grupo familiar).',
+      },
+    ],
+  },
+  {
     slug: 'donde-consultar-que-incluye-mi-poliza',
     title: '¿Dónde puedo consultar qué se incluye en mi póliza? Guía completa 2026',
     excerpt: '¿No sabes lo que cubre tu seguro? Aquí tienes cómo encontrar tu póliza, qué significan sus documentos y qué buscar antes de que lo necesites. Sin tecnicismos, sin rodeos.',
