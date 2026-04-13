@@ -10,14 +10,14 @@ import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: `Opiniones y Reseñas · Valentín Protección Integral | Seguros Madrid`,
-  description: 'Lo que dicen nuestros clientes en Madrid. Descubre por qué más de 1.200 familias confían en Rosa Valentín para orientarse y proteger lo que más importa.',
+  title: "Opiniones Reales de Clientes · Reseñas 4.9 ⭐ | Valentín",
+  description: "Descubre por qué las familias de Madrid confían en Rosa Valentín. Reseñas verificadas sobre nuestra asesoría en salud y vida.",
   alternates: {
     canonical: `${site.domain}/opiniones`,
   },
   openGraph: {
-    title: `Opiniones y Reseñas · Valentín Protección Integral | Seguros Madrid`,
-    description: 'Lo que dicen nuestros clientes en Madrid. Descubre por qué más de 1.200 familias confían en Rosa Valentín para orientarse y proteger lo que más importa.',
+    title: "Opiniones Reales de Clientes · Reseñas 4.9 ⭐ | Valentín",
+    description: "Descubre por qué las familias de Madrid confían en Rosa Valentín. Reseñas verificadas sobre nuestra asesoría en salud y vida.",
     images: [{ url: `${site.domain}/og-image.png`, alt: "Opiniones de clientes - Valentín Protección Integral" }],
   },
 };

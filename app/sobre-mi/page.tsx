@@ -9,12 +9,15 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site, testimonials } from '@/lib/products';
 
 export const metadata: Metadata = {
-  title: `Valentín Protección Integral · Equipo y Valores | ${site.name}`,
-  description: 'Conoce a Rosa Valentín, asesora experta de Valentín Protección Integral. Más de 10 años de experiencia en seguros de salud, vida, mascotas y negocios.',
+  title: "Rosa Valentín · Mediadora de Seguros en Madrid | Sobre Mí",
+  description: "Conoce a Rosa Valentín, mediadora con +10 años de experiencia. Asesoramiento financiero en seguros con cercanía y transparencia en Boadilla y Madrid.",
+  alternates: {
+    canonical: `${site.domain}/sobre-mi`,
+  },
   openGraph: {
-    title: `Valentín Protección Integral · Equipo y Valores | ${site.name}`,
-    description: 'Asesoramiento personalizado en seguros para familias y particulares. Sin presión y con una comparativa transparente.',
-    images: [{ url: `${site.domain}/images/agent/rosa-valentin.jpg`, alt: 'Rosa Valentín — Asesora en Valentín Protección Integral' }],
+    title: "Rosa Valentín · Mediadora de Seguros en Madrid | Sobre Mí",
+    description: "Conoce a Rosa Valentín, mediadora con +10 años de experiencia. Asesoramiento financiero en seguros con cercanía y transparencia en Boadilla y Madrid.",
+    images: [{ url: `${site.domain}/images/agent/rosa-valentin.jpg`, alt: "Rosa Valentín — Mediadora de Seguros en Madrid" }],
   },
 };
 

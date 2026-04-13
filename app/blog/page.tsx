@@ -11,15 +11,15 @@ import { blogPosts } from '@/lib/blog';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: `Blog de Seguros · Guías y Consejos para Elegir Mejor | Valentín`,
-  description: 'Aprende a elegir tu seguro de salud, vida o mascotas sin letra pequeña. Guías honestas sobre copago, coberturas y ahorro real en 2026.',
+  title: "Blog de Seguros: Consejos Sin Letra Pequeña | Valentín",
+  description: "Guías, comparativas y noticias sobre seguros de salud, vida y mascotas. Aprende a elegir mejor con Rosa Valentín.",
   alternates: {
     canonical: `${site.domain}/blog`,
   },
   openGraph: {
-    title: `Blog de Seguros · Guías y Consejos para Elegir Mejor | Valentín`,
-    description: 'Aprende a elegir tu seguro de salud, vida o mascotas sin letra pequeña. Guías honestas sobre copago, coberturas y ahorro real en 2026.',
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Blog de Valentín Protección Integral" }],
+    title: "Blog de Seguros: Consejos Sin Letra Pequeña | Valentín",
+    description: "Guías, comparativas y noticias sobre seguros de salud, vida y mascotas. Aprende a elegir mejor con Rosa Valentín.",
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Blog de Seguros - Valentín Protección Integral" }],
   },
 };
 

@@ -9,15 +9,15 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: `Contacto · Asesora de Seguros en Madrid | Valentín`,
-  description: 'Resuelve tus dudas sobre seguros con Rosa Valentín. Asesoramiento independiente en salud, vida y empresas. Consulta gratuita por WhatsApp, llamada o formulario.',
+  title: "Seguros Cerca de Ti en Madrid · Contacto | Rosa Valentín",
+  description: "¿Tienes dudas con tu seguro? Contacta con Rosa Valentín. Asesoría presencial y online en Madrid. Llámanos o escríbenos por WhatsApp.",
   alternates: {
     canonical: `${site.domain}/contacto`,
   },
   openGraph: {
-    title: `Contacto · Asesora de Seguros en Madrid | Valentín`,
-    description: 'Resuelve tus dudas sobre seguros con Rosa Valentín. Asesoramiento independiente en salud, vida y empresas. Consulta gratuita por WhatsApp, llamada o formulario.',
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Contacto Valentín Protección Integral" }],
+    title: "Seguros Cerca de Ti en Madrid · Contacto | Rosa Valentín",
+    description: "¿Tienes dudas con tu seguro? Contacta con Rosa Valentín. Asesoría presencial y online en Madrid. Llámanos o escríbenos por WhatsApp.",
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Contacto con Rosa Valentín - Seguros en Madrid" }],
   },
 };
 

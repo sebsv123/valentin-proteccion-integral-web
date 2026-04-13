@@ -9,8 +9,16 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 
 export const metadata: Metadata = {
-  title: 'Cómo te ayudamos | Valentín Protección Integral',
-  description: 'Conoce la forma de trabajo, el acompañamiento y la lógica de orientación de Valentín Protección Integral.',
+  title: "Cómo Funciona Nuestra Asesoría de Seguros en Madrid | Valentín",
+  description: "Tu asesora financiera personal en seguros. Descubre nuestro paso a paso: escucha, comparativa real y acompañamiento sin compromisos.",
+  alternates: {
+    canonical: `${site.domain}/como-te-ayudamos`,
+  },
+  openGraph: {
+    title: "Cómo Funciona Nuestra Asesoría de Seguros en Madrid | Valentín",
+    description: "Tu asesora financiera personal en seguros. Descubre nuestro paso a paso: escucha, comparativa real y acompañamiento sin compromisos.",
+    images: [{ url: `${site.domain}/images/home/meeting-real.jpg`, alt: "Metodología de asesoría de seguros - Rosa Valentín" }],
+  },
 };
 
 export const dynamic = 'force-static';

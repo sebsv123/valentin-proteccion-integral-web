@@ -8,15 +8,15 @@ import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Asesora de Seguros en Madrid · Consulta Gratis | Valentín",
-  description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
+  title: "Tu Asesora de Seguros en Madrid · Rosa Valentín | Valentín",
+  description: "¿Buscas asesora de seguros en Madrid? Rosa Valentín ofrece asesoramiento independiente en salud, vida, mascotas y negocios. Consulta gratis sin letra pequeña.",
   alternates: {
     canonical: site.domain,
   },
   openGraph: {
-    title: "Asesora de Seguros en Madrid · Consulta Gratis | Valentín",
-    description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Valentín Protección Integral - Asesora de Seguros" }],
+    title: "Tu Asesora de Seguros en Madrid · Rosa Valentín | Valentín",
+    description: "¿Buscas asesora de seguros en Madrid? Rosa Valentín ofrece asesoramiento independiente en salud, vida, mascotas y negocios. Consulta gratis sin letra pequeña.",
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Tu Asesora de Seguros en Madrid - Rosa Valentín" }],
   },
 };
 
