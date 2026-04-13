@@ -3,12 +3,6 @@ export type FaqItem = {
   answer: string;
 };
 
-export type ReviewItem = {
-  name: string;
-  date: string;
-  text: string;
-};
-
 export type BlogPost = {
   slug: string;
   title: string;
@@ -23,9 +17,9 @@ export type BlogPost = {
   sections: { heading: string; content: string[] }[];
   tips: string[];
   faqs?: FaqItem[];             // ← NUEVO: FAQ del artículo
-  reviews?: ReviewItem[];       // ← NUEVO: reseñas de Google manuales
   reviewCount?: number;         // ← NUEVO: total de reseñas en Google (para schema)
   googleReviewsUrl?: string;    // ← NUEVO: enlace directo al perfil de reseñas
+  googleWriteReviewUrl?: string; // ← NUEVO: enlace directo para escribir reseña
 };
 
 export const blogPosts: BlogPost[] = [
@@ -41,6 +35,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Mejor Seguro de Salud en Madrid 2026 (actualizado abril) | Valentín Protección Integral',
     metaDescription: 'Guía actualizada abril 2026 para elegir el mejor seguro médico privado en Madrid. Cuadros médicos, precios, hospitales y +39 reseñas de 5 estrellas. Asesoramiento sin compromiso.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
     reviewCount: 39,
     sections: [
       {
@@ -162,15 +157,6 @@ export const blogPosts: BlogPost[] = [
         question: '¿Cubre el seguro las urgencias en Madrid?',
         answer: 'La mayoría cubre urgencias en centros privados propios, y algunos también en hospitales públicos si los privados no están disponibles. Es un punto fundamental a revisar, especialmente si tienes hijos o personas mayores a cargo.',
       },
-    ],
-    reviews: [
-      // AQUÍ COPIAS TUS RESEÑAS REALES (ver instrucciones en Bloque 3)
-      {
-        name: 'María G.',
-        date: 'Abril 2026',
-        text: 'Rosa nos ayudó a encontrar el seguro de salud perfecto para toda la familia. Sin presión, con mucha claridad y a un precio mejor del que esperábamos.',
-      },
-      // añade más objetos aquí con el mismo formato
     ],
   },
   {

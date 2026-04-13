@@ -13,6 +13,8 @@
   --muted: #5b6470;
   --card: #ffffff;
   --border: #e2e8f0;
+  --color-surface-offset: #f1f5f9;
+  --color-surface-dynamic: rgba(255, 255, 255, 0.45);
 }
 
 html { scroll-behavior: smooth; }
@@ -220,4 +222,28 @@ img { max-width: 100%; height: auto; }
   height: 3px;
   background: var(--blue);
   border-radius: 99px;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-offset);
+}
+
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-surface-dynamic),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
 }

@@ -61,13 +61,10 @@ export function BlogArticle({ post }: { post: BlogPost }) {
               ))}
 
 
-              {/* ── Reseñas Google aleatorias ── */}
-              {post.reviews && post.reviews.length > 0 && post.googleReviewsUrl && (
+              {/* ── Reseñas Google Dinámicas ── */}
+              {post.googleReviewsUrl && (
                 <GoogleReviewsGrid
-                  reviews={post.reviews}
-                  totalCount={post.reviewCount ?? post.reviews.length}
-                  googleReviewsUrl={post.googleReviewsUrl}
-                  displayCount={5}
+                  totalCount={post.reviewCount}
                 />
               )}
 
