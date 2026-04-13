@@ -24,6 +24,120 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'seguro-medico-privado-madrid',
+    title: '¿Cuál es el mejor seguro médico privado en Madrid? | Guía 2026',
+    excerpt: 'Antes de contratar un seguro médico privado en Madrid, lee esto. Sin marcas, sin presión. Te explicamos qué mirar, cuánto cuesta y cómo elegir bien según tu situación.',
+    image: '/images/blog/seguro-medico-privado-madrid.png',
+    imageAlt: 'Asesoramiento premium de seguros médicos en Madrid',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '12 min',
+    metaTitle: '¿Cuál es el mejor seguro médico privado en Madrid? | Guía 2026',
+    metaDescription: 'Antes de contratar un seguro médico privado en Madrid, lee esto. Sin marcas, sin presión. Te explicamos qué mirar, cuánto cuesta y cómo elegir bien según tu situación.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Guía sin marcas ni presiones para elegir en Madrid',
+        content: [
+          'Si has llegado aquí buscando una lista de compañías con su logo y su precio, este artículo va a decepcionarte. Y eso es buena señal.',
+          'La pregunta "¿cuál es el mejor seguro médico privado para Madrid?" no tiene una respuesta de catálogo. Tiene una respuesta para ti. Porque el mejor seguro es el que encaja con tu situación real: tu edad, tu barrio, si tienes hijos, si ya has sufrido una mala experiencia con otro seguro, si vas al médico dos veces al año o con mucha más frecuencia.',
+          'Lo que sí puedo darte en esta guía son los criterios exactos que uso después de más de diez años asesorando a personas en Madrid. Sin rodeos, sin letra pequeña que se te escape y sin intentar venderte nada que no necesites.',
+        ],
+      },
+      {
+        heading: 'Respuesta rápida (para los que van con prisa)',
+        content: [
+          'No existe un único "mejor" seguro médico privado para Madrid. La elección depende de tres factores clave: que el cuadro médico tenga especialistas cerca de donde vives, que las condiciones de copago encajen con la frecuencia con la que usas el seguro y que las coberturas respondan a tu etapa vital.',
+          'Los precios orientativos en Madrid oscilan entre 25 € y 120 € al mes por persona, según la modalidad y el perfil. Si necesitas orientación sin compromiso, puedes llamarnos o escribirnos y en una sola conversación dejamos esto resuelto.',
+        ],
+      },
+      {
+        heading: 'Por qué cada vez más madrileños contratan un seguro privado',
+        content: [
+          'Madrid tiene una sanidad pública que en urgencias graves funciona bien. Pero la realidad es que la espera media para una prueba diagnóstica en Madrid suele superar los 67 días. Para una consulta de especialista, el tiempo puede alargarse varios meses.',
+          'Eso no es un fallo puntual del sistema: es la consecuencia de una demanda sostenida sobre una estructura que no crece al mismo ritmo. El resultado es que muchas personas llegan a mí después de haber esperado demasiado o simplemente porque han llegado a un momento vital (maternidad, jubilación, etc.) en el que ya no pueden permitirse esa incertidumbre.',
+          '"Desde que llegué a España ha sido un apoyo constante. Se nota la experiencia y la forma tan humana de orientar." — Luis, cliente.',
+        ],
+      },
+      {
+        heading: 'Los 6 criterios reales para elegir un buen seguro',
+        content: [
+          '1. ¿Hay médicos en tu zona? Madrid es enorme. No te fíes de la red nacional, verifica qué especialistas hay cerca de tu barrio (Móstoles, Alcobendas, Vallecas, etc.).',
+          '2. ¿Con copago o sin copago? Sin copago para uso frecuente o familias; con copago para jóvenes que buscan pagar lo mínimo mensual.',
+          '3. ¿Cómo funcionan las urgencias? Pregunta específicamente: ¿A qué hospital puedo acudir a las 3 de la madrugada en mi zona?',
+          '4. ¿Incluye salud mental real? Un seguro que solo ofrece 4 sesiones al año o con esperas de dos semanas, en la práctica no cubre salud mental.',
+          '5. Calidad de la telemedicina: ¿Es una videoconsulta rápida o una pantalla de espera de dos horas?',
+          '6. Enfermedades preexistentes: Si tienes una condición previa, hay que hablarlo antes de contratar para saber si hay exclusiones o periodos de espera.',
+        ],
+      },
+      {
+        heading: 'Precios orientativos en Madrid para 2026',
+        content: [
+          '• Joven (20–35 años): 20 € – 35 € (con copago) / 40 € – 65 € (sin copago)',
+          '• Adulto (36–55 años): 35 € – 60 € (con copago) / 60 € – 95 € (sin copago)',
+          '• Senior (56–70 años): 70 € – 120 € (con copago) / 90 € – 160 € (sin copago)',
+          '• Familia (2 adultos + 2 hijos): 160 € – 260 € (sin copago)',
+          'Nota: Los rangos dependen del perfil de salud declarado y de las coberturas específicas. Si algo te ofrecen mucho más barato, revisa las exclusiones.',
+        ],
+      },
+      {
+        heading: 'Si quieres cambiar tu seguro actual (y no sabes cómo)',
+        content: [
+          'Es la situación más común. Los seguros en España se renuevan anualmente. Para no renovar, debes avisar con UN MES de antelación al vencimiento.',
+          'Cuidado con los periodos de carencia: el tiempo desde que contratas hasta que puedes usar cirugías o maternidad (habitualmente 6-8 meses). Nunca canceles el antiguo hasta tener el nuevo activo.',
+        ],
+      },
+      {
+        heading: 'Perfiles: Jóvenes, Familias y Seniors',
+        content: [
+          'Para jóvenes: Recomendamos pólizas de bajo coste con copago para cubrir lo esencial sin pagar por lo que no usas.',
+          'Para familias: El sin copago suele ser más rentable por la frecuencia de visitas al pediatra (revisa urgencias pediátricas 24h cerca de tu zona).',
+          'Para seniors (+55): Busca renovación garantizada por contrato. A esta edad, la aseguradora no debe poder excluirte por historial clínico acumulado.',
+        ],
+      },
+      {
+        heading: 'La letra pequeña que luego duele',
+        content: [
+          'Revisa siempre los límites de sesiones en fisioterapia o psicología. Confirma el alcance real de las preexistencias declaradas. Y asume que habrá una actualización de precio anual ligada al IPC médico, es normal en el sector.',
+        ],
+      },
+    ],
+    tips: [
+      'Verifica especialistas cerca de tu código postal, no solo en la red general.',
+      'El "sin copago" suele ser más rentable si tienes niños pequeños.',
+      'Avisa con un mes de antelación si quieres cambiar de compañía.',
+      'Pregunta siempre por la renovación garantizada por contrato.',
+    ],
+    faqs: [
+      {
+        question: '¿Cuánto cuesta un seguro médico privado en Madrid?',
+        answer: 'En Madrid los precios varían entre 20 € y 160 € al mes por persona. Las familias suelen pagar entre 130 € y 260 € totales según el número de miembros y la modalidad elegida.',
+      },
+      {
+        question: '¿Puedo contratar si tengo enfermedades previas?',
+        answer: 'Sí, pero hay que declararlas. Dependiendo del caso, puede haber una exclusión de esa condición, un periodo de espera o aceptación completa. Consultar con un asesor antes de firmar es clave.',
+      },
+      {
+        question: '¿A partir de qué edad puedo contratar?',
+        answer: 'No hay edad máxima legal, pero a partir de los 65 años las condiciones cambian. Existen pólizas seniors con coberturas adaptadas. Lo importante es la garantía de no exclusión posterior.',
+      },
+      {
+        question: '¿Los autónomos pueden deducirse el seguro médico?',
+        answer: 'Sí, hasta 500 € anuales por persona (tú, pareja e hijos) en el IRPF. En caso de discapacidad, el límite sube a 1.500 €.',
+      },
+      {
+        question: '¿Qué incluye la cobertura base en Madrid?',
+        answer: 'Generalmente: medicina general, especialistas, pruebas diagnósticas, urgencias 24h y telemedicina. La cirugía y hospitalización suelen ser parte de gamas completas.',
+      },
+      {
+        question: '¿Merece la pena si ya tengo Seguridad Social?',
+        answer: 'La pública es excelente para procesos complejos, pero el seguro privado te ahorra los 3-6 meses de espera habituales para ver a un especialista en Madrid.',
+      },
+    ],
+  },
+  {
     slug: 'mejor-seguro-salud-madrid-2026',
     title: 'Mejor Seguro de Salud en Madrid 2026: Guía completa de coberturas y hospitales',
     excerpt: 'Analizamos las opciones de salud privada en Madrid para 2026: cuadros médicos, hospitales de referencia, precios y cómo elegir sin pagar de más.',
