@@ -24,6 +24,103 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'seguro-medico-asistencia-en-viaje-que-cubre',
+    title: '¿Qué cubre un seguro médico de asistencia en viaje? Guía completa 2026',
+    excerpt: 'Gastos médicos, repatriación, cancelación, pérdida de equipaje... y lo que nadie explica: qué pasa cuando lo necesitas de verdad. Guía honesta del seguro de viaje en 2026.',
+    image: '/images/blog/blog-choices.jpg',
+    imageAlt: 'Viajeros planificando su próxima aventura en el extranjero',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '22 min',
+    metaTitle: '¿Qué cubre un seguro médico de asistencia en viaje? Guía completa 2026',
+    metaDescription: 'Gastos médicos, repatriación, cancelación, pérdida de equipaje... Todo lo que incluye un seguro de viaje en 2026.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Todo lo que necesitas saber antes de salir',
+        content: [
+          'Una urgencia médica en el extranjero no avisa. Cuando ocurre, la pregunta no es "¿debería haber contratado un seguro?". La pregunta es "¿qué hago ahora?" — y la respuesta depende de si tienes uno o no.',
+          'Esta guía explica qué cubre un seguro de asistencia en viaje, qué no cubre, cuándo es obligatorio y, sobre todo, qué hacer si en algún momento lo necesitas de verdad.',
+          'No es un lujo: el coste de una noche de hospitalización en EEUU puede superar los 10.000 €, mientras que el seguro suele costar entre 3 y 8 € al día.',
+        ],
+      },
+      {
+        heading: '¿Qué cubre exactamente el seguro de viaje?',
+        content: [
+          '• Asistencia médica y quirúrgica: Urgencias, hospitalización, diagnósticos y medicamentos prescritos en el destino.',
+          '• Repatriación sanitaria: El servicio más caro. Cubre el traslado médico a España (en avión medicalizado si es preciso) cuando no puedes volver en condiciones normales.',
+          '• Gastos del acompañante: Desplazamiento y estancia de un familiar si quedas hospitalizado solo en el extranjero.',
+          '• Cancelación e interrupción: Reembolso de gastos no recuperables si no puedes viajar por causas graves y justificadas.',
+          '• Equipaje y RC: Cobertura por robo o pérdida de maletas y responsabilidad civil por daños involuntarios a terceros.',
+        ],
+      },
+      {
+        heading: 'La Tarjeta Sanitaria Europea vs Seguro Privado',
+        content: [
+          'La TSE es gratuita y útil en la UE, pero tiene limitaciones críticas que muchos desconocen:',
+          '1. NO cubre la repatriación sanitaria (el coste más elevado de todos).',
+          '2. Solo da acceso a sanidad pública, a veces inexistente en zonas turísticas.',
+          '3. No cubre robos, cancelaciones ni asistencia jurídica.',
+          'Dentro de Europa, el seguro privado complementa a la TSE en los puntos donde esta no llega. Fuera de Europa, la TSE no tiene validez.',
+        ],
+      },
+      {
+        heading: 'Guía de actuación en una emergencia',
+        content: [
+          'Pasos críticos si te ocurre algo fuera de España:',
+          '1. Llama primero a la central 24h del seguro: Ellos gestionan el hospital concertado y el pago directo.',
+          '2. No firmes nada sin entenderlo: El seguro suele proporcionar intérpretes si hay barrera idiomática.',
+          '3. Guarda toda la documentación: Informes, facturas originales y recibos de farmacia para solicitar reembolsos.',
+          '4. Contacta de nuevo: Si la situación es tan urgente que vas por tu cuenta, avisa al seguro tan pronto como puedas.',
+        ],
+      },
+      {
+        heading: 'Precios orientativos para viajar en 2026',
+        content: [
+          '• Europa (7 días): 10 € – 25 €.',
+          '• Familia en Europa (14 días): 35 € – 70 €.',
+          '• EEUU / Canadá (10 días): 40 € – 90 € (Sistema médico más caro del mundo).',
+          '• Sudeste Asiático (15 días): 35 € – 80 €.',
+          '• Multiviaje anual: 80 € – 180 € al año (Ideal si viajas más de 3 veces/año).',
+        ],
+      },
+    ],
+    tips: [
+      'Lleva siempre el número de asistencia del seguro guardado en el móvil.',
+      'Verifica si el destino al que vas exige seguro obligatorio para el visado.',
+      'La repatriación es el servicio más crítico: nunca viajes sin ella.',
+      'Si eres deportista de riesgo, asegúrate de incluir el suplemento correspondiente.',
+    ],
+    faqs: [
+      {
+        question: '¿La TSE sustituye al seguro de viaje?',
+        answer: 'No. La TSE no cubre traslados medicalizados a España ni atención en centros privados. Para fuera de la UE no tiene ninguna validez.',
+      },
+      {
+        question: '¿Qué pasa si tengo una enfermedad preexistente?',
+        answer: 'Debes declararla. Algunas pólizas la excluyen, pero otras cubren complicaciones sobrevenidas si se informan correctamente al contratar.',
+      },
+      {
+        question: '¿Es obligatorio para el visado Schengen?',
+        answer: 'Sí. El consulado exige un seguro con cobertura mínima de 30.000 € y repatriación para conceder el visado de entrada en la UE.',
+      },
+      {
+        question: '¿Cubre el COVID-19?',
+        answer: 'La mayoría de las pólizas actuales lo cubren como cualquier otra enfermedad infecciosa iniciada durante el viaje.',
+      },
+      {
+        question: '¿Cómo elijo según el destino?',
+        answer: 'En Europa basta con 100.000 € de capital médico. En EEUU, Canadá o Japón recomendamos mínimo 500.000 € por el alto coste hospitalario.',
+      },
+      {
+        question: '¿Puedo contratar si ya estoy de viaje?',
+        answer: 'Muy pocas aseguradoras lo permiten y suelen incluir periodos de carencia de 72h para evitar fraudes. Lo ideal es contratar antes de salir.',
+      },
+    ],
+  },
+  {
     slug: 'seguro-de-vida-riesgo-que-es',
     title: '¿Qué es un seguro de vida riesgo? Coberturas, exclusiones y precios 2026',
     excerpt: 'Un seguro de vida riesgo protege a tu familia si tú no puedes. Explicamos qué cubre, qué no cubre, cuánto cuesta y cuándo tiene sentido contratarlo. Sin marcas, sin presión.',
