@@ -1,0 +1,13 @@
+name: Weekly Rebuild for Blog Publication
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 09:00 UTC
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_znwM3Z2Lpq6BXqHfdFusgFzINYct/EH5dtmCy4n"
