@@ -24,6 +24,99 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'fiarse-opiniones-para-elegir-seguro',
+    title: '¿Me puedo fiar de las opiniones para saber si un seguro es mejor?',
+    excerpt: 'Las opiniones online, la OCU y los comparadores tienen límites reales que nadie te cuenta porque a todos les interesa que sigas usándolos. Aquí está la verdad sin filtros.',
+    image: '/images/blog/blog_asesor_vs_comparador_1776077957194.png',
+    imageAlt: 'Asesora experta analizando la fiabilidad de las comparativas de seguros',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '21 min',
+    metaTitle: '¿Me puedo fiar de las opiniones de seguros? La verdad sin filtros 2026',
+    metaDescription: 'Descubre los límites de las reseñas de Google, los rankings de la OCU y los comparadores de seguros. Por qué no son neutrales y cómo elegir bien.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'La verdad que comparadores y rankings no suelen contarte',
+        content: [
+          'La respuesta honesta es: depende. Las opiniones online, los rankings de la OCU y los comparadores son herramientas útiles, pero tienen límites que nadie te explica.',
+          'El problema no es que existan, sino que a todas estas fuentes les interesa que sigas usándolas. Ninguna es 100% neutral porque todas tienen conflictos de interés declarados o encubiertos.',
+          'Este artículo explica qué pueden decirte y qué no, y por qué ninguna de esas fuentes sustituye a un análisis profesional de tu situación específica.',
+        ],
+      },
+      {
+        heading: 'Lo que las reseñas en Google y Trustpilot sí dicen',
+        content: [
+          'Las opiniones de clientes reales te dicen una cosa fundamental: cómo se comporta la aseguradora cuando algo sale mal. Son útiles para detectar patrones.',
+          '• Busca contexto concreto: Una reseña que explica un siniestro paso a paso vale más que cien estrellas sin texto.',
+          '• Identifica patrones de repetición: Si hay muchas quejas sobre "autorizaciones lentas" en los últimos 6 meses, hay un problema operativo real.',
+          'Importante: Estas plataformas capturan desproporcionadamente las experiencias negativas. Úsalas como filtro de descarte, no como criterio de elección único.',
+        ],
+      },
+      {
+        heading: 'Los límites de los rankings de la OCU',
+        content: [
+          'La OCU mide "satisfacción declarada de sus socios", lo cual tiene tres trampas:',
+          '1. Perfil de muestra limitado: Son socios de la OCU, un perfil que no representa al 100% del mercado asegurado.',
+          '2. El sesgo de inercia: Muchos se declaran "satisfechos" simplemente porque no han tenido problemas graves o por resistencia al cambio, no porque tengan la mejor póliza.',
+          '3. Calidad objetiva vs Opinión: Estar contento con la atención telefónica no significa que tu póliza tenga las mejores coberturas técnicas del mercado.',
+        ],
+      },
+      {
+        heading: '¿Por qué los comparadores no siempre comparan bien?',
+        content: [
+          'Los comparadores (Acierto, Rastreator, etc.) muestran precios orientativos para productos estándar. Sus carencias reales son:',
+          '• Interés comercial: Cobran comisión por cada alta, por lo que su incentivo es que contrates lo que ellos te muestran.',
+          '• El precio base engaña: El importe final puede cambiar drásticamente tras evaluar tu cuestionario de salud real.',
+          '• No están todos: Muchas compañías de alta calidad (mutuas o nicho) no aparecen en comparadores porque no aceptan su modelo de comisiones.',
+        ],
+      },
+      {
+        heading: 'Lo que ninguna opinión puede decirte',
+        content: [
+          '• Si tu médico está en la red: Tienes que verificar el cuadro médico de tu zona específica antes de contratar.',
+          '• Si tu condición de salud será aceptada: Las opiniones de otros no sirven para tu historial clínico personal.',
+          '• Si la póliza cubre lo que necesitas: Las reseñas raramente hablan de la "letra pequeña" que afecta a las exclusiones y carencias técnicas.',
+          'Tu mejor arma es hablar con un mediador independiente que conozca las condiciones reales del mercado y trabaje para ti, no para la aseguradora.',
+        ],
+      },
+    ],
+    tips: [
+      'Usa las reseñas negativas como filtro de descarte inicial.',
+      'Verifica el cuadro médico de tu provincia por especialidad antes de firmar nada.',
+      'Compara coberturas reales y límites económicos, no solo la prima mensual.',
+      'Declara siempre todo en el cuestionario de salud: una omisión puede anular tu póliza.',
+    ],
+    faqs: [
+      {
+        question: '¿Son fiables las notas de las aseguradoras en Google?',
+        answer: 'Son una buena señal de cómo atienden al cliente, pero no dicen nada sobre la calidad técnica de sus contratos o coberturas.',
+      },
+      {
+        question: '¿Me puedo fiar del precio que sale en un comparador?',
+        answer: 'Tómalo como una orientación. El precio final solo se conoce cuando la aseguradora evalúa tu riesgo y salud reales.',
+      },
+      {
+        question: '¿Por qué es mejor un asesor independiente que un ranking?',
+        answer: 'El asesor no tiene compromiso con ninguna marca y conoce cómo responden las compañías "en lo malo", más allá de la publicidad.',
+      },
+      {
+        question: '¿Qué es el sesgo de inercia en seguros?',
+        answer: 'Es seguir en una compañía por costumbre o por no querer gestionar papeles, aunque haya opciones mejores y más baratas fuera.',
+      },
+      {
+        question: '¿Cómo distingo una reseña útil de seguros?',
+        answer: 'Es aquella que describe un proceso concreto (siniestro, autorización) con fechas y resultados, no solo una valoración emocional.',
+      },
+      {
+        question: '¿Todas las aseguradoras aparecen en los comparadores?',
+        answer: 'No. Muchas compañías premium o mutuas solo distribuyen sus productos a través de agentes y mediadores especializados.',
+      },
+    ],
+  },
+  {
     slug: 'incluir-personas-poliza-medica',
     title: '¿Puedo incluir en la póliza médica a más personas? Guía completa 2026',
     excerpt: 'Sí puedes, pero no a cualquiera ni en cualquier momento. Te explicamos quién puede entrar, cómo hacerlo, qué pasa con el precio y qué ocurre cuando hay que retirar a alguien.',
