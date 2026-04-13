@@ -8,6 +8,9 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { BlogArticle } from '@/components/blog-article';
 import { blogPosts, getBlogPost } from '@/lib/blog';
 import { site } from '@/lib/products';
+import SchemaFAQ from '@/components/seo/schema-faq';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import SchemaArticle from '@/components/seo/schema-article';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -20,6 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle,
     description: post.metaDescription,
+    alternates: {
+      canonical: `${site.domain}/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
@@ -30,6 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+export const dynamic = 'force-static';
+
 export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getBlogPost(slug);
@@ -37,70 +45,24 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
   return (
     <>
-      <Header />
-      <script
-        id={`schema-blog-${post.slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Article",
-                "headline": post.title,
-                "description": post.metaDescription,
-                "datePublished": post.date,
-                "dateModified": post.dateModified ?? post.date,
-                "url": `${site.domain}/blog/${post.slug}`,
-                "image": `${site.domain}${post.image}`,
-                "author": {
-                  "@type": "Person",
-                  "name": "Rosa Valentín",
-                  "jobTitle": "Asesora de seguros independiente",
-                  "url": site.domain,
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Valentín Protección Integral",
-                  "url": site.domain,
-                },
-              },
-              ...(post.faqs && post.faqs.length > 0 ? [{
-                "@type": "FAQPage",
-                "mainEntity": post.faqs.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-                })),
-              }] : []),
-              {
-                "@type": "LocalBusiness",
-                "name": "Valentín Protección Integral",
-                "url": site.domain,
-                "telephone": "+34603448765",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "C. de los Reyes Católicos, 12",
-                  "addressLocality": "Boadilla del Monte",
-                  "addressRegion": "Madrid",
-                  "addressCountry": "ES",
-                },
-                "sameAs": [
-                  "https://search.google.com/local/reviews?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA",
-                ],
-                ...(post.reviewCount ? {
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "5.0",
-                    "reviewCount": String(post.reviewCount),
-                    "bestRating": "5",
-                  },
-                } : {}),
-              },
-            ],
-          }),
-        }}
+      <SchemaBreadcrumb 
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Blog', item: `${site.domain}/blog`, position: 2 },
+          { name: post.title, item: `${site.domain}/blog/${post.slug}`, position: 3 }
+        ]} 
       />
+      <SchemaArticle 
+        title={post.title}
+        description={post.metaDescription}
+        datePublished={post.date}
+        dateModified={post.dateModified}
+        author="Rosa Valentín"
+        image={post.image}
+        url={`${site.domain}/blog/${post.slug}`}
+      />
+      {post.faqs && <SchemaFAQ faqs={post.faqs} />}
+      <Header />
       <main>
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.title }]} />

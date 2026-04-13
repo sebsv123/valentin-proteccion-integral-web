@@ -38,7 +38,7 @@ const sectionTints: Record<string, string> = {
 
 export function HeroLeadSection() {
   return (
-    <section className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
+    <section id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
       <div className="container-shell hero-grid items-stretch gap-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
           <div className="absolute inset-0">
@@ -47,7 +47,7 @@ export function HeroLeadSection() {
           </div>
           <div className="relative z-10 max-w-3xl">
             <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em]">{site.brandLine}</p>
-            <h1 className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
+            <h1 id="hero-title" className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
               {site.heroTagline}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">
@@ -55,7 +55,7 @@ export function HeroLeadSection() {
               {' '}Protegemos lo que de verdad importa con el seguro adecuado para ti.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contacto" className="btn-primary hover-lift px-10 py-5 text-lg shadow-xl">Cuéntanos qué necesitas</Link>
+              <Link href="/contacto" className="btn-primary hover-lift px-10 py-5 text-lg shadow-xl">Solicitar asesoría en seguros</Link>
               <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} className="btn-whatsapp animate-pulse-soft px-10 py-5 text-lg shadow-xl"><MessageCircle className="h-5 w-5" /> Hablar por WhatsApp</a>
             </div>
             <div className="mt-7 grid gap-3 md:grid-cols-3">
@@ -96,7 +96,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
+    <section id="stats" aria-label="Estadísticas de impacto" className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
       <div className="container-shell">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -163,12 +163,12 @@ export function TrustBadgesSection() {
 export function ProductCategoryGrid() {
   const list = products.map((product) => ({ ...product, image: cardImages[product.slug] || product.cardImage }));
   return (
-    <section className="section-pad bg-white-pure" id="categorias">
+    <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
       <div className="container-shell">
         <ScrollReveal>
-          <div className="mb-8 max-w-3xl">
-            <p className="kicker">Nuestros seguros</p>
-            <h2 className="mt-3 section-title">Encuentra el ramo que mejor encaje con lo que quieres proteger</h2>
+          <div className="mb-12 max-w-3xl">
+            <p className="kicker">Nuestras especialidades</p>
+            <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
             <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
           </div>
         </ScrollReveal>
@@ -187,8 +187,8 @@ export function ProductCategoryGrid() {
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <p className="text-base leading-8 text-[var(--muted)]">{product.summary}</p>
                   <div className="mt-5 flex flex-col gap-3">
-                    <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver más sobre {product.label} <ArrowRight className="h-4 w-4" /></Link>
-                    <a href={buildWhatsAppHref(product.whatsappMessage)} className="btn-ghost w-full justify-center">Resolver por WhatsApp</a>
+                    <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Comparar {product.label} <ArrowRight className="h-4 w-4" /></Link>
+                    <a href={buildWhatsAppHref(product.whatsappMessage)} className="btn-ghost w-full justify-center">Consultar por WhatsApp</a>
                   </div>
                 </div>
               </article>
@@ -271,67 +271,26 @@ export function ComparisonCardsSection() {
 
 export function AgentTrustBlock() {
   return (
-    <section className="section-pad bg-alternate" id="como-funciona">
+    <section id="asesora" aria-labelledby="agent-title" className="section-pad bg-alternate">
       <div className="container-shell">
-        <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:gap-12">
-          <ScrollReveal direction="right">
-            <div className="soft-card overflow-hidden shadow-xl h-full">
-              <div className="grid h-full lg:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[420px]">
-                  <Image src="/images/agent/rosa-valentin.jpg" alt="Rosa Valentín, asesora de Valentín Protección Integral" fill className="object-cover object-top" />
-                </div>
-                <div className="p-7 md:p-9 xl:p-12">
-                  <p className="kicker">Tu equipo experto en Valentín Protección Integral</p>
-                  <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">Criterio y cercanía para tu tranquilidad</h2>
-                  <p className="mt-6 text-base leading-8 text-[var(--muted)] md:text-lg">Nuestro equipo, liderado por Rosa Valentín, acompaña cada caso con una mirada transparente y profesional. No se trata solo de vender una póliza, sino de garantizar que tienes la mejor respuesta frente a un imprevisto.</p>
-                  <div className="mt-8 grid gap-4">
-                    <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Asesoría según tu etapa y prioridades</p></div>
-                    <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Comparativa real entre compañías</p></div>
-                  </div>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Link href="/contacto" className="btn-primary">Consulta sin compromiso</Link>
-                    <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
-                  </div>
-                </div>
-              </div>
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <ScrollReveal direction="left">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border-4 border-white/40 shadow-2xl">
+              <Image src="/images/agent/rosa-oficina.jpg" alt="Rosa Valentín, asesora de seguros experta en Madrid, atendiendo en su oficina" fill className="object-cover object-top" />
             </div>
           </ScrollReveal>
-          <ScrollReveal direction="left">
-            <div className="soft-card overflow-hidden shadow-xl h-full">
-              <div className="grid h-full lg:grid-cols-[1.02fr_0.98fr]">
-                <div className="p-7 md:p-9 xl:p-12">
-                  <p className="kicker">Cómo te ayudamos</p>
-                  <h3 className="mt-3 font-heading text-4xl font-bold text-[var(--blue-deep)]">Una orientación clara en 5 pasos</h3>
-                  <p className="mt-6 text-base leading-8 text-[var(--muted)]">No te dejamos solo con un listado de coberturas. Convertimos la comparación en un proceso más claro, humano y útil.</p>
-                  <div className="mt-8 grid gap-4">
-                    {[
-                      ['01', 'Escucha activa: Entendemos tu situación personal o profesional.'],
-                      ['02', 'Análisis comparativo: Filtramos opciones entre las mejores compañías.'],
-                      ['03', 'Explicación clara: Traducimos la letra pequeña a lenguaje sencillo.'],
-                      ['04', 'Contratación ágil: Gestionamos todo para que no te preocupes de nada.'],
-                      ['05', 'Acompañamiento continuo: Seguimos a tu lado después de la firma.'],
-                    ].map(([step, line], idx) => (
-                      <motion.div
-                        key={line}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        className="flex items-center gap-5 rounded-[22px] border border-[var(--border)] bg-white px-5 py-4 shadow-sm hover:border-[var(--blue)] transition-colors group"
-                      >
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--blue-deep)] text-sm font-bold text-white group-hover:bg-[var(--blue)] transition-colors">{step}</div>
-                        <div className="text-base font-medium text-[var(--text)]">{line}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-                <div className="relative min-h-[360px]">
-                  <Image src="/images/home/handshake-real.jpg" alt="Acompañamiento cercano antes de contratar" fill className="object-cover object-center" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/60 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-8 text-white">
-                    <p className="font-heading text-2xl font-bold leading-tight">Acompañamiento real antes y después de decidir</p>
-                  </div>
-                </div>
+          <ScrollReveal direction="right">
+            <div>
+              <p className="kicker">Atención humana y experta</p>
+              <h2 id="agent-title" className="mt-4 section-title tracking-tight">Rosa Valentín: Más de 10 años comparando por ti para que elijas con total seguridad</h2>
+              <p className="mt-6 text-base leading-8 text-[var(--muted)] md:text-lg">Nuestro equipo, liderado por Rosa Valentín, acompaña cada caso con una mirada transparente y profesional. No se trata solo de vender una póliza, sino de garantizar que tienes la mejor respuesta frente a un imprevisto.</p>
+              <div className="mt-8 grid gap-4">
+                <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Asesoría según tu etapa y prioridades</p></div>
+                <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Comparativa real entre compañías</p></div>
+              </div>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link href="/contacto" className="btn-primary">Consulta sin compromiso</Link>
+                <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
             </div>
           </ScrollReveal>
@@ -343,22 +302,24 @@ export function AgentTrustBlock() {
 
 export function GeneralFaqSection() {
   return (
-    <section className="section-pad" id="faqs" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.2), rgba(18,59,104,0.03))' }}>
-      <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr]">
-        <ScrollReveal direction="right">
-          <div>
-            <p className="kicker">Preguntas frecuentes</p>
-            <h2 className="mt-3 section-title">Resolvemos dudas que suelen aparecer antes de decidir</h2>
-            <p className="section-copy mt-4">Aquí respondemos con más detalle a preguntas habituales. Y si prefieres una explicación más personal, puedes escribirnos por WhatsApp o pedir orientación.</p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
-              <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit">Hablar por WhatsApp</a>
-              <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
+    <section id="preguntas-frecuentes" aria-labelledby="faq-title" className="section-pad bg-alternate overflow-hidden">
+      <div className="container-shell">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
+          <ScrollReveal direction="right">
+            <div>
+              <p className="kicker">Resolvemos tus dudas</p>
+              <h2 id="faq-title" className="mt-3 section-title">¿Tienes preguntas antes de empezar?</h2>
+              <p className="section-copy mt-4">Aquí respondemos con más detalle a preguntas habituales. Y si prefieres una explicación más personal, puedes escribirnos por WhatsApp o pedir orientación.</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
+                <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit">Hablar por WhatsApp</a>
+                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
+              </div>
             </div>
-          </div>
-        </ScrollReveal>
-        <ScrollReveal direction="left">
-          <FAQAccordion items={generalFaqs} contextualLinks />
-        </ScrollReveal>
+          </ScrollReveal>
+          <ScrollReveal direction="left">
+            <FAQAccordion items={generalFaqs} contextualLinks />
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
@@ -366,23 +327,20 @@ export function GeneralFaqSection() {
 
 export function FinalCTASection() {
   return (
-    <section className="section-pad bg-alternate">
+    <section id="cta-final" aria-labelledby="cta-title" className="section-pad pt-0 mb-12">
       <div className="container-shell">
         <ScrollReveal>
-          <div className="soft-card overflow-hidden">
-            <div className="grid gap-0 xl:grid-cols-[0.88fr_1.12fr]">
-              <div className="relative min-h-[340px] xl:min-h-full">
-                <Image src="/images/home/final-cta.jpg" alt="Apretón de manos como cierre de confianza" fill className="object-cover object-center" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,59,104,0.06),rgba(18,59,104,0.22))]" />
-              </div>
-              <div className="p-7 md:p-10">
-                <p className="kicker">¿Tienes el seguro adecuado?</p>
-                <h2 className="mt-3 section-title">Hablemos para encontrar la opción perfecta</h2>
-                <p className="section-copy mt-4">Una llamada breve suele ser el camino más rápido para despejar dudas. Desde ahí vemos juntos qué producto tiene sentido para ti de forma directa y profesional.</p>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <Link href="/contacto" className="btn-primary">Consulta sin compromiso</Link>
-                  <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para revisar qué seguro me encaja mejor.')} className="btn-whatsapp">Hablar por WhatsApp</a>
-                </div>
+          <div className="soft-card relative overflow-hidden bg-[var(--blue-deep)] p-12 text-center text-white md:p-20">
+            <div className="absolute inset-0">
+              <Image src="/images/agent/sebastian.jpg" alt="Sebastián, asesor colaborador en seguros de vida y accidentes" fill className="object-cover opacity-25 brightness-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-deep)] via-[var(--blue-deep)]/90 to-transparent" />
+            </div>
+            <div className="relative z-10 mx-auto max-w-4xl">
+              <h2 id="cta-title" className="font-heading text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl leading-tight">¿Hablamos sobre lo que te preocupa?</h2>
+              <p className="mt-6 text-lg text-white/80 md:text-xl">Una llamada breve suele ser el camino más rápido para despejar dudas. Desde ahí vemos juntos qué producto tiene sentido para ti de forma directa y profesional.</p>
+              <div className="mt-10 flex flex-col gap-4 justify-center sm:flex-row">
+                <Link href="/contacto" className="btn-primary bg-white text-[var(--blue-deep)] hover:bg-white/90">Elegir mi seguro con Rosa</Link>
+                <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para revisar qué seguro me encaja mejor.')} className="btn-whatsapp bg-[#4CAF50] text-white border-none">Hablar por WhatsApp</a>
               </div>
             </div>
           </div>
@@ -458,12 +416,12 @@ export function BlogPreviewSection() {
   ];
 
   return (
-    <section className="section-pad bg-alternate">
+    <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
       <div className="container-shell">
         <ScrollReveal>
-          <div className="mb-8 max-w-3xl">
-            <p className="kicker">Blog Corporativo de Seguros</p>
-            <h2 className="mt-3 section-title">Información de valor para tomar decisiones informadas</h2>
+          <div className="mb-12 text-center">
+            <p className="kicker">Tu seguridad es lo primero</p>
+            <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué más de 1.200 familias confían en Valentín</h2>
             <p className="section-copy mt-4">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
           </div>
         </ScrollReveal>

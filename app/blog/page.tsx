@@ -8,15 +8,32 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: `Blog | ${site.name}`,
-  description: 'Guías breves y contenido útil para entender mejor seguros de salud, vida, mascotas y viaje en España.',
+  title: `Blog de Seguros · Guías y Consejos para Elegir Mejor | Valentín`,
+  description: 'Aprende a elegir tu seguro de salud, vida o mascotas sin letra pequeña. Guías honestas sobre copago, coberturas y ahorro real en 2026.',
+  alternates: {
+    canonical: `${site.domain}/blog`,
+  },
+  openGraph: {
+    title: `Blog de Seguros · Guías y Consejos para Elegir Mejor | Valentín`,
+    description: 'Aprende a elegir tu seguro de salud, vida o mascotas sin letra pequeña. Guías honestas sobre copago, coberturas y ahorro real en 2026.',
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Blog de Valentín Protección Integral" }],
+  },
 };
+
+export const dynamic = 'force-static';
 
 export default function BlogPage() {
   return (
     <>
+      <SchemaBreadcrumb 
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Blog', item: `${site.domain}/blog`, position: 2 }
+        ]} 
+      />
       <Header />
       <main>
         <section className="section-pad pt-6 md:pt-10">
@@ -51,7 +68,7 @@ export default function BlogPage() {
                     <h2 className="font-heading text-2xl font-semibold text-[var(--blue-deep)] group-hover:text-[var(--blue)] transition-colors">{post.title}</h2>
                     <p className="mt-3 text-base leading-8 text-[var(--muted)]">{post.excerpt}</p>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)]">
-                      Leer artículo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      Seguir leyendo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </Link>

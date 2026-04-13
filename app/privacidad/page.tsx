@@ -3,6 +3,8 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 
+export const dynamic = 'force-static';
+
 export default function StaticLegalPage() {
   return (
     <>

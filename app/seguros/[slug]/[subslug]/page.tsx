@@ -6,6 +6,8 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { ProductCTASection, ProductDecisionGrid, ProductFaqSection, RelatedProducts, SubpageHero } from '@/components/product-sections';
 import { getProduct, getProductSubpage, site, subpages } from '@/lib/products';
+import SchemaFAQ from '@/components/seo/schema-faq';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export function generateStaticParams() {
   return subpages.map((subpage) => ({ slug: subpage.parent, subslug: subpage.slug }));
@@ -15,18 +17,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug, subslug } = await params;
   const subpage = getProductSubpage(slug, subslug);
   if (!subpage) return {};
-  const seoTitle = `${subpage.title} · Madrid | ${site.name}`;
-  const seoDesc = `${subpage.summary} Asesoramiento personalizado en Madrid y Boadilla del Monte. Orientación sin compromiso.`;
+  
   return {
-    title: seoTitle,
-    description: seoDesc,
+    title: subpage.metaTitle,
+    description: subpage.metaDescription,
+    alternates: {
+      canonical: `${site.domain}/seguros/${subpage.parent}/${subpage.slug}`,
+    },
     openGraph: {
-      title: seoTitle,
-      description: seoDesc,
+      title: subpage.metaTitle,
+      description: subpage.metaDescription,
       images: [{ url: `${site.domain}${subpage.heroImage}`, alt: subpage.heroAlt }],
     },
   };
 }
+
+export const dynamic = 'force-static';
 
 export default async function ProductSubpagePage({ params }: { params: Promise<{ slug: string; subslug: string }> }) {
   const { slug, subslug } = await params;
@@ -38,6 +44,15 @@ export default async function ProductSubpagePage({ params }: { params: Promise<{
 
   return (
     <>
+      <SchemaBreadcrumb 
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Seguros', item: `${site.domain}/seguros`, position: 2 },
+          { name: product.name, item: `${site.domain}/seguros/${product.slug}`, position: 3 },
+          { name: subpage.name, item: `${site.domain}/seguros/${product.slug}/${subpage.slug}`, position: 4 }
+        ]} 
+      />
+      <SchemaFAQ faqs={subpage.faqs.map(f => ({ question: f.q, answer: f.a }))} />
       <Header />
       <main>
         <div className="container-shell pt-6 md:pt-8">

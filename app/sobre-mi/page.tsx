@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const dynamic = 'force-static';
+
 export default function SobreMiPage() {
   const featuredTestimonials = testimonials.slice(0, 3);
 
@@ -26,7 +28,7 @@ export default function SobreMiPage() {
       <Header />
       <main>
         {/* Hero split section */}
-        <section className="section-pad pt-6 md:pt-10">
+        <section id="sobre-mi-hero" aria-labelledby="sobre-mi-title" className="section-pad pt-6 md:pt-10">
           <div className="container-shell">
             <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre mí' }]} />
             <div className="mt-6 grid gap-8 xl:grid-cols-[0.85fr_1.15fr]">
@@ -72,7 +74,7 @@ export default function SobreMiPage() {
               {/* Content */}
               <div className="soft-card p-8 md:p-10 lg:p-12">
                 <p className="kicker font-bold tracking-[0.3em]">Nuestra filosofía</p>
-                <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-gradient md:text-5xl xl:text-6xl leading-[1.08]">
+                <h1 id="sobre-mi-title" className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-gradient md:text-5xl xl:text-6xl leading-[1.08]">
                   Valentín Protección Integral: Criterio y cercanía
                 </h1>
                 <p className="mt-6 text-lg leading-9 text-[var(--muted)]">
@@ -121,12 +123,12 @@ export default function SobreMiPage() {
         </section>
 
         {/* Cómo trabajo contigo */}
-        <section className="section-pad pt-0">
+        <section id="metodologia" aria-labelledby="metodologia-title" className="section-pad pt-0">
           <div className="container-shell">
             <div className="soft-card glass overflow-hidden border-white/40 shadow-xl">
               <div className="p-8 md:p-10 lg:p-12">
                 <p className="kicker font-bold tracking-[0.3em]">Cómo trabajo contigo</p>
-                <h2 className="mt-4 section-title">Un proceso sencillo orientado a que decidas con más claridad</h2>
+                <h2 id="metodologia-title" className="mt-4 section-title">Un proceso sencillo orientado a que decidas con más claridad</h2>
                 <p className="section-copy mt-4 max-w-3xl">No hay fórmulas mágicas. Hay escucha, comparación y acompañamiento. Así funciona:</p>
 
                 <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -155,7 +157,7 @@ export default function SobreMiPage() {
         </section>
 
         {/* Rosa lifestyle photo block */}
-        <section className="section-pad pt-0">
+        <section id="galeria" aria-label="Galería de Rosa Valentín" className="section-pad pt-0">
           <div className="container-shell">
             <div className="grid gap-6 md:grid-cols-2 items-center">
               <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
@@ -205,11 +207,11 @@ export default function SobreMiPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-pad pt-0">
+        <section id="cta-sobre-mi" aria-labelledby="cta-sobre-mi-title" className="section-pad pt-0">
           <div className="container-shell">
             <div className="soft-card bg-[linear-gradient(135deg,rgba(18,59,104,0.96),rgba(15,94,156,0.9))] p-8 text-white md:p-10 text-center">
               <p className="kicker !text-white/70">¿Quieres que hablemos?</p>
-              <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Una consulta sin compromiso puede ser el mejor primer paso</h2>
+              <h2 id="cta-sobre-mi-title" className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Una consulta sin compromiso puede ser el mejor primer paso</h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg leading-9 text-white/80">
                 Cuéntame tu situación y te ayudo a entender qué opciones tienen sentido para ti. Sin presión, sin compromiso, con toda la claridad.
               </p>

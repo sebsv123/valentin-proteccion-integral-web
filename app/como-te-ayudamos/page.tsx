@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: 'Conoce la forma de trabajo, el acompañamiento y la lógica de orientación de Valentín Protección Integral.',
 };
 
+export const dynamic = 'force-static';
+
 export default function ComoTeAyudamosPage() {
   return (
     <>
@@ -20,13 +22,13 @@ export default function ComoTeAyudamosPage() {
       <main className="pt-6 md:pt-8">
         <div className="container-shell"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Cómo te ayudamos' }]} /></div>
 
-        <section className="section-pad pt-5 md:pt-8">
+        <section id="metodo-hero" aria-labelledby="metodo-h1" className="section-pad pt-5 md:pt-8">
           <div className="container-shell">
             <div className="soft-card overflow-hidden">
               <div className="grid gap-0 lg:grid-cols-[1.02fr_0.98fr]">
                 <div className="p-7 md:p-10 lg:p-12">
                   <p className="kicker">Cómo te ayudamos</p>
-                  <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">Una orientación clara antes de contratar</h1>
+                  <h1 id="metodo-h1" className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">Una orientación clara antes de contratar</h1>
                   <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">Escuchamos tu situación, comparamos contigo y aterrizamos coberturas con un lenguaje que se entiende. La idea es ayudarte a elegir con más tranquilidad, no llenarte de ruido.</p>
                   <div className="mt-7 grid gap-3 md:grid-cols-2">
                     {[
@@ -56,7 +58,7 @@ export default function ComoTeAyudamosPage() {
         <AgentTrustBlock />
         <ComparisonCardsSection />
 
-        <section className="section-pad pt-0">
+        <section id="equipo-ayuda" aria-labelledby="equipo-title" className="section-pad pt-0">
           <div className="container-shell">
             <div className="soft-card overflow-hidden">
               <div className="grid gap-0 xl:grid-cols-[0.9fr_1.1fr]">
@@ -65,7 +67,7 @@ export default function ComoTeAyudamosPage() {
                 </div>
                 <div className="p-7 md:p-10">
                   <p className="kicker">Tu asesora personal</p>
-                  <h2 className="mt-3 section-title">Más de 10 años acompañando decisiones importantes</h2>
+                  <h2 id="equipo-title" className="mt-3 section-title">Más de 10 años acompañando decisiones importantes</h2>
                   <p className="section-copy mt-4">Rosa Valentín combina cercanía, experiencia y comparativa real entre opciones. Si quieres resolver una duda rápida o empezar con más calma, puedes hacerlo por el canal que te resulte más cómodo.</p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost">Instagram · @segurosrosavalentin</a>

@@ -13,9 +13,9 @@ export function BlogArticle({ post }: { post: BlogPost }) {
   const related = getRelatedPosts(post.slug);
 
   return (
-    <>
+    <article id="blog-post">
       {/* Hero */}
-      <section className="section-pad pt-6 md:pt-10">
+      <header className="section-pad pt-6 md:pt-10">
         <div className="container-shell">
           <Link href="/blog" className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)]">
             <ArrowLeft className="h-4 w-4" /> Volver al blog
@@ -34,10 +34,10 @@ export function BlogArticle({ post }: { post: BlogPost }) {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Content */}
-      <section className="section-pad pt-0">
+      <section aria-label="Contenido del artículo" className="section-pad pt-0">
         <div className="container-shell">
           <div className="grid gap-8 xl:grid-cols-[1fr_340px]">
             {/* Article body */}
@@ -150,6 +150,6 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           </div>
         </div>
       </section>
-    </>
+    </article>
   );
 }

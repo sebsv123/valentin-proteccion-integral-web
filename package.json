@@ -23,6 +23,7 @@
     "react-hook-form": "^7.53.0",
     "react-tabs": "^6.0.2",
     "swiper": "^11.1.14",
+    "web-vitals": "^5.2.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

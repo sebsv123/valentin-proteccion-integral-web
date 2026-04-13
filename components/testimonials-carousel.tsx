@@ -1,6 +1,7 @@
 "use client";
 
 import useEmblaCarousel from 'embla-carousel-react';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Quote, Star, Shield } from 'lucide-react';
 import { testimonials, site } from '@/lib/products';
 import ScrollReveal from './ui/scroll-reveal';
@@ -119,9 +120,9 @@ export function TestimonialsCarousel() {
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <a href={`https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent('Hola, quiero una consulta sin compromiso.')}`} className="btn-whatsapp !px-6 !py-3 text-sm">Contactar</a>
-                <a href="/opiniones" className="btn-ghost !px-6 !py-3 text-sm">
+                <Link href="/opiniones" className="btn-ghost !px-6 !py-3 text-sm">
                   Ver todas las opiniones <ExternalLink className="h-3 w-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

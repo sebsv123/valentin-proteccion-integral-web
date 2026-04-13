@@ -7,15 +7,32 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/products';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Seguros | Hub de productos | Valentín Protección Integral',
-  description: 'Accede a salud, vida, mascotas, dental, accidentes, decesos y viaje con una estructura clara y orientación personalizada.',
+  title: 'Seguros en Madrid · Salud, Vida y Más | Valentín Protección Integral',
+  description: 'Comparamos los mejores seguros por ti. Salud, vida, mascotas, dental y más. Recibe asesoría independiente y personalizada en Madrid y Boadilla del Monte.',
+  alternates: {
+    canonical: `${site.domain}/seguros`,
+  },
+  openGraph: {
+    title: 'Seguros en Madrid · Salud, Vida y Más | Valentín Protección Integral',
+    description: 'Comparamos los mejores seguros por ti. Salud, vida, mascotas, dental y más. Recibe asesoría independiente y personalizada en Madrid y Boadilla del Monte.',
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Seguros Valentín Protección Integral - Catálogo completo" }],
+  },
 };
+
+export const dynamic = 'force-static';
 
 export default function SegurosHubPage() {
   return (
     <>
+      <SchemaBreadcrumb 
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Seguros', item: `${site.domain}/seguros`, position: 2 }
+        ]} 
+      />
       <Header />
       <main className="section-pad pt-6 md:pt-10">
         <div className="container-shell">
@@ -50,7 +67,7 @@ export default function SegurosHubPage() {
                       </div>
                     ) : null}
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                      <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver información</Link>
+                      <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver coberturas de {product.label}</Link>
                       <Link href="/contacto" className="btn-ghost w-full justify-center">Solicitar orientación</Link>
                     </div>
                   </div>

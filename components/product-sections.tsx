@@ -25,7 +25,7 @@ export function ProductHero({ product }: { product: Product }) {
             <div className="grid items-stretch gap-0 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="p-8 md:p-12 lg:p-16">
                 <p className="kicker font-bold tracking-[0.3em]">{product.eyebrow}</p>
-                <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl lg:text-7xl leading-[1.1]">{product.heroTitle}</h1>
+                <h1 id="product-h1" className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl lg:text-7xl leading-[1.1]">{product.h1}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">{product.heroCopy}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <Link href="/contacto" className="btn-primary hover-lift px-10"><MessageCircle className="h-5 w-5" /> Solicitar orientación</Link>
@@ -63,12 +63,12 @@ export function ProductHero({ product }: { product: Product }) {
 
 export function CoverageHighlights({ product }: { product: Product }) {
   return (
-    <section className="section-pad bg-alternate">
+    <section id="coberturas" aria-labelledby="coverage-title" className="section-pad bg-alternate">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
         <ScrollReveal direction="right">
           <div>
             <p className="kicker">Coberturas destacadas</p>
-            <h2 className="mt-3 section-title">Lo importante de {product.label}, explicado con más orden</h2>
+            <h2 id="coverage-title" className="mt-3 section-title">Lo importante de {product.label}, explicado con más orden</h2>
             <p className="section-copy mt-4">Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.</p>
           </div>
         </ScrollReveal>
@@ -161,34 +161,36 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
 
 export function CasesAndForm({ product }: { product: Product }) {
   return (
-    <section className="section-pad bg-[linear-gradient(180deg,rgba(255,255,255,0.6),rgba(238,242,247,0.92))]">
-      <div className="container-shell grid gap-8 xl:grid-cols-[0.92fr_1.08fr]">
-        <ScrollReveal direction="right">
-          <div className="soft-card p-7 md:p-10 h-full">
-            <p className="kicker">Perfiles y casos de uso</p>
-            <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">Cuándo suele encajar mejor</h2>
-            <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">No todo el mundo necesita leer el producto igual. Estos perfiles te ayudan a ver más rápido si esta opción va contigo o si conviene mirar otra modalidad.</p>
-            <div className="mt-6 grid gap-3 md:grid-cols-2">
-              {product.cases.map((item, idx) => (
-                <motion.div 
-                  key={item} 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="flex items-center gap-3 rounded-[22px] bg-[var(--bg)] px-4 py-4 text-base font-medium tracking-wide text-[var(--text)] border border-transparent hover:border-[var(--blue)]/20 transition-all"
-                >
-                  <Users className="h-4 w-4 shrink-0 text-[var(--blue)]" />
-                  {item}
-                </motion.div>
-              ))}
+    <section id="contacto-producto" aria-labelledby="contact-product-title" className="section-pad bg-alternate">
+      <div className="container-shell">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+          <ScrollReveal direction="left">
+            <div>
+              <p className="kicker">Aterrizamos tu caso</p>
+              <h2 id="contact-product-title" className="mt-3 section-title">Podemos resolver tus dudas sobre {product.label} ahora mismo</h2>
+              <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">No todo el mundo necesita leer el producto igual. Estos perfiles te ayudan a ver más rápido si esta opción va contigo o si conviene mirar otra modalidad.</p>
+              <div className="mt-6 grid gap-3 md:grid-cols-2">
+                {product.cases.map((item, idx) => (
+                  <motion.div 
+                    key={item} 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center gap-3 rounded-[22px] bg-[var(--bg)] px-4 py-4 text-base font-medium tracking-wide text-[var(--text)] border border-transparent hover:border-[var(--blue)]/20 transition-all"
+                  >
+                    <Users className="h-4 w-4 shrink-0 text-[var(--blue)]" />
+                    {item}
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-[24px] border border-[var(--border)] bg-white p-5 text-base leading-8 text-[var(--muted)]">Si tu situación no encaja exactamente en estos perfiles, no pasa nada. La orientación sirve precisamente para aterrizar lo que cambia según edad, uso, modalidad y necesidades concretas.</div>
             </div>
-            <div className="mt-6 rounded-[24px] border border-[var(--border)] bg-white p-5 text-base leading-8 text-[var(--muted)]">Si tu situación no encaja exactamente en estos perfiles, no pasa nada. La orientación sirve precisamente para aterrizar lo que cambia según edad, uso, modalidad y necesidades concretas.</div>
-          </div>
-        </ScrollReveal>
-        <ScrollReveal direction="left">
-          <LeadForm defaultProduct={product.slug} compact />
-        </ScrollReveal>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <LeadForm defaultProduct={product.slug} compact />
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
@@ -196,12 +198,12 @@ export function CasesAndForm({ product }: { product: Product }) {
 
 export function ProductFaqSection({ product }: { product: Product }) {
   return (
-    <section className="section-pad bg-alternate" id="faqs-producto">
-      <div className="container-shell grid gap-8 xl:grid-cols-[0.88fr_1.12fr]">
+    <section id="faqs-producto" aria-labelledby="faq-product-title" className="section-pad bg-white-pure">
+      <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr] items-start">
         <ScrollReveal direction="right">
           <div>
-            <p className="kicker">Preguntas frecuentes de {product.label}</p>
-            <h2 className="mt-3 section-title">Dudas reales para decidir con más tranquilidad</h2>
+            <p className="kicker">Preguntas frecuentes</p>
+            <h2 id="faq-product-title" className="mt-3 section-title">Lo que más se suele preguntar sobre {product.label}</h2>
             <p className="section-copy mt-4">Hemos recogido preguntas que suelen aparecer antes de contratar este tipo de seguro. La idea es ayudarte a decidir mejor, no llenarte de texto sin contexto.</p>
           </div>
         </ScrollReveal>
@@ -222,7 +224,7 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
             <div className="grid items-stretch gap-0 lg:grid-cols-[1fr_1fr]">
               <div className="p-7 md:p-10 lg:p-12">
                 <p className="kicker">{subpage.eyebrow}</p>
-                <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">{subpage.title}</h1>
+                <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">{subpage.h1}</h1>
                 <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">{subpage.summary}</p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
@@ -245,7 +247,7 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 </div>
               </div>
               <div className="relative min-h-[340px]">
-                <Image src={subpage.heroImage} alt={subpage.heroAlt} fill className="object-cover" />
+                <Image src={subpage.heroImage} alt={`Imagen representativa de ${subpage.h1}`} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
               </div>
             </div>
@@ -259,12 +261,12 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
 export function RelatedProducts({ product }: { product: Product }) {
   const related = getRelatedProducts(product.related);
   return (
-    <section className="section-pad pt-0">
+    <section id="aspectos-clave" aria-labelledby="decision-title" className="section-pad bg-white-pure overflow-hidden">
       <div className="container-shell">
         <ScrollReveal>
-          <div className="mb-8 max-w-3xl">
-            <p className="kicker">Otros seguros relacionados</p>
-            <h2 className="mt-3 section-title">Si quieres comparar otras opciones, aquí tienes un siguiente paso lógico</h2>
+          <div className="mb-12 max-w-3xl">
+            <p className="kicker">Decide con criterio</p>
+            <h2 id="decision-title" className="mt-3 section-title">Cuestiones clave para comparar {product.label} sin perderte en la letra pequeña</h2>
           </div>
         </ScrollReveal>
         <div className="grid gap-8 lg:grid-cols-3">

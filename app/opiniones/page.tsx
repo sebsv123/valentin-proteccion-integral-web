@@ -7,11 +7,22 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: `Opiniones de Clientes · Seguros en Madrid | ${site.name}`,
-  description: 'Reseñas verificadas de personas reales que han confiado en Rosa Valentín para orientarse y elegir su seguro con más claridad. Boadilla del Monte, Madrid.',
+  title: `Opiniones y Reseñas · Valentín Protección Integral | Seguros Madrid`,
+  description: 'Lo que dicen nuestros clientes en Madrid. Descubre por qué más de 1.200 familias confían en Rosa Valentín para orientarse y proteger lo que más importa.',
+  alternates: {
+    canonical: `${site.domain}/opiniones`,
+  },
+  openGraph: {
+    title: `Opiniones y Reseñas · Valentín Protección Integral | Seguros Madrid`,
+    description: 'Lo que dicen nuestros clientes en Madrid. Descubre por qué más de 1.200 familias confían en Rosa Valentín para orientarse y proteger lo que más importa.',
+    images: [{ url: `${site.domain}/og-image.png`, alt: "Opiniones de clientes - Valentín Protección Integral" }],
+  },
 };
+
+export const dynamic = 'force-static';
 
 function StarRating({ count = 5 }: { count?: number }) {
   return (
@@ -26,6 +37,12 @@ function StarRating({ count = 5 }: { count?: number }) {
 export default function OpinionesPage() {
   return (
     <>
+      <SchemaBreadcrumb 
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Opiniones', item: `${site.domain}/opiniones`, position: 2 }
+        ]} 
+      />
       <Header />
       <main className="pt-6 md:pt-8">
         <div className="container-shell">
