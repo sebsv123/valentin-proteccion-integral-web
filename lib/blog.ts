@@ -24,6 +24,90 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'donde-consultar-que-incluye-mi-poliza',
+    title: '¿Dónde puedo consultar qué se incluye en mi póliza? Guía completa 2026',
+    excerpt: '¿No sabes lo que cubre tu seguro? Aquí tienes cómo encontrar tu póliza, qué significan sus documentos y qué buscar antes de que lo necesites. Sin tecnicismos, sin rodeos.',
+    image: '/images/blog/blog_asesor_vs_comparador_1776077957194.png',
+    imageAlt: 'Asesora Rosa Valentín analizando detalladamente los documentos de una póliza de seguro',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '18 min',
+    metaTitle: '¿Dónde puedo consultar qué se incluye en mi póliza? Guía completa 2026',
+    metaDescription: 'Encuentra y entiende tu póliza de seguro. Diferencias entre condiciones generales y particulares y cómo localizar seguros perdidos.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Entender lo que tienes contratado',
+        content: [
+          'La pregunta que más se repite no es "¿qué seguro necesito contratar?", sino "¿qué tengo yo exactamente en el que ya estoy pagando?". La mayoría no lo sabe con certeza.',
+          'No es falta de interés, sino que el sector no siempre facilita la lectura. Un documento de 20 páginas con terminología técnica no invita a profundizar.',
+          'Este artículo explica dónde está la información, cómo se llama y qué significa cada parte para que no haya sorpresas cuando realmente necesites usar el seguro.',
+        ],
+      },
+      {
+        heading: 'Los documentos clave: Particulares vs Generales',
+        content: [
+          'Toda póliza tiene dos bloques principales que debes saber distinguir:',
+          '• Condiciones Particulares (CC.PP.): Tu documento personalizado. Contiene tu nombre, el número de póliza, las coberturas exactas que elegiste, el precio y los beneficiarios.',
+          '• Condiciones Generales (CC.GG.): Las reglas comunes a todos los clientes del mismo producto. Explican cómo funciona el seguro en general y las exclusiones estándar.',
+          'Importante: Si hay una contradicción entre ambas, en España siempre prevalecen las condiciones particulares. Lo que firmaste específicamente para ti manda.',
+        ],
+      },
+      {
+        heading: '¿Dónde encontrar tu póliza ahora mismo?',
+        content: [
+          '1. Área de cliente online o App: Es la vía más rápida. Accedes con tu NIF y puedes descargar los PDF al momento.',
+          '2. Email de contratación: Busca en tu bandeja de entrada palabras como "póliza", "certificado" o el nombre de la aseguradora.',
+          '3. Registro Público (MJUS): Para seguros de vida de fallecidos, puedes usar el Registro del Ministerio de Justicia para saber con qué compañía estaba asegurado.',
+          '4. FIVA: Para seguros de coche, el Fichero Informativo de Vehículos Asegurados permite verificar la vigencia con la matrícula.',
+        ],
+      },
+      {
+        heading: 'Señales de alerta al revisar tu seguro',
+        content: [
+          '• El capital está desactualizado: Lo que contrataste hace 10 años puede ser insuficiente hoy si tu hipoteca o familia han crecido.',
+          '• Los beneficiarios son antiguos: Si te has divorciado o ha habido cambios familiares, el dinero podría acabar en manos equivocadas.',
+          '• Tienes duplicidades: Es muy frecuente pagar por la asistencia en viaje en tres seguros distintos sin saberlo (hogar, salud y tarjeta de crédito).',
+          '• Exclusiones ignoradas: Identifica qué situaciones NO cubre tu póliza antes de que ocurran para decidir si ese riesgo lo asumes tú o necesitas ampliar el seguro.',
+        ],
+      },
+    ],
+    tips: [
+      'Guarda siempre una copia digital de tus condiciones particulares en el móvil.',
+      'Sincroniza tus seguros con un área de cliente única para evitar el olvido.',
+      'Pide a tu mediador una auditoría de seguros: suele ahorrar un 15% en recibos duplicados.',
+      'Revisa los beneficiarios cada 2 años o tras cualquier cambio vital importante.',
+    ],
+    faqs: [
+      {
+        question: '¿Qué documento manda más en mi seguro?',
+        answer: 'Manda el de Condiciones Particulares. Es el que está adaptado a ti y a tus necesidades específicas.',
+      },
+      {
+        question: '¿Puedo consultar seguros de los que no tengo papeles?',
+        answer: 'Sí. Puedes revisar tus recibos bancarios para ver los cobros o usar registros oficiales como el FIVA (coches) o el Registro de Seguros de Vida.',
+      },
+      {
+        question: '¿Qué es exactamente una exclusión?',
+        answer: 'Es una situación que la póliza dice explícitamente que no cubre. Conocerlas es la única forma de no llevarte sorpresas en un siniestro.',
+      },
+      {
+        question: '¿Con qué frecuencia debo revisar mis pólizas?',
+        answer: 'Lo ideal es una vez al año, coincidiendo con la renovación, para verificar que el precio y las coberturas siguen siendo adecuados.',
+      },
+      {
+        question: '¿Puedo cambiar a los beneficiarios?',
+        answer: 'Sí, en la mayoría de seguros de vida e invalidez puedes modificarlos en cualquier momento comunicándolo por escrito a la compañía.',
+      },
+      {
+        question: '¿Por qué me sube el precio si no he tenido partes?',
+        answer: 'Suele deberse a cláusulas de actualización por IPC o edad del asegurado que están en las condiciones generales de tu contrato.',
+      },
+    ],
+  },
+  {
     slug: 'seguro-medico-asistencia-en-viaje-que-cubre',
     title: '¿Qué cubre un seguro médico de asistencia en viaje? Guía completa 2026',
     excerpt: 'Gastos médicos, repatriación, cancelación, pérdida de equipaje... y lo que nadie explica: qué pasa cuando lo necesitas de verdad. Guía honesta del seguro de viaje en 2026.',
