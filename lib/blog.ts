@@ -1,3 +1,14 @@
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type ReviewItem = {
+  name: string;
+  date: string;
+  text: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,14 +16,163 @@ export type BlogPost = {
   image: string;
   imageAlt: string;
   date: string;
+  dateModified?: string;        // ← NUEVO: para mostrar "Actualizado: abril 2026"
   readTime: string;
   metaTitle: string;
   metaDescription: string;
   sections: { heading: string; content: string[] }[];
   tips: string[];
+  faqs?: FaqItem[];             // ← NUEVO: FAQ del artículo
+  reviews?: ReviewItem[];       // ← NUEVO: reseñas de Google manuales
+  reviewCount?: number;         // ← NUEVO: total de reseñas en Google (para schema)
+  googleReviewsUrl?: string;    // ← NUEVO: enlace directo al perfil de reseñas
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'mejor-seguro-salud-madrid-2026',
+    title: 'Mejor Seguro de Salud en Madrid 2026: Guía completa de coberturas y hospitales',
+    excerpt: 'Analizamos las opciones de salud privada en Madrid para 2026: cuadros médicos, hospitales de referencia, precios y cómo elegir sin pagar de más.',
+    image: '/images/blog/blog_salud_madrid_2026_1776077536984.png',
+    imageAlt: 'Consulta médica premium en Madrid',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',   // actualiza este campo cada vez que edites el post
+    readTime: '10 min',
+    metaTitle: 'Mejor Seguro de Salud en Madrid 2026 (actualizado abril) | Valentín Protección Integral',
+    metaDescription: 'Guía actualizada abril 2026 para elegir el mejor seguro médico privado en Madrid. Cuadros médicos, precios, hospitales y +39 reseñas de 5 estrellas. Asesoramiento sin compromiso.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    reviewCount: 39,
+    sections: [
+      {
+        heading: 'El panorama de la salud privada en Madrid en 2026',
+        content: [
+          'El panorama de la sanidad privada en Madrid ha evolucionado hacia una integración total con la tecnología. En 2026, la clave no es solo tener un seguro, sino saber en qué red de hospitales te vas a mover y qué servicios digitales te ofrecen.',
+          'Llevo más de 10 años asesorando a familias en Madrid y lo que más me preguntan no es el precio, sino si su médico de siempre estará en el cuadro, o si el hospital más cercano a su casa está incluido. Esa es exactamente la conversación correcta.',
+          'En este artículo desglosamos los factores reales que determinan si un seguro de salud encaja con tu vida en Madrid en 2026.',
+        ],
+      },
+      {
+        heading: '¿Cómo se clasifican los cuadros médicos en Madrid?',
+        content: [
+          'No todos los seguros de salud tienen la misma red de médicos y hospitales. En Madrid, los cuadros se pueden clasificar en cuatro perfiles según su amplitud y calidad:',
+          '• Cuadro básico / esencial: red reducida, adecuada para uso ocasional. Buena opción para personas jóvenes y sanas.',
+          '• Cuadro amplio / completo: más de 40.000 médicos en España, grandes hospitales privados de Madrid incluidos. Ideal para familias.',
+          '• Cuadro sin copago: misma amplitud que el anterior, pero sin pago por visita. Recomendado si usas el seguro con frecuencia.',
+          '• Cuadro premium / top: acceso a los mejores hospitales privados de referencia, habitación individual garantizada, tecnología diagnóstica avanzada.',
+          'Antes de contratar, siempre comprobamos juntos que tu médico de confianza y el hospital más cercano a tu casa estén incluidos en la opción elegida.',
+        ],
+      },
+      {
+        heading: 'Hospitales de referencia en Madrid: qué debes comprobar',
+        content: [
+          'Un seguro es tan bueno como la puerta que te abre. En Madrid existen más de 1.000 médicos solo en la Comunidad, y algunos seguros cubren los grandes hospitales privados de referencia del centro de la ciudad, así como centros del área oeste (Boadilla, Pozuelo, Las Rozas).',
+          'Lo que debes verificar antes de firmar: si el hospital más cercano a tu domicilio está incluido, si tiene urgencias privadas 24 horas, y si el seguro cubre hospitalización completa o solo consultas ambulatorias.',
+          'En 2026, la mayoría de estos centros permiten gestiones instantáneas vía app: citas, autorizaciones, resultados. Es un factor que marca la diferencia en el día a día.',
+        ],
+      },
+      {
+        heading: 'Copago vs. sin copago: cuál te conviene en Madrid',
+        content: [
+          'Con copago, la prima mensual es más baja pero pagas entre 1 € y 6 € por cada consulta o servicio. Con sin copago, la cuota es algo mayor pero no pagas nada en el momento.',
+          'Para familias con niños que van al médico con frecuencia, el sin copago suele salir más económico a medio plazo. Para adultos jóvenes y sanos que usan el seguro pocas veces al año, el de copago puede ser más rentable.',
+          'Esta es una de las primeras conversaciones que tenemos al asesorarte: calcular qué modalidad te ahorra más dinero según tu perfil real de uso.',
+        ],
+      },
+      {
+        heading: 'Precios orientativos en Madrid en 2026',
+        content: [
+          'Los precios varían según edad, cobertura y modalidad. Como referencia orientativa para 2026:',
+          '• Persona joven (25-35 años): desde 30-50 €/mes en modalidad básica con copago.',
+          '• Adulto (35-50 años): entre 60-100 €/mes en modalidad completa sin copago.',
+          '• Familia de 4 miembros: entre 120-200 €/mes según edades y cobertura elegida.',
+          '• A partir de 50 años: los precios suben de forma progresiva, por eso es importante no esperar.',
+          'Estos rangos son orientativos. Lo más importante no es solo el precio, sino qué incluye exactamente la póliza y cómo encaja con tu situación real.',
+        ],
+      },
+      {
+        heading: 'Telemedicina en Madrid: lo que ha cambiado en 2026',
+        content: [
+          'En 2026, la telemedicina ya no es un extra sino una parte integrada de la mayoría de seguros de salud. Videoconsultas con especialistas, chat médico 24h, recetas electrónicas y seguimiento de tratamientos a distancia.',
+          'En una ciudad como Madrid, donde los desplazamientos consumen mucho tiempo, poder resolver una consulta urgente desde casa sin desplazarte es una ventaja real.',
+          'Revisa siempre si la telemedicina está incluida como servicio base o si es un añadido opcional con coste extra.',
+        ],
+      },
+      {
+        heading: '¿Tiene sentido tener seguro privado si ya tengo la Seguridad Social?',
+        content: [
+          'Sí, y mucho. La Seguridad Social ofrece cobertura universal pero con listas de espera que pueden superar los 3-6 meses para una consulta con especialista o una prueba diagnóstica.',
+          'El seguro privado te da acceso inmediato: el mismo día o al día siguiente en la mayoría de los casos. Para muchas familias en Madrid es la diferencia entre esperar 4 meses para ver al traumatólogo o hacerlo esta semana.',
+          'No se trata de sustituir la sanidad pública, sino de complementarla para los momentos en que el tiempo importa.',
+        ],
+      },
+      {
+        heading: 'Cómo te ayudo a elegir sin presión',
+        content: [
+          'Como asesora independiente, no represento a una sola compañía. Eso significa que comparo varias opciones reales y te explico las diferencias antes de que decidas.',
+          'El proceso es sencillo: una conversación de 15-20 minutos por WhatsApp o teléfono en la que te hago las preguntas correctas (tu médico actual, tu uso real, tu presupuesto), y te presento dos o tres opciones con las coberturas comparadas.',
+          'Sin formularios interminables, sin presión, sin letra pequeña oculta. Solo información clara para que decidas con criterio.',
+        ],
+      },
+    ],
+    tips: [
+      'Verifica siempre que tu médico de confianza está en el cuadro antes de contratar.',
+      'La telemedicina en 2026 puede ahorrarte desplazamientos innecesarios en Madrid.',
+      'No esperes a necesitar el seguro para contratarlo: las carencias son reales.',
+      'Compara cuadros médicos, no solo precios.',
+      'Una conversación de 15 minutos puede ahorrarte meses de dudas.',
+    ],
+    faqs: [
+      {
+        question: '¿Cuál es el mejor seguro de salud en Madrid en 2026?',
+        answer: 'No existe un único "mejor" seguro: existe el que mejor encaja con tu situación. Los factores clave son que tu médico esté en el cuadro, que el hospital más cercano a tu casa esté incluido y que el precio sea sostenible. Como asesora independiente en Madrid, analizo varias opciones sin compromiso.',
+      },
+      {
+        question: '¿Qué diferencia hay entre un seguro con copago y sin copago?',
+        answer: 'El seguro sin copago cubre todas las consultas sin pagar nada en el momento. El de copago tiene prima más baja pero pagas entre 1 y 6 euros por visita. Para familias con niños suele salir más económico el sin copago; para adultos jóvenes con uso ocasional, el de copago puede ser más rentable.',
+      },
+      {
+        question: '¿Cuánto cuesta un seguro de salud privado en Madrid?',
+        answer: 'Una persona joven (25-35 años) puede encontrar cobertura desde 30-50 €/mes. Una familia de 4 miembros oscila entre 120-200 €/mes según edades y cobertura. A partir de los 50 años los precios suben. Lo importante es no elegir solo por precio sino por lo que incluye.',
+      },
+      {
+        question: '¿Qué hospitales están incluidos en los seguros de salud en Madrid?',
+        answer: 'Depende de la póliza. Lo que debes comprobar: si tu hospital de referencia está incluido, si tiene urgencias privadas 24h y si el seguro cubre hospitalización completa. Como asesora independiente, te muestro exactamente qué hospitales cubre cada opción antes de que decidas.',
+      },
+      {
+        question: '¿Puedo contratar un seguro de salud siendo extranjero o tramitando la residencia?',
+        answer: 'Sí. Muchos de los seguros que gestiono están disponibles para personas extranjeras residentes, incluso durante la tramitación del NIE o permiso de residencia. Algunos consulados exigen seguro privado como parte de la documentación para el visado.',
+      },
+      {
+        question: '¿Tiene sentido tener seguro privado si ya tengo la Seguridad Social?',
+        answer: 'Sí. La Seguridad Social tiene listas de espera de 3-6 meses para especialistas. Con seguro privado accedes el mismo día o al día siguiente en la mayoría de los casos. Es una forma de complementar la sanidad pública, no de sustituirla.',
+      },
+      {
+        question: '¿Qué es la carencia y cuánto dura?',
+        answer: 'La carencia es el período desde que contratas hasta que puedes usar ciertas coberturas. Las consultas generales y urgencias tienen carencia mínima (0-2 meses). Maternidad, cirugías y algunas especialidades pueden tener 6-12 meses. Por eso es mejor contratar antes de necesitarlo.',
+      },
+      {
+        question: '¿Puedo cambiarme de seguro si ya tengo uno?',
+        answer: 'Sí, aunque hay que revisar las condiciones de tu póliza actual (fecha de vencimiento, carencias ya cumplidas). Como asesora independiente analizo tu situación y te digo si compensa cambiar ahora o esperar. En muchos casos se puede negociar con la nueva aseguradora el reconocimiento de antigüedad.',
+      },
+      {
+        question: '¿Puedo elegir mi médico con un seguro privado en Madrid?',
+        answer: 'Sí, dentro del cuadro médico de la compañía elegida. Algunos seguros tienen cuadros amplios con más de 40.000 médicos en España, lo que hace muy probable que tu médico de confianza ya esté incluido. Siempre lo comprobamos antes de contratar.',
+      },
+      {
+        question: '¿Cubre el seguro las urgencias en Madrid?',
+        answer: 'La mayoría cubre urgencias en centros privados propios, y algunos también en hospitales públicos si los privados no están disponibles. Es un punto fundamental a revisar, especialmente si tienes hijos o personas mayores a cargo.',
+      },
+    ],
+    reviews: [
+      // AQUÍ COPIAS TUS RESEÑAS REALES (ver instrucciones en Bloque 3)
+      {
+        name: 'María G.',
+        date: 'Abril 2026',
+        text: 'Rosa nos ayudó a encontrar el seguro de salud perfecto para toda la familia. Sin presión, con mucha claridad y a un precio mejor del que esperábamos.',
+      },
+      // añade más objetos aquí con el mismo formato
+    ],
+  },
   {
     slug: 'guia-seguro-salud-espana-2026',
     title: 'Guía para elegir el mejor seguro de salud en España en 2026',
@@ -244,39 +404,6 @@ export const blogPosts: BlogPost[] = [
       'Una urgencia veterinaria puede superar los 2.000 €.',
       'No todos los seguros de mascotas incluyen veterinaria.',
       'Compara opcionales con criterio: no pagues por lo que no necesitas.',
-    ],
-  },
-  {
-    slug: 'mejor-seguro-salud-madrid-2026',
-    title: 'Mejor Seguro de Salud en Madrid 2026: Guía completa de coberturas y hospitales',
-    excerpt: 'Analizamos las opciones de salud privada en Madrid para 2026: cuadros médicos, hospitales de referencia y cómo elegir sin pagar de más.',
-    image: '/images/blog/blog_salud_madrid_2026_1776077536984.png',
-    imageAlt: 'Consulta médica premium en Madrid',
-    date: '2026-04-13',
-    readTime: '9 min',
-    metaTitle: 'Mejor Seguro de Salud en Madrid 2026 | Guía VPI',
-    metaDescription: 'Comparativa de seguros de salud en Madrid 2026. Hospitales de referencia, telemedicina avanzada y claves para elegir tu cuadro médico ideal.',
-    sections: [
-      {
-        heading: 'El panorama de la salud privada en Madrid en 2026',
-        content: [
-          'El panorama de la sanidad privada en Madrid ha evolucionado hacia una integración total con la tecnología. En 2026, la clave no es solo tener un seguro, sino saber en qué red de hospitales te vas a mover y qué servicios digitales te ofrecen.',
-          'Desde los grandes grupos hospitalarios hasta centros de alta especialización, la elección del cuadro médico determina tu experiencia real como paciente.',
-          'En este artículo desglosamos qué factores técnicos hacen que un seguro se considere "premium" en la capital hoy en día.',
-        ],
-      },
-      {
-        heading: 'Hospitales de referencia: ¿Dónde quieres ser atendido?',
-        content: [
-          'Un seguro es tan bueno como la puerta que te abre. En Madrid, contar con acceso a centros de alta complejidad es fundamental para muchos asegurados.',
-          'Debes revisar si tu póliza incluye estos centros sin restricciones o si requiere autorizaciones especiales. En 2026, la mayoría de estos centros permiten gestiones instantáneas vía app.',
-        ],
-      },
-    ],
-    tips: [
-      'Verifica que tu hospital de confianza está en el cuadro médico.',
-      'La telemedicina avanzada ahorra desplazamientos en una ciudad como Madrid.',
-      'Compara los límites de reembolso si optas por especialistas fuera de red.',
     ],
   },
   {

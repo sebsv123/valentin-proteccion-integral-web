@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
+import { FAQAccordion } from '@/components/faq-accordion';
 
 export function BlogArticle({ post }: { post: BlogPost }) {
   const related = getRelatedPosts(post.slug);
@@ -57,6 +59,37 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                   </div>
                 </motion.div>
               ))}
+
+
+              {/* ── Reseñas Google aleatorias ── */}
+              {post.reviews && post.reviews.length > 0 && post.googleReviewsUrl && (
+                <GoogleReviewsGrid
+                  reviews={post.reviews}
+                  totalCount={post.reviewCount ?? post.reviews.length}
+                  googleReviewsUrl={post.googleReviewsUrl}
+                  displayCount={5}
+                />
+              )}
+
+              {/* ── FAQ con acordeón ── */}
+              {post.faqs && post.faqs.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.35 }}
+                  className="soft-card p-7 md:p-9"
+                >
+                  <p className="kicker">Preguntas frecuentes</p>
+                  <h2 className="font-heading mt-2 mb-6 text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
+                    Resolvemos tus dudas sobre seguros de salud en Madrid
+                  </h2>
+                  <FAQAccordion 
+                    items={post.faqs.map(f => ({ q: f.question, a: f.answer }))} 
+                    contextualLinks={true} 
+                  />
+                </motion.div>
+              )}
 
               {/* CTA */}
               <div className="soft-card bg-[linear-gradient(135deg,rgba(0,34,68,0.96),rgba(0,51,102,0.9))] p-8 text-white md:p-10">
