@@ -24,6 +24,101 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'seguro-de-vida-riesgo-que-es',
+    title: '¿Qué es un seguro de vida riesgo? Coberturas, exclusiones y precios 2026',
+    excerpt: 'Un seguro de vida riesgo protege a tu familia si tú no puedes. Explicamos qué cubre, qué no cubre, cuánto cuesta y cuándo tiene sentido contratarlo. Sin marcas, sin presión.',
+    image: '/images/blog/blog_asesor_vs_comparador_1776077957194.png',
+    imageAlt: 'Asesora Rosa Valentín explicando detalladamente una póliza de vida riesgo',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '20 min',
+    metaTitle: '¿Qué es un seguro de vida riesgo? Coberturas, exclusiones y precios 2026',
+    metaDescription: 'Un seguro de vida riesgo protege a tu familia si tú no puedes. Explicamos qué cubre, qué no cubre, cuánto cuesta y cuándo tiene sentido contratarlo.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Lo que cubre, lo que no cubre y cuándo contratarlo',
+        content: [
+          'El seguro de vida riesgo es uno de los productos más contratados en España y, al mismo tiempo, uno de los menos comprendidos. La mayoría sabe que "cubre si me pasa algo", pero pocos han leído su póliza con atención.',
+          'Este artículo explica qué es, cómo funciona y —igual de importante— qué no cubre, para que tu decisión sea consciente y no un salto al vacío.',
+          'Un seguro de vida riesgo es un contrato por el que pagas una prima periódica y, si falleces o sufres una invalidez, el capital acordado llega a tus beneficiarios.',
+        ],
+      },
+      {
+        heading: 'La cobertura principal y complementaria',
+        content: [
+          '• Fallecimiento por cualquier causa: La base de todas las pólizas. Protege a tu familia ante enfermedad, accidente o causa natural. El capital debería cubrir entre 3 y 5 años de tu salario.',
+          '• Invalidez permanente absoluta: Te protege a ti si dejas de poder generar ingresos. Es vital para autónomos y sustentadores principales de hogar.',
+          '• Enfermedades graves: Anticipa el capital ante diagnósticos de cáncer, infarto o ictus, permitiendo afrontar gastos médicos y reducción de jornada.',
+          '• Garantías extra: Doble capital por accidente, segunda opinión médica internacional y gestoría de trámites por fallecimiento.',
+        ],
+      },
+      {
+        heading: 'Lo que nadie lee: las exclusiones',
+        content: [
+          'Un seguro de vida riesgo no cubre absolutamente todo. Estas son las exclusiones que debes conocer:',
+          '1. Suicidio durante el primer año de vigencia.',
+          '2. Negligencia grave (conducir bajo efectos del alcohol o sustancias).',
+          '3. Deportes de alto riesgo no declarados (paracaidismo, alta montaña, motor).',
+          '4. Profesiones de riesgo no declaradas.',
+          '5. Enfermedades preexistentes que no fueron informadas en el cuestionario de salud.',
+        ],
+      },
+      {
+        heading: 'Precios orientativos en España para 2026',
+        content: [
+          'Para un capital de 150.000 € (Fallecimiento + Invalidez):',
+          '• 25–30 años: ~75 € – 130 € al año.',
+          '• 31–40 años: ~120 € – 220 € al año.',
+          '• 41–50 años: ~210 € – 380 € al año.',
+          '• 51–60 años: ~400 € – 700 € al año.',
+          'Nota: El precio se duplica o triplica si eres fumador. Declarar honestamente en el cuestionario de salud es tu única garantía real de pago futura.',
+        ],
+      },
+      {
+        heading: '¿Cuándo tiene sentido para ti?',
+        content: [
+          'Tiene sentido si tienes hijos menores, hipoteca activa, deudas avaladas por terceros o si eres el principal motor económico de tu casa. Por el contrario, puede ser innecesario si tus hijos ya son independientes y tu patrimonio está consolidado.',
+          'Consulta con un mediador antes de renovar automáticamente el seguro del banco; podrías ahorrar un 40% anual simplemente comparando.',
+        ],
+      },
+    ],
+    tips: [
+      'Actualiza tus beneficiarios si tu situación familiar ha cambiado.',
+      'Añade la cobertura de invalidez: es el riesgo más frecuente antes de los 65 años.',
+      'Contratar con 10 años menos significa pagar la mitad durante décadas.',
+      'Un mediador es tu mejor representante ante un conflicto con la compañía.',
+    ],
+    faqs: [
+      {
+        question: '¿Qué diferencia hay entre seguro de riesgo y de ahorro?',
+        answer: 'El de riesgo protege (fallecimiento/invalidez) sin devolución si no hay siniestro. El de ahorro acumula capital para tu jubilación. Son objetivos opuestos.',
+      },
+      {
+        question: '¿Estoy obligado a declarar enfermedades previas?',
+        answer: 'Sí. Es tu obligación legal. Si no lo haces y ocurre un siniestro relacionado, la aseguradora puede denegar el pago del capital.',
+      },
+      {
+        question: '¿Hasta qué edad se puede tener este seguro?',
+        answer: 'Normalmente se puede contratar hasta los 65-70 años y la cobertura puede estirarse hasta los 75-80, dependiendo de la aseguradora.',
+      },
+      {
+        question: '¿Puede subir el precio con los años?',
+        answer: 'Sí, si la prima es "natural" o revisable. Sube con la edad. Si es "nivelada", pagas lo mismo durante toda la vida del contrato.',
+      },
+      {
+        question: '¿Tiene ventajas fiscales para autónomos?',
+        answer: 'Aunque no desgrava directamente en el IRPF como gasto, los beneficiarios pueden tener reducciones importantes en el Impuesto de Sucesiones al cobrarlo.',
+      },
+      {
+        question: '¿Puedo tener más de un seguro de vida a la vez?',
+        answer: 'Sí. Es legal y a veces recomendable (uno para la hipoteca y otro independiente para la protección real de la familia).',
+      },
+    ],
+  },
+  {
     slug: 'tipos-de-seguros-de-vida',
     title: '¿Qué tipos de seguros de vida existen? Guía honesta 2026',
     excerpt: 'Temporal, vida entera, hipotecario, ahorro, invalidez... Todos los tipos de seguro de vida explicados sin marcas ni jerga, con lo que nadie te suele contar antes de contratar.',
