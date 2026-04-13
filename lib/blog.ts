@@ -24,6 +24,94 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'incluir-personas-poliza-medica',
+    title: '¿Puedo incluir en la póliza médica a más personas? Guía completa 2026',
+    excerpt: 'Sí puedes, pero no a cualquiera ni en cualquier momento. Te explicamos quién puede entrar, cómo hacerlo, qué pasa con el precio y qué ocurre cuando hay que retirar a alguien.',
+    image: '/images/blog/blog_asesor_vs_comparador_1776077957194.png',
+    imageAlt: 'Asesora Rosa Valentín explicando la gestión de una póliza de salud familiar',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '19 min',
+    metaTitle: '¿Puedo incluir en la póliza médica a más personas? Guía completa 2026',
+    metaDescription: 'Cómo añadir pareja, hijos o padres al seguro de salud. Diferencias entre tomador y asegurado y gestión de bajas por divorcio.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Todo lo que necesitas saber para gestionar tu seguro familiar',
+        content: [
+          'La respuesta corta es sí. Pero la respuesta útil es más matizada: no a cualquier persona, no en cualquier momento y —algo que casi nadie explica— también hay que saber cuándo y cómo retirar a alguien.',
+          'Este artículo explica quién puede incluirse, la diferencia clave entre tomador y asegurado, y qué procesos seguir cuando la familia cambia por una separación o un hijo que se independiza.',
+        ],
+      },
+      {
+        heading: 'La distinción clave: Tomador vs Asegurado',
+        content: [
+          '• Tomador: Es quien contrata, firma y paga. Es el titular del contrato y el único con potestad para añadir o retirar asegurados.',
+          '• Asegurado: Es la persona cuya salud está cubierta. Puede usar el seguro, pero no puede gestionarlo ni darse de baja por sí mismo (asimetría clave en divorcios).',
+          'Entender que el tomador tiene el control y el asegurado el derecho de uso es fundamental para evitar situaciones donde se sigue pagando por personas que ya no deberían estar en la póliza.',
+        ],
+      },
+      {
+        heading: '¿A quién puedes incluir habitualmente?',
+        content: [
+          '• Cónyuge o pareja de hecho registrada: Requiere libro de familia o certificado de registro.',
+          '• Hijos menores y mayores dependientes: Normalmente hasta los 25-26 años si no tienen ingresos propios.',
+          '• Padres o suegros: No todas las pólizas lo permiten; suelen exigir edad máxima (65-70 años) y cuestionario de salud exhaustivo.',
+          '• Convivientes: Algunas compañías aceptan personas sin vínculo familiar si acreditan convivencia mediante empadronamiento conjunto.',
+        ],
+      },
+      {
+        heading: '¿Cómo afecta al precio y a las carencias?',
+        content: [
+          '• Precio: La prima aumenta por cada asegurado según su edad y salud. Sin embargo, los "descuentos familiares" suelen hacer que la póliza conjunta sea más barata que varias individuales.',
+          '• Carencias: La persona añadida entra con sus propios periodos de espera (3-6 meses para cirugía, etc.), aunque lleve el tomador años en la póliza. Si ya tenía seguro previo, a veces se pueden eliminar.',
+        ],
+      },
+      {
+        heading: 'Gestionar la retirada (El gran olvidado)',
+        content: [
+          '• Divorcio: El tomador debe solicitar la baja del ex-cónyuge por escrito. De lo contrario, seguirá pagando su prima indefinidamente.',
+          '• Independencia de hijos: Al superar la edad límite o empezar a trabajar, el alta no desaparece sola; el tomador debe gestionarla para ajustar el recibo.',
+          '• Cambio de tomador: Si el tomador quiere salir de la póliza pero que el resto siga, otra persona adulta debe asumir formalmente la titularidad del contrato.',
+        ],
+      },
+    ],
+    tips: [
+      'Revisa tu lista de asegurados en cada renovación anual.',
+      'Aprovecha los descuentos familiares: a partir del 3er asegurado el ahorro suele ser mayor.',
+      'En situaciones de divorcio, el tomador tiene la responsabilidad legal de actualizar la póliza.',
+      'Informa cualquier cambio de domicilio: afecta a la validez de los certificados de convivencia.',
+    ],
+    faqs: [
+      {
+        question: '¿Puedo incluir a mi pareja si no estamos casados?',
+        answer: 'Sí, si sois pareja de hecho registrada. Si solo convivís, depende de la compañía; algunas lo aceptan con certificado de empadronamiento conjunto.',
+      },
+      {
+        question: '¿Qué pasa si mi hijo cumple 26 años?',
+        answer: 'Normalmente debe salir de la póliza familiar y contratar una individual. El tomador debe avisar a la compañía para que el recibo se actualice.',
+      },
+      {
+        question: '¿La persona que añado tiene que pasar revisión médica?',
+        answer: 'Tendrá que rellenar un cuestionario de salud. Según las respuestas, la compañía aceptará la inclusión, aplicará exclusiones o revisará la prima.',
+      },
+      {
+        question: '¿Puedo añadir a alguien en cualquier momento del año?',
+        answer: 'Depende. Algunas compañías solo lo permiten en la renovación, pero eventos vitales (matrimonio, nacimiento) suelen abrir ventanas de inclusión inmediata.',
+      },
+      {
+        question: '¿Qué diferencia hay entre tomador y asegurado?',
+        answer: 'El tomador es el dueño del contrato (paga y manda). El asegurado es quien recibe la atención médica (usa el seguro).',
+      },
+      {
+        question: '¿Puedo incluir a mis padres si son mayores de 70 años?',
+        answer: 'Es difícil en pólizas estándar. Suele ser más eficiente buscar una póliza individual diseñada específicamente para el perfil senior.',
+      },
+    ],
+  },
+  {
     slug: 'seguros-salud-cubren-recien-nacidos',
     title: '¿Los seguros de salud cubren a los recién nacidos? Guía completa 2026',
     excerpt: '¿Tu bebé está cubierto desde que nace? Depende de cuándo avises, si el parto fue por el seguro y qué compañía tienes. Todo explicado sin tecnicismos, con los plazos que importan.',
