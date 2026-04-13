@@ -24,6 +24,98 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ventajas-mediador-de-seguros',
+    title: '¿Cuáles son las ventajas de tener un mediador de seguros? | Guía 2026',
+    excerpt: 'Contratar un seguro es fácil. Usarlo cuando lo necesitas, no tanto. Descubre qué cambia cuando tienes un mediador de seguros de tu lado y por qué importa más de lo que crees.',
+    image: '/images/blog/ventajas-mediador-de-seguros.png',
+    imageAlt: 'Asesoría independiente y cercana de seguros en Madrid',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
+    readTime: '15 min',
+    metaTitle: '¿Cuáles son las ventajas de tener un mediador de seguros? | Guía 2026',
+    metaDescription: 'Descubre por qué un mediador es tu mejor aliado ante las aseguradoras. Gestión sin call centers, ahorro real y protección garantizada.',
+    googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
+    googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
+    reviewCount: 23,
+    sections: [
+      {
+        heading: 'Lo que nadie te explica al contratar un seguro',
+        content: [
+          'Hay dos momentos muy distintos en la vida de un seguro. El primero es cuando lo contratas: todo fluye y hay aparente disposición. El segundo es cuando lo necesitas de verdad: cuando hay un parte, una incidencia o una cobertura que no funciona como esperabas. Ahí empieza una historia muy diferente.',
+          'La diferencia entre vivir el primer escenario o el segundo con tranquilidad tiene un nombre: mediador de seguros.',
+          'Un mediador es el profesional que actúa como intermediario entre tú y la aseguradora, pero cuyo trabajo real empieza cuando el seguro tiene que funcionar. Su servicio no termina cuando firmas.',
+        ],
+      },
+      {
+        heading: 'El momento en que te das cuenta de lo que te falta',
+        content: [
+          'Muchos contratan seguros por internet, todo parece en orden hasta que llega el momento de usar la póliza. Descubren que el número de atención deriva a un menú automático, y este a un call center que no conoce su caso.',
+          'Un mediador de seguros existe, precisamente, para que eso no ocurra. Es un profesional regulado que trabaja para que el seguro que tienes sea el que realmente necesitas, y para que funcione cuando lo precisas.',
+        ],
+      },
+      {
+        heading: 'Las 7 ventajas reales de tener un mediador',
+        content: [
+          '1. Trabaja para ti, no para la compañía: Un mediador tiene la obligación legal de actuar en tu nombre e interés, recomendando lo que encaja con tu situación real.',
+          '2. Asesoramiento preventivo: Evita errores caros antes de contratar, revisando carencias, límites y preexistencias que suelen pasar desapercibidas.',
+          '3. Traducción de lenguaje técnico: Te explica lo que dice tu póliza en términos que tengan sentido para tu vida real.',
+          '4. Gestión sin laberintos telefónicos: Cuando hay un siniestro, tienes a alguien que ya sabe quién eres y qué tienes contratado. Sin esperas de 40 minutos.',
+          '5. Ahorro real y detección de duplicidades: Muchos clientes pagan por coberturas repetidas (muerte en varios seguros, fallecimiento en bancos, etc.). Un mediador detecta esto en la primera revisión.',
+          '6. Servicio postventa continuado: Si cambia tu situación familiar o tienes dudas sobre una carta de la compañía, tienes a quién preguntar directamente.',
+          '7. Representación formal en conflictos: Si hay una discrepancia seria en la tasación o cobertura, el mediador te representa con criterio técnico ante la aseguradora.',
+        ],
+      },
+      {
+        heading: 'Situaciones reales donde marcamos la diferencia',
+        content: [
+          '• Evitamos que te rindas ante un call center saturado gestionando el problema por ti.',
+          '• Detectamos pólizas repetidas que llevan años cobrándose sin sentido.',
+          '• Negociamos mejores precios al conocer el mercado global, no solo una compañía.',
+          '• Aclaráramos qué cubre tu póliza antes de que el siniestro ocurra, evitando sorpresas de última hora.',
+        ],
+      },
+      {
+        heading: 'Por qué el servicio importa más que el precio inicial',
+        content: [
+          'El precio es visible desde el principio, pero el valor se percibe con el tiempo. Un seguro mal gestionado en el momento en que se necesita no es un seguro, es solo una cuota mensual.',
+          'La diferencia entre seguir un laberinto automático o tener a una persona que sabe tu nombre es lo que define la tranquilidad real.',
+        ],
+      },
+    ],
+    tips: [
+      'Un mediador trabaja para el cliente, no para la aseguradora.',
+      'Su servicio no tiene coste adicional para el cliente (se remunera vía comisión).',
+      'Es tu representante formal ante cualquier conflicto con la compañía.',
+      'Aclara el lenguaje técnico de las pólizas para que sepas qué firmas.',
+    ],
+    faqs: [
+      {
+        question: '¿Qué es exactamente un mediador de seguros?',
+        answer: 'Es un profesional regulado cuya función es intermediar entre el cliente y la aseguradora, asesorando con objetividad y gestionando los intereses del cliente tanto en la contratación como en caso de siniestro.',
+      },
+      {
+        question: '¿Cuánto cuesta trabajar con un mediador?',
+        answer: 'Para el cliente no suele tener coste directo. El mediador percibe comisiones de las aseguradoras, integrando el asesoramiento y la gestión de incidencias como parte de su servicio habitual.',
+      },
+      {
+        question: '¿Qué pasa si tengo una incidencia?',
+        answer: 'Llamas a tu mediador. Él se encarga de la comunicación con la compañía, el seguimiento del expediente y la resolución del problema, ahorrándote trámites y esperas telefónicas.',
+      },
+      {
+        question: '¿Puede ayudarme con seguros que ya tengo?',
+        answer: 'Sí. Un mediador puede revisar todas tus pólizas activas para detectar duplicidades, huecos de cobertura o pagos innecesarios, reorganizando tu protección de forma más eficiente.',
+      },
+      {
+        question: '¿Es compatible con la contratación online?',
+        answer: 'Sí. Muchos mediadores gestionan los procesos de forma telemática. La diferencia es que detrás hay una persona experta que responde por ti, no un portal automatizado sin contexto.',
+      },
+      {
+        question: '¿Cómo sé si un mediador es de confianza?',
+        answer: 'Debe estar registrado en la Dirección General de Seguros (DGSFP). Un mediador confiable es aquel que revisa lo que ya tienes antes de proponer cambios y nunca te presiona en la primera conversación.',
+      },
+    ],
+  },
+  {
     slug: 'seguro-medico-privado-madrid',
     title: '¿Cuál es el mejor seguro médico privado en Madrid? | Guía 2026',
     excerpt: 'Antes de contratar un seguro médico privado en Madrid, lee esto. Sin marcas, sin presión. Te explicamos qué mirar, cuánto cuesta y cómo elegir bien según tu situación.',
