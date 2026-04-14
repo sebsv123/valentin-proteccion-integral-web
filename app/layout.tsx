@@ -16,6 +16,7 @@ import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
+import SchemaPersons from '@/components/seo/schema-persons';
 import CustomCursor from '@/components/ui/CustomCursor';
 
 export const metadata: Metadata = {
@@ -68,11 +69,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <head>
         <link rel="ai-content-declaration" href="/llms.txt" />
+        <link rel="ai-content-declaration" href="/llms-full.txt" />
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
         <BackgroundWrapper />
         <ClickSpark />
         <SchemaLocalBusiness />
+        <SchemaPersons />
         <WebVitals />
         <Analytics />
         {children}

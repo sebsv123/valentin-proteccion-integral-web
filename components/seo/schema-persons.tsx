@@ -1,0 +1,79 @@
+export default function SchemaPersons() {
+  const rosa = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rosa Valentín",
+    "jobTitle": "Mediadora de Seguros Independiente",
+    "description": "Mediadora de seguros colegiada e independiente con más de 10 años de experiencia en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Asesora a más de 1.200 familias con claridad y sin presión comercial.",
+    "url": "https://valentinproteccionintegral.com/sobre-mi",
+    "image": "https://valentinproteccionintegral.com/og-image.png",
+    "telephone": "+34 603 448 765",
+    "email": "contacto@valentinproteccionintegral.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boadilla del Monte",
+      "addressRegion": "Comunidad de Madrid",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://www.instagram.com/segurosrosavalentin/",
+      "https://wa.me/34603448765"
+    ],
+    "knowsAbout": [
+      "Seguros de salud",
+      "Seguros para mascotas",
+      "Seguros dentales",
+      "Seguros de viaje",
+      "Seguros de accidentes",
+      "Protección jurídica",
+      "Seguros de electrodomésticos",
+      "Seguros de decesos",
+      "Seguros para negocios y pymes",
+      "Seguros para extranjeros con visado en España",
+      "Ley de Bienestar Animal seguros mascotas",
+      "Seguros para autónomos Madrid"
+    ],
+    "worksFor": {
+      "@type": "InsuranceAgency",
+      "name": "Valentín Protección Integral",
+      "url": "https://valentinproteccionintegral.com"
+    }
+  };
+
+  const sebastian = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sebastián",
+    "jobTitle": "Asesor Especialista en Seguros de Vida",
+    "description": "Especialista en seguros de vida en Valentín Protección Integral. Atiende personalmente todas las consultas sobre protección familiar y seguros vinculados a hipoteca en Madrid.",
+    "url": "https://valentinproteccionintegral.com/seguros/vida",
+    "telephone": "+34 689 791 380",
+    "sameAs": [
+      "https://wa.me/34689791380"
+    ],
+    "knowsAbout": [
+      "Seguros de vida",
+      "Seguro de vida vinculado a hipoteca",
+      "Protección familiar mediante seguros",
+      "Capital decreciente en seguros de vida"
+    ],
+    "worksFor": {
+      "@type": "InsuranceAgency",
+      "name": "Valentín Protección Integral",
+      "url": "https://valentinproteccionintegral.com"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(rosa) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sebastian) }}
+      />
+    </>
+  );
+}
