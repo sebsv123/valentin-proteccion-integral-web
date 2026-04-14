@@ -1,19 +1,23 @@
 "use client";
 
 import { useEffect } from "react";
-import { onLCP, onINP, onCLS } from "web-vitals";
+import { onLCP, onINP, onCLS, onFCP, onTTFB } from "web-vitals";
+import { track } from "@vercel/analytics";
 
 export function WebVitals() {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Registrar métricas en consola para depuración
-      onLCP((metric) => console.log('LCP:', metric.value, metric.name));
-      onINP((metric) => console.log('INP:', metric.value, metric.name));
-      onCLS((metric) => console.log('CLS:', metric.value, metric.name));
-      
-      // Aquí se podrían enviar a Vercel Analytics u otro servicio
-      // Ejemplo: va.track('WebVitals', { name: metric.name, value: metric.value })
-    }
+    const send = (metric: { name: string; value: number; rating: string }) => {
+      track('WebVital', {
+        name: metric.name,
+        value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        rating: metric.rating,
+      });
+    };
+    onLCP(send);
+    onINP(send);
+    onCLS(send);
+    onFCP(send);
+    onTTFB(send);
   }, []);
 
   return null;
