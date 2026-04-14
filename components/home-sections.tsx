@@ -336,6 +336,7 @@ export function MascotHelperSection() {
                     fill
                     className="object-contain drop-shadow-2xl"
                     loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 280px"
                   />
                 </div>
               </div>

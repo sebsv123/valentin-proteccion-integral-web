@@ -30,10 +30,10 @@ export function HeroLeadSection() {
                 src="/images/premium/hero-family.webp"
                 alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
                 fill
-                sizes="(max-width: 768px) 100vw, 60vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
                 priority
-                quality={80}
+                quality={75}
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUEB//EACMQAAIBBAIDAQEAAAAAAAAAAAECAwAEBRESITFBUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amce1ba4uYre2jeSSQ4CqMk1Zaz0KytY1kmt2eYjJVpCcfbj9VVVAUbAooor/2Q=="
               />

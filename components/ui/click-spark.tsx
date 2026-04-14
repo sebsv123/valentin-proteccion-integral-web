@@ -33,6 +33,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const startTimeRef = useRef<number | null>(null);
+  const canvasBoundsRef = useRef<DOMRect | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -43,17 +44,27 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
 
     let resizeTimeout: ReturnType<typeof setTimeout>;
 
-    const resizeCanvas = () => {
-      const { width, height } = parent.getBoundingClientRect();
+    const resizeCanvas = (entries?: ResizeObserverEntry[]) => {
+      let width, height;
+      if (entries?.[0]) {
+        width = entries[0].contentRect.width;
+        height = entries[0].contentRect.height;
+      } else {
+        const rect = parent.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+      }
+
       if (canvas.width !== width || canvas.height !== height) {
         canvas.width = width;
         canvas.height = height;
+        canvasBoundsRef.current = canvas.getBoundingClientRect();
       }
     };
 
-    const handleResize = () => {
+    const handleResize = (entries: ResizeObserverEntry[]) => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resizeCanvas, 100);
+      resizeTimeout = setTimeout(() => resizeCanvas(entries), 100);
     };
 
     const ro = new ResizeObserver(handleResize);
@@ -137,7 +148,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const handleClick = (e: React.MouseEvent<HTMLDivElement> | MouseEvent): void => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
+    const rect = canvasBoundsRef.current || canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 

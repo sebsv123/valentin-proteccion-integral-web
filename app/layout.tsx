@@ -69,6 +69,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
         {/* Google Analytics GA4 */}
