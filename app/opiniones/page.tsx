@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
-import GoogleReviews from '@/components/GoogleReviews';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
@@ -139,7 +139,7 @@ export default function OpinionesPage() {
           </div>
         </section>
 
-        <GoogleReviews />
+        <GoogleReviewsWidget />
 
         {/* Instagram social proof */}
         <section className="section-pad pt-0">
