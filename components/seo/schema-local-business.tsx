@@ -9,7 +9,7 @@ export default function SchemaLocalBusiness() {
     "url": "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",
-    "image": "https://valentinproteccionintegral.com/og-image.png",
+    "image": "https://valentinproteccionintegral.com/og-image.webp",
     "logo": "https://valentinproteccionintegral.com/favicon-192.png",
     "priceRange": "€",
     "currenciesAccepted": "EUR",

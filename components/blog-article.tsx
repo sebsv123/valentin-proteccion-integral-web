@@ -95,7 +95,13 @@ export function BlogArticle({ post }: { post: BlogPost }) {
               {/* Mascot tips */}
               <div className="soft-card overflow-hidden">
                 <div className="relative h-48 bg-[linear-gradient(180deg,rgba(76,175,80,0.15),rgba(0,51,102,0.05))]">
-                  <Image src="/images/home/mascota-vpi.png" alt="Mascota de ayuda VPI" fill className="object-contain p-4" />
+                  <Image
+                    src="/images/home/mascota-vpi.webp"
+                    alt="Mascota de ayuda VPI"
+                    fill
+                    className="object-contain p-4"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-5">
                   <p className="font-heading text-xl font-bold text-[var(--blue-deep)]">Consejos rápidos</p>

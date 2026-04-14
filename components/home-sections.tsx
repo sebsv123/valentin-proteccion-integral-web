@@ -8,16 +8,16 @@ import { FAQAccordion } from './faq-accordion';
 import RevealLight from './ui/reveal-light';
 
 const cardImages: Record<string, string> = {
-  salud: '/images/premium/hero-family.png',
-  vida: '/images/products/vida-hero.png',
-  mascotas: '/images/premium/happy-pets.png',
-  dental: '/images/products/dental-hero.png',
-  viaje: '/images/products/viaje-hero.png',
-  accidentes: '/images/products/accidentes-hero.png',
-  electrodomesticos: '/images/products/electrodomesticos.png',
-  'proteccion-juridica': '/images/products/proteccion-juridica.png',
-  negocio: '/images/products/negocio.png',
-  decesos: '/images/products/decesos-hero.png',
+  salud: '/images/premium/hero-family.webp',
+  vida: '/images/products/vida-hero.webp',
+  mascotas: '/images/premium/happy-pets.webp',
+  dental: '/images/products/dental-hero.webp',
+  viaje: '/images/products/viaje-hero.webp',
+  accidentes: '/images/products/accidentes-hero.webp',
+  electrodomesticos: '/images/products/electrodomesticos.webp',
+  'proteccion-juridica': '/images/products/proteccion-juridica.webp',
+  negocio: '/images/products/negocio.webp',
+  decesos: '/images/products/decesos-hero.webp',
 };
 
 const sectionTints: Record<string, string> = {
@@ -72,7 +72,13 @@ export function TrustBadgesSection() {
                 </div>
               </div>
               <div className="relative min-h-[360px] xl:min-h-full">
-                <Image src="/images/home/handshake-real.jpg" alt="Apretón de manos que transmite confianza y acompañamiento" fill className="object-cover object-center" />
+                <Image
+                  src="/images/home/handshake-real.jpg"
+                  alt="Apretón de manos que transmite confianza y acompañamiento profesional"
+                  fill
+                  className="object-cover object-center"
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,59,104,0.08),rgba(18,59,104,0.36))]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 text-white">
                   <p className="font-heading text-3xl font-bold">Protegemos tu tranquilidad</p>
@@ -104,7 +110,13 @@ export function ProductCategoryGrid() {
             <RevealLight key={product.slug} delay={index * 0.05}>
               <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
-                  <Image src={product.image} alt={product.cardAlt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image
+                    src={product.image}
+                    alt={product.cardAlt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
                   {productBadges[product.slug] && (
                     <span
                       className="absolute top-3 right-3 z-10 rounded-full
@@ -189,7 +201,13 @@ export function ComparisonCardsSection() {
           <RevealLight direction="left">
             <div className="soft-card overflow-hidden h-full">
               <div className="relative min-h-[520px] h-full">
-                <Image src="/images/agent/rosa-exterior.jpg" alt="Rosa Valentín, tu asesora de seguros de confianza" fill className="object-cover object-top" />
+                <Image
+                  src="/images/agent/rosa-exterior.jpg"
+                  alt="Rosa Valentín, asesora de seguros experta en Madrid, con actitud cercana y profesional"
+                  fill
+                  className="object-cover object-top"
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,0.08),rgba(18,59,104,0.58))]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-8">
                   <p className="kicker !text-white/70">Una decisión mejor empieza con una conversación clara</p>
@@ -216,7 +234,13 @@ export function AgentTrustBlock() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <RevealLight direction="left">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border-4 border-white/40 shadow-2xl">
-              <Image src="/images/agent/rosa-oficina.jpg" alt="Rosa Valentín, asesora de seguros experta en Madrid, atendiendo en su oficina" fill className="object-cover object-top" />
+              <Image
+                src="/images/agent/rosa-oficina.jpg"
+                alt="Rosa Valentín, especialista en seguros, atendiendo de forma personalizada en su oficina de Madrid"
+                fill
+                className="object-cover object-top"
+                loading="lazy"
+              />
             </div>
           </RevealLight>
           <RevealLight direction="right">
@@ -272,7 +296,13 @@ export function FinalCTASection() {
         <RevealLight>
           <div className="soft-card relative overflow-hidden bg-[var(--blue-deep)] p-12 text-center text-white md:p-20">
             <div className="absolute inset-0">
-              <Image src="/images/agent/sebastian.jpg" alt="Sebastián, asesor colaborador en seguros de vida y accidentes" fill className="object-cover opacity-25 brightness-50" />
+              <Image
+                src="/images/agent/sebastian.jpg"
+                alt="Sebastián, asesor especializado en seguros de vida y bienestar familiar"
+                fill
+                className="object-cover opacity-25 brightness-50"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-deep)] via-[var(--blue-deep)]/90 to-transparent" />
             </div>
             <div className="relative z-10 mx-auto max-w-4xl">
@@ -300,7 +330,13 @@ export function MascotHelperSection() {
             <div className="grid gap-0 xl:grid-cols-[0.85fr_1.15fr]">
               <div className="relative min-h-[360px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10 flex items-center justify-center p-12">
                 <div className="relative w-full h-full max-w-[280px]">
-                  <Image src="/images/home/mascota-vpi.png" alt="Tortuga protectora — Mascota de Valentín Protección Integral" fill className="object-contain drop-shadow-2xl" />
+                  <Image
+                    src="/images/home/mascota-vpi.webp"
+                    alt="Tortuga VPI — Símbolo de protección, tranquilidad y asesoramiento seguro"
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               <div className="p-8 md:p-12 xl:p-16">
@@ -355,7 +391,13 @@ export function BlogPreviewSection() {
               <article className="soft-card overflow-hidden h-full flex flex-col">
                 <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                   <div className="relative h-56">
-                    <Image src={post.image} alt={post.imageAlt} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
                     <h3 className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">{post.title}</h3>

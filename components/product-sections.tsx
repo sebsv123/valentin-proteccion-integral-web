@@ -240,7 +240,13 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 </div>
               </div>
               <div className="relative min-h-[340px]">
-                <Image src={subpage.heroImage} alt={`Imagen representativa de ${subpage.h1}`} fill className="object-cover" />
+                <Image
+                  src={subpage.heroImage}
+                  alt={`Imagen representativa de ${subpage.h1}`}
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
               </div>
             </div>
@@ -267,7 +273,13 @@ export function RelatedProducts({ product }: { product: Product }) {
             <RevealLight key={item.slug} delay={idx * 0.1}>
               <article className="soft-card card-shine overflow-hidden h-full flex flex-col hover-lift border-white/20 shadow-xl transition-all duration-300">
                 <div className="relative h-64">
-                  <Image src={item.cardImage} alt={item.cardAlt} fill className="object-cover" />
+                  <Image
+                    src={item.cardImage}
+                    alt={item.cardAlt}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,34,68,0.7)] to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <p className="kicker !text-white/70 font-bold tracking-widest">{item.eyebrow}</p>
@@ -277,7 +289,7 @@ export function RelatedProducts({ product }: { product: Product }) {
                 <div className="p-8 flex-grow flex flex-col">
                   <p className="text-base leading-relaxed text-[var(--muted)] flex-grow">{item.summary}</p>
                   <div className="mt-8 flex flex-col gap-3">
-                    <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">Ver más información <ArrowRight className="h-4 w-4" /></Link>
+                    <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">Ver seguro de {item.name} <ArrowRight className="h-4 w-4" /></Link>
                     <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur">Consulta rápida</a>
                   </div>
                 </div>

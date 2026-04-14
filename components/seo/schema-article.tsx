@@ -37,7 +37,7 @@ export default function SchemaArticle({
       "name": "Valentín Protección Integral",
       "logo": {
         "@type": "ImageObject",
-        "url": `${site.domain}/og-image.png`,
+        "url": `${site.domain}/og-image.webp`,
       },
     },
     "mainEntityOfPage": {

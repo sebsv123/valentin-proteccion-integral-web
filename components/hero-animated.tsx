@@ -27,7 +27,7 @@ export function HeroLeadSection() {
               className="absolute inset-0 scale-110"
             >
               <Image
-                src="/images/premium/hero-family.png"
+                src="/images/premium/hero-family.webp"
                 alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
                 fill
                 sizes="(max-width: 768px) 100vw, 60vw"

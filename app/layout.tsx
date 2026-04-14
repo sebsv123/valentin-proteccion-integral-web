@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: site.name,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: site.title,
     description: site.description,
-    images: ['/og-image.png'],
+    images: ['/og-image.webp'],
   },
 };
 
