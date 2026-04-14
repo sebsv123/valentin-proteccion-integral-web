@@ -2,7 +2,6 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, HeroLeadSection, ProductCategoryGrid, StatsSection, TrustBadgesSection } from '@/components/home-sections';
-import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import type { Metadata } from 'next';
 import { site } from '@/lib/products';
@@ -100,9 +99,9 @@ export default function HomePage() {
         <TrustBadgesSection />
         <ProductCategoryGrid />
         <AgentTrustBlock />
+        <GoogleReviewsWidget />
         <BlogPreviewSection />
         <GeneralFaqSection />
-        <GoogleReviewsWidget />
         <FinalCTASection />
       </main>
       <Footer />

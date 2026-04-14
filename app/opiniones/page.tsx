@@ -5,8 +5,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
-import { TestimonialsCarousel } from '@/components/testimonials-carousel';
-import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
+import { site, buildWhatsAppHref } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
@@ -100,44 +99,6 @@ export default function OpinionesPage() {
           </div>
         </section>
 
-        {/* All testimonials grid */}
-        <section className="section-pad bg-alternate">
-          <div className="container-shell">
-            <div className="mb-8 max-w-3xl">
-              <p className="kicker">Todas las opiniones</p>
-              <h2 className="mt-3 section-title">Experiencias de personas reales</h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {testimonials.map((item, index) => (
-                <article key={`${item.name}-${index}`} className="group soft-card p-7 transition-all duration-300 hover:shadow-xl hover:border-[var(--blue)]/20 hover:-translate-y-1">
-                  <div className="mb-4 flex items-start justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="relative">
-                        <div className="flex h-13 w-13 items-center justify-center rounded-full bg-gradient-to-br from-[var(--blue)] to-[var(--blue-deep)] text-lg font-bold text-white shadow-md">{item.avatar}</div>
-                        <div className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#4CAF50] text-white shadow-sm">
-                          <Shield className="h-3 w-3" />
-                        </div>
-                      </div>
-                      <div>
-                        <p className="font-heading text-lg font-bold text-[var(--blue-deep)]">{item.name}</p>
-                        <div className="flex items-center gap-1.5 text-sm text-[var(--muted)]">
-                          <MapPin className="h-3 w-3" />
-                          {item.location}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-4"><StarRating /></div>
-                  <p className="text-base leading-8 text-[var(--muted)] italic">&ldquo;{item.quote}&rdquo;</p>
-                  <div className="mt-5 flex items-center gap-2 pt-4 border-t border-[var(--border)]">
-                    <Shield className="h-4 w-4 text-[#4CAF50]" />
-                    <span className="text-xs font-semibold text-[#4CAF50] uppercase tracking-widest">Opinión verificada</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <GoogleReviewsWidget />
 

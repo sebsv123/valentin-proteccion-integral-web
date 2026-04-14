@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, MessageCircle, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
+import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
 import CountUp from './ui/count-up';
 import ScrollReveal from './ui/scroll-reveal';
@@ -396,26 +397,10 @@ export function MascotHelperSection() {
 }
 
 export function BlogPreviewSection() {
-  const posts = [
-    {
-      title: 'Guía definitiva: Cómo elegir un Seguro de Salud en España',
-      copy: 'Analizamos las claves para distinguir copago, reembolso y uso real antes de firmar cualquier póliza médica.',
-      href: '/blog/como-elegir-seguro-salud',
-      image: '/images/blog/blog-team.jpg',
-    },
-    {
-      title: 'Seguro de Vida vs Accidentes: Cuál necesitas realmente',
-      copy: 'Explicamos las diferencias fundamentales de coberturas para que no contrates riesgos solapados.',
-      href: '/blog/seguro-vida-vs-accidentes',
-      image: '/images/home/family-window.jpg',
-    },
-    {
-      title: 'Todo lo que debes saber antes de asegurar tu Viaje a Mascotas',
-      copy: 'Revisiones clave de anulación, límites veterinarios y exclusiones que la mayoría de viajeros pasa por alto.',
-      href: '/blog/seguros-viaje-mascotas-guia',
-      image: '/images/products/viaje-city.jpg',
-    },
-  ];
+  // Obtener los 3 posts más recientes
+  const posts = [...blogPosts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
@@ -429,16 +414,18 @@ export function BlogPreviewSection() {
         </ScrollReveal>
         <div className="grid gap-5 lg:grid-cols-3">
           {posts.map((post, idx) => (
-            <ScrollReveal key={post.title} delay={idx * 0.1}>
+            <ScrollReveal key={post.slug} delay={idx * 0.1}>
               <article className="soft-card overflow-hidden h-full flex flex-col">
-                <div className="relative h-56">
-                  <Image src={post.image} alt={post.title} fill className="object-cover" />
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">{post.title}</h3>
-                  <p className="mt-3 text-base leading-8 text-[var(--muted)] flex-grow">{post.copy}</p>
-                  <Link href={post.href} className="btn-ghost mt-5 w-fit">Ir al blog <ArrowRight className="h-4 w-4" /></Link>
-                </div>
+                <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
+                  <div className="relative h-56">
+                    <Image src={post.image} alt={post.imageAlt} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">{post.title}</h3>
+                    <p className="mt-3 text-base leading-8 text-[var(--muted)] flex-grow">{post.excerpt}</p>
+                    <div className="btn-ghost mt-5 w-fit">Ir al blog <ArrowRight className="h-4 w-4" /></div>
+                  </div>
+                </Link>
               </article>
             </ScrollReveal>
           ))}
