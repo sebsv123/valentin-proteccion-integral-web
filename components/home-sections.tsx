@@ -1,16 +1,11 @@
-"use client";
-
-import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, MessageCircle, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
-import CountUp from './ui/count-up';
-import ScrollReveal from './ui/scroll-reveal';
+import RevealLight from './ui/reveal-light';
 
 const cardImages: Record<string, string> = {
   salud: '/images/premium/hero-family.png',
@@ -51,116 +46,13 @@ const productBadges: Record<string, string> = {
   electrodomesticos: '🔧 Reparación incluida',
 }
 
-export function HeroLeadSection() {
-  const heroRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
-
-  return (
-    <section ref={heroRef} id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
-      <div className="container-shell hero-grid items-stretch gap-8">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
-          <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              style={{ y: bgY }}
-              className="absolute inset-0 scale-110"
-            >
-              <Image
-                src="/images/premium/hero-family.png"
-                alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
-          </div>
-          <div className="relative z-10 max-w-3xl">
-            <h1 id="hero-title" className="kicker text-[var(--blue)] font-bold tracking-[0.3em]">
-              Asesora de Seguros en Madrid · Consulta Gratuita, Sin Letra Pequeña
-            </h1>
-            <p className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
-              {site.heroTagline}
-            </p>
-            <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">
-              Asesoramiento personalizado en <strong>SALUD</strong>, <strong>VIDA</strong>, <strong>MASCOTAS</strong>, <strong>VIAJE</strong>, <strong>DENTAL</strong>, <strong>ACCIDENTES</strong>, <strong>PROTECCIÓN JURÍDICA</strong> y <strong>NEGOCIOS</strong>.
-              {' '}Protegemos lo que de verdad importa con el seguro adecuado para ti.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contacto" className="btn-primary hover-lift px-10 py-5 text-lg shadow-xl">Solicitar asesoría en seguros</Link>
-              <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} className="btn-whatsapp animate-pulse-soft px-10 py-5 text-lg shadow-xl"><MessageCircle className="h-5 w-5" /> Hablar por WhatsApp</a>
-            </div>
-            <div className="mt-7 grid gap-3 md:grid-cols-3">
-              {[
-                ['Te ayudamos a decidir', 'Comparamos opciones contigo y te explicamos la letra pequeña sin prisas ni presión.'],
-                ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
-                ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
-              ].map(([title, copy]) => (
-                <div key={title} className="rounded-[22px] bg-white/92 p-4 shadow-sm backdrop-blur">
-                  <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{copy}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12 flex flex-wrap gap-4 text-sm font-bold text-[var(--blue-deep)]">
-              {products.map((product) => (
-                <Link key={product.slug} href={`/seguros/${product.slug}`} className="glass rounded-full border border-white/60 bg-white/40 px-6 py-4 tracking-wider hover:bg-white hover:text-[var(--blue)] hover:border-[var(--blue)] transition-all">
-                  {product.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.42, delay: 0.05 }} id="lead-form">
-          <LeadForm defaultProduct="salud" compact />
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-export function StatsSection() {
-  const stats = [
-    { label: 'Años de experiencia', value: 10, suffix: '+' },
-    { label: 'Familias protegidas', value: 1200, suffix: '+' },
-    { label: 'Ramos de seguro', value: 9, suffix: '' },
-    { label: 'Asesoría cercana', value: 100, suffix: '%' },
-  ];
-
-  return (
-    <section id="stats" aria-label="Estadísticas de impacto" className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
-      <div className="container-shell">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
-            >
-              <div className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#81C784] mb-2">
-                <CountUp to={stat.value} suffix={stat.suffix} delay={index * 0.15} />
-              </div>
-              <div className="text-white/70 text-sm md:text-base font-semibold uppercase tracking-widest">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function TrustBadgesSection() {
   const icons = [ShieldCheck, HeartHandshake, Stethoscope, BadgeCheck];
   return (
-    <section className="section-pad pb-6" style={{ background: 'linear-gradient(180deg, rgba(15,94,156,0.03), transparent 75%)' }}>
+     <section className="section-pad pb-6" style={{ background: 'linear-gradient(180deg, rgba(15,94,156,0.03), transparent 75%)' }}>
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="soft-card overflow-hidden">
             <div className="grid gap-0 xl:grid-cols-[1.05fr_0.95fr]">
               <div className="p-7 md:p-10">
@@ -189,7 +81,7 @@ export function TrustBadgesSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
       </div>
     </section>
   );
@@ -198,26 +90,26 @@ export function TrustBadgesSection() {
 export function ProductCategoryGrid() {
   const list = products.map((product) => ({ ...product, image: cardImages[product.slug] || product.cardImage }));
   return (
-    <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
+     <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-12 max-w-3xl">
             <p className="kicker">Nuestras especialidades</p>
             <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
-            <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
+             <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
           </div>
-        </ScrollReveal>
+        </RevealLight>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {list.map((product, index) => (
-            <ScrollReveal key={product.slug} delay={index * 0.05}>
+            <RevealLight key={product.slug} delay={index * 0.05}>
               <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
                   <Image src={product.image} alt={product.cardAlt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   {productBadges[product.slug] && (
                     <span
-                      className="absolute top-4 right-4 z-10 rounded-full
-                                 bg-[#f97316] px-3 py-1.5 text-xs font-black
-                                 text-white shadow-lg uppercase tracking-wide"
+                      className="absolute top-3 right-3 z-10 rounded-full
+                                 bg-[#f97316] px-2.5 py-1 text-[10px] md:text-xs font-black
+                                 text-white shadow-lg uppercase tracking-wide md:top-4 md:right-4 md:px-3 md:py-1.5"
                     >
                       {productBadges[product.slug]}
                     </span>
@@ -238,9 +130,9 @@ export function ProductCategoryGrid() {
                     <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Comparar {product.label} <ArrowRight className="h-4 w-4" /></Link>
                     <a href={buildWhatsAppHref(product.whatsappMessage)} className="btn-ghost w-full justify-center">Consultar por WhatsApp</a>
                   </div>
-                </div>
+                 </div>
               </article>
-            </ScrollReveal>
+            </RevealLight>
           ))}
         </div>
       </div>
@@ -256,19 +148,19 @@ export function ComparisonCardsSection() {
   ];
 
   return (
-    <section className="section-pad" style={{ background: 'linear-gradient(180deg, rgba(18,59,104,0.03), rgba(123,198,126,0.04))' }}>
+     <section className="section-pad" style={{ background: 'linear-gradient(180deg, rgba(18,59,104,0.03), rgba(123,198,126,0.04))' }}>
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-8 max-w-3xl">
             <p className="kicker">Cómo decidir mejor</p>
             <h2 className="mt-3 section-title">Compara opciones con acompañamiento real</h2>
-            <p className="section-copy mt-4">No se trata solo de ver coberturas. Se trata de entender qué encaja contigo, qué cambia entre modalidades y cómo empezar por el canal que te resulte más cómodo.</p>
+             <p className="section-copy mt-4">No se trata solo de ver coberturas. Se trata de entender qué encaja contigo, qué cambia entre modalidades y cómo empezar por el canal que te resulte más cómodo.</p>
           </div>
-        </ScrollReveal>
+        </RevealLight>
         <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
           <div className="grid gap-6 xl:grid-cols-3">
             {comparisonProfiles.map((profile, index) => (
-              <ScrollReveal key={profile.title} delay={index * 0.1}>
+              <RevealLight key={profile.title} delay={index * 0.1}>
                 <div className="soft-card glass h-full group p-8 transition-all hover-lift border-white/40 shadow-xl flex flex-col">
                   <div className="mb-6 inline-flex w-fit rounded-full bg-[var(--blue-deep)] px-5 py-2 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-lg">
                     Paso {index + 1}
@@ -288,13 +180,13 @@ export function ComparisonCardsSection() {
                     </Link>
                     <a href={actions[index].wa} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur">
                       Hablar por WhatsApp
-                    </a>
+                     </a>
                   </div>
                 </div>
-              </ScrollReveal>
+              </RevealLight>
             ))}
           </div>
-          <ScrollReveal direction="left">
+          <RevealLight direction="left">
             <div className="soft-card overflow-hidden h-full">
               <div className="relative min-h-[520px] h-full">
                 <Image src="/images/agent/rosa-exterior.jpg" alt="Rosa Valentín, tu asesora de seguros de confianza" fill className="object-cover object-top" />
@@ -310,7 +202,7 @@ export function ComparisonCardsSection() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+          </RevealLight>
         </div>
       </div>
     </section>
@@ -320,14 +212,14 @@ export function ComparisonCardsSection() {
 export function AgentTrustBlock() {
   return (
     <section id="asesora" aria-labelledby="agent-title" className="section-pad bg-alternate">
-      <div className="container-shell">
+       <div className="container-shell">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <ScrollReveal direction="left">
+          <RevealLight direction="left">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border-4 border-white/40 shadow-2xl">
               <Image src="/images/agent/rosa-oficina.jpg" alt="Rosa Valentín, asesora de seguros experta en Madrid, atendiendo en su oficina" fill className="object-cover object-top" />
             </div>
-          </ScrollReveal>
-          <ScrollReveal direction="right">
+          </RevealLight>
+          <RevealLight direction="right">
             <div>
               <p className="kicker">Atención humana y experta</p>
               <h2 id="agent-title" className="mt-4 section-title tracking-tight">Rosa Valentín: Más de 10 años comparando por ti para que elijas con total seguridad</h2>
@@ -338,10 +230,10 @@ export function AgentTrustBlock() {
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contacto" className="btn-primary">Consulta sin compromiso</Link>
-                <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
+                 <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
             </div>
-          </ScrollReveal>
+          </RevealLight>
         </div>
       </div>
     </section>
@@ -353,7 +245,7 @@ export function GeneralFaqSection() {
     <section id="preguntas-frecuentes" aria-labelledby="faq-title" className="section-pad bg-alternate overflow-hidden">
       <div className="container-shell">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
-          <ScrollReveal direction="right">
+          <RevealLight direction="right">
             <div>
               <p className="kicker">Resolvemos tus dudas</p>
               <h2 id="faq-title" className="mt-3 section-title">¿Tienes preguntas antes de empezar?</h2>
@@ -363,10 +255,10 @@ export function GeneralFaqSection() {
                 <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
               </div>
             </div>
-          </ScrollReveal>
-          <ScrollReveal direction="left">
+          </RevealLight>
+          <RevealLight direction="left">
             <FAQAccordion items={generalFaqs} contextualLinks />
-          </ScrollReveal>
+          </RevealLight>
         </div>
       </div>
     </section>
@@ -375,9 +267,9 @@ export function GeneralFaqSection() {
 
 export function FinalCTASection() {
   return (
-    <section id="cta-final" aria-labelledby="cta-title" className="section-pad pt-0 mb-12">
+     <section id="cta-final" aria-labelledby="cta-title" className="section-pad pt-0 mb-12">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="soft-card relative overflow-hidden bg-[var(--blue-deep)] p-12 text-center text-white md:p-20">
             <div className="absolute inset-0">
               <Image src="/images/agent/sebastian.jpg" alt="Sebastián, asesor colaborador en seguros de vida y accidentes" fill className="object-cover opacity-25 brightness-50" />
@@ -392,7 +284,7 @@ export function FinalCTASection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
       </div>
     </section>
   );
@@ -401,9 +293,9 @@ export function FinalCTASection() {
 
 export function MascotHelperSection() {
   return (
-    <section className="section-pad bg-white-pure pt-10">
+     <section className="section-pad bg-white-pure pt-10">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="soft-card glass overflow-hidden border-white/60 shadow-2xl bg-white-pure">
             <div className="grid gap-0 xl:grid-cols-[0.85fr_1.15fr]">
               <div className="relative min-h-[360px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10 flex items-center justify-center p-12">
@@ -435,7 +327,7 @@ export function MascotHelperSection() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
       </div>
     </section>
   );
@@ -448,18 +340,18 @@ export function BlogPreviewSection() {
     .slice(0, 3);
 
   return (
-    <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
+     <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-12 text-center flex flex-col items-center">
             <p className="kicker">Tu seguridad es lo primero</p>
             <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué más de 1.200 familias confían en Valentín</h2>
             <p className="section-copy mt-4 mx-auto">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
           </div>
-        </ScrollReveal>
+        </RevealLight>
         <div className="grid gap-5 lg:grid-cols-3">
           {posts.map((post, idx) => (
-            <ScrollReveal key={post.slug} delay={idx * 0.1}>
+            <RevealLight key={post.slug} delay={idx * 0.1}>
               <article className="soft-card overflow-hidden h-full flex flex-col">
                 <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                   <div className="relative h-56">
@@ -469,10 +361,10 @@ export function BlogPreviewSection() {
                     <h3 className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">{post.title}</h3>
                     <p className="mt-3 text-base leading-8 text-[var(--muted)] flex-grow">{post.excerpt}</p>
                     <div className="btn-ghost mt-5 w-fit">Ir al blog <ArrowRight className="h-4 w-4" /></div>
-                  </div>
+                   </div>
                 </Link>
               </article>
-            </ScrollReveal>
+            </RevealLight>
           ))}
         </div>
       </div>

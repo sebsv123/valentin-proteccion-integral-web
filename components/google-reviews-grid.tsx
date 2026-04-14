@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Star, ExternalLink, PenLine, MapPin } from 'lucide-react';
 import { GOOGLE_REVIEWS, REVIEWS_CONFIG } from '@/lib/reviews';
 
@@ -9,9 +8,9 @@ function StarRating({ count = 5 }: { count?: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${count} estrellas sobre 5`}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <Star 
-          key={i} 
-          className={`h-4 w-4 ${i < count ? 'fill-[var(--orange)] text-[var(--orange)]' : 'text-[var(--border)]'}`} 
+        <Star
+          key={i}
+          className={`h-4 w-4 ${i < count ? 'fill-[var(--orange)] text-[var(--orange)]' : 'text-[var(--border)]'}`}
         />
       ))}
     </div>
@@ -33,9 +32,7 @@ interface Props {
   totalCount?: number;
 }
 
-export function GoogleReviewsGrid({
-  totalCount: propTotalCount,
-}: Props) {
+export function GoogleReviewsGrid({ totalCount: propTotalCount }: Props) {
   const [mounted, setMounted] = useState(false);
   const total = propTotalCount || REVIEWS_CONFIG.totalCount;
 
@@ -43,7 +40,6 @@ export function GoogleReviewsGrid({
     setMounted(true);
   }, []);
 
-  // Seleccionamos 5 aleatorias en cada carga
   const visible = useMemo(() => {
     return [...GOOGLE_REVIEWS].sort(() => Math.random() - 0.5).slice(0, 5);
   }, []);
@@ -76,15 +72,13 @@ export function GoogleReviewsGrid({
         </div>
       </div>
 
-      {/* Grid de reseñas aleatorias */}
+      {/* Grid de reseñas */}
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((review, idx) => (
-          <motion.article
+          <article
             key={`${review.name}-${idx}`}
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: idx * 0.07 }}
-            className="flex flex-col gap-4 rounded-[20px] border border-[var(--border)] bg-white p-5 shadow-sm hover:border-[var(--blue-soft)] transition-colors"
+            className="flex flex-col gap-4 rounded-[20px] border border-[var(--border)] bg-white p-5 shadow-sm hover:border-[var(--blue-soft)] transition-colors animate-fade-in-up"
+            style={{ animationDelay: `${idx * 70}ms`, animationFillMode: 'both' }}
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -108,7 +102,7 @@ export function GoogleReviewsGrid({
             <p className="flex-1 text-sm leading-7 text-[var(--muted)] italic">
               &ldquo;{review.text}&rdquo;
             </p>
-          </motion.article>
+          </article>
         ))}
       </div>
 
@@ -123,7 +117,7 @@ export function GoogleReviewsGrid({
               Tu tranquilidad es nuestra prioridad. Únete a nuestros clientes satisfechos.
             </p>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href={REVIEWS_CONFIG.profileUrl}

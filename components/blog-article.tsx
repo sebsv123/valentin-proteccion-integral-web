@@ -2,12 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
-import { buildWhatsAppHref, site } from '@/lib/products';
+import { buildWhatsAppHref } from '@/lib/products';
 import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
 import { FAQAccordion } from '@/components/faq-accordion';
+import RevealLight from '@/components/ui/reveal-light';
 
 export function BlogArticle({ post }: { post: BlogPost }) {
   const related = getRelatedPosts(post.slug);
@@ -20,16 +20,16 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           <Link href="/blog" className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)]">
             <ArrowLeft className="h-4 w-4" /> Volver al blog
           </Link>
-          <div className="mt-4 soft-card overflow-hidden">
-            <div className="relative h-64 md:h-96">
-              <Image src={post.image} alt={post.imageAlt} fill className="object-cover" priority />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(0,34,68,0.7))]" />
-              <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-10">
-                <div className="flex items-center gap-4 text-sm text-white/80">
-                  <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                  <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readTime} lectura</span>
+          <div className="mt-4 glass-card-premium overflow-hidden border-none shadow-2xl">
+            <div className="relative h-72 md:h-[500px]">
+              <Image src={post.image} alt={post.imageAlt} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" priority />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,34,68,0.95)] via-[rgba(0,34,68,0.4)] to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
+                <div className="flex flex-wrap items-center gap-6 text-sm font-bold text-white/90 uppercase tracking-widest">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20"><Calendar className="h-4 w-4 text-[var(--orange)]" /> {new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20"><Clock className="h-4 w-4 text-[var(--orange)]" /> {post.readTime} lectura</span>
                 </div>
-                <h1 className="mt-3 max-w-4xl font-heading text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl">{post.title}</h1>
+                <h1 className="mt-6 max-w-4xl font-heading text-4xl font-extrabold tracking-tight text-white md:text-6xl leading-[1.1]">{post.title}</h1>
               </div>
             </div>
           </div>
@@ -43,49 +43,39 @@ export function BlogArticle({ post }: { post: BlogPost }) {
             {/* Article body */}
             <div className="space-y-8">
               {post.sections.map((section, idx) => (
-                <motion.div
-                  key={section.heading}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.35, delay: idx * 0.03 }}
-                  className="soft-card p-7 md:p-9"
-                >
-                  <h2 className="font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">{section.heading}</h2>
-                  <div className="mt-5 space-y-4">
-                    {section.content.map((paragraph, pIdx) => (
-                      <p key={pIdx} className="text-base leading-8 text-[var(--muted)] md:text-lg">{paragraph}</p>
-                    ))}
+                <RevealLight key={section.heading} delay={idx * 0.03}>
+                  <div className="glass-card-premium p-8 md:p-12 hover:translate-y-0">
+                    <h2 className="font-heading text-3xl font-extrabold text-[var(--blue-deep)] md:text-4xl leading-tight">{section.heading}</h2>
+                    <div className="mt-7 space-y-6">
+                      {section.content.map((paragraph, pIdx) => (
+                        <p key={pIdx} className="text-lg leading-relaxed text-[var(--muted)] md:text-xl font-medium opacity-90">{paragraph}</p>
+                      ))}
+                    </div>
                   </div>
-                </motion.div>
+                </RevealLight>
               ))}
-
 
               {/* ── Reseñas Google Dinámicas ── */}
               {post.googleReviewsUrl && (
-                <GoogleReviewsGrid
-                  totalCount={post.reviewCount}
-                />
+                <GoogleReviewsGrid totalCount={post.reviewCount} />
               )}
 
               {/* ── FAQ con acordeón ── */}
               {post.faqs && post.faqs.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ duration: 0.35 }}
-                  className="soft-card p-7 md:p-9"
-                >
-                  <p className="kicker">Preguntas frecuentes</p>
-                  <h2 className="font-heading mt-2 mb-6 text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
-                    Resolvemos tus dudas sobre seguros de salud en Madrid
-                  </h2>
-                  <FAQAccordion 
-                    items={post.faqs.map(f => ({ q: f.question, a: f.answer }))} 
-                    contextualLinks={true} 
-                  />
-                </motion.div>
+                <RevealLight>
+                  <div className="glass-card-premium p-8 md:p-12 hover:translate-y-0">
+                    <p className="kicker !text-[var(--blue)]">Preguntas frecuentes</p>
+                    <h2 className="font-heading mt-3 mb-8 text-3xl font-extrabold text-[var(--blue-deep)] md:text-4xl leading-tight">
+                      Resolvemos tus dudas sobre este tema
+                    </h2>
+                    <div className="bg-white/40 rounded-[24px] p-2 border border-white/60">
+                      <FAQAccordion
+                        items={post.faqs.map(f => ({ q: f.question, a: f.answer }))}
+                        contextualLinks={true}
+                      />
+                    </div>
+                  </div>
+                </RevealLight>
               )}
 
               {/* CTA */}

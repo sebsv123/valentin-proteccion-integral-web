@@ -2,12 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, CircleHelp, ClipboardList, HeartHandshake, MessageCircle, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
-import { motion } from 'framer-motion';
-import type { Product, ProductSubpage } from '@/lib/products';
+import RevealLight from './ui/reveal-light';
 import { buildWhatsAppHref, getRelatedProducts, getSubpagesForProduct, site } from '@/lib/products';
-import { FAQAccordion } from './faq-accordion';
+import type { Product, ProductSubpage } from '@/lib/products';
 import { LeadForm } from './lead-form';
-import ScrollReveal from './ui/scroll-reveal';
+import { FAQAccordion } from './faq-accordion';
 
 export function ProductHero({ product }: { product: Product }) {
   const subpages = getSubpagesForProduct(product.slug);
@@ -20,7 +19,7 @@ export function ProductHero({ product }: { product: Product }) {
   return (
     <section className="section-pad pt-6 md:pt-10 bg-white-pure relative overflow-hidden">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="soft-card glass overflow-hidden border-white/40 shadow-2xl bg-premium-glow">
             <div className="grid items-stretch gap-0 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="p-8 md:p-12 lg:p-16">
@@ -55,7 +54,7 @@ export function ProductHero({ product }: { product: Product }) {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+         </RevealLight>
       </div>
     </section>
   );
@@ -63,18 +62,18 @@ export function ProductHero({ product }: { product: Product }) {
 
 export function CoverageHighlights({ product }: { product: Product }) {
   return (
-    <section id="coberturas" aria-labelledby="coverage-title" className="section-pad bg-alternate">
+     <section id="coberturas" aria-labelledby="coverage-title" className="section-pad bg-alternate">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
-        <ScrollReveal direction="right">
+        <RevealLight direction="right">
           <div>
             <p className="kicker">Coberturas destacadas</p>
             <h2 id="coverage-title" className="mt-3 section-title">Lo importante de {product.label}, explicado con más orden</h2>
             <p className="section-copy mt-4">Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.</p>
           </div>
-        </ScrollReveal>
-        <div className="grid gap-6 md:grid-cols-2">
+         </RevealLight>
+         <div className="grid gap-6 md:grid-cols-2">
           {product.highlights.map((item, idx) => (
-            <ScrollReveal key={item} delay={idx * 0.1}>
+            <RevealLight key={item} delay={idx * 0.1}>
               <div className="group soft-card glass p-8 hover-lift border-white/40 transition-all duration-300 hover:border-[var(--blue)]/20">
                 <div className="mb-6 inline-flex rounded-2xl bg-[#4CAF50]/10 p-4 text-[#4CAF50] shadow-sm group-hover:bg-[#4CAF50]/20 transition-colors">
                   <ShieldCheck className="h-6 w-6" />
@@ -84,7 +83,7 @@ export function CoverageHighlights({ product }: { product: Product }) {
                   <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[var(--blue)] to-[var(--green)]" />
                 )}
               </div>
-            </ScrollReveal>
+             </RevealLight>
           ))}
         </div>
       </div>
@@ -118,20 +117,20 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
   ];
 
   return (
-    <section className="section-pad pt-0">
+     <section className="section-pad pt-0">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-8 max-w-3xl">
             <p className="kicker">Lo que conviene tener claro</p>
             <h2 className="mt-3 section-title">Una lectura breve para entender mejor {product.label}</h2>
             <p className="section-copy mt-4">Este bloque resume qué suele incluir, qué puede cambiar según modalidad y qué merece la pena revisar antes de decidir. Sirve para orientar sin saturarte.</p>
           </div>
-        </ScrollReveal>
-        <div className="grid gap-5 xl:grid-cols-3">
+         </RevealLight>
+         <div className="grid gap-5 xl:grid-cols-3">
           {blocks.map((block, idx) => {
             const Icon = block.icon;
             return (
-              <ScrollReveal key={block.title} delay={idx * 0.1}>
+              <RevealLight key={block.title} delay={idx * 0.1}>
                 <article className="soft-card glass p-8 md:p-10 h-full hover-lift border-white/40 transition-all duration-300">
                   <div className={`mb-6 inline-flex rounded-2xl p-4 text-[var(--blue-deep)] shadow-sm ${block.tint}`}>
                     <Icon className="h-6 w-6" />
@@ -145,15 +144,15 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
                     ))}
                   </div>
                 </article>
-              </ScrollReveal>
+               </RevealLight>
             );
           })}
-        </div>
-        <ScrollReveal delay={0.4}>
+         </div>
+        <RevealLight delay={0.4}>
           <div className="mt-6 rounded-[26px] border border-[var(--border)] bg-white px-6 py-5 text-sm leading-7 text-[var(--muted)] md:text-base">
             {product.disclaimer}
           </div>
-        </ScrollReveal>
+         </RevealLight>
       </div>
     </section>
   );
@@ -161,35 +160,32 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
 
 export function CasesAndForm({ product }: { product: Product }) {
   return (
-    <section id="contacto-producto" aria-labelledby="contact-product-title" className="section-pad bg-alternate">
+     <section id="contacto-producto" aria-labelledby="contact-product-title" className="section-pad bg-alternate">
       <div className="container-shell">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
-          <ScrollReveal direction="left">
+          <RevealLight direction="left">
             <div>
               <p className="kicker">Aterrizamos tu caso</p>
               <h2 id="contact-product-title" className="mt-3 section-title">Podemos resolver tus dudas sobre {product.label} ahora mismo</h2>
               <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">No todo el mundo necesita leer el producto igual. Estos perfiles te ayudan a ver más rápido si esta opción va contigo o si conviene mirar otra modalidad.</p>
-              <div className="mt-6 grid gap-3 md:grid-cols-2">
+               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {product.cases.map((item, idx) => (
-                  <motion.div 
+                  <RevealLight 
                     key={item} 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
+                    delay={idx * 0.05}
                     className="flex items-center gap-3 rounded-[22px] bg-[var(--bg)] px-4 py-4 text-base font-medium tracking-wide text-[var(--text)] border border-transparent hover:border-[var(--blue)]/20 transition-all"
                   >
                     <Users className="h-4 w-4 shrink-0 text-[var(--blue)]" />
                     {item}
-                  </motion.div>
+                  </RevealLight>
                 ))}
               </div>
               <div className="mt-6 rounded-[24px] border border-[var(--border)] bg-white p-5 text-base leading-8 text-[var(--muted)]">Si tu situación no encaja exactamente en estos perfiles, no pasa nada. La orientación sirve precisamente para aterrizar lo que cambia según edad, uso, modalidad y necesidades concretas.</div>
             </div>
-          </ScrollReveal>
-          <ScrollReveal direction="right">
+           </RevealLight>
+          <RevealLight direction="right">
             <LeadForm defaultProduct={product.slug} compact />
-          </ScrollReveal>
+           </RevealLight>
         </div>
       </div>
     </section>
@@ -200,16 +196,16 @@ export function ProductFaqSection({ product }: { product: Product }) {
   return (
     <section id="faqs-producto" aria-labelledby="faq-product-title" className="section-pad bg-white-pure">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr] items-start">
-        <ScrollReveal direction="right">
+        <RevealLight direction="right">
           <div>
             <p className="kicker">Preguntas frecuentes</p>
             <h2 id="faq-product-title" className="mt-3 section-title">Lo que más se suele preguntar sobre {product.label}</h2>
             <p className="section-copy mt-4">Hemos recogido preguntas que suelen aparecer antes de contratar este tipo de seguro. La idea es ayudarte a decidir mejor, no llenarte de texto sin contexto.</p>
           </div>
-        </ScrollReveal>
-        <ScrollReveal direction="left">
+         </RevealLight>
+        <RevealLight direction="left">
           <FAQAccordion items={product.faqs} contextualLinks />
-        </ScrollReveal>
+         </RevealLight>
       </div>
     </section>
   );
@@ -219,7 +215,7 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
   return (
     <section className="section-pad pt-6 md:pt-10 bg-white-pure relative overflow-hidden">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="soft-card overflow-hidden border border-[var(--border)] shadow-xl">
             <div className="grid items-stretch gap-0 lg:grid-cols-[1fr_1fr]">
               <div className="p-7 md:p-10 lg:p-12">
@@ -232,17 +228,14 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 </div>
                 <div className="mt-7 grid gap-3">
                   {subpage.bullets.map((item, idx) => (
-                    <motion.div 
+                    <RevealLight 
                       key={item} 
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
+                      delay={idx * 0.1}
                       className="flex items-start gap-3 rounded-[22px] bg-[var(--bg)] px-4 py-4 text-base font-semibold text-[var(--text)] border border-transparent hover:border-[var(--blue)]/10 transition-all"
                     >
                       <Check className="h-5 w-5 mt-0.5 shrink-0 text-[#4CAF50]" />
                       <span>{item}</span>
-                    </motion.div>
+                    </RevealLight>
                   ))}
                 </div>
               </div>
@@ -252,7 +245,7 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+         </RevealLight>
       </div>
     </section>
   );
@@ -263,15 +256,15 @@ export function RelatedProducts({ product }: { product: Product }) {
   return (
     <section id="aspectos-clave" aria-labelledby="decision-title" className="section-pad bg-white-pure overflow-hidden">
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-12 max-w-3xl">
             <p className="kicker">Decide con criterio</p>
             <h2 id="decision-title" className="mt-3 section-title">Cuestiones clave para comparar {product.label} sin perderte en la letra pequeña</h2>
           </div>
-        </ScrollReveal>
+         </RevealLight>
         <div className="grid gap-8 lg:grid-cols-3">
           {related.map((item, idx) => (
-            <ScrollReveal key={item.slug} delay={idx * 0.1}>
+            <RevealLight key={item.slug} delay={idx * 0.1}>
               <article className="soft-card card-shine overflow-hidden h-full flex flex-col hover-lift border-white/20 shadow-xl transition-all duration-300">
                 <div className="relative h-64">
                   <Image src={item.cardImage} alt={item.cardAlt} fill className="object-cover" />
@@ -289,7 +282,7 @@ export function RelatedProducts({ product }: { product: Product }) {
                   </div>
                 </div>
               </article>
-            </ScrollReveal>
+             </RevealLight>
           ))}
         </div>
       </div>

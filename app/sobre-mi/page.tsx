@@ -9,6 +9,9 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import CredentialsBar from '@/components/CredentialsBar';
+import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
   title: "Rosa Valentín · Tu Asesora de Seguros en Madrid",
@@ -42,48 +45,49 @@ export default function SobreMiPage() {
       <Header />
       <main>
         {/* Hero split section */}
-        <section id="sobre-mi-hero" aria-labelledby="sobre-mi-title" className="section-pad pt-6 md:pt-10">
-          <div className="container-shell">
-            <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre mí' }]} />
-            <div className="mt-6 grid gap-8 xl:grid-cols-[0.85fr_1.15fr]">
-              {/* Photo section */}
-              <div className="space-y-6">
-                <div className="soft-card overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
-                  <div className="relative aspect-[4/5] w-full">
-                    <Image src="/images/agent/rosa-despacho.jpg" alt="Rosa Valentín, asesora personal de seguros en Madrid" fill className="object-cover object-top" priority />
+         <RevealLight>
+          <section id="sobre-mi-hero" aria-labelledby="sobre-mi-title" className="section-pad pt-6 md:pt-10">
+            <div className="container-shell">
+              <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre mí' }]} />
+              <div className="mt-6 grid gap-8 xl:grid-cols-[0.85fr_1.15fr]">
+                {/* Photo section */}
+                <div className="space-y-6">
+                  <div className="soft-card overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
+                    <div className="relative aspect-[4/5] w-full">
+                      <Image src="/images/agent/rosa-despacho.jpg" alt="Rosa Valentín, asesora personal de seguros en Madrid" fill className="object-cover object-top" priority />
+                    </div>
                   </div>
-                </div>
-
-                {/* Name & Title - Now separate from image card */}
-                <div className="soft-card bg-white p-6 text-center shadow-md">
-                  <p className="font-heading text-3xl font-bold text-[var(--blue-deep)]">Rosa Valentín</p>
-                  <p className="mt-1 text-base font-semibold text-[var(--blue)]">Socia y asesora experta en VPI</p>
-                  <div className="mt-3 flex items-center justify-center gap-2 text-sm text-[var(--muted)]">
-                    <MapPin className="h-4 w-4" />
-                    Boadilla del Monte, Madrid
+  
+                  {/* Name & Title - Now separate from image card */}
+                  <div className="soft-card bg-white p-6 text-center shadow-md">
+                    <p className="font-heading text-3xl font-bold text-[var(--blue-deep)]">Rosa Valentín</p>
+                    <p className="mt-1 text-base font-semibold text-[var(--blue)]">Socia y asesora experta en VPI</p>
+                    <div className="mt-3 flex items-center justify-center gap-2 text-sm text-[var(--muted)]">
+                      <MapPin className="h-4 w-4" />
+                      Boadilla del Monte, Madrid
+                    </div>
                   </div>
-                </div>
-
-                {/* Values grid */}
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { icon: HeartHandshake, text: 'Enfoque personalizado' },
-                    { icon: ShieldCheck, text: 'Sin presión comercial' },
-                    { icon: ClipboardList, text: 'Comparativa real' },
-                    { icon: MessageCircle, text: 'Escucha activa' },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.text} className="flex flex-col items-center gap-2 rounded-[24px] bg-white px-4 py-5 text-center text-sm font-bold text-[var(--blue-deep)] shadow-sm border border-[var(--border)] transition-all hover:border-[var(--blue)]/20 hover:shadow-md">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--blue)]/5 text-[var(--blue)]">
-                          <Icon className="h-5 w-5" />
+  
+                  {/* Values grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { icon: HeartHandshake, text: 'Enfoque personalizado' },
+                      { icon: ShieldCheck, text: 'Sin presión comercial' },
+                      { icon: ClipboardList, text: 'Comparativa real' },
+                      { icon: MessageCircle, text: 'Escucha activa' },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <div key={item.text} className="flex flex-col items-center gap-2 rounded-[24px] bg-white px-4 py-5 text-center text-sm font-bold text-[var(--blue-deep)] shadow-sm border border-[var(--border)] transition-all hover:border-[var(--blue)]/20 hover:shadow-md">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--blue)]/5 text-[var(--blue)]">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          {item.text}
                         </div>
-                        {item.text}
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
 
               {/* Content */}
               <div className="soft-card p-8 md:p-10 lg:p-12">
@@ -135,56 +139,29 @@ export default function SobreMiPage() {
             </div>
           </div>
         </section>
+      </RevealLight>
 
-        {/* Cómo trabajo contigo */}
-        <section id="metodologia" aria-labelledby="metodologia-title" className="section-pad pt-0">
-          <div className="container-shell">
-            <div className="soft-card glass overflow-hidden border-white/40 shadow-xl">
-              <div className="p-8 md:p-10 lg:p-12">
-                <p className="kicker font-bold tracking-[0.3em]">Cómo trabajo contigo</p>
-                <h2 id="metodologia-title" className="mt-4 section-title">Un proceso sencillo orientado a que decidas con más claridad</h2>
-                <p className="section-copy mt-4 max-w-3xl">No hay fórmulas mágicas. Hay escucha, comparación y acompañamiento. Así funciona:</p>
+        <HowItWorksSection />
 
-                <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                  {[
-                    { step: '01', title: 'Escuchamos', desc: 'Empezamos por entender tu momento, tus prioridades y qué te preocupa. Sin prisas.', icon: MessageCircle },
-                    { step: '02', title: 'Comparamos', desc: 'Revisamos opciones reales, explicamos diferencias y te orientamos con lenguaje claro.', icon: ClipboardList },
-                    { step: '03', title: 'Decidimos juntos', desc: 'Tú decides con toda la información. Sin presiones, sin letra pequeña oculta.', icon: ShieldCheck },
-                    { step: '04', title: 'Seguimos contigo', desc: 'No desaparecemos al contratar. Seguimos disponibles para dudas, renovaciones y cambios.', icon: HeartHandshake },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.step} className="group rounded-[28px] border border-[var(--border)] bg-white p-7 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--blue)]/20 hover:-translate-y-1">
-                        <div className="flex items-center gap-4 mb-5">
-                          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--blue-deep)] text-sm font-extrabold text-white shadow-lg">{item.step}</span>
-                          <Icon className="h-5 w-5 text-[var(--blue)] opacity-70 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                        <h3 className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</h3>
-                        <p className="mt-3 text-base leading-7 text-[var(--muted)]">{item.desc}</p>
-                      </div>
-                    );
-                  })}
+        {/* Rosa lifestyle photo block */}
+         <RevealLight>
+          <section id="galeria" aria-label="Galería de Rosa Valentín" className="section-pad pt-0">
+            <div className="container-shell">
+              <div className="grid gap-6 md:grid-cols-2 items-center">
+                <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
+                  <Image src="/images/agent/rosa-oficina-2.jpg" alt="Rosa Valentín en su oficina de Boadilla del Monte" fill className="object-cover object-top" />
+                </div>
+                <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
+                  <Image src="/images/agent/rosa-exterior-2.jpg" alt="Rosa Valentín, cercanía y profesionalidad" fill className="object-cover object-top" />
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Rosa lifestyle photo block */}
-        <section id="galeria" aria-label="Galería de Rosa Valentín" className="section-pad pt-0">
-          <div className="container-shell">
-            <div className="grid gap-6 md:grid-cols-2 items-center">
-              <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                <Image src="/images/agent/rosa-oficina-2.jpg" alt="Rosa Valentín en su oficina de Boadilla del Monte" fill className="object-cover object-top" />
-              </div>
-              <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                <Image src="/images/agent/rosa-exterior-2.jpg" alt="Rosa Valentín, cercanía y profesionalidad" fill className="object-cover object-top" />
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </RevealLight>
 
         <GoogleReviewsWidget title="Lo que dicen quienes ya han confiado en mí" />
+
+        <CredentialsBar />
 
         {/* Final CTA */}
         <section id="cta-sobre-mi" aria-labelledby="cta-sobre-mi-title" className="section-pad pt-0">

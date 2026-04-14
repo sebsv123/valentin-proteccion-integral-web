@@ -1,6 +1,6 @@
 'use client'
 import { BadgeCheck, GraduationCap, Clock, ShieldCheck } from 'lucide-react'
-import ScrollReveal from '@/components/ui/scroll-reveal'
+import RevealLight from '@/components/ui/reveal-light'
 
 const credentials = [
   {
@@ -32,7 +32,7 @@ export default function CredentialsBar() {
       className="border-y border-[var(--border)] bg-white py-10"
     >
       <div className="container-shell">
-        <ScrollReveal>
+        <RevealLight>
           <p className="kicker text-center mb-8">
             Asesoría con respaldo profesional real
           </p>
@@ -48,7 +48,7 @@ export default function CredentialsBar() {
               >
                 <div className="inline-flex rounded-2xl bg-white p-3
                                 text-[var(--blue)] shadow-sm">
-                  <Icon className="h-6 w-6" />
+                   <Icon className="h-6 w-6" />
                 </div>
                 <p className="font-heading text-lg font-bold
                               text-[var(--blue-deep)]">
@@ -61,7 +61,7 @@ export default function CredentialsBar() {
               </div>
             ))}
           </div>
-        </ScrollReveal>
+        </RevealLight>
       </div>
     </section>
   )

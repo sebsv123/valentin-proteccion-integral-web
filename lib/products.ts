@@ -119,7 +119,7 @@ export const products: Product[] = [
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
       { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral comparamos las mejores opciones del mercado sin coste para ti." },
-      { q: "¿Cuál es el mejor seguro de salud: Sanitas, Adeslas o DKV?", a: "Depende de tu perfil. Sanitas destaca por su red de centros, Adeslas por precio-calidad, y DKV por cobertura dental incluida. Te ayudamos a comparar según tus necesidades reales sin presión." },
+      { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "Depende de tu perfil. Algunas aseguradoras destacan por su red de centros propios, otras por la relación calidad-precio, y otras por incluir servicios dentales completos. Te ayudamos a comparar según tus necesidades reales sin presión." },
       { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, puedes cambiar de compañía respetando los períodos de carencia. Te asesoramos para que la transición sea sin sorpresas ni pérdida de cobertura." },
       { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Sí. El seguro privado elimina listas de espera, te da acceso a especialistas sin derivación y suele incluir servicio 24h. Muchas familias en Madrid combinan ambos sistemas." }
     ],
@@ -129,7 +129,7 @@ export const products: Product[] = [
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
     metaTitle: 'Seguro de Salud en Madrid · Compara Sin Presión | Valentín',
-    metaDescription: '¿Sanitas, Adeslas o Asisa? Te ayudamos a elegir el seguro de salud que mejor se adapta a ti y tu familia. Consultoría gratuita en Madrid.',
+    metaDescription: 'Te ayudamos a elegir el seguro de salud que mejor se adapta a ti y tu familia comparando entre las principales opciones del mercado. Consultoría gratuita en Madrid.',
     h1: 'Seguro de Salud en Madrid: Compara Sin Presión',
   },
   {
@@ -302,7 +302,7 @@ export const products: Product[] = [
     faqs: [
       { q: "¿Los seguros dentales cubren implantes?", a: "Algunos seguros dentales cubren implantes parcialmente o con descuento. Es uno de los aspectos más importantes a comparar, ya que el coste de un implante sin seguro supera los 1.200€." },
       { q: "¿Cuánto cuesta un seguro dental en Madrid?", a: "Los seguros dentales en Madrid cuestan entre 8€ y 35€/mes según las coberturas. Un seguro dental familiar suele ser significativamente más económico que pagar cada visita por separado." },
-      { q: "¿Cuál es el mejor seguro dental: Adeslas o DKV?", a: "Adeslas Dental tiene una de las redes de clínicas más amplia de España. DKV incluye dental en algunos paquetes de salud. La mejor opción depende de los tratamientos que necesites y tu ubicación en Madrid." },
+      { q: "¿Cuál es el mejor seguro dental para mi caso?", a: "Contamos con acceso a las redes de clínicas más amplias de España. La mejor opción depende de los tratamientos que necesites y tu ubicación en Madrid. Te ayudamos a filtrar las opciones más ventajosas." },
       { q: "¿Los seguros dentales tienen período de espera?", a: "La mayoría sí, entre 1 y 6 meses según el tratamiento. Los tratamientos urgentes suelen cubrirse desde el primer día. Te explicamos en detalle los períodos de carencia antes de contratar." }
     ],
     disclaimer:

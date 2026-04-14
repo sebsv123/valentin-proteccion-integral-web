@@ -1,7 +1,8 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
-import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, HeroLeadSection, ProductCategoryGrid, StatsSection, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
+import { HeroLeadSection, StatsSection } from '@/components/hero-animated';
+import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, ProductCategoryGrid, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import HowItWorksSection from '@/components/HowItWorksSection';

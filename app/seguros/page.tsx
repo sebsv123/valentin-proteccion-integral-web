@@ -9,6 +9,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/products';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
   title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
@@ -47,36 +48,42 @@ export default function SegurosHubPage() {
             <h1 className="mt-3 section-title">Encuentra el producto que mejor encaje con lo que quieres proteger</h1>
             <p className="section-copy mt-4">Cada producto tiene su propia página con ventajas, preguntas frecuentes y formas reales de pedir orientación.</p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            {products.map((product) => {
+          <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+            {products.map((product, idx) => {
               const children = getSubpagesForProduct(product.slug);
               return (
-                <article key={product.slug} className="soft-card overflow-hidden">
-                  <div className="relative h-64">
-                    <Image src={product.cardImage} alt={product.cardAlt} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,59,104,0.65)] to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                      <p className="kicker !text-white/80">{product.label}</p>
-                      <h2 className="mt-2 font-heading text-3xl font-bold">{product.label}</h2>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-base leading-8 text-[var(--muted)]">{product.summary}</p>
-                    {children.length ? (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {children.map((child) => (
-                          <Link key={child.slug} href={`/seguros/${product.slug}/${child.slug}`} className="rounded-full bg-[var(--bg)] px-3 py-2 text-sm font-medium text-[var(--blue-deep)]">
-                            {child.label}
-                          </Link>
-                        ))}
+                 <RevealLight key={product.slug} delay={idx * 0.1}>
+                  <article className="glass-card-premium group overflow-hidden h-full flex flex-col">
+                    <div className="relative h-64 overflow-hidden">
+                      <Image 
+                        src={product.cardImage} 
+                        alt={product.cardAlt} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(18,59,104,0.85)] to-transparent p-5 text-white">
+                        <p className="kicker !text-white/80 !mb-1">{product.label}</p>
+                        <h2 className="font-heading text-3xl font-bold">{product.label}</h2>
                       </div>
-                    ) : null}
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                      <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver coberturas de {product.label}</Link>
-                      <Link href="/contacto" className="btn-ghost w-full justify-center">Solicitar orientación</Link>
                     </div>
-                  </div>
-                </article>
+                    <div className="p-7 flex-grow flex flex-col">
+                      <p className="text-base leading-8 text-[var(--muted)] line-clamp-3 flex-grow">{product.summary}</p>
+                      {children.length ? (
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {children.map((child) => (
+                            <Link key={child.slug} href={`/seguros/${product.slug}/${child.slug}`} className="rounded-full bg-white/50 backdrop-blur-sm border border-[var(--border)] px-3 py-1.5 text-xs font-bold text-[var(--blue-deep)] hover:bg-[var(--blue)] hover:text-white transition-all">
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                      <div className="mt-8 flex flex-col gap-3">
+                        <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver detalles de {product.label}</Link>
+                        <Link href="/contacto" className="btn-ghost w-full justify-center opacity-70 hover:opacity-100">Solicitar orientación</Link>
+                      </div>
+                    </div>
+                  </article>
+                </RevealLight>
               );
             })}
           </div>

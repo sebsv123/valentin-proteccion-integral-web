@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, X } from 'lucide-react';
 
 const TIPS = [
@@ -40,31 +39,26 @@ export function SocialProof() {
   if (current === -1 || dismissed) return null;
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 0, x: -50, y: 0 }}
-          animate={{ opacity: 1, x: 0, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="fixed bottom-24 left-6 z-[60] hidden md:flex items-center gap-4 glass p-4 rounded-3xl border border-white/30 shadow-2xl max-w-sm"
-        >
-          <div className="bg-[var(--blue-deep)] p-2.5 rounded-2xl text-white shadow-lg">
-            <ShieldCheck className="h-5 w-5" />
-          </div>
-          <div className="flex-1 pr-6">
-            <p className="text-sm font-bold text-[var(--blue-deep)] leading-tight">
-              {TIPS[current].icon} {TIPS[current].text}
-            </p>
-          </div>
-          <button
-            onClick={() => setDismissed(true)}
-            className="absolute top-2 right-2 p-1 text-[var(--muted)] hover:text-[var(--blue-deep)]"
-            aria-label="Cerrar"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div
+      className={`fixed bottom-24 left-6 z-[60] hidden md:flex items-center gap-4 glass p-4 rounded-3xl border border-white/30 shadow-2xl max-w-sm
+        transition-all duration-500 ease-out
+        ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8 pointer-events-none'}`}
+    >
+      <div className="bg-[var(--blue-deep)] p-2.5 rounded-2xl text-white shadow-lg">
+        <ShieldCheck className="h-5 w-5" />
+      </div>
+      <div className="flex-1 pr-6">
+        <p className="text-sm font-bold text-[var(--blue-deep)] leading-tight">
+          {TIPS[current].icon} {TIPS[current].text}
+        </p>
+      </div>
+      <button
+        onClick={() => setDismissed(true)}
+        className="absolute top-2 right-2 p-1 text-[var(--muted)] hover:text-[var(--blue-deep)]"
+        aria-label="Cerrar"
+      >
+        <X className="h-4 w-4" />
+      </button>
+    </div>
   );
 }

@@ -1,8 +1,8 @@
 'use client'
-import { motion } from 'framer-motion'
 import { MessageCircle, Search, FileCheck, HeartHandshake } from 'lucide-react'
 import Link from 'next/link'
 import { buildWhatsAppHref } from '@/lib/products'
+import RevealLight from './ui/reveal-light'
 
 const steps = [
   {
@@ -39,27 +39,23 @@ export default function HowItWorksSection() {
       className="section-pad bg-[#0f172a] overflow-hidden"
     >
       <div className="container-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
-        >
-          <p className="kicker !text-[#81C784]">Cómo trabajamos contigo</p>
-          <h2
-            id="hiw-title"
-            className="mt-4 font-heading text-4xl font-extrabold
-                       tracking-tight text-white md:text-6xl"
-          >
-            Cuatro pasos para proteger lo que importa
-          </h2>
-          <p className="mt-4 mx-auto max-w-2xl text-base text-white/60
-                        leading-8">
-            Un proceso claro, humano y sin presiones. Así trabajamos
-            en Valentín Protección Integral.
-          </p>
-        </motion.div>
+        <RevealLight>
+          <div className="mb-14 text-center">
+            <p className="kicker !text-[#81C784]">Cómo trabajamos contigo</p>
+            <h2
+              id="hiw-title"
+              className="mt-4 font-heading text-4xl font-extrabold
+                         tracking-tight text-white md:text-6xl"
+            >
+              Cuatro pasos para proteger lo que importa
+            </h2>
+            <p className="mt-4 mx-auto max-w-2xl text-base text-white/60
+                          leading-8">
+              Un proceso claro, humano y sin presiones. Así trabajamos
+              en Valentín Protección Integral.
+            </p>
+          </div>
+        </RevealLight>
 
         <div className="relative">
           {/* Línea conectora desktop */}
@@ -71,74 +67,69 @@ export default function HowItWorksSection() {
 
           <div className="grid gap-6 lg:grid-cols-4">
             {steps.map(({ num, icon: Icon, title, desc }, index) => (
-              <motion.div
-                key={num}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative flex flex-col items-center text-center
-                           rounded-[28px] bg-white/5 backdrop-blur p-8
-                           border border-white/10
-                           hover:border-[#81C784]/30 hover:bg-white/[0.08]
-                           transition-all duration-300 group"
-              >
-                <span
-                  className="absolute top-4 right-5 font-heading text-7xl
-                             font-extrabold text-white/[0.04] select-none
-                             leading-none"
-                  aria-hidden="true"
-                >
-                  {num}
-                </span>
+              <RevealLight key={num} delay={index * 0.15}>
                 <div
-                  className="relative z-10 mb-6 inline-flex rounded-2xl
-                             bg-[#81C784]/15 p-4 text-[#81C784]
-                             group-hover:bg-[#81C784]/25 transition-colors"
+                  className="relative flex flex-col items-center text-center
+                             rounded-[28px] bg-white/5 backdrop-blur p-8
+                             border border-white/10
+                             hover:border-[#81C784]/30 hover:bg-white/[0.08]
+                             transition-all duration-300 group"
                 >
-                  <Icon className="h-7 w-7" />
+                  <span
+                    className="absolute top-4 right-5 font-heading text-7xl
+                               font-extrabold text-white/[0.04] select-none
+                               leading-none"
+                    aria-hidden="true"
+                  >
+                    {num}
+                  </span>
+                  <div
+                    className="relative z-10 mb-6 inline-flex rounded-2xl
+                               bg-[#81C784]/15 p-4 text-[#81C784]
+                               group-hover:bg-[#81C784]/25 transition-colors"
+                  >
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <h3
+                    className="relative z-10 font-heading text-xl font-bold
+                               text-white leading-tight"
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    className="relative z-10 mt-4 text-sm leading-7 text-white/60"
+                  >
+                    {desc}
+                  </p>
                 </div>
-                <h3
-                  className="relative z-10 font-heading text-xl font-bold
-                             text-white leading-tight"
-                >
-                  {title}
-                </h3>
-                <p
-                  className="relative z-10 mt-4 text-sm leading-7 text-white/60"
-                >
-                  {desc}
-                </p>
-              </motion.div>
+              </RevealLight>
             ))}
           </div>
         </div>
 
         {/* CTA inferior */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mt-12 flex flex-col gap-4 items-center sm:flex-row
-                     sm:justify-center"
-        >
-          <Link
-            href="/como-te-ayudamos"
-            className="btn-secondary !border-white/20 !text-white
-                       hover:!bg-white hover:!text-[var(--blue-deep)]"
+        <RevealLight delay={0.3}>
+          <div
+            className="mt-12 flex flex-col gap-4 items-center sm:flex-row
+                       sm:justify-center"
           >
-            Cómo te ayudamos en detalle
-          </Link>
-          <a
-            href={buildWhatsAppHref(
-              'Hola, quiero entender cómo funciona el proceso de asesoría.'
-            )}
-            className="btn-whatsapp"
-          >
-            Empezar ahora por WhatsApp
-          </a>
-        </motion.div>
+            <Link
+              href="/como-te-ayudamos"
+              className="btn-secondary !border-white/20 !text-white
+                         hover:!bg-white hover:!text-[var(--blue-deep)]"
+            >
+              Cómo te ayudamos en detalle
+            </Link>
+            <a
+              href={buildWhatsAppHref(
+                'Hola, quiero entender cómo funciona el proceso de asesoría.'
+              )}
+              className="btn-whatsapp"
+            >
+              Empezar ahora por WhatsApp
+            </a>
+          </div>
+        </RevealLight>
       </div>
     </section>
   )

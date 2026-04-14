@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Quote, Star, Shield } from 'lucide-react';
 import { testimonials, site } from '@/lib/products';
-import ScrollReveal from './ui/scroll-reveal';
+import RevealLight from './ui/reveal-light';
 
 function StarRating({ count = 5 }: { count?: number }) {
   return (
@@ -23,7 +23,7 @@ export function TestimonialsCarousel() {
     <section id="testimonios" className="section-pad">
       <div className="container-shell">
         {/* Header with stats */}
-        <ScrollReveal>
+        <RevealLight>
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="kicker">Opiniones verificadas</p>
@@ -54,9 +54,9 @@ export function TestimonialsCarousel() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
 
-        <ScrollReveal delay={0.1}>
+        <RevealLight delay={0.1}>
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-6">
               {testimonials.map((item, index) => (
@@ -100,9 +100,9 @@ export function TestimonialsCarousel() {
               ))}
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
 
-        <ScrollReveal delay={0.2}>
+        <RevealLight delay={0.2}>
           <div className="mt-10 rounded-[28px] border border-[var(--border)] bg-gradient-to-r from-white to-[rgba(15,94,156,0.03)] p-6 md:p-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-5">
@@ -126,7 +126,7 @@ export function TestimonialsCarousel() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </RevealLight>
       </div>
     </section>
   );
