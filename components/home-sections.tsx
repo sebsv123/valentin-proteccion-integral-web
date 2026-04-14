@@ -406,10 +406,10 @@ export function BlogPreviewSection() {
     <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
       <div className="container-shell">
         <ScrollReveal>
-          <div className="mb-12 text-center">
+          <div className="mb-12 text-center flex flex-col items-center">
             <p className="kicker">Tu seguridad es lo primero</p>
             <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué más de 1.200 familias confían en Valentín</h2>
-            <p className="section-copy mt-4">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
+            <p className="section-copy mt-4 mx-auto">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
           </div>
         </ScrollReveal>
         <div className="grid gap-5 lg:grid-cols-3">

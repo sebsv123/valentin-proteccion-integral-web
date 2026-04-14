@@ -6,7 +6,8 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
-import { buildWhatsAppHref, site, testimonials } from '@/lib/products';
+import { buildWhatsAppHref, site } from '@/lib/products';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
   title: "Rosa Valentín · Tu Asesora de Seguros en Madrid",
@@ -28,7 +29,6 @@ export const metadata: Metadata = {
 export const dynamic = 'force-static';
 
 export default function SobreMiPage() {
-  const featuredTestimonials = testimonials.slice(0, 3);
 
   return (
     <>
@@ -177,41 +177,7 @@ export default function SobreMiPage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="section-pad pt-0">
-          <div className="container-shell">
-            <div className="mb-8 max-w-3xl">
-              <p className="kicker">Lo que dicen quienes ya han confiado en mí</p>
-              <h2 className="mt-3 section-title">Opiniones reales de personas reales</h2>
-            </div>
-            <div className="grid gap-6 lg:grid-cols-3">
-              {featuredTestimonials.map((t) => (
-                <div key={t.name} className="soft-card p-7 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-[var(--orange)] text-[var(--orange)]" />
-                    ))}
-                  </div>
-                  <Quote className="h-7 w-7 text-[var(--green)]/40" />
-                  <p className="mt-3 text-base leading-8 text-[var(--muted)] italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="mt-5 flex items-center gap-3 pt-4 border-t border-[var(--border)]">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[var(--blue)] to-[var(--blue-deep)] font-heading text-lg font-bold text-white">{t.avatar}</div>
-                    <div>
-                      <p className="font-semibold text-[var(--blue-deep)]">{t.name}</p>
-                      <div className="flex items-center gap-1.5 text-sm text-[var(--muted)]">
-                        <MapPin className="h-3 w-3" />
-                        {t.location}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 text-center">
-              <Link href="/opiniones" className="btn-secondary">Ver todas las opiniones</Link>
-            </div>
-          </div>
-        </section>
+        <GoogleReviewsWidget title="Lo que dicen quienes ya han confiado en mí" />
 
         {/* Final CTA */}
         <section id="cta-sobre-mi" aria-labelledby="cta-sobre-mi-title" className="section-pad pt-0">
