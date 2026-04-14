@@ -9,8 +9,8 @@ import { BlogArticle } from '@/components/blog-article';
 import { blogPosts, getBlogPost } from '@/lib/blog';
 import { site } from '@/lib/products';
 import SchemaFAQ from '@/components/seo/schema-faq';
-import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
-import SchemaArticle from '@/components/seo/schema-article';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import ArticleSchema from '@/components/ArticleSchema';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -45,21 +45,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
   return (
     <>
-      <SchemaBreadcrumb 
+      <BreadcrumbSchema 
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 },
-          { name: 'Blog', item: `${site.domain}/blog`, position: 2 },
-          { name: post.title, item: `${site.domain}/blog/${post.slug}`, position: 3 }
+          { name: 'Inicio', url: '/' },
+          { name: 'Blog', url: '/blog' },
+          { name: post.title, url: `/blog/${post.slug}` }
         ]} 
       />
-      <SchemaArticle 
+      <ArticleSchema 
         title={post.title}
         description={post.metaDescription}
         datePublished={post.date}
         dateModified={post.dateModified}
-        author="Rosa Valentín"
-        image={post.image}
-        url={`${site.domain}/blog/${post.slug}`}
       />
       {post.faqs && <SchemaFAQ faqs={post.faqs} />}
       <Header />

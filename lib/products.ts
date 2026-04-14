@@ -118,14 +118,10 @@ export const products: Product[] = [
     ],
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
-      {
-        q: '¿Todos los seguros de SALUD incluyen hospitalización?',
-        a: 'No. Las modalidades básicas se centran en medicina ambulatoria (especialistas y pruebas). Si quieres cobertura de ingreso y cirugía, debes optar por modalidades completas.',
-      },
-      {
-        q: '¿Qué diferencia hay entre copago y reembolso?',
-        a: 'El copago es un importe bajo que pagas por uso dentro del cuadro médico. El reembolso te permite ir a cualquier médico del mundo y recuperar luego el 80-90% de la factura.',
-      },
+      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral comparamos las mejores opciones del mercado sin coste para ti." },
+      { q: "¿Cuál es el mejor seguro de salud: Sanitas, Adeslas o DKV?", a: "Depende de tu perfil. Sanitas destaca por su red de centros, Adeslas por precio-calidad, y DKV por cobertura dental incluida. Te ayudamos a comparar según tus necesidades reales sin presión." },
+      { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, puedes cambiar de compañía respetando los períodos de carencia. Te asesoramos para que la transición sea sin sorpresas ni pérdida de cobertura." },
+      { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Sí. El seguro privado elimina listas de espera, te da acceso a especialistas sin derivación y suele incluir servicio 24h. Muchas familias en Madrid combinan ambos sistemas." }
     ],
     disclaimer:
       'Coberturas, copagos, hospitalización, reembolso y alcance territorial sujetos a modalidad y documentación contractual.',
@@ -180,18 +176,10 @@ export const products: Product[] = [
     ],
     cases: ['FAMILIAS', 'HIPOTECA', 'PROTECCIÓN ECONÓMICA'],
     faqs: [
-      {
-        q: '¿Hablaré con Sebastián directamente?',
-        a: 'Sí, Sebastián gestiona personalmente todas las consultas de seguros de vida para ofrecerte un trato cercano y experto.',
-      },
-      {
-        q: '¿Cómo contacto con Sebastián?',
-        a: 'Puedes llamarle o escribirle por WhatsApp al +34 689 791 380 para cualquier duda sobre tu póliza de vida.',
-      },
-      {
-        q: '¿Un seguro de ACCIDENTES es lo mismo que uno de VIDA?',
-        a: 'No exactamente. Hay productos que comparten ciertos fines, pero el riesgo cubierto puede ser distinto y conviene no tratarlos como equivalentes.',
-      },
+      { q: "¿Es obligatorio el seguro de vida con la hipoteca?", a: "No es legalmente obligatorio, aunque el banco puede exigirlo como condición del préstamo. Sin embargo, tienes derecho a contratarlo con cualquier aseguradora, no solo la del banco, lo que puede suponer un ahorro de hasta el 50%." },
+      { q: "¿Cuánto capital debo asegurar en el seguro de vida?", a: "Lo más habitual es cubrir entre 3 y 5 veces tus ingresos anuales, o el capital pendiente de tu hipoteca. En nuestra consulta gratuita calculamos la cobertura exacta que necesitas." },
+      { q: "¿Puedo contratar un seguro de vida con enfermedades previas?", a: "Sí, aunque las condiciones pueden variar. Trabajamos con varias compañías que tienen criterios diferentes, lo que nos permite encontrar una solución para casi cualquier perfil de salud." },
+      { q: "¿Cuándo debo contratar un seguro de vida?", a: "Cuanto antes mejor: el precio aumenta con la edad y puede verse afectado por el estado de salud. El momento ideal es al firmar una hipoteca, al tener hijos o al iniciar un negocio." }
     ],
     disclaimer:
       'Capital, incapacidad, duración y alcance de la cobertura sujetos a modalidad y condiciones de contratación gestionadas por Sebastián.',
@@ -254,14 +242,10 @@ export const products: Product[] = [
     ],
     cases: ['PERROS', 'GATOS', 'ASISTENCIA VETERINARIA', 'RESPONSABILIDAD CIVIL'],
     faqs: [
-      {
-        q: '¿Incluye asistencia veterinaria?',
-        a: 'Depende de la modalidad. En unas es principal y en otras es complementaria. Conviene revisar qué papel ocupa dentro del producto.',
-      },
-      {
-        q: '¿Incluye responsabilidad civil?',
-        a: 'Puede ser principal u opcional según producto. No siempre viene con el mismo peso ni con los mismos límites.',
-      },
+      { q: "¿Es obligatorio el seguro para perros en España?", a: "Sí. Desde la Ley de Bienestar Animal de 2023, todos los perros en España deben tener seguro de responsabilidad civil. El incumplimiento puede acarrear multas de hasta 10.000€." },
+      { q: "¿Desde cuánto cuesta un seguro para mascotas en Madrid?", a: "El seguro de responsabilidad civil para perros parte desde 5€/mes. Los seguros con cobertura veterinaria completa oscilan entre 20€ y 60€/mes según raza, edad y coberturas." },
+      { q: "¿Qué cubre el seguro obligatorio para perros?", a: "El seguro obligatorio cubre la responsabilidad civil: si tu perro causa daños a terceras personas o sus bienes, el seguro cubre la indemnización. Opcionalmente puedes ampliar con asistencia veterinaria." },
+      { q: "¿Los seguros de mascotas cubren enfermedades crónicas?", a: "Depende de la compañía y el plan contratado. Algunos seguros excluyen enfermedades preexistentes, por eso es importante contratar cuanto antes y con el asesoramiento adecuado." }
     ],
     disclaimer:
       'Asistencia veterinaria, responsabilidad civil, opcionales y límites económicos sujetos a modalidad y condiciones de la póliza.',
@@ -316,14 +300,10 @@ export const products: Product[] = [
     ],
     cases: ['FAMILIAS', 'PARTICULARES', 'PYMES'],
     faqs: [
-      {
-        q: '¿Todos los tratamientos están incluidos?',
-        a: 'No. Hay actos incluidos y otros que pueden tener tarifa o descuento según modalidad y documentación.',
-      },
-      {
-        q: '¿Hay servicios sin franquicia?',
-        a: 'Sí, determinados actos pueden estar incluidos sin franquicia. Conviene revisar cuáles y en qué condiciones.',
-      },
+      { q: "¿Los seguros dentales cubren implantes?", a: "Algunos seguros dentales cubren implantes parcialmente o con descuento. Es uno de los aspectos más importantes a comparar, ya que el coste de un implante sin seguro supera los 1.200€." },
+      { q: "¿Cuánto cuesta un seguro dental en Madrid?", a: "Los seguros dentales en Madrid cuestan entre 8€ y 35€/mes según las coberturas. Un seguro dental familiar suele ser significativamente más económico que pagar cada visita por separado." },
+      { q: "¿Cuál es el mejor seguro dental: Adeslas o DKV?", a: "Adeslas Dental tiene una de las redes de clínicas más amplia de España. DKV incluye dental en algunos paquetes de salud. La mejor opción depende de los tratamientos que necesites y tu ubicación en Madrid." },
+      { q: "¿Los seguros dentales tienen período de espera?", a: "La mayoría sí, entre 1 y 6 meses según el tratamiento. Los tratamientos urgentes suelen cubrirse desde el primer día. Te explicamos en detalle los períodos de carencia antes de contratar." }
     ],
     disclaimer:
       'Actos incluidos, tratamientos, descuentos y condiciones para familias o empresas sujetos a modalidad y documentación del producto.',
@@ -374,14 +354,10 @@ export const products: Product[] = [
     ],
     cases: ['PARTICULARES', 'AUTÓNOMOS', 'PYMES', 'SIN EXAMEN MÉDICO'],
     faqs: [
-      {
-        q: '¿Es lo mismo un seguro de ACCIDENTES que uno de VIDA?',
-        a: 'No. El de vida cubre fallecimiento por cualquier causa (enfermedad o accidente), mientras que el de accidentes se centra exclusivamente en causas accidentales, lo que permite contratarlo sin cuestionarios médicos.',
-      },
-      {
-        q: '¿Qué cubre para autónomos y pymes?',
-        a: 'Es una protección 24/7 que ayuda a cumplir con los convenios colectivos y protege la estabilidad económica del negocio ante una incapacidad del titular o empleado.',
-      },
+      { q: "¿Qué diferencia hay entre el seguro de accidentes y el seguro de salud?", a: "El seguro de salud cubre asistencia médica ante enfermedades y accidentes. El seguro de accidentes paga una indemnización económica si sufres una invalidez permanente o falleces por accidente, complementando tus ingresos cuando más lo necesitas." },
+      { q: "¿Qué cubre un seguro de accidentes personales?", a: "Cubre fallecimiento por accidente, invalidez permanente total o parcial, gastos de hospitalización por accidente, y en algunos casos incapacidad temporal que te impida trabajar." },
+      { q: "¿Necesita un autónomo un seguro de accidentes?", a: "Es muy recomendable. Si eres autónomo y tienes un accidente que te impide trabajar, no tienes cobertura de empresa. Un seguro de accidentes te garantiza ingresos durante la baja." },
+      { q: "¿Cuánto cuesta un seguro de accidentes?", a: "Desde 15€/mes para coberturas básicas. El precio varía según la actividad profesional, la edad y el capital asegurado. Te ayudamos a encontrar la cobertura justa al precio adecuado." }
     ],
     disclaimer:
       'Capitales, invalidez, indemnización diaria y coberturas para autónomos sujetos a modalidad y condiciones del producto.',
@@ -490,14 +466,10 @@ export const products: Product[] = [
     ],
     cases: ['PARTICULARES', 'CONSUMO', 'LABORAL', 'FAMILIA'],
     faqs: [
-      {
-        q: '¿Puedo llamar cualquier día para una duda legal?',
-        a: 'Sí, la mayoría de modalidades incluyen asesoramiento telefónico ilimitado para resolver consultas rápidas.',
-      },
-      {
-        q: '¿Cubre los gastos de ir a juicio?',
-        a: 'Sí, hasta el límite de capital contratatado, el seguro cubre los honorarios de abogados, procuradores y costas.',
-      },
+      { q: "¿Qué es un seguro de protección jurídica?", a: "Es un seguro que te da acceso a un abogado y cubre los gastos legales cuando tienes un conflicto: laboral, con tu casero, con una empresa, de tráfico o frente a la administración pública." },
+      { q: "¿Cuánto cuesta un seguro de defensa jurídica?", a: "Entre 50€ y 150€ al año, dependiendo de las coberturas. Es uno de los seguros con mejor relación coste-beneficio: una sola consulta con un abogado puede superar ese importe." },
+      { q: "¿Qué situaciones cubre el seguro de protección jurídica?", a: "Cubre conflictos laborales (despidos, impagos), defensa ante multas de tráfico, reclamaciones a empresas y servicios, problemas con alquiler o compraventa de vivienda, y defensa penal en accidentes." },
+      { q: "¿El seguro de defensa jurídica cubre a toda la familia?", a: "Depende de la póliza. Hay opciones individuales y familiares. Te ayudamos a elegir la que mejor se adapta a tu situación para que nunca te quedes sin defensa legal cuando la necesites." }
     ],
     disclaimer:
       'Capitales de defensa y ámbitos de actuación sujetos a la modalidad contratada.',
@@ -548,14 +520,10 @@ export const products: Product[] = [
     ],
     cases: ['COMERCIOS', 'OFICINAS', 'AUTÓNOMOS', 'TALLERES'],
     faqs: [
-      {
-        q: '¿Cubre si tengo que cerrar unos días por un siniestro?',
-        a: 'Sí, muchas modalidades incluyen una indemnización por pérdida de beneficios para que el cierre temporal no arruine tu economía.',
-      },
-      {
-        q: '¿Es obligatorio si el local es de alquiler?',
-        a: 'Suele ser requisito del contrato de arrendamiento para cubrir los daños al continente y la responsabilidad civil.',
-      },
+      { q: "¿Qué seguros necesita un autónomo obligatoriamente?", a: "Ninguno es legalmente obligatorio por ser autónomo, excepto en algunas profesiones reguladas. Sin embargo, el seguro de responsabilidad civil y el de accidentes son altamente recomendables para cualquier autónomo." },
+      { q: "¿Puedo deducirme el seguro de salud siendo autónomo?", a: "Sí. Los autónomos pueden deducirse hasta 500€/año por el seguro médico propio, y hasta 500€ adicionales por cada miembro de la unidad familiar incluido en la póliza." },
+      { q: "¿Qué pasa si soy autónomo y tengo una baja laboral?", a: "Sin un seguro específico, perderías ingresos desde el primer día. Un seguro de baja laboral para autónomos te garantiza una renta diaria durante la incapacidad, cubriendo la diferencia que la Seguridad Social no cubre." },
+      { q: "¿Qué seguros necesita una pyme o comercio en Madrid?", a: "Lo más habitual es un seguro multirriesgo de comercio (daños, robo, RC), seguro de responsabilidad civil, y cobertura para los empleados. Te asesoramos según tu actividad y tamaño de negocio." }
     ],
     disclaimer:
       'Capitales asegurados y límites de RC sujetos a la actividad y condiciones de contratación.',
@@ -609,14 +577,10 @@ export const products: Product[] = [
     ],
     cases: ['FAMILIAS', 'PREVISIÓN', 'TRANQUILIDAD'],
     faqs: [
-      {
-        q: '¿Solo cubre el servicio funerario?',
-        a: 'No necesariamente. Puede incluir gestiones, traslados y otros apoyos según contratación. Conviene revisar el alcance real con calma.',
-      },
-      {
-        q: '¿Incluye traslados?',
-        a: 'Puede incluirlos, incluso a nivel nacional o internacional según producto. No siempre viene igual y es un punto importante para comparar.',
-      },
+      { q: "¿Qué cubre un seguro de decesos?", a: "Cubre todos los gastos derivados del fallecimiento: ataúd, flores, esquelas, traslados, gestiones administrativas y en muchos casos lápida y nicho. La familia no tiene que preocuparse de nada en el momento más difícil." },
+      { q: "¿Cuánto cuesta un seguro de decesos en Madrid?", a: "Desde 15-20€/mes para una persona adulta. El precio varía según la edad y las coberturas. Contratar joven resulta mucho más económico y sin esperas." },
+      { q: "¿Merece la pena un seguro de decesos o es mejor ahorrar?", a: "Un entierro en Madrid puede costar entre 3.000€ y 7.000€. El seguro de decesos garantiza esa cobertura por una cuota mensual pequeña, sin descapitalizar los ahorros familiares en un momento de duelo." },
+      { q: "¿Puedo incluir a toda la familia en un solo seguro de decesos?", a: "Sí. Los seguros de decesos familiares son más económicos que contratar pólizas individuales. Te ayudamos a calcular la opción más conveniente para toda la unidad familiar." }
     ],
     disclaimer:
       'Servicio funerario, traslados, gestiones y coberturas complementarias sujetos a modalidad y contratación.',
@@ -671,14 +635,10 @@ export const products: Product[] = [
     ],
     cases: ['ESCAPADAS', 'ESTUDIOS', 'MULTIVIAJE'],
     faqs: [
-      {
-        q: '¿Todos los seguros de VIAJE incluyen anulación?',
-        a: 'No. Depende de la modalidad. Conviene revisar este punto si para ti es importante antes de reservar o salir.',
-      },
-      {
-        q: '¿Todos tienen el mismo límite médico?',
-        a: 'No. Puede variar bastante según modalidad, destino y tipo de viaje. Conviene revisar este punto antes de elegir.',
-      },
+      { q: "¿Qué cubre un seguro de viaje?", a: "Cubre asistencia médica en el extranjero, repatriación, cancelación del viaje, pérdida de equipaje, retrasos de vuelo y responsabilidad civil. Las coberturas varían según el plan contratado." },
+      { q: "¿Necesito seguro de viaje si tengo la tarjeta sanitaria europea?", a: "La tarjeta sanitaria europea cubre asistencia básica en la UE, pero no cubre repatriación, cancelaciones, pérdida de equipaje ni países fuera de Europa. Un seguro de viaje completo es imprescindible para viajes largos o fuera de la UE." },
+      { q: "¿Cuánto cuesta un seguro de viaje?", a: "Desde 3€ por día para viajes cortos. Los seguros anuales de viaje frecuente cuestan entre 80€ y 200€/año. Te ayudamos a elegir según la frecuencia y destinos de tus viajes." },
+      { q: "¿El seguro de viaje cubre las enfermedades preexistentes?", a: "Depende de la compañía y el plan. Algunos cubren agravamientos de enfermedades crónicas, otros no. Es fundamental revisarlo antes de contratar, especialmente para viajeros mayores o con condiciones médicas." }
     ],
     disclaimer:
       'Asistencia médica, anulación, equipaje, duración y ámbito territorial sujetos a modalidad y documentación contractual.',

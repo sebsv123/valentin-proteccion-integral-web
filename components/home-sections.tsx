@@ -46,10 +46,12 @@ export function HeroLeadSection() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
           </div>
           <div className="relative z-10 max-w-3xl">
-            <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em]">{site.brandLine}</p>
-            <h1 id="hero-title" className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
-              {site.heroTagline}
+            <h1 id="hero-title" className="kicker text-[var(--blue)] font-bold tracking-[0.3em]">
+              Asesora de Seguros en Madrid · Consulta Gratuita, Sin Letra Pequeña
             </h1>
+            <p className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
+              {site.heroTagline}
+            </p>
             <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">
               Asesoramiento personalizado en <strong>SALUD</strong>, <strong>VIDA</strong>, <strong>MASCOTAS</strong>, <strong>VIAJE</strong>, <strong>DENTAL</strong>, <strong>ACCIDENTES</strong>, <strong>PROTECCIÓN JURÍDICA</strong> y <strong>NEGOCIOS</strong>.
               {' '}Protegemos lo que de verdad importa con el seguro adecuado para ti.

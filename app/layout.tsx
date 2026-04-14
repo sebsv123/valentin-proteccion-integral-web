@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: site.title,
   description: site.description,
+  verification: {
+    google: 'PEGAR_AQUÍ_EL_CÓDIGO_DE_VERIFICACIÓN_DE_GSC',
+  },
   applicationName: site.name,
   manifest: '/manifest.json',
   alternates: {

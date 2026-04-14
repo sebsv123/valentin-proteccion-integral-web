@@ -7,7 +7,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/products';
-import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: "Seguros en Madrid: Salud, Vida, Mascotas y Más | Valentín",
@@ -27,10 +27,10 @@ export const dynamic = 'force-static';
 export default function SegurosHubPage() {
   return (
     <>
-      <SchemaBreadcrumb 
+      <BreadcrumbSchema 
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 },
-          { name: 'Seguros', item: `${site.domain}/seguros`, position: 2 }
+          { name: 'Inicio', url: '/' },
+          { name: 'Seguros', url: '/seguros' }
         ]} 
       />
       <Header />

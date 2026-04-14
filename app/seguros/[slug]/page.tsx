@@ -7,8 +7,8 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { CasesAndForm, CoverageHighlights, ProductCTASection, ProductDecisionGrid, ProductFaqSection, ProductHero, RelatedProducts } from '@/components/product-sections';
 import { ProductTabs } from '@/components/product-tabs';
 import { getProduct, products, site } from '@/lib/products';
-import SchemaFAQ from '@/components/seo/schema-faq';
-import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import FaqSchema from '@/components/FaqSchema';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -42,14 +42,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <SchemaBreadcrumb 
+      <BreadcrumbSchema 
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 },
-          { name: 'Seguros', item: `${site.domain}/seguros`, position: 2 },
-          { name: product.name, item: `${site.domain}/seguros/${product.slug}`, position: 3 }
+          { name: 'Inicio', url: '/' },
+          { name: 'Seguros', url: '/seguros' },
+          { name: product.name, url: `/seguros/${product.slug}` }
         ]} 
       />
-      <SchemaFAQ faqs={product.faqs.map(f => ({ question: f.q, answer: f.a }))} />
+      <FaqSchema faqs={product.faqs} />
       <Header />
       <main>
         <div className="container-shell pt-6 md:pt-8">
