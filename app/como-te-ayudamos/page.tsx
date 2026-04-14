@@ -9,15 +9,19 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 
 export const metadata: Metadata = {
-  title: "Cómo Funciona Nuestra Asesoría de Seguros en Madrid | Valentín",
-  description: "Tu asesora financiera personal en seguros. Descubre nuestro paso a paso: escucha, comparativa real y acompañamiento sin compromisos.",
-  alternates: {
-    canonical: `${site.domain}/como-te-ayudamos`,
-  },
+  title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
+  description: "No somos un comparador online. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene. Así de simple. Descúbrelo.",
+  keywords: "asesoramiento seguros madrid, consulta seguros gratuita, como elegir seguro madrid",
   openGraph: {
-    title: "Cómo Funciona Nuestra Asesoría de Seguros en Madrid | Valentín",
-    description: "Tu asesora financiera personal en seguros. Descubre nuestro paso a paso: escucha, comparativa real y acompañamiento sin compromisos.",
-    images: [{ url: `${site.domain}/images/home/meeting-real.jpg`, alt: "Metodología de asesoría de seguros - Rosa Valentín" }],
+    title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
+    description: "No somos un comparador online. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene.",
+    url: "https://valentinproteccionintegral.com/como-te-ayudamos",
+    siteName: "Valentín Protección Integral",
+    locale: "es_ES",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/como-te-ayudamos",
   },
 };
 

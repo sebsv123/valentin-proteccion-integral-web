@@ -11,15 +11,19 @@ import { blogPosts } from '@/lib/blog';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Blog de Seguros: Consejos Sin Letra Pequeña | Valentín",
-  description: "Guías, comparativas y noticias sobre seguros de salud, vida y mascotas. Aprende a elegir mejor con Rosa Valentín.",
-  alternates: {
-    canonical: `${site.domain}/blog`,
-  },
+  title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
+  description: "Guías, comparativas y consejos honestos sobre seguros. Todo lo que necesitas saber antes de contratar, explicado sin tecnicismos. ¡Léelo gratis!",
+  keywords: "blog seguros madrid, consejos seguros, guia seguro salud madrid, comparativa seguros 2026",
   openGraph: {
-    title: "Blog de Seguros: Consejos Sin Letra Pequeña | Valentín",
-    description: "Guías, comparativas y noticias sobre seguros de salud, vida y mascotas. Aprende a elegir mejor con Rosa Valentín.",
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Blog de Seguros - Valentín Protección Integral" }],
+    title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
+    description: "Guías, comparativas y consejos honestos sobre seguros. Todo lo que necesitas saber antes de contratar, explicado sin tecnicismos.",
+    url: "https://valentinproteccionintegral.com/blog",
+    siteName: "Valentín Protección Integral",
+    locale: "es_ES",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/blog",
   },
 };
 

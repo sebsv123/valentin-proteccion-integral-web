@@ -10,15 +10,19 @@ import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Opiniones Reales de Clientes · Reseñas 4.9 ⭐ | Valentín",
-  description: "Descubre por qué las familias de Madrid confían en Rosa Valentín. Reseñas verificadas sobre nuestra asesoría en salud y vida.",
-  alternates: {
-    canonical: `${site.domain}/opiniones`,
-  },
+  title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
+  description: "Más de 30 familias en Madrid ya confían en Valentín Protección Integral con una puntuación de 5 estrellas. Lee sus experiencias reales y descubre por qué repiten.",
+  keywords: "opiniones valentín protección integral, reseñas asesora seguros madrid, valoraciones seguros madrid",
   openGraph: {
-    title: "Opiniones Reales de Clientes · Reseñas 4.9 ⭐ | Valentín",
-    description: "Descubre por qué las familias de Madrid confían en Rosa Valentín. Reseñas verificadas sobre nuestra asesoría en salud y vida.",
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Opiniones de clientes - Valentín Protección Integral" }],
+    title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
+    description: "Más de 30 familias en Madrid con una puntuación de 5 estrellas. Lee sus experiencias reales.",
+    url: "https://valentinproteccionintegral.com/opiniones",
+    siteName: "Valentín Protección Integral",
+    locale: "es_ES",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/opiniones",
   },
 };
 

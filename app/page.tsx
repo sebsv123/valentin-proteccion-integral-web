@@ -8,15 +8,25 @@ import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Tu Asesora de Seguros en Madrid · Rosa Valentín | Valentín",
-  description: "¿Buscas asesora de seguros en Madrid? Rosa Valentín ofrece asesoramiento independiente en salud, vida, mascotas y negocios. Consulta gratis sin letra pequeña.",
-  alternates: {
-    canonical: site.domain,
-  },
+  title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
+  description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
+  keywords: "asesora de seguros madrid, seguro de salud madrid, seguro de vida madrid, seguro mascotas madrid, mediadora seguros madrid",
+  authors: [{ name: "Rosa Valentín" }],
   openGraph: {
-    title: "Tu Asesora de Seguros en Madrid · Rosa Valentín | Valentín",
-    description: "¿Buscas asesora de seguros en Madrid? Rosa Valentín ofrece asesoramiento independiente en salud, vida, mascotas y negocios. Consulta gratis sin letra pequeña.",
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Tu Asesora de Seguros en Madrid - Rosa Valentín" }],
+    title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
+    description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
+    url: "https://valentinproteccionintegral.com",
+    siteName: "Valentín Protección Integral",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
+    description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Primera consulta gratis.",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com",
   },
 };
 

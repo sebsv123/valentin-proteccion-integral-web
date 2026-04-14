@@ -10,15 +10,19 @@ import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: "Seguros en Madrid: Salud, Vida, Mascotas y Más | Valentín",
-  description: "Comparamos AXA, Allianz, DKV y Ocaso por ti. Encuentra la mejor cobertura en salud, vida y decesos con asesoría local en Madrid.",
-  alternates: {
-    canonical: `${site.domain}/seguros`,
-  },
+  title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
+  description: "Salud, vida, dental, mascotas, viaje y mucho más. Comparamos las mejores opciones del mercado por ti, sin presión y sin complicaciones. Pide cita gratis.",
+  keywords: "seguros madrid, comparar seguros madrid, asesor seguros madrid, tipos de seguros",
   openGraph: {
-    title: "Seguros en Madrid: Salud, Vida, Mascotas y Más | Valentín",
-    description: "Comparamos AXA, Allianz, DKV y Ocaso por ti. Encuentra la mejor cobertura en salud, vida y decesos con asesoría local en Madrid.",
-    images: [{ url: `${site.domain}/og-image.png`, alt: "Catálogo de Seguros en Madrid - Valentín" }],
+    title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
+    description: "Salud, vida, dental, mascotas, viaje y mucho más. Comparamos las mejores opciones del mercado por ti, sin presión y sin complicaciones.",
+    url: "https://valentinproteccionintegral.com/seguros",
+    siteName: "Valentín Protección Integral",
+    locale: "es_ES",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/seguros",
   },
 };
 
