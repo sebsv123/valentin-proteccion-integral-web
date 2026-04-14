@@ -2,7 +2,7 @@ import { Star } from 'lucide-react';
 import Image from 'next/image';
 
 const PLACE_ID = 'ChIJM_JBwmqbQQ0R-9vVnwTsuRA';
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 
 interface GoogleReview {
   name: string;
@@ -38,17 +38,21 @@ async function getGoogleReviews(): Promise<PlaceData | null> {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': API_KEY,
         'X-Goog-FieldMask': 'displayName,rating,userRatingCount,reviews',
+        'Referer': 'https://valentinproteccionintegral.com', // Forzar el referer para claves restringidas
       },
       next: { revalidate: 3600 }, // Caché de 1 hora
     });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch Google Reviews');
+      const errorData = await res.json().catch(() => ({}));
+      console.error('API Error Response:', errorData);
+      throw new Error(`Failed to fetch Google Reviews: ${res.status} ${res.statusText}`);
     }
 
     return await res.json();
   } catch (error) {
-    console.error('Error fetching Google Reviews:', error);
+    console.error('Error fetching Google Reviews. Ensure "Places API (New)" is enabled in Google Cloud Console.');
+    console.error('Enable it here: https://console.developers.google.com/apis/api/places.googleapis.com/overview?project=308587157554');
     return null;
   }
 }
