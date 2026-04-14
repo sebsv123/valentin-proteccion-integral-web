@@ -9,6 +9,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-headin
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'], display: 'swap', preload: true });
 
 const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+const GA_ID = 'G-TG4JSVQR5Q';
 
 import { BackgroundWrapper } from "@/components/background-wrapper";
 import ClickSpark from "@/components/ui/click-spark";
@@ -70,6 +71,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
+        {/* Google Analytics GA4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
         <BackgroundWrapper />
