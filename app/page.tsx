@@ -1,8 +1,11 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
-import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, HeroLeadSection, ProductCategoryGrid, StatsSection, TrustBadgesSection } from '@/components/home-sections';
+import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, HeroLeadSection, ProductCategoryGrid, StatsSection, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import { TestimonialsCarousel } from '@/components/testimonials-carousel';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import CredentialsBar from '@/components/CredentialsBar';
 import type { Metadata } from 'next';
 import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
@@ -97,11 +100,16 @@ export default function HomePage() {
         <HeroLeadSection />
         <StatsSection />
         <TrustBadgesSection />
+        <MascotHelperSection />
         <ProductCategoryGrid />
+        <ComparisonCardsSection />
         <AgentTrustBlock />
+        <HowItWorksSection />
         <GoogleReviewsWidget />
+        <TestimonialsCarousel />
         <BlogPreviewSection />
         <GeneralFaqSection />
+        <CredentialsBar />
         <FinalCTASection />
       </main>
       <Footer />

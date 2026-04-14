@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, MessageCircle, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
@@ -37,13 +38,44 @@ const sectionTints: Record<string, string> = {
   decesos: 'from-[rgba(18,59,104,0.08)] to-[rgba(123,198,126,0.03)]',
 };
 
+const productBadges: Record<string, string> = {
+  salud: '⭐ Más consultado',
+  mascotas: '🐾 Ley vigente 2024',
+  vida: '🏠 Para hipotecas',
+  dental: '✨ Gran ahorro',
+  accidentes: '⚡ Para autónomos',
+  'proteccion-juridica': '⚖️ Muy valorado',
+  negocio: '🏢 Pymes y locales',
+  decesos: '💛 Para familias',
+  viaje: '✈️ Sin sorpresas',
+  electrodomesticos: '🔧 Reparación incluida',
+}
+
 export function HeroLeadSection() {
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+
   return (
-    <section id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
+    <section ref={heroRef} id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
       <div className="container-shell hero-grid items-stretch gap-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
-          <div className="absolute inset-0">
-            <Image src="/images/premium/hero-family.png" alt="Familia feliz disfrutando de un momento de bienestar y seguridad" fill className="object-cover object-center" priority />
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              style={{ y: bgY }}
+              className="absolute inset-0 scale-110"
+            >
+              <Image
+                src="/images/premium/hero-family.png"
+                alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
+                fill
+                className="object-cover object-center"
+                priority
+              />
+            </motion.div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
           </div>
           <div className="relative z-10 max-w-3xl">
@@ -178,9 +210,18 @@ export function ProductCategoryGrid() {
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {list.map((product, index) => (
             <ScrollReveal key={product.slug} delay={index * 0.05}>
-              <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col">
+              <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
-                  <Image src={product.image} alt={product.cardAlt} fill className="object-cover" />
+                  <Image src={product.image} alt={product.cardAlt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  {productBadges[product.slug] && (
+                    <span
+                      className="absolute top-4 right-4 z-10 rounded-full
+                                 bg-[#f97316] px-3 py-1.5 text-xs font-black
+                                 text-white shadow-lg uppercase tracking-wide"
+                    >
+                      {productBadges[product.slug]}
+                    </span>
+                  )}
                   <div className={`absolute inset-0 bg-gradient-to-t ${sectionTints[product.slug] || 'from-[rgba(18,59,104,0.6)] to-transparent'}`} />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <p className="kicker !text-white/80">{product.eyebrow}</p>
@@ -189,6 +230,10 @@ export function ProductCategoryGrid() {
                 </div>
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <p className="text-base leading-8 text-[var(--muted)]">{product.summary}</p>
+                  <p className="mt-3 text-xs text-[var(--blue)] font-semibold
+                                uppercase tracking-widest">
+                    Consulta gratuita · Sin compromiso
+                  </p>
                   <div className="mt-5 flex flex-col gap-3">
                     <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Comparar {product.label} <ArrowRight className="h-4 w-4" /></Link>
                     <a href={buildWhatsAppHref(product.whatsappMessage)} className="btn-ghost w-full justify-center">Consultar por WhatsApp</a>

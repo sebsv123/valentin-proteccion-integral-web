@@ -16,6 +16,7 @@ import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
+import CustomCursor from '@/components/ui/CustomCursor';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -107,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         {children}
         <SocialProof />
+        <CustomCursor />
         {clarityId ? (
           <Script id="clarity" strategy="afterInteractive">{`
             (function(c,l,a,r,i,t,y){

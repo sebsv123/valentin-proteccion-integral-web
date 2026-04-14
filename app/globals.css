@@ -247,3 +247,8 @@ img { max-width: 100%; height: auto; }
   );
   animation: shimmer 1.5s infinite;
 }
+
+/* Cursor personalizado — solo dispositivos con ratón */
+@media (pointer: fine) {
+  html, * { cursor: none !important; }
+}
