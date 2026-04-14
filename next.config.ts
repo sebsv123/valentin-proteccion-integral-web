@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Cachear imágenes procesadas 30 días — evita reprocesar PNGs pesados en cada cold start
     minimumCacheTTL: 2592000,
-    // Calidad 80: invisible al ojo humano, ~35% menos peso que el default 75 con AVIF
-    quality: 80,
     remotePatterns: [
       {
         protocol: "https",

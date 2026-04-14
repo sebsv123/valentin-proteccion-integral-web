@@ -27,8 +27,8 @@ export function StickyWhatsApp() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"
-          className="group flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white pl-4 pr-6 py-3 rounded-full shadow-2xl font-semibold transition-all duration-300 hover:scale-105"
-          style={{ boxShadow: '0 4px 24px 0 rgba(37,211,102,0.45)' }}
+          className="group flex items-center gap-3 bg-[#128C7E] hover:bg-[#0e6b60] text-white pl-4 pr-6 py-3 rounded-full shadow-2xl font-semibold transition-all duration-300 hover:scale-105"
+          style={{ boxShadow: '0 4px 24px 0 rgba(18,140,126,0.45)' }}
         >
           {/* Icono con anillo pulse */}
           <span className="relative flex h-9 w-9 items-center justify-center">
@@ -48,8 +48,8 @@ export function StickyWhatsApp() {
             href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-4 rounded-2xl shadow-lg text-base transition-all active:scale-95"
-            style={{ boxShadow: '0 2px 16px 0 rgba(37,211,102,0.4)' }}
+            className="flex items-center justify-center gap-2 bg-[#128C7E] hover:bg-[#0e6b60] text-white font-bold py-4 rounded-2xl shadow-lg text-base transition-all active:scale-95"
+            style={{ boxShadow: '0 2px 16px 0 rgba(18,140,126,0.4)' }}
           >
             <MessageCircle className="h-5 w-5" /> WhatsApp
           </a>

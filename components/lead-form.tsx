@@ -70,7 +70,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
           <p className="kicker">Consulta sin compromiso</p>
-          <h3 className="mt-2 font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">Cuéntanos qué necesitas</h3>
+          <h2 className="mt-2 font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">Cuéntanos qué necesitas</h2>
           <p className="mt-3 text-base leading-8 text-[var(--muted)]">Te respondemos con una primera orientación clara para ayudarte a comparar y elegir mejor.</p>
         </div>
         <div className="hidden rounded-2xl bg-[var(--bg)] p-3 text-[var(--blue)] md:block">
@@ -100,8 +100,9 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
 
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-semibold text-[var(--text)]">Producto</label>
-            <select className="select-ui" {...register('productInterest')}>
+            <label htmlFor="productInterest" className="sr-only">Elige un seguro</label>
+            <label htmlFor="productInterest" className="mb-2 block text-sm font-semibold text-[var(--text)]">Producto</label>
+            <select id="productInterest" className="select-ui" {...register('productInterest')}>
               <option value="salud">SALUD (Básico, Senior, Reembolso...)</option>
               <option value="vida">VIDA</option>
               <option value="negocio">NEGOCIO / PYME</option>

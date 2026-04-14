@@ -149,7 +149,7 @@ export function Header() {
 
             <div className="hidden items-center gap-2 xl:flex shrink-0">
               <a href={site.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-4 py-2.5 text-white/95 text-sm bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-90 rounded-[14px] font-semibold transition-opacity shadow-md"><Instagram className="h-4 w-4" /> @segurosrosavalentin</a>
-              <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)]">WhatsApp</a>
+              <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)]">WhatsApp</a>
             </div>
 
             <button className="flex items-center gap-2 text-white/90 hover:text-white px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10 transition-colors font-semibold border border-white/20 shrink-0" onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()} aria-label="Abrir menú">
