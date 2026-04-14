@@ -22,9 +22,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: site.title,
   description: site.description,
-  verification: {
-    google: 'PEGAR_AQUÍ_EL_CÓDIGO_DE_VERIFICACIÓN_DE_GSC',
-  },
   applicationName: site.name,
   manifest: '/manifest.json',
   alternates: {
@@ -67,37 +64,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': ['InsuranceAgency', 'LocalBusiness'],
-    name: site.name,
-    description: site.description,
-    image: `${site.domain}/brand/logo-vpi.jpeg`,
-    telephone: site.phone,
-    url: site.domain,
-    sameAs: [site.instagram],
-    areaServed: ['Madrid', 'Boadilla del Monte', 'Comunidad de Madrid', 'España'],
-    serviceType: 'Asesoramiento y mediación en seguros',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Boadilla del Monte',
-      addressRegion: 'Comunidad de Madrid',
-      addressCountry: 'ES',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 40.407,
-      longitude: -3.892,
-    },
-    priceRange: '€€',
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '19:00',
-    },
-  };
-
   return (
     <html lang="es">
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
