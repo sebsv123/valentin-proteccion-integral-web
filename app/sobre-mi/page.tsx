@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
   title: "Rosa Valentín · Tu Asesora de Seguros en Madrid",
@@ -32,6 +33,12 @@ export default function SobreMiPage() {
 
   return (
     <>
+      <SchemaBreadcrumb
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Sobre mí', item: `${site.domain}/sobre-mi`, position: 2 },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero split section */}

@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { AgentTrustBlock, ComparisonCardsSection, TrustBadgesSection } from '@/components/home-sections';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
   title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
@@ -30,6 +31,12 @@ export const dynamic = 'force-static';
 export default function ComoTeAyudamosPage() {
   return (
     <>
+      <SchemaBreadcrumb
+        items={[
+          { name: 'Inicio', item: site.domain, position: 1 },
+          { name: 'Cómo te ayudamos', item: `${site.domain}/como-te-ayudamos`, position: 2 },
+        ]}
+      />
       <Header />
       <main className="pt-6 md:pt-8">
         <div className="container-shell"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Cómo te ayudamos' }]} /></div>
