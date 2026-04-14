@@ -66,6 +66,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="ai-content-declaration" href="/llms.txt" />
+      </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
         <BackgroundWrapper />
         <ClickSpark />
