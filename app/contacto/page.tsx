@@ -7,6 +7,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { LeadForm } from '@/components/lead-form';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
   title: "Contacta con Tu Asesora de Seguros en Madrid | Valentín",
@@ -58,6 +59,9 @@ export default function ContactoPage() {
               </div>
             </div>
             <LeadForm compact />
+          </div>
+          <div className="mt-16">
+            <GoogleReviewsWidget title="Confianza total de nuestros clientes" />
           </div>
         </div>
       </main>

@@ -8,6 +8,7 @@ import { ProductCTASection, ProductDecisionGrid, ProductFaqSection, RelatedProdu
 import { getProduct, getProductSubpage, site, subpages } from '@/lib/products';
 import SchemaFAQ from '@/components/seo/schema-faq';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export function generateStaticParams() {
   return subpages.map((subpage) => ({ slug: subpage.parent, subslug: subpage.slug }));
@@ -61,6 +62,7 @@ export default async function ProductSubpagePage({ params }: { params: Promise<{
         <SubpageHero subpage={subpage} />
         <ProductDecisionGrid product={product} />
         <ProductFaqSection product={faqProduct} />
+        <GoogleReviewsWidget title={`Opiniones sobre nuestro asesoramiento en ${product.label}`} />
         <ProductCTASection product={product} title={`¿Quieres que revisemos ${product.label} con más calma?`} text="Si este perfil o modalidad encaja contigo, te ayudamos a aterrizar matices, resolver dudas y decidir con más tranquilidad." message={subpage.whatsappMessage} />
         <RelatedProducts product={product} />
       </main>

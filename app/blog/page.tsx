@@ -9,6 +9,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
   title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
@@ -80,6 +81,8 @@ export default function BlogPage() {
             ))}
           </div>
         </section>
+
+        <GoogleReviewsWidget title="Opiniones sobre nuestro asesoramiento" />
 
         <section className="section-pad pt-0">
           <div className="container-shell">

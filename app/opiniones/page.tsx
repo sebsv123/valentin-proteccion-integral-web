@@ -28,15 +28,6 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-function StarRating({ count = 5 }: { count?: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-[var(--orange)] text-[var(--orange)]" />
-      ))}
-    </div>
-  );
-}
 
 export default function OpinionesPage() {
   return (
@@ -84,12 +75,6 @@ export default function OpinionesPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-5 items-center lg:items-end">
-                  <div className="rounded-[30px] border border-[var(--border)] bg-white px-8 py-8 text-center shadow-lg transition-transform hover:scale-[1.02] duration-300">
-                    <p className="font-heading text-6xl font-extrabold text-[var(--blue-deep)]">4.9<span className="text-2xl text-[var(--muted)]">/5</span></p>
-                    <div className="my-3"><StarRating /></div>
-                    <p className="text-xs font-bold text-[var(--muted)] uppercase tracking-[0.2em]">Valoración media</p>
-                    <p className="mt-1 text-sm text-[var(--muted)]">Basada en reseñas reales</p>
-                  </div>
                   <div className="flex gap-3">
                     <a href={buildWhatsAppHref('Hola Rosa, he leído las opiniones y me gustaría hablar contigo.')} className="btn-whatsapp !px-6"><MessageCircle className="h-4 w-4" /> Hablar ahora</a>
                   </div>

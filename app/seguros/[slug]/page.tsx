@@ -9,6 +9,7 @@ import { ProductTabs } from '@/components/product-tabs';
 import { getProduct, products, site } from '@/lib/products';
 import FaqSchema from '@/components/FaqSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -61,6 +62,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <ProductDecisionGrid product={product} />
         <CasesAndForm product={product} />
         <ProductFaqSection product={product} />
+        <GoogleReviewsWidget title={`Opiniones sobre nuestro seguro de ${product.label}`} />
         <ProductCTASection product={product} title={`¿Quieres que te ayudemos con ${product.label}?`} text={`Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.`} message={product.whatsappMessage} />
         <RelatedProducts product={product} />
       </main>

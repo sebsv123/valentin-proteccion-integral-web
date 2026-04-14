@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/products';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
   title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
@@ -79,6 +80,8 @@ export default function SegurosHubPage() {
               );
             })}
           </div>
+
+          <GoogleReviewsWidget title="Lo que dicen nuestros clientes" />
 
           {/* Rosa Trust Block — Conversión y cercanía */}
           <section className="mt-16 rounded-[32px] bg-gradient-to-br from-[#002244] to-[#0F5E9C] p-8 md:p-12 text-white overflow-hidden">
