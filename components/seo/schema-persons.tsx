@@ -43,19 +43,52 @@ export default function SchemaPersons() {
   const sebastian = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Sebastián",
-    "jobTitle": "Asesor Especialista en Seguros de Vida",
-    "description": "Especialista en seguros de vida en Valentín Protección Integral. Atiende personalmente todas las consultas sobre protección familiar y seguros vinculados a hipoteca en Madrid.",
+    "name": "Sebastián Sifontes Valentín",
+    "jobTitle": "Asesor Especialista en Seguros de Vida y Salud",
+    "description": "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Agente exclusivo ASISA desde diciembre 2025 y co-fundador de Bass Group Hispánica S.L., correduría de seguros independiente. Atiende personalmente consultas sobre protección familiar y seguros vinculados a hipoteca.",
     "url": "https://valentinproteccionintegral.com/seguros/vida",
     "telephone": "+34 689 791 380",
     "sameAs": [
-      "https://wa.me/34689791380"
+      "https://wa.me/34689791380",
+      "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Complutense de Madrid",
+        "url": "https://www.ucm.es"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Freie Universität Berlin",
+        "url": "https://www.fu-berlin.de"
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Doble Grado en Gestión y Administración Pública – Economía",
+        "credentialCategory": "degree",
+        "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Universidad Complutense de Madrid" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Máster en Big Data, Data Science e Inteligencia Artificial",
+        "credentialCategory": "postgraduate",
+        "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Universidad Complutense de Madrid" }
+      }
     ],
     "knowsAbout": [
       "Seguros de vida",
       "Seguro de vida vinculado a hipoteca",
       "Protección familiar mediante seguros",
-      "Capital decreciente en seguros de vida"
+      "Capital decreciente en seguros de vida",
+      "Seguros de salud ASISA",
+      "Seguros de accidentes personales",
+      "Economía y administración pública",
+      "Big Data aplicado al sector asegurador",
+      "Inteligencia Artificial en seguros",
+      "Análisis de datos económicos"
     ],
     "worksFor": {
       "@type": "InsuranceAgency",
