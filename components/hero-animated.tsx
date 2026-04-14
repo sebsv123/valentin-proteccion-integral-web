@@ -30,8 +30,12 @@ export function HeroLeadSection() {
                 src="/images/premium/hero-family.png"
                 alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
                 fill
+                sizes="(max-width: 768px) 100vw, 60vw"
                 className="object-cover object-center"
                 priority
+                quality={80}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUEB//EACMQAAIBBAIDAQEAAAAAAAAAAAECAwAEBRESITFBUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amce1ba4uYre2jeSSQ4CqMk1Zaz0KytY1kmt2eYjJVpCcfbj9VVVAUbAooor/2Q=="
               />
             </motion.div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
