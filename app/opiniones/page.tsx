@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import { site, buildWhatsAppHref, testimonials } from '@/lib/products';
+import GoogleReviews from '@/components/GoogleReviews';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
@@ -138,34 +139,7 @@ export default function OpinionesPage() {
           </div>
         </section>
 
-        {/* Google Reviews prep */}
-        <section className="section-pad pt-0">
-          <div className="container-shell">
-            <div className="rounded-[28px] border border-[var(--border)] bg-gradient-to-r from-white to-[rgba(15,94,156,0.03)] p-7 md:p-10">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                <div className="flex items-center gap-5">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--blue-deep)] shadow-lg">
-                    <MapPin className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-heading text-xl font-bold text-[var(--blue-deep)]">{site.name}</p>
-                    <p className="text-sm text-[var(--muted)]">Boadilla del Monte, Madrid · Asesoría de seguros</p>
-                    <div className="mt-1.5 flex items-center gap-2">
-                      <StarRating />
-                      <span className="text-sm font-bold text-[var(--blue-deep)]">4.9</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <a href={buildWhatsAppHref('Hola, quiero dejar mi opinión sobre mi experiencia.')} className="btn-primary !px-6">Dejar una opinión</a>
-                  <Link href="/contacto" className="btn-ghost !px-6">
-                    Contactar <ExternalLink className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <GoogleReviews />
 
         {/* Instagram social proof */}
         <section className="section-pad pt-0">
