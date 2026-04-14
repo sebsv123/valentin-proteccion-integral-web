@@ -4,7 +4,6 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { HeroLeadSection, StatsSection } from '@/components/hero-animated';
 import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, ProductCategoryGrid, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import { TestimonialsCarousel } from '@/components/testimonials-carousel';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import CredentialsBar from '@/components/CredentialsBar';
 import type { Metadata } from 'next';
@@ -100,14 +99,13 @@ export default function HomePage() {
       <main>
         <HeroLeadSection />
         <StatsSection />
+        <GoogleReviewsWidget />
         <TrustBadgesSection />
         <MascotHelperSection />
         <ProductCategoryGrid />
         <ComparisonCardsSection />
         <AgentTrustBlock />
         <HowItWorksSection />
-        <GoogleReviewsWidget />
-        <TestimonialsCarousel />
         <BlogPreviewSection />
         <GeneralFaqSection />
         <CredentialsBar />
