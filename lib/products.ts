@@ -63,9 +63,9 @@ export const site = {
   domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://valentinproteccionintegral.com',
   whatsappNumber: '34603448765',
   instagram: 'https://www.instagram.com/segurosrosavalentin/',
-  heroTagline: '¿Cansado de no entender tu seguro? Asesoramiento humano para proteger lo que importa',
-  brandLine: 'Más de 10 años protegiendo tu tranquilidad',
-  brandSubline: 'Una orientación clara antes de contratar',
+  heroTagline: 'Tus asesores de seguros en Madrid',
+  brandLine: '+10 años · +1.200 familias protegidas · Consulta gratuita',
+  brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Accidentes · Protección Jurídica · Negocios',
   advisorName: 'Rosa Valentín',
 };
 

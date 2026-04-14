@@ -16,14 +16,20 @@ export function HeroLeadSection() {
     offset: ['start start', 'end start'],
   })
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
 
   return (
     <section ref={heroRef} id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
       <div className="container-shell hero-grid items-stretch gap-8">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: isMobile ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }} 
+          className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow"
+        >
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              style={{ y: bgY }}
+              style={{ y: isMobile ? '0%' : bgY }}
               className="absolute inset-0 scale-110"
             >
               <Image
@@ -41,35 +47,57 @@ export function HeroLeadSection() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
           </div>
           <div className="relative z-10 max-w-3xl">
-            <h1 id="hero-title" className="kicker text-[var(--blue)] font-bold tracking-[0.3em]">
-              Asesora de Seguros en Madrid · Consulta Gratuita, Sin Letra Pequeña
-            </h1>
-            <p className="mt-6 max-w-4xl font-heading text-6xl font-extrabold tracking-tight text-gradient md:text-7xl xl:text-8xl leading-[1.05]">
+            {/* KICKER — pequeño, arriba */}
+            <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs sm:text-sm uppercase">
+              Asesores de Seguros en Madrid · Sin Letra Pequeña
+            </p>
+
+            {/* H1 — protagonista visual, tamaño controlado en móvil */}
+            <h1 id="hero-title" className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]">
               {site.heroTagline}
+            </h1>
+
+            {/* Credencial numérica */}
+            <p className="mt-3 text-sm sm:text-base font-semibold text-[var(--blue-deep)]">
+              {site.brandLine}
             </p>
-            <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">
-              Asesoramiento personalizado en <strong>SALUD</strong>, <strong>VIDA</strong>, <strong>MASCOTAS</strong>, <strong>VIAJE</strong>, <strong>DENTAL</strong>, <strong>ACCIDENTES</strong>, <strong>PROTECCIÓN JURÍDICA</strong> y <strong>NEGOCIOS</strong>.
-              {' '}Protegemos lo que de verdad importa con el seguro adecuado para ti.
+
+            {/* Ramos como subtítulo — SEO cola larga */}
+            <p className="mt-2 text-xs sm:text-sm text-[var(--muted)] leading-6">
+              {site.brandSubline}
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contacto" className="btn-primary hover-lift px-10 py-5 text-lg shadow-xl">Solicitar asesoría en seguros</Link>
-              <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} className="btn-whatsapp animate-pulse-soft px-10 py-5 text-lg shadow-xl"><MessageCircle className="h-5 w-5" /> Hablar por WhatsApp</a>
+
+            {/* CTAs — visibles sin scroll en móvil */}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:mt-8">
+              <Link href="/contacto" className="btn-primary hover-lift px-8 py-4 text-base shadow-xl">
+                Solicitar asesoría gratuita
+              </Link>
+              <a
+                href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')}
+                className="btn-whatsapp px-8 py-4 text-base shadow-xl"
+              >
+                <MessageCircle className="h-5 w-5" /> WhatsApp
+              </a>
             </div>
-            <div className="mt-7 grid gap-3 md:grid-cols-3">
+
+            {/* 3 mini-cards de confianza — solo en sm+ para no colapsar móvil */}
+            <div className="mt-6 hidden sm:grid gap-3 md:grid-cols-3">
               {[
                 ['Te ayudamos a decidir', 'Comparamos opciones contigo y te explicamos la letra pequeña sin prisas ni presión.'],
                 ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
                 ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-[22px] bg-white/92 p-4 shadow-sm backdrop-blur">
-                  <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{copy}</p>
+                  <p className="font-heading text-sm font-semibold text-[var(--blue-deep)]">{title}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{copy}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-12 flex flex-wrap gap-4 text-sm font-bold text-[var(--blue-deep)]">
+
+            {/* Pills de ramos — solo en sm+ */}
+            <div className="mt-8 hidden sm:flex flex-wrap gap-3 text-sm font-bold text-[var(--blue-deep)]">
               {products.map((product) => (
-                <Link key={product.slug} href={`/seguros/${product.slug}`} className="glass rounded-full border border-white/60 bg-white/40 px-6 py-4 tracking-wider hover:bg-white hover:text-[var(--blue)] hover:border-[var(--blue)] transition-all">
+                <Link key={product.slug} href={`/seguros/${product.slug}`} className="glass rounded-full border border-white/60 bg-white/40 px-5 py-3 tracking-wider hover:bg-white hover:text-[var(--blue)] hover:border-[var(--blue)] transition-all">
                   {product.label}
                 </Link>
               ))}

@@ -11,13 +11,13 @@ import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
-  description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
-  keywords: "asesora de seguros madrid, seguro de salud madrid, seguro de vida madrid, seguro mascotas madrid, mediadora seguros madrid",
+  title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
+  description: "Tus asesores de seguros en Madrid con +10 años de experiencia. Salud, vida, mascotas, dental, viaje y más. Sin letra pequeña. Primera consulta gratis.",
+  keywords: "asesores de seguros madrid, asesora de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
   openGraph: {
-    title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
-    description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Salud, vida, mascotas y más. Primera consulta gratis.",
+    title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
+    description: "Tus asesores de seguros en Madrid con +10 años de experiencia. Salud, vida, mascotas, dental, viaje y más. Sin letra pequeña. Primera consulta gratis.",
     url: "https://valentinproteccionintegral.com",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asesora Seguros Madrid · Sin Letra Pequeña | Valentín",
-    description: "¿Cansado de no entender tu seguro? Rosa Valentín lleva +10 años explicando sin letra pequeña. Primera consulta gratis.",
+    title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
+    description: "Tus asesores de seguros en Madrid. +10 años, +1.200 familias. Salud, vida, mascotas y más. Primera consulta gratis.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com",
