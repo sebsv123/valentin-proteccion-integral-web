@@ -6,7 +6,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        // Bots principales: indexar todo excepto rutas técnicas y legales
+        // Todos los bots incluidos AI crawlers: indexación completa para SEO + GEO
+        // GPTBot (ChatGPT), CCBot (Perplexity/Claude), Google-Extended (Gemini AI Overviews)
+        // Bloquearlos impediría aparecer en respuestas de IA — canal clave de captación
         userAgent: '*',
         allow: '/',
         disallow: [
@@ -16,19 +18,6 @@ export default function robots(): MetadataRoute.Robots {
           '/privacidad',
           '/cookies',
         ],
-      },
-      {
-        // GPTBot y otros AI crawlers: no queremos que entrenen modelos con el contenido
-        userAgent: 'GPTBot',
-        disallow: '/',
-      },
-      {
-        userAgent: 'CCBot',
-        disallow: '/',
-      },
-      {
-        userAgent: 'Google-Extended',
-        disallow: '/',
       },
     ],
     sitemap: `${domain}/sitemap.xml`,
