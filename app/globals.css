@@ -369,13 +369,3 @@ img { max-width: 100%; height: auto; }
   }
 }
 
-/* Cursor nativo del sistema - sin personalizaciones */
-* {
-  cursor: auto;
-}
-a, button, [role="button"], input[type="submit"] {
-  cursor: pointer;
-}
-input[type="text"], input[type="tel"], input[type="email"], textarea {
-  cursor: text;
-}

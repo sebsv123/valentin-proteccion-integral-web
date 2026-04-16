@@ -25,7 +25,7 @@ import { buttonVariants } from "@/components/ui/button";
 import RetroGrid from "@/components/magicui/retro-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import LogoHero from "@/components/magicui/logo-hero";
+import Globe from "@/components/magicui/globe";
 
 export function DentalLanding() {
   const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo", comentario: "" });
@@ -45,17 +45,11 @@ export function DentalLanding() {
       {/* 🚀 HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
-        {/* Logo watermark — sutil pero visible, centrado detrás */}
-        <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none z-[1]">
-          <div className="relative w-[70%] max-w-[600px] aspect-[16/7] opacity-[0.22]">
-            <Image
-              src="/brand/logo-brand.png"
-              alt=""
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
+        {/* Globe — fondo mitad izquierda, solo desktop */}
+        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
+          <Globe className="inset-0" />
+          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
@@ -170,16 +164,9 @@ export function DentalLanding() {
             </div>
           </div>
 
-          {/* Logo watermark móvil — sutil */}
-          <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-[0.15]">
-            <div className="relative w-[80%] max-w-[400px] aspect-[16/7]">
-              <Image
-                src="/brand/logo-brand.png"
-                alt=""
-                fill
-                className="object-contain"
-              />
-            </div>
+          {/* Globe — visible solo en móvil, debajo del formulario */}
+          <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
+            <Globe className="top-0" />
           </div>
         </div>
       </section>
