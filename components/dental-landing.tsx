@@ -3,20 +3,14 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
 import {
-  Check, 
   Clock, 
   ShieldCheck, 
   Users, 
   FileText, 
   Award, 
-  MessageCircle, 
   Phone,
-  ArrowRight,
-  Heart,
   Stethoscope,
-  Smile,
   ChevronDown,
   BadgeCheck
 } from "lucide-react";
@@ -118,8 +112,8 @@ export function DentalLanding() {
               variants={staggerContainer}
               className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
             >
-              <motion.div variants={fadeInUpVariants} className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <motion.div variants={fadeInUpVariants} className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold">
+                <AnimatedShinyText className="inline-flex items-center">
                   <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
                 </AnimatedShinyText>
               </motion.div>
@@ -268,7 +262,7 @@ export function DentalLanding() {
                 Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
               </p>
               <a 
-                href="https://www.coam.es/colegiados/buscador" 
+                href="https://www.colegiomediadores.es" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8 hover:text-emerald-300 transition-colors underline underline-offset-2"
