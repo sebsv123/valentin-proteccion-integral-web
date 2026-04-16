@@ -153,7 +153,8 @@ export function AccidentesDecesosLanding() {
             {/* Columna izquierda - Texto */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true }}
               variants={staggerContainer}
               className="text-center lg:text-left"
             >
@@ -181,24 +182,26 @@ export function AccidentesDecesosLanding() {
                 una sola llamada, sin papeleos y sin letra pequeña.
               </motion.p>
 
-              <motion.div
-                variants={fadeInUpVariants}
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 text-sm"
-              >
-                <span className="flex items-center gap-1.5">
-                  <span className="text-amber-600">✅</span> Desde 3€/mes (menos que un café al día)
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="text-amber-600">✅</span> Sin permanencia. Cancelas cuando quieras.
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="text-amber-600">✅</span> Gestión completa en 30 minutos
-                </span>
+              <motion.div variants={fadeInUpVariants} className="flex flex-col gap-4 mb-8">
+                {[
+                  "Desde 3€/mes (menos que un café al día)",
+                  "Sin permanencia. Cancelas cuando quieras.",
+                  "Gestión completa en 30 minutos",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex-none w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-base sm:text-lg">{item}</span>
+                  </div>
+                ))}
               </motion.div>
 
               <motion.div
                 variants={fadeInUpVariants}
-                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                className="flex flex-col sm:flex-row gap-4"
               >
                 <a
                   href="https://wa.me/34603448765"
@@ -535,7 +538,7 @@ export function AccidentesDecesosLanding() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Card 1 - Solo tú */}
-            <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center">
+            <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
               <div className="text-4xl mb-4">👤</div>
               <h3 className="text-xl font-bold mb-2">Solo tú</h3>
               <p className="text-3xl font-bold text-amber-600 mb-2">Desde ~3€/mes</p>
@@ -554,7 +557,7 @@ export function AccidentesDecesosLanding() {
             </div>
 
             {/* Card 3 - Padres */}
-            <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center">
+            <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
               <div className="text-4xl mb-4">👴👵</div>
               <h3 className="text-xl font-bold mb-2">Padres o mayores</h3>
               <p className="text-3xl font-bold text-amber-600 mb-2">Desde ~5€/mes</p>
@@ -743,11 +746,18 @@ export function AccidentesDecesosLanding() {
                     )}
                   />
                 </button>
-                {openFaq === i && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                    <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: openFaq === i ? "auto" : 0, 
+                    opacity: openFaq === i ? 1 : 0 
+                  }}
+                  className="overflow-hidden"
+                >
+                  <p className="px-4 sm:px-6 pb-4 sm:pb-6 text-muted-foreground leading-relaxed">
+                    {faq.a}
+                  </p>
+                </motion.div>
               </motion.div>
               ))}
             </div>
