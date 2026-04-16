@@ -171,10 +171,6 @@ export function DentalLanding() {
                   <p className="text-center text-sm text-muted-foreground opacity-70">
                     Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
                   </p>
-                  <p className="text-center text-xs font-medium text-primary/80 flex items-center justify-center gap-1.5">
-                    <span>🦷</span>
-                    <span>Sin carencias en revisiones y limpiezas desde el primer día</span>
-                  </p>
                   <p className="text-center text-xs text-muted-foreground/60">
                     🔒 Consulta sin compromiso. Si decides no contratar, no te llamamos más.
                   </p>
@@ -191,17 +187,26 @@ export function DentalLanding() {
       </section>
 
       {/* 🦷 BARRA GARANTÍA DENTAL */}
-      <section className="py-6 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
-            <span className="text-3xl">🦷</span>
-            <p className="text-lg sm:text-xl font-bold leading-snug">
-              Sin carencias en revisiones y limpiezas desde el primer día.{" "}
-              <span className="underline decoration-2 underline-offset-4">
-                Si no es así, te lo decimos antes de firmar.
-              </span>
-            </p>
+      <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-semibold mb-6 tracking-widest uppercase">
+            <span>🦷</span>
+            <span>Nuestra garantía dental</span>
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Sin carencias en revisiones y limpiezas
+            <br />
+            <span className="underline decoration-white/40 decoration-4 underline-offset-8">
+              desde el primer día.
+            </span>
+          </h2>
+          <p className="text-xl sm:text-2xl text-white/80 font-light max-w-2xl mx-auto">
+            Si no es así, te lo decimos antes de firmar.
+            <br />
+            <span className="text-white font-semibold">
+              Sin letra pequeña. Sin sorpresas.
+            </span>
+          </p>
         </div>
       </section>
 
