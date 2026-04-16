@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import RetroGrid from "@/components/magicui/retro-grid";
 import DotGrid from "@/components/ui/dot-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
@@ -113,8 +112,16 @@ export function SaludLanding() {
       </div>
 
       {/* 2. HERO */}
-      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-gradient-to-br from-background via-green-50/30 to-background">
-        <DotGrid className="z-0" />
+      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-background">
+        <DotGrid 
+          className="z-0"
+          dotSize={4}
+          gap={28}
+          baseColor="#bbf7d0"
+          activeColor="#16a34a"
+          proximity={120}
+          shockStrength={3}
+        />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
           <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
