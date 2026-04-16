@@ -70,6 +70,14 @@ export function TrustBadgesSection() {
                     );
                   })}
                 </div>
+                <div className="mt-8 flex items-start gap-4 rounded-[22px]
+                                border-2 border-[var(--blue)]/20 bg-[var(--blue)]/5 p-5">
+                  <span className="text-2xl flex-none">⏱️</span>
+                  <p className="text-base font-semibold text-[var(--blue-deep)] leading-relaxed">
+                    Respondemos en menos de 30 minutos o te explicamos por qué.
+                    Siempre. Sin excusas. Sin call centers.
+                  </p>
+                </div>
               </div>
               <div className="relative min-h-[360px] xl:min-h-full">
                 <Image
@@ -139,8 +147,18 @@ export function ProductCategoryGrid() {
                     Consulta gratuita · Sin compromiso
                   </p>
                   <div className="mt-5 flex flex-col gap-3">
-                    <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Comparar {product.label} <ArrowRight className="h-4 w-4" /></Link>
-                    <a href={buildWhatsAppHref(product.whatsappMessage)} className="btn-ghost w-full justify-center">Consultar por WhatsApp</a>
+                    <a
+                      href={buildWhatsAppHref(product.whatsappMessage)}
+                      className="btn-whatsapp w-full justify-center font-bold"
+                    >
+                      Consultar por WhatsApp
+                    </a>
+                    <Link
+                      href={`/seguros/${product.slug}`}
+                      className="btn-ghost w-full justify-center text-sm opacity-70 hover:opacity-100"
+                    >
+                      Ver más información <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                  </div>
               </article>
@@ -308,6 +326,12 @@ export function FinalCTASection() {
             <div className="relative z-10 mx-auto max-w-4xl">
               <h2 id="cta-title" className="font-heading text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl leading-tight">¿Hablamos sobre lo que te preocupa?</h2>
               <p className="mt-6 text-lg text-white/80 md:text-xl">Una llamada breve suele ser el camino más rápido para despejar dudas. Desde ahí vemos juntos qué producto tiene sentido para ti de forma directa y profesional.</p>
+              <div className="mt-6 mb-2 inline-flex items-center gap-2 px-5 py-2.5
+                              rounded-full bg-white/15 border border-white/25
+                              backdrop-blur text-sm font-semibold text-white/90">
+                <span className="h-2 w-2 rounded-full bg-[#4CAF50] animate-pulse" />
+                Tiempo medio de respuesta hoy: menos de 18 minutos
+              </div>
               <div className="mt-10 flex flex-col gap-4 justify-center sm:flex-row">
                 <Link href="/contacto" className="btn-primary bg-white text-[var(--blue-deep)] hover:bg-white/90">Elegir mi seguro con Rosa</Link>
                 <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para revisar qué seguro me encaja mejor.')} className="btn-whatsapp bg-[#4CAF50] text-white border-none">Hablar por WhatsApp</a>

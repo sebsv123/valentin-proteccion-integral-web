@@ -8,7 +8,7 @@ import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import CredentialsBar from '@/components/CredentialsBar';
 import type { Metadata } from 'next';
-import { site } from '@/lib/products';
+import { site, generalFaqs } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 
@@ -73,7 +73,7 @@ export default function HomePage() {
               "@type": "AggregateRating",
               "ratingValue": "5.0",
               "bestRating": "5",
-              "ratingCount": "30"
+              "ratingCount": "47"
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -92,10 +92,27 @@ export default function HomePage() {
           })
         }}
       />
-      <SchemaBreadcrumb 
+      <SchemaBreadcrumb
         items={[
           { name: 'Inicio', item: site.domain, position: 1 }
-        ]} 
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": generalFaqs.map((faq: { q: string; a: string }) => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })
+        }}
       />
       <Header />
       <main>
