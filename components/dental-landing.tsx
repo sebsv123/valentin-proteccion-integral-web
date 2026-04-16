@@ -94,7 +94,7 @@ export function DentalLanding() {
               </h1>
 
               <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed max-w-xl">
-                Seguro dental en Madrid sin períodos de carencia para revisiones y limpiezas.
+                Seguro dental en Madrid sin períodos de carencia en ningún tratamiento.
                 Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
               </p>
 
@@ -346,12 +346,13 @@ export function DentalLanding() {
       {/* �📊 SECCIÓN COBERTURAS */}
       <section className="py-24">
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border bg-muted">
             <Image 
               src="/images/dental/clinica-dental.jpg" 
               alt="Clínica dental en Madrid" 
               fill 
               className="object-cover"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
             />
           </div>
           <div>
@@ -436,12 +437,13 @@ export function DentalLanding() {
               </div>
             </div>
             
-            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl bg-muted">
               <Image 
                 src="/images/dental/asesora-seguros.jpg" 
                 alt="Asesora de seguros dentales" 
                 fill 
                 className="object-cover"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
             </div>
           </div>
@@ -452,12 +454,13 @@ export function DentalLanding() {
       <section className="py-24">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg bg-muted">
               <Image 
                 src="/images/dental/familia-salud.jpg" 
                 alt="Familia feliz con salud completa" 
                 fill 
                 className="object-cover"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
             </div>
             <div className="text-center">
@@ -513,15 +516,21 @@ export function DentalLanding() {
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
             <div className="lg:sticky lg:top-24">
               <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
-              <div className="relative aspect-square rounded-3xl overflow-hidden border">
-                <Image src="/images/dental/cuidado-dental.jpg" alt="Cuidado dental profesional" fill className="object-cover" />
+              <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
+                <Image 
+                  src="/images/dental/cuidado-dental.jpg" 
+                  alt="Cuidado dental profesional" 
+                  fill 
+                  className="object-cover" 
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                />
               </div>
             </div>
             <div className="space-y-6">
               {[
                 {
                   q: "¿Hay períodos de carencia?",
-                  a: "Para revisiones y limpiezas, no. Para tratamientos más complejos como endodoncias o implantes, existe un período que te explicamos antes de contratar. Sin letra pequeña, siempre."
+                  a: "No. Toda la cobertura está disponible desde el primer día: revisiones, limpiezas, empastes, endodoncias e incluso implantes. Si en tu caso concreto existiera alguna excepción, te lo decimos antes de firmar. Sin letra pequeña, siempre."
                 },
                 {
                   q: "¿Puedo incluir a toda mi familia?",
