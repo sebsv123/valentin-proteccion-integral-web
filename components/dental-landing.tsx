@@ -16,7 +16,6 @@ import {
   Heart,
   Stethoscope,
   Smile,
-  Zap,
   HelpCircle,
   ChevronDown,
   BadgeCheck
@@ -172,6 +171,10 @@ export function DentalLanding() {
                   <p className="text-center text-sm text-muted-foreground opacity-70">
                     Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
                   </p>
+                  <p className="text-center text-xs font-medium text-primary/80 flex items-center justify-center gap-1.5">
+                    <span>🦷</span>
+                    <span>Sin carencias en revisiones y limpiezas desde el primer día</span>
+                  </p>
                   <p className="text-center text-xs text-muted-foreground/60">
                     🔒 Consulta sin compromiso. Si decides no contratar, no te llamamos más.
                   </p>
@@ -183,6 +186,21 @@ export function DentalLanding() {
           {/* Globe — visible solo en móvil, debajo del formulario */}
           <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
             <Globe className="top-0" />
+          </div>
+        </div>
+      </section>
+
+      {/* 🦷 BARRA GARANTÍA DENTAL */}
+      <section className="py-6 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
+            <span className="text-3xl">🦷</span>
+            <p className="text-lg sm:text-xl font-bold leading-snug">
+              Sin carencias en revisiones y limpiezas desde el primer día.{" "}
+              <span className="underline decoration-2 underline-offset-4">
+                Si no es así, te lo decimos antes de firmar.
+              </span>
+            </p>
           </div>
         </div>
       </section>
@@ -331,10 +349,10 @@ export function DentalLanding() {
                 </div>
               </div>
 
-              <div className="mt-16 p-6 rounded-2xl bg-primary text-primary-foreground flex items-center gap-4 shadow-xl">
-                <Zap className="h-10 w-10 text-yellow-400 fill-yellow-400" />
-                <p className="text-lg font-bold">
-                  GARANTÍA DE VELOCIDAD: Si no te llamamos en 30 minutos, te devolvemos la prima íntegra del primer mes. Sin excepciones. Lo prometemos.
+              <div className="mt-16 p-6 rounded-2xl border-2 border-primary/30 bg-primary/5 flex items-start gap-4">
+                <span className="text-3xl flex-none">⏱️</span>
+                <p className="text-lg font-semibold text-foreground leading-relaxed">
+                  Respondemos en 30 minutos o te debemos una explicación. Siempre.
                 </p>
               </div>
             </div>
@@ -428,7 +446,7 @@ export function DentalLanding() {
         <div className="container mx-auto max-w-4xl text-center px-4">
           <p className="text-lg md:text-xl font-bold text-emerald-800">
             💡 ¿Ya tienes seguro de salud? Añade dental desde{" "}
-            <span className="underline decoration-2">8€/mes más por persona</span>. Te lo gestionamos en una sola llamada, sin papeleo.
+            <span className="underline decoration-2">9€/mes más por persona</span>. Te lo gestionamos en una sola llamada, sin papeleo.
           </p>
           <a
             href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, ya tengo seguro de salud y quiero añadir dental desde 8€/mes.")}`}
@@ -448,10 +466,10 @@ export function DentalLanding() {
           </div>
           <h2 className="text-3xl font-bold sm:text-5xl mb-8">Nuestra garantía de transparencia</h2>
           <p className="text-xl text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
-            Si tras hablar con nosotros sientes que no hemos sido 100% claros, o que algo no era como esperabas, te devolvemos la prima del primer mes. Sin preguntas.
+            Si tras hablar con nosotros sientes que no hemos sido 100% claros, te buscamos una alternativa mejor. Aunque no sea con nosotros.
           </p>
           <p className="text-lg italic font-medium opacity-70 border-t pt-6 max-w-2xl mx-auto">
-            &ldquo;En más de 10 años nunca hemos tenido que aplicarla. Pero existe, porque la honestidad no es solo una palabra.&rdquo;
+            &ldquo;En más de 10 años nunca hemos tenido que hacerlo. Pero si llega el día, lo haremos. Porque la honestidad no es solo una palabra.&rdquo;
           </p>
         </div>
       </section>
