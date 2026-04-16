@@ -17,7 +17,9 @@ import {
   Stethoscope,
   Smile,
   Zap,
-  HelpCircle
+  HelpCircle,
+  ChevronDown,
+  BadgeCheck
 } from "lucide-react";
 
 // Componente Logo WhatsApp oficial
@@ -99,7 +101,7 @@ export function DentalLanding() {
             </div>
 
             {/* Columna derecha: Formulario */}
-            <div className="w-full" id="contacto">
+            <div className="w-full animate-fade-in-up" id="contacto" style={{ animationDelay: "0.2s" }}>
               <div className="bg-background border rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-primary/5">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
@@ -130,16 +132,19 @@ export function DentalLanding() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Para cuántas personas?</label>
-                    <select
-                      value={form.personas}
-                      onChange={e => setForm(p => ({ ...p, personas: e.target.value }))}
-                      className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none"
-                    >
-                      <option>Solo yo</option>
-                      <option>Pareja</option>
-                      <option>Familia con hijos</option>
-                      <option>Más de 4 personas</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={form.personas}
+                        onChange={e => setForm(p => ({ ...p, personas: e.target.value }))}
+                        className="w-full h-14 px-6 pr-12 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none"
+                      >
+                        <option>Solo yo</option>
+                        <option>Pareja</option>
+                        <option>Familia con hijos</option>
+                        <option>Más de 4 personas</option>
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">Comentario (opcional)</label>
@@ -166,6 +171,9 @@ export function DentalLanding() {
                   )}
                   <p className="text-center text-sm text-muted-foreground opacity-70">
                     Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
+                  </p>
+                  <p className="text-center text-xs text-muted-foreground/60">
+                    🔒 Consulta sin compromiso. Si decides no contratar, no te llamamos más.
                   </p>
                 </form>
               </div>
@@ -318,6 +326,7 @@ export function DentalLanding() {
                   <div>
                     <h3 className="text-2xl font-bold mb-2">Paso 3 — ✅ Empiezas protegido</h3>
                     <p className="text-muted-foreground text-lg">Confirmación inmediata. Tu seguro activo en 24-48 horas.</p>
+                    <p className="text-sm text-emerald-600 mt-2 font-medium">💬 Recibirás un mensaje personalizado de Rosa o Sebastián — no un email automático</p>
                   </div>
                 </div>
               </div>
@@ -343,7 +352,7 @@ export function DentalLanding() {
       </section>
 
       {/* 👨‍💼 SECCIÓN ASESORES */}
-      <section className="py-24 bg-primary text-primary-foreground overflow-hidden">
+      <section className="py-24 bg-slate-900 text-white overflow-hidden">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             {/* Foto limpia — sin marco oval */}
@@ -358,10 +367,14 @@ export function DentalLanding() {
             {/* Texto */}
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
-              <p className="text-xl md:text-2xl opacity-90 mb-12 leading-relaxed italic font-light">
+              <p className="text-xl md:text-2xl opacity-90 mb-6 leading-relaxed italic font-light">
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
                 Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
               </p>
+              <div className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8">
+                <BadgeCheck className="h-5 w-5" />
+                <span>Agentes de seguros colegiados en Madrid — Consulta pública del Colegio de Mediadores</span>
+              </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a
                   href="https://wa.me/34603448765"
