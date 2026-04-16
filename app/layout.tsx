@@ -61,6 +61,9 @@ export const metadata: Metadata = {
     description: site.description,
     images: ['/og-image.webp'],
   },
+  other: {
+    'facebook-domain-verification': 's7ts2da9rfedyxqu70u6zm5hbkhsj2',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
