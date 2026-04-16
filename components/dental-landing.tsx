@@ -1,441 +1,416 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { 
-  MessageCircle, 
-  Phone, 
-  ShieldCheck, 
+  Check, 
   Clock, 
+  ShieldCheck, 
   Users, 
-  CircleCheck, 
-  ArrowRight, 
-  Sparkles, 
-  HeartHandshake,
-  ChevronDown,
-  Percent,
-  CalendarCheck
-} from 'lucide-react';
-import { BlurText } from './ui/blur-text';
-import { ParticlesBg } from './ui/particles-bg';
-import { FadeSection } from './ui/fade-section';
-import { ClickSpark } from './ui/click-spark';
-import CountUp from './ui/count-up';
+  FileText, 
+  Award, 
+  MessageCircle, 
+  Phone,
+  ArrowRight,
+  Heart,
+  Stethoscope,
+  Smile,
+  Zap,
+  HelpCircle
+} from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/34603448765?text=Hola%2C%20me%20interesa%20el%20seguro%20dental.%20%C2%BFPodemos%20hablar%3F";
-const PHONE_NUMBER = "603 448 765";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import RetroGrid from "@/components/magicui/retro-grid";
+import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export function DentalLanding() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "¿Realmente no hay carencias para limpiezas?",
-      a: "Correcto. Desde el minuto uno en que tu póliza está activa, puedes solicitar tu primera limpieza y revisión. Sin esperas de 3 o 6 meses como en otras compañías."
-    },
-    {
-      q: "¿Qué hospitales o clínicas puedo usar en Madrid?",
-      a: "Trabajamos con una red de clínicas dentales de primer nivel en toda la Comunidad de Madrid. Al contactar con nosotros, te facilitaremos el cuadro médico más cercano a tu domicilio o lugar de trabajo."
-    },
-    {
-      q: "¿Cómo funciona el mantenimiento de la antigüedad?",
-      a: "Si ya tienes un seguro dental, nosotros respetamos el tiempo que lleves en él. Esto te permite acceder a tratamientos complejos (como endodoncias o implantes) mucho antes que si empezaras de cero."
-    },
-    {
-      q: "¿Qué pasa si necesito una urgencia un fin de semana?",
-      a: "Nuestras pólizas incluyen un servicio de urgencias 24h. Solo tienes que llamar al número de asistencia que te proporcionaremos y te indicarán a qué centro acudir."
-    },
-    {
-      q: "¿Puedo incluir a mis hijos en la póliza?",
-      a: "Por supuesto. De hecho, tenemos modalidades familiares muy ventajosas donde la ortodoncia y los tratamientos preventivos infantiles tienen coberturas especiales."
-    },
-    {
-      q: "¿Cómo se hace el pago?",
-      a: "El pago se domicilia mensualmente en tu cuenta bancaria. Sin cuotas de alta ni gastos de gestión ocultos. Transparencia total."
-    }
-  ];
-
   return (
-    <div className="bg-[#0a0f1e] text-white overflow-x-hidden selection:bg-blue-500/30">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
-        <ParticlesBg count={60} color="59, 130, 246" />
-        <div className="container-shell relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeSection direction="none">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/5 mb-8 dental-badge-glow">
-                <Sparkles className="w-4 h-4 text-blue-400" />
-                <span className="text-sm font-semibold tracking-wide text-blue-400 uppercase">Sin carencias desde el primer día</span>
-              </div>
-            </FadeSection>
-
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-              <BlurText text="Seguro Dental Premium en Madrid" className="block text-white" />
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mt-2">
-                Sin esperas, sin letra pequeña.
-              </span>
-            </h1>
-
-            <FadeSection delay={0.4}>
-              <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Protege tu sonrisa con la confianza de una correduría familiar. Rosa y Sebastián gestionan tu póliza personalmente.
-              </p>
-            </FadeSection>
-
-            <FadeSection delay={0.6} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <ClickSpark>
-                <a 
-                  href={WHATSAPP_LINK}
-                  className="btn-whatsapp !py-4 !px-8 !text-lg !w-full sm:!w-auto flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 rounded-full"
-                >
-                  <MessageCircle className="w-6 h-6" />
-                  Hablar por WhatsApp
-                </a>
-              </ClickSpark>
-              <a 
-                href={`tel:+34${PHONE_NUMBER.replace(/\s/g, '')}`}
-                className="btn-ghost !border-white/10 !bg-white/5 !text-white !py-4 !px-8 !text-lg !w-full sm:!w-auto flex items-center gap-3 hover:!bg-white/10 transition-all rounded-full"
-              >
-                <Phone className="w-5 h-5 text-blue-400" />
-                Llamar a Rosa: {PHONE_NUMBER}
-              </a>
-            </FadeSection>
+    <div className="flex flex-col gap-0 overflow-hidden bg-background">
+      {/* 🚀 HERO SECTION */}
+      <section className="relative flex min-h-[80vh] flex-col items-center justify-center border-b pt-20 pb-16">
+        <RetroGrid className="z-0 opacity-40" />
+        <div className="container relative z-10 flex flex-col items-center text-center">
+          <div className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-6">
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
+            </AnimatedShinyText>
+          </div>
+          
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6">
+            Tu sonrisa protegida desde <br />
+            <span className="text-primary underline decoration-primary/30 decoration-8 underline-offset-8">el primer día.</span> Sin esperas.
+          </h1>
+          
+          <p className="max-w-[800px] text-lg text-muted-foreground sm:text-xl mb-10 leading-relaxed">
+            Seguro dental en Madrid sin períodos de carencia para revisiones y limpiezas. 
+            Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
+            <Link href="#contacto" className={cn(buttonVariants({ size: "lg" }), "h-14 px-8 text-lg font-semibold group")}>
+              Quiero mi presupuesto gratis
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <a 
+              href="https://wa.me/34603448765" 
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold border-emerald-500 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950/20")}
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              💬 Hablar por WhatsApp ahora
+            </a>
           </div>
         </div>
-
-        {/* Hero bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0f1e] to-transparent" />
+        
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Trust Bar */}
-      <section className="py-12 border-y border-white/5 bg-white/[0.02]">
-        <div className="container-shell">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <FadeSection direction="up" delay={0.1}>
-              <div className="flex flex-col gap-1">
-                <span className="text-4xl font-bold text-white">
-                  <CountUp to={355} duration={2} />
-                </span>
-                <span className="text-slate-500 font-medium uppercase tracking-wider text-xs">Familias protegidas</span>
-              </div>
-            </FadeSection>
-            <FadeSection direction="up" delay={0.2}>
-              <div className="flex flex-col gap-1">
-                <span className="text-4xl font-bold text-white">
-                  <CountUp to={11} duration={1.5} suffix=" Años" />
-                </span>
-                <span className="text-slate-500 font-medium uppercase tracking-wider text-xs">En el sector</span>
-              </div>
-            </FadeSection>
-            <FadeSection direction="up" delay={0.3}>
-              <div className="flex flex-col gap-1">
-                <span className="text-4xl font-bold text-white">
-                  &lt; <CountUp to={30} duration={1} /> min
-                </span>
-                <span className="text-slate-500 font-medium uppercase tracking-wider text-xs">Tiempo de respuesta</span>
-              </div>
-            </FadeSection>
+      {/* 🦷 SECCIÓN BENEFICIOS */}
+      <section className="py-24 bg-accent/30">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">¿Por qué elegirnos?</h2>
+            <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>
+
+          <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 w-fit dark:bg-blue-900/30">
+                <ShieldCheck className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Sin carencias en lo esencial</h3>
+              <p className="text-muted-foreground">Revisiones y limpiezas desde el primer día, sin esperar meses.</p>
+            </MagicCard>
+
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600 w-fit dark:bg-emerald-900/30">
+                <Clock className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Respuesta en 30 minutos</h3>
+              <p className="text-muted-foreground">Te llama Rosa o Sebastián personalmente. No un call center.</p>
+            </MagicCard>
+
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-amber-100 text-amber-600 w-fit dark:bg-amber-900/30">
+                <Award className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Desde 8€/mes por persona</h3>
+              <p className="text-muted-foreground">Protección dental real que no notarás en tu bolsillo.</p>
+            </MagicCard>
+
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 w-fit dark:bg-indigo-900/30">
+                <Users className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Toda la familia en una póliza</h3>
+              <p className="text-muted-foreground">Cuantos más miembros, mejor precio por persona.</p>
+            </MagicCard>
+
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-slate-100 text-slate-600 w-fit dark:bg-slate-900/30">
+                <FileText className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Sin letra pequeña</h3>
+              <p className="text-muted-foreground">Te explicamos exactamente qué cubre y qué no. Antes de firmar nada.</p>
+            </MagicCard>
+
+            <MagicCard className="flex flex-col gap-4">
+              <div className="p-3 rounded-xl bg-red-100 text-red-600 w-fit dark:bg-red-900/30">
+                <Award className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold">Más de 10 años de experiencia</h3>
+              <p className="text-muted-foreground">Conocemos el sector por dentro para darte siempre la mejor opción.</p>
+            </MagicCard>
+          </MagicContainer>
         </div>
       </section>
 
-      {/* Así de fácil Section */}
-      <section className="section-pad relative">
-        <div className="container-shell">
-          <FadeSection className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Tu póliza activa en 3 pasos</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">Olvídate de formularios infinitos y esperas tediosas. Lo hacemos simple para ti.</p>
-          </FadeSection>
-
-          <div className="grid md:grid-cols-3 gap-12 relative lg:px-12">
-            {/* Connecting line for desktop */}
-            <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+      {/* 📊 SECCIÓN COBERTURAS */}
+      <section className="py-24">
+        <div className="container grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
+            <Image 
+              src="/images/dental/dental-clinic.jpg" 
+              alt="Clínica dental en Madrid" 
+              fill 
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Lo que tienes disponible desde el primer día</h2>
+            <p className="text-lg text-muted-foreground mb-8">Sin sorpresas. Sin letras pequeñas. Así de claro.</p>
             
-            <FadeSection direction="up" delay={0.1} className="relative z-10 text-center">
-              <div className="w-20 h-20 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-8 relative group hover:border-blue-500/40 transition-colors">
-                <MessageCircle className="w-8 h-8 text-blue-400" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-sm font-bold">1</div>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Escribes por WhatsApp</h3>
-              <p className="text-slate-400 leading-relaxed">Nos cuentas qué necesitas. Sin bots, Rosa o Sebastián te atenderán directamente.</p>
-            </FadeSection>
-
-            <FadeSection direction="up" delay={0.2} className="relative z-10 text-center">
-              <div className="w-20 h-20 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-8 relative group hover:border-emerald-500/40 transition-colors">
-                <Users className="w-8 h-8 text-emerald-400" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-sm font-bold">2</div>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Recibes respuesta</h3>
-              <p className="text-slate-400 leading-relaxed">En menos de 30 minutos resolvemos tus dudas y te enviamos la mejor opción personalizada.</p>
-            </FadeSection>
-
-            <FadeSection direction="up" delay={0.3} className="relative z-10 text-center">
-              <div className="w-20 h-20 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-8 relative group hover:border-amber-500/40 transition-colors">
-                <ShieldCheck className="w-8 h-8 text-amber-400" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-sm font-bold">3</div>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Póliza activada</h3>
-              <p className="text-slate-400 leading-relaxed">Si decides avanzar, tramitamos todo. Tu protección dental comienza ese mismo día.</p>
-            </FadeSection>
+            <div className="overflow-hidden rounded-2xl border bg-card/50 overflow-x-auto">
+              <table className="w-full text-left">
+                <thead className="bg-muted">
+                  <tr>
+                    <th className="px-6 py-4 font-bold">Servicio</th>
+                    <th className="px-6 py-4 font-bold text-center">Disponibilidad</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { s: "Revisión y diagnóstico", d: "✅ Desde el día 1" },
+                    { s: "Limpieza dental (2/año)", d: "✅ Desde el día 1" },
+                    { s: "Radiografías", d: "✅ Desde el día 1" },
+                    { s: "Empastes y obturaciones", d: "⏱ 1 a 3 meses" },
+                    { s: "Endodoncias", d: "⏱ 3 a 6 meses" },
+                    { s: "Ortodoncia", d: "⏱ A partir de 6 meses" },
+                    { s: "Implantes dentales", d: "⏱ A partir de 12 meses" },
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-muted/50 transition-colors">
+                      <td className="px-6 py-4 font-medium">{row.s}</td>
+                      <td className="px-6 py-4 text-center font-semibold text-primary">{row.d}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground italic">
+              Los períodos de espera exactos dependen del plan elegido. Te lo explicamos todo antes de contratar.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Savings Section */}
-      <section className="section-pad bg-white/[0.02]">
-        <div className="container-shell">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeSection direction="left">
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                El ahorro real de estar <span className="text-blue-400">bien asegurado</span>
-              </h2>
-              <p className="text-lg text-slate-400 mb-8">
-                No es solo tranquilidad, es una inversión inteligente en tu salud y tu bolsillo. Así cambian los costes en Madrid con nosotros.
-              </p>
-              
-              <div className="flex flex-col gap-6">
-                {[
-                  { label: "Revisiones y Limpiezas", without: "Desde 80€", with: "GRATIS", highlight: true },
-                  { label: "Radiografías e Intralinguales", without: "Desde 45€", with: "GRATIS", highlight: true },
-                  { label: "Empastes y Obturaciones", without: "Desde 120€", with: "GRATIS", highlight: true },
-                  { label: "Implante dental completo", without: "2.500€", with: "Desde 550€" },
-                  { label: "Ortodoncia (Ahorro medio)", without: "Tarifa Clínica", with: "-40% Descuento" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group">
-                    <span className="font-semibold">{item.label}</span>
-                    <div className="flex items-center gap-6">
-                      <span className="text-slate-500 line-through text-sm">{item.without}</span>
-                      <span className={`font-bold ${item.highlight ? 'text-emerald-400' : 'text-blue-400'}`}>{item.with}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeSection>
-
-            <FadeSection direction="right" className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden glass-card-premium p-8 flex flex-col justify-center">
-                <div className="bg-blue-500/10 rounded-2xl p-6 mb-8 border border-blue-500/20">
-                  <div className="flex items-center gap-3 mb-4">
-                    <CircleCheck className="text-blue-400 w-6 h-6" />
-                    <span className="text-xl font-bold">Cobertura Total desde el día 1</span>
-                  </div>
-                  <p className="text-slate-400">Disfruta de más de 40 servicios gratuitos incluidos en tu cuota mensual. Sin sorpresas al salir de la clínica.</p>
-                </div>
+      {/* ⚡ SECCIÓN PROCESO */}
+      <section className="py-24 bg-accent/30 border-y">
+        <div className="container">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-12">Contrata tu seguro en 3 minutos. <br/>En serio.</h2>
+              <div className="space-y-12 relative">
+                {/* Connector Line */}
+                <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-border hidden md:block" />
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-1">0€</div>
-                    <div className="text-xs uppercase text-slate-500 tracking-wider">Copago en Básicos</div>
+                <div className="flex gap-8 relative">
+                  <div className="flex-none w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">1</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Paso 1 — 📝 Rellenas el formulario</h3>
+                    <p className="text-muted-foreground text-lg">Solo tu nombre, teléfono y cuántas personas necesitan cobertura.</p>
                   </div>
-                  <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-1">100%</div>
-                    <div className="text-xs uppercase text-slate-500 tracking-wider">Transparencia</div>
+                </div>
+
+                <div className="flex gap-8 relative">
+                  <div className="flex-none w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">2</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Paso 2 — 📞 Te llamamos en 30 minutos</h3>
+                    <p className="text-muted-foreground text-lg">Rosa o Sebastián te explican la mejor opción para ti, sin presión.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-8 relative">
+                  <div className="flex-none w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">3</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Paso 3 — ✅ Empiezas protegido</h3>
+                    <p className="text-muted-foreground text-lg">Confirmación inmediata. Tu seguro activo en 24-48 horas.</p>
                   </div>
                 </div>
               </div>
-              
-              {/* Decorative glows */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 blur-[80px] rounded-full" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-emerald-500/10 blur-[80px] rounded-full" />
-            </FadeSection>
+
+              <div className="mt-16 p-6 rounded-2xl bg-primary text-primary-foreground flex items-center gap-4 shadow-xl">
+                <Zap className="h-10 w-10 text-yellow-400 fill-yellow-400" />
+                <p className="text-lg font-bold">
+                  GARANTÍA DE VELOCIDAD: Si no te contactamos en 30 minutos, te hacemos un descuento especial en tu primera mensualidad. Lo prometemos.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+              <Image 
+                src="/images/dental/agent-consultation.jpg" 
+                alt="Carlos consultando su seguro dental" 
+                fill 
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Equipo Section */}
-      <section className="section-pad">
-        <div className="container-shell">
-          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
-            <FadeSection direction="left">
-              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-                <Image 
-                  src="/images/equipo/rosa-y-sebastian.jpg" 
-                  alt="Rosa y Sebastián Valentín" 
-                  fill 
-                  className="object-cover"
+      {/* 👨‍💼 SECCIÓN ASESORES */}
+      <section className="py-24 bg-primary text-primary-foreground">
+        <div className="container max-w-5xl text-center">
+          <div className="mb-10 inline-block p-4 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-white">
+            <Image 
+              src="/images/rosa_y_sebastian.jpeg" 
+              alt="Rosa y Sebastián Valentín" 
+              width={250} 
+              height={250} 
+              className="rounded-full object-cover grayscale-0 hover:grayscale transition-all duration-500"
+            />
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
+          <p className="text-xl md:text-2xl opacity-90 mb-12 leading-relaxed max-w-3xl mx-auto italic font-light">
+            "Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. 
+            Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti."
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a 
+              href="https://wa.me/34603448765" 
+              className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white border-0")}
+            >
+              <MessageCircle className="mr-3 h-6 w-6" />
+              Escríbenos por WhatsApp
+            </a>
+            <div className="text-2xl font-bold">
+              📞 O llámanos directamente: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🎁 SECCIÓN OFERTA CRUZADA */}
+      <section className="py-24">
+        <div className="container">
+          <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <Image 
+                src="/images/dental/family-health.jpg" 
+                alt="Familia feliz con salud completa" 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm tracking-widest uppercase border border-emerald-200">
+                🎁 Clientes dentales: –5% en Salud al ampliar tu cobertura
+              </div>
+              <h2 className="text-3xl font-bold sm:text-5xl mb-6">Los que empiezan con dental, <br/>acaban con más tranquilidad</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                La mayoría de nuestros clientes comienzan con un seguro dental y, en poco tiempo, amplían a salud completa para toda la familia. 
+                Cuando lo hagas, tendrás condiciones especiales por ser ya cliente nuestro. Con la misma gestión personal de Rosa y Sebastián.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🛡️ SECCIÓN GARANTÍA */}
+      <section className="py-24 bg-card border-y">
+        <div className="container max-w-4xl text-center">
+          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+            <ShieldCheck className="h-12 w-12 text-primary" />
+          </div>
+          <h2 className="text-3xl font-bold sm:text-5xl mb-8">Nuestra garantía de transparencia</h2>
+          <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+            Si tras hablar con nosotros sientes que no hemos sido 100% claros, o que algo no era como esperabas, te devolvemos la prima del primer mes. Sin preguntas.
+          </p>
+          <p className="text-lg italic font-medium opacity-70 border-t pt-6">
+            "En más de 10 años nunca hemos tenido que aplicarla. Pero existe, porque la honestidad no es solo una palabra."
+          </p>
+        </div>
+      </section>
+
+      {/* ❓ SECCIÓN FAQ */}
+      <section className="py-24">
+        <div className="container max-w-5xl">
+          <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
+            <div className="lg:sticky lg:top-24">
+              <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
+              <div className="relative aspect-square rounded-3xl overflow-hidden border">
+                <Image src="/images/dental/dental-care.jpg" alt="Cuidado dental profesional" fill className="object-cover" />
+              </div>
+            </div>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "¿Hay períodos de carencia?",
+                  a: "Para revisiones y limpiezas, no. Para tratamientos más complejos como endodoncias o implantes, existe un período que te explicamos antes de contratar. Sin letra pequeña, siempre."
+                },
+                {
+                  q: "¿Puedo incluir a toda mi familia?",
+                  a: "Sí. Gestionamos una póliza familiar donde cada miembro tiene su cobertura. Cuantos más miembros, mejor precio por persona."
+                },
+                {
+                  q: "¿Qué pasa si ya tengo un seguro dental?",
+                  a: "Lo revisamos gratis. Si el tuyo te conviene, te lo decimos. Si podemos mejorar tus condiciones, también te lo decimos."
+                },
+                {
+                  q: "¿Cuánto tarda en activarse?",
+                  a: "Una vez firmada la documentación, tu seguro se activa en 24-48 horas laborables."
+                },
+                {
+                  q: "¿Puedo cancelar cuando quiera?",
+                  a: "Sí, con el preaviso indicado en tu póliza (habitualmente 30 días). Sin penalizaciones ocultas de ningún tipo."
+                }
+              ].map((faq, i) => (
+                <div key={i} className="p-8 rounded-2xl bg-accent/20 border hover:bg-accent/40 transition-colors">
+                  <h3 className="text-xl font-bold mb-4 flex gap-3 items-start">
+                    <HelpCircle className="h-6 w-6 text-primary flex-none mt-1" />
+                    {faq.q}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed pl-9">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 📝 FORMULARIO DE CONTACTO */}
+      <section id="contacto" className="py-24 bg-muted/40 border-t">
+        <div className="container max-w-3xl">
+          <div className="bg-background border rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-primary/5">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Recibe tu presupuesto <br/>en menos de 30 minutos</h2>
+              <p className="text-lg text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
+            </div>
+            
+            <form className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold uppercase tracking-widest opacity-70">Nombre completo</label>
+                <input 
+                  type="text" 
+                  placeholder="Ej: Carlos García" 
+                  className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
+                  required
                 />
               </div>
-            </FadeSection>
-            
-            <FadeSection direction="right">
-              <div className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest uppercase text-xs mb-6">
-                <Users className="w-4 h-4" />
-                Correduría Familiar
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                Hay personas reales <span className="text-emerald-400">detrás de tu póliza.</span>
-              </h2>
-              <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
-                <p>
-                  Somos Rosa y Sebastián Valentín. Madre e hijo trabajando codo con codo desde Boadilla del Monte para proteger a familias de todo Madrid.
-                </p>
-                <p>
-                  No somos un call center frío ni un algoritmo. Cuando nos escribes, recibimos nosotros el mensaje. Cuando tienes un problema en la clínica, somos nosotros quienes peleamos por ti ante la aseguradora.
-                </p>
-                <p className="text-white font-medium italic border-l-2 border-emerald-500/50 pl-6 italic">
-                  "Llevamos 11 años gestionando seguros como si fueran para nuestra propia familia. Si algo no es bueno para nosotros, no lo será para ti."
-                </p>
-              </div>
-              <div className="mt-12 flex flex-wrap gap-8 items-center">
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-xl uppercase tracking-tighter">Rosa Valentín</span>
-                  <span className="text-slate-500 text-sm">Directora Técnica</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-xl uppercase tracking-tighter">Sebastián Valentín</span>
-                  <span className="text-slate-500 text-sm">Asesor de Seguros</span>
-                </div>
-              </div>
-            </FadeSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Garantías Section */}
-      <section className="section-pad relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-500/[0.02]" />
-        <div className="container-shell relative z-10">
-          <FadeSection className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Nuestras garantías agresivas</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">Porque estamos tan seguros de nuestro servicio que podemos permitirnos ser claros.</p>
-          </FadeSection>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                icon: Clock, 
-                title: "Respuesta en <30 min", 
-                desc: "Garantizado por contrato. Si nos escribes en horario laboral, te respondemos en menos de media hora." 
-              },
-              { 
-                icon: ShieldCheck, 
-                title: "14 días de prueba", 
-                desc: "Si en las primeras dos semanas no estás satisfecho, te ayudamos a cancelar sin coste adicional." 
-              },
-              { 
-                icon: CalendarCheck, 
-                title: "Respetamos Antigüedad", 
-                desc: "Vengas de donde vengas, mantenemos tu antigüedad para que no pierdas tus derechos adquiridos." 
-              },
-              { 
-                icon: CircleCheck, 
-                title: "Sin Carencias de Bienvenida", 
-                desc: "Revisiones, limpiezas y curas de urgencia desde el primer minuto. Sin periodos de espera." 
-              }
-            ].map((item, i) => (
-              <FadeSection key={i} direction="up" delay={i * 0.1} className="guarantee-card h-full p-8 rounded-[2rem] bg-white/[0.03] border border-white/5 hover:border-blue-500/30 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-              </FadeSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Oferta Sorpresa Section */}
-      <section className="section-pad">
-        <div className="container-shell">
-          <FadeSection direction="up">
-            <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 p-8 md:p-16 text-center text-white">
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                <HeartHandshake className="w-64 h-64" />
-              </div>
               
-              <div className="relative z-10 max-w-3xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 text-white font-bold text-xs tracking-widest uppercase mb-8">
-                  <Percent className="w-3 h-3" /> Oferta Exclusiva Madrid
-                </div>
-                <h2 className="text-4xl md:text-6xl font-bold mb-8">¿Planeas cuidar tu salud al completo?</h2>
-                <p className="text-xl md:text-2xl text-blue-50/80 mb-12 leading-relaxed">
-                  Si contratas tu seguro dental hoy y decides ampliar a **Salud Completa** en los próximos 30 días, te aplicamos condiciones de **cliente antiguo** desde el primer minuto.
-                </p>
-                <a 
-                  href={WHATSAPP_LINK}
-                  className="inline-flex items-center gap-3 bg-white text-blue-600 font-bold py-5 px-10 rounded-full text-xl hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
-                >
-                  Me interesa esta oferta
-                  <ArrowRight className="w-6 h-6" />
-                </a>
+              <div className="space-y-2">
+                <label className="text-sm font-bold uppercase tracking-widest opacity-70">Teléfono</label>
+                <input 
+                  type="tel" 
+                  placeholder="Ej: 600 000 000" 
+                  className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
+                  required
+                />
               </div>
-            </div>
-          </FadeSection>
-        </div>
-      </section>
 
-      {/* FAQs Section */}
-      <section className="section-pad">
-        <div className="container-shell max-w-4xl">
-          <FadeSection className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Dudas que podrías tener</h2>
-            <p className="text-slate-400 text-lg">Hablamos claro para que decidas con tranquilidad.</p>
-          </FadeSection>
+              <div className="space-y-2">
+                <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Para cuántas personas?</label>
+                <select className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none">
+                  <option>Solo yo</option>
+                  <option>Pareja</option>
+                  <option>Familia con hijos</option>
+                  <option>Más de 4 personas</option>
+                </select>
+              </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <FadeSection key={i} direction="up" delay={i * 0.05}>
-                <button 
-                  onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                  className="w-full p-6 text-left rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all flex items-center justify-between group"
-                >
-                  <span className="text-lg font-semibold">{faq.q}</span>
-                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform ${activeFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                <div className={`overflow-hidden transition-all duration-300 ${activeFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="p-6 text-slate-400 leading-relaxed bg-white/[0.01] rounded-b-2xl -mt-2">
-                    {faq.a}
-                  </div>
-                </div>
-              </FadeSection>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div className="space-y-2">
+                <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Algún comentario? (opcional)</label>
+                <textarea 
+                  placeholder="Cuéntanos brevemente qué buscas..." 
+                  className="w-full h-32 p-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                />
+              </div>
 
-      {/* Final CTA Section */}
-      <section className="section-pad pb-32">
-        <div className="container-shell">
-          <FadeSection direction="up" className="text-center bg-gradient-to-b from-white/[0.03] to-transparent p-12 md:p-24 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">¿Empezamos hoy mismo?</h2>
-              <p className="text-xl text-slate-400 mb-12 max-w-xl mx-auto">
-                No dejes que una molestia dental se convierta en un problema grave. Rosa y Sebastián están al otro lado para ayudarte.
+              <button 
+                type="submit" 
+                className={cn(buttonVariants({ size: "lg" }), "w-full h-16 text-xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform")}
+              >
+                Enviar y esperar mi llamada 🚀
+              </button>
+              
+              <p className="text-center text-sm text-muted-foreground opacity-70">
+                Tus datos solo se usan para contactarte. Nunca los compartimos con terceros.
               </p>
-              
-              <div className="flex flex-col items-center gap-8">
-                <ClickSpark>
-                  <a 
-                    href={WHATSAPP_LINK}
-                    className="btn-whatsapp !py-6 !px-12 !text-2xl flex items-center gap-4 bg-[#25D366] hover:bg-[#128C7E] transition-all rounded-full shadow-[0_20px_40px_rgba(37,211,102,0.3)]"
-                  >
-                    <MessageCircle className="w-8 h-8" />
-                    WhatsApp Directo
-                  </a>
-                </ClickSpark>
-                <div className="flex flex-col gap-2">
-                  <span className="text-slate-500 uppercase tracking-widest text-sm font-bold">O llámanos directamente</span>
-                  <a href={`tel:+34${PHONE_NUMBER.replace(/\s/g, '')}`} className="text-3xl font-bold hover:text-blue-400 transition-colors">
-                    {PHONE_NUMBER}
-                  </a>
-                </div>
-                <div className="mt-12 pt-12 border-t border-white/5 w-full flex flex-col items-center gap-4">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0a0f1e] bg-slate-800 flex items-center justify-center overflow-hidden">
-                         <span className="text-[10px] text-slate-400">★</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-slate-500 text-sm">Rosa y Sebastián Valentín · Correduría de Seguros en Madrid</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Background element */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-          </FadeSection>
+            </form>
+          </div>
         </div>
       </section>
     </div>

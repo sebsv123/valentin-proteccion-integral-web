@@ -339,3 +339,23 @@ img { max-width: 100%; height: auto; }
   50%       { border-color: rgba(255,255,255,0.18); }
 }
 .guarantee-card { animation: border-glow 4s ease-in-out infinite; }
+
+/* ── Retro/MagicUI Theme Extensions (Tailwind v4 style) ──────────────── */
+@theme {
+  --animate-grid: grid 15s linear infinite;
+  --animate-shimmer: shimmer 8s infinite;
+
+  @keyframes grid {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%, 90%, 100% { background-position: calc(-100% - var(--shimmer-width)) 0; }
+    30%, 60% { background-position: calc(100% + var(--shimmer-width)) 0; }
+  }
+}
+
+.font-pixel {
+  font-family: var(--font-pixel), "Courier New", Courier, monospace;
+  letter-spacing: 0.05em;
+}
