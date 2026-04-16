@@ -368,3 +368,14 @@ img { max-width: 100%; height: auto; }
     transform: perspective(1000px) rotateY(8deg) rotateX(-4deg) translateY(-22px) scale(1.03);
   }
 }
+
+/* Cursor simple y profesional */
+body {
+  cursor: default;
+}
+a, button, [role="button"], input, select, textarea, label {
+  cursor: pointer;
+}
+input[type="text"], input[type="tel"], textarea {
+  cursor: text;
+}

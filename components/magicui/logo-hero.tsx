@@ -15,7 +15,7 @@ export default function LogoHero({ className }: { className?: string }) {
         }}
       >
         <Image
-          src="/brand/logo-valentin.jpg"
+          src="/brand/logo-brand.png"
           alt="Valentín Protección Integral"
           fill
           className="object-contain rounded-2xl"
