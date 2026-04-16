@@ -173,7 +173,7 @@ export function DentalLanding() {
 
       {/* 🦷 SECCIÓN BENEFICIOS */}
       <section className="py-24 bg-accent/30">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">¿Por qué elegirnos?</h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
