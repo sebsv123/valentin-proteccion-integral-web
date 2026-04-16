@@ -376,7 +376,7 @@ export function ExtranjeroLanding() {
             <p className="text-blue-400 font-semibold uppercase tracking-widest text-sm mb-3">
               La realidad que nadie te cuenta
             </p>
-            <h2 className="text-2xl sm:text-3xl sm:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">
               Son las 2 de la madrugada en Tokio.<br className="hidden sm:block" />
               <span className="text-blue-400">¿A quién llamas?</span>
             </h2>
