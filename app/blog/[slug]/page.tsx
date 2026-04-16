@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Script from 'next/script';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -30,6 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.metaTitle,
       description: post.metaDescription,
       type: 'article',
+      siteName: 'Valentín Protección Integral',
+      locale: 'es_ES',
       images: [{ url: `${site.domain}${post.image}`, alt: post.imageAlt }],
       publishedTime: post.date,
     },
@@ -52,11 +53,13 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           { name: post.title, url: `/blog/${post.slug}` }
         ]} 
       />
-      <ArticleSchema 
+      <ArticleSchema
         title={post.title}
         description={post.metaDescription}
         datePublished={post.date}
         dateModified={post.dateModified}
+        imageUrl={`https://valentinproteccionintegral.com${post.image}`}
+        articleUrl={`https://valentinproteccionintegral.com/blog/${post.slug}`}
       />
       {post.faqs && <SchemaFAQ faqs={post.faqs} />}
       <Header />

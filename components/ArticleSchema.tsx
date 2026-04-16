@@ -1,9 +1,18 @@
 // components/ArticleSchema.tsx
-export default function ArticleSchema({ title, datePublished, dateModified, description }: {
+export default function ArticleSchema({
+  title,
+  datePublished,
+  dateModified,
+  description,
+  imageUrl,
+  articleUrl,
+}: {
   title: string;
   datePublished: string;
   dateModified?: string;
   description: string;
+  imageUrl?: string;
+  articleUrl?: string;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -15,7 +24,7 @@ export default function ArticleSchema({ title, datePublished, dateModified, desc
     "author": {
       "@type": "Person",
       "name": "Rosa Valentín",
-      "url": "https://valentinproteccionintegral.com/sobre-mi"
+      "url": "https://valentinproteccionintegral.com/sobre-nosotros"
     },
     "publisher": {
       "@type": "Organization",
@@ -26,9 +35,15 @@ export default function ArticleSchema({ title, datePublished, dateModified, desc
         "url": "https://valentinproteccionintegral.com/brand/logo-vpi.jpeg"
       }
     },
+    ...(imageUrl ? {
+      "image": {
+        "@type": "ImageObject",
+        "url": imageUrl
+      }
+    } : {}),
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://valentinproteccionintegral.com/blog"
+      "@id": articleUrl || "https://valentinproteccionintegral.com/blog"
     }
   }
   return (
