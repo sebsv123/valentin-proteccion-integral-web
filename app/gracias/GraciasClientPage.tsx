@@ -2,7 +2,6 @@
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
   }
 }
@@ -16,15 +15,6 @@ import { CheckCircle } from 'lucide-react';
 
 export default function GraciasClientPage() {
   useEffect(() => {
-    // GA4 Conversion event
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-XXXXXXXXX/YYYYY',
-        value: 1.0,
-        currency: 'EUR',
-      });
-    }
-
     // Meta Pixel Lead event
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead');
