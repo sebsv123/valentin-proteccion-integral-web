@@ -5,7 +5,7 @@ export default function SchemaPersons() {
     "name": "Rosa Valentín",
     "jobTitle": "Mediadora de Seguros Independiente",
     "description": "Mediadora de seguros colegiada e independiente con más de 10 años de experiencia en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Asesora a más de 1.200 familias con claridad y sin presión comercial.",
-    "url": "https://valentinproteccionintegral.com/sobre-mi",
+    "url": "https://valentinproteccionintegral.com/sobre-nosotros",
     "image": "https://valentinproteccionintegral.com/og-image.webp",
     "telephone": "+34 603 448 765",
     "email": "contacto@valentinproteccionintegral.com",

@@ -60,6 +60,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { url: `${base}/zonas`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
 
+    // Gracias — no indexar
+    { url: `${base}/gracias`, lastModified: new Date(), changeFrequency: 'never' as const, priority: 0.0 },
+
     // Landing de Accidentes + Decesos
     { url: `${base}/seguros/accidentes-decesos`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ];

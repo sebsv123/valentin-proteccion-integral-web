@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Buscas el mejor seguro médico calidad-precio en 2026? Comparamos las principales opciones del mercado para familias, autónomos y particulares. Guía honesta.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'La guía que los comparadores no pueden darte',
@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Antes de elegir seguro, lee esto. Desvelamos la verdad sobre las reseñas de Google, rankings de la OCU y los límites de los comparadores online.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'La verdad que comparadores y rankings no suelen contarte',
@@ -217,7 +217,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Quieres incluir a tu pareja, hijos o padres en tu póliza médica? Te explicamos los requisitos, plazos, cambios en el precio y cómo gestionar las bajas.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber para gestionar tu seguro familiar',
@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Tu bebé está cubierto desde que nace? Resolvemos todas las dudas: plazos para el alta, cobertura UCI neonatal y alta sin cuestionario médico.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes (y después) de que nazca tu bebé',
@@ -398,7 +398,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿No sabes qué cubre tu seguro? Te enseñamos a encontrar tu póliza, entender la letra pequeña y localizar coberturas duplicadas o seguros antiguos.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Entender lo que tienes contratado',
@@ -482,7 +482,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Gastos médicos, repatriación, pérdida de maletas y más. Todo lo que necesitas saber sobre el seguro de viaje antes de salir de España en 2026.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes de salir',
@@ -579,7 +579,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Entiende por fin el seguro de vida riesgo. Qué cubre, qué NO cubre, cuánto cuesta según tu edad y por qué es vital para proteger a tu familia.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Lo que cubre, lo que no cubre y cuándo contratarlo',
@@ -674,7 +674,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Temporal, ahorro, vida entera, hipotecario... Analizamos todos los tipos de seguro de vida para que elijas el que realmente necesitas hoy.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes de contratar',
@@ -770,7 +770,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Contratar directo o con mediador? Te contamos las ventajas reales de contar con un asesor experto que te defienda ante la aseguradora en 2026.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Lo que nadie te explica al contratar un seguro',
@@ -862,7 +862,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Antes de contratar un seguro médico privado en Madrid, lee esto. Sin marcas, sin presión. Te explicamos qué mirar, cuánto cuesta y cómo elegir bien según tu situación.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 23,
+    reviewCount: 47,
     sections: [
       {
         heading: 'Guía sin marcas ni presiones para elegir en Madrid',

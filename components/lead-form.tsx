@@ -1,6 +1,13 @@
 "use client";
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -19,6 +26,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaultProduct?: string; compact?: boolean }) {
+  const router = useRouter();
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -58,8 +66,8 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
 
       if (!response.ok) throw new Error('No hemos podido enviar tu solicitud. Escríbenos por WhatsApp y lo resolvemos contigo.');
 
-      setServerMessage('Gracias. Hemos recibido tu solicitud y te responderemos con una orientación inicial lo antes posible.');
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
+      router.push('/gracias');
     } catch (error) {
       setServerError(error instanceof Error ? error.message : 'Ha ocurrido un error inesperado.');
     }
@@ -79,7 +87,18 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
       </div>
 
       <div className="mb-6 rounded-[24px] bg-[var(--bg)] p-4 text-sm leading-7 text-[var(--muted)] md:text-base">
-        Si prefieres ir más rápido, también puedes escribirnos por <a className="font-semibold text-[var(--blue)] underline underline-offset-4" href={buildWhatsAppHref(`Hola, quiero una orientación clara sobre el seguro de ${defaultProduct}.`)}>WhatsApp</a>.
+        Si prefieres ir más rápido, también puedes escribirnos por{' '}
+        <a
+          className="font-semibold text-[var(--blue)] underline underline-offset-4"
+          href={buildWhatsAppHref(`Hola, quiero una orientación clara sobre el seguro de ${defaultProduct}.`)}
+          onClick={() => {
+            if (typeof window !== 'undefined' && window.fbq) {
+              window.fbq('track', 'Contact', { content_name: 'WhatsApp CTA' });
+            }
+          }}
+        >
+          WhatsApp
+        </a>.
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4" noValidate>
@@ -133,7 +152,15 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
             {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             Solicitar orientación
           </button>
-          <a href={buildWhatsAppHref(`Hola, quiero una orientación clara sobre el seguro de ${defaultProduct}.`)} className="btn-whatsapp w-full sm:w-auto">
+          <a
+            href={buildWhatsAppHref(`Hola, quiero una orientación clara sobre el seguro de ${defaultProduct}.`)}
+            className="btn-whatsapp w-full sm:w-auto"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.fbq) {
+                window.fbq('track', 'Contact', { content_name: 'WhatsApp CTA' });
+              }
+            }}
+          >
             <MessageCircle className="h-4 w-4" /> Hablar por WhatsApp
           </a>
         </div>
