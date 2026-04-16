@@ -10,7 +10,7 @@ export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "name": site.name,
-    "description": "Mediadora de seguros independiente en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
+    "description": "Asesores de seguros independientes en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
     "url": "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",
@@ -50,7 +50,7 @@ export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "reviewCount": "31"
+      "reviewCount": "47"
     },
     "sameAs": [
       "https://www.instagram.com/segurosrosavalentin/",
