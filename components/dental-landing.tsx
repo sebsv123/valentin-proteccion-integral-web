@@ -49,9 +49,9 @@ export function DentalLanding() {
   };
 
   return (
-    <div className="flex flex-col gap-0 overflow-hidden bg-background">
+    <>
       {/* 🦷 BARRA STICKY */}
-      <div className="sticky top-0 z-50 w-full bg-blue-700 text-white py-3 px-4 shadow-md">
+      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-blue-700 text-white py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
           <p className="text-sm sm:text-base font-semibold leading-snug">
             🦷 <span className="font-bold">Sin carencias en revisiones y limpiezas desde el primer día.</span>{" "}
@@ -69,7 +69,7 @@ export function DentalLanding() {
       </div>
 
       {/* 🚀 HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
+      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
         {/* Globe — fondo mitad izquierda, solo desktop */}
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
@@ -525,6 +525,6 @@ export function DentalLanding() {
         </div>
       </section>
 
-    </div>
+    </>
   );
 }
