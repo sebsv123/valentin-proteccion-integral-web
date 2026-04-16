@@ -8,7 +8,7 @@ import {
   ShieldCheck, 
   Clock, 
   Users, 
-  CheckCircle2, 
+  CircleCheck, 
   ArrowRight, 
   Sparkles, 
   HeartHandshake,
@@ -216,7 +216,7 @@ export function DentalLanding() {
               <div className="aspect-square rounded-3xl overflow-hidden glass-card-premium p-8 flex flex-col justify-center">
                 <div className="bg-blue-500/10 rounded-2xl p-6 mb-8 border border-blue-500/20">
                   <div className="flex items-center gap-3 mb-4">
-                    <CheckCircle2 className="text-blue-400 w-6 h-6" />
+                    <CircleCheck className="text-blue-400 w-6 h-6" />
                     <span className="text-xl font-bold">Cobertura Total desde el día 1</span>
                   </div>
                   <p className="text-slate-400">Disfruta de más de 40 servicios gratuitos incluidos en tu cuota mensual. Sin sorpresas al salir de la clínica.</p>
