@@ -116,7 +116,7 @@ export function ExtranjeroLanding() {
         <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
 
           {/* Texto CORTO en móvil, texto LARGO en desktop */}
-          <p className="text-sm font-medium leading-tight flex-1 truncate">
+          <p className="text-sm font-medium leading-snug flex-1 min-w-0">
             <span className="sm:hidden">
               ✈️ Cobertura médica en 190+ países
             </span>
