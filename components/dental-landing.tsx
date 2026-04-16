@@ -25,7 +25,7 @@ import { buttonVariants } from "@/components/ui/button";
 import RetroGrid from "@/components/magicui/retro-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import Globe from "@/components/magicui/globe";
+import LogoHero from "@/components/magicui/logo-hero";
 
 export function DentalLanding() {
   return (
@@ -33,10 +33,10 @@ export function DentalLanding() {
       {/* 🚀 HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
-        {/* Globe — fondo mitad izquierda, solo desktop */}
+        {/* Logo 3D — fondo mitad izquierda, solo desktop */}
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
-          <Globe className="inset-0" />
-          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+          <LogoHero className="inset-0" />
+          <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
           <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,9 +135,9 @@ export function DentalLanding() {
             </div>
           </div>
 
-          {/* Globe — visible solo en móvil, debajo del formulario */}
-          <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
-            <Globe className="top-0" />
+          {/* Logo 3D — solo móvil, debajo del formulario */}
+          <div className="lg:hidden relative w-full max-w-[420px] aspect-[16/7] mx-auto mt-12">
+            <LogoHero />
           </div>
         </div>
       </section>
@@ -151,48 +151,48 @@ export function DentalLanding() {
           </div>
 
           <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 w-fit dark:bg-blue-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30">
                 <ShieldCheck className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Sin carencias en lo esencial</h3>
               <p className="text-muted-foreground">Revisiones y limpiezas desde el primer día, sin esperar meses.</p>
             </MagicCard>
 
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600 w-fit dark:bg-emerald-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30">
                 <Clock className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Respuesta en 30 minutos</h3>
               <p className="text-muted-foreground">Te llama Rosa o Sebastián personalmente. No un call center.</p>
             </MagicCard>
 
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-amber-100 text-amber-600 w-fit dark:bg-amber-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/30">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Desde 8€/mes por persona</h3>
               <p className="text-muted-foreground">Protección dental real que no notarás en tu bolsillo.</p>
             </MagicCard>
 
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 w-fit dark:bg-indigo-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Toda la familia en una póliza</h3>
               <p className="text-muted-foreground">Cuantos más miembros, mejor precio por persona.</p>
             </MagicCard>
 
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-slate-100 text-slate-600 w-fit dark:bg-slate-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-slate-100 text-slate-600 dark:bg-slate-900/30">
                 <FileText className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Sin letra pequeña</h3>
               <p className="text-muted-foreground">Te explicamos exactamente qué cubre y qué no. Antes de firmar nada.</p>
             </MagicCard>
 
-            <MagicCard className="flex flex-col gap-4">
-              <div className="p-3 rounded-xl bg-red-100 text-red-600 w-fit dark:bg-red-900/30">
+            <MagicCard className="flex flex-col gap-4 items-center text-center">
+              <div className="p-3 rounded-xl bg-red-100 text-red-600 dark:bg-red-900/30">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold">Más de 10 años de experiencia</h3>
@@ -306,32 +306,37 @@ export function DentalLanding() {
       </section>
 
       {/* 👨‍💼 SECCIÓN ASESORES */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container max-w-5xl text-center">
-          <div className="mb-10 inline-block p-4 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-white">
-            <Image 
-              src="/images/rosa_y_sebastian.jpeg" 
-              alt="Rosa y Sebastián Valentín" 
-              width={250} 
-              height={250} 
-              className="rounded-full object-cover grayscale-0 hover:grayscale transition-all duration-500"
-            />
-          </div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
-          <p className="text-xl md:text-2xl opacity-90 mb-12 leading-relaxed max-w-3xl mx-auto italic font-light">
-            "Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. 
-            Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti."
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a 
-              href="https://wa.me/34603448765" 
-              className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white border-0")}
-            >
-              <MessageCircle className="mr-3 h-6 w-6" />
-              Escríbenos por WhatsApp
-            </a>
-            <div className="text-2xl font-bold">
-              📞 O llámanos directamente: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
+      <section className="py-24 bg-primary text-primary-foreground overflow-hidden">
+        <div className="container max-w-6xl">
+          <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
+            {/* Foto limpia — sin marco oval */}
+            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+              <Image
+                src="/images/rosa_y_sebastian.jpeg"
+                alt="Rosa y Sebastián Valentín"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            {/* Texto */}
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
+              <p className="text-xl md:text-2xl opacity-90 mb-12 leading-relaxed italic font-light">
+                &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
+                Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a
+                  href="https://wa.me/34603448765"
+                  className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white border-0")}
+                >
+                  <MessageCircle className="mr-3 h-6 w-6" />
+                  Escríbenos por WhatsApp
+                </a>
+                <div className="text-2xl font-bold">
+                  📞 O llámenos: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -370,11 +375,11 @@ export function DentalLanding() {
             <ShieldCheck className="h-12 w-12 text-primary" />
           </div>
           <h2 className="text-3xl font-bold sm:text-5xl mb-8">Nuestra garantía de transparencia</h2>
-          <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+          <p className="text-xl text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
             Si tras hablar con nosotros sientes que no hemos sido 100% claros, o que algo no era como esperabas, te devolvemos la prima del primer mes. Sin preguntas.
           </p>
-          <p className="text-lg italic font-medium opacity-70 border-t pt-6">
-            "En más de 10 años nunca hemos tenido que aplicarla. Pero existe, porque la honestidad no es solo una palabra."
+          <p className="text-lg italic font-medium opacity-70 border-t pt-6 max-w-2xl mx-auto">
+            &ldquo;En más de 10 años nunca hemos tenido que aplicarla. Pero existe, porque la honestidad no es solo una palabra.&rdquo;
           </p>
         </div>
       </section>

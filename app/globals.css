@@ -359,3 +359,12 @@ img { max-width: 100%; height: auto; }
   font-family: var(--font-pixel), "Courier New", Courier, monospace;
   letter-spacing: 0.05em;
 }
+
+@keyframes logo3d {
+  0%, 100% {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(0px) scale(1);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(8deg) rotateX(-4deg) translateY(-22px) scale(1.03);
+  }
+}
