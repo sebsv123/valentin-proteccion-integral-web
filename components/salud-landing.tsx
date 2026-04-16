@@ -53,7 +53,6 @@ export function SaludLanding() {
     nombre: "",
     telefono: "",
     personas: "Solo yo",
-    comentario: "",
   });
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -61,7 +60,7 @@ export function SaludLanding() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro de salud individual.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}${form.comentario ? `\n💬 ${form.comentario}` : ""}\n\nGracias.`
+      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro de salud individual.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
@@ -239,14 +238,6 @@ export function SaludLanding() {
                     <option>Familia con hijos</option>
                     <option>Más de 4 personas</option>
                   </select>
-                  <textarea
-                    placeholder="Comentario (opcional)"
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-xl border bg-background resize-none"
-                    value={form.comentario}
-                    onChange={(e) => setForm({ ...form, comentario: e.target.value })}
-                  />
-
                   {sent ? (
                     <p className="text-center text-green-600 font-semibold">
                       ✅ Mensaje enviado. Te llamamos en menos de 30 min.
@@ -550,9 +541,27 @@ export function SaludLanding() {
             ))}
           </div>
 
-          <motion.p variants={fadeInUp} className="text-center mt-12 text-white/70">
-            ¿Qué pasa si no cumplimos? Te ayudamos a resolver cualquier problema personalmente. Sin burocracia.
-          </motion.p>
+          <motion.div
+            variants={fadeInUp}
+            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-white/20 
+                       bg-white/5 px-8 py-6 text-center"
+          >
+            <p className="text-lg font-bold text-white mb-2">
+              ¿Y si no cumplimos lo que prometemos?
+            </p>
+            <p className="text-white/70 text-base leading-relaxed">
+              Si no te contactamos en 30 minutos tras tu consulta, 
+              Rosa o Sebastián te ofrecen una{" "}
+              <span className="text-white font-semibold">
+                cita presencial gratuita en nuestra oficina
+              </span>
+              {" "}para explicarte todo en persona.
+              Así de seguros estamos de lo que prometemos.
+            </p>
+            <p className="mt-4 text-sm text-white/40 italic">
+              Nadie en el sector hace esta garantía. Nosotros sí.
+            </p>
+          </motion.div>
         </div>
       </motion.section>
 

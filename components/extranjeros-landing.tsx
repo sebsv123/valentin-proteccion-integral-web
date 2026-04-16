@@ -49,7 +49,6 @@ export function ExtranjeroLanding() {
     nombre: "",
     telefono: "",
     situacion: "Viajo por trabajo frecuentemente",
-    comentario: "",
   });
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -57,7 +56,7 @@ export function ExtranjeroLanding() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y necesito información sobre el seguro de salud para el extranjero.\n\n📞 Teléfono: ${form.telefono}\n✈️ Situación: ${form.situacion}${form.comentario ? `\n💬 ${form.comentario}` : ""}\n\nGracias.`
+      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y necesito información sobre el seguro de salud para el extranjero.\n\n📞 Teléfono: ${form.telefono}\n✈️ Situación: ${form.situacion}\n\nGracias.`
     );
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
@@ -251,15 +250,6 @@ export function ExtranjeroLanding() {
                         <option>Temporadas largas fuera</option>
                         <option>Viaje puntual largo</option>
                       </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-1">Comentario (opcional)</label>
-                      <textarea
-                        value={form.comentario}
-                        onChange={(e) => setForm({ ...form, comentario: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border bg-background h-24 resize-none"
-                        placeholder="¿Algo más que deberíamos saber?"
-                      />
                     </div>
                     <button
                       type="submit"
@@ -559,9 +549,27 @@ export function ExtranjeroLanding() {
             ))}
           </div>
 
-          <motion.p variants={fadeInUp} className="text-center mt-12 text-white/70">
-            ¿Qué pasa si no cumplimos? Te ayudamos a resolver cualquier problema personalmente. Sin burocracia.
-          </motion.p>
+          <motion.div
+            variants={fadeInUp}
+            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-white/20 
+                       bg-white/5 px-8 py-6 text-center"
+          >
+            <p className="text-lg font-bold text-white mb-2">
+              ¿Y si no cumplimos lo que prometemos?
+            </p>
+            <p className="text-white/70 text-base leading-relaxed">
+              Si no te contactamos en 30 minutos tras tu consulta, 
+              Rosa o Sebastián te ofrecen una{" "}
+              <span className="text-white font-semibold">
+                cita presencial gratuita en nuestra oficina
+              </span>
+              {" "}para explicarte todo en persona.
+              Así de seguros estamos de lo que prometemos.
+            </p>
+            <p className="mt-4 text-sm text-white/40 italic">
+              Nadie en el sector hace esta garantía. Nosotros sí.
+            </p>
+          </motion.div>
         </div>
       </motion.section>
 
