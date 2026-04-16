@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Montserrat } from 'next/font/google';
 import Script from 'next/script';
-import { SocialProof } from '@/components/social-proof';
 import { site } from '@/lib/products';
 import './globals.css';
 
@@ -19,7 +18,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
 import SchemaPersons from '@/components/seo/schema-persons';
-import CustomCursor from '@/components/ui/CustomCursor';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -120,8 +118,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WebVitals />
         <Analytics />
         {children}
-        <SocialProof />
-        <CustomCursor />
         {clarityId ? (
           <Script id="clarity" strategy="afterInteractive">{`
             (function(c,l,a,r,i,t,y){
