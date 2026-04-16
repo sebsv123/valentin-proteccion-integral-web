@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -28,6 +28,18 @@ import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import LogoHero from "@/components/magicui/logo-hero";
 
 export function DentalLanding() {
+  const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo", comentario: "" });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const msg = encodeURIComponent(
+      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}${form.comentario ? `\n💬 ${form.comentario}` : ""}\n\nGracias.`
+    );
+    window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
+    setSent(true);
+  };
+
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-background">
       {/* 🚀 HERO SECTION */}
@@ -86,12 +98,14 @@ export function DentalLanding() {
                   <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
                   <p className="text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
                 </div>
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">Nombre completo</label>
                     <input
                       type="text"
-                      placeholder="Ej: Carlos García"
+                      placeholder="Tu nombre completo"
+                      value={form.nombre}
+                      onChange={e => setForm(p => ({ ...p, nombre: e.target.value }))}
                       className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
                       required
                     />
@@ -101,13 +115,19 @@ export function DentalLanding() {
                     <input
                       type="tel"
                       placeholder="Ej: 600 000 000"
+                      value={form.telefono}
+                      onChange={e => setForm(p => ({ ...p, telefono: e.target.value }))}
                       className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Para cuántas personas?</label>
-                    <select className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none">
+                    <select
+                      value={form.personas}
+                      onChange={e => setForm(p => ({ ...p, personas: e.target.value }))}
+                      className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none"
+                    >
                       <option>Solo yo</option>
                       <option>Pareja</option>
                       <option>Familia con hijos</option>
@@ -118,17 +138,26 @@ export function DentalLanding() {
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">Comentario (opcional)</label>
                     <textarea
                       placeholder="Cuéntanos brevemente qué buscas..."
+                      value={form.comentario}
+                      onChange={e => setForm(p => ({ ...p, comentario: e.target.value }))}
                       className="w-full h-28 p-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className={cn(buttonVariants({ size: "lg" }), "w-full h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform")}
-                  >
-                    Enviar y esperar mi llamada 🚀
-                  </button>
+                  {sent ? (
+                    <div className="w-full py-5 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
+                      <p className="text-emerald-700 font-bold text-lg">✅ ¡Perfecto! WhatsApp abierto.</p>
+                      <p className="text-emerald-600 text-sm mt-1">Rosa o Sebastián te responden en menos de 30 minutos.</p>
+                    </div>
+                  ) : (
+                    <button
+                      type="submit"
+                      className={cn(buttonVariants({ size: "lg" }), "w-full h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform")}
+                    >
+                      Enviar por WhatsApp �
+                    </button>
+                  )}
                   <p className="text-center text-sm text-muted-foreground opacity-70">
-                    Tus datos solo se usan para contactarte. Nunca los compartimos con terceros.
+                    Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
                   </p>
                 </form>
               </div>
@@ -204,7 +233,7 @@ export function DentalLanding() {
 
       {/* 📊 SECCIÓN COBERTURAS */}
       <section className="py-24">
-        <div className="container grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image 
               src="https://images.pexels.com/photos/5355863/pexels-photo-5355863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
@@ -213,9 +242,9 @@ export function DentalLanding() {
               className="object-cover"
             />
           </div>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Lo que tienes disponible desde el primer día</h2>
-            <p className="text-lg text-muted-foreground mb-8">Sin sorpresas. Sin letras pequeñas. Así de claro.</p>
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4 text-center">Lo que tienes disponible desde el primer día</h2>
+            <p className="text-lg text-muted-foreground mb-8 text-center">Sin sorpresas. Sin letras pequeñas. Así de claro.</p>
             
             <div className="overflow-hidden rounded-2xl border bg-card/50 overflow-x-auto">
               <table className="w-full text-left">
@@ -252,7 +281,7 @@ export function DentalLanding() {
 
       {/* ⚡ SECCIÓN PROCESO */}
       <section className="py-24 bg-accent/30 border-y">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-12 text-center">Contrata tu seguro en 3 minutos. <br/>En serio.</h2>
@@ -288,7 +317,7 @@ export function DentalLanding() {
               <div className="mt-16 p-6 rounded-2xl bg-primary text-primary-foreground flex items-center gap-4 shadow-xl">
                 <Zap className="h-10 w-10 text-yellow-400 fill-yellow-400" />
                 <p className="text-lg font-bold">
-                  GARANTÍA DE VELOCIDAD: Si no te contactamos en 30 minutos, te hacemos un descuento especial en tu primera mensualidad. Lo prometemos.
+                  GARANTÍA DE VELOCIDAD: Si no te llamamos en 30 minutos, te devolvemos la prima íntegra del primer mes. Sin excepciones. Lo prometemos.
                 </p>
               </div>
             </div>
@@ -344,7 +373,7 @@ export function DentalLanding() {
 
       {/* 🎁 SECCIÓN OFERTA CRUZADA */}
       <section className="py-24">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
               <Image 
@@ -365,6 +394,23 @@ export function DentalLanding() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 💡 BANNER UPGRADE: dental + salud */}
+      <section className="py-10 bg-emerald-50 border-y border-emerald-200">
+        <div className="container mx-auto max-w-4xl text-center px-4">
+          <p className="text-lg md:text-xl font-bold text-emerald-800">
+            💡 ¿Ya tienes seguro de salud? Añade dental desde{" "}
+            <span className="underline decoration-2">8€/mes más por persona</span>. Te lo gestionamos en una sola llamada, sin papeleo.
+          </p>
+          <a
+            href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, ya tengo seguro de salud y quiero añadir dental desde 8€/mes.")}`}
+            className="mt-4 inline-flex items-center gap-2 text-emerald-700 font-semibold hover:opacity-80 transition-opacity underline"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Escríbenos ahora →
+          </a>
         </div>
       </section>
 
