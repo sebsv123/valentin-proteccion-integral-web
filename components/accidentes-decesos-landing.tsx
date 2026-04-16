@@ -783,11 +783,14 @@ export function AccidentesDecesosLanding() {
         className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-amber-700 to-orange-800 text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6">
-            3€ al mes. La tranquilidad no tiene precio.
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">
+            Desde 3€/mes.* La tranquilidad no tiene precio.
           </h2>
-          <p className="text-base sm:text-xl text-white/80 mb-8">
+          <p className="text-base sm:text-xl text-white/80 mb-2">
             Rosa y Sebastián te lo montan en 30 minutos.
+          </p>
+          <p className="text-sm text-white/60 mb-8">
+            *Precio orientativo. Requiere consulta para determinar cobertura según perfil.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -797,7 +800,7 @@ export function AccidentesDecesosLanding() {
                 "h-14 px-8 text-lg font-bold bg-white text-amber-700 hover:bg-amber-50 gap-2"
               )}
             >
-              <MessageCircle className="h-5 w-5" />
+              <WhatsAppLogo className="h-5 w-5" />
               WhatsApp Directo
             </a>
             <a
