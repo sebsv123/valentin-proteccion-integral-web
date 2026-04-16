@@ -186,6 +186,52 @@ export function DentalLanding() {
         </div>
       </section>
 
+      {/* 👨‍💼 SECCIÓN ASESORES */}
+      <section className="py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="container max-w-6xl">
+          <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
+            {/* Foto limpia — sin marco oval */}
+            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+              <Image
+                src="/images/rosa_y_sebastian.jpeg"
+                alt="Rosa y Sebastián Valentín"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            {/* Texto */}
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
+              <p className="text-xl md:text-2xl opacity-90 mb-6 leading-relaxed italic font-light">
+                &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
+                Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
+              </p>
+              <a 
+                href="https://www.coam.es/colegiados/buscador" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8 hover:text-emerald-300 transition-colors underline underline-offset-2"
+              >
+                <BadgeCheck className="h-5 w-5" />
+                <span>Agentes de seguros colegiados en Madrid — Verificar en Colegio Oficial de Mediadores →</span>
+              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a
+                  href="https://wa.me/34603448765"
+                  className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white border-0")}
+                >
+                  <WhatsAppLogo className="mr-3 h-6 w-6" />
+                  Escríbenos por WhatsApp
+                </a>
+                <div className="text-2xl font-bold">
+                  📞 O llámenos: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 🦷 BARRA GARANTÍA DENTAL */}
       <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -369,52 +415,6 @@ export function DentalLanding() {
                 fill 
                 className="object-cover"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 👨‍💼 SECCIÓN ASESORES */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="container max-w-6xl">
-          <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
-            {/* Foto limpia — sin marco oval */}
-            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
-              <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián Valentín"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-            {/* Texto */}
-            <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
-              <p className="text-xl md:text-2xl opacity-90 mb-6 leading-relaxed italic font-light">
-                &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
-                Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
-              </p>
-              <a 
-                href="https://www.coam.es/colegiados/buscador" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8 hover:text-emerald-300 transition-colors underline underline-offset-2"
-              >
-                <BadgeCheck className="h-5 w-5" />
-                <span>Agentes de seguros colegiados en Madrid — Verificar en Colegio Oficial de Mediadores →</span>
-              </a>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a
-                  href="https://wa.me/34603448765"
-                  className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white border-0")}
-                >
-                  <WhatsAppLogo className="mr-3 h-6 w-6" />
-                  Escríbenos por WhatsApp
-                </a>
-                <div className="text-2xl font-bold">
-                  📞 O llámenos: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
