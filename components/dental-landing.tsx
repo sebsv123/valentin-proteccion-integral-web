@@ -154,7 +154,14 @@ export function DentalLanding() {
             </motion.div>
 
             {/* Columna derecha: Formulario */}
-            <div className="w-full animate-fade-in-up" id="contacto" style={{ animationDelay: "0.2s" }}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUpVariants}
+              id="contacto"
+              className="relative"
+            >
               <div className="bg-background border rounded-[2rem] p-5 sm:p-8 md:p-10 shadow-2xl shadow-primary/5">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
@@ -225,27 +232,36 @@ export function DentalLanding() {
                   </p>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
 
         </div>
       </section>
 
       {/* 👨‍💼 SECCIÓN ASESORES */}
-      <section className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
+      >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             {/* Foto limpia — sin marco oval */}
-            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+            <motion.div
+              variants={fadeInUpVariants}
+              className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20"
+            >
               <Image
                 src="/images/rosa_y_sebastian.jpeg"
                 alt="Rosa y Sebastián Valentín"
                 fill
                 className="object-cover object-top"
               />
-            </div>
+            </motion.div>
             {/* Texto */}
-            <div className="text-center">
+            <motion.div variants={fadeInUpVariants} className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
               <p className="text-xl md:text-2xl opacity-90 mb-6 leading-relaxed italic font-light">
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
@@ -272,10 +288,10 @@ export function DentalLanding() {
                   📞 O llámenos: <a href="tel:603448765" className="underline hover:opacity-80 transition-opacity">603 448 765</a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 🦷 SECCIÓN BENEFICIOS */}
       <section className="py-14 sm:py-20 lg:py-24 bg-accent/30">
@@ -356,7 +372,7 @@ export function DentalLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border bg-muted">
             <Image 
-              src="/images/coberturas.jpg" 
+              src="https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
               alt="Clínica dental en Madrid" 
               fill 
               className="object-cover"
