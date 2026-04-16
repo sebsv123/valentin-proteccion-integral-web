@@ -13,6 +13,7 @@ const META_PIXEL_ID = '1307875004562255';
 
 import { BackgroundWrapper } from "@/components/background-wrapper";
 import { WebVitals } from "@/components/web-vitals";
+import { SimpleCursor } from "@/components/ui/simple-cursor";
 import { Analytics } from "@vercel/analytics/react";
 
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
         <BackgroundWrapper />
+        <SimpleCursor />
         <SchemaLocalBusiness />
         <SchemaPersons />
         <WebVitals />

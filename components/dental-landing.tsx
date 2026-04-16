@@ -45,11 +45,9 @@ export function DentalLanding() {
       {/* 🚀 HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
-        {/* Logo 3D — fondo mitad izquierda, solo desktop */}
-        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
-          <LogoHero className="inset-0" />
-          <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
+        {/* Logo 3D — esquina superior derecha, solo desktop */}
+        <div className="absolute top-20 right-[5%] w-[35%] max-w-[420px] hidden lg:block pointer-events-none z-[5]">
+          <LogoHero className="relative" />
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
@@ -164,8 +162,8 @@ export function DentalLanding() {
             </div>
           </div>
 
-          {/* Logo 3D — solo móvil, debajo del formulario */}
-          <div className="lg:hidden relative w-full max-w-[420px] aspect-[16/7] mx-auto mt-12">
+          {/* Logo 3D — solo móvil, arriba del todo */}
+          <div className="lg:hidden relative w-full max-w-[320px] aspect-[16/7] mx-auto mb-8">
             <LogoHero />
           </div>
         </div>

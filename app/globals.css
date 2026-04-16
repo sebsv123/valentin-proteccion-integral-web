@@ -369,13 +369,23 @@ img { max-width: 100%; height: auto; }
   }
 }
 
-/* Cursor simple y profesional */
-body {
-  cursor: default;
+/* Cursor visible - círculo azul simple */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
+  mix-blend-mode: difference;
 }
-a, button, [role="button"], input, select, textarea, label {
-  cursor: pointer;
-}
-input[type="text"], input[type="tel"], textarea {
-  cursor: text;
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background: var(--orange);
 }
