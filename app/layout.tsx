@@ -13,7 +13,7 @@ const GA_ID = 'G-TG4JSVQR5Q';
 const META_PIXEL_ID = '1307875004562255';
 
 import { BackgroundWrapper } from "@/components/background-wrapper";
-import ClickSpark from "@/components/ui/click-spark";
+import { ClickSpark } from "@/components/ui/click-spark";
 import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 

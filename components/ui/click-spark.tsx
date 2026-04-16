@@ -5,7 +5,7 @@ import { useState, useCallback, useRef } from 'react';
 interface Spark { id: number; x: number; y: number; angle: number }
 
 interface ClickSparkProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   color?: string;
 }
