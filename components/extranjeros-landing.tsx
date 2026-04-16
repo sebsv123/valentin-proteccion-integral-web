@@ -330,6 +330,64 @@ export function ExtranjeroLanding() {
         </div>
       </motion.section>
 
+      {/* NUEVO: EL MOMENTO QUE NADIE QUIERE VIVIR SIN COBERTURA */}
+      <section className="py-20 bg-slate-950 text-white overflow-hidden">
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="text-center mb-12">
+            <p className="text-blue-400 font-semibold uppercase tracking-widest text-sm mb-3">
+              La realidad que nadie te cuenta
+            </p>
+            <h2 className="text-3xl sm:text-5xl font-bold mb-4">
+              Son las 2 de la madrugada en Tokio.<br />
+              <span className="text-blue-400">¿A quién llamas?</span>
+            </h2>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              No a un robot. No a un call center con música de espera. 
+              A Rosa o Sebastián. Con tu póliza activa y alguien que ya te conoce 
+              gestionando la situación desde España.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                emoji: "🏥",
+                scenario: "Hospitalización urgente",
+                without: "Pagas de tu bolsillo, pides reembolso 3 meses después con facturas en japonés.",
+                with: "La aseguradora coordina directamente con el hospital. Rosa gestiona el papeleo desde aquí.",
+              },
+              {
+                emoji: "✈️",
+                scenario: "Repatriación médica",
+                without: "Coste mínimo de 15.000€ que adelantas tú. Papeleo en otro idioma. Solo.",
+                with: "Cubierto. Un teléfono 24h. Sebastián al tanto de todo mientras tú te recuperas.",
+              },
+              {
+                emoji: "👨‍⚕️",
+                scenario: "Especialista urgente fuera",
+                without: "Buscas por Google, pagas sin saber si te devuelven. Facturas que no entiendes.",
+                with: "Red de clínicas concertadas en más de 190 países. Cita gestionada en tu idioma.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl bg-white/5 border border-white/10 p-6">
+                <div className="text-4xl mb-4">{item.emoji}</div>
+                <h3 className="font-bold text-lg mb-4 text-white">{item.scenario}</h3>
+                <div className="space-y-3">
+                  <div className="flex gap-2 items-start">
+                    <span className="text-red-400 mt-0.5 flex-none">✗</span>
+                    <p className="text-white/60 text-sm">{item.without}</p>
+                  </div>
+                  <div className="flex gap-2 items-start">
+                    <span className="text-blue-400 mt-0.5 flex-none">✓</span>
+                    <p className="text-blue-100 text-sm font-medium">{item.with}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. COBERTURAS TABLA */}
       <motion.section
         initial="hidden"
@@ -507,6 +565,72 @@ export function ExtranjeroLanding() {
         </div>
       </motion.section>
 
+      {/* NUEVO: TESTIMONIOS */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+        className="py-24"
+      >
+        <div className="container mx-auto max-w-5xl px-4">
+          <motion.div variants={fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl font-bold sm:text-5xl mb-4">
+              Lo que dicen quienes ya viajan con nosotros
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Carlos M.",
+                role: "Consultor, viaja 3 meses al año",
+                text: "Tuve un problema en Dubái. Llamé a Sebastián un domingo por la tarde y en 20 minutos tenía clínica y cita confirmada. No sé qué habría hecho sin ellos.",
+                flag: "🇦🇪",
+              },
+              {
+                name: "Lucía y Javier",
+                role: "Familia, 6 meses en Alemania",
+                text: "Nos fuimos a vivir a Múnich temporalmente con dos niños. Rosa nos montó una póliza que cubría a los cuatro, con pediatra incluido. Sin esperas, sin burocracia.",
+                flag: "🇩🇪",
+              },
+              {
+                name: "Ana B.",
+                role: "Directiva, viajes frecuentes a LATAM",
+                text: "Viajo a México y Colombia casi mensualmente. Tengo la tranquilidad de saber que si pasa algo, hay alguien que me conoce al otro lado del teléfono.",
+                flag: "🇲🇽",
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="rounded-2xl border bg-card p-6 flex flex-col gap-4"
+              >
+                <div className="flex items-center gap-1 text-amber-400">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <svg key={s} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-muted-foreground italic flex-1">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-2 border-t">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg">
+                    {t.flag}
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* 7. PROCESO */}
       <motion.section
         initial="hidden"
@@ -575,23 +699,47 @@ export function ExtranjeroLanding() {
       </motion.section>
 
       {/* 8. CROSS-SELL */}
-      <section className="py-10 bg-blue-50 border-y border-blue-200">
-        <div className="container mx-auto max-w-4xl text-center px-4">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm tracking-widest uppercase border border-blue-200 mb-4">
-            🔗 Combínalo con tu seguro de salud en España
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50 border-y border-blue-100">
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 
+                              text-blue-700 font-semibold text-xs uppercase tracking-widest mb-4">
+                🔗 Protección 360°
+              </div>
+              <h3 className="text-2xl font-bold mb-3">
+                ¿Y cuando vuelves a España?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Nuestros clientes de salud extranjera tienen también cobertura completa 
+                en España. Un solo gestor, una sola llamada para todo. 
+                Al combinarlo, las condiciones son mejores.
+              </p>
+              <a
+                href="/seguros/salud-individual"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "sm" }),
+                  "border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold"
+                )}
+              >
+                Ver seguro de salud en España →
+              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: "🌍", label: "Extranjero", desc: "Cobertura activa en 190+ países" },
+                { icon: "🏠", label: "España", desc: "Médico, especialistas y urgencias" },
+                { icon: "👨‍👩‍👧", label: "Familia", desc: "Todos en una sola póliza" },
+                { icon: "📞", label: "Gestor único", desc: "Rosa o Sebastián, siempre" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl bg-white border p-4 text-center shadow-sm">
+                  <div className="text-2xl mb-1">{item.icon}</div>
+                  <p className="font-bold text-sm">{item.label}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Muchos clientes tienen ya su seguro de salud para España 
-            con nosotros y añaden la cobertura internacional. 
-            Al combinarlos, obtienes condiciones especiales y 
-            una gestión centralizada en una sola llamada.
-          </p>
-          <a
-            href="/seguros/salud-individual"
-            className="mt-4 inline-flex items-center gap-2 text-blue-700 font-semibold hover:opacity-80 transition-opacity underline"
-          >
-            Ver seguro de salud individual →
-          </a>
         </div>
       </section>
 
