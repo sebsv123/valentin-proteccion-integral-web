@@ -11,7 +11,7 @@ import {
   CheckCircle2, 
   ArrowRight, 
   Sparkles, 
-  HeartCharity,
+  HeartHandshake,
   ChevronDown,
   Percent,
   CalendarCheck
@@ -341,7 +341,7 @@ export function DentalLanding() {
           <FadeSection direction="up">
             <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 p-8 md:p-16 text-center text-white">
               <div className="absolute top-0 right-0 p-8 opacity-10">
-                <HeartCharity className="w-64 h-64" />
+                <HeartHandshake className="w-64 h-64" />
               </div>
               
               <div className="relative z-10 max-w-3xl mx-auto">
