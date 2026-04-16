@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { 
+import {
   Check, 
   Clock, 
   ShieldCheck, 
@@ -17,7 +17,6 @@ import {
   Heart,
   Stethoscope,
   Smile,
-  HelpCircle,
   ChevronDown,
   BadgeCheck
 } from "lucide-react";
@@ -33,31 +32,42 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import { motion } from "framer-motion";
 
-const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"), {
+const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 z-0 opacity-40" />,
+  loading: () => <div className="absolute inset-0 z-0" />,
 });
 
-const Globe = dynamic(() => import("@/components/magicui/globe"), {
-  ssr: false,
-  loading: () => null,
+const getFadeInUp = (prefersReducedMotion: boolean) => ({
+  hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: prefersReducedMotion ? 0 : 0.5 } },
 });
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
 
 export function DentalLanding() {
-  const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo", comentario: "" });
+  const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo" });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     setIsTouchDevice(window.matchMedia("(hover: none)").matches);
+    setPrefersReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, []);
+
+  const fadeInUpVariants = getFadeInUp(prefersReducedMotion);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}${form.comentario ? `\n💬 ${form.comentario}` : ""}\n\nGracias.`
+      `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
@@ -66,17 +76,19 @@ export function DentalLanding() {
   return (
     <>
       {/* 🦷 BARRA STICKY */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-blue-700 text-white py-2 sm:py-3 px-4 shadow-md">
-        <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
-          <p className="hidden sm:block text-sm sm:text-base font-semibold leading-snug">
-            🦷 <span className="font-bold">Sin carencias en revisiones y limpiezas desde el primer día.</span>{" "}
-            <span className="opacity-90 font-normal">
-              Si no es así, te lo decimos antes de firmar.
+      <div className="sticky top-0 z-50 bg-blue-700 text-white">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
+          <p className="text-sm font-medium leading-snug flex-1 min-w-0">
+            <span className="sm:hidden">
+              🦷 Sin carencias desde el día 1.
+            </span>
+            <span className="hidden sm:inline">
+              🦷 Sin carencias en revisiones y limpiezas desde el primer día. Si no es así, te lo decimos antes de firmar.
             </span>
           </p>
           <a
             href="#contacto"
-            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
@@ -84,36 +96,45 @@ export function DentalLanding() {
       </div>
 
       {/* 🚀 HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32">
-        <RetroGrid className="z-0 opacity-40 absolute inset-0" />
-        {/* Globe — fondo mitad izquierda, solo desktop */}
-        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
-          <Globe className="inset-0" />
-          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-background">
+        <DotGrid
+          className="z-0"
+          dotSize={4}
+          gap={isTouchDevice ? 32 : 28}
+          baseColor="#bbf7d0"
+          activeColor="#16a34a"
+          proximity={isTouchDevice ? 0 : 80}
+          shockStrength={isTouchDevice ? 0 : 2}
+        />
+        <div className="absolute inset-x-0 top-0 h-64 lg:hidden pointer-events-none z-[3] bg-gradient-to-b from-green-900/15 via-green-800/8 to-transparent" />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
 
             {/* Columna izquierda: Texto */}
-            <div className="flex flex-col items-center text-center space-y-8">
-              <div className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
+            >
+              <motion.div variants={fadeInUpVariants} className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
                 <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
                   <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
                 </AnimatedShinyText>
-              </div>
+              </motion.div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight">
+              <motion.h1 variants={fadeInUpVariants} className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight">
                 Tu sonrisa protegida desde <br className="hidden sm:block" />
                 <span className="text-primary underline decoration-primary/30 decoration-8 underline-offset-8">el primer día.</span> Sin esperas.
-              </h1>
+              </motion.h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+              <motion.p variants={fadeInUpVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
                 Seguro dental en Madrid sin períodos de carencia en ningún tratamiento.
                 Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                 <a
                   href="https://wa.me/34603448765"
                   className={cn(buttonVariants({ variant: "default", size: "lg" }), "h-14 px-8 text-lg font-semibold bg-emerald-500 hover:bg-emerald-600 text-white border-0 shadow-lg shadow-emerald-500/25")}
@@ -128,9 +149,9 @@ export function DentalLanding() {
                   <Phone className="mr-2 h-5 w-5" />
                   603 448 765
                 </a>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
 
             {/* Columna derecha: Formulario */}
             <div className="w-full animate-fade-in-up" id="contacto" style={{ animationDelay: "0.2s" }}>
@@ -178,15 +199,6 @@ export function DentalLanding() {
                       <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase tracking-widest opacity-70">Comentario (opcional)</label>
-                    <textarea
-                      placeholder="Cuéntanos brevemente qué buscas..."
-                      value={form.comentario}
-                      onChange={e => setForm(p => ({ ...p, comentario: e.target.value }))}
-                      className="w-full h-28 p-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
-                    />
-                  </div>
                   {sent ? (
                     <div className="w-full py-5 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
                       <p className="text-emerald-700 font-bold text-lg">✅ ¡Perfecto! WhatsApp abierto.</p>
@@ -216,10 +228,6 @@ export function DentalLanding() {
             </div>
           </div>
 
-          {/* Globe — visible solo en móvil, debajo del formulario */}
-          <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
-            <Globe className="top-0" />
-          </div>
         </div>
       </section>
 
@@ -343,38 +351,17 @@ export function DentalLanding() {
         </div>
       </section>
 
-      {/* � BANNER UPGRADE (duplicado después de Beneficios) */}
-      <section className="py-10 bg-emerald-50 border-y border-emerald-200">
-        <div className="container mx-auto max-w-4xl text-center px-4">
-          <p className="text-lg md:text-xl font-bold text-emerald-800">
-            💡 ¿Ya tienes seguro de salud? Añade dental desde{" "}
-            <span className="underline decoration-2">9€/mes más por persona</span>.
-            {" "}Te lo gestionamos en una sola llamada, sin papeleo.
-          </p>
-          <a
-            href={`https://wa.me/34603448765?text=${encodeURIComponent(
-              "Hola, ya tengo seguro de salud y quiero añadir dental desde 9€/mes."
-            )}`}
-            className="mt-4 inline-flex items-center gap-2 text-emerald-700 font-semibold hover:opacity-80 transition-opacity underline"
-          >
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Escríbenos ahora →
-          </a>
-        </div>
-      </section>
-
-      {/* �📊 SECCIÓN COBERTURAS */}
+      {/*  SECCIÓN COBERTURAS */}
       <section className="py-14 sm:py-20 lg:py-24">
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border bg-muted">
             <Image 
-              src="/images/dental/clinica-dental.jpg" 
+              src="/images/coberturas.jpg" 
               alt="Clínica dental en Madrid" 
               fill 
               className="object-cover"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={75}
             />
           </div>
           <div>
@@ -461,11 +448,12 @@ export function DentalLanding() {
             
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl bg-muted">
               <Image 
-                src="/images/dental/asesora-seguros.jpg" 
+                src="https://images.pexels.com/photos/5355915/pexels-photo-5355915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 alt="Asesora de seguros dentales" 
                 fill 
                 className="object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
               />
             </div>
           </div>
@@ -478,11 +466,12 @@ export function DentalLanding() {
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg bg-muted">
               <Image 
-                src="/images/dental/familia-salud.jpg" 
+                src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 alt="Familia feliz con salud completa" 
                 fill 
                 className="object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
               />
             </div>
             <div className="text-center">
@@ -541,11 +530,12 @@ export function DentalLanding() {
               <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image 
-                  src="/images/dental/cuidado-dental.jpg" 
+                  src="https://images.pexels.com/photos/3845623/pexels-photo-3845623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="Cuidado dental profesional" 
                   fill 
-                  className="object-cover" 
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
                 />
               </div>
             </div>
@@ -576,13 +566,36 @@ export function DentalLanding() {
                   a: "Sí. Los clientes que empiezan con dental tienen descuentos especiales garantizados al añadir salud completa. Con la misma gestión personal de Rosa y Sebastián, en una sola llamada."
                 }
               ].map((faq, i) => (
-                <div key={i} className="p-5 sm:p-8 rounded-2xl bg-accent/20 border hover:bg-accent/40 transition-colors">
-                  <h3 className="text-lg sm:text-xl font-bold mb-4 flex gap-3 items-start">
-                    <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-none mt-1" />
-                    {faq.q}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed pl-8 sm:pl-9">{faq.a}</p>
-                </div>
+                <motion.div
+                  key={i}
+                  variants={fadeInUpVariants}
+                  className="rounded-2xl border bg-card overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-accent/50 transition-colors"
+                  >
+                    <span className="text-base sm:text-lg font-semibold pr-4">{faq.q}</span>
+                    <ChevronDown
+                      className={cn(
+                        "h-5 w-5 flex-shrink-0 transition-transform",
+                        openFaq === i && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={{ 
+                      height: openFaq === i ? "auto" : 0, 
+                      opacity: openFaq === i ? 1 : 0 
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <p className="px-4 sm:px-6 pb-4 sm:pb-6 text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
