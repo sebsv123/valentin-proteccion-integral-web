@@ -84,14 +84,14 @@ export function DentalLanding() {
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                 <a
                   href="https://wa.me/34603448765"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold border-emerald-500 text-emerald-600 hover:bg-emerald-50")}
+                  className={cn(buttonVariants({ variant: "default", size: "lg" }), "h-14 px-8 text-lg font-semibold bg-emerald-500 hover:bg-emerald-600 text-white border-0 shadow-lg shadow-emerald-500/25")}
                 >
                   <WhatsAppLogo className="mr-2 h-5 w-5" />
                   WhatsApp ahora
                 </a>
                 <a
                   href="tel:603448765"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold")}
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold border-2")}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   603 448 765
@@ -252,7 +252,7 @@ export function DentalLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image 
-              src="https://images.pexels.com/photos/5355863/pexels-photo-5355863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+              src="/images/dental/clinica-dental.jpg" 
               alt="Clínica dental en Madrid" 
               fill 
               className="object-cover"
@@ -341,7 +341,7 @@ export function DentalLanding() {
             
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
               <Image 
-                src="https://images.pexels.com/photos/7658382/pexels-photo-7658382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                src="/images/dental/asesora-seguros.jpg" 
                 alt="Asesora de seguros dentales" 
                 fill 
                 className="object-cover"
@@ -371,10 +371,15 @@ export function DentalLanding() {
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan.
                 Cada consulta es personal. Cada recomendación es honesta. Nunca te recomendaremos algo que no te convenga a ti.&rdquo;
               </p>
-              <div className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8">
+              <a 
+                href="https://www.coam.es/colegiados/buscador" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-8 hover:text-emerald-300 transition-colors underline underline-offset-2"
+              >
                 <BadgeCheck className="h-5 w-5" />
-                <span>Agentes de seguros colegiados en Madrid — Consulta pública del Colegio de Mediadores</span>
-              </div>
+                <span>Agentes de seguros colegiados en Madrid — Verificar en Colegio Oficial de Mediadores →</span>
+              </a>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a
                   href="https://wa.me/34603448765"
@@ -398,7 +403,7 @@ export function DentalLanding() {
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
               <Image 
-                src="https://images.pexels.com/photos/6812467/pexels-photo-6812467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                src="/images/dental/familia-salud.jpg" 
                 alt="Familia feliz con salud completa" 
                 fill 
                 className="object-cover"
@@ -458,7 +463,7 @@ export function DentalLanding() {
             <div className="lg:sticky lg:top-24">
               <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border">
-                <Image src="https://images.pexels.com/photos/6627562/pexels-photo-6627562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Cuidado dental profesional" fill className="object-cover" />
+                <Image src="/images/dental/cuidado-dental.jpg" alt="Cuidado dental profesional" fill className="object-cover" />
               </div>
             </div>
             <div className="space-y-6">
