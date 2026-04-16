@@ -50,6 +50,24 @@ export function DentalLanding() {
 
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-background">
+      {/* 🦷 BARRA STICKY */}
+      <div className="sticky top-0 z-50 w-full bg-blue-700 text-white py-3 px-4 shadow-md">
+        <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
+          <p className="text-sm sm:text-base font-semibold leading-snug">
+            🦷 <span className="font-bold">Sin carencias en revisiones y limpiezas desde el primer día.</span>{" "}
+            <span className="opacity-90 font-normal">
+              Si no es así, te lo decimos antes de firmar.
+            </span>
+          </p>
+          <a
+            href="#contacto"
+            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+          >
+            Pedir presupuesto →
+          </a>
+        </div>
+      </div>
+
       {/* 🚀 HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
@@ -229,30 +247,6 @@ export function DentalLanding() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 🦷 BARRA GARANTÍA DENTAL */}
-      <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-semibold mb-6 tracking-widest uppercase">
-            <span>🦷</span>
-            <span>Nuestra garantía dental</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Sin carencias en revisiones y limpiezas
-            <br />
-            <span className="underline decoration-white/40 decoration-4 underline-offset-8">
-              desde el primer día.
-            </span>
-          </h2>
-          <p className="text-xl sm:text-2xl text-white/80 font-light max-w-2xl mx-auto">
-            Si no es así, te lo decimos antes de firmar.
-            <br />
-            <span className="text-white font-semibold">
-              Sin letra pequeña. Sin sorpresas.
-            </span>
-          </p>
         </div>
       </section>
 
@@ -460,7 +454,7 @@ export function DentalLanding() {
             <span className="underline decoration-2">9€/mes más por persona</span>. Te lo gestionamos en una sola llamada, sin papeleo.
           </p>
           <a
-            href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, ya tengo seguro de salud y quiero añadir dental desde 8€/mes.")}`}
+            href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, ya tengo seguro de salud y quiero añadir dental desde 9€/mes.")}`}
             className="mt-4 inline-flex items-center gap-2 text-emerald-700 font-semibold hover:opacity-80 transition-opacity underline"
           >
             <WhatsAppLogo className="h-5 w-5" />
