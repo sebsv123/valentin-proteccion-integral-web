@@ -25,47 +25,119 @@ import { buttonVariants } from "@/components/ui/button";
 import RetroGrid from "@/components/magicui/retro-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import Globe from "@/components/magicui/globe";
 
 export function DentalLanding() {
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-background">
       {/* 🚀 HERO SECTION */}
-      <section className="relative flex min-h-[80vh] flex-col items-center justify-center border-b pt-20 pb-16">
-        <RetroGrid className="z-0 opacity-40" />
-        <div className="container relative z-10 flex flex-col items-center text-center">
-          <div className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-6">
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
-            </AnimatedShinyText>
+      <section className="relative min-h-screen flex items-center justify-center border-b py-20">
+        <RetroGrid className="z-0 opacity-40 absolute inset-0" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+
+            {/* Columna izquierda: Texto + Globe */}
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
+              <div className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+                <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                  <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
+                </AnimatedShinyText>
+              </div>
+
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                Tu sonrisa protegida desde <br />
+                <span className="text-primary underline decoration-primary/30 decoration-8 underline-offset-8">el primer día.</span> Sin esperas.
+              </h1>
+
+              <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed max-w-xl">
+                Seguro dental en Madrid sin períodos de carencia para revisiones y limpiezas.
+                Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                <a
+                  href="https://wa.me/34603448765"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold border-emerald-500 text-emerald-600 hover:bg-emerald-50")}
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  💬 WhatsApp ahora
+                </a>
+                <a
+                  href="tel:603448765"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold")}
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  603 448 765
+                </a>
+              </div>
+
+              {/* Globe — visible solo en desktop */}
+              <div className="hidden lg:block relative w-full max-w-[500px] aspect-square">
+                <Globe className="top-0" />
+              </div>
+            </div>
+
+            {/* Columna derecha: Formulario */}
+            <div className="w-full" id="contacto">
+              <div className="bg-background border rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-primary/5">
+                <div className="mb-8">
+                  <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
+                  <p className="text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
+                </div>
+                <form className="space-y-5">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold uppercase tracking-widest opacity-70">Nombre completo</label>
+                    <input
+                      type="text"
+                      placeholder="Ej: Carlos García"
+                      className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold uppercase tracking-widest opacity-70">Teléfono</label>
+                    <input
+                      type="tel"
+                      placeholder="Ej: 600 000 000"
+                      className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Para cuántas personas?</label>
+                    <select className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none">
+                      <option>Solo yo</option>
+                      <option>Pareja</option>
+                      <option>Familia con hijos</option>
+                      <option>Más de 4 personas</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold uppercase tracking-widest opacity-70">Comentario (opcional)</label>
+                    <textarea
+                      placeholder="Cuéntanos brevemente qué buscas..."
+                      className="w-full h-28 p-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className={cn(buttonVariants({ size: "lg" }), "w-full h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform")}
+                  >
+                    Enviar y esperar mi llamada 🚀
+                  </button>
+                  <p className="text-center text-sm text-muted-foreground opacity-70">
+                    Tus datos solo se usan para contactarte. Nunca los compartimos con terceros.
+                  </p>
+                </form>
+              </div>
+            </div>
           </div>
-          
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6">
-            Tu sonrisa protegida desde <br />
-            <span className="text-primary underline decoration-primary/30 decoration-8 underline-offset-8">el primer día.</span> Sin esperas.
-          </h1>
-          
-          <p className="max-w-[800px] text-lg text-muted-foreground sm:text-xl mb-10 leading-relaxed">
-            Seguro dental en Madrid sin períodos de carencia para revisiones y limpiezas. 
-            Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
-            <Link href="#contacto" className={cn(buttonVariants({ size: "lg" }), "h-14 px-8 text-lg font-semibold group")}>
-              Quiero mi presupuesto gratis
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a 
-              href="https://wa.me/34603448765" 
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-lg font-semibold border-emerald-500 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950/20")}
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              💬 Hablar por WhatsApp ahora
-            </a>
+
+          {/* Globe — visible solo en móvil, debajo del formulario */}
+          <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
+            <Globe className="top-0" />
           </div>
         </div>
-        
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 -z-10 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* 🦷 SECCIÓN BENEFICIOS */}
@@ -351,68 +423,6 @@ export function DentalLanding() {
         </div>
       </section>
 
-      {/* 📝 FORMULARIO DE CONTACTO */}
-      <section id="contacto" className="py-24 bg-muted/40 border-t">
-        <div className="container max-w-3xl">
-          <div className="bg-background border rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-primary/5">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Recibe tu presupuesto <br/>en menos de 30 minutos</h2>
-              <p className="text-lg text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
-            </div>
-            
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-70">Nombre completo</label>
-                <input 
-                  type="text" 
-                  placeholder="Ej: Carlos García" 
-                  className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
-                  required
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-70">Teléfono</label>
-                <input 
-                  type="tel" 
-                  placeholder="Ej: 600 000 000" 
-                  className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Para cuántas personas?</label>
-                <select className="w-full h-14 px-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all appearance-none">
-                  <option>Solo yo</option>
-                  <option>Pareja</option>
-                  <option>Familia con hijos</option>
-                  <option>Más de 4 personas</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-70">¿Algún comentario? (opcional)</label>
-                <textarea 
-                  placeholder="Cuéntanos brevemente qué buscas..." 
-                  className="w-full h-32 p-6 rounded-xl border bg-muted/30 focus:bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
-                />
-              </div>
-
-              <button 
-                type="submit" 
-                className={cn(buttonVariants({ size: "lg" }), "w-full h-16 text-xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform")}
-              >
-                Enviar y esperar mi llamada 🚀
-              </button>
-              
-              <p className="text-center text-sm text-muted-foreground opacity-70">
-                Tus datos solo se usan para contactarte. Nunca los compartimos con terceros.
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
