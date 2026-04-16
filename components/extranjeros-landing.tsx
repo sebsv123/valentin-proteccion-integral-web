@@ -113,16 +113,26 @@ export function ExtranjeroLanding() {
     <>
       {/* 1. BARRA STICKY */}
       <div className="sticky top-0 z-50 bg-blue-900 text-white">
-        <div className="container mx-auto px-4 py-2 sm:py-3 flex items-center justify-between gap-4">
-          <p className="hidden sm:block text-sm md:text-base flex-1 truncate">
-            ✈️ ¿Viajas al extranjero por trabajo o vives fuera? Cobertura médica completa desde el primer día.
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
+
+          {/* Texto CORTO en móvil, texto LARGO en desktop */}
+          <p className="text-sm font-medium leading-tight flex-1 truncate">
+            <span className="sm:hidden">
+              ✈️ Cobertura médica en 190+ países
+            </span>
+            <span className="hidden sm:inline">
+              ✈️ ¿Viajas al extranjero por trabajo o vives fuera? Cobertura médica completa desde el primer día.
+            </span>
           </p>
+
+          {/* CTA: siempre visible, siempre a la derecha */}
           <a
             href="#contacto"
-            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
+
         </div>
       </div>
 
@@ -137,6 +147,8 @@ export function ExtranjeroLanding() {
           proximity={isTouchDevice ? 0 : 80}
           shockStrength={isTouchDevice ? 0 : 2}
         />
+        {/* Degradado decorativo solo para móvil - sustituye visualmente al Globe */}
+        <div className="absolute inset-x-0 top-0 h-64 lg:hidden pointer-events-none z-[3] bg-gradient-to-b from-blue-900/15 via-blue-800/8 to-transparent" />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
           <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
@@ -225,7 +237,7 @@ export function ExtranjeroLanding() {
               id="contacto"
               className="relative"
             >
-              <div className="bg-card border rounded-3xl p-5 sm:p-8 shadow-2xl">
+              <div className="bg-card border rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-2xl">
                 <h3 className="text-2xl font-bold mb-2">Dinos a dónde viajas y te preparamos tu cobertura</h3>
                 <p className="text-muted-foreground mb-6">Sin compromiso. Respuesta en 30 min.</p>
 
@@ -506,7 +518,7 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
+        className="py-14 sm:py-20 lg:py-24 bg-slate-800 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">

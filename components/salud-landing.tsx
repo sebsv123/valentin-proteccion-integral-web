@@ -116,16 +116,26 @@ export function SaludLanding() {
     <>
       {/* 1. BARRA STICKY FIXED */}
       <div className="fixed top-0 left-0 right-0 z-50 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
-        <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
-          <p className="hidden sm:block text-sm sm:text-base font-semibold leading-snug">
-            🏥 <span className="font-bold">Sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día.</span>
+        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
+
+          {/* Texto CORTO en móvil, texto LARGO en desktop */}
+          <p className="text-sm font-semibold leading-tight flex-1 truncate">
+            <span className="sm:hidden">
+              🏥 Médico privado sin esperas
+            </span>
+            <span className="hidden sm:inline">
+              🏥 <span className="font-bold">Sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día.</span>
+            </span>
           </p>
+
+          {/* CTA: siempre visible, siempre a la derecha */}
           <a
             href="#contacto"
-            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
+
         </div>
       </div>
 
@@ -226,7 +236,7 @@ export function SaludLanding() {
               id="contacto"
               className="relative"
             >
-              <div className="bg-card rounded-3xl shadow-xl border p-5 sm:p-8">
+              <div className="bg-card rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl border p-5 sm:p-8">
                 <h2 className="text-2xl font-bold mb-2 text-center">Recibe tu presupuesto en 30 min</h2>
                 <p className="text-muted-foreground text-center mb-6">Sin compromiso. Te lo explicamos todo.</p>
 
