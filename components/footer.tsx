@@ -29,6 +29,7 @@ export function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Navegación</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
+              <Link className="block hover:text-[var(--blue)]" href="/zonas">Zonas que atendemos</Link>
               {mainNav.map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={item.href}>{item.label}</Link>)}
               <Link className="block hover:text-[var(--blue)]" href="/privacidad">Privacidad</Link>
               <Link className="block hover:text-[var(--blue)]" href="/cookies">Cookies</Link>

@@ -1,12 +1,14 @@
 'use client';
 
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
 interface RevealLightProps {
   children: ReactNode;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: 'up' | 'down' | 'left' | 'right' | 'scale' | 'none';
   className?: string;
+  duration?: number;
 }
 
 export default function RevealLight({
@@ -14,57 +16,41 @@ export default function RevealLight({
   delay = 0,
   direction = 'up',
   className = '',
+  duration = 0.8,
 }: RevealLightProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: direction === 'up' ? 30 : direction === 'down' ? -30 : 0,
+      x: direction === 'left' ? 30 : direction === 'right' ? -30 : 0,
+      scale: direction === 'scale' ? 0.95 : 1,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: duration,
+        delay: delay,
+        ease: [0.21, 1, 0.36, 1], // Custom premium cubic-bezier for a smooth "pop"
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  const getTransform = () => {
-    if (isVisible) return 'translate(0, 0)';
-    switch (direction) {
-      case 'up': return 'translateY(30px)';
-      case 'down': return 'translateY(-30px)';
-      case 'left': return 'translateX(30px)';
-      case 'right': return 'translateX(-30px)';
-      default: return 'translateY(30px)';
-    }
+    },
   };
 
+  if (direction === 'none') {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${className}`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: getTransform(),
-        transitionDelay: `${delay}s`,
-      }}
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

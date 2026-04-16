@@ -1,6 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
+import Link from 'next/link';
 import { HeroLeadSection, StatsSection } from '@/components/hero-animated';
 import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, ProductCategoryGrid, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
@@ -9,6 +10,7 @@ import CredentialsBar from '@/components/CredentialsBar';
 import type { Metadata } from 'next';
 import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
   title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
@@ -109,6 +111,27 @@ export default function HomePage() {
         <BlogPreviewSection />
         <GeneralFaqSection />
         <CredentialsBar />
+        
+        {/* Sección de zonas en la home */}
+        <section className="bg-[var(--surface)] py-10 border-t">
+          <div className="container-shell text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-2">
+              Cobertura local
+            </p>
+            <h2 className="font-heading text-xl sm:text-2xl font-bold text-[var(--blue-deep)] mb-6">
+              Atendemos en todo el noroeste de Madrid
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {zonas.map(z => (
+                <Link key={z.slug} href={`/zonas/${z.slug}`}
+                  className="glass rounded-full border border-white/60 bg-white/40 px-5 py-3 text-sm font-semibold text-[var(--blue-deep)] hover:bg-white hover:border-[var(--blue)] transition-all">
+                  Seguros en {z.nombre}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <FinalCTASection />
       </main>
       <Footer />

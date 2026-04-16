@@ -1,6 +1,11 @@
 import { site } from '@/lib/products';
 
-export default function SchemaLocalBusiness() {
+interface Props {
+  cityName?: string;
+  postcode?: string;
+}
+
+export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
@@ -14,7 +19,7 @@ export default function SchemaLocalBusiness() {
     "priceRange": "€",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "areaServed": [
+    "areaServed": cityName ? { "@type": "City", "name": cityName, "postalCode": postcode } : [
       { "@type": "City", "name": "Madrid" },
       { "@type": "City", "name": "Boadilla del Monte" },
       { "@type": "Country", "name": "España" }

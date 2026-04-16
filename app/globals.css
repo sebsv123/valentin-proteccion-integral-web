@@ -295,3 +295,47 @@ img { max-width: 100%; height: auto; }
   animation: metallic-shimmer 3s linear 2s infinite;
   pointer-events: none;
 }
+
+/* ── Dental landing animations ───────────────────────────────────────── */
+@keyframes blur-in {
+  from { filter: blur(14px); opacity: 0; transform: translateY(8px); }
+  to   { filter: blur(0);    opacity: 1; transform: translateY(0); }
+}
+.animate-blur-in {
+  animation: blur-in 0.65s ease forwards;
+  opacity: 0;
+}
+
+/* ClickSpark dots */
+.click-spark-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--spark-color, #25D366);
+  pointer-events: none;
+  transform-origin: 0 0;
+  animation: spark-shoot 0.55s ease-out forwards;
+}
+@keyframes spark-shoot {
+  0%   { transform: rotate(var(--angle, 0deg)) translateX(0)    scale(1); opacity: 1; }
+  100% { transform: rotate(var(--angle, 0deg)) translateX(44px) scale(0); opacity: 0; }
+}
+
+/* Dental hero glow badge */
+@keyframes dental-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+  50%       { box-shadow: 0 0 20px 6px rgba(59,130,246,0.25); }
+}
+.dental-badge-glow { animation: dental-glow-pulse 3s ease-in-out infinite; }
+
+/* Savings row hover */
+.savings-row { transition: background 0.2s ease; }
+.savings-row:hover { background: rgba(255,255,255,0.04); }
+
+/* Guarantee card border pulse */
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255,255,255,0.08); }
+  50%       { border-color: rgba(255,255,255,0.18); }
+}
+.guarantee-card { animation: border-glow 4s ease-in-out infinite; }

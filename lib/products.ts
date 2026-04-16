@@ -140,9 +140,9 @@ export const products: Product[] = [
     heroTitle: 'Un seguro de VIDA no sirve solo para dejar un capital: te ayudo a proteger a tu familia y tu hipoteca con total seguridad',
     heroCopy:
       'Hola, soy Sebastián. Me especializo en encontrar la solución de VIDA que realmente responda a tu necesidad, ya sea protección familiar o asegurar tu hipoteca. El objetivo es tu tranquilidad absoluta.',
-    heroImage: '/images/agent/sebastian.jpg',
+    heroImage: '/images/agent/sebastian-enhanced.png',
     heroAlt: 'Sebastián, asesor especialista en seguros de vida',
-    cardImage: '/images/agent/sebastian.jpg',
+    cardImage: '/images/agent/sebastian-enhanced.png',
     cardAlt: 'Asesoría en seguros de vida',
     summary:
       'Protección económica, apoyo a tu familia y modalidades distintas según quieras cubrir una necesidad familiar, una deuda o una situación concreta.',
@@ -191,7 +191,7 @@ export const products: Product[] = [
     h1: 'Seguro de Vida en Madrid: Protege a tu Familia y tu Hipoteca',
     customAdvisor: {
       name: 'Sebastián',
-      photo: '/images/agent/sebastian.jpg',
+      photo: '/images/agent/sebastian-enhanced.png',
       phone: '+34 689 791 380',
       phoneHref: '+34689791380',
       whatsappNumber: '34689791380',
@@ -702,6 +702,7 @@ export const mainNav = [
   { label: 'Sobre mí', href: '/sobre-mi' },
   { label: 'Blog', href: '/blog' },
   { label: 'Opiniones', href: '/opiniones' },
+  { label: 'Zonas', href: '/zonas' },
   { label: 'Contacto', href: '/contacto' },
 ];
 

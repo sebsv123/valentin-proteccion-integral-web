@@ -8,6 +8,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import SchemaReviews from '@/components/seo/schema-reviews';
 
 export const metadata: Metadata = {
   title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
@@ -38,6 +39,7 @@ export default function OpinionesPage() {
           { name: 'Opiniones', item: `${site.domain}/opiniones`, position: 2 }
         ]} 
       />
+      <SchemaReviews />
       <Header />
       <main className="pt-6 md:pt-8">
         <div className="container-shell">

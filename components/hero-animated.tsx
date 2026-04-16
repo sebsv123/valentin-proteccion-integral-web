@@ -34,12 +34,13 @@ export function HeroLeadSection() {
             >
               <Image
                 src="/images/premium/hero-family.webp"
-                alt="Familia feliz disfrutando de un momento de bienestar y seguridad"
+                alt="Familia feliz disfrutando de un momento de bienestar y seguridad con el respaldo de Valentín Seguros"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
                 priority
-                quality={75}
+                fetchPriority="high"
+                quality={85}
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUEB//EACMQAAIBBAIDAQEAAAAAAAAAAAECAwAEBRESITFBUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amce1ba4uYre2jeSSQ4CqMk1Zaz0KytY1kmt2eYjJVpCcfbj9VVVAUbAooor/2Q=="
               />
@@ -53,19 +54,35 @@ export function HeroLeadSection() {
             </p>
 
             {/* H1 — protagonista visual, tamaño controlado en móvil */}
-            <h1 id="hero-title" className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]">
+            <motion.h1 
+              id="hero-title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]"
+            >
               {site.heroTagline}
-            </h1>
+            </motion.h1>
 
             {/* Credencial numérica */}
-            <p className="mt-3 text-sm sm:text-base font-semibold text-[var(--blue-deep)]">
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-3 text-sm sm:text-base font-semibold text-[var(--blue-deep)]"
+            >
               {site.brandLine}
-            </p>
+            </motion.p>
 
             {/* Ramos como subtítulo — SEO cola larga */}
-            <p className="mt-2 text-xs sm:text-sm text-[var(--muted)] leading-6">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-2 text-xs sm:text-sm text-[var(--muted)] leading-6"
+            >
               {site.brandSubline}
-            </p>
+            </motion.p>
 
             {/* CTAs — visibles sin scroll en móvil */}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:mt-8">

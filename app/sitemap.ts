@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { products, site, subpages } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
+import { zonas } from '@/lib/zonas';
 
 export const dynamic = 'force-static';
 
@@ -48,5 +49,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
+
+    // Zonas localizadas
+    ...zonas.map((z) => ({
+      url: `${base}/zonas/${z.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+    { url: `${base}/zonas`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
   ];
 }

@@ -73,8 +73,8 @@ export function TrustBadgesSection() {
               </div>
               <div className="relative min-h-[360px] xl:min-h-full">
                 <Image
-                  src="/images/home/handshake-real.jpg"
-                  alt="Apretón de manos que transmite confianza y acompañamiento profesional"
+                  src="/images/home/handshake-enhanced.png"
+                  alt="Apretón de manos profesional que simboliza el compromiso, la transparencia y el acompañamiento experto de Valentín Protección Integral"
                   fill
                   className="object-cover object-center"
                   loading="lazy"
@@ -107,7 +107,7 @@ export function ProductCategoryGrid() {
         </RevealLight>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {list.map((product, index) => (
-            <RevealLight key={product.slug} delay={index * 0.05}>
+            <RevealLight key={product.slug} delay={index * 0.1} direction="up">
               <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
                   <Image
@@ -172,7 +172,7 @@ export function ComparisonCardsSection() {
         <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
           <div className="grid gap-6 xl:grid-cols-3">
             {comparisonProfiles.map((profile, index) => (
-              <RevealLight key={profile.title} delay={index * 0.1}>
+              <RevealLight key={profile.title} delay={index * 0.15} direction="up">
                 <div className="soft-card glass h-full group p-8 transition-all hover-lift border-white/40 shadow-xl flex flex-col">
                   <div className="mb-6 inline-flex w-fit rounded-full bg-[var(--blue-deep)] px-5 py-2 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-lg">
                     Paso {index + 1}
@@ -202,8 +202,8 @@ export function ComparisonCardsSection() {
             <div className="soft-card overflow-hidden h-full">
               <div className="relative min-h-[520px] h-full">
                 <Image
-                  src="/images/agent/rosa-exterior.jpg"
-                  alt="Rosa Valentín, asesora de seguros experta en Madrid, con actitud cercana y profesional"
+                  src="/images/agent/rosa-exterior-enhanced.png"
+                  alt="Rosa Valentín, asesora experta en seguros, en una actitud cercana y profesional lista para ayudarte en Madrid"
                   fill
                   className="object-cover object-top"
                   loading="lazy"
@@ -235,8 +235,8 @@ export function AgentTrustBlock() {
           <RevealLight direction="left">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border-4 border-white/40 shadow-2xl">
               <Image
-                src="/images/agent/rosa-oficina.jpg"
-                alt="Rosa Valentín, especialista en seguros, atendiendo de forma personalizada en su oficina de Madrid"
+                src="/images/agent/rosa-oficina-enhanced.png"
+                alt="Rosa Valentín asesorando de forma personalizada en su despacho, garantizando claridad y confianza en cada póliza"
                 fill
                 className="object-cover object-top"
                 loading="lazy"
@@ -297,8 +297,8 @@ export function FinalCTASection() {
           <div className="soft-card relative overflow-hidden bg-[var(--blue-deep)] p-12 text-center text-white md:p-20">
             <div className="absolute inset-0">
               <Image
-                src="/images/agent/sebastian.jpg"
-                alt="Sebastián, asesor especializado en seguros de vida y bienestar familiar"
+                src="/images/agent/sebastian-enhanced.png"
+                alt="Sebastián, asesor del equipo de Valentín especializado en vida y salud, aportando cercanía y rigor técnico"
                 fill
                 className="object-cover opacity-25 brightness-50"
                 loading="lazy"
@@ -388,7 +388,7 @@ export function BlogPreviewSection() {
         </RevealLight>
         <div className="grid gap-5 lg:grid-cols-3">
           {posts.map((post, idx) => (
-            <RevealLight key={post.slug} delay={idx * 0.1}>
+            <RevealLight key={post.slug} delay={idx * 0.12} direction="up">
               <article className="soft-card overflow-hidden h-full flex flex-col">
                 <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                   <div className="relative h-56">
