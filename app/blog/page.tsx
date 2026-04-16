@@ -33,12 +33,45 @@ export const dynamic = 'force-static';
 export default function BlogPage() {
   return (
     <>
-      <SchemaBreadcrumb 
+      <SchemaBreadcrumb
         items={[
           { name: 'Inicio', item: site.domain, position: 1 },
           { name: 'Blog', item: `${site.domain}/blog`, position: 2 }
-        ]} 
+        ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Blog de Seguros · Valentín Protección Integral",
+            "url": "https://valentinproteccionintegral.com/blog",
+            "description": "Guías y consejos honestos sobre seguros explicados sin tecnicismos.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Valentín Protección Integral",
+              "url": "https://valentinproteccionintegral.com"
+            },
+            "blogPost": blogPosts
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .slice(0, 10)
+              .map(post => ({
+                "@type": "BlogPosting",
+                "headline": post.title,
+                "description": post.excerpt,
+                "url": `https://valentinproteccionintegral.com/blog/${post.slug}`,
+                "datePublished": post.date,
+                "image": `https://valentinproteccionintegral.com${post.image}`,
+                "author": {
+                  "@type": "Person",
+                  "name": "Rosa Valentín"
+                }
+              }))
+          })
+        }}
+      />
+      {/* TODO: Añadir etiquetas de categoría en cards cuando el tipo BlogPost tenga campo "category" */}
       <Header />
       <main>
         <section className="section-pad pt-6 md:pt-10">

@@ -70,7 +70,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           "@type": "AggregateRating",
           "ratingValue": "5.0",
           "bestRating": "5",
-          "ratingCount": "30"
+          "ratingCount": "47"
         }
       })}} />
 
@@ -261,7 +261,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
               ¿Buscas asesores de seguros en {z.nombre}?
             </h2>
             <p className="text-[var(--muted)] mb-8 text-lg">
-              Primera consulta gratuita. Sin compromiso. Respuesta en menos de 24h.
+              Primera consulta gratuita. Sin compromiso. Respondemos en menos de 30 minutos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-10 py-4 text-lg">
