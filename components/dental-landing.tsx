@@ -416,7 +416,7 @@ export function DentalLanding() {
 
       {/* 🛡️ SECCIÓN GARANTÍA */}
       <section className="py-24 bg-card border-y">
-        <div className="container max-w-4xl text-center">
+        <div className="container mx-auto max-w-4xl text-center px-4">
           <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
             <ShieldCheck className="h-12 w-12 text-primary" />
           </div>
