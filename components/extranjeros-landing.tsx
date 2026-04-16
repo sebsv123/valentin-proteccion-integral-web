@@ -8,9 +8,10 @@ import { buttonVariants } from "@/components/ui/button";
 import DotGrid from "@/components/ui/dot-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import Globe from "@/components/magicui/globe";
 import {
   Plane,
-  Globe,
+  Globe as GlobeIcon,
   Users,
   Clock,
   FileText,
@@ -117,6 +118,11 @@ export function ExtranjeroLanding() {
           proximity={120}
           shockStrength={3}
         />
+        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
+          <Globe className="inset-0" />
+          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
+        </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Columna izquierda - Texto */}
@@ -293,7 +299,7 @@ export function ExtranjeroLanding() {
                 color: "bg-blue-100 text-blue-600",
               },
               {
-                icon: <Globe className="h-8 w-8" />,
+                icon: <GlobeIcon className="h-8 w-8" />,
                 title: "Residentes en el extranjero",
                 desc: "Si vives fuera de España de forma temporal o permanente, necesitas una póliza que te cubra donde estás, no donde estabas.",
                 color: "bg-indigo-100 text-indigo-600",
