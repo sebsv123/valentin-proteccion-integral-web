@@ -318,7 +318,7 @@ export function DentalLanding() {
                 desc: "Vengas de donde vengas, mantenemos tu antigüedad para que no pierdas tus derechos adquiridos." 
               },
               { 
-                icon: CheckCircle2, 
+                icon: CircleCheck, 
                 title: "Sin Carencias de Bienvenida", 
                 desc: "Revisiones, limpiezas y curas de urgencia desde el primer minuto. Sin periodos de espera." 
               }
