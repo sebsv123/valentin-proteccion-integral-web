@@ -17,7 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Páginas informativas estables — cambian poco
     { url: `${base}/como-te-ayudamos`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/sobre-mi`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/sobre-nosotros`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/sobre-mi`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.1 },
     { url: `${base}/opiniones`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
 
     // Contacto — estable pero importante para conversión

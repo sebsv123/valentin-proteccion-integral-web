@@ -699,7 +699,7 @@ export const mainNav = [
   { label: 'Inicio', href: '/' },
   { label: 'Seguros', href: '/seguros' },
   { label: 'Cómo te ayudamos', href: '/como-te-ayudamos' },
-  { label: 'Sobre mí', href: '/sobre-mi' },
+  { label: 'Sobre nosotros', href: '/sobre-nosotros' },
   { label: 'Blog', href: '/blog' },
   { label: 'Opiniones', href: '/opiniones' },
   { label: 'Zonas', href: '/zonas' },
