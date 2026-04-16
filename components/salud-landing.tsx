@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import RetroGrid from "@/components/magicui/retro-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import Globe from "@/components/magicui/globe";
 import {
   Stethoscope,
   Microscope,
@@ -113,6 +114,11 @@ export function SaludLanding() {
       {/* 2. HERO */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-gradient-to-br from-background via-green-50/30 to-background">
         <RetroGrid className="z-0 opacity-30 absolute inset-0" />
+        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
+          <Globe className="inset-0" />
+          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
+        </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Columna izquierda - Texto */}
@@ -265,6 +271,11 @@ export function SaludLanding() {
             </motion.div>
           </div>
         </div>
+
+        {/* Globe — visible solo en móvil, debajo del formulario */}
+        <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
+          <Globe className="top-0" />
+        </div>
       </section>
 
       {/* 3. BENEFICIOS PRINCIPALES */}
@@ -365,7 +376,7 @@ export function SaludLanding() {
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             <motion.div variants={fadeInUp} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
-                src="/images/equipo/rosa-y-sebastian.jpg"
+                src="/images/rosa_y_sebastian.jpeg"
                 alt="Rosa y Sebastián Valentín"
                 fill
                 className="object-cover object-top"
@@ -373,9 +384,20 @@ export function SaludLanding() {
             </motion.div>
             <motion.div variants={fadeInUp} className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
-              <p className="text-xl md:text-2xl opacity-90 mb-6 leading-relaxed italic font-light">
+              <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed italic font-light">
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
               </p>
+              <a
+                href="https://www.colegiomediadores.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-6 hover:text-emerald-300 transition-colors underline underline-offset-2"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Agentes de seguros colegiados en Madrid — Verificar →
+              </a>
 
               <div className="grid sm:grid-cols-3 gap-6 mt-8">
                 {[
@@ -405,10 +427,11 @@ export function SaludLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image
-              src="/images/dental/clinica-dental.jpg"
-              alt="Consulta médica"
+              src="https://images.pexels.com/photos/8460125/pexels-photo-8460125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Consulta médica privada en Madrid"
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
           <div>
@@ -504,8 +527,10 @@ export function SaludLanding() {
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Así de sencillo es empezar</h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-12 relative">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center max-w-6xl mx-auto">
+            {/* Columna izquierda: los 3 pasos */}
+            <div>
+              <div className="space-y-12 relative">
               <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-green-200 hidden md:block" />
 
               {[
@@ -541,7 +566,19 @@ export function SaludLanding() {
               ))}
             </div>
           </div>
+
+          {/* Columna derecha: imagen */}
+          <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+            <Image
+              src="https://images.pexels.com/photos/7735626/pexels-photo-7735626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="Asesor de seguros con cliente en Madrid"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
         </div>
+      </div>
       </motion.section>
 
       {/* 9. AMPLÍA TU PROTECCIÓN */}
@@ -559,6 +596,27 @@ export function SaludLanding() {
               Muchos de nuestros clientes empezaron con un solo producto. Hoy tienen su familia completamente protegida y pagan menos de lo que esperaban.
             </p>
           </motion.div>
+
+          {/* Banner cross-sell con imagen */}
+          <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-green-50 rounded-[3rem] p-8 md:p-16 border shadow-inner mb-12">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <Image
+                src="https://images.pexels.com/photos/7220529/pexels-photo-7220529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt="Familia protegida con seguro de salud en Madrid"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+            <div className="text-center">
+              <div className="mb-4 inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 font-bold text-sm tracking-widest uppercase border border-green-200">
+                🎁 Clientes dental: descuentos especiales
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                La mayoría de nuestros clientes comienzan con un seguro dental y, en poco tiempo, amplían a salud completa para toda la familia. Cuando lo hagas, tendrás condiciones especiales por ser ya cliente nuestro.
+              </p>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
@@ -621,13 +679,23 @@ export function SaludLanding() {
         variants={staggerContainer}
         className="py-24 bg-accent/30"
       >
-        <div className="container max-w-4xl px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl font-bold sm:text-5xl mb-4">Preguntas frecuentes</h2>
-          </motion.div>
+        <div className="container max-w-5xl px-4">
+          <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
 
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            <div className="lg:sticky lg:top-24 text-center">
+              <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
+              <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
+                <Image
+                  src="/images/rosa_y_sebastian.jpeg"
+                  alt="Rosa y Sebastián responden tus dudas"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
               <motion.div
                 key={i}
                 variants={fadeInUp}
@@ -656,7 +724,8 @@ export function SaludLanding() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </div>
+    </motion.section>
 
       {/* 11. CTA FINAL */}
       <motion.section
