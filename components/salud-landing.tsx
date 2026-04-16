@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import RetroGrid from "@/components/magicui/retro-grid";
+import DotGrid from "@/components/ui/dot-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import Globe from "@/components/magicui/globe";
@@ -113,7 +114,7 @@ export function SaludLanding() {
 
       {/* 2. HERO */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-gradient-to-br from-background via-green-50/30 to-background">
-        <RetroGrid className="z-0 opacity-30 absolute inset-0" />
+        <DotGrid className="z-0" />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
           <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
