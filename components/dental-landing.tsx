@@ -45,9 +45,17 @@ export function DentalLanding() {
       {/* 🚀 HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
-        {/* Logo 3D — esquina superior derecha, solo desktop */}
-        <div className="absolute top-20 right-[5%] w-[35%] max-w-[420px] hidden lg:block pointer-events-none z-[5]">
-          <LogoHero className="relative" />
+        {/* Logo watermark — sutil pero visible, centrado detrás */}
+        <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none z-[1]">
+          <div className="relative w-[70%] max-w-[600px] aspect-[16/7] opacity-[0.22]">
+            <Image
+              src="/brand/logo-brand.png"
+              alt=""
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
@@ -162,9 +170,16 @@ export function DentalLanding() {
             </div>
           </div>
 
-          {/* Logo 3D — solo móvil, arriba del todo */}
-          <div className="lg:hidden relative w-full max-w-[320px] aspect-[16/7] mx-auto mb-8">
-            <LogoHero />
+          {/* Logo watermark móvil — sutil */}
+          <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-[0.15]">
+            <div className="relative w-[80%] max-w-[400px] aspect-[16/7]">
+              <Image
+                src="/brand/logo-brand.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
