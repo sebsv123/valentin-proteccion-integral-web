@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -30,14 +31,28 @@ const WhatsAppLogo = ({ className }: { className?: string }) => (
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import RetroGrid from "@/components/magicui/retro-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import Globe from "@/components/magicui/globe";
+
+const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 z-0 opacity-40" />,
+});
+
+const Globe = dynamic(() => import("@/components/magicui/globe"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export function DentalLanding() {
   const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo", comentario: "" });
   const [sent, setSent] = useState(false);
+
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -262,62 +277,69 @@ export function DentalLanding() {
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
-          <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30">
-                <ShieldCheck className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Sin carencias en lo esencial</h3>
-              <p className="text-muted-foreground">Revisiones y limpiezas desde el primer día, sin esperar meses.</p>
-            </MagicCard>
-
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30">
-                <Clock className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Respuesta en 30 minutos</h3>
-              <p className="text-muted-foreground">Te llama Rosa o Sebastián personalmente. No un call center.</p>
-            </MagicCard>
-
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/30">
-                <FileText className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Precio justo, sin letra pequeña</h3>
-              <p className="text-muted-foreground">
-                Te decimos exactamente lo que pagas antes de contratar.
-                Sin costes ocultos. Sin sorpresas al primer recibo.
-              </p>
-            </MagicCard>
-
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30">
-                <Users className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Toda la familia en una póliza</h3>
-              <p className="text-muted-foreground">Cuantos más miembros, mejor precio por persona.
-              Y si amplías a salud completa, tendrás descuentos especiales por ser ya cliente nuestro.</p>
-            </MagicCard>
-
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-slate-100 text-slate-600 dark:bg-slate-900/30">
-                <Stethoscope className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Tu dentista, cuando lo necesitas</h3>
-              <p className="text-muted-foreground">
-                Acceso a nuestra red de clínicas dentales en Madrid
-                desde el primer día. Sin colas. Sin listas de espera.
-              </p>
-            </MagicCard>
-
-            <MagicCard className="flex flex-col gap-4 items-center text-center">
-              <div className="p-3 rounded-xl bg-red-100 text-red-600 dark:bg-red-900/30">
-                <Award className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold">Más de 10 años de experiencia</h3>
-              <p className="text-muted-foreground">Conocemos el sector por dentro para darte siempre la mejor opción.</p>
-            </MagicCard>
-          </MagicContainer>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <ShieldCheck className="h-8 w-8" />,
+                title: "Sin carencias en lo esencial",
+                desc: "Revisiones y limpiezas desde el primer día, sin esperar meses.",
+                color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30",
+              },
+              {
+                icon: <Clock className="h-8 w-8" />,
+                title: "Respuesta en 30 minutos",
+                desc: "Te llama Rosa o Sebastián personalmente. No un call center.",
+                color: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30",
+              },
+              {
+                icon: <FileText className="h-8 w-8" />,
+                title: "Precio justo, sin letra pequeña",
+                desc: "Te decimos exactamente lo que pagas antes de contratar. Sin costes ocultos. Sin sorpresas al primer recibo.",
+                color: "bg-amber-100 text-amber-600 dark:bg-amber-900/30",
+              },
+              {
+                icon: <Users className="h-8 w-8" />,
+                title: "Toda la familia en una póliza",
+                desc: "Cuantos más miembros, mejor precio por persona. Y si amplías a salud completa, tendrás descuentos especiales por ser ya cliente nuestro.",
+                color: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30",
+              },
+              {
+                icon: <Stethoscope className="h-8 w-8" />,
+                title: "Tu dentista, cuando lo necesitas",
+                desc: "Acceso a nuestra red de clínicas dentales en Madrid desde el primer día. Sin colas. Sin listas de espera.",
+                color: "bg-slate-100 text-slate-600 dark:bg-slate-900/30",
+              },
+              {
+                icon: <Award className="h-8 w-8" />,
+                title: "Más de 10 años de experiencia",
+                desc: "Conocemos el sector por dentro para darte siempre la mejor opción.",
+                color: "bg-red-100 text-red-600 dark:bg-red-900/30",
+              },
+            ].map((item, i) =>
+              isTouchDevice ? (
+                <div
+                  key={i}
+                  className="flex flex-col gap-4 items-center text-center p-6 rounded-2xl border bg-card shadow-sm"
+                >
+                  <div className={cn("p-3 rounded-xl", item.color)}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </div>
+              ) : (
+                <MagicContainer key={i}>
+                  <MagicCard className="flex flex-col gap-4 items-center text-center">
+                    <div className={cn("p-3 rounded-xl", item.color)}>
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.desc}</p>
+                  </MagicCard>
+                </MagicContainer>
+              )
+            )}
+          </div>
         </div>
       </section>
 
