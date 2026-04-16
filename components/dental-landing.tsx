@@ -31,13 +31,19 @@ export function DentalLanding() {
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-background">
       {/* 🚀 HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center border-b py-20">
+      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20">
         <RetroGrid className="z-0 opacity-40 absolute inset-0" />
+        {/* Globe — fondo mitad izquierda, solo desktop */}
+        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
+          <Globe className="inset-0" />
+          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
+        </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
 
-            {/* Columna izquierda: Texto + Globe */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
+            {/* Columna izquierda: Texto */}
+            <div className="flex flex-col items-center text-center space-y-8">
               <div className="group rounded-full border border-black/5 bg-neutral-100 text-base transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
                 <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
                   <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
@@ -71,10 +77,6 @@ export function DentalLanding() {
                 </a>
               </div>
 
-              {/* Globe — visible solo en desktop */}
-              <div className="hidden lg:block relative w-full max-w-[500px] aspect-square">
-                <Globe className="top-0" />
-              </div>
             </div>
 
             {/* Columna derecha: Formulario */}
@@ -205,13 +207,13 @@ export function DentalLanding() {
         <div className="container grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image 
-              src="/images/dental/dental-clinic.jpg" 
+              src="https://images.pexels.com/photos/5355863/pexels-photo-5355863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
               alt="Clínica dental en Madrid" 
               fill 
               className="object-cover"
             />
           </div>
-          <div>
+          <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Lo que tienes disponible desde el primer día</h2>
             <p className="text-lg text-muted-foreground mb-8">Sin sorpresas. Sin letras pequeñas. Así de claro.</p>
             
@@ -253,7 +255,7 @@ export function DentalLanding() {
         <div className="container">
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-12">Contrata tu seguro en 3 minutos. <br/>En serio.</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-12 text-center">Contrata tu seguro en 3 minutos. <br/>En serio.</h2>
               <div className="space-y-12 relative">
                 {/* Connector Line */}
                 <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-border hidden md:block" />
@@ -293,8 +295,8 @@ export function DentalLanding() {
             
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
               <Image 
-                src="/images/dental/agent-consultation.jpg" 
-                alt="Carlos consultando su seguro dental" 
+                src="https://images.pexels.com/photos/7658382/pexels-photo-7658382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                alt="Asesora de seguros dentales" 
                 fill 
                 className="object-cover"
               />
@@ -341,13 +343,13 @@ export function DentalLanding() {
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
               <Image 
-                src="/images/dental/family-health.jpg" 
+                src="https://images.pexels.com/photos/6812467/pexels-photo-6812467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
                 alt="Familia feliz con salud completa" 
                 fill 
                 className="object-cover"
               />
             </div>
-            <div>
+            <div className="text-center">
               <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm tracking-widest uppercase border border-emerald-200">
                 🎁 Clientes dentales: –5% en Salud al ampliar tu cobertura
               </div>
@@ -382,9 +384,9 @@ export function DentalLanding() {
         <div className="container max-w-5xl">
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
             <div className="lg:sticky lg:top-24">
-              <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
+              <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border">
-                <Image src="/images/dental/dental-care.jpg" alt="Cuidado dental profesional" fill className="object-cover" />
+                <Image src="https://images.pexels.com/photos/6627562/pexels-photo-6627562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Cuidado dental profesional" fill className="object-cover" />
               </div>
             </div>
             <div className="space-y-6">
