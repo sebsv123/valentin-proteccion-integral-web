@@ -191,7 +191,7 @@ export function DentalLanding() {
                   </p>
                   <p className="text-center text-xs font-semibold text-emerald-600 flex items-center justify-center gap-1.5">
                     <span>🎁</span>
-                    <span>Al contratar dental, obtienes –5% si añades salud en el futuro</span>
+                    <span>Al contratar dental, obtienes descuentos especiales si añades salud en el futuro</span>
                   </p>
                   <p className="text-center text-xs text-muted-foreground/60">
                     🔒 Consulta sin compromiso. Si decides no contratar, no te llamamos más.
@@ -296,7 +296,7 @@ export function DentalLanding() {
               </div>
               <h3 className="text-xl font-bold">Toda la familia en una póliza</h3>
               <p className="text-muted-foreground">Cuantos más miembros, mejor precio por persona.
-              Y si amplías a salud completa, –5% por ser ya cliente nuestro.</p>
+              Y si amplías a salud completa, tendrás descuentos especiales por ser ya cliente nuestro.</p>
             </MagicCard>
 
             <MagicCard className="flex flex-col gap-4 items-center text-center">
@@ -462,7 +462,7 @@ export function DentalLanding() {
             </div>
             <div className="text-center">
               <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm tracking-widest uppercase border border-emerald-200">
-                🎁 Clientes dentales: –5% en Salud al ampliar tu cobertura
+                🎁 Clientes dentales: descuentos especiales al ampliar tu cobertura
               </div>
               <h2 className="text-3xl font-bold sm:text-5xl mb-6">Los que empiezan con dental, <br/>acaban con más tranquilidad</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -541,7 +541,7 @@ export function DentalLanding() {
                 },
                 {
                   q: "¿Hay ventajas si luego quiero ampliar mi cobertura?",
-                  a: "Sí. Los clientes que empiezan con dental tienen un –5% garantizado al añadir salud completa. Con la misma gestión personal de Rosa y Sebastián, en una sola llamada."
+                  a: "Sí. Los clientes que empiezan con dental tienen descuentos especiales garantizados al añadir salud completa. Con la misma gestión personal de Rosa y Sebastián, en una sola llamada."
                 }
               ].map((faq, i) => (
                 <div key={i} className="p-8 rounded-2xl bg-accent/20 border hover:bg-accent/40 transition-colors">
