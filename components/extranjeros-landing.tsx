@@ -1,14 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import DotGrid from "@/components/ui/dot-grid";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import Globe from "@/components/magicui/globe";
+
+const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 z-0" />,
+});
+
+const Globe = dynamic(() => import("@/components/magicui/globe"), {
+  ssr: false,
+  loading: () => null,
+});
 import {
   Plane,
   Globe as GlobeIcon,
@@ -32,10 +41,10 @@ const WhatsAppLogo = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+const getFadeInUp = (prefersReducedMotion: boolean) => ({
+  hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: prefersReducedMotion ? 0 : 0.5 } },
+});
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -53,6 +62,16 @@ export function ExtranjeroLanding() {
   });
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
+    setPrefersReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  const fadeInUpVariants = getFadeInUp(prefersReducedMotion);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -112,11 +131,11 @@ export function ExtranjeroLanding() {
         <DotGrid 
           className="z-0"
           dotSize={4}
-          gap={28}
+          gap={isTouchDevice ? 32 : 28}
           baseColor="#bfdbfe"
           activeColor="#1d4ed8"
-          proximity={80}
-          shockStrength={2}
+          proximity={isTouchDevice ? 0 : 80}
+          shockStrength={isTouchDevice ? 0 : 2}
         />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
@@ -132,14 +151,14 @@ export function ExtranjeroLanding() {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              <motion.div variants={fadeInUp} className="mb-6">
+              <motion.div variants={fadeInUpVariants} className="mb-6">
                 <AnimatedShinyText className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 font-medium text-sm">
                   ✈️ Cobertura en más de 190 países
                 </AnimatedShinyText>
               </motion.div>
 
               <motion.h1
-                variants={fadeInUp}
+                variants={fadeInUpVariants}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6"
               >
                 Atención médica privada donde estés.{" "}
@@ -147,14 +166,14 @@ export function ExtranjeroLanding() {
               </motion.h1>
 
               <motion.p
-                variants={fadeInUp}
+                variants={fadeInUpVariants}
                 className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8"
               >
                 Tanto si vives fuera, viajas por trabajo o pasas temporadas en el extranjero, 
                 Rosa y Sebastián te gestionan la cobertura completa en una sola llamada.
               </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-col gap-4 mb-8">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col gap-4 mb-8">
                 {[
                   "Cobertura en todo el mundo",
                   "Asistencia en tu idioma",
@@ -171,7 +190,7 @@ export function ExtranjeroLanding() {
                 ))}
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col sm:flex-row gap-4">
                 <a
                   href={`https://wa.me/34603448765?text=${encodeURIComponent(
                     "Hola, me gustaría información sobre el seguro de salud para el extranjero."
@@ -202,7 +221,7 @@ export function ExtranjeroLanding() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeInUp}
+              variants={fadeInUpVariants}
               id="contacto"
               className="relative"
             >
@@ -286,11 +305,11 @@ export function ExtranjeroLanding() {
         className="py-14 sm:py-20 lg:py-24 bg-blue-50/50"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
+          <motion.div variants={fadeInUpVariants} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">¿Para quién es este seguro?</h2>
           </motion.div>
 
-          <MagicContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
                 icon: <Plane className="h-8 w-8" />,
@@ -310,19 +329,31 @@ export function ExtranjeroLanding() {
                 desc: "Parejas o familias que se trasladan temporalmente o pasan largas temporadas en otro país. Todos protegidos, en una sola póliza.",
                 color: "bg-purple-100 text-purple-600",
               },
-            ].map((item, i) => (
-              <MagicCard
-                key={i}
-                className="flex flex-col gap-4 items-center text-center p-6"
-              >
-                <div className={cn("p-3 rounded-xl", item.color)}>
-                  {item.icon}
+            ].map((item, i) =>
+              isTouchDevice ? (
+                <div
+                  key={i}
+                  className="flex flex-col gap-4 items-center text-center p-6 rounded-2xl border bg-card shadow-sm"
+                >
+                  <div className={cn("p-3 rounded-xl", item.color)}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </MagicCard>
-            ))}
-          </MagicContainer>
+              ) : (
+                <MagicContainer key={i}>
+                  <MagicCard className="flex flex-col gap-4 items-center text-center p-6">
+                    <div className={cn("p-3 rounded-xl", item.color)}>
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.desc}</p>
+                  </MagicCard>
+                </MagicContainer>
+              )
+            )}
+          </div>
         </div>
       </motion.section>
 
@@ -389,7 +420,7 @@ export function ExtranjeroLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={fadeInUp}
+        variants={fadeInUpVariants}
         className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -399,7 +430,8 @@ export function ExtranjeroLanding() {
               alt="Profesional viajando con cobertura médica internacional"
               fill
               className="object-cover"
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={75}
             />
           </div>
           <div>
@@ -478,7 +510,7 @@ export function ExtranjeroLanding() {
       >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
-            <motion.div variants={fadeInUp} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+            <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
                 src="/images/rosa_y_sebastian.jpeg"
                 alt="Rosa y Sebastián Valentín"
@@ -486,7 +518,7 @@ export function ExtranjeroLanding() {
                 className="object-cover object-top"
               />
             </motion.div>
-            <motion.div variants={fadeInUp} className="text-center">
+            <motion.div variants={fadeInUpVariants} className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
               <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed italic font-light">
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
@@ -529,7 +561,7 @@ export function ExtranjeroLanding() {
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-12">
+          <motion.div variants={fadeInUpVariants} className="text-center mb-12">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Nuestras garantías</h2>
             <p className="text-xl text-white/80">Promesas que cumplimos</p>
           </motion.div>
@@ -543,7 +575,7 @@ export function ExtranjeroLanding() {
             ].map((garantia, i) => (
               <motion.div
                 key={i}
-                variants={fadeInUp}
+                variants={fadeInUpVariants}
                 className="text-center p-6 rounded-2xl bg-white/10"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4">
@@ -556,7 +588,7 @@ export function ExtranjeroLanding() {
           </div>
 
           <motion.div
-            variants={fadeInUp}
+            variants={fadeInUpVariants}
             className="mt-12 mx-auto max-w-2xl rounded-2xl border border-white/20 
                        bg-white/5 px-8 py-6 text-center"
           >
@@ -588,7 +620,7 @@ export function ExtranjeroLanding() {
         className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto max-w-5xl px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-12">
+          <motion.div variants={fadeInUpVariants} className="text-center mb-12">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">
               Lo que dicen quienes ya viajan con nosotros
             </h2>
@@ -617,7 +649,7 @@ export function ExtranjeroLanding() {
             ].map((t, i) => (
               <motion.div
                 key={i}
-                variants={fadeInUp}
+                variants={fadeInUpVariants}
                 className={cn(
                   "rounded-2xl border bg-card p-5 sm:p-6 flex flex-col gap-4",
                   i === 2 && "hidden sm:flex"
@@ -657,7 +689,7 @@ export function ExtranjeroLanding() {
         className="py-14 sm:py-20 lg:py-24 bg-blue-50"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
+          <motion.div variants={fadeInUpVariants} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Así de sencillo es empezar</h2>
           </motion.div>
 
@@ -686,7 +718,7 @@ export function ExtranjeroLanding() {
                 ].map((paso, i) => (
                   <motion.div
                     key={i}
-                    variants={fadeInUp}
+                    variants={fadeInUpVariants}
                     className="flex gap-8 relative"
                   >
                     <div className="flex-none w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">
@@ -708,7 +740,8 @@ export function ExtranjeroLanding() {
                 alt="Equipo profesional planificando viaje internacional con cobertura médica"
                 fill
                 className="object-cover"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
               />
             </div>
           </div>
@@ -788,7 +821,7 @@ export function ExtranjeroLanding() {
               {faqs.map((faq, i) => (
                 <motion.div
                   key={i}
-                  variants={fadeInUp}
+                  variants={fadeInUpVariants}
                   className="rounded-2xl border bg-card overflow-hidden"
                 >
                   <button
@@ -822,7 +855,7 @@ export function ExtranjeroLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={fadeInUp}
+        variants={fadeInUpVariants}
         className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-800 to-blue-900 text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
