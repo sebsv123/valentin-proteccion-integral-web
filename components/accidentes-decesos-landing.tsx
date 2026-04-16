@@ -585,11 +585,9 @@ export function AccidentesDecesosLanding() {
             <div className="flex items-start gap-4">
               <span className="text-4xl">🎁</span>
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-amber-900 mb-2">Sorpresa para nuevos clientes</h3>
+                <h3 className="text-xl font-bold text-amber-900 mb-2">Regalo Sorpresa para nuevos clientes</h3>
                 <p className="text-amber-800 mb-4">
-                  Al contratar tu primera póliza con nosotros, Rosa o Sebastián te regalan una{" "}
-                  <span className="font-bold">revisión de todos tus seguros actuales</span>{" "}
-                  completamente gratis. Muchos clientes descubren que pagan de más. O que tienen huecos que no sabían.
+                  Al contratar tu primera póliza con nosotros, Rosa o Sebastián te regalan una revisión de todos tus seguros actuales completamente gratis. Muchos clientes descubren que pagan de más. O que tienen huecos que no sabían.
                 </p>
                 <a
                   href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, me gustaría contratar accidentes/decesos y aprovechar la revisión gratuita de seguros.")}`}
