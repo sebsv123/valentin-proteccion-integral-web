@@ -283,10 +283,13 @@ export function DentalLanding() {
 
             <MagicCard className="flex flex-col gap-4 items-center text-center">
               <div className="p-3 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/30">
-                <Award className="h-8 w-8" />
+                <FileText className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold">Desde 8€/mes por persona</h3>
-              <p className="text-muted-foreground">Protección dental real que no notarás en tu bolsillo.</p>
+              <h3 className="text-xl font-bold">Precio justo, sin letra pequeña</h3>
+              <p className="text-muted-foreground">
+                Te decimos exactamente lo que pagas antes de contratar.
+                Sin costes ocultos. Sin sorpresas al primer recibo.
+              </p>
             </MagicCard>
 
             <MagicCard className="flex flex-col gap-4 items-center text-center">
@@ -299,10 +302,13 @@ export function DentalLanding() {
 
             <MagicCard className="flex flex-col gap-4 items-center text-center">
               <div className="p-3 rounded-xl bg-slate-100 text-slate-600 dark:bg-slate-900/30">
-                <FileText className="h-8 w-8" />
+                <Stethoscope className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold">Sin letra pequeña</h3>
-              <p className="text-muted-foreground">Te explicamos exactamente qué cubre y qué no. Antes de firmar nada.</p>
+              <h3 className="text-xl font-bold">Tu dentista, cuando lo necesitas</h3>
+              <p className="text-muted-foreground">
+                Acceso a nuestra red de clínicas dentales en Madrid
+                desde el primer día. Sin colas. Sin listas de espera.
+              </p>
             </MagicCard>
 
             <MagicCard className="flex flex-col gap-4 items-center text-center">
