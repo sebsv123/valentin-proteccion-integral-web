@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ExternalLink, Instagram, MapPin, MessageCircle, Shield, Star, Users } from 'lucide-react';
+import { Instagram, MapPin, MessageCircle, Shield, Users } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -12,11 +12,11 @@ import SchemaReviews from '@/components/seo/schema-reviews';
 
 export const metadata: Metadata = {
   title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
-  description: "Más de 30 familias en Madrid ya confían en Valentín Protección Integral con una puntuación de 5 estrellas. Lee sus experiencias reales y descubre por qué repiten.",
+  description: "Más de 47 reseñas verificadas con 5 estrellas en Google. Familias de Madrid que confían en Valentín Protección Integral. Lee sus experiencias reales.",
   keywords: "opiniones valentín protección integral, reseñas asesora seguros madrid, valoraciones seguros madrid",
   openGraph: {
     title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
-    description: "Más de 30 familias en Madrid con una puntuación de 5 estrellas. Lee sus experiencias reales.",
+    description: "Más de 47 reseñas verificadas con 5 estrellas en Google. Lee las experiencias reales de familias de Madrid.",
     url: "https://valentinproteccionintegral.com/opiniones",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -146,6 +146,16 @@ export default function OpinionesPage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row justify-center">
                 <a href={buildWhatsAppHref('Hola, quiero compartir mi experiencia como cliente.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><MessageCircle className="h-4 w-4" /> Compartir mi experiencia</a>
+                {/* TODO: Añadir URL real de Google Business para reseñas
+                <a
+                  href="https://g.page/r/XXXXXX/review"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"
+                >
+                  ⭐ Dejar reseña en Google
+                </a>
+                */}
                 <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"><Instagram className="h-4 w-4" /> Seguir en Instagram</a>
               </div>
             </div>

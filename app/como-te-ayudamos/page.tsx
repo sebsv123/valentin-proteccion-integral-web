@@ -8,10 +8,11 @@ import { AgentTrustBlock, ComparisonCardsSection, TrustBadgesSection } from '@/c
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import HowItWorksSection from '@/components/HowItWorksSection';
 
 export const metadata: Metadata = {
   title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
-  description: "No somos un comparador online. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene. Así de simple. Descúbrelo.",
+  description: "No somos un comparador online. Somos asesores en Madrid que escuchan tu situación y buscan el seguro que de verdad te conviene. Sin presión. Primera consulta gratis.",
   keywords: "asesoramiento seguros madrid, consulta seguros gratuita, como elegir seguro madrid",
   openGraph: {
     title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
@@ -36,6 +37,31 @@ export default function ComoTeAyudamosPage() {
           { name: 'Inicio', item: site.domain, position: 1 },
           { name: 'Cómo te ayudamos', item: `${site.domain}/como-te-ayudamos`, position: 2 },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Asesoría de Seguros Personalizada en Madrid",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Valentín Protección Integral",
+              "url": "https://valentinproteccionintegral.com"
+            },
+            "areaServed": { "@type": "City", "name": "Madrid" },
+            "description": "Asesoría de seguros sin compromiso en Madrid. Comparamos opciones de salud, vida, mascotas, dental, viaje y más para que elijas con criterio.",
+            "url": "https://valentinproteccionintegral.com/como-te-ayudamos",
+            "serviceType": "Asesoría de Seguros",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Primera consulta gratuita y sin compromiso"
+            }
+          })
+        }}
       />
       <Header />
       <main className="pt-6 md:pt-8">
@@ -75,6 +101,7 @@ export default function ComoTeAyudamosPage() {
 
         <TrustBadgesSection />
         <AgentTrustBlock />
+        <HowItWorksSection />
         <ComparisonCardsSection />
 
         <section id="equipo-ayuda" aria-labelledby="equipo-title" className="section-pad pt-0">
@@ -82,12 +109,12 @@ export default function ComoTeAyudamosPage() {
             <div className="soft-card overflow-hidden">
               <div className="grid gap-0 xl:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[340px]">
-                  <Image src="/images/agent/rosa-valentin.jpg" alt={site.advisorName} fill className="object-cover object-top" />
+                  <Image src="/images/agent/rosa-oficina-enhanced.png" alt="Rosa Valentín y el equipo de Valentín Protección Integral, asesores de seguros en Madrid" fill className="object-cover object-top" />
                 </div>
                 <div className="p-7 md:p-10">
-                  <p className="kicker">Tu asesora personal</p>
-                  <h2 id="equipo-title" className="mt-3 section-title">Más de 10 años acompañando decisiones importantes</h2>
-                  <p className="section-copy mt-4">Rosa Valentín combina cercanía, experiencia y comparativa real entre opciones. Si quieres resolver una duda rápida o empezar con más calma, puedes hacerlo por el canal que te resulte más cómodo.</p>
+                  <p className="kicker">Nuestro equipo</p>
+                  <h2 id="equipo-title" className="mt-3 section-title">Rosa y Sebastián: 10 años acompañando lo que más importa</h2>
+                  <p className="section-copy mt-4">Rosa y Sebastián combinan cercanía, experiencia técnica y comparativa real entre opciones. Puedes empezar por el canal que más te convenga.</p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost">Instagram · @segurosrosavalentin</a>
                     <Link href="/contacto" className="btn-secondary">Consulta sin compromiso</Link>
