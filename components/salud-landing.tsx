@@ -96,14 +96,14 @@ export function SaludLanding() {
   return (
     <>
       {/* 1. BARRA STICKY FIXED */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-green-800 text-white py-3 px-4 shadow-md">
+      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
-          <p className="text-sm sm:text-base font-semibold leading-snug">
+          <p className="hidden sm:block text-sm sm:text-base font-semibold leading-snug">
             🏥 <span className="font-bold">Sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día.</span>
           </p>
           <a
             href="#contacto"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
@@ -118,8 +118,8 @@ export function SaludLanding() {
           gap={28}
           baseColor="#bbf7d0"
           activeColor="#16a34a"
-          proximity={120}
-          shockStrength={3}
+          proximity={80}
+          shockStrength={2}
         />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
@@ -143,7 +143,7 @@ export function SaludLanding() {
 
               <motion.h1
                 variants={fadeInUp}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6"
               >
                 Médico privado para toda tu familia.{" "}
                 <span className="underline decoration-green-500 decoration-4 underline-offset-4">Sin esperas</span>.{" "}
@@ -152,7 +152,7 @@ export function SaludLanding() {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-xl text-muted-foreground mb-8 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
               >
                 Accede a especialistas, urgencias y tu médico de cabecera cuando lo necesitas. Rosa y Sebastián te gestionan todo en una sola llamada, de forma personal.
               </motion.p>
@@ -207,7 +207,7 @@ export function SaludLanding() {
               id="contacto"
               className="relative"
             >
-              <div className="bg-card rounded-3xl shadow-xl border p-8">
+              <div className="bg-card rounded-3xl shadow-xl border p-5 sm:p-8">
                 <h2 className="text-2xl font-bold mb-2 text-center">Recibe tu presupuesto en 30 min</h2>
                 <p className="text-muted-foreground text-center mb-6">Sin compromiso. Te lo explicamos todo.</p>
 
@@ -283,10 +283,10 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-accent/30"
+        className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-16">
+          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">Todo lo que incluye tu seguro de salud</h2>
             <p className="text-lg text-muted-foreground">Sin listas de espera. Sin sorpresas. Desde el primer día.</p>
           </motion.div>
@@ -369,7 +369,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-slate-900 text-white overflow-hidden"
+        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
@@ -421,7 +421,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="py-24"
+        className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
@@ -512,7 +512,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-slate-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
           <motion.div variants={fadeInUp} className="text-center mb-12">
@@ -571,10 +571,10 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-green-50"
+        className="py-14 sm:py-20 lg:py-24 bg-green-50"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-16">
+          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Así de sencillo es empezar</h2>
           </motion.div>
 
@@ -618,8 +618,8 @@ export function SaludLanding() {
             </div>
           </div>
 
-          {/* Columna derecha: imagen */}
-          <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+          {/* Columna derecha: imagen — oculta en móvil */}
+          <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
             <Image
               src="https://images.pexels.com/photos/7735626/pexels-photo-7735626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               alt="Asesor de seguros con cliente en Madrid"
@@ -638,7 +638,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24"
+        className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto px-4">
           <motion.div variants={fadeInUp} className="text-center mb-12">
@@ -728,12 +728,13 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-accent/30"
+        className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container max-w-5xl px-4">
+          <h2 className="text-3xl font-bold sm:text-6xl mb-10 text-center lg:hidden">Preguntas frecuentes</h2>
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
 
-            <div className="lg:sticky lg:top-24 text-center">
+            <div className="hidden lg:block lg:sticky lg:top-24 text-center">
               <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image
@@ -754,9 +755,9 @@ export function SaludLanding() {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-accent/50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-accent/50 transition-colors"
                 >
-                  <span className="text-lg font-semibold pr-4">{faq.q}</span>
+                  <span className="text-base sm:text-lg font-semibold pr-4">{faq.q}</span>
                   <ChevronDown
                     className={cn(
                       "h-5 w-5 flex-shrink-0 transition-transform",
@@ -784,13 +785,13 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="py-24 bg-gradient-to-br from-green-800 to-green-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-green-800 to-green-900 text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6">
             Tu familia merece la mejor atención médica. Hoy mismo.
           </h2>
-          <p className="text-xl text-white/80 mb-8">
+          <p className="text-base sm:text-xl text-white/80 mb-8">
             Rosa y Sebastián te responden en menos de 30 minutos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -798,20 +799,20 @@ export function SaludLanding() {
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-16 px-10 text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
+                "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
               )}
             >
-              <WhatsAppLogo className="h-6 w-6" />
+              <WhatsAppLogo className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
             </a>
             <a
               href="tel:603448765"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-16 px-10 text-xl font-bold border-2 border-white text-white hover:bg-white hover:text-green-900"
+                "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold border-2 border-white text-white hover:bg-white hover:text-green-900"
               )}
             >
-              <Phone className="mr-2 h-6 w-6" />
+              <Phone className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
               603 448 765
             </a>
           </div>

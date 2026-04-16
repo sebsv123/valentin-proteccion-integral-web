@@ -51,9 +51,9 @@ export function DentalLanding() {
   return (
     <>
       {/* 🦷 BARRA STICKY */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-blue-700 text-white py-3 px-4 shadow-md">
+      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-blue-700 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
-          <p className="text-sm sm:text-base font-semibold leading-snug">
+          <p className="hidden sm:block text-sm sm:text-base font-semibold leading-snug">
             🦷 <span className="font-bold">Sin carencias en revisiones y limpiezas desde el primer día.</span>{" "}
             <span className="opacity-90 font-normal">
               Si no es así, te lo decimos antes de firmar.
@@ -61,7 +61,7 @@ export function DentalLanding() {
           </p>
           <a
             href="#contacto"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
@@ -88,12 +88,12 @@ export function DentalLanding() {
                 </AnimatedShinyText>
               </div>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                Tu sonrisa protegida desde <br />
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight">
+                Tu sonrisa protegida desde <br className="hidden sm:block" />
                 <span className="text-primary underline decoration-primary/30 decoration-8 underline-offset-8">el primer día.</span> Sin esperas.
               </h1>
 
-              <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
                 Seguro dental en Madrid sin períodos de carencia en ningún tratamiento.
                 Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
               </p>
@@ -119,7 +119,7 @@ export function DentalLanding() {
 
             {/* Columna derecha: Formulario */}
             <div className="w-full animate-fade-in-up" id="contacto" style={{ animationDelay: "0.2s" }}>
-              <div className="bg-background border rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-primary/5">
+              <div className="bg-background border rounded-[2rem] p-5 sm:p-8 md:p-10 shadow-2xl shadow-primary/5">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
                   <p className="text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
@@ -209,7 +209,7 @@ export function DentalLanding() {
       </section>
 
       {/* 👨‍💼 SECCIÓN ASESORES */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden">
+      <section className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             {/* Foto limpia — sin marco oval */}
@@ -255,9 +255,9 @@ export function DentalLanding() {
       </section>
 
       {/* 🦷 SECCIÓN BENEFICIOS */}
-      <section className="py-24 bg-accent/30">
+      <section className="py-14 sm:py-20 lg:py-24 bg-accent/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">¿Por qué elegirnos?</h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>
@@ -344,7 +344,7 @@ export function DentalLanding() {
       </section>
 
       {/* �📊 SECCIÓN COBERTURAS */}
-      <section className="py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border bg-muted">
             <Image 
@@ -394,7 +394,7 @@ export function DentalLanding() {
       </section>
 
       {/* ⚡ SECCIÓN PROCESO */}
-      <section className="py-24 bg-accent/30 border-y">
+      <section className="py-14 sm:py-20 lg:py-24 bg-accent/30 border-y">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
             <div>
@@ -451,7 +451,7 @@ export function DentalLanding() {
       </section>
 
       {/* 🎁 SECCIÓN OFERTA CRUZADA */}
-      <section className="py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg bg-muted">
@@ -495,7 +495,7 @@ export function DentalLanding() {
       </section>
 
       {/* 🛡️ SECCIÓN GARANTÍA */}
-      <section className="py-24 bg-card border-y">
+      <section className="py-14 sm:py-20 lg:py-24 bg-card border-y">
         <div className="container mx-auto max-w-4xl text-center px-4">
           <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
             <ShieldCheck className="h-12 w-12 text-primary" />
@@ -511,10 +511,11 @@ export function DentalLanding() {
       </section>
 
       {/* ❓ SECCIÓN FAQ */}
-      <section className="py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <div className="container max-w-5xl">
+          <h2 className="text-3xl font-bold sm:text-6xl mb-10 text-center lg:hidden">Preguntas frecuentes</h2>
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
-            <div className="lg:sticky lg:top-24">
+            <div className="hidden lg:block lg:sticky lg:top-24">
               <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image 
@@ -526,7 +527,7 @@ export function DentalLanding() {
                 />
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {[
                 {
                   q: "¿Hay períodos de carencia?",
@@ -553,12 +554,12 @@ export function DentalLanding() {
                   a: "Sí. Los clientes que empiezan con dental tienen descuentos especiales garantizados al añadir salud completa. Con la misma gestión personal de Rosa y Sebastián, en una sola llamada."
                 }
               ].map((faq, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-accent/20 border hover:bg-accent/40 transition-colors">
-                  <h3 className="text-xl font-bold mb-4 flex gap-3 items-start">
-                    <HelpCircle className="h-6 w-6 text-primary flex-none mt-1" />
+                <div key={i} className="p-5 sm:p-8 rounded-2xl bg-accent/20 border hover:bg-accent/40 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold mb-4 flex gap-3 items-start">
+                    <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-none mt-1" />
                     {faq.q}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed pl-9">{faq.a}</p>
+                  <p className="text-muted-foreground leading-relaxed pl-8 sm:pl-9">{faq.a}</p>
                 </div>
               ))}
             </div>

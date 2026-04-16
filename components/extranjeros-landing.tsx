@@ -94,13 +94,13 @@ export function ExtranjeroLanding() {
     <>
       {/* 1. BARRA STICKY */}
       <div className="sticky top-0 z-50 bg-blue-900 text-white">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <p className="text-sm md:text-base flex-1 truncate">
+        <div className="container mx-auto px-4 py-2 sm:py-3 flex items-center justify-between gap-4">
+          <p className="hidden sm:block text-sm md:text-base flex-1 truncate">
             ✈️ ¿Viajas al extranjero por trabajo o vives fuera? Cobertura médica completa desde el primer día.
           </p>
           <a
             href="#contacto"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="w-full text-center sm:w-auto sm:text-left flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Pedir presupuesto →
           </a>
@@ -115,8 +115,8 @@ export function ExtranjeroLanding() {
           gap={28}
           baseColor="#bfdbfe"
           activeColor="#1d4ed8"
-          proximity={120}
-          shockStrength={3}
+          proximity={80}
+          shockStrength={2}
         />
         <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
           <Globe className="inset-0" />
@@ -140,7 +140,7 @@ export function ExtranjeroLanding() {
 
               <motion.h1
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6"
               >
                 Atención médica privada donde estés.{" "}
                 <span className="underline decoration-blue-500">Sin fronteras</span>. Sin sorpresas.
@@ -148,7 +148,7 @@ export function ExtranjeroLanding() {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-lg md:text-xl text-muted-foreground mb-8"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8"
               >
                 Tanto si vives fuera, viajas por trabajo o pasas temporadas en el extranjero, 
                 Rosa y Sebastián te gestionan la cobertura completa en una sola llamada.
@@ -206,7 +206,7 @@ export function ExtranjeroLanding() {
               id="contacto"
               className="relative"
             >
-              <div className="bg-card border rounded-3xl p-8 shadow-2xl">
+              <div className="bg-card border rounded-3xl p-5 sm:p-8 shadow-2xl">
                 <h3 className="text-2xl font-bold mb-2">Dinos a dónde viajas y te preparamos tu cobertura</h3>
                 <p className="text-muted-foreground mb-6">Sin compromiso. Respuesta en 30 min.</p>
 
@@ -283,10 +283,10 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-blue-50/50"
+        className="py-14 sm:py-20 lg:py-24 bg-blue-50/50"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-16">
+          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">¿Para quién es este seguro?</h2>
           </motion.div>
 
@@ -333,8 +333,8 @@ export function ExtranjeroLanding() {
             <p className="text-blue-400 font-semibold uppercase tracking-widest text-sm mb-3">
               La realidad que nadie te cuenta
             </p>
-            <h2 className="text-3xl sm:text-5xl font-bold mb-4">
-              Son las 2 de la madrugada en Tokio.<br />
+            <h2 className="text-2xl sm:text-3xl sm:text-5xl font-bold mb-4">
+              Son las 2 de la madrugada en Tokio.<br className="hidden sm:block" />
               <span className="text-blue-400">¿A quién llamas?</span>
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
@@ -365,7 +365,7 @@ export function ExtranjeroLanding() {
                 with: "Red de clínicas concertadas en más de 190 países. Cita gestionada en tu idioma.",
               },
             ].map((item, i) => (
-              <div key={i} className="rounded-2xl bg-white/5 border border-white/10 p-6">
+              <div key={i} className="rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-6">
                 <div className="text-4xl mb-4">{item.emoji}</div>
                 <h3 className="font-bold text-lg mb-4 text-white">{item.scenario}</h3>
                 <div className="space-y-3">
@@ -390,7 +390,7 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="py-24"
+        className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
@@ -474,7 +474,7 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-slate-900 text-white overflow-hidden"
+        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
@@ -526,7 +526,7 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-slate-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
           <motion.div variants={fadeInUp} className="text-center mb-12">
@@ -585,7 +585,7 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24"
+        className="py-14 sm:py-20 lg:py-24"
       >
         <div className="container mx-auto max-w-5xl px-4">
           <motion.div variants={fadeInUp} className="text-center mb-12">
@@ -594,7 +594,7 @@ export function ExtranjeroLanding() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 name: "Carlos M.",
@@ -618,7 +618,10 @@ export function ExtranjeroLanding() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="rounded-2xl border bg-card p-6 flex flex-col gap-4"
+                className={cn(
+                  "rounded-2xl border bg-card p-5 sm:p-6 flex flex-col gap-4",
+                  i === 2 && "hidden sm:flex"
+                )}
               >
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, s) => (
@@ -651,10 +654,10 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-blue-50"
+        className="py-14 sm:py-20 lg:py-24 bg-blue-50"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-16">
+          <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Así de sencillo es empezar</h2>
           </motion.div>
 
@@ -698,8 +701,8 @@ export function ExtranjeroLanding() {
               </div>
             </div>
 
-            {/* Columna derecha: imagen */}
-            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+            {/* Columna derecha: imagen — oculta en móvil */}
+            <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
               <Image
                 src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 alt="Equipo profesional planificando viaje internacional con cobertura médica"
@@ -763,12 +766,13 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="py-24 bg-accent/30"
+        className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container max-w-5xl px-4">
+          <h2 className="text-3xl font-bold sm:text-6xl mb-10 text-center lg:hidden">Preguntas frecuentes</h2>
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-16 items-start">
 
-            <div className="lg:sticky lg:top-24 text-center">
+            <div className="hidden lg:block lg:sticky lg:top-24 text-center">
               <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image
@@ -789,9 +793,9 @@ export function ExtranjeroLanding() {
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-accent/50 transition-colors"
+                    className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-accent/50 transition-colors"
                   >
-                    <span className="text-lg font-semibold pr-4">{faq.q}</span>
+                    <span className="text-base sm:text-lg font-semibold pr-4">{faq.q}</span>
                     <ChevronDown
                       className={cn(
                         "h-5 w-5 flex-shrink-0 transition-transform",
@@ -819,13 +823,13 @@ export function ExtranjeroLanding() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="py-24 bg-gradient-to-br from-blue-800 to-blue-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-800 to-blue-900 text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6">
             El mundo es tu consulta médica. Protégete donde estés.
           </h2>
-          <p className="text-xl text-white/80 mb-8">
+          <p className="text-base sm:text-xl text-white/80 mb-8">
             Rosa y Sebastián te preparan tu cobertura internacional en menos de 30 minutos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -833,20 +837,20 @@ export function ExtranjeroLanding() {
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-16 px-10 text-xl font-bold bg-blue-500 hover:bg-blue-600 text-white gap-2"
+                "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold bg-blue-500 hover:bg-blue-600 text-white gap-2"
               )}
             >
-              <WhatsAppLogo className="h-6 w-6" />
+              <WhatsAppLogo className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
             </a>
             <a
               href="tel:603448765"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-16 px-10 text-xl font-bold border-2 border-white text-white hover:bg-white hover:text-blue-900"
+                "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold border-2 border-white text-white hover:bg-white hover:text-blue-900"
               )}
             >
-              <Phone className="mr-2 h-6 w-6" />
+              <Phone className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
               603 448 765
             </a>
           </div>
