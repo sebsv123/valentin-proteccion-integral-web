@@ -456,7 +456,7 @@ export function SaludLanding() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {[
-                    { s: "Médico de cabecera",       d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Consulta de especialidad media", d: "✅ Desde el día 1", highlight: false },
                     { s: "Urgencias 24h",            d: "✅ Desde el día 1",    highlight: false },
                     { s: "Pediatría",               d: "✅ Desde el día 1",    highlight: false },
                     { s: "Especialistas",            d: "✅ Desde el día 1",    highlight: false },
