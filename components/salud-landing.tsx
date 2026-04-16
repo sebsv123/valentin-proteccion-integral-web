@@ -443,39 +443,73 @@ export function SaludLanding() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4 text-center lg:text-left">Lo que tienes disponible desde el primer día</h2>
-            <p className="text-lg text-muted-foreground mb-8 text-center lg:text-left">Sin sorpresas. Sin letras pequeñas. Así de claro.</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4 text-center lg:text-left">Lo que tienes. Claro. Sin letra pequeña.</h2>
+            <p className="text-lg text-muted-foreground mb-8 text-center lg:text-left">La mayoría de coberturas son inmediatas. Las que tienen espera, te las explicamos antes de firmar. Así trabajamos.</p>
 
             <div className="overflow-hidden rounded-2xl border bg-card/50 overflow-x-auto">
               <table className="w-full text-left">
                 <thead className="bg-muted">
                   <tr>
                     <th className="px-6 py-4 font-bold">Servicio</th>
-                    <th className="px-6 py-4 font-bold text-center">Incluido</th>
+                    <th className="px-6 py-4 font-bold text-center">Disponibilidad</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {[
-                    { s: "Médico de cabecera", d: "✅ Desde el día 1" },
-                    { s: "Especialistas", d: "✅ Desde el día 1" },
-                    { s: "Urgencias 24h", d: "✅ Desde el día 1" },
-                    { s: "Hospitalización", d: "✅ Desde el día 1" },
-                    { s: "Cirugía programada", d: "✅ Desde el día 1" },
-                    { s: "Análisis y radiografías", d: "✅ Desde el día 1" },
-                    { s: "Maternidad y seguimiento", d: "✅ Desde el día 1" },
-                    { s: "Salud mental", d: "✅ Desde el día 1" },
-                    { s: "Fisioterapia", d: "✅ Desde el día 1" },
+                    { s: "Médico de cabecera",       d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Urgencias 24h",            d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Pediatría",               d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Especialistas",            d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Analíticas y radiografías",d: "✅ Desde el día 1",    highlight: false },
+                    { s: "Pruebas complejas (TAC, resonancia)", d: "⏳ 6 meses", highlight: true  },
+                    { s: "Rehabilitación / Fisioterapia",       d: "⏳ 6 meses", highlight: true  },
+                    { s: "Hospitalización y cirugía",           d: "⏳ 8 meses", highlight: true  },
+                    { s: "Parto y maternidad",                  d: "⏳ 10 meses",highlight: true  },
+                    { s: "Salud mental",                        d: "⏳ Consultar",highlight: true  },
                   ].map((row, i) => (
-                    <tr key={i} className="hover:bg-muted/50 transition-colors">
+                    <tr key={i} className={cn(
+                      "transition-colors",
+                      row.highlight
+                        ? "bg-amber-50/60 hover:bg-amber-50"
+                        : "hover:bg-muted/50"
+                    )}>
                       <td className="px-6 py-4 font-medium">{row.s}</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">{row.d}</td>
+                      <td className={cn(
+                        "px-6 py-4 text-center font-semibold",
+                        row.highlight ? "text-amber-600" : "text-primary"
+                      )}>{row.d}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground italic">
-              Cobertura completa desde el primer día. Te explicamos todos los detalles antes de contratar.
+
+            {/* Nota portabilidad — gancho de venta */}
+            <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex gap-3 items-start">
+              <span className="text-2xl leading-none mt-0.5">🚀</span>
+              <div>
+                <p className="font-bold text-emerald-800 text-sm">
+                  ¿Vienes de otra compañía? Te mantenemos la antigüedad.
+                </p>
+                <p className="text-emerald-700 text-sm mt-1">
+                  Si ya llevas tiempo asegurado con otra empresa, podemos eliminar 
+                  o reducir las carencias y reconocer tu antigüedad. 
+                  Una llamada y lo gestionamos todo.
+                </p>
+                <a
+                  href={`https://wa.me/34603448765?text=${encodeURIComponent(
+                    "Hola, vengo de otra aseguradora y me gustaría que me mantuvierais la antigüedad al cambiarme."
+                  )}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 
+                             underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
+                >
+                  Consultarnos por WhatsApp →
+                </a>
+              </div>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground/70 italic">
+              Los plazos indicados son orientativos y pueden variar según el plan contratado. 
+              Te lo explicamos todo antes de firmar, sin sorpresas.
             </p>
           </div>
         </div>
