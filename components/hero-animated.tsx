@@ -8,6 +8,7 @@ import { MessageCircle } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import CountUp from './ui/count-up';
+import { HeroImage } from './hero-image';
 
 export function HeroLeadSection() {
   const heroRef = useRef<HTMLElement>(null)
@@ -32,18 +33,7 @@ export function HeroLeadSection() {
               style={{ y: isMobile ? '0%' : bgY }}
               className="absolute inset-0 scale-110"
             >
-              <Image
-                src="/images/premium/hero-family.webp"
-                alt="Familia feliz disfrutando de un momento de bienestar y seguridad con el respaldo de Valentín Seguros"
-                fill
-                sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                className="object-cover object-center"
-                priority
-                fetchPriority="high"
-                quality={85}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUEB//EACMQAAIBBAIDAQEAAAAAAAAAAAECAwAEBRESITFBUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amce1ba4uYre2jeSSQ4CqMk1Zaz0KytY1kmt2eYjJVpCcfbj9VVVAUbAooor/2Q=="
-              />
+              <HeroImage />
             </motion.div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
           </div>

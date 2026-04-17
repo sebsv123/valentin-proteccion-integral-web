@@ -15,7 +15,7 @@ function Brand() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0">
       <MetallicPaint className="relative h-[54px] w-[180px] max-w-[60vw] overflow-hidden rounded-[20px] border border-white/20 bg-white p-1 shadow-sm sm:w-[220px]">
-        <Image src="/brand/logo-vpi.png" alt={site.name} fill className="object-contain" priority />
+        <Image src="/brand/logo-vpi.png" alt={site.name} width={220} height={54} className="object-contain" priority />
       </MetallicPaint>
     </Link>
   );
@@ -101,14 +101,14 @@ export function Header() {
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-4 py-2.5 text-white/90
                            text-sm font-semibold rounded-[14px] border border-white/20
-                           hover:bg-white/10 transition-colors"
+                           hover:bg-white/10 transition-colors min-w-[160px]"
               >
                 <Phone className="h-4 w-4" />
                 {site.phone}
               </a>
               <a
                 href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')}
-                className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)]"
+                className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)] min-w-[100px]"
               >
                 WhatsApp
               </a>
@@ -117,9 +117,8 @@ export function Header() {
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2.5 text-white/95 text-sm
-                           bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]
                            hover:opacity-90 rounded-[14px] font-semibold
-                           transition-opacity shadow-md"
+                           transition-opacity shadow-md min-w-[100px]"
               >
                 <Instagram className="h-4 w-4" />
                 Instagram
