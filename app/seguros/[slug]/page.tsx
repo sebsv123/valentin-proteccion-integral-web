@@ -10,6 +10,7 @@ import { getProduct, products, site } from '@/lib/products';
 import FaqSchema from '@/components/FaqSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import { getPexelsImage } from '@/lib/pexels';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -20,6 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getProduct(slug);
   if (!product) return {};
   
+  // Obtener imagen de Pexels para el producto
+  const pexelsImage = await getPexelsImage(slug);
+  
   return {
     title: product.metaTitle,
     description: product.metaDescription,
@@ -29,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      images: [{ url: `${site.domain}${product.heroImage}`, alt: product.heroAlt }],
+      images: [{ url: pexelsImage, alt: product.heroAlt }],
     },
   };
 }

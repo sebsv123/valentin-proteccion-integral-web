@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-[var(--border)] bg-white/92">
       <div className="container-shell py-14">
-        <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
               <div className="relative h-20 w-[320px] max-w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-white p-3 shadow-sm">
@@ -18,6 +18,15 @@ export function Footer() {
             <div className="flex flex-wrap gap-3">
               <a href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} className="btn-whatsapp !px-5 !py-3">WhatsApp</a>
               <Link href="/contacto" className="btn-ghost !px-5 !py-3">Formulario</Link>
+            </div>
+          </div>
+          <div>
+            <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">¿Quién eres tú?</p>
+            <div className="mt-4 space-y-3 text-[var(--muted)]">
+              <Link className="block hover:text-[var(--blue)]" href="/para/jovenes-profesionales">Soy joven profesional</Link>
+              <Link className="block hover:text-[var(--blue)]" href="/para/familias">Tengo familia que proteger</Link>
+              <Link className="block hover:text-[var(--blue)]" href="/para/seniors">Soy senior o prejubilado</Link>
+              <Link className="block hover:text-[var(--blue)]" href="/para/autonomos">Soy autónomo</Link>
             </div>
           </div>
           <div>

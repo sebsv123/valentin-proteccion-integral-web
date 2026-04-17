@@ -1,6 +1,6 @@
 // lib/pexels.ts - Pexels API integration for blog images
 
-const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
+const PEXELS_API_KEY = '3AQ8sttJh513w5Dyjz4Ij0cahKmYefSghoX1jnO0Eosv0HLbgQZW0oW1';
 
 interface PexelsPhoto {
   id: number;
@@ -56,6 +56,24 @@ const slugToQuery: Record<string, string> = {
   
   // Post dental
   'seguro-dental-familias-madrid': 'dental care family dentist madrid',
+
+  // PRODUCTOS DE SEGUROS - Slugs de productos para uso en páginas de seguros
+  // Salud y especialidades médicas
+  'salud': 'doctor consultation healthcare medical hospital',
+  'salud-individual': 'private healthcare doctor consultation',
+  'salud-dental': 'dental care dentist teeth cleaning',
+  'salud-extranjeros': 'international medical travel healthcare',
+  'vida': 'family protection life insurance parents children',
+  'mascotas': 'happy pets dog cat veterinary care',
+  'dental': 'dental care family dentist teeth whitening',
+  'accidentes': 'accident protection safety insurance',
+  'decesos': 'funeral flowers memorial service peaceful',
+  'viaje': 'travel adventure airport luggage tourist',
+  'hogar': 'modern home living room family house',
+  'electrodomesticos': 'home appliances kitchen refrigerator washing machine',
+  'proteccion-juridica': 'legal advice lawyer consultation office',
+  'negocio': 'small business shop storefront commerce',
+  'empresa': 'business office company professional workspace',
 };
 
 /**

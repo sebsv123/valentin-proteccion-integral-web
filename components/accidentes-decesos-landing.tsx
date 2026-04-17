@@ -708,7 +708,49 @@ export function AccidentesDecesosLanding() {
         </div>
       </section>
 
-      {/* 10. FAQ */}
+      {/* 10. SECCIÓN EMOCIONAL - Lo que más importa */}
+      <section className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-amber-300 text-sm font-semibold mb-6">
+              Compromiso en los momentos difíciles
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Lo que más importa cuando menos te lo esperas
+            </h2>
+          </div>
+
+          <div className="prose prose-lg prose-invert mx-auto text-white/80">
+            <p className="text-xl leading-relaxed mb-8">
+              Gestionar un fallecimiento es uno de los momentos más duros que existe. Los trámites, los tiempos, las decisiones. Con este seguro, tu familia no tiene que ocuparse de nada.
+            </p>
+
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 mb-8">
+              <p className="text-lg leading-relaxed mb-6">
+                Nosotros conocemos el proceso y acompañamos en cada paso, con la discreción y el respeto que merece ese momento. Desde el primer aviso hasta la gestión final, estamos ahí.
+              </p>
+
+              <div className="flex items-start gap-4 bg-amber-900/30 border border-amber-500/30 rounded-xl p-6">
+                <div className="flex-none w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+                  <Clock className="h-6 w-6 text-amber-400" />
+                </div>
+                <div>
+                  <p className="font-bold text-white mb-1">Nuestro compromiso:</p>
+                  <p className="text-amber-200 text-lg">
+                    Nos comprometemos a ponernos en contacto con tu familia en menos de 2 horas desde que nos notifiquen cualquier siniestro.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-lg text-white/70 text-center">
+              Porque en esos momentos, lo último que una familia necesita es preocuparse por papeleos, gestiones o gastos inesperados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FAQ */}
       <motion.section
         initial="hidden"
         whileInView="visible"

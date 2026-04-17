@@ -122,6 +122,74 @@ export default function HomePage() {
         <TrustBadgesSection />
         <MascotHelperSection />
         <ProductCategoryGrid />
+
+        {/* Sección ICP - Encuentra lo que necesitas según tu situación */}
+        <section className="section-pad bg-[var(--bg-soft)]">
+          <div className="container-shell">
+            <h2 className="section-title text-center mb-4">Encuentra lo que necesitas según tu situación</h2>
+            <p className="text-center text-[var(--muted)] mb-10 max-w-2xl mx-auto">
+              Cada etapa de la vida tiene sus prioridades. Elige el perfil que mejor te describe y descubre la protección que realmente necesitas.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {/* Joven Profesional */}
+              <Link href="/para/jovenes-profesionales" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold mb-2">Joven Profesional</h3>
+                <p className="text-[var(--muted)] text-sm">
+                  Acabas de emanciparte o tienes hipoteca reciente. Protege lo que estás construyendo.
+                </p>
+                <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
+                  Ver más →
+                </span>
+              </Link>
+
+              {/* Familias */}
+              <Link href="/para/familias" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
+                  <span className="text-2xl">👨‍👩‍👧‍👦</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold mb-2">Familias</h3>
+                <p className="text-[var(--muted)] text-sm">
+                  Protege a quienes más quieres. Salud, dental, vida y decesos para toda la familia.
+                </p>
+                <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
+                  Ver más →
+                </span>
+              </Link>
+
+              {/* Seniors */}
+              <Link href="/para/seniors" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
+                  <span className="text-2xl">🌟</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold mb-2">Seniors</h3>
+                <p className="text-[var(--muted)] text-sm">
+                  Más de 60 años y quieres tener todo en orden. Tranquilidad para ti y los tuyos.
+                </p>
+                <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
+                  Ver más →
+                </span>
+              </Link>
+
+              {/* Autónomos */}
+              <Link href="/para/autonomos" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
+                  <span className="text-2xl">💼</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold mb-2">Autónomos</h3>
+                <p className="text-[var(--muted)] text-sm">
+                  Dedúcete hasta 500€ en el IRPF. Aprovecha las ventajas fiscales que te corresponden.
+                </p>
+                <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
+                  Ver más →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <ComparisonCardsSection />
         <AgentTrustBlock />
         <HowItWorksSection />

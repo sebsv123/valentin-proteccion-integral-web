@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
   // Redirecciones SEO
   async redirects() {
     return [
+      // Consolidación www: sin-www → www
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'valentinproteccionintegral.com' }],
+        destination: 'https://www.valentinproteccionintegral.com/:path*',
+        permanent: true,
+      },
       // Redirección explícita de /sobre-mi a /sobre-nosotros (301 permanente)
       {
         source: '/sobre-mi',

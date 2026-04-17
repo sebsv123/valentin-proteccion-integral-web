@@ -10,6 +10,7 @@ import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import RevealLight from '@/components/ui/reveal-light';
+import { getPexelsImage } from '@/lib/pexels';
 
 export const metadata: Metadata = {
   title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
@@ -30,7 +31,15 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default function SegurosHubPage() {
+export default async function SegurosHubPage() {
+  // Obtener imágenes de Pexels para todos los productos
+  const productsWithImages = await Promise.all(
+    products.map(async (product) => ({
+      ...product,
+      pexelsImage: await getPexelsImage(product.slug),
+    }))
+  );
+
   return (
     <>
       <BreadcrumbSchema 
@@ -49,14 +58,14 @@ export default function SegurosHubPage() {
             <p className="section-copy mt-4">Cada producto tiene su propia página con ventajas, preguntas frecuentes y formas reales de pedir orientación.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-            {products.map((product, idx) => {
+            {productsWithImages.map((product, idx) => {
               const children = getSubpagesForProduct(product.slug);
               return (
                  <RevealLight key={product.slug} delay={idx * 0.1}>
                   <article className="glass-card-premium group overflow-hidden h-full flex flex-col">
                     <div className="relative h-64 overflow-hidden">
                       <Image 
-                        src={product.cardImage} 
+                        src={product.pexelsImage} 
                         alt={product.cardAlt} 
                         fill 
                         className="object-cover transition-transform duration-700 group-hover:scale-110" 

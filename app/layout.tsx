@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   manifest: '/manifest.json',
   alternates: {
-    canonical: 'https://valentinproteccionintegral.com',
+    canonical: '/',
   },
   robots: {
     index: true,

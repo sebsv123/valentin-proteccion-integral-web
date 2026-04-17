@@ -10,6 +10,7 @@ import { site, buildWhatsAppHref } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import { getPexelsImage } from '@/lib/pexels';
 
 export const metadata: Metadata = {
   title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
@@ -30,7 +31,15 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  // Obtener imágenes de Pexels para todos los posts
+  const postsWithImages = await Promise.all(
+    blogPosts.map(async (post) => ({
+      ...post,
+      pexelsImage: await getPexelsImage(post.slug),
+    }))
+  );
+
   return (
     <>
       <SchemaBreadcrumb
@@ -53,7 +62,7 @@ export default function BlogPage() {
               "name": "Valentín Protección Integral",
               "url": "https://valentinproteccionintegral.com"
             },
-            "blogPost": blogPosts
+            "blogPost": postsWithImages
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .slice(0, 10)
               .map(post => ({
@@ -62,7 +71,7 @@ export default function BlogPage() {
                 "description": post.excerpt,
                 "url": `https://valentinproteccionintegral.com/blog/${post.slug}`,
                 "datePublished": post.date,
-                "image": `https://valentinproteccionintegral.com${post.image}`,
+                "image": post.pexelsImage.startsWith('http') ? post.pexelsImage : `https://valentinproteccionintegral.com${post.pexelsImage}`,
                 "author": {
                   "@type": "Person",
                   "name": "Rosa Valentín"
@@ -87,13 +96,13 @@ export default function BlogPage() {
 
         <section className="section-pad pt-0">
           <div className="container-shell grid gap-6 lg:grid-cols-3">
-            {blogPosts
+            {postsWithImages
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .map((post) => (
               <article key={post.slug} className="soft-card overflow-hidden group">
                 <Link href={`/blog/${post.slug}`} className="block">
                   <div className="relative h-60 overflow-hidden">
-                    <Image src={post.image} alt={post.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={post.pexelsImage} alt={post.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(0,34,68,0.5))]" />
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <div className="flex items-center gap-3 text-xs text-white/80">
