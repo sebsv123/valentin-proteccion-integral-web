@@ -51,7 +51,11 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
     if (!endpoint) {
       setServerMessage('Tu solicitud está lista para enviarse. Mientras terminamos la conexión automática, puedes escribirnos por WhatsApp y te ayudamos igualmente.');
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
-      return;
+      // Meta Pixel Lead event
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Lead', { content_name: values.productInterest });
+      }
+      router.push('/gracias');
     }
 
     try {
@@ -67,6 +71,10 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
       if (!response.ok) throw new Error('No hemos podido enviar tu solicitud. Escríbenos por WhatsApp y lo resolvemos contigo.');
 
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
+      // Meta Pixel Lead event
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Lead', { content_name: values.productInterest });
+      }
       router.push('/gracias');
     } catch (error) {
       setServerError(error instanceof Error ? error.message : 'Ha ocurrido un error inesperado.');
