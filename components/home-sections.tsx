@@ -101,8 +101,18 @@ export function TrustBadgesSection() {
   );
 }
 
-export function ProductCategoryGrid() {
-  const list = products.map((product) => ({ ...product, image: cardImages[product.slug] || product.cardImage }));
+interface ProductWithImage {
+  slug: string;
+  cardAlt: string;
+  eyebrow?: string;
+  label: string;
+  summary?: string;
+  whatsappMessage?: string;
+  cardImage?: string;
+  pexelsImage: string;
+}
+
+export function ProductCategoryGrid({ productsWithImages }: { productsWithImages: ProductWithImage[] }) {
   return (
      <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
       <div className="container-shell">
@@ -114,12 +124,12 @@ export function ProductCategoryGrid() {
           </div>
         </RevealLight>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
-          {list.map((product, index) => (
+          {productsWithImages.map((product, index) => (
             <RevealLight key={product.slug} delay={index * 0.1} direction="up">
               <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
                   <Image
-                    src={product.image}
+                    src={product.pexelsImage}
                     alt={product.cardAlt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -148,7 +158,7 @@ export function ProductCategoryGrid() {
                   </p>
                   <div className="mt-5 flex flex-col gap-3">
                     <a
-                      href={buildWhatsAppHref(product.whatsappMessage)}
+                      href={buildWhatsAppHref(product.whatsappMessage || `Hola, quiero información sobre ${product.label}`)}
                       className="btn-whatsapp w-full justify-center font-bold"
                     >
                       Consultar por WhatsApp

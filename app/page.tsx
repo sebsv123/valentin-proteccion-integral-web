@@ -4,6 +4,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import Link from 'next/link';
 import { HeroLeadSection, StatsSection } from '@/components/hero-animated';
 import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, ProductCategoryGrid, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
+import { getPexelsImage } from '@/lib/pexels';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import CredentialsBar from '@/components/CredentialsBar';
@@ -37,7 +38,15 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Obtener imágenes de Pexels para todos los productos
+  const { products } = await import('@/lib/products');
+  const productsWithImages = await Promise.all(
+    products.map(async (product) => ({
+      ...product,
+      pexelsImage: await getPexelsImage(product.slug),
+    }))
+  );
   return (
     <>
       {/* === SEO: LocalBusiness Schema === */}
@@ -50,7 +59,7 @@ export default function HomePage() {
             "name": "Valentín Protección Integral",
             "description": "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
             "url": "https://valentinproteccionintegral.com",
-            "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.jpeg",
+            "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.png",
             "sameAs": ["https://www.instagram.com/segurosrosavalentin"],
             "telephone": "+34-603-44-87-65",
             "address": {
@@ -121,7 +130,7 @@ export default function HomePage() {
         <GoogleReviewsWidget />
         <TrustBadgesSection />
         <MascotHelperSection />
-        <ProductCategoryGrid />
+        <ProductCategoryGrid productsWithImages={productsWithImages} />
 
         {/* Sección ICP - Encuentra lo que necesitas según tu situación */}
         <section className="section-pad bg-[var(--bg-soft)]">

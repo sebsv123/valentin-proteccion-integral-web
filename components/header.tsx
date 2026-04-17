@@ -15,7 +15,7 @@ function Brand() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0">
       <MetallicPaint className="relative h-[54px] w-[180px] max-w-[60vw] overflow-hidden rounded-[20px] border border-white/20 bg-white p-1 shadow-sm sm:w-[220px]">
-        <Image src="/brand/logo-vpi.jpeg" alt={site.name} fill className="object-contain" priority />
+        <Image src="/brand/logo-vpi.png" alt={site.name} fill className="object-contain" priority />
       </MetallicPaint>
     </Link>
   );
@@ -51,14 +51,14 @@ export function Header() {
 
   return (
     <>
-      <header className={`sticky top-0 z-50 transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
+      <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
         <div className="container-shell mx-auto px-4 max-w-[1400px]">
           <div className="flex items-center justify-between gap-3 py-3 xl:gap-5 xl:py-4">
             <Brand />
 
             <nav className="hidden items-center gap-1 xl:flex">
               {/* Mega Menu trigger */}
-              <div className="relative z-[60]" ref={megaRef}>
+              <div className="relative z-[110]" ref={megaRef}>
                 <button
                   onClick={() => setMega((v) => !v)}
                   className="group relative px-4 py-2"
@@ -75,7 +75,7 @@ export function Header() {
                 {/* Mega dropdown — CSS transition, no framer-motion */}
                 <div
                   id="mega-menu"
-                  className={`absolute left-1/2 -translate-x-1/2 top-[calc(100%+12px)] w-[1180px] max-w-[calc(100vw-4rem)] rounded-[30px] border border-[var(--border)] bg-white/95 p-6 shadow-[0_24px_72px_rgba(18,59,104,0.14)] backdrop-blur-xl overflow-y-auto max-h-[calc(100vh-100px)] overscroll-contain
+                  className={`absolute left-1/2 -translate-x-1/2 top-[calc(100%+12px)] w-[1180px] max-w-[calc(100vw-2rem)] rounded-[30px] border border-[var(--border)] bg-white/95 p-6 shadow-[0_24px_72px_rgba(18,59,104,0.25)] backdrop-blur-xl overflow-y-auto max-h-[calc(100vh-120px)] overscroll-contain z-[120]
                     transition-all duration-200 origin-top
                     ${mega ? 'opacity-100 scale-y-100 translate-y-0 pointer-events-auto' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}
                 >
@@ -203,7 +203,7 @@ export function Header() {
       <StaggeredMenu
         isFixed={true}
         position="right"
-        logoUrl="/brand/logo-vpi.jpeg"
+        logoUrl="/brand/logo-vpi.png"
         colors={['#002244', '#0F5E9C']}
         accentColor="#0F5E9C"
         items={[

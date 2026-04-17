@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="space-y-3">
               <div className="relative h-20 w-[320px] max-w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-white p-3 shadow-sm">
-                <Image src="/brand/logo-vpi.jpeg" alt="Logotipo de Valentín Protección Integral - Asesoría de Seguros en Madrid" fill className="object-contain" />
+                <Image src="/brand/logo-vpi.png" alt="Logotipo de Valentín Protección Integral - Asesoría de Seguros en Madrid" fill className="object-contain" />
               </div>
               <p className="text-[var(--muted)]">{site.brandLine}</p>
             </div>
