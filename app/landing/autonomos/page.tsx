@@ -24,7 +24,8 @@ import {
   TrendingUp,
   ShieldCheck,
   Zap,
-  Clock
+  Clock,
+  Users
 } from "lucide-react";
 
 const trackLead = () => {
