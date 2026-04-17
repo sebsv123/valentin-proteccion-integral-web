@@ -14,8 +14,15 @@ import IridescenceBackground from './ui/iridescence-background';
 function Brand() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0">
-      <MetallicPaint className="relative h-[48px] w-[120px] max-w-[65vw] overflow-visible rounded-[20px] border border-white/20 bg-white p-1 shadow-sm sm:w-[140px]">
-        <Image src="/brand/logo-vpi.webp" alt={site.name} width={440} height={181} className="object-contain object-left" priority />
+      <MetallicPaint className="relative h-[44px] w-[160px] max-w-[55vw] overflow-hidden rounded-[20px] border border-white/20 bg-white px-2 py-1 shadow-sm sm:w-[180px]">
+        <Image
+          src="/brand/logo-vpi.webp"
+          alt={site.name}
+          width={440}
+          height={181}
+          className="h-full w-full object-contain"
+          priority
+        />
       </MetallicPaint>
     </Link>
   );
@@ -208,7 +215,7 @@ export function Header() {
       <StaggeredMenu
         isFixed={true}
         position="right"
-        logoUrl="/brand/logo-vpi.png"
+        logoUrl="/brand/logo-vpi.webp"
         colors={['#002244', '#0F5E9C']}
         accentColor="#0F5E9C"
         items={[
