@@ -39,13 +39,16 @@ export const metadata: Metadata = {
 export const dynamic = 'force-static';
 
 export default async function HomePage() {
-  // Obtener imágenes de Pexels para todos los productos
+  // Obtener imágenes de Pexels para todos los productos (fallback a imagen local si falla)
   const { products } = await import('@/lib/products');
   const productsWithImages = await Promise.all(
-    products.map(async (product) => ({
-      ...product,
-      pexelsImage: await getPexelsImage(product.slug),
-    }))
+    products.map(async (product) => {
+      const pexelsImage = await getPexelsImage(product.slug);
+      return {
+        ...product,
+        pexelsImage: pexelsImage === '/images/blog/default.jpg' ? product.cardImage : pexelsImage,
+      };
+    })
   );
   return (
     <>

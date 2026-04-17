@@ -32,12 +32,15 @@ export const metadata: Metadata = {
 export const dynamic = 'force-static';
 
 export default async function SegurosHubPage() {
-  // Obtener imágenes de Pexels para todos los productos
+  // Obtener imágenes de Pexels para todos los productos (fallback a imagen local si falla)
   const productsWithImages = await Promise.all(
-    products.map(async (product) => ({
-      ...product,
-      pexelsImage: await getPexelsImage(product.slug),
-    }))
+    products.map(async (product) => {
+      const pexelsImage = await getPexelsImage(product.slug);
+      return {
+        ...product,
+        pexelsImage: pexelsImage === '/images/blog/default.jpg' ? product.cardImage : pexelsImage,
+      };
+    })
   );
 
   return (
@@ -66,9 +69,10 @@ export default async function SegurosHubPage() {
                     <div className="relative h-64 overflow-hidden">
                       <Image 
                         src={product.pexelsImage} 
-                        alt={product.cardAlt} 
-                        fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                        alt={product.cardAlt}
+                        width={800}
+                        height={450}
+                        className="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full" 
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(18,59,104,0.85)] to-transparent p-5 text-white">
                         <p className="kicker !text-white/80 !mb-1">{product.label}</p>
