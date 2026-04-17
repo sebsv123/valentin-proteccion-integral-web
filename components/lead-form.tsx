@@ -56,6 +56,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
         window.fbq('track', 'Lead', { content_name: values.productInterest });
       }
       router.push('/gracias');
+      return;
     }
 
     try {
