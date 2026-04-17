@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,12 +8,18 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { site } from "@/lib/products";
-import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import LinearGradient from "@/components/magicui/linear-gradient";
+import { LeadForm } from "@/components/lead-form";
 
 const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"), {
   ssr: false,
   loading: () => <div className="absolute inset-0 z-0" />,
+});
+
+const MagicContainer = dynamic(() => import("@/components/magicui/magic-container").then(m => m.MagicContainer), {
+  ssr: false,
+});
+const MagicCard = dynamic(() => import("@/components/magicui/magic-card").then(m => m.MagicCard), {
+  ssr: false,
 });
 
 import {
@@ -25,24 +31,30 @@ import {
   ShieldCheck,
   Zap,
   Clock,
-  Users
+  Users,
+  Heart,
+  Briefcase,
+  HelpCircle
 } from "lucide-react";
 
 const trackLead = () => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Lead', { content_name: 'landing-autonomos-retro' });
+    (window as any).fbq('track', 'Lead', { content_name: 'landing-autonomos' });
+  }
+};
+
+const tracksLead = () => {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'Lead', { content_name: 'landing-autonomos-whatsapp' });
   }
 };
 
 export default function LandingAutonomosPage() {
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
   const whatsappHref = `https://wa.me/34603448765?text=${encodeURIComponent(
     'Hola, soy autónomo en Madrid y quiero información sobre el seguro médico con deducción IRPF.'
   )}`;
-
-  useEffect(() => {
-    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
-  }, []);
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans selection:bg-blue-100">
@@ -62,20 +74,21 @@ export default function LandingAutonomosPage() {
               />
             </div>
           </Link>
-          <a
-            href={`tel:${site.phoneHref}`}
-            className="hidden sm:flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors"
-          >
-            <Phone className="w-4 h-4 text-blue-600" />
-            <span>{site.phone}</span>
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href={`tel:${site.phoneHref}`}
+              className="hidden sm:flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors"
+            >
+              <Phone className="w-4 h-4 text-blue-600" />
+              <span>{site.phone}</span>
+            </a>
+          </div>
         </div>
       </nav>
 
-      {/* HERO RETRO SELECTION */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 bg-background border-b">
+      {/* 1. HERO PRINCIPAL */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 bg-background border-b">
         <RetroGrid className="z-0 opacity-40" />
-        <LinearGradient direction="top" from="rgba(15, 94, 156, 0.05)" to="transparent" className="z-10" />
         
         <div className="container relative z-20 mx-auto px-4 text-center">
           <motion.div 
@@ -83,13 +96,15 @@ export default function LandingAutonomosPage() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center max-w-4xl mx-auto"
           >
-            <div className="group rounded-full border border-slate-200 bg-slate-100/50 text-sm transition-all hover:bg-slate-100 mb-8 z-10 backdrop-blur-sm">
-              <AnimatedShinyText className="inline-flex items-center justify-center px-6 py-2 transition-all text-slate-600">
+            {/* KICKER */}
+            <div className="group rounded-full border border-slate-200 bg-slate-100/50 text-sm transition-all hover:bg-slate-100 mb-8 z-10 backdrop-blur-sm px-6 py-2">
+              <span className="inline-flex items-center justify-center text-slate-600">
                 <span>🕹️ Autónomos en Madrid</span>
                 <ArrowRight className="ml-2 w-3 h-3 transition-transform group-hover:translate-x-1" />
-              </AnimatedShinyText>
+              </span>
             </div>
 
+            {/* H1 */}
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-8 leading-[1.1] text-slate-900">
               Tu seguro médico puede deducirse <span className="underline decoration-[#0F5E9C] decoration-8 underline-offset-4">hasta 500€</span> al año.
             </h1>
@@ -98,6 +113,7 @@ export default function LandingAutonomosPage() {
               Asesoría gratuita en 15 minutos. Nosotros te decimos si te compensa y cómo optimizar tu cuota.
             </p>
 
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-lg">
               <a
                 href={whatsappHref}
@@ -123,6 +139,7 @@ export default function LandingAutonomosPage() {
               </a>
             </div>
             
+            {/* Badge */}
             <p className="mt-8 text-sm font-bold text-slate-400 flex items-center gap-2">
               <Clock className="w-4 h-4 text-amber-500" />
               Respuesta en menos de 2 horas hábiles
