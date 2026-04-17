@@ -23,21 +23,27 @@ export function HeroLeadSection() {
     <section ref={heroRef} id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
       <div className="container-shell hero-grid items-stretch gap-8">
         <div className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
-          {/* HeroImage FUERA del motion.div — renderiza inmediatamente, sin retraso LCP */}
-          <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              style={{ y: isMobile ? '0%' : bgY }}
-              className="absolute inset-0 scale-110"
-            >
+          {/* IMAGEN — Estática, pinta inmediato sin esperar hidratación */}
+          <div className="absolute inset-0 overflow-hidden" style={{ willChange: 'transform' }}>
+            {/* HeroImage estático para LCP óptimo */}
+            <div className="absolute inset-0 scale-110">
               <HeroImage />
-            </motion.div>
+            </div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
+            {/* Parallax overlay solo desktop, después de hidratación */}
+            {!isMobile && (
+              <motion.div
+                style={{ y: bgY }}
+                className="absolute inset-0 pointer-events-none"
+                initial={false}
+              />
+            )}
           </div>
-          {/* Solo el contenido animado — la imagen ya está pintada */}
+          {/* CONTENIDO — Animado, no bloquea LCP */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: isMobile ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }} 
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} 
             className="relative z-10 max-w-3xl"
           >
             {/* KICKER — pequeño, arriba */}

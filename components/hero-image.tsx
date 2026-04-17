@@ -11,7 +11,7 @@ export function HeroImage() {
         fetchPriority="high"
         quality={60}
         className="object-cover object-center"
-        sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 55vw, 700px"
       />
     </div>
   );

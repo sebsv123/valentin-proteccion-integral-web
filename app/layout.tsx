@@ -74,20 +74,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="preload"
           as="image"
-          href="/images/premium/hero-family.webp"
+          href="/images/premium/hero-family-opt.webp"
           fetchPriority="high"
         />
-        {/* Preconnect to analytics and tracking domains */}
+        {/* Preconnect to analytics - solo GTM porque carga early */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
-        {/* Google Analytics GA4 */}
+        {/* Google Analytics GA4 - lazyOnload para no bloquear LCP */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
