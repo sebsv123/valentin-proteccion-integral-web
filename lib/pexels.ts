@@ -1,6 +1,6 @@
 // lib/pexels.ts - Pexels API integration for blog images
 
-const PEXELS_API_KEY = '3AQ8sttJh513w5Dyjz4Ij0cahKmYefSghoX1jnO0Eosv0HLbgQZW0oW1';
+const PEXELS_API_KEY = process.env.PEXELS_API_KEY || '';
 
 interface PexelsPhoto {
   id: number;
@@ -95,7 +95,7 @@ export async function getPexelsImage(query: string): Promise<string> {
       `https://api.pexels.com/v1/search?query=${encodeURIComponent(searchTerm)}&per_page=1&orientation=landscape`,
       {
         headers: { Authorization: PEXELS_API_KEY },
-        next: { revalidate: 86400 }, // Cache por 24 horas
+        next: { revalidate: 604800 }, // Cache por 7 días
       }
     );
 
@@ -105,7 +105,7 @@ export async function getPexelsImage(query: string): Promise<string> {
     }
 
     const data: PexelsResponse = await res.json();
-    return data.photos?.[0]?.src?.large2x || '/images/blog/default.jpg';
+    return data.photos?.[0]?.src?.large || '/images/blog/default.jpg';
   } catch (error) {
     console.error('Error fetching Pexels image:', error);
     return '/images/blog/default.jpg';
