@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 interface RevealLightProps {
   children: ReactNode;
@@ -11,6 +10,7 @@ interface RevealLightProps {
   duration?: number;
 }
 
+// CSS-based animation component (no framer-motion) for better TBT performance
 export default function RevealLight({
   children,
   delay = 0,
@@ -18,39 +18,23 @@ export default function RevealLight({
   className = '',
   duration = 0.8,
 }: RevealLightProps) {
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === 'up' ? 30 : direction === 'down' ? -30 : 0,
-      x: direction === 'left' ? 30 : direction === 'right' ? -30 : 0,
-      scale: direction === 'scale' ? 0.95 : 1,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: duration,
-        delay: delay,
-        ease: [0.21, 1, 0.36, 1], // Custom premium cubic-bezier for a smooth "pop"
-      },
-    },
-  };
-
   if (direction === 'none') {
     return <div className={className}>{children}</div>;
   }
 
+  // CSS animation with delay
+  const animationStyle: React.CSSProperties = {
+    animationName: `reveal-${direction}`,
+    animationDuration: `${duration}s`,
+    animationDelay: `${delay}s`,
+    animationFillMode: 'forwards',
+    animationTimingFunction: 'cubic-bezier(0.21, 1, 0.36, 1)',
+    opacity: 0,
+  };
+
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      className={className}
-    >
+    <div className={className} style={animationStyle}>
       {children}
-    </motion.div>
+    </div>
   );
 }

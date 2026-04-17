@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
@@ -9,6 +8,33 @@ import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import CountUp from './ui/count-up';
 import { HeroImage } from './hero-image';
+
+// CSS Animation wrapper for zero-JS animations
+function CSSReveal({ 
+  children, 
+  delay = 0, 
+  className = '' 
+}: { 
+  children: React.ReactNode; 
+  delay?: number; 
+  className?: string;
+}) {
+  return (
+    <div 
+      className={className}
+      style={{
+        animationName: 'hero-fade-in-up',
+        animationDuration: '0.8s',
+        animationDelay: `${delay}s`,
+        animationFillMode: 'forwards',
+        animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        opacity: 0,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export function HeroLeadSection() {
   const heroRef = useRef<HTMLElement>(null)
@@ -30,7 +56,7 @@ export function HeroLeadSection() {
               <HeroImage />
             </div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
-            {/* Parallax overlay solo desktop, después de hidratación */}
+            {/* Parallax overlay solo desktop — único uso de framer-motion en hero */}
             {!isMobile && (
               <motion.div
                 style={{ y: bgY }}
@@ -39,89 +65,96 @@ export function HeroLeadSection() {
               />
             )}
           </div>
-          {/* CONTENIDO — Animado, no bloquea LCP */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} 
-            className="relative z-10 max-w-3xl"
-          >
+          {/* CONTENIDO — CSS animations, cero TBT */}
+          <div className="relative z-10 max-w-3xl">
             {/* KICKER — pequeño, arriba */}
-            <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs sm:text-sm uppercase">
-              Asesores de Seguros en Madrid · Sin Letra Pequeña
-            </p>
+            <CSSReveal delay={0}>
+              <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs sm:text-sm uppercase">
+                Asesores de Seguros en Madrid · Sin Letra Pequeña
+              </p>
+            </CSSReveal>
 
-            {/* H1 — protagonista visual, tamaño controlado en móvil */}
-            <motion.h1 
-              id="hero-title"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]"
-            >
-              {site.heroTagline}
-            </motion.h1>
+            {/* H1 — protagonista visual */}
+            <CSSReveal delay={0.1}>
+              <h1 
+                id="hero-title"
+                className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]"
+              >
+                {site.heroTagline}
+              </h1>
+            </CSSReveal>
 
             {/* Credencial numérica */}
-            <motion.p 
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-3 text-sm sm:text-base font-semibold text-[var(--blue-deep)]"
-            >
-              {site.brandLine}
-            </motion.p>
+            <CSSReveal delay={0.25}>
+              <p className="mt-3 text-sm sm:text-base font-semibold text-[var(--blue-deep)]">
+                {site.brandLine}
+              </p>
+            </CSSReveal>
 
-            {/* Ramos como subtítulo — SEO cola larga */}
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-2 text-xs sm:text-sm text-[var(--muted)] leading-6"
-            >
-              {site.brandSubline}
-            </motion.p>
+            {/* Ramos como subtítulo */}
+            <CSSReveal delay={0.35}>
+              <p className="mt-2 text-xs sm:text-sm text-[var(--muted)] leading-6">
+                {site.brandSubline}
+              </p>
+            </CSSReveal>
 
-            {/* CTAs — visibles sin scroll en móvil */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:mt-8">
-              <Link href="/contacto" className="btn-primary hover-lift px-8 py-4 text-base shadow-xl">
-                Solicitar asesoría gratuita
-              </Link>
-              <a
-                href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')}
-                className="btn-whatsapp px-8 py-4 text-base shadow-xl"
-              >
-                <MessageCircle className="h-5 w-5" /> WhatsApp
-              </a>
-            </div>
-
-            {/* 3 mini-cards de confianza — solo en sm+ para no colapsar móvil */}
-            <div className="mt-6 hidden sm:grid gap-3 md:grid-cols-3">
-              {[
-                ['Te ayudamos a decidir', 'Comparamos opciones contigo y te explicamos la letra pequeña sin prisas ni presión.'],
-                ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
-                ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
-              ].map(([title, copy]) => (
-                <div key={title} className="rounded-[22px] bg-white/92 p-4 shadow-sm backdrop-blur">
-                  <p className="font-heading text-sm font-semibold text-[var(--blue-deep)]">{title}</p>
-                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{copy}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Pills de ramos — solo en sm+ */}
-            <div className="mt-8 hidden sm:flex flex-wrap gap-3 text-sm font-bold text-[var(--blue-deep)]">
-              {products.map((product) => (
-                <Link key={product.slug} href={`/seguros/${product.slug}`} className="glass rounded-full border border-white/60 bg-white/40 px-5 py-3 tracking-wider hover:bg-white hover:text-[var(--blue)] hover:border-[var(--blue)] transition-all">
-                  {product.label}
+            {/* CTAs */}
+            <CSSReveal delay={0.45}>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:mt-8">
+                <Link href="/contacto" className="btn-primary hover-lift px-8 py-4 text-base shadow-xl">
+                  Solicitar asesoría gratuita
                 </Link>
-              ))}
-            </div>
-          </motion.div>
+                <a
+                  href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')}
+                  className="btn-whatsapp px-8 py-4 text-base shadow-xl"
+                >
+                  <MessageCircle className="h-5 w-5" /> WhatsApp
+                </a>
+              </div>
+            </CSSReveal>
+
+            {/* 3 mini-cards de confianza */}
+            <CSSReveal delay={0.55}>
+              <div className="mt-6 hidden sm:grid gap-3 md:grid-cols-3">
+                {[
+                  ['Te ayudamos a decidir', 'Comparamos opciones contigo y te explicamos la letra pequeña sin prisas ni presión.'],
+                  ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
+                  ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
+                ].map(([title, copy]) => (
+                  <div key={title} className="rounded-[22px] bg-white/92 p-4 shadow-sm backdrop-blur">
+                    <p className="font-heading text-sm font-semibold text-[var(--blue-deep)]">{title}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{copy}</p>
+                  </div>
+                ))}
+              </div>
+            </CSSReveal>
+
+            {/* Pills de ramos */}
+            <CSSReveal delay={0.65}>
+              <div className="mt-8 hidden sm:flex flex-wrap gap-3 text-sm font-bold text-[var(--blue-deep)]">
+                {products.map((product) => (
+                  <Link key={product.slug} href={`/seguros/${product.slug}`} className="glass rounded-full border border-white/60 bg-white/40 px-5 py-3 tracking-wider hover:bg-white hover:text-[var(--blue)] hover:border-[var(--blue)] transition-all">
+                    {product.label}
+                  </Link>
+                ))}
+              </div>
+            </CSSReveal>
+          </div>
         </div>
-        <motion.div initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.42, delay: 0.05 }} id="lead-form">
+        {/* Lead Form — CSS animation */}
+        <div 
+          id="lead-form"
+          style={{
+            animationName: 'hero-fade-in-right',
+            animationDuration: '0.42s',
+            animationDelay: '0.05s',
+            animationFillMode: 'forwards',
+            animationTimingFunction: 'ease-out',
+            opacity: 0,
+          }}
+        >
           <LeadForm defaultProduct="salud" compact />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
