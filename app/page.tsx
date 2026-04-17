@@ -1,13 +1,24 @@
+import dynamicImport from 'next/dynamic';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import Link from 'next/link';
-import { HeroLeadSection, StatsSection } from '@/components/hero-animated';
-import { AgentTrustBlock, BlogPreviewSection, FinalCTASection, GeneralFaqSection, ProductCategoryGrid, TrustBadgesSection, ComparisonCardsSection, MascotHelperSection } from '@/components/home-sections';
+import { HeroLeadSection } from '@/components/hero-animated';
+import { ProductCategoryGrid } from '@/components/home-sections';
 import { getPexelsImage } from '@/lib/pexels';
-import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import HowItWorksSection from '@/components/HowItWorksSection';
-import CredentialsBar from '@/components/CredentialsBar';
+
+// Lazy load componentes debajo del fold para mejorar LCP
+const StatsSection = dynamicImport(() => import('@/components/hero-animated').then(m => m.StatsSection), { ssr: false });
+const GoogleReviewsWidget = dynamicImport(() => import('@/components/GoogleReviewsWidget'), { ssr: false });
+const TrustBadgesSection = dynamicImport(() => import('@/components/home-sections').then(m => m.TrustBadgesSection), { ssr: false });
+const MascotHelperSection = dynamicImport(() => import('@/components/home-sections').then(m => m.MascotHelperSection), { ssr: false });
+const ComparisonCardsSection = dynamicImport(() => import('@/components/home-sections').then(m => m.ComparisonCardsSection), { ssr: false });
+const AgentTrustBlock = dynamicImport(() => import('@/components/home-sections').then(m => m.AgentTrustBlock), { ssr: false });
+const HowItWorksSection = dynamicImport(() => import('@/components/HowItWorksSection'), { ssr: false });
+const BlogPreviewSection = dynamicImport(() => import('@/components/home-sections').then(m => m.BlogPreviewSection), { ssr: false });
+const GeneralFaqSection = dynamicImport(() => import('@/components/home-sections').then(m => m.GeneralFaqSection), { ssr: false });
+const FinalCTASection = dynamicImport(() => import('@/components/home-sections').then(m => m.FinalCTASection), { ssr: false });
+const CredentialsBar = dynamicImport(() => import('@/components/CredentialsBar'), { ssr: false });
 import type { Metadata } from 'next';
 import { site, generalFaqs } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';

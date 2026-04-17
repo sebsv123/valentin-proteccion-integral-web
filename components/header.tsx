@@ -15,7 +15,7 @@ function Brand() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0">
       <MetallicPaint className="relative h-[54px] w-[180px] max-w-[60vw] overflow-hidden rounded-[20px] border border-white/20 bg-white p-1 shadow-sm sm:w-[220px]">
-        <Image src="/brand/logo-vpi.png" alt={site.name} width={220} height={54} className="object-contain" priority />
+        <Image src="/brand/logo-vpi.webp" alt={site.name} width={220} height={54} className="object-contain" priority />
       </MetallicPaint>
     </Link>
   );
