@@ -70,8 +70,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload hero image for LCP optimization */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/premium/hero-family.webp"
+          fetchPriority="high"
+        />
+        {/* Preconnect to analytics and tracking domains */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
         {/* Google Analytics GA4 */}

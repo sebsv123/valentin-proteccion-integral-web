@@ -36,7 +36,7 @@ export function HeroLeadSection() {
                 src="/images/premium/hero-family.webp"
                 alt="Familia feliz disfrutando de un momento de bienestar y seguridad con el respaldo de Valentín Seguros"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 className="object-cover object-center"
                 priority
                 fetchPriority="high"

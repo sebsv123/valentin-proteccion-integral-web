@@ -7,6 +7,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { BlogArticle } from '@/components/blog-article';
 import { blogPosts, getBlogPost } from '@/lib/blog';
 import { site } from '@/lib/products';
+import { getPexelsImage, isLocalImage } from '@/lib/pexels';
 import SchemaFAQ from '@/components/seo/schema-faq';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import ArticleSchema from '@/components/ArticleSchema';
@@ -19,6 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
+
+  // Obtener imagen de Pexels si es local
+  const imageUrl = isLocalImage(post.image)
+    ? await getPexelsImage(slug)
+    : post.image;
+
   return {
     title: post.metaTitle,
     description: post.metaDescription,
@@ -31,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       siteName: 'Valentín Protección Integral',
       locale: 'es_ES',
-      images: [{ url: `${site.domain}${post.image}`, alt: post.imageAlt }],
+      images: [{ url: imageUrl.startsWith('http') ? imageUrl : `${site.domain}${imageUrl}`, alt: post.imageAlt }],
       publishedTime: post.date,
     },
   };
@@ -44,21 +51,32 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const post = getBlogPost(slug);
   if (!post) notFound();
 
+  // Obtener imagen de Pexels si es local
+  const imageUrl = isLocalImage(post.image)
+    ? await getPexelsImage(slug)
+    : post.image;
+
+  // Crear post con imagen actualizada
+  const postWithImage = {
+    ...post,
+    image: imageUrl,
+  };
+
   return (
     <>
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: 'Inicio', url: '/' },
           { name: 'Blog', url: '/blog' },
           { name: post.title, url: `/blog/${post.slug}` }
-        ]} 
+        ]}
       />
       <ArticleSchema
         title={post.title}
         description={post.metaDescription}
         datePublished={post.date}
         dateModified={post.dateModified}
-        imageUrl={`https://valentinproteccionintegral.com${post.image}`}
+        imageUrl={imageUrl.startsWith('http') ? imageUrl : `https://valentinproteccionintegral.com${imageUrl}`}
         articleUrl={`https://valentinproteccionintegral.com/blog/${post.slug}`}
       />
       {post.faqs && <SchemaFAQ faqs={post.faqs} />}
@@ -67,7 +85,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.title }]} />
         </div>
-        <BlogArticle post={post} />
+        <BlogArticle post={postWithImage} />
       </main>
       <Footer />
       <StickyWhatsApp />
