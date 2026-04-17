@@ -1,13 +1,8 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { site } from '@/lib/products';
-
-export const metadata: Metadata = {
-  title: "Seguro Médico para Autónomos en Madrid · Dedúcete hasta 500€ | Valentín",
-  description: "Asesoría gratuita para autónomos en Madrid. Descubre cuánto puedes ahorrar con tu seguro médico y cómo deducirte hasta 500€ en el IRPF. Sin compromiso.",
-  robots: { index: false, follow: false },
-};
 
 // Meta Pixel tracking helper
 function trackLead() {
