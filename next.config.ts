@@ -15,6 +15,23 @@ const nextConfig: NextConfig = {
     ],
   },
   compress: true,
+  // Redirecciones SEO
+  async redirects() {
+    return [
+      // Redirección explícita de /sobre-mi a /sobre-nosotros (301 permanente)
+      {
+        source: '/sobre-mi',
+        destination: '/sobre-nosotros',
+        permanent: true,
+      },
+      // Redirección de /sobre-mi/ (con slash) a /sobre-nosotros
+      {
+        source: '/sobre-mi/:path*',
+        destination: '/sobre-nosotros/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

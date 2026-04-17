@@ -17,22 +17,45 @@ interface PexelsResponse {
   photos: PexelsPhoto[];
 }
 
-// Mapeo de slugs a términos de búsqueda optimizados
+// Mapeo de slugs a términos de búsqueda optimizados para Pexels
+// TODOS los posts del blog deben tener su query específica
 const slugToQuery: Record<string, string> = {
-  'mejor-seguro-medico-calidad-precio-espana': 'doctor consultation healthcare spain',
-  'seguro-de-vida-riesgo-que-es': 'family protection life insurance',
-  'seguros-salud-cubren-recien-nacidos': 'newborn baby hospital',
-  'seguro-medico-asistencia-en-viaje-que-cubre': 'travel adventure airport',
-  'fiarse-opiniones-para-elegir-seguro': 'review trust customer feedback',
-  'incluir-personas-poliza-medica': 'family health insurance meeting',
-  'elegir-seguro-medico-precios-coberturas-2026': 'health insurance medical consultation',
-  'como-saber-seguro-tiene-contratado': 'insurance policy document',
-  'seguro-viaje-que-cubre-gastos-medicos-repatriacion-perdida-maletas': 'travel luggage airport',
-  'seguro-de-vida-riesgo-que-es-cuanto-cuesta-cuando-contratarlo': 'family protection parents children',
-  'tipos-de-seguro-de-vida-cual-elegir-2026': 'life insurance family protection',
-  'mediador-seguros-asesor-intermediario-diferencias': 'insurance advisor meeting',
-  'como-elegir-seguro-medico-privado-madrid': 'doctor medical consultation madrid',
-  'mejor-seguro-medico-privado-madrid-comparativa': 'private healthcare madrid hospital',
+  // Posts de salud
+  'mejor-seguro-medico-calidad-precio-espana': 'doctor consultation healthcare medical',
+  'seguro-medico-privado-madrid': 'private healthcare doctor madrid',
+  'mejor-seguro-salud-madrid-2026': 'health insurance hospital madrid',
+  'guia-seguro-salud-espana-2026': 'medical health insurance spain',
+  'cuanto-cuesta-seguro-salud-madrid': 'healthcare cost medical price',
+  'seguros-salud-cubren-recien-nacidos': 'newborn baby hospital pediatric',
+  'incluir-personas-poliza-medica': 'family health insurance together',
+  
+  // Posts de vida y protección
+  'seguro-de-vida-riesgo-que-es': 'life insurance family protection',
+  'tipos-de-seguros-de-vida': 'life insurance family security',
+  'seguro-vida-esencial-familia': 'family protection parents children',
+  'seguro-vida-hipoteca-obligatorio': 'mortgage family home protection',
+  
+  // Posts de viajes
+  'seguro-medico-asistencia-en-viaje-que-cubre': 'travel medical insurance airport',
+  
+  // Posts de mascotas
+  'seguros-mascotas-2026-vale-la-pena': 'pet insurance dog cat veterinary',
+  'seguro-perros-madrid-ley-bienestar-2026': 'dog pet park madrid',
+  'seguro-perro-obligatorio-madrid': 'dog walking park responsible owner',
+  
+  // Posts de asesoramiento/comparadores
+  'fiarse-opiniones-para-elegir-seguro': 'customer review feedback trust',
+  'ventajas-mediador-de-seguros': 'insurance advisor consultation office',
+  'asesor-seguros-vs-comparador-online': 'insurance advisor vs computer',
+  
+  // Posts de pólizas/jurídico
+  'donde-consultar-que-incluye-mi-poliza': 'insurance policy document contract',
+  
+  // Posts locales
+  'seguros-boadilla-del-monte': 'boadilla del monte madrid suburb family',
+  
+  // Post dental
+  'seguro-dental-familias-madrid': 'dental care family dentist madrid',
 };
 
 /**

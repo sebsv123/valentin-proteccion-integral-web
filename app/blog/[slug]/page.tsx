@@ -7,7 +7,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { BlogArticle } from '@/components/blog-article';
 import { blogPosts, getBlogPost } from '@/lib/blog';
 import { site } from '@/lib/products';
-import { getPexelsImage, isLocalImage } from '@/lib/pexels';
+import { getPexelsImage } from '@/lib/pexels';
 import SchemaFAQ from '@/components/seo/schema-faq';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import ArticleSchema from '@/components/ArticleSchema';
@@ -21,10 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getBlogPost(slug);
   if (!post) return {};
 
-  // Obtener imagen de Pexels si es local
-  const imageUrl = isLocalImage(post.image)
-    ? await getPexelsImage(slug)
-    : post.image;
+  // Obtener imagen de Pexels (reemplaza TODAS las imágenes)
+  const imageUrl = await getPexelsImage(slug);
 
   return {
     title: post.metaTitle,
@@ -51,10 +49,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  // Obtener imagen de Pexels si es local
-  const imageUrl = isLocalImage(post.image)
-    ? await getPexelsImage(slug)
-    : post.image;
+  // Obtener imagen de Pexels (reemplaza TODAS las imágenes)
+  const imageUrl = await getPexelsImage(slug);
 
   // Crear post con imagen actualizada
   const postWithImage = {
