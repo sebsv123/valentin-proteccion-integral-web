@@ -3,6 +3,7 @@
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -15,9 +16,18 @@ import { CheckCircle } from 'lucide-react';
 
 export default function GraciasClientPage() {
   useEffect(() => {
-    // Meta Pixel Lead event
+    // Meta Pixel — Lead
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead');
+    }
+    // Google Ads — Conversion
+    // IMPORTANTE: reemplaza AW-XXXXXXXXX/YYYYYYYYYYY con tu ID real de conversión de Google Ads
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-XXXXXXXXX/YYYYYYYYYYY',
+        value: 1.0,
+        currency: 'EUR',
+      });
     }
   }, []);
 
@@ -33,10 +43,10 @@ export default function GraciasClientPage() {
               </div>
             </div>
             <h1 className="font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
-              ¡Gracias! Rosa o Sebastián te contactarán pronto.
+              ¡Gracias! Te contactamos en menos de 2 horas.
             </h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Hemos recibido tu solicitud. Te responderemos con una orientación clara lo antes posible.
+              Hemos recibido tu solicitud. Valentín te responderá personalmente con una orientación clara y sin compromiso.
             </p>
             <div className="mt-8">
               <Link href="/" className="btn-primary inline-flex">
