@@ -15,7 +15,7 @@ const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"), {
   loading: () => <div className="absolute inset-0 z-0" />,
 });
 
-const MagicContainer = dynamic(() => import("@/components/magicui/magic-container").then(m => m.MagicContainer), {
+const MagicContainer = dynamic(() => import("@/components/magicui/magic-card").then(m => m.MagicContainer), {
   ssr: false,
 });
 const MagicCard = dynamic(() => import("@/components/magicui/magic-card").then(m => m.MagicCard), {
