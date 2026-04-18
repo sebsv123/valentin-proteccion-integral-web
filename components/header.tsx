@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronDown, Instagram, Menu, Phone, X } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 
-import MetallicPaint from './ui/metallic-paint';
+
 import PillNav from './ui/pill-nav';
 import { StaggeredMenu } from './ui/staggered-menu';
 import IridescenceBackground from './ui/iridescence-background';
@@ -14,16 +14,15 @@ import IridescenceBackground from './ui/iridescence-background';
 function Brand() {
   return (
     <Link href="/" className="flex items-center gap-3 shrink-0">
-      <MetallicPaint className="relative h-[44px] w-[160px] max-w-[55vw] overflow-hidden rounded-[20px] border border-white/20 bg-white px-2 py-1 shadow-sm sm:w-[180px]">
+      <div className="relative h-[44px] w-[160px] max-w-[55vw] sm:w-[180px] overflow-hidden rounded-[20px] border border-white/20 bg-white px-2 py-1 shadow-sm">
         <Image
           src="/brand/logo-vpi.webp"
           alt={site.name}
-          width={440}
-          height={181}
-          className="h-full w-full object-contain"
+          fill
+          className="object-contain p-1"
           priority
         />
-      </MetallicPaint>
+      </div>
     </Link>
   );
 }
