@@ -25,13 +25,13 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
-  title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
-  description: "Tus asesores de seguros en Madrid con +10 años de experiencia. Salud, vida, mascotas, dental, viaje y más. Sin letra pequeña. Primera consulta gratis.",
-  keywords: "asesores de seguros madrid, asesora de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
+  title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita | Valentín",
+  description: "Asesor de seguros en Madrid independiente con +10 años y +1.200 familias. Seguro de salud, vida, dental, mascotas y más. Sin letra pequeña. Primera consulta gratis.",
+  keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
   openGraph: {
-    title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
-    description: "Tus asesores de seguros en Madrid con +10 años de experiencia. Salud, vida, mascotas, dental, viaje y más. Sin letra pequeña. Primera consulta gratis.",
+    title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita | Valentín",
+    description: "Asesor de seguros en Madrid independiente con +10 años y +1.200 familias. Seguro de salud, vida, dental, mascotas y más. Sin letra pequeña. Primera consulta gratis.",
     url: "https://valentinproteccionintegral.com",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asesores de Seguros en Madrid · Consulta Gratuita | Valentín",
-    description: "Tus asesores de seguros en Madrid. +10 años, +1.200 familias. Salud, vida, mascotas y más. Primera consulta gratis.",
+    title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita",
+    description: "Asesor independiente en Madrid. +10 años, +1.200 familias. Salud, vida, dental y más. Primera consulta gratis.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com",
@@ -73,7 +73,7 @@ export default async function HomePage() {
             "name": "Valentín Protección Integral",
             "description": "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
             "url": "https://valentinproteccionintegral.com",
-            "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.png",
+            "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.webp",
             "sameAs": ["https://www.instagram.com/segurosrosavalentin"],
             "telephone": "+34-603-44-87-65",
             "address": {

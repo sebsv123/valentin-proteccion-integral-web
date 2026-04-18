@@ -14,13 +14,16 @@ interface CountUpProps {
 
 export default function CountUp({
   to,
-  from = 0,
+  from: fromProp,
   duration = 2,
   delay = 0,
   precision = 0,
   suffix = '',
   className = '',
 }: CountUpProps) {
+  // FIX: Never start from 0, use 10% of final value or provided from value
+  const from = fromProp ?? Math.max(1, Math.floor(to * 0.1));
+  
   // SSR & Initial state: show final value so search engines and users see real data immediately
   const [count, setCount] = useState(to);
   const ref = useRef<HTMLSpanElement>(null);
@@ -29,13 +32,19 @@ export default function CountUp({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    
+    // FIX: Fallback for environments without IntersectionObserver
+    if (typeof IntersectionObserver === 'undefined') {
+      setCount(to);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started.current) return;
         started.current = true;
 
-        // Reset to initial count only when animation starts
+        // Reset to initial count only when animation starts (now from 10% of target, never 0)
         setCount(from);
 
         const startTime = performance.now() + delay * 1000;
