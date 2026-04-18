@@ -21,7 +21,8 @@ export default function CountUp({
   suffix = '',
   className = '',
 }: CountUpProps) {
-  const [count, setCount] = useState(from);
+  // SSR & Initial state: show final value so search engines and users see real data immediately
+  const [count, setCount] = useState(to);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
@@ -34,11 +35,17 @@ export default function CountUp({
         if (!entry.isIntersecting || started.current) return;
         started.current = true;
 
+        // Reset to initial count only when animation starts
+        setCount(from);
+
         const startTime = performance.now() + delay * 1000;
         const totalDuration = duration * 1000;
 
         const tick = (now: number) => {
-          if (now < startTime) { requestAnimationFrame(tick); return; }
+          if (now < startTime) {
+            requestAnimationFrame(tick);
+            return;
+          }
           const elapsed = Math.min(now - startTime, totalDuration);
           const progress = elapsed / totalDuration;
           // easeOut cubic
@@ -48,9 +55,8 @@ export default function CountUp({
         };
 
         requestAnimationFrame(tick);
-        observer.disconnect();
       },
-      { rootMargin: '-50px' }
+      { threshold: 0 } // Trigger as soon as it enters the viewport
     );
 
     observer.observe(el);
