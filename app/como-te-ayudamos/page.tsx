@@ -11,8 +11,8 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import HowItWorksSection from '@/components/HowItWorksSection';
 
 export const metadata: Metadata = {
-  title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
-  description: "No somos un comparador online. Somos asesores en Madrid que escuchan tu situación y buscan el seguro que de verdad te conviene. Sin presión. Primera consulta gratis.",
+  title: "Cómo Elegir tu Seguro en Madrid · Asesoría Independiente y Gratuita | Valentín",
+  description: "No somos un comparador. Somos asesores independientes en Madrid con +10 años. Escuchamos tu situación y encontramos el seguro que de verdad te conviene. Sin presión ni letra pequeña.",
   keywords: "asesoramiento seguros madrid, consulta seguros gratuita, como elegir seguro madrid",
   openGraph: {
     title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
@@ -73,7 +73,10 @@ export default function ComoTeAyudamosPage() {
               <div className="grid gap-0 lg:grid-cols-[1.02fr_0.98fr]">
                 <div className="p-7 md:p-10 lg:p-12">
                   <p className="kicker">Cómo te ayudamos</p>
-                  <h1 id="metodo-h1" className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">Una orientación clara antes de contratar</h1>
+                  <h1 id="metodo-h1" className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">No somos un comparador. Somos tu asesor.</h1>
+                  <p className="mt-3 font-heading text-2xl font-semibold text-[var(--blue)] md:text-3xl">
+                    Tu asesor de seguros en Madrid, de principio a fin
+                  </p>
                   <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">Escuchamos tu situación, comparamos contigo y aterrizamos coberturas con un lenguaje que se entiende. La idea es ayudarte a elegir con más tranquilidad, no llenarte de ruido.</p>
                   <div className="mt-7 grid gap-3 md:grid-cols-2">
                     {[
@@ -91,7 +94,13 @@ export default function ComoTeAyudamosPage() {
                   </div>
                 </div>
                 <div className="relative min-h-[360px]">
-                  <Image src="/images/home/meeting-real.jpg" alt="Reunión de asesoramiento cercana y profesional" fill className="object-cover object-center" priority />
+                  <Image 
+                  src="/images/rosa_y_sebastian.jpeg" 
+                  alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid con más de 10 años de experiencia" 
+                  fill 
+                  className="object-cover object-top" 
+                  priority 
+                />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,59,104,0.08),rgba(18,59,104,0.2))]" />
                 </div>
               </div>
@@ -109,7 +118,12 @@ export default function ComoTeAyudamosPage() {
             <div className="soft-card overflow-hidden">
               <div className="grid gap-0 xl:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[340px]">
-                  <Image src="/images/agent/rosa-oficina-enhanced.png" alt="Rosa Valentín y el equipo de Valentín Protección Integral, asesores de seguros en Madrid" fill className="object-cover object-top" />
+                  <Image 
+                  src="/images/rosa_y_sebastian.jpeg" 
+                  alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid" 
+                  fill 
+                  className="object-cover object-top" 
+                />
                 </div>
                 <div className="p-7 md:p-10">
                   <p className="kicker">Nuestro equipo</p>
