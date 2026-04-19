@@ -14,6 +14,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/api/',
           '/_next/',
+          '/landing',
+          '/gracias',
           '/aviso-legal',
           '/privacidad',
           '/cookies',

@@ -14,9 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Páginas de producto — alta prioridad, actualización periódica
     { url: `${base}/seguros`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/autonomos`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
 
     // Páginas informativas estables — cambian poco
-    { url: `${base}/como-te-ayudamos`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/como-te-ayudamos`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/garantias`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/sobre-nosotros`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/sobre-mi`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.1 },
     { url: `${base}/opiniones`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
@@ -47,8 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPosts.map((post) => ({
       url: `${base}/blog/${post.slug}`,
       lastModified: new Date(post.date),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
     })),
 
     // Zonas localizadas
@@ -56,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/zonas/${z.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.75,
+      priority: 0.8,
     })),
     { url: `${base}/zonas`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
 
