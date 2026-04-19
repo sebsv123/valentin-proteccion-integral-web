@@ -7,20 +7,16 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import dynamicImport from 'next/dynamic'
 
 const TrustBadgesSection = dynamicImport(
-  () => import('@/components/home-sections').then(m => ({ default: m.TrustBadgesSection })),
-  { ssr: false }
+  () => import('@/components/home-sections').then(m => ({ default: m.TrustBadgesSection }))
 );
 const AgentTrustBlock = dynamicImport(
-  () => import('@/components/home-sections').then(m => ({ default: m.AgentTrustBlock })),
-  { ssr: false }
+  () => import('@/components/home-sections').then(m => ({ default: m.AgentTrustBlock }))
 );
 const ComparisonCardsSection = dynamicImport(
-  () => import('@/components/home-sections').then(m => ({ default: m.ComparisonCardsSection })),
-  { ssr: false }
+  () => import('@/components/home-sections').then(m => ({ default: m.ComparisonCardsSection }))
 );
 const HowItWorksSection = dynamicImport(
-  () => import('@/components/HowItWorksSection'),
-  { ssr: false }
+  () => import('@/components/HowItWorksSection')
 );
 
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
