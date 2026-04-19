@@ -43,10 +43,14 @@ export default function GraciasClientPage() {
               </div>
             </div>
             <h1 className="font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
-              ¡Gracias! Te contactamos en menos de 2 horas.
+              ¡Gracias! Rosa o Sebastián te contactarán en menos de 2 horas.
             </h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Hemos recibido tu solicitud. Valentín te responderá personalmente con una orientación clara y sin compromiso.
+              Hemos recibido tu solicitud. Rosa o Sebastián Valentín te responderán personalmente con una orientación clara y sin compromiso.
+            </p>
+            <p className="mt-3 text-base text-[var(--muted)]">
+              Mientras tanto, si tienes urgencia, escríbenos directamente al{' '}
+              <a href="https://wa.me/34603448765" className="font-bold text-[var(--blue-deep)] underline underline-offset-2">603 44 87 65</a>.
             </p>
             <div className="mt-8">
               <Link href="/" className="btn-primary inline-flex">

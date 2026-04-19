@@ -8,15 +8,17 @@ import { LeadForm } from '@/components/lead-form';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import HowItWorksSection from '@/components/HowItWorksSection';
+import dynamic from 'next/dynamic';
+
+const HowItWorksSection = dynamic(() => import('@/components/HowItWorksSection'));
 
 export const metadata: Metadata = {
-  title: "Contacta con Nuestro Equipo de Asesores de Seguros | Valentín",
-  description: "¿Tienes dudas sobre qué seguro elegir? Escríbenos sin compromiso. Respondemos en menos de 30 minutos y la primera consulta es totalmente gratis.",
-  keywords: "contacto asesora seguros madrid, consulta gratuita seguros, telefono seguros madrid",
+  title: "Contacta con Nosotros \u2014 Valentín Protección Integral, Boadilla del Monte (Madrid)",
+  description: "Estamos en Boadilla del Monte, Madrid. Llámanos al 603 44 87 65 o escríbenos por WhatsApp. Rosa y Sebastián Valentín responden en menos de 2 horas. Consulta gratuita sin compromiso.",
+  keywords: "contacto asesora seguros madrid, consulta gratuita seguros boadilla del monte, telefono seguros madrid, mediadores seguros madrid",
   openGraph: {
-    title: "Contacta con Nuestro Equipo de Asesores de Seguros | Valentín",
-    description: "¿Tienes dudas sobre qué seguro elegir? Respondemos en menos de 30 minutos y la primera consulta es totalmente gratis.",
+    title: "Contacta con Nosotros \u2014 Valentín Protección Integral, Boadilla del Monte (Madrid)",
+    description: "Rosa y Sebastián Valentín, mediadores de seguros en Boadilla del Monte. Responden en menos de 30 minutos. Consulta gratuita.",
     url: "https://valentinproteccionintegral.com/contacto",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -43,16 +45,30 @@ export default function ContactoPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contacto · Valentín Protección Integral",
-            "url": "https://valentinproteccionintegral.com/contacto",
-            "description": "Página de contacto de Valentín Protección Integral. Consulta gratuita y sin compromiso.",
-            "mainEntity": {
-              "@type": "LocalBusiness",
-              "name": "Valentín Protección Integral",
-              "telephone": "+34-603-44-87-65",
-              "url": "https://valentinproteccionintegral.com"
-            }
+            "@type": "LocalBusiness",
+            "name": "Valentín Protección Integral",
+            "description": "Mediadores de seguros independientes en Boadilla del Monte, Madrid. Asesoramiento personalizado en seguros de salud, vida, dental, mascotas, accidentes y viaje.",
+            "url": "https://valentinproteccionintegral.com",
+            "telephone": "+34603448765",
+            "email": "info@valentinproteccionintegral.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Boadilla del Monte",
+              "addressLocality": "Boadilla del Monte",
+              "addressRegion": "Madrid",
+              "postalCode": "28660",
+              "addressCountry": "ES"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.4072,
+              "longitude": -3.8747
+            },
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" }
+            ],
+            "sameAs": ["https://www.instagram.com/segurosrosavalentin"],
+            "priceRange": "Consulta gratuita"
           })
         }}
       />
@@ -67,9 +83,11 @@ export default function ContactoPage() {
                   <Image src="/images/home/meeting-real.jpg" alt="Asesoramiento real en una reunión" fill className="object-cover" />
                 </div>
                 <div className="p-7 md:p-9">
-                  <p className="kicker">Contacto</p>
-                  <h1 id="contact-h1" className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">Cuéntanos qué quieres proteger</h1>
-                  <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">Rosa y Sebastián llevan más de 10 años acompañando a familias de Madrid. Cuéntanos tu situación y te orientamos con claridad, sin presión y sin letra pequeña.</p>
+                  <p className="kicker">Contacto — Boadilla del Monte, Madrid</p>
+                  <h1 id="contact-h1" className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">Contacta con Nosotros — Valentín Protección Integral</h1>
+                  <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">
+                    Estamos en Boadilla del Monte, Madrid. Llámanos al <strong>603 44 87 65</strong> o escíbenos por WhatsApp. Rosa y Sebastián Valentín responden en menos de 2 horas en horario de atención.
+                  </p>
                   <div className="mt-6 grid gap-3">
                     <a href={buildWhatsAppHref('Hola, quiero resolver una duda sobre seguros.')} className="btn-whatsapp justify-center">Consulta sin compromiso</a>
                     <a href={`tel:${site.phoneHref}`} className="btn-secondary justify-center">Llamar al {site.phone}</a>

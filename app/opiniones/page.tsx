@@ -8,21 +8,25 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
+import dynamic from 'next/dynamic';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import SchemaReviews from '@/components/seo/schema-reviews';
 
+const GoogleReviewsWidgetDynamic = dynamic(() => import('@/components/GoogleReviewsWidget'), { ssr: false });
+
 export const metadata: Metadata = {
-  title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
-  description: "Más de 47 reseñas reales con 5.0 ⭐ en Google. Familias de Boadilla del Monte y Madrid que confían en nosotros para proteger lo que más quieren. Sin presión, con garantía de respuesta en menos de 2 horas.",
-  keywords: "opiniones valentín protección integral, reseñas asesora seguros madrid, valoraciones seguros madrid",
+  title: "Opiniones y Reseñas | Valentín Protección Integral — 4.9★ en Madrid",
+  description: "Lee las opiniones reales de más de 1.200 familias que confían en Valentín Protección Integral para sus seguros en Madrid y Boadilla del Monte. 4.9 estrellas verificadas en Google.",
+  keywords: "opiniones valentín protección integral, reseñas asesora seguros madrid, valoraciones seguros madrid, opiniones seguros boadilla del monte",
   openGraph: {
-    title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
-    description: "Más de 47 reseñas verificadas con 5 estrellas en Google. Lee las experiencias reales de familias de Madrid.",
+    title: "Opiniones y Reseñas | Valentín Protección Integral — 4.9★ en Madrid",
+    description: "Más de 47 reseñas verificadas con 4.9 estrellas en Google. Familias de Madrid y Boadilla del Monte que confían en Rosa y Sebastián Valentín.",
     url: "https://valentinproteccionintegral.com/opiniones",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_conversando.png", alt: "Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte" }],
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/opiniones",
@@ -42,6 +46,25 @@ export default function OpinionesPage() {
         ]} 
       />
       <SchemaReviews />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Valentín Protección Integral",
+        "telephone": "+34603448765",
+        "address": { "@type": "PostalAddress", "addressLocality": "Boadilla del Monte", "addressRegion": "Madrid", "addressCountry": "ES" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "47",
+          "bestRating": "5"
+        },
+        "review": [{
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Cliente verificado" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Rosa y Sebastián nos ayudaron a encontrar el seguro de salud perfecto para toda la familia en Madrid. Muy profesionales y transparentes en todo momento."
+        }]
+      }) }} />
       <Header />
       <main className="pt-6 md:pt-8">
         <div className="container-shell">
@@ -56,10 +79,10 @@ export default function OpinionesPage() {
                 <div>
                   <p className="kicker font-bold tracking-[0.3em]">Confianza y opiniones</p>
                   <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl leading-[1.05]">
-                    Opiniones reales de familias que ya protegemos en Madrid
+                    Opiniones de Clientes — Valentín Protección Integral en Madrid
                   </h1>
                   <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)]">
-                    La mejor señal de un buen asesoramiento no es lo que decimos nosotros, sino cómo lo viven las personas que han confiado en nuestra orientación para proteger a su familia.
+                    Más de 1.200 familias en Madrid y alrededores han confiado en Rosa y Sebastián Valentín para proteger lo que más les importa. Estas son algunas de sus experiencias reales.
                   </p>
                   
                   {/* Trust Summary Bar - Filling the gap */}
@@ -111,7 +134,7 @@ export default function OpinionesPage() {
         </section>
 
 
-        <GoogleReviewsWidget />
+        <GoogleReviewsWidgetDynamic />
 
         {/* Instagram social proof */}
         <section className="section-pad pt-0">
