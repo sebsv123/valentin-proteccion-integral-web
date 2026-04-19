@@ -11,7 +11,11 @@ const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 const GA_ID = 'G-TG4JSVQR5Q';
 const META_PIXEL_ID = '1307875004562255';
 
-import { BackgroundWrapper } from "@/components/background-wrapper";
+import dynamic from 'next/dynamic';
+const BackgroundWrapper = dynamic(
+  () => import('@/components/background-wrapper').then(m => ({ default: m.BackgroundWrapper })),
+  { ssr: false }
+);
 import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -107,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <img
             height="1"
             width="1"
-            style={{ display: 'none' }}
+            style="display:none"
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
             alt=""
           />
@@ -117,7 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BackgroundWrapper />
         <SchemaLocalBusiness />
         <SchemaPersons />
-        <WebVitals />
+        {process.env.NODE_ENV === 'development' && <WebVitals />}
         <Analytics />
         {children}
         {clarityId ? (
