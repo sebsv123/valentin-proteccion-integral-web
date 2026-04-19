@@ -9,8 +9,13 @@ import { LeadForm } from '@/components/lead-form';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { getZona, zonas } from '@/lib/zonas';
-import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
+import dynamic from 'next/dynamic';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+
+const GoogleReviewsGrid = dynamic(() => import('@/components/google-reviews-grid').then(m => m.GoogleReviewsGrid), {
+  loading: () => <div className="h-40 animate-pulse bg-gray-100 rounded-2xl" />,
+  ssr: false
+});
 
 export function generateStaticParams() {
   return zonas.map((z) => ({ zona: z.slug }));
@@ -315,6 +320,22 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 5b: NAP - Datos de contacto locales */}
+        <section className="section-pad bg-white border-y">
+          <div className="container-shell max-w-3xl text-center">
+            <p className="text-sm text-[var(--muted)] mb-2">Asesores de seguros en {z.nombre}</p>
+            <p className="font-heading text-xl font-bold text-[var(--blue-deep)] mb-3">
+              Valentín Protección Integral · Boadilla del Monte, Madrid
+            </p>
+            <p className="text-lg font-semibold text-[var(--blue)]">
+              <a href={`tel:${site.phoneHref}`} className="hover:underline">{site.phone}</a>
+            </p>
+            <p className="mt-4 text-sm text-[var(--muted)]">
+              Atendemos presencialmente en Boadilla del Monte y por videollamada en toda la Comunidad de Madrid.
+            </p>
           </div>
         </section>
 
