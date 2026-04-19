@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Instagram, MapPin, MessageCircle, Shield, Users } from 'lucide-react';
+import { Instagram, MapPin, Shield, Users } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -78,7 +79,7 @@ export default function OpinionesPage() {
                 </div>
                 <div className="flex flex-col gap-5 items-center lg:items-end">
                   <div className="flex gap-3">
-                    <a href={buildWhatsAppHref('Hola Rosa, he leído las opiniones y me gustaría hablar contigo.')} className="btn-whatsapp !px-6"><MessageCircle className="h-4 w-4" /> Hablar ahora</a>
+                    <a href={buildWhatsAppHref('Hola Rosa, he leído las opiniones y me gustaría hablar contigo.')} className="btn-whatsapp !px-6"><WhatsAppIcon className="h-4 w-4" /> Hablar ahora</a>
                   </div>
                 </div>
               </div>
@@ -145,7 +146,7 @@ export default function OpinionesPage() {
                 Si ya has trabajado con nosotros y te has sentido bien orientado, nos encantará saber tu opinión. Tu comentario ayuda a otras personas a decidir con más confianza.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row justify-center">
-                <a href={buildWhatsAppHref('Hola, quiero compartir mi experiencia como cliente.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><MessageCircle className="h-4 w-4" /> Compartir mi experiencia</a>
+                <a href={buildWhatsAppHref('Hola, quiero compartir mi experiencia como cliente.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-4 w-4" /> Compartir mi experiencia</a>
                 {/* TODO: Añadir URL real de Google Business para reseñas
                 <a
                   href="https://g.page/r/XXXXXX/review"

@@ -3,8 +3,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref, site } from "@/lib/products";
-import { MessageCircle, Shield, Zap, Clock, HeartHandshake } from "lucide-react";
+import { Shield, Zap, Clock, HeartHandshake } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Nuestras Garantías · Valentín Protección Integral",
@@ -128,7 +129,7 @@ export default function GarantiasPage() {
               href={buildWhatsAppHref("Hola, quiero conocer más sobre vuestras garantías de asesoramiento.")}
               className="btn-whatsapp !text-lg !px-10 !py-5 inline-flex"
             >
-              <MessageCircle className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
               Escríbenos por WhatsApp
             </a>
           </div>

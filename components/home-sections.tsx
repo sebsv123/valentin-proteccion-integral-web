@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, MessageCircle, ShieldCheck, Stethoscope } from 'lucide-react';
+import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
 import RevealLight from './ui/reveal-light';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const cardImages: Record<string, string> = {
   salud: '/images/premium/hero-family.webp',

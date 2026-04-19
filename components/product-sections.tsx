@@ -1,12 +1,13 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Check, CircleHelp, ClipboardList, HeartHandshake, MessageCircle, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, Check, CircleHelp, ClipboardList, HeartHandshake, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
 import RevealLight from './ui/reveal-light';
 import { buildWhatsAppHref, getRelatedProducts, getSubpagesForProduct, site } from '@/lib/products';
 import type { Product, ProductSubpage } from '@/lib/products';
 import { LeadForm } from './lead-form';
 import { FAQAccordion } from './faq-accordion';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 export function ProductHero({ product }: { product: Product }) {
   const subpages = getSubpagesForProduct(product.slug);
@@ -27,8 +28,8 @@ export function ProductHero({ product }: { product: Product }) {
                 <h1 id="product-h1" className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl lg:text-7xl leading-[1.1]">{product.h1}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">{product.heroCopy}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Link href="/contacto" className="btn-primary hover-lift px-10"><MessageCircle className="h-5 w-5" /> Solicitar orientación</Link>
-                  <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><MessageCircle className="h-5 w-5" /> Hablar con {advisor.name}</a>
+                  <Link href="/contacto" className="btn-primary hover-lift px-10"><WhatsAppIcon className="h-5 w-5" /> Solicitar orientación</Link>
+                  <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
                 </div>
                 {subpages.length ? (
                   <div className="mt-7 flex flex-wrap gap-3">
@@ -224,7 +225,7 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">{subpage.summary}</p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
-                  <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><MessageCircle className="h-4 w-4" /> Consulta sin compromiso</a>
+                  <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
                 </div>
                 <div className="mt-7 grid gap-3">
                   {subpage.bullets.map((item, idx) => (
@@ -336,7 +337,7 @@ export function ProductCTASection({ product, title, text, message }: { product: 
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(message)}`} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><MessageCircle className="h-5 w-5" /> Hablar con {advisor.name}</a>
+                <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(message)}`} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
                 <Link href="/contacto" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Solicitar orientación</Link>
               </div>
             </div>

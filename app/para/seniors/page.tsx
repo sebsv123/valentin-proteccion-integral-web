@@ -3,8 +3,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref, site } from "@/lib/products";
-import { MessageCircle, Phone, HeartPulse, Umbrella, Home, ArrowRight } from "lucide-react";
+import { Phone, HeartPulse, Umbrella, Home, ArrowRight } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Seguros para Seniors en Madrid · Tranquilidad para ti y los tuyos | Valentín Protección Integral",
@@ -61,7 +62,7 @@ export default function SeniorsPage() {
                   href={buildWhatsAppHref("Hola, tengo más de 60 años y quiero información sobre seguros. Prefiero hablar por teléfono pero me pongo en contacto por aquí primero.")}
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl border-2 border-white text-white hover:bg-white/10 transition-colors"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" />
                   O por WhatsApp
                 </a>
               </div>
@@ -217,7 +218,7 @@ export default function SeniorsPage() {
                 href={buildWhatsAppHref("Soy senior y prefiero que me llaméis. Mi teléfono es: [INDICAR TELÉFONO]")}
                 className="btn-whatsapp !text-lg !px-8 !py-4 inline-flex"
               >
-                <MessageCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
                 O escríbenos por WhatsApp
               </a>
             </div>

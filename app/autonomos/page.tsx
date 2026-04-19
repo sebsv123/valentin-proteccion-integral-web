@@ -4,9 +4,10 @@ import { Footer } from "@/components/footer";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref, site } from "@/lib/products";
-import { MessageCircle, Phone, CheckCircle2, Users, Building2, User } from "lucide-react";
+import { Phone, CheckCircle2, Users, Building2, User } from "lucide-react";
 import SchemaFAQ from "@/components/seo/schema-faq";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Seguros para Autónomos en Madrid · Asesoramiento independiente | Valentín Protección Integral",
@@ -74,7 +75,7 @@ export default function AutonomosPage() {
                   href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
                   className="btn-whatsapp !text-base !px-8 !py-4"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp
                 </a>
                 <a
@@ -192,7 +193,7 @@ export default function AutonomosPage() {
                   href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
                   className="btn-whatsapp !text-base !px-8 !py-4"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" />
                   Hablar por WhatsApp
                 </a>
               </div>
@@ -231,7 +232,7 @@ export default function AutonomosPage() {
               href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
               className="btn-whatsapp !text-lg !px-10 !py-5 inline-flex"
             >
-              <MessageCircle className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
               Consultar por WhatsApp
             </a>
           </div>

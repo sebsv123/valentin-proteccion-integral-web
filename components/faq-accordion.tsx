@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ChevronDown, CircleHelp, MessageCircle } from 'lucide-react';
+import { ChevronDown, CircleHelp } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 export function FAQAccordion({ items, contextualLinks = false }: { items: { q: string; a: string }[]; contextualLinks?: boolean }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -36,7 +37,7 @@ export function FAQAccordion({ items, contextualLinks = false }: { items: { q: s
                   </div>
                   {contextualLinks ? (
                     <div className="mt-5 flex flex-wrap gap-3">
-                      <a href={buildWhatsAppHref(`Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><MessageCircle className="h-4 w-4" /> Hablar por WhatsApp</a>
+                      <a href={buildWhatsAppHref(`Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                       <Link href="/contacto" className="btn-ghost !px-4 !py-3 text-sm">Pedir orientación</Link>
                       <Link href="/seguros/salud" className="btn-ghost !px-4 !py-3 text-sm">Ver SALUD</Link>
                       <Link href="/seguros/vida" className="btn-ghost !px-4 !py-3 text-sm">Ver VIDA</Link>

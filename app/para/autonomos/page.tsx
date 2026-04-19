@@ -3,8 +3,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref, site } from "@/lib/products";
-import { MessageCircle, HeartPulse, Users, Briefcase, Calculator, ArrowRight } from "lucide-react";
+import { HeartPulse, Users, Briefcase, Calculator, ArrowRight } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Seguros para Autónomos en Madrid · Dedúcete hasta 500€ en el IRPF | Valentín Protección Integral",
@@ -55,7 +56,7 @@ export default function AutonomosICPPage() {
                   href={buildWhatsAppHref("Hola, soy autónomo en Madrid y quiero información sobre seguros con deducción fiscal.")}
                   className="btn-whatsapp !text-lg !px-8 !py-4 inline-flex"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <WhatsAppIcon className="h-5 w-5" />
                   Escríbenos por WhatsApp
                 </a>
               </div>
@@ -291,7 +292,7 @@ export default function AutonomosICPPage() {
               href={buildWhatsAppHref("Hola, soy autónomo y quiero aprovechar la deducción de 500€ en el IRPF por mi seguro de salud.")}
               className="btn-whatsapp !text-lg !px-10 !py-5 inline-flex"
             >
-              <MessageCircle className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
               Escríbenos por WhatsApp
             </a>
           </div>

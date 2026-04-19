@@ -11,8 +11,9 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Loader2, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Loader2, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Indícanos tu nombre'),
@@ -170,7 +171,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
               }
             }}
           >
-            <MessageCircle className="h-4 w-4" /> Hablar por WhatsApp
+            <WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp
           </a>
         </div>
 

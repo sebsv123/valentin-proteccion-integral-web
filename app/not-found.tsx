@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { ShieldAlert, Home, BookOpen, MessageCircle } from 'lucide-react';
+import { ShieldAlert, Home, BookOpen } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 export const metadata = {
   title: 'Página no encontrada | Valentín Protección Integral',
@@ -40,7 +41,7 @@ export default function NotFound() {
                       Blog Experto
                     </Link>
                     <Link href="/contacto" className="btn-ghost h-auto py-3 text-sm justify-center gap-2 border-white/60 bg-white/20">
-                      <MessageCircle className="h-4 w-4" />
+                      <WhatsAppIcon className="h-4 w-4" />
                       Contacto
                     </Link>
                   </div>

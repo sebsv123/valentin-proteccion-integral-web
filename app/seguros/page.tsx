@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -118,7 +119,7 @@ export default async function SegurosHubPage() {
                   Soy Rosa Valentín. Te acompaño personalmente en todo el proceso: escucho lo que necesitas, comparo las mejores opciones del mercado y te explico cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row pt-2">
-                  <a href={buildWhatsAppHref('Hola Rosa, quiero una orientación personalizada sobre seguros.')} className="btn-whatsapp !text-base !px-8 !py-4 shadow-xl"><MessageCircle className="h-5 w-5" /> Hablar con Rosa</a>
+                  <a href={buildWhatsAppHref('Hola Rosa, quiero una orientación personalizada sobre seguros.')} className="btn-whatsapp !text-base !px-8 !py-4 shadow-xl"><WhatsAppIcon className="h-5 w-5" /> Hablar con Rosa</a>
                   <a href={`tel:${site.phoneHref}`} className="inline-flex items-center gap-2 rounded-[16px] border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white hover:bg-white/20 transition-colors"><Phone className="h-4 w-4" /> {site.phone}</a>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 'use client'
-import { MessageCircle, Search, FileCheck, HeartHandshake } from 'lucide-react'
+import { Search, FileCheck, HeartHandshake } from 'lucide-react'
+import { WhatsAppIcon } from './ui/whatsapp-icon'
 import Link from 'next/link'
 import { buildWhatsAppHref } from '@/lib/products'
 import RevealLight from './ui/reveal-light'
@@ -7,7 +8,7 @@ import RevealLight from './ui/reveal-light'
 const steps = [
   {
     num: '01',
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     title: 'Cuéntanos tu situación',
     desc: 'Dinos qué te preocupa y qué quieres proteger. Sin formularios kilométricos, sin presión y a tu ritmo.',
   },

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MessageCircle } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { LeadForm } from '@/components/lead-form';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { getZona, zonas } from '@/lib/zonas';
 import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
@@ -123,7 +123,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-8 py-4 text-base">
-                    <MessageCircle className="h-5 w-5" /> WhatsApp gratuito
+                    <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
                   </a>
                   <a href={`tel:${site.phoneHref}`} className="btn-secondary px-8 py-4 text-base">
                     Llamar ahora
@@ -265,7 +265,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-10 py-4 text-lg">
-                <MessageCircle className="h-5 w-5" /> Consulta por WhatsApp
+                <WhatsAppIcon className="h-5 w-5" /> Consulta por WhatsApp
               </a>
               <Link href="/contacto" className="btn-primary px-10 py-4 text-lg">
                 Formulario de contacto
@@ -305,7 +305,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-10 py-4 text-lg">
-              <MessageCircle className="h-5 w-5" /> WhatsApp gratuito
+              <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
             </a>
             <a href={`tel:${site.phoneHref}`} className="btn-secondary !bg-white !text-[var(--blue-deep)] px-10 py-4 text-lg">
               Llamar a {site.phone}

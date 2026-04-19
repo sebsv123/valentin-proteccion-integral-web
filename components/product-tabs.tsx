@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from 'react';
-import { Check, ChevronRight, FileText, HelpCircle, Layers3, LifeBuoy, Lightbulb, MessageCircle, Scale } from 'lucide-react';
+import { Check, ChevronRight, FileText, HelpCircle, Layers3, LifeBuoy, Lightbulb, Scale } from 'lucide-react';
 import { productCompare } from '@/lib/product-comparison';
 import { buildWhatsAppHref } from '@/lib/products';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const icons = {
   modalidades: Layers3,
@@ -163,7 +164,7 @@ export function ProductTabs({ slug }: { slug: string }) {
             {/* Contextual CTA */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row items-start">
               <a href={buildWhatsAppHref(`Hola, quiero orientación sobre seguro de ${slug} (${current.label}).`)} className="btn-whatsapp">
-                <MessageCircle className="h-4 w-4" /> Resolver por WhatsApp
+                <WhatsAppIcon className="h-4 w-4" /> Resolver por WhatsApp
               </a>
             </div>
           </div>

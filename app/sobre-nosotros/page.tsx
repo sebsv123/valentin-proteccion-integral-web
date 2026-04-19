@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Briefcase, ClipboardList, HeartHandshake, Instagram, MapPin, MessageCircle, Phone, Quote, ShieldCheck, Star, Users } from 'lucide-react';
+import { Award, Briefcase, ClipboardList, HeartHandshake, Instagram, MapPin, Phone, Quote, ShieldCheck, Star, Users } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -193,7 +194,7 @@ export default function SobreNosotrosPage() {
                   ¿Quieres hablar directamente con nosotros?
                 </p>
                 <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-                  <a href={buildWhatsAppHref('Hola Rosa, quiero hablar contigo sobre un seguro.')} className="btn-whatsapp"><MessageCircle className="h-4 w-4" /> Hablar por WhatsApp</a>
+                  <a href={buildWhatsAppHref('Hola Rosa, quiero hablar contigo sobre un seguro.')} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                   <Link href="/contacto" className="btn-secondary"><Phone className="h-4 w-4" /> Contactar</Link>
                   <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
                 </div>
@@ -235,7 +236,7 @@ export default function SobreNosotrosPage() {
                 Cuéntame tu situación y te ayudo a entender qué opciones tienen sentido para ti. Sin presión, sin compromiso, con toda la claridad.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row justify-center">
-                <a href={buildWhatsAppHref('Hola Rosa, quiero una consulta para entender qué seguro me conviene.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><MessageCircle className="h-4 w-4" /> Hablar por WhatsApp</a>
+                <a href={buildWhatsAppHref('Hola Rosa, quiero una consulta para entender qué seguro me conviene.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                 <Link href="/contacto" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Contactar</Link>
               </div>
             </div>
