@@ -4,11 +4,28 @@ import Link from 'next/link';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
-import { AgentTrustBlock, ComparisonCardsSection, TrustBadgesSection } from '@/components/home-sections';
+import dynamicImport from 'next/dynamic'
+
+const TrustBadgesSection = dynamicImport(
+  () => import('@/components/home-sections').then(m => ({ default: m.TrustBadgesSection })),
+  { ssr: false }
+);
+const AgentTrustBlock = dynamicImport(
+  () => import('@/components/home-sections').then(m => ({ default: m.AgentTrustBlock })),
+  { ssr: false }
+);
+const ComparisonCardsSection = dynamicImport(
+  () => import('@/components/home-sections').then(m => ({ default: m.ComparisonCardsSection })),
+  { ssr: false }
+);
+const HowItWorksSection = dynamicImport(
+  () => import('@/components/HowItWorksSection'),
+  { ssr: false }
+);
+
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
-import HowItWorksSection from '@/components/HowItWorksSection';
 
 export const metadata: Metadata = {
   title: "Cómo Elegir tu Seguro en Madrid · Asesoría Independiente y Gratuita | Valentín",
@@ -83,7 +100,7 @@ export default function ComoTeAyudamosPage() {
                       'Escuchamos qué quieres proteger y en qué momento estás.',
                       'Comparamos opciones con una explicación que se entiende.',
                       'Traducimos coberturas, matices y diferencias a lenguaje claro.',
-                      'Seguimos a tu lado también después de contratar.',
+                      'Si algo falla después de contratar, somos nosotros quienes llamamos a la compañía por ti — nunca te dejamos solo ante un problema.',
                     ].map((line) => (
                       <div key={line} className="rounded-[22px] bg-[var(--bg)] px-5 py-4 text-base leading-7 text-[var(--text)]">{line}</div>
                     ))}
@@ -121,12 +138,13 @@ export default function ComoTeAyudamosPage() {
               <div className="grid gap-0 xl:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[340px]">
                   <Image 
-                  src="/images/rosa_y_sebastian.jpeg" 
-                  alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid" 
-                  fill 
+                  src="/images/rosa_y_sebastian_conversando.png"
+                  alt="Rosa y Sebastián Valentín reunidos con un cliente en su asesoría de seguros en Boadilla del Monte"
+                  fill
+                  loading="lazy"
                   sizes="(max-width: 1280px) 100vw, 683px"
                   quality={60}
-                  className="object-cover object-top" 
+                  className="object-cover object-top"
                 />
                 </div>
                 <div className="p-7 md:p-10">
@@ -137,6 +155,47 @@ export default function ComoTeAyudamosPage() {
                     <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost">Instagram · @segurosrosavalentin</a>
                     <Link href="/contacto" className="btn-secondary">Consulta sin compromiso</Link>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="Sebastián Valentín asesor" className="section-pad pt-0">
+          <div className="container-shell">
+            <div className="soft-card overflow-hidden">
+              <div className="grid gap-0 xl:grid-cols-[1.1fr_0.9fr]">
+                <div className="p-7 md:p-10">
+                  <p className="kicker">Tu asesor personal</p>
+                  <h2 className="mt-3 section-title">
+                    Sebastián: especialista en autónomos y protección familiar
+                  </h2>
+                  <p className="section-copy mt-4">
+                    Sebastián te acompaña desde la primera llamada hasta que
+                    tienes todo claro. Sin tecnicismos, sin presión. Solo la
+                    información que necesitas para decidir con criterio propio.
+                  </p>
+                  <div className="mt-6">
+                    <a
+                      href="https://wa.me/34603448765?text=Hola%2C+quiero+hablar+con+Sebasti%C3%A1n+sobre+mis+opciones+de+seguro"
+                      className="btn-whatsapp"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Hablar con Sebastián
+                    </a>
+                  </div>
+                </div>
+                <div className="relative min-h-[340px]">
+                  <Image
+                    src="/images/sebastian.png"
+                    alt="Sebastián Valentín, asesor de seguros en Boadilla del Monte y toda la zona de Madrid"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1280px) 100vw, 550px"
+                    quality={75}
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
