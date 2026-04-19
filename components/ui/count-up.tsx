@@ -65,7 +65,7 @@ export default function CountUp({
 
         requestAnimationFrame(tick);
       },
-      { threshold: 0 } // Trigger as soon as it enters the viewport
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     );
 
     observer.observe(el);
