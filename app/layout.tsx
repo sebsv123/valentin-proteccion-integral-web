@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans`}>
+      <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
         <BackgroundWrapper />
         <SchemaLocalBusiness />
         <SchemaPersons />
