@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
 
     // PRODUCTOS (alta intención de compra)
+    { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/vida`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -22,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/zonas/boadilla-del-monte`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/majadahonda`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/pozuelo-de-alarcon`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/zonas/alcorcon`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/madrid`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
     // CONFIANZA / AUTORIDAD
@@ -34,7 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // AUDIENCIAS (si existen en app/para/)
     { url: `${base}/para/familias`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/para/autonomos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/para/mayores`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/para/seniors`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/para/jovenes-profesionales`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // BLOG
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
