@@ -11,6 +11,7 @@ import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import { buildWhatsAppHref, site } from "@/lib/products";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 
 // UI Components
 const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
@@ -546,6 +547,7 @@ export default function AsesoriaGratuitaPage() {
         <WhatsAppIcon className="h-8 w-8" />
       </a>
 
+      <StickyWhatsApp />
     </div>
   );
 }

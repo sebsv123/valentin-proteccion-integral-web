@@ -10,6 +10,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { site } from "@/lib/products";
 import { LeadForm } from "@/components/lead-form";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 
 const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"), {
   ssr: false,
@@ -290,6 +291,7 @@ export default function LandingAutonomosPage() {
         <WhatsAppIcon className="h-8 w-8" />
       </a>
 
+      <StickyWhatsApp />
     </main>
   );
 }
