@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, site } from '@/lib/products';
 
 export function StickyWhatsApp() {
