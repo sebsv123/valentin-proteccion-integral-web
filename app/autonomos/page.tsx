@@ -210,6 +210,20 @@ export default function AutonomosPage() {
           </div>
         </section>
 
+        {/* Testimonio autónomo */}
+        <section className="section-pad bg-white border-y">
+          <div className="container-shell max-w-3xl">
+            <blockquote className="text-center">
+              <p className="font-heading text-2xl md:text-3xl text-[var(--blue-deep)] leading-relaxed italic mb-6">
+                "Sebastián me ayudó a encontrar el seguro de salud perfecto como autónomo. Sin papeleo, sin esperas. En una llamada lo tenía todo claro."
+              </p>
+              <cite className="text-[var(--muted)] not-italic font-medium">
+                — Cliente autónomo, Madrid
+              </cite>
+            </blockquote>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="section-pad bg-[var(--bg-soft)]">
           <div className="container-shell">
@@ -263,6 +277,33 @@ export default function AutonomosPage() {
           </div>
         </section>
       </main>
+      {/* Schema JSON-LD específico para autónomos */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Seguros para Autónomos en Madrid",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Valentín Protección Integral",
+              url: "https://www.valentinproteccionintegral.com",
+              telephone: "+34603448765",
+              areaServed: {
+                "@type": "City",
+                name: "Madrid",
+              },
+            },
+            audience: {
+              "@type": "BusinessAudience",
+              audienceType: "Autónomos y pequeñas empresas",
+            },
+            serviceType: "Asesoramiento de seguros",
+            description: "Protege tu negocio y tu salud como autónomo en Madrid. Asesoramiento gratuito, sin compromiso.",
+          }),
+        }}
+      />
       <SchemaFAQ faqs={faqs} />
       <Footer />
       <StickyWhatsApp />
