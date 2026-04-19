@@ -98,8 +98,10 @@ export default function ComoTeAyudamosPage() {
                   src="/images/rosa_y_sebastian.jpeg" 
                   alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid con más de 10 años de experiencia" 
                   fill 
+                  priority
+                  fetchPriority="high"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top" 
-                  priority 
                 />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,59,104,0.08),rgba(18,59,104,0.2))]" />
                 </div>
@@ -122,6 +124,8 @@ export default function ComoTeAyudamosPage() {
                   src="/images/rosa_y_sebastian.jpeg" 
                   alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid" 
                   fill 
+                  sizes="(max-width: 1280px) 100vw, 683px"
+                  quality={60}
                   className="object-cover object-top" 
                 />
                 </div>

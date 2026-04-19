@@ -102,7 +102,7 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden items-center gap-2 xl:flex shrink-0">
+            <div className="hidden items-center gap-2 xl:flex shrink-0 min-w-[380px]">
               <a
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-4 py-2.5 text-white/90
