@@ -70,13 +70,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
-        {/* Preload hero image for LCP optimization */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/premium/hero-family-opt.webp"
-          fetchPriority="high"
-        />
         {/* Preconnect to analytics - solo GTM porque carga early */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />

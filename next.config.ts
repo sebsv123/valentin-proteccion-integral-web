@@ -77,9 +77,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  compiler: {
+    // SWC compiler options for removing console logs in production (helps reduce JS size)
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: [
+      'framer-motion', 
+      'lucide-react'
+    ],
   },
 };
 
