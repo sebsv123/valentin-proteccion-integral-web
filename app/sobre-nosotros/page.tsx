@@ -10,21 +10,24 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
-import HowItWorksSection from '@/components/HowItWorksSection';
+import dynamic from 'next/dynamic';
+
+const HowItWorksSection = dynamic(() => import('@/components/HowItWorksSection'));
 import CredentialsBar from '@/components/CredentialsBar';
 import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
-  title: "Sobre Nosotros · Rosa y Sebastián Valentín | Asesoría de Seguros en Madrid",
-  description: "Conoce al equipo de Valentín Protección Integral: Rosa y Sebastián, dos asesores con más de 10 años protegiendo familias en Madrid con honestidad, criterio y trato cercano.",
-  keywords: "rosa valentin asesora seguros, sebastian valentin asesor seguros, equipo mediadores seguros madrid, asesoria seguros boadilla del monte",
+  title: "Quiénes Somos | Rosa y Sebastián Valentín — Mediadores de Seguros en Madrid",
+  description: "Rosa y Sebastián Valentín, mediadores de seguros independientes en Boadilla del Monte (Madrid). +10 años y +1.200 familias protegidas. Registrados en DGSFP.",
+  keywords: "rosa valentin mediadora seguros, sebastian valentin asesor seguros, equipo mediadores seguros madrid, asesoria seguros boadilla del monte, DGSFP mediadores madrid",
   openGraph: {
-    title: "Sobre Nosotros · Rosa y Sebastián Valentín | Asesoría de Seguros en Madrid",
-    description: "Conoce al equipo de Valentín Protección Integral: Rosa y Sebastián, dos asesores con más de 10 años protegiendo familias en Madrid con honestidad, criterio y trato cercano.",
+    title: "Quiénes Somos | Rosa y Sebastián Valentín — Mediadores de Seguros en Madrid",
+    description: "Rosa y Sebastián Valentín, mediadores de seguros independientes en Boadilla del Monte (Madrid). +10 años y +1.200 familias protegidas. Registrados en DGSFP.",
     url: "https://valentinproteccionintegral.com/sobre-nosotros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_mesa.png", alt: "Rosa y Sebastián Valentín, mediadores de seguros en Boadilla del Monte, Madrid" }],
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/sobre-nosotros",
@@ -33,10 +36,34 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
+const rosaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rosa Valentín",
+  "jobTitle": "Mediadora de Seguros",
+  "description": "Mediadora de seguros independiente registrada en la DGSFP con más de 10 años asesorando familias en Madrid y Boadilla del Monte.",
+  "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
+  "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros Dentales", "Seguros de Decesos", "Seguros de Mascotas"],
+  "areaServed": "Madrid"
+};
+
+const sebastianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sebastián Valentín",
+  "jobTitle": "Mediador de Seguros",
+  "description": "Mediador de seguros independiente registrado en la DGSFP, especialista en seguros de salud, vida y acc identes para familias y autónomos en Madrid.",
+  "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
+  "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
+  "areaServed": "Madrid"
+};
+
 export default function SobreNosotrosPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(rosaSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sebastianSchema) }} />
       <SchemaBreadcrumb
         items={[
           { name: 'Inicio', item: site.domain, position: 1 },
@@ -100,7 +127,7 @@ export default function SobreNosotrosPage() {
 
                 {/* BLOQUE ROSA */}
                 <p className="kicker font-bold text-[var(--blue)] mt-8">Rosa Valentín</p>
-                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Mediadora certificada</p>
+                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Mediadora de seguros registrada en DGSFP</p>
                 <p className="text-base leading-8 text-[var(--muted)]">
                   Mi nombre es Rosa Valentín. Soy asesora certificada con <strong>más de 10 años de experiencia</strong> en seguros de salud, vida, mascotas, viaje, dental, accidentes, hospitalización y decesos. Trabajo desde <strong>Boadilla del Monte, Madrid</strong>, atendiendo a familias y particulares de toda España.
                 </p>
@@ -112,8 +139,8 @@ export default function SobreNosotrosPage() {
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
                   {[
                     { icon: Award, stat: '+10 años', desc: 'Asesorando familias con cercanía' },
-                    { icon: Briefcase, stat: 'Certificada', desc: 'Formación continua y actualizada' },
-                    { icon: Users, stat: '8 ramos', desc: 'Salud, vida, mascotas, viaje y más' },
+                    { icon: Users, stat: '+1.200', desc: 'Familias protegidas en Madrid' },
+                    { icon: Briefcase, stat: '8 ramos', desc: 'Salud, vida, mascotas, viaje y más' },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
@@ -129,6 +156,17 @@ export default function SobreNosotrosPage() {
                 <div className="mt-8 rounded-[24px] border border-[var(--blue)]/15 bg-gradient-to-r from-[rgba(15,94,156,0.04)] to-transparent px-6 py-6">
                   <Quote className="h-6 w-6 text-[var(--blue)]/30 mb-2" />
                   <em className="text-base leading-8 text-[var(--muted)]">&ldquo;La prioridad es ayudarte a separar lo importante de lo accesorio, revisar qué cambia según modalidad y orientarte para que contrates con más tranquilidad y menos dudas.&rdquo;</em>
+                </div>
+
+                {/* Pilar 5 — Honestidad e independencia */}
+                <div className="mt-6 rounded-[24px] border border-[var(--blue-deep)]/20 bg-[var(--blue-deep)]/4 px-6 py-5">
+                  <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Mediadores independientes</p>
+                  <p className="text-base leading-8 text-[var(--muted)]">
+                    No somos una compañía aseguradora. Somos mediadores independientes registrados en la DGSFP
+                    (<strong>Nº C012479234434D · NIF 79234434D</strong>).
+                    Eso significa que trabajamos para ti, no para ninguna compañía.
+                    Nuestro único objetivo es que tengas la mejor cobertura al precio más justo.
+                  </p>
                 </div>
 
                 {/* BLOQUE SEBASTIÁN */}
@@ -150,7 +188,7 @@ export default function SobreNosotrosPage() {
                     {/* Texto Sebastián */}
                     <div>
                       <p className="kicker font-bold text-[var(--blue)]">Sebastián Valentín</p>
-                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Especialista en Vida y Salud</p>
+                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Mediador de seguros registrado en DGSFP · Especialista en Vida y Salud</p>
                       <h3 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-4">
                         El rigor técnico al servicio de tu tranquilidad
                       </h3>
@@ -190,7 +228,7 @@ export default function SobreNosotrosPage() {
                 <div className="mt-6 mb-2 rounded-2xl border border-[var(--green)]/20 bg-[var(--green)]/5 px-5 py-4 flex items-start gap-3">
                   <ShieldCheck className="h-5 w-5 mt-0.5 text-[var(--green)] shrink-0" />
                   <p className="text-sm leading-6 text-[var(--blue-deep)] font-medium">
-                    <strong>Nuestra garantía:</strong> Respondemos en menos de 2 horas en horario laboral. Si algo falla con tu póliza después de contratar, somos nosotros los que llamamos a la compañía — nunca estarás solo.
+                    <strong>Nuestra garantía:</strong> Si después de contratar tienes cualquier problema con tu seguro, somos nosotros quienes llamamos a la compañía por ti. No te dejamos solo con un número de teléfono.
                   </p>
                 </div>
 
