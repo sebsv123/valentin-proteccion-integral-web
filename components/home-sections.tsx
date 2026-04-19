@@ -94,8 +94,6 @@ export function TrustBadgesSection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </section>
   );
 }
@@ -120,7 +118,6 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
             <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
              <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
           </div>
-        </div>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {productsWithImages.map((product, index) => (
             <div className="fade-up" key={product.slug} style={{ transitionDelay: `${index * 0.08}s` }}>
