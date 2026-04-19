@@ -401,3 +401,31 @@ img { max-width: 100%; height: auto; }
   to   { opacity: 1; transform: translateX(0); }
 }
 
+/* ============================================
+   FADE-UP: animaciones CSS sin JS en hilo principal
+   ============================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+/* Stagger para cards en grid */
+.fade-up:nth-child(2) { transition-delay: 0.08s; }
+.fade-up:nth-child(3) { transition-delay: 0.16s; }
+.fade-up:nth-child(4) { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+

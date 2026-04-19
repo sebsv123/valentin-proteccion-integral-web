@@ -5,7 +5,6 @@ import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
-import RevealLight from './ui/reveal-light';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const cardImages: Record<string, string> = {
@@ -53,8 +52,7 @@ export function TrustBadgesSection() {
   return (
      <section className="section-pad pb-6" style={{ background: 'linear-gradient(180deg, rgba(15,94,156,0.03), transparent 75%)' }}>
       <div className="container-shell">
-        <RevealLight>
-          <div className="soft-card overflow-hidden">
+        <div className="soft-card overflow-hidden fade-up">
             <div className="grid gap-0 xl:grid-cols-[1.05fr_0.95fr]">
               <div className="p-7 md:p-10">
                 <p className="kicker">Más de 10 años protegiendo lo importante</p>
@@ -96,7 +94,7 @@ export function TrustBadgesSection() {
               </div>
             </div>
           </div>
-        </RevealLight>
+        </div>
       </div>
     </section>
   );
@@ -117,16 +115,15 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
   return (
      <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
       <div className="container-shell">
-        <RevealLight>
-          <div className="mb-12 max-w-3xl">
+        <div className="mb-12 max-w-3xl fade-up">
             <p className="kicker">Nuestras especialidades</p>
             <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
              <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
           </div>
-        </RevealLight>
+        </div>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {productsWithImages.map((product, index) => (
-            <RevealLight key={product.slug} delay={index * 0.1} direction="up">
+            <div className="fade-up" key={product.slug} style={{ transitionDelay: `${index * 0.08}s` }}>
               <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
                 <div className="relative h-72">
                   <Image
@@ -173,7 +170,7 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
                   </div>
                  </div>
               </article>
-            </RevealLight>
+            </div>
           ))}
         </div>
       </div>
@@ -191,17 +188,16 @@ export function ComparisonCardsSection() {
   return (
      <section className="section-pad" style={{ background: 'linear-gradient(180deg, rgba(18,59,104,0.03), rgba(123,198,126,0.04))' }}>
       <div className="container-shell">
-        <RevealLight>
-          <div className="mb-8 max-w-3xl">
+        <div className="mb-8 max-w-3xl fade-up">
             <p className="kicker">Cómo decidir mejor</p>
             <h2 className="mt-3 section-title">Compara opciones con acompañamiento real</h2>
              <p className="section-copy mt-4">No se trata solo de ver coberturas. Se trata de entender qué encaja contigo, qué cambia entre modalidades y cómo empezar por el canal que te resulte más cómodo.</p>
           </div>
-        </RevealLight>
+        </div>
         <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
           <div className="grid gap-6 xl:grid-cols-3">
             {comparisonProfiles.map((profile, index) => (
-              <RevealLight key={profile.title} delay={index * 0.15} direction="up">
+              <div className="fade-up" key={profile.title} style={{ transitionDelay: `${index * 0.08}s` }}>
                 <div className="soft-card glass h-full group p-8 transition-all hover-lift border-white/40 shadow-xl flex flex-col">
                   <div className="mb-6 inline-flex w-fit rounded-full bg-[var(--blue-deep)] px-5 py-2 text-[10px] font-black uppercase tracking-[0.3em] text-white shadow-lg">
                     Paso {index + 1}
@@ -224,10 +220,10 @@ export function ComparisonCardsSection() {
                      </a>
                   </div>
                 </div>
-              </RevealLight>
+              </div>
             ))}
           </div>
-          <RevealLight direction="left">
+          <div className="fade-up" style={{ transitionDelay: '0.08s' }}>
             <div className="soft-card overflow-hidden h-full">
               <div className="relative min-h-[520px] h-full">
                 <Image
@@ -249,7 +245,7 @@ export function ComparisonCardsSection() {
                 </div>
               </div>
             </div>
-          </RevealLight>
+          </div>
         </div>
       </div>
     </section>
@@ -261,7 +257,7 @@ export function AgentTrustBlock() {
     <section id="asesora" aria-labelledby="agent-title" className="section-pad bg-alternate">
        <div className="container-shell">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <RevealLight direction="left">
+          <div className="fade-up" style={{ transitionDelay: '0.08s' }}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[40px] border-4 border-white/40 shadow-2xl">
               <Image
                 src="/images/agent/rosa-oficina-enhanced.png"
@@ -271,8 +267,8 @@ export function AgentTrustBlock() {
                 loading="lazy"
               />
             </div>
-          </RevealLight>
-          <RevealLight direction="right">
+          </div>
+          <div className="fade-up">
             <div>
               <p className="kicker">Atención humana y experta</p>
               <h2 id="agent-title" className="mt-4 section-title tracking-tight">Rosa Valentín: Más de 10 años comparando por ti para que elijas con total seguridad</h2>
@@ -286,7 +282,7 @@ export function AgentTrustBlock() {
                  <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
             </div>
-          </RevealLight>
+          </div>
         </div>
       </div>
     </section>
@@ -298,7 +294,7 @@ export function GeneralFaqSection() {
     <section id="preguntas-frecuentes" aria-labelledby="faq-title" className="section-pad bg-alternate overflow-hidden">
       <div className="container-shell">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-start">
-          <RevealLight direction="right">
+          <div className="fade-up">
             <div>
               <p className="kicker">Resolvemos tus dudas</p>
               <h2 id="faq-title" className="mt-3 section-title">¿Tienes preguntas antes de empezar?</h2>
@@ -308,10 +304,10 @@ export function GeneralFaqSection() {
                 <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
               </div>
             </div>
-          </RevealLight>
-          <RevealLight direction="left">
+          </div>
+          <div className="fade-up" style={{ transitionDelay: '0.08s' }}>
             <FAQAccordion items={generalFaqs} contextualLinks />
-          </RevealLight>
+          </div>
         </div>
       </div>
     </section>
@@ -322,7 +318,7 @@ export function FinalCTASection() {
   return (
      <section id="cta-final" aria-labelledby="cta-title" className="section-pad pt-0 mb-12">
       <div className="container-shell">
-        <RevealLight>
+        <div className="fade-up">
           <div className="soft-card relative overflow-hidden bg-[var(--blue-deep)] p-12 text-center text-white md:p-20">
             <div className="absolute inset-0">
               <Image
@@ -349,7 +345,7 @@ export function FinalCTASection() {
               </div>
             </div>
           </div>
-        </RevealLight>
+        </div>
       </div>
     </section>
   );
@@ -360,7 +356,7 @@ export function MascotHelperSection() {
   return (
      <section className="section-pad bg-white-pure pt-10">
       <div className="container-shell">
-        <RevealLight>
+        <div className="fade-up">
           <div className="soft-card glass overflow-hidden border-white/60 shadow-2xl bg-white-pure">
             <div className="grid gap-0 xl:grid-cols-[0.85fr_1.15fr]">
               <div className="relative min-h-[360px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10 flex items-center justify-center p-12">
@@ -399,7 +395,7 @@ export function MascotHelperSection() {
               </div>
             </div>
           </div>
-        </RevealLight>
+        </div>
       </div>
     </section>
   );
@@ -414,16 +410,16 @@ export function BlogPreviewSection() {
   return (
      <section id="confianza" aria-labelledby="trust-title" className="section-pad bg-alternate">
       <div className="container-shell">
-        <RevealLight>
+        <div className="fade-up">
           <div className="mb-12 text-center flex flex-col items-center">
             <p className="kicker">Tu seguridad es lo primero</p>
             <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué más de 1.200 familias confían en Valentín</h2>
             <p className="section-copy mt-4 mx-auto">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
           </div>
-        </RevealLight>
+        </div>
         <div className="grid gap-5 lg:grid-cols-3">
           {posts.map((post, idx) => (
-            <RevealLight key={post.slug} delay={idx * 0.12} direction="up">
+            <div className="fade-up" key={post.slug} style={{ transitionDelay: `${idx * 0.08}s` }}>
               <article className="soft-card overflow-hidden h-full flex flex-col">
                 <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                   <div className="relative h-56">
@@ -442,7 +438,7 @@ export function BlogPreviewSection() {
                    </div>
                 </Link>
               </article>
-            </RevealLight>
+            </div>
           ))}
         </div>
       </div>

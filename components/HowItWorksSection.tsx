@@ -1,9 +1,9 @@
 'use client'
+import { useEffect } from 'react'
 import { Search, FileCheck, HeartHandshake } from 'lucide-react'
 import { WhatsAppIcon } from './ui/whatsapp-icon'
 import Link from 'next/link'
 import { buildWhatsAppHref } from '@/lib/products'
-import RevealLight from './ui/reveal-light'
 
 const steps = [
   {
@@ -33,6 +33,22 @@ const steps = [
 ]
 
 export default function HowItWorksSection() {
+  useEffect(() => {
+    const els = document.querySelectorAll('.fade-up');
+    if (!els.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          observer.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    els.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="como-funciona"
@@ -40,8 +56,7 @@ export default function HowItWorksSection() {
       className="section-pad bg-[#0f172a] overflow-hidden"
     >
       <div className="container-shell">
-        <RevealLight>
-          <div className="mb-14 text-center">
+        <div className="fade-up mb-14 text-center">
             <p className="kicker !text-[#81C784]">Cómo trabajamos contigo</p>
             <h2
               id="hiw-title"
@@ -68,7 +83,7 @@ export default function HowItWorksSection() {
 
           <div className="grid gap-6 lg:grid-cols-4">
             {steps.map(({ num, icon: Icon, title, desc }, index) => (
-              <RevealLight key={num} delay={index * 0.15}>
+              <div className="fade-up" key={num} style={{ transitionDelay: `${index * 0.08}s` }}>
                 <div
                   className="relative flex flex-col items-center text-center
                              rounded-[28px] bg-white/5 backdrop-blur p-8
@@ -103,13 +118,13 @@ export default function HowItWorksSection() {
                     {desc}
                   </p>
                 </div>
-              </RevealLight>
+              </div>
             ))}
           </div>
         </div>
 
         {/* CTA inferior */}
-        <RevealLight delay={0.3}>
+        <div className="fade-up" style={{ transitionDelay: '0.24s' }}>
           <div
             className="mt-12 flex flex-col gap-4 items-center sm:flex-row
                        sm:justify-center"
@@ -130,7 +145,7 @@ export default function HowItWorksSection() {
               Empezar ahora por WhatsApp
             </a>
           </div>
-        </RevealLight>
+        </div>
       </div>
     </section>
   )
