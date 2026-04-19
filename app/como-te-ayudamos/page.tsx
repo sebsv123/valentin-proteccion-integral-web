@@ -139,7 +139,7 @@ export default function ComoTeAyudamosPage() {
                 <div className="relative min-h-[340px]">
                   <Image 
                   src="/images/rosa_y_sebastian_conversando.png"
-                  alt="Rosa y Sebastián Valentín reunidos con un cliente en su asesoría de seguros en Boadilla del Monte"
+                  alt="Rosa y Sebastián Valentín en una reunión de asesoría de seguros en Boadilla del Monte"
                   fill
                   loading="lazy"
                   sizes="(max-width: 1280px) 100vw, 683px"
@@ -161,41 +161,68 @@ export default function ComoTeAyudamosPage() {
           </div>
         </section>
 
-        <section aria-label="Sebastián Valentín asesor" className="section-pad pt-0">
+        <section
+          aria-labelledby="prueba-social-title"
+          className="section-pad pt-0"
+        >
           <div className="container-shell">
             <div className="soft-card overflow-hidden">
-              <div className="grid gap-0 xl:grid-cols-[1.1fr_0.9fr]">
-                <div className="p-7 md:p-10">
-                  <p className="kicker">Tu asesor personal</p>
-                  <h2 className="mt-3 section-title">
-                    Sebastián: especialista en autónomos y protección familiar
+              <div className="grid gap-0 xl:grid-cols-[0.95fr_1.05fr]">
+                <div className="relative min-h-[380px]">
+                  <Image
+                    src="/images/sebastian_con_cliente.png"
+                    alt="Sebastián Valentín explicando opciones de seguro a un cliente en Boadilla del Monte"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1280px) 100vw, 600px"
+                    quality={75}
+                    className="object-cover object-center"
+                  />
+                </div>
+                <div className="p-7 md:p-10 flex flex-col justify-center">
+                  <p className="kicker">Lo que nos diferencia</p>
+                  <h2
+                    id="prueba-social-title"
+                    className="mt-3 section-title"
+                  >
+                    Más de 1.200 familias ya confían en nosotros
                   </h2>
                   <p className="section-copy mt-4">
-                    Sebastián te acompaña desde la primera llamada hasta que
-                    tienes todo claro. Sin tecnicismos, sin presión. Solo la
-                    información que necesitas para decidir con criterio propio.
+                    No trabajamos para las compañías. Trabajamos para ti.
+                    Por eso podemos decirte lo que realmente necesitas —
+                    aunque a veces sea menos de lo que ibas a contratar.
                   </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-[18px] bg-[var(--bg)] px-5 py-4">
+                      <p className="text-2xl font-bold text-[var(--blue-deep)]">+10 años</p>
+                      <p className="text-sm text-[var(--muted)] mt-1">
+                        de experiencia en el sector
+                      </p>
+                    </div>
+                    <div className="rounded-[18px] bg-[var(--bg)] px-5 py-4">
+                      <p className="text-2xl font-bold text-[var(--blue-deep)]">+1.200</p>
+                      <p className="text-sm text-[var(--muted)] mt-1">
+                        familias protegidas en Madrid
+                      </p>
+                    </div>
+                    <div className="rounded-[18px] bg-[var(--bg)] px-5 py-4 sm:col-span-2">
+                      <p className="text-base text-[var(--text)] leading-7">
+                        🛡️ <strong>Garantía real:</strong> Si necesitas gestionar
+                        un siniestro o reclamación, nosotros hacemos la llamada
+                        a la compañía. Tú no tienes que pelear solo.
+                      </p>
+                    </div>
+                  </div>
                   <div className="mt-6">
                     <a
-                      href="https://wa.me/34603448765?text=Hola%2C+quiero+hablar+con+Sebasti%C3%A1n+sobre+mis+opciones+de+seguro"
+                      href="https://wa.me/34603448765?text=Hola%2C+quiero+una+consulta+gratuita+sobre+seguros"
                       className="btn-whatsapp"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Hablar con Sebastián
+                      Consulta gratuita ahora
                     </a>
                   </div>
-                </div>
-                <div className="relative min-h-[340px]">
-                  <Image
-                    src="/images/sebastian.png"
-                    alt="Sebastián Valentín, asesor de seguros en Boadilla del Monte y toda la zona de Madrid"
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 1280px) 100vw, 550px"
-                    quality={75}
-                    className="object-cover object-top"
-                  />
                 </div>
               </div>
             </div>
