@@ -108,8 +108,8 @@ export default function ComoTeAyudamosPage() {
                 </div>
                 <div className="relative min-h-[360px]">
                   <Image 
-                  src="/images/rosa_y_sebastian.jpeg" 
-                  alt="Rosa y Sebastián Valentín, asesores de seguros en Madrid con más de 10 años de experiencia" 
+                  src="/images/rosa_y_sebastian_conversando.png" 
+                  alt="Rosa y Sebastián Valentín atendiendo a clientes en su asesoría de seguros en Boadilla del Monte" 
                   fill 
                   priority
                   fetchPriority="high"
@@ -219,6 +219,45 @@ export default function ComoTeAyudamosPage() {
                       Consulta gratuita ahora
                     </a>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section aria-label="Sebastián Valentín, asesor personal" className="section-pad pt-0">
+          <div className="container-shell">
+            <div className="soft-card overflow-hidden rounded-3xl">
+              <div className="grid gap-0 xl:grid-cols-[1.1fr_0.9fr]">
+                <div className="p-7 md:p-10 flex flex-col justify-center">
+                  <p className="kicker">Tu asesor personal</p>
+                  <h2 className="mt-3 section-title">
+                    Sebastián: especialista en autónomos y protección familiar
+                  </h2>
+                  <p className="section-copy mt-4">
+                    Sebastián te acompaña desde la primera consulta hasta que tienes todo claro.
+                    Sin tecnicismos, sin presión. Solo lo que necesitas saber para decidir con criterio.
+                  </p>
+                  <div className="mt-6">
+                    <a
+                      href="https://wa.me/34603448765?text=Hola%2C+quiero+hablar+con+Sebasti%C3%A1n+sobre+mis+opciones+de+seguro"
+                      className="btn-whatsapp"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Hablar con Sebastián
+                    </a>
+                  </div>
+                </div>
+                <div className="relative min-h-[340px]">
+                  <Image
+                    src="/images/sebastian.png"
+                    alt="Sebastián Valentín, asesor de seguros en Boadilla del Monte y Madrid"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1280px) 100vw, 550px"
+                    quality={75}
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
