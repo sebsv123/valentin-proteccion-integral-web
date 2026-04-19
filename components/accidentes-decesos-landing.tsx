@@ -157,38 +157,26 @@ export function AccidentesDecesosLanding() {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Columna izquierda - Texto */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="text-center lg:text-left"
-            >
-              <motion.div variants={fadeInUpVariants} className="mb-6">
+            <div className="text-center lg:text-left">
+              <div className="mb-6">
                 <AnimatedShinyText className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
                   🛡️ El seguro que toda familia necesita — desde 3€/mes
                 </AnimatedShinyText>
               </motion.div>
 
-              <motion.h1
-                variants={fadeInUpVariants}
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6"
-              >
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Protege a tu familia hoy.{" "}
                 Desde <span className="underline decoration-amber-500 decoration-4 underline-offset-4">3€ al mes</span>.{" "}
                 Sin excusas.
               </motion.h1>
 
-              <motion.p
-                variants={fadeInUpVariants}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
-              >
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                 Si algo te pasa, tu familia no debería preocuparse por el dinero.
                 Rosa y Sebastián te montan la protección completa en 
                 una sola llamada, sin papeleos y sin letra pequeña.
-              </motion.p>
+              </p>
 
-              <motion.div variants={fadeInUpVariants} className="flex flex-col gap-4 mb-8">
+              <div className="flex flex-col gap-4 mb-8">
                 {[
                   "Desde 3€/mes (menos que un café al día)",
                   "Sin permanencia. Cancelas cuando quieras.",
@@ -203,14 +191,11 @@ export function AccidentesDecesosLanding() {
                     <span className="text-base sm:text-lg">{item}</span>
                   </div>
                 ))}
-              </motion.div>
+              </div>
 
-              <motion.div
-                variants={fadeInUpVariants}
-                className="flex flex-col sm:flex-row gap-4"
-              >
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/34603448765"
+                  href={`https://wa.me/34603448765?text=${encodeURIComponent('Hola Rosa y Sebastián, vi la página de accidentes y decesos y me gustaría saber el precio para mi familia. Sin compromiso.')}`}
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "h-14 px-8 text-lg font-bold bg-amber-600 hover:bg-amber-700 text-white gap-2"
@@ -229,8 +214,8 @@ export function AccidentesDecesosLanding() {
                   <Phone className="h-5 w-5 mr-2" />
                   603 448 765
                 </a>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Columna derecha - Formulario */}
             <motion.div
@@ -372,11 +357,12 @@ export function AccidentesDecesosLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image
-              src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Familia feliz y protegida"
+              src="/images/rosa_y_sebastian_mesa.png"
+              alt="Rosa y Sebastián Valentín asesorando con honestidad"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
               quality={75}
             />
           </div>
@@ -441,10 +427,11 @@ export function AccidentesDecesosLanding() {
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián Valentín"
+                src="/images/rosa_y_sebastian_conversando.png"
+                alt="Rosa y Sebastián Valentín, tus mediadores de confianza"
                 fill
                 className="object-cover object-top"
+                loading="lazy"
               />
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center">
@@ -520,15 +507,10 @@ export function AccidentesDecesosLanding() {
                        bg-white/5 px-8 py-6 text-center"
           >
             <p className="text-lg font-bold text-white mb-2">
-              ¿Y si no cumplimos lo que prometemos?
+              ¿Por qué confiar en nosotros?
             </p>
             <p className="text-white/70 text-base leading-relaxed">
-              Si no te contactamos en 30 minutos tras tu consulta, 
-              Rosa o Sebastián te ofrecen una{" "}
-              <span className="text-white font-semibold">
-                cita presencial gratuita
-              </span>{" "}
-              para revisar todas tus pólizas sin compromiso.
+              Si después de contratar tienes cualquier problema con tu seguro, somos nosotros quienes llamamos a la compañía por ti. No te dejamos solo con un número de teléfono. Respondemos en menos de 2 horas en horario laboral.
             </p>
           </motion.div>
         </div>
@@ -652,11 +634,12 @@ export function AccidentesDecesosLanding() {
             {/* Columna derecha: imagen — oculta en móvil */}
             <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
               <Image
-                src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Proceso sencillo de contratación"
+                src="/images/sebastian_con_cliente.png"
+                alt="Sebastián Valentín asesorando a un cliente"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
                 quality={75}
               />
             </div>
@@ -765,10 +748,11 @@ export function AccidentesDecesosLanding() {
               <h2 className="text-4xl font-bold mb-6">Preguntas frecuentes</h2>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
                 <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa y Sebastián"
+                  src="/images/rosa_y_sebastian_mesa.png"
+                  alt="Rosa y Sebastián resuelven tus dudas"
                   fill
                   className="object-cover object-top"
+                  loading="lazy"
                 />
               </div>
             </div>
