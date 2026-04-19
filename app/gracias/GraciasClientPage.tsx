@@ -16,12 +16,18 @@ import { CheckCircle } from 'lucide-react';
 
 export default function GraciasClientPage() {
   useEffect(() => {
+    // GA4 — Evento de conversión primaria
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Contactar', {
+        event_category: 'conversion',
+        event_label: 'gracias_page',
+      });
+    }
     // Meta Pixel — Lead
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead');
     }
-    // Google Ads — Conversion
-    // IMPORTANTE: reemplaza AW-XXXXXXXXX/YYYYYYYYYYY con tu ID real de conversión de Google Ads
+    // Google Ads — Conversion (reemplaza AW-XXXXXXXXX/YYYYYYYYYYY con tu ID real)
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'conversion', {
         send_to: 'AW-XXXXXXXXX/YYYYYYYYYYY',
@@ -43,17 +49,25 @@ export default function GraciasClientPage() {
               </div>
             </div>
             <h1 className="font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
-              ¡Gracias! Rosa o Sebastián te contactarán en menos de 2 horas.
+              ¡Gracias! Ya tenemos tus datos.
             </h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Hemos recibido tu solicitud. Rosa o Sebastián Valentín te responderán personalmente con una orientación clara y sin compromiso.
+              Rosa o Sebastián Valentín te contactarán en menos de 2 horas en horario de atención
+              <strong className="text-[var(--blue-deep)]"> (L-V 9h-19h, S 10h-14h)</strong>.
             </p>
             <p className="mt-3 text-base text-[var(--muted)]">
-              Mientras tanto, si tienes urgencia, escríbenos directamente al{' '}
-              <a href="https://wa.me/34603448765" className="font-bold text-[var(--blue-deep)] underline underline-offset-2">603 44 87 65</a>.
+              Si tienes urgencia, escríbenos directamente:
             </p>
-            <div className="mt-8">
-              <Link href="/" className="btn-primary inline-flex">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row justify-center">
+              <a
+                href="https://wa.me/34603448765?text=Hola%2C+acabo+de+enviar+un+formulario+y+tengo+urgencia"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-whatsapp inline-flex justify-center"
+              >
+                Escribir por WhatsApp
+              </a>
+              <Link href="/" className="btn-secondary inline-flex justify-center">
                 Volver al inicio
               </Link>
             </div>
