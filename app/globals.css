@@ -422,10 +422,22 @@ img { max-width: 100%; height: auto; }
 .fade-up:nth-child(4) { transition-delay: 0.24s; }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   .fade-up {
     opacity: 1;
     transform: none;
     transition: none;
+    will-change: auto;
+  }
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 
