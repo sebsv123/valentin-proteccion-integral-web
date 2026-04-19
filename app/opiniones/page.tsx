@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Instagram, MapPin, Shield, Users } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
@@ -13,7 +14,7 @@ import SchemaReviews from '@/components/seo/schema-reviews';
 
 export const metadata: Metadata = {
   title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
-  description: "Más de 47 reseñas verificadas con 5 estrellas en Google. Familias de Madrid que confían en Valentín Protección Integral. Lee sus experiencias reales.",
+  description: "Más de 47 reseñas reales con 5.0 ⭐ en Google. Familias de Boadilla del Monte y Madrid que confían en nosotros para proteger lo que más quieren. Sin presión, con garantía de respuesta en menos de 2 horas.",
   keywords: "opiniones valentín protección integral, reseñas asesora seguros madrid, valoraciones seguros madrid",
   openGraph: {
     title: "Opiniones de Clientes Reales · 5.0 ⭐ | Valentín Seguros",
@@ -55,7 +56,7 @@ export default function OpinionesPage() {
                 <div>
                   <p className="kicker font-bold tracking-[0.3em]">Confianza y opiniones</p>
                   <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl leading-[1.05]">
-                    Lo que dicen quienes ya han confiado en nosotros
+                    Opiniones reales de familias que ya protegemos en Madrid
                   </h1>
                   <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)]">
                     La mejor señal de un buen asesoramiento no es lo que decimos nosotros, sino cómo lo viven las personas que han confiado en nuestra orientación para proteger a su familia.
@@ -76,10 +77,32 @@ export default function OpinionesPage() {
                       <span className="text-sm font-bold text-[var(--blue-deep)]">+1.2k Familias</span>
                     </div>
                   </div>
+
+                  <div className="mt-6 rounded-2xl border border-[var(--green)]/20 bg-[var(--green)]/5 px-5 py-4 flex items-start gap-3">
+                    <Shield className="h-5 w-5 mt-0.5 text-[var(--green)] shrink-0" />
+                    <p className="text-sm leading-6 text-[var(--blue-deep)] font-medium">
+                      <strong>Nuestra garantía:</strong> Si necesitas ayuda después de contratar, 
+                      somos nosotros los que llamamos a la compañía por ti. Nunca te dejamos solo.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-5 items-center lg:items-end">
+                <div className="flex flex-col gap-5">
+                  <div className="relative h-72 lg:h-full min-h-[280px] rounded-[1.5rem] overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/rosa_y_sebastian_conversando.png"
+                      alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 420px"
+                      quality={80}
+                      className="object-cover object-top"
+                    />
+                  </div>
                   <div className="flex gap-3">
-                    <a href={buildWhatsAppHref('Hola Rosa, he leído las opiniones y me gustaría hablar contigo.')} className="btn-whatsapp !px-6"><WhatsAppIcon className="h-4 w-4" /> Hablar ahora</a>
+                    <a href={buildWhatsAppHref('Hola Rosa, he leído las opiniones y me gustaría hablar contigo.')} 
+                       className="btn-whatsapp !px-6 w-full justify-center">
+                      <WhatsAppIcon className="h-4 w-4" /> Hablar ahora
+                    </a>
                   </div>
                 </div>
               </div>
@@ -117,6 +140,17 @@ export default function OpinionesPage() {
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-[rgba(15,94,156,0.06)] to-[rgba(123,198,126,0.08)] p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                  <div className="relative h-48 rounded-2xl overflow-hidden mb-5 shadow-md">
+                    <Image
+                      src="/images/sebastian_con_cliente.png"
+                      alt="Sebastián Valentín asesorando a un cliente sobre su seguro"
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 1024px) 100vw, 380px"
+                      quality={70}
+                      className="object-cover object-center"
+                    />
+                  </div>
                   <div className="grid gap-4 grid-cols-2">
                     {[
                       { value: '+1.200', label: 'Familias orientadas' },
@@ -147,16 +181,14 @@ export default function OpinionesPage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row justify-center">
                 <a href={buildWhatsAppHref('Hola, quiero compartir mi experiencia como cliente.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-4 w-4" /> Compartir mi experiencia</a>
-                {/* TODO: Añadir URL real de Google Business para reseñas
                 <a
-                  href="https://g.page/r/XXXXXX/review"
+                  href="https://www.google.com/maps/search/Valentín+Protección+Integral+Boadilla+del+Monte"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-ghost !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"
                 >
                   ⭐ Dejar reseña en Google
                 </a>
-                */}
                 <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"><Instagram className="h-4 w-4" /> Seguir en Instagram</a>
               </div>
             </div>
