@@ -58,7 +58,7 @@ export default async function SegurosHubPage() {
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Seguros' }]} />
           <div className="mb-10 max-w-3xl">
             <p className="kicker">Nuestros seguros</p>
-            <h1 className="mt-3 section-title">Encuentra el producto que mejor encaje con lo que quieres proteger</h1>
+            <h1 className="mt-3 section-title">Seguros en Madrid: salud, vida, dental, mascotas y más — sin complicaciones, sin presión</h1>
             <p className="section-copy mt-4">Cada producto tiene su propia página con ventajas, preguntas frecuentes y formas reales de pedir orientación.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
@@ -73,10 +73,11 @@ export default async function SegurosHubPage() {
                         alt={product.cardAlt}
                         width={800}
                         height={450}
+                        loading="lazy"
+                        decoding="async"
                         className="object-cover transition-transform duration-700 group-hover:scale-110 w-full h-full" 
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(18,59,104,0.85)] to-transparent p-5 text-white">
-                        <p className="kicker !text-white/80 !mb-1">{product.label}</p>
                         <h2 className="font-heading text-3xl font-bold">{product.label}</h2>
                       </div>
                     </div>
@@ -92,8 +93,18 @@ export default async function SegurosHubPage() {
                         </div>
                       ) : null}
                       <div className="mt-8 flex flex-col gap-3">
-                        <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver detalles de {product.label}</Link>
-                        <Link href="/contacto" className="btn-ghost w-full justify-center opacity-70 hover:opacity-100">Solicitar orientación</Link>
+                        <Link href={`/seguros/${product.slug}`} className="btn-secondary w-full justify-center">Ver detalles</Link>
+                        <a 
+                          href={buildWhatsAppHref(
+                            `Hola, me interesa información sobre ${product.label}.` 
+                          )} 
+                          className="btn-whatsapp w-full justify-center"
+                          target="_blank" 
+                          rel="noreferrer"
+                        >
+                          <WhatsAppIcon className="h-4 w-4" /> 
+                          Consultar por WhatsApp
+                        </a>
                       </div>
                     </div>
                   </article>
@@ -108,15 +119,15 @@ export default async function SegurosHubPage() {
           <section className="mt-16 rounded-[32px] bg-gradient-to-br from-[#002244] to-[#0F5E9C] p-8 md:p-12 text-white overflow-hidden">
             <div className="grid gap-8 md:grid-cols-[280px_1fr] items-center">
               <div className="relative mx-auto md:mx-0 h-[320px] w-[260px] rounded-[24px] overflow-hidden border-4 border-white/20 shadow-2xl">
-                <Image src="/images/agent/rosa-oficina.jpg" alt="Rosa Valentín — Asesora de seguros" fill className="object-cover object-top" />
+                <Image src="/images/sebastian_con_cliente.png" alt="Sebastián Valentín asesorando a un cliente sobre su seguro en Boadilla del Monte" fill className="object-cover object-top" />
               </div>
               <div className="space-y-5">
-                <p className="font-heading text-lg font-semibold text-white/70 uppercase tracking-widest">Tu asesora de confianza</p>
+                <p className="font-heading text-lg font-semibold text-white/70 uppercase tracking-widest">Tu equipo de confianza</p>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
-                  Más de 10 años comparando por ti para que elijas con total seguridad
+                  Más de 10 años y +1.200 familias en Madrid confían en nuestro criterio independiente
                 </h2>
                 <p className="text-lg leading-8 text-white/80 max-w-2xl">
-                  Soy Rosa Valentín. Te acompaño personalmente en todo el proceso: escucho lo que necesitas, comparo las mejores opciones del mercado y te explico cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.
+                  Somos Rosa y Sebastián Valentín. Te acompañamos personalmente en todo el proceso: escuchamos lo que necesitas, comparamos las mejores opciones del mercado y te explicamos cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row pt-2">
                   <a href={buildWhatsAppHref('Hola Rosa, quiero una orientación personalizada sobre seguros.')} className="btn-whatsapp !text-base !px-8 !py-4 shadow-xl"><WhatsAppIcon className="h-5 w-5" /> Hablar con Rosa</a>
