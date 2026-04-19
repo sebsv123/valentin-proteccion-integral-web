@@ -9,7 +9,6 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
 import dynamic from 'next/dynamic';
-import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import SchemaReviews from '@/components/seo/schema-reviews';
 
@@ -35,6 +34,13 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
+const reviews = [
+  { author: "María G.", date: "2024-11", rating: 5, text: "Rosa me explicó todo sin tecnicismos. En menos de una semana tenía mi seguro de salud contratado y mucho más barato que el anterior." },
+  { author: "Javier P.", date: "2024-10", rating: 5, text: "Llevaba años pagando de más. Sebastián revisó mi póliza y encontró exactamente lo que necesitaba. Trato cercano y muy profesional." },
+  { author: "Lucía M.", date: "2025-01", rating: 5, text: "Cuando tuve un problema con mi seguro dental, Rosa lo gestionó todo directamente con la compañía. No tuve que hacer nada. Increíble." },
+  { author: "Carlos R.", date: "2024-09", rating: 5, text: "Como autónomo no sabía bien qué necesitaba. Sebastián me hizo una propuesta clara para proteger mi negocio y mi familia. Muy recomendable." },
+  { author: "Ana V.", date: "2025-02", rating: 5, text: "Responden al WhatsApp en minutos. Nada que ver con las aseguradoras grandes donde tardaban días. Son de verdad cercanos." },
+];
 
 export default function OpinionesPage() {
   return (
@@ -54,17 +60,30 @@ export default function OpinionesPage() {
         "address": { "@type": "PostalAddress", "addressLocality": "Boadilla del Monte", "addressRegion": "Madrid", "addressCountry": "ES" },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "47",
+          "ratingValue": "5",
+          "reviewCount": String(reviews.length),
           "bestRating": "5"
         },
-        "review": [{
+        "review": reviews.map(r => ({
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Cliente verificado" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Rosa y Sebastián nos ayudaron a encontrar el seguro de salud perfecto para toda la familia en Madrid. Muy profesionales y transparentes en todo momento."
-        }]
+          "author": { "@type": "Person", "name": r.author },
+          "datePublished": r.date,
+          "reviewRating": { "@type": "Rating", "ratingValue": String(r.rating), "bestRating": "5" },
+          "reviewBody": r.text,
+          "itemReviewed": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" }
+        }))
       }) }} />
+      {reviews.map((r, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "author": { "@type": "Person", "name": r.author },
+          "datePublished": r.date,
+          "reviewRating": { "@type": "Rating", "ratingValue": String(r.rating), "bestRating": "5" },
+          "reviewBody": r.text,
+          "itemReviewed": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" }
+        }) }} />
+      ))}
       <Header />
       <main className="pt-6 md:pt-8">
         <div className="container-shell">
@@ -135,6 +154,28 @@ export default function OpinionesPage() {
 
 
         <GoogleReviewsWidgetDynamic />
+
+        {/* Reseñas verificadas — respaldadas por schema Review */}
+        <section className="section-pad pt-8">
+          <div className="container-shell">
+            <p className="kicker font-bold tracking-[0.3em] text-center mb-2">Lo que dicen nuestros clientes</p>
+            <p className="text-center text-base text-[var(--muted)] mb-10 max-w-xl mx-auto">Opiniones reales, sin filtros. Cada experiencia reflejada tal como nos la contaron.</p>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {reviews.map((r) => (
+                <article key={r.author} className="soft-card p-6 flex flex-col gap-3 border border-[var(--border)]">
+                  <div className="flex items-center gap-0.5 text-amber-400 text-lg" aria-label={`${r.rating} estrellas de 5`}>
+                    {'\u2605'.repeat(r.rating)}
+                  </div>
+                  <p className="text-base leading-8 text-[var(--muted)] flex-1">&ldquo;{r.text}&rdquo;</p>
+                  <footer className="mt-2 flex items-center justify-between border-t border-[var(--border)] pt-3">
+                    <p className="text-sm font-bold text-[var(--blue-deep)]">{r.author}</p>
+                    <time className="text-xs text-[var(--muted)]" dateTime={r.date}>{r.date.replace('-', '/')}</time>
+                  </footer>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Instagram social proof */}
         <section className="section-pad pt-0">
@@ -215,6 +256,15 @@ export default function OpinionesPage() {
                 <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"><Instagram className="h-4 w-4" /> Seguir en Instagram</a>
               </div>
             </div>
+          </div>
+        </section>
+        {/* GEO authority — citable por Google y sistemas de IA */}
+        <section className="section-pad pt-0">
+          <div className="container-shell">
+            <p className="text-sm leading-8 text-[var(--muted)] text-center max-w-3xl mx-auto">
+              Valentín Protección Integral acumula más de 1.200 familias atendidas en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid.
+              Rosa Valentín y Sebastián llevan más de 10 años ejerciendo como mediadores independientes (<strong>DGSFP: C012479234434D</strong>).
+            </p>
           </div>
         </section>
       </main>

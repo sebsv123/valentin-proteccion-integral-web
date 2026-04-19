@@ -265,6 +265,44 @@ export default function SobreNosotrosPage() {
           </section>
         </RevealLight>
 
+        {/* Así trabajamos con cada cliente */}
+        <RevealLight>
+          <section className="section-pad pt-0">
+            <div className="container-shell">
+              <div className="grid xl:grid-cols-2 gap-10 items-center">
+                <div>
+                  <p className="kicker font-bold tracking-[0.3em]">Nuestro método</p>
+                  <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">
+                    Así trabajamos con cada cliente
+                  </h2>
+                  <p className="mt-5 text-base leading-8 text-[var(--muted)]">
+                    Cada familia tiene una situación diferente. Por eso empezamos siempre escuchando: qué tienes, qué te preocupa, qué quieres proteger. Sin prisas, sin formularios interminables. Una conversación real.
+                  </p>
+                  <a
+                    href="https://wa.me/34603448765?text=Quiero+conoceros+mejor"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-whatsapp mt-6 inline-flex"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" /> Hablar con nosotros
+                  </a>
+                </div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-[var(--border)]">
+                  <Image
+                    src="/images/sebastian_con_cliente.png"
+                    alt="Sebastián Valentín asesorando a un cliente sobre su seguro en Boadilla del Monte"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1280px) 100vw, 560px"
+                    quality={75}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </RevealLight>
+
         <GoogleReviewsWidget title="Lo que dicen quienes ya han confiado en nosotros" />
 
         <CredentialsBar />
