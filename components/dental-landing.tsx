@@ -243,9 +243,11 @@ export function DentalLanding() {
               className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20"
             >
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián Valentín"
+                src="/images/rosa_y_sebastian_conversando.png"
+                alt="Rosa y Sebastián Valentín, asesores de seguros dentales en Madrid"
                 fill
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 420px"
                 className="object-cover object-top"
               />
             </motion.div>
@@ -361,12 +363,12 @@ export function DentalLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border bg-muted">
             <Image 
-              src="https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-              alt="Clínica dental en Madrid" 
+              src="/images/sebastian_con_cliente.png" 
+              alt="Sebastián Valentín explicando coberturas de seguro dental a un cliente en Madrid" 
               fill 
+              loading="lazy"
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              quality={75}
             />
           </div>
           <div>
@@ -443,11 +445,21 @@ export function DentalLanding() {
                 </div>
               </div>
 
-              <div className="mt-16 p-6 rounded-2xl border-2 border-primary/30 bg-primary/5 flex items-start gap-4">
-                <span className="text-3xl flex-none">⏱️</span>
-                <p className="text-lg font-semibold text-foreground leading-relaxed">
-                  Respondemos en 30 minutos o te debemos una explicación. Siempre.
-                </p>
+              <div className="mt-10 space-y-4">
+                <div className="p-5 rounded-2xl border-2 border-primary/30 bg-primary/5 flex items-start gap-4">
+                  <span className="text-2xl flex-none">⏱️</span>
+                  <p className="text-base font-semibold text-foreground leading-relaxed">
+                    Si no respondemos en 30 minutos, te lo explicamos y te compensamos con
+                    una revisión de toda tu póliza actual — gratis.
+                  </p>
+                </div>
+                <div className="p-5 rounded-2xl border-2 border-emerald-200 bg-emerald-50 flex items-start gap-4">
+                  <span className="text-2xl flex-none">🎁</span>
+                  <p className="text-base font-semibold text-emerald-800 leading-relaxed">
+                    Cuando contratas con nosotros recibes un mensaje personal de bienvenida
+                    de Rosa o Sebastián — no un email automático. Siempre una persona real.
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -512,17 +524,41 @@ export function DentalLanding() {
 
       {/* 🛡️ SECCIÓN GARANTÍA */}
       <section className="py-14 sm:py-20 lg:py-24 bg-card border-y">
-        <div className="container mx-auto max-w-4xl text-center px-4">
-          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-            <ShieldCheck className="h-12 w-12 text-primary" />
+        <div className="container mx-auto max-w-5xl px-4">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
+
+            {/* Foto izquierda */}
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border">
+              <Image
+                src="/images/rosa_y_sebastian_mesa.png"
+                alt="Rosa y Sebastián Valentín revisando pólizas con un cliente"
+                fill
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 480px"
+                quality={75}
+                className="object-cover object-center"
+              />
+            </div>
+
+            {/* Texto derecha */}
+            <div>
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <ShieldCheck className="h-10 w-10 text-primary" />
+              </div>
+              <h2 className="text-3xl font-bold sm:text-4xl mb-6">
+                Nuestra garantía de transparencia
+              </h2>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                Si tras hablar con nosotros sientes que no hemos sido 100% claros,
+                te buscamos una alternativa mejor. Aunque no sea con nosotros.
+              </p>
+              <p className="text-lg italic font-medium opacity-70 border-t pt-6">
+                &ldquo;En más de 10 años nunca hemos tenido que hacerlo. Pero si llega el día,
+                lo haremos. Porque la honestidad no es solo una palabra.&rdquo;
+              </p>
+            </div>
+
           </div>
-          <h2 className="text-3xl font-bold sm:text-5xl mb-8">Nuestra garantía de transparencia</h2>
-          <p className="text-xl text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
-            Si tras hablar con nosotros sientes que no hemos sido 100% claros, te buscamos una alternativa mejor. Aunque no sea con nosotros.
-          </p>
-          <p className="text-lg italic font-medium opacity-70 border-t pt-6 max-w-2xl mx-auto">
-            &ldquo;En más de 10 años nunca hemos tenido que hacerlo. Pero si llega el día, lo haremos. Porque la honestidad no es solo una palabra.&rdquo;
-          </p>
         </div>
       </section>
 
