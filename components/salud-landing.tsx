@@ -109,8 +109,8 @@ export function SaludLanding() {
 
   return (
     <>
-      {/* 1. BARRA STICKY FIXED */}
-      <div className="fixed top-0 left-0 right-0 z-50 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
+      {/* 1. BARRA STICKY */}
+      <div className="sticky top-16 left-0 right-0 z-30 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
 
           {/* Texto CORTO en móvil, texto LARGO en desktop */}
@@ -135,7 +135,7 @@ export function SaludLanding() {
       </div>
 
       {/* 2. HERO */}
-      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-32 bg-background">
+      <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-24 bg-background">
         <DotGrid 
           className="z-0"
           dotSize={4}
@@ -411,9 +411,11 @@ export function SaludLanding() {
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián Valentín"
+                src="/images/rosa_y_sebastian_de_pie.png"
+                alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte"
                 fill
+                loading="lazy"
+                decoding="async"
                 className="object-cover object-top"
               />
             </motion.div>
@@ -462,12 +464,13 @@ export function SaludLanding() {
         <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border">
             <Image
-              src="https://images.pexels.com/photos/8460125/pexels-photo-8460125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Consulta médica privada en Madrid"
+              src="/images/sebastian_con_cliente.png"
+              alt="Sebastián Valentín revisando coberturas de salud con un cliente en Madrid"
               fill
+              loading="lazy"
+              decoding="async"
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              quality={75}
             />
           </div>
           <div>
@@ -569,7 +572,7 @@ export function SaludLanding() {
                 variants={fadeInUpVariants}
                 className="text-center p-6 rounded-2xl bg-white/10"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4">
+                <div className="mb-4 text-white/80">
                   {garantia.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-2">{garantia.title}</h3>
@@ -658,12 +661,13 @@ export function SaludLanding() {
           {/* Columna derecha: imagen — oculta en móvil */}
           <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
             <Image
-              src="https://images.pexels.com/photos/7735626/pexels-photo-7735626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Asesor de seguros con cliente en Madrid"
+              src="/images/rosa_y_sebastian_mesa.png"
+              alt="Rosa y Sebastián Valentín en consulta de seguros de salud en Boadilla del Monte"
               fill
+              loading="lazy"
+              decoding="async"
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              quality={75}
             />
           </div>
         </div>
@@ -690,12 +694,13 @@ export function SaludLanding() {
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-green-50 rounded-[3rem] p-8 md:p-16 border shadow-inner mb-12">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.pexels.com/photos/7220529/pexels-photo-7220529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Familia protegida con seguro de salud en Madrid"
+                src="/images/sebastian.png"
+                alt="Sebastián Valentín asesorando sobre seguros complementarios"
                 fill
+                loading="lazy"
+                decoding="async"
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
-                quality={75}
               />
             </div>
             <div className="text-center">
@@ -739,7 +744,7 @@ export function SaludLanding() {
                 variants={fadeInUpVariants}
                 className="p-8 rounded-2xl border bg-card/50 text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                <div className="mb-4">
                   {producto.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{producto.title}</h3>
@@ -777,9 +782,11 @@ export function SaludLanding() {
               <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa y Sebastián responden tus dudas"
+                  src="/images/rosa_y_sebastian_conversando.png"
+                  alt="Rosa y Sebastián Valentín respondiendo preguntas sobre seguros de salud"
                   fill
+                  loading="lazy"
+                  decoding="async"
                   className="object-cover object-top"
                 />
               </div>
