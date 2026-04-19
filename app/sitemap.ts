@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // PRODUCTOS (alta intención de compra)
     { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/salud-individual`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${base}/seguros/salud-individual`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/accidentes-decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-extranjeros`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
