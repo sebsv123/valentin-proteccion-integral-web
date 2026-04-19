@@ -55,14 +55,14 @@ export default function SobreNosotrosPage() {
                 <div className="space-y-6">
                   <div className="soft-card overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
                     <div className="relative aspect-[4/5] w-full">
-                      <Image src="/images/agent/rosa-despacho.jpg" alt="Rosa Valentín, asesora personal de seguros en Madrid" fill className="object-cover object-top" priority />
+                      <Image src="/images/rosa_y_sebastian_de_pie.png" alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte, Madrid" fill className="object-cover object-top" priority />
                     </div>
                   </div>
   
                   {/* Name & Title - Now separate from image card */}
                   <div className="soft-card bg-white p-6 text-center shadow-md">
-                    <p className="font-heading text-3xl font-bold text-[var(--blue-deep)]">Rosa Valentín</p>
-                    <p className="mt-1 text-base font-semibold text-[var(--blue)]">Socia y asesora experta en VPI</p>
+                    <p className="font-heading text-3xl font-bold text-[var(--blue-deep)]">Rosa &amp; Sebastián Valentín</p>
+                    <p className="mt-1 text-base font-semibold text-[var(--blue)]">Tu equipo de asesores en Boadilla del Monte</p>
                     <div className="mt-3 flex items-center justify-center gap-2 text-sm text-[var(--muted)]">
                       <MapPin className="h-4 w-4" />
                       Boadilla del Monte, Madrid
@@ -80,9 +80,7 @@ export default function SobreNosotrosPage() {
                       const Icon = item.icon;
                       return (
                         <div key={item.text} className="flex flex-col items-center gap-2 rounded-[24px] bg-white px-4 py-5 text-center text-sm font-bold text-[var(--blue-deep)] shadow-sm border border-[var(--border)] transition-all hover:border-[var(--blue)]/20 hover:shadow-md">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--blue)]/5 text-[var(--blue)]">
-                            <Icon className="h-5 w-5" />
-                          </div>
+                          <Icon className="h-7 w-7 text-[var(--blue)]" />
                           {item.text}
                         </div>
                       );
@@ -94,7 +92,7 @@ export default function SobreNosotrosPage() {
               <div className="soft-card p-8 md:p-10 lg:p-12">
                 <p className="kicker font-bold tracking-[0.3em]">Dos personas. Un mismo compromiso.</p>
                 <h1 id="sobre-nosotros-title" className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-gradient md:text-5xl xl:text-6xl leading-[1.08]">
-                  Rosa y Sebastián: El equipo que protege lo que más te importa
+                  Rosa y Sebastián: el equipo que protege a familias en Madrid desde hace más de 10 años
                 </h1>
                 <p className="mt-6 text-lg leading-9 text-[var(--muted)]">
                   Valentín Protección Integral nace con una idea sencilla: ayudar a familias y particulares a entender mejor lo que están contratando. No se trata de empujar un producto, sino de comparar con criterio y acompañar cada decisión con más contexto.
@@ -120,8 +118,7 @@ export default function SobreNosotrosPage() {
                     const Icon = item.icon;
                     return (
                       <div key={item.stat} className="rounded-[22px] bg-[var(--bg)] px-5 py-5 text-center border border-[var(--border)]">
-                        <Icon className="h-6 w-6 mx-auto text-[var(--blue)] mb-2" />
-                        <p className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.stat}</p>
+                                                <p className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.stat}</p>
                         <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{item.desc}</p>
                       </div>
                     );
@@ -142,8 +139,8 @@ export default function SobreNosotrosPage() {
                     <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden
                                     shadow-xl border border-[var(--border)]">
                       <Image
-                        src="/images/agent/sebastian-enhanced.png"
-                        alt="Sebastián Valentín, asesor especializado en vida y salud en Valentín Protección Integral"
+                        src="/images/sebastian.png"
+                        alt="Sebastián Valentín, asesor de seguros especializado en vida y salud en Madrid"
                         fill
                         className="object-cover object-top"
                         loading="lazy"
@@ -189,6 +186,14 @@ export default function SobreNosotrosPage() {
                   </div>
                 </div>
 
+                {/* Garantía */}
+                <div className="mt-6 mb-2 rounded-2xl border border-[var(--green)]/20 bg-[var(--green)]/5 px-5 py-4 flex items-start gap-3">
+                  <ShieldCheck className="h-5 w-5 mt-0.5 text-[var(--green)] shrink-0" />
+                  <p className="text-sm leading-6 text-[var(--blue-deep)] font-medium">
+                    <strong>Nuestra garantía:</strong> Respondemos en menos de 2 horas en horario laboral. Si algo falla con tu póliza después de contratar, somos nosotros los que llamamos a la compañía — nunca estarás solo.
+                  </p>
+                </div>
+
                 {/* CTAs */}
                 <p className="mt-8 text-sm font-semibold text-[var(--muted)]">
                   ¿Quieres hablar directamente con nosotros?
@@ -212,10 +217,10 @@ export default function SobreNosotrosPage() {
             <div className="container-shell">
               <div className="grid gap-6 md:grid-cols-2 items-center">
                 <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/agent/rosa-oficina-2.jpg" alt="Rosa Valentín en su oficina de Boadilla del Monte" fill className="object-cover object-top" />
+                  <Image src="/images/rosa_y_sebastian_conversando.png" alt="Rosa y Sebastián Valentín en consulta con un cliente en Boadilla del Monte" fill className="object-cover object-top" />
                 </div>
                 <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/agent/rosa-exterior-2.jpg" alt="Rosa Valentín, cercanía y profesionalidad" fill className="object-cover object-top" />
+                  <Image src="/images/rosa_y_sebastian_mesa.png" alt="Rosa y Sebastián Valentín asesorando en su oficina de Boadilla del Monte" fill className="object-cover object-top" />
                 </div>
               </div>
             </div>
