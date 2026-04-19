@@ -10,6 +10,8 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import SchemaReviews from '@/components/seo/schema-reviews';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+
 
 export const metadata: Metadata = {
   title: "Opiniones y Reseñas | Valentín Protección Integral — 4.9★ en Madrid",
@@ -150,7 +152,7 @@ export default function OpinionesPage() {
         </section>
 
 
-        <GoogleReviewsWidgetDynamic />
+        <GoogleReviewsWidget />
 
         {/* Reseñas verificadas — respaldadas por schema Review */}
         <section className="section-pad pt-8">
