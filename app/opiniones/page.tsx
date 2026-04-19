@@ -8,11 +8,8 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { site, buildWhatsAppHref } from '@/lib/products';
-import dynamic from 'next/dynamic';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import SchemaReviews from '@/components/seo/schema-reviews';
-
-const GoogleReviewsWidgetDynamic = dynamic(() => import('@/components/GoogleReviewsWidget'), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Opiniones y Reseñas | Valentín Protección Integral — 4.9★ en Madrid",

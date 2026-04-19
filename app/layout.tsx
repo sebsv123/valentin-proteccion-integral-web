@@ -11,11 +11,8 @@ const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 const GA_ID = 'G-TG4JSVQR5Q';
 const META_PIXEL_ID = '1307875004562255';
 
-import dynamic from 'next/dynamic';
-const BackgroundWrapper = dynamic(
-  () => import('@/components/background-wrapper').then(m => ({ default: m.BackgroundWrapper })),
-  { ssr: false }
-);
+import { BackgroundWrapper } from '@/components/background-wrapper';
+
 import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 

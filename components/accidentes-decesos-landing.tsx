@@ -162,13 +162,13 @@ export function AccidentesDecesosLanding() {
                 <AnimatedShinyText className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
                   🛡️ El seguro que toda familia necesita — desde 3€/mes
                 </AnimatedShinyText>
-              </motion.div>
+              </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Protege a tu familia hoy.{" "}
                 Desde <span className="underline decoration-amber-500 decoration-4 underline-offset-4">3€ al mes</span>.{" "}
                 Sin excusas.
-              </motion.h1>
+              </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                 Si algo te pasa, tu familia no debería preocuparse por el dinero.

@@ -8,9 +8,8 @@ import { LeadForm } from '@/components/lead-form';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import dynamic from 'next/dynamic';
+import HowItWorksSection from '@/components/HowItWorksSection';
 
-const HowItWorksSection = dynamic(() => import('@/components/HowItWorksSection'));
 
 export const metadata: Metadata = {
   title: "Contacta con Nosotros \u2014 Valentín Protección Integral, Boadilla del Monte (Madrid)",

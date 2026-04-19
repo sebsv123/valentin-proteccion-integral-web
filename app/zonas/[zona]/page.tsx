@@ -9,13 +9,8 @@ import { LeadForm } from '@/components/lead-form';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { getZona, zonas } from '@/lib/zonas';
-import dynamic from 'next/dynamic';
+import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
-
-const GoogleReviewsGrid = dynamic(() => import('@/components/google-reviews-grid').then(m => m.GoogleReviewsGrid), {
-  loading: () => <div className="h-40 animate-pulse bg-gray-100 rounded-2xl" />,
-  ssr: false
-});
 
 export function generateStaticParams() {
   return zonas.map((z) => ({ zona: z.slug }));

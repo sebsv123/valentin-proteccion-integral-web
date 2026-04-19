@@ -10,9 +10,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
-import dynamic from 'next/dynamic';
-
-const HowItWorksSection = dynamic(() => import('@/components/HowItWorksSection'));
+import HowItWorksSection from '@/components/HowItWorksSection';
 import CredentialsBar from '@/components/CredentialsBar';
 import RevealLight from '@/components/ui/reveal-light';
 
