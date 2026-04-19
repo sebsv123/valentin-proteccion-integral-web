@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Header } from '@/components/header';
@@ -202,6 +203,55 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </div>
         </section>
 
+        {/* SECCIÓN 3b: Asesores — humanidad y confianza */}
+<section className="section-pad bg-[var(--blue-deep)] text-white overflow-hidden">
+  <div className="container-shell">
+    <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
+
+      <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl
+        ring-4 ring-white/20 max-w-xs mx-auto md:mx-0">
+        <Image
+          src="/images/rosa_y_sebastian_de_pie.png"
+          alt={`Rosa y Sebastián Valentín, asesores de seguros independientes en ${z.nombre}`}
+          fill
+          loading="lazy"
+          sizes="(max-width: 768px) 320px, 380px"
+          quality={75}
+          className="object-cover object-top"
+        />
+      </div>
+
+      <div>
+        <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">
+          Tu equipo en {z.nombre}
+        </p>
+        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+          Hablas con Rosa o Sebastián. No con un bot ni un call center.
+        </h2>
+        <p className="text-white/80 text-base sm:text-lg leading-8 mb-4">
+          Llevamos más de 10 años ayudando a familias y autónomos de {z.nombre}
+          y toda la zona noroeste de Madrid. Cada consulta es personal.
+          Cada recomendación es honesta.
+        </p>
+        <p className="text-white/70 text-sm leading-7 mb-6">
+          Somos mediadores independientes: no trabajamos para ninguna compañía,
+          trabajamos para ti. Por eso siempre te decimos la verdad,
+          aunque no sea lo que quieras escuchar.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href={buildWhatsAppHref(z.whatsappMessage)}
+            className="btn-whatsapp px-8 py-3 text-base"
+          >
+            <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
         {/* SECCIÓN 4: Cómo trabajamos — proceso 3 pasos */}
         <section className="section-pad bg-[var(--surface)]">
           <div className="container-shell max-w-4xl text-center">
@@ -221,6 +271,27 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                   <p className="text-sm text-[var(--muted)] leading-6">{step.copy}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10 flex flex-col sm:flex-row items-center
+              gap-6 soft-card bg-white rounded-3xl p-6 shadow-sm border max-w-2xl mx-auto">
+              <div className="relative w-20 h-20 flex-none rounded-full overflow-hidden
+                ring-2 ring-[var(--blue)] shadow-md">
+                <Image
+                  src="/images/sebastian.png"
+                  alt="Sebastián Valentín, asesor de seguros"
+                  fill
+                  loading="lazy"
+                  sizes="80px"
+                  quality={80}
+                  className="object-cover object-top"
+                />
+              </div>
+              <p className="text-sm sm:text-base text-[var(--muted)] leading-7 text-center sm:text-left">
+                <strong className="text-[var(--blue-deep)]">Sebastián Valentín</strong> —
+                Asesor independiente con +10 años de experiencia. Responderá a tu consulta
+                en menos de 30 minutos. Personalmente.
+              </p>
             </div>
           </div>
         </section>
