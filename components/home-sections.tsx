@@ -94,6 +94,7 @@ export function TrustBadgesSection() {
               </div>
             </div>
           </div>
+        </div>
     </section>
   );
 }

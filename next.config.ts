@@ -87,7 +87,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    cssChunking: 'loose',
+    cssChunking: 'strict',
     optimizePackageImports: [
       'framer-motion', 
       'lucide-react'
