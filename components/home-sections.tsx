@@ -191,7 +191,6 @@ export function ComparisonCardsSection() {
             <h2 className="mt-3 section-title">Compara opciones con acompañamiento real</h2>
              <p className="section-copy mt-4">No se trata solo de ver coberturas. Se trata de entender qué encaja contigo, qué cambia entre modalidades y cómo empezar por el canal que te resulte más cómodo.</p>
           </div>
-        </div>
         <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
           <div className="grid gap-6 xl:grid-cols-3">
             {comparisonProfiles.map((profile, index) => (

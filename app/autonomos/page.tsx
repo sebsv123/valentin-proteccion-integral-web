@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -58,33 +59,53 @@ export default function AutonomosPage() {
       />
       <Header />
       <main>
+        <div className="container-shell pt-4">
+          <Breadcrumbs items={[
+            { label: 'Inicio', href: '/' },
+            { label: 'Seguros para Autónomos' }
+          ]} />
+        </div>
+
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[#123B68] via-[#0F5E9C] to-[#123B68] py-20 lg:py-28">
           <div className="absolute inset-0 bg-[url('/images/premium/grid.svg')] opacity-10" />
           <div className="container-shell relative z-10">
-            <div className="max-w-3xl">
-              <p className="kicker !text-white/80 !border-white/30">Seguros para autónomos</p>
-              <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Autónomo en Madrid. Tu seguro médico puede costarte mucho menos de lo que crees.
-              </h1>
-              <p className="mt-6 text-xl text-white/90 leading-relaxed max-w-2xl">
-                La ley te permite deducirte hasta 500€ anuales por persona. Te explicamos cómo aprovecharlo.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
-                  className="btn-whatsapp !text-base !px-8 !py-4"
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  WhatsApp
-                </a>
-                <a
-                  href={`tel:${site.phoneHref}`}
-                  className="flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition-all"
-                >
-                  <Phone className="h-5 w-5" />
-                  {site.phone}
-                </a>
+            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+              <div>
+                <p className="kicker !text-white/80 !border-white/30">Seguros para autónomos</p>
+                <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Autónomo en Madrid. Tu seguro médico puede costarte mucho menos de lo que crees.
+                </h1>
+                <p className="mt-6 text-xl text-white/90 leading-relaxed max-w-2xl">
+                  La ley te permite deducirte hasta 500€ anuales por persona. Te explicamos cómo aprovecharlo.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
+                    className="btn-whatsapp !text-base !px-8 !py-4"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${site.phoneHref}`}
+                    className="flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition-all"
+                  >
+                    <Phone className="h-5 w-5" />
+                    {site.phone}
+                  </a>
+                </div>
+              </div>
+              <div className="hidden lg:block relative h-[420px] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/sebastian.png"
+                  alt="Sebastián Valentín, asesor de seguros para autónomos en Madrid"
+                  fill
+                  priority
+                  sizes="(max-width: 1280px) 0vw, 480px"
+                  quality={80}
+                  className="object-cover object-top"
+                />
               </div>
             </div>
           </div>
@@ -99,27 +120,21 @@ export default function AutonomosPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="glass-card-premium p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-[var(--blue)]">500€</span>
-                </div>
+                <p className="font-heading text-5xl font-extrabold text-[var(--blue)] mb-4">500€</p>
                 <h3 className="font-heading text-xl font-bold mb-3">Por persona al año</h3>
                 <p className="text-[var(--muted)]">
                   Tú, tu pareja y cada hijo tienen su propio límite de 500€. Una familia de cuatro puede deducir hasta 2.000€.
                 </p>
               </div>
               <div className="glass-card-premium p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--blue)]/10 flex items-center justify-center">
-                  <CheckCircle2 className="h-8 w-8 text-[var(--blue)]" />
-                </div>
+                <CheckCircle2 className="h-10 w-10 text-[var(--blue)] mx-auto mb-4" />
                 <h3 className="font-heading text-xl font-bold mb-3">Salud y dental incluidos</h3>
                 <p className="text-[var(--muted)]">
                   El seguro puede incluir cobertura médica y dental. Lo importante es que sea un seguro de salud.
                 </p>
               </div>
               <div className="glass-card-premium p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-[var(--blue)]">IRPF</span>
-                </div>
+                <p className="font-heading text-3xl font-extrabold text-[var(--blue)] mb-4">IRPF</p>
                 <h3 className="font-heading text-xl font-bold mb-3">Directo en tu declaración</h3>
                 <p className="text-[var(--muted)]">
                   La deducción se aplica automáticamente al hacer la declaración de la renta. No necesitas complicados trámites previos.
@@ -138,9 +153,7 @@ export default function AutonomosPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="glass-card-premium p-8">
-                <div className="w-12 h-12 mb-6 rounded-xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <User className="h-6 w-6 text-[var(--blue)]" />
-                </div>
+                <User className="h-8 w-8 text-[var(--blue)] mb-4" />
                 <h3 className="font-heading text-xl font-bold mb-3">Autónomo solo</h3>
                 <p className="text-[var(--muted)] mb-4">
                   Necesitas cobertura básica pero eficiente. Médico de cabecera, especialistas comunes y urgencias. Sin pagar por coberturas que no usarás.
@@ -150,9 +163,7 @@ export default function AutonomosPage() {
                 </p>
               </div>
               <div className="glass-card-premium p-8 border-[var(--blue)]">
-                <div className="w-12 h-12 mb-6 rounded-xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-[var(--blue)]" />
-                </div>
+                <Users className="h-8 w-8 text-[var(--blue)] mb-4" />
                 <h3 className="font-heading text-xl font-bold mb-3">Autónomo con familia</h3>
                 <p className="text-[var(--muted)] mb-4">
                   La opción más popular. Cobertura para toda la familia con pediatrician, ginecología, y todas las especialidades. Cada miembro tiene su deducción.
@@ -162,9 +173,7 @@ export default function AutonomosPage() {
                 </p>
               </div>
               <div className="glass-card-premium p-8">
-                <div className="w-12 h-12 mb-6 rounded-xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-[var(--blue)]" />
-                </div>
+                <Building2 className="h-8 w-8 text-[var(--blue)] mb-4" />
                 <h3 className="font-heading text-xl font-bold mb-3">Autónomo con empleados</h3>
                 <p className="text-[var(--muted)] mb-4">
                   Además de tu seguro personal, puedes contratar para tu equipo. Los seguros de empleados son gasto deducible de la actividad.
@@ -219,22 +228,38 @@ export default function AutonomosPage() {
           </div>
         </section>
 
-        {/* CTA Final */}
-        <section className="section-pad bg-gradient-to-br from-[#123B68] to-[#0F5E9C]">
-          <div className="container-shell text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-6">
-              Empieza a ahorrar en tu seguro médico hoy
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Dedúcete hasta 500€ y obtén la cobertura médica que necesitas. Sin presión, sin comparadores automáticos.
-            </p>
-            <a
-              href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.")}
-              className="btn-whatsapp !text-lg !px-10 !py-5 inline-flex"
-            >
-              <WhatsAppIcon className="h-6 w-6" />
-              Consultar por WhatsApp
-            </a>
+        <section className="section-pad bg-gradient-to-br from-[#123B68] to-[#0F5E9C] overflow-hidden">
+          <div className="container-shell">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] items-center">
+              <div className="hidden lg:block relative h-72 rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/rosa_y_sebastian_mesa.png"
+                  alt="Rosa y Sebastián Valentín asesorando a un autónomo en Boadilla del Monte"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 1280px) 0vw, 400px"
+                  quality={70}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="kicker !text-white/70">Tu asesor personal</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white font-heading mb-5">
+                  No somos un comparador. Somos tu asesor.
+                </h2>
+                <p className="text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                  Sebastián conoce tu sector, entiende tu situación fiscal y te explica 
+                  todo en un lenguaje que se entiende. Sin letra pequeña, sin presión.
+                </p>
+                <a
+                  href={buildWhatsAppHref("Hola Sebastián, soy autónomo y quiero que me asesores sobre mi seguro médico.")}
+                  className="btn-whatsapp !text-lg !px-10 !py-5 inline-flex"
+                >
+                  <WhatsAppIcon className="h-6 w-6" />
+                  Hablar con Sebastián
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

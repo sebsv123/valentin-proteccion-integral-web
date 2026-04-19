@@ -71,7 +71,6 @@ export default function HowItWorksSection() {
               en Valentín Protección Integral.
             </p>
           </div>
-        </div>
 
         <div className="relative">
           {/* Línea conectora desktop */}
