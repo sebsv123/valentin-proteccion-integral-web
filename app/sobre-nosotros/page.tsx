@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Briefcase, ClipboardList, HeartHandshake, Instagram, MapPin, Phone, Quote, ShieldCheck, Star, Users } from 'lucide-react';
+import { Award, Briefcase, ClipboardList, HeartHandshake, Instagram, MapPin, MessageCircle, Phone, Quote, ShieldCheck, Star, Users } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
