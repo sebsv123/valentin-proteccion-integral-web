@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import { WhatsAppIcon as WhatsAppLogo } from "@/components/ui/whatsapp-icon";
 
 const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
   ssr: false,
