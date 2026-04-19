@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { site } from "@/lib/products";
@@ -92,11 +91,7 @@ export default function LandingAutonomosPage() {
         <RetroGrid className="z-0 opacity-40" />
         
         <div className="container relative z-20 mx-auto px-4 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center max-w-4xl mx-auto"
-          >
+          <div className="flex flex-col items-center max-w-4xl mx-auto">
             {/* KICKER */}
             <div className="group rounded-full border border-slate-200 bg-slate-100/50 text-sm transition-all hover:bg-slate-100 mb-8 z-10 backdrop-blur-sm px-6 py-2">
               <span className="inline-flex items-center justify-center text-slate-600">
@@ -145,7 +140,7 @@ export default function LandingAutonomosPage() {
               <Clock className="w-4 h-4 text-amber-500" />
               Respuesta en menos de 2 horas hábiles
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
@@ -78,8 +78,8 @@ export default function AsesoriaGratuitaPage() {
 
   const handleWhatsAppClick = (query?: string) => {
     const msg = query 
-      ? `Hola, me gustaría recibir asesoría gratuita sobre ${query}.`
-      : "Hola, me gustaría recibir asesoría gratuita sobre seguros.";
+      ? `Hola, vi tu anuncio y quiero una asesoría gratuita sobre ${query}.`
+      : "Hola, vi tu anuncio y quiero una asesoría gratuita de seguros.";
     tracksLead();
     window.open(buildWhatsAppHref(msg), "_blank");
   };
