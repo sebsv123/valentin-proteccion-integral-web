@@ -103,7 +103,7 @@ export default function ComoTeAyudamosPage() {
                   </div>
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                     <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
-                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y entender mejor mis opciones.')} className="btn-whatsapp">Hablar por WhatsApp</a>
+                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y entender mejor mis opciones.')} className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp">Hablar por WhatsApp</a>
                   </div>
                 </div>
                 <div className="relative min-h-[360px]">
@@ -212,7 +212,7 @@ export default function ComoTeAyudamosPage() {
                   <div className="mt-6">
                     <a
                       href="https://wa.me/34603448765?text=Hola%2C+quiero+una+consulta+gratuita+sobre+seguros"
-                      className="btn-whatsapp"
+                      className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp"
                       target="_blank"
                       rel="noreferrer"
                     >

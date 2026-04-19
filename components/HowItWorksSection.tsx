@@ -65,7 +65,7 @@ export default function HowItWorksSection() {
             >
               Cuatro pasos para proteger lo que importa
             </h2>
-            <p className="mt-4 mx-auto max-w-2xl text-base text-white/60
+            <p className="mt-4 mx-auto max-w-2xl text-base text-white/90
                           leading-8">
               Un proceso claro, humano y sin presiones. Así trabajamos
               en Valentín Protección Integral.
@@ -86,7 +86,7 @@ export default function HowItWorksSection() {
               <div className="fade-up" key={num} style={{ transitionDelay: `${index * 0.08}s` }}>
                 <div
                   className="relative flex flex-col items-center text-center
-                             rounded-[28px] bg-white/5 backdrop-blur p-8
+                             rounded-[28px] bg-white/10 backdrop-blur p-8
                              border border-white/10
                              hover:border-[#81C784]/30 hover:bg-white/[0.08]
                              transition-all duration-300 group"
@@ -113,7 +113,7 @@ export default function HowItWorksSection() {
                     {title}
                   </h3>
                   <p
-                    className="relative z-10 mt-4 text-sm leading-7 text-white/60"
+                    className="relative z-10 mt-4 text-sm leading-7 text-white/90"
                   >
                     {desc}
                   </p>

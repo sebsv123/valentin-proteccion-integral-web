@@ -278,7 +278,7 @@ export function AgentTrustBlock() {
                 <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Comparativa real entre compañías</p></div>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contacto" className="btn-primary">Consulta sin compromiso</Link>
+                <Link href="/contacto" className="btn-primary" aria-label="Contactar para consulta sin compromiso">Consulta sin compromiso</Link>
                  <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
             </div>
@@ -300,8 +300,8 @@ export function GeneralFaqSection() {
               <h2 id="faq-title" className="mt-3 section-title">¿Tienes preguntas antes de empezar?</h2>
               <p className="section-copy mt-4">Aquí respondemos con más detalle a preguntas habituales. Y si prefieres una explicación más personal, puedes escribirnos por WhatsApp o pedir orientación.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
-                <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit">Hablar por WhatsApp</a>
-                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
+                <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit" aria-label="Hablar con Rosa Valentín por WhatsApp">Hablar por WhatsApp</a>
+                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit" aria-label="Solicitar consulta sin compromiso por formulario">Consulta sin compromiso</Link>
               </div>
             </div>
           </div>
