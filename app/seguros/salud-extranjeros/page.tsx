@@ -1,5 +1,10 @@
 import { Metadata } from "next";
-import { ExtranjeroLanding } from "@/components/extranjeros-landing";
+import dynamic from "next/dynamic";
+
+const ExtranjeroLanding = dynamic(
+  () => import("@/components/extranjeros-landing").then((mod) => mod.ExtranjeroLanding),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: "Seguro de Salud para Extranjeros en Madrid | Cobertura Internacional | Valentín Protección Integral",
