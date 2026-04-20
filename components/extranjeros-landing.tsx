@@ -898,7 +898,7 @@ export function ExtranjeroLanding() {
                 "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold bg-blue-500 hover:bg-blue-600 text-white gap-2"
               )}
             >
-              <WhatsAppLogo className="h-5 w-5 sm:h-6 sm:w-6" />
+              <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
             </a>
             <a
