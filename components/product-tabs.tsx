@@ -121,16 +121,25 @@ export function ProductTabs({ slug }: { slug: string }) {
 
             {/* Cards View (Modalidades) */}
             {hasCards && (
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {current.cards!.map((card) => (
-                  <div key={card.title} className="group rounded-[22px] border border-[var(--border)] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--blue)]/20 hover:-translate-y-0.5">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+                {current.cards!.map((card) => {
+                  const cardStyles: Record<string, string> = {
+                    'Más accesible': 'bg-green-50 border-green-200',
+                    'Especializado': 'bg-blue-50 border-blue-200',
+                    'Visado OK': 'bg-amber-50 border-amber-200',
+                    'Más libertad': 'bg-purple-50 border-purple-200',
+                  };
+                  const cardClass = cardStyles[card.tag || ''] || 'bg-white border-[var(--border)]';
+                  return (
+                  <div key={card.title} className={`group rounded-[22px] border p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--blue)]/20 hover:-translate-y-0.5 ${cardClass}`}>
                     {card.tag && (
                       <span className={`inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-widest mb-4 ${tagColors[card.tag] || 'bg-[var(--bg)] text-[var(--blue-deep)]'}`}>{card.tag}</span>
                     )}
                     <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)] leading-tight">{card.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{card.desc}</p>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
