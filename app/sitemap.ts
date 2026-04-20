@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://valentinproteccionintegral.com';
+  const base = 'https://www.valentinproteccionintegral.com';
   const now = new Date().toISOString();
 
   return [

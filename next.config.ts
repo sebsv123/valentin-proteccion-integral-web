@@ -47,6 +47,17 @@ const nextConfig: NextConfig = {
         destination: '/sobre-nosotros/:path*',
         permanent: true,
       },
+      // Redirecciones de seguros consolidados (para limpiar GSC)
+      {
+        source: '/seguros/accidentes',
+        destination: '/seguros/accidentes-decesos',
+        permanent: true,
+      },
+      {
+        source: '/seguros/decesos',
+        destination: '/seguros/accidentes-decesos',
+        permanent: true,
+      },
     ];
   },
   async headers() {
