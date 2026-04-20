@@ -84,7 +84,7 @@ export function VidaLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="sticky top-16 left-0 right-0 z-30 w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
+      <div className="relative w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
           <p className="text-sm font-semibold leading-tight flex-1 truncate">
             <span className="sm:hidden">Seguro de vida desde 10€/mes</span>
@@ -512,7 +512,7 @@ export function VidaLanding() {
             {/* Columna derecha: imagen */}
             <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
+                src="/images/rosa_y_sebastian_mesa.png"
                 alt="Rosa y Sebastián Valentín asesorando sobre seguros de vida"
                 fill
                 loading="lazy"
@@ -541,7 +541,7 @@ export function VidaLanding() {
               <h2 className="text-3xl font-bold sm:text-6xl mb-6">Preguntas frecuentes</h2>
               <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
                 <Image
-                  src="/images/rosa_y_sebastian.jpeg"
+                  src="/images/rosa_y_sebastian_conversando.png"
                   alt="Rosa y Sebastián Valentín respondiendo preguntas sobre seguros de vida"
                   fill
                   loading="lazy"

@@ -117,7 +117,7 @@ export function SaludLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="sticky top-16 left-0 right-0 z-30 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
+      <div className="relative w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
 
           {/* Texto CORTO en móvil, texto LARGO en desktop */}
