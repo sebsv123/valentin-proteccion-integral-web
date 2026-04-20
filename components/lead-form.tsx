@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, ShieldCheck } from 'lucide-react';
+import { buildWhatsAppHref } from '@/lib/products';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Indícanos tu nombre'),
