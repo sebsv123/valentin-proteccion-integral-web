@@ -23,6 +23,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { GarantiaPrecio } from "@/components/garantia-precio";
 
 const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
   ssr: false,
@@ -86,17 +87,17 @@ export function VidaLanding() {
       {/* 1. BARRA STICKY */}
       <div className="sticky top-16 z-40 w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
-          <p className="text-sm font-semibold leading-tight flex-1 truncate">
-            <span className="sm:hidden">Seguro de vida desde 10€/mes</span>
+          <p className="text-sm font-semibold leading-tight flex-1">
+            <span className="sm:hidden">Garantía de precio: tráenos tu oferta</span>
             <span className="hidden sm:inline">
-              <span className="font-bold">Seguro de vida desde 10€/mes · Sin examen médico en la mayoría de casos</span>
+              <span className="font-bold">Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.</span>
             </span>
           </p>
           <a
-            href="#coberturas"
+            href="/como-te-ayudamos"
             className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            Ver condiciones →
+            Ver cómo →
           </a>
         </div>
       </div>
@@ -359,8 +360,8 @@ export function VidaLanding() {
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
             <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián Valentín, asesores de seguros de vida en Madrid"
+                src="/images/sebastian.png"
+                alt="Sebastián Valentín, especialista en seguros de vida en Madrid"
                 fill
                 loading="lazy"
                 decoding="async"
@@ -369,9 +370,9 @@ export function VidaLanding() {
               />
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con una persona, no con un call center</h2>
               <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed italic font-light">
-                &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
+                &ldquo;Sebastián lleva más de 10 años ayudando a familias de Madrid a proteger lo más importante: la tranquilidad económica de los suyos. Cada seguro de vida que gestiona lo trata como si fuera el de su propia familia.&rdquo;
               </p>
               <a
                 href="https://www.colegiomediadores.es"
@@ -385,9 +386,9 @@ export function VidaLanding() {
 
               <div className="grid sm:grid-cols-3 gap-6 mt-8">
                 {[
-                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Respondemos en menos de 30 minutos" },
-                  { icon: <FileText className="h-6 w-6" />, text: "Te explicamos todo antes de firmar" },
-                  { icon: <UserCheck className="h-6 w-6" />, text: "Un gestor personal de por vida" },
+                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Responde en menos de 30 minutos" },
+                  { icon: <FileText className="h-6 w-6" />, text: "Te explica todo antes de firmar" },
+                  { icon: <UserCheck className="h-6 w-6" />, text: "Tu gestor personal de por vida" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/10">
                     {item.icon}
@@ -525,6 +526,9 @@ export function VidaLanding() {
           </div>
         </div>
       </motion.section>
+
+      {/* GARANTÍA DE PRECIO (COMPONENTE REUTILIZABLE) */}
+      <GarantiaPrecio />
 
       {/* 8. FAQ */}
       <motion.section

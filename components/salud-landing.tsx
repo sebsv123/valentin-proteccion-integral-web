@@ -45,6 +45,7 @@ import {
   Hourglass,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { GarantiaPrecio } from "@/components/garantia-precio";
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -801,6 +802,9 @@ export function SaludLanding() {
           </div>
         </div>
       </motion.section>
+
+      {/* GARANTÍA DE PRECIO (COMPONENTE REUTILIZABLE) */}
+      <GarantiaPrecio />
 
       {/* 10. FAQ */}
       <motion.section

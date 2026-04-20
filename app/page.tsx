@@ -20,6 +20,7 @@ const BlogPreviewSection = dynamicImport(() => import('@/components/home-section
 const GeneralFaqSection = dynamicImport(() => import('@/components/home-sections').then(m => m.GeneralFaqSection));
 const FinalCTASection = dynamicImport(() => import('@/components/home-sections').then(m => m.FinalCTASection));
 const CredentialsBar = dynamicImport(() => import('@/components/CredentialsBar'));
+const GarantiaPrecio = dynamicImport(() => import('@/components/garantia-precio').then(m => m.GarantiaPrecio));
 import type { Metadata } from 'next';
 import { site, generalFaqs } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
@@ -241,6 +242,7 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <GarantiaPrecio />
         <FinalCTASection />
       </main>
       <Footer />
