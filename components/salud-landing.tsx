@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import { WhatsAppIcon as WhatsAppLogo } from "@/components/ui/whatsapp-icon";
 
 const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
   ssr: false,
@@ -52,13 +51,13 @@ const getFadeInUp = (prefersReducedMotion: boolean) => ({
   visible: { opacity: 1, y: 0, transition: { duration: prefersReducedMotion ? 0 : 0.5 } },
 });
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
+const getStaggerContainer = (prefersReducedMotion: boolean) => ({
+  hidden: { opacity: prefersReducedMotion ? 1 : 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: prefersReducedMotion ? 0 : 0.1 },
   },
-};
+});
 
 export function SaludLanding() {
   const [form, setForm] = useState({
@@ -78,6 +77,7 @@ export function SaludLanding() {
   }, []);
 
   const fadeInUpVariants = getFadeInUp(prefersReducedMotion);
+  const staggerContainerVariants = getStaggerContainer(prefersReducedMotion);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -164,7 +164,7 @@ export function SaludLanding() {
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={staggerContainer}
+              variants={staggerContainerVariants}
               className="text-center lg:text-left"
             >
               <motion.div variants={fadeInUpVariants} className="mb-6">
@@ -313,8 +313,8 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container mx-auto px-4">
@@ -411,8 +411,8 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
@@ -425,6 +425,7 @@ export function SaludLanding() {
                 loading="lazy"
                 decoding="async"
                 className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
               />
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center">
@@ -465,7 +466,7 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUpVariants}
         className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
@@ -564,12 +565,31 @@ export function SaludLanding() {
         </div>
       </motion.section>
 
+      {/* 6.5 GARANTÍA DE PRECIO */}
+      <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+              <BadgePercent className="h-6 w-6 text-amber-600" />
+            </div>
+            <div className="flex-1">
+              <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
+                El mismo seguro. Mejor precio. Garantizado.
+              </p>
+              <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
+                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 7. GARANTÍAS */}
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
@@ -627,8 +647,8 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-green-50"
       >
         <div className="container mx-auto px-4">
@@ -696,8 +716,8 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
         <div className="container mx-auto px-4">
@@ -788,8 +808,8 @@ export function SaludLanding() {
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container max-w-5xl px-4">
@@ -806,6 +826,7 @@ export function SaludLanding() {
                   loading="lazy"
                   decoding="async"
                   className="object-cover object-top"
+                  sizes="(max-width: 1024px) 0px, 35vw"
                 />
               </div>
             </div>
@@ -843,30 +864,11 @@ export function SaludLanding() {
       </div>
     </motion.section>
 
-      {/* 10. GARANTÍA DE PRECIO */}
-      <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
-              <BadgePercent className="h-6 w-6 text-amber-600" />
-            </div>
-            <div className="flex-1">
-              <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
-                El mismo seguro. Mejor precio. Garantizado.
-              </p>
-              <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 11. CTA FINAL */}
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUpVariants}
         className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-green-800 to-green-900 text-white"
       >
@@ -885,7 +887,7 @@ export function SaludLanding() {
                 "h-14 sm:h-16 px-10 text-lg sm:text-xl font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
               )}
             >
-              <WhatsAppLogo className="h-5 w-5 sm:h-6 sm:w-6" />
+              <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
             </a>
             <a
