@@ -84,7 +84,7 @@ export function VidaLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="relative w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
+      <div className="sticky top-16 z-40 w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
           <p className="text-sm font-semibold leading-tight flex-1 truncate">
             <span className="sm:hidden">Seguro de vida desde 10€/mes</span>
@@ -192,13 +192,14 @@ export function VidaLanding() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="relative"
             >
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-blue-100">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-blue-100">
                 <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa y Sebastián Valentín, asesores de seguros de vida en Madrid"
+                  src="/images/products/vida-hero.jpg"
+                  alt="Familia protegida con seguro de vida en Madrid"
                   fill
                   priority={true}
-                  className="object-cover object-top"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </motion.div>

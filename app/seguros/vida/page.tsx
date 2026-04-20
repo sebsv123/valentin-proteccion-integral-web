@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { VidaLanding } from "@/components/vida-landing";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 
 export const metadata: Metadata = {
   title: "Seguro de Vida en Madrid | Valentín Protección Integral",
@@ -8,5 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function VidaPage() {
-  return <VidaLanding />;
+  return (
+    <>
+      <Header />
+      <VidaLanding />
+      <Footer />
+      <StickyWhatsApp />
+    </>
+  );
 }
