@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { AccidentesDecesosLanding } from "@/components/accidentes-decesos-landing";
+import dynamic from "next/dynamic";
+
+const AccidentesDecesosLanding = dynamic(
+  () => import("@/components/accidentes-decesos-landing").then((mod) => mod.AccidentesDecesosLanding),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: "Seguro de Accidentes y Decesos en Madrid | Desde 3€/mes | Valentín Protección Integral",
