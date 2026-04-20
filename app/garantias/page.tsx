@@ -3,7 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref, site } from "@/lib/products";
-import { Shield, Zap, Clock, HeartHandshake } from "lucide-react";
+import { Shield, Zap, Clock, HeartHandshake, BadgePercent } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
@@ -93,6 +93,17 @@ export default function GarantiasPage() {
                 <h3 className="font-heading text-2xl font-bold mb-4">Sin presión, nunca</h3>
                 <p className="text-[var(--muted)] leading-relaxed">
                   No trabajamos a comisión por venderte el producto más caro. Nuestro objetivo es que contrates lo que de verdad te conviene. Si no hay nada que encaje, te lo decimos.
+                </p>
+              </div>
+
+              {/* Mejor precio garantizado */}
+              <div className="glass-card-premium p-8 md:col-span-2 border-amber-500/30 bg-gradient-to-br from-amber-50/50 to-white">
+                <div className="w-14 h-14 mb-6 rounded-2xl bg-amber-500/10 flex items-center justify-center">
+                  <BadgePercent className="h-7 w-7 text-amber-600" />
+                </div>
+                <h3 className="font-heading text-2xl font-bold mb-4">El mismo seguro. Mejor precio. Garantizado.</h3>
+                <p className="text-[var(--muted)] leading-relaxed">
+                  Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
                 </p>
               </div>
             </div>

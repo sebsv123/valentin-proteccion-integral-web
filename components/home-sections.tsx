@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, HeartHandshake, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
+import { ArrowRight, BadgeCheck, BadgePercent, HeartHandshake, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
@@ -48,7 +48,7 @@ const productBadges: Record<string, string> = {
 
 
 export function TrustBadgesSection() {
-  const icons = [ShieldCheck, HeartHandshake, Stethoscope, BadgeCheck];
+  const icons = [ShieldCheck, HeartHandshake, Stethoscope, BadgeCheck, BadgePercent];
   return (
      <section className="section-pad pb-6" style={{ background: 'linear-gradient(180deg, rgba(15,94,156,0.03), transparent 75%)' }}>
       <div className="container-shell">

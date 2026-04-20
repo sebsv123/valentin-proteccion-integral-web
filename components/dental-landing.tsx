@@ -12,7 +12,8 @@ import {
   Phone,
   Stethoscope,
   ChevronDown,
-  BadgeCheck
+  BadgeCheck,
+  BadgePercent,
 } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
@@ -638,6 +639,25 @@ export function DentalLanding() {
                   </motion.div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GARANTÍA DE PRECIO */}
+      <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+              <BadgePercent className="h-6 w-6 text-amber-600" />
+            </div>
+            <div className="flex-1">
+              <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
+                El mismo seguro. Mejor precio. Garantizado.
+              </p>
+              <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
+                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+              </p>
             </div>
           </div>
         </div>
