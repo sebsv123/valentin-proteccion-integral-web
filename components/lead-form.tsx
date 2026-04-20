@@ -12,8 +12,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, ShieldCheck } from 'lucide-react';
-import { buildWhatsAppHref } from '@/lib/products';
-import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Indícanos tu nombre'),
@@ -157,22 +155,11 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
         </label>
         {errors.consent ? <p className="text-sm text-red-600">{errors.consent.message}</p> : null}
 
-        <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-          <button type="submit" disabled={isSubmitting} className="btn-primary w-full sm:w-auto">
+        <div className="mt-2">
+          <button type="submit" disabled={isSubmitting} className="btn-primary w-full">
             {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             Solicitar orientación
           </button>
-          <a
-            href={buildWhatsAppHref(`Hola, quiero una orientación clara sobre el seguro de ${defaultProduct}.`)}
-            className="btn-whatsapp w-full sm:w-auto"
-            onClick={() => {
-              if (typeof window !== 'undefined' && window.fbq) {
-                window.fbq('track', 'Contact', { content_name: 'WhatsApp CTA' });
-              }
-            }}
-          >
-            <WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp
-          </a>
         </div>
 
         {serverMessage ? <div className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">{serverMessage}</div> : null}

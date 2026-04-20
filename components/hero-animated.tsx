@@ -8,6 +8,7 @@ import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import CountUp from './ui/count-up';
 import { HeroImage } from './hero-image';
+import { Phone, BadgePercent } from 'lucide-react';
 
 // CSS Animation wrapper for zero-JS animations
 function CSSReveal({ 
@@ -98,6 +99,10 @@ export function HeroLeadSection() {
                 <span className="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)]">
                   <span className="text-green-500">✓</span> Asesores independientes
                 </span>
+                <span className="w-1 h-1 rounded-full bg-[var(--muted)]/40 hidden sm:block" />
+                <span className="flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)]">
+                  <BadgePercent className="h-4 w-4 text-green-500" /> Precio garantizado
+                </span>
               </div>
             </CSSReveal>
 
@@ -122,9 +127,10 @@ export function HeroLeadSection() {
                 </a>
                 <a
                   href="tel:+34603448765"
-                  className="block text-center text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors font-medium"
+                  className="flex items-center justify-center gap-1.5 text-center text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors font-medium"
                 >
-                  📞 O llámanos al 603 44 87 65
+                  <Phone className="h-3.5 w-3.5" />
+                  O llámanos al 603 44 87 65
                 </a>
               </div>
             </CSSReveal>

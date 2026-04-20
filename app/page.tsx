@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import Link from 'next/link';
 import { HeroLeadSection } from '@/components/hero-animated';
+import { TrendingUp, Users, Heart, Briefcase } from 'lucide-react';
 import { ProductCategoryGrid } from '@/components/home-sections';
 import { getPexelsImage } from '@/lib/pexels';
 
@@ -157,56 +158,56 @@ export default async function HomePage() {
               {/* Joven Profesional */}
               <Link href="/para/jovenes-profesionales" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-2xl">🚀</span>
+                  <TrendingUp className="h-7 w-7 text-[var(--blue)]" />
                 </div>
                 <h3 className="font-heading text-lg font-bold mb-2">Joven Profesional</h3>
                 <p className="text-[var(--muted)] text-sm">
                   Acabas de emanciparte o tienes hipoteca reciente. Protege lo que estás construyendo.
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver más →
+                  Ver mi protección →
                 </span>
               </Link>
 
               {/* Familias */}
               <Link href="/para/familias" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-2xl">👨‍👩‍👧‍👦</span>
+                  <Users className="h-7 w-7 text-[var(--blue)]" />
                 </div>
                 <h3 className="font-heading text-lg font-bold mb-2">Familias</h3>
                 <p className="text-[var(--muted)] text-sm">
                   Protege a quienes más quieres. Salud, dental, vida y decesos para toda la familia.
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver más →
+                  Proteger a los míos →
                 </span>
               </Link>
 
               {/* Seniors */}
               <Link href="/para/seniors" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-2xl">🌟</span>
+                  <Heart className="h-7 w-7 text-[var(--blue)]" />
                 </div>
                 <h3 className="font-heading text-lg font-bold mb-2">Seniors</h3>
                 <p className="text-[var(--muted)] text-sm">
                   Más de 60 años y quieres tener todo en orden. Tranquilidad para ti y los tuyos.
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver más →
+                  Tener todo en orden →
                 </span>
               </Link>
 
               {/* Autónomos */}
               <Link href="/para/autonomos" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
-                  <span className="text-2xl">💼</span>
+                  <Briefcase className="h-7 w-7 text-[var(--blue)]" />
                 </div>
                 <h3 className="font-heading text-lg font-bold mb-2">Autónomos</h3>
                 <p className="text-[var(--muted)] text-sm">
                   Dedúcete hasta 500€ en el IRPF. Aprovecha las ventajas fiscales que te corresponden.
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver más →
+                  Ver ventajas fiscales →
                 </span>
               </Link>
             </div>
