@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import { SaludLanding } from "@/components/salud-landing";
 
 export const metadata: Metadata = {
-  title: "Seguro de Salud Individual en Madrid | Sin listas de espera | Valentín Protección Integral",
+  title: "Seguro Médico Privado en Madrid | Rosa y Sebastián te lo gestionan todo | Valentín Protección Integral",
   description: "Seguro de salud privado en Madrid sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día. Rosa y Sebastián te responden en 30 minutos.",
   keywords: "seguro salud individual Madrid, seguro médico privado Madrid, seguro salud sin carencias Madrid, seguro salud familiar Madrid",
   openGraph: {
-    title: "Seguro de Salud Individual Madrid — Sin esperas, sin sorpresas",
+    title: "Seguro Médico Privado en Madrid — Rosa y Sebastián te lo gestionan todo",
     description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
@@ -56,7 +56,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo funciona el asesoramiento de Valentín Protección Integral para seguros de salud en Madrid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Rosa y Sebastián Valentín son asesores independientes en Boadilla del Monte y Madrid. Te escuchan, comparan las mejores opciones del mercado y te orientan sin presiones. La consulta es gratuita y te responden en menos de 30 minutos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Rosa y Sebastián Valentín son asesores independientes en Boadilla del Monte y Madrid. Te escuchan, comparan las mejores opciones del mercado y te orientan con honestidad. La consulta es gratuita y te responden en menos de 30 minutos." }
     }
   ]
 };
