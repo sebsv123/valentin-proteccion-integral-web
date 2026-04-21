@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -24,11 +23,6 @@ import {
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { GarantiaPrecio } from "@/components/garantia-precio";
-
-const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 z-0" />,
-});
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -104,15 +98,6 @@ export function VidaLanding() {
 
       {/* 2. HERO */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-24 bg-background">
-        <DotGrid
-          className="z-0"
-          dotSize={4}
-          gap={isTouchDevice ? 32 : 28}
-          baseColor="#dbeafe"
-          activeColor="#2563eb"
-          proximity={isTouchDevice ? 0 : 80}
-          shockStrength={isTouchDevice ? 0 : 2}
-        />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Columna izquierda - Texto */}
@@ -193,7 +178,7 @@ export function VidaLanding() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-blue-100">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-border">
                 <Image
                   src="/images/products/vida-hero.jpg"
                   alt="Familia protegida con seguro de vida en Madrid"
@@ -227,49 +212,41 @@ export function VidaLanding() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: <Users className="h-8 w-8" />,
+                icon: <Users className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Protección familiar",
                 desc: "Tu familia recibe un capital si faltas. Pueden mantener su nivel de vida, pagar estudios y afrontar gastos inesperados.",
-                color: "bg-blue-100 text-blue-600",
               },
               {
-                icon: <Home className="h-8 w-8" />,
+                icon: <Home className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Vinculado a hipoteca",
                 desc: "El banco puede exigirlo, pero tú eliges con quién contratarlo. Ahorra hasta un 50% respecto a la oferta de tu banco.",
-                color: "bg-green-100 text-green-600",
               },
               {
-                icon: <Briefcase className="h-8 w-8" />,
+                icon: <Briefcase className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Protección para autónomos",
                 desc: "Si eres autónomo o tienes un negocio familiar, el seguro de vida protege la continuidad de tu actividad.",
-                color: "bg-amber-100 text-amber-600",
               },
               {
-                icon: <TrendingUp className="h-8 w-8" />,
+                icon: <TrendingUp className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Rentabilidad a largo plazo",
                 desc: "Algunas modalidades acumulan valor e incluso pueden recuperar parte de la prima si no se produce el siniestro.",
-                color: "bg-purple-100 text-purple-600",
               },
               {
-                icon: <Shield className="h-8 w-8" />,
+                icon: <Shield className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Sin examen médico",
                 desc: "En la mayoría de casos para menores de 50 años y capitales razonables, no se requiere reconocimiento médico.",
-                color: "bg-pink-100 text-pink-600",
               },
               {
-                icon: <Heart className="h-8 w-8" />,
+                icon: <Heart className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Tranquilidad emocional",
                 desc: "Saber que tu familia estará protegida te permite vivir con menos preocupación y más presente.",
-                color: "bg-red-100 text-red-600",
               },
             ].map((beneficio, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-4 items-center text-center p-6 rounded-2xl border bg-card shadow-sm"
+                className="flex flex-col gap-3 items-start text-left p-6 rounded-2xl border bg-card hover:shadow-md transition-shadow"
               >
-                <div className={cn("p-3 rounded-xl", beneficio.color)}>
-                  {beneficio.icon}
-                </div>
+                {beneficio.icon}
                 <h3 className="text-xl font-bold">{beneficio.title}</h3>
                 <p className="text-muted-foreground">{beneficio.desc}</p>
               </div>
@@ -316,7 +293,7 @@ export function VidaLanding() {
                 key={i}
                 className="flex gap-4 p-6 rounded-2xl bg-white/10 border border-white/20"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-white/60">
                   {cobertura.icon}
                 </div>
                 <div>
@@ -425,9 +402,9 @@ export function VidaLanding() {
               <motion.div
                 key={i}
                 variants={fadeInUpVariants}
-                className="text-center p-6 rounded-2xl border bg-card shadow-sm"
+                className="text-left p-6 rounded-2xl border bg-card shadow-sm"
               >
-                <div className="mb-4 text-blue-600">
+                <div className="mb-4 text-muted-foreground">
                   {garantia.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-2">{garantia.title}</h3>
@@ -596,7 +573,7 @@ export function VidaLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUpVariants}
-        className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-800 to-blue-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6">
