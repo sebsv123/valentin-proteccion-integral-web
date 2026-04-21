@@ -44,7 +44,11 @@ const staggerContainer = {
   },
 };
 
-export function MascotasLanding() {
+interface MascotasLandingProps {
+  teamImageSrc?: string;
+}
+
+export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg" }: MascotasLandingProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -86,19 +90,19 @@ export function MascotasLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="sticky top-16 z-40 w-full bg-amber-700 text-white py-2 sm:py-3 px-4 shadow-md">
+      <div className="sticky top-16 z-40 w-full bg-[#002244] text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
           <p className="text-sm font-semibold leading-tight flex-1">
-            <span className="sm:hidden">¿Tienes perro? La RC es OBLIGATORIA desde 2023.</span>
+            <span className="sm:hidden">Tráenos cualquier presupuesto que tengas.</span>
             <span className="hidden sm:inline">
-              <span className="font-bold">Desde la Ley de Bienestar Animal, todos los perros necesitan RC obligatoria. Multas de hasta 10.000€. Desde 5€/mes.</span>
+              <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
             </span>
           </p>
           <a
-            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20el%20seguro%20de%20RC%20para%20mi%20perro%20desde%205%E2%82%AC%2Fmes"
+            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20comparar%20precios%20de%20seguro%20para%20mi%20mascota"
             className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            Contratar ahora →
+            Compruébalo gratis →
           </a>
         </div>
       </div>
@@ -215,7 +219,7 @@ export function MascotasLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-14 sm:py-20 lg:py-24 bg-accent/30"
+        className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
         <div className="container mx-auto px-4">
           <motion.div variants={fadeInUpVariants} className="text-center mb-10 sm:mb-16">
@@ -282,7 +286,7 @@ export function MascotasLanding() {
       {/* 4. COBERTURAS */}
       <section
         id="coberturas"
-        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-16">
@@ -317,7 +321,7 @@ export function MascotasLanding() {
                 key={i}
                 className="flex gap-4 p-6 rounded-2xl bg-white/10 border border-white/20"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
                   {cobertura.icon}
                 </div>
                 <div>
@@ -331,22 +335,22 @@ export function MascotasLanding() {
       </section>
 
       {/* 4.5. ALERTA LEY */}
-      <section className="py-10 sm:py-14 bg-amber-50 border-y border-amber-200">
+      <section className="py-10 sm:py-14 bg-white border-y border-[var(--border)]">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-amber-200 shadow-sm">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-[var(--bg-soft)] border border-[var(--border)] shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
               <AlertTriangle className="h-6 w-6 text-amber-600" />
             </div>
             <div className="flex-1">
-              <p className="font-heading text-lg sm:text-xl font-bold text-amber-900">
+              <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
                 Ley de Bienestar Animal 2023 — Es obligatorio
               </p>
-              <p className="text-sm sm:text-base text-amber-700 mt-1">
+              <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
                 Desde la entrada en vigor de la Ley 7/2023, todos los perros en España necesitan seguro de responsabilidad civil. Las multas por incumplimiento pueden llegar a 10.000€. Contratar desde 5€/mes es la solución más sencilla.
               </p>
               <a
                 href="https://wa.me/34603448765?text=Hola%2C%20quiero%20contratar%20la%20RC%20obligatoria%20para%20mi%20perro"
-                className="inline-flex items-center gap-1 text-sm font-bold text-amber-700 mt-3 underline underline-offset-2 hover:text-amber-900 transition-colors"
+                className="inline-flex items-center gap-1 text-sm font-bold text-[var(--blue)] mt-3 underline underline-offset-2 hover:text-[var(--blue-deep)] transition-colors"
               >
                 Contratar RC ahora →
               </a>
@@ -361,13 +365,13 @@ export function MascotasLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
+        className="py-14 sm:py-20 lg:py-24 bg-white overflow-hidden"
       >
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
-            <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+            <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-[var(--border)]">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
+                src={teamImageSrc}
                 alt="Rosa Valentín, asesora de seguros para mascotas en Madrid"
                 fill
                 loading="lazy"
@@ -377,15 +381,15 @@ export function MascotasLanding() {
               />
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center lg:text-left">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con Rosa, no con un call center</h2>
-              <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed italic font-light">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8 text-[var(--blue-deep)]">Hablas con Rosa, no con un call center</h2>
+              <p className="text-xl md:text-2xl text-[var(--muted)] mb-4 leading-relaxed italic font-light">
                 &ldquo;Rosa lleva más de 10 años protegiendo a las mascotas de las familias de Boadilla del Monte y Madrid. Cada seguro que gestiona lo trata como si fuera el de su propia mascota.&rdquo;
               </p>
               <a
                 href="https://www.colegiomediadores.es"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-amber-400 mb-6 hover:text-amber-300 transition-colors underline underline-offset-2"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--blue)] mb-6 hover:text-[var(--blue-deep)] transition-colors underline underline-offset-2"
               >
                 <CheckCircle2 className="h-5 w-5" />
                 Agentes de seguros colegiados en Madrid — Verificar →
@@ -397,9 +401,9 @@ export function MascotasLanding() {
                   { icon: <FileText className="h-6 w-6" />, text: "Te explica todo antes de firmar" },
                   { icon: <UserCheck className="h-6 w-6" />, text: "Tu gestor personal de por vida" },
                 ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/10">
-                    {item.icon}
-                    <span className="text-sm font-medium">{item.text}</span>
+                  <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[var(--bg-soft)] border border-[var(--border)]">
+                    <div className="text-[var(--blue)]">{item.icon}</div>
+                    <span className="text-sm font-medium text-[var(--foreground)]">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -434,7 +438,7 @@ export function MascotasLanding() {
                 variants={fadeInUpVariants}
                 className="text-center p-6 rounded-2xl border bg-card shadow-sm"
               >
-                <div className="mb-4 text-amber-600">
+                <div className="mb-4 text-[var(--blue)]">
                   {garantia.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-2">{garantia.title}</h3>
@@ -445,20 +449,20 @@ export function MascotasLanding() {
 
           <motion.div
             variants={fadeInUpVariants}
-            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-amber-200 bg-amber-50 px-8 py-6 text-center"
+            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-[var(--blue)]/20 bg-[var(--blue)]/5 px-8 py-6 text-center"
           >
-            <p className="text-lg font-bold text-amber-900 mb-2">
+            <p className="text-lg font-bold text-[var(--blue-deep)] mb-2">
               ¿Y si no cumplimos lo que prometemos?
             </p>
-            <p className="text-amber-700 text-base leading-relaxed">
+            <p className="text-[var(--muted)] text-base leading-relaxed">
               Si no te contactamos en 30 minutos, Rosa te ofrece una{" "}
-              <span className="text-amber-900 font-semibold">
+              <span className="text-[var(--blue-deep)] font-semibold">
                 cita presencial gratuita en nuestra oficina
               </span>
               {" "}de Boadilla del Monte para explicarte todo en persona.
               Así de seguros estamos de lo que prometemos.
             </p>
-            <p className="mt-4 text-sm text-amber-500 italic">
+            <p className="mt-4 text-sm text-[var(--blue)] italic">
               Nadie en el sector hace esta garantía. Nosotros sí.
             </p>
           </motion.div>
@@ -471,7 +475,7 @@ export function MascotasLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-14 sm:py-20 lg:py-24 bg-amber-50"
+        className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
         <div className="container mx-auto px-4">
           <motion.div variants={fadeInUpVariants} className="text-center mb-10 sm:mb-16">
@@ -482,7 +486,7 @@ export function MascotasLanding() {
             {/* Columna izquierda: los 3 pasos */}
             <div>
               <div className="space-y-12 relative">
-                <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-amber-200 hidden md:block" />
+                <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-[var(--border)] hidden md:block" />
 
                 {[
                   {
@@ -506,7 +510,7 @@ export function MascotasLanding() {
                     variants={fadeInUpVariants}
                     className="flex gap-8 relative"
                   >
-                    <div className="flex-none w-12 h-12 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">
+                    <div className="flex-none w-12 h-12 rounded-full bg-[var(--blue)] text-white flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">
                       {paso.num}
                     </div>
                     <div>
@@ -519,9 +523,9 @@ export function MascotasLanding() {
             </div>
 
             {/* Columna derecha: imagen */}
-            <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl">
+            <div className="hidden lg:block relative aspect-[3/4] rounded-3xl overflow-hidden border border-[var(--border)] shadow-2xl">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
+                src={teamImageSrc}
                 alt="Rosa Valentín asesorando sobre seguros para mascotas"
                 fill
                 loading="lazy"
@@ -543,7 +547,7 @@ export function MascotasLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-14 sm:py-20 lg:py-24 bg-accent/30"
+        className="py-14 sm:py-20 lg:py-24 bg-white"
       >
         <div className="container max-w-5xl px-4">
           <h2 className="text-3xl font-bold sm:text-6xl mb-10 text-center lg:hidden">Preguntas frecuentes</h2>
