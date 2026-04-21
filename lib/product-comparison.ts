@@ -268,8 +268,8 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         label: 'Modalidades',
         intro: 'Protege la continuidad de tu actividad.',
         cards: [
-          { title: 'Comercio / Local', desc: 'Multirriesgo para daños por agua, robo, cristales e incendio en tu punto de venta.', tag: 'Físico' },
-          { title: 'RC Profesional', desc: 'Protección ante reclamaciones de clientes o terceros por errores en tu actividad profesional.', tag: 'Servicios' },
+          { title: 'Multirriesgo para Comercio y Local', desc: 'Cubre los daños materiales de tu punto de venta: incendio, robo, daños por agua, rotura de cristales y rótulos. Incluye responsabilidad civil de explotación frente a clientes y terceros. Adaptado a retail, hostelería, comercio de proximidad y pequeño comercio.', tag: 'Físico' },
+          { title: 'RC Profesional para Autónomos y Servicios', desc: 'Protección ante reclamaciones por errores, omisiones o negligencias en tu actividad profesional. Esencial para consultores, técnicos, asesores, agencias y cualquier profesional que preste servicios a terceros. Incluye defensa jurídica.', tag: 'Servicios' },
         ],
         bullets: ['Indemnización por pérdida de beneficios.', 'Asistencia urgente para el negocio (fontanería, electricidad).'],
       },

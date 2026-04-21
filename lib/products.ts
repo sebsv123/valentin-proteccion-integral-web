@@ -486,7 +486,7 @@ export const products: Product[] = [
     eyebrow: 'PYMES · AUTÓNOMOS',
     heroTitle: 'Protege tu local, tu stock y tu actividad profesional frente a imprevistos que puedan parar tu negocio',
     heroCopy:
-      'Seguro multirriesgo para locales, oficinas y comercios. Protección total frente a robos, daños por agua, incendio y responsabilidad civil profesional.',
+      'Seguro multirriesgo para locales, oficinas y comercios. Protección total frente a robos, daños por agua, incendio y responsabilidad civil profesional. Asesoramiento independiente en Madrid para autónomos, pymes y comercios.',
     heroImage: '/images/products/negocio.webp',
     heroAlt: 'Local comercial moderno y protegido',
     cardImage: '/images/products/negocio.webp',
@@ -529,8 +529,8 @@ export const products: Product[] = [
       'Capitales asegurados y límites de RC sujetos a la actividad y condiciones de contratación.',
     related: ['accidentes', 'proteccion-juridica', 'salud'],
     whatsappMessage: 'Hola, quiero proteger mi NEGOCIO con un seguro a medida.',
-    metaTitle: 'Seguro Multirriesgo para Negocios y Pymes en Madrid | Valentín Protección Integral',
-    metaDescription: 'Protege tu local, stock y responsabilidad civil con un seguro multirriesgo para comercio o pyme en Madrid. Asesoramiento independiente sin compromiso. Llámanos.',
+    metaTitle: 'Seguro para Negocios y Autónomos en Madrid | Valentín Protección Integral',
+    metaDescription: 'Seguro multirriesgo para locales, comercios, pymes y autónomos en Madrid. Cubre robo, daños, RC profesional y pérdida de actividad. Asesoramiento independiente sin compromiso. Llámanos.',
     h1: 'Seguro para tu Negocio o Pyme en Madrid',
   },
   {

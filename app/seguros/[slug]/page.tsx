@@ -90,6 +90,60 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <ProductHero product={product} />
         <ProductTabs slug={product.slug} />
         <CoverageHighlights product={product} />
+        
+        {/* Sección Perfiles de Negocio - Solo para negocio */}
+        {slug === 'negocio' && (
+          <section className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-12">
+                <p className="text-sm font-bold tracking-widest uppercase text-[var(--blue)] mb-3">Soluciones por tipo de negocio</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Seguro adaptado a tu actividad</h2>
+                <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto">
+                  Cada negocio tiene riesgos específicos. Estas son las coberturas más relevantes según tu sector.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* COMERCIOS */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--blue)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">COMERCIOS</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Para tiendas, bazares, supermercados y cualquier comercio con local físico. 
+                    Lo más relevante: protección del stock y mercancía, cobertura de robo con o sin violencia, 
+                    RC de explotación y daños por agua o incendio.
+                  </p>
+                </div>
+                {/* OFICINAS */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--green)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">OFICINAS</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Para despachos, agencias, consultoras y empresas de servicios. 
+                    Lo más relevante: equipos electrónicos, RC profesional, defensa jurídica 
+                    y cobertura de robo de material informático.
+                  </p>
+                </div>
+                {/* AUTÓNOMOS */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--orange)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">AUTÓNOMOS</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Para profesionales independientes que trabajan desde casa o en local propio. 
+                    Lo más relevante: RC profesional ante clientes, accidentes del titular 
+                    y cobertura de equipos de trabajo.
+                  </p>
+                </div>
+                {/* TALLERES */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[#4CAF50]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">TALLERES</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Para talleres mecánicos, imprentas, carpinterías y actividades con maquinaria. 
+                    Lo más relevante: daños a bienes de terceros en tus instalaciones, 
+                    RC de explotación y cobertura de maquinaria propia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
         <ProductDecisionGrid product={product} />
         <CasesAndForm product={product} />
         
@@ -123,39 +177,42 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         
         {/* Sección Equipo - Solo para negocio */}
         {slug === 'negocio' && (
-          <section className="py-14 sm:py-20 lg:py-24 bg-white">
+          <section className="py-14 sm:py-20 lg:py-24 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="order-2 lg:order-1 text-center lg:text-left">
-                  <p className="text-sm font-bold tracking-widest uppercase text-[var(--blue)] mb-3">Asesoramiento Personal</p>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Rosa y Sebastián te asesoran sin compromiso</h2>
+                {/* Imagen izquierda en desktop */}
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián Valentín, asesores de seguros para negocios y pymes en Madrid"
+                    width={480}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                    className="object-cover object-top w-full h-full"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                {/* Texto derecha en desktop */}
+                <div className="text-center lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Rosa y Sebastián, tus asesores de seguros para negocios en Madrid</h2>
                   <p className="text-lg text-[var(--muted)] leading-relaxed mb-6">
-                    Más de 10 años ayudando a negocios y pymes de Madrid a proteger lo que han construido. 
-                    Entendemos los riesgos de tu actividad y te proponemos soluciones a medida, sin letra pequeña.
+                    Con más de 10 años asesorando a comercios, pymes y autónomos en Madrid, 
+                    te ayudamos a elegir el seguro que realmente protege tu actividad, 
+                    sin coberturas innecesarias y sin letra pequeña.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
-                      href={`https://wa.me/34603448765?text=${encodeURIComponent(product.whatsappMessage)}`}
+                      href="https://wa.me/34603448765?text=Hola%2C%20quiero%20proteger%20mi%20NEGOCIO%20con%20un%20seguro%20a%20medida."
                       className={cn(
                         buttonVariants({ size: 'lg' }),
                         'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
                       )}
                     >
                       <WhatsAppIcon className="h-5 w-5" />
-                      Hablar con un experto
+                      Hablar con Rosa Valentín
                     </a>
                   </div>
-                </div>
-                <div className="order-1 lg:order-2 relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/rosa_y_sebastian.jpeg"
-                    alt="Rosa y Sebastián Valentín, asesores de seguros para negocios y pymes en Madrid"
-                    fill
-                    loading="lazy"
-                    decoding="async"
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
                 </div>
               </div>
             </div>

@@ -61,6 +61,8 @@ export function ProductHero({ product }: { product: Product }) {
 }
 
 export function CoverageHighlights({ product }: { product: Product }) {
+  const isNegocio = product.slug === 'negocio';
+  
   return (
      <section id="coberturas" aria-labelledby="coverage-title" className="section-pad bg-alternate">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
@@ -69,6 +71,11 @@ export function CoverageHighlights({ product }: { product: Product }) {
             <p className="kicker">Coberturas destacadas</p>
             <h2 id="coverage-title" className="mt-3 section-title">Lo importante de {product.label}, explicado con más orden</h2>
             <p className="section-copy mt-4">Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.</p>
+            {isNegocio && (
+              <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+                Un seguro de negocio bien diseñado protege tanto el continente (local, instalaciones, mobiliario) como el contenido (stock, equipos, mercancía) y la responsabilidad frente a terceros. Las coberturas más habituales en un multirriesgo de comercio o pyme incluyen:
+              </p>
+            )}
           </div>
          </RevealLight>
          <div className="grid gap-6 md:grid-cols-2">
