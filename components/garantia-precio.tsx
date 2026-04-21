@@ -31,7 +31,7 @@ export function GarantiaPrecio({
           <div>
             <p className="font-bold text-blue-900">Garantía de precio</p>
             <p className="text-sm text-blue-700">
-              Tráenos el precio de tu banco o gestoría. Si no encontramos algo mejor, te lo decimos con honestidad.
+              Tráenos cualquier presupuesto. Si no encontramos algo mejor, te lo decimos con honestidad.
             </p>
           </div>
         </div>
@@ -55,8 +55,8 @@ export function GarantiaPrecio({
             Garantía de precio
           </h3>
           <p className="text-muted-foreground mb-6 max-w-md">
-            Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200
-            familias asesoradas, siempre hemos encontrado un precio mejor.
+            Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200
+            familias asesoradas, siempre encontramos una opción mejor.
           </p>
           {showCta && (
             <a
@@ -88,8 +88,8 @@ export function GarantiaPrecio({
               Garantía de precio
             </h3>
             <p className="text-lg text-blue-800">
-              Tráenos el precio de tu banco o gestoría. En 10 años y más de
-              1.200 familias asesoradas, siempre hemos encontrado un precio
+              Tráenos cualquier presupuesto que tengas. En más de 10 años y
+              1.200 familias asesoradas, siempre encontramos una opción
               mejor.
             </p>
           </div>

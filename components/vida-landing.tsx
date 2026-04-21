@@ -88,9 +88,9 @@ export function VidaLanding() {
       <div className="sticky top-16 z-40 w-full bg-blue-900 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
           <p className="text-sm font-semibold leading-tight flex-1">
-            <span className="sm:hidden">Garantía de precio: tráenos tu oferta</span>
+            <span className="sm:hidden">¿Tienes otro precio? Lo mejoramos.</span>
             <span className="hidden sm:inline">
-              <span className="font-bold">Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.</span>
+              <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
             </span>
           </p>
           <a
