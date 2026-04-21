@@ -79,7 +79,14 @@ export default function ContactoPage() {
             <div className="soft-card overflow-hidden">
               <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[340px]">
-                  <Image src="/images/home/meeting-real.jpg" alt="Asesoramiento real en una reunión" fill className="object-cover" />
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                    loading="eager"
+                  />
                 </div>
                 <div className="p-7 md:p-9">
                   <p className="kicker">Contacto — Boadilla del Monte, Madrid</p>
