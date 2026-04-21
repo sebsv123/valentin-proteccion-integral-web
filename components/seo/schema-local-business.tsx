@@ -45,13 +45,6 @@ export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
         "closes": "19:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": "47"
-    },
     "sameAs": [
       "https://www.instagram.com/segurosrosavalentin/",
       "https://wa.me/34603448765"
