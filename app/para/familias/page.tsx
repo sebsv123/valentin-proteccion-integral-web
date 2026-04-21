@@ -8,8 +8,8 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
-  title: "Seguros para Familias en Madrid · Protección completa sin complicaciones | Valentín Protección Integral",
-  description: "Protege a tu familia con un asesoramiento real. Salud, dental, vida y decesos adaptados a lo que necesitáis ahora, con alguien que os conoce y os acompaña de verdad.",
+  title: "Seguros para Familias Madrid · Sin complicaciones",
+  description: "Protege a tu familia en Madrid con un solo asesor. Salud, vida, dental y decesos. Sin letra pequeña. Consulta gratuita por WhatsApp · Valentín Protección Integral.",
   keywords: "seguros familia Madrid, seguro salud familiar, seguro dental familia, seguro decesos familiar",
   openGraph: {
     title: "Seguros para Familias en Madrid · Protección completa sin complicaciones",

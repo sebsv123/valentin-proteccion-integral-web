@@ -8,12 +8,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
-  title: "Seguros para Seniors en Madrid · Tranquilidad para ti y los tuyos | Valentín Protección Integral",
-  description: "Más de 60 años y quieres tener todo en orden. Salud privada, decesos y protección patrimonial con el acompañamiento cercano que mereces. Sin trámites complicados.",
+  title: "Seguros para Seniors en Madrid · Tranquilidad real",
+  description: "Seguros para mayores de 55 en Madrid. Salud, decesos y vida adaptados a tus necesidades. Asesoría gratuita sin compromiso · Valentín Protección Integral.",
   keywords: "seguros seniors Madrid, seguro salud mayores Madrid, seguro decesos senior, protección patrimonial",
   openGraph: {
-    title: "Seguros para Seniors en Madrid · Tranquilidad para ti y los tuyos",
-    description: "Más de 60 años y quieres tener todo en orden. Salud privada, decesos y protección patrimonial con acompañamiento cercano.",
+    title: "Seguros para Seniors en Madrid · Tranquilidad real",
+    description: "Seguros para mayores de 55 en Madrid. Salud, decesos y vida adaptados. Asesoría gratuita sin compromiso.",
     url: "https://www.valentinproteccionintegral.com/para/seniors",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

@@ -15,12 +15,12 @@ import CredentialsBar from '@/components/CredentialsBar';
 import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos | Rosa y Sebastián Valentín — Mediadores de Seguros en Madrid",
-  description: "Rosa y Sebastián Valentín, mediadores de seguros independientes en Boadilla del Monte (Madrid). +10 años y +1.200 familias protegidas. Registrados en DGSFP.",
+  title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
+  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Mediadores independientes registrados en DGSFP. Sin ataduras a ninguna compañía.",
   keywords: "rosa valentin mediadora seguros, sebastian valentin asesor seguros, equipo mediadores seguros madrid, asesoria seguros boadilla del monte, DGSFP mediadores madrid",
   openGraph: {
-    title: "Quiénes Somos | Rosa y Sebastián Valentín — Mediadores de Seguros en Madrid",
-    description: "Rosa y Sebastián Valentín, mediadores de seguros independientes en Boadilla del Monte (Madrid). +10 años y +1.200 familias protegidas. Registrados en DGSFP.",
+    title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
+    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Mediadores independientes registrados en DGSFP.",
     url: "https://valentinproteccionintegral.com/sobre-nosotros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

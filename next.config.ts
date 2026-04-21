@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
         destination: '/seguros/accidentes-decesos',
         permanent: true,
       },
+      // Redirect URL rota vida-hipoteca
+      {
+        source: '/seguros/vida-hipoteca',
+        destination: '/seguros/vida/hipoteca',
+        permanent: true,
+      },
     ];
   },
   async headers() {

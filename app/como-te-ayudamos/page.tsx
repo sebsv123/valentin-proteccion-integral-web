@@ -24,9 +24,9 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Cómo Elegir tu Seguro en Madrid · Asesoría Independiente y Gratuita | Valentín",
-  description: "No somos un comparador. Somos asesores independientes en Madrid con +10 años. Escuchamos tu situación y encontramos el seguro que de verdad te conviene. Sin presión ni letra pequeña.",
-  keywords: "asesoramiento seguros madrid, consulta seguros gratuita, como elegir seguro madrid",
+  title: "Cómo Te Ayudamos | Valentín Protección Integral — Seguros en Madrid",
+  description: "Te asesoramos gratis, buscamos la mejor opción y te acompañamos después de contratar. Así trabajamos en Valentín Protección Integral · Boadilla del Monte, Madrid.",
+  keywords: "cómo funciona seguros madrid, proceso seguros valentín, asesoría seguros madrid",
   openGraph: {
     title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
     description: "No somos un comparador online. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene.",

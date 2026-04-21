@@ -8,12 +8,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
-  title: "Seguros para Autónomos en Madrid · Dedúcete hasta 500€ en el IRPF | Valentín Protección Integral",
-  description: "Como autónomo tienes ventajas fiscales que la mayoría no aprovecha. Te ayudamos a elegir el seguro médico que más te conviene y a entender exactamente cuánto te devuelve Hacienda.",
+  title: "Seguros Autónomos Madrid · Dedúcete 500€ en IRPF",
+  description: "Dedúcete hasta 500€ en el IRPF con tu seguro médico. Asesoramiento gratuito para autónomos en Madrid · Valentín Protección Integral.",
   keywords: "seguros autónomos Madrid, seguro médico autónomo deducible, deducción IRPF autónomo, seguro salud autónomo",
   openGraph: {
-    title: "Seguros para Autónomos en Madrid · Dedúcete hasta 500€ en el IRPF",
-    description: "Como autónomo tienes ventajas fiscales que la mayoría no aprovecha. Te ayudamos a elegir el seguro médico que más te conviene.",
+    title: "Seguros Autónomos Madrid · Dedúcete 500€ en IRPF",
+    description: "Dedúcete hasta 500€ en el IRPF con tu seguro médico. Asesoramiento gratuito para autónomos en Madrid.",
     url: "https://www.valentinproteccionintegral.com/para/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

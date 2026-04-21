@@ -8,12 +8,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
-  title: "Seguros para Jóvenes Profesionales en Madrid · Protección que crece contigo | Valentín Protección Integral",
-  description: "Acabas de emanciparte o tienes hipoteca reciente. Te ayudamos a proteger lo que estás construyendo: salud, hogar y vida, sin pagar de más ni contratar lo que no necesitas.",
+  title: "Seguros Jóvenes Profesionales Madrid · Desde 30€",
+  description: "Seguros para jóvenes profesionales en Madrid desde 30€/mes. Salud, accidentes y vida. Asesoría gratuita sin compromiso · Valentín Protección Integral.",
   keywords: "seguros jóvenes profesionales Madrid, seguro salud joven Madrid, seguro hogar primer piso, seguro vida hipoteca joven",
   openGraph: {
-    title: "Seguros para Jóvenes Profesionales en Madrid · Protección que crece contigo",
-    description: "Acabas de emanciparte o tienes hipoteca reciente. Te ayudamos a proteger lo que estás construyendo.",
+    title: "Seguros Jóvenes Profesionales Madrid · Desde 30€",
+    description: "Seguros para jóvenes profesionales en Madrid desde 30€/mes. Salud, accidentes y vida. Asesoría gratuita sin compromiso.",
     url: "https://www.valentinproteccionintegral.com/para/jovenes-profesionales",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

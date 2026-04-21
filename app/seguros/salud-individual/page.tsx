@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { SaludLanding } from "@/components/salud-landing";
 
 export const metadata: Metadata = {
-  title: "Seguro Médico Privado en Madrid | Rosa y Sebastián te lo gestionan todo | Valentín Protección Integral",
-  description: "Seguro de salud privado en Madrid sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día. Rosa y Sebastián te responden en 30 minutos.",
+  title: "Seguro Salud Individual Madrid · Sin listas de espera",
+  description: "Seguro de salud individual en Madrid sin listas de espera. Médico en 24h, cobertura desde el primer día. Presupuesto gratis · Valentín Protección Integral.",
   keywords: "seguro salud individual Madrid, seguro médico privado Madrid, seguro salud sin carencias Madrid, seguro salud familiar Madrid",
   openGraph: {
     title: "Seguro de Salud en Madrid · Desde 30€/mes",

@@ -11,7 +11,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 export const metadata: Metadata = {
-  title: 'Asesores de Seguros por Zonas en Madrid · Valentín Protección Integral',
+  title: 'Asesores de Seguros por Zonas en Madrid · VPI',
   description: 'Asesores de seguros independientes en Boadilla del Monte, Las Rozas, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años, consulta gratuita.',
   alternates: { canonical: `${site.domain}/zonas` },
 };
