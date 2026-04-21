@@ -115,17 +115,6 @@ export function DentalLanding() {
                 En los seguros que gestionamos, revisiones y limpiezas están disponibles desde el primer día. Rosa y Sebastián te explican exactamente qué incluye cada opción antes de que decidas. Sin letra pequeña. Sin presión.
               </p>
 
-              {/* Bloque de incentivo destacado */}
-              <div className="w-full lg:w-auto p-4 rounded-xl bg-emerald-50 border-2 border-emerald-200">
-                <p className="text-sm font-bold text-emerald-800 uppercase tracking-wide mb-1">🎁 Sorpresa para nuevos clientes</p>
-                <p className="text-base font-semibold text-emerald-900">
-                  Contrata salud + dental juntos y el primer mes de dental es gratis.
-                </p>
-                <p className="text-sm text-emerald-700 mt-1">
-                  Válido para nuevos clientes. Rosa te lo confirma al contactar.
-                </p>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                 <a
                   href={DENTAL_WHATSAPP_URL}

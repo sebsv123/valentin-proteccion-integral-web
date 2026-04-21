@@ -125,7 +125,7 @@ export default function SegurosHubPage() {
                   Más de 10 años y +1.200 familias en Madrid confían en nuestro criterio independiente
                 </h2>
                 <p className="text-lg leading-8 text-white/80 max-w-2xl">
-                  Somos Rosa y Sebastián Valentín. Te acompañamos personalmente en todo el proceso: escuchamos lo que necesitas, comparamos las mejores opciones del mercado y te explicamos cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.
+                  Somos Rosa y Sebastián Valentín. Te acompañamos personalmente en todo el proceso: escuchamos lo que necesitas, buscamos la mejor solución para tu situación concreta y te explicamos cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row pt-2">
                   <a href={buildWhatsAppHref('Hola Rosa, quiero una orientación personalizada sobre seguros.')} className="btn-whatsapp !text-base !px-8 !py-4 shadow-xl"><WhatsAppIcon className="h-5 w-5" /> Hablar con Rosa</a>

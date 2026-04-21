@@ -491,7 +491,7 @@ export function SaludLanding() {
             </div>
             <p className="mt-3 text-xs text-muted-foreground/70 italic">
               Los plazos indicados son orientativos y pueden variar según el plan contratado. 
-              Te lo explicamos todo antes de firmar, sin sorpresas.
+              Te lo explicamos todo antes de firmar, con total transparencia.
             </p>
           </div>
         </div>

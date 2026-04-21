@@ -119,7 +119,7 @@ export const products: Product[] = [
     ],
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
-      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral comparamos las mejores opciones del mercado sin coste para ti." },
+      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral te asesoramos de forma independiente y personalizada, sin coste para ti." },
       { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "No existe una única respuesta válida para todos. El mejor seguro de salud es el que mejor encaja con tu perfil, uso y presupuesto. Una modalidad completa funciona bien para uso frecuente o familias; el reembolso es mejor si necesitas libertad de elección; y las opciones senior o para extranjeros están diseñadas para necesidades concretas. Te ayudamos a comparar sin centrarlo todo en el precio." },
       { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, en la mayoría de los casos puedes cambiar de seguro de salud sin perder coberturas, aunque conviene revisar los períodos de carencia de la nueva póliza. En algunos casos, si llevas más de dos años con una compañía, puedes negociar la reducción o eliminación de carencias. Te ayudamos a gestionar el cambio sin que quedes desprotegido en ningún momento." },
       { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Depende de tu situación y uso. La sanidad pública ofrece cobertura universal, pero los tiempos de espera para especialistas y pruebas pueden ser largos. Un seguro privado te da acceso inmediato a especialidades, urgencias privadas y pruebas diagnósticas sin esperas. Para familias con hijos, seniors o autónomos que no pueden permitirse baja médica prolongada, suele merecer la pena desde el primer uso." }
@@ -185,17 +185,16 @@ export const products: Product[] = [
     disclaimer:
       'Capital, incapacidad, duración y alcance de la cobertura sujetos a modalidad y condiciones de contratación gestionadas por Sebastián.',
     related: ['salud', 'accidentes', 'decesos'],
-    whatsappMessage:
-      'Hola Sebastián, quiero orientación sobre el seguro de VIDA para mi familia o mi hipoteca.',
+    whatsappMessage: 'Hola, quiero orientación sobre un seguro de vida para mi familia o hipoteca.',
     metaTitle: 'Seguro de Vida en Madrid · Protege a Tu Familia',
     metaDescription: 'Protege a tu familia o tu hipoteca con un seguro de vida bien elegido. Te asesoramos para encontrar la opción que mejor encaja contigo.',
     h1: 'Seguro de Vida en Madrid: Protege a tu Familia y tu Hipoteca',
     customAdvisor: {
-      name: 'Sebastián',
-      photo: '/images/agent/sebastian-enhanced.png',
-      phone: '+34 689 791 380',
-      phoneHref: '+34689791380',
-      whatsappNumber: '34689791380',
+      name: 'Rosa y Sebastián',
+      photo: '/images/rosa_y_sebastian_conversando.png',
+      phone: '+34 603 44 87 65',
+      phoneHref: '+34603448765',
+      whatsappNumber: '34603448765',
     },
   },
   {

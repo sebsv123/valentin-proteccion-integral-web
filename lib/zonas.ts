@@ -55,7 +55,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Cuánto cuesta un seguro de salud en Boadilla del Monte?',
-        a: 'El precio de un seguro de salud en Boadilla del Monte varía entre 30€ y 120€/mes según la edad, las coberturas y la compañía. En nuestra consulta gratuita comparamos las mejores opciones del mercado para tu perfil concreto sin coste ni compromiso.',
+        a: 'El precio de un seguro de salud en Boadilla del Monte varía entre 30€ y 120€/mes según la edad, las coberturas y la compañía. En nuestra consulta gratuita te asesoramos de forma independiente y buscamos la mejor solución para tu perfil concreto sin coste ni compromiso.',
       },
       {
         q: '¿Puedo contratar un seguro sin desplazarme en Boadilla del Monte?',
@@ -85,7 +85,7 @@ export const zonas: Zona[] = [
     metaDescription: 'Asesores de seguros en Las Rozas de Madrid. +10 años de experiencia en salud, vida, mascotas y más. Asesoramiento personalizado sin compromiso.',
     h1: 'Asesores de Seguros en Las Rozas de Madrid',
     heroSubtitle: '+10 años · +1.200 familias protegidas · Consulta gratuita y sin compromiso',
-    intro: 'Atendemos a familias, autónomos y empresas de Las Rozas de Madrid con asesoramiento independiente en seguros. Comparamos las mejores opciones del mercado para que tomes la decisión correcta sin complicaciones, sin letra pequeña y sin presión.',
+    intro: 'Atendemos a familias, autónomos y empresas de Las Rozas de Madrid con asesoramiento independiente en seguros. Buscamos la mejor solución para tu situación concreta, sin complicaciones, sin letra pequeña y sin presión.',
     porQueElegirNos: 'Las Rozas de Madrid ha crecido hasta convertirse en uno de los municipios más dinámicos del noroeste metropolitano, con más de 100.000 habitantes y una alta concentración de empresas, autónomos y familias jóvenes. Este perfil mixto genera necesidades muy diversas en materia de seguros: desde autónomos que necesitan proteger sus ingresos con un seguro de accidentes o protección jurídica, hasta familias que buscan un seguro de salud completo con acceso rápido a especialistas.\n\nEl municipio cuenta con el Hospital Universitario HM Montepríncipe como referencia privada cercana, pero las esperas en la sanidad pública para especialistas pueden superar los 60 días. Un seguro de salud privado elimina esas esperas y da acceso a consultas en 24-48h en la mayoría de casos.\n\nLas Rozas también tiene uno de los mayores polígonos empresariales del noroeste de Madrid — Las Rozas Business Park — lo que hace que el seguro para pymes y autónomos sea una de las coberturas más demandadas en la zona. Somos independientes y atendemos tanto de forma presencial como por videollamada.',
     datosLocales: {
       poblacion: '100.000 habitantes',
@@ -97,7 +97,7 @@ export const zonas: Zona[] = [
     faqsLocales: [
       {
         q: '¿Hay asesores de seguros independientes en Las Rozas de Madrid?',
-        a: 'Sí. Desde Boadilla del Monte atendemos a clientes de Las Rozas de Madrid tanto de forma presencial como por videollamada o teléfono. Somos independientes: comparamos entre más de 20 compañías sin ataduras.',
+        a: 'Sí. Desde Boadilla del Monte atendemos a clientes de Las Rozas de Madrid tanto de forma presencial como por videollamada o teléfono. Somos independientes: trabajamos con las principales compañías sin ataduras.',
       },
       {
         q: '¿Qué seguro necesita un autónomo en Las Rozas?',
