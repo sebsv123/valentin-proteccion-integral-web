@@ -11,15 +11,15 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
-  title: 'Opiniones verificadas en Google | Valentín Protección Integral',
+  title: 'Opiniones y Reseñas Verificadas de Clientes · Valentín Protección Integral Madrid',
   description:
-    'Consulta las opiniones verificadas en Google de Valentín Protección Integral y accede directamente a nuestro perfil oficial para ver o dejar tu reseña.',
+    '+1.200 familias en Madrid confían en Rosa y Sebastián Valentín. Consulta sus reseñas reales en Google y descubre por qué somos la asesoría de seguros más cercana de Boadilla del Monte.',
   keywords:
     'opiniones google valentín protección integral, reseñas verificadas google, reseñas seguros madrid, opiniones boadilla del monte',
   openGraph: {
-    title: 'Opiniones verificadas en Google | Valentín Protección Integral',
+    title: 'Opiniones y Reseñas Verificadas de Clientes · Valentín Protección Integral Madrid',
     description:
-      'Consulta nuestras opiniones verificadas directamente en Google y accede al perfil oficial de Valentín Protección Integral.',
+      '+1.200 familias en Madrid confían en Rosa y Sebastián Valentín. Consulta sus reseñas reales en Google.',
     url: 'https://valentinproteccionintegral.com/opiniones',
     siteName: 'Valentín Protección Integral',
     locale: 'es_ES',
@@ -60,7 +60,7 @@ export default function OpinionesPage() {
                 <div>
                   <p className="kicker font-bold tracking-[0.3em]">Opiniones verificadas</p>
                   <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl leading-[1.05]">
-                    Reseñas reales visibles en nuestro perfil oficial de Google
+                    Opiniones de Clientes Reales — Valentín Protección Integral Madrid
                   </h1>
                   <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)]">
                     En esta página solo mostramos la fuente legítima de reseñas: el widget oficial de Google con acceso directo al perfil, a las reseñas verificadas y al botón oficial para dejar una nueva opinión.
@@ -84,7 +84,7 @@ export default function OpinionesPage() {
                   <div className="mt-6 rounded-2xl border border-[var(--green)]/20 bg-[var(--green)]/5 px-5 py-4 flex items-start gap-3">
                     <Shield className="h-5 w-5 mt-0.5 text-[var(--green)] shrink-0" />
                     <p className="text-sm leading-6 text-[var(--blue-deep)] font-medium">
-                      <strong>Transparencia real:</strong> aquí no publicamos opiniones inventadas ni valoraciones copiadas. Solo mantenemos reseñas verificables desde Google.
+                      <strong>Solo reseñas verificables.</strong> Aquí no encontrarás testimonios fabricados ni valoraciones copiadas. Cada opinión tiene nombre, fecha y enlace directo a Google. Eso es lo que significa trabajar con transparencia.
                     </p>
                   </div>
                 </div>
@@ -152,6 +152,7 @@ export default function OpinionesPage() {
                       Todas las opiniones visibles en esta página proceden exclusivamente del perfil oficial de Google, con enlace verificable a cada reseña real.
                     </p>
                     <div className="mt-6">
+                      {/* TODO: reemplazar con Place ID real del Google Business Profile */}
                       <a
                         href="https://www.google.com/maps/search/Valentín+Protección+Integral+Boadilla+del+Monte"
                         target="_blank"
@@ -177,6 +178,7 @@ export default function OpinionesPage() {
                 Si ya has trabajado con nosotros, puedes dejar tu reseña directamente en Google para que otras personas la consulten con total transparencia.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row justify-center">
+                {/* TODO: reemplazar con Place ID real del Google Business Profile */}
                 <a
                   href="https://www.google.com/maps/search/Valentín+Protección+Integral+Boadilla+del+Monte"
                   target="_blank"
