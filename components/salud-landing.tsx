@@ -118,27 +118,20 @@ export function SaludLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="sticky top-16 z-40 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
+      <div className="sticky top-16 z-40 w-full bg-[#002244] text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
-
-          {/* Texto CORTO en móvil, texto LARGO en desktop */}
-          <p className="text-sm font-semibold leading-tight flex-1 truncate">
-            <span className="sm:hidden flex items-center gap-1.5">
-              <Hospital className="h-4 w-4 inline" /> Médico privado sin esperas
-            </span>
-            <span className="hidden sm:inline flex items-center gap-1.5">
-              <Hospital className="h-4 w-4 inline" /> <span className="font-bold">Sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día.</span>
+          <p className="text-sm font-semibold leading-tight flex-1">
+            <span className="sm:hidden">Tráenos cualquier presupuesto que tengas.</span>
+            <span className="hidden sm:inline">
+              <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
             </span>
           </p>
-
-          {/* CTA: siempre visible, siempre a la derecha */}
           <a
-            href="#contacto"
+            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20comparar%20precios%20de%20seguro%20de%20salud"
             className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            Pedir presupuesto →
+            Compruébalo gratis →
           </a>
-
         </div>
       </div>
 
