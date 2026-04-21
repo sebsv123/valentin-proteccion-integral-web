@@ -80,7 +80,7 @@ export const products: Product[] = [
     eyebrow: 'SALUD',
     heroTitle: 'Te ayudamos a encontrar un seguro de SALUD que encaje contigo y con la forma en la que realmente quieres usarlo',
     heroCopy:
-      'No todas las opciones funcionan igual. Hay modalidades equilibradas, otras para mayores de 55, para extranjeros o con libre elección de médico y reembolso. La clave está en comparar con contexto.',
+      'No todas las opciones funcionan igual. Comparamos seguros de salud privados en Madrid: modalidad completa, para familias, seniors, extranjeros con visado y reembolso con libre elección de médico. La clave está en comparar con contexto.',
     heroImage: '/images/products/health-medical-care.webp',
     heroAlt: 'Consulta médica profesional y cercana',
     cardImage: '/images/products/health-medical-care.webp',
@@ -119,17 +119,17 @@ export const products: Product[] = [
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
       { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral comparamos las mejores opciones del mercado sin coste para ti." },
-      { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "Depende de tu perfil. Algunas aseguradoras destacan por su red de centros propios, otras por la relación calidad-precio, y otras por incluir servicios dentales completos. Te ayudamos a comparar según tus necesidades reales sin presión." },
-      { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, puedes cambiar de compañía respetando los períodos de carencia. Te asesoramos para que la transición sea sin sorpresas ni pérdida de cobertura." },
-      { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Sí. El seguro privado elimina listas de espera, te da acceso a especialistas sin derivación y suele incluir servicio 24h. Muchas familias en Madrid combinan ambos sistemas." }
+      { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "No existe una única respuesta válida para todos. El mejor seguro de salud es el que mejor encaja con tu perfil, uso y presupuesto. Una modalidad completa funciona bien para uso frecuente o familias; el reembolso es mejor si necesitas libertad de elección; y las opciones senior o para extranjeros están diseñadas para necesidades concretas. Te ayudamos a comparar sin centrarlo todo en el precio." },
+      { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, en la mayoría de los casos puedes cambiar de seguro de salud sin perder coberturas, aunque conviene revisar los períodos de carencia de la nueva póliza. En algunos casos, si llevas más de dos años con una compañía, puedes negociar la reducción o eliminación de carencias. Te ayudamos a gestionar el cambio sin que quedes desprotegido en ningún momento." },
+      { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Depende de tu situación y uso. La sanidad pública ofrece cobertura universal, pero los tiempos de espera para especialistas y pruebas pueden ser largos. Un seguro privado te da acceso inmediato a especialidades, urgencias privadas y pruebas diagnósticas sin esperas. Para familias con hijos, seniors o autónomos que no pueden permitirse baja médica prolongada, suele merecer la pena desde el primer uso." }
     ],
     disclaimer:
       'Coberturas, copagos, hospitalización, reembolso y alcance territorial sujetos a modalidad y documentación contractual.',
     related: ['vida', 'dental', 'accidentes'],
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
-    metaTitle: 'Seguro de Salud en Madrid · Desde 30€/mes',
-    metaDescription: 'Te ayudamos a elegir el seguro de salud que mejor encaja contigo y tu familia. Compara opciones reales y pide tu consulta gratuita hoy.',
+    metaTitle: 'Seguro de Salud Privado en Madrid | Desde 30€/mes · Valentín Protección Integral',
+    metaDescription: 'Compara seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento independiente sin compromiso. Desde 30€/mes.',
     h1: 'Seguro de Salud en Madrid: Compara Sin Presión',
   },
   {

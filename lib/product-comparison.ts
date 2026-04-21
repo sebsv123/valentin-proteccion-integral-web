@@ -24,10 +24,10 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         label: 'Modalidades',
         intro: 'No todas las opciones funcionan igual. Elige antes qué tipo de uso le darás al seguro.',
         cards: [
-          { title: 'Básico / Ambulatorio', desc: 'Consultas, pruebas y especialistas sin necesidad de ingreso. Ideal si buscas acceso rápido a medicina general.', tag: 'Más accesible' },
-          { title: 'Senior (+55 años)', desc: 'Asesor médico personal, sin copagos y asistencia en viaje amplia. Diseñado para plenitud y tranquilidad.', tag: 'Especializado' },
-          { title: 'Extranjeros (Visado)', desc: 'Sin copagos, sin carencias y con repatriación incluida. Cumple requisitos para residencia/visado.', tag: 'Visado OK' },
-          { title: 'Reembolso / Libre Elección', desc: 'Libertad de elegir cualquier especialista en el mundo. Recuperas entre el 80% y 90% de la factura.', tag: 'Más libertad' },
+          { title: 'Seguro de Salud Básico o Ambulatorio', desc: 'Acceso rápido a medicina general, especialidades y pruebas diagnósticas sin necesidad de ingreso hospitalario. Ideal para personas jóvenes y sanas que buscan una alternativa privada ágil a las listas de espera de la sanidad pública. Con o sin copago según modalidad.', tag: 'Más accesible' },
+          { title: 'Seguro de Salud para Mayores de 55 años', desc: 'Diseñado para quienes buscan tranquilidad y acompañamiento médico en la etapa senior. Incluye asesor médico personal, sin copagos y asistencia ampliada en viaje. Una opción pensada para la plenitud, no solo para la enfermedad.', tag: 'Especializado' },
+          { title: 'Seguro de Salud para Extranjeros con Visado', desc: 'Sin copagos, sin carencias y con repatriación incluida. Cumple los requisitos exigidos para tramitar la residencia o el visado en España. Apto para reagrupación familiar y estudiantes internacionales.', tag: 'Visado OK' },
+          { title: 'Seguro de Salud con Reembolso y Libre Elección', desc: 'Libertad total para elegir cualquier médico o especialista en el mundo, dentro o fuera del cuadro médico. Recuperas entre el 80% y el 90% de la factura. La opción preferida por quienes ya tienen médico de confianza o necesitan cobertura internacional habitual.', tag: 'Más libertad' },
         ],
         bullets: [
           'Hay opciones ambulatorias y otras completas que incluyen hospitalización y cirugía.',

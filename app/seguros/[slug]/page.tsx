@@ -91,6 +91,86 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <ProductTabs slug={product.slug} />
         <CoverageHighlights product={product} />
         
+        {/* Sección Perfiles de Salud - Solo para salud */}
+        {slug === 'salud' && (
+          <section className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="text-center mb-12">
+                <p className="text-sm font-bold tracking-widest uppercase text-[var(--blue)] mb-3">Encuentra tu modalidad</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Seguro de salud adaptado a tu perfil</h2>
+                <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto">
+                  Cada persona y familia tiene necesidades diferentes. Estas son las modalidades más demandadas en Madrid.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* COMPLETA */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--blue)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">COMPLETA</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    La modalidad más habitual para quien quiere acceso a medicina general, especialidades, urgencias, 
+                    pruebas y hospitalización en un solo seguro. Incluye ingreso y cirugía en las opciones más completas. 
+                    Recomendada para uso frecuente o familias que quieren cubrirlo todo con una sola póliza.
+                  </p>
+                </div>
+                {/* FAMILIAS */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--green)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">FAMILIAS</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Un seguro que cubre a toda la unidad familiar con una sola contratación. Permite incluir a hijos, 
+                    pareja y dependientes. Especialmente valorado por familias que quieren acceso privado rápido 
+                    para pediatría, urgencias y especialidades sin esperas.
+                  </p>
+                </div>
+                {/* AUTÓNOMOS */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[var(--orange)]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">AUTÓNOMOS</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Los autónomos pueden deducirse hasta 500€/año por el seguro médico propio y hasta 500€ adicionales 
+                    por cada miembro de la unidad familiar incluido. Una ventaja fiscal que convierte el seguro de salud 
+                    en una decisión también económica, no solo sanitaria.
+                  </p>
+                </div>
+                {/* SENIOR */}
+                <div className="soft-card bg-white p-8 border-l-4 border-[#4CAF50]">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">SENIOR</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Para mayores de 55 años que priorizan tranquilidad, acompañamiento médico personalizado y cobertura 
+                    sin copagos. Incluye asistencia en viaje ampliada. Una opción diseñada para la plenitud, 
+                    con acceso a especialistas sin barreras.
+                  </p>
+                </div>
+                {/* REEMBOLSO */}
+                <div className="soft-card bg-white p-8 border-l-4 border-purple-500">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">REEMBOLSO</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Libertad de elegir cualquier especialista en el mundo y recuperar entre el 80% y el 90% de la factura. 
+                    Ideal para quienes ya tienen médico de confianza, viajan con frecuencia o necesitan cobertura 
+                    fuera de España de forma habitual.
+                  </p>
+                </div>
+                {/* CON COPAGO */}
+                <div className="soft-card bg-white p-8 border-l-4 border-amber-500">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">CON COPAGO</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Modalidad con un pequeño pago por cada consulta o prueba, que permite reducir significativamente 
+                    la prima mensual. Recomendada para personas sanas con uso puntual del seguro que buscan precio 
+                    ajustado sin renunciar a la red privada.
+                  </p>
+                </div>
+                {/* SIN COPAGO */}
+                <div className="soft-card bg-white p-8 border-l-4 border-emerald-500 md:col-span-2 lg:col-span-1">
+                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">SIN COPAGO</h3>
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Sin coste adicional en cada consulta. Pagas tu prima mensual y accedes a toda la red sin 
+                    desembolso por visita. La opción preferida por familias con hijos o personas con uso frecuente 
+                    del seguro que valoran la previsibilidad del gasto.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
         {/* Sección Perfiles de Negocio - Solo para negocio */}
         {slug === 'negocio' && (
           <section className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]">
@@ -204,6 +284,51 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
                       href="https://wa.me/34603448765?text=Hola%2C%20quiero%20proteger%20mi%20NEGOCIO%20con%20un%20seguro%20a%20medida."
+                      className={cn(
+                        buttonVariants({ size: 'lg' }),
+                        'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
+                      )}
+                    >
+                      <WhatsAppIcon className="h-5 w-5" />
+                      Hablar con Rosa Valentín
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {/* Sección Equipo - Solo para salud */}
+        {slug === 'salud' && (
+          <section className="py-14 sm:py-20 lg:py-24 bg-gray-50">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Imagen izquierda en desktop */}
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid"
+                    width={480}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                    className="object-cover object-top w-full h-full"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                {/* Texto derecha en desktop */}
+                <div className="text-center lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Rosa y Sebastián, tus asesores de seguros de salud en Madrid</h2>
+                  <p className="text-lg text-[var(--muted)] leading-relaxed mb-6">
+                    Con más de 10 años comparando seguros de salud en Madrid y más de 
+                    1.200 familias asesoradas, te ayudamos a elegir la modalidad que realmente 
+                    encaja contigo: sin presión, sin letra pequeña y con seguimiento real 
+                    antes y después de contratar.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20SALUD%20y%20entender%20qu%C3%A9%20modalidad%20me%20encaja%20mejor."
                       className={cn(
                         buttonVariants({ size: 'lg' }),
                         'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
