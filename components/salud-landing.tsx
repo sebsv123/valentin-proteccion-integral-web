@@ -90,8 +90,8 @@ export function SaludLanding() {
       a: "Sin listas de espera, médico de cabecera propio, habitación individual en hospitalizaciones y acceso inmediato a especialistas.",
     },
     {
-      q: "¿Puedo cancelar cuando quiera?",
-      a: "Sí. No hay permanencia. Te explicamos todas las condiciones antes de firmar.",
+      q: "¿Cuándo puedo cancelar mi seguro?",
+      a: "Puedes cancelar tu póliza comunicándolo con un mes de antelación a la fecha de vencimiento. Ni antes de ese plazo ni después: exactamente dentro del mes previo al vencimiento. Te avisamos con tiempo para que no se te pase.",
     },
     {
       q: "¿Ya tengo dental con vosotros, tengo ventajas?",
@@ -321,6 +321,46 @@ export function SaludLanding() {
         </div>
       </motion.section>
 
+      {/* 3.5 TIPOS DE PÓLIZA */}
+      <section className="py-14 sm:py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl font-bold sm:text-5xl mb-4 text-center">¿Con o sin copago? Tú eliges.</h2>
+          <p className="text-lg text-muted-foreground text-center mb-10">Hay distintos niveles de cobertura. Te explicamos la diferencia con honestidad.</p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            {/* Básico */}
+            <div className="rounded-2xl border bg-card p-6 flex flex-col gap-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold w-fit">Con copago</span>
+              <h3 className="text-xl font-bold">Plan Básico</h3>
+              <p className="text-muted-foreground text-sm">Acceso a la red médica con un pequeño copago por consulta. La opción más económica para quienes quieren cobertura privada con coste mensual reducido.</p>
+              <p className="text-xs font-semibold text-amber-700 mt-auto">Incluye copago por consulta</p>
+            </div>
+
+            {/* Senior */}
+            <div className="rounded-2xl border bg-card p-6 flex flex-col gap-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold w-fit">Con copago · +55 años</span>
+              <h3 className="text-xl font-bold">Plan Senior</h3>
+              <p className="text-muted-foreground text-sm">Diseñado para personas mayores de 55 años, con cobertura amplia adaptada a sus necesidades. Incluye copago por consulta en la mayoría de servicios.</p>
+              <p className="text-xs font-semibold text-amber-700 mt-auto">Incluye copago por consulta</p>
+            </div>
+
+            {/* Completa */}
+            <div className="rounded-2xl border-2 border-green-500 bg-green-50 p-6 flex flex-col gap-3 relative">
+              <span className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-bold w-fit">Sin copago</span>
+              <h3 className="text-xl font-bold">Póliza Completa</h3>
+              <p className="text-muted-foreground text-sm">Acceso ilimitado a médico de cabecera, especialistas y urgencias sin ningún coste adicional por consulta. Modalidades: <strong>Plena Total, Plena Plus y Completa</strong>.</p>
+              <p className="text-xs font-semibold text-green-700 mt-auto">Sin copago — tranquilidad total</p>
+            </div>
+
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-6 italic">
+            Las urgencias y la hospitalización no tienen copago en ningún plan. Te explicamos cada modalidad antes de que decidas.
+          </p>
+        </div>
+      </section>
+
       {/* 4. BANNER UPGRADE — CLIENTES DENTAL */}
       <section className="py-10 bg-emerald-50 border-y border-emerald-200">
         <div className="container mx-auto max-w-4xl text-center px-4">
@@ -465,13 +505,12 @@ export function SaludLanding() {
                 </tbody>
               </table>
             </div>
-
             {/* Nota portabilidad — gancho de venta */}
             <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex gap-3 items-start">
               <ArrowUpRight className="h-6 w-6 text-emerald-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="font-bold text-emerald-800 text-sm">
-                  ¿Vienes de otra compañía? Te mantenemos la antigüedad.
+                <p className="text-sm text-muted-foreground mb-3">
+                  Con copago por consulta. Sin carencias ocultas. La opción más económica para empezar.
                 </p>
                 <p className="text-emerald-700 text-sm mt-1">
                   Si ya llevas tiempo asegurado con otra empresa, podemos eliminar 

@@ -23,8 +23,8 @@ const faqs = [
     a: "Una vez firmada la documentación, tu seguro se activa en 24-48 horas laborables."
   },
   {
-    q: "¿Puedo cancelar cuando quiera?",
-    a: "Sí, con el preaviso indicado en tu póliza (habitualmente 30 días). Sin penalizaciones ocultas de ningún tipo."
+    q: "¿Cuándo puedo cancelar mi seguro?",
+    a: "Puedes cancelar tu póliza comunicándolo con un mes de antelación a la fecha de vencimiento. Ni antes ni después: exactamente dentro del mes previo al vencimiento. Te recordamos la fecha con tiempo para que no se te pase."
   },
   {
     q: "¿Hay ventajas si luego quiero ampliar mi cobertura?",

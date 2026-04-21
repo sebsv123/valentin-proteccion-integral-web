@@ -358,13 +358,14 @@ export function MascotHelperSection() {
             <div className="grid gap-0 xl:grid-cols-[0.85fr_1.15fr]">
               <div className="relative min-h-[360px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10 flex items-center justify-center p-12">
                 <div className="relative w-full h-full max-w-[280px]">
-                  <Image
-                    src="/images/home/mascota-vpi.webp"
-                    alt="Tortuga VPI — Símbolo de protección, tranquilidad y asesoramiento seguro"
-                    fill
-                    className="object-contain drop-shadow-2xl"
+                  <img
+                    src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg"
+                    alt="Asesor de seguros acompañando a una familia en Madrid durante una consulta personalizada"
+                    width={800}
+                    height={600}
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 280px"
+                    decoding="async"
+                    className="h-full w-full object-cover object-center rounded-3xl drop-shadow-2xl"
                   />
                 </div>
               </div>

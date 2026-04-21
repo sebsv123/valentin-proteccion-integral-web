@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Conclusión: Busca honestidad, no solo ofertas',
         content: [
-          'El mejor seguro es el que cubre lo que necesitas cuando lo necesitas. Antes de contratar, verifica siempre el cuadro médico de tu provincia y declara todo en el cuestionario de salud para evitar sorpresas legales.',
+          'El mejor seguro es el que cubre lo que necesitas cuando lo necesitas. Antes de contratar, verifica siempre el cuadro médico de tu provincia y declara todo en el cuestionario de salud para evitar imprevistos legales.',
         ],
       },
     ],
@@ -405,7 +405,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           'La pregunta que más se repite no es "¿qué seguro necesito contratar?", sino "¿qué tengo yo exactamente en el que ya estoy pagando?". La mayoría no lo sabe con certeza.',
           'No es falta de interés, sino que el sector no siempre facilita la lectura. Un documento de 20 páginas con terminología técnica no invita a profundizar.',
-          'Este artículo explica dónde está la información, cómo se llama y qué significa cada parte para que no haya sorpresas cuando realmente necesites usar el seguro.',
+          'Este artículo explica dónde está la información, cómo se llama y qué significa cada parte para que no haya imprevistos cuando realmente necesites usar el seguro.',
         ],
       },
       {
@@ -453,7 +453,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Qué es exactamente una exclusión?',
-        answer: 'Es una situación que la póliza dice explícitamente que no cubre. Conocerlas es la única forma de no llevarte sorpresas en un siniestro.',
+        answer: 'Es una situación que la póliza dice explícitamente que no cubre. Conocerlas es la única forma de no llevarte imprevistos en un siniestro.',
       },
       {
         question: '¿Con qué frecuencia debo revisar mis pólizas?',
@@ -805,7 +805,7 @@ export const blogPosts: BlogPost[] = [
           '• Evitamos que te rindas ante un call center saturado gestionando el problema por ti.',
           '• Detectamos pólizas repetidas que llevan años cobrándose sin sentido.',
           '• Negociamos mejores precios al conocer el mercado global, no solo una compañía.',
-          '• Aclaráramos qué cubre tu póliza antes de que el siniestro ocurra, evitando sorpresas de última hora.',
+          '• Aclaráramos qué cubre tu póliza antes de que el siniestro ocurra, evitando imprevistos de última hora.',
         ],
       },
       {
@@ -1465,7 +1465,7 @@ export const blogPosts: BlogPost[] = [
       'No escatimes en la Responsabilidad Civil de tu seguro de hogar: en urbanizaciones, los daños por agua a terceros pueden ser muy costosos.',
     ],
     faqs: [
-      { question: '¿Es mejor contratar un seguro de salud con o sin copago en Boadilla?', answer: 'Para familias con uso frecuente (pediatría, especialistas), suele compensar la modalidad sin copago para evitar sorpresas en la factura mensual. Para perfiles jóvenes o deportistas con uso puntual, el copago puede reducir la prima considerablemente.' },
+      { question: '¿Es mejor contratar un seguro de salud con o sin copago en Boadilla?', answer: 'Para familias con uso frecuente (pediatría, especialistas), suele compensar la modalidad sin copago para evitar variaciones en la factura mensual. Para perfiles jóvenes o deportistas con uso puntual, el copago puede reducir la prima considerablemente.' },
       { question: '¿Qué cubre el seguro de vida vinculado a la hipoteca?', answer: 'Su objetivo principal es cancelar la deuda con el banco en caso de fallecimiento o invalidez del titular. Sin embargo, contratarlo fuera del banco permite proteger también a la familia con capitales adicionales y mejores precios.' },
     ],
   },
@@ -1541,7 +1541,7 @@ export const blogPosts: BlogPost[] = [
     date: '2026-04-14',
     readTime: '22 min',
     metaTitle: 'Precio Seguro Salud Madrid 2026 · ¿Cuánto cuesta realmente?',
-    metaDescription: 'Descubre cuánto cuesta un seguro de salud en Madrid en 2026. Precios para autónomos, familias y particulares. Comparativa honesta sin sorpresas comerciales.',
+    metaDescription: 'Descubre cuánto cuesta un seguro de salud en Madrid en 2026. Precios para autónomos, familias y particulares. Comparativa honesta sin letra pequeña.',
     sections: [
       {
         heading: 'Entendiendo el mercado de la salud privada en la Comunidad de Madrid',
@@ -1598,7 +1598,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'seguro-dental-familias-madrid',
     title: 'Seguro dental para familias en Madrid: guía sin letra pequeña 2026',
-    excerpt: '¿Merece la pena un seguro dental familiar en Madrid? Analizamos los actos gratuitos, los descuentos reales y cómo ahorrar en ortodoncia e implantes sin sorpresas.',
+    excerpt: '¿Merece la pena un seguro dental familiar en Madrid? Analizamos los actos gratuitos, los descuentos reales y cómo ahorrar en ortodoncia e implantes con transparencia total.',
     image: '/images/products/dental-hero.webp',
     imageAlt: 'Familia en Madrid cuidando su salud dental con un seguro profesional',
     date: '2026-04-14',
@@ -1957,7 +1957,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           'Aprovechar la deducción fiscal es importante, pero más importante es tener la cobertura que realmente necesitas. Como autónomo, no tienes la red de seguridad de una empresa que te mantenga la nómina durante una baja prolongada. Si enfermas y necesitas atención médica rápida para volver a trabajar, un buen seguro de salud se convierte en una inversión rentable, no en un gasto.',
           'Para autónomos jóvenes y sanos, un seguro con copago moderado suele ser la opción más económica. Pagas una prima mensual baja y asumes un pequeño coste por cada consulta. Si vas poco al médico, la combinación de prima baja + copago te sale más rentable que un seguro sin copago.',
-          'Si tienes hijos o preexistencias médicas, un seguro sin copago te dará la tranquilidad de saber exactamente cuánto vas a pagar cada mes, sin sorpresas. El coste mensual es mayor, pero tienes acceso ilimitado a especialistas sin coste adicional.',
+          'Si tienes hijos o preexistencias médicas, un seguro sin copago te dará la tranquilidad de saber exactamente cuánto vas a pagar cada mes, sin imprevistos. El coste mensual es mayor, pero tienes acceso ilimitado a especialistas sin coste adicional.',
           'Para autónomos mayores de 45 años, recomendamos evaluar seguros con cobertura de prótesis, rehabilitación y medicina preventiva. A esta edad, los chequeos regulares y la detección precoz pueden evitar parones largos en tu actividad profesional.',
         ],
       },
