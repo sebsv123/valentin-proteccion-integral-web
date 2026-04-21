@@ -42,7 +42,10 @@ const rosaSchema = {
   "description": "Mediadora de seguros independiente registrada en la DGSFP con más de 10 años asesorando familias en Madrid y Boadilla del Monte.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros Dentales", "Seguros de Decesos", "Seguros de Mascotas"],
-  "areaServed": "Madrid"
+  "areaServed": "Madrid",
+  "sameAs": [
+    "https://www.linkedin.com/in/rosa-isabel-valentin-gonzalez-3a0b16141/"
+  ]
 };
 
 const sebastianSchema = {
@@ -53,7 +56,10 @@ const sebastianSchema = {
   "description": "Mediador de seguros independiente registrado en la DGSFP, especialista en seguros de salud, vida y acc identes para familias y autónomos en Madrid.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
-  "areaServed": "Madrid"
+  "areaServed": "Madrid",
+  "sameAs": [
+    "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187/"
+  ]
 };
 
 export default function SobreNosotrosPage() {
@@ -218,6 +224,27 @@ export default function SobreNosotrosPage() {
                           );
                         })}
                       </div>
+                      <a
+                        href="https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)] transition-colors"
+                        aria-label="Ver perfil de Sebastián en LinkedIn"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="h-4 w-4 shrink-0"
+                          aria-hidden="true"
+                        >
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        Ver perfil en LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5 opacity-60" aria-hidden="true">
+                          <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4zm6.5-1a.75.75 0 000 1.5h2.44l-6.97 6.97a.75.75 0 001.06 1.06L14.25 7.06v2.44a.75.75 0 001.5 0V4.75a.75.75 0 00-.75-.75h-4.25z" clipRule="evenodd" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -238,6 +265,24 @@ export default function SobreNosotrosPage() {
                   <a href={buildWhatsAppHref('Hola Rosa, quiero hablar contigo sobre un seguro.')} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                   <Link href="/contacto" className="btn-secondary"><Phone className="h-4 w-4" /> Contactar</Link>
                   <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
+                  <a
+                    href="https://www.linkedin.com/in/rosa-isabel-valentin-gonzalez-3a0b16141/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-ghost"
+                    aria-label="Ver perfil de Rosa en LinkedIn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>
