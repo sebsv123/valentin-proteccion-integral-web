@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-individual`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/accidentes-decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/accidentes`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },

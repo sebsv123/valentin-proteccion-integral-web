@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'contratar seguro dental Madrid',
     'seguro dental Boadilla del Monte',
   ],
-  alternates: { canonical: 'https://valentinproteccionintegral.com/seguros/salud-dental' },
+  alternates: { canonical: 'https://valentinproteccionintegral.com/seguros/dental' },
   openGraph: {
     title: 'Seguro Dental en Madrid · Sin Carencias | Valentín Protección Integral',
     description: 'Seguro dental desde 8€/mes en Boadilla del Monte, Madrid. Sin carencias desde el día 1. Asesoramiento sin compromiso.',

@@ -15,7 +15,6 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
-import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import { DentalLeadForm } from "./dental-lead-form";
 import { DentalFAQ } from "./dental-faq";
 
@@ -68,8 +67,8 @@ const coverageData = [
   { s: "Radiografías", d: "✅ Desde el día 1" },
   { s: "Empastes y obturaciones", d: "✅ Desde el día 1" },
   { s: "Endodoncias", d: "✅ Desde el día 1" },
-  { s: "Ortodoncia", d: "✅ Desde el día 1" },
-  { s: "Implantes dentales", d: "✅ Desde el día 1" },
+  { s: "Ortodoncia", d: "✅ Según modalidad" },
+  { s: "Implantes dentales", d: "✅ Según modalidad" },
 ];
 
 export function DentalLanding() {
@@ -77,11 +76,10 @@ export function DentalLanding() {
     <>
 
       {/* 🦷 BARRA STICKY */}
-      <div className="sticky top-0 z-50 bg-blue-700 text-white">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
-          <p className="text-sm font-medium leading-snug flex-1 min-w-0">
-            <span className="sm:hidden">🦷 Sin carencias desde el día 1.</span>
-            <span className="hidden sm:inline">🦷 Sin carencias en revisiones y limpiezas desde el primer día. Si no es así, te lo decimos antes de firmar.</span>
+      <div className="sticky top-16 z-40 w-full bg-blue-700 text-white py-2 sm:py-3 px-4 shadow-md">
+        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
+          <p className="text-sm font-semibold leading-tight text-center flex-1">
+            ¿Tienes ya un seguro dental? Tráenoslo — en 10 años y más de 1.200 familias siempre hemos encontrado uno mejor.
           </p>
           <a
             href="#contacto"
@@ -105,9 +103,7 @@ export function DentalLanding() {
               className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold">
-                <AnimatedShinyText className="inline-flex items-center">
-                  <span>⭐ Más de 200 familias madrileñas confían en nosotros</span>
-                </AnimatedShinyText>
+                <BadgeCheck className="h-4 w-4 mr-1.5" /> Más de 1.200 familias protegidas en Madrid
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight">
@@ -116,14 +112,18 @@ export function DentalLanding() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Seguro dental en Madrid sin períodos de carencia en ningún tratamiento.
-                Rosa y Sebastián te responden en menos de 30 minutos, de forma personal.
+                En los seguros que gestionamos, revisiones y limpiezas están disponibles desde el primer día. Rosa y Sebastián te explican exactamente qué incluye cada opción antes de que decidas. Sin letra pequeña. Sin presión.
               </p>
 
-              {/* Badge de incentivo - NUEVO */}
-              <div className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 border-2 border-emerald-200 text-emerald-800">
-                <span className="text-xl">🎁</span>
-                <span className="font-semibold">Contrata salud + dental juntos y obtén el primer mes de dental sin coste</span>
+              {/* Bloque de incentivo destacado */}
+              <div className="w-full lg:w-auto p-4 rounded-xl bg-emerald-50 border-2 border-emerald-200">
+                <p className="text-sm font-bold text-emerald-800 uppercase tracking-wide mb-1">🎁 Sorpresa para nuevos clientes</p>
+                <p className="text-base font-semibold text-emerald-900">
+                  Contrata salud + dental juntos y el primer mes de dental es gratis.
+                </p>
+                <p className="text-sm text-emerald-700 mt-1">
+                  Válido para nuevos clientes. Rosa te lo confirma al contactar.
+                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -279,7 +279,7 @@ export function DentalLanding() {
                 <div className="flex gap-8 relative">
                   <div className="flex-none w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">1</div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Paso 1 — 📝 Rellenas el formulario</h3>
+                    <h3 className="text-2xl font-bold mb-2">Paso 1 — Escríbenos por WhatsApp o rellena el formulario</h3>
                     <p className="text-muted-foreground text-lg">Solo tu nombre, teléfono y cuántas personas necesitan cobertura.</p>
                   </div>
                 </div>
@@ -402,15 +402,13 @@ export function DentalLanding() {
                 <ShieldCheck className="h-10 w-10 text-primary" />
               </div>
               <h2 className="text-3xl font-bold sm:text-4xl mb-6">
-                Nuestra garantía de transparencia
+                La garantía que nadie más da
               </h2>
               <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-                Si tras hablar con nosotros sientes que no hemos sido 100% claros,
-                te buscamos una alternativa mejor. Aunque no sea con nosotros.
+                Si después de hablar con nosotros sientes que no hemos sido completamente honestos, te buscamos una alternativa mejor. Aunque no sea con nosotros. En 10 años nunca ha hecho falta — pero si llega el día, lo cumplimos.
               </p>
               <p className="text-lg italic font-medium opacity-70 border-t pt-6">
-                &ldquo;En más de 10 años nunca hemos tenido que hacerlo. Pero si llega el día,
-                lo haremos. Porque la honestidad no es solo una palabra.&rdquo;
+                &ldquo;En 10 años ningún cliente ha tenido que usarla. Pero si llega el día, lo cumplimos. Sin excusas.&rdquo;
               </p>
             </div>
           </div>
