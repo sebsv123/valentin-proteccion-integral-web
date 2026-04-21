@@ -300,7 +300,6 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container mx-auto px-4">
@@ -399,7 +398,6 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
@@ -578,7 +576,6 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
@@ -638,7 +635,6 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-green-50"
       >
         <div className="container mx-auto px-4">
@@ -708,12 +704,11 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
         <div className="container mx-auto px-4">
           <motion.div variants={fadeInUpVariants} className="text-center mb-12">
-            <h2 className="text-3xl font-bold sm:text-5xl mb-4">Cuanto más completa tu protección, más económica</h2>
+            <h2 className="text-3xl font-bold sm:text-5xl mb-4">Amplía tu protección</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Muchos de nuestros clientes empezaron con un solo producto. Hoy tienen su familia completamente protegida y pagan menos de lo que esperaban.
             </p>
@@ -832,7 +827,6 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
-        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container max-w-5xl px-4">
