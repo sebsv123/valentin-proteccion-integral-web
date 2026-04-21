@@ -119,19 +119,10 @@ export function SaludLanding() {
     <>
       {/* 1. BARRA STICKY */}
       <div className="sticky top-16 z-40 w-full bg-[#002244] text-white py-2 sm:py-3 px-4 shadow-md">
-        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
-          <p className="text-sm font-semibold leading-tight flex-1">
-            <span className="sm:hidden">Tráenos cualquier presupuesto que tengas.</span>
-            <span className="hidden sm:inline">
-              <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
-            </span>
+        <div className="container mx-auto max-w-5xl flex items-center justify-center gap-3">
+          <p className="text-sm font-semibold leading-tight text-center">
+            ¿Tienes ya un presupuesto? Tráenoslo y lo mejoramos — o te decimos honestamente si ya es bueno.
           </p>
-          <a
-            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20comparar%20precios%20de%20seguro%20de%20salud"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
-          >
-            Compruébalo gratis →
-          </a>
         </div>
       </div>
 
@@ -796,8 +787,36 @@ export function SaludLanding() {
         </div>
       </motion.section>
 
-      {/* GARANTÍA DE PRECIO (COMPONENTE REUTILIZABLE) */}
-      <GarantiaPrecio />
+      {/* GARANTÍA DE PRECIO PERSONALIZADA */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUpVariants}
+        className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white"
+      >
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+              <Shield className="h-5 w-5" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold">Nuestra Garantía de Precio Justo</h2>
+          </div>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Si encuentras el mismo seguro más barato con otra correduría independiente, te lo igualamos. Sin letra pequeña.
+          </p>
+          <a
+            href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20salud"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
+            )}
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Compara ahora gratis
+          </a>
+        </div>
+      </motion.section>
 
       {/* 10. FAQ */}
       <motion.section

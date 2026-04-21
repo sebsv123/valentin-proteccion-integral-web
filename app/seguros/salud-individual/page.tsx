@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_conversando.png", alt: "Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid" }],
   },
   twitter: {
-    title: "Seguro de Salud en Madrid · Desde 30€/mes",
+    title: "Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral",
     description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
   },
   alternates: {
