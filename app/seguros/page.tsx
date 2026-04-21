@@ -11,7 +11,7 @@ import { buildWhatsAppHref, getSubpagesForProduct, products, site } from '@/lib/
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import RevealLight from '@/components/ui/reveal-light';
-import { getPexelsImage } from '@/lib/pexels';
+import { getLocalPexelsImage } from '@/lib/pexels';
 
 export const metadata: Metadata = {
   title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
@@ -32,17 +32,15 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default async function SegurosHubPage() {
-  // Obtener imágenes de Pexels para todos los productos (fallback a imagen local si falla)
-  const productsWithImages = await Promise.all(
-    products.map(async (product) => {
-      const pexelsImage = await getPexelsImage(product.slug);
-      return {
-        ...product,
-        pexelsImage: pexelsImage === '/images/blog/default.jpg' ? product.cardImage : pexelsImage,
-      };
-    })
-  );
+export default function SegurosHubPage() {
+  // Usar imágenes locales de Pexels para mejor rendimiento (LCP)
+  const productsWithImages = products.map((product) => {
+    const localImage = getLocalPexelsImage(product.slug);
+    return {
+      ...product,
+      pexelsImage: localImage || product.cardImage,
+    };
+  });
 
   return (
     <>

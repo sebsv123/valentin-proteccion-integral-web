@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { HeroLeadSection } from '@/components/hero-animated';
 import { TrendingUp, Users, Heart, Briefcase } from 'lucide-react';
 import { ProductCategoryGrid } from '@/components/home-sections';
-import { getPexelsImage } from '@/lib/pexels';
+import { getLocalPexelsImage } from '@/lib/pexels';
 
 // Lazy load componentes debajo del fold para mejorar LCP (sin ssr: false para Server Components)
 const StatsSection = dynamicImport(() => import('@/components/hero-animated').then(m => m.StatsSection));
@@ -51,18 +51,16 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default async function HomePage() {
-  // Obtener imágenes de Pexels para todos los productos (fallback a imagen local si falla)
-  const { products } = await import('@/lib/products');
-  const productsWithImages = await Promise.all(
-    products.map(async (product) => {
-      const pexelsImage = await getPexelsImage(product.slug);
-      return {
-        ...product,
-        pexelsImage: pexelsImage === '/images/blog/default.jpg' ? product.cardImage : pexelsImage,
-      };
-    })
-  );
+export default function HomePage() {
+  // Usar imágenes locales de Pexels para mejor rendimiento (LCP)
+  const { products }: { products: import('@/lib/products').Product[] } = require('@/lib/products');
+  const productsWithImages = products.map((product: import('@/lib/products').Product) => {
+    const localImage = getLocalPexelsImage(product.slug);
+    return {
+      ...product,
+      pexelsImage: localImage || product.cardImage,
+    };
+  });
   return (
     <>
       {/* === SEO: LocalBusiness Schema === */}

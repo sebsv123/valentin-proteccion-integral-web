@@ -113,6 +113,76 @@ export async function getPexelsImage(query: string): Promise<string> {
 }
 
 /**
+ * Mapa de imágenes locales de Pexels descargadas y optimizadas
+ * Usar estas en lugar de llamadas API para mejor rendimiento (LCP)
+ */
+const localPexelsImages: Record<string, string> = {
+  // Familia y hogar
+  'familia-feliz': '/images/pexels/familia-feliz-pexels.webp',
+  'seguro-vida-familia': '/images/pexels/seguro-vida-familia-pexels.webp',
+  
+  // Salud y bienestar
+  'salud': '/images/pexels/salud-bienestar-pexels.webp',
+  'salud-individual': '/images/pexels/salud-bienestar-pexels.webp',
+  'salud-bienestar': '/images/pexels/salud-bienestar-pexels.webp',
+  
+  // Mascotas
+  'mascotas': '/images/pexels/mascota-familia-pexels.webp',
+  
+  // Dental
+  'dental': '/images/pexels/dental-salud-pexels.webp',
+  'salud-dental': '/images/pexels/dental-salud-pexels.webp',
+  
+  // Autónomos y negocios
+  'autonomo-trabajo': '/images/pexels/autonomo-trabajo-pexels.webp',
+  'negocio': '/images/pexels/negocio-oficina-pexels.webp',
+  'empresa': '/images/pexels/negocio-oficina-pexels.webp',
+  'proteccion-juridica': '/images/pexels/negocio-oficina-pexels.webp',
+  
+  // Viaje
+  'viaje': '/images/pexels/seguro-viaje-pexels.webp',
+  
+  // Local/Madrid
+  'madrid': '/images/pexels/madrid-ciudad-pexels.webp',
+  'boadilla-del-monte': '/images/pexels/madrid-ciudad-pexels.webp',
+  
+  // Testimonios
+  'cliente-satisfecho': '/images/pexels/cliente-satisfecho-pexels.webp',
+  
+  // Vida (protección familiar)
+  'vida': '/images/pexels/seguro-vida-familia-pexels.webp',
+  
+  // Accidentes y decesos (usar vida como alternativa)
+  'accidentes': '/images/pexels/salud-bienestar-pexels.webp',
+  'decesos': '/images/pexels/seguro-vida-familia-pexels.webp',
+  
+  // Hogar
+  'hogar': '/images/pexels/familia-feliz-pexels.webp',
+  'electrodomesticos': '/images/pexels/familia-feliz-pexels.webp',
+};
+
+/**
+ * Obtiene la ruta de una imagen local de Pexels
+ * @param slug - Slug del producto o término de búsqueda
+ * @returns Ruta local de la imagen o null si no existe
+ */
+export function getLocalPexelsImage(slug: string): string | null {
+  // Buscar coincidencia exacta
+  if (localPexelsImages[slug]) {
+    return localPexelsImages[slug];
+  }
+  
+  // Buscar coincidencias parciales
+  for (const [key, path] of Object.entries(localPexelsImages)) {
+    if (slug.includes(key) || key.includes(slug)) {
+      return path;
+    }
+  }
+  
+  return null;
+}
+
+/**
  * Verifica si una imagen es local (empieza con /images/)
  * @param imagePath - Ruta de la imagen
  * @returns true si es local
