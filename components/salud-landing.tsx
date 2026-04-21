@@ -1,23 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
-import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-
-const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 z-0" />,
-});
-
-const Globe = dynamic(() => import("@/components/magicui/globe"), {
-  ssr: false,
-  loading: () => null,
-});
 import {
   Stethoscope,
   Microscope,
@@ -129,20 +116,6 @@ export function SaludLanding() {
 
       {/* 2. HERO */}
       <section className="relative min-h-screen flex items-center justify-center border-b overflow-hidden py-20 pt-24 bg-background">
-        <DotGrid 
-          className="z-0"
-          dotSize={4}
-          gap={isTouchDevice ? 32 : 28}
-          baseColor="#bbf7d0"
-          activeColor="#16a34a"
-          proximity={isTouchDevice ? 0 : 80}
-          shockStrength={isTouchDevice ? 0 : 2}
-        />
-        <div className="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none z-[5]">
-          <Globe className="inset-0" />
-          <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
-          <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-background to-transparent" />
-        </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Columna izquierda - Texto */}
@@ -153,9 +126,9 @@ export function SaludLanding() {
               className="text-center lg:text-left"
             >
               <motion.div variants={fadeInUpVariants} className="mb-6">
-                <AnimatedShinyText className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-semibold">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-semibold">
                   <Heart className="h-4 w-4 inline mr-1.5" /> Más de 200 familias madrileñas confían en nosotros
-                </AnimatedShinyText>
+                </span>
               </motion.div>
 
               <motion.h1
@@ -287,11 +260,6 @@ export function SaludLanding() {
             </motion.div>
           </div>
         </div>
-
-        {/* Globe — visible solo en móvil, debajo del formulario */}
-        <div className="lg:hidden relative w-full max-w-[360px] aspect-square mx-auto mt-12">
-          <Globe className="top-0" />
-        </div>
       </section>
 
       {/* 3. BENEFICIOS PRINCIPALES */}
@@ -309,67 +277,46 @@ export function SaludLanding() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <Stethoscope className="h-8 w-8" />,
+            {[{
+                icon: <Stethoscope className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Médico de cabecera",
                 desc: "Tu médico personal, sin esperas de la sanidad pública.",
-                color: "bg-green-100 text-green-600",
               },
               {
-                icon: <Microscope className="h-8 w-8" />,
+                icon: <Microscope className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Especialistas",
                 desc: "Cardiólogo, dermatólogo, traumatólogo... cuando los necesites.",
-                color: "bg-blue-100 text-blue-600",
               },
               {
-                icon: <Siren className="h-8 w-8" />,
+                icon: <Siren className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Urgencias 24h",
                 desc: "Atención urgente cualquier día del año, a cualquier hora.",
-                color: "bg-red-100 text-red-600",
               },
               {
-                icon: <Building2 className="h-8 w-8" />,
+                icon: <Building2 className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Hospitalización",
                 desc: "Habitación individual, sin listas, con la mejor atención.",
-                color: "bg-purple-100 text-purple-600",
               },
               {
-                icon: <Baby className="h-8 w-8" />,
+                icon: <Baby className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Maternidad",
                 desc: "Seguimiento completo del embarazo y parto con los mejores especialistas.",
-                color: "bg-pink-100 text-pink-600",
               },
               {
-                icon: <FlaskConical className="h-8 w-8" />,
+                icon: <FlaskConical className="h-7 w-7 text-muted-foreground mb-3" />,
                 title: "Análisis y pruebas",
                 desc: "Radiografías, analíticas y pruebas diagnósticas sin demora.",
-                color: "bg-amber-100 text-amber-600",
               },
-            ].map((beneficio, i) =>
-              isTouchDevice ? (
-                <div
-                  key={i}
-                  className="flex flex-col gap-4 items-center text-center p-6 rounded-2xl border bg-card shadow-sm"
-                >
-                  <div className={cn("p-3 rounded-xl", beneficio.color)}>
-                    {beneficio.icon}
-                  </div>
-                  <h3 className="text-xl font-bold">{beneficio.title}</h3>
-                  <p className="text-muted-foreground">{beneficio.desc}</p>
-                </div>
-              ) : (
-                <MagicContainer key={i}>
-                  <MagicCard className="flex flex-col gap-4 items-center text-center p-6">
-                    <div className={cn("p-3 rounded-xl", beneficio.color)}>
-                      {beneficio.icon}
-                    </div>
-                    <h3 className="text-xl font-bold">{beneficio.title}</h3>
-                    <p className="text-muted-foreground">{beneficio.desc}</p>
-                  </MagicCard>
-                </MagicContainer>
-              )
-            )}
+            ].map((beneficio, i) => (
+              <div
+                key={i}
+                className="flex flex-col gap-3 items-start text-left p-6 rounded-2xl border bg-card hover:shadow-md transition-shadow"
+              >
+                {beneficio.icon}
+                <h3 className="text-xl font-bold">{beneficio.title}</h3>
+                <p className="text-muted-foreground">{beneficio.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </motion.section>
@@ -740,14 +687,14 @@ export function SaludLanding() {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                icon: <Heart className="h-8 w-8 text-pink-500" />,
+                icon: <Heart className="h-8 w-8 text-pink-500 mb-4" />,
                 title: "Dental",
                 desc: "¿Ya lo tienes? Perfecto. ¿Aún no? Desde 9€/mes más.",
                 link: "/seguros/salud-dental",
                 linkText: "Ver seguro dental →",
               },
               {
-                icon: <Shield className="h-8 w-8 text-blue-500" />,
+                icon: <Shield className="h-8 w-8 text-blue-500 mb-4" />,
                 title: "Vida",
                 desc: "Protege a tu familia si tú faltas.",
                 link: "#",
@@ -755,7 +702,7 @@ export function SaludLanding() {
                 disabled: true,
               },
               {
-                icon: <Zap className="h-8 w-8 text-amber-500" />,
+                icon: <Zap className="h-8 w-8 text-amber-500 mb-4" />,
                 title: "Accidentes",
                 desc: "Cobertura extra ante cualquier imprevisto.",
                 link: "#",
@@ -766,11 +713,9 @@ export function SaludLanding() {
               <motion.div
                 key={i}
                 variants={fadeInUpVariants}
-                className="p-8 rounded-2xl border bg-card/50 text-center"
+                className="p-8 rounded-2xl border bg-card/50 text-left"
               >
-                <div className="mb-4">
-                  {producto.icon}
-                </div>
+                {producto.icon}
                 <h3 className="text-xl font-bold mb-2">{producto.title}</h3>
                 <p className="text-muted-foreground mb-4">{producto.desc}</p>
                 <a
@@ -887,7 +832,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUpVariants}
-        className="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-green-800 to-green-900 text-white"
+        className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white"
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6">
