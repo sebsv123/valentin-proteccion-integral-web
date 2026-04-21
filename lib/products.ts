@@ -606,22 +606,9 @@ export const products: Product[] = [
     summary:
       'Asistencia médica, anulación, equipaje y modalidades distintas según el tipo de viaje, con una explicación más útil y menos genérica.',
     highlights: [
-      {
-        title: "Asistencia médica real en el extranjero",
-        description: "No todas las pólizas tienen el mismo límite. Para Europa suelen ser suficientes 30.000€, pero para América o Asia conviene revisar que el límite sea de al menos 150.000€. Te explicamos exactamente qué tienes antes de contratar."
-      },
-      {
-        title: "Cancelación — el detalle que más importa",
-        description: "La anulación no siempre cubre lo que parece. Hay motivos que están excluidos por defecto (huelga de aerolínea, cambio de trabajo, crisis personal). Conviene saber qué situaciones están realmente cubiertas antes de reservar."
-      },
-      {
-        title: "Equipaje con límites reales",
-        description: "La cobertura de equipaje varía enormemente entre modalidades. Hay pólizas que cubren hasta 1.500€ y otras que llegan a 3.000€. El límite por objeto también cambia. Te lo aclaramos para que sepas exactamente a qué atenerte."
-      },
-      {
-        title: "Multiviaje — cuándo compensa de verdad",
-        description: "Una póliza anual multiviaje suele compensar si viajas dos o más veces al año. Con tres viajes, el ahorro respecto a contratar pólizas puntuales puede superar el 40%. Rosa y Sebastián te hacen el cálculo según tu uso real."
-      }
+      'Para Europa, un límite médico de 30.000€ suele ser suficiente. Para América o Asia conviene revisar que llegue al menos a 150.000€. Es el detalle que más cambia entre pólizas y el que más importa si algo va mal.',
+      'La anulación no cubre todo lo que parece. Hay motivos que están excluidos por defecto según modalidad (huelga de aerolínea, cambio de trabajo, situaciones personales). Conviene saber exactamente qué situaciones están cubiertas antes de reservar.',
+      'Una póliza multiviaje anual suele compensar desde el segundo viaje del año. Con tres o más viajes, el ahorro respecto a contratar pólizas puntuales puede superar el 40%. Rosa y Sebastián te hacen el cálculo según tu uso real.',
     ],
     benefits: [
       'Más claridad al diferenciar límites y destinos.',
@@ -629,23 +616,25 @@ export const products: Product[] = [
       'Ayuda para elegir según uso real del viaje.',
     ],
     whatIncludes: [
-      'Asistencia médica en viaje.',
-      'Apoyo ante incidencias durante el desplazamiento.',
-      'Coberturas de equipaje o interrupción, según modalidad.',
-      'Opciones para viajes puntuales o frecuentes.',
+      'Asistencia médica de urgencia en el extranjero (límite varía según modalidad y destino).',
+      'Repatriación sanitaria o de restos mortales.',
+      'Cobertura de equipaje: pérdida, robo y daños (límite según modalidad).',
+      'Anulación del viaje por causas justificadas, según condiciones.',
+      'Opciones para viaje puntual, multiviaje anual o estancia larga por estudios.',
     ],
     whatVaries: [
-      'La anulación.',
-      'El límite médico.',
-      'El ámbito territorial.',
-      'La duración cubierta.',
-      'El tipo de viaje admitido.',
+      'El límite de asistencia médica (de 30.000€ a 300.000€ según modalidad y destino).',
+      'Si la anulación está incluida o es opcional.',
+      'El ámbito territorial (Europa, mundial, países Schengen).',
+      'La duración máxima cubierta por viaje.',
+      'Si cubre enfermedades preexistentes en situación estable.',
     ],
     whatReview: [
-      'Si es viaje puntual o frecuente.',
-      'Si necesitas anulación.',
-      'Qué límite médico buscas.',
-      'Si tu destino o motivo del viaje requiere una modalidad específica.',
+      'Si viajas una o varias veces al año (puntual vs. multiviaje).',
+      'El destino: Europa vs. resto del mundo (el límite médico cambia mucho).',
+      'Si necesitas anulación incluida o es algo prescindible para ti.',
+      'Si tienes alguna condición médica preexistente que quieras cubrir.',
+      'Si el viaje es de ocio, trabajo, estudios o larga estancia.',
     ],
     cases: ['ESCAPADAS', 'ESTUDIOS', 'MULTIVIAJE'],
     faqs: [
@@ -663,17 +652,17 @@ export const products: Product[] = [
       },
       {
         q: "¿El seguro de viaje cubre las enfermedades preexistentes?",
-        a: "Depende de la modalidad y la aseguradora. Algunas cubren urgencias derivadas de enfermedades preexistentes si estaban estables antes del viaje; otras las excluyen totalmente. Es exactamente el tipo de detalle que Rosa y Sebastián revisan contigo antes de contratar, para que no haya sorpresas cuando lo necesites."
+        a: "Depende de la compañía y la modalidad. Algunas cubren las urgencias derivadas de enfermedades preexistentes si estaban estables antes del viaje; otras las excluyen directamente. Es exactamente el tipo de detalle que Rosa y Sebastián revisan contigo antes de contratar, para que no haya sorpresas cuando lo necesites de verdad."
       }
     ],
     disclaimer:
       'Asistencia médica, anulación, equipaje, duración y ámbito territorial sujetos a modalidad y documentación contractual.',
     related: ['salud', 'accidentes', 'mascotas'],
     incentive: "¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.",
-    whatsappMessage: 'Hola, quiero orientación sobre VIAJE para elegir bien según mi destino y duración.',
-    metaTitle: 'Seguro de Viaje Madrid · Desde 3€/día',
-    metaDescription: 'Viaja con asistencia médica, anulación y equipaje protegido. Elige la cobertura adecuada según destino, duración y tipo de viaje.',
-    h1: 'Seguro de Viaje en Madrid: Viaja sin Preocupaciones',
+    whatsappMessage: 'Hola, quiero orientación sobre un seguro de viaje. ¿Pueden ayudarme a elegir según mi destino y fechas?',
+    metaTitle: 'Seguro de Viaje Madrid · Asistencia Médica, Anulación y Equipaje | Valentín Protección Integral',
+    metaDescription: 'Seguro de viaje en Madrid desde 3€/día. Asistencia médica, repatriación, anulación y equipaje. Puntual, multiviaje o para estudios. Rosa y Sebastián te orientan en 30 minutos, gratis.',
+    h1: 'Seguro de Viaje en Madrid: Cobertura Médica, Anulación y Equipaje',
   },
 ];
 

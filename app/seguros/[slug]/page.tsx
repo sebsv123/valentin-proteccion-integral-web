@@ -89,12 +89,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
         <ProductHero product={product} />
 
-        {/* Garantía de precio destacada en viaje — arriba por ser producto comparado */}
+        {/* Garantía de precio destacada para viaje */}
         {slug === 'viaje' && (
-          <div className="bg-[#002244] text-white py-4 px-4">
-            <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-              <p className="text-base font-semibold text-white/90">
-                🛡️ <strong>Garantía de precio:</strong> Si tu banco o comparador te da un precio más bajo con las mismas coberturas, te lo igualamos.
+          <div className="bg-[#002244] text-white py-3 px-4">
+            <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <p className="text-sm font-semibold text-white/90">
+                🛡️ <strong>Garantía de precio:</strong> Si tu banco o comparador te da el mismo seguro más barato, te lo igualamos. Sin letra pequeña.
               </p>
               <a
                 href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
@@ -257,6 +257,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Si encuentras el mismo seguro más barato con otra correduría independiente, te lo igualamos. Sin letra pequeña.
             </p>
+            {slug === 'viaje' && (
+              <p className="text-base text-emerald-300 font-medium mb-4 -mt-4">
+                ¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en menos de 30 minutos tienes opciones reales encima de la mesa.
+              </p>
+            )}
             <a
               href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto"
               className={cn(
@@ -385,24 +390,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   </h2>
                   <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">
                     Con más de 10 años comparando opciones para familias y viajeros frecuentes en Madrid, 
-                    sabemos que el seguro de viaje que vende el banco rara vez es el más completo. 
-                    Te explicamos qué hay detrás de cada póliza antes de que contrates.
+                    sabemos que el seguro que vende el banco rara vez es el más completo. 
+                    Te explicamos qué hay detrás de cada modalidad antes de que contrates.
                   </p>
-                  <p className="text-base text-[var(--muted)] leading-relaxed mb-6 font-medium">
+                  <p className="text-base font-semibold text-[var(--muted)] leading-relaxed mb-6">
                     ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a
-                      href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."
-                      className={cn(
-                        buttonVariants({ size: 'lg' }),
-                        'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
-                      )}
-                    >
-                      <WhatsAppIcon className="h-5 w-5" />
-                      Hablar con Rosa Valentín
-                    </a>
-                  </div>
+                  <a
+                    href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."
+                    className={cn(
+                      buttonVariants({ size: 'lg' }),
+                      'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
+                    )}
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    Hablar con Rosa Valentín
+                  </a>
                 </div>
               </div>
             </div>
