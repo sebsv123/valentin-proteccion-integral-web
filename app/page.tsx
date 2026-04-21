@@ -98,7 +98,7 @@ export default async function HomePage() {
               "@type": "AggregateRating",
               "ratingValue": "5.0",
               "bestRating": "5",
-              "ratingCount": "47"
+              "ratingCount": "49"
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
