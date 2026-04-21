@@ -17,13 +17,11 @@ import {
   UserCheck,
   RefreshCw,
   ChevronDown,
-  ArrowRight,
   Shield,
   Heart,
   Zap,
   Phone,
   BadgePercent,
-  Hospital,
   Lightbulb,
   Gift,
   ArrowUpRight,
@@ -32,7 +30,6 @@ import {
   Hourglass,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { GarantiaPrecio } from "@/components/garantia-precio";
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -56,11 +53,9 @@ export function SaludLanding() {
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    setIsTouchDevice(window.matchMedia("(hover: none)").matches);
     setPrefersReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, []);
 
@@ -509,12 +504,12 @@ export function SaludLanding() {
             <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex gap-3 items-start">
               <ArrowUpRight className="h-6 w-6 text-emerald-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Con copago por consulta. Sin carencias ocultas. La opción más económica para empezar.
+                <p className="font-bold text-emerald-800 text-sm">
+                  ¿Vienes de otra compañía? Te mantenemos la antigüedad.
                 </p>
                 <p className="text-emerald-700 text-sm mt-1">
-                  Si ya llevas tiempo asegurado con otra empresa, podemos eliminar 
-                  o reducir las carencias y reconocer tu antigüedad. 
+                  Si ya llevas tiempo asegurado con otra empresa, podemos eliminar
+                  o reducir las carencias y reconocer tu antigüedad.
                   Una llamada y lo gestionamos todo.
                 </p>
                 <a
