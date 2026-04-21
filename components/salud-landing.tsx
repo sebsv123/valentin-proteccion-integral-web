@@ -52,13 +52,13 @@ const getFadeInUp = (prefersReducedMotion: boolean) => ({
   visible: { opacity: 1, y: 0, transition: { duration: prefersReducedMotion ? 0 : 0.5 } },
 });
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
+const getStaggerContainer = (prefersReducedMotion: boolean) => ({
+  hidden: { opacity: prefersReducedMotion ? 1 : 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: prefersReducedMotion ? 0 : 0.1 },
   },
-};
+});
 
 export function SaludLanding() {
   const [form, setForm] = useState({
@@ -78,6 +78,7 @@ export function SaludLanding() {
   }, []);
 
   const fadeInUpVariants = getFadeInUp(prefersReducedMotion);
+  const staggerContainerVariants = getStaggerContainer(prefersReducedMotion);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -148,7 +149,7 @@ export function SaludLanding() {
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={staggerContainer}
+              variants={staggerContainerVariants}
               className="text-center lg:text-left"
             >
               <motion.div variants={fadeInUpVariants} className="mb-6">
@@ -298,6 +299,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
@@ -396,6 +398,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
@@ -409,6 +412,7 @@ export function SaludLanding() {
                 loading="lazy"
                 decoding="async"
                 className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
               />
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center">
@@ -548,6 +552,7 @@ export function SaludLanding() {
         </div>
       </motion.section>
 
+      {/* 6.5 GARANTÍA DE PRECIO */}
       {/* 6.5. GARANTÍA DE PRECIO */}
       <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -572,6 +577,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
@@ -631,6 +637,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-green-50"
       >
@@ -700,6 +707,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
@@ -823,6 +831,7 @@ export function SaludLanding() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainerVariants}
         variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
@@ -840,6 +849,7 @@ export function SaludLanding() {
                   loading="lazy"
                   decoding="async"
                   className="object-cover object-top"
+                  sizes="(max-width: 1024px) 0px, 35vw"
                 />
               </div>
             </div>
