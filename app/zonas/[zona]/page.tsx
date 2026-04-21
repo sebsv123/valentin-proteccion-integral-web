@@ -9,7 +9,6 @@ import { LeadForm } from '@/components/lead-form';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { getZona, zonas } from '@/lib/zonas';
-import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export function generateStaticParams() {
@@ -47,7 +46,6 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
 
   return (
     <>
-      {/* Schema 1: LocalBusiness con areaServed específico */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "InsuranceAgency"],
@@ -71,11 +69,10 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           "@type": "AggregateRating",
           "ratingValue": "5.0",
           "bestRating": "5",
-          "ratingCount": "47"
+          "ratingCount": "49"
         }
       })}} />
 
-      {/* Schema 2: FAQPage con preguntas locales */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -86,7 +83,6 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
         }))
       })}} />
 
-      {/* Schema 3: BreadcrumbList */}
       <SchemaBreadcrumb items={[
         { name: 'Inicio', item: site.domain, position: 1 },
         { name: 'Zonas', item: `${site.domain}/zonas`, position: 2 },
@@ -96,48 +92,37 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
       <Header />
       <main>
 
-        {/* SECCIÓN 1: Hero con H1, credenciales y CTA — todo visible sin scroll en móvil */}
         <section className="section-pad pt-4 md:pt-8 bg-white-pure overflow-hidden relative border-b">
           <div className="container-shell">
-            {/* Breadcrumb visual */}
             <nav aria-label="Breadcrumb" className="text-xs text-[var(--muted)] mb-4 flex gap-1 flex-wrap">
               <Link href="/" className="hover:text-[var(--blue)]">Inicio</Link>
-              <span>›</span>
+              <span>&#x203a;</span>
               <Link href="/zonas" className="hover:text-[var(--blue)]">Zonas</Link>
-              <span>›</span>
+              <span>&#x203a;</span>
               <span className="text-[var(--blue-deep)] font-medium">{z.nombre}</span>
             </nav>
-
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
                 <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs uppercase mb-3">
-                  Asesores Independientes · {z.nombre}
+                  Asesores Independientes &middot; {z.nombre}
                 </p>
                 <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-gradient leading-[1.1] mb-3">
                   {z.h1}
                 </h1>
-                <p className="text-sm sm:text-base font-semibold text-[var(--blue-deep)] mb-2">
-                  {z.heroSubtitle}
-                </p>
-                <p className="text-base sm:text-lg text-[var(--muted)] leading-8 mb-6">
-                  {z.intro}
-                </p>
+                <p className="text-sm sm:text-base font-semibold text-[var(--blue-deep)] mb-2">{z.heroSubtitle}</p>
+                <p className="text-base sm:text-lg text-[var(--muted)] leading-8 mb-6">{z.intro}</p>
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-8 py-4 text-base">
                     <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
                   </a>
-                  <a href={`tel:${site.phoneHref}`} className="btn-secondary px-8 py-4 text-base">
-                    Llamar ahora
-                  </a>
+                  <a href={`tel:${site.phoneHref}`} className="btn-secondary px-8 py-4 text-base">Llamar ahora</a>
                 </div>
-                {/* Señales de confianza */}
                 <div className="flex flex-wrap gap-2 text-xs font-semibold text-[var(--blue-deep)]">
                   {['+10 años de experiencia', '+1.200 familias protegidas', 'Consulta 100% gratuita', 'Sin letra pequeña', 'Independientes'].map(t => (
                     <span key={t} className="glass rounded-full px-3 py-2 border border-white/60 bg-white/40">✓ {t}</span>
                   ))}
                 </div>
               </div>
-              {/* Formulario lado derecho */}
               <div id="formulario">
                 <LeadForm defaultProduct={z.segurosDestacados[0] as any || 'salud'} compact />
               </div>
@@ -145,18 +130,14 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </div>
         </section>
 
-        {/* SECCIÓN 2: Por qué elegirnos en [Zona] — texto profundo con datos locales */}
         <section className="section-pad bg-[var(--surface)]">
           <div className="container-shell max-w-4xl">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-6">
               Por qué elegir asesores de seguros en {z.nombre}
             </h2>
             {z.porQueElegirNos.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-[var(--muted)] leading-8 mb-5 text-base sm:text-lg">
-                {paragraph}
-              </p>
+              <p key={i} className="text-[var(--muted)] leading-8 mb-5 text-base sm:text-lg">{paragraph}</p>
             ))}
-            {/* Datos locales como destacado visual */}
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {[
                 { label: 'Población', value: z.datosLocales.poblacion },
@@ -176,7 +157,6 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </div>
         </section>
 
-        {/* SECCIÓN 3: Seguros más demandados en [Zona] */}
         <section className="section-pad bg-white border-t border-b">
           <div className="container-shell">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-2 text-center">
@@ -190,69 +170,47 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 <Link key={product.slug} href={`/seguros/${product.slug}`}
                   className="soft-card glass rounded-2xl p-6 border border-white/60 bg-white/60 hover:bg-white hover:border-[var(--blue)] transition-all group">
                   <p className="kicker text-[var(--blue)] font-bold tracking-widest text-xs mb-2">{product.eyebrow}</p>
-                  <p className="font-heading text-lg font-bold text-[var(--blue-deep)] mb-2 group-hover:text-[var(--blue)] transition-colors">
-                    {product.label}
-                  </p>
-                  <p className="text-sm text-[var(--muted)] leading-6 mb-4">{product.summary.slice(0, 100)}…</p>
-                  <span className="text-xs font-bold text-[var(--blue)] uppercase tracking-wider">
-                    Ver seguro de {product.label} →
-                  </span>
+                  <p className="font-heading text-lg font-bold text-[var(--blue-deep)] mb-2 group-hover:text-[var(--blue)] transition-colors">{product.label}</p>
+                  <p className="text-sm text-[var(--muted)] leading-6 mb-4">{product.summary.slice(0, 100)}&hellip;</p>
+                  <span className="text-xs font-bold text-[var(--blue)] uppercase tracking-wider">Ver seguro de {product.label} &rarr;</span>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN 3b: Asesores — humanidad y confianza */}
-<section className="section-pad bg-[var(--blue-deep)] text-white overflow-hidden">
-  <div className="container-shell">
-    <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
+        <section className="section-pad bg-[var(--blue-deep)] text-white overflow-hidden">
+          <div className="container-shell">
+            <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 max-w-xs mx-auto md:mx-0">
+                <Image
+                  src="/images/rosa_y_sebastian_de_pie.png"
+                  alt={`Rosa y Sebastián Valentín, asesores de seguros independientes en ${z.nombre}`}
+                  fill loading="lazy" sizes="(max-width: 768px) 320px, 380px" quality={75}
+                  className="object-cover object-top"
+                />
+              </div>
+              <div>
+                <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">Tu equipo en {z.nombre}</p>
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Hablas con Rosa o Sebastián. No con un bot ni un call center.
+                </h2>
+                <p className="text-white/80 text-base sm:text-lg leading-8 mb-4">
+                  Llevamos más de 10 años ayudando a familias y autónomos de {z.nombre} y toda la zona noroeste de Madrid. Cada consulta es personal. Cada recomendación es honesta.
+                </p>
+                <p className="text-white/70 text-sm leading-7 mb-6">
+                  Somos mediadores independientes: no trabajamos para ninguna compañía, trabajamos para ti. Por eso siempre te decimos la verdad, aunque no sea lo que quieras escuchar.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-8 py-3 text-base">
+                    <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl
-        ring-4 ring-white/20 max-w-xs mx-auto md:mx-0">
-        <Image
-          src="/images/rosa_y_sebastian_de_pie.png"
-          alt={`Rosa y Sebastián Valentín, asesores de seguros independientes en ${z.nombre}`}
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 320px, 380px"
-          quality={75}
-          className="object-cover object-top"
-        />
-      </div>
-
-      <div>
-        <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">
-          Tu equipo en {z.nombre}
-        </p>
-        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
-          Hablas con Rosa o Sebastián. No con un bot ni un call center.
-        </h2>
-        <p className="text-white/80 text-base sm:text-lg leading-8 mb-4">
-          Llevamos más de 10 años ayudando a familias y autónomos de {z.nombre}
-          y toda la zona noroeste de Madrid. Cada consulta es personal.
-          Cada recomendación es honesta.
-        </p>
-        <p className="text-white/70 text-sm leading-7 mb-6">
-          Somos mediadores independientes: no trabajamos para ninguna compañía,
-          trabajamos para ti. Por eso siempre te decimos la verdad,
-          aunque no sea lo que quieras escuchar.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href={buildWhatsAppHref(z.whatsappMessage)}
-            className="btn-whatsapp px-8 py-3 text-base"
-          >
-            <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-        {/* SECCIÓN 4: Cómo trabajamos — proceso 3 pasos */}
         <section className="section-pad bg-[var(--surface)]">
           <div className="container-shell max-w-4xl text-center">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-2">
@@ -272,31 +230,19 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 </div>
               ))}
             </div>
-
-            <div className="mt-10 flex flex-col sm:flex-row items-center
-              gap-6 soft-card bg-white rounded-3xl p-6 shadow-sm border max-w-2xl mx-auto">
-              <div className="relative w-20 h-20 flex-none rounded-full overflow-hidden
-                ring-2 ring-[var(--blue)] shadow-md">
-                <Image
-                  src="/images/sebastian.png"
-                  alt="Sebastián Valentín, asesor de seguros"
-                  fill
-                  loading="lazy"
-                  sizes="80px"
-                  quality={80}
-                  className="object-cover object-top"
-                />
+            <div className="mt-10 flex flex-col sm:flex-row items-center gap-6 soft-card bg-white rounded-3xl p-6 shadow-sm border max-w-2xl mx-auto">
+              <div className="relative w-20 h-20 flex-none rounded-full overflow-hidden ring-2 ring-[var(--blue)] shadow-md">
+                <Image src="/images/sebastian.png" alt="Sebastián Valentín, asesor de seguros"
+                  fill loading="lazy" sizes="80px" quality={80} className="object-cover object-top" />
               </div>
               <p className="text-sm sm:text-base text-[var(--muted)] leading-7 text-center sm:text-left">
-                <strong className="text-[var(--blue-deep)]">Sebastián Valentín</strong> —
-                Asesor independiente con +10 años de experiencia. Responderá a tu consulta
-                en menos de 30 minutos. Personalmente.
+                <strong className="text-[var(--blue-deep)]">Sebastián Valentín</strong> &mdash;
+                Asesor independiente con +10 años de experiencia. Responderá a tu consulta en menos de 30 minutos. Personalmente.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN 5: FAQs locales con schema */}
         <section className="section-pad bg-white border-t">
           <div className="container-shell max-w-3xl">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-8 text-center">
@@ -309,21 +255,18 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                     {faq.q}
                     <span className="text-[var(--blue)] font-bold text-xl ml-4 shrink-0 group-open:rotate-45 transition-transform">+</span>
                   </summary>
-                  <p className="px-5 pb-5 text-[var(--muted)] leading-7 text-sm sm:text-base">
-                    {faq.a}
-                  </p>
+                  <p className="px-5 pb-5 text-[var(--muted)] leading-7 text-sm sm:text-base">{faq.a}</p>
                 </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN 5b: NAP - Datos de contacto locales */}
         <section className="section-pad bg-white border-y">
           <div className="container-shell max-w-3xl text-center">
             <p className="text-sm text-[var(--muted)] mb-2">Asesores de seguros en {z.nombre}</p>
             <p className="font-heading text-xl font-bold text-[var(--blue-deep)] mb-3">
-              Valentín Protección Integral · Boadilla del Monte, Madrid
+              Valentín Protección Integral &middot; Boadilla del Monte, Madrid
             </p>
             <p className="text-lg font-semibold text-[var(--blue)]">
               <a href={`tel:${site.phoneHref}`} className="hover:underline">{site.phone}</a>
@@ -334,18 +277,10 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </div>
         </section>
 
-        {/* SECCIÓN 6: Reseñas de Google */}
-        <section className="section-pad bg-[var(--surface)]">
-          <div className="container-shell">
-            <GoogleReviewsGrid />
-          </div>
-        </section>
-
-        {/* SECCIÓN 7: CTA intermedio */}
-        <section className="section-pad bg-[var(--surface)] border-t border-b pt-0">
+        <section className="section-pad bg-[var(--surface)] border-t border-b">
           <div className="container-shell max-w-2xl text-center">
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-3">
-              ¿Buscas asesores de seguros en {z.nombre}?
+              &iquest;Buscas asesores de seguros en {z.nombre}?
             </h2>
             <p className="text-[var(--muted)] mb-8 text-lg">
               Primera consulta gratuita. Sin compromiso. Respondemos en menos de 30 minutos.
@@ -354,14 +289,11 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
               <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-10 py-4 text-lg">
                 <WhatsAppIcon className="h-5 w-5" /> Consulta por WhatsApp
               </a>
-              <Link href="/contacto" className="btn-primary px-10 py-4 text-lg">
-                Formulario de contacto
-              </Link>
+              <Link href="/contacto" className="btn-primary px-10 py-4 text-lg">Formulario de contacto</Link>
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN 8: Zonas cercanas — internal linking */}
         <section className="section-pad bg-white">
           <div className="container-shell text-center">
             <h2 className="font-heading text-xl font-bold text-[var(--blue-deep)] mb-2">
@@ -381,9 +313,8 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           </div>
         </section>
 
-        {/* SECCIÓN 9: CTA final oscuro */}
         <section className="bg-[var(--blue-deep)] py-16 px-6 text-center">
-          <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">Asesores independientes · {z.nombre}</p>
+          <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-3">Asesores independientes &middot; {z.nombre}</p>
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-3">
             Tu consulta de seguros en {z.nombre}, gratis y sin compromiso
           </h2>

@@ -6,13 +6,17 @@ export const metadata: Metadata = {
   description: "Seguro de salud privado en Madrid sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día. Rosa y Sebastián te responden en 30 minutos.",
   keywords: "seguro salud individual Madrid, seguro médico privado Madrid, seguro salud sin carencias Madrid, seguro salud familiar Madrid",
   openGraph: {
-    title: "Seguro Médico Privado en Madrid — Rosa y Sebastián te lo gestionan todo",
+    title: "Seguro de Salud en Madrid · Desde 30€/mes",
     description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
     images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_conversando.png", alt: "Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid" }],
+  },
+  twitter: {
+    title: "Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral",
+    description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/seguros/salud-individual",

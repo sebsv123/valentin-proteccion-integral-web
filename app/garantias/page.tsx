@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
@@ -48,9 +49,33 @@ export default function GarantiasPage() {
           </div>
         </section>
 
-        {/* 4 Pilares de Garantía */}
+        {/* Equipo Garantía */}
         <section className="section-pad bg-white">
           <div className="container-shell">
+            <div className="soft-card overflow-hidden mb-12">
+              <div className="grid gap-0 xl:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[340px]">
+                  <Image
+                    src="/images/rosa_y_sebastian_conversando.png"
+                    alt="Rosa y Sebastián Valentín, garantía personal de asesoramiento en seguros"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1280px) 100vw, 600px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <p className="kicker">Garantía personal</p>
+                  <h2 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)]">
+                    Dos personas, un compromiso
+                  </h2>
+                  <p className="mt-4 text-[var(--muted)] leading-relaxed">
+                    Rosa y Sebastián son quienes responden tus mensajes, quienes preparan las propuestas y quienes te acompañan si hay algún problema. No hay call centers ni equipos de juniors. Solo dos profesionales con 10 años de experiencia y una reputación que cuidar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* Diseño serio */}
               <div className="glass-card-premium p-8">

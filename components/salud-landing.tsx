@@ -45,6 +45,7 @@ import {
   Hourglass,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { GarantiaPrecio } from "@/components/garantia-precio";
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -118,27 +119,11 @@ export function SaludLanding() {
   return (
     <>
       {/* 1. BARRA STICKY */}
-      <div className="sticky top-16 left-0 right-0 z-30 w-full bg-green-800 text-white py-2 sm:py-3 px-4 shadow-md">
-        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
-
-          {/* Texto CORTO en móvil, texto LARGO en desktop */}
-          <p className="text-sm font-semibold leading-tight flex-1 truncate">
-            <span className="sm:hidden flex items-center gap-1.5">
-              <Hospital className="h-4 w-4 inline" /> Médico privado sin esperas
-            </span>
-            <span className="hidden sm:inline flex items-center gap-1.5">
-              <Hospital className="h-4 w-4 inline" /> <span className="font-bold">Sin listas de espera. Médico de cabecera, especialistas y urgencias desde el primer día.</span>
-            </span>
+      <div className="sticky top-16 z-40 w-full bg-[#002244] text-white py-2 sm:py-3 px-4 shadow-md">
+        <div className="container mx-auto max-w-5xl flex items-center justify-center gap-3">
+          <p className="text-sm font-semibold leading-tight text-center">
+            ¿Tienes ya un presupuesto? Tráenoslo y lo mejoramos — o te decimos honestamente si ya es bueno.
           </p>
-
-          {/* CTA: siempre visible, siempre a la derecha */}
-          <a
-            href="#contacto"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
-          >
-            Pedir presupuesto →
-          </a>
-
         </div>
       </div>
 
@@ -315,6 +300,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container mx-auto px-4">
@@ -413,6 +399,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white overflow-hidden"
       >
         <div className="container max-w-6xl">
@@ -566,6 +553,7 @@ export function SaludLanding() {
       </motion.section>
 
       {/* 6.5 GARANTÍA DE PRECIO */}
+      {/* 6.5. GARANTÍA DE PRECIO */}
       <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
@@ -590,6 +578,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-slate-900 text-white"
       >
         <div className="container mx-auto max-w-5xl px-4">
@@ -649,6 +638,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-green-50"
       >
         <div className="container mx-auto px-4">
@@ -718,6 +708,7 @@ export function SaludLanding() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]"
       >
         <div className="container mx-auto px-4">
@@ -804,12 +795,44 @@ export function SaludLanding() {
         </div>
       </motion.section>
 
+      {/* GARANTÍA DE PRECIO PERSONALIZADA */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUpVariants}
+        className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white"
+      >
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+              <Shield className="h-5 w-5" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold">Nuestra Garantía de Precio Justo</h2>
+          </div>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Si encuentras el mismo seguro más barato con otra correduría independiente, te lo igualamos. Sin letra pequeña.
+          </p>
+          <a
+            href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20salud"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
+            )}
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Compara ahora gratis
+          </a>
+        </div>
+      </motion.section>
+
       {/* 10. FAQ */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainerVariants}
+        variants={staggerContainer}
         className="py-14 sm:py-20 lg:py-24 bg-accent/30"
       >
         <div className="container max-w-5xl px-4">

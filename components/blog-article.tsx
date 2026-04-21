@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
 import { buildWhatsAppHref } from '@/lib/products';
-import { GoogleReviewsGrid } from '@/components/google-reviews-grid';
 import { FAQAccordion } from '@/components/faq-accordion';
 import RevealLight from '@/components/ui/reveal-light';
 
@@ -54,11 +53,6 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                   </div>
                 </RevealLight>
               ))}
-
-              {/* ── Reseñas Google Dinámicas ── */}
-              {post.googleReviewsUrl && (
-                <GoogleReviewsGrid totalCount={post.reviewCount} />
-              )}
 
               {/* ── FAQ con acordeón ── */}
               {post.faqs && post.faqs.length > 0 && (

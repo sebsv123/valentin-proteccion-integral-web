@@ -137,7 +137,7 @@ export function Header() {
                 y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
             */}
             <button
-              className="flex items-center gap-2 text-white/90 hover:text-white
+              className="flex xl:hidden items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}

@@ -3,7 +3,7 @@ import { DentalLanding } from '@/components/dental-landing';
 
 export const metadata: Metadata = {
   title: 'Seguro Dental en Madrid · Sin Carencias desde el Día 1 | Valentín Protección Integral',
-  description: 'Seguro dental en Madrid sin períodos de carencia: revisiones, limpiezas e implantes desde el día 1. Rosa y Sebastián Valentín te responden en 30 minutos. Sin letra pequeña.',
+  description: 'Seguro dental desde 8€/mes. Asesoramiento sin compromiso en Boadilla del Monte, Madrid. Te ayudamos a elegir la cobertura perfecta para tu familia.',
   keywords: [
     'seguro dental Madrid',
     'seguro dental sin carencias Madrid',
@@ -15,33 +15,105 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://valentinproteccionintegral.com/seguros/salud-dental' },
   openGraph: {
     title: 'Seguro Dental en Madrid · Sin Carencias | Valentín Protección Integral',
-    description: 'Tu seguro dental en Madrid sin períodos de espera para revisiones y limpiezas. Respuesta garantizada en 30 minutos. Rosa y Sebastián Valentín.',
+    description: 'Seguro dental desde 8€/mes en Boadilla del Monte, Madrid. Sin carencias desde el día 1. Asesoramiento sin compromiso.',
     url: 'https://valentinproteccionintegral.com/seguros/salud-dental',
     siteName: 'Valentín Protección Integral',
     locale: 'es_ES',
     type: 'website',
-    images: [{ url: 'https://valentinproteccionintegral.com/images/sebastian_con_cliente.png', alt: 'Sebastián Valentín explicando coberturas de seguro dental en Madrid' }],
+    images: [{ url: 'https://www.valentinproteccionintegral.com/og-dental.webp', alt: 'Seguro dental en Madrid - Valentín Protección Integral' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Seguro Dental en Madrid · Sin Carencias | Valentín Protección Integral',
+    description: 'Seguro dental desde 8€/mes en Boadilla del Monte, Madrid. Sin carencias desde el día 1.',
+    images: ['https://www.valentinproteccionintegral.com/og-dental.webp'],
   },
 };
 
-const serviceSchema = {
+// Schema InsuranceAgency simplificado (sin Person extensa de Sebastián)
+const insuranceAgencySchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguro Dental en Madrid",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
+  "@type": "InsuranceAgency",
+  "name": "Valentín Protección Integral",
+  "description": "Asesoramiento independiente para seguros dentales en Madrid. Sin carencias en revisiones y limpiezas desde el primer día. Rosa y Sebastián Valentín te atienden personalmente.",
+  "url": "https://valentinproteccionintegral.com/seguros/salud-dental",
+  "telephone": "+34 603 448 765",
+  "email": "contacto@valentinproteccionintegral.com",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Comunidad de Madrid",
+    "addressCountry": "ES"
   },
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón"],
-  "description": "Asesoramiento independiente para seguros dentales en Madrid. Sin carencias en revisiones y limpiezas desde el primer día. Comparamos las mejores opciones sin coste.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Consulta gratuita y sin compromiso" }
+  "areaServed": {
+    "@type": "Place",
+    "name": "Madrid y alrededores"
+  },
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Rosa Valentín",
+      "jobTitle": "Mediadora de Seguros Independiente"
+    },
+    {
+      "@type": "Person",
+      "name": "Sebastián Sifontes Valentín",
+      "jobTitle": "Asesor Especialista en Seguros"
+    }
+  ]
+};
+
+// Schema Person de Rosa (simplificado)
+const rosaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rosa Valentín",
+  "jobTitle": "Mediadora de Seguros Independiente",
+  "description": "Mediadora de seguros colegiada con más de 10 años de experiencia en Madrid. Especialista en seguros dentales, salud, mascotas y protección familiar.",
+  "url": "https://valentinproteccionintegral.com/sobre-nosotros",
+  "telephone": "+34 603 448 765",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Comunidad de Madrid",
+    "addressCountry": "ES"
+  },
+  "sameAs": [
+    "https://www.instagram.com/segurosrosavalentin/",
+    "https://wa.me/34603448765"
+  ],
+  "knowsAbout": [
+    "Seguros dentales",
+    "Seguros de salud",
+    "Seguros para mascotas",
+    "Protección familiar mediante seguros"
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://valentinproteccionintegral.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Seguros",
+      "item": "https://valentinproteccionintegral.com/seguros"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Seguro Dental",
+      "item": "https://valentinproteccionintegral.com/seguros/salud-dental"
+    }
+  ]
 };
 
 const faqSchema = {
@@ -69,7 +141,9 @@ const faqSchema = {
 export default function SaludDentalPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(insuranceAgencySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(rosaSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <DentalLanding />
     </>
