@@ -113,6 +113,13 @@ export function VidaLanding() {
                 </span>
               </motion.div>
 
+              <motion.p
+                variants={fadeInUpVariants}
+                className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-2"
+              >
+                La decisión que tu familia te agradecerá
+              </motion.p>
+
               <motion.h1
                 variants={fadeInUpVariants}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6"
@@ -126,7 +133,7 @@ export function VidaLanding() {
                 variants={fadeInUpVariants}
                 className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
               >
-                Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias madrileñas a elegir la cobertura de vida que realmente necesitan. Sin letra pequeña. Sin presión.
+                La mayoría de familias madrileñas pagan más de lo necesario por su seguro de vida. Rosa y Sebastián llevan 10 años arreglando eso. Sin letra pequeña. Sin presión.
               </motion.p>
 
               <motion.div
@@ -306,6 +313,27 @@ export function VidaLanding() {
         </div>
       </section>
 
+      {/* BANNER SORPRESA — HIPOTECA */}
+      <section className="py-10 bg-amber-50 border-y border-amber-200">
+        <div className="container mx-auto max-w-4xl text-center px-4">
+          <p className="text-lg md:text-xl font-bold text-amber-900">
+            ¿Tu banco te impuso el seguro de vida con la hipoteca?
+          </p>
+          <p className="text-base text-amber-800 mt-2 max-w-2xl mx-auto">
+            No estás obligado a quedarte con él. En el 95% de los casos lo mejoramos en precio manteniendo las mismas coberturas — o mejores.
+          </p>
+          <a
+            href={`https://wa.me/34603448765?text=${encodeURIComponent(
+              "Hola, tengo el seguro de vida con mi banco y quiero comparar precio."
+            )}`}
+            className="mt-4 inline-flex items-center gap-2 text-amber-700 font-semibold hover:opacity-80 transition-opacity underline"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Escríbenos y lo comprobamos →
+          </a>
+        </div>
+      </section>
+
       {/* 4.5. GARANTÍA DE PRECIO */}
       <section className="py-10 sm:py-14 bg-blue-50 border-y border-blue-200">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -418,7 +446,7 @@ export function VidaLanding() {
             className="mt-12 mx-auto max-w-2xl rounded-2xl border border-blue-200 bg-blue-50 px-8 py-6 text-center"
           >
             <p className="text-lg font-bold text-blue-900 mb-2">
-              ¿Y si no cumplimos lo que prometemos?
+              Nuestra garantía que nadie más da
             </p>
             <p className="text-blue-700 text-base leading-relaxed">
               Si no te contactamos en 30 minutos tras tu consulta, Rosa o Sebastián te ofrecen una{" "}
@@ -429,7 +457,7 @@ export function VidaLanding() {
               Así de seguros estamos de lo que prometemos.
             </p>
             <p className="mt-4 text-sm text-blue-500 italic">
-              Nadie en el sector hace esta garantía. Nosotros sí.
+              Llevamos 10 años cumpliéndola. Ningún cliente ha tenido que reclamarla.
             </p>
           </motion.div>
         </div>
@@ -457,8 +485,8 @@ export function VidaLanding() {
                 {[
                   {
                     num: "1",
-                    title: "Escríbenos por WhatsApp o llámanos",
-                    desc: "Dos clics y tus datos llegan directamente a Rosa o Sebastián.",
+                    title: "Escríbenos por WhatsApp",
+                    desc: "Dos clics y tu consulta llega directamente a Rosa o Sebastián. Sin formularios, sin esperas.",
                   },
                   {
                     num: "2",
