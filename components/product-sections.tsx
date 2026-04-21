@@ -80,12 +80,12 @@ export function CoverageHighlights({ product }: { product: Product }) {
          </RevealLight>
          <div className="grid gap-6 md:grid-cols-2">
           {product.highlights.map((item, idx) => (
-            <RevealLight key={item} delay={idx * 0.1}>
+            <RevealLight key={idx} delay={idx * 0.1}>
               <div className="group soft-card glass p-8 hover-lift border-white/40 transition-all duration-300 hover:border-[var(--blue)]/20">
                 <div className="mb-6 inline-flex rounded-2xl bg-[#4CAF50]/10 p-4 text-[#4CAF50] shadow-sm group-hover:bg-[#4CAF50]/20 transition-colors">
                   <ShieldCheck className="h-6 w-6" />
                 </div>
-                <p className="text-lg leading-relaxed text-[var(--text)] font-medium">{item}</p>
+                <p className="text-lg leading-relaxed text-[var(--text)] font-medium">{typeof item === 'string' ? item : item.title}</p>
                 {idx === 0 && (
                   <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[var(--blue)] to-[var(--green)]" />
                 )}
