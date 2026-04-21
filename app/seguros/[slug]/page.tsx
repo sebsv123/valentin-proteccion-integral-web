@@ -88,6 +88,24 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Seguros', href: '/seguros' }, { label: product.label }]} />
         </div>
         <ProductHero product={product} />
+
+        {/* Garantía de precio destacada en viaje — arriba por ser producto comparado */}
+        {slug === 'viaje' && (
+          <div className="bg-[#002244] text-white py-4 px-4">
+            <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+              <p className="text-base font-semibold text-white/90">
+                🛡️ <strong>Garantía de precio:</strong> Si tu banco o comparador te da un precio más bajo con las mismas coberturas, te lo igualamos.
+              </p>
+              <a
+                href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
+                className="flex-none text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
+              >
+                Compara ahora →
+              </a>
+            </div>
+          </div>
+        )}
+
         <ProductTabs slug={product.slug} />
         <CoverageHighlights product={product} />
         
@@ -329,6 +347,53 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
                       href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20SALUD%20y%20entender%20qu%C3%A9%20modalidad%20me%20encaja%20mejor."
+                      className={cn(
+                        buttonVariants({ size: 'lg' }),
+                        'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
+                      )}
+                    >
+                      <WhatsAppIcon className="h-5 w-5" />
+                      Hablar con Rosa Valentín
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Sección Equipo - Solo para viaje */}
+        {slug === 'viaje' && (
+          <section className="py-14 sm:py-20 lg:py-24 bg-gray-50">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián Valentín, asesores de seguros de viaje en Madrid"
+                    width={480}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                    className="object-cover object-top w-full h-full"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="text-center lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">
+                    Rosa y Sebastián te ayudan a elegir el seguro de viaje que realmente necesitas
+                  </h2>
+                  <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">
+                    Con más de 10 años comparando opciones para familias y viajeros frecuentes en Madrid, 
+                    sabemos que el seguro de viaje que vende el banco rara vez es el más completo. 
+                    Te explicamos qué hay detrás de cada póliza antes de que contrates.
+                  </p>
+                  <p className="text-base text-[var(--muted)] leading-relaxed mb-6 font-medium">
+                    ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."
                       className={cn(
                         buttonVariants({ size: 'lg' }),
                         'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'

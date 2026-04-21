@@ -12,7 +12,7 @@ export type Product = {
   cardImage: string;
   cardAlt: string;
   summary: string;
-  highlights: string[];
+  highlights: string[] | { title: string; description: string }[];
   benefits: string[];
   whatIncludes: string[];
   whatVaries: string[];
@@ -25,6 +25,7 @@ export type Product = {
   metaTitle: string;
   metaDescription: string;
   h1: string;
+  incentive?: string;
   customAdvisor?: {
     name: string;
     photo: string;
@@ -605,9 +606,22 @@ export const products: Product[] = [
     summary:
       'Asistencia médica, anulación, equipaje y modalidades distintas según el tipo de viaje, con una explicación más útil y menos genérica.',
     highlights: [
-      'Elegir bien un seguro de VIAJE depende del destino, la duración y el tipo de desplazamiento.',
-      'Algunas modalidades ponen más foco en asistencia médica, otras en anulación y otras en viajes recurrentes o situaciones concretas como estudios.',
-      'El límite médico y el alcance de ciertas coberturas no siempre son iguales entre modalidades, por lo que conviene revisar qué tipo de viaje quieres proteger.',
+      {
+        title: "Asistencia médica real en el extranjero",
+        description: "No todas las pólizas tienen el mismo límite. Para Europa suelen ser suficientes 30.000€, pero para América o Asia conviene revisar que el límite sea de al menos 150.000€. Te explicamos exactamente qué tienes antes de contratar."
+      },
+      {
+        title: "Cancelación — el detalle que más importa",
+        description: "La anulación no siempre cubre lo que parece. Hay motivos que están excluidos por defecto (huelga de aerolínea, cambio de trabajo, crisis personal). Conviene saber qué situaciones están realmente cubiertas antes de reservar."
+      },
+      {
+        title: "Equipaje con límites reales",
+        description: "La cobertura de equipaje varía enormemente entre modalidades. Hay pólizas que cubren hasta 1.500€ y otras que llegan a 3.000€. El límite por objeto también cambia. Te lo aclaramos para que sepas exactamente a qué atenerte."
+      },
+      {
+        title: "Multiviaje — cuándo compensa de verdad",
+        description: "Una póliza anual multiviaje suele compensar si viajas dos o más veces al año. Con tres viajes, el ahorro respecto a contratar pólizas puntuales puede superar el 40%. Rosa y Sebastián te hacen el cálculo según tu uso real."
+      }
     ],
     benefits: [
       'Más claridad al diferenciar límites y destinos.',
@@ -635,14 +649,27 @@ export const products: Product[] = [
     ],
     cases: ['ESCAPADAS', 'ESTUDIOS', 'MULTIVIAJE'],
     faqs: [
-      { q: "¿Qué cubre un seguro de viaje?", a: "Cubre asistencia médica en el extranjero, repatriación, cancelación del viaje, pérdida de equipaje, retrasos de vuelo y responsabilidad civil. Las coberturas varían según el plan contratado." },
-      { q: "¿Necesito seguro de viaje si tengo la tarjeta sanitaria europea?", a: "La tarjeta sanitaria europea cubre asistencia básica en la UE, pero no cubre repatriación, cancelaciones, pérdida de equipaje ni países fuera de Europa. Un seguro de viaje completo es imprescindible para viajes largos o fuera de la UE." },
-      { q: "¿Cuánto cuesta un seguro de viaje?", a: "Desde 3€ por día para viajes cortos. Los seguros anuales de viaje frecuente cuestan entre 80€ y 200€/año. Te ayudamos a elegir según la frecuencia y destinos de tus viajes." },
-      { q: "¿El seguro de viaje cubre las enfermedades preexistentes?", a: "Depende de la compañía y el plan. Algunos cubren agravamientos de enfermedades crónicas, otros no. Es fundamental revisarlo antes de contratar, especialmente para viajeros mayores o con condiciones médicas." }
+      {
+        q: "¿Qué cubre un seguro de viaje?",
+        a: "Cubre asistencia médica en el extranjero, repatriación, cancelación del viaje, pérdida de equipaje, retrasos de vuelo y responsabilidad civil. Las coberturas varían según el plan contratado. Rosa y Sebastián te explican qué incluye cada opción antes de que decidas."
+      },
+      {
+        q: "¿Necesito seguro de viaje si tengo la tarjeta sanitaria europea?",
+        a: "La tarjeta sanitaria europea solo cubre atención básica en países de la UE y no incluye repatriación, cancelación, equipaje ni asistencia en urgencias privadas. Para viajes fuera de Europa o si quieres protección completa, el seguro de viaje es imprescindible. Si viajas dentro de la UE con la TSE y algo sale mal, un seguro de viaje cubre lo que la tarjeta no alcanza."
+      },
+      {
+        q: "¿Cuánto cuesta un seguro de viaje?",
+        a: "Un seguro de viaje puntual para Europa cuesta habitualmente entre 15€ y 40€ según la duración y coberturas. Para viajeros frecuentes, una póliza anual multiviaje puede salir más rentable desde el segundo viaje del año. Rosa y Sebastián te calculan el precio exacto en menos de 30 minutos, gratis y sin compromiso."
+      },
+      {
+        q: "¿El seguro de viaje cubre las enfermedades preexistentes?",
+        a: "Depende de la modalidad y la aseguradora. Algunas cubren urgencias derivadas de enfermedades preexistentes si estaban estables antes del viaje; otras las excluyen totalmente. Es exactamente el tipo de detalle que Rosa y Sebastián revisan contigo antes de contratar, para que no haya sorpresas cuando lo necesites."
+      }
     ],
     disclaimer:
       'Asistencia médica, anulación, equipaje, duración y ámbito territorial sujetos a modalidad y documentación contractual.',
     related: ['salud', 'accidentes', 'mascotas'],
+    incentive: "¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.",
     whatsappMessage: 'Hola, quiero orientación sobre VIAJE para elegir bien según mi destino y duración.',
     metaTitle: 'Seguro de Viaje Madrid · Desde 3€/día',
     metaDescription: 'Viaja con asistencia médica, anulación y equipaje protegido. Elige la cobertura adecuada según destino, duración y tipo de viaje.',
