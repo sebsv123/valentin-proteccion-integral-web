@@ -529,8 +529,8 @@ export const products: Product[] = [
       'Capitales asegurados y límites de RC sujetos a la actividad y condiciones de contratación.',
     related: ['accidentes', 'proteccion-juridica', 'salud'],
     whatsappMessage: 'Hola, quiero proteger mi NEGOCIO con un seguro a medida.',
-    metaTitle: 'Seguro para tu Negocio en Madrid · Pymes',
-    metaDescription: 'Asegura tu local, stock y actividad profesional con un multirriesgo para comercio y pyme adaptado a tus necesidades.',
+    metaTitle: 'Seguro Multirriesgo para Negocios y Pymes en Madrid | Valentín Protección Integral',
+    metaDescription: 'Protege tu local, stock y responsabilidad civil con un seguro multirriesgo para comercio o pyme en Madrid. Asesoramiento independiente sin compromiso. Llámanos.',
     h1: 'Seguro para tu Negocio o Pyme en Madrid',
   },
   {

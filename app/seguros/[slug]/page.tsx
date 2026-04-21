@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -25,8 +26,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getProduct(slug);
   if (!product) return {};
   
-  // Obtener imagen de Pexels para el producto
-  const pexelsImage = await getPexelsImage(slug);
+  // Usar imagen local OG para negocio, Pexels para otros
+  const ogImage = slug === 'negocio' 
+    ? `${site.domain}/og-image-negocio.webp`
+    : await getPexelsImage(slug);
   
   const twitterTitle = slug === 'salud' 
     ? 'Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral'
@@ -41,11 +44,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      images: [{ url: pexelsImage, alt: product.heroAlt }],
+      images: [{ url: ogImage, alt: product.heroAlt }],
     },
     twitter: {
+      card: 'summary_large_image',
       title: twitterTitle,
       description: product.metaDescription,
+      images: [{ url: ogImage, alt: product.heroAlt }],
     },
   };
 }
@@ -115,6 +120,48 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         
         <ProductFaqSection product={product} />
         <GoogleReviewsWidget title={`Opiniones sobre nuestro seguro de ${product.label}`} />
+        
+        {/* Sección Equipo - Solo para negocio */}
+        {slug === 'negocio' && (
+          <section className="py-14 sm:py-20 lg:py-24 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="order-2 lg:order-1 text-center lg:text-left">
+                  <p className="text-sm font-bold tracking-widest uppercase text-[var(--blue)] mb-3">Asesoramiento Personal</p>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Rosa y Sebastián te asesoran sin compromiso</h2>
+                  <p className="text-lg text-[var(--muted)] leading-relaxed mb-6">
+                    Más de 10 años ayudando a negocios y pymes de Madrid a proteger lo que han construido. 
+                    Entendemos los riesgos de tu actividad y te proponemos soluciones a medida, sin letra pequeña.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href={`https://wa.me/34603448765?text=${encodeURIComponent(product.whatsappMessage)}`}
+                      className={cn(
+                        buttonVariants({ size: 'lg' }),
+                        'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
+                      )}
+                    >
+                      <WhatsAppIcon className="h-5 w-5" />
+                      Hablar con un experto
+                    </a>
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián Valentín, asesores de seguros para negocios y pymes en Madrid"
+                    fill
+                    loading="lazy"
+                    decoding="async"
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
         <ProductCTASection product={product} title={`¿Quieres que te ayudemos con ${product.label}?`} text={`Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.`} message={product.whatsappMessage} />
         <RelatedProducts product={product} />
       </main>

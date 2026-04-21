@@ -1,4 +1,3 @@
-"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BadgePercent, Check, CircleHelp, ClipboardList, HeartHandshake, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
