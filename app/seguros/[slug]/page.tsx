@@ -243,7 +243,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         )}
         
         <ProductDecisionGrid product={product} />
-        <CasesAndForm product={product} />
+        <CasesAndForm product={product} defaultProduct={product.slug} />
         
         {/* Sección Garantía de Precio Justo */}
         <section className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white">

@@ -165,7 +165,7 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
   );
 }
 
-export function CasesAndForm({ product }: { product: Product }) {
+export function CasesAndForm({ product, defaultProduct }: { product: Product; defaultProduct?: string }) {
   return (
      <section id="contacto-producto" aria-labelledby="contact-product-title" className="section-pad bg-alternate">
       <div className="container-shell">
@@ -191,7 +191,7 @@ export function CasesAndForm({ product }: { product: Product }) {
             </div>
            </RevealLight>
           <RevealLight direction="right">
-            <LeadForm defaultProduct={product.slug} compact />
+            <LeadForm defaultProduct={defaultProduct || product.slug} compact />
            </RevealLight>
         </div>
       </div>
