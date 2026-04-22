@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Seguro de salud individual en Madrid sin listas de espera. Médico en 24h, cobertura desde el primer día. Presupuesto gratis · Valentín Protección Integral.",
   keywords: "seguro salud individual Madrid, seguro médico privado Madrid, seguro salud sin carencias Madrid, seguro salud familiar Madrid",
   openGraph: {
-    title: "Seguro de Salud en Madrid · Desde 30€/mes",
+    title: "Seguro de Salud en Madrid · Desde 21€/mes",
     description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_conversando.png", alt: "Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid" }],
   },
   twitter: {
-    title: "Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral",
+    title: "Seguro de Salud en Madrid · Desde 21€/mes | Valentín Protección Integral",
     description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
   },
   alternates: {
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cuánto cuesta un seguro de salud privado en Madrid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un seguro de salud individual en Madrid suele costar desde 30€ al mes, dependiendo de la edad, cobertura y compañía. Rosa y Sebastián Valentín te asesoran de forma independiente y te orientan con honestidad, sin coste." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Un seguro de salud individual en Madrid suele costar desde 21€ al mes, dependiendo de la edad, cobertura y compañía. Rosa y Sebastián Valentín te asesoran de forma independiente y te orientan con honestidad, sin coste." }
     },
     {
       "@type": "Question",
@@ -83,7 +83,7 @@ export default function SaludIndividualPage() {
         </p>
         <h2>¿Cuánto cuesta un seguro de salud en Madrid?</h2>
         <p>
-          El precio de un seguro médico privado en Madrid depende de la edad, las coberturas elegidas y el número de personas aseguradas. Los planes individuales comienzan desde 30€ al mes. Como mediadores independientes, te asesoramos de forma personalizada y te orientamos para encontrar la opción que mejor se adapte a tu situación y presupuesto.
+          El precio de un seguro médico privado en Madrid depende de la edad, las coberturas elegidas y el número de personas aseguradas. Los planes individuales comienzan desde 21€ al mes. Como mediadores independientes, te asesoramos de forma personalizada y te orientamos para encontrar la opción que mejor se adapte a tu situación y presupuesto.
         </p>
         <h2>¿Por qué elegir Valentín Protección Integral?</h2>
         <ul>
