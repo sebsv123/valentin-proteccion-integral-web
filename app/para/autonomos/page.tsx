@@ -52,31 +52,31 @@ export default function AutonomosPerfilPage() {
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Para Autónomos",url:"/para/autonomos"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#0F0F10] text-white">
+      <main className="min-h-screen bg-[#1C1C1C] text-white">
         
         {/* HERO LINEAR — Dark profesional */}
-        <section className="min-h-screen flex items-center bg-[#0F0F10] relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#5E6AD2]/10 via-transparent to-transparent" />
+        <section className="min-h-screen flex items-center bg-[#1C1C1C] relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#3ECF8E]/10 via-transparent to-transparent" />
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E6AD2]/20 text-[#8B93E5] text-sm font-medium mb-6">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgba(62,207,142,0.3)] bg-[rgba(62,207,142,0.08)] text-[#3ECF8E] text-sm font-medium mb-6">
                   <Briefcase className="w-4 h-4" />
                   Para autónomos
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-6">
                   Tu negocio no para.
                   <br />
-                  <span className="text-[#5E6AD2]">Tu protección tampoco.</span>
+                  <span className="text-[#3ECF8E]">Tu protección tampoco.</span>
                 </h1>
-                <p className="text-lg text-[#8A8F98] mb-8 max-w-lg leading-relaxed">
+                <p className="text-lg text-[#9B9B9B] mb-8 max-w-lg leading-relaxed">
                   Seguros diseñados para profesionales independientes. 
                   Deducción IRPF hasta 500€/año. Salud, accidentes, RC profesional.
                 </p>
                 <a 
                   href={wCotiza}
-                  className="inline-flex items-center gap-2 bg-[#5E6AD2] hover:bg-[#4C53B8] text-white px-6 py-3 rounded-md font-medium transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#3ECF8E] hover:bg-[#2EBF7E] text-[#1C1C1C] font-semibold px-6 py-3 rounded-md font-medium transition-colors"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
                   Proteger mi negocio
@@ -89,7 +89,7 @@ export default function AutonomosPerfilPage() {
                   alt="Autónomo profesional laptop café Madrid"
                   width={500}
                   height={600}
-                  className="rounded-lg border border-[#27272A]"
+                  className="rounded-lg border border-[rgba(62,207,142,0.15)]"
                 />
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function AutonomosPerfilPage() {
         </section>
 
         {/* COBERTURAS */}
-        <section className="py-24 bg-[#0F0F10] border-t border-[#27272A]">
+        <section className="py-24 bg-[#1C1C1C] border-t border-[rgba(62,207,142,0.15)]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <h2 className="text-2xl font-semibold mb-12 text-center">Coberturas esenciales</h2>
             
@@ -107,12 +107,12 @@ export default function AutonomosPerfilPage() {
                 { icon: Zap, title: "Accidentes", desc: "Incapacidad temporal cubierta. Desde 3€/mes." },
                 { icon: Shield, title: "RC Profesional", desc: "Errores y omissiones cubiertos. Protege tu patrimonio." },
               ].map((item, i) => (
-                <div key={i} className="p-6 rounded-lg bg-[#18181B] border border-[#27272A] hover:border-[#5E6AD2]/50 transition-colors">
-                  <div className="w-10 h-10 rounded bg-[#5E6AD2]/20 flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-[#5E6AD2]" />
+                <div key={i} className="p-6 rounded-lg bg-[#2A2A2A] border border-[rgba(62,207,142,0.15)] hover:border-[#5E6AD2]/50 transition-colors">
+                  <div className="w-10 h-10 rounded bg-[#3ECF8E]/20 flex items-center justify-center mb-4">
+                    <item.icon className="w-5 h-5 text-[#3ECF8E]" />
                   </div>
                   <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#8A8F98]">{item.desc}</p>
+                  <p className="text-sm text-[#9B9B9B]">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -120,7 +120,7 @@ export default function AutonomosPerfilPage() {
         </section>
 
         {/* VENTAJAS */}
-        <section className="py-24 bg-[#18181B]">
+        <section className="py-24 bg-[#2A2A2A]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -134,8 +134,8 @@ export default function AutonomosPerfilPage() {
                     "Respuesta en 30 minutos garantizada",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#5E6AD2]" />
-                      <span className="text-[#8A8F98]">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#3ECF8E]" />
+                      <span className="text-[#9B9B9B]">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -145,7 +145,7 @@ export default function AutonomosPerfilPage() {
                 alt="Rosa y Sebastián - Asesores autónomos"
                 width={500}
                 height={400}
-                className="rounded-lg border border-[#27272A]"
+                className="rounded-lg border border-[rgba(62,207,142,0.15)]"
               />
             </div>
           </div>
@@ -157,12 +157,12 @@ export default function AutonomosPerfilPage() {
             <h2 className="text-3xl font-semibold text-white mb-4">
               Protege tu negocio hoy
             </h2>
-            <p className="text-white/80 mb-8">
+            <p className="text-[#1C1C1C]/80 mb-8">
               Cotización personalizada en 30 minutos. Sin compromiso.
             </p>
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-2 bg-white text-[#5E6AD2] px-8 py-3 rounded-md font-medium"
+              className="inline-flex items-center gap-2 bg-white text-[#3ECF8E] px-8 py-3 rounded-md font-medium"
             >
               <WhatsAppIcon className="w-5 h-5" />
               WhatsApp: 603 44 87 65

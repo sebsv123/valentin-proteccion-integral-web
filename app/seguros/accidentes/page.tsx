@@ -10,12 +10,12 @@ import { Bike, Dumbbell, Bike as BikeIcon, Mountain, Waves, AlertTriangle, Shiel
 
 export const metadata: Metadata = {
   title: "Seguro Accidentes Madrid | Ciclismo, Gym, Moto Laboral | Valentín Protección Integral",
-  description: "Seguro de accidentes desde 3€/mes. Cubre ciclismo, gimnasio, moto laboral, deportes de montaña y agua. Indemnización por incapacidad temporal.",
+  description: "Seguro de accidentes desde muy poco al mes. Cubre ciclismo, gimnasio, moto laboral, deportes de montaña y agua. Indemnización por incapacidad temporal.",
   keywords: ["seguro accidentes Madrid","seguro ciclismo Madrid","seguro gym Madrid","indemnización incapacidad temporal"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes" },
   openGraph: {
     title: "Seguro Accidentes Madrid | Ciclismo, Gym, Moto Laboral",
-    description: "Todo cubierto desde 3€/mes. Ciclismo, gimnasio, moto laboral, deportes.",
+    description: "Todo cubierto desde muy poco al mes. Ciclismo, gimnasio, moto laboral, deportes.",
     url: "https://valentinproteccionintegral.com/seguros/accidentes",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -39,7 +39,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de accidentes para ciclismo, gimnasio, moto laboral y deportes. Desde 3€/mes.",
+  "description": "Seguro de accidentes para ciclismo, gimnasio, moto laboral y deportes. Desde muy poco al mes.",
 };
 
 export const dynamic = "force-static";
@@ -65,7 +65,7 @@ export default function AccidentesPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,99,99,0.2)] text-[#FF8C42] text-sm font-medium mb-6">
                   <AlertTriangle className="w-4 h-4" />
-                  Desde 3€/mes
+                  Desde muy poco al mes
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                   <span className="bg-gradient-to-r from-[#FF6363] to-[#FFD93D] bg-clip-text text-transparent">
@@ -83,7 +83,7 @@ export default function AccidentesPage() {
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#FF6363] to-[#FF8C42] text-white font-semibold text-lg hover:shadow-[0_0_30px_rgba(255,99,99,0.4)] transition-all hover:scale-[1.02]"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  Cotizar ahora desde 3€/mes
+                  Cotizar ahora desde muy poco al mes
                 </a>
               </div>
               
@@ -177,7 +177,7 @@ export default function AccidentesPage() {
               Protege tu estilo de vida
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Desde 3€/mes. Cotización en 30 minutos.
+              Desde muy poco al mes. Cotización en 30 minutos.
             </p>
             <a 
               href={wCotiza}

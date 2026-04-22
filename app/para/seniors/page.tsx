@@ -55,18 +55,18 @@ export default function SeniorsPage() {
       <main className="min-h-screen bg-white">
         
         {/* HERO IBM — Claro, accesible, 18px+ */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-[#F4F4F4] to-white">
+        <section className="py-16 lg:py-24 bg-[#F7F8F9]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="text-center mb-12">
-              <span className="inline-block bg-[#0043CE]/10 text-[#0043CE] px-4 py-2 rounded-full text-base font-medium mb-6">
+              <span className="inline-block bg-[#F0FAE5] text-[#163300] border border-[#9FE870] px-4 py-2 rounded-full text-base font-medium mb-6">
                 Para mayores de 60 años
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#161616] tracking-tight mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#163300] tracking-tight mb-6 leading-tight">
                 Tranquilidad para ti.
                 <br />
-                <span className="text-[#0043CE]">Alivio para tus hijos.</span>
+                <span className="text-[#163300]">Alivio para tus hijos.</span>
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-[#525252] max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-[#6B7280] max-w-3xl mx-auto leading-relaxed">
                 Decesos, salud y hogar gestionados por Rosa y Sebastián. 
                 Siempre la misma persona, siempre cerca.
               </p>
@@ -79,12 +79,12 @@ export default function SeniorsPage() {
                 { num: "2", title: "Te asesoramos", desc: "Opciones claras en lenguaje sencillo" },
                 { num: "3", title: "Todo gestionado", desc: "Nosotros hacemos el papeleo por ti" },
               ].map((step, i) => (
-                <div key={i} className="text-center p-6 bg-white rounded-xl border border-[#E0E0E0]">
-                  <div className="w-12 h-12 rounded-full bg-[#0043CE] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div key={i} className="text-center p-6 bg-white rounded-xl border border-[#E5E7EB]">
+                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                     {step.num}
                   </div>
-                  <h3 className="text-xl font-semibold text-[#161616] mb-2">{step.title}</h3>
-                  <p className="text-base text-[#525252]">{step.desc}</p>
+                  <h3 className="text-xl font-semibold text-[#163300] mb-2">{step.title}</h3>
+                  <p className="text-base text-[#6B7280]">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -94,7 +94,7 @@ export default function SeniorsPage() {
         {/* COBERTURAS SENIOR */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-[#161616] text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-[#163300] text-center mb-12">
               Protección completa para seniors
             </h2>
             
@@ -104,12 +104,12 @@ export default function SeniorsPage() {
                 { icon: Shield, title: "Decesos Completo", desc: "Gestión total del sepelio y trámites. Tu familia hace una sola llamada." },
                 { icon: Home, title: "Hogar Protegido", desc: "Tu vivienda, tu patrimonio. Todo cubierto: daños, robo, responsabilidad civil." },
               ].map((item, i) => (
-                <div key={i} className="p-8 bg-[#F4F4F4] rounded-xl border border-[#E0E0E0] hover:border-[#0043CE] transition-colors">
-                  <div className="w-14 h-14 rounded-xl bg-[#0043CE]/10 flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7 text-[#0043CE]" />
+                <div key={i} className="p-8 bg-[#F7F8F9] rounded-xl border border-[#E5E7EB] hover:border-[#9FE870] transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-[#F0FAE5] flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-[#163300]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#161616] mb-3">{item.title}</h3>
-                  <p className="text-base text-[#525252] leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-semibold text-[#163300] mb-3">{item.title}</h3>
+                  <p className="text-base text-[#6B7280] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -117,7 +117,7 @@ export default function SeniorsPage() {
         </section>
 
         {/* VENTAJAS */}
-        <section className="py-16 lg:py-24 bg-[#F4F4F4]">
+        <section className="py-16 lg:py-24 bg-[#F7F8F9]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <Image 
@@ -128,7 +128,7 @@ export default function SeniorsPage() {
                 className="rounded-xl object-cover"
               />
               <div>
-                <h2 className="text-3xl font-semibold text-[#161616] mb-8">
+                <h2 className="text-3xl font-semibold text-[#163300] mb-8">
                   Por qué los seniors confían en nosotros
                 </h2>
                 <div className="space-y-5">
@@ -140,10 +140,10 @@ export default function SeniorsPage() {
                     "Sin call center, sin operadores genéricos",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-6 h-6 rounded-full bg-[#0043CE] flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-6 h-6 rounded-full bg-[#9FE870] flex items-center justify-center flex-shrink-0 mt-1">
                         <CheckCircle2 className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-lg text-[#161616]">{item}</span>
+                      <span className="text-lg text-[#163300]">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -155,7 +155,7 @@ export default function SeniorsPage() {
         {/* FOTO EQUIPO */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="bg-[#F4F4F4] rounded-2xl p-8 lg:p-12">
+            <div className="bg-[#F7F8F9] rounded-2xl p-8 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <Image 
                   src="/images/rosa_y_sebastian.jpeg"
@@ -165,25 +165,25 @@ export default function SeniorsPage() {
                   className="rounded-xl object-cover mx-auto"
                 />
                 <div className="text-center lg:text-left">
-                  <h2 className="text-3xl font-semibold text-[#161616] mb-4">
+                  <h2 className="text-3xl font-semibold text-[#163300] mb-4">
                     Rosa y Sebastián
                   </h2>
-                  <p className="text-lg text-[#525252] mb-6 leading-relaxed">
+                  <p className="text-lg text-[#6B7280] mb-6 leading-relaxed">
                     "Llevamos más de 10 años trabajando con familias de Madrid. 
                     Los seniors son quienes más nos recomiendan porque tratamos 
                     sus seguros como si fueran los de nuestra propia familia."
                   </p>
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-[#525252]">
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-[#6B7280]">
                     <span className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-[#0043CE]" />
+                      <Clock className="w-4 h-4 text-[#163300]" />
                       +10 años
                     </span>
                     <span className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-[#0043CE]" />
+                      <Users className="w-4 h-4 text-[#163300]" />
                       +1.200 familias
                     </span>
                     <span className="flex items-center gap-2">
-                      <FileCheck className="w-4 h-4 text-[#0043CE]" />
+                      <FileCheck className="w-4 h-4 text-[#163300]" />
                       DGSFP regulados
                     </span>
                   </div>
@@ -194,7 +194,7 @@ export default function SeniorsPage() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="py-16 lg:py-24 bg-[#0043CE]">
+        <section className="py-16 lg:py-24 bg-[#163300]">
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-4">
               Hablemos con calma. Estamos aquí.
@@ -205,7 +205,7 @@ export default function SeniorsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href={wCotiza}
-                className="inline-flex items-center gap-3 bg-white text-[#0043CE] px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#F4F4F4] transition-colors"
+                className="inline-flex items-center gap-3 bg-white text-[#163300] px-8 py-4 rounded-2xl font-medium text-lg hover:bg-[#F0FAE5] transition-colors"
               >
                 <WhatsAppIcon className="w-6 h-6" />
                 WhatsApp: 603 44 87 65

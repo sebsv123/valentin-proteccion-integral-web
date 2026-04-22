@@ -85,8 +85,8 @@ export default function SaludIndividualPage() {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-3 gap-12 text-center">
               <div>
-                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">0</p>
-                <p className="text-xl text-[#6E6E73] mt-2">días de lista de espera</p>
+                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">Hoy</p>
+                <p className="text-xl text-[#6E6E73] mt-2">mismo puedes tener cobertura</p>
               </div>
               <div>
                 <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">24<span className="text-4xl">h</span></p>

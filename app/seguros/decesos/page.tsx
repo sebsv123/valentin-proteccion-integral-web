@@ -127,7 +127,7 @@ export default function DecesosPage() {
                 { icon: "🕊️", title: "Sepelio completo", desc: "Todos los gastos cubiertos" },
                 { icon: "📋", title: "Gestión total", desc: "Nosotros lo tramitamos todo" },
                 { icon: "🚗", title: "Traslados", desc: "Nacional e internacional" },
-                { icon: "👨‍👩‍👧", title: "Apoyo familia", desc: "Asistencia psicológica incluida" },
+                { icon: "👨‍👩‍👧", title: "Apoyo familia", desc: "Asistencia psicológica (según modalidad)" },
               ].map((item, i) => (
                 <div key={i} className="border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.04)] rounded-2xl p-6 hover:border-[rgba(94,106,210,0.4)] transition-all text-center">
                   <span className="text-3xl mb-3 block">{item.icon}</span>

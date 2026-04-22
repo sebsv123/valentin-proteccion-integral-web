@@ -141,7 +141,7 @@ export default function MascotasPage() {
               <p className="text-[#717171] mb-6 leading-relaxed">
                 La Ley 17/2023 de Bienestar Animal exige a todos los propietarios de perros en España 
                 (incluido Madrid) tener un seguro de responsabilidad civil. La multa por no cumplir 
-                puede llegar a los 10.000€.
+                puede llegar a multas de hasta 10.000€.
               </p>
               <div className="bg-white rounded-2xl p-6 border border-[#DDDDDD]">
                 <p className="text-[#222222] font-medium">

@@ -101,13 +101,9 @@ export default function AsesoriaPage() {
                 {/* Chat Bubble Intercom */}
                 <div className="bg-white rounded-2xl shadow-lg border border-[#E5E7EB] p-6 max-w-md">
                   <div className="flex items-start gap-3 mb-4">
-                    <Image 
-                      src="/images/rosa_y_sebastian.jpeg" 
-                      alt="Rosa Valentín"
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
+                    <div className="w-10 h-10 rounded-full bg-[#1F8EFA] flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+                      R
+                    </div>
                     <div className="bg-[#EFF6FF] rounded-2xl rounded-tl-sm px-4 py-3">
                       <p className="text-sm text-[#1A1A2E]">
                         "Hola 👋 Soy Rosa. ¿En qué te puedo ayudar hoy?"

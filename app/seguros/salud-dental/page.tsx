@@ -9,12 +9,12 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Phone, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Dental Madrid Sin Carencias | Valentín Protección Integral",
-  description: "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Sin carencias iniciales, sin listas de espera. Desde 9€/mes. Rosa y Sebastián.",
+  title: "Seguro Dental Madrid Carencias Mínimas | Valentín Protección Integral",
+  description: "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Carencias mínimas del mercado, sin listas de espera. Desde 9€/mes. Rosa y Sebastián.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","ortodoncia seguro dental","implantes dentales seguro"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
-    title: "Seguro Dental Madrid Sin Carencias | Valentín Protección Integral",
+    title: "Seguro Dental Madrid Carencias Mínimas | Valentín Protección Integral",
     description: "Dental completo: revisiones, ortodoncia, implantes. Sin carencias. Desde 9€/mes.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
@@ -39,7 +39,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Sin carencias.",
+  "description": "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Carencias mínimas.",
   "medicalSpecialty": "Dentistry"
 };
 
@@ -83,7 +83,7 @@ export default function SaludDentalPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
             <span className="inline-flex items-center gap-2 bg-[#E0F2FE] text-[#0284C7] px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">
               <Sparkles className="w-4 h-4" />
-              Sin carencias · Sin listas de espera
+              Carencias mínimas · Sin listas de espera
             </span>
             
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold text-[#0F172A] tracking-tight mt-6 leading-tight">

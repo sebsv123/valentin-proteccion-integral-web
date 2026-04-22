@@ -100,7 +100,7 @@ export default function AutonomosLandingPage() {
                 {/* Badge Stripe */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(99,91,255,0.3)] bg-[rgba(99,91,255,0.1)] text-[#A78BFA] text-sm mb-8">
                   <Sparkles className="w-4 h-4" />
-                  +1.200 autónomos protegidos en Madrid
+                  +1.200 clientes protegidos en Madrid
                 </div>
                 
                 {/* H1 Stripe weight-300 */}

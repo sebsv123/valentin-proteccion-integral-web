@@ -143,7 +143,7 @@ export default function AccidentesDecesosPage() {
             <div className="grid grid-cols-3 gap-8 py-16 border-y border-[rgba(255,255,255,0.06)]">
               <div className="text-center">
                 <p className="text-5xl font-light text-white">Pack</p>
-                <p className="text-[#888899] text-sm mt-2">5% descuento</p>
+                <p className="text-[#888899] text-sm mt-2">condiciones especiales por pack</p>
               </div>
               <div className="text-center">
                 <p className="text-5xl font-light text-[#FF6B35]">Día 1</p>
