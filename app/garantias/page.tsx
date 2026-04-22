@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
-import { Shield, Zap, Clock, HeartHandshake, BadgePercent, CheckCircle2, ArrowRight } from "lucide-react";
+import { BadgePercent, CheckCircle2, ArrowRight } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { motion } from "framer-motion";
@@ -30,28 +30,28 @@ const badges = [
 const guarantees = [
   {
     num: "01",
-    icon: Shield,
+    tag: "Seriedad",
     title: "Seriedad en cada detalle",
     body: "Trabajamos con la misma exigencia que esperarías de una gran firma. Documentación clara, comunicación profesional y propuestas presentadas con cuidado.",
     dark: true,
   },
   {
     num: "02",
-    icon: Zap,
+    tag: "Proceso",
     title: "Proceso sin fricciones",
     body: "Sin formularios interminables, sin burocracia innecesaria. Consulta, propuesta y contratación en 3 pasos. Si algo se puede simplificar, lo simplificamos.",
     dark: false,
   },
   {
     num: "03",
-    icon: Clock,
+    tag: "Respuesta",
     title: "Respuesta en menos de 24h",
     body: "Respondemos en menos de 24 horas laborables. Si no es así, te llamamos nosotros con una explicación y una disculpa real.",
     dark: true,
   },
   {
     num: "04",
-    icon: HeartHandshake,
+    tag: "Sin presión",
     title: "Sin presión, nunca",
     body: "No trabajamos a comisión por venderte el producto más caro. Nuestro objetivo es que contrates lo que de verdad te conviene. Si no hay nada que encaje, te lo decimos.",
     dark: false,
@@ -77,15 +77,12 @@ export default function GarantiasPage() {
       <Header />
       <main className="overflow-x-hidden">
 
-        {/* ── HERO OSCURO — Linear style ───────────────────────────────── */}
+        {/* ── HERO OSCURO ─────────────────────────────────────────────── */}
         <section className="relative min-h-[92vh] flex flex-col items-center justify-center bg-[#0d0d10] overflow-hidden">
-          {/* purple/blue glow top-left */}
           <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full"
             style={{ background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)" }} />
-          {/* blue glow bottom-right */}
           <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full"
             style={{ background: "radial-gradient(circle, rgba(15,94,156,0.22) 0%, transparent 70%)" }} />
-          {/* fine dot grid */}
           <div aria-hidden className="absolute inset-0 opacity-[0.07]"
             style={{
               backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
@@ -118,7 +115,6 @@ export default function GarantiasPage() {
               Sin letra pequeña. Sin excusas. Estas son las garantías que puedes exigirnos desde el primer día.
             </motion.p>
 
-            {/* badges row */}
             <motion.div
               variants={fadeUp} initial="hidden" animate="show" custom={3}
               className="mt-10 flex flex-wrap items-center justify-center gap-3"
@@ -133,7 +129,6 @@ export default function GarantiasPage() {
               ))}
             </motion.div>
 
-            {/* CTA secundario hero */}
             <motion.div
               variants={fadeUp} initial="hidden" animate="show" custom={4}
               className="mt-10"
@@ -148,12 +143,11 @@ export default function GarantiasPage() {
             </motion.div>
           </div>
 
-          {/* bottom fade to white */}
           <div aria-hidden className="absolute bottom-0 left-0 right-0 h-32"
             style={{ background: "linear-gradient(to bottom, transparent, #ffffff)" }} />
         </section>
 
-        {/* ── GARANTÍA PERSONAL — foto + texto, luz ───────────────────── */}
+        {/* ── GARANTÍA PERSONAL ────────────────────────────────────────── */}
         <section className="section-pad bg-white">
           <div className="container-shell">
             <motion.div
@@ -193,45 +187,51 @@ export default function GarantiasPage() {
           </div>
         </section>
 
-        {/* ── GARANTÍAS — alternating dark/light rows — Linear style ── */}
+        {/* ── GARANTÍAS — Linear/Resend style ─────────────────────────── */}
         <div id="garantias">
-          {guarantees.map(({ num, icon: Icon, title, body, dark }, i) => (
+          {guarantees.map(({ num, tag, title, body, dark }, i) => (
             <section
               key={num}
-              className={`section-pad ${
-                dark ? "bg-[#0d0d10]" : "bg-white"
-              }`}
+              className={`section-pad ${dark ? "bg-[#0d0d10]" : "bg-white"}`}
             >
+              {/* separador superior — línea fina Resend-style */}
+              <div className={`container-shell mb-12`}>
+                <div className={`h-px w-full ${dark ? "bg-white/8" : "bg-gray-100"}`} />
+              </div>
+
               <div className="container-shell">
                 <motion.div
                   variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0}
-                  className={`max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-10 ${
-                    i % 2 === 1 ? "md:flex-row-reverse" : ""
-                  }`}
+                  className={`max-w-4xl mx-auto grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start`}
                 >
-                  {/* number block */}
-                  <div className="shrink-0 flex flex-col items-center">
-                    <span className={`font-heading text-[6rem] font-bold leading-none select-none ${
-                      dark ? "text-white/8" : "text-gray-100"
-                    }`}>
+                  {/* columna izquierda — número + tag */}
+                  <div className="flex flex-col gap-3">
+                    {/* número gigante decorativo — VISIBLE en ambos fondos */}
+                    <span
+                      aria-hidden
+                      className={`font-heading text-[7rem] md:text-[9rem] font-bold leading-none select-none tabular-nums ${
+                        dark ? "text-white/[0.06]" : "text-gray-200"
+                      }`}
+                    >
                       {num}
                     </span>
+                    {/* tag tipo Linear */}
+                    <p className={`text-[11px] font-bold tracking-[0.18em] uppercase -mt-4 ${
+                      dark ? "text-indigo-400" : "text-[#0F5E9C]"
+                    }`}>
+                      {num} — {tag}
+                    </p>
                   </div>
 
-                  {/* content */}
-                  <div className="flex-1">
-                    <div className={`w-12 h-12 mb-5 rounded-xl flex items-center justify-center ${
-                      dark ? "bg-indigo-500/10" : "bg-[#0F5E9C]/8"
-                    }`}>
-                      <Icon className={`h-6 w-6 ${ dark ? "text-indigo-400" : "text-[#0F5E9C]" }`} />
-                    </div>
-                    <h2 className={`font-heading text-3xl md:text-4xl font-bold leading-tight mb-4 ${
+                  {/* columna derecha — título + cuerpo */}
+                  <div className="pt-2">
+                    <h2 className={`font-heading text-3xl md:text-4xl font-bold leading-tight mb-5 ${
                       dark ? "text-white" : "text-[#0d0d10]"
                     }`}>
                       {title}
                     </h2>
-                    <p className={`text-lg leading-relaxed max-w-xl ${
-                      dark ? "text-white/50" : "text-gray-500"
+                    <p className={`text-lg leading-relaxed ${
+                      dark ? "text-white/55" : "text-gray-500"
                     }`}>
                       {body}
                     </p>
@@ -242,22 +242,36 @@ export default function GarantiasPage() {
           ))}
         </div>
 
-        {/* ── PRECIO GARANTIZADO — oscuro destacado ───────────────────── */}
+        {/* ── PRECIO GARANTIZADO ───────────────────────────────────────── */}
         <section className="section-pad bg-[#0d0d10]">
+          <div className="container-shell mb-12">
+            <div className="h-px w-full max-w-4xl mx-auto bg-white/8" />
+          </div>
           <div className="container-shell">
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className="max-w-4xl mx-auto rounded-3xl border border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent p-10 md:p-14 flex flex-col md:flex-row items-start gap-8"
+              className="max-w-4xl mx-auto grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start"
             >
-              <div className="shrink-0 w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center">
-                <BadgePercent className="h-7 w-7 text-amber-400" />
+              {/* columna izquierda */}
+              <div className="flex flex-col gap-3">
+                <span aria-hidden className="font-heading text-[7rem] md:text-[9rem] font-bold leading-none select-none text-white/[0.06]">
+                  05
+                </span>
+                <p className="text-[11px] font-bold tracking-[0.18em] uppercase -mt-4 text-amber-400">
+                  05 — Precio
+                </p>
               </div>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-amber-400 mb-3">05 — Precio garantizado</p>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+
+              {/* columna derecha */}
+              <div className="pt-2">
+                <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1 mb-5">
+                  <BadgePercent className="h-3.5 w-3.5 text-amber-400" />
+                  <span className="text-xs font-semibold text-amber-400 tracking-wide">Precio garantizado</span>
+                </div>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   El mismo seguro. Mejor precio. Garantizado.
                 </h2>
-                <p className="text-lg text-white/50 leading-relaxed">
+                <p className="text-lg text-white/55 leading-relaxed">
                   Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
                 </p>
               </div>
@@ -268,6 +282,9 @@ export default function GarantiasPage() {
         {/* ── TIMELINE 3 PASOS — claro ─────────────────────────────────── */}
         <section className="section-pad bg-[#f6f8fa]">
           <div className="container-shell">
+            {/* separador */}
+            <div className="h-px w-full bg-gray-200 mb-16" />
+
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="text-center mb-16"
@@ -303,9 +320,10 @@ export default function GarantiasPage() {
           </div>
         </section>
 
-        {/* ── ¿QUÉ PASA SI NO CUMPLIMOS? — oscuro ─────────────────────── */}
+        {/* ── ¿QUÉ PASA SI NO CUMPLIMOS? ──────────────────────────────── */}
         <section className="section-pad bg-[#0d0d10]">
           <div className="container-shell">
+            <div className="h-px w-full max-w-3xl mx-auto bg-white/8 mb-16" />
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center"
@@ -314,17 +332,17 @@ export default function GarantiasPage() {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
                 ¿Qué pasa si no cumplimos?
               </h2>
-              <p className="text-lg text-white/50 leading-relaxed mb-5">
+              <p className="text-lg text-white/55 leading-relaxed mb-5">
                 Nuestro negocio vive de la recomendación. Un cliente insatisfecho nos cuesta más que cualquier póliza. Por eso estas garantías no son marketing — son la base de cómo trabajamos.
               </p>
-              <p className="text-lg text-white/50 leading-relaxed">
+              <p className="text-lg text-white/55 leading-relaxed">
                 En más de 10 años hemos asesorado a más de 1.200 familias en Madrid. La mayoría de nuestros nuevos clientes llegan recomendados por alguien que ya confía en nosotros. Esa es nuestra mejor garantía.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* ── CTA FINAL — claro con WhatsApp ──────────────────────────── */}
+        {/* ── CTA FINAL ────────────────────────────────────────────────── */}
         <section className="section-pad bg-white border-t border-gray-100">
           <div className="container-shell text-center">
             <motion.h2
