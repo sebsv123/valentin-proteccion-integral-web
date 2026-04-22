@@ -77,7 +77,7 @@ export default function GarantiasPage() {
       <Header />
       <main className="overflow-x-hidden">
 
-        {/* ── HERO OSCURO ─────────────────────────────────────────────── */}
+        {/* ── HERO OSCURO ───────────────────────────────────────────────── */}
         <section className="relative min-h-[92vh] flex flex-col items-center justify-center bg-[#0d0d10] overflow-hidden">
           <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full"
             style={{ background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)" }} />
@@ -147,7 +147,7 @@ export default function GarantiasPage() {
             style={{ background: "linear-gradient(to bottom, transparent, #ffffff)" }} />
         </section>
 
-        {/* ── GARANTÍA PERSONAL ────────────────────────────────────────── */}
+        {/* ── GARANTÍA PERSONAL ───────────────────────────────────────── */}
         <section className="section-pad bg-white">
           <div className="container-shell">
             <motion.div
@@ -194,28 +194,27 @@ export default function GarantiasPage() {
               key={num}
               className={`section-pad ${dark ? "bg-[#0d0d10]" : "bg-white"}`}
             >
-              {/* separador superior — línea fina Resend-style */}
-              <div className={`container-shell mb-12`}>
-                <div className={`h-px w-full ${dark ? "bg-white/8" : "bg-gray-100"}`} />
+              <div className="container-shell mb-12">
+                <div className={`h-px w-full ${dark ? "bg-white/10" : "bg-gray-200"}`} />
               </div>
 
               <div className="container-shell">
                 <motion.div
                   variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0}
-                  className={`max-w-4xl mx-auto grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start`}
+                  className="max-w-4xl mx-auto grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start"
                 >
                   {/* columna izquierda — número + tag */}
                   <div className="flex flex-col gap-3">
-                    {/* número gigante decorativo — VISIBLE en ambos fondos */}
                     <span
                       aria-hidden
                       className={`font-heading text-[7rem] md:text-[9rem] font-bold leading-none select-none tabular-nums ${
-                        dark ? "text-white/[0.06]" : "text-gray-200"
+                        dark
+                          ? "text-white/10"
+                          : "text-[#0d0d10]/20"
                       }`}
                     >
                       {num}
                     </span>
-                    {/* tag tipo Linear */}
                     <p className={`text-[11px] font-bold tracking-[0.18em] uppercase -mt-4 ${
                       dark ? "text-indigo-400" : "text-[#0F5E9C]"
                     }`}>
@@ -245,16 +244,15 @@ export default function GarantiasPage() {
         {/* ── PRECIO GARANTIZADO ───────────────────────────────────────── */}
         <section className="section-pad bg-[#0d0d10]">
           <div className="container-shell mb-12">
-            <div className="h-px w-full max-w-4xl mx-auto bg-white/8" />
+            <div className="h-px w-full max-w-4xl mx-auto bg-white/10" />
           </div>
           <div className="container-shell">
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="max-w-4xl mx-auto grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start"
             >
-              {/* columna izquierda */}
               <div className="flex flex-col gap-3">
-                <span aria-hidden className="font-heading text-[7rem] md:text-[9rem] font-bold leading-none select-none text-white/[0.06]">
+                <span aria-hidden className="font-heading text-[7rem] md:text-[9rem] font-bold leading-none select-none text-white/10">
                   05
                 </span>
                 <p className="text-[11px] font-bold tracking-[0.18em] uppercase -mt-4 text-amber-400">
@@ -262,7 +260,6 @@ export default function GarantiasPage() {
                 </p>
               </div>
 
-              {/* columna derecha */}
               <div className="pt-2">
                 <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/8 px-3 py-1 mb-5">
                   <BadgePercent className="h-3.5 w-3.5 text-amber-400" />
@@ -279,12 +276,10 @@ export default function GarantiasPage() {
           </div>
         </section>
 
-        {/* ── TIMELINE 3 PASOS — claro ─────────────────────────────────── */}
+        {/* ── TIMELINE 3 PASOS ─────────────────────────────────────────── */}
         <section className="section-pad bg-[#f6f8fa]">
           <div className="container-shell">
-            {/* separador */}
-            <div className="h-px w-full bg-gray-200 mb-16" />
-
+            <div className="h-px w-full bg-gray-300 mb-16" />
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="text-center mb-16"
@@ -323,7 +318,7 @@ export default function GarantiasPage() {
         {/* ── ¿QUÉ PASA SI NO CUMPLIMOS? ──────────────────────────────── */}
         <section className="section-pad bg-[#0d0d10]">
           <div className="container-shell">
-            <div className="h-px w-full max-w-3xl mx-auto bg-white/8 mb-16" />
+            <div className="h-px w-full max-w-3xl mx-auto bg-white/10 mb-16" />
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center"
