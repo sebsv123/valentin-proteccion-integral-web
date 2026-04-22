@@ -119,7 +119,7 @@ export const products: Product[] = [
     ],
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
-      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía entre 30€ y 120€/mes según la compañía, edad y coberturas. En Valentín Protección Integral te asesoramos de forma independiente y personalizada, sin coste para ti." },
+      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía desde 21€/mes según la compañía, edad y coberturas. En Valentín Protección Integral te asesoramos de forma independiente y personalizada, sin coste para ti." },
       { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "No existe una única respuesta válida para todos. El mejor seguro de salud es el que mejor encaja con tu perfil, uso y presupuesto. Una modalidad completa funciona bien para uso frecuente o familias; el reembolso es mejor si necesitas libertad de elección; y las opciones senior o para extranjeros están diseñadas para necesidades concretas. Te ayudamos a comparar sin centrarlo todo en el precio." },
       { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, en la mayoría de los casos puedes cambiar de seguro de salud sin perder coberturas, aunque conviene revisar los períodos de carencia de la nueva póliza. En algunos casos, si llevas más de dos años con una compañía, puedes negociar la reducción o eliminación de carencias. Te ayudamos a gestionar el cambio sin que quedes desprotegido en ningún momento." },
       { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Depende de tu situación y uso. La sanidad pública ofrece cobertura universal, pero los tiempos de espera para especialistas y pruebas pueden ser largos. Un seguro privado te da acceso inmediato a especialidades, urgencias privadas y pruebas diagnósticas sin esperas. Para familias con hijos, seniors o autónomos que no pueden permitirse baja médica prolongada, suele merecer la pena desde el primer uso." }
@@ -129,8 +129,8 @@ export const products: Product[] = [
     related: ['vida', 'dental', 'accidentes'],
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
-    metaTitle: 'Seguro de Salud Privado en Madrid | Desde 30€/mes · Valentín Protección Integral',
-    metaDescription: 'Compara seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento independiente sin compromiso. Desde 30€/mes.',
+    metaTitle: 'Seguro de Salud Privado en Madrid | Desde 21€/mes · Valentín Protección Integral',
+    metaDescription: 'Compara seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento independiente sin compromiso. Desde 21€/mes.',
     h1: 'Seguro de Salud en Madrid: Compara Sin Presión',
   },
   {

@@ -1,32 +1,32 @@
-import { Metadata } from "next";
-import { SaludLanding } from "@/components/salud-landing";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { StickyWhatsApp } from "@/components/sticky-whatsapp";
+import { buildWhatsAppHref } from "@/lib/products";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { Heart, Clock, Building2, Shield, CheckCircle2, Users, Star, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Individual Madrid · Sin listas de espera",
-  description: "Seguro de salud individual en Madrid sin listas de espera. Médico en 24h, cobertura desde el primer día. Presupuesto gratis · Valentín Protección Integral.",
-  keywords: "seguro salud individual Madrid, seguro médico privado Madrid, seguro salud sin carencias Madrid, seguro salud familiar Madrid",
+  title: "Seguro Salud Privado Madrid | Sin Listas de Espera | Valentín Protección Integral",
+  description: "Seguro de salud privado en Madrid sin listas de espera. Accede a los mejores hospitales privados. Cotización en 30 minutos. Rosa y Sebastián.",
+  keywords: ["seguro salud privado Madrid","seguro salud sin esperas Madrid","seguro hospital privado Madrid","seguro salud individual Madrid"],
+  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
-    title: "Seguro de Salud en Madrid · Desde 21€/mes",
-    description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
+    title: "Seguro Salud Privado Madrid | Sin Listas de Espera",
+    description: "Accede a los mejores hospitales privados de Madrid sin esperas. Cotización en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_conversando.png", alt: "Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid" }],
-  },
-  twitter: {
-    title: "Seguro de Salud en Madrid · Desde 21€/mes | Valentín Protección Integral",
-    description: "Médico privado para toda tu familia en Madrid. Gestión personal de Rosa y Sebastián. Presupuesto en 30 minutos.",
-  },
-  alternates: {
-    canonical: "https://valentinproteccionintegral.com/seguros/salud-individual",
   },
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Seguro de Salud en Madrid",
+  "name": "Seguro de Salud Privado Madrid",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -38,76 +38,156 @@ const serviceSchema = {
       "addressCountry": "ES"
     }
   },
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón"],
-  "description": "Asesoramiento independiente para seguros de salud en Madrid. Te asesoramos de forma personalizada, sin coste para el cliente.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Consulta gratuita y sin compromiso" }
+  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
+  "description": "Seguro de salud privado en Madrid sin listas de espera. Acceso directo a especialistas y hospitales privados.",
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cuánto cuesta un seguro de salud privado en Madrid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un seguro de salud individual en Madrid suele costar desde 21€ al mes, dependiendo de la edad, cobertura y compañía. Rosa y Sebastián Valentín te asesoran de forma independiente y te orientan con honestidad, sin coste." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Hay períodos de carencia en el seguro de salud?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Urgencias, médico de cabecera y especialistas están disponibles desde el primer día en la mayoría de planes. Algunos servicios como cirugía o maternidad pueden tener espera, que siempre te explicamos antes de contratar, sin letra pequeña." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo funciona el asesoramiento de Valentín Protección Integral para seguros de salud en Madrid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Rosa y Sebastián Valentín son asesores independientes en Boadilla del Monte y Madrid. Te escuchan, buscan la mejor solución para tu situación y te orientan con honestidad. La consulta es gratuita y te responden en menos de 30 minutos." }
-    }
-  ]
-};
+export const dynamic = "force-static";
 
 export default function SaludIndividualPage() {
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de salud privado en Madrid sin listas de espera.");
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <Header />
+      <main className="min-h-screen bg-white">
+        
+        {/* HERO APPLE — Cinematic */}
+        <section className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-6 pt-20">
+          <p className="text-[#0071E3] text-lg font-medium tracking-wide uppercase mb-4">
+            Seguro Salud Privado Madrid
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-[#1D1D1F] tracking-tight leading-[1.0] max-w-5xl mb-8">
+            Sin listas de espera.
+            <br />
+            Sin sorpresas.
+          </h1>
+          <p className="text-xl md:text-2xl text-[#6E6E73] mt-4 max-w-2xl leading-relaxed">
+            Accede a los mejores hospitales privados de Madrid
+            con Rosa Valentín. Cotización en 30 minutos.
+          </p>
+          
+          {/* Imagen CINEMATIC */}
+          <Image 
+            src="https://images.pexels.com/photos/3845998/pexels-photo-3845998.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Hospital privado moderno Madrid limpio brillante"
+            width={1200}
+            height={600}
+            className="w-full max-w-6xl rounded-3xl mt-16 shadow-[0_40px_80px_rgba(0,0,0,0.12)] aspect-[21/9] object-cover"
+            priority
+          />
+        </section>
 
-      {/* BLOQUE SEO ESTÁTICO — visible para crawlers, oculto visualmente */}
-      <section aria-label="Información sobre el seguro de salud individual en Madrid" className="sr-only">
-        <h1>Seguro de Salud Individual en Madrid — Sin listas de espera</h1>
-        <p>
-          En Valentín Protección Integral ofrecemos asesoramiento independiente para contratar el mejor seguro de salud privado en Madrid. Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias y profesionales en Boadilla del Monte, Pozuelo de Alarcón, Las Rozas y toda la comunidad de Madrid a elegir la cobertura médica que necesitan, sin ataduras a ninguna compañía aseguradora.
-        </p>
-        <h2>¿Qué incluye un seguro de salud privado en Madrid?</h2>
-        <p>
-          Un seguro de salud individual te da acceso a médico de cabecera, especialistas y urgencias desde el primer día, sin esperas. La mayoría de planes incluyen analíticas, radiografías, fisioterapia y atención pediátrica. Te explicamos cada cobertura con claridad, sin letra pequeña, antes de que firmes nada.
-        </p>
-        <h2>¿Cuánto cuesta un seguro de salud en Madrid?</h2>
-        <p>
-          El precio de un seguro médico privado en Madrid depende de la edad, las coberturas elegidas y el número de personas aseguradas. Los planes individuales comienzan desde 21€ al mes. Como mediadores independientes, te asesoramos de forma personalizada y te orientamos para encontrar la opción que mejor se adapte a tu situación y presupuesto.
-        </p>
-        <h2>¿Por qué elegir Valentín Protección Integral?</h2>
-        <ul>
-          <li>Mediadores independientes registrados en la DGSFP — trabajamos para ti, no para ninguna compañía</li>
-          <li>Más de 1.200 familias protegidas en Madrid</li>
-          <li>Respuesta en menos de 30 minutos por WhatsApp</li>
-          <li>Asesoría gratuita y sin compromiso</li>
-          <li>Acompañamiento real después de contratar: gestión de incidencias incluida</li>
-        </ul>
-        <h2>Preguntas frecuentes sobre el seguro de salud individual en Madrid</h2>
-        <dl>
-          <dt>¿Hay períodos de carencia?</dt>
-          <dd>Urgencias, médico de cabecera y especialistas están disponibles desde el primer día en la mayoría de planes. Algunos servicios como cirugía programada o maternidad pueden tener espera, que siempre explicamos antes de contratar.</dd>
-          <dt>¿Puedo añadir a mi familia al mismo seguro?</dt>
-          <dd>Sí. Puedes contratar un plan familiar que incluya pareja e hijos, generalmente con descuento respecto a contratar cada miembro por separado.</dd>
-          <dt>¿Qué pasa si necesito un especialista?</dt>
-          <dd>Con un seguro privado accedes directamente al especialista que necesitas, sin necesidad de derivación ni lista de espera. El cuadro médico incluye cientos de profesionales en Madrid.</dd>
-          <dt>¿Cómo contrato?</dt>
-          <dd>Escríbenos por WhatsApp al 603 44 87 65, cuéntanos tu situación y en menos de 30 minutos te enviamos las mejores opciones sin coste ni compromiso.</dd>
-        </dl>
-      </section>
+        {/* STATS APPLE */}
+        <section className="py-24 bg-[#F5F5F7]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              <div>
+                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">0</p>
+                <p className="text-xl text-[#6E6E73] mt-2">días de lista de espera</p>
+              </div>
+              <div>
+                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">24<span className="text-4xl">h</span></p>
+                <p className="text-xl text-[#6E6E73] mt-2">para especialista</p>
+              </div>
+              <div>
+                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">100<span className="text-4xl">%</span></p>
+                <p className="text-xl text-[#6E6E73] mt-2">hospitales privados</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      {/* Componente visual principal — sin tocar */}
-      <SaludLanding />
+        {/* BENEFICIOS — Grid Apple */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-4xl font-semibold text-[#1D1D1F] text-center mb-16">
+              Cobertura completa
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Heart, title: "Sin esperas", desc: "Acceso directo a especialistas" },
+                { icon: Building2, title: "Hospitales top", desc: "Mejores centros privados Madrid" },
+                { icon: Clock, title: "24 horas", desc: "Atención médica telefónica" },
+                { icon: Shield, title: "Sin letra pequeña", desc: "Cobertura clara desde el primer día" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-2xl border border-[#D2D2D7] p-8 text-center hover:border-[#0071E3] transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#F5F5F7] flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-[#0071E3]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#1D1D1F] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#6E6E73]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FOTO EQUIPO Apple Portrait */}
+        <section className="py-24 bg-[#F5F5F7]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <Image 
+                src="/images/rosa_y_sebastian.jpeg"
+                alt="Rosa y Sebastián - Tu asesoría salud privada Madrid"
+                width={500}
+                height={700}
+                className="rounded-3xl aspect-[3/4] object-cover shadow-[0_60px_120px_rgba(0,0,0,0.15)] mx-auto"
+              />
+              <div>
+                <h2 className="text-4xl font-semibold text-[#1D1D1F] mb-6">
+                  Tu salud en manos expertas
+                </h2>
+                <p className="text-xl text-[#6E6E73] leading-relaxed mb-8">
+                  Rosa y Sebastián llevan más de 10 años ayudando a familias y profesionales 
+                  de Madrid a elegir el seguro de salud adecuado. Conocen cada hospital privado, 
+                  cada especialista, cada cobertura.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Asesoría gratuita y sin compromiso",
+                    "Comparamos entre las principales compañías",
+                    "Gestión completa del alta",
+                    "Revisión anual de tu cobertura",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#0071E3]" />
+                      <span className="text-[#1D1D1F]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL Apple */}
+        <section className="py-24 bg-white text-center">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#1D1D1F] mb-6">
+              Tu salud no puede esperar
+            </h2>
+            <p className="text-xl text-[#6E6E73] mb-10">
+              Cotización personalizada en 30 minutos. Sin letra pequeña.
+            </p>
+            <a 
+              href={wCotiza}
+              className="inline-flex items-center gap-3 bg-[#0071E3] hover:bg-[#0077ED] text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:scale-[1.02]"
+            >
+              <WhatsAppIcon className="w-5 h-5" />
+              Cotiza tu salud ahora
+            </a>
+            <p className="text-sm text-[#6E6E73] mt-6">
+              NIF: 79234434D · DGSFP: C012479234434D · Boadilla del Monte, Madrid
+            </p>
+          </div>
+        </section>
+
+      </main>
+      <Footer />
+      <StickyWhatsApp />
     </>
   );
 }
