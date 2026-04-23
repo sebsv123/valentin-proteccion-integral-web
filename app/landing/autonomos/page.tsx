@@ -120,8 +120,8 @@ export default function AutonomosLandingPage() {
               <div className="relative">
                 <div className="relative rounded-lg overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_30px_45px_-30px,rgba(0,0,0,0.1)_0px_18px_36px_-18px]">
                   <Image
-                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Autónomo profesional laptop Madrid office modern"
+                    src="https://images.pexels.com/photos/6001241/pexels-photo-6001241.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Autónoma trabajando en laptop - Seguros para autónomos Madrid"
                     width={600}
                     height={700}
                     className="w-full h-auto object-cover object-top"

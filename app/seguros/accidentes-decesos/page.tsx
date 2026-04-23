@@ -61,8 +61,8 @@ export default function AccidentesDecesosPage() {
           {/* Background image with overlay */}
           <div className="absolute inset-0">
             <Image
-              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Protección familiar Madrid"
+              src="https://images.pexels.com/photos/7642200/pexels-photo-7642200.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Familia protegida en casa Madrid - Seguro accidentes y decesos"
               fill
               className="object-cover opacity-30"
               priority
@@ -132,8 +132,8 @@ export default function AccidentesDecesosPage() {
               <div className="hidden lg:block relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-amber-500/20 border border-white/10">
                   <Image
-                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Familia protegida con seguro accidentes y decesos Madrid"
+                    src="https://images.pexels.com/photos/4609037/pexels-photo-4609037.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Familia feliz protegida - Pack seguro accidentes y decesos Madrid"
                     width={600}
                     height={500}
                     className="w-full h-auto object-cover"
