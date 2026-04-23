@@ -182,12 +182,12 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
         <section className="section-pad bg-[var(--blue-deep)] text-white overflow-hidden">
           <div className="container-shell">
             <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 max-w-xs mx-auto md:mx-0">
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 max-w-xs mx-auto md:mx-0">
                 <Image
                   src="/images/rosa_y_sebastian_de_pie.png"
                   alt={`Rosa y Sebastián Valentín, asesores de seguros independientes en ${z.nombre}`}
                   fill loading="lazy" sizes="(max-width: 768px) 320px, 380px" quality={75}
-                  className="object-cover object-top"
+                  className="object-cover object-[center_20%]"
                 />
               </div>
               <div>

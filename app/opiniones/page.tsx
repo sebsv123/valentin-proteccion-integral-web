@@ -97,7 +97,7 @@ export default function OpinionesPage() {
                       priority
                       sizes="(max-width: 1024px) 100vw, 420px"
                       quality={80}
-                      className="object-cover object-top"
+                      className="object-cover object-[center_20%]"
                     />
                   </div>
                   <div className="flex gap-3">

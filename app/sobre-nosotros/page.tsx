@@ -85,8 +85,8 @@ export default function SobreNosotrosPage() {
                 {/* Photo section */}
                 <div className="space-y-6">
                   <div className="soft-card overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
-                    <div className="relative aspect-[4/5] w-full">
-                      <Image src="/images/rosa_y_sebastian_de_pie.png" alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte, Madrid" fill className="object-cover object-top" priority />
+                    <div className="relative aspect-square w-full">
+                      <Image src="/images/rosa_y_sebastian_de_pie.png" alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte, Madrid" fill className="object-cover object-[center_20%]" priority />
                     </div>
                   </div>
   
@@ -298,10 +298,10 @@ export default function SobreNosotrosPage() {
             <div className="container-shell">
               <div className="grid gap-6 md:grid-cols-2 items-center">
                 <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/rosa_y_sebastian_conversando.png" alt="Rosa y Sebastián Valentín en consulta con un cliente en Boadilla del Monte" fill className="object-cover object-top" />
+                  <Image src="/images/rosa_y_sebastian_conversando.png" alt="Rosa y Sebastián Valentín en consulta con un cliente en Boadilla del Monte" fill className="object-cover object-[center_20%]" />
                 </div>
                 <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/rosa_y_sebastian_mesa.png" alt="Rosa y Sebastián Valentín asesorando en su oficina de Boadilla del Monte" fill className="object-cover object-top" />
+                  <Image src="/images/rosa_y_sebastian_mesa.png" alt="Rosa y Sebastián Valentín asesorando en su oficina de Boadilla del Monte" fill className="object-cover object-[center_20%]" />
                 </div>
               </div>
             </div>

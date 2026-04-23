@@ -236,10 +236,10 @@ export default function DecesosPage() {
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián - Tu apoyo en momentos difíciles"
                     width={500}
-                    height={600}
-                    className="w-full h-auto object-cover object-top"
-                    objectFit="cover"
+                    height={500}
+                    className="w-full h-auto object-cover object-[center_20%]"
                     priority
+                    style={{ aspectRatio: '1/1' }}
                   />
                 </div>
               </div>

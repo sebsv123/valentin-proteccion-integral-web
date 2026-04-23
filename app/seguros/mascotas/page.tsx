@@ -217,9 +217,10 @@ export default function MascotasPage() {
                     src="/images/rosa_y_sebastian_mascotas.png"
                     alt="Rosa y Sebastián - Amantes de los animales"
                     width={500}
-                    height={600}
-                    className="w-full h-auto object-cover object-top"
+                    height={500}
+                    className="w-full h-auto object-cover object-[center_20%]"
                     priority
+                    style={{ aspectRatio: '1/1' }}
                   />
                 </div>
               </div>
