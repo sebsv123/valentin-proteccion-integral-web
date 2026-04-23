@@ -8,7 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
-import { Globe, CheckCircle2, ArrowRight, Quote } from "lucide-react";
+import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro Médico NIE/TIE Extranjeros Madrid | Valentín",
@@ -150,49 +150,6 @@ export default function SaludExtranjerosPage() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </section>
-
-        {/* TESTIMONIALS */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl font-bold text-center text-[#163300] mb-12">
-              Clientes con NIE/TIE Aprobado
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Testimonial 1 */}
-              <div className="bg-[#F0FAE5] rounded-2xl p-8 border border-[#9FE870]">
-                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
-                <p className="text-[#163300] text-lg leading-relaxed mb-6">
-                  "NIE Madrid aprobado semana 1. Perfecto para residencia familiar."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
-                    J
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#163300]">Juan</p>
-                    <p className="text-sm text-[#4B5563]">Colombia · NIE Aprobado</p>
-                  </div>
-                </div>
-              </div>
-              {/* Testimonial 2 */}
-              <div className="bg-[#F0FAE5] rounded-2xl p-8 border border-[#9FE870]">
-                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
-                <p className="text-[#163300] text-lg leading-relaxed mb-6">
-                  "TIE renovado sin problemas. Cobertura completa."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
-                    M
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#163300]">María</p>
-                    <p className="text-sm text-[#4B5563]">EEUU · TIE Renovado</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
