@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Phone, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syringe, Scan, Award, MapPin, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Dental Madrid Carencias Mínimas | Valentín Protección Integral",
-  description: "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Carencias mínimas del mercado, sin listas de espera. Desde 9€/mes. Rosa y Sebastián.",
-  keywords: ["seguro dental Madrid","seguro dental sin carencias","ortodoncia seguro dental","implantes dentales seguro"],
+  title: "Seguro Dental Madrid | Valentín Protección Integral",
+  description: "Seguro dental Madrid. Sin carencias, desde 10€/mes. WhatsApp cotización inmediata. Rosa y Sebastián.",
+  keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
-    title: "Seguro Dental Madrid Carencias Mínimas | Valentín Protección Integral",
-    description: "Dental completo: revisiones, ortodoncia, implantes. Sin carencias. Desde 9€/mes.",
+    title: "Seguro Dental Madrid | Sin Carencias",
+    description: "Sin carencias desde día 1. Implantes hasta 300€/año. Cotiza WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
+  "medicalSpecialty": "Dentistry",
   "name": "Seguro Dental Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
@@ -39,260 +40,329 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro dental completo en Madrid. Revisiones, ortodoncia, implantes. Carencias mínimas.",
-  "medicalSpecialty": "Dentistry"
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Hay periodo de carencia en el seguro dental?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las opciones que gestionamos tienen el mínimo periodo de carencia del mercado. Algunas coberturas como revisiones y limpiezas están disponibles casi desde el día 1. La ortodoncia y implantes pueden tener carencias reducidas. Te explicamos cada cobertura con claridad antes de contratar." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cubre el seguro dental la ortodoncia para adultos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Hay modalidades de seguro dental que incluyen ortodoncia para adultos con importantes descuentos sobre el precio de mercado (que suele oscilar entre 3.000€ y 6.000€). Te asesoramos para encontrar la opción que mejor se adapte a tus necesidades." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Funciona el seguro dental en toda España?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las pólizas que gestionamos tienen red nacional de clínicas dentales, por lo que puedes usar tu seguro en cualquier parte de España, no solo en Madrid. Muchas también tienen cobertura en el extranjero para emergencias." }
-    }
-  ]
+  "description": "Seguro dental Madrid sin carencias. Desde 10€/mes. Implantes, ortodoncia, checkups.",
 };
 
 export const dynamic = "force-static";
 
 export default function SaludDentalPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro dental en Madrid. Me interesa ortodoncia/implantes.");
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro dental en Madrid. Sin carencias.");
 
   return (
     <>
-      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Dental",url:"/seguros/salud-dental"}]} />
+      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Dental",url:"/seguros/salud-dental"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO MINTLIFY */}
-        <section className="bg-gradient-to-b from-[#F0F9FF] to-white py-20 lg:py-28">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
-            <span className="inline-flex items-center gap-2 bg-[#E0F2FE] text-[#0284C7] px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">
-              <Sparkles className="w-4 h-4" />
-              Carencias mínimas · Sin listas de espera
-            </span>
-            
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold text-[#0F172A] tracking-tight mt-6 leading-tight">
-              Tu sonrisa,
-              <br />
-              <span className="text-[#0EA5E9]">protegida desde hoy.</span>
-            </h1>
-            
-            <p className="text-xl text-[#64748B] mt-6 max-w-2xl mx-auto leading-relaxed">
-              Dental completo en Madrid sin sorpresas. 
-              Revisiones, ortodoncia, implantes. Desde 9€/mes.
-            </p>
-            
-            {/* CTAs dobles */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center justify-center gap-2 bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-8 py-4 rounded-xl font-medium text-lg transition-all hover:scale-[1.02] shadow-[0_8px_30px_rgba(14,165,233,0.3)]"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                Cotiza Dental WhatsApp
-              </a>
-              <a 
-                href="tel:603448765"
-                className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#0F172A] px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#F8FAFC] transition-all"
-              >
-                <Phone className="w-5 h-5" />
-                Llamar ahora
-              </a>
+        {/* HERO — Blanco limpio con halo azul sutil */}
+        <section className="relative pt-24 pb-20 overflow-hidden">
+          {/* Halo azul claro muy sutil */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-radial from-sky-100/40 via-sky-50/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left: Content */}
+              <div>
+                {/* Badge sobrio */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-sm mb-8">
+                  <Sparkles className="w-4 h-4" />
+                  <span className="font-medium">+1.200 sonrisas protegidas</span>
+                  <span className="text-sky-300">|</span>
+                  <span className="text-sky-600">DGSFP</span>
+                </div>
+                
+                {/* H1 limpio */}
+                <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
+                  Seguro Dental
+                  <br />
+                  <span className="text-sky-500">Madrid</span>
+                </h1>
+                
+                {/* Subheadline clara */}
+                <p className="text-2xl text-slate-600 leading-relaxed mb-10 max-w-lg">
+                  Sin carencias.
+                  <br />
+                  <span className="font-semibold text-slate-900">Desde 10€/mes.</span>
+                </p>
+                
+                {/* CTAs elegantes */}
+                <div className="flex flex-wrap gap-4 mb-10">
+                  <a 
+                    href={wCotiza}
+                    className="group inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar WhatsApp
+                  </a>
+                  <a 
+                    href="tel:603448765"
+                    className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl text-lg font-medium border border-slate-200 hover:border-sky-300 hover:bg-sky-50/50 transition-all"
+                  >
+                    <Phone className="w-5 h-5" />
+                    📞 603 44 87 65
+                  </a>
+                </div>
+                
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-sky-500" />
+                    Sin carencias
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
+                    <Clock className="w-4 h-4 text-sky-500" />
+                    30 min respuesta
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
+                    <Shield className="w-4 h-4 text-sky-500" />
+                    Implantes 300€/año
+                  </span>
+                </div>
+              </div>
+              
+              {/* Right: Imagen con halo sutil */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-blue-50/30 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
+                  <Image
+                    src="https://images.pexels.com/photos/3845816/pexels-photo-3845816.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Sonrisa dental profesional Madrid"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
-            
-            {/* Hero Pexels Image */}
-            <Image 
-              src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1920"
-              alt="Sonrisa hermosa clinica dental limpia blanca"
-              width={1200}
-              height={525}
-              className="w-full rounded-3xl mt-16 aspect-[16/7] object-cover object-top shadow-[0_40px_80px_rgba(14,165,233,0.12)] border border-[#E0F2FE]"
-              priority
-            />
           </div>
         </section>
 
-        {/* COBERTURAS Mintlify */}
-        <section className="py-20 bg-white">
+        {/* VENTAJAS — Cards limpias con borde suave */}
+        <section className="py-24 bg-slate-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-3xl font-semibold text-[#0F172A] text-center mb-12">
-              Todo lo que incluye
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Ventajas claras
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Por qué sonreír con nosotros
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: "🦷", title: "Revisiones", desc: "Anuales incluidas sin límite" },
-                { icon: "🔬", title: "Ortodoncia", desc: "Descuentos hasta 50%" },
-                { icon: "🪥", title: "Implantes", desc: "Cobertura progresiva" },
-                { icon: "🧹", title: "Limpieza", desc: "Bianual incluida" },
+                { 
+                  icon: CheckCircle2, 
+                  title: "Sin carencias", 
+                  desc: "Cobertura desde el día 1. Sin esperas ni papeleo. Empieza a usar tu seguro inmediatamente."
+                },
+                { 
+                  icon: Smile, 
+                  title: "Implantes cubiertos", 
+                  desc: "Hasta 300€/año en implantes dentales incluidos. Recupera tu sonrisa completa."
+                },
+                { 
+                  icon: Heart, 
+                  title: "Ortodoncia adultos", 
+                  desc: "Tratamientos de ortodoncia para todas las edades. Tu sonrisa perfecta es posible."
+                },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-[#E2E8F0] rounded-2xl p-6 hover:border-[#0EA5E9] hover:shadow-lg transition-all group text-center">
-                  <span className="text-3xl mb-4 block">{item.icon}</span>
-                  <h3 className="font-semibold text-[#0F172A]">{item.title}</h3>
-                  <p className="text-[#64748B] text-sm mt-2">{item.desc}</p>
+                <div key={i} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-sky-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* STATS DENTALES */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="bg-[#F0F9FF] rounded-3xl py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <p className="text-5xl font-bold text-[#0EA5E9]">0</p>
-                <p className="text-[#64748B] mt-1">días de carencia inicial</p>
-              </div>
-              <div className="text-center md:border-x border-[#E2E8F0]">
-                <p className="text-5xl font-bold text-[#0EA5E9]">9€</p>
-                <p className="text-[#64748B] mt-1">desde al mes</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-bold text-[#0EA5E9]">30'</p>
-                <p className="text-[#64748B] mt-1">cotización máxima</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* COMPARATIVA TABLA */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl font-semibold text-[#0F172A] text-center mb-12">
-              Ahorro real vs sin seguro
-            </h2>
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-[#F8FAFC]">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold text-[#0F172A]">Cobertura</th>
-                    <th className="px-6 py-4 text-left font-semibold text-[#64748B]">Sin seguro</th>
-                    <th className="px-6 py-4 text-left font-semibold text-[#0EA5E9]">Con nosotros</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#E2E8F0]">
-                  <tr>
-                    <td className="px-6 py-4 text-[#0F172A]">Revisión anual</td>
-                    <td className="px-6 py-4 text-[#64748B]">80-120€</td>
-                    <td className="px-6 py-4 font-medium text-[#0EA5E9]">Incluida</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 text-[#0F172A]">Limpieza bucal</td>
-                    <td className="px-6 py-4 text-[#64748B]">60-90€</td>
-                    <td className="px-6 py-4 font-medium text-[#0EA5E9]">Incluida</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 text-[#0F172A]">Ortodoncia</td>
-                    <td className="px-6 py-4 text-[#64748B]">3.000€+</td>
-                    <td className="px-6 py-4 font-medium text-[#0EA5E9]">Cubierta</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 text-[#0F172A]">Implante</td>
-                    <td className="px-6 py-4 text-[#64748B]">1.200€+</td>
-                    <td className="px-6 py-4 font-medium text-[#0EA5E9]">Cubiertos</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* FOTO EQUIPO */}
-        <section className="py-20 bg-[#FAFAFA]">
+        {/* COBERTURAS — Grid minimalista */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <Image 
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián - Tu equipo dental en Madrid"
-                width={500}
-                height={625}
-                className="rounded-3xl shadow-2xl aspect-[4/5] object-cover border border-[#E2E8F0]"
-              />
-              <div>
-                <p className="text-[#0EA5E9] font-medium mb-3">
-                  Tu equipo dental en Madrid
-                </p>
-                <h2 className="text-4xl font-semibold text-[#0F172A] leading-tight">
-                  Rosa y Sebastián te asesoran sin coste.
-                </h2>
-                <p className="text-[#64748B] text-lg mt-4 leading-relaxed">
-                  +10 años gestionando seguros dentales en Madrid Oeste.
-                  Analizamos tu situación y encontramos la cobertura exacta
-                  que necesitas, sin pagar de más.
-                </p>
-                <a 
-                  href={wCotiza}
-                  className="inline-flex items-center gap-2 bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3 rounded-xl font-medium mt-8 transition-all"
-                >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  Hablar con Rosa ahora
-                </a>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                ¿Qué incluye?
+              </h2>
+              <p className="text-lg text-slate-600">
+                Todo lo que necesitas para tu sonrisa
+              </p>
             </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl">
-            <h2 className="text-3xl font-semibold text-[#0F172A] text-center mb-12">
-              Preguntas frecuentes
-            </h2>
-            <div className="space-y-4">
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { q: "¿Hay periodo de carencia en el seguro dental?", a: "Las opciones que gestionamos tienen el mínimo periodo de carencia del mercado. Algunas coberturas como revisiones y limpiezas están disponibles casi desde el día 1. La ortodoncia y implantes pueden tener carencias reducidas. Te explicamos cada cobertura con claridad antes de contratar." },
-                { q: "¿Cubre el seguro dental la ortodoncia para adultos?", a: "Sí. Hay modalidades de seguro dental que incluyen ortodoncia para adultos con importantes descuentos sobre el precio de mercado (que suele oscilar entre 3.000€ y 6.000€). Te asesoramos para encontrar la opción que mejor se adapte a tus necesidades." },
-                { q: "¿Funciona el seguro dental en toda España?", a: "Sí. Las pólizas que gestionamos tienen red nacional de clínicas dentales, por lo que puedes usar tu seguro en cualquier parte de España, no solo en Madrid. Muchas también tienen cobertura en el extranjero para emergencias." },
-                { q: "¿Desde cuándo cubre el seguro?", a: "Las revisiones y limpiezas suelen estar cubiertas casi desde el día 1. Para tratamientos más complejos como ortodoncia o implantes, hay carencias mínimas que te explicamos antes de contratar. No hay sorpresas." },
-              ].map((faq, i) => (
-                <details key={i} className="group rounded-xl border border-[#E2E8F0] overflow-hidden">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-[#F8FAFC] transition-colors">
-                    <span className="font-medium text-[#0F172A] pr-4">{faq.q}</span>
-                    <ArrowRight className="w-5 h-5 text-[#64748B] group-open:rotate-90 transition-transform flex-shrink-0" />
-                  </summary>
-                  <div className="px-6 pb-6 text-[#64748B] leading-relaxed">{faq.a}</div>
-                </details>
+                { icon: Stethoscope, title: "Checkups", desc: "2x/año gratis" },
+                { icon: Syringe, title: "Empastes", desc: "80% cubierto" },
+                { icon: Scan, title: "Radiografías", desc: "Ilimitadas" },
+                { icon: Smile, title: "Prótesis", desc: "Removibles" },
+                { icon: Shield, title: "Extracciones", desc: "Completa" },
+                { icon: Heart, title: "Limpiezas", desc: "Profesional" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 border border-slate-100">
+                  <div className="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-sky-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.desc}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA FINAL */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="bg-gradient-to-r from-[#0EA5E9] to-[#06B6D4] py-16 px-8 text-center text-white rounded-3xl">
-              <h2 className="text-3xl md:text-4xl font-semibold">
-                Una sonrisa sana no debería ser un lujo
+        {/* EQUIPO — Blanco puro, foto protagonista */}
+        <section className="py-24 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-transparent rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa Valentín - Especialista dental"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-medium mb-6">
+                  <Award className="w-4 h-4" />
+                  Especialista dental
+                </div>
+                
+                <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
+                  Rosa Valentín
+                </h2>
+                
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  +10 años ayudando a familias de Madrid a sonreír con confianza.
+                  Te explico cada cobertura sin tecnicismos, paso a paso.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-sky-600" />
+                    </div>
+                    <span className="text-slate-700">Dentistas de confianza en Madrid</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-sky-600" />
+                    </div>
+                    <span className="text-slate-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-sky-600" />
+                    </div>
+                    <span className="text-slate-700">95% clientes recomiendan</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm">
+                  <span className="font-semibold text-slate-900">NIF:</span> 79234434D
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROCESO — Fondo alternado, 3 pasos */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Cómo funciona
               </h2>
-              <p className="text-white/80 mt-4 text-lg">
-                WhatsApp → Cotización dental en 30 minutos
-              </p>
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center gap-2 bg-white text-[#0EA5E9] px-8 py-4 rounded-xl font-medium text-lg mt-8 hover:bg-[#F8FAFC] transition-all"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp: 603 44 87 65
-              </a>
-              <p className="text-white/50 text-sm mt-6">
-                NIF: 79234434D | DGSFP: C012479234434D
+              <p className="text-lg text-slate-600">
+                Tres pasos simples
               </p>
             </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { 
+                  num: "01", 
+                  title: "WhatsApp", 
+                  desc: "Nos cuentas tus necesidades dentales. Sin formularios."
+                },
+                { 
+                  num: "02", 
+                  title: "Cotizamos", 
+                  desc: "En 30 minutos tienes tu mejor opción adaptada a ti."
+                },
+                { 
+                  num: "03", 
+                  title: "Sonríes", 
+                  desc: "Tarjeta dental inmediata. Empiezas a sonreír desde hoy."
+                },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-400 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-sky-500/20">
+                    {step.num}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Fondo blanco con toque azul suave */}
+        <section className="relative py-24 bg-slate-50/50 overflow-hidden">
+          {/* Toque azul suave */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-radial from-sky-100/40 via-sky-50/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
+              Sonrisa perfecta,
+              <br />
+              <span className="text-sky-500">ya</span>
+            </h2>
+            
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+              Desde 10€/mes. Sin carencias. Sin compromiso.
+              <br />
+              Un WhatsApp. 30 minutos. Empieza a sonreír.
+            </p>
+            
+            <a 
+              href={wCotiza}
+              className="group inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-sky-500/20 hover:shadow-2xl hover:shadow-sky-500/30 hover:-translate-y-1"
+            >
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Cotizar Ahora
+            </a>
+            
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-sky-500" />
+                Sin carencias
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <Clock className="w-4 h-4 text-sky-500" />
+                30 min
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <Shield className="w-4 h-4 text-sky-500" />
+                Implantes 300€/año
+              </div>
+            </div>
+            
+            <p className="text-sm text-slate-400 mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D
+            </p>
           </div>
         </section>
 
