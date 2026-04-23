@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Bike, Dumbbell, Bike as BikeIcon, Mountain, Waves, AlertTriangle, Shield, CheckCircle2, TrendingUp } from "lucide-react";
+import { Sparkles, CheckCircle2, Mountain, Bike, Dumbbell, Bike as BikeIcon, Trophy, Heart, Shield, Zap, AlertTriangle, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Accidentes Madrid | Ciclismo, Gym, Moto Laboral | Valentín Protección Integral",
-  description: "Seguro de accidentes desde muy poco al mes. Cubre ciclismo, gimnasio, moto laboral, deportes de montaña y agua. Indemnización por incapacidad temporal.",
-  keywords: ["seguro accidentes Madrid","seguro ciclismo Madrid","seguro gym Madrid","indemnización incapacidad temporal"],
+  title: "Seguro Accidentes Deportes Madrid | Valentín Protección Integral",
+  description: "Seguro accidentes deportivos Madrid desde muy poco al mes. Esquí, moto, running. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  keywords: ["seguro accidentes deportes Madrid","seguro deportes extremos Madrid","seguro accidentes esqui moto"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes" },
   openGraph: {
-    title: "Seguro Accidentes Madrid | Ciclismo, Gym, Moto Laboral",
-    description: "Todo cubierto desde muy poco al mes. Ciclismo, gimnasio, moto laboral, deportes.",
+    title: "Seguro Accidentes Deportes Madrid | Esquí, Moto, BTT",
+    description: "Desde muy poco al mes. Esquí, moto, BTT, gym. Cobertura inmediata. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/accidentes",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguro de Accidentes Madrid",
+  "@type": "InsuranceAgency",
+  "name": "Seguro Accidentes Deportes Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -38,154 +38,267 @@ const serviceSchema = {
       "addressCountry": "ES"
     }
   },
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de accidentes para ciclismo, gimnasio, moto laboral y deportes. Desde muy poco al mes.",
+  "areaServed": ["Madrid", "Sierra de Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón"],
+  "description": "Seguro accidentes deportivos Madrid. Esquí, moto, BTT, running, gym. Cobertura inmediata.",
 };
 
 export const dynamic = "force-static";
 
 export default function AccidentesPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de accidentes. Hago ciclismo/gym/moto y quiero estar cubierto.");
+  const wCotiza = buildWhatsAppHref("Hola, practico deportes y quiero un seguro de accidentes en Madrid.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Accidentes",url:"/seguros/accidentes"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#1C1C1E] text-white">
+      <main className="min-h-screen bg-[#07080a] text-[#f9f9f9]">
         
-        {/* HERO RAYCAST — Energía deportiva */}
-        <section className="min-h-screen bg-[#1C1C1E] relative overflow-hidden flex items-center">
-          {/* Gradient blob ENERGÉTICO */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-[#FF6363] to-[#FFD93D] opacity-[0.15] blur-[100px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-[#FF8C42] to-[#FF6363] opacity-[0.1] blur-[80px] rounded-full" />
+        {/* HERO RAYCAST — Obsidian dark, red accent */}
+        <section className="relative pt-24 pb-20 overflow-hidden">
+          {/* Raycast red diagonal stripe decoration */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-[#FF6363]/20 to-transparent transform rotate-45 translate-x-1/2 -translate-y-1/2" />
           
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Content */}
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,99,99,0.2)] text-[#FF8C42] text-sm font-medium mb-6">
-                  <AlertTriangle className="w-4 h-4" />
-                  Desde muy poco al mes
+                {/* Badge Raycast */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#FF6363] text-sm mb-6">
+                  <Sparkles className="w-4 h-4" />
+                  Deportes extremos OK
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                  <span className="bg-gradient-to-r from-[#FF6363] to-[#FFD93D] bg-clip-text text-transparent">
-                    Bici. Gym. Trabajo.
-                  </span>
+                
+                {/* H1 Raycast */}
+                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-white leading-[1.10] tracking-normal mb-6">
+                  Seguro
                   <br />
-                  <span className="text-white">Todo cubierto.</span>
+                  <span className="text-[#FF6363]">Accidentes</span>
+                  <br />
+                  Deportes
                 </h1>
-                <p className="text-xl text-[#98989D] mb-8 max-w-lg">
-                  Seguro de accidentes que cubre tu vida activa. Ciclismo, deporte, moto laboral. 
-                  Indemnización por incapacidad temporal.
+                
+                {/* Subhead */}
+                <p className="text-xl text-[#cecece] leading-relaxed mb-8 max-w-md">
+                  Desde muy poco al mes.
+                  <br />
+                  Esquí, moto, BTT, gym.
                 </p>
-                <a 
-                  href={wCotiza}
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#FF6363] to-[#FF8C42] text-white font-semibold text-lg hover:shadow-[0_0_30px_rgba(255,99,99,0.4)] transition-all hover:scale-[1.02]"
-                >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  Cotizar ahora desde muy poco al mes
-                </a>
+                
+                {/* CTAs Raycast */}
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <a 
+                    href={wCotiza}
+                    className="group inline-flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-full text-base font-semibold border border-[#2f3031] transition-all hover:bg-[#1b1c1e]"
+                    style={{ boxShadow: 'rgba(255,255,255,0.1) 0px 1px 0px 0px inset, rgba(0,0,0,0.4) 0px 2px 4px' }}
+                  >
+                    <WhatsAppIcon className="w-4 h-4" />
+                    💬 Cotizar WhatsApp
+                    <span className="hidden group-hover:inline text-sm ml-1 text-[#5fc992]">
+                      🚀 1 mes gratis
+                    </span>
+                  </a>
+                  <a 
+                    href="#coberturas"
+                    className="inline-flex items-center gap-2 text-[#55b3ff] px-6 py-3 rounded-full text-base font-medium hover:text-white transition-colors"
+                  >
+                    Ver coberturas →
+                  </a>
+                </div>
+                
+                {/* Trust row */}
+                <div className="flex flex-wrap gap-6 text-sm text-[#9c9c9d]">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#5fc992]" />
+                    Cobertura inmediata
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[#ffbc33]" />
+                    30 min respuesta
+                  </span>
+                </div>
               </div>
               
-              <div className="hidden lg:block relative">
-                <Image
-                  src="https://images.pexels.com/photos/2889445/pexels-photo-2889445.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Ciclista deporte protección accidentes Madrid"
-                  width={500}
-                  height={600}
-                  className="rounded-3xl object-cover border border-[rgba(255,255,255,0.1)]"
-                />
+              {/* Right: Hero Image */}
+              <div className="relative">
+                <div className="relative rounded-xl overflow-hidden border border-[#252829]" style={{ boxShadow: '0 20px 40px rgba(0,0,0,0.6)' }}>
+                  <Image
+                    src="https://images.pexels.com/photos/38296/cycling-mountain-bike-mountain-biking-trail-38296.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Deportes extremos Madrid sierra BTT"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* DEPORTES — Cards neon */}
-        <section className="py-24 bg-[#1C1C1E]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-              Todo lo que cubrimos
+        {/* DEPORTES — Raycast cards */}
+        <section className="py-20 border-t border-[#252829]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-medium text-white leading-[1.17] tracking-[0.2px] text-center mb-12">
+              Deportes cubiertos
             </h2>
-            <p className="text-[#98989D] text-center mb-12">
-              Tu estilo de vida activo, protegido
-            </p>
             
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
-                { icon: Bike, name: "Ciclismo", desc: "Carretera y montaña" },
-                { icon: Dumbbell, name: "Gym", desc: "Gimnasio y fitness" },
-                { icon: BikeIcon, name: "Moto laboral", desc: "Desplazamientos trabajo" },
-                { icon: Mountain, name: "Montaña", desc: "Senderismo, escalada" },
-                { icon: Waves, name: "Deportes agua", desc: "Natación, surf, paddle" },
-              ].map((sport, i) => (
-                <div key={i} className="rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] p-6 text-center hover:border-[rgba(255,99,99,0.4)] transition-all group">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF6363] to-[#FF8C42] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <sport.icon className="w-7 h-7 text-white" />
+                { icon: Mountain, title: "Montaña", desc: "Esquí, BTT" },
+                { icon: BikeIcon, title: "Moto", desc: "Trial, enduro" },
+                { icon: Activity, title: "Running", desc: "Trail, maratón" },
+                { icon: Dumbbell, title: "Gym", desc: "Crossfit, pesas" },
+                { icon: Trophy, title: "Fútbol", desc: "7, amateur" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl p-5 bg-[#101111] border border-[#252829] hover:border-[#2f3031] transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#1b1c1e] flex items-center justify-center mb-3">
+                    <item.icon className="w-5 h-5 text-[#FF6363]" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-1">{sport.name}</h3>
-                  <p className="text-[#98989D] text-sm">{sport.desc}</p>
+                  <h3 className="text-base font-medium text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-[#6a6b6c]">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* COBERTURA */}
-        <section className="py-24 bg-[#191919]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  ¿Qué cubre exactamente?
-                </h2>
-                <div className="space-y-6">
-                  {[
-                    { icon: Shield, title: "Gastos médicos", desc: "Urgencias, hospitalización, rehabilitación" },
-                    { icon: TrendingUp, title: "Incapacidad temporal", desc: "Indemnización diaria si no puedes trabajar" },
-                    { icon: AlertTriangle, title: "Invalidez", desc: "Capital en caso de invalidez permanente" },
-                    { icon: CheckCircle2, title: "Fallecimiento", desc: "Capital para tus beneficiarios" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[rgba(255,99,99,0.2)] flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-5 h-5 text-[#FF8C42]" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                        <p className="text-[#98989D]">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+        {/* COBERTURAS — Raycast grid */}
+        <section id="coberturas" className="py-20 bg-[#101111] border-t border-[#252829]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-medium text-white leading-[1.17] tracking-[0.2px] text-center mb-12">
+              Cobertura completa
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: Heart, title: "Muerte", desc: "60.000€" },
+                { icon: Shield, title: "Invalidez", desc: "Hasta 100%" },
+                { icon: Activity, title: "Gastos médicos", desc: "6.000€" },
+                { icon: AlertTriangle, title: "Hospital", desc: "100€/día" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl p-5 bg-[#07080a] border border-[#252829]">
+                  <div className="w-10 h-10 rounded-lg bg-[#1b1c1e] flex items-center justify-center mb-3">
+                    <item.icon className="w-5 h-5 text-[#5fc992]" />
+                  </div>
+                  <h3 className="text-base font-medium text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-[#FF6363] font-semibold">{item.desc}</p>
                 </div>
-              </div>
-              <div className="relative">
+              ))}
+            </div>
+            
+            {/* Doble capital highlight */}
+            <div className="mt-8 p-4 rounded-xl bg-[#1b1c1e] border border-[#FF6363]/30 text-center">
+              <p className="text-[#FF6363] font-medium">
+                <span className="inline-flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4" />
+                  Doble capital en deportes de riesgo
+                </span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO */}
+        <section className="py-20 border-t border-[#252829]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative rounded-xl overflow-hidden border border-[#252829]" style={{ boxShadow: '0 20px 40px rgba(0,0,0,0.6)' }}>
                 <Image
                   src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa y Sebastián - Seguro accidentes"
+                  alt="Sebastián · Practicante MTB"
                   width={500}
                   height={600}
-                  className="rounded-3xl object-cover border border-[rgba(255,255,255,0.1)]"
+                  className="w-full h-auto object-cover"
+                  priority
                 />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#5fc992] text-sm mb-6">
+                  <Bike className="w-4 h-4" />
+                  Practicante MTB
+                </div>
+                <h2 className="text-[32px] font-medium text-white leading-[1.17] tracking-[0.2px] mb-4">
+                  Sebastián
+                </h2>
+                <p className="text-lg text-[#cecece] leading-relaxed mb-6">
+                  Entiendo los riesgos porque también practico deportes de montaña. 
+                  Un accidente puede pasarle a cualquiera, estando preparado 
+                  es la diferencia.
+                </p>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#9c9c9d] text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-[#5fc992]" />
+                  DGSFP: C012479234434D
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-24 bg-gradient-to-br from-[#FF6363] to-[#FF8C42]">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Protege tu estilo de vida
+        {/* PROCESO RÁPIDO */}
+        <section className="py-20 bg-[#101111] border-t border-[#252829]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-medium text-white leading-[1.17] tracking-[0.2px] text-center mb-12">
+              Proceso rápido
             </h2>
-            <p className="text-xl text-white/80 mb-8">
-              Desde muy poco al mes. Cotización en 30 minutos.
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { num: "1", title: "WhatsApp", desc: "Dinos qué deportes practicas." },
+                { num: "2", title: "Específico", desc: "Cotización a medida en 30min." },
+                { num: "3", title: "Inmediata", desc: "Cobertura desde el primer día." },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#FF6363] flex items-center justify-center text-lg font-semibold mx-auto mb-4">
+                    {step.num}
+                  </div>
+                  <h3 className="text-xl font-medium text-white mb-2">{step.title}</h3>
+                  <p className="text-base text-[#6a6b6c]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Raycast speed */}
+        <section className="py-24 bg-[#101111] border-t border-[#252829]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-[48px] sm:text-[56px] font-semibold text-white leading-[1.10] mb-4">
+              Protegerme <span className="text-[#FF6363]">YA</span>
+            </h2>
+            <p className="text-xl text-[#cecece] mb-10">
+              Un WhatsApp. 30 minutos. Listo para salir.
             </p>
+            
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-3 bg-white text-[#FF6363] px-10 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all"
+              className="group inline-flex items-center gap-2 bg-[#FF6363] hover:bg-[#ff7a7a] text-white px-10 py-4 rounded-full text-lg font-semibold transition-all"
+              style={{ boxShadow: '0 10px 30px rgba(255,99,99,0.3)' }}
             >
               <WhatsAppIcon className="w-5 h-5" />
-              Cotizar seguro de accidentes
+              💬 Cotizar Ahora
+              <span className="hidden group-hover:inline text-sm ml-1">
+                🚀 1 mes gratis
+              </span>
             </a>
+            
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-3 mt-10">
+              {[
+                "Sin permanencia",
+                "Cobertura inmediata",
+                "DGSFP verificado",
+              ].map((item, i) => (
+                <div key={i} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#9c9c9d] text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-[#5fc992]" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-sm text-[#434345] mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D
+            </p>
           </div>
         </section>
 
