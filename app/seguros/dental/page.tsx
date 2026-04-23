@@ -265,7 +265,7 @@ export default function DentalPage() {
             </div>
             
             <p className="text-sm text-[#888888] mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

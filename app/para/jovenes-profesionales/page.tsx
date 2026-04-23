@@ -424,7 +424,7 @@ export default function JovenesPage() {
             </div>
             
             <p className="text-lg text-violet-300/70 mt-10">
-              NIF: 79234434D · DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

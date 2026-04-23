@@ -244,7 +244,7 @@ export default function AutonomosLandingPage() {
                   "Llevamos más de 10 años ayudando a autónomos como tú a protegerse mejor y a pagar menos impuestos."
                 </blockquote>
                 <p className="text-base text-[#061b31] font-normal mb-1">Rosa Valentín</p>
-                <p className="text-sm text-[#64748d] mb-4">Mediadora DGSFP · NIF: 79234434D</p>
+                <p className="text-sm text-[#64748d] mb-4">Mediadora DGSFP: C012479234434D</p>
                 <div className="flex gap-4 text-sm text-[#64748d]">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
@@ -322,7 +322,7 @@ export default function AutonomosLandingPage() {
               Empezar por WhatsApp
             </a>
             <p className="text-sm text-white/40 mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D · 10 años · Sin permanencia
+              DGSFP: C012479234434D · 10 años · Sin permanencia
             </p>
           </div>
         </section>

@@ -434,7 +434,7 @@ export default function AutonomosPage() {
             </div>
             
             <p className="text-lg text-slate-500 mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

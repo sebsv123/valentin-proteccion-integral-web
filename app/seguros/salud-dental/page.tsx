@@ -359,7 +359,7 @@ export default function SaludDentalPage() {
             </div>
             
             <p className="text-sm text-slate-400 mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

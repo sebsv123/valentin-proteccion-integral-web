@@ -297,7 +297,7 @@ export default function VidaHipotecaPage() {
             </div>
             
             <p className="text-sm text-white/40 mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D · Mediadores independientes
+              DGSFP: C012479234434D · Mediadores independientes
             </p>
           </div>
         </section>

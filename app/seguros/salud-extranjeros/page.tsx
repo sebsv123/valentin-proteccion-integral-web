@@ -348,7 +348,7 @@ export default function SaludExtranjerosPage() {
               </span>
             </div>
             <p className="text-[#4B5563]/60 text-sm mt-6">
-              NIF: 79234434D | DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

@@ -266,7 +266,7 @@ export default function VidaPage() {
             </div>
             
             <p className="text-sm text-white/40 mt-8">
-              NIF: 79234434D · DGSFP: C012479234434D
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>
