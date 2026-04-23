@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -87,12 +87,13 @@ export default function FamiliasPage() {
                 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
+                    location="familias-hero"
                     className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Proteger mi familia
-                  </a>
+                  </WhatsAppButton>
                   <a 
                     href="tel:603448765"
                     className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl text-lg font-medium border border-slate-200 hover:border-blue-300 hover:bg-blue-50/30 transition-all"
@@ -414,12 +415,13 @@ export default function FamiliasPage() {
               Organizamos la protección completa de tu familia.
             </p>
             
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="familias-cta-final"
               className="group inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               Proteger a mi familia
-            </a>
+            </WhatsAppButton>
             
             {/* Badges finales */}
             <div className="flex flex-wrap justify-center gap-4 mt-12">
