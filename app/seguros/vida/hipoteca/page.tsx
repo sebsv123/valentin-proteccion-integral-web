@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { CheckCircle2, Shield, Home, Wallet, TrendingDown, AlertTriangle, Phone, Building, Euro } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -301,6 +302,9 @@ export default function VidaHipotecaPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes con seguro de vida para hipoteca" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#e23b4a" />

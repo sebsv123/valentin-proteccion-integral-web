@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { CheckCircle2, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -270,6 +271,9 @@ export default function VidaPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros de vida" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#e23b4a" />

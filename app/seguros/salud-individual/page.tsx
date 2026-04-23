@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -322,6 +323,9 @@ export default function SaludIndividualPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros de salud" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#10b981" />

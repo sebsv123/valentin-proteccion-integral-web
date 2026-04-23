@@ -7,6 +7,8 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
+import GarantiasSection from "@/components/GarantiasSection";
 import { Sparkles, CheckCircle2, Mountain, Bike, Dumbbell, Bike as BikeIcon, Trophy, Heart, Shield, Zap, AlertTriangle, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -299,6 +301,12 @@ export default function AccidentesPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguro de accidentes" />
+
+        {/* GARANTÍAS PREMIUM */}
+        <GarantiasSection brandColor="#10b981" />
 
       </main>
       <Footer />

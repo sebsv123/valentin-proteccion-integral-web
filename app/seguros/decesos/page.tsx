@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileCheck, Award, TrendingUp, Phone, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -374,6 +375,9 @@ export default function DecesosPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguro de decesos" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#6366f1" />

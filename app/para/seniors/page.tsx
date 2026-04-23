@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -428,6 +429,9 @@ export default function SeniorsPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes senior" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#10b981" />

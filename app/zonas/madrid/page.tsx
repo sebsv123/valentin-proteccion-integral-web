@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Briefcase, Car, Clock, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -319,12 +320,14 @@ export default function MadridPage() {
           </div>
         </section>
 
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes en Madrid" />
+
         {/* GARANTÍAS PREMIUM */}
-        <GarantiasSection brandColor="#171717" />
+        <GarantiasSection brandColor="#10b981" />
 
       </main>
       <Footer />
       <StickyWhatsApp />
     </>
-  );
 }

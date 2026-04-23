@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Smile, Stethoscope, Syringe, Scan, XCircle, Bone } from "lucide-react";
 
@@ -269,6 +271,12 @@ export default function DentalPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguro dental" />
+
+        {/* GARANTÍAS PREMIUM */}
+        <GarantiasSection brandColor="#18E299" />
 
       </main>
       <Footer />

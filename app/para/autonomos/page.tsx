@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, AlertTriangle, Briefcase, Stethoscope, Umbrella, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -438,6 +439,9 @@ export default function AutonomosPage() {
             </p>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de autónomos que confían en nosotros" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#64748b" />

@@ -7,6 +7,8 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
+import GarantiasSection from "@/components/GarantiasSection";
 import { Globe, CheckCircle2, ArrowRight, Quote, Plane, Shield, Clock, Users } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -99,6 +101,12 @@ export default function ViajePage() {
 
             {/* Guarantee Badge */}
             <GuaranteeBadge type="viaje" />
+
+            {/* RESEÑAS GOOGLE */}
+            <GoogleReviewsWidget title="Opiniones de clientes sobre seguro de viaje" />
+
+            {/* GARANTÍAS PREMIUM */}
+            <GarantiasSection brandColor="#f59e0b" />
 
             {/* Team Image */}
             <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">

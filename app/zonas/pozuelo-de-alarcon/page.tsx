@@ -8,6 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Users, Shield, Heart, Phone, Crown } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -319,8 +320,11 @@ export default function PozueloPage() {
           </div>
         </section>
 
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes en Pozuelo de Alarcón" />
+
         {/* GARANTÍAS PREMIUM */}
-        <GarantiasSection brandColor="#171717" />
+        <GarantiasSection brandColor="#10b981" />
 
       </main>
       <Footer />
