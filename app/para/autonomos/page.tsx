@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, Globe, Home, Briefcase, Zap } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, AlertTriangle, Briefcase, Stethoscope, Umbrella, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Autónomos Madrid | Valentín Protección Integral",
-  description: "Seguro médico autónomos deducible IRPF Madrid. Salud + RC + accidentes. Cotiza WhatsApp 30min. Rosa y Sebastián.",
-  keywords: ["seguros autonomos Madrid","seguro autonomos deducible IRPF","proteccion autonomos Madrid"],
+  title: "Seguros Autónomos Madrid | IRPF Deducible | Valentín Protección Integral",
+  description: "Seguros para autónomos Madrid. IRPF 100% deducible. Salud, RC profesional, accidentes. Ahorra y protege tu negocio. WhatsApp 30min.",
+  keywords: ["seguros autonomos Madrid","seguro autonomos deducible IRPF","seguro RC autonomos Madrid","proteccion autonomos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/autonomos" },
   openGraph: {
     title: "Seguros Autónomos Madrid | IRPF Deducible",
-    description: "Salud + RC profesional + Accidentes. Todo deducible. WhatsApp 30min.",
+    description: "Ahorra en IRPF y protege tu negocio. Salud, RC, accidentes. Todo deducible. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/para/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -39,303 +39,319 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros autónomos Madrid. IRPF deducible 100%. Salud + RC profesional + Accidentes.",
+  "description": "Seguros autónomos Madrid. IRPF 100% deducible. Salud, RC profesional, accidentes. Ahorra y protege.",
 };
 
 export const dynamic = "force-static";
 
-export default function AutonomosParaPage() {
-  const wCotiza = buildWhatsAppHref("Hola, soy autónomo y quiero un seguro deducible IRPF en Madrid.");
+export default function AutonomosPage() {
+  const wCotiza = buildWhatsAppHref("Hola, soy autónomo en Madrid y quiero información sobre seguros deducibles IRPF.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Para",url:"/para"},{name:"Autónomos",url:"/para/autonomos"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#171717] text-[#fafafa]">
+      <main className="min-h-screen bg-white">
         
-        {/* HERO SUPABASE — Dark tech, orange accent */}
-        <section className="py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+        {/* HERO — Profesional, tech limpio */}
+        <section className="relative pt-20 pb-16 bg-slate-50 overflow-hidden">
+          {/* Halo tech sutil */}
+          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-gradient-radial from-slate-200/50 via-slate-100/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge tech style */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f0f0f] border border-[#2e2e2e] text-[#898989] text-xs mb-8">
-                  <Sparkles className="w-3.5 h-3.5 text-[#F97316]" />
-                  +1.200 autónomos · DGSFP
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm mb-8 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-slate-700" />
+                  <span className="font-medium">+1.200 autónomos protegidos</span>
+                  <span className="text-slate-300">|</span>
+                  <span>DGSFP</span>
                 </div>
                 
-                {/* H1 Supabase style — 72px tight */}
-                <h1 className="text-[48px] sm:text-[56px] lg:text-[72px] font-normal text-[#fafafa] leading-[1.00] mb-6">
-                  Seguros
+                {/* H1 */}
+                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
+                  Seguros para
                   <br />
-                  <span className="text-[#F97316]">Autónomos Tech</span>
+                  <span className="text-slate-700">autónomos</span>
                 </h1>
                 
-                {/* Subhead */}
-                <p className="text-xl text-[#b4b4b4] leading-relaxed mb-8 max-w-md">
-                  IRPF deducible + RC profesional + Accidentes.
+                {/* Subheadline */}
+                <p className="text-2xl text-slate-600 leading-relaxed mb-8 max-w-lg">
+                  IRPF 100% deducible.
                   <br />
-                  Protección fiscal completa.
+                  <span className="text-slate-500">Ahorra y protege tu negocio.</span>
                 </p>
                 
-                {/* CTAs Supabase — Pill 9999px */}
+                {/* CTAs */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <a 
                     href={wCotiza}
-                    className="group inline-flex items-center gap-2 bg-[#0f0f0f] border border-[#F97316] text-[#fafafa] px-8 py-3 rounded-full text-sm font-medium transition-all hover:bg-[#F97316] hover:text-[#0f0f0f]"
+                    className="group inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-slate-900/20 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    💬 Cotizar WhatsApp
-                    <span className="hidden group-hover:inline text-xs ml-1">
-                      ⚡ Alta 24h + 1 mes RC gratis
-                    </span>
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar ahora
                   </a>
                   <a 
-                    href="#planes"
-                    className="inline-flex items-center gap-2 bg-transparent text-[#b4b4b4] px-6 py-3 rounded-full text-sm font-medium border border-[#2e2e2e] hover:border-[#363636] hover:text-[#fafafa] transition-all"
+                    href="tel:603448765"
+                    className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl text-lg font-medium border border-slate-200 hover:border-slate-400 transition-all"
                   >
-                    Ver planes
+                    <Phone className="w-5 h-5" />
+                    📞 603 44 87 65
                   </a>
                 </div>
                 
-                {/* Trust row */}
-                <div className="flex flex-wrap gap-6 text-sm text-[#898989]">
-                  <span className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#F97316]" />
-                    Deducible fiscal
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
+                    <TrendingDown className="w-4 h-4 text-green-600" />
+                    IRPF deducible
                   </span>
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#F97316]" />
-                    30 min respuesta
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-[#F97316]" />
-                    Sin permanencia
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
+                    <Clock className="w-4 h-4 text-slate-700" />
+                    30 min gestión
                   </span>
                 </div>
               </div>
               
-              {/* Right: Hero image */}
+              {/* Right: Profesional */}
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden border border-[#2e2e2e]">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-200/40 to-slate-100/20 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
                   <Image
                     src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Autónomo laptop Madrid coworking"
+                    alt="Autónomo profesional Madrid"
                     width={600}
-                    height={400}
+                    height={450}
                     className="w-full h-auto object-cover"
                     priority
                   />
-                </div>
-                {/* Floating stat card */}
-                <div className="absolute -bottom-4 -left-4 bg-[#0f0f0f] rounded-xl p-4 border border-[#2e2e2e]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#F97316]/20 flex items-center justify-center">
-                      <TrendingDown className="w-5 h-5 text-[#F97316]" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-[#fafafa]">Ahorro fiscal</p>
-                      <p className="text-xs text-[#898989]">Hasta 500€/año</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PLANES TECH — Supabase pricing style */}
-        <section id="planes" className="py-24 border-t border-[#242424]">
+        {/* PROBLEMAS — Lo que enfrenta el autónomo */}
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[36px] font-normal text-[#fafafa] leading-[1.25] text-center mb-16">
-              Planes para autónomos
-            </h2>
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-slate-900 leading-tight mb-4">
+                El autónomo está expuesto
+              </h2>
+              <p className="text-xl text-slate-600">
+                Tres riesgos que necesitas cubrir
+              </p>
+            </div>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 { 
-                  name: "STARTUP", 
-                  price: "45€/mes",
-                  desc: "Para empezar",
-                  features: ["Salud básica", "IRPF deducible", "Chequeos anuales"],
-                  border: "#2e2e2e"
+                  icon: AlertTriangle, 
+                  title: "Responsabilidad", 
+                  desc: "Un error profesional puede costar miles. Tu patrimonio personal en riesgo."
                 },
                 { 
-                  name: "PRO", 
-                  price: "75€/mes",
-                  desc: "El más popular",
-                  features: ["+ RC profesional", "+ Accidentes", "Especialistas ilimitados"],
-                  border: "#F97316",
-                  popular: true
+                  icon: Stethoscope, 
+                  title: "Salud", 
+                  desc: "Sin seguro privado, dependes de la lista de espera. Tu negocio no puede parar."
                 },
                 { 
-                  name: "ENTERPRISE", 
-                  price: "120€/mes",
-                  desc: "Todo incluido",
-                  features: ["Todo ilimitado", "Cobertura internacional", "Asesor fiscal incluido"],
-                  border: "#2e2e2e"
+                  icon: Briefcase, 
+                  title: "Accidentes", 
+                  desc: "Una baja como autónomo es ingresos a cero. Sin protección, sin renta."
                 },
-              ].map((plan, i) => (
-                <div key={i} className={`bg-[#0f0f0f] rounded-2xl p-6 border ${plan.popular ? 'border-[#F97316] ring-1 ring-[#F97316]' : 'border-[#2e2e2e]'}`}>
-                  {plan.popular && (
-                    <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F97316]/10 text-[#F97316] text-xs font-medium mb-4">
-                      <Zap className="w-3 h-3" />
-                      Más popular
-                    </div>
-                  )}
-                  <h3 className="text-lg font-medium text-[#fafafa] mb-1">{plan.name}</h3>
-                  <p className="text-2xl text-[#F97316] font-normal mb-1">{plan.price}</p>
-                  <p className="text-sm text-[#898989] mb-4">{plan.desc}</p>
-                  <ul className="space-y-2 mb-6">
-                    {plan.features.map((feat, j) => (
-                      <li key={j} className="flex items-center gap-2 text-sm text-[#b4b4b4]">
-                        <CheckCircle2 className="w-4 h-4 text-[#F97316]" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  <a 
-                    href={wCotiza}
-                    className="block w-full text-center py-2.5 rounded-full text-sm font-medium transition-all border border-[#F97316] text-[#fafafa] hover:bg-[#F97316] hover:text-[#0f0f0f]"
-                  >
-                    Elegir {plan.name}
-                  </a>
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                  <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                    <item.icon className="w-7 h-7 text-slate-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* COBERTURAS — Supabase features grid */}
-        <section className="py-24 border-t border-[#242424]">
+        {/* COBERTURAS — Útiles para autónomos */}
+        <section className="py-20 bg-slate-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[36px] font-normal text-[#fafafa] leading-[1.25] text-center mb-16">
-              Cobertura completa
-            </h2>
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-slate-900 leading-tight mb-4">
+                Coberturas que necesitas
+              </h2>
+              <p className="text-xl text-slate-600">
+                Todo deducible en tu IRPF
+              </p>
+            </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: TrendingDown, title: "IRPF 100%", desc: "Deducible fiscal" },
-                { icon: Shield, title: "RC Profesional", desc: "Errores cubiertos" },
-                { icon: Briefcase, title: "Accidentes", desc: "Laboral/extralaboral" },
-                { icon: Globe, title: "Internacional", desc: "Cobertura UE" },
-                { icon: Home, title: "Home Office", desc: "Protección puesto" },
-                { icon: CheckCircle2, title: "Sin carencias", desc: "Desde día 1" },
+                { icon: Stethoscope, title: "Salud", desc: "Sin copagos" },
+                { icon: Umbrella, title: "RC Profesional", desc: "Errores cubiertos" },
+                { icon: AlertTriangle, title: "Accidentes", desc: "Baja protegida" },
+                { icon: Shield, title: "Vida", desc: "Hipoteca segura" },
               ].map((item, i) => (
-                <div key={i} className="bg-[#0f0f0f] rounded-xl p-5 border border-[#2e2e2e] hover:border-[#363636] transition-all">
-                  <div className="w-10 h-10 rounded-lg bg-[#F97316]/10 flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[#F97316]" />
+                <div key={i} className="bg-white rounded-xl p-6 border border-slate-100 text-center">
+                  <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4 mx-auto">
+                    <item.icon className="w-6 h-6 text-slate-700" />
                   </div>
-                  <h3 className="text-base font-medium text-[#fafafa] mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#898989]">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* VENTAJAS FISCALES */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-slate-900 leading-tight mb-4">
+                Ventajas fiscales reales
+              </h2>
+              <p className="text-xl text-slate-600">
+                Tu seguro te cuesta la mitad
+              </p>
+            </div>
+            
+            <div className="bg-slate-900 rounded-2xl p-10 text-white">
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Ejemplo real</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700">
+                      <span className="text-slate-300">Prima anual seguro salud</span>
+                      <span className="font-semibold">600€</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-slate-700">
+                      <span className="text-slate-300">Deducción IRPF (50%)</span>
+                      <span className="font-semibold text-green-400">-300€</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3">
+                      <span className="text-lg font-semibold">Coste real anual</span>
+                      <span className="text-2xl font-bold text-green-400">300€</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-6xl font-bold text-green-400 mb-2">50%</div>
+                  <p className="text-xl text-slate-300">de ahorro fiscal</p>
+                  <p className="text-slate-400 mt-4">El seguro médico de autónomos es 100% deducible en tu IRPF</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* EQUIPO */}
-        <section className="py-24 border-t border-[#242424]">
+        <section className="py-20 bg-slate-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative rounded-2xl overflow-hidden border border-[#2e2e2e]">
-                <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Sebastián Valentín · Autónomo → Mediador"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f0f0f] border border-[#2e2e2e] text-[#F97316] text-xs font-medium mb-6">
-                  <Briefcase className="w-3.5 h-3.5" />
-                  Autónomo → Mediador
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-200/40 to-slate-100/20 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Especialistas en autónomos"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
                 </div>
-                <h2 className="text-[36px] font-normal text-[#fafafa] leading-[1.25] mb-4">
-                  Sebastián Valentín
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium mb-6">
+                  <Award className="w-4 h-4" />
+                  Especialistas en autónomos
+                </div>
+                
+                <h2 className="text-[36px] sm:text-[42px] font-bold text-slate-900 leading-tight mb-6">
+                  Rosa y Sebastián
                 </h2>
-                <p className="text-lg text-[#b4b4b4] mb-6">
-                  Fui autónomo. Sé lo que necesitas.
+                
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  Entendemos el mundo de los autónomos porque trabajamos con ellos cada día. 
+                  Sabemos que cada euro cuenta, por eso optimizamos tus seguros para que 
+                  ahorres en impuestos y estés protegido.
                 </p>
-                <p className="text-base text-[#898989] leading-relaxed mb-8">
-                  +10 años ayudando a profesionales independientes en Madrid 
-                  a optimizar su protección y sus impuestos. 
-                  Entiendo el día a día del autónomo porque lo he vivido.
-                </p>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f0f0f] border border-[#2e2e2e] text-[#898989] text-xs">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F97316]" />
-                  DGSFP: C012479234434D
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-slate-700" />
+                    </div>
+                    <span className="text-slate-700">+1.200 autónomos ahorrando</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-slate-700" />
+                    </div>
+                    <span className="text-slate-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-slate-700" />
+                    </div>
+                    <span className="text-slate-700">Ahorro fiscal garantizado</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm">
+                  <span className="font-semibold text-slate-900">NIF:</span> 79234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PROCESO FAST */}
-        <section className="py-24 border-t border-[#242424]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[36px] font-normal text-[#fafafa] leading-[1.25] text-center mb-16">
-              Proceso fast
+        {/* CTA FINAL */}
+        <section className="relative py-24 bg-slate-900 overflow-hidden">
+          {/* Halo */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-radial from-slate-700/50 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-white leading-tight mb-6">
+              Ahorra y protege tu negocio
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { num: "01", title: "WhatsApp", desc: "Actividad profesional y necesidades." },
-                { num: "02", title: "Optimizado", desc: "Cotización IRPF-optimizada en 30min." },
-                { num: "03", title: "Digital", desc: "Alta inmediata. Todo online." },
-              ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded-lg bg-[#F97316] text-[#0f0f0f] flex items-center justify-center text-lg font-medium mx-auto mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="text-lg font-medium text-[#fafafa] mb-2">{step.title}</h3>
-                  <p className="text-sm text-[#898989]">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA + TRUST */}
-        <section className="py-24 bg-[#0f0f0f]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-[48px] sm:text-[56px] font-normal text-[#fafafa] leading-[1.00] mb-4">
-              Protege tu negocio
-            </h2>
-            <p className="text-xl text-[#898989] mb-10">
-              Un WhatsApp. 30 minutos. Todo optimizado.
+            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              Descubre cuánto puedes ahorrar en tu IRPF.
             </p>
             
             <a 
               href={wCotiza}
-              className="group inline-flex items-center gap-2 bg-[#F97316] text-[#0f0f0f] px-10 py-4 rounded-full text-lg font-medium transition-all hover:scale-105"
+              className="group inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 Cotizar por WhatsApp
-              <span className="hidden group-hover:inline text-sm ml-2 text-[#0f0f0f]/70">
-                ⚡ Alta 24h + 1 mes RC gratis
-              </span>
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Calcular ahorro fiscal
             </a>
             
-            {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
-              {[
-                "Deducible fiscal",
-                "Sin permanencia",
-                "DGSFP verificado",
-              ].map((item, i) => (
-                <div key={i} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#171717] border border-[#2e2e2e] text-[#b4b4b4] text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#F97316]" />
-                  {item}
-                </div>
-              ))}
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+                <TrendingDown className="w-4 h-4 text-green-400" />
+                IRPF deducible
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+                <Clock className="w-4 h-4" />
+                30 min
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+                <Shield className="w-4 h-4" />
+                DGSFP verificado
+              </div>
             </div>
             
-            <p className="text-sm text-[#4d4d4d] mt-8">
+            <p className="text-lg text-slate-500 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
