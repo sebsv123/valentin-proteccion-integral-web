@@ -9,7 +9,7 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro Salud Privado Madrid | Sin Copagos | Valentín",
@@ -70,9 +70,9 @@ export default function SaludIndividualPage() {
                 
                 {/* H1 — Balanced size with breathing room */}
                 <h1 className="text-[40px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-[1.05] tracking-tight mb-5">
-                  Seguro Salud Privado
+                  Tu Seguro de Salud
                   <br />
-                  <span className="text-emerald-400">Madrid Sin Copagos</span>
+                  <span className="text-emerald-400">Privado en Madrid</span>
                 </h1>
                 
                 {/* Subheadline */}
@@ -195,16 +195,18 @@ export default function SaludIndividualPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
+                { icon: Stethoscope, title: "Médico de cabecera", desc: "Sin esperas ni demoras" },
+                { icon: Heart, title: "Especialistas", desc: "Sin derivación previa" },
+                { icon: FlaskConical, title: "Pruebas diagnósticas", desc: "Analíticas, rayos X, ecografías" },
+                { icon: Activity, title: "Urgencias 24h", desc: "Atención inmediata" },
                 { icon: Hospital, title: "Hospitalización", desc: "Habitación individual" },
-                { icon: Stethoscope, title: "Especialistas", desc: "Sin lista de espera" },
-                { icon: Pill, title: "Medicación", desc: "En hospital incluida" },
-                { icon: FlaskConical, title: "Análisis y pruebas", desc: "Diagnóstico completo" },
+                { icon: Award, title: "Segunda opinión", desc: "Médica especializada" },
+                { icon: Phone, title: "Telemedicina", desc: "Consulta online 24/7" },
                 { icon: SmilePlus, title: "Dental básica", desc: "Extracciones y limpieza" },
-                { icon: Ambulance, title: "Ambulancia", desc: "Urgencias 24h" },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-100">
+                <div key={i} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
                   <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
                     <item.icon className="w-6 h-6 text-emerald-500" />
                   </div>
@@ -212,6 +214,40 @@ export default function SaludIndividualPage() {
                   <p className="text-sm text-gray-600">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
+        <section className="py-24 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-emerald-100/50 border border-emerald-100">
+              <h2 className="text-[36px] sm:text-[44px] font-bold text-gray-900 leading-tight mb-6 text-center">
+                ¿Y si no te respondemos en 30 minutos?
+              </h2>
+              
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+                Rosa o Sebastián te llaman directamente.
+                <br />
+                Sin esperas. Sin centralitas. Sin excusas.
+                <br />
+                <span className="text-emerald-600 font-semibold">Nadie en el sector ofrece esta garantía. Nosotros sí.</span>
+              </p>
+              
+              <div className="flex items-center justify-center gap-4 pt-4 border-t border-gray-100">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa Valentín"
+                    fill
+                    className="object-cover object-[center_20%]"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Rosa Valentín</p>
+                  <p className="text-sm text-gray-500">Mediadora DGSFP · NIF 79234434D</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
