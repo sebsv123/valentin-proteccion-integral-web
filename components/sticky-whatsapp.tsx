@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
@@ -13,6 +13,17 @@ export function StickyWhatsApp() {
     return () => { clearTimeout(timer); clearTimeout(hideTimer); };
   }, []);
 
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, location: string, href: string) => {
+    e.preventDefault();
+    trackWhatsAppClick(location);
+    setTimeout(() => {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }, 200);
+  };
+
+  const desktopHref = buildWhatsAppHref('Hola, quiero orientación sobre un seguro.');
+  const mobileHref = 'https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros.';
+
   return (
     <>
       {/* Desktop: botón flotante esquina inferior derecha */}
@@ -24,10 +35,8 @@ export function StickyWhatsApp() {
           </div>
         )}
         <a
-          href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro.')}
-          onClick={() => trackWhatsAppClick('sticky-desktop')}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={desktopHref}
+          onClick={(e) => handleClick(e, 'sticky-desktop', desktopHref)}
           aria-label="Contactar por WhatsApp"
           className="group flex items-center gap-3 bg-[#128C7E] hover:bg-[#0e6b60] text-white pl-4 pr-6 py-3 rounded-full shadow-2xl font-semibold transition-all duration-300 hover:scale-105"
           style={{ boxShadow: '0 4px 24px 0 rgba(18,140,126,0.45)' }}
@@ -49,10 +58,8 @@ export function StickyWhatsApp() {
         className="fixed bottom-0 left-0 right-0 z-[999] sm:hidden min-h-[64px] bg-white border-t border-slate-100 px-4 py-3 shadow-[0_-4px_24px_rgba(0,0,0,0.08)]"
       >
         <a
-          href="https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros."
-          onClick={() => trackWhatsAppClick('sticky-mobile')}
-          target="_blank"
-          rel="noreferrer"
+          href={mobileHref}
+          onClick={(e) => handleClick(e, 'sticky-mobile', mobileHref)}
           className="flex items-center justify-center gap-3 w-full rounded-2xl bg-[#25D366] hover:bg-[#128C7E] text-white py-4 text-base font-bold transition-colors"
         >
           <WhatsAppIcon className="h-5 w-5 flex-none" />

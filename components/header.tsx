@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronDown, Instagram, Menu, Phone, X } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
+import { MouseEvent } from 'react';
 
 
 import PillNav from './ui/pill-nav';
@@ -43,7 +44,7 @@ export function Header() {
   // Close mega menu on outside click
   useEffect(() => {
     if (!mega) return;
-    const handleClick = (e: MouseEvent) => {
+    const handleClick = (e: globalThis.MouseEvent) => {
       const target = e.target as Node;
       const panel = document.getElementById('mega-menu');
       const trigger = document.getElementById('mega-trigger');
@@ -51,13 +52,23 @@ export function Header() {
         setMega(false);
       }
     };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener('mousedown', handleClick as EventListener);
+    return () => document.removeEventListener('mousedown', handleClick as EventListener);
   }, [mega]);
 
   const grouped = useMemo(() => products.map((product) => ({ ...product, children: getSubpagesForProduct(product.slug) })), []);
 
   const closeAll = () => setMega(false);
+
+  const handleWhatsAppClick = (e: MouseEvent<HTMLAnchorElement>, location: string, href: string) => {
+    e.preventDefault();
+    trackWhatsAppClick(location);
+    setTimeout(() => {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }, 200);
+  };
+
+  const whatsappHref = buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.');
 
   return (
     <>
@@ -114,8 +125,8 @@ export function Header() {
                 {site.phone}
               </a>
               <a
-                href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')}
-                onClick={() => trackWhatsAppClick('nav-header')}
+                href={whatsappHref}
+                onClick={(e) => handleWhatsAppClick(e, 'nav-header', whatsappHref)}
                 className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)] min-w-[100px]"
               >
                 WhatsApp
@@ -167,7 +178,7 @@ export function Header() {
               Accede al producto que te interesa y, cuando tenga sentido, profundiza por perfil o modalidad.
             </p>
             <div className="mt-5 grid gap-3">
-              <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.')} onClick={() => trackWhatsAppClick('nav-mega-menu')} className="btn-whatsapp !w-full !justify-center">Consulta sin compromiso</a>
+              <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center">Consulta sin compromiso</a>
               <a href={`tel:${site.phoneHref}`} className="btn-ghost !w-full !justify-center"><Phone className="h-4 w-4" /> {site.phone}</a>
             </div>
           </div>

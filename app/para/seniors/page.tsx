@@ -413,8 +413,6 @@ export default function SeniorsPage() {
                 <Phone className="w-6 h-6" />
                 📞 603 44 87 65
               </a>
-                WhatsApp
-              </a>
             </div>
             
             <div className="flex flex-wrap justify-center gap-6 mt-10 text-emerald-100">

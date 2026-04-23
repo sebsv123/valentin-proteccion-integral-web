@@ -2,7 +2,7 @@
 
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
-import { ReactNode } from 'react';
+import { ReactNode, MouseEvent } from 'react';
 
 interface WhatsAppButtonProps {
   href: string;
@@ -19,8 +19,17 @@ export function WhatsAppButton({
   className = '',
   showIcon = false 
 }: WhatsAppButtonProps) {
-  const handleClick = () => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    // Prevent immediate navigation
+    e.preventDefault();
+    
+    // Track the click
     trackWhatsAppClick(location);
+    
+    // Small delay to ensure event fires before navigation
+    setTimeout(() => {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }, 200);
   };
 
   return (
