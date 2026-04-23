@@ -55,76 +55,81 @@ export default function SaludIndividualPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO OSCURO — Premium, elegante, potente */}
-        <section className="relative bg-gray-950 min-h-[85vh] flex items-center overflow-hidden">
-          {/* Background image with overlay */}
-          <div className="absolute inset-0">
-            <Image
-              src="https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Hospital moderno Madrid"
-              fill
-              className="object-cover opacity-40"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-gray-950/70" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/50" />
-          </div>
-          
-          {/* Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10 py-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* HERO — Balanced two-column with visible image */}
+        <section className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 min-h-[80vh] flex items-center overflow-hidden">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-16 lg:py-24">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left: Content */}
-              <div>
+              <div className="order-2 lg:order-1">
                 {/* Guarantee Badge */}
-                <GuaranteeBadge type="salud" />
+                <div className="mb-6">
+                  <GuaranteeBadge type="salud" />
+                </div>
                 
-                {/* H1 potente */}
-                <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
-                  Seguro Salud Privado Madrid:
+                {/* H1 — Balanced size with breathing room */}
+                <h1 className="text-[40px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-[1.05] tracking-tight mb-5">
+                  Seguro Salud Privado
                   <br />
-                  <span className="text-emerald-400">Sin Copagos ni Listas de Espera</span>
+                  <span className="text-emerald-400">Madrid Sin Copagos</span>
                 </h1>
                 
-                {/* Subheadline clara */}
-                <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-lg">
-                  Sin copagos. Cobertura inmediata. Madrid.
+                {/* Subheadline */}
+                <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-md">
+                  Cobertura inmediata. Especialistas sin lista de espera. Respuesta en 30 min.
                 </p>
                 
-                {/* CTAs con alto contraste */}
-                <div className="flex flex-wrap gap-4 mb-10">
+                {/* CTAs */}
+                <div className="flex flex-wrap gap-3 mb-8">
                   <a 
                     href={wCotiza}
-                    className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+                    className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-6 py-3.5 rounded-xl text-base font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
                     Cotizar por WhatsApp
                   </a>
                   <a 
                     href="#ventajas"
-                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl text-lg font-medium border border-white/20 hover:bg-white/20 transition-all"
+                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3.5 rounded-xl text-base font-medium border border-white/20 hover:bg-white/20 transition-all"
                   >
                     Ver ventajas
                   </a>
                 </div>
                 
-                {/* Trust pills oscuros */}
-                <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     Sin copagos
                   </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
-                    <Clock className="w-4 h-4 text-emerald-400" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
+                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
                     30 min respuesta
                   </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
-                    <Shield className="w-4 h-4 text-emerald-400" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
+                    <Shield className="w-3.5 h-3.5 text-emerald-400" />
                     Sin permanencia
                   </span>
                 </div>
               </div>
               
-              {/* Right: Empty for image visibility */}
-              <div className="hidden lg:block" />
+              {/* Right: Visible Hospital Image */}
+              <div className="order-1 lg:order-2">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border border-white/10">
+                  <Image
+                    src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Hospital moderno Madrid con tecnología avanzada"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                  {/* Subtle overlay for premium feel */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/30 via-transparent to-transparent" />
+                </div>
+                {/* Caption */}
+                <p className="text-white/50 text-sm mt-4 text-center lg:text-left">
+                  Red de hospitales premium Madrid · Cobertura inmediata
+                </p>
+              </div>
             </div>
           </div>
         </section>
