@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
@@ -186,14 +187,13 @@ export function StatsSection() {
   const stats = [
     { label: 'Años de experiencia', value: 10, suffix: '+' },
     { label: 'Familias protegidas', value: 1200, suffix: '+' },
-    { label: 'Ramos de seguro', value: 9, suffix: '' },
     { label: 'Asesoría cercana', value: 100, suffix: '%' },
   ];
 
   return (
     <section id="stats" aria-label="Estadísticas de impacto" className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
       <div className="container-shell">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -209,6 +209,24 @@ export function StatsSection() {
               <div className="text-white/70 text-sm md:text-base font-semibold uppercase tracking-widest">{stat.label}</div>
             </motion.div>
           ))}
+          {/* Team Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="col-span-2 lg:col-span-2 flex justify-center"
+          >
+            <Image
+              src="/images/rosa_y_sebastian.jpeg"
+              alt="Rosa y Sebastián, equipo Valentín Protección Integral"
+              width={400}
+              height={300}
+              priority
+              className="rounded-lg shadow-xl object-cover object-[center_20%]"
+              style={{ aspectRatio: '4/3', maxHeight: '200px' }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>
