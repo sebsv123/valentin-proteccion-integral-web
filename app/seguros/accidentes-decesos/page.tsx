@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, AlertTriangle, Users, Umbrella, Activity, Award, TrendingUp, Phone, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pack Accidentes y Decesos Madrid | Protección Completa | Valentín Protección Integral",
-  description: "Pack combinado accidentes + decesos. Cubre el imprevisto de hoy y protege a tu familia del mañana. Desde 18€/mes. Rosa y Sebastián.",
-  keywords: ["pack accidentes decesos Madrid","seguro accidentes decesos combinado","protección completa familia Madrid"],
+  title: "Seguro Accidentes + Decesos Madrid | Valentín Protección Integral",
+  description: "Pack accidentes + decesos Madrid. Protección completa para ti y tu familia. WhatsApp 30min. Rosa y Sebastián.",
+  keywords: ["pack accidentes decesos Madrid","seguro accidentes decesos combinado","proteccion completa familia Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes-decesos" },
   openGraph: {
-    title: "Pack Accidentes y Decesos Madrid | Protección Completa",
-    description: "Accidentes cubre hoy. Decesos protege mañana. Un pack. Tranquilidad total.",
+    title: "Seguro Accidentes + Decesos Madrid | Protección Completa",
+    description: "Protección completa para ti y tu familia. Accidentes + Decesos en un solo pack. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/accidentes-decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
-  "name": "Pack Accidentes y Decesos Madrid - Valentín Protección Integral",
+  "name": "Seguro Accidentes + Decesos Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -45,179 +45,347 @@ const serviceSchema = {
 export const dynamic = "force-static";
 
 export default function AccidentesDecesosPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre el pack combinado accidentes + decesos.");
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre el pack accidentes + decesos en Madrid.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Accidentes y Decesos",url:"/seguros/accidentes-decesos"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#0C0C0C] text-white">
+      <main className="min-h-screen bg-white">
         
-        {/* HERO ELEVENLABS — Aurora dramática */}
-        <section className="relative bg-[#0C0C0C] min-h-screen overflow-hidden flex items-center">
-          {/* Aurora gradient blob */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-20 blur-[120px] bg-gradient-to-r from-[#FF6B35] via-[#9B59B6] to-[#2C3E8C] rounded-full" />
+        {/* HERO OSCURO — Impactante, elegante, profesional */}
+        <section className="relative bg-slate-950 min-h-[85vh] flex items-center overflow-hidden">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Protección familiar Madrid"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60" />
+          </div>
           
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 relative z-10">
-            <div className="max-w-3xl">
-              {/* Badge combinado */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(255,107,53,0.3)] bg-[rgba(255,107,53,0.08)] text-[#FF6B35] text-sm mb-8">
-                <Sparkles className="w-4 h-4" />
-                Pack Accidentes + Decesos — La protección completa
-              </div>
-
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold text-white tracking-tight leading-[1.05] mb-6">
-                Protección total:
-                <br />
-                <span className="bg-gradient-to-r from-[#FF6B35] to-[#9B59B6] bg-clip-text text-transparent">
-                  hoy y mañana.
-                </span>
-              </h1>
-
-              <p className="text-xl text-[#888899] mt-6 max-w-2xl leading-relaxed">
-                Accidentes cubre el imprevisto de hoy.
-                Decesos protege a tu familia del mañana.
-                Un pack. Una llamada. Tranquilidad total.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <a 
-                  href={wCotiza}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#9B59B6] text-white px-8 py-4 rounded-xl font-medium hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all hover:scale-[1.02]"
-                >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  Cotiza el pack ahora
-                </a>
-                <a 
-                  href="tel:603448765"
-                  className="inline-flex items-center gap-2 border border-[rgba(255,255,255,0.2)] text-white px-8 py-4 rounded-xl font-medium hover:bg-[rgba(255,255,255,0.05)] transition-all"
-                >
-                  Llamar: 603 44 87 65
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* DOS MUNDOS — Split visual */}
-        <section className="py-24 bg-[#0C0C0C]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
-            <div className="grid md:grid-cols-2 gap-1 rounded-3xl overflow-hidden">
-              {/* Izquierda: Accidentes — warm orange */}
-              <div className="bg-gradient-to-br from-[#FF6B35]/10 to-transparent p-12 border-r border-[rgba(255,255,255,0.06)]">
-                <p className="text-[#FF6B35] font-mono text-xs tracking-widest mb-4">
-                  ACCIDENTES
+          {/* Content */}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10 py-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left: Content */}
+              <div>
+                {/* Badge sobrio */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm mb-8">
+                  <Package className="w-4 h-4 text-amber-400" />
+                  <span>Pack completo</span>
+                  <span className="text-white/40">|</span>
+                  <span>Accidentes + Decesos</span>
+                </div>
+                
+                {/* H1 potente */}
+                <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
+                  Seguro
+                  <br />
+                  <span className="text-amber-400">Accidentes</span>
+                  <br />
+                  <span className="text-white">+ Decesos</span>
+                </h1>
+                
+                {/* Subheadline clara */}
+                <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-lg">
+                  Protección completa para ti y tu familia.
+                  <br />
+                  <span className="text-white/60">Hoy y mañana, siempre cubiertos.</span>
                 </p>
-                <h3 className="text-3xl font-semibold text-white mb-4">
-                  El imprevisto de hoy
-                </h3>
-                <ul className="space-y-3 text-[#888899]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FF6B35]" /> Desde 3€/mes</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FF6B35]" /> Cobertura deportes</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FF6B35]" /> Trabajo + ocio</li>
-                </ul>
+                
+                {/* CTAs con alto contraste */}
+                <div className="flex flex-wrap gap-4 mb-10">
+                  <a 
+                    href={wCotiza}
+                    className="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar Pack
+                  </a>
+                  <a 
+                    href="#pack"
+                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl text-lg font-medium border border-white/20 hover:bg-white/20 transition-all"
+                  >
+                    Ver coberturas
+                  </a>
+                </div>
+                
+                {/* Trust pills oscuros */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                    Un solo precio
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <Clock className="w-4 h-4 text-amber-400" />
+                    30 min respuesta
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <Shield className="w-4 h-4 text-amber-400" />
+                    Sin permanencia
+                  </span>
+                </div>
               </div>
-              {/* Derecha: Decesos — cool purple */}
-              <div className="bg-gradient-to-bl from-[#9B59B6]/10 to-transparent p-12">
-                <p className="text-[#9B59B6] font-mono text-xs tracking-widest mb-4">
-                  DECESOS
-                </p>
-                <h3 className="text-3xl font-semibold text-white mb-4">
-                  La paz de mañana
-                </h3>
-                <ul className="space-y-3 text-[#888899]">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#9B59B6]" /> Gastos sepelio 0€</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#9B59B6]" /> Familia tranquila</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#9B59B6]" /> Gestión completa</li>
-                </ul>
-              </div>
+              
+              {/* Right: Empty for image visibility */}
+              <div className="hidden lg:block" />
             </div>
           </div>
         </section>
 
-        {/* STATS PACK */}
-        <section className="py-16 bg-[#0C0C0C]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="grid grid-cols-3 gap-8 py-16 border-y border-[rgba(255,255,255,0.06)]">
-              <div className="text-center">
-                <p className="text-5xl font-light text-white">Pack</p>
-                <p className="text-[#888899] text-sm mt-2">condiciones especiales por pack</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-light text-[#FF6B35]">Día 1</p>
-                <p className="text-[#888899] text-sm mt-2">Cobertura inmediata</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-light text-[#9B59B6]">30&apos;</p>
-                <p className="text-[#888899] text-sm mt-2">Respuesta máxima</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FOTO EQUIPO */}
-        <section className="py-24 bg-[#0C0C0C]">
+        {/* BLOQUE DEL PACK — Explicación clara */}
+        <section id="pack" className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="relative">
-              <Image 
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián - Tu protección completa"
-                width={1200}
-                height={675}
-                className="rounded-3xl border border-[rgba(255,255,255,0.08)] shadow-[0_0_80px_rgba(155,89,182,0.2)] aspect-[16/9] object-cover object-top"
-              />
-              <div className="absolute bottom-8 left-8 bg-[rgba(12,12,12,0.9)] backdrop-blur-sm px-6 py-4 rounded-2xl border border-[rgba(255,255,255,0.08)]">
-                <p className="text-white font-semibold">Rosa y Sebastián</p>
-                <p className="text-[#888899] text-sm">+10 años protegiendo familias en Madrid</p>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-sm mb-6">
+                <Package className="w-4 h-4" />
+                Una solución combinada
+              </div>
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Un pack, doble protección
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                No tienes que elegir entre protegerte a ti o cuidar de tu familia. 
+                Este pack te da ambas coberturas al mejor precio.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Card Accidentes */}
+              <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-6">
+                  <AlertTriangle className="w-7 h-7 text-amber-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">Accidentes</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Cubre el imprevisto de hoy. Desde una caída en casa hasta un accidente de tráfico. 
+                  Invalidez, gastos médicos y hospitalización incluidos.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Muerte por accidente: 60.000€",
+                    "Invalidez permanente: hasta 100%",
+                    "Gastos médicos: 6.000€",
+                    "Hospitalización: 100€/día"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-slate-700">
+                      <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Card Decesos */}
+              <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-6">
+                  <Heart className="w-7 h-7 text-slate-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">Decesos</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Protege a tu familia del mañana. Cubre todos los gastos del funeral 
+                  y deja un capital a quienes más quieres.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Capital hasta 50.000€",
+                    "Gastos de funeral incluidos",
+                    "Repatriación si es necesario",
+                    "Gestión completa del trámite"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-slate-700">
+                      <CheckCircle2 className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* VENTAJAS PACK */}
-        <section className="py-24 bg-[#141414]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl font-semibold text-white text-center mb-12">
-              Ventajas del pack combinado
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+        {/* ACCIDENTES — Sección propia */}
+        <section className="py-24 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-sm mb-6">
+                <AlertTriangle className="w-4 h-4" />
+                Protección inmediata
+              </div>
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Accidentes
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Porque el imprevisto no avisa. Estés donde estés, estás cubierto.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: Heart, title: "Una sola gestión", desc: "Un asesor para ambos seguros. Simplificas papeleo." },
-                { icon: Shield, title: "Precio preferente", desc: "5% de descuento por contratar ambos juntos." },
-                { icon: Clock, title: "Cobertura inmediata", desc: "Accidentes desde día 1. Decesos sin carencias." },
-                { icon: CheckCircle2, title: "Tranquilidad total", desc: "Hoy y mañana cubiertos. Sin preocupaciones." },
+                { icon: Activity, title: "Muerte", desc: "60.000€ capital" },
+                { icon: Shield, title: "Invalidez", desc: "Hasta 100%" },
+                { icon: Umbrella, title: "Gastos médicos", desc: "6.000€ cubierto" },
+                { icon: Clock, title: "Hospital", desc: "100€/día" },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4 p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)]">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF6B35]/20 to-[#9B59B6]/20 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-[#FF6B35]" />
+                <div key={i} className="bg-white rounded-xl p-6 border border-slate-100 text-center">
+                  <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center mb-4 mx-auto">
+                    <item.icon className="w-6 h-6 text-amber-500" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                    <p className="text-[#888899] text-sm">{item.desc}</p>
-                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA FINAL Aurora */}
-        <section className="bg-gradient-to-r from-[#FF6B35] via-[#9B59B6] to-[#2C3E8C] py-24 text-center">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-4xl font-semibold text-white">
-              Un pack. Una decisión. Toda la tranquilidad.
+        {/* DECESOS — Sección propia */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-sm mb-6">
+                <Heart className="w-4 h-4" />
+                Tranquilidad familiar
+              </div>
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Decesos
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Porque tu familia merece estar protegida. Previsión y tranquilidad.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: Users, title: "Capital", desc: "Hasta 50.000€" },
+                { icon: Heart, title: "Funeral", desc: "Gastos cubiertos" },
+                { icon: Umbrella, title: "Repatriación", desc: "Si es necesario" },
+                { icon: CheckCircle2, title: "Gestión", desc: "Trámite completo" },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100 text-center">
+                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 mx-auto shadow-sm">
+                    <item.icon className="w-6 h-6 text-slate-600" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO Y GARANTÍA — Fondo blanco */}
+        <section className="py-24 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-100/50 to-slate-100/30 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Tu equipo de confianza"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-700 text-sm font-medium mb-6">
+                  <Award className="w-4 h-4" />
+                  Mediadores certificados
+                </div>
+                
+                <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
+                  Rosa y Sebastián
+                </h2>
+                
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  Te ayudamos a encontrar el pack que mejor se adapta a ti. 
+                  Explicamos cada cobertura con claridad, sin tecnicismos, 
+                  para que tomes la mejor decisión para ti y tu familia.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-slate-700">+10 años de experiencia</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-slate-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-slate-700">+1.200 familias protegidas</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm">
+                  <span className="font-semibold text-slate-900">NIF:</span> 79234434D
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Fondo blanco con acento */}
+        <section className="relative py-24 bg-white overflow-hidden">
+          {/* Acento visual sutil */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-amber-100/40 via-amber-50/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
+              Protección completa,
+              <br />
+              <span className="text-amber-500">un solo paso</span>
             </h2>
+            
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+              Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              Descubre el pack que mejor protege a ti y a tu familia.
+            </p>
+            
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-2 bg-white text-[#9B59B6] px-10 py-4 rounded-xl font-medium text-lg mt-8 hover:shadow-2xl transition-all"
+              className="group inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              WhatsApp: 603 44 87 65
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Cotizar Pack Ahora
             </a>
-            <p className="text-white/50 text-sm mt-6">
-              NIF: 79234434D | DGSFP: C012479234434D
+            
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-amber-500" />
+                Accidentes + Decesos
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <Clock className="w-4 h-4 text-amber-500" />
+                30 min
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
+                <Shield className="w-4 h-4 text-amber-500" />
+                Sin permanencia
+              </div>
+            </div>
+            
+            <p className="text-sm text-slate-400 mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
         </section>
