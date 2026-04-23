@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, Users, MessageCircle, Phone } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Users, MessageCircle, Award, TrendingUp, HeartHandshake, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Asesoría Seguros Gratis Madrid | Valentín Protección Integral",
-  description: "Asesoría gratuita seguros Madrid. Salud, vida, hogar, autónomos. WhatsApp 30min respuesta. Mediadores independientes. Boadilla del Monte.",
+  title: "Asesoría Seguros GRATIS Madrid | Valentín Protección Integral",
+  description: "Asesoría gratuita seguros Madrid. Encuentra el mejor seguro para ti en 30 minutos. Mediadores independientes. Sin compromiso.",
   keywords: ["asesoria seguros gratis Madrid","asesoramiento seguros Madrid","consulta seguros gratuita"],
   alternates: { canonical: "https://valentinproteccionintegral.com/landing/asesoria-gratuita" },
   openGraph: {
-    title: "Asesoría Seguros Gratis Madrid | Valentín Protección Integral",
-    description: "Asesoría gratuita en 30 minutos. Encuentra el mejor seguro para ti. Sin compromiso.",
+    title: "Asesoría Seguros GRATIS Madrid | 30 Minutos",
+    description: "Encuentra el mejor seguro para ti en 30 minutos. Mediadores independientes. Sin compromiso.",
     url: "https://valentinproteccionintegral.com/landing/asesoria-gratuita",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
-  "name": "Asesoría Seguros Gratis Madrid - Valentín Protección Integral",
+  "name": "Asesoría Seguros GRATIS Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,7 +39,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Asesoría gratuita seguros Madrid. Salud, vida, hogar, autónomos. 30min respuesta.",
+  "description": "Asesoría gratuita seguros Madrid. Encuentra el mejor seguro para ti en 30 minutos.",
 };
 
 export const dynamic = "force-static";
@@ -52,122 +52,148 @@ export default function AsesoriaGratuitaPage() {
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Asesoría Gratuita",url:"/landing/asesoria-gratuita"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#faf9f6]">
+      <main className="min-h-screen bg-white">
         
-        {/* HERO INTERCOM — Warm cream, Fin Orange accent */}
-        <section className="pt-24 pb-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+        {/* HERO — Blanco premium con halo naranja suave */}
+        <section className="relative pt-24 pb-20 overflow-hidden">
+          {/* Halo radial naranja muy suave */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-orange-100/40 via-orange-50/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
-              <div>
-                {/* Badge Intercom */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white border border-[#dedbd6] text-[#7b7b78] text-xs mb-6">
-                  <Sparkles className="w-3.5 h-3.5 text-[#ff5600]" />
-                  ✦ +1.200 clientes · 30min respuesta
+              <div className="text-center lg:text-left">
+                {/* Badge sobrio */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-sm mb-8">
+                  <Sparkles className="w-4 h-4 text-orange-500" />
+                  <span className="font-medium">+1.200 personas asesoradas</span>
+                  <span className="text-gray-400">|</span>
+                  <span className="text-gray-500">DGSFP verificado</span>
                 </div>
                 
-                {/* H1 Intercom style — tight tracking, 1.00 line-height */}
-                <h1 className="text-[48px] sm:text-[54px] font-normal text-[#111111] leading-[1.00] tracking-[-1.6px] mb-6">
-                  Asesoría Seguros
+                {/* H1 fuerte */}
+                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-gray-900 leading-[1.05] tracking-tight mb-6">
+                  Asesoría
                   <br />
-                  <span className="text-[#ff5600]">GRATIS Madrid</span>
+                  Seguros{" "}
+                  <span className="text-orange-500">GRATIS</span>
+                  <br />
+                  Madrid
                 </h1>
                 
-                {/* Subhead */}
-                <p className="text-lg text-[#7b7b78] leading-[1.50] mb-8 max-w-md">
-                  Encuentra el mejor seguro para ti en 30 minutos.
+                {/* Subheadline clara */}
+                <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
+                  Encuentra el mejor seguro para ti en{" "}
+                  <span className="font-semibold text-gray-900">30 minutos</span>.
+                  <br />
                   Mediadores independientes. Sin compromiso.
                 </p>
                 
-                {/* CTAs Intercom — sharp 4px radius, scale hover */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                {/* CTAs elegantes */}
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
                   <a 
                     href={wCotiza}
-                    className="group inline-flex items-center gap-2 bg-[#111111] text-white px-4 py-3 rounded text-base font-normal transition-transform hover:scale-110 hover:bg-white hover:text-[#111111] border border-[#111111]"
+                    className="group inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
+                    <MessageCircle className="w-5 h-5" />
                     💬 WhatsApp Ahora
                   </a>
                   <a 
                     href="tel:603448765"
-                    className="inline-flex items-center gap-2 bg-transparent text-[#111111] px-4 py-3 rounded text-base font-normal border border-[#111111] transition-transform hover:scale-110"
+                    className="inline-flex items-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-xl text-lg font-medium border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-5 h-5" />
                     📞 603 44 87 65
                   </a>
                 </div>
+                
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-orange-500" />
+                    100% Gratis
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm">
+                    <Clock className="w-4 h-4 text-orange-500" />
+                    30 min respuesta
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm">
+                    <Shield className="w-4 h-4 text-orange-500" />
+                    Sin permanencia
+                  </span>
+                </div>
               </div>
               
-              {/* Right: Chat Bubble Intercom Style */}
+              {/* Right: Imagen con halo sutil */}
               <div className="relative">
-                <div className="bg-white rounded-lg p-6 border border-[#dedbd6] shadow-sm max-w-md mx-auto">
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="w-10 h-10 rounded bg-[#ff5600] flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
-                      R
-                    </div>
-                    <div className="bg-[#faf9f6] rounded-lg rounded-tl-sm px-4 py-3 border border-[#dedbd6]">
-                      <p className="text-sm text-[#111111]">
-                        "Hola 👋 Soy Rosa. ¿En qué te puedo ayudar hoy?"
-                      </p>
-                    </div>
-                  </div>
-                  <a 
-                    href={wCotiza}
-                    className="w-full flex items-center justify-center gap-2 bg-[#ff5600] hover:bg-[#e04d00] text-white rounded py-3 font-normal text-base transition-transform hover:scale-[1.02]"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    Responder por WhatsApp
-                  </a>
-                </div>
-                
-                {/* Decorative dots */}
-                <div className="absolute -top-4 -right-4 flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-[#ff5600]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#dedbd6]"></div>
-                  <div className="w-2 h-2 rounded-full bg-[#65b5ff]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-amber-50/30 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100">
+                  <Image
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Asesoría seguros profesional Madrid"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ¿POR QUÉ NOSOTROS? — Intercom cards */}
-        <section className="py-20 border-t border-[#dedbd6]">
+        {/* BENEFICIOS — Cards limpias con borde fino */}
+        <section className="py-24 bg-gray-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <p className="text-center text-[#ff5600] text-xs font-normal uppercase tracking-[0.6px] mb-4">
-              Mediadores independientes × 10 años experiencia
-            </p>
-            <h2 className="text-[40px] font-normal text-[#111111] leading-[1.00] tracking-[-1.2px] text-center mb-12">
-              ¿Por qué nosotros?
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-[36px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+                ¿Por qué elegirnos?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Tres razones claras para confiar en nuestra asesoría
+              </p>
+            </div>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: CheckCircle2, title: "Mejor precio", desc: "Comparamos todas las compañías para encontrar tu mejor opción." },
-                { icon: Shield, title: "Sin permanencia", desc: "Cancelas cuando quieras. Sin letra pequeña ni sorpresas." },
-                { icon: Clock, title: "30 min garantizados", desc: "Respuesta en 30 minutos o te llamamos nosotros." },
+                { 
+                  icon: Users, 
+                  title: "Independientes", 
+                  desc: "No trabajamos para ninguna aseguradora. Nuestro único objetivo es encontrar lo mejor para ti."
+                },
+                { 
+                  icon: Clock, 
+                  title: "Rápidos", 
+                  desc: "En 30 minutos conoces todas tus opciones. Sin esperas, sin papeleo, sin complicaciones."
+                },
+                { 
+                  icon: HeartHandshake, 
+                  title: "Cercanos", 
+                  desc: "Te acompañamos antes, durante y después. Disponibles por WhatsApp siempre que nos necesites."
+                },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-lg p-6 border border-[#dedbd6] hover:border-[#ff5600]/30 transition-all">
-                  <div className="w-10 h-10 rounded bg-[#faf9f6] border border-[#dedbd6] flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-[#ff5600]" />
+                <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-orange-500" />
                   </div>
-                  <h3 className="text-xl font-normal text-[#111111] tracking-[-0.48px] mb-2">{item.title}</h3>
-                  <p className="text-base text-[#7b7b78] leading-[1.50]">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* EQUIPO */}
-        <section className="py-20 bg-white">
+        {/* EQUIPO — Blanco puro, foto protagonista */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative">
-                <div className="rounded-lg overflow-hidden border border-[#dedbd6]">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-transparent rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
-                    alt="Rosa y Sebastián Valentín — tus asesores personales"
+                    alt="Rosa y Sebastián - Tu equipo de asesores"
                     width={500}
                     height={600}
                     className="w-full h-auto object-cover"
@@ -175,107 +201,167 @@ export default function AsesoriaGratuitaPage() {
                   />
                 </div>
               </div>
+              
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#faf9f6] border border-[#dedbd6] text-[#7b7b78] text-xs mb-6">
-                  <Users className="w-3.5 h-3.5 text-[#ff5600]" />
-                  Tu equipo personal
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-medium mb-6">
+                  <Award className="w-4 h-4" />
+                  Mediadores certificados
                 </div>
-                <h2 className="text-[32px] font-normal text-[#111111] leading-[1.00] tracking-[-0.96px] mb-4">
-                  Rosa y Sebastián Valentín
+                
+                <h2 className="text-[36px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-6">
+                  Rosa y Sebastián
                 </h2>
-                <p className="text-lg text-[#7b7b78] leading-[1.50] mb-6">
-                  Tus asesores personales en Madrid. 
-                  Llevamos más de 10 años ayudando a familias y profesionales 
-                  a encontrar la protección que necesitan.
+                
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  +10 años ayudando a familias y profesionales de Madrid a encontrar 
+                  la protección adecuada. Conocemos el mercado a fondo y sabemos 
+                  dónde está cada cobertura.
                 </p>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#0bdf50]/10 border border-[#0bdf50]/30 text-[#2c6415] text-xs">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  DGSFP: C012479234434D
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <span className="text-gray-700">Más de 1.200 personas asesoradas</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <span className="text-gray-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <span className="text-gray-700">95% de clientes satisfechos</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm">
+                  <span className="font-semibold text-gray-900">NIF:</span> 79234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PROCESO SIMPLE — 3 pasos Intercom */}
-        <section className="py-20 border-t border-[#dedbd6]">
+        {/* PROCESO — Fondo alternado, 3 pasos claros */}
+        <section className="py-24 bg-gray-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-normal text-[#111111] leading-[1.00] tracking-[-1.2px] text-center mb-4">
-              Proceso simple
-            </h2>
-            <p className="text-lg text-[#7b7b78] text-center mb-12">
-              ¡Sin papeleo! Todo digital.
-            </p>
+            <div className="text-center mb-16">
+              <h2 className="text-[36px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+                Cómo funciona
+              </h2>
+              <p className="text-lg text-gray-600">
+                Tres pasos simples, sin presión
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "1", title: "WhatsApp", desc: "Nos escribes con tu situación. En tu idioma." },
-                { num: "2", title: "Cotizamos", desc: "En 30 min tenemos tu mejor precio." },
-                { num: "3", title: "Contratas", desc: "Sin presión. Sin permanencia. Digital." },
+                { 
+                  num: "01", 
+                  title: "WhatsApp", 
+                  desc: "Nos cuentas qué necesitas. Sin formularios ni esperas."
+                },
+                { 
+                  num: "02", 
+                  title: "Cotización", 
+                  desc: "Analizamos el mercado y te damos las mejores opciones en 30 min."
+                },
+                { 
+                  num: "03", 
+                  title: "Decisión", 
+                  desc: "Tú decides sin presión. Te ayudamos con todo el papeleo si quieres."
+                },
               ].map((step, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded bg-[#ff5600] text-white flex items-center justify-center text-lg font-normal mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-400 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-orange-500/20">
                     {step.num}
                   </div>
-                  <h3 className="text-xl font-normal text-[#111111] tracking-[-0.48px] mb-2">{step.title}</h3>
-                  <p className="text-base text-[#7b7b78] leading-[1.50]">{step.desc}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* GARANTÍAS — Intercom badges */}
-        <section className="py-20 bg-[#faf9f6]">
+        {/* GARANTÍAS — Checks y badges naranjas */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[32px] font-normal text-[#111111] leading-[1.00] tracking-[-0.96px] text-center mb-12">
-              Nuestras garantías
+            <div className="text-center mb-16">
+              <h2 className="text-[36px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+                Garantías de confianza
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: "100% Gratis", desc: "La asesoría no te cuesta nada" },
+                { title: "Sin permanencia", desc: "Cambia cuando quieras" },
+                { title: "30 min respuesta", desc: "Rápidos y eficientes" },
+                { title: "Disponibles 24/7", desc: "WhatsApp siempre abierto" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 border border-gray-100">
+                  <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Fondo blanco con halo naranja cálido */}
+        <section className="relative py-24 overflow-hidden">
+          {/* Halo naranja suave */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-orange-200/30 via-orange-100/10 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-6">
+              Tu asesoría gratuita
+              <br />
+              <span className="text-orange-500">te espera</span>
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "Respuesta 30min o llamamos nosotros",
-                "Revisión anual gratis",
-                "Sin permanencia",
-                "DGSFP verificado",
-              ].map((item, i) => (
-                <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded bg-white border border-[#dedbd6] text-sm text-[#111111]">
-                  <CheckCircle2 className="w-4 h-4 text-[#0bdf50]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA FINAL */}
-        <section className="py-24 bg-[#111111]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-[40px] sm:text-[48px] font-normal text-white leading-[1.00] tracking-[-1.2px] mb-4">
-              Tu asesoría gratuita espera
-            </h2>
-            <p className="text-lg text-white/60 leading-[1.50] mb-10">
+            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
               Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              Descubre el seguro que realmente necesitas.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <a 
-                href={wCotiza}
-                className="group inline-flex items-center gap-2 bg-[#ff5600] text-white px-6 py-3 rounded text-lg font-normal transition-transform hover:scale-110"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                💬 WhatsApp Ahora
-              </a>
-              <a 
-                href="tel:603448765"
-                className="inline-flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded text-lg font-normal border border-white/30 transition-transform hover:scale-110"
-              >
-                <Phone className="w-5 h-5" />
-                📞 603 44 87 65
-              </a>
+            <a 
+              href={wCotiza}
+              className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-1"
+            >
+              <MessageCircle className="w-6 h-6" />
+              💬 Empezar Ahora
+            </a>
+            
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-orange-500" />
+                100% Gratis
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <Clock className="w-4 h-4 text-orange-500" />
+                30 min
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <Shield className="w-4 h-4 text-orange-500" />
+                Sin compromiso
+              </div>
             </div>
             
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-gray-400 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
