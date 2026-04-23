@@ -125,8 +125,8 @@ export default function SaludDentalPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-blue-50/30 rounded-3xl blur-2xl transform scale-95" />
                 <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
                   <Image
-                    src="https://images.pexels.com/photos/3845816/pexels-photo-3845816.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Sonrisa dental profesional Madrid"
+                    src="/images/dental/hero-dental.jpg"
+                    alt="Seguro dental Madrid - Clínica dental profesional"
                     width={600}
                     height={500}
                     className="w-full h-auto object-cover object-top"
