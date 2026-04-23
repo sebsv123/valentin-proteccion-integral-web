@@ -6,19 +6,20 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { CheckCircle2, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
-  description: "Seguro de vida para tu hipoteca en Madrid. Ahorra hasta 50% vs tu banco. Cotiza gratis en WhatsApp · Respuesta 30min · Sin permanencia.",
+  title: "Seguro de Vida en Madrid | Valentín",
+  description: "Seguro de vida en Madrid adaptado a tu situación real. Protege económicamente a tu familia con asesoría clara y sin letra pequeña.",
   keywords: ["seguro vida hipoteca Madrid","seguro vida hipoteca","proteccion vida familia Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/vida" },
   openGraph: {
-    title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
-    description: "Seguro de vida para tu hipoteca en Madrid. Ahorra hasta 50% vs tu banco. Cotiza gratis en WhatsApp · Respuesta 30min · Sin permanencia.",
+    title: "Seguro de Vida en Madrid | Valentín",
+    description: "Seguro de vida en Madrid adaptado a tu situación real. Protege económicamente a tu familia con asesoría clara y sin letra pequeña.",
     url: "https://valentinproteccionintegral.com/seguros/vida",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -68,15 +69,12 @@ export default function VidaPage() {
             
             {/* H1 — Human and emotional */}
             <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-gray-900 leading-[1.15] tracking-tight mb-6">
-              Tu familia tranquila,
-              <br />
-              <span className="text-[#e23b4a]">tu hipoteca resuelta</span>
+              Tu familia protegida si un día no estás.
             </h1>
             
             {/* Subhead — Warm and natural */}
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Llevamos más de 10 años ayudando a familias de Madrid a protegerse 
-              sin complicaciones. Sin letra pequeña, sin sorpresas.
+              Protege económicamente a tu familia con una solución clara y adaptada a tu situación.
             </p>
             
             {/* CTAs — Coral as accent */}
@@ -279,6 +277,35 @@ export default function VidaPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#e23b4a" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="coral"
+          title="¿Tienes dudas sobre el seguro de vida?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Por qué contratar con vosotros y no con el banco?", 
+              a: "Te ahorras hasta un 50% respecto al precio del banco. Además, la cobertura es para proteger a tu familia, no al banco. Puedes elegir el beneficiario que quieras." 
+            },
+            { 
+              q: "¿Cuánto cuesta el seguro de vida?", 
+              a: "Depende de tu edad, capital asegurado y estado de salud. Una póliza típica de 100.000€ para una persona de 35 años cuesta entre 15-25€/mes. Te damos presupuesto personalizado en 30 min." 
+            },
+            { 
+              q: "¿Hay que hacerse médicos?", 
+              a: "Generalmente no para capitales menores a 150.000€. Para mayores capitales o ciertas edades, puede requerirse un sencillo chequeo. Te lo gestionamos nosotros." 
+            },
+            { 
+              q: "¿Puedo cancelar cuando quiera?", 
+              a: "Sí, el seguro de vida es sin permanencia. Puedes cancelar en cualquier momento sin penalización." 
+            },
+            { 
+              q: "¿Qué pasa si ya tengo uno con el banco?", 
+              a: "Puedes sustituirlo. La ley te permite cambiar el seguro de vida de tu hipoteca. Te ayudamos con todo el papeleo para hacer el cambio sin complicaciones." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

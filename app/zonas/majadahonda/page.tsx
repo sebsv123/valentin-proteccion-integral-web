@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Dog, Car, Heart, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Majadahonda Madrid | Asesor Local | Valentín",
-  description: "Seguros en Majadahonda. Asesor local cercano. Salud privada, vida hipoteca, hogar. Cotiza gratis WhatsApp 30 minutos.",
+  title: "Seguros en Majadahonda | Valentín",
+  description: "Asesor de seguros en Majadahonda. Salud, vida, dental y decesos con asesoría independiente y sin letra pequeña. Primera consulta gratuita.",
   keywords: ["seguros Majadahonda","seguros Majadahonda Madrid","mediador Majadahonda"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/majadahonda" },
   openGraph: {
-    title: "Seguros Majadahonda Madrid | Asesor Local | Valentín",
-    description: "Seguros en Majadahonda. Asesor local cercano. Salud privada, vida hipoteca, hogar. Cotiza gratis WhatsApp 30 minutos.",
+    title: "Seguros en Majadahonda | Valentín",
+    description: "Asesor de seguros en Majadahonda. Salud, vida, dental y decesos con asesoría independiente y sin letra pequeña. Primera consulta gratuita.",
     url: "https://valentinproteccionintegral.com/zonas/majadahonda",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

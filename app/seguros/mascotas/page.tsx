@@ -6,19 +6,20 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Mascotas Madrid | RC Obligatoria Perros | Valentín",
-  description: "Seguro mascotas Madrid desde 5€/mes. RC obligatoria perros Ley 2023. Asistencia veterinaria perros y gatos. WhatsApp 30 minutos.",
+  title: "Seguro para Mascotas en Madrid | Valentín",
+  description: "Seguro de mascotas en Madrid desde el primer día y sin burocracia. Cobertura veterinaria, vacunas y urgencias. Consulta gratis en 30 minutos.",
   keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid","seguro mascotas barato"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/mascotas" },
   openGraph: {
-    title: "Seguro Mascotas Madrid | RC Obligatoria Perros | Valentín",
-    description: "Seguro mascotas Madrid desde 5€/mes. RC obligatoria perros Ley 2023. Asistencia veterinaria perros y gatos. WhatsApp 30 minutos.",
+    title: "Seguro para Mascotas en Madrid | Valentín",
+    description: "Seguro de mascotas en Madrid desde el primer día y sin burocracia. Cobertura veterinaria, vacunas y urgencias. Consulta gratis en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -73,16 +74,14 @@ export default function MascotasPage() {
                 
                 {/* H1 emocional */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-stone-800 leading-[0.95] tracking-tight mb-6">
-                  Seguro de Mascotas Madrid:
+                  Tu mascota protegida desde mañana.
                   <br />
-                  <span className="text-amber-600">RC Obligatoria y Veterinario</span>
+                  <span className="text-amber-600">Sin burocracia.</span>
                 </h1>
                 
                 {/* Subheadline cálida */}
                 <p className="text-2xl text-stone-600 leading-relaxed mb-8 max-w-lg">
-                  Porque merece lo mejor.
-                  <br />
-                  <span className="text-stone-500">Veterinario, accidentes, cirugías.</span>
+                  Cobertura veterinaria y protección para tu mascota, sin burocracia y con explicación clara desde el principio.
                 </p>
                 
                 {/* CTAs */}
@@ -364,6 +363,35 @@ export default function MascotasPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#f59e0b" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="amber"
+          title="¿Tienes dudas sobre el seguro de mascotas?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Qué cubre el seguro?", 
+              a: "Cubre veterinario, cirugías, hospitalización, medicación y responsabilidad civil obligatoria para perros. También incluye eutanasia y gestión de restos si es necesario." 
+            },
+            { 
+              q: "¿Hay límite de edad?", 
+              a: "No. Aceptamos perros y gatos de cualquier edad, incluso mayores. Las primas se ajustan a la edad, pero nunca te dejamos sin cobertura por ser senior." 
+            },
+            { 
+              q: "¿Incluye la vacunación?", 
+              a: "El plan básico cubre consultas y urgencias. Para vacunación anual, algunos planes incluyen un chequeo gratuito al año. Te lo explicamos al cotizar." 
+            },
+            { 
+              q: "¿Puedo ir a cualquier veterinario?", 
+              a: "Tenemos red de clínicas concertadas en Madrid. Si tu veterinario habitual está en la red, perfecto. Si no, te ayudamos a encontrar el centro más cercano." 
+            },
+            { 
+              q: "¿Cubre la RC obligatoria?", 
+              a: "Sí, desde 2023 es obligatoria para perros potencialmente peligrosos, pero recomendable para todos. Cubre daños a terceros con hasta 150.000€ de indemnización." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

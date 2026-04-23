@@ -4,17 +4,18 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clock, FileCheck, Users, Home } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Autónomos Madrid | IRPF Deducible | Valentín",
-  description: "Seguro médico autónomos Madrid deducible 100% IRPF. RC profesional, accidentes. Cotiza gratis WhatsApp 30min. Sin permanencia.",
+  title: "Seguro Autónomos Madrid · Deducción Fiscal | Valentín",
+  description: "Seguro para autónomos en Madrid deducible en el IRPF. Salud, accidentes y vida con asesoría gratuita. Rosa o Sebastián te responden en 30 min.",
   keywords: ["seguros autonomos Madrid","seguro autonomos deduccion IRPF","proteccion autonomos Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/landing/autonomos" },
   openGraph: {
-    title: "Seguros Autónomos Madrid | IRPF Deducible | Valentín",
-    description: "Seguro médico autónomos Madrid deducible 100% IRPF. RC profesional, accidentes. Cotiza gratis WhatsApp 30min. Sin permanencia.",
+    title: "Seguro Autónomos Madrid · Deducción Fiscal | Valentín",
+    description: "Seguro para autónomos en Madrid deducible en el IRPF. Salud, accidentes y vida con asesoría gratuita. Rosa o Sebastián te responden en 30 min.",
     url: "https://valentinproteccionintegral.com/landing/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -68,16 +69,12 @@ export default function AutonomosLandingPage() {
                 
                 {/* H1 — 48px weight 300, tight tracking */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-                  Seguro para Autónomos
-                  <br />
-                  <span className="text-[#533afd]">en Madrid</span>
+                  Protégete sin perder un día de trabajo.
                 </h1>
                 
                 {/* Subhead — 18px weight 300 */}
                 <p className="text-lg font-light text-[#64748d] leading-[1.40] mb-8 max-w-lg">
-                  <span className="text-[#533afd] font-semibold">Deducción fiscal del 100% en tu IRPF.</span>
-                  <br />
-                  Gestión completa sin que pierdas un día de trabajo.
+                  Protección y ventajas fiscales pensadas para autónomos que no quieren perder tiempo ni complicarse.
                 </p>
                 
                 {/* CTAs Stripe */}
@@ -94,10 +91,6 @@ export default function AutonomosLandingPage() {
                 
                 {/* Trust row */}
                 <div className="flex flex-wrap gap-6 text-sm text-[#64748d]">
-                  <span className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
-                    Sin permanencia
-                  </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-[#533afd]" />
                     Respuesta 30 min
@@ -326,10 +319,39 @@ export default function AutonomosLandingPage() {
               Hablar con Rosa ahora
             </WhatsAppButton>
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · Sin permanencia
+              DGSFP: C012479234434D · +1.200 clientes protegidos
             </p>
           </div>
         </section>
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="indigo"
+          title="¿Tienes dudas sobre seguros para autónomos?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Cómo funciona la deducción fiscal?", 
+              a: "La prima del seguro de salud para autónomos es 100% deducible en tu declaración de IRPF. Si pagas 100€/mes, te devuelven hasta 30€ en la declaración anual." 
+            },
+            { 
+              q: "¿Puedo contratar solo para mí o también para mi familia?", 
+              a: "Puedes contratar solo para ti (más barato) o incluir cónyuge e hijos. Toda la familia disfruta de la misma cobertura privada." 
+            },
+            { 
+              q: "¿Y si tengo una baja laboral?", 
+              a: "Recomendamos combinar el seguro de salud con un seguro de incapacidad temporal. Así cobras tu sueldo completo durante la baja médica." 
+            },
+            { 
+              q: "¿Cuánto cuesta aproximadamente?", 
+              a: "Un seguro de salud completo para un autónomo de 35 años cuesta entre 50-80€/mes. El de responsabilidad civil unos 20-40€/año. Te damos presupuesto exacto en WhatsApp." 
+            },
+            { 
+              q: "¿Hay permanencia?", 
+              a: "Las pólizas de salud tienen permanencia de 1 año por normativa. El seguro de RC profesional suele ser sin permanencia. Te lo aclaramos todo antes de contratar." 
+            },
+          ]}
+        />
 
       </main>
       <StickyWhatsApp />

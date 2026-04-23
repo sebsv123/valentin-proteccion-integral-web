@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Seniors Madrid 65+ | Tranquilidad Real | Valentín",
-  description: "Seguros para mayores de 65 en Madrid. Salud geriátrica, decesos, asistencia domicilio. Gestor personal. Cotiza en WhatsApp o teléfono.",
+  title: "Seguros para Seniors en Madrid | Valentín",
+  description: "Seguros pensados para mayores de 55 en Madrid. Salud, decesos y vida con asesoría clara, cercana y sin letra pequeña. Consulta gratis.",
   keywords: ["seguros mayores Madrid","seguros seniors Madrid","seguro decesos Madrid","asistencia domicilio mayores"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/seniors" },
   openGraph: {
-    title: "Seguros Seniors Madrid 65+ | Tranquilidad Real | Valentín",
-    description: "Seguros para mayores de 65 en Madrid. Salud geriátrica, decesos, asistencia domicilio. Gestor personal. Cotiza en WhatsApp o teléfono.",
+    title: "Seguros para Seniors en Madrid | Valentín",
+    description: "Seguros pensados para mayores de 55 en Madrid. Salud, decesos y vida con asesoría clara, cercana y sin letra pequeña. Consulta gratis.",
     url: "https://valentinproteccionintegral.com/para/seniors",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

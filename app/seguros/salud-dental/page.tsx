@@ -6,19 +6,20 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syringe, Scan, Award, MapPin, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Dental Madrid Sin Carencias | Valentín",
-  description: "Seguro dental Madrid desde 9€/mes. Sin carencias, revisiones desde día 1. Toda la familia en una póliza. Cotiza WhatsApp 30 min.",
+  title: "Seguro Dental en Madrid · Sin Carencias | Valentín",
+  description: "Seguro dental en Madrid sin carencias desde el día 1. Revisiones, empastes y ortodoncia desde 9€/mes. Respuesta garantizada en 30 minutos.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
-    title: "Seguro Dental Madrid Sin Carencias | Valentín",
-    description: "Seguro dental Madrid desde 9€/mes. Sin carencias, revisiones desde día 1. Toda la familia en una póliza. Cotiza WhatsApp 30 min.",
+    title: "Seguro Dental en Madrid · Sin Carencias | Valentín",
+    description: "Seguro dental en Madrid sin carencias desde el día 1. Revisiones, empastes y ortodoncia desde 9€/mes. Respuesta garantizada en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -116,7 +117,7 @@ export default function SaludDentalPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Shield className="w-4 h-4 text-sky-500" />
-                    Implantes incluidos
+                    50+ tratamientos cubiertos
                   </span>
                 </div>
               </div>
@@ -159,9 +160,9 @@ export default function SaludDentalPage() {
                   desc: "Cobertura desde el día 1. Sin esperas ni papeleo. Empieza a usar tu seguro inmediatamente."
                 },
                 { 
-                  icon: Smile, 
-                  title: "Implantes cubiertos", 
-                  desc: "Implantes dentales incluidos. Recupera tu sonrisa completa."
+                  icon: Stethoscope, 
+                  title: "Consultas gratuitas", 
+                  desc: "Consulta, revisión y consulta urgente sin coste. Atención cuando la necesites."
                 },
                 { 
                   icon: Heart, 
@@ -398,7 +399,7 @@ export default function SaludDentalPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <Shield className="w-4 h-4 text-sky-500" />
-                Implantes 300€/año
+                Limpieza dental incluida
               </div>
             </div>
             
@@ -413,6 +414,35 @@ export default function SaludDentalPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#0ea5e9" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="sky"
+          title="¿Tienes dudas sobre el seguro dental?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Cuándo puedo empezar a usar el seguro?", 
+              a: "Desde el primer día. No hay carencias ni períodos de espera. Contratas hoy y mañana ya puedes ir al dentista." 
+            },
+            { 
+              q: "¿Hay que pagar algo en la consulta?", 
+              a: "No. Las consultas, revisiones y limpiezas son gratuitas. Solo pagas si necesitas algún tratamiento específico, y siempre con precios reducidos según el cuadro médico." 
+            },
+            { 
+              q: "¿Puedo ir a cualquier dentista?", 
+              a: "Tienes acceso a la red de clínicas concertadas. En Madrid son más de 200 centros. Puedes elegir el más cercano a ti o el que prefieras." 
+            },
+            { 
+              q: "¿Y si necesito ortodoncia?", 
+              a: "La ortodoncia tiene precios especiales con descuentos importantes. El estudio inicial es gratuito y te dan presupuesto sin compromiso antes de empezar." 
+            },
+            { 
+              q: "¿Cuánto cuesta una extracción?", 
+              a: "Las extracciones simples están cubiertas sin coste. Para extracciones complejas (cordales incluidos) hay precios reducidos según el cuadro." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Users, MessageCircle, Award, TrendingUp, HeartHandshake, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Asesoría Seguros Gratis Madrid | Valentín Protección",
-  description: "Asesoría seguros gratuita en Madrid. Salud, vida, hogar, autónomos. Respuesta en 30 minutos. Sin compromiso. WhatsApp directo.",
+  title: "Asesoría de Seguros Gratis en Madrid | Valentín",
+  description: "Asesoría de seguros gratuita en Madrid. Te ayudamos a elegir sin presión, sin letra pequeña y sin compromiso. Respuesta en menos de 30 minutos.",
   keywords: ["asesoria seguros gratis Madrid","asesoramiento seguros Madrid","consulta seguros gratuita"],
   alternates: { canonical: "https://valentinproteccionintegral.com/landing/asesoria-gratuita" },
   openGraph: {
-    title: "Asesoría Seguros Gratis Madrid | Valentín Protección",
-    description: "Asesoría seguros gratuita en Madrid. Salud, vida, hogar, autónomos. Respuesta en 30 minutos. Sin compromiso. WhatsApp directo.",
+    title: "Asesoría de Seguros Gratis en Madrid | Valentín",
+    description: "Asesoría de seguros gratuita en Madrid. Te ayudamos a elegir sin presión, sin letra pequeña y sin compromiso. Respuesta en menos de 30 minutos.",
     url: "https://valentinproteccionintegral.com/landing/asesoria-gratuita",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

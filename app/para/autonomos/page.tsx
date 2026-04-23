@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, AlertTriangle, Briefcase, Stethoscope, Umbrella, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros para Autónomos Madrid | Valentín Protección",
-  description: "Seguros adaptados a autónomos Madrid. IRPF, RC, accidentes. Gestión personal con Rosa y Sebastián. Respuesta 30min por WhatsApp.",
+  title: "Seguros para Autónomos en Madrid | Valentín",
+  description: "Seguros adaptados para autónomos en Madrid. Deducción fiscal, protección real y asesoría sin complicaciones. Consulta gratis en 30 minutos.",
   keywords: ["seguros autonomos Madrid","seguro autonomos deducible IRPF","seguro RC autonomos Madrid","proteccion autonomos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/autonomos" },
   openGraph: {
-    title: "Seguros para Autónomos Madrid | Valentín Protección",
-    description: "Seguros adaptados a autónomos Madrid. IRPF, RC, accidentes. Gestión personal con Rosa y Sebastián. Respuesta 30min por WhatsApp.",
+    title: "Seguros para Autónomos en Madrid | Valentín",
+    description: "Seguros adaptados para autónomos en Madrid. Deducción fiscal, protección real y asesoría sin complicaciones. Consulta gratis en 30 minutos.",
     url: "https://valentinproteccionintegral.com/para/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

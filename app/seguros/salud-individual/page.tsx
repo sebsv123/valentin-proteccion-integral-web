@@ -6,19 +6,21 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
+import { getPexelsImage } from "@/lib/pexels";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Privado Madrid | Sin Copagos | Valentín",
-  description: "Seguro médico privado Madrid sin copagos. Cobertura inmediata, especialistas ilimitados. Cotiza en WhatsApp en 30 minutos. DGSFP verificado.",
+  title: "Seguro de Salud Privado en Madrid | Valentín",
+  description: "Seguro médico privado en Madrid sin listas de espera. Especialistas, pruebas y urgencias desde el primer día. Consulta gratis en 30 minutos.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
-    title: "Seguro Salud Privado Madrid | Sin Copagos | Valentín",
-    description: "Seguro médico privado Madrid sin copagos. Cobertura inmediata, especialistas ilimitados. Cotiza en WhatsApp en 30 minutos. DGSFP verificado.",
+    title: "Seguro de Salud Privado en Madrid | Valentín",
+    description: "Seguro médico privado en Madrid sin listas de espera. Especialistas, pruebas y urgencias desde el primer día. Consulta gratis en 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -47,8 +49,9 @@ const serviceSchema = {
 
 export const dynamic = "force-static";
 
-export default function SaludIndividualPage() {
+export default async function SaludIndividualPage() {
   const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de salud privado individual en Madrid.");
+  const pexelsImage = await getPexelsImage('salud-individual');
 
   return (
     <>
@@ -70,14 +73,14 @@ export default function SaludIndividualPage() {
                 
                 {/* H1 — Balanced size with breathing room */}
                 <h1 className="text-[40px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-[1.05] tracking-tight mb-5">
-                  Tu Seguro de Salud
+                  Tu médico cuando lo necesitas.
                   <br />
-                  <span className="text-emerald-400">Privado en Madrid</span>
+                  <span className="text-emerald-400">No cuando el sistema lo permite.</span>
                 </h1>
                 
                 {/* Subheadline */}
                 <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-md">
-                  Cobertura inmediata. Especialistas sin lista de espera. Respuesta en 30 min.
+                  Atención médica privada, especialidades y pruebas sin esperas innecesarias, explicadas de forma clara antes de contratar.
                 </p>
                 
                 {/* CTAs */}
@@ -118,8 +121,8 @@ export default function SaludIndividualPage() {
               <div className="order-1 lg:order-2">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border border-white/10">
                   <Image
-                    src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Hospital moderno Madrid con tecnología avanzada"
+                    src={pexelsImage}
+                    alt="Atención médica privada de calidad en Madrid"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover"
@@ -367,6 +370,35 @@ export default function SaludIndividualPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#10b981" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="emerald"
+          title="¿Tienes dudas sobre el seguro de salud?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Hay que pagar copagos?", 
+              a: "No. Esta modalidad es sin copagos. Pagas la cuota mensual y nada más. Consultas, pruebas, hospitalización... todo incluido." 
+            },
+            { 
+              q: "¿Cuándo puedo ir al especialista?", 
+              a: "Desde el primer día. No necesitas derivación del médico de cabecera. Eliges el especialista que prefieras de la red y pides cita directamente." 
+            },
+            { 
+              q: "¿Puedo elegir hospital?", 
+              a: "Sí. Tienes acceso a los principales hospitales privados de Madrid: La Zarzuela, Ruber, Clínica de la Luz, Nuestra Señora de América, etc." 
+            },
+            { 
+              q: "¿Y si tengo una urgencia?", 
+              a: "Tienes urgencias 24h en los hospitales de la red. También telemedicina por videollamada con médico las 24h del día." 
+            },
+            { 
+              q: "¿Cuánto cuesta?", 
+              a: "Depende de tu edad y la cobertura que elijas. Un adulto de 30-40 años paga entre 50-80€/mes para una cobertura completa sin copagos." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

@@ -27,13 +27,13 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
-  title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita | Valentín",
-  description: "Asesor de seguros en Madrid independiente con +10 años y +1.200 familias. Seguro de salud, vida, dental, mascotas y más. Sin letra pequeña. Primera consulta gratis.",
+  title: "Asesor de Seguros en Madrid | Valentín",
+  description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
   keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
   openGraph: {
-    title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita | Valentín",
-    description: "Asesor de seguros en Madrid independiente con +10 años y +1.200 familias. Seguro de salud, vida, dental, mascotas y más. Sin letra pequeña. Primera consulta gratis.",
+    title: "Asesor de Seguros en Madrid | Valentín",
+    description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
     url: "https://valentinproteccionintegral.com",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asesor de Seguros en Madrid · +10 años · Consulta Gratuita",
-    description: "Asesor independiente en Madrid. +10 años, +1.200 familias. Salud, vida, dental y más. Primera consulta gratis.",
+    title: "Asesor de Seguros en Madrid | Valentín",
+    description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com",

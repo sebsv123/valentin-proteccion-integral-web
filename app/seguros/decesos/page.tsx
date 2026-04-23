@@ -6,19 +6,20 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileCheck, Award, TrendingUp, Phone, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Decesos Madrid | Tranquilidad Familiar | Valentín",
-  description: "Seguro de decesos en Madrid. Todos los gastos cubiertos, gestión completa para tu familia. Cotiza sin compromiso en WhatsApp 30 min.",
+  title: "Seguro de Decesos en Madrid | Valentín",
+  description: "Seguro de decesos en Madrid con gestión completa incluida. Tu familia solo tiene que llamarnos una vez. Consulta gratuita sin compromiso.",
   keywords: ["seguro decesos Madrid","seguro gastos sepelio Madrid","seguro fallecimiento Madrid","protección familiar decesos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/decesos" },
   openGraph: {
-    title: "Seguro de Decesos Madrid | Tranquilidad Familiar | Valentín",
-    description: "Seguro de decesos en Madrid. Todos los gastos cubiertos, gestión completa para tu familia. Cotiza sin compromiso en WhatsApp 30 min.",
+    title: "Seguro de Decesos en Madrid | Valentín",
+    description: "Seguro de decesos en Madrid con gestión completa incluida. Tu familia solo tiene que llamarnos una vez. Consulta gratuita sin compromiso.",
     url: "https://valentinproteccionintegral.com/seguros/decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -73,16 +74,12 @@ export default function DecesosPage() {
                 
                 {/* H1 claro */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Seguro de Decesos Madrid:
-                  <br />
-                  <span className="text-indigo-600">Tranquilidad para tu Familia</span>
+                  Tu familia solo tiene que llamarnos una vez.
                 </h1>
                 
                 {/* Subheadline emocional */}
                 <p className="text-2xl text-slate-600 leading-relaxed mb-10 max-w-lg">
-                  Deja todo resuelto para tu familia.
-                  <br />
-                  <span className="text-slate-500">Ellos no pagan nada. Solo tienen que llamarnos.</span>
+                  Gestionamos los trámites y acompañamos a tu familia para que todo quede resuelto cuando más importa.
                 </p>
                 
                 {/* CTAs */}
@@ -141,8 +138,8 @@ export default function DecesosPage() {
               En un momento difícil, tu familia merece tranquilidad
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              El seguro de decesos cubre todos los gastos del funeral y deja un capital 
-              para quienes más quieres. Tu familia no tendrá que preocuparse por el dinero 
+              El seguro de decesos cubre todos los gastos del funeral y la repatriación 
+              si es necesario. Tu familia no tendrá que preocuparse por el dinero 
               ni por los trámites en el peor momento.
             </p>
           </div>
@@ -207,10 +204,10 @@ export default function DecesosPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 { icon: Heart, title: "Gastos de sepelio", desc: "Todo incluido" },
-                { icon: Users, title: "Capital", desc: "Hasta 50.000€" },
-                { icon: Umbrella, title: "Traslado", desc: "Funerario incluido" },
+                { icon: Umbrella, title: "Repatriación", desc: "Nacional e internacional" },
+                { icon: Users, title: "Traslado funerario", desc: "Dentro de España" },
                 { icon: FileCheck, title: "Gestoría", desc: "Trámites cubiertos" },
-                { icon: Shield, title: "Repatriación", desc: "Si es necesario" },
+                { icon: Shield, title: "Protección familiar", desc: "Cobertura completa" },
                 { icon: Clock, title: "Servicio 24h", desc: "Siempre disponible" },
               ].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
@@ -382,6 +379,35 @@ export default function DecesosPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#6366f1" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="indigo"
+          title="¿Tienes dudas sobre el seguro de decesos?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Qué es exactamente un seguro de decesos?", 
+              a: "Es un seguro que cubre todos los gastos del funeral y la gestión administrativa cuando fallece una persona. Tu familia solo tiene que llamar a la aseguradora y ellos se encargan de todo." 
+            },
+            { 
+              q: "¿Cuánto cuesta?", 
+              a: "Depende de la edad. Una persona de 50 años paga unos 15-25€/mes. Cuanto más joven se contrate, más barato sale." 
+            },
+            { 
+              q: "¿Hay que hacerse médicos?", 
+              a: "No, no se requiere examen médico para contratar. Solo tienes que cumplimentar un cuestionario de salud sencillo." 
+            },
+            { 
+              q: "¿Y si fallezco fuera de Madrid?", 
+              a: "Incluye repatriación nacional e internacional. Te traen a España desde cualquier parte del mundo sin coste adicional para la familia." 
+            },
+            { 
+              q: "¿Puedo contratarlo para mis padres?", 
+              a: "Sí, puedes contratarlo para cualquier familiar. Solo necesitas su consentimiento y datos personales. Es una forma de dejar todo resuelto." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

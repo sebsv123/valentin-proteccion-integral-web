@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Users, Baby, User, GraduationCap, Phone, Award, TrendingUp, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Familiares Madrid | Todo en Uno | Valentín",
-  description: "Seguros para familias en Madrid. Salud, vida, dental y hogar en una sola gestión. Cotiza en WhatsApp 30 minutos. Sin permanencia.",
+  title: "Seguros para Familias en Madrid | Valentín",
+  description: "Seguros pensados para proteger a toda tu familia en Madrid. Salud, vida, dental y decesos con asesoría clara y personalizada. Sin letra pequeña.",
   keywords: ["seguros familias Madrid","seguro familia completa Madrid","seguro salud vida hogar familia"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/familias" },
   openGraph: {
-    title: "Seguros Familiares Madrid | Todo en Uno | Valentín",
-    description: "Seguros para familias en Madrid. Salud, vida, dental y hogar en una sola gestión. Cotiza en WhatsApp 30 minutos. Sin permanencia.",
+    title: "Seguros para Familias en Madrid | Valentín",
+    description: "Seguros pensados para proteger a toda tu familia en Madrid. Salud, vida, dental y decesos con asesoría clara y personalizada. Sin letra pequeña.",
     url: "https://valentinproteccionintegral.com/para/familias",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

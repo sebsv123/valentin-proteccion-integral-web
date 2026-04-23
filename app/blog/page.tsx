@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -11,6 +9,7 @@ import { blogPosts } from '@/lib/blog';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { getPexelsImage } from '@/lib/pexels';
+import { BlogGrid } from '@/components/blog-grid';
 
 export const metadata: Metadata = {
   title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
@@ -80,7 +79,6 @@ export default async function BlogPage() {
           })
         }}
       />
-      {/* TODO: Añadir etiquetas de categoría en cards cuando el tipo BlogPost tenga campo "category" */}
       <Header />
       <main>
         <section className="section-pad pt-6 md:pt-10">
@@ -94,35 +92,7 @@ export default async function BlogPage() {
           </div>
         </section>
 
-        <section className="section-pad pt-0">
-          <div className="container-shell grid gap-6 lg:grid-cols-3">
-            {postsWithImages
-              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-              .map((post) => (
-              <article key={post.slug} className="soft-card overflow-hidden group">
-                <Link href={`/blog/${post.slug}`} className="block">
-                  <div className="relative h-60 overflow-hidden">
-                    <Image src={post.pexelsImage} alt={post.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(0,34,68,0.5))]" />
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <div className="flex items-center gap-3 text-xs text-white/80">
-                        <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-                        <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h2 className="font-heading text-2xl font-semibold text-[var(--blue-deep)] group-hover:text-[var(--blue)] transition-colors">{post.title}</h2>
-                    <p className="mt-3 text-base leading-8 text-[var(--muted)]">{post.excerpt}</p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)]">
-                      Seguir leyendo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
+        <BlogGrid posts={postsWithImages.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())} />
 
         <GoogleReviewsWidget title="Opiniones sobre nuestro asesoramiento" />
 

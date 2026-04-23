@@ -82,7 +82,7 @@ export function HeroLeadSection() {
                 id="hero-title"
                 className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]"
               >
-                Asesor de Seguros en Madrid — Consulta Gratuita, Sin Compromiso
+                Protección real. Sin letra pequeña.
               </h1>
             </CSSReveal>
 
@@ -110,7 +110,7 @@ export function HeroLeadSection() {
             {/* Ramos como subtítulo */}
             <CSSReveal delay={0.3}>
               <p className="text-base sm:text-lg text-[var(--muted)] leading-7 max-w-2xl">
-                Seguros de salud, vida, dental, mascotas, viaje y más. Comparamos las mejores opciones para ti, sin letra pequeña ni compromiso.
+                Protegemos a familias y particulares con asesoría clara, sin letra pequeña y sin compromiso.
               </p>
             </CSSReveal>
 

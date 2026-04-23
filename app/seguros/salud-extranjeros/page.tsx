@@ -6,19 +6,20 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Médico NIE/TIE Extranjeros Madrid | Valentín",
-  description: "+100 aprobados. Cumple extranjería 2026. Latinos/EEUU. Seguro médico residencia España con certificado para NIE/TIE Madrid.",
+  title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
+  description: "Seguro médico para extranjeros en España listo en 24 horas. Cobertura completa, gestión sencilla y atención personalizada desde el primer día.",
   keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro Médico NIE/TIE Extranjeros Madrid | Valentín",
-    description: "+100 aprobados. Cumple extranjería 2026. Latinos/EEUU. Seguro médico residencia España con certificado para NIE/TIE Madrid.",
+    title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
+    description: "Seguro médico para extranjeros en España listo en 24 horas. Cobertura completa, gestión sencilla y atención personalizada desde el primer día.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -62,7 +63,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cuándo empieza la cobertura?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Algunas coberturas específicas pueden tener carencias mínimas que te explicamos antes de contratar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." }
     }
   ]
 };
@@ -86,14 +87,14 @@ export default function SaludExtranjerosPage() {
             
             {/* H1 Optimized */}
             <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
-              Seguro de Salud para Extranjeros
+              Seguro médico en España.
               <br />
-              <span className="text-[#2E7D32]">en Madrid</span>
+              <span className="text-[#2E7D32]">Listo en 24 horas.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
-              Sin lista de espera. Cobertura desde el primer día. Te ayudamos en español con todo el proceso.
+              Seguro médico pensado para vivir en España con tranquilidad, listo para gestionar de forma rápida y sencilla.
             </p>
 
             {/* Guarantee Badge */}
@@ -300,7 +301,7 @@ export default function SaludExtranjerosPage() {
               {[
                 { q: "¿Necesito NIE para contratar el seguro de salud?", a: "No siempre es obligatorio. Te asesoramos según tu situación particular. Algunas modalidades permiten contratación con pasaporte. Escríbenos por WhatsApp y estudiamos tu caso en 30 minutos." },
                 { q: "Do I need to speak Spanish?", a: "No, we speak English. Rosa and Sebastián can assist you in English throughout the entire process." },
-                { q: "¿Cuándo empieza la cobertura?", a: "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Algunas coberturas específicas pueden tener carencias mínimas que te explicamos antes de contratar." },
+                { q: "¿Cuándo empieza la cobertura?", a: "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." },
               ].map((faq, i) => (
                 <details key={i} className="group rounded-xl border border-[#E5E7EB] bg-white overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-[#F7F8F9] transition-colors">
@@ -351,7 +352,36 @@ export default function SaludExtranjerosPage() {
         <GoogleReviewsWidget title="Opiniones de clientes extranjeros sobre seguro médico" />
 
         {/* GARANTÍAS PREMIUM */}
-        <GarantiasSection brandColor="#16a34a" />
+        <GarantiasSection brandColor="#163300" />
+
+        {/* FAQ CHAT */}
+        <FAQChat 
+          brandColor="emerald"
+          title="¿Tienes dudas sobre el seguro para extranjeros?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            { 
+              q: "¿Necesito NIE para contratar?", 
+              a: "No siempre es obligatorio. Algunas modalidades permiten contratación con pasaporte. Te asesoramos según tu situación particular por WhatsApp en 30 minutos." 
+            },
+            { 
+              q: "¿Cuándo empieza la cobertura?", 
+              a: "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." 
+            },
+            { 
+              q: "¿Sirve para la renovación del TIE?", 
+              a: "Sí. El seguro cumple los requisitos de Extranjería y te facilitamos el certificado necesario para tu renovación de NIE/TIE." 
+            },
+            { 
+              q: "¿Puedo tener médico de cabecera?", 
+              a: "Sí, puedes elegir médico de cabecera de la red de clínicas concertadas. También tienes acceso a especialistas sin derivación previa." 
+            },
+            { 
+              q: "¿Incluye cobertura dental?", 
+              a: "Algunas modalidades incluyen dental básica incluida (limpiezas, extracciones simples). Para cobertura dental completa, te ofrecemos planes complementarios." 
+            },
+          ]}
+        />
 
       </main>
       <Footer />

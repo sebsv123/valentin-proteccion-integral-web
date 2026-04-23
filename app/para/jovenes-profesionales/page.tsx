@@ -12,13 +12,13 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Briefcase, Home, Zap, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Jóvenes Profesionales Madrid | Valentín",
-  description: "Seguros para jóvenes profesionales Madrid. Salud sin copagos, vida hipoteca, accidentes deportes. WhatsApp cotización inmediata.",
+  title: "Seguros para Jóvenes Profesionales Madrid | Valentín",
+  description: "Seguros para jóvenes profesionales en Madrid. Salud privada, dental y accidentes desde precios accesibles. Consulta gratuita sin compromiso.",
   keywords: ["seguros jovenes profesionales Madrid","seguro hipoteca joven Madrid","seguro salud millennials Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/jovenes-profesionales" },
   openGraph: {
-    title: "Seguros Jóvenes Profesionales Madrid | Valentín",
-    description: "Seguros para jóvenes profesionales Madrid. Salud sin copagos, vida hipoteca, accidentes deportes. WhatsApp cotización inmediata.",
+    title: "Seguros para Jóvenes Profesionales Madrid | Valentín",
+    description: "Seguros para jóvenes profesionales en Madrid. Salud privada, dental y accidentes desde precios accesibles. Consulta gratuita sin compromiso.",
     url: "https://valentinproteccionintegral.com/para/jovenes-profesionales",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
