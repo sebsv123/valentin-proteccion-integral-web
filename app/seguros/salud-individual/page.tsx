@@ -6,11 +6,11 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro Salud Privado Madrid | Valentín Protección Integral",
-  description: "Mejor seguro médico privado Madrid. Sin copagos, cobertura inmediata. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  description: "Seguro médico privado Madrid. Sin copagos, cobertura inmediata. Cotiza WhatsApp 30min. Rosa y Sebastián.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
@@ -52,218 +52,273 @@ export default function SaludIndividualPage() {
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#f5f5f7]">
+      <main className="min-h-screen bg-white">
         
-        {/* HERO APPLE — Clean, minimal, product-as-hero */}
-        <section className="bg-[#000000] text-white py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
-            {/* Badge Apple style */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1d1d1f] text-[#86868b] text-sm mb-8">
-              <Sparkles className="w-4 h-4" />
-              +1.200 protegidos · DGSFP verificado
-            </div>
-            
-            {/* H1 Apple SF Pro Display 56px weight 600 */}
-            <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-4">
-              Tu Salud Privado
-              <br />
-              <span className="text-[#86868b]">Madrid</span>
-            </h1>
-            
-            {/* Subhead Apple style */}
-            <p className="text-[21px] text-[#86868b] leading-[1.47] mb-10 max-w-2xl mx-auto">
-              Sin copagos. Cobertura inmediata. Madrid.
-            </p>
-            
-            {/* CTAs Apple style — Pill links */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-6 py-3 rounded-lg text-[17px] font-normal transition-colors"
-              >
-                <WhatsAppIcon className="w-4 h-4" />
-                💬 Cotizar WhatsApp
-              </a>
-              <a 
-                href="#coberturas"
-                className="inline-flex items-center gap-2 bg-transparent text-[#2997ff] px-6 py-3 rounded-[980px] text-[17px] font-normal border border-[#2997ff] hover:underline transition-all"
-              >
-                Ver coberturas →
-              </a>
-            </div>
-            
-            {/* Hero Image Apple style */}
-            <div className="relative max-w-4xl mx-auto">
-              <Image
-                src="https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Hospital moderno Madrid profesional"
-                width={980}
-                height={550}
-                className="w-full rounded-xl object-cover shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px]"
-                priority
-              />
+        {/* HERO OSCURO — Premium, elegante, potente */}
+        <section className="relative bg-gray-950 min-h-[85vh] flex items-center overflow-hidden">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Hospital moderno Madrid"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-gray-950/70" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/50" />
+          </div>
+          
+          {/* Content */}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10 py-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left: Content */}
+              <div>
+                {/* Badge sobrio */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm mb-8">
+                  <Sparkles className="w-4 h-4 text-emerald-400" />
+                  <span>+1.200 protegidos</span>
+                  <span className="text-white/40">|</span>
+                  <span>DGSFP verificado</span>
+                </div>
+                
+                {/* H1 potente */}
+                <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
+                  Tu Salud
+                  <br />
+                  <span className="text-emerald-400">Privado</span>
+                  <br />
+                  Madrid
+                </h1>
+                
+                {/* Subheadline clara */}
+                <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-lg">
+                  Sin copagos. Cobertura inmediata. Madrid.
+                </p>
+                
+                {/* CTAs con alto contraste */}
+                <div className="flex flex-wrap gap-4 mb-10">
+                  <a 
+                    href={wCotiza}
+                    className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar WhatsApp
+                  </a>
+                  <a 
+                    href="#ventajas"
+                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl text-lg font-medium border border-white/20 hover:bg-white/20 transition-all"
+                  >
+                    Ver ventajas
+                  </a>
+                </div>
+                
+                {/* Trust pills oscuros */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Sin copagos
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <Clock className="w-4 h-4 text-emerald-400" />
+                    30 min respuesta
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
+                    <Shield className="w-4 h-4 text-emerald-400" />
+                    Sin permanencia
+                  </span>
+                </div>
+              </div>
+              
+              {/* Right: Empty for image visibility */}
+              <div className="hidden lg:block" />
             </div>
           </div>
         </section>
 
-        {/* VENTAJAS — Apple cards limpias */}
-        <section className="py-24 bg-white">
+        {/* VENTAJAS — Fondo blanco puro */}
+        <section id="ventajas" className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
-              Ventajas claras
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-4">
+                Ventajas claras
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Por qué elegir un seguro de salud privado con nosotros
+              </p>
+            </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: CheckCircle2, title: "Sin copagos", desc: "Consulta y hospitalización sin pagar nada extra." },
-                { icon: Clock, title: "Cobertura inmediata", desc: "Desde el primer día. Sin carencias para urgencias." },
-                { icon: Shield, title: "Madrid + España", desc: "Red nacional de hospitales privados." },
+                { 
+                  icon: Heart, 
+                  title: "Sin copagos", 
+                  desc: "No pagas nada extra en cada visita. Todo incluido en tu cuota mensual."
+                },
+                { 
+                  icon: Clock, 
+                  title: "Cobertura inmediata", 
+                  desc: "Desde el primer día sin esperas ni carencias iniciales."
+                },
+                { 
+                  icon: MapPin, 
+                  title: "Madrid + España", 
+                  desc: "Red completa de hospitales y clínicas en toda España."
+                },
+                { 
+                  icon: Activity, 
+                  title: "Cobertura completa", 
+                  desc: "Desde consultas hasta cirugía, todo incluido."
+                },
               ].map((item, i) => (
-                <div key={i} className="bg-[#f5f5f7] rounded-xl p-8 text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#0071e3]/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-7 h-7 text-[#0071e3]" />
+                <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-emerald-500" />
                   </div>
-                  <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-2">{item.title}</h3>
-                  <p className="text-[17px] text-[#86868b] leading-[1.47]">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* COBERTURAS — Apple grid */}
-        <section id="coberturas" className="py-24 bg-[#f5f5f7]">
+        {/* COBERTURA COMPLETA — Fondo blanco con mucho aire */}
+        <section className="py-24 bg-gray-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
-              Cobertura completa
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-4">
+                Cobertura completa
+              </h2>
+              <p className="text-lg text-gray-600">
+                Todo lo que incluye tu seguro de salud
+              </p>
+            </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { icon: Hospital, title: "Hospitalización", desc: "Completa" },
-                { icon: Stethoscope, title: "Especialistas", desc: "Ilimitados" },
-                { icon: Pill, title: "Medicación", desc: "100% cubierta" },
-                { icon: FlaskConical, title: "Análisis", desc: "Y pruebas" },
-                { icon: SmilePlus, title: "Dental", desc: "Básica incluida" },
-                { icon: Ambulance, title: "Ambulancia", desc: "Ilimitada" },
+                { icon: Hospital, title: "Hospitalización", desc: "Habitación individual" },
+                { icon: Stethoscope, title: "Especialistas", desc: "Sin lista de espera" },
+                { icon: Pill, title: "Medicación", desc: "En hospital incluida" },
+                { icon: FlaskConical, title: "Análisis y pruebas", desc: "Diagnóstico completo" },
+                { icon: SmilePlus, title: "Dental básica", desc: "Extracciones y limpieza" },
+                { icon: Ambulance, title: "Ambulancia", desc: "Urgencias 24h" },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px] hover:shadow-[rgba(0,0,0,0.3)_5px_8px_40px_0px] transition-shadow">
-                  <div className="w-12 h-12 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-[#1d1d1f]" />
+                <div key={i} className="bg-white rounded-xl p-6 border border-gray-100">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-emerald-500" />
                   </div>
-                  <h3 className="text-[17px] font-semibold text-[#1d1d1f] mb-1">{item.title}</h3>
-                  <p className="text-[14px] text-[#86868b]">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* EQUIPO — Apple style con foto */}
+        {/* EQUIPO Y CONFIANZA — Fondo blanco */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative">
-                <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa Valentín · Mediadora Senior"
-                  width={500}
-                  height={600}
-                  className="w-full rounded-xl object-cover shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px]"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/50 to-transparent rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Tu equipo de confianza"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="text-center lg:text-left">
-                <h2 className="text-[32px] font-semibold text-[#1d1d1f] leading-[1.10] mb-4">
-                  Rosa Valentín
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-medium mb-6">
+                  <Award className="w-4 h-4" />
+                  Mediadores certificados
+                </div>
+                
+                <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-6">
+                  Rosa y Sebastián
                 </h2>
-                <p className="text-[21px] text-[#86868b] mb-6">
-                  Mediadora Senior
+                
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  Te acompañamos en todo el proceso. Desde elegir el seguro que mejor 
+                  se adapta a ti hasta resolver cualquier duda que tengas después.
                 </p>
-                <p className="text-[17px] text-[#1d1d1f] leading-[1.47] mb-8">
-                  +10 años ayudando a familias de Madrid a encontrar 
-                  la mejor cobertura médica privada. Asesoría personalizada, 
-                  sin coste adicional.
-                </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f5f5f7] text-[#1d1d1f] text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#0071e3]" />
-                  NIF: 79234434D · DGSFP: C012479234434D
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-gray-700">+10 años de experiencia</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-gray-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-gray-700">+1.200 clientes satisfechos</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm">
+                  <span className="font-semibold text-gray-900">NIF:</span> 79234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PROCESO — Apple steps minimal */}
-        <section className="py-24 bg-[#f5f5f7]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-4">
-              Proceso simple
-            </h2>
-            <p className="text-[21px] text-[#86868b] text-center mb-16">
-              Sin esperas. Sin complicaciones.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { num: "1", title: "WhatsApp", desc: "Nos cuentas tu situación médica y necesidades." },
-                { num: "2", title: "Cotizamos", desc: "En 30 min te enviamos la mejor opción para ti." },
-                { num: "3", title: "Alta inmediata", desc: "Cobertura desde el primer día. Sin papeleo." },
-              ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#0071e3] text-white flex items-center justify-center text-[21px] font-semibold mx-auto mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-2">{step.title}</h3>
-                  <p className="text-[17px] text-[#86868b] leading-[1.47]">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* GARANTÍAS APPLE — Badges blancos */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
-              Garantías
+        {/* CTA FINAL — Fondo blanco con acento sutil */}
+        <section className="relative py-24 bg-gray-50/50 overflow-hidden">
+          {/* Acento visual sutil */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-radial from-emerald-100/40 via-emerald-50/20 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-6">
+              Tu salud no puede esperar
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "Respuesta 30min garantizada",
-                "Sin permanencia",
-                "Revisión anual gratuita",
-                "DGSFP verificado",
-              ].map((item, i) => (
-                <div key={i} className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#f5f5f7] text-[#1d1d1f] text-[17px]">
-                  <CheckCircle2 className="w-5 h-5 text-[#0071e3]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA FINAL — Apple dark section */}
-        <section className="py-24 lg:py-32 bg-[#000000] text-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-[48px] sm:text-[56px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-4">
-              Empieza Hoy
-            </h2>
-            <p className="text-[21px] text-[#86868b] mb-10">
-              Tu cobertura médica privada en 30 minutos.
+            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+              Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              Descubre el seguro que mejor se adapta a ti.
             </p>
+            
             <a 
               href={wCotiza}
-              className="group inline-flex items-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-8 py-4 rounded-lg text-[17px] font-normal transition-all hover:scale-105"
+              className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 Cotizar por WhatsApp
-              <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
-                ✨ + Dental = condiciones especiales
-              </span>
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Cotizar Ahora
             </a>
-            <p className="text-[14px] text-[#86868b] mt-8">
+            
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                Sin copagos
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <Clock className="w-4 h-4 text-emerald-500" />
+                30 min
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
+                <Shield className="w-4 h-4 text-emerald-500" />
+                Sin permanencia
+              </div>
+            </div>
+            
+            <p className="text-sm text-gray-400 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
