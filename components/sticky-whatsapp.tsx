@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export function StickyWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -24,6 +25,7 @@ export function StickyWhatsApp() {
         )}
         <a
           href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro.')}
+          onClick={() => trackWhatsAppClick('sticky-desktop')}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"
@@ -48,6 +50,7 @@ export function StickyWhatsApp() {
       >
         <a
           href="https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros."
+          onClick={() => trackWhatsAppClick('sticky-mobile')}
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center gap-3 w-full rounded-2xl bg-[#25D366] hover:bg-[#128C7E] text-white py-4 text-base font-bold transition-colors"

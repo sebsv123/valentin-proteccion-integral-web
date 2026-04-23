@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
+import { WhatsAppButton } from './whatsapp-button';
 
 export function Footer() {
   return (
@@ -16,7 +17,7 @@ export function Footer() {
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece asesoramiento personalizado para asegurar tu tranquilidad. Una firma especializada en proteger lo que de verdad importa, acompañándote con cercanía antes y después de contratar.</p>
             <div className="flex flex-wrap gap-3">
-              <a href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} className="btn-whatsapp !px-5 !py-3">WhatsApp</a>
+              <WhatsAppButton href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href="/contacto" className="btn-ghost !px-5 !py-3">Formulario</Link>
             </div>
           </div>
@@ -51,7 +52,7 @@ export function Footer() {
               <p>{site.phone}</p>
               <p className="font-medium text-[var(--blue-deep)]">Boadilla del Monte, Madrid</p>
               <a href={site.instagram} className="block hover:text-[var(--blue)]">@segurosrosavalentin</a>
-              <a href={buildWhatsAppHref('Hola, quiero una orientación sobre seguros.')} className="block hover:text-[var(--blue)]">Abrir WhatsApp</a>
+              <WhatsAppButton href={buildWhatsAppHref('Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)]">Abrir WhatsApp</WhatsAppButton>
             </div>
             <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
               <iframe
