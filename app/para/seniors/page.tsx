@@ -68,9 +68,9 @@ export default function SeniorsPage() {
                 
                 {/* H1 grande y claro */}
                 <h1 className="text-[48px] sm:text-[56px] font-bold text-stone-800 leading-[1.05] mb-6">
-                  Seguros para
+                  Seguros para Mayores Madrid:
                   <br />
-                  <span className="text-emerald-700">mayores</span>
+                  <span className="text-emerald-700">Decesos, Salud y Asistencia</span>
                 </h1>
                 
                 {/* Subheadline muy legible */}

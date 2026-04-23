@@ -73,9 +73,9 @@ export default function DecesosPage() {
                 
                 {/* H1 claro */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Seguro decesos
+                  Seguro de Decesos Madrid:
                   <br />
-                  en <span className="text-indigo-600">Madrid</span>
+                  <span className="text-indigo-600">Tranquilidad para tu Familia</span>
                 </h1>
                 
                 {/* Subheadline emocional */}

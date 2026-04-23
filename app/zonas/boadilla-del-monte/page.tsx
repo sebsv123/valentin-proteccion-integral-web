@@ -69,9 +69,9 @@ export default function BoadillaPage() {
                 
                 {/* H1 Uber style — 52px bold */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4">
-                  Seguros
+                  Seguros en Boadilla del Monte:
                   <br />
-                  <span className="text-[#4b4b4b]">Boadilla del Monte</span>
+                  <span className="text-[#4b4b4b]">Tu Mediador Local</span>
                 </h1>
                 
                 {/* Subhead */}

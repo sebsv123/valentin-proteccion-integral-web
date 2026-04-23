@@ -73,9 +73,9 @@ export default function FamiliasPage() {
                 
                 {/* H1 */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Protege a tu
+                  Seguros Familiares Madrid:
                   <br />
-                  <span className="text-blue-600">familia</span>
+                  <span className="text-blue-600">Toda la Familia Protegida</span>
                 </h1>
                 
                 {/* Subheadline */}

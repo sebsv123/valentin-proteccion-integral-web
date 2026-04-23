@@ -71,9 +71,9 @@ export default function JovenesPage() {
                 
                 {/* H1 moderno */}
                 <h1 className="text-[52px] sm:text-[60px] lg:text-[68px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Seguros
+                  Seguros Jóvenes Profesionales Madrid:
                   <br />
-                  <span className="text-violet-600">a tu medida</span>
+                  <span className="text-violet-600">Salud e Hipoteca</span>
                 </h1>
                 
                 {/* Subhead aspiracional */}

@@ -69,9 +69,9 @@ export default function MajadahondaPage() {
                 
                 {/* H1 Uber style */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4">
-                  Seguros
+                  Seguros en Majadahonda:
                   <br />
-                  <span className="text-[#4b4b4b]">Majadahonda</span>
+                  <span className="text-[#4b4b4b]">Asesor Independiente Cercano</span>
                 </h1>
                 
                 {/* Subhead */}

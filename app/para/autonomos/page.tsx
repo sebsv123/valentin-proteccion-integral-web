@@ -73,9 +73,9 @@ export default function AutonomosPage() {
                 
                 {/* H1 */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Seguros para
+                  Seguros para Autónomos Madrid:
                   <br />
-                  <span className="text-slate-700">autónomos</span>
+                  <span className="text-slate-700">Ahorra en IRPF y RC</span>
                 </h1>
                 
                 {/* Subheadline */}

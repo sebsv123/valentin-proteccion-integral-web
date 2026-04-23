@@ -84,11 +84,9 @@ export default function AccidentesDecesosPage() {
                 
                 {/* H1 potente */}
                 <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
-                  Seguro
+                  Seguro Accidentes y Decesos Madrid:
                   <br />
-                  <span className="text-amber-400">Accidentes</span>
-                  <br />
-                  <span className="text-white">+ Decesos</span>
+                  <span className="text-amber-400">Pack Familiar Completo</span>
                 </h1>
                 
                 {/* Subheadline clara */}

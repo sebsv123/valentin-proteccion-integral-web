@@ -71,9 +71,9 @@ export default function AutonomosLandingPage() {
                 
                 {/* H1 — 48px weight 300, tight tracking */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-                  Seguros para
+                  Seguros Autónomos Madrid:
                   <br />
-                  <span className="text-[#533afd]">Autónomos en Madrid</span>
+                  <span className="text-[#533afd]">IRPF Deducible al 100%</span>
                 </h1>
                 
                 {/* Subhead — 18px weight 300 */}

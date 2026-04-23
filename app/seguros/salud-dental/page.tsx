@@ -74,9 +74,9 @@ export default function SaludDentalPage() {
                 
                 {/* H1 limpio */}
                 <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
-                  Seguro Dental
+                  Seguro Dental Madrid:
                   <br />
-                  <span className="text-sky-500">Madrid</span>
+                  <span className="text-sky-500">Sin Carencias desde el Primer Día</span>
                 </h1>
                 
                 {/* Subheadline clara */}

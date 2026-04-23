@@ -101,10 +101,10 @@ export default function SaludExtranjerosPage() {
 
             {/* H1 bilingüe impacto */}
             <h1 className="text-5xl md:text-7xl font-semibold text-[#163300] tracking-tight leading-[1.05] max-w-4xl">
-              Living in Spain?
+              Seguro Salud Extranjeros Madrid:
               <br />
               <span className="text-[#2E7D32]">
-                Tu salud, cubierta desde hoy.
+                Cobertura en 24 Horas
               </span>
             </h1>
 

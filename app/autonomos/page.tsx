@@ -121,10 +121,10 @@ export default function AutonomosRootPage() {
                 
                 {/* H1 Stripe — 56px weight 300 */}
                 <h1 className="text-[48px] sm:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6">
-                  Seguros
+                  Seguros Autónomos Madrid 2026:
                   <br />
                   <span className="bg-gradient-to-r from-[#635BFF] to-[#96F7D6] bg-clip-text text-transparent font-normal">
-                    Autónomos Madrid 2026
+                    IRPF, RC y Accidentes
                   </span>
                 </h1>
                 

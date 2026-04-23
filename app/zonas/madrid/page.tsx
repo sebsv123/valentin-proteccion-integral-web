@@ -69,9 +69,9 @@ export default function MadridPage() {
                 
                 {/* H1 */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4">
-                  Seguros
+                  Seguros en Madrid Capital:
                   <br />
-                  <span className="text-[#4b4b4b]">Madrid Capital</span>
+                  <span className="text-[#4b4b4b]">Mediador Independiente</span>
                 </h1>
                 
                 {/* Subhead */}

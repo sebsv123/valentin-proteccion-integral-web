@@ -84,11 +84,9 @@ export default function SaludIndividualPage() {
                 
                 {/* H1 potente */}
                 <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
-                  Tu Salud
+                  Seguro Salud Privado Madrid:
                   <br />
-                  <span className="text-emerald-400">Privado</span>
-                  <br />
-                  Madrid
+                  <span className="text-emerald-400">Sin Copagos ni Listas de Espera</span>
                 </h1>
                 
                 {/* Subheadline clara */}

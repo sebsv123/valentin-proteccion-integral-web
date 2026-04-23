@@ -65,9 +65,9 @@ export default function VidaPage() {
             
             {/* H1 Revolut billboard — 80px weight 500 */}
             <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-medium text-white leading-[1.00] tracking-[-0.8px] mb-6">
-              Seguro Vida
+              Seguro de Vida Hipoteca Madrid:
               <br />
-              <span className="text-white/90">Hipoteca Madrid</span>
+              <span className="text-white/90">Protege a tu Familia</span>
             </h1>
             
             {/* Subhead */}

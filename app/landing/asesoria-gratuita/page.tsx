@@ -73,12 +73,9 @@ export default function AsesoriaGratuitaPage() {
                 
                 {/* H1 fuerte */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-gray-900 leading-[1.05] tracking-tight mb-6">
-                  Asesoría
+                  Asesoría Seguros Gratis Madrid:
                   <br />
-                  Seguros{" "}
-                  <span className="text-orange-500">GRATIS</span>
-                  <br />
-                  Madrid
+                  <span className="text-orange-500">Respuesta en 30 Minutos</span>
                 </h1>
                 
                 {/* Subheadline clara */}

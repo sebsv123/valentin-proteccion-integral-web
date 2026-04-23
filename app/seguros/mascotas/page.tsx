@@ -73,9 +73,9 @@ export default function MascotasPage() {
                 
                 {/* H1 emocional */}
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-stone-800 leading-[0.95] tracking-tight mb-6">
-                  Seguro para tu
+                  Seguro de Mascotas Madrid:
                   <br />
-                  <span className="text-amber-600">mascota</span>
+                  <span className="text-amber-600">RC Obligatoria y Veterinario</span>
                 </h1>
                 
                 {/* Subheadline cálida */}
