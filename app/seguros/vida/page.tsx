@@ -6,8 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import GuaranteeBadge from "@/components/GuaranteeBadge";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
+import { CheckCircle2, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
@@ -55,55 +54,59 @@ export default function VidaPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO — White with coral accents */}
-        <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
-          {/* Soft coral halo behind content */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-[#e23b4a]/10 to-transparent blur-3xl pointer-events-none" />
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl relative z-10 text-center">
-            {/* Guarantee Badge */}
-            <GuaranteeBadge type="vida" />
+        {/* HERO — Clean white, human tone */}
+        <section className="bg-white py-16 lg:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
             
-            {/* H1 — Clean and premium */}
-            <h1 className="text-[40px] sm:text-[56px] lg:text-[64px] font-semibold text-[#191c1f] leading-[1.10] tracking-[-0.02em] mb-6">
-              Seguro de Vida Hipoteca Madrid
+            {/* Subtle trust badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm mb-8">
+              <Shield className="w-4 h-4" />
+              +1.200 familias protegidas · DGSFP verificado
+            </div>
+            
+            {/* H1 — Human and emotional */}
+            <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-gray-900 leading-[1.15] tracking-tight mb-6">
+              Tu familia tranquila,
+              <br />
+              <span className="text-[#e23b4a]">tu hipoteca resuelta</span>
             </h1>
             
-            {/* Subhead — Human and warm */}
-            <p className="text-xl sm:text-2xl text-[#505a63] leading-[1.50] mb-12 max-w-2xl mx-auto">
-              Protege a tu familia y deja la hipoteca resuelta.
+            {/* Subhead — Warm and natural */}
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
+              Llevamos más de 10 años ayudando a familias de Madrid a protegerse 
+              sin complicaciones. Sin letra pequeña, sin sorpresas.
             </p>
             
             {/* CTAs — Coral as accent */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
               <a 
                 href={wCotiza}
-                className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-8 py-4 rounded-xl text-lg font-medium transition-all shadow-lg shadow-[#e23b4a]/20"
+                className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-7 py-3.5 rounded-xl text-base font-medium transition-all"
               >
                 <WhatsAppIcon className="w-5 h-5" />
                 Cotizar en WhatsApp
               </a>
               <a 
                 href="tel:603448765"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#191c1f] px-8 py-4 rounded-xl text-lg font-medium border-2 border-gray-200 transition-all"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-7 py-3.5 rounded-xl text-base font-medium border border-gray-300 transition-all"
               >
                 <Phone className="w-5 h-5" />
                 Llamar ahora
               </a>
             </div>
             
-            {/* Trust row */}
-            <div className="flex flex-wrap justify-center gap-8 text-[#505a63]">
-              <span className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-[#00a87e]" />
-                30 min respuesta
+            {/* Trust row — Elegant */}
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                Respuesta en 30 min
               </span>
-              <span className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-[#00a87e]" />
+              <span className="flex items-center gap-1.5">
+                <Shield className="w-4 h-4 text-emerald-600" />
                 Sin permanencia
               </span>
-              <span className="flex items-center gap-2">
-                <Heart className="w-5 h-5 text-[#e23b4a]" />
+              <span className="flex items-center gap-1.5">
+                <Heart className="w-4 h-4 text-[#e23b4a]" />
                 Familia protegida
               </span>
             </div>
