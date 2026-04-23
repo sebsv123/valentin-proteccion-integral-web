@@ -7,6 +7,7 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
+import GarantiasSection from "@/components/GarantiasSection";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -321,6 +322,9 @@ export default function SaludIndividualPage() {
             </p>
           </div>
         </section>
+
+        {/* GARANTÍAS PREMIUM */}
+        <GarantiasSection brandColor="#10b981" />
 
       </main>
       <Footer />

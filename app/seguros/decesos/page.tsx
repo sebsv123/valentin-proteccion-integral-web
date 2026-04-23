@@ -7,6 +7,7 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
+import GarantiasSection from "@/components/GarantiasSection";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileCheck, Award, TrendingUp, Phone, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -373,6 +374,9 @@ export default function DecesosPage() {
             </p>
           </div>
         </section>
+
+        {/* GARANTÍAS PREMIUM */}
+        <GarantiasSection brandColor="#6366f1" />
 
       </main>
       <Footer />
