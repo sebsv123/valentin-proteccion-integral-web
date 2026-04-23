@@ -256,7 +256,7 @@ export default function ComoTeAyudamosPage() {
                     loading="lazy"
                     sizes="(max-width: 1280px) 100vw, 550px"
                     quality={75}
-                    className="object-cover object-top"
+                    className="object-cover object-[center_20%]"
                   />
                 </div>
               </div>
