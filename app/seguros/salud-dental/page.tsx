@@ -318,6 +318,46 @@ export default function SaludDentalPage() {
           </div>
         </section>
 
+        {/* COMPARADOR — ¿Ya tienes seguro dental? */}
+        <section className="py-24 bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-sky-100/50 border border-sky-100">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4 text-center">
+                ¿Ya tienes seguro dental y no estás del todo contento?
+              </h2>
+              
+              <p className="text-lg text-slate-600 leading-relaxed mb-10 text-center max-w-2xl mx-auto">
+                Tráenoslo. En 10 años y +1.200 familias, siempre hemos encontrado uno mejor — o te lo decimos honestamente si el tuyo ya es bueno.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                {[
+                  { icon: CheckCircle2, text: "Te comparamos sin cobrarte nada" },
+                  { icon: Shield, text: "Si el tuyo es mejor, te lo decimos. Así de claros." },
+                  { icon: Clock, text: "Si el nuestro es mejor, cambiamos en un día" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-sky-50/50">
+                    <div className="w-10 h-10 rounded-lg bg-sky-100 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-sky-600" />
+                    </div>
+                    <p className="text-slate-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <a 
+                  href={wCotiza}
+                  className="inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  Compara tu seguro actual
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINAL — Fondo blanco con toque azul suave */}
         <section className="relative py-24 bg-slate-50/50 overflow-hidden">
           {/* Toque azul suave */}
