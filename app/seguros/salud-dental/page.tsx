@@ -5,11 +5,10 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { trackWhatsAppClick } from "@/lib/analytics";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syringe, Scan, Award, MapPin, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -89,13 +88,13 @@ export default function SaludDentalPage() {
                 
                 {/* CTAs elegantes */}
                 <div className="flex flex-wrap gap-4 mb-10">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
-                    onClick={() => trackWhatsAppClick('hero')}
+                    location="hero"
                     className="group inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5"
                   >
                     Cotizar WhatsApp
-                  </a>
+                  </WhatsAppButton>
                   <a 
                     href="tel:603448765"
                     className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl text-lg font-medium border border-slate-200 hover:border-sky-300 hover:bg-sky-50/50 transition-all"
@@ -348,14 +347,14 @@ export default function SaludDentalPage() {
               </div>
               
               <div className="text-center">
-                <a 
+                <WhatsAppButton 
                   href={wCotiza}
-                  onClick={() => trackWhatsAppClick('comparador')}
+                  location="comparador"
+                  showIcon
                   className="inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl"
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
                   Compara tu seguro actual
-                </a>
+                </WhatsAppButton>
               </div>
             </div>
           </div>
@@ -379,13 +378,13 @@ export default function SaludDentalPage() {
               Un WhatsApp. 30 minutos. Empieza a sonreír.
             </p>
             
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
-              onClick={() => trackWhatsAppClick('cta-final')}
+              location="cta-final"
               className="group inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-sky-500/20 hover:shadow-2xl hover:shadow-sky-500/30 hover:-translate-y-1"
             >
               Cotizar Ahora
-            </a>
+            </WhatsAppButton>
             
             {/* Badges finales */}
             <div className="flex flex-wrap justify-center gap-4 mt-12">
