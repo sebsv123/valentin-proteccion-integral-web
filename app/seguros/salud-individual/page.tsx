@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Privado Madrid | Valentín Protección Integral",
-  description: "Seguro médico privado Madrid. Sin copagos, cobertura inmediata. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  title: "Seguro Salud Privado Madrid | Sin Copagos | Valentín",
+  description: "Seguro médico privado Madrid sin copagos. Cobertura inmediata, especialistas ilimitados. Cotiza en WhatsApp en 30 minutos. DGSFP verificado.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
-    title: "Seguro Salud Privado Madrid | Sin Copagos",
-    description: "Cobertura inmediata. Sin copagos. Especialistas sin lista de espera. WhatsApp 30min.",
+    title: "Seguro Salud Privado Madrid | Sin Copagos | Valentín",
+    description: "Seguro médico privado Madrid sin copagos. Cobertura inmediata, especialistas ilimitados. Cotiza en WhatsApp en 30 minutos. DGSFP verificado.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Mascotas Madrid | Perros y Gatos | Valentín Protección Integral",
-  description: "Seguro veterinario para perros y gatos Madrid. Veterinario, accidentes, cirugías, hospitalización. Desde 15€/mes. Rosa y Sebastián.",
+  title: "Seguro Mascotas Madrid | RC Obligatoria Perros | Valentín",
+  description: "Seguro mascotas Madrid desde 5€/mes. RC obligatoria perros Ley 2023. Asistencia veterinaria perros y gatos. WhatsApp 30 minutos.",
   keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid","seguro mascotas barato"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/mascotas" },
   openGraph: {
-    title: "Seguro Mascotas Madrid | Perros y Gatos",
-    description: "Protege a tu compañero de 4 patas. Veterinario, cirugías, hospitalización. WhatsApp 30min.",
+    title: "Seguro Mascotas Madrid | RC Obligatoria Perros | Valentín",
+    description: "Seguro mascotas Madrid desde 5€/mes. RC obligatoria perros Ley 2023. Asistencia veterinaria perros y gatos. WhatsApp 30 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

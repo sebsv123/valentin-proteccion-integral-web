@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Users, Baby, User, GraduationCap, Phone, Award, TrendingUp, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Familias Madrid | Protección Completa | Valentín Protección Integral",
-  description: "Seguros para familias Madrid. Salud, vida, hogar, mascotas. Todo organizado y simple. WhatsApp 30min. Rosa y Sebastián.",
+  title: "Seguros Familiares Madrid | Todo en Uno | Valentín",
+  description: "Seguros para familias en Madrid. Salud, vida, dental y hogar en una sola gestión. Cotiza en WhatsApp 30 minutos. Sin permanencia.",
   keywords: ["seguros familias Madrid","seguro familia completa Madrid","seguro salud vida hogar familia"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/familias" },
   openGraph: {
-    title: "Seguros Familias Madrid | Protección Completa",
-    description: "Toda tu familia protegida. Salud, vida, hogar, mascotas. Organizado y simple.",
+    title: "Seguros Familiares Madrid | Todo en Uno | Valentín",
+    description: "Seguros para familias en Madrid. Salud, vida, dental y hogar en una sola gestión. Cotiza en WhatsApp 30 minutos. Sin permanencia.",
     url: "https://valentinproteccionintegral.com/para/familias",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

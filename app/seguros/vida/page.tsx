@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Wallet, AlertTriangle, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Vida Hipoteca Madrid | Valentín Protección Integral",
-  description: "Seguro de vida para hipoteca Madrid. Protege tu familia. Cotiza WhatsApp 30min sin compromiso. Rosa y Sebastián.",
+  title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
+  description: "Seguro de vida para tu hipoteca en Madrid. Ahorra hasta 50% vs tu banco. Cotiza gratis en WhatsApp · Respuesta 30min · Sin permanencia.",
   keywords: ["seguro vida hipoteca Madrid","seguro vida hipoteca","proteccion vida familia Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/vida" },
   openGraph: {
-    title: "Seguro Vida Hipoteca Madrid | Protege tu Familia",
-    description: "Cobertura hasta 500k€. Invalidez 100%. Cotiza WhatsApp 30min.",
+    title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
+    description: "Seguro de vida para tu hipoteca en Madrid. Ahorra hasta 50% vs tu banco. Cotiza gratis en WhatsApp · Respuesta 30min · Sin permanencia.",
     url: "https://valentinproteccionintegral.com/seguros/vida",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

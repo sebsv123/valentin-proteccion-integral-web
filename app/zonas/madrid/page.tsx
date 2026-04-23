@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Briefcase, Car, Clock, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Madrid Capital | Valentín Protección Integral",
-  description: "Seguros Madrid centro. Salud privada, vida, hogar, autónomos. WhatsApp 30min respuesta inmediata. Rosa y Sebastián.",
+  title: "Seguros Madrid Capital | Asesor Independiente | Valentín",
+  description: "Seguros en Madrid capital. Mediadores independientes con +10 años. Salud, vida, hogar, autónomos. WhatsApp respuesta inmediata.",
   keywords: "seguros madrid, seguro medico madrid, seguros hogar madrid, seguro autonomos madrid centro",
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/madrid" },
   openGraph: {
-    title: "Seguros Madrid Capital | Cobertura Completa",
-    description: "Cobertura completa Madrid centro. Respuesta inmediata 30min. WhatsApp.",
+    title: "Seguros Madrid Capital | Asesor Independiente | Valentín",
+    description: "Seguros en Madrid capital. Mediadores independientes con +10 años. Salud, vida, hogar, autónomos. WhatsApp respuesta inmediata.",
     url: "https://valentinproteccionintegral.com/zonas/madrid",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

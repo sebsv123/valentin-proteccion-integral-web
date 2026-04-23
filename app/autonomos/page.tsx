@@ -10,13 +10,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, Briefcase, Globe, ChevronDown, Star, Quote } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Autónomos Madrid 2026 | IRPF Deducible | Valentín Protección Integral",
-  description: "Mejor seguro autónomos Madrid 2026. Médico deducible IRPF 100%, RC profesional, accidentes laborales. Cotiza gratis WhatsApp 30min. +1.200 autónomos protegidos.",
+  title: "Seguros Autónomos Madrid 2026 | IRPF | Valentín",
+  description: "Mejor seguro autónomos Madrid 2026. Médico deducible IRPF, RC profesional, accidentes. Mediadores independientes. Cotiza gratis.",
   keywords: "seguro autónomos madrid, seguro médico autónomos irpf, rc profesional madrid, seguro autónomos deducible, protección autónomos madrid",
   alternates: { canonical: "https://valentinproteccionintegral.com/autonomos" },
   openGraph: {
-    title: "Seguros Autónomos Madrid 2026 | IRPF Deducible",
-    description: "Médico deducible IRPF, RC profesional, accidentes. Cotiza gratis WhatsApp 30min.",
+    title: "Seguros Autónomos Madrid 2026 | IRPF | Valentín",
+    description: "Mejor seguro autónomos Madrid 2026. Médico deducible IRPF, RC profesional, accidentes. Mediadores independientes. Cotiza gratis.",
     url: "https://valentinproteccionintegral.com/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros para Mayores Madrid | Tranquilidad y Confianza | Valentín Protección Integral",
-  description: "Seguros para mayores en Madrid. Decesos, salud, asistencia domicilio. Atención por teléfono. Rosa y Sebastián.",
+  title: "Seguros Seniors Madrid 65+ | Tranquilidad Real | Valentín",
+  description: "Seguros para mayores de 65 en Madrid. Salud geriátrica, decesos, asistencia domicilio. Gestor personal. Cotiza en WhatsApp o teléfono.",
   keywords: ["seguros mayores Madrid","seguros seniors Madrid","seguro decesos Madrid","asistencia domicilio mayores"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/seniors" },
   openGraph: {
-    title: "Seguros para Mayores Madrid | Tranquilidad y Confianza",
-    description: "Decesos, salud, asistencia domicilio. Atención por teléfono. Explicado paso a paso.",
+    title: "Seguros Seniors Madrid 65+ | Tranquilidad Real | Valentín",
+    description: "Seguros para mayores de 65 en Madrid. Salud geriátrica, decesos, asistencia domicilio. Gestor personal. Cotiza en WhatsApp o teléfono.",
     url: "https://valentinproteccionintegral.com/para/seniors",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

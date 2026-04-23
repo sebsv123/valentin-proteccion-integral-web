@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syringe, Scan, Award, MapPin, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Dental Madrid | Valentín Protección Integral",
-  description: "Seguro dental Madrid. Sin carencias. WhatsApp cotización inmediata. Rosa y Sebastián.",
+  title: "Seguro Dental Madrid Sin Carencias | Valentín",
+  description: "Seguro dental Madrid desde 9€/mes. Sin carencias, revisiones desde día 1. Toda la familia en una póliza. Cotiza WhatsApp 30 min.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
-    title: "Seguro Dental Madrid | Sin Carencias",
-    description: "Sin carencias desde día 1. Implantes incluidos. Cotiza WhatsApp 30min.",
+    title: "Seguro Dental Madrid Sin Carencias | Valentín",
+    description: "Seguro dental Madrid desde 9€/mes. Sin carencias, revisiones desde día 1. Toda la familia en una póliza. Cotiza WhatsApp 30 min.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

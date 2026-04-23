@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileCheck, Award, TrendingUp, Phone, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Decesos Madrid | Deja todo resuelto para tu familia | Valentín Protección Integral",
-  description: "Seguro de decesos en Madrid. Cubre todos los gastos de sepelio. Tu familia no paga nada, no tramita nada. Solo tiene que llamarnos.",
+  title: "Seguro de Decesos Madrid | Tranquilidad Familiar | Valentín",
+  description: "Seguro de decesos en Madrid. Todos los gastos cubiertos, gestión completa para tu familia. Cotiza sin compromiso en WhatsApp 30 min.",
   keywords: ["seguro decesos Madrid","seguro gastos sepelio Madrid","seguro fallecimiento Madrid","protección familiar decesos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/decesos" },
   openGraph: {
-    title: "Seguro Decesos Madrid | Deja todo resuelto para tu familia",
-    description: "Tu familia no paga nada, no tramita nada. Solo tiene que llamarnos. Cubrimos todo.",
+    title: "Seguro de Decesos Madrid | Tranquilidad Familiar | Valentín",
+    description: "Seguro de decesos en Madrid. Todos los gastos cubiertos, gestión completa para tu familia. Cotiza sin compromiso en WhatsApp 30 min.",
     url: "https://valentinproteccionintegral.com/seguros/decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

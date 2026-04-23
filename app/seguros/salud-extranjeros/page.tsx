@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Extranjeros Madrid | Health Insurance Spain | Valentín Protección Integral",
-  description: "Seguro médico privado para extranjeros residentes en España. Sin barreras de idioma. Sin burocracia. WhatsApp → Cobertura en 24h. Rosa y Sebastián. We speak English.",
+  title: "Seguro Salud Extranjeros Madrid | Valentín Protección",
+  description: "Seguro médico privado para extranjeros residentes en Madrid. Sin burocracia, sin barreras idioma. Cobertura en 24h. WhatsApp en inglés.",
   keywords: ["seguro salud extranjeros Madrid","health insurance Spain","seguro médico extranjeros España","seguro expat Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro Salud Extranjeros Madrid | Health Insurance Spain",
-    description: "Seguro médico privado para extranjeros en Madrid. Sin barreras de idioma. WhatsApp → Cobertura en 24h.",
+    title: "Seguro Salud Extranjeros Madrid | Valentín Protección",
+    description: "Seguro médico privado para extranjeros residentes en Madrid. Sin burocracia, sin barreras idioma. Cobertura en 24h. WhatsApp en inglés.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

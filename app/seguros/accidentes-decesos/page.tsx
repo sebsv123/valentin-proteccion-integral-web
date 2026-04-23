@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, AlertTriangle, Users, Umbrella, Activity, Award, TrendingUp, Phone, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Accidentes + Decesos Madrid | Valentín Protección Integral",
-  description: "Pack accidentes + decesos Madrid. Protección completa para ti y tu familia. WhatsApp 30min. Rosa y Sebastián.",
+  title: "Seguro Accidentes y Decesos Madrid | Pack | Valentín",
+  description: "Pack seguro accidentes y decesos Madrid. Protección completa para ti y tu familia. Desde 3€/mes. Cotiza gratis en WhatsApp 30 min.",
   keywords: ["pack accidentes decesos Madrid","seguro accidentes decesos combinado","proteccion completa familia Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes-decesos" },
   openGraph: {
-    title: "Seguro Accidentes + Decesos Madrid | Protección Completa",
-    description: "Protección completa para ti y tu familia. Accidentes + Decesos en un solo pack. WhatsApp 30min.",
+    title: "Seguro Accidentes y Decesos Madrid | Pack | Valentín",
+    description: "Pack seguro accidentes y decesos Madrid. Protección completa para ti y tu familia. Desde 3€/mes. Cotiza gratis en WhatsApp 30 min.",
     url: "https://valentinproteccionintegral.com/seguros/accidentes-decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Users, MessageCircle, Award, TrendingUp, HeartHandshake, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Asesoría Seguros GRATIS Madrid | Valentín Protección Integral",
-  description: "Asesoría gratuita seguros Madrid. Encuentra el mejor seguro para ti en 30 minutos. Mediadores independientes. Sin compromiso.",
+  title: "Asesoría Seguros Gratis Madrid | Valentín Protección",
+  description: "Asesoría seguros gratuita en Madrid. Salud, vida, hogar, autónomos. Respuesta en 30 minutos. Sin compromiso. WhatsApp directo.",
   keywords: ["asesoria seguros gratis Madrid","asesoramiento seguros Madrid","consulta seguros gratuita"],
   alternates: { canonical: "https://valentinproteccionintegral.com/landing/asesoria-gratuita" },
   openGraph: {
-    title: "Asesoría Seguros GRATIS Madrid | 30 Minutos",
-    description: "Encuentra el mejor seguro para ti en 30 minutos. Mediadores independientes. Sin compromiso.",
+    title: "Asesoría Seguros Gratis Madrid | Valentín Protección",
+    description: "Asesoría seguros gratuita en Madrid. Salud, vida, hogar, autónomos. Respuesta en 30 minutos. Sin compromiso. WhatsApp directo.",
     url: "https://valentinproteccionintegral.com/landing/asesoria-gratuita",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

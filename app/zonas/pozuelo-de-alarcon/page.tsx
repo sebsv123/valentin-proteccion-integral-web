@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Users, Shield, Heart, Phone, Crown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Pozuelo de Alarcón | Valentín Protección Integral",
-  description: "Seguros premium Pozuelo Alarcón. Salud privada, vida familiar, hogar alta gama. WhatsApp exclusivo 30min. Rosa y Sebastián.",
+  title: "Seguros Pozuelo de Alarcón | Premium | Valentín",
+  description: "Seguros en Pozuelo de Alarcón. Servicio premium y personalizado. Salud ejecutivos, vida familiar, hogar alta gama. WhatsApp.",
   keywords: ["seguros Pozuelo de Alarcón","seguros Pozuelo Alarcón","seguros premium Pozuelo","mediador Pozuelo"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon" },
   openGraph: {
-    title: "Seguros Pozuelo de Alarcón | Servicio Premium",
-    description: "Servicio premium para tu familia en Pozuelo. Salud, vida, hogar alta gama. WhatsApp exclusivo.",
+    title: "Seguros Pozuelo de Alarcón | Premium | Valentín",
+    description: "Seguros en Pozuelo de Alarcón. Servicio premium y personalizado. Salud ejecutivos, vida familiar, hogar alta gama. WhatsApp.",
     url: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

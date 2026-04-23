@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Briefcase, Home, Zap, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Jóvenes Profesionales Madrid | A tu medida | Valentín Protección Integral",
-  description: "Seguros para jóvenes profesionales Madrid. Tu primera hipoteca, salud sin copagos, protección real. WhatsApp 30min. Rosa y Sebastián.",
+  title: "Seguros Jóvenes Profesionales Madrid | Valentín",
+  description: "Seguros para jóvenes profesionales Madrid. Salud sin copagos, vida hipoteca, accidentes deportes. WhatsApp cotización inmediata.",
   keywords: ["seguros jovenes profesionales Madrid","seguro hipoteca joven Madrid","seguro salud millennials Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/jovenes-profesionales" },
   openGraph: {
-    title: "Seguros Jóvenes Profesionales Madrid | A tu medida",
-    description: "Tu primera hipoteca, salud sin copagos, protección real. Decidí rápido y bien.",
+    title: "Seguros Jóvenes Profesionales Madrid | Valentín",
+    description: "Seguros para jóvenes profesionales Madrid. Salud sin copagos, vida hipoteca, accidentes deportes. WhatsApp cotización inmediata.",
     url: "https://valentinproteccionintegral.com/para/jovenes-profesionales",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

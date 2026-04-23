@@ -9,13 +9,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Dog, Car, Heart, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Boadilla del Monte | Valentín Protección Integral",
-  description: "Seguros Boadilla del Monte Madrid. Salud, vida, hogar local. Asesoría WhatsApp 30min. Rosa y Sebastián.",
+  title: "Seguros Boadilla del Monte | Mediador Local | Valentín",
+  description: "Seguros en Boadilla del Monte. Mediadores locales con oficina propia. Salud, vida, hogar, mascotas. WhatsApp 30 min respuesta.",
   keywords: ["seguros Boadilla del Monte","seguros Boadilla","mediador Boadilla del Monte"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/boadilla-del-monte" },
   openGraph: {
-    title: "Seguros Boadilla del Monte | Mediador Local",
-    description: "Tu mediador en Boadilla del Monte desde 2015. Salud, vida, hogar. WhatsApp 30min.",
+    title: "Seguros Boadilla del Monte | Mediador Local | Valentín",
+    description: "Seguros en Boadilla del Monte. Mediadores locales con oficina propia. Salud, vida, hogar, mascotas. WhatsApp 30 min respuesta.",
     url: "https://valentinproteccionintegral.com/zonas/boadilla-del-monte",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
