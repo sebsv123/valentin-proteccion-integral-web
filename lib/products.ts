@@ -78,7 +78,7 @@ export const products: Product[] = [
     slug: 'salud',
     name: 'Seguro de salud',
     label: 'SALUD',
-    eyebrow: 'SALUD',
+    eyebrow: 'ASISTENCIA MÉDICA',
     heroTitle: 'Te ayudamos a encontrar un seguro de SALUD que encaje contigo y con la forma en la que realmente quieres usarlo',
     heroCopy:
       'No todas las opciones funcionan igual. Comparamos seguros de salud privados en Madrid: modalidad completa, para familias, seniors, extranjeros con visado y reembolso con libre elección de médico. La clave está en comparar con contexto.',
@@ -137,7 +137,7 @@ export const products: Product[] = [
     slug: 'vida',
     name: 'Seguro de vida',
     label: 'VIDA',
-    eyebrow: 'VIDA',
+    eyebrow: 'PROTECCIÓN FAMILIAR',
     heroTitle: 'Un seguro de VIDA no sirve solo para dejar un capital: te ayudo a proteger a tu familia y tu hipoteca con total seguridad',
     heroCopy:
       'Hola, soy Sebastián. Me especializo en encontrar la solución de VIDA que realmente responda a tu necesidad, ya sea protección familiar o asegurar tu hipoteca. El objetivo es tu tranquilidad absoluta.',
@@ -201,7 +201,7 @@ export const products: Product[] = [
     slug: 'mascotas',
     name: 'Seguro para mascotas',
     label: 'MASCOTAS',
-    eyebrow: 'MASCOTAS',
+    eyebrow: 'VETERINARIA Y RC',
     heroTitle: 'El seguro para MASCOTAS puede ayudarte tanto con la parte veterinaria del día a día como con la protección frente a daños a terceros',
     heroCopy:
       'No todas las opciones parten del mismo enfoque. Algunas están más centradas en asistencia veterinaria y otras en responsabilidad civil. Además, según modalidad, también puede ampliarse la protección con opcionales como robo, fallecimiento accidental o determinados gastos asociados.',
@@ -260,7 +260,7 @@ export const products: Product[] = [
     slug: 'dental',
     name: 'Seguro dental',
     label: 'DENTAL',
-    eyebrow: 'DENTAL',
+    eyebrow: 'SONRISA SANA',
     heroTitle: 'El seguro DENTAL puede ayudarte a acceder a una atención bucodental más cómoda y previsible',
     heroCopy:
       'Según la modalidad, puede dar acceso a distintas especialidades, a determinados actos incluidos sin franquicia y a mejores condiciones frente a tarifas particulares, con opciones pensadas también para familias y empresas.',
@@ -317,7 +317,7 @@ export const products: Product[] = [
     slug: 'accidentes',
     name: 'Seguro de accidentes',
     label: 'ACCIDENTES',
-    eyebrow: 'ACCIDENTES',
+    eyebrow: 'INDEMNIZACIÓN 24/7',
     heroTitle: 'Un seguro de ACCIDENTES puede ayudarte a protegerte frente a imprevistos que alteran tu estabilidad económica',
     heroCopy:
       'La clave está en saber si buscas una protección básica o una solución más amplia. Al no requerir examen médico, es una forma rápida y efectiva de protegerte a ti y a tu negocio.',
@@ -537,7 +537,7 @@ export const products: Product[] = [
     slug: 'decesos',
     name: 'Seguro de decesos',
     label: 'DECESOS',
-    eyebrow: 'DECESOS',
+    eyebrow: 'PREVISIÓN FAMILIAR',
     heroTitle: 'El seguro de DECESOS puede ayudarte a dejar resueltas muchas gestiones y servicios importantes en un momento delicado',
     heroCopy:
       'No se trata solo del servicio funerario. Según contratación, puede incluir traslados, gestiones y servicios complementarios que ayudan a reducir carga para la familia en un momento delicado.',
@@ -594,7 +594,7 @@ export const products: Product[] = [
     slug: 'viaje',
     name: 'Seguro de viaje',
     label: 'VIAJE',
-    eyebrow: 'VIAJE',
+    eyebrow: 'ASISTENCIA EN EL EXTRANJERO',
     heroTitle: 'No todos los seguros de VIAJE están pensados para lo mismo: elegir bien depende del destino, la duración y el tipo de desplazamiento',
     heroCopy:
       'Hay opciones para viajes puntuales, estudios, escapadas frecuentes o necesidades más específicas. La anulación, el límite médico y el alcance de ciertas coberturas no siempre son iguales entre modalidades.',
