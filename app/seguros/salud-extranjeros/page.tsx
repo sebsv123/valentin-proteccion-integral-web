@@ -97,15 +97,15 @@ export default function SaludExtranjerosPage() {
             {/* Guarantee Badge */}
             <GuaranteeBadge type="salud-extranjeros" />
 
-            {/* Team Image */}
+            {/* Hero Image — Healthcare for internationals */}
             <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">
               <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián, equipo Valentín Protección Integral Madrid"
+                src="https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Seguro médico internacional para extranjeros en Madrid — Profesional sanitario"
                 width={600}
                 height={400}
                 priority
-                className="w-full h-auto object-cover object-[center_20%]"
+                className="w-full h-auto object-cover object-center"
                 style={{ aspectRatio: '3/2' }}
               />
             </div>

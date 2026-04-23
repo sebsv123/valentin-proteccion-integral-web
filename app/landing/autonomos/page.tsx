@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clock, FileCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,10 +64,9 @@ export default function AutonomosLandingPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge Stripe */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-white border border-[#e5edf5] text-[#273951] text-xs mb-6 shadow-[rgba(50,50,93,0.25)_0px_2px_5px_-1px,rgba(0,0,0,0.1)_0px_1px_3px_-1px]">
-                  <Sparkles className="w-3.5 h-3.5 text-[#533afd]" />
-                  ✦ +1.200 clientes protegidos · DGSFP verificado
+                {/* Guarantee Badge */}
+                <div className="mb-6">
+                  <GuaranteeBadge type="autonomos" />
                 </div>
                 
                 {/* H1 — 48px weight 300, tight tracking */}

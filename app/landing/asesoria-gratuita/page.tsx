@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, Clock, Shield, Users, MessageCircle, Award, TrendingUp, HeartHandshake, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,12 +64,9 @@ export default function AsesoriaGratuitaPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
               <div className="text-center lg:text-left">
-                {/* Badge sobrio */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-sm mb-8">
-                  <Sparkles className="w-4 h-4 text-orange-500" />
-                  <span className="font-medium">+1.200 personas asesoradas</span>
-                  <span className="text-gray-400">|</span>
-                  <span className="text-gray-500">DGSFP verificado</span>
+                {/* Guarantee Badge */}
+                <div className="mb-8">
+                  <GuaranteeBadge type="default" />
                 </div>
                 
                 {/* H1 fuerte */}
