@@ -92,8 +92,7 @@ export default function AccidentesPage() {
                     className="group inline-flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-full text-base font-semibold border border-[#2f3031] transition-all hover:bg-[#1b1c1e]"
                     style={{ boxShadow: 'rgba(255,255,255,0.1) 0px 1px 0px 0px inset, rgba(0,0,0,0.4) 0px 2px 4px' }}
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    💬 Cotizar WhatsApp
+                    Cotizar WhatsApp
                     <span className="hidden group-hover:inline text-sm ml-1 text-[#5fc992]">
                       🚀 1 mes gratis
                     </span>
@@ -127,7 +126,7 @@ export default function AccidentesPage() {
                     alt="Deportes extremos Madrid sierra BTT"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -209,7 +208,7 @@ export default function AccidentesPage() {
                   alt="Sebastián · Practicante MTB"
                   width={500}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-top"
                   priority
                 />
               </div>
@@ -275,8 +274,7 @@ export default function AccidentesPage() {
               className="group inline-flex items-center gap-2 bg-[#FF6363] hover:bg-[#ff7a7a] text-white px-10 py-4 rounded-full text-lg font-semibold transition-all"
               style={{ boxShadow: '0 10px 30px rgba(255,99,99,0.3)' }}
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 Cotizar Ahora
+              Cotizar Ahora
               <span className="hidden group-hover:inline text-sm ml-1">
                 🚀 1 mes gratis
               </span>

@@ -123,7 +123,7 @@ export default function SaludSeniorPage() {
                     alt="Atención médica para mayores Madrid"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -217,7 +217,7 @@ export default function SaludSeniorPage() {
                     alt="Rosa y Sebastián - Especialistas en seguros para mayores"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>

@@ -10,12 +10,12 @@ import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syrin
 
 export const metadata: Metadata = {
   title: "Seguro Dental Madrid | Valentín Protección Integral",
-  description: "Seguro dental Madrid. Sin carencias, desde 10€/mes. WhatsApp cotización inmediata. Rosa y Sebastián.",
+  description: "Seguro dental Madrid. Sin carencias. WhatsApp cotización inmediata. Rosa y Sebastián.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
     title: "Seguro Dental Madrid | Sin Carencias",
-    description: "Sin carencias desde día 1. Implantes hasta 300€/año. Cotiza WhatsApp 30min.",
+    description: "Sin carencias desde día 1. Implantes incluidos. Cotiza WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -40,7 +40,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro dental Madrid sin carencias. Desde 10€/mes. Implantes, ortodoncia, checkups.",
+  "description": "Seguro dental Madrid sin carencias. Implantes, ortodoncia, checkups.",
 };
 
 export const dynamic = "force-static";
@@ -83,7 +83,7 @@ export default function SaludDentalPage() {
                 <p className="text-2xl text-slate-600 leading-relaxed mb-10 max-w-lg">
                   Sin carencias.
                   <br />
-                  <span className="font-semibold text-slate-900">Desde 10€/mes.</span>
+                  <span className="font-semibold text-slate-900">Precio adaptado a tu perfil.</span>
                 </p>
                 
                 {/* CTAs elegantes */}
@@ -92,8 +92,7 @@ export default function SaludDentalPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar WhatsApp
+                    Cotizar WhatsApp
                   </a>
                   <a 
                     href="tel:603448765"
@@ -116,7 +115,7 @@ export default function SaludDentalPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Shield className="w-4 h-4 text-sky-500" />
-                    Implantes 300€/año
+                    Implantes incluidos
                   </span>
                 </div>
               </div>
@@ -130,7 +129,7 @@ export default function SaludDentalPage() {
                     alt="Sonrisa dental profesional Madrid"
                     width={600}
                     height={500}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -161,7 +160,7 @@ export default function SaludDentalPage() {
                 { 
                   icon: Smile, 
                   title: "Implantes cubiertos", 
-                  desc: "Hasta 300€/año en implantes dentales incluidos. Recupera tu sonrisa completa."
+                  desc: "Implantes dentales incluidos. Recupera tu sonrisa completa."
                 },
                 { 
                   icon: Heart, 
@@ -226,7 +225,7 @@ export default function SaludDentalPage() {
                     alt="Rosa Valentín - Especialista dental"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -331,7 +330,7 @@ export default function SaludDentalPage() {
             </h2>
             
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-              Desde 10€/mes. Sin carencias. Sin compromiso.
+              Sin carencias. Sin compromiso.
               <br />
               Un WhatsApp. 30 minutos. Empieza a sonreír.
             </p>
@@ -340,8 +339,7 @@ export default function SaludDentalPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-sky-500/20 hover:shadow-2xl hover:shadow-sky-500/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Cotizar Ahora
+              Cotizar Ahora
             </a>
             
             {/* Badges finales */}

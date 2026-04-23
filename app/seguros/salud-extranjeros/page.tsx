@@ -120,8 +120,7 @@ export default function SaludExtranjerosPage() {
                 href={wCotiza}
                 className="inline-flex items-center gap-2 bg-[#163300] hover:bg-[#1a3d00] text-white px-8 py-4 rounded-xl font-medium text-lg transition-all hover:scale-[1.02] shadow-[0_8px_30px_rgba(22,51,0,0.2)]"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                💬 Cotiza en WhatsApp
+                Cotiza en WhatsApp
               </a>
               <a 
                 href={wCotiza}
@@ -137,7 +136,7 @@ export default function SaludExtranjerosPage() {
               alt="Diverse international people expats Madrid professional"
               width={1200}
               height={525}
-              className="w-full rounded-3xl mt-16 aspect-[16/7] object-cover shadow-2xl border border-[#E5E7EB]"
+              className="w-full h-auto object-cover object-top rounded-3xl mt-16 aspect-[16/7] shadow-2xl border border-[#E5E7EB]"
               priority
             />
           </div>
@@ -269,8 +268,7 @@ export default function SaludExtranjerosPage() {
                   href={wCotiza}
                   className="mt-8 inline-flex items-center gap-3 bg-[#163300] text-white px-8 py-4 rounded-xl font-medium hover:bg-[#1a3d00] transition-all"
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  💬 Habla con nosotros
+                  Habla con nosotros
                 </a>
               </div>
             </div>
@@ -340,8 +338,7 @@ export default function SaludExtranjerosPage() {
                 href={wCotiza}
                 className="mt-10 inline-flex items-center gap-3 bg-[#9FE870] hover:bg-[#8EDD60] text-[#163300] font-semibold px-10 py-5 rounded-2xl text-xl transition-all hover:scale-[1.02]"
               >
-                <WhatsAppIcon className="w-6 h-6" />
-                💬 Cotiza ahora — It&apos;s free
+                Cotiza ahora — It&apos;s free
               </a>
               <p className="text-white/40 text-sm mt-6">
                 NIF: 79234434D | DGSFP: C012479234434D

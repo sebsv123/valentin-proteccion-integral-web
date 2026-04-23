@@ -85,8 +85,7 @@ export default function PozueloPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-black hover:bg-[#333] text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 WhatsApp Privado
+                    WhatsApp Privado
                     <span className="hidden group-hover:inline text-sm ml-1">
                       🏛️ Puerta a puerta gratis
                     </span>
@@ -121,7 +120,7 @@ export default function PozueloPage() {
                     alt="Pozuelo de Alarcón luxury residencial"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -199,7 +198,7 @@ export default function PozueloPage() {
                   alt="Rosa Valentín · Pozuelo especialistas"
                   width={500}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-top"
                   priority
                 />
               </div>
@@ -276,8 +275,7 @@ export default function PozueloPage() {
                   href={wCotiza}
                   className="group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[#e2e2e2] transition-colors"
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  💬 WhatsApp Privado
+                  WhatsApp Privado
                   <span className="hidden group-hover:inline text-sm ml-2 text-[#4b4b4b]">
                     🏛️ Puerta a puerta gratis
                   </span>

@@ -91,8 +91,7 @@ export default function AutonomosPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-slate-900/20 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar ahora
+                    Cotizar ahora
                   </a>
                   <a 
                     href="tel:603448765"
@@ -125,7 +124,7 @@ export default function AutonomosPage() {
                     alt="Autónomo profesional Madrid"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -226,15 +225,15 @@ export default function AutonomosPage() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-3 border-b border-slate-700">
                       <span className="text-slate-300">Prima anual seguro salud</span>
-                      <span className="font-semibold">600€</span>
+                      <span className="font-semibold">Consultar</span>
                     </div>
                     <div className="flex justify-between items-center py-3 border-b border-slate-700">
                       <span className="text-slate-300">Deducción IRPF (50%)</span>
-                      <span className="font-semibold text-green-400">-300€</span>
+                      <span className="font-semibold text-green-400">-50%</span>
                     </div>
                     <div className="flex justify-between items-center py-3">
                       <span className="text-lg font-semibold">Coste real anual</span>
-                      <span className="text-2xl font-bold text-green-400">300€</span>
+                      <span className="text-2xl font-bold text-green-400">Mitad de precio</span>
                     </div>
                   </div>
                 </div>
@@ -260,7 +259,7 @@ export default function AutonomosPage() {
                     alt="Rosa y Sebastián - Especialistas en autónomos"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -331,8 +330,7 @@ export default function AutonomosPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Calcular ahorro fiscal
+              Calcular ahorro fiscal
             </a>
             
             {/* Badges finales */}

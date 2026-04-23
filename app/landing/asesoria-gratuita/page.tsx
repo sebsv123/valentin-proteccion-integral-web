@@ -133,7 +133,7 @@ export default function AsesoriaGratuitaPage() {
                     alt="Asesoría seguros profesional Madrid"
                     width={600}
                     height={500}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -196,7 +196,7 @@ export default function AsesoriaGratuitaPage() {
                     alt="Rosa y Sebastián - Tu equipo de asesores"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>

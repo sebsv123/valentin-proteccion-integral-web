@@ -93,7 +93,6 @@ export default function SeniorsPage() {
                     href={wCotiza}
                     className="inline-flex items-center justify-center gap-2 bg-white text-stone-700 px-8 py-5 rounded-xl text-xl font-medium border-2 border-stone-200 hover:border-emerald-400 transition-all"
                   >
-                    <WhatsAppIcon className="w-6 h-6" />
                     WhatsApp
                   </a>
                 </div>
@@ -112,7 +111,7 @@ export default function SeniorsPage() {
                     alt="Pareja mayor tranquila"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -206,7 +205,7 @@ export default function SeniorsPage() {
                     alt="Rosa y Sebastián - Te acompañamos"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -323,7 +322,6 @@ export default function SeniorsPage() {
                 href={wCotiza}
                 className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white px-10 py-5 rounded-xl text-xl font-medium border-2 border-emerald-400 hover:bg-emerald-400 transition-all"
               >
-                <WhatsAppIcon className="w-6 h-6" />
                 WhatsApp
               </a>
             </div>

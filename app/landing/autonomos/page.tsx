@@ -88,8 +88,7 @@ export default function AutonomosLandingPage() {
                     href={wCotiza}
                     className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-4 py-2 rounded text-base font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    💬 Cotiza en WhatsApp
+                    Cotizar por WhatsApp
                   </a>
                   <a 
                     href="tel:603448765"
@@ -124,7 +123,7 @@ export default function AutonomosLandingPage() {
                     alt="Autónomo profesional laptop Madrid office modern"
                     width={600}
                     height={700}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -136,7 +135,7 @@ export default function AutonomosLandingPage() {
                     </div>
                     <div>
                       <p className="text-sm font-normal text-[#061b31]">Ahorro fiscal</p>
-                      <p className="text-xs text-[#64748d]">Hasta 500€/año</p>
+                      <p className="text-xs text-[#64748d]">Ahorro fiscal real</p>
                     </div>
                   </div>
                 </div>
@@ -230,7 +229,7 @@ export default function AutonomosLandingPage() {
                     alt="Rosa y Sebastián - Tus asesores en Madrid"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                   />
                 </div>
               </div>
@@ -318,8 +317,7 @@ export default function AutonomosLandingPage() {
               href={wCotiza}
               className="inline-flex items-center gap-3 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-3 rounded text-lg font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 Empezar ahora por WhatsApp
+              Empezar por WhatsApp
             </a>
             <p className="text-sm text-white/40 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D · 10 años · Sin permanencia

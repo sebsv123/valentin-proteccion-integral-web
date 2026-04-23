@@ -132,7 +132,7 @@ export default function AutonomosRootPage() {
                 <p className="text-xl text-[#64748d] font-light leading-relaxed mb-8 max-w-lg">
                   IRPF deducible + RC profesional + Accidentes.
                   <br />
-                  <span className="text-[#533afd] font-normal">Desde 25€/mes.</span>
+                  <span className="text-[#533afd] font-normal">Precio adaptado a tu perfil.</span>
                 </p>
                 
                 {/* CTAs Stripe */}
@@ -141,8 +141,7 @@ export default function AutonomosRootPage() {
                     href={wCotiza}
                     className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-3 rounded text-base font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    💬 WhatsApp Ahora
+                    WhatsApp Ahora
                   </a>
                   <Link 
                     href="/seguros/salud-individual"
@@ -177,7 +176,7 @@ export default function AutonomosRootPage() {
                     alt="Autónomo profesional laptop Madrid 2026"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -189,7 +188,7 @@ export default function AutonomosRootPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-[#061b31]">Ahorro fiscal 2026</p>
-                      <p className="text-xs text-[#64748d]">Hasta 500€/año</p>
+                      <p className="text-xs text-[#64748d]">Ahorro fiscal real</p>
                     </div>
                   </div>
                 </div>
@@ -212,7 +211,7 @@ export default function AutonomosRootPage() {
               {[
                 { num: "01", title: "100% deducible", desc: "Toda la prima de tu seguro médico es deducible en IRPF como gasto profesional." },
                 { num: "02", title: "Factura Hacienda", desc: "Te emitimos factura con IVA incluido, válida para la Agencia Tributaria." },
-                { num: "03", title: "Ejemplo real", desc: "Pagas 500€/año, te devuelven ~250€ en tu declaración. Tu seguro cuesta la mitad." },
+                { num: "03", title: "Ejemplo real", desc: "La mitad de tu prima de salud te la devuelve Hacienda. Tu seguro cuesta menos de lo que crees." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px]">
                   <span className="text-[#533afd] text-sm font-medium">{item.num}</span>
@@ -235,7 +234,7 @@ export default function AutonomosRootPage() {
               {[
                 { 
                   name: "BÁSICO", 
-                  price: "25€",
+                  price: "Adaptado",
                   period: "/mes",
                   features: ["Salud privada IRPF deducible", "Especialistas ilimitados", "Urgencias 24h"],
                   cta: "Elegir Básico",
@@ -243,7 +242,7 @@ export default function AutonomosRootPage() {
                 },
                 { 
                   name: "PRO", 
-                  price: "45€",
+                  price: "Adaptado",
                   period: "/mes",
                   features: ["Todo lo de Básico", "RC profesional incluida", "Accidentes laboral/extra", "Cobertura internacional UE"],
                   cta: "Elegir Pro",
@@ -251,7 +250,7 @@ export default function AutonomosRootPage() {
                 },
                 { 
                   name: "ENTERPRISE", 
-                  price: "75€",
+                  price: "Adaptado",
                   period: "/mes",
                   features: ["Todo ilimitado", "RC profesional ampliada", "Accidentes premium", "Asesor fiscal incluido"],
                   cta: "Elegir Enterprise",
@@ -421,8 +420,7 @@ export default function AutonomosRootPage() {
                 href={wCotiza}
                 className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#665efd] text-white px-8 py-4 rounded text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px]"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                💬 Cotizar WhatsApp
+                Cotizar WhatsApp
               </a>
               <a 
                 href="tel:603448765"

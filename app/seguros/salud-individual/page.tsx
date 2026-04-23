@@ -102,8 +102,7 @@ export default function SaludIndividualPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar WhatsApp
+                    Cotizar por WhatsApp
                   </a>
                   <a 
                     href="#ventajas"
@@ -228,7 +227,7 @@ export default function SaludIndividualPage() {
                     alt="Rosa y Sebastián - Tu equipo de confianza"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -298,8 +297,7 @@ export default function SaludIndividualPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Cotizar Ahora
+              Cotizar Ahora
             </a>
             
             {/* Badges finales */}

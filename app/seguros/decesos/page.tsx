@@ -10,7 +10,7 @@ import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileChec
 
 export const metadata: Metadata = {
   title: "Seguro Decesos Madrid | Deja todo resuelto para tu familia | Valentín Protección Integral",
-  description: "Seguro de decesos en Madrid. Cubre todos los gastos de sepelio. Tu familia no paga nada, no tramita nada. Solo tiene que llamarnos. Desde 15€/mes.",
+  description: "Seguro de decesos en Madrid. Cubre todos los gastos de sepelio. Tu familia no paga nada, no tramita nada. Solo tiene que llamarnos.",
   keywords: ["seguro decesos Madrid","seguro gastos sepelio Madrid","seguro fallecimiento Madrid","protección familiar decesos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/decesos" },
   openGraph: {
@@ -91,8 +91,7 @@ export default function DecesosPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-indigo-600/20 hover:shadow-xl hover:shadow-indigo-600/30 hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Hablar por WhatsApp
+                    Hablar por WhatsApp
                   </a>
                   <a 
                     href="tel:603448765"
@@ -125,7 +124,8 @@ export default function DecesosPage() {
                     alt="Familia tranquila con previsión"
                     width={600}
                     height={500}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
+                    objectFit="cover"
                     priority
                   />
                 </div>
@@ -172,7 +172,7 @@ export default function DecesosPage() {
                 { 
                   icon: Shield, 
                   title: "Tranquilidad económica", 
-                  desc: "Un funeral puede costar 6.000€ o más. Con nosotros, eso no es un problema."
+                  desc: "Los gastos de funeral pueden ser elevados. Con nosotros, eso no es un problema."
                 },
                 { 
                   icon: FileCheck, 
@@ -237,7 +237,8 @@ export default function DecesosPage() {
                     alt="Rosa y Sebastián - Tu apoyo en momentos difíciles"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
+                    objectFit="cover"
                     priority
                   />
                 </div>
@@ -350,8 +351,7 @@ export default function DecesosPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-indigo-600/20 hover:shadow-2xl hover:shadow-indigo-600/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Hablar por WhatsApp
+              Hablar por WhatsApp
             </a>
             
             {/* Badges finales */}

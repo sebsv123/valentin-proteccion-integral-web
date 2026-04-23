@@ -81,8 +81,7 @@ export default function VidaPage() {
                 href={wCotiza}
                 className="group inline-flex items-center gap-2 bg-[#191c1f] hover:bg-[#191c1f]/85 text-white px-8 py-4 rounded-full text-lg font-medium transition-opacity"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                💬 Cotizar WhatsApp
+                Cotizar WhatsApp
                 <span className="hidden group-hover:inline text-sm ml-2 text-white/70">
                   🎁 Vida + Decesos = condiciones especiales
                 </span>
@@ -176,7 +175,7 @@ export default function VidaPage() {
                   alt="Sebastián Valentín · Especialista hipotecas"
                   width={500}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-top"
                   priority
                 />
               </div>
@@ -243,8 +242,7 @@ export default function VidaPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-10 py-4 rounded-full text-lg font-medium transition-colors"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 Cotizar por WhatsApp
+              Cotizar por WhatsApp
               <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
                 🎁 Vida + Decesos = condiciones especiales
               </span>

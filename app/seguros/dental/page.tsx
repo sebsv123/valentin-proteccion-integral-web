@@ -10,12 +10,12 @@ import { Sparkles, CheckCircle2, Clock, Smile, Stethoscope, Syringe, Scan, XCirc
 
 export const metadata: Metadata = {
   title: "Seguro Dental Sin Carencias Madrid | Valentín Protección Integral",
-  description: "Seguro dental económico Madrid. Sin carencias, desde 10€/mes. WhatsApp cotización inmediata. Rosa y Sebastián.",
+  description: "Seguro dental económico Madrid. Sin carencias. WhatsApp cotización inmediata. Rosa y Sebastián.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/dental" },
   openGraph: {
-    title: "Seguro Dental Sin Carencias Madrid | Desde 10€/mes",
-    description: "Sin carencias desde día 1. Implantes hasta 300€/año. Cotiza WhatsApp 30min.",
+    title: "Seguro Dental Sin Carencias Madrid | Sin esperas",
+    description: "Sin carencias desde día 1. Implantes incluidos. Cotiza WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -40,7 +40,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro dental Madrid sin carencias. Desde 10€/mes. Implantes, ortodoncia, checkups.",
+  "description": "Seguro dental Madrid sin carencias. Implantes, ortodoncia, checkups.",
 };
 
 export const dynamic = "force-static";
@@ -77,7 +77,7 @@ export default function DentalPage() {
               
               {/* Subhead */}
               <p className="text-xl text-[#666666] leading-[1.50] mb-10 max-w-2xl mx-auto">
-                Sin carencias. Desde 10€/mes.
+                Sin carencias. Precio adaptado.
                 <br />
                 Tu sonrisa, protegida desde hoy.
               </p>
@@ -127,7 +127,7 @@ export default function DentalPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: CheckCircle2, title: "Sin carencias", desc: "Cobertura desde el día 1. Sin esperas ni papeleo." },
-                { icon: Bone, title: "Implantes cubiertos", desc: "Hasta 300€/año en implantes dentales incluidos." },
+                { icon: Bone, title: "Implantes", desc: "Implantes dentales incluidos en tu seguro." },
                 { icon: Smile, title: "Ortodoncia adultos", desc: "Tratamientos de ortodoncia para todas las edades." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-3xl p-8 border border-[rgba(0,0,0,0.05)] hover:border-[#18E299]/30 transition-all">
@@ -156,7 +156,7 @@ export default function DentalPage() {
                 { icon: XCircle, title: "Extracciones", desc: "Completa" },
                 { icon: Smile, title: "Prótesis", desc: "Removibles" },
                 { icon: Scan, title: "Radiografías", desc: "Ilimitadas" },
-                { icon: Bone, title: "Implantes", desc: "Hasta 300€/año" },
+                { icon: Bone, title: "Implantes", desc: "Incluidos" },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-2xl p-6 border border-[rgba(0,0,0,0.05)] hover:border-[#18E299]/20 transition-all">
                   <div className="w-10 h-10 rounded-xl bg-[#d4fae8] flex items-center justify-center mb-4">
@@ -236,7 +236,7 @@ export default function DentalPage() {
               Sonrisa perfecta, ya.
             </h2>
             <p className="text-xl text-[#666666] mb-10">
-              Desde 10€/mes. Sin carencias. Sin compromiso.
+              Sin carencias. Sin compromiso.
             </p>
             
             <a 

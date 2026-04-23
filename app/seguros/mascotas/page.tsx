@@ -91,8 +91,7 @@ export default function MascotasPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar WhatsApp
+                    Cotizar WhatsApp
                   </a>
                   <a 
                     href="tel:603448765"
@@ -125,7 +124,7 @@ export default function MascotasPage() {
                     alt="Perro y gato felices protegidos"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -215,11 +214,11 @@ export default function MascotasPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 to-stone-100/20 rounded-3xl blur-2xl transform scale-95" />
                 <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 border border-stone-100">
                   <Image
-                    src="/images/rosa_y_sebastian.jpeg"
+                    src="/images/rosa_y_sebastian_mascotas.png"
                     alt="Rosa y Sebastián - Amantes de los animales"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -332,8 +331,7 @@ export default function MascotasPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-white text-amber-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Cotizar Ahora
+              Cotizar Ahora
             </a>
             
             {/* Badges finales */}

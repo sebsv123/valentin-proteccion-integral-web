@@ -10,3 +10,4 @@ out
 .vercel
 .env*.local
 tsconfig.tsbuildinfo
+design-references/

@@ -104,8 +104,7 @@ export default function AccidentesDecesosPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar Pack
+                    Cotizar Pack
                   </a>
                   <a 
                     href="#pack"
@@ -132,8 +131,19 @@ export default function AccidentesDecesosPage() {
                 </div>
               </div>
               
-              {/* Right: Empty for image visibility */}
-              <div className="hidden lg:block" />
+              {/* Right: Hero image */}
+              <div className="hidden lg:block relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-amber-500/20 border border-white/10">
+                  <Image
+                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Familia protegida con seguro accidentes y decesos Madrid"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -291,7 +301,7 @@ export default function AccidentesDecesosPage() {
                     alt="Rosa y Sebastián - Tu equipo de confianza"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -364,8 +374,7 @@ export default function AccidentesDecesosPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/30 hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Cotizar Pack Ahora
+              Cotizar Pack Ahora
             </a>
             
             {/* Badges finales */}

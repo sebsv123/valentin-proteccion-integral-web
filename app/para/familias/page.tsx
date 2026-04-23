@@ -91,8 +91,7 @@ export default function FamiliasPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Proteger mi familia
+                    Proteger mi familia
                   </a>
                   <a 
                     href="tel:603448765"
@@ -125,7 +124,7 @@ export default function FamiliasPage() {
                     alt="Familia feliz protegida Madrid"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -222,7 +221,7 @@ export default function FamiliasPage() {
                     alt="Rosa y Sebastián - Tu familia de confianza"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -334,8 +333,7 @@ export default function FamiliasPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Proteger a mi familia
+              Proteger a mi familia
             </a>
             
             {/* Badges finales */}

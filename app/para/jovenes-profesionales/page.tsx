@@ -91,8 +91,7 @@ export default function JovenesPage() {
                     href={wCotiza}
                     className="group inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    💬 Cotizar ahora
+                    Cotizar ahora
                   </a>
                   <a 
                     href="#necesidades"
@@ -124,7 +123,7 @@ export default function JovenesPage() {
                     alt="Joven profesional Madrid"
                     width={600}
                     height={500}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -251,7 +250,7 @@ export default function JovenesPage() {
                     alt="Rosa y Sebastián - Entienden tu momento"
                     width={500}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
@@ -323,8 +322,7 @@ export default function JovenesPage() {
               href={wCotiza}
               className="group inline-flex items-center gap-3 bg-white text-violet-600 px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              💬 Empezar ahora
+              Empezar ahora
             </a>
             
             {/* Minimal badges */}
