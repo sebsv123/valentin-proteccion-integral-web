@@ -1,36 +1,82 @@
 'use client';
-import { motion } from 'framer-motion';
+import { Shield, CheckCircle } from 'lucide-react';
 
-const guarantees: Record<string, string> = {
-  vida: "Mejoramos tu Seguro Banco/Hipoteca · 18k€ Mín · Suicidio Año 1",
-  dental: "Sin Espera: Cobertura Inmediata",
-  salud: "Cita sin Listas de Espera · Respuesta Personal 24h",
-  'salud-extranjeros': "Póliza Cumple Requisitos Residencia · +100 Clientes Aprobados",
-  mascotas: "Vacunas + Pasaporte Europeo Cubiertos · Cumple RD 2026",
-  viaje: "Cobertura Médica Inmediata · Sin Franquicia Inicial",
-  autonomos: "Deducciones Fiscales 2026 Verificadas · Hasta 500€ Ahorro",
-  zonas: "Servicio Domicilio Boadilla · Respuesta Local 1h",
-  familias: "Paquete Familiar: Vida + Salud 5% dto",
-  default: "Respuesta Personal de Rosa o Sebastián en 30min",
+const guarantees: Record<string, { title: string; subtitle: string }> = {
+  vida: { 
+    title: "Mejoramos tu seguro del banco", 
+    subtitle: "18.000€ mínimo · Suicidio cubierto año 1" 
+  },
+  dental: { 
+    title: "Sin listas de espera", 
+    subtitle: "Cobertura inmediata desde el primer día" 
+  },
+  salud: { 
+    title: "Cita sin listas de espera", 
+    subtitle: "Respuesta personal en 24h" 
+  },
+  'salud-extranjeros': { 
+    title: "Cumple requisitos extranjería", 
+    subtitle: "+100 clientes con NIE/TIE aprobado" 
+  },
+  mascotas: { 
+    title: "Vacunas y pasaporte europeo", 
+    subtitle: "Cumple normativa RD 2026" 
+  },
+  viaje: { 
+    title: "Cobertura desde la salida de casa", 
+    subtitle: "Sin franquicia · 60.000€ médica" 
+  },
+  autonomos: { 
+    title: "Deducciones fiscales 2026", 
+    subtitle: "Hasta 500€ de ahorro verificado" 
+  },
+  zonas: { 
+    title: "Servicio a domicilio", 
+    subtitle: "Respuesta local en 1 hora" 
+  },
+  familias: { 
+    title: "Pack familiar completo", 
+    subtitle: "Vida + Salud · 5% dto. adicional" 
+  },
+  decesos: { 
+    title: "Todo incluido", 
+    subtitle: "Servicio completo sin sorpresas" 
+  },
+  accidentes: { 
+    title: "24h cobertura mundial", 
+    subtitle: "Incapacidad permanente incluida" 
+  },
+  'accidentes-decesos': { 
+    title: "Doble protección", 
+    subtitle: "Accidente + Decesos en una póliza" 
+  },
+  senior: { 
+    title: "Especialistas en +65", 
+    subtitle: "Sin carencias · Sin copagos" 
+  },
+  default: { 
+    title: "Respuesta personal garantizada", 
+    subtitle: "Rosa o Sebastián en 30 minutos" 
+  },
 };
 
 export default function GuaranteeBadge({ type = 'default' }: { type?: string }) {
-  const text = guarantees[type] ?? guarantees.default;
+  const guarantee = guarantees[type] ?? guarantees.default;
+  
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-gradient-to-br from-emerald-600 to-blue-700 text-white px-10 py-10 rounded-3xl shadow-2xl border-4 border-white/30 mx-auto max-w-2xl mb-12 text-center font-bold"
-    >
-      <div className="text-6xl mb-4">🛡️</div>
-      <h3 className="text-3xl md:text-4xl font-black text-yellow-100 uppercase tracking-wider mb-4">
-        GARANTÍA EXCLUSIVA
-      </h3>
-      <p className="text-xl md:text-2xl leading-snug mb-4">{text}</p>
-      <p className="text-base md:text-lg opacity-90 font-semibold">
-        +10 años · Independientes Madrid
-      </p>
-    </motion.div>
+    <div className="inline-flex items-center gap-3 px-4 py-3 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200/80 shadow-sm">
+      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex-shrink-0">
+        <Shield className="w-4 h-4" />
+      </div>
+      <div className="flex flex-col items-start">
+        <span className="text-sm font-semibold text-gray-900 leading-tight">
+          {guarantee.title}
+        </span>
+        <span className="text-xs text-gray-500 leading-tight">
+          {guarantee.subtitle}
+        </span>
+      </div>
+      <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+    </div>
   );
 }

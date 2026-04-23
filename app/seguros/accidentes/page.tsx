@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, Mountain, Bike, Dumbbell, Bike as BikeIcon, Trophy, Heart, Shield, Zap, AlertTriangle, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,10 +64,9 @@ export default function AccidentesPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge Raycast */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#FF6363] text-sm mb-6">
-                  <Sparkles className="w-4 h-4" />
-                  Deportes extremos OK
+                {/* Guarantee Badge */}
+                <div className="mb-6">
+                  <GuaranteeBadge type="accidentes" />
                 </div>
                 
                 {/* H1 Raycast */}

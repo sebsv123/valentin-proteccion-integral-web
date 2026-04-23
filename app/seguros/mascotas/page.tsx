@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,12 +64,9 @@ export default function MascotasPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge cálido */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-amber-100 text-amber-700 text-sm mb-8 shadow-sm">
-                  <Sparkles className="w-4 h-4" />
-                  <span className="font-medium">+1.200 mascotas protegidas</span>
-                  <span className="text-amber-300">|</span>
-                  <span>DGSFP</span>
+                {/* Guarantee Badge */}
+                <div className="mb-8">
+                  <GuaranteeBadge type="mascotas" />
                 </div>
                 
                 {/* H1 emocional */}

@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Users, Shield, Heart, Phone, Crown } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -61,10 +62,9 @@ export default function PozueloPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge premium */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm mb-6">
-                  <Crown className="w-4 h-4" />
-                  Pozuelo exclusivo · +1.200 familias
+                {/* Guarantee Badge */}
+                <div className="mb-6">
+                  <GuaranteeBadge type="zonas" />
                 </div>
                 
                 {/* H1 Uber style */}

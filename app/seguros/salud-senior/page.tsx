@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Home, Pill, Phone, UserCheck, Award, TrendingUp, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,10 +64,9 @@ export default function SaludSeniorPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge credenciales */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-base mb-8 shadow-sm">
-                  <Sparkles className="w-4 h-4 text-emerald-600" />
-                  <span className="font-medium">Especialistas en mayores 65+</span>
+                {/* Guarantee Badge */}
+                <div className="mb-8">
+                  <GuaranteeBadge type="senior" />
                 </div>
                 
                 {/* H1 grande y claro */}

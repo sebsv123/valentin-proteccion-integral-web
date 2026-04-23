@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { CheckCircle2, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -58,10 +59,9 @@ export default function VidaPage() {
         <section className="bg-white py-16 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
             
-            {/* Subtle trust badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm mb-8">
-              <Shield className="w-4 h-4" />
-              +1.200 familias protegidas · DGSFP verificado
+            {/* Guarantee Badge */}
+            <div className="mb-8">
+              <GuaranteeBadge type="vida" />
             </div>
             
             {/* H1 — Human and emotional */}
