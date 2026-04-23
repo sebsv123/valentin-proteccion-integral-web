@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -89,12 +89,13 @@ export default function JovenesPage() {
                 
                 {/* CTAs modernos */}
                 <div className="flex flex-wrap gap-4 mb-10">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
+                    location="jovenes-hero"
                     className="group inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Cotizar ahora
-                  </a>
+                  </WhatsAppButton>
                   <a 
                     href="#necesidades"
                     className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-full text-lg font-medium border border-slate-200 hover:border-violet-300 transition-all"
@@ -405,12 +406,13 @@ export default function JovenesPage() {
               La protección que necesitás, al precio justo.
             </p>
             
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="jovenes-cta-final"
               className="group inline-flex items-center gap-3 bg-white text-violet-600 px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               Empezar ahora
-            </a>
+            </WhatsAppButton>
             
             {/* Minimal badges */}
             <div className="flex flex-wrap justify-center gap-6 mt-12 text-violet-200">

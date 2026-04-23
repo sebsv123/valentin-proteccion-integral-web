@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -91,12 +91,13 @@ export default function SeniorsPage() {
                     <Phone className="w-6 h-6" />
                     📞 603 44 87 65
                   </a>
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
-                    className="inline-flex items-center justify-center gap-2 bg-white text-stone-700 px-8 py-5 rounded-xl text-xl font-medium border-2 border-stone-200 hover:border-emerald-400 transition-all"
+                    location="seniors-hero"
+                    className="group inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-teal-600/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    WhatsApp
-                  </a>
+                    Proteger mi salud
+                  </WhatsAppButton>
                 </div>
                 
                 {/* Info simple */}
@@ -398,17 +399,20 @@ export default function SeniorsPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <WhatsAppButton 
+                href={wCotiza}
+                location="seniors-cta-final"
+                className="group inline-flex items-center gap-3 bg-white text-teal-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              >
+                Hablar con Rosa
+              </WhatsAppButton>
               <a 
                 href="tel:603448765"
-                className="inline-flex items-center justify-center gap-3 bg-white text-emerald-700 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl"
+                className="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-lg"
               >
                 <Phone className="w-6 h-6" />
                 📞 603 44 87 65
               </a>
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white px-10 py-5 rounded-xl text-xl font-medium border-2 border-emerald-400 hover:bg-emerald-400 transition-all"
-              >
                 WhatsApp
               </a>
             </div>

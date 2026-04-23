@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -83,15 +83,16 @@ export default function PozueloPage() {
                 
                 {/* CTAs Uber */}
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
+                    location="pozuelo-hero"
                     className="group inline-flex items-center gap-2 bg-black hover:bg-[#333] text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
                   >
-                    WhatsApp Privado
+                    WhatsApp Pozuelo
                     <span className="hidden group-hover:inline text-sm ml-1">
-                      🏛️ Puerta a puerta gratis
+                      � Café gratis
                     </span>
-                  </a>
+                  </WhatsAppButton>
                   <a 
                     href="tel:603448765"
                     className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-base font-medium border border-[#efefef] hover:bg-[#e2e2e2] transition-colors"
@@ -274,15 +275,13 @@ export default function PozueloPage() {
                 <p className="text-xl text-[#afafaf] mb-8">
                   Un WhatsApp. 30 minutos. Asesoría puerta a puerta.
                 </p>
-                <a 
+                <WhatsAppButton 
                   href={wCotiza}
+                  location="pozuelo-cta-final"
                   className="group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[#e2e2e2] transition-colors"
                 >
-                  WhatsApp Privado
-                  <span className="hidden group-hover:inline text-sm ml-2 text-[#4b4b4b]">
-                    🏛️ Puerta a puerta gratis
-                  </span>
-                </a>
+                  WhatsApp Pozuelo
+                </WhatsAppButton>
                 
                 {/* Badges */}
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
