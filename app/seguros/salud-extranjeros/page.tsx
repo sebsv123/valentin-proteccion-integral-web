@@ -6,16 +6,17 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
+import { Globe, CheckCircle2, ArrowRight, Quote } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Extranjeros Madrid | Valentín Protección",
-  description: "Seguro médico privado para extranjeros residentes en Madrid. Sin burocracia, sin barreras idioma. Cobertura en 24h. WhatsApp en inglés.",
-  keywords: ["seguro salud extranjeros Madrid","health insurance Spain","seguro médico extranjeros España","seguro expat Madrid"],
+  title: "Seguro Médico NIE/TIE Extranjeros Madrid | Valentín",
+  description: "+100 aprobados. Cumple extranjería 2026. Latinos/EEUU. Seguro médico residencia España con certificado para NIE/TIE Madrid.",
+  keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro Salud Extranjeros Madrid | Valentín Protección",
-    description: "Seguro médico privado para extranjeros residentes en Madrid. Sin burocracia, sin barreras idioma. Cobertura en 24h. WhatsApp en inglés.",
+    title: "Seguro Médico NIE/TIE Extranjeros Madrid | Valentín",
+    description: "+100 aprobados. Cumple extranjería 2026. Latinos/EEUU. Seguro médico residencia España con certificado para NIE/TIE Madrid.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Seguro Salud Extranjeros Madrid - Valentín Protección Integral",
+  "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,7 +40,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico privado para extranjeros residentes en España. Sin barreras de idioma. Cobertura en 24h.",
+  "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h.",
 };
 
 const faqSchema = {
@@ -77,124 +78,119 @@ export default function SaludExtranjerosPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO WISE — Internacional, multicultural */}
+        {/* HERO — NIE/TIE Optimized */}
         <section className="bg-white pt-20 pb-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
             
-            {/* Flags row — impacto visual inmediato */}
-            <div className="flex items-center gap-3 mb-8 flex-wrap">
-              <span className="text-3xl">🇬🇧</span>
-              <span className="text-3xl">🇩🇪</span>
-              <span className="text-3xl">🇫🇷</span>
-              <span className="text-3xl">🇮🇹</span>
-              <span className="text-3xl">🇨🇳</span>
-              <span className="text-3xl">🇺🇸</span>
-              <span className="text-3xl">🇦🇷</span>
-              <span className="text-sm text-[#4B5563] ml-2">+40 países de origen</span>
-            </div>
-
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0FAE5] border border-[#9FE870] text-[#163300] text-sm font-medium mb-6">
-              <Globe className="w-4 h-4" />
-              Seguro salud para extranjeros residentes en España
-            </div>
-
-            {/* H1 bilingüe impacto */}
-            <h1 className="text-5xl md:text-7xl font-semibold text-[#163300] tracking-tight leading-[1.05] max-w-4xl">
-              Seguro Salud Extranjeros Madrid:
+            {/* H1 Optimized */}
+            <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
+              Seguro Médico Residencia España 2026:
               <br />
-              <span className="text-[#2E7D32]">
-                Cobertura en 24 Horas
-              </span>
+              <span className="text-[#2E7D32]">NIE/TIE Aprobado Madrid</span>
             </h1>
 
-            <p className="text-xl text-[#4B5563] mt-6 max-w-2xl leading-relaxed">
-              Seguro médico privado para extranjeros en Madrid.
-              Sin barreras de idioma. Sin burocracia. 
-              WhatsApp → Cobertura en 24h.
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
+              +100 clientes latinos/EEUU con NIE/TIE en 10+ años · Cumple 100% extranjería
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mt-10">
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center gap-2 bg-[#163300] hover:bg-[#1a3d00] text-white px-8 py-4 rounded-xl font-medium text-lg transition-all hover:scale-[1.02] shadow-[0_8px_30px_rgba(22,51,0,0.2)]"
-              >
-                Cotiza en WhatsApp
-              </a>
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center gap-2 bg-[#F0FAE5] border border-[#9FE870] text-[#163300] px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#E5F5D0] transition-all"
-              >
-                🌍 We speak English
-              </a>
-            </div>
+            {/* Guarantee Badge */}
+            <GuaranteeBadge type="salud-extranjeros" />
 
-            {/* PEXELS hero */}
-            <Image
-              src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
-              alt="Diverse international people expats Madrid professional"
-              width={1200}
-              height={525}
-              className="w-full h-auto object-cover object-top rounded-3xl mt-16 aspect-[16/7] shadow-2xl border border-[#E5E7EB]"
-              priority
-            />
+            {/* Team Image */}
+            <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">
+              <Image
+                src="/images/rosa_y_sebastian.jpeg"
+                alt="Rosa y Sebastián, equipo Valentín Protección Integral Madrid"
+                width={600}
+                height={400}
+                priority
+                className="w-full h-auto object-cover object-[center_20%]"
+                style={{ aspectRatio: '3/2' }}
+              />
+            </div>
           </div>
         </section>
 
-        {/* PARA QUIÉN ES — Cards multicultural */}
+        {/* REQUISITOS EXTRANJERÍA */}
         <section className="bg-[#F7F8F9] py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <p className="text-center text-[#163300] font-medium tracking-widest text-sm uppercase mb-4">
-              Diseñado para ti
-            </p>
-            <h2 className="text-4xl font-semibold text-center text-[#163300] mb-12">
-              ¿Eres de los nuestros?
+            <h2 className="text-4xl font-bold text-center text-[#163300] mb-4">
+              Requisitos Extranjería Cumplidos ✅
             </h2>
+            <p className="text-center text-[#4B5563] mb-12 max-w-2xl mx-auto">
+              Póliza 100% válida para NIE, TIE, renovaciones y reagrupación familiar
+            </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: "✈️",
-                  title: "Residente extranjero",
-                  desc: "Vives en España y necesitas cobertura médica privada sin NIE complicado"
-                },
-                {
-                  icon: "🎓", 
-                  title: "Estudiante internacional",
-                  desc: "Visado de estudios en Madrid. Cobertura médica obligatoria sin líos"
-                },
-                {
-                  icon: "💼",
-                  title: "Profesional expatriado",
-                  desc: "Tu empresa te manda a Madrid. Necesitas salud privada desde el primer día"
-                }
-              ].map((c, i) => (
-                <div key={i} className="bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#9FE870] hover:shadow-lg transition-all">
-                  <span className="text-4xl mb-4 block">{c.icon}</span>
-                  <h3 className="text-xl font-semibold text-[#163300] mb-3">{c.title}</h3>
-                  <p className="text-[#4B5563] leading-relaxed">{c.desc}</p>
-                </div>
-              ))}
+            <div className="bg-white rounded-2xl shadow-lg border border-[#E5E7EB] overflow-hidden">
+              <table className="w-full">
+                <thead className="bg-[#163300] text-white">
+                  <tr>
+                    <th className="py-4 px-6 text-left font-semibold">Requisito</th>
+                    <th className="py-4 px-6 text-left font-semibold">Nuestra Póliza</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#E5E7EB]">
+                    <td className="py-4 px-6 text-[#4B5563]">Sin copagos/carencias</td>
+                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ Día 1</td>
+                  </tr>
+                  <tr className="border-b border-[#E5E7EB] bg-[#F9FAFB]">
+                    <td className="py-4 px-6 text-[#4B5563]">Cobertura nacional</td>
+                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ + Internacional 190 países</td>
+                  </tr>
+                  <tr className="border-b border-[#E5E7EB]">
+                    <td className="py-4 px-6 text-[#4B5563]">Certificado consulado</td>
+                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ PDF 24h</td>
+                  </tr>
+                  <tr className="bg-[#F9FAFB]">
+                    <td className="py-4 px-6 text-[#4B5563]">Estudiantes/no lucrativo/nómada digital</td>
+                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ Todos visados</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
 
-        {/* STATS GLOBALES */}
+        {/* TESTIMONIALS */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="grid grid-cols-3 gap-8 py-16 border-y border-[#E5E7EB]">
-              <div className="text-center">
-                <p className="text-6xl font-bold text-[#163300]">+40</p>
-                <p className="text-[#4B5563] mt-2">países de origen atendidos</p>
+            <h2 className="text-3xl font-bold text-center text-[#163300] mb-12">
+              Clientes con NIE/TIE Aprobado
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-[#F0FAE5] rounded-2xl p-8 border border-[#9FE870]">
+                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
+                <p className="text-[#163300] text-lg leading-relaxed mb-6">
+                  "NIE Madrid aprobado semana 1. Perfecto para residencia familiar."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
+                    J
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#163300]">Juan</p>
+                    <p className="text-sm text-[#4B5563]">Colombia · NIE Aprobado</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center border-x border-[#E5E7EB]">
-                <p className="text-6xl font-bold text-[#2E7D32]">24h</p>
-                <p className="text-[#4B5563] mt-2">cobertura desde contratación</p>
-              </div>
-              <div className="text-center">
-                <p className="text-6xl font-bold text-[#163300]">0</p>
-                <p className="text-[#4B5563] mt-2">barreras de idioma</p>
+              {/* Testimonial 2 */}
+              <div className="bg-[#F0FAE5] rounded-2xl p-8 border border-[#9FE870]">
+                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
+                <p className="text-[#163300] text-lg leading-relaxed mb-6">
+                  "TIE renovado sin problemas. Cobertura completa."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
+                    M
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#163300]">María</p>
+                    <p className="text-sm text-[#4B5563]">EEUU · TIE Renovado</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -324,29 +320,35 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* CTA FINAL — Wise verde global */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="bg-[#163300] py-24 text-center text-white rounded-3xl">
-              <p className="text-[#9FE870] font-medium tracking-widest uppercase text-sm mb-4">
-                Ready to start?
-              </p>
-              <h2 className="text-4xl md:text-5xl font-semibold text-white">
-                Tu salud en Madrid,<br/>resuelta hoy.
-              </h2>
-              <p className="text-white/70 text-lg mt-4">
-                WhatsApp · Sin compromiso · En tu idioma
-              </p>
-              <a 
-                href={wCotiza}
-                className="mt-10 inline-flex items-center gap-3 bg-[#9FE870] hover:bg-[#8EDD60] text-[#163300] font-semibold px-10 py-5 rounded-2xl text-xl transition-all hover:scale-[1.02]"
-              >
-                Cotiza ahora — It&apos;s free
-              </a>
-              <p className="text-white/40 text-sm mt-6">
-                NIF: 79234434D | DGSFP: C012479234434D
-              </p>
+        {/* CTA SECTION — Certificado Residencia */}
+        <section className="py-20 bg-[#F7F8F9]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#163300] mb-4">
+              Presupuesto + Certificado Residencia
+            </h2>
+            <p className="text-lg text-[#4B5563] mb-8">
+              Recibe tu póliza y certificado para extranjería en menos de 24 horas
+            </p>
+            <a 
+              href={wCotiza}
+              className="inline-flex items-center gap-3 bg-[#163300] hover:bg-[#1a3d00] text-white font-semibold px-10 py-5 rounded-2xl text-xl transition-all hover:scale-[1.02] shadow-xl"
+            >
+              <WhatsAppIcon className="w-6 h-6" />
+              Solicitar por WhatsApp
+            </a>
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-[#4B5563]">
+              <span className="inline-flex items-center gap-1">
+                <CheckCircle2 className="w-4 h-4 text-[#2E7D32]" />
+                seguro médico NIE España
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <CheckCircle2 className="w-4 h-4 text-[#2E7D32]" />
+                seguro residencia Madrid latinos 2026
+              </span>
             </div>
+            <p className="text-[#4B5563]/60 text-sm mt-6">
+              NIF: 79234434D | DGSFP: C012479234434D
+            </p>
           </div>
         </section>
 

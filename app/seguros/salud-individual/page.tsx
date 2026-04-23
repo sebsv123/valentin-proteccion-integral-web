@@ -6,6 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -74,13 +75,8 @@ export default function SaludIndividualPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge sobrio */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm mb-8">
-                  <Sparkles className="w-4 h-4 text-emerald-400" />
-                  <span>+1.200 protegidos</span>
-                  <span className="text-white/40">|</span>
-                  <span>DGSFP verificado</span>
-                </div>
+                {/* Guarantee Badge */}
+                <GuaranteeBadge type="salud" />
                 
                 {/* H1 potente */}
                 <h1 className="text-[56px] sm:text-[64px] lg:text-[72px] font-bold text-white leading-[0.95] tracking-tight mb-6">
