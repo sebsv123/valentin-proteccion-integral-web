@@ -75,7 +75,7 @@ export default function AutonomosPage() {
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
                   Seguros para Autónomos Madrid:
                   <br />
-                  <span className="text-slate-700">Ahorra en IRPF y RC</span>
+                  <span className="text-slate-700">IRPF, RC y Accidentes</span>
                 </h1>
                 
                 {/* Subheadline */}
@@ -309,6 +309,90 @@ export default function AutonomosPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ - Autónomos */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
+                Preguntas frecuentes
+              </h2>
+              <p className="text-lg text-slate-600">
+                Todo lo que necesitas saber sobre seguros para autónomos
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { 
+                  q: "¿El seguro de autónomos es deducible en IRPF?", 
+                  a: "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración." 
+                },
+                { 
+                  q: "¿Qué pasa si tengo un accidente laboral?", 
+                  a: "Con el seguro de accidentes cubrimos incapacidad temporal y permanente, además de gastos médicos. Incluye accidentes de trayecto y en el trabajo." 
+                },
+                { 
+                  q: "¿Necesito seguro de RC profesional como autónomo?", 
+                  a: "Depende de tu actividad. Profesiones como médicos, abogados o consultores suelen requerirlo. Te asesoramos sin coste para saber si es obligatorio en tu caso." 
+                },
+                { 
+                  q: "¿Cuánto tiempo tarda la gestión?", 
+                  a: "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación." 
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿El seguro de autónomos es deducible en IRPF?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Qué pasa si tengo un accidente laboral?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Con el seguro de accidentes cubrimos incapacidad temporal y permanente, además de gastos médicos. Incluye accidentes de trayecto y en el trabajo."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Necesito seguro de RC profesional como autónomo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende de tu actividad. Profesiones como médicos, abogados o consultores suelen requerirlo. Te asesoramos sin coste para saber si es obligatorio en tu caso."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Cuánto tiempo tarda la gestión?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación."
+                  }
+                }
+              ]
+            })
+          }}
+        />
 
         {/* CTA FINAL */}
         <section className="relative py-24 bg-slate-900 overflow-hidden">

@@ -75,7 +75,7 @@ export default function FamiliasPage() {
                 <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
                   Seguros Familiares Madrid:
                   <br />
-                  <span className="text-blue-600">Toda la Familia Protegida</span>
+                  <span className="text-blue-600">Protección Completa para tu Familia</span>
                 </h1>
                 
                 {/* Subheadline */}
@@ -312,6 +312,90 @@ export default function FamiliasPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ - Familias */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
+                Preguntas frecuentes
+              </h2>
+              <p className="text-lg text-slate-600">
+                Todo sobre seguros familiares
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { 
+                  q: "¿Puedo incluir a toda mi familia en un solo seguro?", 
+                  a: "Sí. Tenemos pólizas familiares que cubren a padres, hijos e incluso abuelos en una sola cuota, con descuentos especiales por familia numerosa." 
+                },
+                { 
+                  q: "¿El seguro dental incluye a los niños?", 
+                  a: "Sí, y con ventajas especiales: ortodoncia pediatrica, revisiones frecuentes y sin límite de edad para los hijos incluidos en la póliza familiar." 
+                },
+                { 
+                  q: "¿Qué pasa si nos mudamos fuera de Madrid?", 
+                  a: "El seguro te sigue. Las compañías con las que trabajamos tienen red nacional de centros. También cubrimos viajes por España y UE." 
+                },
+                { 
+                  q: "¿Cómo gestiono las bajas y altas de miembros?", 
+                  a: "Un simple WhatsApp. Nacimientos, nuevos matrimonios, cambios de dirección... lo gestionamos en 24h sin papeleo complicado." 
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Puedo incluir a toda mi familia en un solo seguro?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Tenemos pólizas familiares que cubren a padres, hijos e incluso abuelos en una sola cuota, con descuentos especiales por familia numerosa."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿El seguro dental incluye a los niños?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, y con ventajas especiales: ortodoncia pediatrica, revisiones frecuentes y sin límite de edad para los hijos incluidos en la póliza familiar."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Qué pasa si nos mudamos fuera de Madrid?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El seguro te sigue. Las compañías con las que trabajamos tienen red nacional de centros. También cubrimos viajes por España y UE."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Cómo gestiono las bajas y altas de miembros?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Un simple WhatsApp. Nacimientos, nuevos matrimonios, cambios de dirección... lo gestionamos en 24h sin papeleo complicado."
+                  }
+                }
+              ]
+            })
+          }}
+        />
 
         {/* CTA FINAL */}
         <section className="relative py-24 bg-blue-600 overflow-hidden">

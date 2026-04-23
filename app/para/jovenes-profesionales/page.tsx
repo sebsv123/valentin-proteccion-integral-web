@@ -300,6 +300,90 @@ export default function JovenesPage() {
           </div>
         </section>
 
+        {/* FAQ - Jóvenes Profesionales */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
+                Preguntas frecuentes
+              </h2>
+              <p className="text-lg text-slate-600">
+                Respuestas para jóvenes profesionales
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { 
+                  q: "¿Qué seguro necesito para mi primera hipoteca?", 
+                  a: "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco." 
+                },
+                { 
+                  q: "¿Me conviene seguro de salud sin copagos?", 
+                  a: "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo." 
+                },
+                { 
+                  q: "¿Puedo deducirme el seguro médico siendo autónomo?", 
+                  a: "Sí, si eres autónomo el 100% de la prima es deducible en IRPF. Si eres asalariado, depende de tu convenio. Lo revisamos gratis." 
+                },
+                { 
+                  q: "¿Qué pasa si cambio de trabajo?", 
+                  a: "El seguro te sigue. Al ser privado y contratado directamente, no depende de tu empresa. Perfecto para la movilidad laboral de los jóvenes." 
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Qué seguro necesito para mi primera hipoteca?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Me conviene seguro de salud sin copagos?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Puedo deducirme el seguro médico siendo autónomo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, si eres autónomo el 100% de la prima es deducible en IRPF. Si eres asalariado, depende de tu convenio. Lo revisamos gratis."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Qué pasa si cambio de trabajo?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El seguro te sigue. Al ser privado y contratado directamente, no depende de tu empresa. Perfecto para la movilidad laboral de los jóvenes."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
         {/* CTA FINAL */}
         <section className="relative py-24 bg-violet-600 overflow-hidden">
           {/* Halo */}

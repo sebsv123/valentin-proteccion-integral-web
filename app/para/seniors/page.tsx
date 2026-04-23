@@ -297,6 +297,90 @@ export default function SeniorsPage() {
           </div>
         </section>
 
+        {/* FAQ - Seniors */}
+        <section className="py-20 bg-stone-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-stone-800 leading-tight mb-4">
+                Preguntas frecuentes
+              </h2>
+              <p className="text-lg text-stone-600">
+                Resolvemos tus dudas con claridad
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { 
+                  q: "¿Es obligatorio el seguro de decesos?", 
+                  a: "No es obligatorio, pero sí muy recomendable. Un funeral puede costar más de 6.000€. Con el seguro, tu familia no paga nada y nosotros gestionamos todo." 
+                },
+                { 
+                  q: "¿El seguro de salud para mayores tiene carencias?", 
+                  a: "Depende del plan. Hay opciones sin carencias desde el primer día. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti." 
+                },
+                { 
+                  q: "¿Puedo contratar seguro si tengo más de 70 años?", 
+                  a: "Sí, tenemos opciones para todas las edades. Incluso algunas pólizas admiten alta hasta los 80 años. Lo revisamos caso por caso sin compromiso." 
+                },
+                { 
+                  q: "¿Qué es la asistencia en domicilio?", 
+                  a: "Incluye ayuda para tareas del hogar, cuidados personales y aviso a familiares si es necesario. Para que puedas seguir viviendo en tu casa con seguridad." 
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
+                  <h3 className="text-lg font-bold text-stone-800 mb-2">{item.q}</h3>
+                  <p className="text-stone-600 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Es obligatorio el seguro de decesos?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No es obligatorio, pero sí muy recomendable. Un funeral puede costar más de 6.000€. Con el seguro, tu familia no paga nada y nosotros gestionamos todo."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿El seguro de salud para mayores tiene carencias?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende del plan. Hay opciones sin carencias desde el primer día. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Puedo contratar seguro si tengo más de 70 años?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, tenemos opciones para todas las edades. Incluso algunas pólizas admiten alta hasta los 80 años. Lo revisamos caso por caso sin compromiso."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Qué es la asistencia en domicilio?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Incluye ayuda para tareas del hogar, cuidados personales y aviso a familiares si es necesario. Para que puedas seguir viviendo en tu casa con seguridad."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
         {/* CTA FINAL — Tranquila, sin presión */}
         <section className="py-24 bg-emerald-600">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
