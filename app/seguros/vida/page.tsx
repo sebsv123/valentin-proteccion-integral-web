@@ -186,17 +186,17 @@ export default function VidaPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e23b4a]/10 text-[#e23b4a] text-sm mb-6">
                   <Users className="w-4 h-4" />
-                  Tu especialista hipotecas
+                  Tu especialista en hipotecas
                 </div>
                 <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] mb-4">
                   Sebastián Valentín
                 </h2>
                 <p className="text-xl text-[#505a63] mb-6">
-                  Especialista en seguros de vida para hipotecas.
+                  Especialista en seguros de vida para hipotecas
                 </p>
                 <p className="text-base text-[#505a63] leading-[1.50] mb-8">
-                  +10 años ayudando a familias de Madrid a protegerse 
-                  frente al banco. Te explico cada cobertura sin tecnicismos.
+                  Más de 10 años ayudando a familias de Madrid a protegerse 
+                  ante las exigencias del banco. Te explico cada cobertura sin tecnicismos.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00a87e]/10 text-[#006400] text-sm">
                   <CheckCircle2 className="w-4 h-4" />
