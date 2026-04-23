@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -256,12 +256,13 @@ export default function SaludExtranjerosPage() {
                     ✓ English spoken
                   </span>
                 </div>
-                <a 
+                <WhatsAppButton 
                   href={wCotiza}
+                  location="salud-extranjeros-garantias"
                   className="mt-8 inline-flex items-center gap-3 bg-[#163300] text-white px-8 py-4 rounded-xl font-medium hover:bg-[#1a3d00] transition-all"
                 >
                   Habla con nosotros
-                </a>
+                </WhatsAppButton>
               </div>
             </div>
           </div>
@@ -322,13 +323,14 @@ export default function SaludExtranjerosPage() {
             <p className="text-lg text-[#4B5563] mb-8">
               Recibe tu póliza y certificado para extranjería en menos de 24 horas
             </p>
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="salud-extranjeros-cta-final"
+              showIcon
               className="inline-flex items-center gap-3 bg-[#163300] hover:bg-[#1a3d00] text-white font-semibold px-10 py-5 rounded-2xl text-xl transition-all hover:scale-[1.02] shadow-xl"
             >
-              <WhatsAppIcon className="w-6 h-6" />
               Solicitar por WhatsApp
-            </a>
+            </WhatsAppButton>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-[#4B5563]">
               <span className="inline-flex items-center gap-1">
                 <CheckCircle2 className="w-4 h-4 text-[#2E7D32]" />

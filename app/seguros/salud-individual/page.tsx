@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -82,12 +82,13 @@ export default function SaludIndividualPage() {
                 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
+                    location="salud-individual-hero"
                     className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-6 py-3.5 rounded-xl text-base font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
                     Cotizar por WhatsApp
-                  </a>
+                  </WhatsAppButton>
                   <a 
                     href="#ventajas"
                     className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3.5 rounded-xl text-base font-medium border border-white/20 hover:bg-white/20 transition-all"
@@ -331,12 +332,13 @@ export default function SaludIndividualPage() {
               Descubre el seguro que mejor se adapta a ti.
             </p>
             
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="salud-individual-cta-final"
               className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
               Cotizar Ahora
-            </a>
+            </WhatsAppButton>
             
             {/* Badges finales */}
             <div className="flex flex-wrap justify-center gap-4 mt-12">

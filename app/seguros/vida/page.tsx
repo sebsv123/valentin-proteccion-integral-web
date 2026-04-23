@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
@@ -81,13 +81,14 @@ export default function VidaPage() {
             
             {/* CTAs — Coral as accent */}
             <div className="flex flex-wrap justify-center gap-3 mb-10">
-              <a 
+              <WhatsAppButton 
                 href={wCotiza}
+                location="vida-hero"
+                showIcon
                 className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-7 py-3.5 rounded-xl text-base font-medium transition-all"
               >
-                <WhatsAppIcon className="w-5 h-5" />
                 Cotizar en WhatsApp
-              </a>
+              </WhatsAppButton>
               <a 
                 href="tel:603448765"
                 className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-7 py-3.5 rounded-xl text-base font-medium border border-gray-300 transition-all"
@@ -242,15 +243,16 @@ export default function VidaPage() {
               Un WhatsApp. 30 minutos. Sin compromiso.
             </p>
             
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="vida-cta-final"
               className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-10 py-4 rounded-full text-lg font-medium transition-colors"
             >
               Cotizar por WhatsApp
-              <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
+            </WhatsAppButton>  
+            <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
                 🎁 Vida + Decesos = condiciones especiales
               </span>
-            </a>
             
             {/* Garantías badges */}
             <div className="flex flex-wrap justify-center gap-4 mt-12">

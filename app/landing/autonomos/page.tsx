@@ -3,7 +3,7 @@ import Image from "next/image";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clock, FileCheck, Users, Home } from "lucide-react";
 
@@ -82,13 +82,14 @@ export default function AutonomosLandingPage() {
                 
                 {/* CTAs Stripe */}
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <a 
+                  <WhatsAppButton 
                     href={wCotiza}
+                    location="landing-autonomos-hero"
+                    showIcon
                     className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-4 rounded-xl text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
                     Hablar con Rosa ahora
-                  </a>
+                  </WhatsAppButton>
                 </div>
                 
                 {/* Trust row */}
@@ -316,13 +317,14 @@ export default function AutonomosLandingPage() {
             <p className="text-lg text-white/70 font-light mb-8">
               Un WhatsApp. 30 minutos. Toda la tranquilidad.
             </p>
-            <a 
+            <WhatsAppButton 
               href={wCotiza}
+              location="landing-autonomos-cta-final"
+              showIcon
               className="inline-flex items-center gap-3 bg-[#533afd] hover:bg-[#4434d4] text-white px-8 py-4 rounded-xl text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
             >
-              <WhatsAppIcon className="w-5 h-5" />
               Hablar con Rosa ahora
-            </a>
+            </WhatsAppButton>
             <p className="text-sm text-white/40 mt-8">
               DGSFP: C012479234434D · Sin permanencia
             </p>
