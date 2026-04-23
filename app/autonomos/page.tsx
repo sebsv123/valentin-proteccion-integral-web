@@ -1,500 +1,444 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Breadcrumbs } from "@/components/breadcrumbs";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
-import { site, buildWhatsAppHref } from "@/lib/products";
-import { 
-  Phone, 
-  CheckCircle2, 
-  Shield, 
-  Briefcase, 
-  Heart, 
-  Scale, 
-  Clock,
-  Users,
-  Gift,
-  ChevronDown,
-  ChevronUp,
-  BadgeCheck
-} from "lucide-react";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, Briefcase, Globe, ChevronDown, Star, Quote } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Autónomos Madrid | Valentín Protección Integral",
-  description: "Protege tu actividad como autónomo en Madrid. Salud, accidentes, RC y más. Asesoría gratuita sin compromiso. ☎ 603 44 87 65",
-  keywords: "seguro autónomos Madrid, seguro autónomo salud, seguro RC autónomos, protección autónomos Madrid",
+  title: "Seguros Autónomos Madrid 2026 | IRPF Deducible | Valentín Protección Integral",
+  description: "Mejor seguro autónomos Madrid 2026. Médico deducible IRPF 100%, RC profesional, accidentes laborales. Cotiza gratis WhatsApp 30min. +1.200 autónomos protegidos.",
+  keywords: "seguro autónomos madrid, seguro médico autónomos irpf, rc profesional madrid, seguro autónomos deducible, protección autónomos madrid",
+  alternates: { canonical: "https://valentinproteccionintegral.com/autonomos" },
   openGraph: {
-    title: "Seguros para Autónomos en Madrid — Asesoría Gratuita",
-    description: "Protege tu actividad como autónomo en Madrid. Salud, accidentes, RC y más. Asesoría gratuita sin compromiso.",
-    url: "https://www.valentinproteccionintegral.com/autonomos",
+    title: "Seguros Autónomos Madrid 2026 | IRPF Deducible",
+    description: "Médico deducible IRPF, RC profesional, accidentes. Cotiza gratis WhatsApp 30min.",
+    url: "https://valentinproteccionintegral.com/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "https://www.valentinproteccionintegral.com/images/rosa_y_sebastian.jpeg", alt: "Rosa y Sebastián Valentín - Asesores de seguros para autónomos en Madrid" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Seguros Autónomos Madrid | Valentín Protección Integral",
-    description: "Protege tu actividad como autónomo en Madrid. Salud, accidentes, RC y más. Asesoría gratuita sin compromiso.",
-  },
-  alternates: {
-    canonical: "https://www.valentinproteccionintegral.com/autonomos",
   },
 };
 
-// FAQ data con Schema
-const faqs = [
-  {
-    question: "¿Qué seguros necesita un autónomo en Madrid?",
-    answer: "Como mínimo, un autónomo debería tener: seguro de salud (para acceder a la sanidad privada sin esperas), responsabilidad civil (para cubrir daños a terceros en tu actividad), y accidentes de trabajo. Muchos también contratan protección jurídica y vida para proteger a su familia.",
-  },
-  {
-    question: "¿Puedo deducirme el seguro de salud siendo autónomo?",
-    answer: "Sí. La ley permite deducirte hasta 500€ anuales por cada persona asegurada (tú, tu pareja y cada hijo). Esto significa que una familia de cuatro puede deducir hasta 2.000€ al año en la declaración del IRPF.",
-  },
-  {
-    question: "¿Es obligatorio el seguro de RC para autónomos?",
-    answer: "Depende de tu actividad. Algunos sectores como la construcción, consultoría o transporte lo requieren por ley o por los contratos con clientes. Aunque no sea obligatorio para tu sector, es altamente recomendable: una reclamación puede arruinar tu negocio.",
-  },
-  {
-    question: "¿Cuánto cuesta un seguro para autónomos?",
-    answer: "El precio varía según coberturas y edad. Un seguro de salud básico empieza en 30-40€/mes. La RC profesional desde 150-300€/año. Accidentes desde 100€/año. Te preparamos un presupuesto personalizado sin compromiso en una llamada.",
-  },
-  {
-    question: "¿Puedo contratar seguros para mis empleados siendo autónomo?",
-    answer: "Sí, si tienes trabajadores a tu cargo puedes contratar seguros de salud y accidentes para ellos. Estas primas son gastos deducibles de tu actividad económica, además de mejorar la retención de talento en tu equipo.",
-  },
-];
-
-// FAQ Schema para SEO
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
-
-// Service Schema
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguros para Autónomos en Madrid",
+  "@type": "InsuranceAgency",
+  "name": "Seguros Autónomos Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
-    "url": "https://www.valentinproteccionintegral.com",
     "telephone": "+34603448765",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Boadilla del Monte",
       "addressRegion": "Madrid",
       "addressCountry": "ES"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Madrid"
-    },
-    "identifier": {
-      "@type": "PropertyValue",
-      "name": "Registro DGSFP",
-      "value": "C012479234434D"
-    },
-    "taxID": "79234434D"
+    }
   },
-  "audience": {
-    "@type": "BusinessAudience",
-    "audienceType": "Autónomos y pequeñas empresas"
-  },
-  "serviceType": "Asesoramiento de seguros",
-  "description": "Protege tu actividad como autónomo en Madrid. Salud, accidentes, RC y más. Asesoría gratuita sin compromiso.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR",
-    "description": "Asesoría gratuita sin compromiso"
-  }
+  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
+  "description": "Seguros autónomos Madrid 2026. IRPF deducible 100%, RC profesional, accidentes. Cotiza WhatsApp.",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El seguro médico es 100% deducible en IRPF para autónomos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si tengo un accidente siendo autónomo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito RC profesional como autónomo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si ejerces una profesión donde puedes cometer errores (consultoría, IT, diseño...), la RC profesional protege tu patrimonio personal ante reclamaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en activarse la cobertura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay permanencia en los seguros para autónomos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
 
-export default function AutonomosPage() {
+export default function AutonomosRootPage() {
+  const wCotiza = buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguros deducibles IRPF en Madrid.");
+
   return (
     <>
-      {/* Schema JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      
-      <BreadcrumbSchema
-        items={[
-          { name: "Inicio", url: "/" },
-          { name: "Autónomos", url: "/autonomos" },
-        ]}
-      />
-      
+      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Autónomos",url:"/autonomos"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
-      
-      {/* Sticky Banner - visible en móvil */}
-      <div className="sticky top-[68px] z-40 w-full bg-[#1a2744] text-white py-2.5 px-4 shadow-lg lg:hidden">
-        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
-          <p className="text-sm font-semibold leading-tight flex-1">
-            <span className="sm:hidden">Consulta gratuita para autónomos</span>
-            <span className="hidden sm:inline">Asesoría gratuita para autónomos en 24h</span>
-          </p>
-          <a
-            href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguros.")}
-            className="flex-none bg-[#2d8653] hover:bg-[#236b42] text-white text-sm font-bold px-4 py-2 rounded-full transition-colors flex items-center gap-1.5"
-          >
-            <WhatsAppIcon className="h-4 w-4" />
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <main>
-        {/* Breadcrumbs */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4 pb-2">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Seguros para Autónomos' }]} />
-        </div>
-
-        {/* 1. HERO */}
-        <section className="relative bg-[#1a2744] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1a2744] via-[#243352] to-[#1a2744]" />
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24 relative z-10">
-            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-center">
-              {/* Texto */}
+      <main className="min-h-screen bg-white">
+        
+        {/* HERO STRIPE — Purple gradients, weight-300 */}
+        <section className="relative pt-24 pb-20 overflow-hidden">
+          {/* Gradient orbs */}
+          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#635BFF] to-[#96F7D6] opacity-[0.15] blur-[150px]" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#635BFF] to-[#ea2261] opacity-[0.1] blur-[120px]" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Content */}
               <div>
-                {/* Badge Sin permanencia */}
-                <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6">
-                  <BadgeCheck className="h-4 w-4 text-[#2d8653]" />
-                  Sin permanencia · Cancela cuando quieras
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(99,91,255,0.4)] bg-[rgba(99,91,255,0.15)] text-[#533afd] text-sm mb-6">
+                  <Sparkles className="w-4 h-4" />
+                  2026 · +1.200 autónomos protegidos · DGSFP
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                  Seguros para Autónomos en Madrid — <span className="text-[#2d8653]">Asesoría Gratuita</span>
+                {/* H1 Stripe — 56px weight 300 */}
+                <h1 className="text-[48px] sm:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6">
+                  Seguros
+                  <br />
+                  <span className="bg-gradient-to-r from-[#635BFF] to-[#96F7D6] bg-clip-text text-transparent font-normal">
+                    Autónomos Madrid 2026
+                  </span>
                 </h1>
                 
-                <p className="mt-6 text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl">
-                  Protege tu salud, tu negocio y tu familia. Como autónomo, un accidente o una baja puede poner en riesgo todo lo que has construido. Te ayudamos a cubrirte sin complicaciones.
+                {/* Subhead */}
+                <p className="text-xl text-[#64748d] font-light leading-relaxed mb-8 max-w-lg">
+                  IRPF deducible + RC profesional + Accidentes.
+                  <br />
+                  <span className="text-[#533afd] font-normal">Desde 25€/mes.</span>
                 </p>
                 
-                {/* CTA WhatsApp */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguros.")}
-                    className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-lg font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"
+                {/* CTAs Stripe */}
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <a 
+                    href={wCotiza}
+                    className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-3 rounded text-base font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
-                    <WhatsAppIcon className="h-6 w-6" />
-                    Consulta gratuita
+                    <WhatsAppIcon className="w-4 h-4" />
+                    💬 WhatsApp Ahora
                   </a>
-                  <a
-                    href={`tel:${site.phoneHref}`}
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-lg font-semibold px-8 py-4 rounded-full border border-white/30 transition-all"
+                  <Link 
+                    href="/seguros/salud-individual"
+                    className="inline-flex items-center gap-2 bg-transparent text-[#533afd] px-6 py-3 rounded text-base font-normal border border-[#b9b9f9] hover:bg-[rgba(83,58,253,0.05)] transition-all"
                   >
-                    <Phone className="h-5 w-5" />
-                    {site.phone}
-                  </a>
+                    Ver salud individual →
+                  </Link>
                 </div>
                 
-                {/* Badge promocional */}
-                <div className="mt-6 inline-flex items-center gap-2 bg-[#2d8653]/20 border border-[#2d8653]/30 text-[#7dd3a8] text-sm font-medium px-4 py-2 rounded-lg">
-                  <Gift className="h-4 w-4" />
-                  🎁 Contrata Salud + Accidentes → gestión de primera reclamación gratis
+                {/* Trust row */}
+                <div className="flex flex-wrap gap-6 text-sm text-[#64748d]">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
+                    Deducible IRPF 100%
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-[#533afd]" />
+                    30 min respuesta
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-[#533afd]" />
+                    Sin permanencia
+                  </span>
                 </div>
               </div>
               
-              {/* Imagen Hero */}
-              <div className="hidden lg:block relative">
-                <div className="relative h-[420px] xl:h-[480px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                  <Image
-                    src="/images/pexels/pexels-autonomo-hero.jpg"
-                    alt="Autónomo trabajando desde casa en Madrid - Seguros para autónomos"
-                    fill
-                    priority
-                    sizes="(max-width: 1280px) 40vw, 480px"
-                    quality={85}
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a2744]/60 to-transparent" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 2. PROBLEMAS - 3 riesgos reales */}
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a2744]">
-                Sin la protección adecuada, estás expuesto a…
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-              {/* Problema 1: Baja por enfermedad */}
-              <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                  <Heart className="h-7 w-7 text-red-600" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-3">
-                  Baja por enfermedad
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Sin seguro de salud, dependes exclusivamente de la Seguridad Social. Las listas de espera pueden hacer que una dolencia menor se convierta en un problema grave, afectando a tu capacidad de trabajar.
-                </p>
-              </div>
-              
-              {/* Problema 2: Accidente laboral */}
-              <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                  <Briefcase className="h-7 w-7 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-3">
-                  Accidente laboral
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Como autónomo, una lesión que te impida trabajar significa cero ingresos. Sin un seguro de accidentes o incapacidad, no tendrás cobertura económica durante tu recuperación.
-                </p>
-              </div>
-              
-              {/* Problema 3: Responsabilidad civil */}
-              <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Scale className="h-7 w-7 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a2744] mb-3">
-                  Responsabilidad civil
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Un error profesional o un daño a un cliente puede generar una reclamación económica que ponga en riesgo tu patrimonio personal. La RC te protege de estas situaciones.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. SOLUCIÓN - Qué cubre exactamente */}
-        <section className="py-16 lg:py-24 bg-[#f1f5f9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a2744]">
-                La protección completa para tu actividad
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Te ayudamos a configurar el paquete de seguros que se adapta a tu actividad y presupuesto
-              </p>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 max-w-7xl mx-auto">
-              {/* Salud */}
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#2d8653]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                  <Heart className="h-6 w-6 text-emerald-600" />
-                </div>
-                <h3 className="font-bold text-[#1a2744] mb-2">Salud</h3>
-                <p className="text-sm text-gray-600">Médico privado, especialistas y urgencias sin esperas. Deducible en IRPF.</p>
-              </div>
-              
-              {/* Accidentes */}
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#2d8653]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Briefcase className="h-6 w-6 text-orange-600" />
-                </div>
-                <h3 className="font-bold text-[#1a2744] mb-2">Accidentes</h3>
-                <p className="text-sm text-gray-600">Cobertura por lesiones que impidan trabajar. Indemnización diaria o capital.</p>
-              </div>
-              
-              {/* RC Profesional */}
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#2d8653]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="font-bold text-[#1a2744] mb-2">RC Profesional</h3>
-                <p className="text-sm text-gray-600">Protege tu patrimonio ante reclamaciones de terceros por daños en tu actividad.</p>
-              </div>
-              
-              {/* Vida */}
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#2d8653]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-[#1a2744] mb-2">Vida</h3>
-                <p className="text-sm text-gray-600">Protege a tu familia si algo te pasara. Capital para mantener su calidad de vida.</p>
-              </div>
-              
-              {/* Protección Jurídica */}
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#2d8653]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Scale className="h-6 w-6 text-indigo-600" />
-                </div>
-                <h3 className="font-bold text-[#1a2744] mb-2">Protección Jurídica</h3>
-                <p className="text-sm text-gray-600">Abogado y gestoría para reclamaciones, contratos y conflictos laborales o fiscales.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. GARANTÍA + FOTO ROSA Y SEBASTIÁN */}
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
-              {/* Foto */}
+              {/* Right: Hero Image */}
               <div className="relative">
-                <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative rounded-lg overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_30px_45px_-30px,rgba(0,0,0,0.1)_0px_18px_36px_-18px]">
                   <Image
-                    src="/images/rosa_y_sebastian.jpeg"
-                    alt="Rosa y Sebastián Valentín - Asesores de seguros para autónomos en Madrid"
-                    fill
+                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Autónomo profesional laptop Madrid 2026"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto object-cover"
                     priority
-                    sizes="(max-width: 1024px) 100vw, 400px"
-                    quality={85}
-                    className="object-cover"
                   />
                 </div>
-                {/* Badge experiencia */}
-                <div className="absolute -bottom-4 -right-4 lg:right-auto lg:-left-4 bg-[#1a2744] text-white px-6 py-3 rounded-xl shadow-lg">
-                  <p className="text-2xl font-bold">+10 años</p>
-                  <p className="text-sm text-white/80">asesorando autónomos</p>
-                </div>
-              </div>
-              
-              {/* Texto garantía */}
-              <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a2744] mb-6">
-                  Hablas con Rosa o Sebastián, no con un call center
-                </h2>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-[#2d8653]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Clock className="h-4 w-4 text-[#2d8653]" />
+                {/* Floating card */}
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px] border border-[#e5edf5]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded bg-[#533afd]/10 flex items-center justify-center">
+                      <TrendingDown className="w-5 h-5 text-[#533afd]" />
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1a2744]">Asesoría gratuita en 24h</p>
-                      <p className="text-gray-600 text-sm">Te respondemos el mismo día. Sin esperas, sin burocracia.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-[#2d8653]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-[#2d8653]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#1a2744]">Sin compromiso</p>
-                      <p className="text-gray-600 text-sm">Te explicamos todas las opciones. Tú decides cuándo y si contratar.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-[#2d8653]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Shield className="h-4 w-4 text-[#2d8653]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#1a2744]">Correduría independiente</p>
-                      <p className="text-gray-600 text-sm">No trabajamos para ninguna aseguradora. Buscamos lo mejor para ti.</p>
+                      <p className="text-sm font-medium text-[#061b31]">Ahorro fiscal 2026</p>
+                      <p className="text-xs text-[#64748d]">Hasta 500€/año</p>
                     </div>
                   </div>
                 </div>
-                
-                {/* Datos regulatorios */}
-                <div className="bg-[#f1f5f9] rounded-xl p-4 mb-6">
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold text-[#1a2744]">NIF:</span> 79234434D · 
-                    <span className="font-semibold text-[#1a2744]"> Registro DGSFP:</span> C012479234434D
-                  </p>
-                </div>
-                
-                <a
-                  href={buildWhatsAppHref("Hola, soy autónomo y quiero que me asesoreis sobre seguros.")}
-                  className={cn(
-                    buttonVariants({ size: "lg" }),
-                    "h-14 px-8 text-lg font-bold bg-[#25D366] hover:bg-[#1ebe57] text-white gap-2 inline-flex items-center rounded-full"
-                  )}
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  Hablar con un asesor
-                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 5. FAQ */}
-        <section className="py-16 lg:py-24 bg-[#f1f5f9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a2744] text-center mb-12">
-                Preguntas frecuentes de autónomos
-              </h2>
-              
-              <div className="space-y-4">
-                {faqs.map((faq, idx) => (
-                  <details 
-                    key={idx} 
-                    className="group bg-white rounded-xl border border-gray-200 overflow-hidden [&_summary::-webkit-details-marker]:hidden"
-                  >
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                      <h3 className="font-semibold text-[#1a2744] pr-4">{faq.question}</h3>
-                      <div className="flex-shrink-0 w-8 h-8 bg-[#1a2744]/5 rounded-full flex items-center justify-center group-open:bg-[#1a2744] group-open:text-white transition-colors">
-                        <ChevronDown className="h-5 w-5 group-open:hidden" />
-                        <ChevronUp className="h-5 w-5 hidden group-open:block" />
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. CTA FINAL */}
-        <section className="py-16 lg:py-24 bg-[#1a2744]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Protege tu actividad hoy mismo
+        {/* IRPF EXPLICADO — Stripe cards */}
+        <section className="py-20 border-t border-[#e5edf5]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-4">
+              ¿Cómo funciona la deducción?
             </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Una llamada de 10 minutos puede ahorrarte problemas y dinero. Asesoría gratuita, sin compromiso.
+            <p className="text-lg text-[#64748d] text-center mb-12">
+              Aprovecha al máximo tu IRPF 2026
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-              <a
-                href={buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguros.")}
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-lg font-bold px-10 py-5 rounded-full transition-all shadow-lg hover:shadow-xl"
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { num: "01", title: "100% deducible", desc: "Toda la prima de tu seguro médico es deducible en IRPF como gasto profesional." },
+                { num: "02", title: "Factura Hacienda", desc: "Te emitimos factura con IVA incluido, válida para la Agencia Tributaria." },
+                { num: "03", title: "Ejemplo real", desc: "Pagas 500€/año, te devuelven ~250€ en tu declaración. Tu seguro cuesta la mitad." },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px]">
+                  <span className="text-[#533afd] text-sm font-medium">{item.num}</span>
+                  <h3 className="text-lg font-light text-[#061b31] mt-2 mb-3">{item.title}</h3>
+                  <p className="text-sm text-[#64748d] leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PLANES — Stripe pricing */}
+        <section className="py-20 bg-[#f6f9fc]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
+              Planes para autónomos
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { 
+                  name: "BÁSICO", 
+                  price: "25€",
+                  period: "/mes",
+                  features: ["Salud privada IRPF deducible", "Especialistas ilimitados", "Urgencias 24h"],
+                  cta: "Elegir Básico",
+                  popular: false
+                },
+                { 
+                  name: "PRO", 
+                  price: "45€",
+                  period: "/mes",
+                  features: ["Todo lo de Básico", "RC profesional incluida", "Accidentes laboral/extra", "Cobertura internacional UE"],
+                  cta: "Elegir Pro",
+                  popular: true
+                },
+                { 
+                  name: "ENTERPRISE", 
+                  price: "75€",
+                  period: "/mes",
+                  features: ["Todo ilimitado", "RC profesional ampliada", "Accidentes premium", "Asesor fiscal incluido"],
+                  cta: "Elegir Enterprise",
+                  popular: false
+                },
+              ].map((plan, i) => (
+                <div key={i} className={`bg-white rounded-lg p-6 border ${plan.popular ? 'border-[#533afd] ring-1 ring-[#533afd]' : 'border-[#e5edf5]'} shadow-[rgba(23,23,23,0.08)_0px_15px_35px]`}>
+                  {plan.popular && (
+                    <div className="inline-flex items-center gap-1 px-2 py-1 rounded bg-[rgba(21,190,83,0.2)] border border-[rgba(21,190,83,0.4)] text-[#108c3d] text-xs mb-4">
+                      <Star className="w-3 h-3" />
+                      Más popular
+                    </div>
+                  )}
+                  <h3 className="text-lg font-medium text-[#061b31]">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1 mt-2 mb-4">
+                    <span className="text-3xl font-light text-[#061b31]">{plan.price}</span>
+                    <span className="text-sm text-[#64748d]">{plan.period}</span>
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {plan.features.map((feat, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-[#64748d]">
+                        <CheckCircle2 className="w-4 h-4 text-[#15be53] mt-0.5" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <a 
+                    href={wCotiza}
+                    className={`block w-full text-center py-2.5 rounded text-sm font-medium transition-all ${plan.popular ? 'bg-[#533afd] text-white hover:bg-[#4434d4]' : 'bg-[#f6f9fc] text-[#061b31] hover:bg-[#e5edf5]'}`}
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COBERTURAS — Stripe grid */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
+              Cobertura completa
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: TrendingDown, title: "IRPF médico", desc: "100% deducible" },
+                { icon: Shield, title: "RC profesional", desc: "Errores cubiertos" },
+                { icon: Briefcase, title: "Accidentes", desc: "Laboral/extra" },
+                { icon: Globe, title: "Internacional", desc: "Cobertura UE" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-lg p-5 border border-[#e5edf5] hover:border-[#533afd]/30 transition-all">
+                  <div className="w-10 h-10 rounded bg-[#f6f9fc] flex items-center justify-center mb-3">
+                    <item.icon className="w-5 h-5 text-[#533afd]" />
+                  </div>
+                  <h3 className="text-base font-medium text-[#061b31] mb-1">{item.title}</h3>
+                  <p className="text-sm text-[#64748d]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIOS — Stripe carousel style */}
+        <section className="py-20 bg-[#f6f9fc]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
+              Lo que dicen los autónomos
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { 
+                  quote: "Me ahorré casi 300€ en IRPF el año pasado. El seguro me salió gratis de lo que me devolvió Hacienda.", 
+                  author: "Carlos M.", 
+                  role: "Consultor IT, Madrid",
+                  stars: 5
+                },
+                { 
+                  quote: "Tuve un accidente en obra y el seguro cubrió todos los gastos más la baja. Me salvó el año.", 
+                  author: "Laura S.", 
+                  role: "Arquitecta técnica",
+                  stars: 5
+                },
+                { 
+                  quote: "La RC profesional me da tranquilidad. Un error en un informe podría costarme miles sin ella.", 
+                  author: "Miguel A.", 
+                  role: "Asesor fiscal",
+                  stars: 5
+                },
+              ].map((testimonial, i) => (
+                <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(23,23,23,0.06)_0px_15px_35px]">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.stars)].map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-[#ea2261] text-[#ea2261]" />
+                    ))}
+                  </div>
+                  <Quote className="w-8 h-8 text-[#533afd]/20 mb-3" />
+                  <p className="text-sm text-[#061b31] leading-relaxed mb-4">{testimonial.quote}</p>
+                  <div className="border-t border-[#e5edf5] pt-4">
+                    <p className="text-sm font-medium text-[#061b31]">{testimonial.author}</p>
+                    <p className="text-xs text-[#64748d]">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ — Stripe accordion */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl">
+            <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
+              Preguntas frecuentes
+            </h2>
+            
+            <div className="space-y-4">
+              {[
+                { 
+                  q: "¿El seguro médico es 100% deducible en IRPF para autónomos?", 
+                  a: "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible." 
+                },
+                { 
+                  q: "¿Qué pasa si tengo un accidente siendo autónomo?", 
+                  a: "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal." 
+                },
+                { 
+                  q: "¿Necesito RC profesional como autónomo?", 
+                  a: "Si ejerces una profesión donde puedes cometer errores (consultoría, IT, diseño...), la RC profesional protege tu patrimonio personal ante reclamaciones." 
+                },
+                { 
+                  q: "¿Cuánto tarda en activarse la cobertura?", 
+                  a: "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar." 
+                },
+                { 
+                  q: "¿Hay permanencia en los seguros para autónomos?", 
+                  a: "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización." 
+                },
+              ].map((faq, i) => (
+                <details key={i} className="group bg-white rounded-lg border border-[#e5edf5] shadow-[rgba(23,23,23,0.06)_0px_15px_35px] overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                    <span className="text-sm font-medium text-[#061b31]">{faq.q}</span>
+                    <ChevronDown className="w-5 h-5 text-[#64748d] transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-[#64748d] leading-relaxed border-t border-[#e5edf5] pt-4">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Stripe dark section */}
+        <section className="py-24 bg-[#1c1e54]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-[48px] sm:text-[56px] font-light text-white leading-[1.03] tracking-[-1.4px] mb-4">
+              Protege tu negocio
+            </h2>
+            <p className="text-xl text-white/70 mb-10">
+              Un WhatsApp. 30 minutos. Todo optimizado para 2026.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href={wCotiza}
+                className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#665efd] text-white px-8 py-4 rounded text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px]"
               >
-                <WhatsAppIcon className="h-6 w-6" />
-                WhatsApp: Consulta gratuita
+                <WhatsAppIcon className="w-5 h-5" />
+                💬 Cotizar WhatsApp
               </a>
-              <a
-                href={`tel:${site.phoneHref}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-lg font-semibold px-10 py-5 rounded-full border border-white/30 transition-all"
+              <a 
+                href="tel:603448765"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded text-lg font-medium border border-white/30 transition-all"
               >
-                <Phone className="h-5 w-5" />
-                {site.phone}
+                📞 603 44 87 65
               </a>
             </div>
             
-            <p className="text-white/60 text-sm">
-              NIF: 79234434D · Registro DGSFP: C012479234434D
+            <p className="text-sm text-white/40 mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D · +1.200 autónomos protegidos
             </p>
           </div>
         </section>
-      </main>
 
+      </main>
       <Footer />
       <StickyWhatsApp />
     </>
