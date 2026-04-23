@@ -86,14 +86,14 @@ export default function SaludExtranjerosPage() {
             
             {/* H1 Optimized */}
             <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
-              Seguro Médico Residencia España 2026:
+              Seguro de Salud para Extranjeros
               <br />
-              <span className="text-[#2E7D32]">NIE/TIE Aprobado Madrid</span>
+              <span className="text-[#2E7D32]">en Madrid</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
-              +100 clientes latinos/EEUU con NIE/TIE en 10+ años · Cumple 100% extranjería
+              Sin lista de espera. Cobertura desde el primer día. Te ayudamos en español con todo el proceso.
             </p>
 
             {/* Guarantee Badge */}
@@ -182,6 +182,40 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
+        {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
+        <section className="py-20 bg-gradient-to-br from-[#F0FAE5] via-[#E8F5E9] to-[#F1F8E9]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-[#9FE870]/20 border border-[#C8E6C9]">
+              <h2 className="text-[36px] sm:text-[44px] font-bold text-[#163300] leading-tight mb-6 text-center">
+                ¿Y si no te respondemos en 30 minutos?
+              </h2>
+              
+              <p className="text-xl text-[#4B5563] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+                Rosa o Sebastián te llaman directamente.
+                <br />
+                Sin esperas. Sin centralitas. Sin excusas.
+                <br />
+                <span className="text-[#2E7D32] font-semibold">Nadie en el sector ofrece esta garantía. Nosotros sí.</span>
+              </p>
+              
+              <div className="flex items-center justify-center gap-4 pt-4 border-t border-[#E5E7EB]">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa Valentín"
+                    fill
+                    className="object-cover object-[center_20%]"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-[#163300]">Rosa Valentín</p>
+                  <p className="text-sm text-[#4B5563]">Mediadora DGSFP · NIF 79234434D</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FOTO EQUIPO Wise cálido */}
         <section className="bg-[#F7F8F9] py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
@@ -241,9 +275,9 @@ export default function SaludExtranjerosPage() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "01", title: "WhatsApp", desc: "Nos escribes con tu situación. En tu idioma." },
-                { num: "02", title: "Análisis", desc: "En 30 minutos tenemos tu cotización personalizada." },
-                { num: "03", title: "Cobertura", desc: "En 24h tienes tu seguro activo. Listo." }
+                { num: "01", title: "Nos cuentas", desc: "Tu situación por WhatsApp. En tu idioma." },
+                { num: "02", title: "Buscamos", desc: "La mejor opción entre todas las compañías para ti." },
+                { num: "03", title: "Gestionamos", desc: "Todo nosotros. Sin papeleo para ti." }
               ].map((paso, i) => (
                 <div key={i} className="text-center">
                   <p className="text-6xl font-bold text-[#9FE870] mb-4">{paso.num}</p>
