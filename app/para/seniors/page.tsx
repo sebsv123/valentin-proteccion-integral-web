@@ -109,11 +109,11 @@ export default function SeniorsPage() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-100">
                   <Image
-                    src="https://images.pexels.com/photos/3760260/pexels-photo-3760260.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Pareja mayor tranquila"
+                    src="/images/products/salud-senior.webp"
+                    alt="Atención médica personalizada para mayores"
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover object-top"
+                    className="w-full h-auto object-cover object-[center_20%]"
                     priority
                   />
                 </div>
