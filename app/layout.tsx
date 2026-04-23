@@ -3,6 +3,7 @@ import { Playfair_Display, Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { site } from '@/lib/products';
 import './globals.css';
+import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/gtm';
 
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-heading', weight: ['600', '700', '800'], display: 'swap', preload: true });
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'], display: 'swap', preload: true });
@@ -76,6 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
+        {/* Google Tag Manager - afterInteractive para performance */}
+        <GoogleTagManager />
         {/* Google Analytics GA4 - lazyOnload para no bloquear LCP */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -115,6 +118,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
+        {/* Google Tag Manager (noscript) - must be first child of body */}
+        <GoogleTagManagerNoScript />
         <BackgroundWrapper />
         <SchemaLocalBusiness />
         <SchemaPersons />
