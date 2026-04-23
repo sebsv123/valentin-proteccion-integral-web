@@ -6,7 +6,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Wallet, AlertTriangle, Users } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Wallet, AlertTriangle, Users, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro de Vida Hipoteca Madrid | Valentín Protección",
@@ -54,58 +54,58 @@ export default function VidaPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO REVOLUT — Rojo billboard style */}
-        <section className="bg-[#e23b4a] text-white py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
+        {/* HERO — White with coral accents */}
+        <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
+          {/* Soft coral halo behind content */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-[#e23b4a]/10 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl relative z-10 text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e23b4a]/10 text-[#e23b4a] text-sm mb-8">
               <Sparkles className="w-4 h-4" />
-              +1.200 familias protegidas · DGSFP
+              +1.200 familias protegidas · DGSFP verificado
             </div>
             
-            {/* H1 Revolut billboard — 80px weight 500 */}
-            <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-medium text-white leading-[1.00] tracking-[-0.8px] mb-6">
-              Seguro de Vida Hipoteca Madrid:
-              <br />
-              <span className="text-white/90">Protege a tu Familia</span>
+            {/* H1 — Clean and premium */}
+            <h1 className="text-[40px] sm:text-[56px] lg:text-[64px] font-semibold text-[#191c1f] leading-[1.10] tracking-[-0.02em] mb-6">
+              Seguro de Vida Hipoteca Madrid
             </h1>
             
-            {/* Subhead */}
-            <p className="text-xl sm:text-2xl text-white/80 leading-[1.40] mb-10 max-w-2xl mx-auto">
-              Protege tu familia. No el banco.
+            {/* Subhead — Human and warm */}
+            <p className="text-xl sm:text-2xl text-[#505a63] leading-[1.50] mb-12 max-w-2xl mx-auto">
+              Protege a tu familia y deja la hipoteca resuelta.
             </p>
             
-            {/* CTAs Revolut — pills 9999px */}
+            {/* CTAs — Coral as accent */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <a 
                 href={wCotiza}
-                className="group inline-flex items-center gap-2 bg-[#191c1f] hover:bg-[#191c1f]/85 text-white px-8 py-4 rounded-full text-lg font-medium transition-opacity"
+                className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-8 py-4 rounded-xl text-lg font-medium transition-all shadow-lg shadow-[#e23b4a]/20"
               >
-                Cotizar WhatsApp
-                <span className="hidden group-hover:inline text-sm ml-2 text-white/70">
-                  🎁 Vida + Decesos = condiciones especiales
-                </span>
+                <WhatsAppIcon className="w-5 h-5" />
+                Cotizar en WhatsApp
               </a>
               <a 
                 href="tel:603448765"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-lg font-medium border-2 border-white/30 transition-all"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#191c1f] px-8 py-4 rounded-xl text-lg font-medium border-2 border-gray-200 transition-all"
               >
-                📞 603 44 87 65
+                <Phone className="w-5 h-5" />
+                Llamar ahora
               </a>
             </div>
             
             {/* Trust row */}
-            <div className="flex flex-wrap justify-center gap-8 text-white/70">
+            <div className="flex flex-wrap justify-center gap-8 text-[#505a63]">
               <span className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5" />
+                <CheckCircle2 className="w-5 h-5 text-[#00a87e]" />
                 30 min respuesta
               </span>
               <span className="flex items-center gap-2">
-                <Shield className="w-5 h-5" />
+                <Shield className="w-5 h-5 text-[#00a87e]" />
                 Sin permanencia
               </span>
               <span className="flex items-center gap-2">
-                <Heart className="w-5 h-5" />
+                <Heart className="w-5 h-5 text-[#e23b4a]" />
                 Familia protegida
               </span>
             </div>
@@ -169,14 +169,15 @@ export default function VidaPage() {
         <section className="py-24 bg-[#f4f4f4]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="rounded-[20px] overflow-hidden">
+              <div className="rounded-[20px] overflow-hidden relative">
                 <Image
                   src="/images/rosa_y_sebastian.jpeg"
                   alt="Sebastián Valentín · Especialista hipotecas"
                   width={500}
-                  height={600}
-                  className="w-full h-auto object-cover object-top"
+                  height={500}
+                  className="w-full h-auto object-cover object-[center_20%]"
                   priority
+                  style={{ aspectRatio: '1/1' }}
                 />
               </div>
               <div>

@@ -231,13 +231,16 @@ export default function SaludExtranjerosPage() {
         <section className="bg-[#F7F8F9] py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <Image
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián — Tu equipo en Madrid"
-                width={500}
-                height={625}
-                className="rounded-3xl shadow-2xl aspect-[4/5] object-cover border border-[#E5E7EB]"
-              />
+              <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB]">
+                <Image
+                  src="/images/rosa_y_sebastian.jpeg"
+                  alt="Rosa y Sebastián — Tu equipo en Madrid"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto object-cover object-[center_20%]"
+                  style={{ aspectRatio: '1/1' }}
+                />
+              </div>
               <div>
                 <p className="text-[#2E7D32] font-medium mb-3 uppercase tracking-widest text-sm">
                   Tu equipo local en Madrid

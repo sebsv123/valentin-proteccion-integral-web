@@ -216,9 +216,10 @@ export default function SaludSeniorPage() {
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián - Especialistas en seguros para mayores"
                     width={500}
-                    height={600}
-                    className="w-full h-auto object-cover object-top"
+                    height={500}
+                    className="w-full h-auto object-cover object-[center_20%]"
                     priority
+                    style={{ aspectRatio: '1/1' }}
                   />
                 </div>
               </div>

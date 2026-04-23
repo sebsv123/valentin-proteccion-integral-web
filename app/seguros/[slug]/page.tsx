@@ -284,15 +284,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Imagen izquierda en desktop */}
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián Valentín, asesores de seguros para negocios y pymes en Madrid"
                     width={480}
-                    height={320}
+                    height={480}
                     loading="lazy"
                     decoding="async"
-                    className="object-cover object-top w-full h-full"
+                    className="object-cover object-[center_20%] w-full h-full"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
@@ -328,15 +328,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Imagen izquierda en desktop */}
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián Valentín, asesores de seguros de salud en Madrid"
                     width={480}
-                    height={320}
+                    height={480}
                     loading="lazy"
                     decoding="async"
-                    className="object-cover object-top w-full h-full"
+                    className="object-cover object-[center_20%] w-full h-full"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
@@ -372,15 +372,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <section className="py-14 sm:py-20 lg:py-24 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián Valentín, asesores de seguros de viaje en Madrid"
                     width={480}
-                    height={320}
+                    height={480}
                     loading="lazy"
                     decoding="async"
-                    className="object-cover object-top w-full h-full"
+                    className="object-cover object-[center_20%] w-full h-full"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>

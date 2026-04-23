@@ -78,12 +78,12 @@ export default function ContactoPage() {
           <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr]">
             <div className="soft-card overflow-hidden">
               <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[340px]">
+                <div className="relative min-h-[340px] overflow-hidden">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-[center_20%]"
                     sizes="(max-width: 1024px) 100vw, 400px"
                     loading="eager"
                   />
