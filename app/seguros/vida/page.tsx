@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Shield, FileCheck, Heart, Users, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Wallet, AlertTriangle, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Vida Madrid | Protección Familiar Directa | Valentín Protección Integral",
-  description: "Seguro de vida con indemnización directa al notario. Capital mínimo 18.000€, el doble de la competencia. Suicidio cubierto año 1. Rosa y Sebastián.",
-  keywords: ["seguro vida Madrid","seguro vida hipoteca Madrid","indemnización directa seguro vida","capital seguro vida 18.000€"],
+  title: "Seguro Vida Hipoteca Madrid | Valentín Protección Integral",
+  description: "Seguro de vida para hipoteca Madrid. Protege tu familia. Cotiza WhatsApp 30min sin compromiso. Rosa y Sebastián.",
+  keywords: ["seguro vida hipoteca Madrid","seguro vida hipoteca","proteccion vida familia Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/vida" },
   openGraph: {
-    title: "Seguro de Vida Madrid | Protección Familiar Directa",
-    description: "Capital mínimo 18.000€, el doble de la competencia. Indemnización directa al notario.",
+    title: "Seguro Vida Hipoteca Madrid | Protege tu Familia",
+    description: "Cobertura hasta 500k€. Invalidez 100%. Cotiza WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/vida",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguro de Vida Madrid",
+  "@type": "InsuranceAgency",
+  "name": "Seguro Vida Hipoteca Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,154 +39,232 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de vida con capital mínimo 18.000€. Indemnización directa al notario sin intermediarios. Suicidio cubierto desde año 1.",
+  "description": "Seguro de vida para hipoteca Madrid. Protege tu familia, no el banco. Cobertura hasta 500k€.",
 };
 
 export const dynamic = "force-static";
 
 export default function VidaPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de vida con indemnización directa. ¿Cuál es el capital mínimo?");
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de vida para hipoteca en Madrid.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Vida",url:"/seguros/vida"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-[#191C1F] text-white">
+      <main className="min-h-screen bg-white">
         
-        {/* HERO REVOLUT — Pregunta impactante */}
-        <section className="min-h-screen flex items-center bg-[#191C1F] relative overflow-hidden">
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0075EB]/10 via-transparent to-transparent" />
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-[#27C880] font-mono text-sm tracking-widest uppercase mb-6">
-                  PROTECCIÓN FAMILIAR DIRECTA
-                </p>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
-                  ¿Sabes cuánto le
-                  <br />
-                  <span className="text-[#0075EB]">quedaría a tu familia</span>
-                  <br />
-                  ante invalidez?
-                </h1>
-                
-                {/* Stats impacto Revolut */}
-                <div className="flex flex-wrap gap-6 mt-8">
-                  <div className="border-l-2 border-[#0075EB] pl-4">
-                    <p className="text-3xl font-bold text-white">50%</p>
-                    <p className="text-[#8A9BB0] text-sm">Hipoteca banco</p>
-                  </div>
-                  <div className="border-l-2 border-[#0075EB] pl-4">
-                    <p className="text-3xl font-bold text-white">40%</p>
-                    <p className="text-[#8A9BB0] text-sm">Nómina trabajo</p>
-                  </div>
-                  <div className="border-l-2 border-[#27C880] pl-4">
-                    <p className="text-3xl font-bold text-[#27C880]">18.000€</p>
-                    <p className="text-[#8A9BB0] text-sm">Nosotros mínimo</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="hidden lg:block relative">
-                <Image
-                  src="https://images.pexels.com/photos/3807770/pexels-photo-3807770.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Protección familiar seguridad profesional"
-                  width={500}
-                  height={600}
-                  className="rounded-2xl object-cover brightness-90 border border-[rgba(255,255,255,0.08)] shadow-[0_0_60px_rgba(0,117,235,0.2)]"
-                />
-              </div>
+        {/* HERO REVOLUT — Rojo billboard style */}
+        <section className="bg-[#e23b4a] text-white py-24 lg:py-32">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-8">
+              <Sparkles className="w-4 h-4" />
+              +1.200 familias protegidas · DGSFP
+            </div>
+            
+            {/* H1 Revolut billboard — 80px weight 500 */}
+            <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-medium text-white leading-[1.00] tracking-[-0.8px] mb-6">
+              Seguro Vida
+              <br />
+              <span className="text-white/90">Hipoteca Madrid</span>
+            </h1>
+            
+            {/* Subhead */}
+            <p className="text-xl sm:text-2xl text-white/80 leading-[1.40] mb-10 max-w-2xl mx-auto">
+              Protege tu familia. No el banco.
+            </p>
+            
+            {/* CTAs Revolut — pills 9999px */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <a 
+                href={wCotiza}
+                className="group inline-flex items-center gap-2 bg-[#191c1f] hover:bg-[#191c1f]/85 text-white px-8 py-4 rounded-full text-lg font-medium transition-opacity"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
+                💬 Cotizar WhatsApp
+                <span className="hidden group-hover:inline text-sm ml-2 text-white/70">
+                  🎁 Vida + Decesos = condiciones especiales
+                </span>
+              </a>
+              <a 
+                href="tel:603448765"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-lg font-medium border-2 border-white/30 transition-all"
+              >
+                📞 603 44 87 65
+              </a>
+            </div>
+            
+            {/* Trust row */}
+            <div className="flex flex-wrap justify-center gap-8 text-white/70">
+              <span className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" />
+                30 min respuesta
+              </span>
+              <span className="flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                Sin permanencia
+              </span>
+              <span className="flex items-center gap-2">
+                <Heart className="w-5 h-5" />
+                Familia protegida
+              </span>
             </div>
           </div>
         </section>
 
-        {/* DIFERENCIADORES — Cards dark Revolut */}
-        <section className="py-24 bg-[#1E2328]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-              Por qué elegirnos
+        {/* ¿QUIÉN NECESITA? — Revolut cards */}
+        <section className="py-24 bg-[#f4f4f4]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] text-center mb-16">
+              ¿Quién lo necesita?
             </h2>
-            <p className="text-[#8A9BB0] text-center mb-12 max-w-2xl mx-auto">
-              El doble de capital mínimo. Indemnización directa. Cobertura completa desde el primer día.
-            </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: FileCheck, title: "Directo notario", desc: "Sin intermediarios ni gestores. Tu familia recibe el 100% del capital en 10-15 días.", color: "#0075EB" },
-                { icon: Shield, title: "Suicidio año 1", desc: "Cubierto desde el primer año. A diferencia de la mayoría de pólizas del mercado.", color: "#27C880" },
-                { icon: TrendingUp, title: "18.000€ mínimo", desc: "El doble de la competencia (~9.000€ típico). Capital real para gastos funerarios y deudas.", color: "#0075EB" },
-                { icon: Heart, title: "Complementa banco", desc: "El seguro del banco cubre 50% en invalidez. Nosotros cubrimos el gap que deja tu familia expuesta.", color: "#27C880" },
+                { icon: Home, title: "Nueva hipoteca", desc: "El banco lo exige. Pero tú decides dónde contratarlo." },
+                { icon: Users, title: "Familia joven", desc: "Protección máxima cuando más lo necesitas." },
+                { icon: Heart, title: "Tranquilidad", desc: "Duerme mejor sabiendo que tu familia está cubierta." },
               ].map((item, i) => (
-                <div key={i} className="rounded-2xl bg-[#191C1F] border border-[rgba(255,255,255,0.08)] p-6 hover:border-[rgba(0,117,235,0.4)] transition-all">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${item.color}20` }}>
-                    <item.icon className="w-6 h-6" style={{ color: item.color }} />
+                <div key={i} className="bg-white rounded-[20px] p-8 hover:bg-[#f9f9f9] transition-colors">
+                  <div className="w-14 h-14 rounded-full bg-[#e23b4a]/10 flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-[#e23b4a]" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-[#8A9BB0] text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-[24px] font-medium text-[#191c1f] mb-3">{item.title}</h3>
+                  <p className="text-base text-[#505a63] leading-[1.50]">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FOTO EQUIPO dark Revolut */}
-        <section className="py-24 bg-[#191C1F]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        {/* COBERTURAS — Revolut grid rojo */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] text-center mb-16">
+              Cobertura completa
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { icon: Wallet, title: "Capital muerte", desc: "Hasta 500.000€ de cobertura para tu familia." },
+                { icon: AlertTriangle, title: "Invalidez absoluta", desc: "100% del capital en caso de invalidez permanente." },
+                { icon: Shield, title: "Doble capital accidentes", desc: "El doble si el fallecimiento es por accidente." },
+                { icon: CheckCircle2, title: "Exención hipoteca", desc: "Tu familia no hereda la deuda del banco." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 p-6 rounded-[20px] bg-[#f4f4f4] hover:bg-[#e8e8e8] transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-[#e23b4a] flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-[20px] font-medium text-[#191c1f] mb-1">{item.title}</h3>
+                    <p className="text-base text-[#505a63] leading-[1.50]">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO — Revolut flat style */}
+        <section className="py-24 bg-[#f4f4f4]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Image 
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián - Protección familiar directa"
-                width={600}
-                height={700}
-                className="rounded-2xl object-cover brightness-90 border border-[rgba(255,255,255,0.08)] shadow-[0_0_60px_rgba(0,117,235,0.2)]"
-              />
+              <div className="rounded-[20px] overflow-hidden">
+                <Image
+                  src="/images/rosa_y_sebastian.jpeg"
+                  alt="Sebastián Valentín · Especialista hipotecas"
+                  width={500}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Rosa y Sebastián
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e23b4a]/10 text-[#e23b4a] text-sm mb-6">
+                  <Users className="w-4 h-4" />
+                  Tu especialista hipotecas
+                </div>
+                <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] mb-4">
+                  Sebastián Valentín
                 </h2>
-                <p className="text-lg text-[#8A9BB0] leading-relaxed mb-6">
-                  Tu asesor personal de por vida. No un call center, no un operador diferente cada vez. 
-                  Misma persona, siempre disponible, respuesta en 30 minutos.
+                <p className="text-xl text-[#505a63] mb-6">
+                  Especialista en seguros de vida para hipotecas.
                 </p>
-                <div className="space-y-3">
-                  {[
-                    "+10 años protegiendo familias en Madrid",
-                    "+1.200 familias ya protegidas",
-                    "Capital mínimo 18.000€ (doble competencia)",
-                    "DGSFP regulados: C012479234434D",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#27C880]" />
-                      <span className="text-white">{item}</span>
-                    </div>
-                  ))}
+                <p className="text-base text-[#505a63] leading-[1.50] mb-8">
+                  +10 años ayudando a familias de Madrid a protegerse 
+                  frente al banco. Te explico cada cobertura sin tecnicismos.
+                </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00a87e]/10 text-[#006400] text-sm">
+                  <CheckCircle2 className="w-4 h-4" />
+                  DGSFP: C012479234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA FINAL Revolut */}
-        <section className="py-24 bg-gradient-to-br from-[#0075EB] to-[#00C6FF]">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Protege a tu familia hoy
+        {/* PROCESO — 3 pasos rojo */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] text-center mb-16">
+              Proceso simple
             </h2>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Capital mínimo 18.000€. Indemnización directa al notario. 
-              Suicidio cubierto desde el primer año.
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { num: "1", title: "WhatsApp", desc: "Nos cuentas el importe de tu hipoteca." },
+                { num: "2", title: "Cotizamos", desc: "En 30 min tienes tu mejor opción." },
+                { num: "3", title: "Alta 24h", desc: "Sin papeles. Sin esperas." },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-[#e23b4a] text-white flex items-center justify-center text-[24px] font-medium mx-auto mb-6">
+                    {step.num}
+                  </div>
+                  <h3 className="text-[24px] font-medium text-[#191c1f] mb-2">{step.title}</h3>
+                  <p className="text-base text-[#505a63] leading-[1.50]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA + GARANTÍAS — Revolut dark section */}
+        <section className="py-24 bg-[#191c1f]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-[48px] sm:text-[64px] font-medium text-white leading-[1.00] tracking-[-0.8px] mb-6">
+              Protege tu familia hoy
+            </h2>
+            <p className="text-xl text-white/60 mb-10">
+              Un WhatsApp. 30 minutos. Sin compromiso.
             </p>
+            
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-3 bg-white text-[#0075EB] px-10 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all hover:scale-[1.02]"
+              className="group inline-flex items-center gap-2 bg-[#e23b4a] hover:bg-[#c42f3d] text-white px-10 py-4 rounded-full text-lg font-medium transition-colors"
             >
-              <WhatsAppIcon className="w-6 h-6" />
-              Cotizar seguro de vida ahora
+              <WhatsAppIcon className="w-5 h-5" />
+              💬 Cotizar por WhatsApp
+              <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
+                🎁 Vida + Decesos = condiciones especiales
+              </span>
             </a>
-            <p className="text-sm text-white/60 mt-6">
+            
+            {/* Garantías badges */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              {[
+                "30min respuesta",
+                "Sin permanencia",
+                "DGSFP verificado",
+              ].map((item, i) => (
+                <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm">
+                  <CheckCircle2 className="w-4 h-4" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-sm text-white/40 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
