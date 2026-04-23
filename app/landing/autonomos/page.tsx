@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
-import GarantiasSection from "@/components/GarantiasSection";
-import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clock, FileCheck } from "lucide-react";
+import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clock, FileCheck, Users, Home } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguros Autónomos Madrid | IRPF Deducible | Valentín",
@@ -54,7 +50,6 @@ export default function AutonomosLandingPage() {
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros Autónomos",url:"/landing/autonomos"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
-      <Header />
       <main className="min-h-screen bg-white">
         
         {/* HERO STRIPE — Weight-300 elegance, purple accents */}
@@ -73,30 +68,26 @@ export default function AutonomosLandingPage() {
                 
                 {/* H1 — 48px weight 300, tight tracking */}
                 <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-                  Seguros Autónomos Madrid:
+                  Seguro para Autónomos
                   <br />
-                  <span className="text-[#533afd]">IRPF Deducible al 100%</span>
+                  <span className="text-[#533afd]">en Madrid</span>
                 </h1>
                 
                 {/* Subhead — 18px weight 300 */}
                 <p className="text-lg font-light text-[#64748d] leading-[1.40] mb-8 max-w-lg">
-                  Tu seguro médico es deducible al 100% en IRPF.
-                  Te ayudamos a protegerte y a pagar menos impuestos.
+                  <span className="text-[#533afd] font-semibold">Deducción fiscal del 100% en tu IRPF.</span>
+                  <br />
+                  Gestión completa sin que pierdas un día de trabajo.
                 </p>
                 
                 {/* CTAs Stripe */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <a 
                     href={wCotiza}
-                    className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-4 py-2 rounded text-base font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
+                    className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-4 rounded-xl text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
-                    Cotizar por WhatsApp
-                  </a>
-                  <a 
-                    href="tel:603448765"
-                    className="inline-flex items-center gap-2 bg-transparent text-[#533afd] px-4 py-2 rounded text-base font-normal border border-[#b9b9f9] hover:bg-[rgba(83,58,253,0.05)] transition-all"
-                  >
-                    📞 Llamar ahora
+                    <WhatsAppIcon className="w-5 h-5" />
+                    Hablar con Rosa ahora
                   </a>
                 </div>
                 
@@ -203,10 +194,10 @@ export default function AutonomosLandingPage() {
             
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: Heart, title: "Salud privada", desc: "100% deducible en IRPF para autónomos. Especialistas sin lista de espera." },
-                { icon: Shield, title: "Accidentes", desc: "Cobertura laboral y extralaboral. Incapacidad temporal cubierta desde día 1." },
-                { icon: FileCheck, title: "Responsabilidad Civil", desc: "Errores profesionales cubiertos. Protege tu patrimonio personal." },
-                { icon: Sparkles, title: "Decesos", desc: "Protege a tu familia, no al banco. Gestión completa del sepelio incluida." },
+                { icon: Heart, title: "Salud", desc: "Deducible 100% en IRPF. Especialistas sin esperas." },
+                { icon: Shield, title: "Accidentes", desc: "Baja laboral cubierta. Incapacidad desde día 1." },
+                { icon: Users, title: "Vida", desc: "Protección para tu familia si faltan ingresos." },
+                { icon: Home, title: "Decesos", desc: "Muy contratado por autónomos. Gestión completa." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] hover:border-[#533afd]/30 transition-all shadow-[rgba(23,23,23,0.08)_0px_15px_35px]">
                   <div className="w-10 h-10 rounded bg-[#533afd]/10 flex items-center justify-center mb-4">
@@ -266,9 +257,9 @@ export default function AutonomosLandingPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "01", title: "WhatsApp", desc: "Nos escribes con tu situación. Sin papeleo previo." },
-                { num: "02", title: "Análisis", desc: "En 30 min tienes tu cotización personalizada. Sin compromiso." },
-                { num: "03", title: "Cobertura", desc: "Decides sin presión. Sin permanencia. Sin sorpresas." },
+                { num: "01", title: "Nos escribes", desc: "Por WhatsApp contándonos tu actividad." },
+                { num: "02", title: "Propuesta", desc: "En menos de 24h tienes una propuesta personalizada." },
+                { num: "03", title: "Tú decides", desc: "Nosotros lo gestionamos todo. Sin papeleo para ti." },
               ].map((step, i) => (
                 <div key={i} className="text-center">
                   <div className="w-12 h-12 rounded-full bg-[#533afd] text-white flex items-center justify-center text-lg font-normal mx-auto mb-4">
@@ -282,27 +273,36 @@ export default function AutonomosLandingPage() {
           </div>
         </section>
 
-        {/* GARANTÍAS */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[32px] font-light text-[#061b31] tracking-[-0.64px] text-center mb-12">
-              Nuestras garantías. Por escrito.
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Respuesta en 30 minutos o te llamamos nosotros",
-                "Revisión anual gratuita de tu póliza",
-                "Gestor personal asignado para siempre",
-                "DGSFP: C012479234434D — mediadores verificados",
-                "Sin permanencia — cancelas cuando quieras",
-                "Sin letra pequeña, sin sorpresas",
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 p-4 rounded-lg bg-[#f6f9fc]">
-                  <CheckCircle2 className="w-5 h-5 text-[#15be53] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-[#061b31]">{item}</span>
+        {/* GARANTÍA RESPUESTA — Bloque único */}
+        <section className="py-20 bg-gradient-to-br from-[#f6f9fc] via-[#eef2ff] to-[#f5f3ff]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-[#533afd]/10 border border-[#e0e7ff]">
+              <h2 className="text-[36px] sm:text-[44px] font-bold text-[#061b31] leading-tight mb-6 text-center">
+                ¿Y si no te respondemos en 30 minutos?
+              </h2>
+              
+              <p className="text-xl text-[#64748d] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+                Rosa o Sebastián te llaman directamente.
+                <br />
+                Sin esperas. Sin centralitas. Sin excusas.
+                <br />
+                <span className="text-[#533afd] font-semibold">Nadie en el sector ofrece esta garantía. Nosotros sí.</span>
+              </p>
+              
+              <div className="flex items-center justify-center gap-4 pt-4 border-t border-[#e5edf5]">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa Valentín"
+                    fill
+                    className="object-cover object-[center_20%]"
+                  />
                 </div>
-              ))}
+                <div>
+                  <p className="font-semibold text-[#061b31]">Rosa Valentín</p>
+                  <p className="text-sm text-[#64748d]">Mediadora DGSFP · NIF 79234434D</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -318,24 +318,18 @@ export default function AutonomosLandingPage() {
             </p>
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-3 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-3 rounded text-lg font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
+              className="inline-flex items-center gap-3 bg-[#533afd] hover:bg-[#4434d4] text-white px-8 py-4 rounded-xl text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
             >
-              Empezar por WhatsApp
+              <WhatsAppIcon className="w-5 h-5" />
+              Hablar con Rosa ahora
             </a>
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · 10 años · Sin permanencia
+              DGSFP: C012479234434D · Sin permanencia
             </p>
           </div>
         </section>
 
-        {/* RESEÑAS GOOGLE */}
-        <GoogleReviewsWidget title="Opiniones de autónomos que confían en nosotros" />
-
-        {/* GARANTÍAS PREMIUM */}
-        <GarantiasSection brandColor="#7c3aed" />
-
       </main>
-      <Footer />
       <StickyWhatsApp />
     </>
   );
