@@ -328,4 +328,5 @@ export default function BoadillaPage() {
       <Footer />
       <StickyWhatsApp />
     </>
+  );
 }

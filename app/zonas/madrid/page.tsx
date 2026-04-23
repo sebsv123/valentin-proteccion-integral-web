@@ -330,4 +330,5 @@ export default function MadridPage() {
       <Footer />
       <StickyWhatsApp />
     </>
+  );
 }
