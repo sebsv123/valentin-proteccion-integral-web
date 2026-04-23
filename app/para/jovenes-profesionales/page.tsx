@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Heart, Mountain, Home, Laptop, Zap, TrendingUp } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Briefcase, Home, Zap, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Jóvenes Profesionales Madrid | Valentín Protección Integral",
-  description: "Seguros millennials Madrid. Salud sin copagos, vida hipoteca joven, accidentes deportes. WhatsApp 30min. Rosa y Sebastián.",
-  keywords: ["seguros jovenes Madrid","seguros millennials Madrid","seguro hipoteca joven Madrid","seguro salud sin copagos jovenes"],
+  title: "Seguros Jóvenes Profesionales Madrid | A tu medida | Valentín Protección Integral",
+  description: "Seguros para jóvenes profesionales Madrid. Tu primera hipoteca, salud sin copagos, protección real. WhatsApp 30min. Rosa y Sebastián.",
+  keywords: ["seguros jovenes profesionales Madrid","seguro hipoteca joven Madrid","seguro salud millennials Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/jovenes-profesionales" },
   openGraph: {
-    title: "Seguros Jóvenes Profesionales Madrid | Millennials First",
-    description: "Salud sin copagos, deportes, hipoteca joven. WhatsApp 30min respuesta.",
+    title: "Seguros Jóvenes Profesionales Madrid | A tu medida",
+    description: "Tu primera hipoteca, salud sin copagos, protección real. Decidí rápido y bien.",
     url: "https://valentinproteccionintegral.com/para/jovenes-profesionales",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -39,13 +39,13 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros para jóvenes profesionales Madrid. Millennials. Salud sin copagos, hipoteca joven, deportes.",
+  "description": "Seguros para jóvenes profesionales Madrid. Hipoteca, salud, protección. Simple y moderno.",
 };
 
 export const dynamic = "force-static";
 
 export default function JovenesPage() {
-  const wCotiza = buildWhatsAppHref("Hola, soy joven profesional en Madrid y busco un seguro a mi medida.");
+  const wCotiza = buildWhatsAppHref("Hola, soy joven profesional en Madrid y busco un seguro. Primera hipoteca / salud / protección.");
 
   return (
     <>
@@ -54,77 +54,76 @@ export default function JovenesPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO VERCEL TURQUESA */}
-        <section className="pt-24 pb-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* HERO — Moderno, aspiracional, limpio */}
+        <section className="relative pt-24 pb-20 overflow-hidden">
+          {/* Halo suave violeta */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-radial from-violet-100/60 via-fuchsia-50/30 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge Vercel */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EBF5FF] text-[#0066FF] text-sm mb-6" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px' }}>
-                  <Sparkles className="w-4 h-4" />
-                  Millennials first · +1.200 jóvenes
+                {/* Badge moderno */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm mb-8 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-violet-600" />
+                  <span className="font-medium">+1.200 jóvenes ya protegidos</span>
                 </div>
                 
-                {/* H1 Vercel — compressed tracking */}
-                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-[#171717] leading-[1.00] tracking-[-2.4px] mb-6">
+                {/* H1 moderno */}
+                <h1 className="text-[52px] sm:text-[60px] lg:text-[68px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
                   Seguros
                   <br />
-                  <span className="text-[#0066FF]">Jóvenes Madrid</span>
+                  <span className="text-violet-600">a tu medida</span>
                 </h1>
                 
-                {/* Subhead */}
-                <p className="text-xl text-[#666666] leading-relaxed mb-8 max-w-md">
-                  Sin copagos. Deportes. Hipoteca joven.
+                {/* Subhead aspiracional */}
+                <p className="text-2xl text-slate-500 leading-relaxed mb-10 max-w-md">
+                  Tu primera hipoteca.
+                  <br />
+                  Salud sin copagos.
+                  <br />
+                  <span className="text-slate-900 font-medium">Protección real.</span>
                 </p>
                 
-                {/* CTAs Vercel */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                {/* CTAs modernos */}
+                <div className="flex flex-wrap gap-4 mb-10">
                   <a 
                     href={wCotiza}
-                    className="group inline-flex items-center gap-2 bg-[#0066FF] hover:bg-[#0052CC] text-white px-6 py-3 rounded-lg text-base font-medium transition-all"
-                    style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px' }}
+                    className="group inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    💬 WhatsApp
-                    <span className="hidden group-hover:inline text-sm ml-1">
-                      ⚡ 15% descuento
-                    </span>
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar ahora
                   </a>
                   <a 
-                    href="#coberturas"
-                    className="inline-flex items-center gap-2 bg-white text-[#171717] px-6 py-3 rounded-lg text-base font-medium transition-all hover:bg-[#fafafa]"
-                    style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px' }}
+                    href="#necesidades"
+                    className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-full text-lg font-medium border border-slate-200 hover:border-violet-300 transition-all"
                   >
-                    Ver coberturas
+                    Ver opciones
                   </a>
                 </div>
                 
-                {/* Trust row */}
-                <div className="flex flex-wrap gap-6 text-sm text-[#666666]">
+                {/* Trust minimal */}
+                <div className="flex flex-wrap gap-6 text-slate-500">
                   <span className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#0066FF]" />
-                    Sin copagos
+                    <CheckCircle2 className="w-5 h-5 text-violet-600" />
+                    Sin permanencia
                   </span>
                   <span className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-[#0066FF]" />
-                    App gestión
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-[#0066FF]" />
-                    25-35 años
+                    <Zap className="w-5 h-5 text-violet-600" />
+                    30 min respuesta
                   </span>
                 </div>
               </div>
               
-              {/* Right: Hero Image */}
+              {/* Right: Imagen aspiracional */}
               <div className="relative">
-                <div className="relative rounded-xl overflow-hidden" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-100/50 to-fuchsia-50/30 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50">
                   <Image
                     src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Joven profesional Madrid gym coworking"
+                    alt="Joven profesional Madrid"
                     width={600}
-                    height={450}
+                    height={500}
                     className="w-full h-auto object-cover"
                     priority
                   />
@@ -134,141 +133,213 @@ export default function JovenesPage() {
           </div>
         </section>
 
-        {/* PERFECTO PARA — Vercel cards */}
-        <section className="py-20" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px inset' }}>
+        {/* NECESIDADES REALES */}
+        <section id="necesidades" className="py-24 bg-slate-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#171717] leading-[1.20] tracking-[-2.4px] text-center mb-12">
-              Perfecto para ti
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { icon: Home, title: "25-35 años", desc: "Primera hipoteca joven" },
-                { icon: Mountain, title: "Deportes", desc: "Extremos cubiertos" },
-                { icon: Heart, title: "Salud", desc: "Sin copagos urgencias" },
-                { icon: Laptop, title: "Home Office", desc: "Trabajo remoto protegido" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-xl p-6 bg-white" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px' }}>
-                  <div className="w-10 h-10 rounded-lg bg-[#EBF5FF] flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-[#0066FF]" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#171717] mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#666666]">{item.desc}</p>
-                </div>
-              ))}
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Lo que necesitás ahora
+              </h2>
+              <p className="text-xl text-slate-500">
+                Tres momentos clave
+              </p>
             </div>
-          </div>
-        </section>
-
-        {/* COBERTURAS JÓVENES — Vercel grid */}
-        <section id="coberturas" className="py-20 bg-[#fafafa]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#171717] leading-[1.20] tracking-[-2.4px] text-center mb-12">
-              Cobertura joven
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: Heart, title: "Salud sin copagos", desc: "Médico sin pagar extra" },
-                { icon: Mountain, title: "Deportes", desc: "Accidentes cubiertos" },
-                { icon: Home, title: "Vida hipoteca", desc: "Primera vivienda joven" },
-                { icon: Laptop, title: "Responsabilidad", desc: "RC digital incluida" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-xl p-5 bg-white" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px' }}>
-                  <div className="w-10 h-10 rounded-lg bg-[#EBF5FF] flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[#0066FF]" />
-                  </div>
-                  <h3 className="text-base font-semibold text-[#171717] mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#666666]">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* EQUIPO JÓVEN */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative rounded-xl overflow-hidden" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px' }}>
-                <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa Valentín · También millennial"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EBF5FF] text-[#0066FF] text-sm mb-6" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px' }}>
-                  <Sparkles className="w-4 h-4" />
-                  También millennial
-                </div>
-                <h2 className="text-[40px] font-semibold text-[#171717] leading-[1.20] tracking-[-2.4px] mb-4">
-                  Rosa Valentín
-                </h2>
-                <p className="text-lg text-[#666666] leading-relaxed mb-6">
-                  Entiendo lo que necesitas porque también soy joven profesional. 
-                  Sé lo que es la primera hipoteca, el gimnasio, los deportes de fin de semana.
-                </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#171717] text-white text-sm">
-                  <CheckCircle2 className="w-4 h-4" />
-                  DGSFP: C012479234434D
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROCESO RÁPIDO */}
-        <section className="py-20 bg-[#fafafa]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] font-semibold text-[#171717] leading-[1.20] tracking-[-2.4px] text-center mb-12">
-              Proceso rápido
-            </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "01", title: "WhatsApp", desc: "Edad + deportes + necesidades." },
-                { num: "02", title: "Plan joven", desc: "Cotización optimizada en 30min." },
-                { num: "03", title: "App", desc: "Gestión instantánea desde el móvil." },
-              ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded-lg bg-[#0066FF] text-white flex items-center justify-center text-lg font-semibold mx-auto mb-4" style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px' }}>
-                    {step.num}
+                { 
+                  icon: Home, 
+                  title: "Primera hipoteca", 
+                  desc: "El banco exige seguro de vida. Nosotros te conseguimos el mejor precio con la misma cobertura."
+                },
+                { 
+                  icon: Heart, 
+                  title: "Salud sin copagos", 
+                  desc: "Médico cuando lo necesites, sin pagar extra. Especialistas y urgencias incluidos."
+                },
+                { 
+                  icon: Briefcase, 
+                  title: "Protección real", 
+                  desc: "RC profesional, accidentes, responsabilidad. Tu futuro protegido desde el día 1."
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-2xl p-8 border border-slate-100">
+                  <div className="w-14 h-14 rounded-xl bg-violet-50 flex items-center justify-center mb-6">
+                    <item.icon className="w-7 h-7 text-violet-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#171717] mb-2">{step.title}</h3>
-                  <p className="text-base text-[#666666]">{step.desc}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-500 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COBERTURAS CLARAS */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Cobertura simple
+              </h2>
+              <p className="text-xl text-slate-500">
+                Lo esencial, nada de más
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: Heart, title: "Salud", desc: "Sin copagos" },
+                { icon: Home, title: "Vida", desc: "Hipoteca" },
+                { icon: Briefcase, title: "RC", desc: "Profesional" },
+                { icon: Shield, title: "Accidentes", desc: "Protección" },
+              ].map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mb-4 mx-auto">
+                    <item.icon className="w-8 h-8 text-slate-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <p className="text-slate-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* BENEFICIOS PRÁCTICOS */}
+        <section className="py-24 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-4">
+                Beneficios reales
+              </h2>
+              <p className="text-xl text-slate-500">
+                Por qué elegirnos
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "App para gestionar todo", desc: "Tu seguro en el móvil. Sin papeleo, sin llamadas eternas." },
+                { title: "Sin permanencia", desc: "Cambiás cuando quieras. Sin letras chicas ni sorpresas." },
+                { title: "30 minutos y listo", desc: "Cotización clara, sin tecnicismos. Decidís y ya está." },
+                { title: "Precio justo", desc: "Sin comisiones ocultas. Pagás lo que ves, ni un euro más." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-100">
+                  <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-violet-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                    <p className="text-slate-500">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-100/40 to-slate-100/20 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Entienden tu momento"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 text-violet-700 text-sm font-medium mb-8">
+                  <Award className="w-4 h-4" />
+                  También pasamos por esto
+                </div>
+                
+                <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
+                  Rosa y Sebastián
+                </h2>
+                
+                <p className="text-xl text-slate-500 leading-relaxed mb-8">
+                  Sabemos lo que es la primera hipoteca, el gimnasio, los planes de fin de semana. 
+                  Entendemos tu ritmo y te proponemos seguros que realmente se adaptan a tu vida.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-violet-600" />
+                    </div>
+                    <span className="text-slate-700">+1.200 jóvenes protegidos</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-violet-600" />
+                    </div>
+                    <span className="text-slate-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-violet-600" />
+                    </div>
+                    <span className="text-slate-700">94% recomiendan</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm">
+                  <span className="font-semibold text-slate-900">NIF:</span> 79234434D
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA FINAL */}
-        <section className="py-24 bg-[#0066FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-[48px] sm:text-[56px] font-semibold text-white leading-[1.00] tracking-[-2.4px] mb-4">
-              Tu futuro asegurado
+        <section className="relative py-24 bg-violet-600 overflow-hidden">
+          {/* Halo */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-violet-500/50 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[44px] sm:text-[52px] font-bold text-white leading-tight mb-6">
+              Decidí rápido.
+              <br />
+              <span className="text-violet-200">Decidí bien.</span>
             </h2>
-            <p className="text-xl text-white/70 mb-10">
-              Un WhatsApp. 30 minutos. Sin complicaciones.
+            
+            <p className="text-xl text-violet-100 mb-12 max-w-2xl mx-auto">
+              Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              La protección que necesitás, al precio justo.
             </p>
             
             <a 
               href={wCotiza}
-              className="group inline-flex items-center gap-2 bg-white text-[#0066FF] px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:bg-[#fafafa]"
-              style={{ boxShadow: 'rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px' }}
+              className="group inline-flex items-center gap-3 bg-white text-violet-600 px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              💬 WhatsApp Ahora
-              <span className="hidden group-hover:inline text-sm ml-2 text-[#0066FF]/70">
-                ⚡ 15% descuento
-              </span>
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Empezar ahora
             </a>
             
-            <p className="text-sm text-white/40 mt-8">
+            {/* Minimal badges */}
+            <div className="flex flex-wrap justify-center gap-6 mt-12 text-violet-200">
+              <span className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" />
+                Sin permanencia
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="w-5 h-5" />
+                30 min
+              </span>
+            </div>
+            
+            <p className="text-lg text-violet-300/70 mt-10">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
