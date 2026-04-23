@@ -120,12 +120,11 @@ export default function DecesosPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/40 to-slate-100/20 rounded-3xl blur-2xl transform scale-95" />
                 <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
                   <Image
-                    src="https://images.pexels.com/photos/3760260/pexels-photo-3760260.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Familia tranquila con previsión"
+                    src="/images/products/decesos-hero.webp"
+                    alt="Acompañamiento familiar con dignidad y previsión"
                     width={600}
                     height={500}
-                    className="w-full h-auto object-cover object-top"
-                    objectFit="cover"
+                    className="w-full h-auto object-cover object-[center_30%]"
                     priority
                   />
                 </div>
