@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Mascotas Madrid | Valentín Protección Integral",
-  description: "Seguro veterinario perros gatos Madrid. Accidentes, cirugías, hospital. Cotiza WhatsApp 30min. Rosa y Sebastián.",
-  keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid"],
+  title: "Seguro Mascotas Madrid | Perros y Gatos | Valentín Protección Integral",
+  description: "Seguro veterinario para perros y gatos Madrid. Veterinario, accidentes, cirugías, hospitalización. Desde 15€/mes. Rosa y Sebastián.",
+  keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid","seguro mascotas barato"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/mascotas" },
   openGraph: {
-    title: "Seguro Mascotas Madrid | Veterinario y Cirugías",
-    description: "Hospitalización, cirugía 90% cubierta, medicación crónica. WhatsApp 30min.",
+    title: "Seguro Mascotas Madrid | Perros y Gatos",
+    description: "Protege a tu compañero de 4 patas. Veterinario, cirugías, hospitalización. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -54,244 +54,305 @@ export default function MascotasPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO AIRBNB — Rosa coral, fotografía cálida, rounded */}
-        <section className="relative bg-gradient-to-b from-[#FFF8F6] to-white pt-24 pb-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+        {/* HERO — Blanco cálido, mascota protagonista */}
+        <section className="relative pt-20 pb-16 bg-orange-50/30 overflow-hidden">
+          {/* Halo cálido suave */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-amber-100/50 via-orange-50/30 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge Airbnb */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#DDDDDD] text-[#717171] text-sm mb-6 shadow-sm">
-                  <Sparkles className="w-4 h-4 text-[#FF5A5F]" />
-                  +1.200 mascotas felices · DGSFP
+                {/* Badge cálido */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-amber-100 text-amber-700 text-sm mb-8 shadow-sm">
+                  <Sparkles className="w-4 h-4" />
+                  <span className="font-medium">+1.200 mascotas protegidas</span>
+                  <span className="text-amber-300">|</span>
+                  <span>DGSFP</span>
                 </div>
                 
-                {/* H1 Airbnb style */}
-                <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] font-semibold text-[#222222] leading-[1.10] tracking-[-0.02em] mb-4">
+                {/* H1 emocional */}
+                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-stone-800 leading-[0.95] tracking-tight mb-6">
                   Seguro para tu
                   <br />
-                  <span className="text-[#FF5A5F]">Mascota Madrid</span>
+                  <span className="text-amber-600">mascota</span>
                 </h1>
                 
-                {/* Subhead */}
-                <p className="text-xl text-[#717171] leading-relaxed mb-8 max-w-md">
-                  Veterinario, accidentes, cirugías.
+                {/* Subheadline cálida */}
+                <p className="text-2xl text-stone-600 leading-relaxed mb-8 max-w-lg">
+                  Porque merece lo mejor.
                   <br />
-                  Protege a tu compañero de 4 patas.
+                  <span className="text-stone-500">Veterinario, accidentes, cirugías.</span>
                 </p>
                 
-                {/* CTAs Airbnb — rounded, coral */}
+                {/* CTAs */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <a 
                     href={wCotiza}
-                    className="group inline-flex items-center gap-2 bg-[#FF5A5F] hover:bg-[#E14F53] text-white px-6 py-4 rounded-xl text-lg font-medium transition-all hover:scale-105 shadow-md"
+                    className="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
                     <WhatsAppIcon className="w-5 h-5" />
                     💬 Cotizar WhatsApp
-                    <span className="hidden group-hover:inline text-sm ml-1">
-                      🐶 10% 1er año
-                    </span>
                   </a>
                   <a 
-                    href="#coberturas"
-                    className="inline-flex items-center gap-2 bg-white text-[#222222] px-6 py-4 rounded-xl text-lg font-medium border border-[#DDDDDD] hover:border-[#FF5A5F] transition-all"
+                    href="tel:603448765"
+                    className="inline-flex items-center gap-2 bg-white text-stone-700 px-8 py-4 rounded-xl text-lg font-medium border border-stone-200 hover:border-amber-300 hover:bg-amber-50/30 transition-all"
                   >
-                    Ver coberturas
+                    <Phone className="w-5 h-5" />
+                    📞 603 44 87 65
                   </a>
                 </div>
                 
                 {/* Trust pills */}
                 <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF8F6] text-[#222222] text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-[#00A699]" />
-                    30 min respuesta
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
+                    Perros y gatos
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF8F6] text-[#222222] text-sm">
-                    <Shield className="w-4 h-4 text-[#00A699]" />
-                    Sin permanencia
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm">
+                    <Heart className="w-4 h-4 text-amber-500" />
+                    Sin límite de edad
                   </span>
                 </div>
               </div>
               
-              {/* Right: Hero image Airbnb style */}
+              {/* Right: Mascota protagonista */}
               <div className="relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 to-orange-50/20 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 border border-stone-100">
                   <Image
-                    src="https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Perro gato veterinario Madrid feliz"
+                    src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Perro y gato felices protegidos"
                     width={600}
-                    height={500}
+                    height={450}
                     className="w-full h-auto object-cover"
                     priority
                   />
                 </div>
-                {/* Floating card */}
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-[#EBEBEB]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#FF5A5F]/10 flex items-center justify-center">
-                      <PawPrint className="w-5 h-5 text-[#FF5A5F]" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-[#222222]">Protección total</p>
-                      <p className="text-xs text-[#717171]">Perros y gatos</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ¿POR QUÉ? — Airbnb cards hogar */}
-        <section className="py-20 bg-[#F7F7F7]">
+        {/* RAZONES — Por qué asegurar */}
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
-              ¿Por qué un seguro para tu mascota?
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { icon: Stethoscope, title: "Accidente repentino", desc: "Urgencias veterinarias cubiertas las 24h. Sin preocuparte por el coste." },
-                { icon: Syringe, title: "Cirugía inesperada", desc: "Hasta 3.000€ en cirugías. Tu mascota merece lo mejor." },
-                { icon: Heart, title: "Veterinario rutinario", desc: "Chequeos anuales incluidos. Prevenir es cuidar." },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-[#EBEBEB] hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#FF5A5F]/10 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-[#FF5A5F]" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#222222] mb-2">{item.title}</h3>
-                  <p className="text-base text-[#717171] leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
+                Por qué asegurar a tu mascota
+              </h2>
+              <p className="text-xl text-stone-600">
+                Cuidarlos es quererlos
+              </p>
             </div>
-          </div>
-        </section>
-
-        {/* COBERTURAS — Airbnb grid */}
-        <section id="coberturas" className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
-              Todo lo que incluye
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                { icon: Home, title: "Hospitalización", desc: "Completa" },
-                { icon: Syringe, title: "Cirugía", desc: "90% cubierta" },
-                { icon: Pill, title: "Medicación", desc: "Crónica incluida" },
-                { icon: Shield, title: "Robo", desc: "600€ cubiertos" },
-                { icon: Stethoscope, title: "Responsabilidad", desc: "Civil incluida" },
-                { icon: PawPrint, title: "Eutanasia", desc: "Cubierta" },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-5 border border-[#EBEBEB] hover:border-[#FF5A5F]/30 transition-all">
-                  <div className="w-10 h-10 rounded-lg bg-[#FFF8F6] flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[#FF5A5F]" />
-                  </div>
-                  <h3 className="text-base font-semibold text-[#222222] mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#717171]">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* EQUIPO — Airbnb shadows suaves */}
-        <section className="py-20 bg-[#F7F7F7]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa Valentín · Amor por los animales"
-                  width={500}
-                  height={600}
-                  className="w-full rounded-3xl object-cover shadow-md"
-                  priority
-                />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFF8F6] text-[#FF5A5F] text-sm mb-6">
-                  <Heart className="w-4 h-4" />
-                  Amor por los animales
-                </div>
-                <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] mb-4">
-                  Rosa Valentín
-                </h2>
-                <p className="text-lg text-[#717171] leading-relaxed mb-6">
-                  +10 años protegiendo mascotas en Madrid.
-                  Entiendo lo que significa tu compañero porque 
-                  también tengo los míos.
-                </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00A699]/10 text-[#00887A] text-sm">
-                  <CheckCircle2 className="w-4 h-4" />
-                  DGSFP: C012479234434D
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROCESO FÁCIL */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
-              Proceso fácil
-            </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "1", title: "WhatsApp", desc: "Foto + raza de tu mascota." },
-                { num: "2", title: "Cotizamos", desc: "En 30 min cotización personalizada." },
-                { num: "3", title: "Tarjeta", desc: "Veterinaria digital inmediata." },
-              ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#FF5A5F] text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4 shadow-md">
-                    {step.num}
+                { 
+                  icon: Heart, 
+                  title: "Tranquilidad", 
+                  desc: "Sabes que está cubierto si algo pasa. Sin preocuparte por el dinero en momentos difíciles."
+                },
+                { 
+                  icon: Stethoscope, 
+                  title: "Mejor atención", 
+                  desc: "Acceso a los mejores veterinarios de Madrid. Sin esperas, sin listas de espera."
+                },
+                { 
+                  icon: Shield, 
+                  title: "Imprevistos cubiertos", 
+                  desc: "Accidentes, enfermedades, cirugías. Todo protegido desde el primer día."
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-orange-50/50 rounded-2xl p-8 border border-orange-100">
+                  <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                    <item.icon className="w-7 h-7 text-amber-500" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#222222] mb-2">{step.title}</h3>
-                  <p className="text-base text-[#717171]">{step.desc}</p>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-3">{item.title}</h3>
+                  <p className="text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA + TRUST — Airbnb final */}
-        <section className="py-24 bg-gradient-to-b from-[#FFF8F6] to-[#FFE8E5]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-[40px] sm:text-[48px] font-semibold text-[#222222] leading-[1.10] mb-4">
-              Protege a tu mejor amigo
+        {/* COBERTURAS — Cards limpias */}
+        <section className="py-20 bg-stone-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
+                Cobertura completa
+              </h2>
+              <p className="text-xl text-stone-600">
+                Todo lo que incluye
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: Stethoscope, title: "Veterinario", desc: "Consultas" },
+                { icon: Syringe, title: "Vacunas", desc: "Puestas al día" },
+                { icon: Pill, title: "Medicación", desc: "Tratamientos" },
+                { icon: Home, title: "Hospital", desc: "Ingresos" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 border border-stone-100 text-center">
+                  <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center mb-4 mx-auto">
+                    <item.icon className="w-6 h-6 text-amber-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-800 mb-1">{item.title}</h3>
+                  <p className="text-sm text-stone-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO Y CONFIANZA */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 to-stone-100/20 rounded-3xl blur-2xl transform scale-95" />
+                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 border border-stone-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Amantes de los animales"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-700 text-sm font-medium mb-6">
+                  <PawPrint className="w-4 h-4" />
+                  Amantes de los animales
+                </div>
+                
+                <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-6">
+                  Rosa y Sebastián
+                </h2>
+                
+                <p className="text-lg text-stone-600 leading-relaxed mb-6">
+                  Tenemos mascotas y sabemos lo que significan. Por eso entendemos 
+                  lo importante que es protegerlas. Te ayudamos a encontrar el seguro 
+                  que mejor cuida a tu compañero de 4 patas.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-stone-700">+1.200 mascotas protegidas</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-stone-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="text-stone-700">98% dueños felices</span>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-100 text-stone-700 text-sm">
+                  <span className="font-semibold text-stone-900">NIF:</span> 79234434D
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROCESO — Simple */}
+        <section className="py-20 bg-orange-50/30">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
+                Cómo funciona
+              </h2>
+              <p className="text-xl text-stone-600">
+                Tres pasos simples
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { 
+                  num: "1", 
+                  title: "Nos cuentas", 
+                  desc: "Nos dices qué mascota tienes y qué necesitas."
+                },
+                { 
+                  num: "2", 
+                  title: "Te asesoramos", 
+                  desc: "Te recomendamos la mejor cobertura para tu caso."
+                },
+                { 
+                  num: "3", 
+                  title: "Proteges", 
+                  desc: "Tu mascota está cubierta desde el primer día."
+                },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-500/20">
+                    {step.num}
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-800 mb-3">{step.title}</h3>
+                  <p className="text-stone-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL */}
+        <section className="relative py-24 bg-amber-500 overflow-hidden">
+          {/* Halo */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-radial from-amber-400/50 to-transparent blur-3xl pointer-events-none" />
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-bold text-white leading-tight mb-6">
+              Protege a tu compañero
             </h2>
-            <p className="text-xl text-[#717171] mb-10">
+            
+            <p className="text-xl text-amber-100 mb-10 max-w-2xl mx-auto">
               Un WhatsApp. 30 minutos. Sin compromiso.
+              <br />
+              Tu mascota lo merece.
             </p>
             
             <a 
               href={wCotiza}
-              className="group inline-flex items-center gap-2 bg-[#FF5A5F] hover:bg-[#E14F53] text-white px-8 py-5 rounded-xl text-xl font-medium transition-all hover:scale-105 shadow-lg"
+              className="group inline-flex items-center gap-3 bg-white text-amber-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               <WhatsAppIcon className="w-6 h-6" />
-              💬 Cotizar por WhatsApp
-              <span className="hidden group-hover:inline text-base ml-2">
-                🐶 10% 1er año
-              </span>
+              💬 Cotizar Ahora
             </a>
             
-            {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
-              {[
-                "30min respuesta",
-                "Sin permanencia",
-                "DGSFP verificado",
-              ].map((item, i) => (
-                <div key={i} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#222222] text-sm border border-[#DDDDDD]">
-                  <CheckCircle2 className="w-4 h-4 text-[#00A699]" />
-                  {item}
-                </div>
-              ))}
+            {/* Badges finales */}
+            <div className="flex flex-wrap justify-center gap-4 mt-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
+                <CheckCircle2 className="w-4 h-4" />
+                Perros y gatos
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
+                <Heart className="w-4 h-4" />
+                Sin límite de edad
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
+                <Shield className="w-4 h-4" />
+                DGSFP verificado
+              </div>
             </div>
             
-            <p className="text-sm text-[#717171] mt-8">
+            <p className="text-lg text-amber-200/70 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
