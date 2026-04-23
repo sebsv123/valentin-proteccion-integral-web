@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Sparkles, CheckCircle2, Phone, Heart, Home, Plane, Ambulance, Shield, Clock } from "lucide-react";
+import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros Mayores 50+ Madrid | Valentín Protección Integral",
-  description: "Seguros seniors Madrid. Decesos, salud geriátrica, asistencia domicilio. Llamada directa 603 44 87 65. Rosa y Sebastián.",
+  title: "Seguros para Mayores Madrid | Tranquilidad y Confianza | Valentín Protección Integral",
+  description: "Seguros para mayores en Madrid. Decesos, salud, asistencia domicilio. Atención por teléfono. Rosa y Sebastián.",
   keywords: ["seguros mayores Madrid","seguros seniors Madrid","seguro decesos Madrid","asistencia domicilio mayores"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/seniors" },
   openGraph: {
-    title: "Seguros Mayores 50+ Madrid | Tranquilidad",
-    description: "Decesos, salud geriátrica, asistencia domicilio. Llamada directa. 10+ años confianza.",
+    title: "Seguros para Mayores Madrid | Tranquilidad y Confianza",
+    description: "Decesos, salud, asistencia domicilio. Atención por teléfono. Explicado paso a paso.",
     url: "https://valentinproteccionintegral.com/para/seniors",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
-  "name": "Seguros Mayores 50+ Madrid - Valentín Protección Integral",
+  "name": "Seguros para Mayores Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,87 +39,77 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros para mayores 50+ Madrid. Decesos, salud geriátrica, asistencia domicilio 24h.",
+  "description": "Seguros para mayores Madrid. Decesos, salud, asistencia domicilio. Atención personalizada.",
 };
 
 export const dynamic = "force-static";
 
 export default function SeniorsPage() {
-  const wCotiza = buildWhatsAppHref("Hola, tengo más de 50 años y busco un seguro tranquilo en Madrid. Prefiero llamar.");
+  const wCotiza = buildWhatsAppHref("Hola, tengo más de 50 años y busco un seguro en Madrid.");
 
   return (
     <>
-      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Para",url:"/para"},{name:"Mayores 50+",url:"/para/seniors"}]} />
+      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Para",url:"/para"},{name:"Mayores",url:"/para/seniors"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO WISE — Azul calma (usando verde Wise) */}
-        <section className="pt-24 pb-20 bg-[#F7F8F9]">
+        {/* HERO — Tranquilo, claro, sin oscuros */}
+        <section className="pt-20 pb-16 bg-stone-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
               <div>
-                {/* Badge Wise */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0FAE5] text-[#163300] text-sm mb-6 border border-[#9FE870]">
-                  <Sparkles className="w-4 h-4 text-[#2E7D32]" />
-                  +10 años confianza · +1.200 seniors
+                {/* Badge claro */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-base mb-8">
+                  <Sparkles className="w-4 h-4 text-emerald-600" />
+                  <span>+10 años ayudando a mayores</span>
                 </div>
                 
-                {/* H1 Wise style */}
-                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-[#163300] leading-[0.85] tracking-tight mb-6">
-                  Seguros
+                {/* H1 grande y claro */}
+                <h1 className="text-[48px] sm:text-[56px] font-bold text-stone-800 leading-[1.05] mb-6">
+                  Seguros para
                   <br />
-                  <span className="text-[#4B5563]">Tranquilidad 50+</span>
+                  <span className="text-emerald-700">mayores</span>
                 </h1>
                 
-                {/* Subhead grande para legibilidad */}
-                <p className="text-2xl text-[#4B5563] leading-relaxed mb-8 max-w-lg">
-                  Decesos, salud, asistencia hogar.
+                {/* Subheadline muy legible */}
+                <p className="text-2xl text-stone-600 leading-relaxed mb-8">
+                  Decesos, salud y asistencia en casa.
                   <br />
-                  <span className="text-[#163300] font-medium">Todo explicado paso a paso.</span>
+                  Todo explicado con claridad.
                 </p>
                 
-                {/* CTAs — Teléfono primario para seniors */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                {/* Teléfono grande y visible */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a 
                     href="tel:603448765"
-                    className="group inline-flex items-center gap-2 bg-[#9FE870] hover:bg-[#8FD460] text-[#163300] px-8 py-4 rounded-full text-lg font-semibold transition-transform hover:scale-105"
+                    className="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-5 rounded-xl text-xl font-semibold transition-all shadow-lg"
                   >
-                    <Phone className="w-5 h-5" />
-                    📞 Llamar Ahora
-                    <span className="hidden group-hover:inline text-sm ml-1">
-                      👴 Asesoría gratis
-                    </span>
+                    <Phone className="w-6 h-6" />
+                    📞 603 44 87 65
                   </a>
                   <a 
                     href={wCotiza}
-                    className="inline-flex items-center gap-2 bg-white text-[#163300] px-6 py-4 rounded-full text-lg font-medium border border-[#E5E7EB] hover:bg-[#F0FAE5] transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-stone-700 px-8 py-5 rounded-xl text-xl font-medium border-2 border-stone-200 hover:border-emerald-400 transition-all"
                   >
-                    <WhatsAppIcon className="w-5 h-5" />
+                    <WhatsAppIcon className="w-6 h-6" />
                     WhatsApp
                   </a>
                 </div>
                 
-                {/* Trust row */}
-                <div className="flex flex-wrap gap-6 text-lg text-[#4B5563]">
-                  <span className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#2E7D32]" />
-                    Sin internet necesario
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-[#163300]" />
-                    Respuesta inmediata
-                  </span>
-                </div>
+                {/* Info simple */}
+                <p className="text-lg text-stone-500">
+                  Atención personalizada. Sin prisa.
+                </p>
               </div>
               
-              {/* Right: Hero Image */}
+              {/* Right: Imagen serena */}
               <div className="relative">
-                <div className="relative rounded-[30px] overflow-hidden shadow-[rgba(14,15,12,0.12)_0px_0px_0px_1px]">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-100">
                   <Image
                     src="https://images.pexels.com/photos/3760260/pexels-photo-3760260.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Senior pareja Madrid parque feliz"
+                    alt="Pareja mayor tranquila"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover"
@@ -131,168 +121,225 @@ export default function SeniorsPage() {
           </div>
         </section>
 
-        {/* NECESIDADES 50+ — Wise cards */}
-        <section className="py-20">
+        {/* NECESIDADES — Tres cosas simples */}
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] sm:text-[48px] font-bold text-[#163300] leading-[0.85] text-center mb-12">
-              Lo que necesitas
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Heart, title: "Decesos", desc: "Sin preocupaciones para tu familia. Todo gestionado." },
-                { icon: Shield, title: "Salud geriátrica", desc: "Especialistas en medicina para mayores." },
-                { icon: Home, title: "Asistencia 24h", desc: "Ayuda en casa cuando la necesites." },
-                { icon: Plane, title: "Repatriación", desc: "Cobertura internacional completa." },
-              ].map((item, i) => (
-                <div key={i} className="rounded-[30px] p-6 bg-[#F0FAE5] border border-[#9FE870]/30">
-                  <div className="w-12 h-12 rounded-full bg-[#9FE870] flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-[#163300]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#163300] mb-2">{item.title}</h3>
-                  <p className="text-base text-[#4B5563]">{item.desc}</p>
-                </div>
-              ))}
+            <div className="text-center mb-14">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-stone-800 mb-4">
+                Tres cosas importantes
+              </h2>
+              <p className="text-xl text-stone-500">
+                Lo que necesitas ahora
+              </p>
             </div>
-          </div>
-        </section>
-
-        {/* COBERTURAS — Wise grid */}
-        <section className="py-20 bg-[#F7F8F9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] sm:text-[48px] font-bold text-[#163300] leading-[0.85] text-center mb-12">
-              Cobertura completa
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: Heart, title: "Decesos completo", desc: "Todo incluido" },
-                { icon: Shield, title: "Geriátrica", desc: "Especialistas" },
-                { icon: Ambulance, title: "Ambulancia 24h", desc: "Domicilio" },
-                { icon: Plane, title: "Repatriación", desc: "Mundial" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-[20px] p-5 bg-white border border-[#E5E7EB]">
-                  <div className="w-10 h-10 rounded-full bg-[#F0FAE5] flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[#163300]" />
-                  </div>
-                  <h3 className="text-base font-bold text-[#163300] mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#4B5563]">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* EQUIPO EXPERIENCIA */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative rounded-[30px] overflow-hidden shadow-[rgba(14,15,12,0.12)_0px_0px_0px_1px]">
-                <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa Valentín · 10+ años seniors"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0FAE5] text-[#163300] text-sm mb-6 border border-[#9FE870]">
-                  <Sparkles className="w-4 h-4 text-[#2E7D32]" />
-                  10+ años experiencia seniors
-                </div>
-                <h2 className="text-[40px] sm:text-[48px] font-bold text-[#163300] leading-[0.85] mb-4">
-                  Rosa Valentín
-                </h2>
-                <p className="text-xl text-[#4B5563] leading-relaxed mb-6">
-                  Llevo más de 10 años ayudando a personas mayores en Madrid 
-                  a encontrar la protección adecuada. Entiendo lo importante 
-                  que es la claridad y la confianza.
-                </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#9FE870] text-[#163300] text-sm font-semibold">
-                  <CheckCircle2 className="w-4 h-4" />
-                  DGSFP: C012479234434D
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROCESO SIMPLE */}
-        <section className="py-20 bg-[#F7F8F9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[40px] sm:text-[48px] font-bold text-[#163300] leading-[0.85] text-center mb-12">
-              Proceso simple
-            </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { num: "1", title: "Llamada", desc: "Directa, sin necesidad de internet. Te escuchamos." },
-                { num: "2", title: "Asesor personal", desc: "Te asignamos un asesor que te guiará en todo." },
-                { num: "3", title: "Todo explicado", desc: "Paso a paso, sin prisa, hasta que quede claro." },
-              ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#9FE870] text-[#163300] flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    {step.num}
+                { 
+                  icon: HandHeart, 
+                  title: "Decesos", 
+                  desc: "Para que tu familia no se preocupe por nada. Gastos cubiertos y gestión completa."
+                },
+                { 
+                  icon: Heart, 
+                  title: "Salud", 
+                  desc: "Médico cuando lo necesites. Sin listas de espera. Atención en casa si lo prefieres."
+                },
+                { 
+                  icon: Home, 
+                  title: "Asistencia", 
+                  desc: "Ayuda en tu hogar cuando la necesites. 24 horas, los 365 días del año."
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-stone-50 rounded-2xl p-8">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm">
+                    <item.icon className="w-8 h-8 text-emerald-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#163300] mb-2">{step.title}</h3>
-                  <p className="text-lg text-[#4B5563]">{step.desc}</p>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-3">{item.title}</h3>
+                  <p className="text-lg text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA CONFIANZA — Teléfono destacado */}
-        <section className="py-24 bg-[#163300]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-[48px] sm:text-[56px] font-bold text-white leading-[0.85] mb-4">
-              Llamar Ahora
-            </h2>
-            <p className="text-2xl text-white/70 mb-4">
-              GRATIS. Sin compromiso.
-            </p>
+        {/* COBERTURAS — Lista clara */}
+        <section className="py-20 bg-stone-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-stone-800 mb-4">
+                Todo lo que incluye
+              </h2>
+              <p className="text-xl text-stone-500">
+                Sin letra pequeña
+              </p>
+            </div>
             
-            {/* Teléfono gigante */}
-            <a 
-              href="tel:603448765"
-              className="group inline-flex items-center gap-3 bg-[#9FE870] hover:bg-[#8FD460] text-[#163300] px-10 py-5 rounded-full text-3xl font-bold transition-transform hover:scale-105 mb-8"
-            >
-              <Phone className="w-8 h-8" />
-              603 44 87 65
-              <span className="hidden group-hover:inline text-lg ml-2 text-[#163300]/70">
-                👴 Asesoría gratis
-              </span>
-            </a>
-            
-            <p className="text-xl text-white/50 mb-8">
-              O si prefieres WhatsApp:
-            </p>
-            
-            <a 
-              href={wCotiza}
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full text-lg font-medium border border-white/30 transition-all"
-            >
-              <WhatsAppIcon className="w-5 h-5" />
-              WhatsApp
-            </a>
-            
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
-                "Sin internet necesario",
-                "Asesor personal",
-                "DGSFP verificado",
+                "Gastos de funeral cubiertos al 100%",
+                "Capital para tu familia (hasta 50.000€)",
+                "Médico especialista sin esperas",
+                "Atención en tu domicilio",
+                "Traslado al hospital si es necesario",
+                "Gestión de todos los trámites",
               ].map((item, i) => (
-                <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm">
-                  <CheckCircle2 className="w-4 h-4" />
-                  {item}
+                <div key={i} className="flex items-center gap-4 bg-white rounded-xl p-6">
+                  <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <p className="text-lg text-stone-700">{item}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* EQUIPO — Confianza humana */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-100">
+                  <Image
+                    src="/images/rosa_y_sebastian.jpeg"
+                    alt="Rosa y Sebastián - Te acompañamos"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-base mb-8">
+                  <HandHeart className="w-4 h-4" />
+                  Te acompañamos
+                </div>
+                
+                <h2 className="text-[40px] sm:text-[48px] font-bold text-stone-800 leading-tight mb-6">
+                  Rosa y Sebastián
+                </h2>
+                
+                <p className="text-xl text-stone-600 leading-relaxed mb-8">
+                  Llevamos más de 10 años ayudando a mayores de Madrid. 
+                  Sabemos que lo más importante es la confianza y el trato humano.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-lg text-stone-700">+500 mayores acompañados</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-lg text-stone-700">DGSFP: C012479234434D</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <span className="text-lg text-stone-700">Disponibles para ti</span>
+                  </div>
+                </div>
+                
+                <p className="text-lg text-stone-500">
+                  <span className="font-semibold text-stone-800">NIF:</span> 79234434D
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROCESO — Muy simple */}
+        <section className="py-20 bg-stone-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[40px] sm:text-[48px] font-bold text-stone-800 mb-4">
+                Cómo funciona
+              </h2>
+              <p className="text-xl text-stone-500">
+                Tres pasos sencillos
+              </p>
+            </div>
             
-            <p className="text-sm text-white/40 mt-8">
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { 
+                  num: "1", 
+                  title: "Nos llamas", 
+                  desc: "Explicamos todo por teléfono. Sin prisa, con paciencia."
+                },
+                { 
+                  num: "2", 
+                  title: "Te asesoramos", 
+                  desc: "Te proponemos lo que mejor se adapta a ti. Sin compromiso."
+                },
+                { 
+                  num: "3", 
+                  title: "Estás cubierto", 
+                  desc: "Nosotros nos ocupamos de todo. Tú tranquilo."
+                },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-20 h-20 rounded-full bg-emerald-600 text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6">
+                    {step.num}
+                  </div>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-3">{step.title}</h3>
+                  <p className="text-lg text-stone-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Tranquila, sin presión */}
+        <section className="py-24 bg-emerald-600">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-[44px] sm:text-[52px] font-bold text-white leading-tight mb-6">
+              Tranquilidad para ti
+              <br />
+              y tu familia
+            </h2>
+            
+            <p className="text-2xl text-emerald-100 mb-10">
+              Una llamada. Sin compromiso. Con toda la paciencia del mundo.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a 
+                href="tel:603448765"
+                className="inline-flex items-center justify-center gap-3 bg-white text-emerald-700 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl"
+              >
+                <Phone className="w-6 h-6" />
+                📞 603 44 87 65
+              </a>
+              <a 
+                href={wCotiza}
+                className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white px-10 py-5 rounded-xl text-xl font-medium border-2 border-emerald-400 hover:bg-emerald-400 transition-all"
+              >
+                <WhatsAppIcon className="w-6 h-6" />
+                WhatsApp
+              </a>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-6 mt-10 text-emerald-100">
+              <span className="flex items-center gap-2 text-lg">
+                <CheckCircle2 className="w-5 h-5" />
+                Sin permanencia
+              </span>
+              <span className="flex items-center gap-2 text-lg">
+                <Shield className="w-5 h-5" />
+                DGSFP verificado
+              </span>
+            </div>
+            
+            <p className="text-lg text-emerald-200/70 mt-8">
               NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
