@@ -134,7 +134,7 @@ export default async function BlogPage() {
               <p className="mt-4 max-w-3xl text-lg leading-9 text-white/80">Si quieres aterrizar lo que has leído a tu situación real, puedes escribirnos por WhatsApp o pedir orientación sin compromiso.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a href={buildWhatsAppHref('Hola, vengo del blog y quiero una orientación sobre seguros.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]">Hablar por WhatsApp</a>
-                <Link href="/contacto" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Ir a contacto</Link>
+                <Link href="/contacto" className="btn-secondary !bg-transparent !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Ir a contacto</Link>
               </div>
             </div>
           </div>
