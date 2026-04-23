@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Heart, Clock, Building2, Shield, CheckCircle2, Users, Star, ArrowRight } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Privado Madrid | Sin Listas de Espera | Valentín Protección Integral",
-  description: "Seguro de salud privado en Madrid sin listas de espera. Accede a los mejores hospitales privados. Cotización en 30 minutos. Rosa y Sebastián.",
-  keywords: ["seguro salud privado Madrid","seguro salud sin esperas Madrid","seguro hospital privado Madrid","seguro salud individual Madrid"],
+  title: "Seguro Salud Privado Madrid | Valentín Protección Integral",
+  description: "Mejor seguro médico privado Madrid. Sin copagos, cobertura inmediata. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
-    title: "Seguro Salud Privado Madrid | Sin Listas de Espera",
-    description: "Accede a los mejores hospitales privados de Madrid sin esperas. Cotización en 30 minutos.",
+    title: "Seguro Salud Privado Madrid | Sin Copagos",
+    description: "Cobertura inmediata. Sin copagos. Especialistas sin lista de espera. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguro de Salud Privado Madrid",
+  "@type": "MedicalBusiness",
+  "name": "Seguro Salud Privado Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,148 +39,232 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de salud privado en Madrid sin listas de espera. Acceso directo a especialistas y hospitales privados.",
+  "description": "Seguro médico privado Madrid sin copagos. Cobertura inmediata. Especialistas sin lista de espera.",
 };
 
 export const dynamic = "force-static";
 
 export default function SaludIndividualPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de salud privado en Madrid sin listas de espera.");
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de salud privado individual en Madrid.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#f5f5f7]">
         
-        {/* HERO APPLE — Cinematic */}
-        <section className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-6 pt-20">
-          <p className="text-[#0071E3] text-lg font-medium tracking-wide uppercase mb-4">
-            Seguro Salud Privado Madrid
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-[#1D1D1F] tracking-tight leading-[1.0] max-w-5xl mb-8">
-            Sin listas de espera.
-            <br />
-            Sin sorpresas.
-          </h1>
-          <p className="text-xl md:text-2xl text-[#6E6E73] mt-4 max-w-2xl leading-relaxed">
-            Accede a los mejores hospitales privados de Madrid
-            con Rosa Valentín. Cotización en 30 minutos.
-          </p>
-          
-          {/* Imagen CINEMATIC */}
-          <Image 
-            src="https://images.pexels.com/photos/3845998/pexels-photo-3845998.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Hospital privado moderno Madrid limpio brillante"
-            width={1200}
-            height={600}
-            className="w-full max-w-6xl rounded-3xl mt-16 shadow-[0_40px_80px_rgba(0,0,0,0.12)] aspect-[21/9] object-cover"
-            priority
-          />
-        </section>
-
-        {/* STATS APPLE */}
-        <section className="py-24 bg-[#F5F5F7]">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid md:grid-cols-3 gap-12 text-center">
-              <div>
-                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">Hoy</p>
-                <p className="text-xl text-[#6E6E73] mt-2">mismo puedes tener cobertura</p>
-              </div>
-              <div>
-                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">24<span className="text-4xl">h</span></p>
-                <p className="text-xl text-[#6E6E73] mt-2">para especialista</p>
-              </div>
-              <div>
-                <p className="text-7xl md:text-8xl font-light text-[#1D1D1F]">100<span className="text-4xl">%</span></p>
-                <p className="text-xl text-[#6E6E73] mt-2">hospitales privados</p>
-              </div>
+        {/* HERO APPLE — Clean, minimal, product-as-hero */}
+        <section className="bg-[#000000] text-white py-24 lg:py-32">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
+            {/* Badge Apple style */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1d1d1f] text-[#86868b] text-sm mb-8">
+              <Sparkles className="w-4 h-4" />
+              +1.200 protegidos · DGSFP verificado
+            </div>
+            
+            {/* H1 Apple SF Pro Display 56px weight 600 */}
+            <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-4">
+              Tu Salud Privado
+              <br />
+              <span className="text-[#86868b]">Madrid</span>
+            </h1>
+            
+            {/* Subhead Apple style */}
+            <p className="text-[21px] text-[#86868b] leading-[1.47] mb-10 max-w-2xl mx-auto">
+              Sin copagos. Cobertura inmediata. Madrid.
+            </p>
+            
+            {/* CTAs Apple style — Pill links */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              <a 
+                href={wCotiza}
+                className="inline-flex items-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-6 py-3 rounded-lg text-[17px] font-normal transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                💬 Cotizar WhatsApp
+              </a>
+              <a 
+                href="#coberturas"
+                className="inline-flex items-center gap-2 bg-transparent text-[#2997ff] px-6 py-3 rounded-[980px] text-[17px] font-normal border border-[#2997ff] hover:underline transition-all"
+              >
+                Ver coberturas →
+              </a>
+            </div>
+            
+            {/* Hero Image Apple style */}
+            <div className="relative max-w-4xl mx-auto">
+              <Image
+                src="https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Hospital moderno Madrid profesional"
+                width={980}
+                height={550}
+                className="w-full rounded-xl object-cover shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px]"
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* BENEFICIOS — Grid Apple */}
+        {/* VENTAJAS — Apple cards limpias */}
         <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-4xl font-semibold text-[#1D1D1F] text-center mb-16">
-              Cobertura completa
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
+              Ventajas claras
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: Heart, title: "Sin esperas", desc: "Acceso directo a especialistas" },
-                { icon: Building2, title: "Hospitales top", desc: "Mejores centros privados Madrid" },
-                { icon: Clock, title: "24 horas", desc: "Atención médica telefónica" },
-                { icon: Shield, title: "Sin letra pequeña", desc: "Cobertura clara desde el primer día" },
+                { icon: CheckCircle2, title: "Sin copagos", desc: "Consulta y hospitalización sin pagar nada extra." },
+                { icon: Clock, title: "Cobertura inmediata", desc: "Desde el primer día. Sin carencias para urgencias." },
+                { icon: Shield, title: "Madrid + España", desc: "Red nacional de hospitales privados." },
               ].map((item, i) => (
-                <div key={i} className="rounded-2xl border border-[#D2D2D7] p-8 text-center hover:border-[#0071E3] transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-[#F5F5F7] flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-[#0071E3]" />
+                <div key={i} className="bg-[#f5f5f7] rounded-xl p-8 text-center">
+                  <div className="w-14 h-14 rounded-full bg-[#0071e3]/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-7 h-7 text-[#0071e3]" />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#1D1D1F] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#6E6E73]">{item.desc}</p>
+                  <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-2">{item.title}</h3>
+                  <p className="text-[17px] text-[#86868b] leading-[1.47]">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FOTO EQUIPO Apple Portrait */}
-        <section className="py-24 bg-[#F5F5F7]">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <Image 
-                src="/images/rosa_y_sebastian.jpeg"
-                alt="Rosa y Sebastián - Tu asesoría salud privada Madrid"
-                width={500}
-                height={700}
-                className="rounded-3xl aspect-[3/4] object-cover shadow-[0_60px_120px_rgba(0,0,0,0.15)] mx-auto"
-              />
-              <div>
-                <h2 className="text-4xl font-semibold text-[#1D1D1F] mb-6">
-                  Tu salud en manos expertas
+        {/* COBERTURAS — Apple grid */}
+        <section id="coberturas" className="py-24 bg-[#f5f5f7]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
+              Cobertura completa
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {[
+                { icon: Hospital, title: "Hospitalización", desc: "Completa" },
+                { icon: Stethoscope, title: "Especialistas", desc: "Ilimitados" },
+                { icon: Pill, title: "Medicación", desc: "100% cubierta" },
+                { icon: FlaskConical, title: "Análisis", desc: "Y pruebas" },
+                { icon: SmilePlus, title: "Dental", desc: "Básica incluida" },
+                { icon: Ambulance, title: "Ambulancia", desc: "Ilimitada" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px] hover:shadow-[rgba(0,0,0,0.3)_5px_8px_40px_0px] transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-[#1d1d1f]" />
+                  </div>
+                  <h3 className="text-[17px] font-semibold text-[#1d1d1f] mb-1">{item.title}</h3>
+                  <p className="text-[14px] text-[#86868b]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EQUIPO — Apple style con foto */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <Image
+                  src="/images/rosa_y_sebastian.jpeg"
+                  alt="Rosa Valentín · Mediadora Senior"
+                  width={500}
+                  height={600}
+                  className="w-full rounded-xl object-cover shadow-[rgba(0,0,0,0.22)_3px_5px_30px_0px]"
+                />
+              </div>
+              <div className="text-center lg:text-left">
+                <h2 className="text-[32px] font-semibold text-[#1d1d1f] leading-[1.10] mb-4">
+                  Rosa Valentín
                 </h2>
-                <p className="text-xl text-[#6E6E73] leading-relaxed mb-8">
-                  Rosa y Sebastián llevan más de 10 años ayudando a familias y profesionales 
-                  de Madrid a elegir el seguro de salud adecuado. Conocen cada hospital privado, 
-                  cada especialista, cada cobertura.
+                <p className="text-[21px] text-[#86868b] mb-6">
+                  Mediadora Senior
                 </p>
-                <div className="space-y-4">
-                  {[
-                    "Asesoría gratuita y sin compromiso",
-                    "Comparamos entre las principales compañías",
-                    "Gestión completa del alta",
-                    "Revisión anual de tu cobertura",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#0071E3]" />
-                      <span className="text-[#1D1D1F]">{item}</span>
-                    </div>
-                  ))}
+                <p className="text-[17px] text-[#1d1d1f] leading-[1.47] mb-8">
+                  +10 años ayudando a familias de Madrid a encontrar 
+                  la mejor cobertura médica privada. Asesoría personalizada, 
+                  sin coste adicional.
+                </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f5f5f7] text-[#1d1d1f] text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-[#0071e3]" />
+                  NIF: 79234434D · DGSFP: C012479234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA FINAL Apple */}
-        <section className="py-24 bg-white text-center">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#1D1D1F] mb-6">
-              Tu salud no puede esperar
+        {/* PROCESO — Apple steps minimal */}
+        <section className="py-24 bg-[#f5f5f7]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-4">
+              Proceso simple
             </h2>
-            <p className="text-xl text-[#6E6E73] mb-10">
-              Cotización personalizada en 30 minutos. Sin letra pequeña.
+            <p className="text-[21px] text-[#86868b] text-center mb-16">
+              Sin esperas. Sin complicaciones.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { num: "1", title: "WhatsApp", desc: "Nos cuentas tu situación médica y necesidades." },
+                { num: "2", title: "Cotizamos", desc: "En 30 min te enviamos la mejor opción para ti." },
+                { num: "3", title: "Alta inmediata", desc: "Cobertura desde el primer día. Sin papeleo." },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#0071e3] text-white flex items-center justify-center text-[21px] font-semibold mx-auto mb-4">
+                    {step.num}
+                  </div>
+                  <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-2">{step.title}</h3>
+                  <p className="text-[17px] text-[#86868b] leading-[1.47]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* GARANTÍAS APPLE — Badges blancos */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[40px] font-semibold text-[#1d1d1f] leading-[1.10] text-center mb-16">
+              Garantías
+            </h2>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                "Respuesta 30min garantizada",
+                "Sin permanencia",
+                "Revisión anual gratuita",
+                "DGSFP verificado",
+              ].map((item, i) => (
+                <div key={i} className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#f5f5f7] text-[#1d1d1f] text-[17px]">
+                  <CheckCircle2 className="w-5 h-5 text-[#0071e3]" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL — Apple dark section */}
+        <section className="py-24 lg:py-32 bg-[#000000] text-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <h2 className="text-[48px] sm:text-[56px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-4">
+              Empieza Hoy
+            </h2>
+            <p className="text-[21px] text-[#86868b] mb-10">
+              Tu cobertura médica privada en 30 minutos.
             </p>
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-3 bg-[#0071E3] hover:bg-[#0077ED] text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:scale-[1.02]"
+              className="group inline-flex items-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-8 py-4 rounded-lg text-[17px] font-normal transition-all hover:scale-105"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              Cotiza tu salud ahora
+              💬 Cotizar por WhatsApp
+              <span className="hidden group-hover:inline text-sm ml-2 text-white/80">
+                ✨ + Dental = condiciones especiales
+              </span>
             </a>
-            <p className="text-sm text-[#6E6E73] mt-6">
-              NIF: 79234434D · DGSFP: C012479234434D · Boadilla del Monte, Madrid
+            <p className="text-[14px] text-[#86868b] mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D
             </p>
           </div>
         </section>
