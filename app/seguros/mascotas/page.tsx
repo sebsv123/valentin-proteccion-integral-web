@@ -6,16 +6,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import { Heart, Shield, Plane, Stethoscope, FileCheck, AlertTriangle, CheckCircle2, Star } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Mascotas Madrid | RC Obligatoria Ley 2023 | Valentín Protección Integral",
-  description: "Seguro de mascotas desde 5€/mes. RC obligatoria Ley 17/2023. Veterinario, vacunas, pasaporte europeo. Rosa y Sebastián.",
-  keywords: ["seguro mascotas Madrid","seguro perro Madrid","RC obligatoria perro 2023","pasaporte europeo mascotas"],
+  title: "Seguro Mascotas Madrid | Valentín Protección Integral",
+  description: "Seguro veterinario perros gatos Madrid. Accidentes, cirugías, hospital. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/mascotas" },
   openGraph: {
-    title: "Seguro Mascotas Madrid | RC Obligatoria Ley 2023",
-    description: "Desde 5€/mes. RC obligatoria, veterinario, pasaporte europeo.",
+    title: "Seguro Mascotas Madrid | Veterinario y Cirugías",
+    description: "Hospitalización, cirugía 90% cubierta, medicación crónica. WhatsApp 30min.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Seguro de Mascotas Madrid",
+  "@type": "InsuranceAgency",
+  "name": "Seguro Mascotas Madrid - Valentín Protección Integral",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Valentín Protección Integral",
@@ -39,171 +39,261 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de mascotas con RC obligatoria Ley 17/2023. Desde 5€/mes. Veterinario, vacunas, pasaporte europeo.",
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Es obligatorio el seguro de perro en Madrid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. La Ley de Bienestar Animal 17/2023 obliga a todos los propietarios de perros en España, incluido Madrid, a tener un seguro de responsabilidad civil. Las opciones que gestionamos empiezan desde 5€/mes para RC básica." }
-    }
-  ]
+  "description": "Seguro veterinario perros gatos Madrid. Accidentes, cirugías, hospital. Cotiza WhatsApp 30min.",
 };
 
 export const dynamic = "force-static";
 
 export default function MascotasPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro para mi perro/gato. ¿Me podéis ayudar con la RC obligatoria?");
+  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro para mi mascota en Madrid.");
 
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Mascotas",url:"/seguros/mascotas"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO AIRBNB — Foto mascota emocional */}
-        <section className="relative min-h-[80vh] flex items-center">
-          <div className="absolute inset-0">
-            <Image
-              src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=1920"
-              alt="Golden retriever feliz con dueño parque Madrid"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-          </div>
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10 py-20">
-            <div className="max-w-2xl">
-              <span className="inline-block bg-[#FF385C] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                RC Obligatoria Ley 2023 — Desde 5€/mes
-              </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Tu compañero merece
-                <br />
-                protección total
-              </h1>
-              <p className="text-xl text-white/90 mb-8 max-w-lg">
-                Seguro de mascotas que cubre RC obligatoria, veterinario ilimitado, 
-                vacunas y pasaporte europeo.
-              </p>
-              <a 
-                href={wCotiza}
-                className="inline-flex items-center gap-3 bg-[#FF385C] hover:bg-[#D9324E] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                Proteger a mi mascota
-              </a>
+        {/* HERO AIRBNB — Rosa coral, fotografía cálida, rounded */}
+        <section className="relative bg-gradient-to-b from-[#FFF8F6] to-white pt-24 pb-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Content */}
+              <div>
+                {/* Badge Airbnb */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#DDDDDD] text-[#717171] text-sm mb-6 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-[#FF5A5F]" />
+                  +1.200 mascotas felices · DGSFP
+                </div>
+                
+                {/* H1 Airbnb style */}
+                <h1 className="text-[40px] sm:text-[48px] lg:text-[56px] font-semibold text-[#222222] leading-[1.10] tracking-[-0.02em] mb-4">
+                  Seguro para tu
+                  <br />
+                  <span className="text-[#FF5A5F]">Mascota Madrid</span>
+                </h1>
+                
+                {/* Subhead */}
+                <p className="text-xl text-[#717171] leading-relaxed mb-8 max-w-md">
+                  Veterinario, accidentes, cirugías.
+                  <br />
+                  Protege a tu compañero de 4 patas.
+                </p>
+                
+                {/* CTAs Airbnb — rounded, coral */}
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <a 
+                    href={wCotiza}
+                    className="group inline-flex items-center gap-2 bg-[#FF5A5F] hover:bg-[#E14F53] text-white px-6 py-4 rounded-xl text-lg font-medium transition-all hover:scale-105 shadow-md"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    💬 Cotizar WhatsApp
+                    <span className="hidden group-hover:inline text-sm ml-1">
+                      🐶 10% 1er año
+                    </span>
+                  </a>
+                  <a 
+                    href="#coberturas"
+                    className="inline-flex items-center gap-2 bg-white text-[#222222] px-6 py-4 rounded-xl text-lg font-medium border border-[#DDDDDD] hover:border-[#FF5A5F] transition-all"
+                  >
+                    Ver coberturas
+                  </a>
+                </div>
+                
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF8F6] text-[#222222] text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-[#00A699]" />
+                    30 min respuesta
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF8F6] text-[#222222] text-sm">
+                    <Shield className="w-4 h-4 text-[#00A699]" />
+                    Sin permanencia
+                  </span>
+                </div>
+              </div>
+              
+              {/* Right: Hero image Airbnb style */}
+              <div className="relative">
+                <div className="relative rounded-3xl overflow-hidden shadow-lg">
+                  <Image
+                    src="https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Perro gato veterinario Madrid feliz"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+                {/* Floating card */}
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-[#EBEBEB]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#FF5A5F]/10 flex items-center justify-center">
+                      <PawPrint className="w-5 h-5 text-[#FF5A5F]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#222222]">Protección total</p>
+                      <p className="text-xs text-[#717171]">Perros y gatos</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CARACTERÍSTICAS */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222222] text-center mb-12">
-              Todo lo que incluye
+        {/* ¿POR QUÉ? — Airbnb cards hogar */}
+        <section className="py-20 bg-[#F7F7F7]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
+              ¿Por qué un seguro para tu mascota?
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Shield, title: "RC Obligatoria", desc: "Cubre daños a terceros. Ley 17/2023." },
-                { icon: Stethoscope, title: "Veterinario", desc: "Consultas, urgencias, cirugías cubiertas." },
-                { icon: Heart, title: "Vacunas", desc: "Rabia, desparasitación, chip incluidos." },
-                { icon: Plane, title: "Pasaporte UE", desc: "Documentación para viajar por Europa." },
+                { icon: Stethoscope, title: "Accidente repentino", desc: "Urgencias veterinarias cubiertas las 24h. Sin preocuparte por el coste." },
+                { icon: Syringe, title: "Cirugía inesperada", desc: "Hasta 3.000€ en cirugías. Tu mascota merece lo mejor." },
+                { icon: Heart, title: "Veterinario rutinario", desc: "Chequeos anuales incluidos. Prevenir es cuidar." },
               ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl border border-[#DDDDDD] hover:border-[#FF385C] transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-[#FFF8F9] flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-[#FF385C]" />
+                <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-[#EBEBEB] hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-[#FF5A5F]/10 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-[#FF5A5F]" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#222222] mb-2">{item.title}</h3>
-                  <p className="text-[#717171] text-sm">{item.desc}</p>
+                  <h3 className="text-xl font-semibold text-[#222222] mb-2">{item.title}</h3>
+                  <p className="text-base text-[#717171] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* INFO OBLIGATORIA */}
-        <section className="py-20 bg-[#FFF8F9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-3 mb-6">
-                <AlertTriangle className="w-6 h-6 text-[#FF385C]" />
-                <h2 className="text-2xl font-bold text-[#222222]">RC obligatoria desde 2023</h2>
-              </div>
-              <p className="text-[#717171] mb-6 leading-relaxed">
-                La Ley 17/2023 de Bienestar Animal exige a todos los propietarios de perros en España 
-                (incluido Madrid) tener un seguro de responsabilidad civil. La multa por no cumplir 
-                puede llegar a multas de hasta 10.000€.
-              </p>
-              <div className="bg-white rounded-2xl p-6 border border-[#DDDDDD]">
-                <p className="text-[#222222] font-medium">
-                  Las pólizas que gestionamos incluyen RC desde 5€/mes. 
-                  Si quieres cobertura veterinaria completa, te calculamos el precio para tu mascota en 30 minutos.
-                </p>
-              </div>
+        {/* COBERTURAS — Airbnb grid */}
+        <section id="coberturas" className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
+              Todo lo que incluye
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { icon: Home, title: "Hospitalización", desc: "Completa" },
+                { icon: Syringe, title: "Cirugía", desc: "90% cubierta" },
+                { icon: Pill, title: "Medicación", desc: "Crónica incluida" },
+                { icon: Shield, title: "Robo", desc: "600€ cubiertos" },
+                { icon: Stethoscope, title: "Responsabilidad", desc: "Civil incluida" },
+                { icon: PawPrint, title: "Eutanasia", desc: "Cubierta" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 border border-[#EBEBEB] hover:border-[#FF5A5F]/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#FFF8F6] flex items-center justify-center mb-3">
+                    <item.icon className="w-5 h-5 text-[#FF5A5F]" />
+                  </div>
+                  <h3 className="text-base font-semibold text-[#222222] mb-1">{item.title}</h3>
+                  <p className="text-sm text-[#717171]">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* FOTO EQUIPO */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        {/* EQUIPO — Airbnb shadows suaves */}
+        <section className="py-20 bg-[#F7F7F7]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Image 
-                src="/images/rosa_y_sebastian_mascotas.png"
-                alt="Rosa y Sebastián - Amantes de las mascotas"
-                width={600}
-                height={500}
-                className="rounded-3xl object-cover shadow-xl"
-              />
+              <div className="relative">
+                <Image
+                  src="/images/rosa_y_sebastian.jpeg"
+                  alt="Rosa Valentín · Amor por los animales"
+                  width={500}
+                  height={600}
+                  className="w-full rounded-3xl object-cover shadow-md"
+                  priority
+                />
+              </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#222222] mb-6">
-                  Nosotros también tenemos mascotas
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFF8F6] text-[#FF5A5F] text-sm mb-6">
+                  <Heart className="w-4 h-4" />
+                  Amor por los animales
+                </div>
+                <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] mb-4">
+                  Rosa Valentín
                 </h2>
-                <p className="text-lg text-[#717171] mb-6 leading-relaxed">
-                  Rosa y Sebastián entienden lo que significa tu compañero. Por eso buscan 
-                  las mejores coberturas: veterinario de confianza, sin letra pequeña, 
-                  y gestión ágil cuando más lo necesitas.
+                <p className="text-lg text-[#717171] leading-relaxed mb-6">
+                  +10 años protegiendo mascotas en Madrid.
+                  Entiendo lo que significa tu compañero porque 
+                  también tengo los míos.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="flex items-center gap-2 bg-[#FFF8F9] px-4 py-2 rounded-full text-sm font-medium text-[#FF385C]">
-                    <CheckCircle2 className="w-4 h-4" />
-                    +1.200 mascotas protegidas
-                  </span>
-                  <span className="flex items-center gap-2 bg-[#FFF8F9] px-4 py-2 rounded-full text-sm font-medium text-[#FF385C]">
-                    <Star className="w-4 h-4" />
-                    Veterinarios de confianza
-                  </span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00A699]/10 text-[#00887A] text-sm">
+                  <CheckCircle2 className="w-4 h-4" />
+                  DGSFP: C012479234434D
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA FINAL */}
-        <section className="py-20 bg-[#222222]">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Protege a tu compañero hoy
+        {/* PROCESO FÁCIL */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <h2 className="text-[32px] sm:text-[40px] font-semibold text-[#222222] leading-[1.15] text-center mb-12">
+              Proceso fácil
             </h2>
-            <p className="text-xl text-white/70 mb-8">
-              RC obligatoria desde 5€/mes. Veterinario completo desde 20€.
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { num: "1", title: "WhatsApp", desc: "Foto + raza de tu mascota." },
+                { num: "2", title: "Cotizamos", desc: "En 30 min cotización personalizada." },
+                { num: "3", title: "Tarjeta", desc: "Veterinaria digital inmediata." },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-14 h-14 rounded-full bg-[#FF5A5F] text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4 shadow-md">
+                    {step.num}
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#222222] mb-2">{step.title}</h3>
+                  <p className="text-base text-[#717171]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA + TRUST — Airbnb final */}
+        <section className="py-24 bg-gradient-to-b from-[#FFF8F6] to-[#FFE8E5]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
+            <h2 className="text-[40px] sm:text-[48px] font-semibold text-[#222222] leading-[1.10] mb-4">
+              Protege a tu mejor amigo
+            </h2>
+            <p className="text-xl text-[#717171] mb-10">
+              Un WhatsApp. 30 minutos. Sin compromiso.
             </p>
+            
             <a 
               href={wCotiza}
-              className="inline-flex items-center gap-3 bg-[#FF385C] hover:bg-[#D9324E] text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all"
+              className="group inline-flex items-center gap-2 bg-[#FF5A5F] hover:bg-[#E14F53] text-white px-8 py-5 rounded-xl text-xl font-medium transition-all hover:scale-105 shadow-lg"
             >
-              <WhatsAppIcon className="w-5 h-5" />
-              WhatsApp: 603 44 87 65
+              <WhatsAppIcon className="w-6 h-6" />
+              💬 Cotizar por WhatsApp
+              <span className="hidden group-hover:inline text-base ml-2">
+                🐶 10% 1er año
+              </span>
             </a>
+            
+            {/* Trust badges */}
+            <div className="flex flex-wrap justify-center gap-3 mt-10">
+              {[
+                "30min respuesta",
+                "Sin permanencia",
+                "DGSFP verificado",
+              ].map((item, i) => (
+                <div key={i} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#222222] text-sm border border-[#DDDDDD]">
+                  <CheckCircle2 className="w-4 h-4 text-[#00A699]" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-sm text-[#717171] mt-8">
+              NIF: 79234434D · DGSFP: C012479234434D
+            </p>
           </div>
         </section>
 
