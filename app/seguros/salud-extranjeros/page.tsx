@@ -87,14 +87,14 @@ export default function SaludExtranjerosPage() {
             
             {/* H1 Optimized */}
             <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
-              Seguro médico en España.
+              Seguro médico para NIE y TIE en España.
               <br />
               <span className="text-[#2E7D32]">Listo en 24 horas.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
-              Seguro médico pensado para vivir en España con tranquilidad, listo para gestionar de forma rápida y sencilla.
+              Prima anual. Sin copagos. Sin carencias desde el primer día. Cobertura completa como la Seguridad Social española — exigida por el consulado para tu visado.
             </p>
 
             {/* Guarantee Badge */}
@@ -152,6 +152,57 @@ export default function SaludExtranjerosPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        {/* REQUISITOS CONSULADO */}
+        <section className="py-20 bg-[#163300] text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Lo que exige el Consulado Español
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Seguro privado y válido en España</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Cobertura completa (equivalente a la Seguridad Social)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Sin copagos</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Sin carencias (cobertura desde el día 1)</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Hospitalización, urgencias y atención completa incluidas</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">✅</span>
+                  <p>Activo durante toda la estancia en España</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">❌</span>
+                  <p>No válido: seguros de viaje ni pólizas "light"</p>
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+                <p className="text-lg leading-relaxed mb-4">
+                  Por condiciones del consulado, estas pólizas se contratan con prima <span className="font-bold underline decoration-[#9FE870]">ANUAL</span>, no mensual.
+                </p>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-sm text-white/70 italic">
+                    Requisito para demostrar cobertura durante toda la estancia en España.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -299,9 +350,11 @@ export default function SaludExtranjerosPage() {
             </h2>
             <div className="space-y-4">
               {[
-                { q: "¿Necesito NIE para contratar el seguro de salud?", a: "No siempre es obligatorio. Te asesoramos según tu situación particular. Algunas modalidades permiten contratación con pasaporte. Escríbenos por WhatsApp y estudiamos tu caso en 30 minutos." },
-                { q: "Do I need to speak Spanish?", a: "No, we speak English. Rosa and Sebastián can assist you in English throughout the entire process." },
-                { q: "¿Cuándo empieza la cobertura?", a: "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." },
+                { q: "¿Necesito NIE o puedo tramitar con pasaporte?", a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación en 30 minutos." },
+                { q: "¿Una póliza cubre a toda mi familia?", a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar. Es perfectamente válida para los trámites en el consulado español para cada miembro." },
+                { q: "¿Cuándo recibo la documentación?", a: "En el momento en que firmas la póliza, recibes toda la documentación al instante. Certificado incluido, listo para presentar en el consulado en menos de 24h." },
+                { q: "¿Esta póliza es mensual o anual?", a: "Por condiciones del consulado español, estas pólizas son de prima anual, no mensual. Es un requisito para demostrar cobertura durante toda la estancia. Te explicamos el coste exacto antes de contratar." },
+                { q: "¿Qué pasa si necesito volver a mi país?", a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado, no a España. Es una diferencia importante respecto al resto de seguros de salud." },
               ].map((faq, i) => (
                 <details key={i} className="group rounded-xl border border-[#E5E7EB] bg-white overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-[#F7F8F9] transition-colors">
@@ -361,24 +414,24 @@ export default function SaludExtranjerosPage() {
           subtitle="Preguntas frecuentes"
           items={[
             { 
-              q: "¿Necesito NIE para contratar?", 
-              a: "No siempre es obligatorio. Algunas modalidades permiten contratación con pasaporte. Te asesoramos según tu situación particular por WhatsApp en 30 minutos." 
+              q: "¿Necesito NIE o puedo tramitar con pasaporte?", 
+              a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación en 30 minutos." 
             },
             { 
-              q: "¿Cuándo empieza la cobertura?", 
-              a: "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." 
+              q: "¿Una póliza cubre a toda mi familia?", 
+              a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar. Es perfectamente válida para los trámites en el consulado español para cada miembro." 
             },
             { 
-              q: "¿Sirve para la renovación del TIE?", 
-              a: "Sí. El seguro cumple los requisitos de Extranjería y te facilitamos el certificado necesario para tu renovación de NIE/TIE." 
+              q: "¿Cuándo recibo la documentación?", 
+              a: "En el momento en que firmas la póliza, recibes toda la documentación al instante. Certificado incluido, listo para presentar en el consulado en menos de 24h." 
             },
             { 
-              q: "¿Puedo tener médico de cabecera?", 
-              a: "Sí, puedes elegir médico de cabecera de la red de clínicas concertadas. También tienes acceso a especialistas sin derivación previa." 
+              q: "¿Esta póliza es mensual o anual?", 
+              a: "Por condiciones del consulado español, estas pólizas son de prima anual, no mensual. Es un requisito para demostrar cobertura durante toda la estancia. Te explicamos el coste exacto antes de contratar." 
             },
             { 
-              q: "¿Incluye cobertura dental?", 
-              a: "Algunas modalidades incluyen dental básica incluida (limpiezas, extracciones simples). Para cobertura dental completa, te ofrecemos planes complementarios." 
+              q: "¿Qué pasa si necesito volver a mi país?", 
+              a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado, no a España. Es una diferencia importante respecto al resto de seguros de salud." 
             },
           ]}
         />

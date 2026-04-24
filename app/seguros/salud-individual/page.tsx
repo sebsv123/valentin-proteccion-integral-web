@@ -104,6 +104,10 @@ export default async function SaludIndividualPage() {
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    Desde 22,50€/mes
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     Sin copagos
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
@@ -395,7 +399,7 @@ export default async function SaludIndividualPage() {
             },
             { 
               q: "¿Cuánto cuesta?", 
-              a: "Depende de tu edad y la cobertura que elijas. Un adulto de 30-40 años paga entre 50-80€/mes para una cobertura completa sin copagos." 
+              a: "El precio de entrada para un adulto es desde 22,50€/mes. Para perfiles de 30-40 años con cobertura completa sin copagos, el rango habitual es 50-80€/mes. Te damos presupuesto exacto en WhatsApp según tu edad y cobertura." 
             },
           ]}
         />
