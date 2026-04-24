@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -78,8 +76,22 @@ export default function SaludExtranjerosPage() {
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
-      <Header />
-      <main className="min-h-screen bg-white">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
+          <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">
+            Valentín <span className="text-emerald-600">Protección Integral</span>
+          </a>
+          <a
+            href="https://wa.me/34603448765"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            📞 Cotizar ahora
+          </a>
+        </div>
+      </header>
+      <main className="min-h-screen bg-white pt-16">
         
         {/* HERO — NIE/TIE Optimized */}
         <section className="bg-white pt-20 pb-16">
@@ -87,24 +99,33 @@ export default function SaludExtranjerosPage() {
             
             {/* H1 Optimized */}
             <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
-              Seguro médico para NIE y TIE en España.
-              <br />
-              <span className="text-[#2E7D32]">Listo en 24 horas.</span>
+              Seguro médico para NIE y TIE.<br/>
+              <span className="text-[#2E7D32]">Prima anual. Sin copagos. Válido para consulado.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
-              Prima anual. Sin copagos. Sin carencias desde el primer día. Cobertura completa como la Seguridad Social española — exigida por el consulado para tu visado.
+              El gobierno español exige un seguro privado específico para conceder visados y permisos de residencia.
+              Te tramitamos la póliza correcta con certificado para consulado en menos de 24 horas.
             </p>
 
-            {/* Guarantee Badge */}
-            <GuaranteeBadge type="salud-extranjeros" />
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
+                📋 Prima anual · Requisito consulado
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
+                ✅ Sin copagos desde el día 1
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
+                📄 Certificado PDF en 24h
+              </span>
+            </div>
 
             {/* Hero Image — Healthcare for internationals */}
             <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">
               <Image
-                src="https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Seguro médico internacional para extranjeros en Madrid — Profesional sanitario"
+                src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
                 width={600}
                 height={400}
                 priority
@@ -112,6 +133,15 @@ export default function SaludExtranjerosPage() {
                 style={{ aspectRatio: '3/2' }}
               />
             </div>
+
+            <a
+              href="https://wa.me/34603448765?text=Hola%2C%20necesito%20seguro%20m%C3%A9dico%20para%20tr%C3%A1mites%20de%20NIE%2FTIE%20en%20el%20consulado"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#163300] hover:bg-[#2E7D32] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg mt-8"
+            >
+              Consultar por WhatsApp →
+            </a>
           </div>
         </section>
 
@@ -157,52 +187,33 @@ export default function SaludExtranjerosPage() {
         </section>
 
         {/* REQUISITOS CONSULADO */}
-        <section className="py-20 bg-[#163300] text-white">
+        <section className="py-20 bg-[#163300]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
               Lo que exige el Consulado Español
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Seguro privado y válido en España</p>
+            <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
+              Por condiciones del consulado, estas pólizas se contratan con <strong className="text-white">prima anual</strong>, no mensual.
+              Es un requisito oficial para demostrar cobertura durante toda la estancia.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { ok: true, text: "Seguro privado y válido en España" },
+                { ok: true, text: "Cobertura completa equivalente a la Seguridad Social" },
+                { ok: true, text: "Sin copagos" },
+                { ok: true, text: "Sin carencias — cobertura desde el día 1" },
+                { ok: true, text: "Hospitalización, urgencias y atención completa incluidas" },
+                { ok: true, text: "Activo durante toda la estancia en España" },
+                { ok: false, text: "Seguros de viaje — NO son válidos para visado" },
+                { ok: false, text: "Pólizas básicas o \"light\" — NO cumplen los requisitos" },
+              ].map((item, i) => (
+                <div key={i} className={`flex items-start gap-3 p-4 rounded-xl border ${item.ok ? 'bg-white/10 border-white/20' : 'bg-red-900/30 border-red-500/30'}`}>
+                  <span className={`text-xl flex-shrink-0 mt-0.5 ${item.ok ? 'text-emerald-400' : 'text-red-400'}`}>
+                    {item.ok ? '✓' : '✗'}
+                  </span>
+                  <p className={`text-sm font-medium ${item.ok ? 'text-white' : 'text-red-200'}`}>{item.text}</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Cobertura completa (equivalente a la Seguridad Social)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Sin copagos</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Sin carencias (cobertura desde el día 1)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Hospitalización, urgencias y atención completa incluidas</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">✅</span>
-                  <p>Activo durante toda la estancia en España</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl">❌</span>
-                  <p>No válido: seguros de viaje ni pólizas "light"</p>
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                <p className="text-lg leading-relaxed mb-4">
-                  Por condiciones del consulado, estas pólizas se contratan con prima <span className="font-bold underline decoration-[#9FE870]">ANUAL</span>, no mensual.
-                </p>
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-sm text-white/70 italic">
-                    Requisito para demostrar cobertura durante toda la estancia en España.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -342,31 +353,38 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* FAQ BILINGÜE */}
-        <section className="py-20 bg-[#F7F8F9]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl">
-            <h2 className="text-3xl font-semibold text-[#163300] text-center mb-12">
-              Preguntas frecuentes / FAQ
-            </h2>
-            <div className="space-y-4">
-              {[
-                { q: "¿Necesito NIE o puedo tramitar con pasaporte?", a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación en 30 minutos." },
-                { q: "¿Una póliza cubre a toda mi familia?", a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar. Es perfectamente válida para los trámites en el consulado español para cada miembro." },
-                { q: "¿Cuándo recibo la documentación?", a: "En el momento en que firmas la póliza, recibes toda la documentación al instante. Certificado incluido, listo para presentar en el consulado en menos de 24h." },
-                { q: "¿Esta póliza es mensual o anual?", a: "Por condiciones del consulado español, estas pólizas son de prima anual, no mensual. Es un requisito para demostrar cobertura durante toda la estancia. Te explicamos el coste exacto antes de contratar." },
-                { q: "¿Qué pasa si necesito volver a mi país?", a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado, no a España. Es una diferencia importante respecto al resto de seguros de salud." },
-              ].map((faq, i) => (
-                <details key={i} className="group rounded-xl border border-[#E5E7EB] bg-white overflow-hidden">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-[#F7F8F9] transition-colors">
-                    <span className="font-medium text-[#163300] pr-4">{faq.q}</span>
-                    <ArrowRight className="w-5 h-5 text-[#4B5563] group-open:rotate-90 transition-transform flex-shrink-0" />
-                  </summary>
-                  <div className="px-6 pb-6 text-[#4B5563] leading-relaxed">{faq.a}</div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQ SECTION */}
+        <FAQChat
+          brandColor="emerald"
+          title="Preguntas frecuentes sobre el seguro para extranjeros"
+          subtitle="Todo lo que necesitas saber antes de contratar"
+          items={[
+            {
+              q: "¿Necesito NIE o puedo tramitar con pasaporte?",
+              a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación concreta en 30 minutos."
+            },
+            {
+              q: "¿Una póliza puede cubrir a toda mi familia?",
+              a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar y es perfectamente válida para los trámites en el consulado español para cada miembro."
+            },
+            {
+              q: "¿Cuándo recibo la documentación para el consulado?",
+              a: "En el momento en que firmas la póliza recibe toda la documentación al instante. El certificado está listo para presentar en el consulado en menos de 24 horas."
+            },
+            {
+              q: "¿Por qué es prima anual y no mensual?",
+              a: "Por condiciones del consulado español, estas pólizas deben ser de prima anual. Es un requisito oficial para demostrar que tienes cobertura durante toda tu estancia. Te explicamos el coste exacto antes de contratar."
+            },
+            {
+              q: "¿Qué pasa si necesito volver a mi país?",
+              a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado. Esto es diferente al resto de seguros de salud, que repatrían a España. Es una cobertura específica y muy importante."
+            },
+            {
+              q: "¿La póliza incluye asistencia en viaje?",
+              a: "Sí. Todas las pólizas para extranjeros —excepto la modalidad más básica— incluyen asistencia en viaje con cobertura de capital según la póliza contratada. Te detallamos el capital exacto antes de firmar."
+            },
+          ]}
+        />
 
         {/* CTA SECTION — Certificado Residencia */}
         <section className="py-20 bg-[#F7F8F9]">
@@ -407,37 +425,13 @@ export default function SaludExtranjerosPage() {
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#163300" />
 
-        {/* FAQ CHAT */}
-        <FAQChat 
-          brandColor="emerald"
-          title="¿Tienes dudas sobre el seguro para extranjeros?"
-          subtitle="Preguntas frecuentes"
-          items={[
-            { 
-              q: "¿Necesito NIE o puedo tramitar con pasaporte?", 
-              a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación en 30 minutos." 
-            },
-            { 
-              q: "¿Una póliza cubre a toda mi familia?", 
-              a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar. Es perfectamente válida para los trámites en el consulado español para cada miembro." 
-            },
-            { 
-              q: "¿Cuándo recibo la documentación?", 
-              a: "En el momento en que firmas la póliza, recibes toda la documentación al instante. Certificado incluido, listo para presentar en el consulado en menos de 24h." 
-            },
-            { 
-              q: "¿Esta póliza es mensual o anual?", 
-              a: "Por condiciones del consulado español, estas pólizas son de prima anual, no mensual. Es un requisito para demostrar cobertura durante toda la estancia. Te explicamos el coste exacto antes de contratar." 
-            },
-            { 
-              q: "¿Qué pasa si necesito volver a mi país?", 
-              a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado, no a España. Es una diferencia importante respecto al resto de seguros de salud." 
-            },
-          ]}
-        />
+
 
       </main>
-      <Footer />
+      <footer className="bg-gray-950 text-white/50 py-8 text-center text-xs">
+        <p>© 2026 Valentín Protección Integral · NIF: 79234434D · DGSFP: C012479234434D</p>
+        <p className="mt-1">Mediadores de seguros independientes · Boadilla del Monte, Madrid</p>
+      </footer>
       <StickyWhatsApp />
     </>
   );

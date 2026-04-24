@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -57,8 +55,22 @@ export default async function SaludIndividualPage() {
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
-      <Header />
-      <main className="min-h-screen bg-white">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
+          <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">
+            Valentín <span className="text-emerald-600">Protección Integral</span>
+          </a>
+          <a
+            href="https://wa.me/34603448765"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            📞 Cotizar ahora
+          </a>
+        </div>
+      </header>
+      <main className="min-h-screen bg-white pt-16">
         
         {/* HERO — Balanced two-column with visible image */}
         <section className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 min-h-[80vh] flex items-center overflow-hidden">
@@ -149,45 +161,54 @@ export default async function SaludIndividualPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-4">
-                Ventajas claras
+                ¿Qué póliza se adapta a ti?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Por qué elegir un seguro de salud privado con nosotros
+              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                No existe "la mejor". Existe la que mejor encaja con tu situación.
+                Te explicamos las diferencias para que elijas con criterio.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { 
-                  icon: Heart, 
-                  title: "Sin copagos", 
-                  desc: "No pagas nada extra en cada visita. Todo incluido en tu cuota mensual."
-                },
-                { 
-                  icon: Clock, 
-                  title: "Cobertura inmediata", 
-                  desc: "Desde el primer día sin esperas ni carencias iniciales."
-                },
-                { 
-                  icon: MapPin, 
-                  title: "Madrid + España", 
-                  desc: "Red completa de hospitales y clínicas en toda España."
-                },
-                { 
-                  icon: Activity, 
-                  title: "Cobertura completa", 
-                  desc: "Desde consultas hasta cirugía, todo incluido."
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7 text-emerald-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-gray-900">
+                    <th className="text-left py-4 pr-6 text-sm font-semibold text-gray-500 uppercase tracking-wider w-1/4">Cobertura</th>
+                    <th className="text-center py-4 px-4 text-base font-bold text-gray-900">Entrada<br/><span className="text-emerald-600 font-semibold text-sm">~22–35€/mes</span></th>
+                    <th className="text-center py-4 px-4 text-base font-bold text-gray-900 bg-emerald-50 rounded-t-xl">Completa<br/><span className="text-emerald-600 font-semibold text-sm">~50–80€/mes</span></th>
+                    <th className="text-center py-4 px-4 text-base font-bold text-gray-900">Premium<br/><span className="text-gray-400 font-semibold text-sm">desde 90€/mes</span></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    ["Médico general y especialistas", "✓", "✓", "✓"],
+                    ["Sin copagos en consulta", "—", "✓", "✓"],
+                    ["Urgencias 24h", "✓", "✓", "✓"],
+                    ["Hospitalización incluida", "—", "✓", "✓"],
+                    ["Pruebas diagnósticas completas", "Básicas", "✓", "✓"],
+                    ["Telemedicina 24h", "—", "✓", "✓"],
+                    ["Habitación individual", "—", "—", "✓"],
+                    ["Asistencia en viaje", "—", "Opcional", "✓"],
+                    ["Dental básica incluida", "—", "—", "✓"],
+                    ["Reembolso internacional", "—", "—", "✓"],
+                  ].map(([feature, entry, complete, premium], i) => (
+                    <tr key={i} className="hover:bg-gray-50 transition-colors">
+                      <td className="py-4 pr-6 text-sm text-gray-700">{feature}</td>
+                      <td className="py-4 px-4 text-center text-sm text-gray-500">{entry}</td>
+                      <td className="py-4 px-4 text-center text-sm font-semibold text-emerald-700 bg-emerald-50">{complete}</td>
+                      <td className="py-4 px-4 text-center text-sm text-gray-600">{premium}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+
+            <p className="text-center text-sm text-gray-400 mt-8">
+              * Precios orientativos para adulto entre 30-45 años en Madrid. El precio exacto depende de tu edad y modalidad.
+              <a href="https://wa.me/34603448765" className="text-emerald-600 font-medium ml-1 hover:underline">
+                Pídenos tu presupuesto sin compromiso →
+              </a>
+            </p>
           </div>
         </section>
 
@@ -405,7 +426,10 @@ export default async function SaludIndividualPage() {
         />
 
       </main>
-      <Footer />
+      <footer className="bg-gray-950 text-white/50 py-8 text-center text-xs">
+        <p>© 2026 Valentín Protección Integral · NIF: 79234434D · DGSFP: C012479234434D</p>
+        <p className="mt-1">Mediadores de seguros independientes · Boadilla del Monte, Madrid</p>
+      </footer>
       <StickyWhatsApp />
     </>
   );
