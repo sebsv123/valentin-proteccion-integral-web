@@ -107,7 +107,7 @@ export default async function SaludIndividualPage() {
                     location="salud-individual-hero"
                     className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
                   >
-                    Quiero mi seguro para visado ahora
+                    Quiero mi seguro de salud ahora
                   </WhatsAppButton>
                   <p className="text-white/80 text-sm font-bold ml-1 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
