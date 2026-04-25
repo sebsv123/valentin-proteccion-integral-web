@@ -457,7 +457,6 @@ export default function SaludExtranjerosPage() {
                   Nuestro objetivo es que tú te centres en tu nueva vida en Madrid, mientras nosotros blindamos tu expediente ante extranjería.
                 </p>
                 {/* Trust badges */}
-                {/* Trust badges */}
                 <div className="flex gap-4 mt-8 flex-wrap">
                   <span className="bg-[#F0FAE5] border border-[#9FE870] text-[#163300] px-4 py-2 rounded-full text-sm">
                     ✓ DGSFP: C012479234434D
@@ -469,9 +468,10 @@ export default function SaludExtranjerosPage() {
                     ✓ English spoken
                   </span>
                 </div>
-                <WhatsAppButton 
-                  href={wCotiza}
-                  location="salud-extranjeros-garantias"
+                <a 
+                  href={wExtranjeria}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-3 bg-[#163300] text-white px-8 py-4 rounded-xl font-medium hover:bg-[#1a3d00] transition-all"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
