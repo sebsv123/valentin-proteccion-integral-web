@@ -16,14 +16,13 @@ export function HeroImage() {
   return (
     <div className="absolute inset-0 z-0">
       <Image
-        src="/images/premium/hero-family-opt.webp"
+        src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
         alt="Familia protegida por Valentín Protección Integral"
         fill
         priority
         fetchPriority="high"
-        quality={isMobile ? 40 : 60}
         className="object-cover object-center"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 55vw, 700px"
+        sizes="100vw"
       />
     </div>
   );
