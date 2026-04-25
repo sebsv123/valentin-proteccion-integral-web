@@ -94,137 +94,64 @@ export default function SaludExtranjerosPage() {
       </header>
       <main className="min-h-screen bg-white pt-16">
         
-        {/* HERO — Despacho Serio / Autoridad */}
-        <section className="relative min-h-[90vh] flex items-center bg-gray-900 overflow-hidden">
-          {/* Fondo con imagen multicultural (recuperada) */}
+        {/* HERO — Bloque Protagonista de Autoridad */}
+        <section className="relative min-h-[95vh] flex items-center bg-slate-950 overflow-hidden">
+          {/* Fondo cinemático */}
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
+              alt="Especialistas en seguros para extranjeros en España"
               fill
-              className="object-cover opacity-30"
+              className="object-cover opacity-20"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-900/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950 to-slate-950" />
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
-            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
-              <div>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-xs font-black uppercase tracking-tighter">
-                    <CheckCircle2 className="w-3 h-3" />
-                    Especialistas en seguros válidos para visado en España
-                  </div>
-                </div>
-                
-                <h1 className="text-[40px] sm:text-[60px] font-bold text-white leading-[1.1] tracking-tight mb-8">
-                  El seguro que <span className="text-emerald-400">extranjería acepta</span> sin preguntas
-                </h1>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-24">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-500 text-gray-950 text-sm font-black uppercase tracking-widest mb-8 shadow-xl shadow-emerald-500/20">
+                <Shield className="w-4 h-4" />
+                Especialistas en seguros válidos para visado en España
+              </div>
+              
+              <h1 className="text-[44px] sm:text-[72px] font-bold text-white leading-[1] tracking-tight mb-8">
+                El seguro que <span className="text-emerald-400 font-black">extranjería acepta</span> sin preguntas
+              </h1>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                  {[
-                    "Seguro sin copagos",
-                    "Cobertura completa exigida",
-                    "Documento listo para presentar",
-                    "Gestión rápida (24–48h)"
-                  ].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 text-white/90 font-bold">
-                      <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/40">
-                        <Check className="w-4 h-4 text-gray-900" />
-                      </div>
-                      {check}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col gap-3 mb-12">
-                  <div className="flex flex-wrap gap-4">
-                    <a
-                      href={wVisado}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-5 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
-                    >
-                      <WhatsAppIcon className="w-6 h-6" />
-                      Quiero mi seguro para visado
-                    </a>
-                    <div className="flex items-center gap-3 px-6 py-4">
-                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <p className="text-white font-bold leading-none italic">Respuesta en menos de 10 min</p>
-                        <p className="text-white/50 text-sm mt-1">Horario laboral</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-6 pt-8 border-t border-white/10">
-                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    Válido para NIE / TIE / visado
-                  </div>
-                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    +1.200 familias ya protegidas
-                  </div>
-                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    Asesor personal directo
-                  </div>
+              <div className="flex flex-col items-center gap-6">
+                <a
+                  href={wVisado}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-10 py-6 rounded-2xl text-2xl font-black transition-all shadow-2xl shadow-emerald-500/30 hover:scale-105 active:scale-95"
+                >
+                  <WhatsAppIcon className="w-8 h-8" />
+                  Quiero mi seguro ahora
+                </a>
+                <div className="flex items-center gap-2 text-white/50 text-sm font-medium italic">
+                  <Phone className="w-4 h-4" />
+                  Respondemos en menos de 10 minutos (horario laboral)
                 </div>
               </div>
+            </div>
 
-              {/* Tarjeta tipo "Documento Oficial" */}
-              <div className="hidden lg:block relative">
-                <div className="absolute inset-0 bg-emerald-600/5 rounded-[40px] blur-3xl" />
-                <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-2xl transform rotate-2">
-                  <div className="absolute top-8 right-8">
-                    <div className="w-16 h-16 rounded-full bg-slate-50 border-4 border-white shadow-inner flex items-center justify-center overflow-hidden opacity-20">
-                      <Globe className="w-10 h-10 text-slate-400" />
-                    </div>
+            {/* Tarjetas de Beneficios Hero */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { t: "Cumple requisitos", d: "Validado para trámites de extranjería y consulados.", icon: <FileCheck className="w-6 h-6" /> },
+                { t: "Sin copagos", d: "Cobertura completa desde el primer día, sin abonos extra.", icon: <Shield className="w-6 h-6" /> },
+                { t: "Certificado 24h", d: "Documento oficial listo para presentar en tiempo récord.", icon: <FileText className="w-6 h-6" /> },
+                { t: "+1.200 Casos", d: "Más de mil familias ya han obtenido su visado con nosotros.", icon: <Heart className="w-6 h-6" /> }
+              ].map((card, i) => (
+                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-all group">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    {card.icon}
                   </div>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/30">
-                      <FileCheck className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
-                      <p className="text-lg font-bold text-slate-900">Validez Consular</p>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="h-2 w-3/4 bg-slate-100 rounded-full" />
-                    <div className="h-2 w-full bg-slate-100 rounded-full" />
-                    <div className="h-2 w-5/6 bg-slate-100 rounded-full" />
-                    <div className="pt-4 grid grid-cols-2 gap-4">
-                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase">Sin Copagos</p>
-                        <p className="text-emerald-600 font-bold text-sm">CUMPLIDO</p>
-                      </div>
-                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase">Carencias</p>
-                        <p className="text-emerald-600 font-bold text-sm">0 DÍAS</p>
-                      </div>
-                    </div>
-                    <div className="pt-6 border-t border-dashed border-slate-200 text-center">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Sello de aprobación</p>
-                      <div className="w-20 h-20 border-4 border-emerald-100 rounded-full mx-auto flex items-center justify-center">
-                        <Check className="w-10 h-10 text-emerald-200" />
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{card.t}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{card.d}</p>
                 </div>
-                {/* Decoración extra */}
-                <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -246,9 +173,9 @@ export default function SaludExtranjerosPage() {
               <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-slate-100 z-0" />
               
               {[
-                { num: "01", title: "Nos escribes por WhatsApp", desc: "Rosa o Sebastián analizan tu caso en 5 minutos." },
-                { num: "02", title: "Te recomendamos la opción válida", desc: "Elegimos la póliza exacta que el consulado no rechazará." },
-                { num: "03", title: "Recibes tu seguro listo", desc: "Certificado oficial en tu email y WhatsApp en 24h." }
+                { num: "01", title: "Escribes por WhatsApp", desc: "Rosa o Sebastián analizan tu trámite en 5 minutos." },
+                { num: "02", title: "Te damos la opción válida", desc: "Seleccionamos la póliza exacta que extranjería exige para tu caso." },
+                { num: "03", title: "Recibes tu póliza lista", desc: "Certificado oficial en tu móvil listo para presentar en 24h." }
               ].map((paso, i) => (
                 <div key={i} className="relative z-10 text-center group">
                   <div className="w-20 h-20 rounded-full bg-white border-2 border-emerald-500 text-emerald-600 flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-xl shadow-emerald-500/10 group-hover:bg-emerald-500 group-hover:text-white transition-all">
@@ -275,13 +202,12 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* SORPRESA 1 — Checklist Lead Magnet */}
-        <section className="py-20 bg-slate-900 overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+        {/* SORPRESA 1 — Checklist Lead Magnet (Gris suave para explicación) */}
+        <section className="py-24 bg-slate-50 overflow-hidden relative border-y border-slate-100">
           <div className="container mx-auto px-4 relative z-10 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Lead Magnet */}
-              <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden group">
+              <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-xl border border-slate-100 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
                 <div className="relative z-10">
                   <div className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-[10px] font-black uppercase tracking-widest mb-6">🎁 Recurso Gratuito</div>
@@ -297,15 +223,15 @@ export default function SaludExtranjerosPage() {
               </div>
 
               {/* Revision Gratis */}
-              <div className="bg-emerald-600 rounded-[40px] p-8 md:p-10 shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+              <div className="bg-[#163300] rounded-[40px] p-8 md:p-10 shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
                 <div className="relative z-10">
                   <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-black uppercase tracking-widest mb-6">🔥 Bonus Exclusivo</div>
                   <h3 className="text-2xl font-bold text-white mb-4">Revisión de expediente GRATIS</h3>
-                  <p className="text-emerald-50 mb-8">Antes de que pagues nada, revisamos si cumples con los requisitos técnicos para que no pierdas tu dinero.</p>
+                  <p className="text-emerald-100/70 mb-8">Antes de que pagues nada, revisamos si cumples con los requisitos técnicos para que no pierdas tu dinero.</p>
                   <a
                     href={buildWhatsAppHref("Hola, me gustaría una revisión gratuita de mi expediente para el visado")}
-                    className="inline-flex items-center gap-3 text-white font-bold hover:gap-4 transition-all"
+                    className="inline-flex items-center gap-3 text-emerald-400 font-bold hover:gap-4 transition-all"
                   >
                     Solicitar Revisión Gratuita <ArrowRight className="w-5 h-5" />
                   </a>
@@ -315,7 +241,7 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* GARANTÍAS NUCLEARES — Rompiendo Objeciones */}
+        {/* GARANTÍAS NUCLEARES — Destacado (Acción) */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-16">
@@ -345,8 +271,8 @@ export default function SaludExtranjerosPage() {
                   icon: <FileCheck className="w-8 h-8 text-emerald-600" />
                 }
               ].map((g, i) => (
-                <div key={i} className="p-10 rounded-[32px] bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all shadow-sm hover:shadow-xl group">
-                  <div className="mb-6 w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                <div key={i} className="p-10 rounded-[40px] bg-white border border-slate-100 hover:border-emerald-200 transition-all shadow-xl hover:shadow-2xl group text-center">
+                  <div className="mb-8 w-20 h-20 rounded-3xl bg-emerald-50 flex items-center justify-center mx-auto shadow-md group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                     {g.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{g.title}</h3>
@@ -508,12 +434,12 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* EL VALOR DE LA TRANQUILIDAD — Banner de Autoridad */}
-        <section className="py-24 bg-white overflow-hidden">
+        {/* EL VALOR DE LA TRANQUILIDAD — Gris suave (Explicación) */}
+        <section className="py-24 bg-slate-50 border-y border-slate-100 overflow-hidden">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative">
-                <div className="absolute -inset-4 bg-emerald-50 rounded-[40px] -rotate-2" />
+                <div className="absolute -inset-4 bg-emerald-500/10 rounded-[40px] -rotate-2" />
                 <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl border-8 border-white">
                   <Image
                     src="https://images.pexels.com/photos/5920775/pexels-photo-5920775.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -526,7 +452,7 @@ export default function SaludExtranjerosPage() {
               <div>
                 <p className="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4">Efecto Despacho Serio</p>
                 <h2 className="text-4xl font-bold text-slate-900 mb-6 leading-tight">
-                  Alguien que ya lo ha hecho <span className="text-emerald-600">mil veces por ti</span>
+                  Alguien que ya lo ha hecho <span className="text-emerald-600 font-black">mil veces por ti</span>
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   El éxito de un visado no depende solo de la póliza, sino de cómo se presenta la documentación. Rosa y Sebastián conocen los criterios específicos de cada consulado para que no pierdas tiempo ni dinero en denegaciones evitables.
@@ -538,9 +464,9 @@ export default function SaludExtranjerosPage() {
                     "Soporte directo por WhatsApp en español e inglés",
                     "Gestión integral sin que tengas que desplazarte"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
-                      <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-emerald-600" />
+                    <li key={i} className="flex items-center gap-3 text-slate-700 font-bold">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-gray-900" />
                       </div>
                       {item}
                     </li>
