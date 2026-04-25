@@ -41,10 +41,19 @@ export default function SaludExtranjerosPage() {
 
       <main className="min-h-screen bg-white pt-16">
         
-        {/* 1. HERO — Impacto Inmediato */}
-        <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
-          {/* Fondo limpio con detalles sutiles */}
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 hidden lg:block -skew-x-12 translate-x-20" />
+        {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
+        <section className="relative py-20 lg:py-32 bg-slate-950 overflow-hidden min-h-[85vh] flex items-center">
+          {/* Fondo con imagen multicultural */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent" />
+          </div>
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
@@ -80,7 +89,7 @@ export default function SaludExtranjerosPage() {
                       href={wVisado}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 bg-[#f28c28] hover:bg-[#e67e22] text-white px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-xl shadow-orange-500/40 w-full"
+                      className="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-xl shadow-emerald-500/20 w-full"
                     >
                       <WhatsAppIcon className="w-6 h-6" />
                       Quiero mi seguro para visado ahora
