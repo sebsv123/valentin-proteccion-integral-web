@@ -112,23 +112,31 @@ export default function SaludExtranjerosPage() {
             <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
               <div>
                 <div className="flex flex-wrap gap-2 mb-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30">
-                    <Shield className="w-3 h-3" />
-                    Garantía de Aceptación Administrativa
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold border border-amber-500/30">
-                    <Globe className="w-3 h-3" />
-                    Fast Track 24h: Gestión Urgente
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-xs font-black uppercase tracking-tighter">
+                    <CheckCircle2 className="w-3 h-3" />
+                    Especialistas en seguros válidos para visado en España
                   </div>
                 </div>
                 
-                <h1 className="text-[40px] sm:text-[60px] font-bold text-white leading-[1.1] tracking-tight mb-6">
-                  Seguro de salud para extranjeros en España <span className="text-emerald-400">aprobado para visado</span>
+                <h1 className="text-[40px] sm:text-[60px] font-bold text-white leading-[1.1] tracking-tight mb-8">
+                  El seguro que <span className="text-emerald-400">extranjería acepta</span> sin preguntas
                 </h1>
 
-                <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-2xl">
-                  Sin copagos. Sin complicaciones. Listo para presentar en extranjería en 24h.
-                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                  {[
+                    "Seguro sin copagos",
+                    "Cobertura completa exigida",
+                    "Documento listo para presentar",
+                    "Gestión rápida (24–48h)"
+                  ].map((check, i) => (
+                    <div key={i} className="flex items-center gap-3 text-white/90 font-bold">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/40">
+                        <Check className="w-4 h-4 text-gray-900" />
+                      </div>
+                      {check}
+                    </div>
+                  ))}
+                </div>
 
                 <div className="flex flex-col gap-3 mb-12">
                   <div className="flex flex-wrap gap-4">
@@ -238,12 +246,12 @@ export default function SaludExtranjerosPage() {
               <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-slate-100 z-0" />
               
               {[
-                { num: "01", title: "Escríbenos por WhatsApp", desc: "Rosa o Sebastián te atienden personalmente. Sin centralitas." },
-                { num: "02", title: "Recibes opciones en minutos", desc: "Comparamos y te enviamos la mejor póliza para tu visado." },
-                { num: "03", title: "Listo para presentar", desc: "Firmas digitalmente y recibes tu certificado oficial en 24h." }
+                { num: "01", title: "Nos escribes por WhatsApp", desc: "Rosa o Sebastián analizan tu caso en 5 minutos." },
+                { num: "02", title: "Te recomendamos la opción válida", desc: "Elegimos la póliza exacta que el consulado no rechazará." },
+                { num: "03", title: "Recibes tu seguro listo", desc: "Certificado oficial en tu email y WhatsApp en 24h." }
               ].map((paso, i) => (
-                <div key={i} className="relative z-10 text-center">
-                  <div className="w-20 h-20 rounded-full bg-white border-2 border-emerald-500 text-emerald-600 flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-xl shadow-emerald-500/10">
+                <div key={i} className="relative z-10 text-center group">
+                  <div className="w-20 h-20 rounded-full bg-white border-2 border-emerald-500 text-emerald-600 flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-xl shadow-emerald-500/10 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                     {paso.num}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{paso.title}</h3>
@@ -260,7 +268,7 @@ export default function SaludExtranjerosPage() {
                 className="inline-flex items-center gap-3 bg-[#163300] hover:bg-black text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-xl"
               >
                 <WhatsAppIcon className="w-6 h-6" />
-                Quiero mi seguro para extranjería
+                Quiero mi seguro ahora
               </a>
               <p className="mt-4 text-slate-500 text-sm italic font-medium">Respuesta en menos de 10 minutos (horario laboral)</p>
             </div>
@@ -268,23 +276,40 @@ export default function SaludExtranjerosPage() {
         </section>
 
         {/* SORPRESA 1 — Checklist Lead Magnet */}
-        <section className="py-20 bg-emerald-600 overflow-hidden relative">
+        <section className="py-20 bg-slate-900 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-          <div className="container mx-auto px-4 relative z-10 max-w-5xl">
-            <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center gap-10">
-              <div className="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 bg-emerald-50 rounded-3xl flex items-center justify-center border-4 border-emerald-100 shadow-inner">
-                <FileText className="w-16 h-16 md:w-24 md:h-24 text-emerald-600" />
+          <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Lead Magnet */}
+              <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+                <div className="relative z-10">
+                  <div className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-[10px] font-black uppercase tracking-widest mb-6">🎁 Recurso Gratuito</div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Checklist para tu visado sin errores</h3>
+                  <p className="text-slate-600 mb-8">Evita los 7 errores que provocan denegaciones. Todo lo que el consulado no te dice en un PDF directo.</p>
+                  <a
+                    href={buildWhatsAppHref("Hola, quiero la checklist gratuita para visado")}
+                    className="inline-flex items-center gap-3 text-emerald-600 font-bold hover:gap-4 transition-all"
+                  >
+                    Descargar Checklist PDF <ArrowRight className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
-              <div className="flex-grow text-center md:text-left">
-                <div className="inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-black uppercase tracking-widest mb-4">🎁 Recurso Gratuito</div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Checklist para aprobar tu visado sin errores</h2>
-                <p className="text-lg text-slate-600 mb-8">Evita los 7 errores más comunes que provocan denegaciones en extranjería. Posiciónate como experto ante el consulado.</p>
-                <a
-                  href={buildWhatsAppHref("Hola, quiero la checklist gratuita para visado")}
-                  className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-emerald-600/20"
-                >
-                  Descargar Checklist (PDF) por WhatsApp
-                </a>
+
+              {/* Revision Gratis */}
+              <div className="bg-emerald-600 rounded-[40px] p-8 md:p-10 shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
+                <div className="relative z-10">
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-black uppercase tracking-widest mb-6">🔥 Bonus Exclusivo</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Revisión de expediente GRATIS</h3>
+                  <p className="text-emerald-50 mb-8">Antes de que pagues nada, revisamos si cumples con los requisitos técnicos para que no pierdas tu dinero.</p>
+                  <a
+                    href={buildWhatsAppHref("Hola, me gustaría una revisión gratuita de mi expediente para el visado")}
+                    className="inline-flex items-center gap-3 text-white font-bold hover:gap-4 transition-all"
+                  >
+                    Solicitar Revisión Gratuita <ArrowRight className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -451,10 +476,10 @@ export default function SaludExtranjerosPage() {
                   Trabajamos para ti.
                 </h2>
                 <p className="text-[#4B5563] text-lg mt-6 leading-relaxed">
-                  Sabemos lo importante que es esto porque tratamos cada semana con personas en tu misma situación. Encontrar el mejor <strong>seguro médico para visado en España</strong> no es cuestión de precio, sino de seguridad jurídica.
+                  Sabemos lo importante que es esto porque tratamos cada semana con personas en tu misma situación. Te explicamos <strong>EXACTAMENTE qué presentar</strong> y cómo hacerlo para que el funcionario de extranjería no tenga dudas.
                 </p>
                 <p className="text-[#4B5563] text-lg mt-4 leading-relaxed font-medium">
-                  Nuestro objetivo es que tú te centres en tu nueva vida en Madrid, mientras nosotros blindamos tu expediente ante extranjería.
+                  No vendemos seguros por vender; vendemos la seguridad de que tu nueva vida en España empiece con buen pie.
                 </p>
                 {/* Trust badges */}
                 <div className="flex gap-4 mt-8 flex-wrap">
