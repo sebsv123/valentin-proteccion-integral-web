@@ -57,7 +57,7 @@ export function HeroLeadSection() {
             <div className="absolute inset-0 scale-110">
               <HeroImage />
             </div>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
+            <div className="absolute inset-0 bg-slate-950/40" />
             {/* Parallax overlay solo desktop — único uso de framer-motion en hero */}
             {!isMobile && (
               <motion.div
@@ -80,9 +80,9 @@ export function HeroLeadSection() {
             <CSSReveal delay={0.1}>
               <h1 
                 id="hero-title"
-                className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-gradient leading-[1.1]"
+                className="mt-3 font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
               >
-                Protección real. Sin letra pequeña.
+                Seguro de salud para extranjeros <span className="text-emerald-400">válido para visado en España</span>
               </h1>
             </CSSReveal>
 
@@ -109,8 +109,8 @@ export function HeroLeadSection() {
 
             {/* Ramos como subtítulo */}
             <CSSReveal delay={0.3}>
-              <p className="text-base sm:text-lg text-[var(--muted)] leading-7 max-w-2xl">
-                Protegemos a familias y particulares con asesoría clara, sin letra pequeña y sin compromiso.
+              <p className="text-base sm:text-lg text-white/80 leading-7 max-w-2xl">
+                Sin copagos. Sin errores. Listo para presentar en extranjería en 24–48h.
               </p>
             </CSSReveal>
 
@@ -118,21 +118,30 @@ export function HeroLeadSection() {
             <CSSReveal delay={0.4}>
               <div className="mt-6 flex flex-col gap-3">
                 <a
-                  href="https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros."
+                  href="https://wa.me/34603448765?text=Hola%2C%20quiero%20mi%20seguro%20para%20visado%20ahora."
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 text-lg font-bold shadow-xl shadow-green-500/20 transition-all hover:scale-105 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 text-lg font-bold shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 w-full sm:w-auto"
                 >
                   <WhatsAppIcon className="h-6 w-6 flex-none" />
-                  Hablar con un asesor — Consulta gratuita
+                  Quiero mi seguro para visado ahora
                 </a>
-                <a
-                  href="tel:+34603448765"
-                  className="flex items-center justify-center gap-1.5 text-center text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors font-medium"
-                >
-                  <Phone className="h-3.5 w-3.5" />
-                  O llámanos al 603 44 87 65
-                </a>
+                <p className="text-white/60 text-sm font-bold mt-1 ml-1 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Respuesta en menos de 10 minutos
+                </p>
+                
+                {/* Bloque Asesores - Estilo Extranjería */}
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
+                    <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50 font-bold uppercase tracking-widest leading-none mb-1">Atención directa</p>
+                    <p className="text-lg font-bold text-white leading-none">Rosa y Sebastián</p>
+                    <p className="text-xs text-emerald-400 mt-1 font-medium italic">Tus asesores personales</p>
+                  </div>
+                </div>
               </div>
             </CSSReveal>
 

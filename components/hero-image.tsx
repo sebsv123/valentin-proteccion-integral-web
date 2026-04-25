@@ -21,7 +21,7 @@ export function HeroImage() {
         fill
         priority
         fetchPriority="high"
-        className="object-cover object-center opacity-40"
+        className="object-cover object-center opacity-70"
         sizes="100vw"
       />
     </div>
