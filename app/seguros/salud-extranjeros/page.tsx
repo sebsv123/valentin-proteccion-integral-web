@@ -124,52 +124,27 @@ export default function SaludExtranjerosPage() {
                 </div>
               </div>
 
-              {/* Tarjeta tipo "Documento Oficial" (Diseño Premium Restaurado) */}
-              <div className="hidden lg:block relative">
-                <div className="absolute inset-0 bg-emerald-600/5 rounded-[40px] blur-3xl" />
-                <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-2xl transform rotate-2">
-                  <div className="absolute top-8 right-8">
-                    <div className="w-16 h-16 rounded-full bg-slate-50 border-4 border-white shadow-inner flex items-center justify-center overflow-hidden opacity-20">
-                      <Globe className="w-10 h-10 text-slate-400" />
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/30">
-                      <FileCheck className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
-                      <p className="text-lg font-bold text-slate-900">Validez Consular</p>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="h-2 w-3/4 bg-slate-100 rounded-full" />
-                    <div className="h-2 w-full bg-slate-100 rounded-full" />
-                    <div className="h-2 w-5/6 bg-slate-100 rounded-full" />
-                    <div className="pt-4 grid grid-cols-2 gap-4">
-                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase">Sin Copagos</p>
-                        <p className="text-emerald-600 font-bold text-sm">CUMPLIDO</p>
+              {/* Tarjeta tipo "Documento Oficial" (Imagen Real con Efecto Premium) */}
+              <div className="hidden lg:block relative group perspective-1000">
+                <div className="absolute inset-0 bg-emerald-600/10 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative transform rotate-2 group-hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
+                  <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
+                    <Image 
+                      src="/images/premium/certificado-oficial.png" 
+                      alt="Certificado Oficial de Seguro de Salud" 
+                      width={600} 
+                      height={800} 
+                      className="rounded-[24px] w-full h-auto"
+                    />
+                    
+                    {/* Badge flotante "Listo en 24h" */}
+                    <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                      <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                        <Check className="w-5 h-5 text-white" />
                       </div>
-                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase">Carencias</p>
-                        <p className="text-emerald-600 font-bold text-sm">0 DÍAS</p>
-                      </div>
-                    </div>
-                    <div className="pt-6 border-t border-dashed border-slate-200 text-center">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Sello de aprobación</p>
-                      <div className="w-20 h-20 border-4 border-emerald-100 rounded-full mx-auto flex items-center justify-center">
-                        <Check className="w-10 h-10 text-emerald-200" />
-                      </div>
+                      <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
                     </div>
                   </div>
-                </div>
-                {/* Decoración extra */}
-                <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
                 </div>
               </div>
             </div>
