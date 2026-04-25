@@ -99,7 +99,7 @@ export default async function SaludIndividualPage() {
               <p className="text-xl text-white/70 leading-relaxed mb-4 max-w-2xl">
                 Elige la cobertura adecuada sin pagar de más y sin quedarte corto cuando lo necesites.
               </p>
-              <p className="text-lg text-emerald-400 font-bold leading-relaxed mb-10 max-w-2xl">
+              <p className="text-xl text-emerald-400 font-extrabold leading-relaxed mb-10 max-w-2xl">
                 Evita elegir mal tu seguro y pagar de más o quedarte corto cuando lo necesites.
               </p>
               
