@@ -94,64 +94,137 @@ export default function SaludExtranjerosPage() {
       </header>
       <main className="min-h-screen bg-white pt-16">
         
-        {/* HERO — Bloque Protagonista de Autoridad */}
-        <section className="relative min-h-[95vh] flex items-center bg-slate-950 overflow-hidden">
-          {/* Fondo cinemático */}
+        {/* HERO — Despacho Serio / Autoridad (Restaurado estructura Grid) */}
+        <section className="relative min-h-[90vh] flex items-center bg-gray-900 overflow-hidden">
+          {/* Fondo con imagen multicultural */}
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Especialistas en seguros para extranjeros en España"
+              alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
               fill
-              className="object-cover opacity-20"
+              className="object-cover opacity-30"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950 to-slate-950" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-900/40 to-transparent" />
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-24">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-500 text-gray-950 text-sm font-black uppercase tracking-widest mb-8 shadow-xl shadow-emerald-500/20">
-                <Shield className="w-4 h-4" />
-                Especialistas en seguros válidos para visado en España
-              </div>
-              
-              <h1 className="text-[44px] sm:text-[72px] font-bold text-white leading-[1] tracking-tight mb-8">
-                El seguro que <span className="text-emerald-400 font-black">extranjería acepta</span> sin preguntas
-              </h1>
-
-              <div className="flex flex-col items-center gap-6">
-                <a
-                  href={wVisado}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-10 py-6 rounded-2xl text-2xl font-black transition-all shadow-2xl shadow-emerald-500/30 hover:scale-105 active:scale-95"
-                >
-                  <WhatsAppIcon className="w-8 h-8" />
-                  Quiero mi seguro ahora
-                </a>
-                <div className="flex items-center gap-2 text-white/50 text-sm font-medium italic">
-                  <Phone className="w-4 h-4" />
-                  Respondemos en menos de 10 minutos (horario laboral)
-                </div>
-              </div>
-            </div>
-
-            {/* Tarjetas de Beneficios Hero */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { t: "Cumple requisitos", d: "Validado para trámites de extranjería y consulados.", icon: <FileCheck className="w-6 h-6" /> },
-                { t: "Sin copagos", d: "Cobertura completa desde el primer día, sin abonos extra.", icon: <Shield className="w-6 h-6" /> },
-                { t: "Certificado 24h", d: "Documento oficial listo para presentar en tiempo récord.", icon: <FileText className="w-6 h-6" /> },
-                { t: "+1.200 Casos", d: "Más de mil familias ya han obtenido su visado con nosotros.", icon: <Heart className="w-6 h-6" /> }
-              ].map((card, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-[32px] hover:bg-white/10 transition-all group">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
-                    {card.icon}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+              <div>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-xs font-black uppercase tracking-tighter shadow-lg shadow-emerald-500/20">
+                    <CheckCircle2 className="w-3 h-3" />
+                    Especialistas en seguros válidos para visado en España
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{card.t}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{card.d}</p>
                 </div>
-              ))}
+                
+                <h1 className="text-[40px] sm:text-[60px] font-bold text-white leading-[1.1] tracking-tight mb-8">
+                  El seguro que <span className="text-emerald-400">extranjería acepta</span> sin preguntas
+                </h1>
+
+                <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                  {[
+                    "Seguro sin copagos",
+                    "Cobertura completa exigida",
+                    "Documento listo para presentar",
+                    "Gestión rápida (24–48h)"
+                  ].map((check, i) => (
+                    <div key={i} className="flex items-center gap-3 text-white/90 font-bold">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/40">
+                        <Check className="w-4 h-4 text-gray-900" />
+                      </div>
+                      {check}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col gap-3 mb-12">
+                  <div className="flex flex-wrap gap-4">
+                    <a
+                      href={wVisado}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-5 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
+                    >
+                      <WhatsAppIcon className="w-6 h-6" />
+                      Quiero mi seguro para visado
+                    </a>
+                    <div className="flex items-center gap-3 px-6 py-4">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                        <Phone className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <p className="text-white font-bold leading-none italic">Respondemos en menos de 10 min</p>
+                        <p className="text-white/50 text-sm mt-1">Horario laboral</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-6 pt-8 border-t border-white/10">
+                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    Válido para NIE / TIE / visado
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    +1.200 familias ya protegidas
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    Asesor personal directo
+                  </div>
+                </div>
+              </div>
+
+              {/* Tarjeta tipo "Documento Oficial" (Restaurada) */}
+              <div className="hidden lg:block relative">
+                <div className="absolute inset-0 bg-emerald-600/5 rounded-[40px] blur-3xl" />
+                <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-2xl transform rotate-2">
+                  <div className="absolute top-8 right-8">
+                    <div className="w-16 h-16 rounded-full bg-slate-50 border-4 border-white shadow-inner flex items-center justify-center overflow-hidden opacity-20">
+                      <Globe className="w-10 h-10 text-slate-400" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/30">
+                      <FileCheck className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
+                      <p className="text-lg font-bold text-slate-900">Validez Consular</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="h-2 w-3/4 bg-slate-100 rounded-full" />
+                    <div className="h-2 w-full bg-slate-100 rounded-full" />
+                    <div className="h-2 w-5/6 bg-slate-100 rounded-full" />
+                    <div className="pt-4 grid grid-cols-2 gap-4">
+                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Sin Copagos</p>
+                        <p className="text-emerald-600 font-bold text-sm">CUMPLIDO</p>
+                      </div>
+                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Carencias</p>
+                        <p className="text-emerald-600 font-bold text-sm">0 DÍAS</p>
+                      </div>
+                    </div>
+                    <div className="pt-6 border-t border-dashed border-slate-200 text-center">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Sello de aprobación</p>
+                      <div className="w-20 h-20 border-4 border-emerald-100 rounded-full mx-auto flex items-center justify-center">
+                        <Check className="w-10 h-10 text-emerald-200" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Decoración extra */}
+                <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                    <Check className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
