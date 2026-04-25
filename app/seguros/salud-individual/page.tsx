@@ -154,14 +154,14 @@ export default async function SaludIndividualPage() {
             <div className="grid sm:grid-cols-3 gap-8">
               {[
                 "Te ayudamos a elegir la cobertura correcta",
-                "Sin sorpresas ni letra pequeña",
-                "Asesoramiento independiente (no vendemos una sola opción)"
+                "Sin letra pequeña",
+                "Respuesta rápida por WhatsApp"
               ].map((g, i) => (
-                <div key={i} className="flex items-start gap-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-emerald-600" />
+                <div key={i} className="flex items-center gap-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 justify-center sm:justify-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-5 h-5 text-emerald-600" />
                   </div>
-                  <p className="text-slate-700 font-medium">{g}</p>
+                  <p className="text-slate-800 font-bold">{g}</p>
                 </div>
               ))}
             </div>
