@@ -70,7 +70,7 @@ const faqSchema = {
 export const dynamic = "force-static";
 
 export default function SaludExtranjerosPage() {
-  const wExtranjeria = buildWhatsAppHref("Quiero mi seguro para extranjería");
+  const wVisado = buildWhatsAppHref("Quiero mi seguro para visado");
 
   return (
     <>
@@ -141,13 +141,13 @@ export default function SaludExtranjerosPage() {
                 <div className="flex flex-col gap-3 mb-12">
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href={wExtranjeria}
+                      href={wVisado}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-5 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
                     >
                       <WhatsAppIcon className="w-6 h-6" />
-                      Quiero mi seguro para extranjería
+                      Quiero mi seguro para visado
                     </a>
                     <div className="flex items-center gap-3 px-6 py-4">
                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
@@ -262,15 +262,15 @@ export default function SaludExtranjerosPage() {
 
             <div className="mt-16 text-center">
               <a
-                href={wExtranjeria}
+                href={wVisado}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#163300] hover:bg-black text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-xl"
               >
                 <WhatsAppIcon className="w-6 h-6" />
-                Quiero mi seguro ahora
+                Quiero mi seguro para visado
               </a>
-              <p className="mt-4 text-slate-500 text-sm italic font-medium">Respuesta en menos de 10 minutos (horario laboral)</p>
+              <p className="mt-4 text-slate-500 text-sm italic font-medium">Respondemos en menos de 10 minutos (horario laboral)</p>
             </div>
           </div>
         </section>
@@ -476,10 +476,10 @@ export default function SaludExtranjerosPage() {
                   Trabajamos para ti.
                 </h2>
                 <p className="text-[#4B5563] text-lg mt-6 leading-relaxed">
-                  Sabemos lo importante que es esto porque tratamos cada semana con personas en tu misma situación. Te explicamos <strong>EXACTAMENTE qué presentar</strong> y cómo hacerlo para que el funcionario de extranjería no tenga dudas.
+                  Trabajamos cada semana con personas que necesitan este seguro para su visado. No vendemos seguros al azar. Solo recomendamos lo que cumple tu trámite. Te explicamos <strong>EXACTAMENTE qué presentar</strong> y cómo hacerlo.
                 </p>
                 <p className="text-[#4B5563] text-lg mt-4 leading-relaxed font-medium">
-                  No vendemos seguros por vender; vendemos la seguridad de que tu nueva vida en España empiece con buen pie.
+                  Nuestro objetivo es que tú te centres en tu nueva vida en Madrid, mientras nosotros blindamos tu expediente ante extranjería.
                 </p>
                 {/* Trust badges */}
                 <div className="flex gap-4 mt-8 flex-wrap">
@@ -494,15 +494,15 @@ export default function SaludExtranjerosPage() {
                   </span>
                 </div>
                 <a 
-                  href={wExtranjeria}
+                  href={wVisado}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-3 bg-[#163300] text-white px-8 py-4 rounded-xl font-medium hover:bg-[#1a3d00] transition-all"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  Quiero mi seguro para extranjería
+                  Quiero mi seguro para visado
                 </a>
-                <p className="mt-3 text-slate-500 text-xs font-medium">Respuesta en menos de 10 min (horario laboral)</p>
+                <p className="mt-3 text-slate-500 text-xs font-medium">Respondemos en menos de 10 min (horario laboral)</p>
               </div>
             </div>
           </div>
@@ -554,32 +554,28 @@ export default function SaludExtranjerosPage() {
         {/* FAQ SECTION */}
         <FAQChat
           brandColor="emerald"
-          title="Resolvemos tus dudas sobre el visado"
-          subtitle="Información real, sin jerga técnica"
+          title="❓ Preguntas sobre seguro para visado"
+          subtitle="Información real para extranjeros en España"
           items={[
             {
-              q: "¿Qué cobertura exige el seguro salud extranjeros España?",
-              a: "Para obtener el visado o residencia, se exige una póliza sin copagos, con hospitalización y cobertura de repatriación. Debe ser equivalente a la sanidad pública española. Nosotros solo tramitamos opciones que cumplen el 100% de estos requisitos."
+              q: "¿Es obligatorio el seguro sin copagos para extranjería?",
+              a: "Rotundamente sí. Cualquier póliza con copagos será rechazada de inmediato. Para que tu visado o residencia sea aprobado, necesitas un seguro médico de cobertura completa equivalente a la sanidad pública española."
             },
             {
-              q: "¿Es válido este seguro médico visado España para el consulado?",
-              a: "Sí, emitimos certificados específicos en español con la redacción exacta que pide el consulado. Nuestra tasa de aprobación es del 100% en expedientes de visado."
+              q: "¿Sirve este seguro médico para el NIE?",
+              a: "Sí. Es el requisito indispensable para que te concedan el NIE o la TIE. Emitimos certificados específicos con la redacción exacta que pide el consulado y las oficinas de extranjería."
             },
             {
-              q: "¿Necesito un seguro sin copagos extranjería?",
-              a: "Rotundamente sí. Cualquier póliza con copagos será rechazada de inmediato por las oficinas de extranjería. Tramitamos únicamente seguros sin abonos extra por consulta."
+              q: "¿Cuánto tarda en estar listo el seguro?",
+              a: "En la mayoría de los casos, tendrás tu póliza y tu certificado oficial en PDF en menos de 24 horas. Gestión rápida para que no pierdas tu cita en extranjería."
             },
             {
-              q: "¿Puedo contratar un seguro para NIE España con pasaporte?",
-              a: "Sí. La mayoría de nuestros clientes inician el proceso con pasaporte para poder obtener precisamente el NIE o la TIE. Te asesoramos en el paso a paso."
+              q: "¿Qué pasa si me rechazan el seguro en extranjería?",
+              a: "Si el seguro que te tramitamos no cumple con los requisitos técnicos exigidos para tu trámite, te devolvemos el dinero. Así de seguros estamos de nuestra gestión experta."
             },
             {
-              q: "¿Qué incluye la repatriación?",
-              a: "Incluye el traslado sanitario o por fallecimiento hasta tu país de origen. Es una cobertura obligatoria por ley para extranjeros y nosotros la incluimos por defecto."
-            },
-            {
-              q: "¿Hay pediatras incluidos?",
-              a: "Sí, si viajas con familia, la póliza incluye pediatría y todas las especialidades desde el primer día, sin listas de espera."
+              q: "¿Puedo contratar con pasaporte?",
+              a: "Sí. No necesitas tener el NIE para contratar. De hecho, necesitas el seguro primero para poder obtener el NIE. Te asesoramos en el paso a paso."
             },
           ]}
         />
@@ -594,15 +590,15 @@ export default function SaludExtranjerosPage() {
               Recibe tu póliza y certificado para extranjería en menos de 24 horas
             </p>
             <a 
-              href={wExtranjeria}
+              href={wVisado}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#163300] hover:bg-[#1a3d00] text-white font-semibold px-10 py-5 rounded-2xl text-xl transition-all hover:scale-[1.02] shadow-xl"
             >
               <WhatsAppIcon className="w-6 h-6" />
-              Quiero mi seguro para extranjería
+              Quiero mi seguro para visado
             </a>
-            <p className="mt-4 text-slate-500 text-sm font-medium">Respuesta en menos de 10 min (horario laboral)</p>
+            <p className="mt-4 text-slate-500 text-sm font-medium">Respondemos en menos de 10 min (horario laboral)</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-[#4B5563]">
               <span className="inline-flex items-center gap-1">
                 <CheckCircle2 className="w-4 h-4 text-[#2E7D32]" />
