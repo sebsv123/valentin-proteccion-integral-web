@@ -280,9 +280,7 @@ export default async function SaludIndividualPage() {
                     ["Urgencias 24h", "Incluido", "Incluido", "Incluido"],
                     ["Hospitalización incluida", "No incluido", "Incluido", "Incluido"],
                     ["Pruebas diagnósticas completas", "Básicas", "Incluido", "Incluido"],
-                    ["Telemedicina 24h", "No incluido", "Incluido", "Incluido"],
-                    ["Habitación individual", "No incluido", "No incluido", "Incluido"],
-                    ["Asistencia en viaje", "No incluido", "Opcional", "Incluido"],
+                    ["Asistencia en viaje", "No incluido", "Incluido", "Incluido"],
                   ].map(([feature, entry, complete, premium], i) => (
                     <tr key={i} className="hover:bg-gray-50 transition-colors">
                       <td className="py-4 pr-6 text-sm text-gray-700">{feature}</td>
