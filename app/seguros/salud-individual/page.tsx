@@ -77,8 +77,8 @@ export default async function SaludIndividualPage() {
           {/* Overlay gradiente premium */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Clínica médica privada de alta gama en Madrid"
+              src="https://images.pexels.com/photos/3769151/pexels-photo-3769151.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Asesoramiento médico personalizado y cercano en Madrid"
               fill
               className="object-cover opacity-60"
               priority
