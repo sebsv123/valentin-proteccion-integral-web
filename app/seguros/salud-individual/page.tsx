@@ -149,17 +149,19 @@ export default async function SaludIndividualPage() {
               <div className="hidden lg:block relative group perspective-1000">
                 <div className="absolute inset-0 bg-emerald-600/10 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative transform rotate-2 group-hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
-                  <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
-                    <Image 
-                      src="/images/premium/certificado-salud-individual.png" 
-                      alt="Estudio de Cobertura Personalizada" 
-                      width={600} 
-                      height={800} 
-                      className="rounded-[24px] w-full h-auto"
-                    />
+                  <div className="relative">
+                    <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
+                      <Image 
+                        src="/images/premium/certificado-salud-individual.png" 
+                        alt="Estudio de Cobertura Personalizada" 
+                        width={600} 
+                        height={800} 
+                        className="rounded-[24px] w-full h-auto"
+                      />
+                    </div>
                     
-                    {/* Badge flotante "Garantía de Ahorro" */}
-                    <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                    {/* Badge flotante "Garantía de Ahorro" - Ahora fuera del overflow */}
+                    <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft z-20">
                       <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
                         <Check className="w-5 h-5 text-white" />
                       </div>
