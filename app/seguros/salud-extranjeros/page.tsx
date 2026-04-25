@@ -187,49 +187,63 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* REQUISITOS CONSULADO — Diseño Premium */}
-        <section className="py-24 bg-gray-50">
+        {/* PROTOCOLO DE CUMPLIMIENTO OFICIAL — Diseño Ultra Premium */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                  Estándares oficiales del Gobierno Español
-                </h2>
-                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                  Para obtener un visado o residencia, no sirve cualquier seguro privado. La póliza debe cumplir con criterios técnicos muy específicos que nosotros garantizamos por contrato.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "Cobertura equivalente a la Seguridad Social pública",
-                    "Contratación obligatoria sin copagos por consulta",
-                    "Sin periodos de carencia (cobertura total inmediata)",
-                    "Inclusión de hospitalización y urgencias 24h",
-                    "Certificado oficial emitido en español para Extranjería"
-                  ].map((text, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-white" />
-                      </div>
-                      <span className="text-gray-700 font-medium">{text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-500/20">
-                    <Shield className="w-8 h-8" />
+            <div className="bg-[#163300] rounded-[40px] p-8 md:p-16 text-white overflow-hidden relative shadow-2xl">
+              {/* Elementos decorativos de fondo */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-400/5 rounded-full blur-3xl -ml-32 -mb-32" />
+
+              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
+                    <Shield className="w-4 h-4" />
+                    Protocolo de Aceptación Garantizada
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Garantía de Aceptación</h3>
-                </div>
-                <p className="text-gray-600 text-center mb-8">
-                  Nuestras pólizas están diseñadas para cumplir con el Artículo 31 de la Ley de Extranjería. Si el consulado rechaza el seguro, buscamos una alternativa o gestionamos la solución.
-                </p>
-                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                  <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 text-center">Importante: Pago Anual</p>
-                  <p className="text-gray-700 text-sm leading-relaxed text-center">
-                    El Consulado exige demostrar cobertura durante toda la estancia. Por ello, estas pólizas se tramitan con <strong>pago único anual</strong>.
+                  <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+                    Estándares legales para tu visado
+                  </h2>
+                  <p className="text-emerald-100/80 text-lg mb-8 leading-relaxed">
+                    No tramitamos "seguros de viaje". Gestionamos pólizas de salud de grado residencial que cumplen el 100% de la normativa española.
                   </p>
+                  
+                  <div className="space-y-6">
+                    {[
+                      { t: "Grado de Sanidad Pública", d: "Sin exclusiones, equivalente a la Seguridad Social." },
+                      { t: "Sin Copagos Judiciales", d: "Acceso total a medicina y especialistas sin abonos extra." },
+                      { t: "Cobertura de Repatriación", d: "Punto crítico exigido por todos los consulados." },
+                      { t: "Vigencia Documental", d: "Certificados oficiales listos para presentar en 24h." }
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-4">
+                        <div className="mt-1">
+                          <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
+                            <Check className="w-4 h-4 text-[#163300]" />
+                          </div>
+                        </div>
+                        <div>
+                          <p className="font-bold text-white">{item.t}</p>
+                          <p className="text-emerald-100/60 text-sm">{item.d}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-20 h-20 rounded-full bg-white text-[#163300] flex items-center justify-center mb-6 shadow-xl">
+                      <FileText className="w-10 h-10" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">Garantía de Pago Único</h3>
+                    <p className="text-emerald-100/70 mb-8 leading-relaxed">
+                      El Gobierno exige demostrar solvencia y cobertura para toda la estancia. Por ello, estas pólizas se emiten exclusivamente con <strong>pago anual</strong>, garantizando que tu expediente no sea rechazado por falta de vigencia.
+                    </p>
+                    <div className="w-full h-px bg-white/10 mb-8" />
+                    <p className="text-sm font-medium text-emerald-400 uppercase tracking-widest">
+                      Validado bajo Art. 31 Ley de Extranjería
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,32 +363,32 @@ export default function SaludExtranjerosPage() {
         {/* FAQ SECTION */}
         <FAQChat
           brandColor="emerald"
-          title="Preguntas frecuentes sobre el seguro para extranjeros"
-          subtitle="Todo lo que necesitas saber antes de contratar"
+          title="Resolvemos tus dudas sobre el visado"
+          subtitle="Información real, sin jerga técnica"
           items={[
             {
-              q: "¿Necesito NIE o puedo tramitar con pasaporte?",
-              a: "Puedes iniciar el proceso con pasaporte. El seguro se contrata antes de tener el NIE/TIE y sirve precisamente para obtenerlo. Te asesoramos según tu situación concreta en 30 minutos."
+              q: "¿Sirve mi seguro de viaje para el visado?",
+              a: "Rotundamente no. El consulado exige una póliza de salud con hospitalización y sin copagos. Los seguros de viaje son para incidentes puntuales, no para residencia. Nosotros tramitamos la opción correcta directamente."
             },
             {
-              q: "¿Una póliza puede cubrir a toda mi familia?",
-              a: "Sí. Una misma póliza puede incluir a todo el núcleo familiar y es perfectamente válida para los trámites en el consulado español para cada miembro."
+              q: "¿Puedo tramitar con pasaporte?",
+              a: "Sí. La mayoría de nuestros clientes inician el proceso con pasaporte. El seguro es el paso previo necesario para obtener tu NIE o TIE."
             },
             {
-              q: "¿Cuándo recibo la documentación para el consulado?",
-              a: "En el momento en que firmas la póliza recibe toda la documentación al instante. El certificado está listo para presentar en el consulado en menos de 24 horas."
+              q: "¿Por qué el pago es anual?",
+              a: "Es una exigencia administrativa. El consulado necesita verificar que la cobertura es estable y está pagada por adelantado para toda la duración de tu estancia inicial. Evita rechazos en tu expediente."
             },
             {
-              q: "¿Por qué es prima anual y no mensual?",
-              a: "Por condiciones del consulado español, estas pólizas deben ser de prima anual. Es un requisito oficial para demostrar que tienes cobertura durante toda tu estancia. Te explicamos el coste exacto antes de contratar."
+              q: "¿Cuánto tarda el certificado?",
+              a: "Una vez emitida la póliza, el certificado oficial en español para el consulado está listo en menos de 24 horas. Te lo enviamos en PDF para que lo presentes de inmediato."
             },
             {
-              q: "¿Qué pasa si necesito volver a mi país?",
-              a: "Las pólizas para extranjeros incluyen repatriación al país de ORIGEN del asegurado. Esto es diferente al resto de seguros de salud, que repatrían a España. Es una cobertura específica y muy importante."
+              q: "¿Qué incluye la repatriación?",
+              a: "Incluye el traslado sanitario o por fallecimiento hasta tu país de origen. Es una cobertura obligatoria por ley para extranjeros y nosotros la incluimos por defecto."
             },
             {
-              q: "¿La póliza incluye asistencia en viaje?",
-              a: "Sí. Todas las pólizas para extranjeros —excepto la modalidad más básica— incluyen asistencia en viaje con cobertura de capital según la póliza contratada. Te detallamos el capital exacto antes de firmar."
+              q: "¿Hay pediatras incluidos?",
+              a: "Sí, si viajas con familia, la póliza incluye pediatría y todas las especialidades desde el primer día, sin listas de espera."
             },
           ]}
         />
