@@ -48,6 +48,11 @@ export function FAQChat({
       question: "bg-rose-50 border-rose-200 text-rose-900",
       answer: "bg-slate-50 border-slate-200 text-slate-700",
       accent: "text-rose-500"
+    },
+    orange: {
+      question: "bg-orange-50 border-orange-200 text-orange-900",
+      answer: "bg-slate-50 border-slate-200 text-slate-700",
+      accent: "text-orange-500"
     }
   };
 
@@ -111,6 +116,7 @@ export function FAQChat({
                         brandColor === 'blue' ? 'from-blue-400 to-blue-600' :
                         brandColor === 'indigo' ? 'from-indigo-400 to-indigo-600' :
                         brandColor === 'amber' ? 'from-amber-400 to-amber-600' :
+                        brandColor === 'orange' ? 'from-orange-400 to-orange-600' :
                         'from-rose-400 to-rose-600'
                       } flex items-center justify-center mt-0.5`}>
                         <span className="text-white text-xs font-bold">V</span>
@@ -133,6 +139,7 @@ export function FAQChat({
               brandColor === 'blue' ? 'bg-blue-500' :
               brandColor === 'indigo' ? 'bg-indigo-500' :
               brandColor === 'amber' ? 'bg-amber-500' :
+              brandColor === 'orange' ? 'bg-orange-500' :
               'bg-rose-500'
             } animate-pulse`} />
             <span className="text-slate-600 text-sm">Habla con nosotros por WhatsApp</span>
