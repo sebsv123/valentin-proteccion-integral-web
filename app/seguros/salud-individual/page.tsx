@@ -341,7 +341,7 @@ export default async function SaludIndividualPage() {
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Más de 10 años ayudando a personas a elegir su seguro de salud en España.
+                  Más de 10 años ayudando a personas a elegir correctamente su seguro de salud en España.
                   <br /><br />
                   No trabajamos para una compañía. Trabajamos para ayudarte a tomar la mejor decisión.
                 </p>
