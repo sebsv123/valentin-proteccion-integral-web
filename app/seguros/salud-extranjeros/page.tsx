@@ -49,24 +49,25 @@ export default function SaludExtranjerosPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
               <div>
-                <h1 className="text-[40px] sm:text-[60px] font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-6">
-                  Seguro de salud para extranjeros <span className="text-[#f28c28]">válido para visado</span> en España
+                <h1 className="text-[40px] sm:text-[60px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+                  Seguro de salud para extranjeros <span className="text-emerald-400">aprobado</span> para visado en España
                 </h1>
                 
-                <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed mb-10">
-                  Sin copagos. Sin errores. Listo para presentar en extranjería en 24–48h.
+                <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
+                  Evita errores que puedan retrasar tu visado.
+                  <br />
+                  Te damos el seguro correcto en 24–48h.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
                   {[
-                    "Cumple requisitos de extranjería",
-                    "Documento listo para presentar",
-                    "Asesor personal por WhatsApp",
-                    "+1.200 familias ayudadas"
+                    "Válido para extranjería",
+                    "Sin copagos",
+                    "Documento listo para presentar"
                   ].map((bullet, i) => (
-                    <div key={i} className="flex items-center gap-3 text-slate-700 font-bold">
-                      <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-emerald-600" />
+                    <div key={i} className="flex items-center gap-3 text-white font-bold">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
+                        <Check className="w-4 h-4 text-gray-900" />
                       </div>
                       {bullet}
                     </div>
@@ -79,12 +80,12 @@ export default function SaludExtranjerosPage() {
                       href={wVisado}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 bg-[#f28c28] hover:bg-[#e67e22] text-white px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-xl shadow-orange-500/20 w-full"
+                      className="inline-flex items-center justify-center gap-3 bg-[#f28c28] hover:bg-[#e67e22] text-white px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-xl shadow-orange-500/40 w-full"
                     >
                       <WhatsAppIcon className="w-6 h-6" />
-                      Quiero mi seguro para visado
+                      Quiero mi seguro para visado ahora
                     </a>
-                    <p className="text-center mt-3 text-slate-500 text-sm font-bold flex items-center justify-center gap-2">
+                    <p className="text-center mt-3 text-white font-bold flex items-center justify-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                       Respuesta en menos de 10 minutos
                     </p>
@@ -167,11 +168,11 @@ export default function SaludExtranjerosPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  t: "Si tu seguro no cumple requisitos → te devolvemos el dinero",
+                  t: "Si tu seguro no es válido para tu trámite → te devolvemos el dinero",
                   icon: <Shield className="w-10 h-10 text-[#f28c28]" />
                 },
                 {
-                  t: "Te ayudamos hasta que presentes tu documentación correctamente",
+                  t: "Te acompañamos hasta que presentes correctamente tu documentación",
                   icon: <Heart className="w-10 h-10 text-[#f28c28]" />
                 },
                 {
@@ -179,11 +180,11 @@ export default function SaludExtranjerosPage() {
                   icon: <FileText className="w-10 h-10 text-[#f28c28]" />
                 }
               ].map((g, i) => (
-                <div key={i} className="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100 hover:shadow-xl transition-all text-center group">
-                  <div className="mb-8 w-20 h-20 rounded-3xl bg-slate-50 flex items-center justify-center mx-auto group-hover:bg-[#f28c28]/10 group-hover:scale-110 transition-all">
+                <div key={i} className="bg-white p-12 rounded-[40px] shadow-sm border border-slate-100 hover:shadow-xl transition-all text-center group">
+                  <div className="mb-8 w-24 h-24 rounded-3xl bg-slate-50 flex items-center justify-center mx-auto group-hover:bg-[#f28c28]/10 group-hover:scale-110 transition-all">
                     {g.icon}
                   </div>
-                  <p className="text-xl font-bold text-slate-800 leading-relaxed">
+                  <p className="text-2xl font-bold text-slate-800 leading-tight">
                     {g.t}
                   </p>
                 </div>
@@ -203,16 +204,16 @@ export default function SaludExtranjerosPage() {
             
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { num: "01", t: "Nos escribes por WhatsApp", d: "Rosa o Sebastián analizan tu trámite al momento." },
-                { num: "02", t: "Te damos la opción válida para tu caso", d: "Sin mareos. Directo a lo que extranjería acepta." },
-                { num: "03", t: "Recibes tu póliza lista para presentar", d: "En formato PDF oficial listo para tu cita." }
+                { num: "1", t: "Escribes por WhatsApp", d: "Rosa o Sebastián analizan tu trámite al momento." },
+                { num: "2", t: "Te damos la opción válida", d: "Sin mareos. Directo a lo que extranjería acepta." },
+                { num: "3", t: "Recibes tu póliza lista", d: "En formato PDF oficial listo para tu cita." }
               ].map((paso, i) => (
                 <div key={i} className="relative">
-                  <div className="w-16 h-16 rounded-full bg-[#f28c28] text-white flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg shadow-orange-500/20">
+                  <div className="w-20 h-20 rounded-full bg-[#f28c28] text-white flex items-center justify-center text-3xl font-black mx-auto mb-6 shadow-xl shadow-orange-500/20">
                     {paso.num}
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{paso.t}</h3>
-                  <p className="text-slate-500">{paso.d}</p>
+                  <h3 className="text-2xl font-bold mb-3">{paso.t}</h3>
+                  <p className="text-slate-500 font-medium">{paso.d}</p>
                 </div>
               ))}
             </div>
@@ -235,14 +236,21 @@ export default function SaludExtranjerosPage() {
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500 text-slate-950 text-sm font-black uppercase tracking-widest mb-8">
-              Especialistas en seguros para visado en España
+            <div className="flex justify-center mb-10">
+              <div className="w-24 h-24 rounded-3xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                <Users className="w-12 h-12 text-emerald-400" />
+              </div>
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight">
-              Trabajamos cada semana con personas que necesitan este seguro para su residencia o visado.
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
+              Especialistas en seguros para visado en España
             </h2>
-            <p className="text-xl md:text-2xl text-emerald-100/70 leading-relaxed font-medium">
-              No vendemos seguros al azar. Solo recomendamos opciones que cumplen los requisitos reales de extranjería.
+            <p className="text-2xl md:text-3xl text-emerald-100/70 leading-relaxed mb-8 font-medium">
+              Cada semana ayudamos a personas en tu misma situación.
+            </p>
+            <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
+              No recomendamos seguros al azar. 
+              <br />
+              Solo opciones que cumplen los requisitos reales de extranjería.
             </p>
           </div>
         </section>
@@ -300,17 +308,17 @@ export default function SaludExtranjerosPage() {
               </div>
               <div>
                 <p className="text-[#f28c28] font-black uppercase tracking-widest text-sm mb-4">Confianza Humana</p>
-                <h2 className="text-4xl font-extrabold text-slate-900 mb-8">
-                  Somos mediadores independientes con más de 10 años de experiencia.
+                <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
+                  Más de 10 años ayudando a familias a tomar la decisión correcta.
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">
                   No trabajamos para una compañía. 
                   <br />
-                  <strong>Trabajamos para encontrar lo mejor para ti.</strong>
+                  <strong>Trabajamos para ti.</strong>
                 </p>
                 <div className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100">
-                  <Users className="w-6 h-6 text-slate-400" />
-                  <p className="font-bold text-slate-800">+1.200 clientes extranjeros ya han confiado en nosotros.</p>
+                  <Heart className="w-6 h-6 text-emerald-500" />
+                  <p className="font-bold text-slate-800">Cercanía real y asesoramiento independiente.</p>
                 </div>
               </div>
             </div>
@@ -359,12 +367,18 @@ export default function SaludExtranjerosPage() {
               className="inline-flex items-center gap-3 bg-[#f28c28] hover:bg-[#e67e22] text-white px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-2xl"
             >
               <WhatsAppIcon className="w-6 h-6" />
-              Quiero mi seguro para visado
+              Quiero mi seguro para visado ahora
             </a>
-            <p className="mt-6 text-slate-400 font-bold flex items-center justify-center gap-2">
-              <MessageSquare className="w-5 h-5 text-emerald-500" />
-              Atención directa por WhatsApp
-            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm font-bold text-slate-400">
+              <p className="flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 text-emerald-500" />
+                Atención rápida (respuesta en menos de 10 minutos)
+              </p>
+              <p className="flex items-center gap-2">
+                <FileCheck className="w-5 h-5 text-[#f28c28]" />
+                Gestión completa en 24–48h
+              </p>
+            </div>
           </div>
         </section>
 
