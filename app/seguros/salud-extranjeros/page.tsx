@@ -156,21 +156,65 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* PROCESO SENCILLO — 3 pasos Wise (Conversión Inmediata) */}
-        <section className="py-24 bg-white border-b border-slate-100">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+        {/* GARANTÍAS NUCLEARES — Eliminación de objeciones inmediata */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-sm font-bold mb-4">
-                Agilidad Máxima
+                Confianza Total
               </div>
               <h2 className="text-[32px] sm:text-[44px] font-bold text-slate-900 mb-4">
-                Lo tienes en 3 pasos
+                Tu tranquilidad es nuestra prioridad
+              </h2>
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+                No vendemos solo un seguro, vendemos el <strong>éxito de tu trámite</strong>.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Devolución Garantizada",
+                  desc: "Si tu seguro no cumple con los requisitos técnicos exigidos para tu trámite, te devolvemos el dinero.",
+                  icon: <Shield className="w-8 h-8 text-emerald-600" />
+                },
+                {
+                  title: "Acompañamiento Total",
+                  desc: "Te acompañamos hasta que tu documentación esté presentada y aceptada correctamente.",
+                  icon: <Heart className="w-8 h-8 text-emerald-600" />
+                },
+                {
+                  title: "Transparencia Absoluta",
+                  desc: "Sin permanencias ocultas, sin letra pequeña y sin sorpresas en la renovación.",
+                  icon: <FileCheck className="w-8 h-8 text-emerald-600" />
+                }
+              ].map((g, i) => (
+                <div key={i} className="p-10 rounded-[40px] bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-all shadow-sm hover:shadow-xl group text-center">
+                  <div className="mb-8 w-20 h-20 rounded-3xl bg-white flex items-center justify-center mx-auto shadow-md group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                    {g.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{g.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{g.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROCESO SENCILLO — 3 pasos (Gris suave) */}
+        <section className="py-24 bg-slate-50 border-y border-slate-100">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-4">
+                Lo tienes listo en 3 pasos
+              </div>
+              <h2 className="text-[32px] sm:text-[44px] font-bold text-slate-900 mb-4">
+                Sin complicaciones, sin esperas
               </h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-12 relative">
-              {/* Línea decorativa entre pasos en desktop */}
-              <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-slate-100 z-0" />
+              <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-slate-200 z-0" />
               
               {[
                 { num: "01", title: "Escribes por WhatsApp", desc: "Rosa o Sebastián analizan tu trámite en 5 minutos." },
@@ -202,12 +246,12 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* SORPRESA 1 — Checklist Lead Magnet (Gris suave para explicación) */}
-        <section className="py-24 bg-slate-50 overflow-hidden relative border-y border-slate-100">
+        {/* SORPRESA 1 — Lead Magnet (Blanco) */}
+        <section className="py-24 bg-white overflow-hidden relative">
           <div className="container mx-auto px-4 relative z-10 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Lead Magnet */}
-              <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-xl border border-slate-100 relative overflow-hidden group">
+              <div className="bg-slate-50 rounded-[40px] p-8 md:p-10 shadow-xl border border-slate-100 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[100px] -mr-10 -mt-10 transition-transform group-hover:scale-110" />
                 <div className="relative z-10">
                   <div className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-[10px] font-black uppercase tracking-widest mb-6">🎁 Recurso Gratuito</div>
@@ -237,48 +281,6 @@ export default function SaludExtranjerosPage() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* GARANTÍAS NUCLEARES — Destacado (Acción) */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-[32px] sm:text-[44px] font-bold text-slate-900 mb-4">
-                Tu tranquilidad es nuestra prioridad
-              </h2>
-              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                No vendemos solo un seguro, vendemos el resultado de tu trámite.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Devolución Garantizada",
-                  desc: "Si tu seguro no es válido para tu trámite de extranjería, te devolvemos el dinero sin preguntas.",
-                  icon: <Shield className="w-8 h-8 text-emerald-600" />
-                },
-                {
-                  title: "Acompañamiento Total",
-                  desc: "Te acompañamos hasta que tu documentación esté presentada y aceptada correctamente.",
-                  icon: <Heart className="w-8 h-8 text-emerald-600" />
-                },
-                {
-                  title: "Transparencia Absoluta",
-                  desc: "Sin permanencias ocultas, sin letra pequeña y sin sorpresas en la renovación.",
-                  icon: <FileCheck className="w-8 h-8 text-emerald-600" />
-                }
-              ].map((g, i) => (
-                <div key={i} className="p-10 rounded-[40px] bg-white border border-slate-100 hover:border-emerald-200 transition-all shadow-xl hover:shadow-2xl group text-center">
-                  <div className="mb-8 w-20 h-20 rounded-3xl bg-emerald-50 flex items-center justify-center mx-auto shadow-md group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all">
-                    {g.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{g.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{g.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
