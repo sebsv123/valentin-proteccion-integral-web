@@ -9,7 +9,7 @@ import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { getPexelsImage } from "@/lib/pexels";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro de Salud Privado en Madrid | Valentín",
@@ -93,12 +93,11 @@ export default async function SaludIndividualPage() {
               </div>
               
               <h1 className="text-[40px] sm:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
-                Tu médico en minutos.<br />
-                <span className="text-emerald-400">Sin listas de espera.</span>
+                Seguro de salud individual en España <span className="text-emerald-400">con asesoramiento personalizado</span>
               </h1>
               
               <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
-                Acceso inmediato a los mejores especialistas y hospitales privados de Madrid. Sin burocracia, solo salud.
+                Elige la cobertura adecuada sin pagar de más y sin quedarte corto cuando lo necesites.
               </p>
               
               <div className="flex flex-wrap gap-4 mb-12">
@@ -107,15 +106,21 @@ export default async function SaludIndividualPage() {
                   location="salud-individual-hero"
                   className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
                 >
-                  Pedir presupuesto gratis
+                  Quiero asesoramiento para mi seguro de salud
                 </WhatsAppButton>
-                <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
-                  <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-gray-950 bg-gray-800" />
-                    ))}
-                  </div>
-                  <p className="text-white/80 text-sm font-medium">+1.200 madrileños protegidos</p>
+                <div className="flex flex-col justify-center text-white/60 text-sm gap-1">
+                  <p className="flex items-center gap-2 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Te ayudamos a elegir la mejor cobertura
+                  </p>
+                  <p className="flex items-center gap-2 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Sin sorpresas ni letra pequeña
+                  </p>
+                  <p className="flex items-center gap-2 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Respuesta en menos de 10 minutos
+                  </p>
                 </div>
               </div>
 
@@ -133,6 +138,81 @@ export default async function SaludIndividualPage() {
                   Citas en el día
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2. BLOQUE GARANTÍAS DE CONFIANZA */}
+        <section className="py-16 bg-slate-50 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Garantías de confianza</h2>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-8">
+              {[
+                "Te ayudamos a elegir la cobertura correcta",
+                "Sin sorpresas ni letra pequeña",
+                "Asesoramiento independiente (no vendemos una sola opción)"
+              ].map((g, i) => (
+                <div key={i} className="flex items-start gap-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-4 h-4 text-emerald-600" />
+                  </div>
+                  <p className="text-slate-700 font-medium">{g}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. BLOQUE CÓMO FUNCIONA */}
+        <section className="py-16 bg-white border-b border-slate-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900">Cómo funciona</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              {[
+                { n: "1", t: "Nos escribes por WhatsApp", d: "Rosa o Sebastián analizan tu caso." },
+                { n: "2", t: "Analizamos tu caso", d: "Buscamos lo mejor para ti." },
+                { n: "3", t: "Te recomendamos la mejor opción", d: "La que más te protege." }
+              ].map((p, i) => (
+                <div key={i} className="relative">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                    {p.n}
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">{p.t}</h3>
+                  <p className="text-slate-500 text-sm">{p.d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <WhatsAppButton 
+                href={wCotiza}
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg"
+              >
+                Quiero asesoramiento
+              </WhatsAppButton>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. BLOQUE VALOR AÑADIDO */}
+        <section className="py-16 bg-slate-50 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Te ayudamos a evitar errores y pagar de más</h2>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                "Revisión gratuita de tu situación actual",
+                "Te ayudamos a elegir la cobertura adecuada",
+                "Asesoramiento sin compromiso"
+              ].map((v, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white p-5 rounded-xl shadow-sm border border-slate-100 text-center justify-center">
+                  <p className="text-slate-700 font-bold text-sm">✔ {v}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -257,8 +337,9 @@ export default async function SaludIndividualPage() {
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Te acompañamos en todo el proceso. Desde elegir el seguro que mejor 
-                  se adapta a ti hasta resolver cualquier duda que tengas después.
+                  Más de 10 años ayudando a personas a elegir su seguro de salud en España.
+                  <br /><br />
+                  No trabajamos para una compañía. Trabajamos para ayudarte a tomar la mejor decisión.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -311,8 +392,12 @@ export default async function SaludIndividualPage() {
               location="salud-individual-cta-final"
               className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
-              Cotizar Ahora
+              Quiero asesoramiento para mi seguro de salud
             </WhatsAppButton>
+            
+            <p className="mt-6 text-slate-500 font-bold text-sm">
+              Respuesta en menos de 10 minutos • Asesoramiento personalizado sin compromiso
+            </p>
             
             {/* Badges finales */}
             <div className="flex flex-wrap justify-center gap-4 mt-12">
