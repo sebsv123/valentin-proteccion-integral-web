@@ -23,7 +23,17 @@ export default function SaludExtranjerosPage() {
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
       
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      {/* Gancho Principal - Top Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-emerald-600 text-white py-2 text-center overflow-hidden">
+        <div className="container mx-auto px-4">
+          <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
+            <Shield className="w-4 h-4" />
+            Si tu seguro no es válido para tu trámite → te devolvemos el dinero
+          </p>
+        </div>
+      </div>
+
+      <header className="fixed top-9 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-slate-900 text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
@@ -39,7 +49,7 @@ export default function SaludExtranjerosPage() {
         </div>
       </header>
 
-      <main className="min-h-screen bg-white pt-16">
+      <main className="min-h-screen bg-white pt-24 sm:pt-28">
         
         {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
         <section className="relative py-20 lg:py-32 bg-slate-950 overflow-hidden min-h-[85vh] flex items-center">
