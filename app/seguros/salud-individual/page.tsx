@@ -176,9 +176,9 @@ export default async function SaludIndividualPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { n: "1", t: "Nos escribes por WhatsApp", d: "Rosa o Sebastián analizan tu caso." },
-                { n: "2", t: "Analizamos tu caso", d: "Buscamos lo mejor para ti." },
-                { n: "3", t: "Te recomendamos la mejor opción", d: "La que más te protege." }
+                { n: "1", t: "Nos escribes por WhatsApp", d: "Atención directa sin esperas." },
+                { n: "2", t: "Analizamos tu caso", d: "Buscamos el seguro que necesitas." },
+                { n: "3", t: "Te recomendamos la mejor opción", d: "La que más te protege al mejor precio." }
               ].map((p, i) => (
                 <div key={i} className="relative">
                   <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
