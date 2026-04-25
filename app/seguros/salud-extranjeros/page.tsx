@@ -63,7 +63,7 @@ export default function SaludExtranjerosPage() {
                 </h1>
                 
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
-                  Evita errores que puedan retrasar tu visado.
+                  Evita errores que pueden retrasar o rechazar tu visado.
                   <br />
                   Te damos el seguro correcto en 24–48h.
                 </p>
@@ -72,7 +72,8 @@ export default function SaludExtranjerosPage() {
                   {[
                     "Válido para extranjería",
                     "Sin copagos",
-                    "Documento listo para presentar"
+                    "Documento listo",
+                    "Si no es válido → devolución"
                   ].map((bullet, i) => (
                     <div key={i} className="flex items-center gap-3 text-white font-bold">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
@@ -213,16 +214,21 @@ export default function SaludExtranjerosPage() {
             
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { num: "1", t: "Escribes por WhatsApp", d: "Rosa o Sebastián analizan tu trámite al momento." },
-                { num: "2", t: "Te damos la opción válida", d: "Sin mareos. Directo a lo que extranjería acepta." },
-                { num: "3", t: "Recibes tu póliza lista", d: "En formato PDF oficial listo para tu cita." }
+                { num: "1", t: "Escribes por WhatsApp", d: "Analizamos tu trámite al momento." },
+                { num: "2", t: "Te damos la opción válida", d: "Directo a lo que aceptan." },
+                { num: "3", t: "Recibes tu póliza lista", d: "En PDF oficial en tu móvil." }
               ].map((paso, i) => (
                 <div key={i} className="relative">
-                  <div className="w-20 h-20 rounded-full bg-emerald-600 text-white flex items-center justify-center text-3xl font-black mx-auto mb-6 shadow-xl shadow-emerald-600/20">
+                  <div className="text-[120px] font-black text-slate-100 absolute -top-20 left-1/2 -translate-x-1/2 z-0 opacity-50 select-none">
                     {paso.num}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{paso.t}</h3>
-                  <p className="text-slate-500 font-medium">{paso.d}</p>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 rounded-full bg-emerald-600 text-white flex items-center justify-center text-3xl font-black mx-auto mb-6 shadow-xl shadow-emerald-600/20">
+                      {paso.num}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{paso.t}</h3>
+                    <p className="text-slate-500 font-bold">{paso.d}</p>
+                  </div>
                 </div>
               ))}
             </div>
