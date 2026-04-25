@@ -205,13 +205,13 @@ export default async function SaludIndividualPage() {
         <section className="py-16 bg-slate-50 border-b border-slate-100">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Te ayudamos a evitar errores y pagar de más</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Te ayudamos a no pagar de más</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {[
-                "Revisión gratuita de tu situación actual",
+                "Revisamos tu situación actual sin compromiso",
                 "Te ayudamos a elegir la cobertura adecuada",
-                "Asesoramiento sin compromiso"
+                "Evitamos errores en la contratación"
               ].map((v, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white p-5 rounded-xl shadow-sm border border-slate-100 text-center justify-center">
                   <p className="text-slate-700 font-bold text-sm">✔ {v}</p>
