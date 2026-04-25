@@ -189,6 +189,7 @@ export default async function SaludIndividualPage() {
             <div className="mt-12 text-center">
               <WhatsAppButton 
                 href={wCotiza}
+                location="salud-individual-como-funciona"
                 className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg"
               >
                 Quiero asesoramiento
