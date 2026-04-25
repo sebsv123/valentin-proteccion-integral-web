@@ -87,59 +87,85 @@ export default async function SaludIndividualPage() {
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
-            <div className="max-w-3xl">
-              <div className="mb-8">
-                <GuaranteeBadge type="salud" />
-              </div>
-              
-              <h1 className="text-[40px] sm:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
-                Seguro de salud individual en España <span className="text-emerald-400">con asesoramiento personalizado</span>
-              </h1>
-              
-              <p className="text-xl text-white/70 leading-relaxed mb-4 max-w-2xl">
-                Elige la cobertura adecuada sin pagar de más y sin quedarte corto cuando lo necesites.
-              </p>
-              
-              <div className="flex flex-wrap gap-4 mb-12">
-                <div className="flex flex-col gap-3">
-                  <WhatsAppButton 
-                    href={wCotiza}
-                    location="salud-individual-hero"
-                    className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
-                  >
-                    Quiero mi seguro de salud ahora
-                  </WhatsAppButton>
-                  <p className="text-white/80 text-sm font-bold ml-1 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Respuesta en menos de 10 minutos
-                  </p>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="max-w-3xl">
+                <div className="mb-8">
+                  <GuaranteeBadge type="salud" />
+                </div>
+                
+                <h1 className="text-[40px] sm:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
+                  Seguro de salud individual en España <span className="text-emerald-400">con asesoramiento personalizado</span>
+                </h1>
+                
+                <p className="text-xl text-white/70 leading-relaxed mb-4 max-w-2xl">
+                  Elige la cobertura adecuada sin pagar de más y sin quedarte corto cuando lo necesites.
+                </p>
+                
+                <div className="flex flex-wrap gap-4 mb-12">
+                  <div className="flex flex-col gap-3">
+                    <WhatsAppButton 
+                      href={wCotiza}
+                      location="salud-individual-hero"
+                      className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
+                    >
+                      Quiero mi seguro de salud ahora
+                    </WhatsAppButton>
+                    <p className="text-white/80 text-sm font-bold ml-1 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Respuesta en menos de 10 minutos
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bloque Asesores - Estilo Extranjería */}
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
+                    <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50 font-bold uppercase tracking-widest leading-none mb-1">Atención directa</p>
+                    <p className="text-lg font-bold text-white leading-none">Rosa y Sebastián</p>
+                    <p className="text-xs text-emerald-400 mt-1 font-medium italic">Tus asesores personales</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-6 mt-12">
+                  <div className="flex items-center gap-2 text-white/60 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Desde 22,50€/mes
+                  </div>
+                  <div className="flex items-center gap-2 text-white/60 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Sin copagos
+                  </div>
+                  <div className="flex items-center gap-2 text-white/60 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Citas en el día
+                  </div>
                 </div>
               </div>
 
-              {/* Bloque Asesores - Estilo Extranjería */}
-              <div className="mt-8 flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
-                  <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
-                </div>
-                <div>
-                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest leading-none mb-1">Atención directa</p>
-                  <p className="text-lg font-bold text-white leading-none">Rosa y Sebastián</p>
-                  <p className="text-xs text-emerald-400 mt-1 font-medium italic">Tus asesores personales</p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-6 mt-12">
-                <div className="flex items-center gap-2 text-white/60 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Desde 22,50€/mes
-                </div>
-                <div className="flex items-center gap-2 text-white/60 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Sin copagos
-                </div>
-                <div className="flex items-center gap-2 text-white/60 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Citas en el día
+              {/* Tarjeta tipo "Estudio de Cobertura" (Imagen Real con Efecto Premium) */}
+              <div className="hidden lg:block relative group perspective-1000">
+                <div className="absolute inset-0 bg-emerald-600/10 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative transform rotate-2 group-hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
+                  <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
+                    <Image 
+                      src="/images/premium/certificado-salud-individual.png" 
+                      alt="Estudio de Cobertura Personalizada" 
+                      width={600} 
+                      height={800} 
+                      className="rounded-[24px] w-full h-auto"
+                    />
+                    
+                    {/* Badge flotante "Garantía de Ahorro" */}
+                    <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                      <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                        <Check className="w-5 h-5 text-white" />
+                      </div>
+                      <p className="text-sm font-bold text-slate-700">Garantía de Ahorro</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
