@@ -66,91 +66,72 @@ export default async function SaludIndividualPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
-            📞 Cotizar ahora
+            Cotizar ahora
           </a>
         </div>
       </header>
       <main className="min-h-screen bg-white pt-16">
         
-        {/* HERO — Balanced two-column with visible image */}
-        <section className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 min-h-[80vh] flex items-center overflow-hidden">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-16 lg:py-24">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left: Content */}
-              <div className="order-2 lg:order-1">
-                {/* Guarantee Badge */}
-                <div className="mb-6">
-                  <GuaranteeBadge type="salud" />
-                </div>
-                
-                {/* H1 — Balanced size with breathing room */}
-                <h1 className="text-[40px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-[1.05] tracking-tight mb-5">
-                  Tu médico cuando lo necesitas.
-                  <br />
-                  <span className="text-emerald-400">No cuando el sistema lo permite.</span>
-                </h1>
-                
-                {/* Subheadline */}
-                <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-md">
-                  Atención médica privada, especialidades y pruebas sin esperas innecesarias, explicadas de forma clara antes de contratar.
-                </p>
-                
-                {/* CTAs */}
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <WhatsAppButton 
-                    href={wCotiza}
-                    location="salud-individual-hero"
-                    className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-6 py-3.5 rounded-xl text-base font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
-                  >
-                    Cotizar por WhatsApp
-                  </WhatsAppButton>
-                  <a 
-                    href="#ventajas"
-                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3.5 rounded-xl text-base font-medium border border-white/20 hover:bg-white/20 transition-all"
-                  >
-                    Ver ventajas
-                  </a>
-                </div>
-                
-                {/* Trust pills */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Desde 22,50€/mes
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Sin copagos
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
-                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                    30 min respuesta
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-white/80 text-xs border border-white/10">
-                    <Shield className="w-3.5 h-3.5 text-emerald-400" />
-                    Sin permanencia
-                  </span>
-                </div>
+        {/* HERO — Impacto y Confianza */}
+        <section className="relative min-h-[85vh] flex items-center bg-gray-950 overflow-hidden">
+          {/* Overlay gradiente premium */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Clínica médica privada de alta gama en Madrid"
+              fill
+              className="object-cover opacity-60"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
+            <div className="max-w-3xl">
+              <div className="mb-8">
+                <GuaranteeBadge type="salud" />
               </div>
               
-              {/* Right: Visible Hospital Image */}
-              <div className="order-1 lg:order-2">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border border-white/10">
-                  <Image
-                    src={pexelsImage}
-                    alt="Atención médica privada de calidad en Madrid"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                  {/* Subtle overlay for premium feel */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/30 via-transparent to-transparent" />
+              <h1 className="text-[40px] sm:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
+                Tu médico en minutos.<br />
+                <span className="text-emerald-400">Sin listas de espera.</span>
+              </h1>
+              
+              <p className="text-xl text-white/70 leading-relaxed mb-10 max-w-2xl">
+                Acceso inmediato a los mejores especialistas y hospitales privados de Madrid. Sin burocracia, solo salud.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 mb-12">
+                <WhatsAppButton 
+                  href={wCotiza}
+                  location="salud-individual-hero"
+                  className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
+                >
+                  Pedir presupuesto gratis
+                </WhatsAppButton>
+                <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+                  <div className="flex -space-x-2">
+                    {[1,2,3].map(i => (
+                      <div key={i} className="w-8 h-8 rounded-full border-2 border-gray-950 bg-gray-800" />
+                    ))}
+                  </div>
+                  <p className="text-white/80 text-sm font-medium">+1.200 madrileños protegidos</p>
                 </div>
-                {/* Caption */}
-                <p className="text-white/50 text-sm mt-4 text-center lg:text-left">
-                  Red de hospitales premium Madrid · Cobertura inmediata
-                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-2 text-white/60 text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  Desde 22,50€/mes
+                </div>
+                <div className="flex items-center gap-2 text-white/60 text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  Sin copagos
+                </div>
+                <div className="flex items-center gap-2 text-white/60 text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  Citas en el día
+                </div>
               </div>
             </div>
           </div>
@@ -181,16 +162,14 @@ export default async function SaludIndividualPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    ["Médico general y especialistas", "✓", "✓", "✓"],
-                    ["Sin copagos en consulta", "—", "✓", "✓"],
-                    ["Urgencias 24h", "✓", "✓", "✓"],
-                    ["Hospitalización incluida", "—", "✓", "✓"],
-                    ["Pruebas diagnósticas completas", "Básicas", "✓", "✓"],
-                    ["Telemedicina 24h", "—", "✓", "✓"],
-                    ["Habitación individual", "—", "—", "✓"],
-                    ["Asistencia en viaje", "—", "Opcional", "✓"],
-                    ["Dental básica incluida", "—", "—", "✓"],
-                    ["Reembolso internacional", "—", "—", "✓"],
+                    ["Médico general y especialistas", "Incluido", "Incluido", "Incluido"],
+                    ["Sin copagos en consulta", "No incluido", "Incluido", "Incluido"],
+                    ["Urgencias 24h", "Incluido", "Incluido", "Incluido"],
+                    ["Hospitalización incluida", "No incluido", "Incluido", "Incluido"],
+                    ["Pruebas diagnósticas completas", "Básicas", "Incluido", "Incluido"],
+                    ["Telemedicina 24h", "No incluido", "Incluido", "Incluido"],
+                    ["Habitación individual", "No incluido", "No incluido", "Incluido"],
+                    ["Asistencia en viaje", "No incluido", "Opcional", "Incluido"],
                   ].map(([feature, entry, complete, premium], i) => (
                     <tr key={i} className="hover:bg-gray-50 transition-colors">
                       <td className="py-4 pr-6 text-sm text-gray-700">{feature}</td>
@@ -212,40 +191,7 @@ export default async function SaludIndividualPage() {
           </div>
         </section>
 
-        {/* COBERTURA COMPLETA — Fondo blanco con mucho aire */}
-        <section className="py-24 bg-gray-50/50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="text-center mb-16">
-              <h2 className="text-[40px] sm:text-[48px] font-bold text-gray-900 leading-tight mb-4">
-                Cobertura completa
-              </h2>
-              <p className="text-lg text-gray-600">
-                Todo lo que incluye tu seguro de salud
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { icon: Stethoscope, title: "Médico de cabecera", desc: "Sin esperas ni demoras" },
-                { icon: Heart, title: "Especialistas", desc: "Sin derivación previa" },
-                { icon: FlaskConical, title: "Pruebas diagnósticas", desc: "Analíticas, rayos X, ecografías" },
-                { icon: Activity, title: "Urgencias 24h", desc: "Atención inmediata" },
-                { icon: Hospital, title: "Hospitalización", desc: "Habitación individual" },
-                { icon: Award, title: "Segunda opinión", desc: "Médica especializada" },
-                { icon: Phone, title: "Telemedicina", desc: "Consulta online 24/7" },
-                { icon: SmilePlus, title: "Dental básica", desc: "Extracciones y limpieza" },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-emerald-500" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
         <section className="py-24 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">

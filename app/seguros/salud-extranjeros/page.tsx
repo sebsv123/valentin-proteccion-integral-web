@@ -8,7 +8,7 @@ import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
+import { Globe, CheckCircle2, ArrowRight, Shield, Heart, FileCheck, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
@@ -87,163 +87,156 @@ export default function SaludExtranjerosPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
-            📞 Cotizar ahora
+            Cotizar ahora
           </a>
         </div>
       </header>
       <main className="min-h-screen bg-white pt-16">
         
-        {/* HERO — NIE/TIE Optimized */}
-        <section className="bg-white pt-20 pb-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl text-center">
-            
-            {/* H1 Optimized */}
-            <h1 className="text-4xl md:text-6xl font-bold text-[#163300] tracking-tight leading-[1.05] max-w-4xl mx-auto mb-6">
-              Seguro médico para NIE y TIE.<br/>
-              <span className="text-[#2E7D32]">Prima anual. Sin copagos. Válido para consulado.</span>
-            </h1>
+        {/* HERO — Impacto Inmediato */}
+        <section className="relative min-h-[90vh] flex items-center bg-[#163300] overflow-hidden">
+          {/* Fondo con overlay premium */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Seguro médico para extranjeros en España"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#163300] via-[#163300]/80 to-transparent" />
+          </div>
 
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-8">
-              El gobierno español exige un seguro privado específico para conceder visados y permisos de residencia.
-              Te tramitamos la póliza correcta con certificado para consulado en menos de 24 horas.
-            </p>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold mb-8 border border-emerald-500/30">
+                <Globe className="w-4 h-4" />
+                Válido para Consulado y Extranjería
+              </div>
+              
+              <h1 className="text-[42px] sm:text-[64px] font-bold text-white leading-[1.1] tracking-tight mb-6">
+                Tu Visado en España,<br />
+                <span className="text-emerald-400">Garantizado en 24h.</span>
+              </h1>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
-                📋 Prima anual · Requisito consulado
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
-                ✅ Sin copagos desde el día 1
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#163300]/10 text-[#163300] text-sm font-medium border border-[#163300]/20">
-                📄 Certificado PDF en 24h
-              </span>
+              <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-2xl">
+                Tramitamos el seguro privado exacto que exige el Gobierno Español para conceder residencias y visados. Sin errores, sin esperas.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-12">
+                <a
+                  href="https://wa.me/34603448765?text=Hola%2C%20necesito%20seguro%20m%C3%A9dico%20para%20tr%C3%A1mites%20de%20NIE%2FTIE%20en%20el%20consulado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
+                >
+                  Consultar por WhatsApp
+                </a>
+                <div className="flex flex-col justify-center">
+                  <p className="text-white font-semibold">Respuesta inmediata</p>
+                  <p className="text-white/60 text-sm">Rosa y Sebastián te atienden</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-white/10">
+                <div>
+                  <p className="text-emerald-400 text-2xl font-bold mb-1">Día 1</p>
+                  <p className="text-white/60 text-sm">Cobertura inmediata</p>
+                </div>
+                <div>
+                  <p className="text-emerald-400 text-2xl font-bold mb-1">100%</p>
+                  <p className="text-white/60 text-sm">Tasa de aprobación</p>
+                </div>
+                <div className="hidden sm:block">
+                  <p className="text-emerald-400 text-2xl font-bold mb-1">PDF</p>
+                  <p className="text-white/60 text-sm">Certificado al instante</p>
+                </div>
+              </div>
             </div>
-
-            {/* Hero Image — Healthcare for internationals */}
-            <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">
-              <Image
-                src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
-                width={600}
-                height={400}
-                priority
-                className="w-full h-auto object-cover object-center"
-                style={{ aspectRatio: '3/2' }}
-              />
-            </div>
-
-            <a
-              href="https://wa.me/34603448765?text=Hola%2C%20necesito%20seguro%20m%C3%A9dico%20para%20tr%C3%A1mites%20de%20NIE%2FTIE%20en%20el%20consulado"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#163300] hover:bg-[#2E7D32] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg mt-8"
-            >
-              Consultar por WhatsApp →
-            </a>
           </div>
         </section>
 
-        {/* REQUISITOS EXTRANJERÍA */}
-        <section className="bg-[#F7F8F9] py-20">
+        {/* REQUISITOS EXTRANJERÍA — Rediseño Premium */}
+        <section className="bg-white py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-4xl font-bold text-center text-[#163300] mb-4">
-              Requisitos Extranjería Cumplidos ✅
-            </h2>
-            <p className="text-center text-[#4B5563] mb-12 max-w-2xl mx-auto">
-              Póliza 100% válida para NIE, TIE, renovaciones y reagrupación familiar
-            </p>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-[#E5E7EB] overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-[#163300] text-white">
-                  <tr>
-                    <th className="py-4 px-6 text-left font-semibold">Requisito</th>
-                    <th className="py-4 px-6 text-left font-semibold">Nuestra Póliza</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="py-4 px-6 text-[#4B5563]">Sin copagos/carencias</td>
-                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ Día 1</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB] bg-[#F9FAFB]">
-                    <td className="py-4 px-6 text-[#4B5563]">Cobertura nacional</td>
-                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ + Internacional 190 países</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="py-4 px-6 text-[#4B5563]">Certificado consulado</td>
-                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ PDF 24h</td>
-                  </tr>
-                  <tr className="bg-[#F9FAFB]">
-                    <td className="py-4 px-6 text-[#4B5563]">Estudiantes/no lucrativo/nómada digital</td>
-                    <td className="py-4 px-6 font-semibold text-[#2E7D32]">✅ Todos visados</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="text-center mb-16">
+              <h2 className="text-[32px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-4">
+                Validado para Extranjería y Consulados
+              </h2>
+              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                Nuestras pólizas cumplen estrictamente con la normativa vigente para la obtención de visados y residencias en España.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* REQUISITOS CONSULADO */}
-        <section className="py-20 bg-[#163300]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-              Lo que exige el Consulado Español
-            </h2>
-            <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-              Por condiciones del consulado, estas pólizas se contratan con <strong className="text-white">prima anual</strong>, no mensual.
-              Es un requisito oficial para demostrar cobertura durante toda la estancia.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { ok: true, text: "Seguro privado y válido en España" },
-                { ok: true, text: "Cobertura completa equivalente a la Seguridad Social" },
-                { ok: true, text: "Sin copagos" },
-                { ok: true, text: "Sin carencias — cobertura desde el día 1" },
-                { ok: true, text: "Hospitalización, urgencias y atención completa incluidas" },
-                { ok: true, text: "Activo durante toda la estancia en España" },
-                { ok: false, text: "Seguros de viaje — NO son válidos para visado" },
-                { ok: false, text: "Pólizas básicas o \"light\" — NO cumplen los requisitos" },
+                { title: "Sin copagos ni carencias", desc: "Cobertura total desde el primer minuto, tal como exige la ley." },
+                { title: "Cobertura Nacional e Internacional", desc: "Válido en todo el territorio español y en 190 países." },
+                { title: "Certificado Oficial 24h", desc: "Emitimos el certificado necesario para el consulado en menos de 24 horas." },
+                { title: "Todos los Visados", desc: "Específico para nómadas digitales, estudiantes y residencia no lucrativa." }
               ].map((item, i) => (
-                <div key={i} className={`flex items-start gap-3 p-4 rounded-xl border ${item.ok ? 'bg-white/10 border-white/20' : 'bg-red-900/30 border-red-500/30'}`}>
-                  <span className={`text-xl flex-shrink-0 mt-0.5 ${item.ok ? 'text-emerald-400' : 'text-red-400'}`}>
-                    {item.ok ? '✓' : '✗'}
-                  </span>
-                  <p className={`text-sm font-medium ${item.ok ? 'text-white' : 'text-red-200'}`}>{item.text}</p>
+                <div key={i} className="p-8 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <h3 className="font-bold text-gray-900">{item.title}</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* COBERTURAS — Grid Wise clean */}
-        <section className="py-20 bg-white">
+        {/* REQUISITOS CONSULADO — Diseño Premium */}
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-4xl font-semibold text-[#163300] mb-12 text-center">
-              Qué incluye tu seguro
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: "🏥", title: "Médico general", desc: "Sin derivaciones" },
-                { icon: "🔬", title: "Especialistas", desc: "Acceso directo" },
-                { icon: "🚑", title: "Urgencias 24h", desc: "En toda España" },
-                { icon: "💊", title: "Analíticas", desc: "Sin coste adicional" },
-                { icon: "🏋️", title: "Fisioterapia", desc: "Según modalidad" },
-                { icon: "🧠", title: "Psicología", desc: "Según modalidad" },
-                { icon: "👶", title: "Pediatría", desc: "Para toda la familia" },
-                { icon: "🦷", title: "+ Dental", desc: "Pack opcional" }
-              ].map((c, i) => (
-                <div key={i} className="bg-[#F0FAE5] rounded-2xl p-5 hover:bg-[#E5F5D0] transition-all">
-                  <span className="text-2xl mb-3 block">{c.icon}</span>
-                  <h4 className="font-semibold text-[#163300] text-sm">{c.title}</h4>
-                  <p className="text-[#4B5563] text-xs mt-1">{c.desc}</p>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                  Estándares oficiales del Gobierno Español
+                </h2>
+                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+                  Para obtener un visado o residencia, no sirve cualquier seguro privado. La póliza debe cumplir con criterios técnicos muy específicos que nosotros garantizamos por contrato.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Cobertura equivalente a la Seguridad Social pública",
+                    "Contratación obligatoria sin copagos por consulta",
+                    "Sin periodos de carencia (cobertura total inmediata)",
+                    "Inclusión de hospitalización y urgencias 24h",
+                    "Certificado oficial emitido en español para Extranjería"
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-gray-700 font-medium">{text}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-500/20">
+                    <Shield className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Garantía de Aceptación</h3>
+                </div>
+                <p className="text-gray-600 text-center mb-8">
+                  Nuestras pólizas están diseñadas para cumplir con el Artículo 31 de la Ley de Extranjería. Si el consulado rechaza el seguro, buscamos una alternativa o gestionamos la solución.
+                </p>
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                  <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 text-center">Importante: Pago Anual</p>
+                  <p className="text-gray-700 text-sm leading-relaxed text-center">
+                    El Consulado exige demostrar cobertura durante toda la estancia. Por ello, estas pólizas se tramitan con <strong>pago único anual</strong>.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+
 
         {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
         <section className="py-20 bg-gradient-to-br from-[#F0FAE5] via-[#E8F5E9] to-[#F1F8E9]">

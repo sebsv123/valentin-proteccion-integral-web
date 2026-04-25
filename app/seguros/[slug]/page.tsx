@@ -109,80 +109,79 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <ProductTabs slug={product.slug} />
         <CoverageHighlights product={product} />
         
-        {/* Sección Perfiles de Salud - Solo para salud */}
+        {/* Sección Comparativa de Salud — Tracción de Landings */}
         {slug === 'salud' && (
-          <section className="py-14 sm:py-20 lg:py-24 bg-[var(--bg-soft)]">
+          <section className="py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-4 max-w-6xl">
-              <div className="text-center mb-12">
-                <p className="text-sm font-bold tracking-widest uppercase text-[var(--blue)] mb-3">Encuentra tu modalidad</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Seguro de salud adaptado a tu perfil</h2>
-                <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto">
-                  Cada persona y familia tiene necesidades diferentes. Estas son las modalidades más demandadas en Madrid.
+              <div className="text-center mb-16">
+                <p className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-600 mb-4">Tu elección con criterio</p>
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-950 mb-6 leading-tight">¿Qué póliza se adapta a tu situación?</h2>
+                <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                  No todas las pólizas de salud son iguales. Hemos simplificado el mercado en tres tramos para que elijas la que realmente necesitas sin pagar de más.
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* COMPLETA */}
-                <div className="soft-card bg-white p-8 border-l-4 border-[var(--blue)]">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">COMPLETA</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    La modalidad más habitual para quien quiere acceso a medicina general, especialidades, urgencias, 
-                    pruebas y hospitalización en un solo seguro. Incluye ingreso y cirugía en las opciones más completas. 
-                    Recomendada para uso frecuente o familias que quieren cubrirlo todo con una sola póliza.
-                  </p>
+
+              {/* Tabla Comparativa Premium */}
+              <div className="relative">
+                <div className="overflow-x-auto pb-8">
+                  <table className="w-full border-collapse min-w-[800px]">
+                    <thead>
+                      <tr className="border-b-2 border-gray-900">
+                        <th className="text-left py-6 pr-6 text-sm font-bold text-gray-400 uppercase tracking-widest w-1/4">Cobertura Principal</th>
+                        <th className="text-center py-6 px-6 text-lg font-bold text-gray-900">
+                          Modalidad Entrada<br />
+                          <span className="text-emerald-600 text-sm font-semibold">Desde ~22€/mes</span>
+                        </th>
+                        <th className="text-center py-6 px-6 text-lg font-bold text-gray-950 bg-emerald-50 rounded-t-3xl border-x border-t border-emerald-100">
+                          Modalidad Completa<br />
+                          <span className="text-emerald-600 text-sm font-semibold">Desde ~50€/mes</span>
+                          <div className="mt-2 text-[10px] uppercase tracking-tighter bg-emerald-500 text-white py-1 px-2 rounded-full inline-block">Más recomendada</div>
+                        </th>
+                        <th className="text-center py-6 px-6 text-lg font-bold text-gray-900">
+                          Modalidad Premium<br />
+                          <span className="text-gray-400 text-sm font-semibold">Desde ~90€/mes</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {[
+                        ["Médico general y especialistas", "✓", "✓", "✓"],
+                        ["Sin copagos (pago fijo mensual)", "Consultar", "✓", "✓"],
+                        ["Urgencias 24h y Ambulancia", "✓", "✓", "✓"],
+                        ["Hospitalización y Cirugía", "—", "✓", "✓"],
+                        ["Pruebas diagnósticas (eco, TAC, RM)", "Básicas", "✓", "✓"],
+                        ["Telemedicina y Chat Médico 24h", "—", "✓", "✓"],
+                        ["Habitación individual con cama acompañante", "—", "—", "✓"],
+                        ["Asistencia en viaje internacional", "—", "✓", "✓"],
+                        ["Dental básica (limpiezas/extracciones)", "—", "—", "✓"],
+                        ["Reembolso de gastos fuera de red", "—", "—", "✓"],
+                      ].map(([feature, entry, complete, premium], i) => (
+                        <tr key={i} className="group hover:bg-gray-50 transition-colors">
+                          <td className="py-5 pr-6 text-base font-medium text-gray-700">{feature}</td>
+                          <td className="py-5 px-6 text-center text-gray-500">{entry}</td>
+                          <td className="py-5 px-6 text-center text-base font-bold text-emerald-700 bg-emerald-50 border-x border-emerald-100">{complete}</td>
+                          <td className="py-5 px-6 text-center text-gray-600">{premium}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-                {/* FAMILIAS */}
-                <div className="soft-card bg-white p-8 border-l-4 border-[var(--green)]">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">FAMILIAS</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Un seguro que cubre a toda la unidad familiar con una sola contratación. Permite incluir a hijos, 
-                    pareja y dependientes. Especialmente valorado por familias que quieren acceso privado rápido 
-                    para pediatría, urgencias y especialidades sin esperas.
-                  </p>
-                </div>
-                {/* AUTÓNOMOS */}
-                <div className="soft-card bg-white p-8 border-l-4 border-[var(--orange)]">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">AUTÓNOMOS</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Los autónomos pueden deducirse hasta 500€/año por el seguro médico propio y hasta 500€ adicionales 
-                    por cada miembro de la unidad familiar incluido. Una ventaja fiscal que convierte el seguro de salud 
-                    en una decisión también económica, no solo sanitaria.
-                  </p>
-                </div>
-                {/* SENIOR */}
-                <div className="soft-card bg-white p-8 border-l-4 border-[#4CAF50]">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">SENIOR</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Para mayores de 55 años que priorizan tranquilidad, acompañamiento médico personalizado y cobertura 
-                    sin copagos. Incluye asistencia en viaje ampliada. Una opción diseñada para la plenitud, 
-                    con acceso a especialistas sin barreras.
-                  </p>
-                </div>
-                {/* REEMBOLSO */}
-                <div className="soft-card bg-white p-8 border-l-4 border-purple-500">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">REEMBOLSO</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Libertad de elegir cualquier especialista en el mundo y recuperar entre el 80% y el 90% de la factura. 
-                    Ideal para quienes ya tienen médico de confianza, viajan con frecuencia o necesitan cobertura 
-                    fuera de España de forma habitual.
-                  </p>
-                </div>
-                {/* CON COPAGO */}
-                <div className="soft-card bg-white p-8 border-l-4 border-amber-500">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">CON COPAGO</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Modalidad con un pequeño pago por cada consulta o prueba, que permite reducir significativamente 
-                    la prima mensual. Recomendada para personas sanas con uso puntual del seguro que buscan precio 
-                    ajustado sin renunciar a la red privada.
-                  </p>
-                </div>
-                {/* SIN COPAGO */}
-                <div className="soft-card bg-white p-8 border-l-4 border-emerald-500 md:col-span-2 lg:col-span-1">
-                  <h3 className="text-xl font-bold text-[var(--blue-deep)] mb-3">SIN COPAGO</h3>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Sin coste adicional en cada consulta. Pagas tu prima mensual y accedes a toda la red sin 
-                    desembolso por visita. La opción preferida por familias con hijos o personas con uso frecuente 
-                    del seguro que valoran la previsibilidad del gasto.
-                  </p>
+                
+                {/* Disclaimer y Acción */}
+                <div className="mt-12 p-8 rounded-3xl bg-gray-50 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="max-w-xl text-center md:text-left">
+                    <p className="text-gray-600 leading-relaxed italic">
+                      "Los precios varían según la edad y el código postal en Madrid. Lo ideal es que Rosa o Sebastián te preparen una comparativa real de las 3 opciones en 30 minutos."
+                    </p>
+                  </div>
+                  <a
+                    href="https://wa.me/34603448765?text=Hola%20Rosa%2C%20me%20gustar%C3%ADa%20ver%20la%20comparativa%20de%20los%203%20tramos%20de%20salud."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-emerald-500/20 whitespace-nowrap"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" /> Ver mi comparativa real
+                  </a>
                 </div>
               </div>
             </div>
