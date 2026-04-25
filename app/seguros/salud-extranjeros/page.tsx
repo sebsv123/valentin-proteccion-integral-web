@@ -93,105 +93,167 @@ export default function SaludExtranjerosPage() {
       </header>
       <main className="min-h-screen bg-white pt-16">
         
-        {/* HERO — Impacto Inmediato */}
-        <section className="relative min-h-[90vh] flex items-center bg-[#163300] overflow-hidden">
-          {/* Fondo con overlay premium */}
+        {/* HERO — Despacho Serio / Autoridad */}
+        <section className="relative min-h-[85vh] flex items-center bg-slate-50 overflow-hidden">
+          {/* Fondo decorativo sutil */}
           <div className="absolute inset-0 z-0">
-            <Image
-              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Seguro médico para extranjeros en España"
-              fill
-              className="object-cover opacity-40"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#163300] via-[#163300]/80 to-transparent" />
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-50/50 skew-x-12 translate-x-32" />
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]" />
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10 py-20">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold mb-8 border border-emerald-500/30">
-                <Globe className="w-4 h-4" />
-                Válido para Consulado y Extranjería
-              </div>
-              
-              <h1 className="text-[42px] sm:text-[64px] font-bold text-white leading-[1.1] tracking-tight mb-6">
-                Tu Visado en España,<br />
-                <span className="text-emerald-400">Garantizado en 24h.</span>
-              </h1>
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-8 border border-emerald-200">
+                  <Shield className="w-4 h-4" />
+                  Garantía de Aceptación Administrativa
+                </div>
+                
+                <h1 className="text-[40px] sm:text-[60px] font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+                  Seguro de salud para extranjeros en España <span className="text-emerald-600">aprobado para visado</span>
+                </h1>
 
-              <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-2xl">
-                Tramitamos el seguro privado exacto que exige el Gobierno Español para conceder residencias y visados. Sin errores, sin esperas.
-              </p>
+                <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed mb-10 max-w-2xl">
+                  Sin copagos. Sin complicaciones. Listo para presentar en extranjería en 24h.
+                </p>
 
-              <div className="flex flex-wrap gap-4 mb-12">
-                <a
-                  href="https://wa.me/34603448765?text=Hola%2C%20necesito%20seguro%20m%C3%A9dico%20para%20tr%C3%A1mites%20de%20NIE%2FTIE%20en%20el%20consulado"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-emerald-500/20"
-                >
-                  Consultar por WhatsApp
-                </a>
-                <div className="flex flex-col justify-center">
-                  <p className="text-white font-semibold">Respuesta inmediata</p>
-                  <p className="text-white/60 text-sm">Rosa y Sebastián te atienden</p>
+                <div className="flex flex-wrap gap-4 mb-12">
+                  <a
+                    href="https://wa.me/34603448765?text=Hola%2C%20necesito%20seguro%20m%C3%A9dico%20para%20tr%C3%A1mites%20de%20NIE%2FTIE%20en%20el%20consulado"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-5 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-600/20"
+                  >
+                    Consultar por WhatsApp ahora
+                  </a>
+                  <div className="flex items-center gap-3 px-6 py-4">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <div>
+                      <p className="text-slate-900 font-bold leading-none">Respuesta en minutos</p>
+                      <p className="text-slate-500 text-sm mt-1">Rosa y Sebastián</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-6 pt-8 border-t border-slate-200">
+                  <div className="flex items-center gap-2 text-slate-700 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    Válido para NIE / TIE / visado
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-700 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    +1.200 familias ya protegidas
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-700 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    Asesor personal por WhatsApp
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-white/10">
-                <div>
-                  <p className="text-emerald-400 text-2xl font-bold mb-1">Día 1</p>
-                  <p className="text-white/60 text-sm">Cobertura inmediata</p>
+              {/* Tarjeta tipo "Documento Oficial" */}
+              <div className="hidden lg:block relative">
+                <div className="absolute inset-0 bg-emerald-600/5 rounded-[40px] blur-3xl" />
+                <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-2xl transform rotate-2">
+                  <div className="absolute top-8 right-8">
+                    <div className="w-16 h-16 rounded-full bg-slate-50 border-4 border-white shadow-inner flex items-center justify-center overflow-hidden opacity-20">
+                      <Globe className="w-10 h-10 text-slate-400" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/30">
+                      <FileCheck className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
+                      <p className="text-lg font-bold text-slate-900">Validez Consular</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="h-2 w-3/4 bg-slate-100 rounded-full" />
+                    <div className="h-2 w-full bg-slate-100 rounded-full" />
+                    <div className="h-2 w-5/6 bg-slate-100 rounded-full" />
+                    <div className="pt-4 grid grid-cols-2 gap-4">
+                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Sin Copagos</p>
+                        <p className="text-emerald-600 font-bold text-sm">CUMPLIDO</p>
+                      </div>
+                      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Carencias</p>
+                        <p className="text-emerald-600 font-bold text-sm">0 DÍAS</p>
+                      </div>
+                    </div>
+                    <div className="pt-6 border-t border-dashed border-slate-200 text-center">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Sello de aprobación</p>
+                      <div className="w-20 h-20 border-4 border-emerald-100 rounded-full mx-auto flex items-center justify-center">
+                        <Check className="w-10 h-10 text-emerald-200" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-emerald-400 text-2xl font-bold mb-1">100%</p>
-                  <p className="text-white/60 text-sm">Tasa de aprobación</p>
-                </div>
-                <div className="hidden sm:block">
-                  <p className="text-emerald-400 text-2xl font-bold mb-1">PDF</p>
-                  <p className="text-white/60 text-sm">Certificado al instante</p>
+                {/* Decoración extra */}
+                <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                    <Check className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* REQUISITOS EXTRANJERÍA — Rediseño Premium */}
-        <section className="bg-white py-24">
+        {/* PROCESO SENCILLO — 3 pasos Wise (Conversión Inmediata) */}
+        <section className="py-24 bg-white border-b border-slate-100">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="text-center mb-16">
-              <h2 className="text-[32px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-4">
-                Validado para Extranjería y Consulados
+              <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-sm font-bold mb-4">
+                Agilidad Máxima
+              </div>
+              <h2 className="text-[32px] sm:text-[44px] font-bold text-slate-900 mb-4">
+                Lo tienes en 3 pasos
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-                Nuestras pólizas cumplen estrictamente con la normativa vigente para la obtención de visados y residencias en España.
-              </p>
             </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
+            
+            <div className="grid md:grid-cols-3 gap-12 relative">
+              {/* Línea decorativa entre pasos en desktop */}
+              <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-slate-100 z-0" />
+              
               {[
-                { title: "Sin copagos ni carencias", desc: "Cobertura total desde el primer minuto, tal como exige la ley." },
-                { title: "Cobertura Nacional e Internacional", desc: "Válido en todo el territorio español y en 190 países." },
-                { title: "Certificado Oficial 24h", desc: "Emitimos el certificado necesario para el consulado en menos de 24 horas." },
-                { title: "Todos los Visados", desc: "Específico para nómadas digitales, estudiantes y residencia no lucrativa." }
-              ].map((item, i) => (
-                <div key={i} className="p-8 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <h3 className="font-bold text-gray-900">{item.title}</h3>
+                { num: "01", title: "Escríbenos por WhatsApp", desc: "Rosa o Sebastián te atienden personalmente. Sin centralitas." },
+                { num: "02", title: "Recibes opciones en minutos", desc: "Comparamos y te enviamos la mejor póliza para tu visado." },
+                { num: "03", title: "Listo para presentar", desc: "Firmas digitalmente y recibes tu certificado oficial en 24h." }
+              ].map((paso, i) => (
+                <div key={i} className="relative z-10 text-center">
+                  <div className="w-20 h-20 rounded-full bg-white border-2 border-emerald-500 text-emerald-600 flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-xl shadow-emerald-500/10">
+                    {paso.num}
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{paso.title}</h3>
+                  <p className="text-slate-500 leading-relaxed">{paso.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <a
+                href="https://wa.me/34603448765?text=Hola%2C%20quiero%20conseguir%20mi%20seguro%20para%20extranjeros%20en%203%20pasos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#163300] hover:bg-black text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-xl"
+              >
+                <WhatsAppIcon className="w-6 h-6" />
+                Hablar por WhatsApp ahora
+              </a>
             </div>
           </div>
         </section>
 
         {/* PROTOCOLO DE CUMPLIMIENTO OFICIAL — Diseño Ultra Premium */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="bg-[#163300] rounded-[40px] p-8 md:p-16 text-white overflow-hidden relative shadow-2xl">
-              {/* Elementos decorativos de fondo */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-400/5 rounded-full blur-3xl -ml-32 -mb-32" />
 
@@ -199,21 +261,21 @@ export default function SaludExtranjerosPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
                     <Shield className="w-4 h-4" />
-                    Protocolo de Aceptación Garantizada
+                    Validación Técnica Superior
                   </div>
                   <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
                     Estándares legales para tu visado
                   </h2>
                   <p className="text-emerald-100/80 text-lg mb-8 leading-relaxed">
-                    No tramitamos "seguros de viaje". Gestionamos pólizas de salud de grado residencial que cumplen el 100% de la normativa española.
+                    Gestionamos pólizas de salud de grado residencial que cumplen con los requisitos de seguro exigidos para trámites de extranjería en España.
                   </p>
                   
                   <div className="space-y-6">
                     {[
                       { t: "Grado de Sanidad Pública", d: "Sin exclusiones, equivalente a la Seguridad Social." },
-                      { t: "Sin Copagos Judiciales", d: "Acceso total a medicina y especialistas sin abonos extra." },
-                      { t: "Cobertura de Repatriación", d: "Punto crítico exigido por todos los consulados." },
-                      { t: "Vigencia Documental", d: "Certificados oficiales listos para presentar en 24h." }
+                      { t: "Sin Copagos", d: "Acceso total a medicina y especialistas sin abonos extra por consulta." },
+                      { t: "Cobertura de Repatriación", d: "Punto crítico valorado por todas las oficinas de extranjería." },
+                      { t: "Vigencia Documental", d: "Certificados oficiales listos para presentar en menos de 24h." }
                     ].map((item, i) => (
                       <div key={i} className="flex gap-4">
                         <div className="mt-1">
@@ -235,13 +297,13 @@ export default function SaludExtranjerosPage() {
                     <div className="w-20 h-20 rounded-full bg-white text-[#163300] flex items-center justify-center mb-6 shadow-xl">
                       <FileText className="w-10 h-10" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4">Garantía de Pago Único</h3>
-                    <p className="text-emerald-100/70 mb-8 leading-relaxed">
-                      El Gobierno exige demostrar solvencia y cobertura para toda la estancia. Por ello, estas pólizas se emiten exclusivamente con <strong>pago anual</strong>, garantizando que tu expediente no sea rechazado por falta de vigencia.
+                    <h3 className="text-2xl font-bold mb-4">Garantía de Aceptación</h3>
+                    <p className="text-emerald-100/70 mb-8 leading-relaxed text-sm">
+                      Aunque la ley no exige el pago anual por escrito, la práctica administrativa en consulados y oficinas de extranjería lo ha convertido en el <strong>estándar de seguridad</strong> para evitar denegaciones por dudas sobre la vigencia del seguro.
                     </p>
                     <div className="w-full h-px bg-white/10 mb-8" />
-                    <p className="text-sm font-medium text-emerald-400 uppercase tracking-widest">
-                      Validado bajo Art. 31 Ley de Extranjería
+                    <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest leading-relaxed">
+                      Pólizas adaptadas a los criterios técnicos de la normativa de extranjería vigente
                     </p>
                   </div>
                 </div>
@@ -338,24 +400,45 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* PROCESO SENCILLO — 3 pasos Wise */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-4xl font-semibold text-center text-[#163300] mb-12">
-              Tan fácil como 1, 2, 3
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { num: "01", title: "Nos cuentas", desc: "Tu situación por WhatsApp. En tu idioma." },
-                { num: "02", title: "Buscamos", desc: "La mejor opción entre todas las compañías para ti." },
-                { num: "03", title: "Gestionamos", desc: "Todo nosotros. Sin papeleo para ti." }
-              ].map((paso, i) => (
-                <div key={i} className="text-center">
-                  <p className="text-6xl font-bold text-[#9FE870] mb-4">{paso.num}</p>
-                  <h3 className="text-xl font-semibold text-[#163300]">{paso.title}</h3>
-                  <p className="text-[#4B5563] mt-2">{paso.desc}</p>
+        {/* EL VALOR DE LA TRANQUILIDAD — Banner de Autoridad */}
+        <section className="py-24 bg-white overflow-hidden">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-emerald-50 rounded-[40px] -rotate-2" />
+                <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl border-8 border-white">
+                  <Image
+                    src="https://images.pexels.com/photos/5920775/pexels-photo-5920775.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Gestión profesional de seguros para extranjeros"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+              </div>
+              <div>
+                <p className="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4">Efecto Despacho Serio</p>
+                <h2 className="text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                  Alguien que ya lo ha hecho <span className="text-emerald-600">mil veces por ti</span>
+                </h2>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  El éxito de un visado no depende solo de la póliza, sino de cómo se presenta la documentación. Rosa y Sebastián conocen los criterios específicos de cada consulado para que no pierdas tiempo ni dinero en denegaciones evitables.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Asesoramiento preventivo sobre requisitos de consulado",
+                    "Certificados emitidos con la redacción exacta exigida",
+                    "Soporte directo por WhatsApp en español e inglés",
+                    "Gestión integral sin que tengas que desplazarte"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                      <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-emerald-600" />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -375,8 +458,8 @@ export default function SaludExtranjerosPage() {
               a: "Sí. La mayoría de nuestros clientes inician el proceso con pasaporte. El seguro es el paso previo necesario para obtener tu NIE o TIE."
             },
             {
-              q: "¿Por qué el pago es anual?",
-              a: "Es una exigencia administrativa. El consulado necesita verificar que la cobertura es estable y está pagada por adelantado para toda la duración de tu estancia inicial. Evita rechazos en tu expediente."
+              q: "¿Por qué el pago suele ser anual?",
+              a: "Aunque la ley no lo exige literalmente, es la práctica estándar más segura. El consulado necesita verificar que la cobertura es estable y está pagada por adelantado para toda la duración de tu estancia inicial. El pago anual evita denegaciones por dudas sobre la vigencia del seguro."
             },
             {
               q: "¿Cuánto tarda el certificado?",
