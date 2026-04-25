@@ -100,65 +100,65 @@ export default function SaludExtranjerosPage() {
                     </p>
                   </div>
                   
-                  <div className="flex -space-x-3 items-center">
-                    <div className="relative w-12 h-12 rounded-full border-4 border-white overflow-hidden shadow-lg">
-                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa" fill className="object-cover" />
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
+                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
                     </div>
-                    <div className="relative w-12 h-12 rounded-full border-4 border-white overflow-hidden shadow-lg">
-                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Sebastián" fill className="object-cover object-[center_20%]" />
-                    </div>
-                    <div className="pl-6">
-                      <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">Atención directa</p>
-                      <p className="text-sm font-bold text-white">Rosa y Sebastián</p>
+                    <div className="pl-2">
+                      <p className="text-xs text-white/50 font-bold uppercase tracking-widest">Atención directa</p>
+                      <p className="text-lg font-bold text-white leading-none">Rosa y Sebastián</p>
+                      <p className="text-xs text-emerald-400 mt-1 font-medium italic">Tus asesores personales</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Tarjeta tipo "Documento Oficial" */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-emerald-500/10 rounded-[40px] blur-3xl opacity-50" />
-                <div className="relative bg-white border border-slate-200 rounded-[32px] p-8 md:p-10 shadow-2xl overflow-hidden">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-[60px] flex items-center justify-center">
-                    <Globe className="w-10 h-10 text-slate-200" />
+              {/* Tarjeta tipo "Documento Oficial" (Diseño Premium Restaurado) */}
+              <div className="hidden lg:block relative">
+                <div className="absolute inset-0 bg-emerald-600/5 rounded-[40px] blur-3xl" />
+                <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-2xl transform rotate-2">
+                  <div className="absolute top-8 right-8">
+                    <div className="w-16 h-16 rounded-full bg-slate-50 border-4 border-white shadow-inner flex items-center justify-center overflow-hidden opacity-20">
+                      <Globe className="w-10 h-10 text-slate-400" />
+                    </div>
                   </div>
-                  
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
-                      <FileCheck className="w-6 h-6 text-emerald-600" />
+                    <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-600/30">
+                      <FileCheck className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
-                      <p className="text-lg font-bold text-slate-900">Validez Consular 2026</p>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Certificado Oficial</p>
+                      <p className="text-lg font-bold text-slate-900">Validez Consular</p>
                     </div>
                   </div>
-
                   <div className="space-y-6">
                     <div className="h-2 w-3/4 bg-slate-100 rounded-full" />
                     <div className="h-2 w-full bg-slate-100 rounded-full" />
                     <div className="h-2 w-5/6 bg-slate-100 rounded-full" />
-                    
-                    <div className="pt-6 grid grid-cols-2 gap-4">
+                    <div className="pt-4 grid grid-cols-2 gap-4">
                       <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-black text-slate-400 uppercase mb-1">Carencias</p>
-                        <p className="text-emerald-600 font-bold text-sm">SIN ESPERAS</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Sin Copagos</p>
+                        <p className="text-emerald-600 font-bold text-sm">CUMPLIDO</p>
                       </div>
                       <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
-                        <p className="text-[10px] font-black text-slate-400 uppercase mb-1">Copagos</p>
-                        <p className="text-emerald-600 font-bold text-sm">0€ (SÍ)</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Carencias</p>
+                        <p className="text-emerald-600 font-bold text-sm">0 DÍAS</p>
                       </div>
                     </div>
-
-                    <div className="pt-8 border-t border-dashed border-slate-200 flex items-center justify-between">
-                      <div>
-                        <p className="text-[10px] font-black text-slate-400 uppercase">Estado</p>
-                        <p className="text-emerald-600 font-bold">REQUISITOS CUMPLIDOS</p>
-                      </div>
-                      <div className="w-16 h-16 rounded-full border-4 border-emerald-100 flex items-center justify-center">
-                        <Check className="w-8 h-8 text-emerald-200" />
+                    <div className="pt-6 border-t border-dashed border-slate-200 text-center">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Sello de aprobación</p>
+                      <div className="w-20 h-20 border-4 border-emerald-100 rounded-full mx-auto flex items-center justify-center">
+                        <Check className="w-10 h-10 text-emerald-200" />
                       </div>
                     </div>
                   </div>
+                </div>
+                {/* Decoración extra */}
+                <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                    <Check className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
                 </div>
               </div>
             </div>
