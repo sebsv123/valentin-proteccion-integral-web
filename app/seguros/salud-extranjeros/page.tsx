@@ -8,7 +8,8 @@ import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Globe, CheckCircle2, ArrowRight, Shield, Heart, FileCheck, Check, FileText } from "lucide-react";
+import { Globe, CheckCircle2, ArrowRight, Shield, Heart, FileCheck, Check, FileText, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 export const metadata: Metadata = {
   title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
