@@ -63,9 +63,9 @@ export default function SaludExtranjerosPage() {
                 </h1>
                 
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
-                  Evita errores que pueden retrasar o rechazar tu visado.
+                  Evita errores que puedan retrasar o rechazar tu visado.
                   <br />
-                  Te damos el seguro correcto en 24–48h.
+                  <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">Te damos el seguro correcto en 24–48h.</span>
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
@@ -73,7 +73,7 @@ export default function SaludExtranjerosPage() {
                     "Válido para extranjería",
                     "Sin copagos",
                     "Documento listo",
-                    "Si no es válido → devolución"
+                    "Si no es válido, te devolvemos el dinero"
                   ].map((bullet, i) => (
                     <div key={i} className="flex items-center gap-3 text-white font-bold">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
