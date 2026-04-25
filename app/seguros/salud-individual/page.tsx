@@ -396,11 +396,11 @@ export default async function SaludIndividualPage() {
               location="salud-individual-cta-final"
               className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
-              Quiero asesoramiento para mi seguro de salud
+              Quiero mi asesoramiento de seguro de salud
             </WhatsAppButton>
             
             <p className="mt-6 text-slate-500 font-bold text-sm">
-              Respuesta en menos de 10 minutos • Asesoramiento personalizado sin compromiso
+              Respuesta en menos de 10 minutos
             </p>
             
             {/* Badges finales */}
