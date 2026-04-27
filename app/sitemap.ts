@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://www.valentinproteccionintegral.com';
+  const base = 'https://valentinproteccionintegral.com';
   const now = new Date().toISOString();
 
   return [
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/accidentes-decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/accidentes`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    // /seguros/accidentes omitida: redirige a /seguros/accidentes-decesos (301) — no puede ser canónica
     { url: `${base}/seguros/decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-extranjeros`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Artículos del blog (26 URLs explícitas para indexación fiable)
     { url: `${base}/blog/mejor-seguro-medico-calidad-precio-espana`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/seguro-medico-privado-madrid`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/mejor-seguro-salud-madrid-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/blog/mejor-seguro-salud-madrid-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 }, // artículo existente en blog.ts
     { url: `${base}/blog/seguros-boadilla-del-monte`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/cuanto-cuesta-seguro-salud-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/mejor-seguro-salud-autonomos-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
@@ -60,12 +60,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/asesor-seguros-vs-comparador-online`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/guia-seguro-salud-espana-2026`, lastModified: '2026-02-15', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-vida-esencial-familia`, lastModified: '2026-01-28', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/seguro-vida-hipoteca-obligatorio`, lastModified: '2026-02-10', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/seguros-mascotas-2026-vale-la-pena`, lastModified: '2026-03-01', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-perro-obligatorio-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-dental-familias-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-accidentes-convenio-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-ahorro-jubilacion-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-decesos-familiar-madrid-que-cubre`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-dental-vs-salud-completa-madrid`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/por-que-necesitas-mas-de-9-000e-en-proteccion-familiar-madrid-2026-must-have`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/pasaporte-europeo-mascotas-obligatorio-2026-vacunas-precio-madrid`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/cuanto-te-indemniza-realmente-tu-seguro-hipoteca-nomina-en-invalidez-solo-50`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
 
     // CONTACTO
     { url: `${base}/contacto`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },

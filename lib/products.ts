@@ -61,7 +61,7 @@ export const site = {
     'Asesoramiento personalizado en seguros en Madrid y Boadilla. +10 años de experiencia ayudando a familias a elegir con claridad. Consulta gratis.',
   phone: '+34 603 448 765',
   phoneHref: '+34603448765',
-  domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.valentinproteccionintegral.com',
+  domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://valentinproteccionintegral.com',
   whatsappNumber: '34603448765',
   instagram: 'https://www.instagram.com/segurosrosavalentin/',
   heroTagline: 'Tus asesores de seguros en Madrid',
