@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   title: "Seguro Accidentes Deportes Madrid | Valentín Protección Integral",
   description: "Seguro accidentes deportivos Madrid desde muy poco al mes. Esquí, moto, running. Cotiza WhatsApp 30min. Rosa y Sebastián.",
   keywords: ["seguro accidentes deportes Madrid","seguro deportes extremos Madrid","seguro accidentes esqui moto"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes-decesos" },
   openGraph: {
     title: "Seguro Accidentes Deportes Madrid | Esquí, Moto, BTT",
     description: "Desde muy poco al mes. Esquí, moto, BTT, gym. Cobertura inmediata. WhatsApp 30min.",
-    url: "https://valentinproteccionintegral.com/seguros/accidentes",
+    url: "https://valentinproteccionintegral.com/seguros/accidentes-decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",

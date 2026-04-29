@@ -181,10 +181,10 @@ export default function SaludSeniorPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="text-center mb-14">
               <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
-                Cobertura completa
+                Principales especialidades
               </h2>
               <p className="text-xl text-stone-600">
-                Todo lo que incluye
+                Coberturas clave para mayores de 65 años
               </p>
             </div>
             
