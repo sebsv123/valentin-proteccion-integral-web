@@ -27,23 +27,83 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "name": "Seguro de Decesos Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de decesos que cubre todos los gastos de sepelio. Tu familia solo tiene que llamar.",
+  "description": "Seguro de decesos que cubre todos los gastos de sepelio. Tu familia solo tiene que llamar."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es exactamente un seguro de decesos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un seguro que cubre todos los gastos del funeral y la gestión administrativa cuando fallece una persona. Tu familia solo tiene que llamar a la aseguradora y ellos se encargan de todo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la edad. Una persona de 50 años paga unos 15-25€/mes. Cuanto más joven se contrate, más barato sale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay que hacerse médicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, no se requiere examen médico para contratar. Solo tienes que cumplimentar un cuestionario de salud sencillo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si fallezco fuera de Madrid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Incluye repatriación nacional e internacional. Te traen a España desde cualquier parte del mundo sin coste adicional para la familia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo contratarlo para mis padres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, puedes contratarlo para cualquier familiar. Solo necesitas su consentimiento y datos personales. Es una forma de dejar todo resuelto."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
@@ -54,7 +114,9 @@ export default function DecesosPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Decesos",url:"/seguros/decesos"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         

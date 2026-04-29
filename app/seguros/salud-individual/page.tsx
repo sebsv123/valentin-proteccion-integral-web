@@ -27,23 +27,20 @@ export const metadata: Metadata = {
   },
 };
 
-const serviceSchema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Seguro Salud Privado Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
   },
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico privado Madrid sin copagos. Cobertura inmediata. Especialistas sin lista de espera.",
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -51,6 +48,62 @@ const serviceSchema = {
     "bestRating": "5",
     "worstRating": "1"
   }
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Seguro Salud Privado Madrid - Valentín Protección Integral",
+  "provider": localBusinessSchema,
+  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
+  "description": "Seguro médico privado Madrid sin copagos. Cobertura inmediata. Especialistas sin lista de espera."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay que pagar copagos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Esta modalidad es sin copagos. Pagas la cuota mensual y nada más. Consultas, pruebas, hospitalización... todo incluido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo puedo ir al especialista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde el primer día. No necesitas derivación del médico de cabecera. Eliges el especialista que prefieras de la red y pides cita directamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo elegir hospital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Tienes acceso a los principales hospitales privados de Madrid: La Zarzuela, Ruber, Clínica de la Luz, Nuestra Señora de América, etc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si tengo una urgencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tienes urgencias 24h en los hospitales de la red. También telemedicina por videollamada con médico las 24h del día."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio de entrada para un adulto es desde 22,50€/mes. Para perfiles de 30-40 años con cobertura completa sin copagos, el rango habitual es 50-80€/mes. Te damos presupuesto exacto en WhatsApp según tu edad y cobertura."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
@@ -62,7 +115,9 @@ export default async function SaludIndividualPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">

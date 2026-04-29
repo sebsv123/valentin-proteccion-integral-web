@@ -27,24 +27,84 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "medicalSpecialty": "Dentistry",
   "name": "Seguro Dental Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro dental Madrid sin carencias. Implantes, ortodoncia, checkups.",
+  "description": "Seguro dental Madrid sin carencias. Implantes, ortodoncia, checkups."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuándo puedo empezar a usar el seguro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde el primer día. No hay carencias ni períodos de espera. Contratas hoy y mañana ya puedes ir al dentista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay que pagar algo en la consulta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Las consultas, revisiones y limpiezas son gratuitas. Solo pagas si necesitas algún tratamiento específico, y siempre con precios reducidos según el cuadro médico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo ir a cualquier dentista?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tienes acceso a la red de clínicas concertadas. En Madrid son más de 200 centros. Puedes elegir el más cercano a ti o el que prefieras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si necesito ortodoncia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La ortodoncia tiene precios especiales con descuentos importantes. El estudio inicial es gratuito y te dan presupuesto sin compromiso antes de empezar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una extracción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las extracciones simples están cubiertas sin coste. Para extracciones complejas (cordales incluidos) hay precios reducidos según el cuadro."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
@@ -55,7 +115,9 @@ export default function SaludDentalPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Dental",url:"/seguros/salud-dental"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         

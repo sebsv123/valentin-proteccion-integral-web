@@ -26,23 +26,20 @@ export const metadata: Metadata = {
   },
 };
 
-const serviceSchema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
   },
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h.",
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -50,6 +47,15 @@ const serviceSchema = {
     "bestRating": "5",
     "worstRating": "1"
   }
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
+  "provider": localBusinessSchema,
+  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
+  "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h."
 };
 
 const faqSchema = {
@@ -100,6 +106,7 @@ export default function SaludExtranjerosPage() {
     <>
       <link rel="preload" href="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900" as="image" fetchPriority="high" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />
 

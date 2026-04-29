@@ -27,23 +27,83 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "name": "Seguro Vida Hipoteca Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro de vida para hipoteca Madrid. Protege tu familia, no el banco. Cobertura hasta 500k€.",
+  "description": "Seguro de vida para hipoteca Madrid. Protege tu familia, no el banco. Cobertura hasta 500k€."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué contratar con vosotros y no con el banco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Te ahorras hasta un 50% respecto al precio del banco. Además, la cobertura es para proteger a tu familia, no al banco. Puedes elegir el beneficiario que quieras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta el seguro de vida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de tu edad, capital asegurado y estado de salud. Una póliza típica de 100.000€ para una persona de 35 años cuesta entre 15-25€/mes. Te damos presupuesto personalizado en 30 min."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay que hacerse médicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generalmente no para capitales menores a 150.000€. Para mayores capitales o ciertas edades, puede requerirse un sencillo chequeo. Te lo gestionamos nosotros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cancelar cuando quiera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, el seguro de vida es sin permanencia. Puedes cancelar en cualquier momento sin penalización."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si ya tengo uno con el banco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes sustituirlo. La ley te permite cambiar el seguro de vida de tu hipoteca. Te ayudamos con todo el papeleo para hacer el cambio sin complicaciones."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
@@ -54,7 +114,9 @@ export default function VidaPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Vida",url:"/seguros/vida"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         

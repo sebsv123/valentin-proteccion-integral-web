@@ -27,23 +27,83 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "name": "Seguro Mascotas Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro veterinario perros gatos Madrid. Accidentes, cirugías, hospital. Cotiza WhatsApp 30min.",
+  "description": "Seguro veterinario perros gatos Madrid. Accidentes, cirugías, hospital. Cotiza WhatsApp 30min."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué cubre el seguro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cubre veterinario, cirugías, hospitalización, medicación y responsabilidad civil obligatoria para perros. También incluye eutanasia y gestión de restos si es necesario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay límite de edad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Aceptamos perros y gatos de cualquier edad, incluso mayores. Las primas se ajustan a la edad, pero nunca te dejamos sin cobertura por ser senior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Incluye la vacunación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plan básico cubre consultas y urgencias. Para vacunación anual, algunos planes incluyen un chequeo gratuito al año. Te lo explicamos al cotizar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo ir a cualquier veterinario?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tenemos red de clínicas concertadas en Madrid. Si tu veterinario habitual está en la red, perfecto. Si no, te ayudamos a encontrar el centro más cercano."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cubre la RC obligatoria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, desde 2023 es obligatoria para perros potencialmente peligrosos, pero recomendable para todos. Cubre daños a terceros con hasta 150.000€ de indemnización."
+      }
+    }
+  ]
 };
 
 export const dynamic = "force-static";
@@ -54,7 +114,9 @@ export default function MascotasPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Mascotas",url:"/seguros/mascotas"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
         
