@@ -206,7 +206,7 @@ export default function SaludExtranjerosPage() {
                   
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
-                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[center_20%]" />
+                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="64px" className="object-cover object-[center_20%]" />
                     </div>
                     <div className="pl-2">
                       <p className="text-xs text-white/50 font-bold uppercase tracking-widest">Atención directa</p>
