@@ -102,15 +102,18 @@ export default function SaludExtranjerosPage() {
       <main className="min-h-screen bg-white pt-24 sm:pt-28">
         
         {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
-        <section className="relative py-20 lg:py-32 bg-slate-950 overflow-hidden min-h-[85vh] flex items-center">
-          {/* Fondo con imagen multicultural */}
+        <section className="relative py-20 lg:py-32 bg-[#1e3a5f] overflow-hidden min-h-[85vh] flex items-center">
+          {/* Fondo con imagen multicultural - optimizada para LCP */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
-              fill
-              className="object-cover opacity-30"
+              width={900}
+              height={600}
+              className="object-cover opacity-30 w-full h-full"
               priority
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTAwiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFlM2E1ZiIvPjwvc3ZnPg=="
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent" />
           </div>
@@ -203,7 +206,62 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* 2. BLOQUE GARANTÍAS (Subido arriba) */}
+        {/* 2. ¿PARA QUIÉN ES ESTE SEGURO? — Perfiles de cliente */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                ¿Para quién es este seguro?
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Diseñado para diferentes situaciones de extranjeros en España
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Estudiante internacional */}
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+                  <span className="text-3xl">🎓</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Estudiante internacional
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Cubre los requisitos de tu visado de estudios desde el primer día
+                </p>
+              </div>
+
+              {/* Residente en proceso de NIE/TIE */}
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6">
+                  <span className="text-3xl">🏠</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Residente en proceso de NIE/TIE
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Certificado válido para comisaría en menos de 24h
+                </p>
+              </div>
+
+              {/* Trabajador o emprendedor extranjero */}
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
+                  <span className="text-3xl">💼</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  Trabajador o emprendedor extranjero
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Sin carencias, sin copagos, compatible con tu situación laboral
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. BLOQUE GARANTÍAS (Subido arriba) */}
         <section className="py-24 bg-slate-50 border-y border-slate-100">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-16">
