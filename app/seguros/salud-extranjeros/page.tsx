@@ -232,57 +232,37 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
-        {/* 2. ¿PARA QUIÉN ES ESTE SEGURO? — Perfiles de cliente */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                ¿Para quién es este seguro?
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Diseñado para diferentes situaciones de extranjeros en España
-              </p>
+        {/* SECCIÓN PERFILES — ¿Para quién es este seguro? */}
+        <section className="py-16 bg-white border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">¿Para quién es este seguro?</h2>
+              <p className="text-slate-500 mt-3 max-w-xl mx-auto">Tres perfiles. Una misma solución. Rápida y sin complicaciones.</p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Estudiante internacional */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-                  <span className="text-3xl">🎓</span>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                {
+                  emoji: "🎓",
+                  title: "Estudiante internacional",
+                  desc: "Cubre los requisitos de tu visado de estudios desde el primer día. Sin carencias, sin esperas."
+                },
+                {
+                  emoji: "🏠",
+                  title: "Residente en proceso de NIE/TIE",
+                  desc: "Certificado válido para comisaría en menos de 24h. Más de 100 trámites aprobados."
+                },
+                {
+                  emoji: "💼",
+                  title: "Trabajador o emprendedor extranjero",
+                  desc: "Sin copagos, sin carencias, compatible con tu situación laboral o de autónomo en España."
+                }
+              ].map((perfil, i) => (
+                <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                  <div className="text-4xl mb-4">{perfil.emoji}</div>
+                  <h3 className="font-bold text-slate-900 text-lg mb-2">{perfil.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{perfil.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  Estudiante internacional
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Cubre los requisitos de tu visado de estudios desde el primer día
-                </p>
-              </div>
-
-              {/* Residente en proceso de NIE/TIE */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6">
-                  <span className="text-3xl">🏠</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  Residente en proceso de NIE/TIE
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Certificado válido para comisaría en menos de 24h
-                </p>
-              </div>
-
-              {/* Trabajador o emprendedor extranjero */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
-                  <span className="text-3xl">💼</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  Trabajador o emprendedor extranjero
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Sin carencias, sin copagos, compatible con tu situación laboral
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
