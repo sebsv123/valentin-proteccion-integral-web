@@ -492,6 +492,11 @@ export default async function SaludIndividualPage() {
       <footer className="bg-gray-950 text-white/50 py-8 text-center text-xs">
         <p>© 2026 Valentín Protección Integral · NIF: 79234434D · DGSFP: C012479234434D</p>
         <p className="mt-1">Mediadores de seguros independientes · Boadilla del Monte, Madrid</p>
+        <div className="flex items-center justify-center gap-4 mt-3">
+          <a href="tel:+34603448765" className="text-white/40 hover:text-white/70 transition-colors">603 44 87 65</a>
+          <span className="text-white/20">·</span>
+          <a href="mailto:rosavalenting@gmail.com" className="text-white/40 hover:text-white/70 transition-colors">rosavalenting@gmail.com</a>
+        </div>
       </footer>
       <StickyWhatsApp />
     </>

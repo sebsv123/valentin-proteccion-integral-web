@@ -498,6 +498,11 @@ export default function SaludExtranjerosPage() {
         <div className="container mx-auto px-4 text-center">
           <p className="font-bold text-white mb-4">Valentín Protección Integral</p>
           <p className="text-sm">© 2026 · Mediadores de seguros independientes · NIF 79234434D · Boadilla del Monte, Madrid</p>
+          <div className="flex items-center justify-center gap-4 mt-4 text-sm">
+            <a href="tel:+34603448765" className="text-slate-400 hover:text-white transition-colors">603 44 87 65</a>
+            <span className="text-slate-600">·</span>
+            <a href="mailto:rosavalenting@gmail.com" className="text-slate-400 hover:text-white transition-colors">rosavalenting@gmail.com</a>
+          </div>
         </div>
       </footer>
 
