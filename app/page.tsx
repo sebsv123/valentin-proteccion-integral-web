@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asesor de Seguros en Madrid | Valentín",
+    title: "Seguros de Salud, Vida y Más en Madrid | Valentín Protección Integral",
     description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
   },
   alternates: {
