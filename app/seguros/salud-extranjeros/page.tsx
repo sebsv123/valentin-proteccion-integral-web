@@ -95,6 +95,7 @@ export default function SaludExtranjerosPage() {
 
   return (
     <>
+      <link rel="preload" href="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900" as="image" fetchPriority="high" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />
@@ -140,6 +141,7 @@ export default function SaludExtranjerosPage() {
               height={600}
               className="object-cover opacity-30 w-full h-full"
               priority
+              fetchPriority="high"
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTAwiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFlM2E1ZiIvPjwvc3ZnPg=="
             />
@@ -194,7 +196,7 @@ export default function SaludExtranjerosPage() {
                   
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
-                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
+                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[center_20%]" />
                     </div>
                     <div className="pl-2">
                       <p className="text-xs text-white/50 font-bold uppercase tracking-widest">Atención directa</p>
@@ -352,7 +354,13 @@ export default function SaludExtranjerosPage() {
 
         {/* 4. BLOQUE ESPECIALISTAS (Reposicionado y Protagonista) */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+          <div 
+            className="absolute top-0 left-0 w-full h-full opacity-5"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5V4zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '6px 6px'
+            }}
+          />
           <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
             <div className="flex justify-center mb-10">
               <div className="w-24 h-24 rounded-3xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
@@ -421,6 +429,7 @@ export default function SaludExtranjerosPage() {
                   src="/images/rosa_y_sebastian.jpeg"
                   alt="Rosa y Sebastián — Valentín Protección Integral"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-[center_20%]"
                 />
               </div>
