@@ -106,7 +106,7 @@ export default function SaludExtranjerosPage() {
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
             <span className="hidden sm:inline">Si tu seguro no es válido para tu trámite → <span className="text-amber-400">te devolvemos el dinero</span></span>
-            <span className="sm:hidden">Garantía: <span className="text-amber-400 font-black">Te devolvemos el dinero</span></span>
+            <span className="sm:hidden">Si no es válido para tu trámite → <span className="text-amber-400 font-black">te devolvemos el dinero</span></span>
           </p>
         </div>
       </div>
