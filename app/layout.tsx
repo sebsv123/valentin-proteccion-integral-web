@@ -3,7 +3,6 @@ import { Playfair_Display, Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { site } from '@/lib/products';
 import './globals.css';
-import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/gtm';
 
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-heading', weight: ['600', '700', '800'], display: 'swap', preload: true });
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'], display: 'swap', preload: true });
@@ -78,37 +77,63 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://images.pexels.com" />
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
-        {/* Google Tag Manager - lazyOnload para reducir TBT */}
-        <GoogleTagManager />
-        {/* Meta Pixel - diferido hasta que la página esté idle */}
-        <Script id="meta-pixel" strategy="lazyOnload">
+      </head>
+      <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TNB5FR4W"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        <BackgroundWrapper />
+        <SchemaLocalBusiness />
+        <SchemaPersons />
+        {process.env.NODE_ENV === 'development' && <WebVitals />}
+        <Analytics />
+        {children}
+        <CookieBanner />
+        {/* Deferred tracking scripts - loaded after page is interactive to eliminate TBT */}
+        <Script id="deferred-tracking" strategy="afterInteractive">
           {`
-            if ('requestIdleCallback' in window) {
-              requestIdleCallback(function() {
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '${META_PIXEL_ID}');
-                fbq('track', 'PageView');
+            // Load GTM after page is fully loaded
+            if (typeof window !== 'undefined') {
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  // GTM
+                  (function(w,d,s,l,i){
+                    w[l]=w[l]||[];
+                    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                    var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                    j.async=true;
+                    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                    f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-TNB5FR4W');
+                  
+                  // Meta Pixel
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                  n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window, document,'script',
+                  'https://connect.facebook.net/en_US/fbevents.js');
+                  fbq('init', '${META_PIXEL_ID}');
+                  fbq('track', 'PageView');
+                  
+                  // Clarity
+                  ${clarityId ? `(function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                  })(window, document, "clarity", "script", "${clarityId}");` : ''}
+                }, 100);
               });
-            } else {
-              setTimeout(function() {
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '${META_PIXEL_ID}');
-                fbq('track', 'PageView');
-              }, 3000);
             }
           `}
         </Script>
@@ -121,26 +146,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             alt=""
           />
         </noscript>
-      </head>
-      <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
-        {/* Google Tag Manager (noscript) - must be first child of body */}
-        <GoogleTagManagerNoScript />
-        <BackgroundWrapper />
-        <SchemaLocalBusiness />
-        <SchemaPersons />
-        {process.env.NODE_ENV === 'development' && <WebVitals />}
-        <Analytics />
-        {children}
-        <CookieBanner />
-        {clarityId ? (
-          <Script id="clarity" strategy="lazyOnload">{`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "${clarityId}");
-          `}</Script>
-        ) : null}
       </body>
     </html>
   );
