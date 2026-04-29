@@ -117,7 +117,7 @@ export default async function SaludIndividualPage() {
 
   return (
     <>
-      <link rel="preload" href="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1600" as="image" fetchPriority="high" />
+      <link rel="preload" href="/images/hero-salud.webp" as="image" fetchPriority="high" type="image/webp" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
@@ -144,12 +144,13 @@ export default async function SaludIndividualPage() {
           {/* Overlay gradiente premium */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="/images/hero-salud.webp"
               alt="Asesoramiento médico profesional y tecnológico"
               fill
               className="object-cover opacity-60"
               priority
               fetchPriority="high"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-slate-950/40" />
           </div>
