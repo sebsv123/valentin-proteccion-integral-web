@@ -100,16 +100,17 @@ export default function SaludExtranjerosPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />
 
       {/* Gancho Principal - Top Bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-emerald-600 text-white py-2 text-center overflow-hidden">
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-900 border-b border-slate-700 text-white py-2.5 text-center overflow-hidden">
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
-            <Shield className="w-4 h-4" />
-            Si tu seguro no es válido para tu trámite → te devolvemos el dinero
+            <Shield className="w-4 h-4 text-amber-400" />
+            <span className="hidden sm:inline">Si tu seguro no es válido para tu trámite → <span className="text-amber-400">te devolvemos el dinero</span></span>
+            <span className="sm:hidden">Garantía: <span className="text-amber-400 font-black">Te devolvemos el dinero</span></span>
           </p>
         </div>
       </div>
 
-      <header className="fixed top-9 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-slate-900 text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
@@ -120,7 +121,8 @@ export default function SaludExtranjerosPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all"
           >
-            Presupuesto WhatsApp
+            <WhatsAppIcon className="w-4 h-4" />
+            <span className="hidden sm:inline">Presupuesto </span>WhatsApp
           </a>
         </div>
       </header>
