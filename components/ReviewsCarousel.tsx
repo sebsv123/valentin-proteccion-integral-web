@@ -165,15 +165,18 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           {reviews.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Ver reseña ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === current ? 'bg-blue-600 w-5' : 'bg-gray-300 w-2'
-              }`}
+              className="h-2 w-2 rounded-full transition-all duration-300"
+              style={{
+                backgroundColor: i === current ? '#2563eb' : '#d1d5db',
+                transform: i === current ? 'scaleX(2.5)' : 'scaleX(1)',
+                transformOrigin: 'center',
+              }}
             />
           ))}
         </div>
