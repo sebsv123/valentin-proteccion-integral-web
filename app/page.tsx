@@ -3,13 +3,12 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import Link from 'next/link';
-import { HeroLeadSection } from '@/components/hero-animated';
 import { TrendingUp, Users, Heart, Briefcase } from 'lucide-react';
 import { ProductCategoryGrid } from '@/components/home-sections';
 import { getLocalPexelsImage } from '@/lib/pexels';
 
-// Lazy load componentes debajo del fold para mejorar LCP (sin ssr: false para Server Components)
-const StatsSection = dynamicImport(() => import('@/components/hero-animated').then(m => m.StatsSection));
+// Framer-motion components isolated via 'use client' wrapper (ssr:false)
+import { HeroLeadSection, StatsSection } from '@/components/hero-sections-wrapper';
 const GoogleReviewsWidget = dynamicImport(() => import('@/components/GoogleReviewsWidget'));
 const TrustBadgesSection = dynamicImport(() => import('@/components/home-sections').then(m => m.TrustBadgesSection));
 const MascotHelperSection = dynamicImport(() => import('@/components/home-sections').then(m => m.MascotHelperSection));
