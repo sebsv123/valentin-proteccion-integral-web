@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { Phone, AlertTriangle, FileText, Euro, Plane, ShieldCheck, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pasaporte Europeo Mascotas Obligatorio 2026: Vacunas, Precio Madrid | Valentín Protección Integral",
+  title: "Pasaporte europeo mascotas 2026: vacunas y precio Madrid | Valentín",
   description: "Desde abril 2026, pasaporte europeo obligatorio para viajar con perros/gatos a la UE. Vacunas rabía, chip, precio Madrid 100-150€. Evita multas 600€. Check-up gratis.",
   keywords: ["pasaporte europeo perro obligatorio","precio pasaporte gato Madrid 2026","seguro mascotas viajes UE","pasaporte mascotas vacunas obligatorias","multa sin pasaporte perro Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/blog/pasaporte-europeo-mascotas-obligatorio-2026-vacunas-precio-madrid" },

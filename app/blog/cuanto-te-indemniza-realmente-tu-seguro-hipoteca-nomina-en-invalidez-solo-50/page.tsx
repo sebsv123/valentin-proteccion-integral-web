@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { Phone, AlertTriangle, Calculator, ShieldCheck, Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "¿Cuánto te indemniza realmente tu seguro hipoteca o nómina en invalidez? Solo el 50%... | Valentín Protección Integral",
+  title: "Seguro hipoteca en invalidez: ¿cuánto cobras? | Valentín",
   description: "Descubre el gap real de cobertura: hipoteca cubre 50% en invalidez, nómina solo 40% extra. Déficit de 1.000€/mes para familias Madrid. Calcula tu protección real con Rosa y Sebastián.",
   keywords: ["indemnización invalidez hipoteca Madrid","cobertura seguro colectivo trabajo España","seguro hipoteca invalidez permanente","gap cobertura vida Madrid","indemnización fallecimiento hipoteca"],
   alternates: { canonical: "https://valentinproteccionintegral.com/blog/cuanto-te-indemniza-realmente-tu-seguro-hipoteca-nomina-en-invalidez-solo-50" },

@@ -27,12 +27,12 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
-  title: "Asesor de Seguros en Madrid | Valentín",
+  title: "Seguros de Salud, Vida y Más en Madrid | Valentín Protección Integral",
   description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
   keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
   openGraph: {
-    title: "Asesor de Seguros en Madrid | Valentín",
+    title: "Seguros de Salud, Vida y Más en Madrid | Valentín Protección Integral",
     description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
     url: "https://valentinproteccionintegral.com",
     siteName: "Valentín Protección Integral",
