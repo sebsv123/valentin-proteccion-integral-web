@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { StickyWhatsApp } from "@/components/sticky-whatsapp";
+import dynamicImport from "next/dynamic";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { FAQChat } from "@/components/faq-chat";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { getPexelsImage } from "@/lib/pexels";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User, Check } from "lucide-react";
+
+// Dynamic imports for non-critical components (reduce initial JS bundle)
+const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
+const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
   title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
@@ -114,6 +117,7 @@ export default async function SaludIndividualPage() {
 
   return (
     <>
+      <link rel="preload" href="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=1600" as="image" fetchPriority="high" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
@@ -145,6 +149,7 @@ export default async function SaludIndividualPage() {
               fill
               className="object-cover opacity-60"
               priority
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-slate-950/40" />
           </div>
@@ -183,7 +188,7 @@ export default async function SaludIndividualPage() {
                 {/* Bloque Asesores - Estilo Extranjería */}
                 <div className="mt-8 flex items-center gap-4">
                   <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
-                    <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill className="object-cover object-[center_20%]" />
+                    <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-[center_20%]" />
                   </div>
                   <div>
                     <p className="text-xs text-white/50 font-bold uppercase tracking-widest leading-none mb-1">Atención directa</p>
@@ -389,6 +394,7 @@ export default async function SaludIndividualPage() {
                     src="/images/rosa_y_sebastian.jpeg"
                     alt="Rosa Valentín"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-[center_20%]"
                   />
                 </div>
