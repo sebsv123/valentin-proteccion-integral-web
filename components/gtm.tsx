@@ -8,7 +8,7 @@ export function GoogleTagManager() {
       {/* GTM Script - goes in <head> */}
       <Script
         id="gtm-script"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){
