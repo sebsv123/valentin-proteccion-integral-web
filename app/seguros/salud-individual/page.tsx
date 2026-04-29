@@ -44,6 +44,13 @@ const serviceSchema = {
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Seguro médico privado Madrid sin copagos. Cobertura inmediata. Especialistas sin lista de espera.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 };
 
 export const dynamic = "force-static";

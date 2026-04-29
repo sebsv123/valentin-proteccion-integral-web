@@ -40,6 +40,13 @@ const serviceSchema = {
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 };
 
 const faqSchema = {
@@ -48,18 +55,35 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Necesito NIE para contratar el seguro de salud?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No siempre es obligatorio. Te asesoramos según tu situación particular. Algunas modalidades permiten contratación con pasaporte. Escríbenos por WhatsApp y estudiamos tu caso en 30 minutos." }
+      "name": "¿El seguro es válido para solicitar el visado o NIE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, nuestros seguros cumplen todos los requisitos exigidos por el consulado o la comisaría de extranjería para visado, NIE y TIE."
+      }
     },
     {
       "@type": "Question",
-      "name": "Do I need to speak Spanish?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No, we speak English. Rosa and Sebastián can assist you in English throughout the entire process." }
+      "name": "¿Cuánto tarda en emitirse el certificado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El certificado se emite en menos de 24 horas desde la contratación."
+      }
     },
     {
       "@type": "Question",
-      "name": "¿Cuándo empieza la cobertura?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La cobertura comienza entre 24-48 horas después de la contratación, dependiendo de la compañía y modalidad elegida. Te explicamos los detalles específicos antes de contratar." }
+      "name": "¿Tiene copagos o carencias?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No tiene copagos ni carencias desde el primer día de cobertura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo contratar si ya estoy en España?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, puedes contratar desde cualquier punto de España sin necesidad de desplazarte."
+      }
     }
   ]
 };
@@ -72,7 +96,9 @@ export default function SaludExtranjerosPage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />
+
       {/* Gancho Principal - Top Bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] bg-emerald-600 text-white py-2 text-center overflow-hidden">
         <div className="container mx-auto px-4">
