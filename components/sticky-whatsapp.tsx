@@ -52,22 +52,19 @@ export function StickyWhatsApp() {
         </a>
       </div>
 
-      {/* Móvil: barra fija en el bottom */}
+      {/* Móvil: barra sticky fija en la parte inferior */}
       <div 
         suppressHydrationWarning={true} 
-        className="fixed bottom-0 left-0 right-0 z-[999] sm:hidden min-h-[64px] bg-white border-t border-slate-100 px-4 py-3 shadow-[0_-4px_24px_rgba(0,0,0,0.08)]"
+        className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#25D366]"
       >
         <a
           href={mobileHref}
           onClick={(e) => handleClick(e, 'sticky-mobile', mobileHref)}
-          className="flex items-center justify-center gap-3 w-full rounded-2xl bg-[#25D366] hover:bg-[#128C7E] text-white py-4 text-base font-bold transition-colors"
+          className="flex items-center justify-center gap-2 w-full text-white py-3 px-4 text-sm font-semibold"
         >
           <WhatsAppIcon className="h-5 w-5 flex-none" />
-          Hablar con un asesor — es gratis
+          Escríbenos por WhatsApp
         </a>
-        <p className="text-center text-xs text-slate-400 mt-2">
-          Consulta gratuita · Respuesta en menos de 2 horas hábiles
-        </p>
       </div>
     </>
   );

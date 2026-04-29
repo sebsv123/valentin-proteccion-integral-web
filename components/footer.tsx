@@ -49,10 +49,11 @@ export function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Contacto</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <p>{site.phone}</p>
-              <p className="font-medium text-[var(--blue-deep)]">Boadilla del Monte, Madrid</p>
-              <a href={site.instagram} className="block hover:text-[var(--blue)]">@segurosrosavalentin</a>
-              <WhatsAppButton href={buildWhatsAppHref('Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)]">Abrir WhatsApp</WhatsAppButton>
+              <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">603 44 87 65</a>
+              <a href="mailto:rosavalenting@gmail.com" className="block hover:text-[var(--blue)] text-sm">rosavalenting@gmail.com</a>
+              <p className="font-medium text-[var(--blue-deep)] text-sm">Boadilla del Monte, Madrid</p>
+              <a href={site.instagram} className="block hover:text-[var(--blue)] text-sm">@segurosrosavalentin</a>
+              <WhatsAppButton href={buildWhatsAppHref('Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)] text-sm">Abrir WhatsApp</WhatsAppButton>
             </div>
             <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
               <iframe

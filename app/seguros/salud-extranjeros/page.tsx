@@ -13,17 +13,18 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Globe, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
-  description: "Seguro médico para extranjeros en España listo en 24 horas. Cobertura completa, gestión sencilla y atención personalizada desde el primer día.",
+  title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+  description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
   keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro de Salud para Extranjeros en Madrid | Valentín",
-    description: "Seguro médico para extranjeros en España listo en 24 horas. Cobertura completa, gestión sencilla y atención personalizada desde el primer día.",
+    title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+    description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Mediadores de seguros en Madrid" }],
   },
 };
 

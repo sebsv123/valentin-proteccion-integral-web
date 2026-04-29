@@ -14,17 +14,18 @@ import { getPexelsImage } from "@/lib/pexels";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Salud Privado en Madrid | Valentín",
-  description: "Seguro médico privado en Madrid sin listas de espera. Especialistas, pruebas y urgencias desde el primer día. Consulta gratis en 30 minutos.",
+  title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
+  description: "Sin copagos, sin carencias, sin permanencia. Mediadores independientes con +10 años y +1.200 familias protegidas.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
-    title: "Seguro de Salud Privado en Madrid | Valentín",
-    description: "Seguro médico privado en Madrid sin listas de espera. Especialistas, pruebas y urgencias desde el primer día. Consulta gratis en 30 minutos.",
+    title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
+    description: "Sin copagos, sin carencias, sin permanencia. Mediadores independientes con +10 años y +1.200 familias protegidas.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Mediadores de seguros en Madrid" }],
   },
 };
 
