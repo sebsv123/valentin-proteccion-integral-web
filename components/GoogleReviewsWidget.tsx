@@ -1,4 +1,4 @@
-import ReviewsCarousel from './ReviewsCarousel'
+import ReviewsCarouselWrapper from './ReviewsCarouselWrapper'
 
 interface GoogleReviewsWidgetProps {
   title?: string
@@ -31,7 +31,7 @@ export default async function GoogleReviewsWidget({ title, subtitle }: GoogleRev
           </div>
         )}
         {data?.reviews?.length > 0 ? (
-          <ReviewsCarousel
+          <ReviewsCarouselWrapper
             reviews={data.reviews}
             rating={data.rating}
             user_ratings_total={data.user_ratings_total}
