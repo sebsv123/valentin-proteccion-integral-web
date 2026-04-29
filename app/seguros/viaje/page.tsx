@@ -26,23 +26,36 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valentín Protección Integral",
+  "url": "https://valentinproteccionintegral.com",
+  "telephone": "+34603448765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de los Reyes Católicos, 1",
+    "addressLocality": "Boadilla del Monte",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "60",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "name": "Seguro Viaje Temporal Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro viaje temporal España. Cobertura desde salida aeropuerto Madrid. Médica 60.000€ mundial. Sin franquicia. Repatriación incluida.",
+  "description": "Seguro viaje temporal España. Cobertura desde salida aeropuerto Madrid. Médica 60.000€ mundial. Sin franquicia. Repatriación incluida."
 };
 
 const faqSchema = {
@@ -75,6 +88,7 @@ export default function ViajePage() {
   return (
     <>
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Viaje Temporal",url:"/seguros/viaje"}]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
