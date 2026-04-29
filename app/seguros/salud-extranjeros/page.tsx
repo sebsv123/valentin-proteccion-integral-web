@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { StickyWhatsApp } from "@/components/sticky-whatsapp";
+import dynamicImport from "next/dynamic";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { FAQChat } from "@/components/faq-chat";
 import { Shield, CheckCircle2, Phone, Globe, FileCheck, Check, FileText, Heart, Users, Scale, MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+
+// Dynamic imports for non-critical components (reduce initial JS bundle)
+const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
+const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
   title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
