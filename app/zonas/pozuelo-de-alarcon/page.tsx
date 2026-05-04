@@ -12,15 +12,15 @@ import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Dog, Heart, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Seguros en Pozuelo de AlarcÛn ó Mediador Independiente | ValentÌn ProtecciÛn Integral',
-  description: 'Asesor de seguros en Pozuelo de AlarcÛn. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 aÒos. Consulta gratis.',
-  keywords: ['seguros Pozuelo de AlarcÛn', 'seguro salud Pozuelo', 'mediador seguros Pozuelo de AlarcÛn', 'seguro medico privado Pozuelo'],
+  title: 'Seguros en Pozuelo de Alarc√≥n ‚Äî Mediador Independiente | Valent√≠n Protecci√≥n Integral',
+  description: 'Asesor de seguros en Pozuelo de Alarc√≥n. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 a√±os. Consulta gratis.',
+  keywords: ['seguros Pozuelo de Alarc√≥n', 'seguro salud Pozuelo', 'mediador seguros Pozuelo de Alarc√≥n', 'seguro medico privado Pozuelo'],
   alternates: { canonical: 'https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon' },
   openGraph: {
-    title: 'Seguros en Pozuelo de AlarcÛn ó Mediador Independiente | ValentÌn ProtecciÛn Integral',
-    description: 'Asesor de seguros en Pozuelo de AlarcÛn. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 aÒos. Consulta gratis.',
+    title: 'Seguros en Pozuelo de Alarc√≥n ‚Äî Mediador Independiente | Valent√≠n Protecci√≥n Integral',
+    description: 'Asesor de seguros en Pozuelo de Alarc√≥n. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 a√±os. Consulta gratis.',
     url: 'https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon',
-    siteName: 'ValentÌn ProtecciÛn Integral',
+    siteName: 'Valent√≠n Protecci√≥n Integral',
     locale: 'es_ES',
     type: 'website',
   },
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'ValentÌn ProtecciÛn Integral - Seguros Pozuelo de AlarcÛn',
+  name: 'Valent√≠n Protecci√≥n Integral - Seguros Pozuelo de Alarc√≥n',
   telephone: '+34603448765',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Pozuelo de AlarcÛn',
+    addressLocality: 'Pozuelo de Alarc√≥n',
     addressRegion: 'Madrid',
     addressCountry: 'ES',
   },
@@ -42,22 +42,22 @@ const serviceSchema = {
     latitude: 40.435,
     longitude: -3.8142,
   },
-  areaServed: ['Pozuelo de AlarcÛn', 'Majadahonda', 'Boadilla del Monte', 'Las Rozas', 'Madrid'],
-  description: 'Mediador de seguros independiente en Pozuelo de AlarcÛn. Salud, vida, dental, mascotas.',
+  areaServed: ['Pozuelo de Alarc√≥n', 'Majadahonda', 'Boadilla del Monte', 'Las Rozas', 'Madrid'],
+  description: 'Mediador de seguros independiente en Pozuelo de Alarc√≥n. Salud, vida, dental, mascotas.',
 };
 
 export const dynamic = 'force-static';
 
 export default function PozueloPage() {
-  const wCotiza = buildWhatsAppHref('Hola, soy de Pozuelo de AlarcÛn y necesito informaciÛn sobre seguros.');
+  const wCotiza = buildWhatsAppHref('Hola, soy de Pozuelo de Alarc√≥n y necesito informaci√≥n sobre seguros.');
 
   return (
     <>
-      <BreadcrumbSchema items={[{ name: 'Inicio', url: '/' }, { name: 'Zonas', url: '/zonas' }, { name: 'Pozuelo de AlarcÛn', url: '/zonas/pozuelo-de-alarcon' }]} />
+      <BreadcrumbSchema items={[{ name: 'Inicio', url: '/' }, { name: 'Zonas', url: '/zonas' }, { name: 'Pozuelo de Alarc√≥n', url: '/zonas/pozuelo-de-alarcon' }]} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Header />
       <main className='min-h-screen bg-white'>
-        {/* HERO UBER ó Mapa local style */}
+        {/* HERO UBER ‚Äî Mapa local style */}
         <section className='py-16 lg:py-24'>
           <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl'>
             <div className='grid lg:grid-cols-2 gap-12 items-center'>
@@ -68,19 +68,19 @@ export default function PozueloPage() {
                   <GuaranteeBadge type='zonas' />
                 </div>
 
-                {/* H1 Uber style ó 52px bold */}
+                {/* H1 Uber style ‚Äî 52px bold */}
                 <h1 className='text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4'>
-                  Seguros en Pozuelo de AlarcÛn:
+                  Seguros en Pozuelo de Alarc√≥n:
                   <br />
                   <span className='text-[#4b4b4b]'>Mediador Independiente</span>
                 </h1>
 
                 {/* Subhead */}
                 <p className='text-xl text-[#4b4b4b] leading-relaxed mb-8 max-w-md'>
-                  En Pozuelo las familias merecen seguros a medida. No vendemos una marca: buscamos lo mejor para ti entre todas las compaÒÌas.
+                  En Pozuelo las familias merecen seguros a medida. No vendemos una marca: buscamos lo mejor para ti entre todas las compa√±√≠as.
                 </p>
 
-                {/* CTAs Uber ó pill 999px */}
+                {/* CTAs Uber ‚Äî pill 999px */}
                 <div className='flex flex-wrap gap-4 mb-8'>
                   <WhatsAppButton href={wCotiza} location='pozuelo-hero' className='group inline-flex items-center gap-2 bg-black hover:bg-[#333] text-white px-6 py-3 rounded-full text-base font-medium transition-colors'>
                     WhatsApp Pozuelo
@@ -112,7 +112,7 @@ export default function PozueloPage() {
                 <div className='relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]'>
                   <Image
                     src='/images/zonas/pozuelo-de-alarcon.webp'
-                    alt='Pozuelo de AlarcÛn, Madrid Oeste'
+                    alt='Pozuelo de Alarc√≥n, Madrid Oeste'
                     width={600}
                     height={450}
                     className='w-full h-auto object-cover object-top'
@@ -122,7 +122,7 @@ export default function PozueloPage() {
                   <div className='absolute bottom-4 left-4'>
                     <div className='inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg'>
                       <MapPin className='w-4 h-4 text-black' />
-                      <span className='text-sm font-bold text-black'>Pozuelo de AlarcÛn</span>
+                      <span className='text-sm font-bold text-black'>Pozuelo de Alarc√≥n</span>
                     </div>
                   </div>
                 </div>
@@ -131,19 +131,19 @@ export default function PozueloPage() {
           </div>
         </section>
 
-        {/* LOCAL PROOF ó Uber cards dark */}
+        {/* LOCAL PROOF ‚Äî Uber cards dark */}
         <section className='py-16 bg-black text-white'>
           <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
-            <p className='text-sm uppercase tracking-wider text-[#afafaf] mb-4'>POZUELO DE ALARC”N, MADRID OESTE</p>
+            <p className='text-sm uppercase tracking-wider text-[#afafaf] mb-4'>POZUELO DE ALARC√ìN, MADRID OESTE</p>
             <p className='text-lg text-[#afafaf] mb-12 max-w-2xl'>
-              Pozuelo tiene una de las rentas m·s altas de EspaÒa. Tus seguros deben estar diseÒados para ese nivel de vida, no para una media que no te representa.
+              Pozuelo tiene una de las rentas m√°s altas de Espa√±a. Tus seguros deben estar dise√±ados para ese nivel de vida, no para una media que no te representa.
             </p>
 
             <div className='grid md:grid-cols-3 gap-6'>
               {[
                 { icon: Building2, title: 'Perfil premium', desc: 'Familias con necesidades de salud privada, patrimonio que proteger y calidad de vida que mantener.' },
-                { icon: Stethoscope, title: 'ClÌnicas de referencia', desc: 'Acceso a ClÌnica Ruber, Hospital MonteprÌncipe y toda la red privada de Madrid Oeste.' },
-                { icon: Sparkles, title: 'Sin letras pequeÒas', desc: 'Te explicamos cada cl·usula antes de firmar. Transparencia total, siempre.' },
+                { icon: Stethoscope, title: 'Cl√≠nicas de referencia', desc: 'Acceso a Cl√≠nica Ruber, Hospital Montepr√≠ncipe y toda la red privada de Madrid Oeste.' },
+                { icon: Sparkles, title: 'Sin letras peque√±as', desc: 'Te explicamos cada cl√°usula antes de firmar. Transparencia total, siempre.' },
               ].map((item, i) => (
                 <div key={i} className='rounded-xl p-6 border border-[#333]'>
                   <div className='w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4'>
@@ -157,7 +157,7 @@ export default function PozueloPage() {
           </div>
         </section>
 
-        {/* POPULARES POZUELO ó Uber grid */}
+        {/* POPULARES POZUELO ‚Äî Uber grid */}
         <section className='py-16'>
           <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
             <h2 className='text-[36px] font-bold text-black leading-[1.22] text-center mb-12'>Populares en Pozuelo</h2>
@@ -188,7 +188,7 @@ export default function PozueloPage() {
               <div className='relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]'>
                 <Image
                   src='/images/rosa_y_sebastian.jpeg'
-                  alt='Rosa ValentÌn ∑ Asesora en Pozuelo de AlarcÛn'
+                  alt='Rosa Valent√≠n ¬∑ Asesora en Pozuelo de Alarc√≥n'
                   width={500}
                   height={500}
                   className='w-full h-auto object-cover object-[center_20%]'
@@ -201,14 +201,14 @@ export default function PozueloPage() {
                   <MapPin className='w-4 h-4' />
                   Atendemos Pozuelo
                 </div>
-                <h2 className='text-[36px] font-bold text-black leading-[1.22] mb-4'>Rosa ValentÌn</h2>
+                <h2 className='text-[36px] font-bold text-black leading-[1.22] mb-4'>Rosa Valent√≠n</h2>
                 <p className='text-lg text-[#4b4b4b] mb-6'>
-                  Tu mediadora en Pozuelo de AlarcÛn. Conozco las necesidades de las familias de la zona porque las asesoro cada dÌa.
+                  Tu mediadora en Pozuelo de Alarc√≥n. Conozco las necesidades de las familias de la zona porque las asesoro cada d√≠a.
                 </p>
                 <div className='space-y-3 mb-8'>
                   <div className='flex items-center gap-3 text-[#4b4b4b]'>
                     <MapPin className='w-5 h-5 text-black' />
-                    <span>Pozuelo de AlarcÛn, Madrid Oeste</span>
+                    <span>Pozuelo de Alarc√≥n, Madrid Oeste</span>
                   </div>
                   <div className='flex items-center gap-3 text-[#4b4b4b]'>
                     <Phone className='w-5 h-5 text-black' />
@@ -232,7 +232,7 @@ export default function PozueloPage() {
             <div className='grid md:grid-cols-3 gap-8'>
               {[
                 { num: '1', title: 'WhatsApp', desc: 'Escribe "Pozuelo" y tu necesidad concreta.' },
-                { num: '2', title: 'An·lisis', desc: 'Revisamos tu situaciÛn y comparamos las mejores opciones del mercado.' },
+                { num: '2', title: 'An√°lisis', desc: 'Revisamos tu situaci√≥n y comparamos las mejores opciones del mercado.' },
                 { num: '3', title: 'Sin sorpresas', desc: 'Contrato claro, sin permanencia. Si algo falla, lo resolvemos.' },
               ].map((step, i) => (
                 <div key={i} className='text-center'>
@@ -284,17 +284,17 @@ export default function PozueloPage() {
                   allowFullScreen
                   loading='lazy'
                   referrerPolicy='no-referrer-when-downgrade'
-                  title='UbicaciÛn Pozuelo de AlarcÛn'
+                  title='Ubicaci√≥n Pozuelo de Alarc√≥n'
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* RESE—AS GOOGLE */}
-        <GoogleReviewsWidget title='Opiniones de clientes en Pozuelo de AlarcÛn' />
+        {/* RESE√ëAS GOOGLE */}
+        <GoogleReviewsWidget title='Opiniones de clientes en Pozuelo de Alarc√≥n' />
 
-        {/* GARANTÕAS PREMIUM */}
+        {/* GARANT√çAS PREMIUM */}
         <GarantiasSection brandColor='#10b981' />
       </main>
       <Footer />
