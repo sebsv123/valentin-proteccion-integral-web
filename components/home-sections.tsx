@@ -346,18 +346,22 @@ export function MascotHelperSection() {
       <div className="container-shell">
         <div className="fade-up">
           <div className="soft-card glass overflow-hidden border-white/60 shadow-2xl bg-white-pure">
-            <div className="grid gap-0 xl:grid-cols-[0.85fr_1.15fr]">
-              <div className="relative min-h-[360px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10 flex items-center justify-center p-12">
-                <div className="relative w-full h-full max-w-[280px]">
-                  <img
-                    src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg"
-                    alt="Asesor de seguros acompañando a una familia en Madrid durante una consulta personalizada"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-center rounded-3xl drop-shadow-2xl"
-                  />
+            <div className="grid gap-0 lg:grid-cols-2 items-stretch">
+              <div className="relative min-h-[360px] lg:min-h-[520px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10">
+                <img
+                  src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg"
+                  alt="Asesor de seguros acompañando a una familia en Madrid durante una consulta personalizada"
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                />
+                {/* Overlay decorativo + badge */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#003366]/30 via-transparent to-transparent" />
+                <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
+                  <ShieldCheck className="h-4 w-4 text-[var(--green)]" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[var(--blue-deep)]">+10 años orientando</span>
                 </div>
               </div>
               <div className="p-8 md:p-12 xl:p-16">
