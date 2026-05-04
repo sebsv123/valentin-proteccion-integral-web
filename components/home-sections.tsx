@@ -74,6 +74,7 @@ export function TrustBadgesSection() {
                   src="/images/home/handshake-enhanced.png"
                   alt="Apretón de manos profesional que simboliza el compromiso, la transparencia y el acompañamiento experto de Valentín Protección Integral"
                   fill
+                  sizes="(max-width: 1280px) 100vw, 50vw"
                   className="object-cover object-center"
                   loading="lazy"
                 />
@@ -119,6 +120,7 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
                     src={product.pexelsImage}
                     alt={product.cardAlt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -218,6 +220,7 @@ export function ComparisonCardsSection() {
                   src="/images/agent/rosa-exterior-enhanced.png"
                   alt="Rosa Valentín, asesora experta en seguros, en una actitud cercana y profesional lista para ayudarte en Madrid"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top"
                   loading="lazy"
                 />
@@ -251,6 +254,7 @@ export function AgentTrustBlock() {
                 src="/images/agent/rosa-oficina-enhanced.png"
                 alt="Rosa Valentín asesorando de forma personalizada en su despacho, garantizando claridad y confianza en cada póliza"
                 fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover object-top"
                 loading="lazy"
               />
@@ -313,6 +317,7 @@ export function FinalCTASection() {
                 src="/images/agent/sebastian-enhanced.png"
                 alt="Sebastián, asesor del equipo de Valentín especializado en vida y salud, aportando cercanía y rigor técnico"
                 fill
+                sizes="100vw"
                 className="object-cover opacity-25 brightness-50"
                 loading="lazy"
               />
@@ -348,14 +353,13 @@ export function MascotHelperSection() {
           <div className="soft-card glass overflow-hidden border-white/60 shadow-2xl bg-white-pure">
             <div className="grid gap-0 lg:grid-cols-2 items-stretch">
               <div className="relative min-h-[360px] lg:min-h-[520px] bg-gradient-to-br from-[#81C784]/20 to-[#003366]/10">
-                <img
-                  src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg"
+                <Image
+                  src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                   alt="Asesor de seguros acompañando a una familia en Madrid durante una consulta personalizada"
-                  width={1200}
-                  height={900}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover object-center"
+                  className="object-cover object-center"
                 />
                 {/* Overlay decorativo + badge */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#003366]/30 via-transparent to-transparent" />
@@ -420,6 +424,7 @@ export function BlogPreviewSection() {
                       src={post.image}
                       alt={post.imageAlt}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-500 hover:scale-105"
                       loading="lazy"
                     />

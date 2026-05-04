@@ -96,10 +96,11 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
                 {review.profile_photo_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={review.profile_photo_url}
+                    src={review.profile_photo_url.replace('=s128', '=s40')}
                     alt={review.author_name}
                     className="w-9 h-9 rounded-full object-cover"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">
@@ -135,10 +136,11 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
               {reviews[current].profile_photo_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src={reviews[current].profile_photo_url}
+                  src={reviews[current].profile_photo_url.replace('=s128', '=s40')}
                   alt={reviews[current].author_name}
                   className="w-9 h-9 rounded-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">
