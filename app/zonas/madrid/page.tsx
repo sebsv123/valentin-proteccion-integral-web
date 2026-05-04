@@ -12,12 +12,12 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Briefcase, Car, Clock, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Asesor de Seguros en Madrid | Sin Copagos · Valentín Protección Integral",
+  title: "Seguros en Madrid Capital — Mediador Independiente | VPI",
   description: "Mediadores de seguros independientes en Madrid. Salud, vida, dental, mascotas y más. +10 años y +1.200 familias. Consulta gratis sin compromiso.",
   keywords: "seguros madrid, seguro medico madrid, seguros hogar madrid, seguro autonomos madrid centro",
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/madrid" },
   openGraph: {
-    title: "Asesor de Seguros en Madrid | Sin Copagos · Valentín Protección Integral",
+    title: "Seguros en Madrid Capital — Mediador Independiente | VPI",
     description: "Mediadores de seguros independientes en Madrid. Salud, vida, dental, mascotas y más. +10 años y +1.200 familias. Consulta gratis sin compromiso.",
     url: "https://valentinproteccionintegral.com/zonas/madrid",
     siteName: "Valentín Protección Integral",

@@ -11,12 +11,12 @@ const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp"
 const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
-  title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+  title: "Seguro Médico para NIE, TIE y Visado | VPI",
   description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
   keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+    title: "Seguro Médico para NIE, TIE y Visado | VPI",
     description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",

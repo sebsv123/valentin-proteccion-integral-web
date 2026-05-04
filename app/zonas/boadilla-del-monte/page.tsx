@@ -12,12 +12,12 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Dog, Car, Heart, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros en Boadilla del Monte | Valentín",
+  title: "Seguros en Boadilla del Monte — Asesor Local | VPI",
   description: "Asesor de seguros en Boadilla del Monte con oficina local. Salud, vida, dental y decesos con atención personalizada. Consulta gratis.",
   keywords: ["seguros Boadilla del Monte","seguros Boadilla","mediador Boadilla del Monte"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/boadilla-del-monte" },
   openGraph: {
-    title: "Seguros en Boadilla del Monte | Valentín",
+    title: "Seguros en Boadilla del Monte — Asesor Local | VPI",
     description: "Asesor de seguros en Boadilla del Monte con oficina local. Salud, vida, dental y decesos con atención personalizada. Consulta gratis.",
     url: "https://valentinproteccionintegral.com/zonas/boadilla-del-monte",
     siteName: "Valentín Protección Integral",

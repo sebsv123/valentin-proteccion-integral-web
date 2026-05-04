@@ -12,7 +12,7 @@ import GarantiasSection from "@/components/GarantiasSection";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Home, Pill, Phone, UserCheck, Award, TrendingUp, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Salud Senior Madrid | Para Mayores 65+ | Valentín Protección Integral",
+  title: "Seguro Salud Senior Madrid · Mayores 65+ | VPI",
   description: "Seguro médico para mayores 65+ Madrid. Sin carencias, sin copagos, atención geriátrica especializada. Llámanos o WhatsApp. Rosa y Sebastián.",
   keywords: ["seguro salud senior Madrid","seguro medico mayores 65 Madrid","salud privada jubilados Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-senior" },

@@ -24,7 +24,7 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Cómo Te Ayudamos | Valentín Protección Integral — Seguros en Madrid",
+  title: "Cómo Te Ayudamos · Seguros en Madrid | VPI",
   description: "Te asesoramos gratis, buscamos la mejor opción y te acompañamos después de contratar. Así trabajamos en Valentín Protección Integral · Boadilla del Monte, Madrid.",
   keywords: "cómo funciona seguros madrid, proceso seguros valentín, asesoría seguros madrid",
   openGraph: {

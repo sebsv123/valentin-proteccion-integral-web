@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { Phone, Shield, TrendingUp, Clock, ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Por qué necesitas más de 9.000€ en protección familiar Madrid 2026: El must-have | Valentín Protección Integral",
+  title: "9.000€ en protección familiar Madrid 2026: must-have",
   description: "Capital mínimo 9.000€ es insuficiente. Funeral Madrid 4-6k€ + deudas + hipoteca = déficit 15k€. Descubre por qué 18.000€ directos es el must-have 2026 para familias Madrid.",
   keywords: ["mejor seguro vida Madrid 2026","capital seguro vida mínimo España","indemnización directa familia","protección económica familia Madrid","gap seguro vida hipoteca"],
   alternates: { canonical: "https://valentinproteccionintegral.com/blog/por-que-necesitas-mas-de-9-000e-en-proteccion-familiar-madrid-2026-must-have" },

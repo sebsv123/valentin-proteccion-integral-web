@@ -12,12 +12,12 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Users, Shield, Heart, Phone, Crown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros en Pozuelo de Alarcón | Valentín",
+  title: "Seguros en Pozuelo de Alarcón — Salud Premium | VPI",
   description: "Asesor de seguros en Pozuelo de Alarcón. Asesoría independiente para familias y autónomos. Sin letra pequeña. Consulta gratuita en 30 minutos.",
   keywords: ["seguros Pozuelo de Alarcón","seguros Pozuelo Alarcón","seguros premium Pozuelo","mediador Pozuelo"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon" },
   openGraph: {
-    title: "Seguros en Pozuelo de Alarcón | Valentín",
+    title: "Seguros en Pozuelo de Alarcón — Salud Premium | VPI",
     description: "Asesor de seguros en Pozuelo de Alarcón. Asesoría independiente para familias y autónomos. Sin letra pequeña. Consulta gratuita en 30 minutos.",
     url: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon",
     siteName: "Valentín Protección Integral",

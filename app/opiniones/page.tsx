@@ -11,13 +11,13 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export const metadata: Metadata = {
-  title: 'Opiniones y Reseñas Verificadas de Clientes · Valentín Protección Integral Madrid',
+  title: 'Opiniones y Reseñas Verificadas · VPI Madrid',
   description:
     '+1.200 familias en Madrid confían en Rosa y Sebastián Valentín. Consulta sus reseñas reales en Google y descubre por qué somos la asesoría de seguros más cercana de Boadilla del Monte.',
   keywords:
     'opiniones google valentín protección integral, reseñas verificadas google, reseñas seguros madrid, opiniones boadilla del monte',
   openGraph: {
-    title: 'Opiniones y Reseñas Verificadas de Clientes · Valentín Protección Integral Madrid',
+    title: 'Opiniones y Reseñas Verificadas · VPI Madrid',
     description:
       '+1.200 familias en Madrid confían en Rosa y Sebastián Valentín. Consulta sus reseñas reales en Google.',
     url: 'https://valentinproteccionintegral.com/opiniones',
