@@ -353,7 +353,10 @@ export default function SobreNosotrosPage() {
         {/* Final CTA */}
         <section id="cta-sobre-nosotros" aria-labelledby="cta-sobre-nosotros-title" className="section-pad pt-0">
           <div className="container-shell">
-            <div className="soft-card bg-[linear-gradient(135deg,rgba(18,59,104,0.96),rgba(15,94,156,0.9))] p-8 text-white md:p-10 text-center">
+            <div
+              className="rounded-[32px] border border-white/10 p-8 md:p-10 text-center text-white shadow-[0_18px_60px_rgba(18,59,104,0.18)]"
+              style={{ background: 'linear-gradient(135deg, rgba(18,59,104,0.96), rgba(15,94,156,0.9))' }}
+            >
               <p className="kicker !text-white/70">¿Quieres que hablemos?</p>
               <h2 id="cta-sobre-nosotros-title" className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Una consulta sin compromiso puede ser el mejor primer paso</h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg leading-9 text-white/80">
