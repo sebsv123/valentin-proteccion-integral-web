@@ -15,15 +15,23 @@ import IridescenceBackground from './ui/iridescence-background';
 
 function Brand() {
   return (
-    <Link href="/" className="flex items-center gap-3 shrink-0">
-      <div className="relative h-[44px] w-[160px] max-w-[55vw] sm:w-[180px] overflow-hidden rounded-[20px] border border-white/20 bg-white px-2 py-1 shadow-sm">
+    <Link href="/" className="flex items-center gap-3 shrink-0" aria-label={site.name}>
+      <div className="relative h-[52px] w-[52px] sm:h-[56px] sm:w-[56px] shrink-0">
         <Image
           src="/brand/logo-vpi.webp"
           alt={site.name}
           fill
-          className="object-contain p-1"
+          className="object-contain"
           priority
         />
+      </div>
+      <div className="hidden sm:flex flex-col leading-none">
+        <span className="font-heading text-[20px] xl:text-[22px] font-extrabold tracking-tight text-white">
+          Valentín
+        </span>
+        <span className="text-[12px] xl:text-[13px] font-semibold tracking-wide text-white/80 mt-0.5">
+          Protección Integral
+        </span>
       </div>
     </Link>
   );
@@ -87,7 +95,7 @@ export function Header() {
                   aria-expanded={mega}
                   aria-controls="mega-menu"
                 >
-                  <div className="flex items-center gap-1.5 font-semibold text-white/90 hover:text-white transition-colors text-[15px]">
+                  <div className="flex items-center gap-1.5 font-semibold text-white/90 hover:text-white transition-colors text-base">
                     Seguros <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mega ? 'rotate-180' : ''}`} />
                   </div>
                   {/* CSS underline hover */}
