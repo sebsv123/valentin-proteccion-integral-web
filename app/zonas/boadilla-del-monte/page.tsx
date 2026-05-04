@@ -137,6 +137,27 @@ export default function BoadillaPage() {
           </div>
         </section>
 
+        {/* IMAGEN LOCAL — Boadilla del Monte */}
+        <section className="py-16 bg-slate-100">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/zonas/boadilla-del-monte.webp"
+                alt="Boadilla del Monte - Asesores de seguros locales"
+                width={1200}
+                height={675}
+                className="w-full h-auto object-cover"
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                <p className="text-white text-sm">
+                  📷 Boadilla del Monte · Tu asesor de seguros local
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 3. SEGUROS POPULARES EN BOADILLA */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
