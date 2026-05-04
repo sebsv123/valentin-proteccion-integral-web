@@ -7,6 +7,7 @@ import { zonas } from '@/lib/zonas';
 import { site } from '@/lib/products';
 import Image from 'next/image';
 import { MapPin, ArrowRight, Shield, Phone, BadgeCheck, Heart, HeartPulse, Smile, PawPrint, Activity, Plane, Flower2, Globe2, Building2, Stethoscope, Users } from 'lucide-react';
+import { FAQChat } from '@/components/faq-chat';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
@@ -208,55 +209,6 @@ export default function ZonasPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="pb-12 bg-white">
-          <div className="container-shell max-w-3xl">
-            <h2 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-6">
-              Preguntas frecuentes sobre cobertura por zona
-            </h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: '¿Atendéis presencialmente en todas las zonas?',
-                  a: 'Nuestra sede está en Boadilla del Monte y allí atendemos presencialmente con cita previa. En Las Rozas, Majadahonda, Pozuelo y Madrid capital atendemos por videollamada, teléfono o WhatsApp. La calidad del asesoramiento es exactamente la misma — y para muchos clientes resulta más cómodo no tener que desplazarse.'
-                },
-                {
-                  q: '¿Hay diferencia de precio según la zona donde viva?',
-                  a: 'En la mayoría de seguros (salud, vida, mascotas, dental, accidentes y viaje) el precio no depende del código postal sino de tu edad, situación familiar y la modalidad elegida. En seguros de hogar y de auto sí influye la zona, ya que las aseguradoras valoran riesgo de robo, siniestralidad y tipo de inmueble. Para los productos vinculados a salud y vida, vivir en Boadilla, Las Rozas, Majadahonda o Madrid centro no cambia tu prima.'
-                },
-                {
-                  q: '¿Trabajáis fuera de Madrid?',
-                  a: 'Atendemos a clientes de toda España por videollamada o WhatsApp, especialmente en seguros de salud para extranjeros (NIE, TIE, visado), vida y mascotas. Nuestro foco geográfico es el noroeste de Madrid por la atención presencial, pero el asesoramiento independiente no tiene fronteras.'
-                }
-              ].map(faq => (
-                <details key={faq.q} className="rounded-2xl border border-gray-200 bg-white p-5 group">
-                  <summary className="cursor-pointer font-semibold text-[var(--blue-deep)] flex items-center justify-between">
-                    {faq.q}
-                    <span className="text-[var(--blue)] group-open:rotate-180 transition-transform">▾</span>
-                  </summary>
-                  <p className="mt-3 text-[var(--muted)] leading-relaxed">{faq.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Schema FAQ */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                { '@type': 'Question', name: '¿Atendéis presencialmente en todas las zonas?', acceptedAnswer: { '@type': 'Answer', text: 'Nuestra sede está en Boadilla del Monte. En Las Rozas, Majadahonda, Pozuelo y Madrid capital atendemos por videollamada, teléfono o WhatsApp.' } },
-                { '@type': 'Question', name: '¿Hay diferencia de precio según la zona?', acceptedAnswer: { '@type': 'Answer', text: 'En salud, vida, mascotas, dental, accidentes y viaje el precio no depende del código postal. En hogar y auto sí influye la zona.' } },
-                { '@type': 'Question', name: '¿Trabajáis fuera de Madrid?', acceptedAnswer: { '@type': 'Answer', text: 'Atendemos a clientes de toda España por videollamada o WhatsApp, especialmente en salud para extranjeros, vida y mascotas.' } }
-              ]
-            })
-          }}
-        />
-
         {/* Grid + Sidebar Layout */}
         <section className="pb-20 bg-white">
           <div className="container-shell">
@@ -376,6 +328,42 @@ export default function ZonasPage() {
             </div>
           </div>
         </section>
+        {/* FAQ Chat Section */}
+        <FAQChat
+          items={[
+            {
+              q: '¿Atendéis presencialmente en todas las zonas?',
+              a: 'Nuestra sede está en Boadilla del Monte y allí atendemos presencialmente con cita previa. En Las Rozas, Majadahonda, Pozuelo y Madrid capital atendemos por videollamada, teléfono o WhatsApp. La calidad del asesoramiento es exactamente la misma — y para muchos clientes resulta más cómodo no tener que desplazarse.'
+            },
+            {
+              q: '¿Hay diferencia de precio según la zona donde viva?',
+              a: 'En la mayoría de seguros (salud, vida, mascotas, dental, accidentes y viaje) el precio no depende del código postal sino de tu edad, situación familiar y la modalidad elegida. En seguros de hogar y de auto sí influye la zona, ya que las aseguradoras valoran riesgo de robo, siniestralidad y tipo de inmueble. Para los productos vinculados a salud y vida, vivir en Boadilla, Las Rozas, Majadahonda o Madrid centro no cambia tu prima.'
+            },
+            {
+              q: '¿Trabajáis fuera de Madrid?',
+              a: 'Atendemos a clientes de toda España por videollamada o WhatsApp, especialmente en seguros de salud para extranjeros (NIE, TIE, visado), vida y mascotas. Nuestro foco geográfico es el noroeste de Madrid por la atención presencial, pero el asesoramiento independiente no tiene fronteras.'
+            }
+          ]}
+          title="Preguntas frecuentes sobre cobertura por zona"
+          subtitle="Resolvemos tus dudas"
+          brandColor="blue"
+        />
+
+        {/* Schema FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                { '@type': 'Question', name: '¿Atendéis presencialmente en todas las zonas?', acceptedAnswer: { '@type': 'Answer', text: 'Nuestra sede está en Boadilla del Monte. En Las Rozas, Majadahonda, Pozuelo y Madrid capital atendemos por videollamada, teléfono o WhatsApp.' } },
+                { '@type': 'Question', name: '¿Hay diferencia de precio según la zona?', acceptedAnswer: { '@type': 'Answer', text: 'En salud, vida, mascotas, dental, accidentes y viaje el precio no depende del código postal. En hogar y auto sí influye la zona.' } },
+                { '@type': 'Question', name: '¿Trabajáis fuera de Madrid?', acceptedAnswer: { '@type': 'Answer', text: 'Atendemos a clientes de toda España por videollamada o WhatsApp, especialmente en salud para extranjeros, vida y mascotas.' } }
+              ]
+            })
+          }}
+        />
       </main>
       <Footer />
       <StickyWhatsApp />
