@@ -232,7 +232,7 @@ export function Header() {
         accentColor="#0F5E9C"
         items={[
           { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
-          ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
+          ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: item.slug === 'vida' ? '/seguros/vida/hipoteca' : `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
         ]}
         socialItems={[
