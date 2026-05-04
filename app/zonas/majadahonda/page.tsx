@@ -119,8 +119,8 @@ export default function MajadahondaPage() {
               <div className="relative">
                 <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&h=600&fit=crop"
-                    alt="Mapa Majadahonda Madrid"
+                    src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop"
+                    alt="Hospital y entorno sanitario de Majadahonda, Madrid"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"

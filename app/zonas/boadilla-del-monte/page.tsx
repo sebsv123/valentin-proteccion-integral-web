@@ -119,8 +119,8 @@ export default function BoadillaPage() {
               <div className="relative">
                 <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&h=600&fit=crop"
-                    alt="Mapa Boadilla del Monte Madrid"
+                    src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+                    alt="Urbanización residencial en Boadilla del Monte, Madrid"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"

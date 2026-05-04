@@ -123,8 +123,26 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                   ))}
                 </div>
               </div>
-              <div id="formulario">
-                <LeadForm defaultProduct={z.segurosDestacados[0] as any || 'salud'} compact />
+              <div className="space-y-6">
+                {z.heroImage && (
+                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-white/40">
+                    <Image
+                      src={z.heroImage}
+                      alt={z.heroImageAlt || `${z.nombre} - Asesores de seguros independientes`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 540px"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/30 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[var(--blue-deep)]">📍 {z.nombreCorto}</span>
+                    </div>
+                  </div>
+                )}
+                <div id="formulario">
+                  <LeadForm defaultProduct={z.segurosDestacados[0] as any || 'salud'} compact />
+                </div>
               </div>
             </div>
           </div>

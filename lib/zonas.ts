@@ -26,6 +26,8 @@ export type Zona = {
   zonasCercanas: string[];
   whatsappMessage: string;
   keywords?: string[]; // Para la Ronda 2
+  heroImage?: string;
+  heroImageAlt?: string;
 };
 
 export const zonas: Zona[] = [
@@ -77,6 +79,8 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'mascotas', 'dental'],
     zonasCercanas: ['majadahonda', 'pozuelo-de-alarcon', 'las-rozas', 'madrid'],
     whatsappMessage: 'Hola, soy de Boadilla del Monte y quiero una consulta gratuita sobre seguros. ¿Podéis ayudarme?',
+    heroImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=900&fit=crop',
+    heroImageAlt: 'Urbanización residencial en Boadilla del Monte, Madrid',
     keywords: [
       'seguros boadilla del monte',
       'asesores seguros boadilla del monte',
@@ -138,6 +142,8 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'mascotas'],
     zonasCercanas: ['boadilla-del-monte', 'majadahonda', 'madrid'],
     whatsappMessage: 'Hola, soy de Las Rozas y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
+    heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=900&fit=crop',
+    heroImageAlt: 'Polo empresarial y oficinas modernas en Las Rozas, Madrid',
     keywords: [
       'seguros las rozas de madrid',
       'asesores seguros las rozas',
@@ -199,6 +205,8 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'dental'],
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'pozuelo-de-alarcon', 'madrid'],
     whatsappMessage: 'Hola, soy de Majadahonda y quiero una consulta gratuita sobre seguros. ¿Podéis ayudarme?',
+    heroImage: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&h=900&fit=crop',
+    heroImageAlt: 'Hospital y entorno sanitario de Majadahonda, Madrid',
     keywords: [
       'seguros majadahonda',
       'asesores seguros majadahonda',
@@ -260,6 +268,8 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'decesos'],
     zonasCercanas: ['madrid', 'majadahonda', 'boadilla-del-monte'],
     whatsappMessage: 'Hola, soy de Pozuelo de Alarcón y quiero asesoramiento sobre seguros para mi familia. ¿Podéis ayudarme?',
+    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop',
+    heroImageAlt: 'Vivienda residencial premium en Pozuelo de Alarcón, Madrid',
     keywords: [
       'seguros pozuelo de alarcon',
       'asesores seguros pozuelo alarcon',
@@ -321,6 +331,8 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'mascotas', 'viaje'],
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'majadahonda', 'pozuelo-de-alarcon'],
     whatsappMessage: 'Hola, soy de Madrid y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
+    heroImage: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&h=900&fit=crop',
+    heroImageAlt: 'Skyline de Madrid con la Gran Vía al atardecer',
     keywords: [
       'seguros madrid',
       'asesores seguros independientes madrid',
