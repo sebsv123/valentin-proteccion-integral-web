@@ -392,3 +392,7 @@ export const zonas: Zona[] = [
 ];
 
 export const getZona = (slug: string) => zonas.find((z) => z.slug === slug);
+
+export function formatZona(slug: string): string {
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+}

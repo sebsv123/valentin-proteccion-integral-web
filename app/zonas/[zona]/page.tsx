@@ -7,7 +7,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { LeadForm } from '@/components/lead-form';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
-import { getZona, zonas } from '@/lib/zonas';
+import { getZona, zonas, formatZona } from '@/lib/zonas';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { MapPin, CheckCircle2, Building2, Stethoscope, Home, Dog, Heart, Phone, Sparkles } from 'lucide-react';
 import { WhatsAppButton } from '@/components/whatsapp-button';
@@ -15,10 +15,6 @@ import GuaranteeBadge from '@/components/GuaranteeBadge';
 import GarantiasSection from '@/components/GarantiasSection';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
-
-function formatZona(slug: string) {
-  return slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
-}
 
 export function generateStaticParams() {
   return zonas.map((z) => ({ zona: z.slug }));
