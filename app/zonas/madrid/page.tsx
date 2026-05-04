@@ -140,10 +140,10 @@ export default function MadridPage() {
               <Image
                 src="/images/zonas/madrid.webp"
                 alt="Madrid - Asesores de seguros locales"
-                width={1200}
-                height={675}
+                width={800}
+                height={450}
+                sizes="(max-width: 768px) 100vw, 800px"
                 className="w-full h-auto object-cover"
-                priority
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                 <p className="text-white text-sm">📷 Madrid, España · Tu asesor de seguros local</p>
