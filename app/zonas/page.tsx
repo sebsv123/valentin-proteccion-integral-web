@@ -168,27 +168,32 @@ export default function ZonasPage() {
                 </div>
                 <ul className="grid grid-cols-2 gap-3">
                   {[
-                    { Icon: HeartPulse, t: 'Salud privada', d: 'Con y sin copagos · familiar y senior', c: '#E11D48' },
-                    { Icon: Heart, t: 'Vida', d: 'Riesgo y vida hipoteca · capital decreciente', c: '#0EA5E9' },
-                    { Icon: Smile, t: 'Dental', d: 'Particulares, familias y empresas', c: '#06B6D4' },
-                    { Icon: PawPrint, t: 'Mascotas', d: 'Con RC obligatoria desde 2023', c: '#10B981' },
-                    { Icon: Activity, t: 'Accidentes', d: 'Autónomos y profesionales liberales · 24/7', c: '#F59E0B' },
-                    { Icon: Plane, t: 'Viaje', d: 'Multiviaje anual · estudios en el extranjero', c: '#6366F1' },
-                    { Icon: Flower2, t: 'Decesos', d: 'Familiares · traslados nacionales e internacionales', c: '#8B5CF6' },
-                    { Icon: Globe2, t: 'Extranjeros', d: 'NIE/TIE · certificado en 24 h', c: '#EC4899' },
-                  ].map(({ Icon, t, d, c }) => (
-                    <li
-                      key={t}
-                      className="group rounded-xl border border-gray-200 bg-white p-4 hover:border-[var(--blue)] hover:shadow-md transition-all"
-                    >
-                      <span
-                        className="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-3"
-                        style={{ backgroundColor: `${c}15`, color: c }}
+                    { Icon: HeartPulse, t: 'Salud privada', d: 'Con y sin copagos · familiar y senior', c: '#E11D48', href: '/seguros/salud' },
+                    { Icon: Heart, t: 'Vida', d: 'Riesgo y vida hipoteca · capital decreciente', c: '#0EA5E9', href: '/seguros/vida' },
+                    { Icon: Smile, t: 'Dental', d: 'Particulares, familias y empresas', c: '#06B6D4', href: '/seguros/dental' },
+                    { Icon: PawPrint, t: 'Mascotas', d: 'Con RC obligatoria desde 2023', c: '#10B981', href: '/seguros/mascotas' },
+                    { Icon: Activity, t: 'Accidentes', d: 'Autónomos y profesionales liberales · 24/7', c: '#F59E0B', href: '/seguros/accidentes' },
+                    { Icon: Plane, t: 'Viaje', d: 'Multiviaje anual · estudios en el extranjero', c: '#6366F1', href: '/seguros/viaje' },
+                    { Icon: Flower2, t: 'Decesos', d: 'Familiares · traslados nacionales e internacionales', c: '#8B5CF6', href: '/seguros/decesos' },
+                    { Icon: Globe2, t: 'Extranjeros', d: 'NIE/TIE · certificado en 24 h', c: '#EC4899', href: '/seguros/salud-extranjeros' },
+                  ].map(({ Icon, t, d, c, href }) => (
+                    <li key={t}>
+                      <Link
+                        href={href}
+                        className="group block rounded-xl border border-gray-200 bg-white p-4 hover:border-[var(--blue)] hover:shadow-md transition-all"
                       >
-                        <Icon className="w-5 h-5" />
-                      </span>
-                      <p className="font-heading font-bold text-[var(--blue-deep)] text-sm leading-tight mb-1">{t}</p>
-                      <p className="text-xs text-[var(--muted)] leading-snug">{d}</p>
+                        <span
+                          className="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-3"
+                          style={{ backgroundColor: `${c}15`, color: c }}
+                        >
+                          <Icon className="w-5 h-5" />
+                        </span>
+                        <p className="font-heading font-bold text-[var(--blue-deep)] text-sm leading-tight mb-1 flex items-center gap-1">
+                          {t}
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                        </p>
+                        <p className="text-xs text-[var(--muted)] leading-snug">{d}</p>
+                      </Link>
                     </li>
                   ))}
                 </ul>
