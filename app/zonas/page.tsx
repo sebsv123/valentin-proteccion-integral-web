@@ -6,7 +6,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { zonas } from '@/lib/zonas';
 import { site } from '@/lib/products';
 import Image from 'next/image';
-import { MapPin, ArrowRight, Shield, Phone, BadgeCheck } from 'lucide-react';
+import { MapPin, ArrowRight, Shield, Phone, BadgeCheck, Heart, HeartPulse, Smile, PawPrint, Activity, Plane, Flower2, Globe2, Building2, Stethoscope, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
@@ -98,32 +98,107 @@ export default function ZonasPage() {
           </div>
         </section>
 
-        {/* Intro contenido SEO */}
-        <section className="pb-12 bg-white">
-          <div className="container-shell">
-            <div className="prose prose-lg max-w-3xl text-[var(--muted)]">
-              <h2 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-4">
-                Por qué importa un asesor de seguros con conocimiento local
-              </h2>
-              <p className="leading-relaxed mb-4">
-                No es lo mismo asesorar a una familia con hipoteca en Boadilla del Monte que a un autónomo de Las Rozas que factura desde el polo digital, ni a un senior de Pozuelo que busca reembolso premium. Cada zona del noroeste de Madrid tiene un perfil demográfico, un hospital de referencia y unas necesidades de protección distintas. Y si ese contexto no se entiende, la cobertura se queda corta o se sobredimensiona — pagas por lo que no necesitas o falta lo que de verdad importa.
-              </p>
-              <p className="leading-relaxed mb-4">
-                Llevamos más de 10 años trabajando exclusivamente en esta zona. Conocemos los hospitales (Puerta de Hierro en Majadahonda, HM Montepríncipe a 5 minutos de Boadilla, Gregorio Marañón y 12 de Octubre en Madrid centro), los perfiles típicos de cada municipio y las particularidades del seguro de hogar en urbanizaciones residenciales. Esa cercanía no es un eslogan — es lo que permite que la recomendación encaje con tu situación real.
-              </p>
-              <h2 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mt-10 mb-4">
-                Lo que cubrimos en cada zona
-              </h2>
-              <ul className="grid gap-2 sm:grid-cols-2 list-disc pl-5">
-                <li>Salud privada con y sin copagos, modalidades familiares y senior</li>
-                <li>Vida riesgo y vida hipoteca con capital decreciente</li>
-                <li>Dental para particulares, familias y empresas</li>
-                <li>Mascotas con responsabilidad civil obligatoria desde 2023</li>
-                <li>Accidentes 24/7 para autónomos y profesionales liberales</li>
-                <li>Viaje multiviaje anual, escapadas y estudios en el extranjero</li>
-                <li>Decesos familiares con traslados nacionales e internacionales</li>
-                <li>Salud para extranjeros con NIE/TIE y certificado en 24 h</li>
-              </ul>
+        {/* Por qué importa un asesor local — editorial layout */}
+        <section className="py-16 bg-gradient-to-b from-white via-[#F8FAFC] to-white relative overflow-hidden">
+          {/* Decorative blueprint dots */}
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: 'radial-gradient(circle, var(--blue-deep) 1px, transparent 1px)',
+              backgroundSize: '28px 28px',
+            }}
+          />
+          <div className="container-shell relative">
+            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
+              {/* Left column: narrative */}
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-[var(--blue-deep)]/5 border border-[var(--blue-deep)]/10 px-3 py-1 text-xs font-bold tracking-widest uppercase text-[var(--blue-deep)] mb-4">
+                  <BadgeCheck className="w-3.5 h-3.5" /> Conocimiento de zona
+                </span>
+                <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-[var(--blue-deep)] leading-tight mb-6">
+                  Por qué importa un asesor con <span className="text-[var(--blue)]">conocimiento local</span>
+                </h2>
+                <p className="text-lg text-[var(--muted)] leading-relaxed mb-5">
+                  <span className="float-left text-5xl font-extrabold text-[var(--blue)] leading-none mr-2 mt-1 font-heading">N</span>
+                  o es lo mismo asesorar a una familia con hipoteca en <strong className="text-[var(--blue-deep)]">Boadilla del Monte</strong> que a un autónomo de <strong className="text-[var(--blue-deep)]">Las Rozas</strong> que factura desde el polo digital, ni a un senior de <strong className="text-[var(--blue-deep)]">Pozuelo</strong> que busca reembolso premium. Cada zona del noroeste de Madrid tiene un perfil demográfico, un hospital de referencia y unas necesidades de protección distintas. Si ese contexto no se entiende, la cobertura se queda corta o se sobredimensiona — pagas por lo que no necesitas o falta lo que de verdad importa.
+                </p>
+                <p className="text-lg text-[var(--muted)] leading-relaxed mb-8">
+                  Llevamos <strong className="text-[var(--blue-deep)]">más de 10 años</strong> trabajando exclusivamente en esta zona. Conocemos los hospitales, los perfiles típicos de cada municipio y las particularidades del seguro de hogar en urbanizaciones residenciales. Esa cercanía no es un eslogan — es lo que permite que la recomendación encaje con tu situación real.
+                </p>
+
+                {/* Hospitals chips card */}
+                <div className="rounded-2xl border border-[var(--blue-deep)]/10 bg-white p-5 sm:p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-[var(--blue)]/10 text-[var(--blue)]">
+                      <Stethoscope className="w-5 h-5" />
+                    </span>
+                    <p className="font-heading font-bold text-[var(--blue-deep)]">Hospitales de referencia que conocemos</p>
+                  </div>
+                  <ul className="grid sm:grid-cols-2 gap-3">
+                    {[
+                      { name: 'Puerta de Hierro', loc: 'Majadahonda' },
+                      { name: 'HM Montepríncipe', loc: 'a 5 min de Boadilla' },
+                      { name: 'Gregorio Marañón', loc: 'Madrid centro' },
+                      { name: '12 de Octubre', loc: 'Madrid sur' },
+                    ].map(h => (
+                      <li key={h.name} className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex w-7 h-7 shrink-0 items-center justify-center rounded-md bg-[var(--blue-deep)]/5 text-[var(--blue-deep)]">
+                          <Building2 className="w-4 h-4" />
+                        </span>
+                        <div className="leading-tight">
+                          <p className="font-semibold text-[var(--blue-deep)] text-sm">{h.name}</p>
+                          <p className="text-xs text-[var(--muted)]">{h.loc}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right column: "Lo que cubrimos en cada zona" cards */}
+              <div className="lg:sticky lg:top-24">
+                <div className="flex items-end justify-between mb-5">
+                  <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-[var(--blue-deep)] leading-tight">
+                    Lo que cubrimos<br/>en cada zona
+                  </h3>
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[var(--blue)]">
+                    <Shield className="w-3.5 h-3.5" /> 8 ramos
+                  </span>
+                </div>
+                <ul className="grid grid-cols-2 gap-3">
+                  {[
+                    { Icon: HeartPulse, t: 'Salud privada', d: 'Con y sin copagos · familiar y senior', c: '#E11D48' },
+                    { Icon: Heart, t: 'Vida', d: 'Riesgo y vida hipoteca · capital decreciente', c: '#0EA5E9' },
+                    { Icon: Smile, t: 'Dental', d: 'Particulares, familias y empresas', c: '#06B6D4' },
+                    { Icon: PawPrint, t: 'Mascotas', d: 'Con RC obligatoria desde 2023', c: '#10B981' },
+                    { Icon: Activity, t: 'Accidentes', d: 'Autónomos y profesionales liberales · 24/7', c: '#F59E0B' },
+                    { Icon: Plane, t: 'Viaje', d: 'Multiviaje anual · estudios en el extranjero', c: '#6366F1' },
+                    { Icon: Flower2, t: 'Decesos', d: 'Familiares · traslados nacionales e internacionales', c: '#8B5CF6' },
+                    { Icon: Globe2, t: 'Extranjeros', d: 'NIE/TIE · certificado en 24 h', c: '#EC4899' },
+                  ].map(({ Icon, t, d, c }) => (
+                    <li
+                      key={t}
+                      className="group rounded-xl border border-gray-200 bg-white p-4 hover:border-[var(--blue)] hover:shadow-md transition-all"
+                    >
+                      <span
+                        className="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-3"
+                        style={{ backgroundColor: `${c}15`, color: c }}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </span>
+                      <p className="font-heading font-bold text-[var(--blue-deep)] text-sm leading-tight mb-1">{t}</p>
+                      <p className="text-xs text-[var(--muted)] leading-snug">{d}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 rounded-xl bg-[var(--blue-deep)] text-white p-4 flex items-center gap-3">
+                  <Users className="w-5 h-5 shrink-0 text-[var(--gold,#F4C24C)]" />
+                  <p className="text-sm leading-snug">
+                    <strong>+1.200 familias</strong> ya confían en nosotros en el noroeste de Madrid
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

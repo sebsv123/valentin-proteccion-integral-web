@@ -120,7 +120,7 @@ export default function MajadahondaPage() {
                 <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
                   <Image
                     src="/images/zonas/majadahonda.webp"
-                    alt="Plaza Mayor y Ayuntamiento de Majadahonda, Madrid"
+                    alt="Hospital Universitario Puerta de Hierro en Majadahonda, Madrid"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"

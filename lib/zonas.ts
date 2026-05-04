@@ -225,8 +225,8 @@ export const zonas: Zona[] = [
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'pozuelo-de-alarcon', 'madrid'],
     whatsappMessage: 'Hola, soy de Majadahonda y quiero una consulta gratuita sobre seguros. ¿Podéis ayudarme?',
     heroImage: '/images/zonas/majadahonda.webp',
-    heroImageAlt: 'Plaza Mayor y Ayuntamiento de Majadahonda, Madrid',
-    heroImageCredit: 'Plaza Mayor y Ayuntamiento de Majadahonda · Wikimedia Commons (CC BY-SA)',
+    heroImageAlt: 'Hospital Universitario Puerta de Hierro en Majadahonda, Madrid',
+    heroImageCredit: 'Hospital Puerta de Hierro, Majadahonda · Antonio Rubio / Wikimedia Commons (CC BY 2.0)',
     heroAccent: '#F28C28',
     landmarks: [
       { name: 'Hospital Puerta de Hierro', icon: '🏥' },
