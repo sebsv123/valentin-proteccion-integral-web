@@ -2,14 +2,14 @@
 
 import dynamic from 'next/dynamic';
 
-// CRITICAL: Isolate framer-motion components with ssr:false
-// This prevents framer-motion from being included in the initial SSR bundle
-// and eliminates the 25s+ TBT caused by hydration
+// HeroLeadSection now renders with SSR to fix LCP delay (1920ms resource load)
+// HeroImage is SSR-compatible with CSS-based mobile detection
+// StatsSection stays client-only as it's below the fold
 
 export const HeroLeadSection = dynamic(
   () => import('@/components/hero-animated').then(m => m.HeroLeadSection),
   { 
-    ssr: false,
+    ssr: true,
     loading: () => <div className="min-h-[85vh] bg-white" />
   }
 );

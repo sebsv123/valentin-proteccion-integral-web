@@ -222,7 +222,7 @@ export function StatsSection() {
               alt="Rosa y Sebastián, equipo Valentín Protección Integral"
               width={400}
               height={300}
-              priority
+              sizes="(max-width: 640px) 80vw, 200px"
               className="rounded-lg shadow-xl object-cover object-[center_20%]"
               style={{ aspectRatio: '4/3', maxHeight: '200px' }}
             />
