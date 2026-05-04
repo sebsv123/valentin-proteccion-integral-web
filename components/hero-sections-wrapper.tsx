@@ -2,9 +2,10 @@
 // HeroImage se renderiza en el servidor (visible en View Source)
 // El contenido con animaciones es client-only
 
-import dynamic from 'next/dynamic';
 import { HeroImageServer } from '@/components/hero-server';
 import { HeroContentClient, HeroLeadForm } from '@/components/hero-content-client';
+import { StatsSection } from '@/components/stats-section-client';
+export { StatsSection };
 
 // Hero completo — imagen SSR + contenido cliente
 export function HeroLeadSection() {
@@ -33,12 +34,3 @@ export function HeroLeadSection() {
     </section>
   );
 }
-
-// Stats es client-only (below the fold, no afecta LCP)
-export const StatsSection = dynamic(
-  () => import('@/components/hero-animated').then(m => m.StatsSection),
-  { 
-    ssr: false,
-    loading: () => null
-  }
-);
