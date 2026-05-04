@@ -14,9 +14,6 @@ const cardImages: Record<string, string> = {
   dental: '/images/products/dental-hero.webp',
   viaje: '/images/products/viaje-hero.webp',
   accidentes: '/images/products/accidentes-hero.webp',
-  electrodomesticos: '/images/products/electrodomesticos.webp',
-  'proteccion-juridica': '/images/products/proteccion-juridica.webp',
-  negocio: '/images/products/negocio.webp',
   decesos: '/images/products/decesos-hero.webp',
 };
 
@@ -27,9 +24,6 @@ const sectionTints: Record<string, string> = {
   viaje: 'from-[rgba(15,94,156,0.08)] to-[rgba(15,94,156,0.02)]',
   dental: 'from-[rgba(242,140,40,0.08)] to-[rgba(15,94,156,0.04)]',
   accidentes: 'from-[rgba(18,59,104,0.08)] to-[rgba(242,140,40,0.05)]',
-  electrodomesticos: 'from-[rgba(242,140,40,0.06)] to-[rgba(34,197,94,0.04)]',
-  'proteccion-juridica': 'from-[rgba(15,94,156,0.08)] to-[rgba(18,59,104,0.04)]',
-  negocio: 'from-[rgba(34,197,94,0.08)] to-[rgba(15,94,156,0.04)]',
   decesos: 'from-[rgba(18,59,104,0.08)] to-[rgba(123,198,126,0.03)]',
 };
 
@@ -39,11 +33,8 @@ const productBadges: Record<string, string> = {
   vida: '🏠 Para hipotecas',
   dental: '✨ Gran ahorro',
   accidentes: '⚡ Para autónomos',
-  'proteccion-juridica': '⚖️ Muy valorado',
-  negocio: '🏢 Pymes y locales',
   decesos: '💛 Para familias',
   viaje: '✈️ Sin sorpresas',
-  electrodomesticos: '🔧 Reparación incluida',
 }
 
 

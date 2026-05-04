@@ -224,57 +224,6 @@ export const productCompare: Record<string, ProductCompareConfig> = {
       },
     ],
   },
-  electrodomesticos: {
-    tabs: [
-      {
-        id: 'modalidades',
-        label: 'Modalidades',
-        intro: 'Protección para la tecnología de tu hogar.',
-        cards: [
-          { title: 'Reparación mecánica', desc: 'Cubre piezas y mano de obra ante averías internas que el seguro de hogar estándar suele excluir.', tag: 'Principal' },
-          { title: 'Línea blanca y marrón', desc: 'Desde frigos y lavadoras hasta televisores y equipos de sonido de última generación.', tag: 'Completo' },
-        ],
-        bullets: ['Válido para aparatos de hasta 12 años.', 'Sin costes de desplazamiento ni mano de obra.'],
-      },
-      {
-        id: 'consejos',
-        label: 'Consejos',
-        intro: 'Alarga la vida de tus aparatos.',
-        advice: [
-          { title: 'Garantía vs Seguro', desc: 'El seguro entra cuando la garantía del fabricante termina o para averías que no están bajo garantía oficial.' },
-          { title: 'Ahorro real', desc: 'Una sola reparación de un frigorífico o TV puede costar más que varios años de seguro.' },
-        ],
-      },
-    ],
-  },
-  'proteccion-juridica': {
-    tabs: [
-      {
-        id: 'modalidades',
-        label: 'Modalidades',
-        intro: 'Defensa legal a tu medida.',
-        cards: [
-          { title: 'Legal Particular', desc: 'Defensa en consumo, vivienda y temas laborales diarios.', tag: 'Más común' },
-          { title: 'Legal Familiar', desc: 'Extensión a todo el núcleo familiar, incluyendo temas de sucesiones o divorcios.', tag: 'Para familias' },
-        ],
-        bullets: ['Asesoramiento telefónico 24h incluido.', 'Libertad de elección de abogado hasta el límite capital.'],
-      },
-    ],
-  },
-  negocio: {
-    tabs: [
-      {
-        id: 'modalidades',
-        label: 'Modalidades',
-        intro: 'Protege la continuidad de tu actividad.',
-        cards: [
-          { title: 'Multirriesgo para Comercio y Local', desc: 'Cubre los daños materiales de tu punto de venta: incendio, robo, daños por agua, rotura de cristales y rótulos. Incluye responsabilidad civil de explotación frente a clientes y terceros. Adaptado a retail, hostelería, comercio de proximidad y pequeño comercio.', tag: 'Físico' },
-          { title: 'RC Profesional para Autónomos y Servicios', desc: 'Protección ante reclamaciones por errores, omisiones o negligencias en tu actividad profesional. Esencial para consultores, técnicos, asesores, agencias y cualquier profesional que preste servicios a terceros. Incluye defensa jurídica.', tag: 'Servicios' },
-        ],
-        bullets: ['Indemnización por pérdida de beneficios.', 'Asistencia urgente para el negocio (fontanería, electricidad).'],
-      },
-    ],
-  },
   decesos: {
     tabs: [
       {

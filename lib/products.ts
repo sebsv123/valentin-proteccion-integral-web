@@ -66,7 +66,7 @@ export const site = {
   instagram: 'https://www.instagram.com/segurosrosavalentin/',
   heroTagline: 'Tus asesores de seguros en Madrid',
   brandLine: '+10 años · +1.200 familias protegidas · Consulta gratuita',
-  brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Accidentes · Protección Jurídica · Negocios',
+  brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Accidentes · Decesos',
   advisorName: 'Rosa Valentín',
 };
 
@@ -361,177 +361,11 @@ export const products: Product[] = [
     ],
     disclaimer:
       'Capitales, invalidez, indemnización diaria y coberturas para autónomos sujetos a modalidad y condiciones del producto.',
-    related: ['vida', 'salud', 'negocio'],
+    related: ['vida', 'salud', 'decesos'],
     whatsappMessage: 'Hola, quiero orientación sobre ACCIDENTES para mí o para mi negocio.',
     metaTitle: 'Seguro de Accidentes Madrid · Desde 15€/mes',
     metaDescription: 'Protección 24/7 ante accidentes, invalidez y fallecimiento. Sin examen médico y con una gestión rápida para particulares y autónomos.',
     h1: 'Seguro de Accidentes en Madrid: Cobertura 24/7',
-  },
-  {
-    slug: 'electrodomesticos',
-    name: 'Seguro de electrodomésticos',
-    label: 'ELECTRODOMÉSTICOS',
-    eyebrow: 'HOGAR · TECNOLOGÍA',
-    heroTitle: 'Protege el corazón tecnológico de tu hogar frente a averías que la garantía oficial no siempre cubre',
-    heroCopy:
-      'Una protección pensada para alargar la vida de tus electrodomésticos (frigorífico, lavadora, TV, etc.) cubriendo piezas, mano de obra y desplazamiento en caso de avería mecánica.',
-    heroImage: '/images/products/electrodomesticos.webp',
-    heroAlt: 'Cocina moderna con electrodomésticos protegidos',
-    cardImage: '/images/products/electrodomesticos.webp',
-    cardAlt: 'Reparación de electrodomésticos del hogar',
-    summary:
-      'Reparación de averías mecánicas en línea blanca y marrón para aparatos de menos de 12 años, con un funcionamiento ágil y profesional.',
-    highlights: [
-      'Cubre averías mecánicas y eléctricas fuera de la garantía del fabricante.',
-      'Incluye desplazamiento, mano de obra y piezas originales.',
-      'Válido para aparatos de hasta 12 años de antigüedad.',
-    ],
-    benefits: [
-      'Tranquilidad ante facturas de reparación inesperadas.',
-      'Acceso directo a técnicos profesionales.',
-      'Sustitución o indemnización si el aparato no tiene arreglo.',
-    ],
-    whatIncludes: [
-      'Reparación de frigoríficos, lavadoras y lavavajillas.',
-      'Asistencia para televisores, hornos y placas de cocina.',
-      'Desplazamiento y mano de obra sin costes extra.',
-    ],
-    whatVaries: [
-      'El número de intervenciones anuales.',
-      'El límite máximo por reparación.',
-      'La edad máxima admitida del aparato.',
-    ],
-    whatReview: [
-      'Si cubre piezas y mano de obra al 100%.',
-      'El periodo de carencia (suele ser de 30 días).',
-      'Qué aparatos específicos de tu hogar entran en cobertura.',
-    ],
-    cases: ['LÍNEA BLANCA', 'LÍNEA MARRÓN', 'MANTENIMIENTO'],
-    faqs: [
-      {
-        q: '¿Qué aparatos puedo asegurar?',
-        a: 'Principalmente línea blanca (frigoríficos, lavadoras, hornos) y línea marrón (TVs). Deben tener menos de 12 años y estar en buen estado.',
-      },
-      {
-        q: '¿Cubre la garantía oficial de la marca?',
-        a: 'Es un complemento que entra en juego cuando la garantía oficial termina o para situaciones que el fabricante no cubre.',
-      },
-    ],
-    disclaimer:
-      'Cobertura, límites y requisitos de antigüedad sujetos a las condiciones de la póliza.',
-    related: ['mascotas', 'salud', 'accidentes'],
-    whatsappMessage: 'Hola, quiero proteger mis ELECTRODOMÉSTICOS de averías.',
-    metaTitle: 'Seguro para Electrodomésticos · Sin Sorpresas',
-    metaDescription: 'Protege tus electrodomésticos frente a averías mecánicas. Cobertura para piezas, mano de obra y desplazamiento en Madrid.',
-    h1: 'Seguro para Electrodomésticos en Madrid',
-  },
-  {
-    slug: 'proteccion-juridica',
-    name: 'Protección jurídica',
-    label: 'PROTECCIÓN JURÍDICA',
-    eyebrow: 'DEFENSA LEGAL',
-    heroTitle: 'Contar con un abogado a tu lado para defender tus derechos no debería ser un lujo',
-    heroCopy:
-      'Asesoramiento jurídico y defensa legal en conflictos de consumo, vivienda, trabajo o familia. Acceso telefónico 24h y cobertura de gastos judiciales.',
-    heroImage: '/images/products/proteccion-juridica.webp',
-    heroAlt: 'Consulta legal profesional y cercana',
-    cardImage: '/images/products/proteccion-juridica.webp',
-    cardAlt: 'Protección jurídica',
-    summary:
-      'Defensa de tus intereses legales, reclamación de daños y asesoramiento telefónico ilimitado con especialistas.',
-    highlights: [
-      'Asesoramiento jurídico telefónico 24/7.',
-      'Defensa en conflictos de consumo y vivienda.',
-      'Reclamación de daños y perjuicios a terceros.',
-    ],
-    benefits: [
-      'Resuelve dudas legales antes de que se conviertan en problemas.',
-      'Ahorra en honorarios de abogados y gastos judiciales.',
-      'Tranquilidad ante conflictos laborales o familiares.',
-    ],
-    whatIncludes: [
-      'Defensa penal y civil.',
-      'Reclamaciones a suministros y servicios.',
-      'Asesoramiento en trámites de extranjería o sucesiones.',
-    ],
-    whatVaries: [
-      'El capital máximo para gastos judiciales.',
-      'La inclusión de defensa en temas familiares (divorcio, etc.).',
-      'Los periodos de carencia según el tipo de conflicto.',
-    ],
-    whatReview: [
-      'Si incluye defensa en internet e identidad digital.',
-      'El alcance de la defensa laboral.',
-      'Los límites geográficos de la cobertura.',
-    ],
-    cases: ['PARTICULARES', 'CONSUMO', 'LABORAL', 'FAMILIA'],
-    faqs: [
-      { q: "¿Qué es un seguro de protección jurídica?", a: "Es un seguro que te da acceso a un abogado y cubre los gastos legales cuando tienes un conflicto: laboral, con tu casero, con una empresa, de tráfico o frente a la administración pública." },
-      { q: "¿Cuánto cuesta un seguro de defensa jurídica?", a: "Entre 50€ y 150€ al año, dependiendo de las coberturas. Es uno de los seguros con mejor relación coste-beneficio: una sola consulta con un abogado puede superar ese importe." },
-      { q: "¿Qué situaciones cubre el seguro de protección jurídica?", a: "Cubre conflictos laborales (despidos, impagos), defensa ante multas de tráfico, reclamaciones a empresas y servicios, problemas con alquiler o compraventa de vivienda, y defensa penal en accidentes." },
-      { q: "¿El seguro de defensa jurídica cubre a toda la familia?", a: "Depende de la póliza. Hay opciones individuales y familiares. Te ayudamos a elegir la que mejor se adapta a tu situación para que nunca te quedes sin defensa legal cuando la necesites." }
-    ],
-    disclaimer:
-      'Capitales de defensa y ámbitos de actuación sujetos a la modalidad contratada.',
-    related: ['vida', 'accidentes', 'negocio'],
-    whatsappMessage: 'Hola, necesito asesoramiento sobre PROTECCIÓN JURÍDICA.',
-    metaTitle: 'Seguro de Protección Jurídica Madrid | Valentín',
-    metaDescription: 'Defensa legal para consumo, vivienda, trabajo y familia. Acceso a asesoramiento experto y gastos judiciales según modalidad.',
-    h1: 'Seguro de Protección Jurídica en Madrid',
-  },
-  {
-    slug: 'negocio',
-    name: 'Seguro para negocios',
-    label: 'NEGOCIOS',
-    eyebrow: 'PYMES · AUTÓNOMOS',
-    heroTitle: 'Protege tu local, tu stock y tu actividad profesional frente a imprevistos que puedan parar tu negocio',
-    heroCopy:
-      'Seguro multirriesgo para locales, oficinas y comercios. Protección total frente a robos, daños por agua, incendio y responsabilidad civil profesional. Asesoramiento independiente en Madrid para autónomos, pymes y comercios.',
-    heroImage: '/images/products/negocio.webp',
-    heroAlt: 'Local comercial moderno y protegido',
-    cardImage: '/images/products/negocio.webp',
-    cardAlt: 'Seguro para negocios y pymes',
-    summary:
-      'Cobertura integral para el continente y contenido de tu negocio, incluyendo la protección frente a reclamaciones de terceros.',
-    highlights: [
-      'Protección frente a robo, incendio y daños eléctricos.',
-      'Responsabilidad civil ante clientes y empleados.',
-      'Cobertura de pérdida de beneficios por cese de actividad.',
-    ],
-    benefits: [
-      'Asegura la continuidad de tu negocio tras un siniestro.',
-      'Adapta las coberturas según tu sector (retail, oficina, servicios).',
-      'Cumple con los requisitos legales y contractuales de tu local.',
-    ],
-    whatIncludes: [
-      'Rotura de cristales y rótulos.',
-      'Daños por agua y filtraciones.',
-      'Responsabilidad Civil de explotación y patronal.',
-    ],
-    whatVaries: [
-      'El capital asegurado de existencias y mobiliario.',
-      'La cobertura de transporte de mercancías.',
-      'Los límites de RC según la actividad profesional.',
-    ],
-    whatReview: [
-      'Si cubre la defensa jurídica del negocio.',
-      'Si necesitas cobertura para equipos electrónicos especializados.',
-      'Las exclusiones específicas según tu tipo de local.',
-    ],
-    cases: ['COMERCIOS', 'OFICINAS', 'AUTÓNOMOS', 'TALLERES'],
-    faqs: [
-      { q: "¿Qué seguros necesita un autónomo obligatoriamente?", a: "Ninguno es legalmente obligatorio por ser autónomo, excepto en algunas profesiones reguladas. Sin embargo, el seguro de responsabilidad civil y el de accidentes son altamente recomendables para cualquier autónomo." },
-      { q: "¿Puedo deducirme el seguro de salud siendo autónomo?", a: "Sí. Los autónomos pueden deducirse hasta 500€/año por el seguro médico propio, y hasta 500€ adicionales por cada miembro de la unidad familiar incluido en la póliza." },
-      { q: "¿Qué pasa si soy autónomo y tengo una baja laboral?", a: "Sin un seguro específico, perderías ingresos desde el primer día. Un seguro de baja laboral para autónomos te garantiza una renta diaria durante la incapacidad, cubriendo la diferencia que la Seguridad Social no cubre." },
-      { q: "¿Qué seguros necesita una pyme o comercio en Madrid?", a: "Lo más habitual es un seguro multirriesgo de comercio (daños, robo, RC), seguro de responsabilidad civil, y cobertura para los empleados. Te asesoramos según tu actividad y tamaño de negocio." }
-    ],
-    disclaimer:
-      'Capitales asegurados y límites de RC sujetos a la actividad y condiciones de contratación.',
-    related: ['accidentes', 'proteccion-juridica', 'salud'],
-    whatsappMessage: 'Hola, quiero proteger mi NEGOCIO con un seguro a medida.',
-    metaTitle: 'Seguro para Negocios y Autónomos en Madrid | Valentín Protección Integral',
-    metaDescription: 'Seguro multirriesgo para locales, comercios, pymes y autónomos en Madrid. Cubre robo, daños, RC profesional y pérdida de actividad. Asesoramiento independiente sin compromiso. Llámanos.',
-    h1: 'Seguro para tu Negocio o Pyme en Madrid',
   },
   {
     slug: 'decesos',
@@ -686,7 +520,7 @@ export const generalFaqs: FAQItem[] = [
   { q: '¿Me ayudáis a comparar coberturas?', a: 'Ese es nuestro principal valor. No somos un comparador automático de precios; traducimos la letra pequeña, te explicamos diferencias reales (ej. copago vs reembolso) y te ayudamos a elegir con criterio.' },
   { q: '¿Qué necesito para contratar?', a: 'Una vez hayamos elegido la mejor opción, nosotros nos encargamos de toda la gestión administrativa. Solo necesitaremos tus datos básicos y confirmar las condiciones pactadas.' },
   { q: '¿Puedo resolver dudas después de contratar?', a: 'Por supuesto. Nuestro trabajo no termina al firmar la póliza. Seguiremos a tu lado para ayudarte con autorizaciones, partes de siniestro o cambios en tus condiciones.' },
-  { q: '¿Qué tipo de seguros puedo consultar?', a: 'Somos especialistas en seguros de SALUD, VIDA, MASCOTAS, VIAJES, DENTAL, ACCIDENTES, ELECTRODOMÉSTICOS, PROTECCIÓN JURÍDICA y NEGOCIOS. Además, ofrecemos soluciones específicas para familias, seniors, extranjeros, autónomos y pymes.' },
+  { q: '¿Qué tipo de seguros puedo consultar?', a: 'Somos especialistas en seguros de SALUD, VIDA, MASCOTAS, VIAJES, DENTAL, ACCIDENTES y DECESOS. Además, ofrecemos soluciones específicas para familias, seniors, extranjeros y autónomos.' },
 ];
 
 export const testimonials = [

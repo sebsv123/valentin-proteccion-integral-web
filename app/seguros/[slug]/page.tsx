@@ -26,10 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getProduct(slug);
   if (!product) return {};
   
-  // Usar imagen local OG para negocio, Pexels para otros
-  const ogImage = slug === 'negocio' 
-    ? `${site.domain}/og-image-negocio.webp`
-    : await getPexelsImage(slug);
+  const ogImage = await getPexelsImage(slug);
   
   const twitterTitle = slug === 'salud' 
     ? 'Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral'

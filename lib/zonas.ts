@@ -257,7 +257,7 @@ export const zonas: Zona[] = [
         a: 'Las propiedades de valor elevado en Pozuelo requieren un seguro de hogar bien dimensionado: continente a valor real de reconstrucción, contenido con capital adecuado, responsabilidad civil y coberturas de asistencia. Un seguro de hogar mal dimensionado puede dejar sin cubrir parte del siniestro. Rosa y Sebastián revisan tu situación y calculan la cobertura correcta para tu propiedad, gratis y sin compromiso.',
       },
     ],
-    segurosDestacados: ['salud', 'vida', 'proteccion-juridica', 'accidentes'],
+    segurosDestacados: ['salud', 'vida', 'accidentes', 'decesos'],
     zonasCercanas: ['madrid', 'majadahonda', 'boadilla-del-monte'],
     whatsappMessage: 'Hola, soy de Pozuelo de Alarcón y quiero asesoramiento sobre seguros para mi familia. ¿Podéis ayudarme?',
     keywords: [

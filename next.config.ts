@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
         destination: '/seguros/vida/hipoteca',
         permanent: true,
       },
+      // Productos retirados por política de agencia
+      { source: '/seguros/negocio', destination: '/seguros', permanent: true },
+      { source: '/seguros/proteccion-juridica', destination: '/seguros', permanent: true },
+      { source: '/seguros/electrodomesticos', destination: '/seguros', permanent: true },
+      { source: '/seguros/accidentes/pyme-autonomos', destination: '/seguros/accidentes-decesos', permanent: true },
     ];
   },
   async headers() {
