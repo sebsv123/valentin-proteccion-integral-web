@@ -119,18 +119,18 @@ export default function MadridPage() {
               <div className="relative">
                 <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop"
-                    alt="Madrid skyline Gran Vía"
+                    src="/images/zonas/madrid.webp"
+                    alt="Plaza de Cibeles en Madrid centro"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"
                     priority
                   />
                 </div>
-                {/* Location pin */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center shadow-lg">
-                    <MapPin className="w-6 h-6 text-white" />
+                <div className="absolute bottom-4 left-4">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
+                    <MapPin className="w-4 h-4 text-black" />
+                    <span className="text-sm font-bold text-black">Madrid</span>
                   </div>
                 </div>
               </div>

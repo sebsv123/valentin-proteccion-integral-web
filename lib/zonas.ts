@@ -28,6 +28,9 @@ export type Zona = {
   keywords?: string[]; // Para la Ronda 2
   heroImage?: string;
   heroImageAlt?: string;
+  heroImageCredit?: string;
+  landmarks?: { name: string; icon: string }[];
+  heroAccent?: string;
 };
 
 export const zonas: Zona[] = [
@@ -79,8 +82,16 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'mascotas', 'dental'],
     zonasCercanas: ['majadahonda', 'pozuelo-de-alarcon', 'las-rozas', 'madrid'],
     whatsappMessage: 'Hola, soy de Boadilla del Monte y quiero una consulta gratuita sobre seguros. ¿Podéis ayudarme?',
-    heroImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=900&fit=crop',
-    heroImageAlt: 'Urbanización residencial en Boadilla del Monte, Madrid',
+    heroImage: '/images/zonas/boadilla-del-monte.webp',
+    heroImageAlt: 'Palacio del Infante don Luis en Boadilla del Monte, Madrid',
+    heroImageCredit: 'Palacio del Infante don Luis · Wikimedia Commons (CC BY-SA)',
+    heroAccent: '#0F5E9C',
+    landmarks: [
+      { name: 'Palacio del Infante don Luis', icon: '🏛️' },
+      { name: 'HM Montepríncipe', icon: '🏥' },
+      { name: 'Convento de la Encarnación', icon: '⛪' },
+      { name: 'Fuente de las Conchas', icon: '⛲' },
+    ],
     keywords: [
       'seguros boadilla del monte',
       'asesores seguros boadilla del monte',
@@ -142,8 +153,16 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'mascotas'],
     zonasCercanas: ['boadilla-del-monte', 'majadahonda', 'madrid'],
     whatsappMessage: 'Hola, soy de Las Rozas y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
-    heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=900&fit=crop',
-    heroImageAlt: 'Polo empresarial y oficinas modernas en Las Rozas, Madrid',
+    heroImage: '/images/zonas/las-rozas.webp',
+    heroImageAlt: 'Centro de las Artes y Biblioteca León Tolstoi en Las Rozas de Madrid',
+    heroImageCredit: 'Centro de las Artes y Biblioteca León Tolstoi · Wikimedia Commons (CC BY-SA)',
+    heroAccent: '#7BC67E',
+    landmarks: [
+      { name: 'Las Rozas Business Park', icon: '🏢' },
+      { name: 'Heron City', icon: '🎬' },
+      { name: 'Parque Empresarial', icon: '💼' },
+      { name: 'HU Puerta de Hierro (12 min)', icon: '🏥' },
+    ],
     keywords: [
       'seguros las rozas de madrid',
       'asesores seguros las rozas',
@@ -205,8 +224,16 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'dental'],
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'pozuelo-de-alarcon', 'madrid'],
     whatsappMessage: 'Hola, soy de Majadahonda y quiero una consulta gratuita sobre seguros. ¿Podéis ayudarme?',
-    heroImage: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&h=900&fit=crop',
-    heroImageAlt: 'Hospital y entorno sanitario de Majadahonda, Madrid',
+    heroImage: '/images/zonas/majadahonda.webp',
+    heroImageAlt: 'Plaza Mayor y Ayuntamiento de Majadahonda, Madrid',
+    heroImageCredit: 'Plaza Mayor y Ayuntamiento de Majadahonda · Wikimedia Commons (CC BY-SA)',
+    heroAccent: '#F28C28',
+    landmarks: [
+      { name: 'Hospital Puerta de Hierro', icon: '🏥' },
+      { name: 'Plaza Mayor', icon: '🏛️' },
+      { name: 'Centro Comercial Centro Oeste', icon: '🛍️' },
+      { name: 'Club de Campo Las Rejas', icon: '⛳' },
+    ],
     keywords: [
       'seguros majadahonda',
       'asesores seguros majadahonda',
@@ -268,8 +295,16 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'accidentes', 'decesos'],
     zonasCercanas: ['madrid', 'majadahonda', 'boadilla-del-monte'],
     whatsappMessage: 'Hola, soy de Pozuelo de Alarcón y quiero asesoramiento sobre seguros para mi familia. ¿Podéis ayudarme?',
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop',
-    heroImageAlt: 'Vivienda residencial premium en Pozuelo de Alarcón, Madrid',
+    heroImage: '/images/zonas/pozuelo-de-alarcon.webp',
+    heroImageAlt: 'Biblioteca Municipal Universitaria ESIC en Pozuelo de Alarcón, Madrid',
+    heroImageCredit: 'Biblioteca Municipal Universitaria ESIC · Wikimedia Commons (CC BY-SA)',
+    heroAccent: '#123B68',
+    landmarks: [
+      { name: 'Ciudad de la Imagen', icon: '🎬' },
+      { name: 'ESIC Business School', icon: '🎓' },
+      { name: 'Av. de Europa', icon: '🌲' },
+      { name: 'Clínica Ruber Internacional (20 min)', icon: '🏥' },
+    ],
     keywords: [
       'seguros pozuelo de alarcon',
       'asesores seguros pozuelo alarcon',
@@ -331,8 +366,16 @@ export const zonas: Zona[] = [
     segurosDestacados: ['salud', 'vida', 'mascotas', 'viaje'],
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'majadahonda', 'pozuelo-de-alarcon'],
     whatsappMessage: 'Hola, soy de Madrid y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
-    heroImage: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1200&h=900&fit=crop',
-    heroImageAlt: 'Skyline de Madrid con la Gran Vía al atardecer',
+    heroImage: '/images/zonas/madrid.webp',
+    heroImageAlt: 'Plaza de Cibeles en Madrid centro',
+    heroImageCredit: 'Plaza de Cibeles · Wikimedia Commons (CC BY-SA)',
+    heroAccent: '#003366',
+    landmarks: [
+      { name: 'Plaza de Cibeles', icon: '⛲' },
+      { name: 'Hospital Gregorio Marañón', icon: '🏥' },
+      { name: 'Hospital 12 de Octubre', icon: '🏥' },
+      { name: 'Clínica Ruber', icon: '🏥' },
+    ],
     keywords: [
       'seguros madrid',
       'asesores seguros independientes madrid',

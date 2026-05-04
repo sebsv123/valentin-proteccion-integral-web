@@ -119,17 +119,18 @@ export default function MajadahondaPage() {
               <div className="relative">
                 <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop"
-                    alt="Hospital y entorno sanitario de Majadahonda, Madrid"
+                    src="/images/zonas/majadahonda.webp"
+                    alt="Plaza Mayor y Ayuntamiento de Majadahonda, Madrid"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"
                     priority
                   />
-                  {/* Location pin overlay */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center shadow-lg">
-                      <MapPin className="w-6 h-6 text-white" />
+                  {/* Location badge bottom-left */}
+                  <div className="absolute bottom-4 left-4">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
+                      <MapPin className="w-4 h-4 text-black" />
+                      <span className="text-sm font-bold text-black">Majadahonda</span>
                     </div>
                   </div>
                 </div>

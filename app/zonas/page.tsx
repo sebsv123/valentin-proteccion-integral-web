@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { zonas } from '@/lib/zonas';
 import { site } from '@/lib/products';
+import Image from 'next/image';
 import { MapPin, ArrowRight, Shield, Phone, BadgeCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -44,40 +45,54 @@ export default function ZonasPage() {
           </div>
         </section>
 
-        {/* Featured Card - Hero Zone */}
+        {/* Featured Card - Hero Zone con imagen real */}
         <section className="pb-8 bg-white">
           <div className="container-shell">
             <Link
               href={`/zonas/${featuredZona.slug}`}
-              className="group block relative overflow-hidden rounded-3xl bg-slate-900"
+              className="group block relative overflow-hidden rounded-3xl bg-slate-900 shadow-2xl"
             >
-              {/* Background with gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-800/60" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-deep)]/20 to-transparent" />
-
-              {/* Content */}
-              <div className="relative p-8 sm:p-12 lg:p-16 min-h-[320px] sm:min-h-[380px] flex flex-col justify-end">
-                {/* Badge */}
-                <span className="inline-flex items-center gap-1.5 w-fit px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/30">
+              {featuredZona.heroImage && (
+                <Image
+                  src={featuredZona.heroImage}
+                  alt={featuredZona.heroImageAlt || featuredZona.nombre}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+              )}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(135deg, ${featuredZona.heroAccent || '#003366'}E6 0%, rgba(0,34,68,0.85) 60%, rgba(0,0,0,0.7) 100%)`,
+                }}
+              />
+              <div className="relative p-8 sm:p-12 lg:p-16 min-h-[400px] sm:min-h-[460px] flex flex-col justify-end">
+                <span className="inline-flex items-center gap-1.5 w-fit px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/30 backdrop-blur">
                   <BadgeCheck className="h-3.5 w-3.5" />
                   Sede Principal
                 </span>
-
-                {/* Title */}
-                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">
-                  {featuredZona.nombre}
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 leading-tight">
+                  Seguros en {featuredZona.nombre}
                 </h2>
-
-                {/* Excerpt */}
-                <p className="text-white/80 text-base sm:text-lg max-w-2xl mb-6 line-clamp-3">
-                  {featuredZona.intro.slice(0, 160)}{featuredZona.intro.length > 160 ? '…' : ''}
+                <p className="text-white/85 text-base sm:text-lg max-w-2xl mb-6 line-clamp-3">
+                  {featuredZona.intro.slice(0, 180)}{featuredZona.intro.length > 180 ? '…' : ''}
                 </p>
-
-                {/* CTA */}
-                <span className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
-                  Ver seguros en {featuredZona.nombreCorto}
-                  <ArrowRight className="h-5 w-5" />
-                </span>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-white text-[var(--blue-deep)] px-6 py-3 text-sm font-bold group-hover:gap-3 transition-all">
+                    Ver seguros en {featuredZona.nombreCorto}
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                  {featuredZona.landmarks && featuredZona.landmarks.slice(0, 2).map((lm) => (
+                    <span
+                      key={lm.name}
+                      className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur border border-white/20 px-3 py-1.5 text-xs font-semibold text-white"
+                    >
+                      <span aria-hidden>{lm.icon}</span> {lm.name}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Link>
           </div>
@@ -176,28 +191,39 @@ export default function ZonasPage() {
                     <Link
                       key={z.slug}
                       href={`/zonas/${z.slug}`}
-                      className="group block p-6 rounded-2xl border border-gray-100 bg-white hover:shadow-lg hover:border-[var(--blue)] transition-all h-full"
+                      className="group block rounded-3xl bg-white overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      {/* Kicker */}
-                      <p className="text-[var(--blue)] font-bold tracking-widest text-[10px] uppercase mb-3">
-                        {z.provincia.toUpperCase()}
-                      </p>
-
-                      {/* Title */}
-                      <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)] mb-3 group-hover:text-[var(--blue)] transition-colors">
-                        {z.nombre}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p className="text-sm text-[var(--muted)] leading-6 mb-4 line-clamp-3">
-                        {z.intro.slice(0, 100)}{z.intro.length > 100 ? '…' : ''}
-                      </p>
-
-                      {/* Footer */}
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--blue)] group-hover:gap-2 transition-all">
-                        Ver cobertura
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
+                      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        {z.heroImage && (
+                          <Image
+                            src={z.heroImage}
+                            alt={z.heroImageAlt || z.nombre}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 400px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        )}
+                        <div
+                          className="absolute inset-0 opacity-50"
+                          style={{ background: `linear-gradient(180deg, transparent 50%, ${z.heroAccent || '#003366'}AA 100%)` }}
+                        />
+                        <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 shadow-sm">
+                          <MapPin className="h-3 w-3" style={{ color: z.heroAccent || 'var(--blue)' }} />
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--blue-deep)]">{z.provincia}</span>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                          {z.nombre}
+                        </h3>
+                        <p className="text-sm text-[var(--muted)] leading-6 mb-4 line-clamp-2">
+                          {z.heroSubtitle}
+                        </p>
+                        <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--blue)] group-hover:gap-2 transition-all">
+                          Ver seguros en {z.nombreCorto}
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
                     </Link>
                   ))}
                 </div>

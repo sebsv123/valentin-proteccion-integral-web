@@ -10,6 +10,7 @@ import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref, products, site } from '@/lib/products';
 import { getZona, zonas } from '@/lib/zonas';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import { MapPin } from 'lucide-react';
 
 export function generateStaticParams() {
   return zonas.map((z) => ({ zona: z.slug }));
@@ -92,84 +93,189 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
       <Header />
       <main>
 
-        <section className="section-pad pt-4 md:pt-8 bg-white-pure overflow-hidden relative border-b">
-          <div className="container-shell">
-            <nav aria-label="Breadcrumb" className="text-xs text-[var(--muted)] mb-4 flex gap-1 flex-wrap">
-              <Link href="/" className="hover:text-[var(--blue)]">Inicio</Link>
-              <span>&#x203a;</span>
-              <Link href="/zonas" className="hover:text-[var(--blue)]">Zonas</Link>
-              <span>&#x203a;</span>
-              <span className="text-[var(--blue-deep)] font-medium">{z.nombre}</span>
+        {/* HERO inmersivo con imagen de zona */}
+        <section className="relative overflow-hidden bg-[var(--blue-deep)] text-white">
+          {z.heroImage && (
+            <>
+              <Image
+                src={z.heroImage}
+                alt={z.heroImageAlt || `${z.nombre} - Asesores de seguros independientes`}
+                fill
+                sizes="100vw"
+                className="object-cover object-center opacity-45"
+                priority
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(135deg, ${z.heroAccent || '#003366'}E6 0%, rgba(0,34,68,0.92) 55%, rgba(0,34,68,0.78) 100%)`,
+                }}
+              />
+            </>
+          )}
+          <div className="relative container-shell pt-8 pb-16 md:pt-12 md:pb-20">
+            <nav aria-label="Breadcrumb" className="text-xs text-white/70 mb-6 flex gap-1 flex-wrap">
+              <Link href="/" className="hover:text-white">Inicio</Link>
+              <span>›</span>
+              <Link href="/zonas" className="hover:text-white">Zonas</Link>
+              <span>›</span>
+              <span className="text-white font-medium">{z.nombre}</span>
             </nav>
-            <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-start">
               <div>
-                <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs uppercase mb-3">
-                  Asesores Independientes &middot; {z.nombre}
-                </p>
-                <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-gradient leading-[1.1] mb-3">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest backdrop-blur"
+                  style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.25)' }}
+                >
+                  <MapPin className="h-3.5 w-3.5" /> Asesores en {z.nombre}
+                </span>
+                <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.05] mb-5 text-white">
                   {z.h1}
                 </h1>
-                <p className="text-sm sm:text-base font-semibold text-[var(--blue-deep)] mb-2">{z.heroSubtitle}</p>
-                <p className="text-base sm:text-lg text-[var(--muted)] leading-8 mb-6">{z.intro}</p>
-                <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                  <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-8 py-4 text-base">
+                <p className="text-base sm:text-lg text-white/90 leading-8 mb-7 max-w-2xl">
+                  {z.heroSubtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 mb-7">
+                  <a href={buildWhatsAppHref(z.whatsappMessage)} className="btn-whatsapp px-8 py-4 text-base shadow-2xl">
                     <WhatsAppIcon className="h-5 w-5" /> WhatsApp gratuito
                   </a>
-                  <a href={`tel:${site.phoneHref}`} className="btn-secondary px-8 py-4 text-base">Llamar ahora</a>
+                  <a
+                    href={`tel:${site.phoneHref}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-bold border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white hover:text-[var(--blue-deep)] transition-all"
+                  >
+                    Llamar ahora
+                  </a>
                 </div>
-                <div className="flex flex-wrap gap-2 text-xs font-semibold text-[var(--blue-deep)]">
-                  {['+10 años de experiencia', '+1.200 familias protegidas', 'Consulta 100% gratuita', 'Sin letra pequeña', 'Independientes'].map(t => (
-                    <span key={t} className="glass rounded-full px-3 py-2 border border-white/60 bg-white/40">✓ {t}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="space-y-6">
-                {z.heroImage && (
-                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-white/40">
-                    <Image
-                      src={z.heroImage}
-                      alt={z.heroImageAlt || `${z.nombre} - Asesores de seguros independientes`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 540px"
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/30 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[var(--blue-deep)]">📍 {z.nombreCorto}</span>
-                    </div>
+                {z.landmarks && (
+                  <div className="flex flex-wrap gap-2">
+                    {z.landmarks.map((lm) => (
+                      <span
+                        key={lm.name}
+                        className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-semibold text-white backdrop-blur"
+                        style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)' }}
+                      >
+                        <span aria-hidden>{lm.icon}</span> {lm.name}
+                      </span>
+                    ))}
                   </div>
                 )}
-                <div id="formulario">
+              </div>
+              <div id="formulario" className="lg:sticky lg:top-24">
+                <div className="rounded-3xl bg-white p-1 shadow-2xl ring-1 ring-black/5">
                   <LeadForm defaultProduct={z.segurosDestacados[0] as any || 'salud'} compact />
                 </div>
               </div>
             </div>
           </div>
+          {z.heroImageCredit && (
+            <div className="relative bg-black/30 backdrop-blur-sm">
+              <p className="container-shell py-2 text-[10px] text-white/60 tracking-wide">
+                📷 {z.heroImageCredit}
+              </p>
+            </div>
+          )}
         </section>
 
-        <section className="section-pad bg-[var(--surface)]">
-          <div className="container-shell max-w-4xl">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[var(--blue-deep)] mb-6">
-              Por qué elegir asesores de seguros en {z.nombre}
-            </h2>
-            {z.porQueElegirNos.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-[var(--muted)] leading-8 mb-5 text-base sm:text-lg">{paragraph}</p>
-            ))}
-            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+        {/* STATS BAR — barra de confianza visual */}
+        <section className="bg-white border-b">
+          <div className="container-shell py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { label: 'Población', value: z.datosLocales.poblacion },
-                { label: 'Hospital más cercano', value: z.datosLocales.hospitalMasCercano },
-                { label: 'Perfil principal', value: z.datosLocales.perfilPrincipal },
-              ].map((item) => (
-                <div key={item.label} className="soft-card p-5 rounded-2xl bg-white shadow-sm">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue)] mb-1">{item.label}</p>
-                  <p className="text-sm text-[var(--blue-deep)] font-medium leading-6">{item.value}</p>
+                { num: '+10', label: 'años de experiencia' },
+                { num: '+1.200', label: 'familias protegidas' },
+                { num: '30 min', label: 'tiempo de respuesta' },
+                { num: '0€', label: 'consulta sin compromiso' },
+              ].map((s) => (
+                <div key={s.label} className="text-center md:text-left md:border-l md:first:border-l-0 md:pl-6 first:pl-0">
+                  <p
+                    className="font-heading text-3xl md:text-4xl font-extrabold leading-none"
+                    style={{ color: z.heroAccent || 'var(--blue)' }}
+                  >
+                    {s.num}
+                  </p>
+                  <p className="mt-1 text-xs md:text-sm text-[var(--muted)] font-medium uppercase tracking-wider">
+                    {s.label}
+                  </p>
                 </div>
               ))}
-              <div className="soft-card p-5 rounded-2xl bg-[var(--blue-deep)] text-white shadow-sm">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">Dato clave</p>
-                <p className="text-sm font-medium leading-6">{z.datosLocales.curiosidadLocal}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* PERFIL DE ZONA — datos locales en grid visual con iconos */}
+        <section className="section-pad bg-[var(--surface)]">
+          <div className="container-shell">
+            <div className="text-center mb-12 max-w-3xl mx-auto">
+              <p className="kicker text-[var(--blue)] font-bold tracking-[0.3em] text-xs uppercase mb-3">
+                Perfil de {z.nombreCorto}
+              </p>
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--blue-deep)]">
+                Conocemos {z.nombre} mejor que nadie
+              </h2>
+              <p className="text-[var(--muted)] mt-4 text-base sm:text-lg leading-8">
+                Cada zona tiene un perfil distinto. La cobertura adecuada depende de entender quién vive aquí, qué hospital queda cerca y qué riesgos son reales.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+              {[
+                { icon: '👥', label: 'Población', value: z.datosLocales.poblacion },
+                { icon: '🏥', label: 'Hospital de referencia', value: z.datosLocales.hospitalMasCercano },
+                { icon: '👤', label: 'Perfil principal', value: z.datosLocales.perfilPrincipal },
+                { icon: '💡', label: 'Dato clave', value: z.datosLocales.curiosidadLocal, highlight: true },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className={`relative rounded-3xl p-6 shadow-sm border transition-all hover:shadow-xl hover:-translate-y-1 ${
+                    item.highlight
+                      ? 'text-white border-transparent'
+                      : 'bg-white border-gray-100'
+                  }`}
+                  style={item.highlight ? { background: `linear-gradient(135deg, ${z.heroAccent || '#003366'}, var(--blue-deep))` } : undefined}
+                >
+                  <div className={`text-3xl mb-3 ${item.highlight ? '' : ''}`} aria-hidden>
+                    {item.icon}
+                  </div>
+                  <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${item.highlight ? 'text-white/70' : 'text-[var(--blue)]'}`}>
+                    {item.label}
+                  </p>
+                  <p className={`text-sm font-medium leading-6 ${item.highlight ? 'text-white' : 'text-[var(--blue-deep)]'}`}>
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* POR QUÉ ELEGIRNOS — narrativa con quote visual */}
+        <section className="section-pad bg-white">
+          <div className="container-shell max-w-4xl">
+            <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+              <div
+                className="hidden md:flex h-16 w-16 rounded-2xl items-center justify-center text-white text-2xl shadow-lg shrink-0"
+                style={{ background: `linear-gradient(135deg, ${z.heroAccent || '#003366'}, var(--blue-deep))` }}
+                aria-hidden
+              >
+                ✦
+              </div>
+              <div>
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--blue-deep)] mb-6 leading-tight">
+                  Por qué elegir asesores de seguros en {z.nombre}
+                </h2>
+                {z.porQueElegirNos.split('\n\n').map((paragraph, i) => (
+                  <p key={i} className="text-[var(--muted)] leading-8 mb-5 text-base sm:text-lg">
+                    {i === 0 && (
+                      <span
+                        className="float-left mr-3 mt-1 font-heading text-5xl sm:text-6xl font-extrabold leading-none"
+                        style={{ color: z.heroAccent || 'var(--blue)' }}
+                        aria-hidden
+                      >
+                        {paragraph.charAt(0)}
+                      </span>
+                    )}
+                    {i === 0 ? paragraph.slice(1) : paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
