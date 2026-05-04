@@ -168,7 +168,11 @@ export default function MadridPage() {
                   <Car className="w-5 h-5 text-black" />
                 </div>
                 <h3 className="text-base font-bold text-black mb-1">Extranjeros y NIE</h3>
-                <a href="/seguros/salud-extranjeros" className="text-sm text-[#4b4b4b] underline hover:text-black">
+                <a
+                  href="/seguros/salud-extranjeros"
+                  className="text-sm text-[#4b4b4b] underline hover:text-black"
+                  aria-label="Seguros para extranjeros válidos para visado y TIE desde el primer día"
+                >
                   Válido para visado/TIE desde día 1.
                 </a>
               </div>
