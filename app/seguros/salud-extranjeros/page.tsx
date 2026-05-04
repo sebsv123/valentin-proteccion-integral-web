@@ -11,13 +11,13 @@ const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp"
 const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
-  title: "Seguro Médico para NIE, TIE y Visado | VPI",
-  description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
-  keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
+  title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+  description: "Seguro médico para extranjeros válido para NIE, TIE y visado. Sin copagos, certificado en 24h. +100 trámites aprobados. Respuesta en 10 minutos.",
+  keywords: ["seguro médico NIE España", "seguro médico TIE España", "seguro residencia visado España", "seguro extranjeros Madrid", "seguro medico para visado consulado"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" },
   openGraph: {
-    title: "Seguro Médico para NIE, TIE y Visado | VPI",
-    description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
+    title: "Seguro Médico para NIE, TIE y Visado en España | Valentín Protección Integral",
+    description: "Seguro médico para extranjeros válido para NIE, TIE y visado. Sin copagos, certificado en 24h. +100 trámites aprobados. Respuesta en 10 minutos.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -104,7 +104,7 @@ export default function SaludExtranjerosPage() {
 
   return (
     <>
-      <link rel="preload" href="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900" as="image" fetchPriority="high" />
+      <link rel="preload" href="/images/extranjeros-hero.jpg" as="image" fetchPriority="high" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Extranjeros",url:"/seguros/salud-extranjeros"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
@@ -121,7 +121,7 @@ export default function SaludExtranjerosPage() {
         </div>
       </div>
 
-      <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed top-[42px] left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-slate-900 text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
@@ -138,14 +138,14 @@ export default function SaludExtranjerosPage() {
         </div>
       </header>
 
-      <main className="min-h-screen bg-white pt-24 sm:pt-28">
+      <main className="min-h-screen bg-white pt-[106px] sm:pt-[112px]">
         
         {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
         <section className="relative py-20 lg:py-32 bg-[#1e3a5f] overflow-hidden min-h-[85vh] flex items-center">
           {/* Fondo con imagen multicultural - optimizada para LCP */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900"
+              src="/images/extranjeros-hero.jpg"
               alt="Seguro médico para extranjeros en España — NIE TIE visado consulado"
               width={900}
               height={600}
@@ -196,11 +196,11 @@ export default function SaludExtranjerosPage() {
                       className="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-2xl text-xl font-black transition-all shadow-xl shadow-emerald-500/20 w-full"
                     >
                       <WhatsAppIcon className="w-6 h-6" />
-                      Quiero mi seguro para visado ahora
+                      Seguro para NIE, TIE o Visado — WhatsApp
                     </a>
                     <p className="text-center mt-3 text-white font-bold flex items-center justify-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      Respuesta en menos de 10 minutos
+                      🇪🇸 Hablamos español · Respuesta en menos de 10 minutos
                     </p>
                   </div>
                   
@@ -224,12 +224,15 @@ export default function SaludExtranjerosPage() {
                   <div className="relative">
                     <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
                       <Image 
-                        src="/images/premium/certificado-oficial.png" 
-                        alt="Certificado Oficial de Seguro de Salud" 
+                        src="/images/rosa_y_sebastian.jpeg" 
+                        alt="Rosa y Sebastián — Valentín Protección Integral" 
                         width={600} 
                         height={800} 
                         className="rounded-[24px] w-full h-auto"
                       />
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap">
+                        +100 NIE/TIE aprobados
+                      </div>
                     </div>
                     
                     {/* Badge flotante "Listo en 24h" - Ahora fuera del overflow */}
@@ -544,7 +547,7 @@ export default function SaludExtranjerosPage() {
           className="flex items-center justify-center gap-3 bg-emerald-600 text-white py-4 rounded-xl font-black shadow-lg"
         >
           <WhatsAppIcon className="w-5 h-5" />
-          Quiero mi seguro para visado
+          Seguro NIE/TIE — WhatsApp ahora
         </a>
       </div>
     </>
