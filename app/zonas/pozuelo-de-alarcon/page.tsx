@@ -1,136 +1,129 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { StickyWhatsApp } from "@/components/sticky-whatsapp";
-import { buildWhatsAppHref } from "@/lib/products";
-import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppButton } from "@/components/whatsapp-button";
-import GuaranteeBadge from "@/components/GuaranteeBadge";
-import GarantiasSection from "@/components/GarantiasSection";
-import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Users, Shield, Heart, Phone, Crown } from "lucide-react";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { StickyWhatsApp } from '@/components/sticky-whatsapp';
+import { buildWhatsAppHref } from '@/lib/products';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { WhatsAppButton } from '@/components/whatsapp-button';
+import GuaranteeBadge from '@/components/GuaranteeBadge';
+import GarantiasSection from '@/components/GarantiasSection';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import { Sparkles, CheckCircle2, MapPin, Building2, Stethoscope, Home, Dog, Heart, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Seguros en Pozuelo de Alarc√≥n ‚Äî Salud Premium | VPI",
-  description: "Asesor de seguros en Pozuelo de Alarc√≥n. Asesor√≠a independiente para familias y aut√≥nomos. Sin letra peque√±a. Consulta gratuita en 30 minutos.",
-  keywords: ["seguros Pozuelo de Alarc√≥n","seguros Pozuelo Alarc√≥n","seguros premium Pozuelo","mediador Pozuelo"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon" },
+  title: 'Seguros en Pozuelo de AlarcÛn ó Mediador Independiente | ValentÌn ProtecciÛn Integral',
+  description: 'Asesor de seguros en Pozuelo de AlarcÛn. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 aÒos. Consulta gratis.',
+  keywords: ['seguros Pozuelo de AlarcÛn', 'seguro salud Pozuelo', 'mediador seguros Pozuelo de AlarcÛn', 'seguro medico privado Pozuelo'],
+  alternates: { canonical: 'https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon' },
   openGraph: {
-    title: "Seguros en Pozuelo de Alarc√≥n ‚Äî Salud Premium | VPI",
-    description: "Asesor de seguros en Pozuelo de Alarc√≥n. Asesor√≠a independiente para familias y aut√≥nomos. Sin letra peque√±a. Consulta gratuita en 30 minutos.",
-    url: "https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon",
-    siteName: "Valent√≠n Protecci√≥n Integral",
-    locale: "es_ES",
-    type: "website",
+    title: 'Seguros en Pozuelo de AlarcÛn ó Mediador Independiente | ValentÌn ProtecciÛn Integral',
+    description: 'Asesor de seguros en Pozuelo de AlarcÛn. Salud, vida, dental y mascotas sin copagos. Mediador independiente con +10 aÒos. Consulta gratis.',
+    url: 'https://valentinproteccionintegral.com/zonas/pozuelo-de-alarcon',
+    siteName: 'ValentÌn ProtecciÛn Integral',
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Valent√≠n Protecci√≥n Integral - Seguros Pozuelo de Alarc√≥n Premium",
-  "telephone": "+34603448765",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Pozuelo de Alarc√≥n",
-    "addressRegion": "Madrid",
-    "addressCountry": "ES"
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'ValentÌn ProtecciÛn Integral - Seguros Pozuelo de AlarcÛn',
+  telephone: '+34603448765',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pozuelo de AlarcÛn',
+    addressRegion: 'Madrid',
+    addressCountry: 'ES',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 40.4353,
-    "longitude": -3.8144
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 40.435,
+    longitude: -3.8142,
   },
-  "areaServed": ["Pozuelo de Alarc√≥n", "Majadahonda", "Boadilla del Monte", "Las Rozas", "Madrid"],
-  "description": "Seguros premium Pozuelo de Alarc√≥n. Salud privada ejecutivos, vida familiar, hogar alta gama.",
+  areaServed: ['Pozuelo de AlarcÛn', 'Majadahonda', 'Boadilla del Monte', 'Las Rozas', 'Madrid'],
+  description: 'Mediador de seguros independiente en Pozuelo de AlarcÛn. Salud, vida, dental, mascotas.',
 };
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 export default function PozueloPage() {
-  const wCotiza = buildWhatsAppHref("Hola, soy de Pozuelo de Alarc√≥n y busco un seguro premium para mi familia.");
+  const wCotiza = buildWhatsAppHref('Hola, soy de Pozuelo de AlarcÛn y necesito informaciÛn sobre seguros.');
 
   return (
     <>
-      <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Zonas",url:"/zonas"},{name:"Pozuelo de Alarc√≥n",url:"/zonas/pozuelo-de-alarcon"}]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
+      <BreadcrumbSchema items={[{ name: 'Inicio', url: '/' }, { name: 'Zonas', url: '/zonas' }, { name: 'Pozuelo de AlarcÛn', url: '/zonas/pozuelo-de-alarcon' }]} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Header />
-      <main className="min-h-screen bg-white">
-        
-        {/* HERO UBER PREMIUM ‚Äî Pozuelo */}
-        <section className="py-16 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <main className='min-h-screen bg-white'>
+        {/* HERO UBER ó Mapa local style */}
+        <section className='py-16 lg:py-24'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl'>
+            <div className='grid lg:grid-cols-2 gap-12 items-center'>
               {/* Left: Content */}
               <div>
                 {/* Guarantee Badge */}
-                <div className="mb-6">
-                  <GuaranteeBadge type="zonas" />
+                <div className='mb-6'>
+                  <GuaranteeBadge type='zonas' />
                 </div>
-                
-                {/* H1 Uber style */}
-                <h1 className="text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4">
-                  Seguros en Pozuelo de Alarc√≥n:
+
+                {/* H1 Uber style ó 52px bold */}
+                <h1 className='text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4'>
+                  Seguros en Pozuelo de AlarcÛn:
                   <br />
-                  <span className="text-[#4b4b4b]">Servicio Premium Local</span>
+                  <span className='text-[#4b4b4b]'>Mediador Independiente</span>
                 </h1>
-                
-                {/* Subhead premium */}
-                <p className="text-xl text-[#4b4b4b] leading-relaxed mb-8 max-w-md">
-                  Servicio premium para tu familia.
+
+                {/* Subhead */}
+                <p className='text-xl text-[#4b4b4b] leading-relaxed mb-8 max-w-md'>
+                  En Pozuelo las familias merecen seguros a medida. No vendemos una marca: buscamos lo mejor para ti entre todas las compaÒÌas.
                 </p>
-                
-                {/* CTAs Uber */}
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <WhatsAppButton 
-                    href={wCotiza}
-                    location="pozuelo-hero"
-                    className="group inline-flex items-center gap-2 bg-black hover:bg-[#333] text-white px-6 py-3 rounded-full text-base font-medium transition-colors"
-                  >
+
+                {/* CTAs Uber ó pill 999px */}
+                <div className='flex flex-wrap gap-4 mb-8'>
+                  <WhatsAppButton href={wCotiza} location='pozuelo-hero' className='group inline-flex items-center gap-2 bg-black hover:bg-[#333] text-white px-6 py-3 rounded-full text-base font-medium transition-colors'>
                     WhatsApp Pozuelo
-                    <span className="hidden group-hover:inline text-sm ml-1">
-                      ÔøΩ Caf√© gratis
-                    </span>
                   </WhatsAppButton>
-                  <a 
-                    href="tel:603448765"
-                    className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-base font-medium border border-[#efefef] hover:bg-[#e2e2e2] transition-colors"
+                  <a
+                    href='tel:603448765'
+                    className='inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-base font-medium border border-[#efefef] hover:bg-[#e2e2e2] transition-colors'
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className='w-5 h-5' />
                     Llamar
                   </a>
                 </div>
-                
-                {/* Trust pills premium */}
-                <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Hospital Universitario 10min
+
+                {/* Trust pills */}
+                <div className='flex flex-wrap gap-3'>
+                  <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
+                    <CheckCircle2 className='w-4 h-4' />
+                    Respuesta en 30min
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm">
-                    <Crown className="w-4 h-4" />
-                    Servicio premium
+                  <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
+                    <Heart className='w-4 h-4' />
+                    Conocemos la zona
                   </span>
                 </div>
               </div>
-              
-              {/* Right: Hero image */}
-              <div className="relative">
-                <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
+
+              {/* Right: Map image */}
+              <div className='relative'>
+                <div className='relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]'>
                   <Image
-                    src="/images/zonas/pozuelo-de-alarcon.webp"
-                    alt="Biblioteca Municipal Universitaria ESIC en Pozuelo de Alarc√≥n, Madrid"
+                    src='/images/zonas/pozuelo-de-alarcon.webp'
+                    alt='Pozuelo de AlarcÛn, Madrid Oeste'
                     width={600}
                     height={450}
-                    className="w-full h-auto object-cover object-top"
+                    className='w-full h-auto object-cover object-top'
                     priority
                   />
-                </div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg">
-                    <MapPin className="w-4 h-4 text-black" />
-                    <span className="text-sm font-bold text-black">Pozuelo de Alarc√≥n</span>
+                  {/* Location badge bottom-left */}
+                  <div className='absolute bottom-4 left-4'>
+                    <div className='inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-4 py-2 shadow-lg'>
+                      <MapPin className='w-4 h-4 text-black' />
+                      <span className='text-sm font-bold text-black'>Pozuelo de AlarcÛn</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -138,99 +131,92 @@ export default function PozueloPage() {
           </div>
         </section>
 
-        {/* POZUELO ESPECIAL ‚Äî Premium dark section */}
-        <section className="py-16 bg-black text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <p className="text-sm uppercase tracking-wider text-[#afafaf] mb-4">EXPERTOS EN POZUELO</p>
-            <h2 className="text-[36px] font-bold leading-[1.22] mb-12">
-              Conocemos tus necesidades premium
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* LOCAL PROOF ó Uber cards dark */}
+        <section className='py-16 bg-black text-white'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
+            <p className='text-sm uppercase tracking-wider text-[#afafaf] mb-4'>POZUELO DE ALARC”N, MADRID OESTE</p>
+            <p className='text-lg text-[#afafaf] mb-12 max-w-2xl'>
+              Pozuelo tiene una de las rentas m·s altas de EspaÒa. Tus seguros deben estar diseÒados para ese nivel de vida, no para una media que no te representa.
+            </p>
+
+            <div className='grid md:grid-cols-3 gap-6'>
               {[
-                { icon: Building2, title: "Hospital Universitario", desc: "A 10 minutos. Las mejores especialidades m√©dicas." },
-                { icon: Users, title: "Colegios privados", desc: "Seguros escolares y accidentes deportivos cubiertos." },
-                { icon: Home, title: "Urbanizaciones premium", desc: "Seguros de hogar a medida para viviendas de alta gama." },
-                { icon: Stethoscope, title: "Salud ejecutivos", desc: "Cobertura premium con acceso a los mejores m√©dicos." },
+                { icon: Building2, title: 'Perfil premium', desc: 'Familias con necesidades de salud privada, patrimonio que proteger y calidad de vida que mantener.' },
+                { icon: Stethoscope, title: 'ClÌnicas de referencia', desc: 'Acceso a ClÌnica Ruber, Hospital MonteprÌncipe y toda la red privada de Madrid Oeste.' },
+                { icon: Sparkles, title: 'Sin letras pequeÒas', desc: 'Te explicamos cada cl·usula antes de firmar. Transparencia total, siempre.' },
               ].map((item, i) => (
-                <div key={i} className="rounded-xl p-6 border border-[#333]">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-white" />
+                <div key={i} className='rounded-xl p-6 border border-[#333]'>
+                  <div className='w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4'>
+                    <item.icon className='w-5 h-5 text-white' />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                  <p className="text-[#afafaf] text-sm">{item.desc}</p>
+                  <h3 className='text-xl font-bold mb-2'>{item.title}</h3>
+                  <p className='text-[#afafaf]'>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SERVICIOS POZUELO PREMIUM */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[36px] font-bold text-black leading-[1.22] text-center mb-12">
-              Servicios exclusivos Pozuelo
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* POPULARES POZUELO ó Uber grid */}
+        <section className='py-16'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
+            <h2 className='text-[36px] font-bold text-black leading-[1.22] text-center mb-12'>Populares en Pozuelo</h2>
+
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
               {[
-                { icon: Stethoscope, title: "Salud ejecutivos", desc: "Quir√≥n + HM" },
-                { icon: Users, title: "Vida familiar", desc: "Cobertura completa" },
-                { icon: Home, title: "Hogar alta gama", desc: "Chalets y pisos premium" },
-                { icon: Shield, title: "Jur√≠dica", desc: "Contratos y reclamaciones" },
+                { icon: Stethoscope, title: 'Salud premium', desc: 'Sin copagos, acceso inmediato.' },
+                { icon: Home, title: 'Vida familiar', desc: 'Protege tu patrimonio en Pozuelo.' },
+                { icon: Dog, title: 'Mascotas', desc: 'Veterinarios de referencia en zona.' },
+                { icon: Heart, title: 'Decesos', desc: 'Tranquilidad para toda la familia.' },
               ].map((item, i) => (
-                <div key={i} className="rounded-xl p-5 shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px] hover:shadow-[rgba(0,0,0,0.16)_0px_4px_20px_0px] transition-shadow">
-                  <div className="w-10 h-10 rounded-lg bg-black flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-white" />
+                <div key={i} className='rounded-xl p-5 shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px] hover:shadow-[rgba(0,0,0,0.16)_0px_4px_20px_0px] transition-shadow'>
+                  <div className='w-10 h-10 rounded-lg bg-[#efefef] flex items-center justify-center mb-3'>
+                    <item.icon className='w-5 h-5 text-black' />
                   </div>
-                  <h3 className="text-base font-bold text-black mb-1">{item.title}</h3>
-                  <p className="text-sm text-[#4b4b4b]">{item.desc}</p>
+                  <h3 className='text-base font-bold text-black mb-1'>{item.title}</h3>
+                  <p className='text-sm text-[#4b4b4b]'>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* EQUIPO PREMIUM POZUELO */}
-        <section className="py-16 bg-[#efefef]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]">
+        {/* EQUIPO LOCAL */}
+        <section className='py-16 bg-[#efefef]'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
+            <div className='grid lg:grid-cols-2 gap-12 items-center'>
+              <div className='relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px]'>
                 <Image
-                  src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa Valent√≠n ¬∑ Pozuelo especialistas"
+                  src='/images/rosa_y_sebastian.jpeg'
+                  alt='Rosa ValentÌn ∑ Asesora en Pozuelo de AlarcÛn'
                   width={500}
                   height={500}
-                  className="w-full h-auto object-cover object-[center_20%]"
+                  className='w-full h-auto object-cover object-[center_20%]'
                   priority
                   style={{ aspectRatio: '1/1' }}
                 />
               </div>
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm mb-6">
-                  <Crown className="w-4 h-4" />
-                  Pozuelo especialistas
+                <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-sm mb-6 shadow-sm'>
+                  <MapPin className='w-4 h-4' />
+                  Atendemos Pozuelo
                 </div>
-                <h2 className="text-[36px] font-bold text-black leading-[1.22] mb-4">
-                  Rosa Valent√≠n
-                </h2>
-                <p className="text-lg text-[#4b4b4b] mb-6">
-                  Especialistas en seguros premium para Pozuelo de Alarc√≥n. 
-                  Entendemos las necesidades espec√≠ficas de las familias 
-                  de esta zona: calidad, exclusividad y servicio puerta a puerta.
+                <h2 className='text-[36px] font-bold text-black leading-[1.22] mb-4'>Rosa ValentÌn</h2>
+                <p className='text-lg text-[#4b4b4b] mb-6'>
+                  Tu mediadora en Pozuelo de AlarcÛn. Conozco las necesidades de las familias de la zona porque las asesoro cada dÌa.
                 </p>
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-center gap-3 text-[#4b4b4b]">
-                    <MapPin className="w-5 h-5 text-black" />
-                    <span>Pozuelo de Alarc√≥n, Madrid</span>
+                <div className='space-y-3 mb-8'>
+                  <div className='flex items-center gap-3 text-[#4b4b4b]'>
+                    <MapPin className='w-5 h-5 text-black' />
+                    <span>Pozuelo de AlarcÛn, Madrid Oeste</span>
                   </div>
-                  <div className="flex items-center gap-3 text-[#4b4b4b]">
-                    <Phone className="w-5 h-5 text-black" />
+                  <div className='flex items-center gap-3 text-[#4b4b4b]'>
+                    <Phone className='w-5 h-5 text-black' />
                     <span>603 44 87 65</span>
                   </div>
                 </div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm'>
+                  <CheckCircle2 className='w-4 h-4' />
                   DGSFP: C012479234434D
                 </div>
               </div>
@@ -238,93 +224,78 @@ export default function PozueloPage() {
           </div>
         </section>
 
-        {/* PROCESO EXCLUSIVO */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-[36px] font-bold text-black leading-[1.22] text-center mb-12">
-              Proceso exclusivo
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-8">
+        {/* PROCESO LOCAL */}
+        <section className='py-16'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
+            <h2 className='text-[36px] font-bold text-black leading-[1.22] text-center mb-12'>Proceso local</h2>
+
+            <div className='grid md:grid-cols-3 gap-8'>
               {[
-                { num: "1", title: "WhatsApp Privado", desc: "Cu√©ntanos tus preferencias premium." },
-                { num: "2", title: "Asesor Personal", desc: "En 30 min te asignamos tu asesor dedicado." },
-                { num: "3", title: "Puerta a Puerta", desc: "Servicio exclusivo en tu domicilio en Pozuelo." },
+                { num: '1', title: 'WhatsApp', desc: 'Escribe "Pozuelo" y tu necesidad concreta.' },
+                { num: '2', title: 'An·lisis', desc: 'Revisamos tu situaciÛn y comparamos las mejores opciones del mercado.' },
+                { num: '3', title: 'Sin sorpresas', desc: 'Contrato claro, sin permanencia. Si algo falla, lo resolvemos.' },
               ].map((step, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
-                  <p className="text-base text-[#4b4b4b]">{step.desc}</p>
+                <div key={i} className='text-center'>
+                  <div className='w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold mx-auto mb-4'>{step.num}</div>
+                  <h3 className='text-xl font-bold text-black mb-2'>{step.title}</h3>
+                  <p className='text-base text-[#4b4b4b]'>{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA + MAPA POZUELO */}
-        <section className="py-16 bg-black text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* CTA + MAPA */}
+        <section className='py-16 bg-black text-white'>
+          <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
+            <div className='grid lg:grid-cols-2 gap-12 items-center'>
               {/* Left: CTA */}
-              <div className="text-center lg:text-left">
-                <h2 className="text-[36px] sm:text-[48px] font-bold leading-[1.22] mb-4">
-                  Servicio premium Pozuelo
-                </h2>
-                <p className="text-xl text-[#afafaf] mb-8">
-                  Un WhatsApp. 30 minutos. Asesor√≠a puerta a puerta.
-                </p>
-                <WhatsAppButton 
+              <div className='text-center lg:text-left'>
+                <h2 className='text-[36px] sm:text-[48px] font-bold leading-[1.22] mb-4'>Tu mediador de seguros en Pozuelo</h2>
+                <p className='text-xl text-[#afafaf] mb-8'>Independientes. Sin comisiones ocultas. Sin permanencia.</p>
+                <WhatsAppButton
                   href={wCotiza}
-                  location="pozuelo-cta-final"
-                  className="group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[#e2e2e2] transition-colors"
+                  location='pozuelo-cta-final'
+                  className='group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[#e2e2e2] transition-colors'
                 >
                   WhatsApp Pozuelo
                 </WhatsAppButton>
-                
+
                 {/* Badges */}
-                <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
-                  {[
-                    "30min respuesta",
-                    "Asesor personal",
-                    "Servicio puerta a puerta",
-                  ].map((item, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm">
-                      <CheckCircle2 className="w-4 h-4" />
+                <div className='flex flex-wrap justify-center lg:justify-start gap-3 mt-8'>
+                  {['Sin copagos', 'Mediador independiente', 'DGSFP verificado'].map((item, i) => (
+                    <div key={i} className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm'>
+                      <CheckCircle2 className='w-4 h-4' />
                       {item}
                     </div>
                   ))}
                 </div>
-                
-                <p className="text-sm text-[#afafaf] mt-8">
-                  DGSFP: C012479234434D
-                </p>
+
+                <p className='text-sm text-[#afafaf] mt-8'>DGSFP: C012479234434D</p>
               </div>
-              
-              {/* Right: Google Maps embed Pozuelo */}
-              <div className="relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.16)_0px_4px_20px_0px] h-[350px]">
+
+              {/* Right: Google Maps embed */}
+              <div className='relative rounded-xl overflow-hidden shadow-[rgba(0,0,0,0.16)_0px_4px_20px_0px] h-[350px]'>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.1234567890123!2d-3.8144!3d40.4353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e123456789%3A0xabcdef1234567890!2sPozuelo%20de%20Alarc%C3%B3n%2C%20Madrid!5e0!3m2!1ses!2ses!4v1234567890123"
-                  width="100%"
-                  height="100%"
+                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.5!2d-3.8142!3d40.4350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e123456789%3A0xabcdef1234567890!2sPozuelo%20de%20Alarc%C3%B3n%2C%20Madrid!5e0!3m2!1ses!2ses!4v1234567890123'
+                  width='100%'
+                  height='100%'
                   style={{ border: 0 }}
                   allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicaci√≥n Pozuelo de Alarc√≥n"
+                  loading='lazy'
+                  referrerPolicy='no-referrer-when-downgrade'
+                  title='UbicaciÛn Pozuelo de AlarcÛn'
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* RESE√ëAS GOOGLE */}
-        <GoogleReviewsWidget title="Opiniones de clientes en Pozuelo de Alarc√≥n" />
+        {/* RESE—AS GOOGLE */}
+        <GoogleReviewsWidget title='Opiniones de clientes en Pozuelo de AlarcÛn' />
 
-        {/* GARANT√çAS PREMIUM */}
-        <GarantiasSection brandColor="#10b981" />
-
+        {/* GARANTÕAS PREMIUM */}
+        <GarantiasSection brandColor='#10b981' />
       </main>
       <Footer />
       <StickyWhatsApp />
