@@ -44,7 +44,7 @@ export const zonas: Zona[] = [
     metaDescription: 'Asesores de seguros en Boadilla del Monte con sede propia. +10 años protegiendo familias y autónomos locales. Salud, vida, mascotas, dental. Primera consulta gratuita. DGSFP C012479234434D.',
     h1: 'Seguros en Boadilla del Monte – Tu Asesor Local con +10 Años',
     heroSubtitle: 'Sede en Boadilla del Monte. Rosa y Sebastián llevan más de 10 años protegiendo a familias, autónomos y vecinos del municipio. Sin call center — respuesta personal en 30 minutos.',
-    intro: 'Somos asesores de seguros independientes con sede en Boadilla del Monte. Llevamos más de 10 años ayudando a familias, autónomos y vecinos del municipio a elegir el seguro que realmente necesitan. Comparamos entre las principales compañías del mercado sin ataduras, para encontrar la opción que encaja con tu situación real — sin letra pequeña y sin presión comercial. La consulta es gratuita y puedes contactarnos por WhatsApp, teléfono o videollamada.',
+    intro: 'Somos agentes de seguros registrados con sede en Boadilla del Monte. Llevamos más de 10 años ayudando a familias, autónomos y vecinos del municipio a elegir el seguro que realmente necesitan. Comparamos entre las principales compañías del mercado con registro oficial DGSFP, para encontrar la opción que encaja con tu situación real — sin letra pequeña y sin presión comercial. La consulta es gratuita y puedes contactarnos por WhatsApp, teléfono o videollamada.',
     porQueElegirNos: 'Boadilla del Monte es uno de los municipios con mayor calidad de vida y mayor renta per cápita de España. Ese perfil se traduce en familias con hipotecas, autónomos con negocio propio y un perfil senior creciente que busca cobertura completa. Las necesidades de protección son amplias y diversas — y ningún comparador automático puede sustituir a alguien que conoce el municipio de primera mano.\n\nBoadilla no tiene hospital propio. El centro hospitalario de referencia más cercano es el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 10 minutos, y el HM Montepríncipe a escasos 5 minutos. Esto hace que un seguro de salud privado sea especialmente valioso para los residentes: elimina listas de espera para especialistas, pruebas diagnósticas y urgencias sin necesidad de desplazarse. Las listas de espera en la sanidad pública madrileña superan los 60 días de media para especialistas.\n\nNuestra sede está en Boadilla del Monte. No somos un call center ni una plataforma digital — somos Rosa y Sebastián, asesores que viven y trabajan en el municipio. Conocemos los colegios, las urbanizaciones, el Prado del Espino, las necesidades reales de las familias de aquí. Atendemos presencialmente y también por teléfono, WhatsApp o videollamada para quien prefiera no desplazarse.',
     datosLocales: {
       poblacion: '52.000 habitantes',
@@ -114,8 +114,8 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Las Rozas — Salud, Vida, Autónomos | VPI',
     metaDescription: 'Asesores de seguros independientes para Las Rozas de Madrid. Salud sin esperas, vida, autónomos y RC mascotas. +10 años, +1.200 familias. Primera consulta gratuita. DGSFP C012479234434D.',
     h1: 'Seguros en Las Rozas de Madrid – Tu Asesor Independiente con +10 Años',
-    heroSubtitle: 'Asesores independientes para familias, autónomos y profesionales de Las Rozas. Salud, vida, mascotas y más — sin call center, sin letra pequeña. Rosa y Sebastián responden en 30 minutos.',
-    intro: 'Atendemos a familias, autónomos y profesionales de Las Rozas de Madrid con asesoramiento independiente en seguros. Analizamos tu situación real, comparamos entre las principales compañías del mercado y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin coste. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
+    heroSubtitle: 'Agentes registrados para familias, autónomos y profesionales de Las Rozas. Salud, vida, mascotas y más — sin call center, sin letra pequeña. Rosa y Sebastián responden en 30 minutos.',
+    intro: 'Atendemos a familias, autónomos y profesionales de Las Rozas de Madrid con asesoramiento especializado en seguros. Analizamos tu situación real, analizamos entre las principales compañías del mercado y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin coste. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
     porQueElegirNos: 'Las Rozas de Madrid ha crecido hasta convertirse en uno de los municipios más dinámicos del noroeste metropolitano, con más de 100.000 habitantes y una alta concentración de familias jóvenes, autónomos digitales y profesionales de empresa. Este perfil mixto genera necesidades muy diversas: desde familias con hipoteca que necesitan un seguro de vida bien dimensionado, hasta autónomos tech que deben proteger sus ingresos ante una incapacidad, pasando por familias con mascotas que buscan RC y cobertura veterinaria.\n\nLas Rozas no tiene hospital público propio. El centro hospitalario de referencia más cercano es el HM Montepríncipe en Boadilla del Monte, a unos 12 minutos, y el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 15 minutos. Esto hace que un seguro de salud privado sea especialmente valioso: elimina las listas de espera para especialistas — que en Madrid superan los 67 días de media — y da acceso a consultas en 24-48h.\n\nLas Rozas también alberga uno de los mayores polos empresariales del noroeste — lo que hace que el seguro para autónomos y pymes sea una de las coberturas más demandadas en la zona. Somos Agentes registrados y conocemos el perfil del municipio. Atendemos presencialmente desde Boadilla y por videollamada o WhatsApp para quien prefiera no desplazarse.',
     datosLocales: {
       poblacion: 'Más de 100.000 habitantes',
@@ -126,8 +126,8 @@ export const zonas: Zona[] = [
     perfilResidente: 'Familias jóvenes con hijos, autónomos, directivos de empresa y pymes. Perfil diverso. Alta demanda de salud, vida, accidentes y seguros de negocio.',
     faqsLocales: [
       {
-        q: '¿Hay asesores de seguros independientes cerca de Las Rozas de Madrid?',
-        a: 'Sí. Desde nuestra sede en Boadilla del Monte, a unos 15 minutos de Las Rozas, atendemos a clientes del municipio tanto de forma presencial como por videollamada, teléfono o WhatsApp. Somos independientes: trabajamos con las principales compañías sin ataduras y siempre recomendamos lo que más te conviene a ti.',
+        q: '¿Hay agentes de seguros registrados cerca de Las Rozas de Madrid?',
+        a: 'Sí. Desde nuestra sede en Boadilla del Monte, a unos 15 minutos de Las Rozas, atendemos a clientes del municipio tanto de forma presencial como por videollamada, teléfono o WhatsApp. Somos independientes: trabajamos con las principales compañías con registro oficial DGSFP y siempre recomendamos lo que más te conviene a ti.',
       },
       {
         q: '¿Qué seguro necesita un autónomo o profesional tech en Las Rozas?',
@@ -152,7 +152,7 @@ export const zonas: Zona[] = [
     ],
     segurosDestacados: ['salud', 'vida', 'accidentes', 'mascotas'],
     zonasCercanas: ['boadilla-del-monte', 'majadahonda', 'madrid'],
-    whatsappMessage: 'Hola, soy de Las Rozas y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
+    whatsappMessage: 'Hola, soy de Las Rozas y quiero asesoramiento especializado sobre seguros. ¿Podéis ayudarme?',
     heroImage: '/images/zonas/las-rozas.webp',
     heroImageAlt: 'Centro de las Artes y Biblioteca León Tolstoi en Las Rozas de Madrid',
     heroImageCredit: 'Centro de las Artes y Biblioteca León Tolstoi · Wikimedia Commons (CC BY-SA)',
@@ -172,7 +172,7 @@ export const zonas: Zona[] = [
       'seguro mascotas las rozas',
       'seguro rc perro las rozas',
       'correduría seguros las rozas',
-      'mediador seguros las rozas madrid',
+      'agente seguros las rozas madrid',
       'seguro accidentes las rozas',
     ],
   },
@@ -185,8 +185,8 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Majadahonda — Salud, Vida y Autónomos | VPI',
     metaDescription: 'Asesores de seguros independientes para Majadahonda. Salud privada sin esperas, vida, autónomos y dental. +10 años, +1.200 familias. A 10 min de Majadahonda. DGSFP C012479234434D.',
     h1: 'Seguros en Majadahonda – Tu Asesor Local con +10 Años',
-    heroSubtitle: 'Asesores independientes a 10 minutos de Majadahonda. Rosa y Sebastián llevan más de 10 años protegiendo a familias y autónomos del noroeste de Madrid. Respuesta personal en 30 minutos — sin call center.',
-    intro: 'Asesoramos a particulares, familias y autónomos de Majadahonda en seguros de salud, vida, dental, accidentes y más. Nuestra sede está en Boadilla del Monte, a 10 minutos, y atendemos también por videollamada, teléfono o WhatsApp. Somos independientes: comparamos entre las principales compañías sin ataduras, para que la recomendación sea siempre la que te conviene a ti — no la que más comisión da.',
+    heroSubtitle: 'Agentes registrados a 10 minutos de Majadahonda. Rosa y Sebastián llevan más de 10 años protegiendo a familias y autónomos del noroeste de Madrid. Respuesta personal en 30 minutos — sin call center.',
+    intro: 'Asesoramos a particulares, familias y autónomos de Majadahonda en seguros de salud, vida, dental, accidentes y más. Nuestra sede está en Boadilla del Monte, a 10 minutos, y atendemos también por videollamada, teléfono o WhatsApp. Somos independientes: analizamos entre las principales compañías con registro oficial DGSFP, para que la recomendación sea siempre la que te conviene a ti — no la que más comisión da.',
     porQueElegirNos: 'Majadahonda tiene un perfil demográfico muy particular: alta concentración de profesionales liberales, sanitarios, directivos y familias de nivel medio-alto. El municipio acoge el Hospital Universitario Puerta de Hierro, uno de los centros más grandes de la Comunidad de Madrid — pero ese hospital es público y sujeto a las listas de espera del sistema sanitario madrileño, que superan los 60 días para especialistas. Un seguro de salud privado elimina esas esperas y da acceso a consultas en 24-48h.\n\nMajadahonda también concentra una alta actividad deportiva — golf, tenis, pádel, running — que hace que las coberturas de accidentes deportivos sean especialmente relevantes para muchos residentes. Un accidente durante la práctica deportiva puede generar gastos médicos y, sobre todo, tiempo sin trabajar. Un seguro de accidentes bien dimensionado cubre ambas cosas.\n\nLos autónomos y profesionales liberales de Majadahonda — abogados, médicos, consultores, diseñadores — necesitan protección específica: RC profesional, incapacidad temporal y salud. Rosa y Sebastián conocen esos perfiles desde hace más de 10 años y asesoran de forma personalizada, sin plantillas ni soluciones genéricas.',
     datosLocales: {
       poblacion: '75.000 habitantes',
@@ -244,7 +244,7 @@ export const zonas: Zona[] = [
       'seguro dental majadahonda',
       'seguro vida majadahonda',
       'correduría seguros majadahonda',
-      'mediador seguros majadahonda',
+      'agente seguros majadahonda',
     ],
   },
   {
@@ -256,8 +256,8 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Pozuelo de Alarcón — Salud Premium | VPI',
     metaDescription: 'Asesores de seguros independientes para Pozuelo de Alarcón. Salud premium con reembolso, vida para hipotecas altas, protección jurídica. +10 años, +1.200 familias. DGSFP C012479234434D.',
     h1: 'Seguros en Pozuelo de Alarcón – Asesoramiento Experto e Independiente',
-    heroSubtitle: 'Asesores independientes para familias y profesionales de Pozuelo de Alarcón. Salud, vida, hogar y protección jurídica — coberturas que responden cuando las necesitas. Rosa y Sebastián, respuesta personal en 30 minutos.',
-    intro: 'Ayudamos a familias y profesionales de Pozuelo de Alarcón a elegir seguros con criterio. Analizamos tu situación real, comparamos entre las principales compañías del mercado y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin compromisos. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
+    heroSubtitle: 'Agentes registrados para familias y profesionales de Pozuelo de Alarcón. Salud, vida, hogar y protección jurídica — coberturas que responden cuando las necesitas. Rosa y Sebastián, respuesta personal en 30 minutos.',
+    intro: 'Ayudamos a familias y profesionales de Pozuelo de Alarcón a elegir seguros con criterio. Analizamos tu situación real, analizamos entre las principales compañías del mercado y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin compromisos. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
     porQueElegirNos: 'Pozuelo de Alarcón es uno de los municipios con mayor renta per cápita de España. Ese perfil se traduce en necesidades de protección amplias y bien definidas: familias con hipotecas de capital elevado que necesitan seguros de vida correctamente dimensionados, profesionales con demanda de salud premium con libre elección médica o reembolso, y autónomos con facturaciones altas que deben proteger su actividad y sus ingresos ante cualquier imprevisto.\n\nEl perfil de Pozuelo también incluye familias con hijos en colegios privados e internacionales, propiedades de valor elevado que justifican un seguro de hogar bien cubierto, y un perfil senior con patrimonio que busca dejar todo en orden para sus hijos. No se trata de pagar más por lo mismo — se trata de tener la cobertura que realmente responde en el momento que la necesitas.\n\nSomos Agentes registrados: no trabajamos para ninguna compañía, trabajamos para ti. Comparamos el mercado completo y te explicamos cada opción con claridad, sin tecnicismos y sin intereses ocultos. Llevamos más de 10 años haciéndolo para familias y profesionales del noroeste de Madrid. Atendemos por videollamada o presencialmente desde nuestra sede en Boadilla del Monte, a menos de 15 minutos de Pozuelo.',
     datosLocales: {
       poblacion: '90.000 habitantes',
@@ -276,8 +276,8 @@ export const zonas: Zona[] = [
         a: 'Con hipotecas de capital elevado y un nivel de vida que mantener, en Pozuelo es habitual necesitar capitales asegurados altos. La regla general es cubrir el capital pendiente de la hipoteca más entre 3 y 5 veces los ingresos anuales netos. Rosa y Sebastián calculan la cobertura exacta que necesitas para tu situación concreta, sin compromiso.',
       },
       {
-        q: '¿Hay asesores de seguros independientes cerca de Pozuelo de Alarcón?',
-        a: 'Nuestra sede está en Boadilla del Monte, a menos de 15 minutos de Pozuelo. Atendemos también por videollamada o teléfono. Somos completamente independientes: comparamos entre las principales compañías sin preferencias ni ataduras.',
+        q: '¿Hay agentes de seguros registrados cerca de Pozuelo de Alarcón?',
+        a: 'Nuestra sede está en Boadilla del Monte, a menos de 15 minutos de Pozuelo. Atendemos también por videollamada o teléfono. Somos completamente independientes: analizamos entre las principales compañías sin preferencias ni ataduras.',
       },
       {
         q: '¿Qué seguro necesita un autónomo o directivo en Pozuelo de Alarcón?',
@@ -315,7 +315,7 @@ export const zonas: Zona[] = [
       'seguro vida hipoteca pozuelo',
       'seguro hogar pozuelo de alarcon',
       'correduría seguros pozuelo',
-      'mediador seguros pozuelo de alarcon',
+      'agente seguros pozuelo de alarcon',
     ],
   },
   {
@@ -327,8 +327,8 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Madrid — Asesores Independientes | VPI',
     metaDescription: 'Asesores de seguros independientes en Madrid. Salud privada sin esperas, vida, autónomos y más. +10 años, +1.200 familias. Atención por videollamada y WhatsApp. DGSFP C012479234434D.',
     h1: 'Seguros en Madrid – Asesores Independientes que Trabajan para Ti',
-    heroSubtitle: 'En Madrid hay cientos de opciones de seguros. Rosa y Sebastián llevan más de 10 años ayudando a familias y autónomos a elegir la correcta — sin ataduras a ninguna compañía, sin letra pequeña, con respuesta personal en 30 minutos.',
-    intro: 'Somos asesores de seguros independientes con más de 10 años de experiencia ayudando a particulares, familias y autónomos en Madrid a elegir el seguro adecuado. Comparamos entre las principales compañías sin ataduras y te explicamos cada opción con claridad — sin tecnicismos, sin presión y sin letra pequeña. Atendemos por videollamada, teléfono o WhatsApp en toda la Comunidad de Madrid.',
+    heroSubtitle: 'En Madrid hay cientos de opciones de seguros. Rosa y Sebastián llevan más de 10 años ayudando a familias y autónomos a elegir la correcta — con registro oficial DGSFP a ninguna compañía, sin letra pequeña, con respuesta personal en 30 minutos.',
+    intro: 'Somos agentes de seguros registrados con más de 10 años de experiencia ayudando a particulares, familias y autónomos en Madrid a elegir el seguro adecuado. Comparamos entre las principales compañías con registro oficial DGSFP y te explicamos cada opción con claridad — sin tecnicismos, sin presión y sin letra pequeña. Atendemos por videollamada, teléfono o WhatsApp en toda la Comunidad de Madrid.',
     porQueElegirNos: 'Madrid tiene más de 3,3 millones de habitantes y una de las mayores demandas de seguros de salud privados de España. Las listas de espera en la sanidad pública madrileña para especialistas superan los 67 días de media, lo que hace que cada vez más familias opten por complementar o sustituir la sanidad pública con un seguro privado. La oferta es enorme — el problema no es encontrar un seguro, sino encontrar el correcto para tu situación concreta.\n\nAhí es donde entramos nosotros. A diferencia de los comparadores digitales que muestran resultados por algoritmo, o de los agentes ligados a una sola compañía que solo pueden ofrecerte su propio catálogo, Rosa y Sebastián analizan tu perfil real, tus necesidades y tu presupuesto — y te presentan las opciones que de verdad tienen sentido para ti. Sin coste, sin compromiso y sin presión comercial.\n\nSomos Agentes registrados en la DGSFP, lo que significa que nuestra obligación es velar por tus intereses. Llevamos más de 10 años haciéndolo para familias y autónomos de Madrid y el noroeste de la Comunidad. Atendemos por videollamada, teléfono o WhatsApp en toda la Comunidad de Madrid — sin necesidad de desplazarse a ninguna oficina.',
     datosLocales: {
       poblacion: '3,3 millones de habitantes',
@@ -340,7 +340,7 @@ export const zonas: Zona[] = [
     faqsLocales: [
       {
         q: '¿Cuánto cuesta un seguro de salud en Madrid?',
-        a: 'El precio de un seguro de salud en Madrid varía según la edad, las coberturas, la modalidad elegida (con o sin copago, con o sin hospitalización, con o sin reembolso) y la compañía. En nuestra consulta gratuita comparamos las mejores opciones del mercado para tu perfil exacto — sin coste ni compromiso.',
+        a: 'El precio de un seguro de salud en Madrid varía según la edad, las coberturas, la modalidad elegida (con o sin copago, con o sin hospitalización, con o sin reembolso) y la compañía. En nuestra consulta gratuita analizamos las mejores opciones del mercado para tu perfil exacto — sin coste ni compromiso.',
       },
       {
         q: '¿Es mejor contratar un seguro con un asesor independiente o directamente con la compañía?',
@@ -365,7 +365,7 @@ export const zonas: Zona[] = [
     ],
     segurosDestacados: ['salud', 'vida', 'mascotas', 'viaje'],
     zonasCercanas: ['boadilla-del-monte', 'las-rozas', 'majadahonda', 'pozuelo-de-alarcon'],
-    whatsappMessage: 'Hola, soy de Madrid y quiero asesoramiento independiente sobre seguros. ¿Podéis ayudarme?',
+    whatsappMessage: 'Hola, soy de Madrid y quiero asesoramiento especializado sobre seguros. ¿Podéis ayudarme?',
     heroImage: '/images/zonas/madrid.webp',
     heroImageAlt: 'Plaza de Cibeles en Madrid centro',
     heroImageCredit: 'Plaza de Cibeles · Wikimedia Commons (CC BY-SA)',
@@ -385,7 +385,7 @@ export const zonas: Zona[] = [
       'seguro autonomos madrid',
       'seguro vida hipoteca madrid',
       'correduría seguros independiente madrid',
-      'mediador seguros madrid',
+      'agente seguros madrid',
       'consulta seguros gratis madrid',
     ],
   },

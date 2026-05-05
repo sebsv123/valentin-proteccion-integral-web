@@ -130,7 +130,7 @@ export const products: Product[] = [
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
     metaTitle: 'Seguro de Salud Privado en Madrid | Desde 21€/mes · Valentín Protección Integral',
-    metaDescription: 'Compara seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento independiente sin compromiso. Desde 21€/mes.',
+    metaDescription: 'Analiza seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento independiente sin compromiso. Desde 21€/mes.',
     h1: 'Seguro de Salud en Madrid: Compara Sin Presión',
   },
   {

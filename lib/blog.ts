@@ -182,7 +182,7 @@ export const blogPosts: BlogPost[] = [
           '• Si tu médico está en la red: Tienes que verificar el cuadro médico de tu zona específica antes de contratar.',
           '• Si tu condición de salud será aceptada: Las opiniones de otros no sirven para tu historial clínico personal.',
           '• Si la póliza cubre lo que necesitas: Las reseñas raramente hablan de la "letra pequeña" que afecta a las exclusiones y carencias técnicas.',
-          'Tu mejor arma es hablar con un mediador independiente que conozca las condiciones reales del mercado y trabaje para ti, no para la aseguradora.',
+          'Tu mejor arma es hablar con un agente de seguros registrado que conozca las condiciones reales del mercado y trabaje para ti, no para la aseguradora.',
         ],
       },
     ],
@@ -202,7 +202,7 @@ export const blogPosts: BlogPost[] = [
         answer: 'Tómalo como una orientación. El precio final solo se conoce cuando la aseguradora evalúa tu riesgo y salud reales.',
       },
       {
-        question: '¿Por qué es mejor un asesor independiente que un ranking?',
+        question: '¿Por qué es mejor un agente de seguros registrado que un ranking?',
         answer: 'El asesor no tiene compromiso con ninguna marca y conoce cómo responden las compañías "en lo malo", más allá de la publicidad.',
       },
       {
@@ -643,8 +643,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '¿Cuándo tiene sentido para ti?',
         content: [
-          'Tiene sentido si tienes hijos menores, hipoteca activa, deudas avaladas por terceros o si eres el principal motor económico de tu casa. Por el contrario, puede ser innecesario si tus hijos ya son independientes y tu patrimonio está consolidado.',
-          'Consulta con un mediador antes de renovar automáticamente el seguro del banco; podrías ahorrar un 40% anual simplemente comparando.',
+          'Tiene sentido si tienes hijos menores, hipoteca activa, deudas avaladas por terceros o si eres el principal motor económico de tu casa. Por el contrario, puede ser innecesario si tus hijos ya son mayores de edad y tu patrimonio está consolidado.',
+          'Consulta con un mediador antes de renovar automáticamente el seguro del banco; podrías ahorrar un 40% anual simplemente analizando.',
         ],
       },
     ],
@@ -677,7 +677,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Puedo tener más de un seguro de vida a la vez?',
-        answer: 'Sí. Es legal y a veces recomendable (uno para la hipoteca y otro independiente para la protección real de la familia).',
+        answer: 'Sí. Es legal y a veces recomendable (uno para la hipoteca y otro adicional para la protección real de la familia).',
       },
     ],
   },
@@ -1067,7 +1067,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Cómo te ayudo a elegir sin presión',
         content: [
-          'Como asesora independiente, no represento a una sola compañía. Eso significa que comparo varias opciones reales y te explico las diferencias antes de que decidas.',
+          'Como agente de seguros registrada, no represento a una sola compañía. Eso significa que comparo varias opciones reales y te explico las diferencias antes de que decidas.',
           'El proceso es sencillo: una conversación de 15-20 minutos por WhatsApp o teléfono en la que te hago las preguntas correctas (tu médico actual, tu uso real, tu presupuesto), y te presento dos o tres opciones con las coberturas comparadas.',
           'Sin formularios interminables, sin presión, sin letra pequeña oculta. Solo información clara para que decidas con criterio.',
         ],
@@ -1083,7 +1083,7 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       {
         question: '¿Cuál es el mejor seguro de salud en Madrid en 2026?',
-        answer: 'No existe un único "mejor" seguro: existe el que mejor encaja con tu situación. Los factores clave son que tu médico esté en el cuadro, que el hospital más cercano a tu casa esté incluido y que el precio sea sostenible. Como asesora independiente en Madrid, analizo varias opciones sin compromiso.',
+        answer: 'No existe un único "mejor" seguro: existe el que mejor encaja con tu situación. Los factores clave son que tu médico esté en el cuadro, que el hospital más cercano a tu casa esté incluido y que el precio sea sostenible. Como agente de seguros registrada en Madrid, analizo varias opciones sin compromiso.',
       },
       {
         question: '¿Qué diferencia hay entre un seguro con copago y sin copago?',
@@ -1095,7 +1095,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Qué hospitales están incluidos en los seguros de salud en Madrid?',
-        answer: 'Depende de la póliza. Lo que debes comprobar: si tu hospital de referencia está incluido, si tiene urgencias privadas 24h y si el seguro cubre hospitalización completa. Como asesora independiente, te muestro exactamente qué hospitales cubre cada opción antes de que decidas.',
+        answer: 'Depende de la póliza. Lo que debes comprobar: si tu hospital de referencia está incluido, si tiene urgencias privadas 24h y si el seguro cubre hospitalización completa. Como agente de seguros registrada, te muestro exactamente qué hospitales cubre cada opción antes de que decidas.',
       },
       {
         question: '¿Puedo contratar un seguro de salud siendo extranjero o tramitando la residencia?',
@@ -1111,7 +1111,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Puedo cambiarme de seguro si ya tengo uno?',
-        answer: 'Sí, aunque hay que revisar las condiciones de tu póliza actual (fecha de vencimiento, carencias ya cumplidas). Como asesora independiente analizo tu situación y te digo si compensa cambiar ahora o esperar. En muchos casos se puede negociar con la nueva aseguradora el reconocimiento de antigüedad.',
+        answer: 'Sí, aunque hay que revisar las condiciones de tu póliza actual (fecha de vencimiento, carencias ya cumplidas). Como agente de seguros registrada analizo tu situación y te digo si compensa cambiar ahora o esperar. En muchos casos se puede negociar con la nueva aseguradora el reconocimiento de antigüedad.',
       },
       {
         question: '¿Puedo elegir mi médico con un seguro privado en Madrid?',
@@ -1381,7 +1381,7 @@ export const blogPosts: BlogPost[] = [
     ],
     tips: [
       'Puedes contratar tu seguro de vida fuera del banco y seguir cumpliendo las condiciones.',
-      'Compara siempre el coste del seguro del banco vs. un asesor independiente.',
+      'Compara siempre el coste del seguro del banco vs. un agente de seguros registrado.',
       'La diferencia de precio puede superar el 40% anual.',
     ],
   },
@@ -1560,7 +1560,7 @@ export const blogPosts: BlogPost[] = [
       'Si tu perro viaja contigo, verifica que el seguro tenga cobertura en toda la Unión Europea.',
     ],
     faqs: [
-      { question: '¿Es obligatorio para todos los perros en Madrid sin excepción?', answer: 'Sí, la Ley de Bienestar Animal nacional obliga a todos los perros, desde un chihuahua hasta un gran danés, a tener seguro de responsabilidad civil independientemente de su raza.' },
+      { question: '¿Es obligatorio para todos los perros en Madrid sin excepción?', answer: 'Sí, la Ley de Bienestar Animal nacional obliga a todos los perros, desde un chihuahua hasta un gran danés, a tener seguro de responsabilidad civil con independencia de su raza.' },
       { question: '¿Qué pasa si mi perro causa un accidente? ¿Me ayuda el seguro?', answer: 'El seguro de RC se encarga de las indemnizaciones por daños materiales y personales, además de costear su defensa legal si fuera necesario.' },
     ],
   },
@@ -1740,7 +1740,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Conclusión: Su negocio prospera si usted está sano',
         content: [
           'En el competitivo ecosistema empresarial de Madrid, la salud es su ventaja competitiva más silenciosa. Un autónomo bien protegido es un autónomo que puede centrarse en sus clientes, en sus proyectos y en su crecimiento sin el miedo constante al "qué pasará si me pongo malo". El seguro de salud es el socio que nunca le falla, garantizando que los mejores recursos médicos de Madrid estén a su disposición en el momento exacto en que los necesite.',
-          'Si busca optimizar sus seguros actuales o quiere contratar su primera póliza de autónomo con la garantía de aprovechar todas las deducciones fiscales, en nuestra asesoría de seguros en Madrid estamos para guiarle. Le ofrecemos un análisis transparente, comparando las mejores compañías del mercado y diseñando una solución que se ajuste a su presupuesto y su ritmo de vida. No deje su salud al azar; confíe en un experto que entiende el valor de su tiempo y de su esfuerzo profesional.',
+          'Si busca optimizar sus seguros actuales o quiere contratar su primera póliza de autónomo con la garantía de aprovechar todas las deducciones fiscales, en nuestra asesoría de seguros en Madrid estamos para guiarle. Le ofrecemos un análisis transparente, analizando las mejores compañías del mercado y diseñando una solución que se ajuste a su presupuesto y su ritmo de vida. No deje su salud al azar; confíe en un experto que entiende el valor de su tiempo y de su esfuerzo profesional.',
           'Le invitamos a solicitar una consultoría de salud para autónomos hoy mismo. En menos de 24 horas, le presentaremos un estudio personalizado con las opciones más eficientes del mercado madrileño para 2026. Proteja su presente y asegure su futuro profesional con nosotros. Estamos a su lado en Madrid, Boadilla y toda la zona noroeste.',
         ],
       },

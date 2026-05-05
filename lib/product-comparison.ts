@@ -117,7 +117,7 @@ export const productCompare: Record<string, ProductCompareConfig> = {
       {
         id: 'modalidades',
         label: 'Modalidades',
-        intro: 'Hay distintas formas de acceder a asistencia dental. A veces viene incluida, otras es independiente.',
+        intro: 'Hay distintas formas de acceder a asistencia dental. A veces viene incluida, otras es específico.',
         cards: [
           { title: 'Dental incluido en salud', desc: 'Algunas pólizas de salud incluyen un cuadro dental básico. Ideal si ya tienes seguro médico y quieres añadir dental.', tag: 'Integrado' },
           { title: 'Seguro dental independiente', desc: 'Póliza específica solo para dental, con cuadro propio y coberturas centradas en odontología.', tag: 'Especializado' },
