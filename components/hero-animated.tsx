@@ -98,7 +98,7 @@ export function HeroLeadSection() {
                 </span>
                 <span className="w-1 h-1 rounded-full bg-[var(--muted)]/40 hidden sm:block" />
                 <span className="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)]">
-                  <span className="text-green-500">✓</span> Asesores independientes
+                  <span className="text-green-500">✓</span> Agentes registrados DGSFP
                 </span>
                 <span className="w-1 h-1 rounded-full bg-[var(--muted)]/40 hidden sm:block" />
                 <span className="flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)]">
@@ -140,7 +140,7 @@ export function HeroLeadSection() {
             <CSSReveal delay={0.55}>
               <div className="mt-6 hidden sm:grid gap-3 md:grid-cols-3">
                 {[
-                  ['Te ayudamos a decidir', 'Comparamos opciones contigo y te explicamos la letra pequeña sin prisas ni presión.'],
+                  ['Te ayudamos a decidir', 'Analizamos según tu perfil y te explicamos la letra pequeña sin prisas ni presión.'],
                   ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
                   ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
                 ].map(([title, copy]) => (

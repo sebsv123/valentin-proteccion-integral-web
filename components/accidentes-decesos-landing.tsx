@@ -429,7 +429,7 @@ export function AccidentesDecesosLanding() {
             <motion.div variants={fadeInUpVariants} className="relative w-full max-w-sm mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <Image
                 src="/images/rosa_y_sebastian_conversando.png"
-                alt="Rosa y Sebastián Valentín, tus mediadores de confianza"
+                alt="Rosa y Sebastián Valentín, tus agentees de confianza"
                 fill
                 className="object-cover object-top"
                 loading="lazy"
@@ -441,7 +441,7 @@ export function AccidentesDecesosLanding() {
                 &ldquo;Rosa y Sebastián llevan más de 10 años siendo el primer teléfono al que llaman las familias madrileñas cuando algo pasa. Cada póliza es una conversación honesta, no una venta.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://www.colegioagentees.es"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-sm font-medium text-amber-400 mb-6 hover:text-amber-300 transition-colors underline underline-offset-2"

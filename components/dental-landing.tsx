@@ -163,7 +163,7 @@ export function DentalLanding() {
                 &ldquo;Llevamos más de 10 años ayudando a familias en Madrid a encontrar el seguro dental que realmente necesitan, sin letra pequeña.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://www.colegioagentees.es"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center lg:justify-start gap-2 text-sm font-medium text-emerald-400 mb-8 hover:text-emerald-300 transition-colors underline underline-offset-2"

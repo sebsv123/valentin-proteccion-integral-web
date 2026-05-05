@@ -10,7 +10,7 @@ export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "name": site.name,
-    "description": "Asesores de seguros independientes en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
+    "description": "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
     "url": "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",

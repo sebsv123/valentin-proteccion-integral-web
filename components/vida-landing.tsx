@@ -147,7 +147,7 @@ export function VidaLanding() {
                   <CheckCircle2 className="h-4 w-4 text-blue-600" /> +1.200 familias
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600" /> Asesores independientes
+                  <CheckCircle2 className="h-4 w-4 text-blue-600" /> Agentes registrados DGSFP
                 </span>
               </motion.div>
 
