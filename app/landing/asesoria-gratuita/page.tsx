@@ -212,8 +212,7 @@ export default function AsesoriaGratuitaPage() {
                 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   +10 años ayudando a familias y profesionales de Madrid a encontrar 
-                  la protección adecuada. Conocemos el mercado a fondo y sabemos 
-                  dónde está cada cobertura.
+                  la protección adecuada. Conocemos en profundidad las coberturas y sabemos cuál se adapta a cada caso.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -267,7 +266,7 @@ export default function AsesoriaGratuitaPage() {
                 { 
                   num: "02", 
                   title: "Cotización", 
-                  desc: "Analizamos el mercado y te damos las mejores opciones en 30 min."
+                  desc: "Estudiamos tus necesidades y te explicamos las mejores opciones en 30 min."
                 },
                 { 
                   num: "03", 

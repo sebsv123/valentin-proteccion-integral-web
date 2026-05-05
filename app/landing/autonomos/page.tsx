@@ -230,7 +230,7 @@ export default function AutonomosLandingPage() {
                   "Llevamos más de 10 años ayudando a autónomos como tú a protegerse mejor y a pagar menos impuestos."
                 </blockquote>
                 <p className="text-base text-[#061b31] font-normal mb-1">Rosa Valentín</p>
-                <p className="text-sm text-[#64748d] mb-4">Mediadora DGSFP: C012479234434D</p>
+                <p className="text-sm text-[#64748d] mb-4">Agente de Seguros · DGSFP: C012479234434D</p>
                 <div className="flex gap-4 text-sm text-[#64748d]">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
@@ -294,7 +294,7 @@ export default function AutonomosLandingPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#061b31]">Rosa Valentín</p>
-                  <p className="text-sm text-[#64748d]">Mediadora DGSFP · NIF 79234434D</p>
+                  <p className="text-sm text-[#64748d]">Agente de Seguros · DGSFP: C012479234434D</p>
                 </div>
               </div>
             </div>
