@@ -27,12 +27,12 @@ import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
   title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
-  description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
-  keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, correduría seguros independiente madrid, consulta seguros gratis madrid",
+  description: "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
+  keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, agente seguros registrado DGSFP madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
   openGraph: {
     title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
-    description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
+    description: "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
     url: "https://valentinproteccionintegral.com",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
-    description: "Asesor de seguros en Madrid independiente. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
+    description: "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com",

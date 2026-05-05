@@ -251,7 +251,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <h2 className="text-2xl sm:text-3xl font-bold">Nuestra Garantía de Precio Justo</h2>
             </div>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Si encuentras el mismo seguro más barato con otra correduría independiente, te lo igualamos. Sin letra pequeña.
+              Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.
             </p>
             {slug === 'viaje' && (
               <p className="text-base text-emerald-300 font-medium mb-4 -mt-4">

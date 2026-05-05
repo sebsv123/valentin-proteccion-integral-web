@@ -785,7 +785,7 @@ export function SaludLanding() {
             <h2 className="text-2xl sm:text-3xl font-bold">Nuestra Garantía de Precio Justo</h2>
           </div>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Si encuentras el mismo seguro más barato con otra correduría independiente, te lo igualamos. Sin letra pequeña.
+            Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.
           </p>
           <a
             href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20salud"
