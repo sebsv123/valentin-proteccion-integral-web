@@ -120,7 +120,7 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         intro: 'Hay distintas formas de acceder a asistencia dental. A veces viene incluida, otras es específico.',
         cards: [
           { title: 'Dental incluido en salud', desc: 'Algunas pólizas de salud incluyen un cuadro dental básico. Ideal si ya tienes seguro médico y quieres añadir dental.', tag: 'Integrado' },
-          { title: 'Seguro dental independiente', desc: 'Póliza específica solo para dental, con cuadro propio y coberturas centradas en odontología.', tag: 'Especializado' },
+          { title: 'Seguro dental específico', desc: 'Póliza específica solo para dental, con cuadro propio y coberturas centradas en odontología.', tag: 'Especializado' },
           { title: 'Con copago dental', desc: 'Consultas gratuitas pero tratamientos con copago reducido. Una opción económica para uso frecuente.', tag: 'Económico' },
         ],
         bullets: ['Revisa si tu póliza de salud ya incluye dental básico.', 'Hay opciones con consultas incluidas y tratamientos a precio reducido.'],

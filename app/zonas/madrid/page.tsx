@@ -38,7 +38,7 @@ const serviceSchema = {
     "longitude": -3.7038
   },
   "areaServed": ["Madrid", "Madrid Centro", "Chamberí", "Salamanca", "Retiro", "Latina", "Carabanchel", "Vallecas", "Madrid Oeste"],
-  "description": "Asesores de seguros independientes en Madrid. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
+  "description": "Agentes de seguros registrados DGSFP en Madrid. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",

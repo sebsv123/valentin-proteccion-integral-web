@@ -455,7 +455,7 @@ export default function SaludExtranjerosPage() {
                 </p>
                 <div className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100">
                   <Heart className="w-6 h-6 text-emerald-500" />
-                  <p className="font-bold text-slate-800">Cercanía real y asesoramiento independiente.</p>
+                  <p className="font-bold text-slate-800">Cercanía real y asesoramiento con registro oficial.</p>
                 </div>
               </div>
             </div>
@@ -524,7 +524,7 @@ export default function SaludExtranjerosPage() {
       <footer className="bg-slate-950 text-slate-500 py-12 border-t border-slate-900">
         <div className="container mx-auto px-4 text-center">
           <p className="font-bold text-white mb-4">Valentín Protección Integral</p>
-          <p className="text-sm">© 2026 · Mediadores de seguros independientes · NIF 79234434D · Boadilla del Monte, Madrid</p>
+          <p className="text-sm">© 2026 · Agentes de seguros registrados DGSFP · NIF 79234434D · Boadilla del Monte, Madrid</p>
           <div className="flex items-center justify-center gap-4 mt-4 text-sm">
             <a href="tel:+34603448765" className="text-slate-400 hover:text-white transition-colors">603 44 87 65</a>
             <span className="text-slate-600">·</span>

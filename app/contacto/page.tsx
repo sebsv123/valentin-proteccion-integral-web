@@ -46,7 +46,7 @@ export default function ContactoPage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Valentín Protección Integral",
-            "description": "Mediadores de seguros independientes en Boadilla del Monte, Madrid. Asesoramiento personalizado en seguros de salud, vida, dental, mascotas, accidentes y viaje.",
+            "description": "Agentes de seguros registrados DGSFP en Boadilla del Monte, Madrid. Asesoramiento personalizado en seguros de salud, vida, dental, mascotas, accidentes y viaje.",
             "url": "https://valentinproteccionintegral.com",
             "telephone": "+34603448765",
             "email": "info@valentinproteccionintegral.com",

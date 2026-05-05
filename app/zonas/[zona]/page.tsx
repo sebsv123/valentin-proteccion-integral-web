@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ zona: str
   const { zona } = await params;
   const zonaName = capitalizeZona(zona);
   return {
-    title: `Seguros en ${zonaName} â€” Mediador Independiente | ValentÃ­n ProtecciÃ³n Integral`,
+    title: `Seguros en ${zonaName} â€” Agente Registrado DGSFP | Valentín Protección Integral`,
     description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas sin copagos. +10 aÃ±os Â· +1.200 familias. Consulta gratis.`,
     keywords: [`seguros ${zonaName}`, `mediador seguros ${zonaName}`, `seguro salud ${zonaName}`, `asesor seguros ${zonaName}`],
     alternates: { canonical: `https://valentinproteccionintegral.com/zonas/${zona}` },
     openGraph: {
-      title: `Seguros en ${zonaName} â€” Mediador Independiente | ValentÃ­n ProtecciÃ³n Integral`,
+      title: `Seguros en ${zonaName} â€” Agente Registrado DGSFP | Valentín Protección Integral`,
       description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas sin copagos. +10 aÃ±os Â· +1.200 familias. Consulta gratis.`,
       url: `https://valentinproteccionintegral.com/zonas/${zona}`,
       siteName: 'ValentÃ­n ProtecciÃ³n Integral',
@@ -55,7 +55,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
       addressRegion: 'Madrid',
       addressCountry: 'ES',
     },
-    description: `Mediador independiente de seguros en ${zonaName}. Salud, vida, dental, mascotas.`,
+    description: `Agente de seguros registrado DGSFP en ${zonaName}. Salud, vida, dental, mascotas.`,
   };
 
   return (
@@ -79,7 +79,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 <h1 className='text-[40px] sm:text-[48px] lg:text-[52px] font-bold text-black leading-[1.23] mb-4'>
                   Seguros en {zonaName}:
                   <br />
-                  <span className='text-[#4b4b4b]'>Tu Mediador Independiente</span>
+                  <span className='text-[#4b4b4b]'>Tu Agente Registrado DGSFP</span>
                 </h1>
 
                 {/* Subhead */}
@@ -147,14 +147,14 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
           <div className='container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl'>
             <p className='text-sm uppercase tracking-wider text-[#afafaf] mb-4'>{zonaName.toUpperCase()}, MADRID</p>
             <p className='text-lg text-[#afafaf] mb-12 max-w-2xl'>
-              Asesoramiento independiente para familias y autÃ³nomos de {zonaName}. MÃ¡s de 10 aÃ±os protegiendo lo que mÃ¡s importa.
+              Asesoramiento con registro oficial para familias y autónomos de {zonaName}. Más de 10 años protegiendo lo que más importa.
             </p>
 
             <div className='grid md:grid-cols-3 gap-6'>
               {[
-                { icon: Building2, title: 'Mediador independiente', desc: 'No trabajamos para ninguna compaÃ±Ã­a. Trabajamos para ti, comparando entre todas las aseguradoras.' },
-                { icon: Sparkles, title: 'Respuesta en 30 min', desc: 'Contacto directo con Rosa o SebastiÃ¡n por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
-                { icon: Heart, title: 'GestiÃ³n de siniestros', desc: 'No desaparecemos tras la firma. Te acompaÃ±amos en renovaciones, cambios y siniestros.' },
+                { icon: Building2, title: 'Agente registrado DGSFP', desc: 'No trabajamos para ninguna compañía. Trabajamos para ti, con asesoramiento personalizado.' },
+                { icon: Sparkles, title: 'Respuesta en 30 min', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
+                { icon: Heart, title: 'Gestión de siniestros', desc: 'No desaparecemos tras la firma. Te acompañamos en renovaciones, cambios y siniestros.' },
               ].map((item, i) => (
                 <div key={i} className='rounded-xl p-6 border border-[#333]'>
                   <div className='w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4'>
@@ -263,7 +263,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
               {/* Left: CTA */}
               <div className='text-center lg:text-left'>
                 <h2 className='text-[36px] sm:text-[48px] font-bold leading-[1.22] mb-4'>Tu asesor de seguros en {zonaName}</h2>
-                <p className='text-xl text-[#afafaf] mb-8'>Independientes. Sin comisiones ocultas. Sin permanencia.</p>
+                <p className='text-xl text-[#afafaf] mb-8'>Con registro oficial. Sin comisiones ocultas. Sin permanencia.</p>
                 <WhatsAppButton
                   href={wCotiza}
                   location={`${zona}-cta-final`}
@@ -274,7 +274,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
 
                 {/* Badges */}
                 <div className='flex flex-wrap justify-center lg:justify-start gap-3 mt-8'>
-                  {['Sin copagos', 'Mediador independiente', 'DGSFP verificado'].map((item, i) => (
+                  {['Sin copagos', 'Agente registrado DGSFP', 'DGSFP verificado'].map((item, i) => (
                     <div key={i} className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm'>
                       <CheckCircle2 className='w-4 h-4' />
                       {item}

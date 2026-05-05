@@ -122,7 +122,7 @@ export default function SegurosHubPage() {
               <div className="space-y-5">
                 <p className="font-heading text-lg font-semibold text-white/70 uppercase tracking-widest">Tu equipo de confianza</p>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
-                  Más de 10 años y +1.200 familias en Madrid confían en nuestro criterio independiente
+                  Más de 10 años y +1.200 familias en Madrid confían en nuestro criterio con registro oficial
                 </h2>
                 <p className="text-lg leading-8 text-white/80 max-w-2xl">
                   Somos Rosa y Sebastián Valentín. Te acompañamos personalmente en todo el proceso: escuchamos lo que necesitas, buscamos la mejor solución para tu situación concreta y te explicamos cada detalle con claridad. Sin presiones, sin letra pequeña, sin sorpresas.

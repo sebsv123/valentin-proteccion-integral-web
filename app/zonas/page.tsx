@@ -9,12 +9,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
-  description: "Asesores de seguros independientes en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias. Consulta gratis por WhatsApp.",
+  description: "Agentes de seguros registrados DGSFP en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias. Consulta gratis por WhatsApp.",
   keywords: ["asesores seguros Madrid Oeste", "seguros Boadilla", "seguros Majadahonda", "seguros Pozuelo", "mediador Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas" },
   openGraph: {
     title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
-    description: "Asesores de seguros independientes en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias.",
+    description: "Agentes de seguros registrados DGSFP en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias.",
     url: "https://valentinproteccionintegral.com/zonas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

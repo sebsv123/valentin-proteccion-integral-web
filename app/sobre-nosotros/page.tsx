@@ -169,7 +169,7 @@ export default function SobreNosotrosPage() {
                 <div className="mt-6 rounded-[24px] border border-[var(--blue-deep)]/20 bg-[var(--blue-deep)]/4 px-6 py-5">
                   <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Agentes registrados</p>
                   <p className="text-base leading-8 text-[var(--muted)]">
-                    No somos una compañía aseguradora. Somos mediadores independientes registrados en la DGSFP
+                    No somos una compañía aseguradora. Somos agentes registrados en la DGSFP
                     (<strong>Nº C012479234434D · NIF 79234434D</strong>).
                     Eso significa que trabajamos para ti, no para ninguna compañía.
                     Nuestro único objetivo es que tengas la mejor cobertura al precio más justo.
