@@ -15,7 +15,7 @@ const steps = [
   {
     num: '02',
     icon: Search,
-    title: 'Te explicamos las opciones',
+    title: 'Te explicamos con claridad',
     desc: 'Te asesoramos según tu perfil y prioridades. Te explicamos qué cambia entre modalidades con total claridad.',
   },
   {

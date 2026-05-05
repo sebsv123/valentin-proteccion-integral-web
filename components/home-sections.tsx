@@ -109,7 +109,7 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
         <div className="mb-12 max-w-3xl fade-up">
             <p className="kicker">Nuestras especialidades</p>
             <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
-             <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las mejores opciones analizadas para tu perfil.</p>
+             <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las coberturas más adecuadas para tu perfil.</p>
           </div>
         <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
           {productsWithImages.map((product, index) => (
@@ -181,7 +181,7 @@ export function ComparisonCardsSection() {
       <div className="container-shell">
         <div className="mb-8 max-w-3xl fade-up">
             <p className="kicker">Cómo decidir mejor</p>
-            <h2 className="mt-3 section-title">Elige con acompañamiento real</h2>
+            <h2 className="mt-3 section-title">Entiende tus coberturas con acompañamiento real</h2>
              <p className="section-copy mt-4">No se trata solo de ver coberturas. Se trata de entender qué encaja contigo, qué cambia entre modalidades y cómo empezar por el canal que te resulte más cómodo.</p>
           </div>
         <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
@@ -227,7 +227,7 @@ export function ComparisonCardsSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,0.08),rgba(18,59,104,0.58))]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-8">
                   <p className="kicker !text-white/70">Una decisión mejor empieza con una conversación clara</p>
-                  <h3 className="mt-3 font-heading text-4xl font-bold">Te escuchamos, aterrizamos opciones y te acompañamos de verdad</h3>
+                  <h3 className="mt-3 font-heading text-4xl font-bold">Te escuchamos, te explicamos las coberturas y te acompañamos de verdad</h3>
                   <div className="mt-5 grid gap-3">
                     {['Escuchamos tu situación y tus prioridades', 'Traducimos coberturas y matices a lenguaje claro', 'Te guiamos hacia SALUD, VIDA, ELECTRODOMÉSTICOS o NEGOCIOS'].map((item) => (
                       <div key={item} className="rounded-[22px] bg-white/14 px-4 py-4 text-sm leading-7 text-white/92 backdrop-blur md:text-base">{item}</div>
@@ -263,7 +263,7 @@ export function AgentTrustBlock() {
           <div className="fade-up">
             <div>
               <p className="kicker">Atención humana y experta</p>
-              <h2 id="agent-title" className="mt-4 section-title tracking-tight">Rosa Valentín: Más de 10 años asesorando para que elijas con total seguridad</h2>
+              <h2 id="agent-title" className="mt-4 section-title tracking-tight">Rosa Valentín: Más de 10 años acompañándote para que decidas con total seguridad</h2>
               <p className="mt-6 text-base leading-8 text-[var(--muted)] md:text-lg">Nuestro equipo, liderado por Rosa Valentín, acompaña cada caso con una mirada transparente y profesional. No se trata solo de vender una póliza, sino de garantizar que tienes la mejor respuesta frente a un imprevisto.</p>
               <div className="mt-8 grid gap-4">
                 <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Asesoría según tu etapa y prioridades</p></div>
@@ -374,7 +374,7 @@ export function MascotHelperSection() {
                 <p className="section-copy mt-6 text-xl">Hemos diseñado esta experiencia para que te sientas acompañado en cada paso. Sin tecnicismos, sin presiones y con una mirada experta sobre lo que de verdad importa.</p>
                 <div className="mt-10 grid gap-4 md:grid-cols-2">
                   {[
-                    'Ordenamos prioridades antes de comparar.',
+                    'Ordenamos prioridades antes de decidir.',
                     'Aterrizamos coberturas a lenguaje claro.',
                     'Te señalamos qué conviene revisar de verdad.',
                     'Acompañamiento por WhatsApp o llamada.',
