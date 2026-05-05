@@ -10,6 +10,7 @@ import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Seguros para Mayores de 70 en Madrid — Sin Letra Pequeña | VPI",
@@ -235,7 +236,7 @@ export default function SeniorsPage() {
               </p>
               <p className="text-lg text-stone-600 leading-relaxed">
                 Las opciones para mayores de 70 años en Madrid incluyen seguros de salud con acceso a especialistas, pruebas diagnósticas y hospitalización; seguros de decesos con gestión completa del sepelio desde el primer día y sin carencias; y seguros de vida con capitales adaptados a las necesidades familiares. En todos los casos, te explicamos las condiciones con claridad, sin letra pequeña y sin presión comercial. Si tienes más de 70 años y quieres saber qué opciones reales hay para ti, escríbenos por WhatsApp al{' '}
-                <a href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold hover:text-emerald-700 underline">603 44 87 65</a>.
+                <WhatsAppLink href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold hover:text-emerald-700 underline">603 44 87 65</WhatsAppLink>.
                 Te respondemos con toda la paciencia del mundo.
               </p>
             </div>

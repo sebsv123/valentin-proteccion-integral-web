@@ -41,6 +41,7 @@ import {
   BadgePercent,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -79,6 +80,12 @@ export function AccidentesDecesosLanding() {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y quiero información sobre el seguro de accidentes y decesos.\n\n📞 Teléfono: ${form.telefono}\n🏠 Para: ${form.personas}\n\nGracias.`
     );
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Contactar', {
+        event_category: 'engagement',
+        event_label: 'whatsapp_click',
+      });
+    }
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
   };
@@ -195,7 +202,7 @@ export function AccidentesDecesosLanding() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
+                <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent('Hola Rosa y Sebastián, vi la página de accidentes y decesos y me gustaría saber el precio para mi familia. Sin compromiso.')}`}
                   className={cn(
                     buttonVariants({ size: "lg" }),
@@ -204,7 +211,7 @@ export function AccidentesDecesosLanding() {
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp Directo
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -403,12 +410,12 @@ export function AccidentesDecesosLanding() {
                     Al combinar accidentes + salud individual, las condiciones mejoran y el precio baja. 
                     Un solo gestor para toda tu protección.
                   </p>
-                  <a
+                  <WhatsAppLink
                     href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, tengo salud con vosotros y quiero consultar sobre añadir accidentes y decesos.")}`}
                     className="text-sm font-bold text-amber-800 underline hover:text-amber-900"
                   >
                     Preguntar por combinado →
-                  </a>
+                  </WhatsAppLink>
                 </div>
               </div>
             </div>
@@ -567,12 +574,12 @@ export function AccidentesDecesosLanding() {
                 <p className="text-amber-800 mb-4">
                   Al contratar tu primera póliza con nosotros, Rosa o Sebastián te regalan una revisión de todos tus seguros actuales completamente gratis. Muchos clientes descubren que pagan de más. O que tienen huecos que no sabían.
                 </p>
-                <a
+                <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, me gustaría contratar accidentes/decesos y aprovechar la revisión gratuita de seguros.")}`}
                   className="inline-flex items-center text-sm font-bold text-amber-800 underline hover:text-amber-900"
                 >
                   Quiero mi revisión gratuita →
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           </div>
@@ -834,7 +841,7 @@ export function AccidentesDecesosLanding() {
             *Precio orientativo. Requiere consulta para determinar cobertura según perfil.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, me gustaría información sobre el seguro de accidentes y decesos.")}`}
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -843,7 +850,7 @@ export function AccidentesDecesosLanding() {
             >
               <WhatsAppLogo className="h-5 w-5" />
               WhatsApp Directo
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

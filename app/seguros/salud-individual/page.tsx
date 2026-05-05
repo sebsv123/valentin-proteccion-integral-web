@@ -9,6 +9,7 @@ import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { getPexelsImage } from "@/lib/pexels";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User, Check } from "lucide-react";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
@@ -127,14 +128,14 @@ export default async function SaludIndividualPage() {
           <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
           </a>
-          <a
+          <WhatsAppLink
             href="https://wa.me/34603448765"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
             Cotizar ahora
-          </a>
+          </WhatsAppLink>
         </div>
       </header>
       <main className="min-h-screen bg-white pt-16">
@@ -364,9 +365,9 @@ export default async function SaludIndividualPage() {
 
             <p className="text-center text-sm text-gray-400 mt-8">
               * Precios orientativos para adulto entre 30-45 años en Madrid. El precio exacto depende de tu edad y modalidad.
-              <a href="https://wa.me/34603448765" className="text-emerald-600 font-medium ml-1 hover:underline">
+              <WhatsAppLink href="https://wa.me/34603448765" className="text-emerald-600 font-medium ml-1 hover:underline">
                 Pídenos tu presupuesto sin compromiso →
-              </a>
+              </WhatsAppLink>
             </p>
           </div>
         </section>

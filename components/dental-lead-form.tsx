@@ -17,6 +17,12 @@ export function DentalLeadForm() {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Contactar', {
+        event_category: 'engagement',
+        event_label: 'whatsapp_click',
+      });
+    }
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
   };

@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { GarantiaPrecio } from "@/components/garantia-precio";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const DotGrid = dynamic(() => import("@/components/ui/dot-grid"), {
   ssr: false,
@@ -98,12 +99,12 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
               <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
             </span>
           </p>
-          <a
+          <WhatsAppLink
             href="https://wa.me/34603448765?text=Hola%2C%20quiero%20revisar%20precios%20de%20seguro%20para%20mi%20mascota"
             className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Compruébalo gratis →
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
 
@@ -168,7 +169,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                 variants={fadeInUpVariants}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
               >
-                <a
+                <WhatsAppLink
                   href="https://wa.me/34603448765"
                   className={cn(
                     buttonVariants({ size: "lg" }),
@@ -177,7 +178,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   Pedir presupuesto gratis
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -348,12 +349,12 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
                 Desde la entrada en vigor de la Ley 7/2023, todos los perros en España necesitan seguro de responsabilidad civil. Las multas por incumplimiento pueden llegar a 10.000€. Contratar desde 5€/mes es la solución más sencilla.
               </p>
-              <a
+              <WhatsAppLink
                 href="https://wa.me/34603448765?text=Hola%2C%20quiero%20contratar%20la%20RC%20obligatoria%20para%20mi%20perro"
                 className="inline-flex items-center gap-1 text-sm font-bold text-[var(--blue)] mt-3 underline underline-offset-2 hover:text-[var(--blue-deep)] transition-colors"
               >
                 Contratar RC ahora →
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>
@@ -617,7 +618,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             Rosa te responde en menos de 30 minutos. Desde 5€/mes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20para%20mi%20mascota"
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -626,7 +627,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             >
               <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               Pedir presupuesto gratis
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

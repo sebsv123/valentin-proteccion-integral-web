@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { GarantiaPrecio } from "@/components/garantia-precio";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -155,7 +156,7 @@ export function VidaLanding() {
                 variants={fadeInUpVariants}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
               >
-                <a
+                <WhatsAppLink
                   href="https://wa.me/34603448765"
                   className={cn(
                     buttonVariants({ size: "lg" }),
@@ -164,7 +165,7 @@ export function VidaLanding() {
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   Pedir presupuesto gratis
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -322,7 +323,7 @@ export function VidaLanding() {
           <p className="text-base text-amber-800 mt-2 max-w-2xl mx-auto">
             No estás obligado a quedarte con él. En el 95% de los casos lo mejoramos en precio manteniendo las mismas coberturas — o mejores.
           </p>
-          <a
+          <WhatsAppLink
             href={`https://wa.me/34603448765?text=${encodeURIComponent(
               "Hola, tengo el seguro de vida con mi banco y quiero revisar mi precio."
             )}`}
@@ -330,7 +331,7 @@ export function VidaLanding() {
           >
             <WhatsAppIcon className="h-5 w-5" />
             Escríbenos y lo comprobamos →
-          </a>
+          </WhatsAppLink>
         </div>
       </section>
 
@@ -611,7 +612,7 @@ export function VidaLanding() {
             Rosa y Sebastián te responden en menos de 30 minutos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -620,7 +621,7 @@ export function VidaLanding() {
             >
               <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               Pedir presupuesto gratis
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

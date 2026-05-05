@@ -27,6 +27,7 @@ import {
   Gift,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -140,7 +141,7 @@ export function AccidentesLanding() {
                 variants={fadeInUpVariants}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
               >
-                <a
+                <WhatsAppLink
                   href="https://wa.me/34603448765?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20accidentes."
                   className={cn(
                     buttonVariants({ size: "lg" }),
@@ -149,7 +150,7 @@ export function AccidentesLanding() {
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp ahora
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -308,7 +309,7 @@ export function AccidentesLanding() {
           <p className="text-base text-orange-800 mt-2 max-w-2xl mx-auto">
             Al combinar accidentes con cualquier otro seguro, las condiciones mejoran. Un solo gestor para toda tu protección familiar.
           </p>
-          <a
+          <WhatsAppLink
             href={`https://wa.me/34603448765?text=${encodeURIComponent(
               "Hola, tengo otro seguro con vosotros y quiero consultar sobre añadir accidentes."
             )}`}
@@ -316,7 +317,7 @@ export function AccidentesLanding() {
           >
             <WhatsAppIcon className="h-5 w-5" />
             Escríbenos y te lo explicamos →
-          </a>
+          </WhatsAppLink>
         </div>
       </section>
 
@@ -556,7 +557,7 @@ export function AccidentesLanding() {
             Tráenos el precio que tengas. En 10 años nunca hemos dejado de encontrar uno mejor.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20accidentes."
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -565,7 +566,7 @@ export function AccidentesLanding() {
             >
               <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               Pedir presupuesto gratis
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

@@ -34,6 +34,7 @@ import {
   BadgePercent,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -72,6 +73,12 @@ export function ExtranjeroLanding() {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y necesito información sobre el seguro de salud para el extranjero.\n\n📞 Teléfono: ${form.telefono}\n✈️ Situación: ${form.situacion}\n\nGracias.`
     );
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Contactar', {
+        event_category: 'engagement',
+        event_label: 'whatsapp_click',
+      });
+    }
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
   };
@@ -197,7 +204,7 @@ export function ExtranjeroLanding() {
               </motion.div>
 
               <motion.div variants={fadeInUpVariants} className="flex flex-col sm:flex-row gap-4">
-                <a
+                <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent(
                     "Hola, me gustaría información sobre el seguro de salud para el extranjero."
                   )}`}
@@ -208,7 +215,7 @@ export function ExtranjeroLanding() {
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp ahora
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -491,7 +498,7 @@ export function ExtranjeroLanding() {
                   Diseñamos pólizas colectivas para empresas con empleados viajeros. 
                   Mejor precio por volumen, gestión centralizada y un solo interlocutor.
                 </p>
-                <a
+                <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent(
                     "Hola, soy directivo/empresario y necesito cobertura médica para viajes de empresa."
                   )}`}
@@ -499,7 +506,7 @@ export function ExtranjeroLanding() {
                              underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
                 >
                   Consultar póliza de empresa →
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           </div>
@@ -891,7 +898,7 @@ export function ExtranjeroLanding() {
             Rosa y Sebastián te preparan tu cobertura internacional en menos de 30 minutos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -900,7 +907,7 @@ export function ExtranjeroLanding() {
             >
               <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

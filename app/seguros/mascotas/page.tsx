@@ -12,6 +12,7 @@ import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Seguro para Mascotas en Madrid — Perros y Gatos | VPI",
@@ -438,7 +439,7 @@ export default function MascotasPage() {
                 </p>
                 <p className="text-lg text-stone-600 leading-relaxed">
                   Si quieres saber qué opciones hay para tu gato, escríbenos por WhatsApp al{' '}
-                  <a href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700 underline">603 44 87 65</a>.
+                  <WhatsAppLink href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700 underline">603 44 87 65</WhatsAppLink>.
                   Te respondemos en menos de 30 minutos, sin compromiso.
                 </p>
               </div>

@@ -22,6 +22,7 @@ const HowItWorksSection = dynamicImport(
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Cómo Te Ayudamos · Seguros en Madrid | VPI",
@@ -210,14 +211,14 @@ export default function ComoTeAyudamosPage() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a
+                    <WhatsAppLink
                       href="https://wa.me/34603448765?text=Hola%2C+quiero+una+consulta+gratuita+sobre+seguros"
                       className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp"
                       target="_blank"
                       rel="noreferrer"
                     >
                       Consulta gratuita ahora
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </div>
               </div>
@@ -238,14 +239,14 @@ export default function ComoTeAyudamosPage() {
                     Sin tecnicismos, sin presión. Solo lo que necesitas saber para decidir con criterio.
                   </p>
                   <div className="mt-6">
-                    <a
+                    <WhatsAppLink
                       href="https://wa.me/34603448765?text=Hola%2C+quiero+hablar+con+Sebasti%C3%A1n+sobre+mis+opciones+de+seguro"
                       className="btn-whatsapp"
                       target="_blank"
                       rel="noreferrer"
                     >
                       Hablar con Sebastián
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </div>
                 <div className="relative min-h-[340px]">

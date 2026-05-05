@@ -16,6 +16,7 @@ import { Shield } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -93,12 +94,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <p className="text-sm font-semibold text-white/90">
                 🛡️ <strong>Garantía de precio:</strong> Si encuentras el mismo seguro más barato, te lo igualamos. Sin letra pequeña.
               </p>
-              <a
+              <WhatsAppLink
                 href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
                 className="flex-none text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
               >
                 Consúltanos →
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         )}
@@ -171,14 +172,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       "Los precios varían según la edad y el código postal en Madrid. Lo ideal es que Rosa o Sebastián te preparen una comparativa real de las 3 opciones en 30 minutos."
                     </p>
                   </div>
-                  <a
+                  <WhatsAppLink
                     href="https://wa.me/34603448765?text=Hola%20Rosa%2C%20me%20gustar%C3%ADa%20ver%20la%20comparativa%20de%20los%203%20tramos%20de%20salud."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-emerald-500/20 whitespace-nowrap"
                   >
                     <WhatsAppIcon className="w-5 h-5" /> Ver mi comparativa real
-                  </a>
+                  </WhatsAppLink>
                 </div>
               </div>
             </div>
@@ -258,7 +259,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 ¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en menos de 30 minutos tienes opciones reales encima de la mesa.
               </p>
             )}
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto"
               className={cn(
                 buttonVariants({ size: 'lg' }),
@@ -267,7 +268,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             >
               <WhatsAppIcon className="h-5 w-5" />
               Compara ahora gratis
-            </a>
+            </WhatsAppLink>
           </div>
         </section>
         
@@ -301,7 +302,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     sin coberturas innecesarias y sin letra pequeña.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a
+                    <WhatsAppLink
                       href="https://wa.me/34603448765?text=Hola%2C%20quiero%20proteger%20mi%20NEGOCIO%20con%20un%20seguro%20a%20medida."
                       className={cn(
                         buttonVariants({ size: 'lg' }),
@@ -310,7 +311,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     >
                       <WhatsAppIcon className="h-5 w-5" />
                       Hablar con Rosa Valentín
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </div>
               </div>
@@ -346,7 +347,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     antes y después de contratar.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a
+                    <WhatsAppLink
                       href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20SALUD%20y%20entender%20qu%C3%A9%20modalidad%20me%20encaja%20mejor."
                       className={cn(
                         buttonVariants({ size: 'lg' }),
@@ -355,7 +356,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     >
                       <WhatsAppIcon className="h-5 w-5" />
                       Hablar con Rosa Valentín
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </div>
               </div>
@@ -392,7 +393,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <p className="text-base font-semibold text-[var(--muted)] leading-relaxed mb-6">
                     ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.
                   </p>
-                  <a
+                  <WhatsAppLink
                     href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."
                     className={cn(
                       buttonVariants({ size: 'lg' }),
@@ -401,7 +402,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   >
                     <WhatsAppIcon className="h-5 w-5" />
                     Hablar con Rosa Valentín
-                  </a>
+                  </WhatsAppLink>
                 </div>
               </div>
             </div>

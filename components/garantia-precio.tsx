@@ -4,6 +4,7 @@ import { Shield, BadgeCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 interface GarantiaPrecioProps {
   variant?: "default" | "compact" | "card";
@@ -59,7 +60,7 @@ export function GarantiaPrecio({
             familias asesoradas, siempre encontramos una opción mejor.
           </p>
           {showCta && (
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -68,7 +69,7 @@ export function GarantiaPrecio({
             >
               <WhatsAppIcon className="h-5 w-5" />
               Solicitar comparación gratis
-            </a>
+            </WhatsAppLink>
           )}
         </div>
       </div>

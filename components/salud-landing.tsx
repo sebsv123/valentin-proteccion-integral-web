@@ -30,6 +30,7 @@ import {
   Hourglass,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -67,6 +68,12 @@ export function SaludLanding() {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro de salud individual.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Contactar', {
+        event_category: 'engagement',
+        event_label: 'whatsapp_click',
+      });
+    }
     window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
     setSent(true);
   };
@@ -161,7 +168,7 @@ export function SaludLanding() {
                 variants={fadeInUpVariants}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
               >
-                <a
+                <WhatsAppLink
                   href="https://wa.me/34603448765"
                   className={cn(
                     buttonVariants({ size: "lg" }),
@@ -170,7 +177,7 @@ export function SaludLanding() {
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp ahora
-                </a>
+                </WhatsAppLink>
                 <a
                   href="tel:603448765"
                   className={cn(
@@ -362,7 +369,7 @@ export function SaludLanding() {
           <p className="text-lg md:text-xl font-bold text-emerald-800 flex items-center justify-center gap-2">
             <Lightbulb className="h-5 w-5 inline" /> ¿Ya tienes seguro dental con nosotros? Al añadir salud completa, tienes descuentos especiales. Te lo gestionamos en una sola llamada.
           </p>
-          <a
+          <WhatsAppLink
             href={`https://wa.me/34603448765?text=${encodeURIComponent(
               "Hola, ya tengo seguro dental y quiero añadir salud individual."
             )}`}
@@ -370,7 +377,7 @@ export function SaludLanding() {
           >
             <WhatsAppIcon className="h-5 w-5" />
             Escríbenos ahora →
-          </a>
+          </WhatsAppLink>
         </div>
       </section>
 
@@ -512,7 +519,7 @@ export function SaludLanding() {
                   o reducir las carencias y reconocer tu antigüedad.
                   Una llamada y lo gestionamos todo.
                 </p>
-                <a
+                <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent(
                     "Hola, vengo de otra aseguradora y me gustaría que me mantuvierais la antigüedad al cambiarme."
                   )}`}
@@ -520,7 +527,7 @@ export function SaludLanding() {
                              underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
                 >
                   Consultarnos por WhatsApp →
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
             <p className="mt-3 text-xs text-muted-foreground/70 italic">
@@ -787,7 +794,7 @@ export function SaludLanding() {
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.
           </p>
-          <a
+          <WhatsAppLink
             href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20salud"
             className={cn(
               buttonVariants({ size: "lg" }),
@@ -796,7 +803,7 @@ export function SaludLanding() {
           >
             <WhatsAppIcon className="h-5 w-5" />
             Consúltanos gratis
-          </a>
+          </WhatsAppLink>
         </div>
       </motion.section>
 
@@ -876,7 +883,7 @@ export function SaludLanding() {
             Rosa y Sebastián te responden en menos de 30 minutos.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <WhatsAppLink
               href="https://wa.me/34603448765"
               className={cn(
                 buttonVariants({ size: "lg" }),
@@ -885,7 +892,7 @@ export function SaludLanding() {
             >
               <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp ahora
-            </a>
+            </WhatsAppLink>
             <a
               href="tel:603448765"
               className={cn(

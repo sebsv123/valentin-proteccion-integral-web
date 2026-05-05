@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 import { CheckCircle } from 'lucide-react';
 
 export default function GraciasClientPage() {
@@ -27,14 +28,7 @@ export default function GraciasClientPage() {
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead');
     }
-    // Google Ads — Conversion (reemplaza AW-XXXXXXXXX/YYYYYYYYYYY con tu ID real)
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-XXXXXXXXX/YYYYYYYYYYY',
-        value: 1.0,
-        currency: 'EUR',
-      });
-    }
+    // Google Ads conversion tracking is handled via GTM — do not duplicate here
   }, []);
 
   return (
@@ -59,14 +53,14 @@ export default function GraciasClientPage() {
               Si tienes urgencia, escríbenos directamente:
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row justify-center">
-              <a
+              <WhatsAppLink
                 href="https://wa.me/34603448765?text=Hola%2C+acabo+de+enviar+un+formulario+y+tengo+urgencia"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-whatsapp inline-flex justify-center"
               >
                 Escribir por WhatsApp
-              </a>
+              </WhatsAppLink>
               <Link href="/" className="btn-secondary inline-flex justify-center">
                 Volver al inicio
               </Link>

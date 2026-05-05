@@ -13,6 +13,7 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import CredentialsBar from '@/components/CredentialsBar';
 import RevealLight from '@/components/ui/reveal-light';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
@@ -327,14 +328,14 @@ export default function SobreNosotrosPage() {
                   <p className="mt-5 text-base leading-8 text-[var(--muted)]">
                     Cada familia tiene una situación diferente. Por eso empezamos siempre escuchando: qué tienes, qué te preocupa, qué quieres proteger. Sin prisas, sin formularios interminables. Una conversación real.
                   </p>
-                  <a
+                  <WhatsAppLink
                     href="https://wa.me/34603448765?text=Quiero+conoceros+mejor"
                     target="_blank"
                     rel="noreferrer"
                     className="btn-whatsapp mt-6 inline-flex"
                   >
                     <WhatsAppIcon className="h-4 w-4" /> Hablar con nosotros
-                  </a>
+                  </WhatsAppLink>
                 </div>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-[var(--border)]">
                   <Image
