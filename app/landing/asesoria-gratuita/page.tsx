@@ -83,7 +83,7 @@ export default function AsesoriaGratuitaPage() {
                   Encuentra el mejor seguro para ti en{" "}
                   <span className="font-semibold text-gray-900">30 minutos</span>.
                   <br />
-                  Mediadores independientes. Sin compromiso.
+                  Agentes registrados. Sin compromiso.
                 </p>
                 
                 {/* CTAs elegantes */}

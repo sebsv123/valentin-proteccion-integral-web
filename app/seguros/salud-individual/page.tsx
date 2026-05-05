@@ -16,12 +16,12 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-  description: "Sin copagos, sin carencias, sin permanencia. Mediadores independientes con +10 años y +1.200 familias protegidas.",
+  description: "Sin copagos, sin carencias, sin permanencia. Agentes registrados con +10 años y +1.200 familias protegidas.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
     title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-    description: "Sin copagos, sin carencias, sin permanencia. Mediadores independientes con +10 años y +1.200 familias protegidas.",
+    description: "Sin copagos, sin carencias, sin permanencia. Agentes registrados con +10 años y +1.200 familias protegidas.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

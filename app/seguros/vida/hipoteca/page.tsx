@@ -312,7 +312,7 @@ export default function VidaHipotecaPage() {
             </div>
             
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · Mediadores independientes
+              DGSFP: C012479234434D · Agentes registrados
             </p>
           </div>
         </section>

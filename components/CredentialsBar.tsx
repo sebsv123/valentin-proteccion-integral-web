@@ -5,7 +5,7 @@ import RevealLight from '@/components/ui/reveal-light'
 const credentials = [
   {
     icon: BadgeCheck,
-    label: 'Mediadora registrada',
+    label: 'Agente de seguros registrada',
     sub: 'Registro DGSyFP oficial',
   },
   {
@@ -20,8 +20,8 @@ const credentials = [
   },
   {
     icon: ShieldCheck,
-    label: 'Asesora independiente',
-    sub: 'Sin ataduras comerciales',
+    label: 'Agente registrada en la DGSFP',
+    sub: 'Agentes registrados en la DGSFP',
   },
 ]
 

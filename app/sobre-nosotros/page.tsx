@@ -16,11 +16,11 @@ import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Mediadores independientes registrados en DGSFP. Sin ataduras a ninguna compañía.",
+  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP. Sin ataduras a ninguna compañía.",
   keywords: "rosa valentin mediadora seguros, sebastian valentin asesor seguros, equipo mediadores seguros madrid, asesoria seguros boadilla del monte, DGSFP mediadores madrid",
   openGraph: {
     title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Mediadores independientes registrados en DGSFP.",
+    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP.",
     url: "https://valentinproteccionintegral.com/sobre-nosotros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -164,7 +164,7 @@ export default function SobreNosotrosPage() {
 
                 {/* Pilar 5 — Honestidad e independencia */}
                 <div className="mt-6 rounded-[24px] border border-[var(--blue-deep)]/20 bg-[var(--blue-deep)]/4 px-6 py-5">
-                  <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Mediadores independientes</p>
+                  <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Agentes registrados</p>
                   <p className="text-base leading-8 text-[var(--muted)]">
                     No somos una compañía aseguradora. Somos mediadores independientes registrados en la DGSFP
                     (<strong>Nº C012479234434D · NIF 79234434D</strong>).

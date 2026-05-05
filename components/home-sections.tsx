@@ -267,7 +267,7 @@ export function AgentTrustBlock() {
               <p className="mt-6 text-base leading-8 text-[var(--muted)] md:text-lg">Nuestro equipo, liderado por Rosa Valentín, acompaña cada caso con una mirada transparente y profesional. No se trata solo de vender una póliza, sino de garantizar que tienes la mejor respuesta frente a un imprevisto.</p>
               <div className="mt-8 grid gap-4">
                 <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Asesoría según tu etapa y prioridades</p></div>
-                <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Comparativa real entre compañías</p></div>
+                <div className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">Análisis detallado de coberturas y modalidades</p></div>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contacto" className="btn-primary" aria-label="Contactar para consulta sin compromiso">Consulta sin compromiso</Link>

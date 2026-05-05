@@ -128,7 +128,7 @@ export default function MadridPage() {
               +1.200 familias protegidas en Madrid
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mt-4">
-              Mediadores independientes
+              Agentes registrados
             </p>
           </div>
         </section>

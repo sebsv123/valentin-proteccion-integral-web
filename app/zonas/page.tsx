@@ -180,7 +180,7 @@ export default function ZonasPage() {
                   Tu equipo de confianza
                 </h2>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                  Somos Rosa y Sebastián, mediadores independientes de seguros con más de 10 años de experiencia. 
+                  Somos Rosa y Sebastián, Agentes registrados de seguros con más de 10 años de experiencia. 
                   No trabajamos para ninguna compañía aseguradora: trabajamos para ti, buscando el mejor seguro 
                   entre todas las opciones del mercado.
                 </p>
