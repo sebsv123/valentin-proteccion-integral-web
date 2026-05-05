@@ -343,8 +343,8 @@ export const zonas: Zona[] = [
         a: 'El precio de un seguro de salud en Madrid varía según la edad, las coberturas, la modalidad elegida (con o sin copago, con o sin hospitalización, con o sin reembolso) y la compañía. En nuestra consulta gratuita analizamos las mejores opciones del mercado para tu perfil exacto — sin coste ni compromiso.',
       },
       {
-        q: '¿Es mejor contratar un seguro con un asesor independiente o directamente con la compañía?',
-        a: 'Con un asesor independiente siempre accedes a las mismas coberturas y precios — o mejores — pero con alguien que compara el mercado completo por ti y defiende tus intereses si hay un siniestro. Un agente de una sola compañía solo puede ofrecerte su propio catálogo. Somos Agentes registrados DGSFP: nuestra obligación legal es velar por ti.',
+        q: '¿Es mejor contratar un seguro con un agente registrado DGSFP o directamente con la compañía?',
+        a: 'Con un agente registrado DGSFP siempre accedes a las mismas coberturas y precios — o mejores — pero con alguien que analiza el mercado completo por ti y defiende tus intereses si hay un siniestro. Un agente de una sola compañía solo puede ofrecerte su propio catálogo. Trabajamos con registro oficial DGSFP: nuestra obligación legal es velar por ti.',
       },
       {
         q: '¿Qué seguros son obligatorios en Madrid?',
@@ -384,7 +384,7 @@ export const zonas: Zona[] = [
       'seguro salud sin esperas madrid',
       'seguro autonomos madrid',
       'seguro vida hipoteca madrid',
-      'agente seguros registrado madrid',
+      'agentes seguros registrados DGSFP madrid',
       'agente seguros madrid',
       'consulta seguros gratis madrid',
     ],
