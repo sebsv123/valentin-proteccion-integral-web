@@ -181,8 +181,7 @@ export default function ZonasPage() {
                 </h2>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                   Somos Rosa y Sebastián, Agentes registrados de seguros con más de 10 años de experiencia. 
-                  No trabajamos para ninguna compañía aseguradora: trabajamos para ti, buscando el mejor seguro 
-                  entre todas las opciones del mercado.
+                  Trabajamos para ti, con asesoramiento personalizado y registro oficial DGSFP.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">

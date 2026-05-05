@@ -17,7 +17,7 @@ import RevealLight from '@/components/ui/reveal-light';
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
   description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP. Con asesoramiento centrado en ti.",
-  keywords: "rosa valentin mediadora seguros, sebastian valentin asesor seguros, equipo mediadores seguros madrid, asesoria seguros boadilla del monte, DGSFP mediadores madrid",
+  keywords: "rosa valentin agente seguros, sebastian valentin asesor seguros, equipo agentes seguros madrid, asesoria seguros boadilla del monte, DGSFP agentes madrid",
   openGraph: {
     title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
     description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP.",

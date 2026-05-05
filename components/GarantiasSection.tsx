@@ -104,7 +104,7 @@ export default function GarantiasSection({ brandColor = '#e23b4a' }: GarantiasSe
           </div>
           <div className="text-center sm:text-left">
             <p className="font-semibold text-gray-900">Rosa Valentín</p>
-            <p className="text-sm text-gray-500">Mediadora DGSFP · NIF 79234434D</p>
+            <p className="text-sm text-gray-500">Agente de Seguros · DGSFP: C012479234434D</p>
           </div>
         </div>
 
