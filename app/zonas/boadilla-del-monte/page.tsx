@@ -40,7 +40,7 @@ const serviceSchema = {
     "longitude": -3.8783
   },
   "areaServed": ["Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas", "Madrid"],
-  "description": "Asesores de seguros independientes en Boadilla del Monte. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
+  "description": "Agentes de seguros registrados DGSFP en Boadilla del Monte. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -91,7 +91,7 @@ export default function BoadillaPage() {
                 <p className="text-lg text-slate-400 mb-8 leading-relaxed">
                   Rosa y Sebastián son los Agentes de seguros registrados DGSFP en Boadilla del Monte. 
                   Más de 10 años ayudando a vecinos a elegir el mejor seguro, 
-                  comparando entre todas las compañías sin coste ni compromiso.
+                  analizando entre compañías líderes del mercado sin coste ni compromiso.
                 </p>
                 <a 
                   href={wCotiza}
@@ -252,7 +252,7 @@ export default function BoadillaPage() {
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">2</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Analizamos tu caso gratis</h3>
-                <p className="text-slate-600">Comparamos opciones entre todas las compañías. Sin coste ni compromiso.</p>
+                <p className="text-slate-600">Analizamos opciones entre compañías líderes del mercado. Sin coste ni compromiso.</p>
               </div>
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">3</div>
