@@ -530,7 +530,7 @@ export function ExtranjeroLanding() {
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://rrpp.dgsfp.mineco.es/Mediador"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-400 mb-6 hover:text-blue-300 transition-colors underline underline-offset-2"

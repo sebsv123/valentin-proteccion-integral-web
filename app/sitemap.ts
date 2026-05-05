@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // /seguros/accidentes omitida: redirige a /seguros/accidentes-decesos (301) — no puede ser canónica
     { url: `${base}/seguros/decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-extranjeros`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/seguros/health-insurance-foreigners-spain`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
 
     // ZONAS (SEO local)
@@ -48,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/mejor-seguro-salud-autonomos-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/seguros-vida-hipoteca-boadilla-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/seguro-medico-autonomos-madrid-deduccion-fiscal`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/ventajas-mediador-de-seguros`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/ventajas-asesor-de-seguros`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/fiarse-opiniones-para-elegir-seguro`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/incluir-personas-poliza-medica`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguros-salud-cubren-recien-nacidos`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
@@ -57,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/seguro-de-vida-riesgo-que-es`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/tipos-de-seguros-de-vida`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-perros-madrid-ley-bienestar-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/asesor-seguros-vs-comparador-online`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/asesor-seguros-vs-portal-online`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/guia-seguro-salud-espana-2026`, lastModified: '2026-02-15', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-vida-esencial-familia`, lastModified: '2026-01-28', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/seguro-vida-hipoteca-obligatorio`, lastModified: '2026-02-10', changeFrequency: 'monthly', priority: 0.6 },

@@ -12,17 +12,36 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Phone, Heart, Home, HandHeart, Shield, Award, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguros para Seniors en Madrid | Valentín",
-  description: "Seguros pensados para mayores de 55 en Madrid. Salud, decesos y vida con asesoría clara, cercana y sin letra pequeña. Consulta gratis.",
-  keywords: ["seguros mayores Madrid","seguros seniors Madrid","seguro decesos Madrid","asistencia domicilio mayores"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/para/seniors" },
+  title: "Seguros para Mayores de 70 en Madrid — Sin Letra Pequeña | VPI",
+  description:
+    "Seguros de salud, decesos y vida para mayores de 55 y 70 años en Madrid. Asesoría clara, cercana y sin presión. Nos adaptamos a tu situación real. Consulta gratis.",
+  keywords: [
+    "seguros mayores 70 años Madrid",
+    "seguros seniors Madrid",
+    "seguro salud mayores Madrid",
+    "seguro decesos mayores Madrid",
+    "seguro vida mayores 65 Madrid",
+    "seguro salud sin edad límite Madrid",
+  ],
+  authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   openGraph: {
-    title: "Seguros para Seniors en Madrid | Valentín",
-    description: "Seguros pensados para mayores de 55 en Madrid. Salud, decesos y vida con asesoría clara, cercana y sin letra pequeña. Consulta gratis.",
+    title: "Seguros para Mayores de 70 en Madrid — Sin Letra Pequeña | VPI",
+    description:
+      "Seguros de salud, decesos y vida para mayores en Madrid. Sin edad límite artificial. Asesoría real y cercana. Consulta gratis por WhatsApp.",
     url: "https://valentinproteccionintegral.com/para/seniors",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seguros para Mayores de 70 en Madrid",
+    description:
+      "Salud, decesos y vida para mayores en Madrid. Sin letra pequeña, sin presión. Consulta gratis con Rosa Valentín.",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/para/seniors",
   },
 };
 
@@ -193,6 +212,32 @@ export default function SeniorsPage() {
                   <p className="text-lg text-stone-700">{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        
+        {/* MAYORES DE 70 */}
+        <section className="py-20 bg-stone-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
+                ¿Puedo contratar un seguro de salud con más de 70 años en Madrid?
+              </h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-6">
+              <p className="text-lg text-stone-600 leading-relaxed">
+                Esta es una de las preguntas que más escuchamos en Valentín Protección Integral. Muchas personas creen que al cumplir 70 años ya no pueden contratar un seguro de salud privado, pero la realidad es más matizada. Sí, es cierto que algunas opciones del mercado ponen límites de edad para nuevas contrataciones, pero existen alternativas específicas para personas mayores de 70 años que ofrecen coberturas adaptadas a esta etapa de la vida.
+              </p>
+              <p className="text-lg text-stone-600 leading-relaxed">
+                En nuestro día a día trabajamos con personas mayores de 70 años que buscan un seguro de salud sin listas de espera, un seguro de decesos que deje todo resuelto para su familia, o un seguro de vida que proteja a los suyos. Estudiamos cada caso de forma personalizada porque no es lo mismo una persona de 72 años con buena salud que otra de 78 con patologías previas. No aplicamos recetas genéricas: escuchamos tu situación real y buscamos la opción que mejor se adapta a ti, con transparencia y sin prisas.
+              </p>
+              <p className="text-lg text-stone-600 leading-relaxed">
+                Las opciones para mayores de 70 años en Madrid incluyen seguros de salud con acceso a especialistas, pruebas diagnósticas y hospitalización; seguros de decesos con gestión completa del sepelio desde el primer día y sin carencias; y seguros de vida con capitales adaptados a las necesidades familiares. En todos los casos, te explicamos las condiciones con claridad, sin letra pequeña y sin presión comercial. Si tienes más de 70 años y quieres saber qué opciones reales hay para ti, escríbenos por WhatsApp al{' '}
+                <a href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-semibold hover:text-emerald-700 underline">603 44 87 65</a>.
+                Te respondemos con toda la paciencia del mundo.
+              </p>
             </div>
           </div>
         </section>

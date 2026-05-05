@@ -14,10 +14,10 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 export const metadata: Metadata = {
   title: "Contacto · Asesor de Seguros Boadilla | VPI",
   description: "Estamos en Boadilla del Monte, Madrid. Llámanos al 603 44 87 65 o escríbenos por WhatsApp. Rosa y Sebastián Valentín responden en menos de 2 horas. Consulta gratuita sin compromiso.",
-  keywords: "contacto asesora seguros madrid, consulta gratuita seguros boadilla del monte, telefono seguros madrid, mediadores seguros madrid",
+  keywords: "contacto asesora seguros madrid, consulta gratuita seguros boadilla del monte, telefono seguros madrid, agentes seguros madrid",
   openGraph: {
     title: "Contacto · Asesor de Seguros Boadilla | VPI",
-    description: "Rosa y Sebastián Valentín, mediadores de seguros en Boadilla del Monte. Responden en menos de 30 minutos. Consulta gratuita.",
+    description: "Rosa y Sebastián Valentín, agentes de seguros en Boadilla del Monte. Responden en menos de 30 minutos. Consulta gratuita.",
     url: "https://valentinproteccionintegral.com/contacto",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

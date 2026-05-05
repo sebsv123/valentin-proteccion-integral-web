@@ -99,7 +99,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             </span>
           </p>
           <a
-            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20comparar%20precios%20de%20seguro%20para%20mi%20mascota"
+            href="https://wa.me/34603448765?text=Hola%2C%20quiero%20revisar%20precios%20de%20seguro%20para%20mi%20mascota"
             className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Compruébalo gratis →
@@ -386,7 +386,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                 &ldquo;Rosa lleva más de 10 años protegiendo a las mascotas de las familias de Boadilla del Monte y Madrid. Cada seguro que gestiona lo trata como si fuera el de su propia mascota.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://rrpp.dgsfp.mineco.es/Mediador"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--blue)] mb-6 hover:text-[var(--blue-deep)] transition-colors underline underline-offset-2"

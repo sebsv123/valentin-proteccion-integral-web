@@ -13,17 +13,36 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileCheck, Award, TrendingUp, Phone, HandHeart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro de Decesos en Madrid | Valentín",
-  description: "Seguro de decesos en Madrid con gestión completa incluida. Tu familia solo tiene que llamarnos una vez. Consulta gratuita sin compromiso.",
-  keywords: ["seguro decesos Madrid","seguro gastos sepelio Madrid","seguro fallecimiento Madrid","protección familiar decesos"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/decesos" },
+  title: "Seguro de Decesos en Madrid — Gestión Completa Incluida | VPI",
+  description:
+    "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Seguro de decesos en Madrid con gestión completa del sepelio desde el primer día. Sin carencias. Consulta gratuita.",
+  keywords: [
+    "seguro decesos Madrid",
+    "seguro gastos sepelio Madrid",
+    "seguro fallecimiento Madrid",
+    "protección familiar decesos",
+    "seguro decesos sin carencia Madrid",
+    "seguro entierro Madrid",
+  ],
+  authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   openGraph: {
-    title: "Seguro de Decesos en Madrid | Valentín",
-    description: "Seguro de decesos en Madrid con gestión completa incluida. Tu familia solo tiene que llamarnos una vez. Consulta gratuita sin compromiso.",
+    title: "Seguro de Decesos en Madrid — Gestión Completa Incluida",
+    description:
+      "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Gestión completa del sepelio desde el primer día. Sin carencias ni sorpresas.",
     url: "https://valentinproteccionintegral.com/seguros/decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seguro de Decesos en Madrid — Gestión Completa Incluida",
+    description:
+      "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Sin carencias ni sorpresas. Consulta gratuita.",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/seguros/decesos",
   },
 };
 

@@ -352,7 +352,7 @@ export function ProductCTASection({ product, title, text, message }: { product: 
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {[
                   { step: '01', label: 'Cuéntanos', desc: 'Tu situación y qué quieres proteger' },
-                  { step: '02', label: 'Comparamos', desc: 'Opciones reales con explicación clara' },
+                  { step: '02', label: 'Analizamos', desc: 'Opciones reales con explicación clara' },
                   { step: '03', label: 'Decides tú', desc: 'Sin presión, con todo el contexto' },
                 ].map((item) => (
                   <div key={item.step} className="rounded-[20px] bg-white/10 p-5 backdrop-blur">

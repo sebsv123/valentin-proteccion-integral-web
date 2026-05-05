@@ -42,7 +42,7 @@ export default function AvisoLegalPage() {
               <li><strong>Email:</strong> hola@valentinproteccionintegral.com</li>
               <li><strong>Web:</strong> https://valentinproteccionintegral.com</li>
               <li>
-                <strong>Registro de Mediadores:</strong> Inscritos en el Registro de Mediadores de
+                <strong>Registro DGSFP:</strong> Inscritos en el Registro de Mediadores de
                 Seguros y Reaseguros de la Dirección General de Seguros y Fondos de Pensiones (DGSFP).
                 Consulta pública disponible en{' '}
                 <a href="https://rrpp.dgsfp.mineco.es/Mediador" target="_blank" rel="noreferrer">rrpp.dgsfp.mineco.es/Mediador</a>.

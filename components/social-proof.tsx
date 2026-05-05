@@ -7,7 +7,7 @@ const TIPS = [
   { text: 'Más de 1.200 familias ya han confiado en nuestra orientación', icon: '👨‍👩‍👧‍👦' },
   { text: 'Asesoramiento en 8 ramos de seguro diferentes', icon: '🛡️' },
   { text: 'Consulta sin compromiso por WhatsApp o teléfono', icon: '💬' },
-  { text: 'Más de 10 años de experiencia en mediación de seguros', icon: '⭐' },
+  { text: 'Más de 10 años de experiencia en asesoría de seguros', icon: '⭐' },
 ];
 
 export function SocialProof() {

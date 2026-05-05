@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -13,17 +14,36 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro para Mascotas en Madrid | Valentín",
-  description: "Seguro de mascotas en Madrid desde el primer día y sin burocracia. Cobertura veterinaria, vacunas y urgencias. Consulta gratis en 30 minutos.",
-  keywords: ["seguro mascotas Madrid","seguro perro gato Madrid","veterinario seguro Madrid","seguro mascotas barato"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/mascotas" },
+  title: "Seguro para Mascotas en Madrid — Perros y Gatos | VPI",
+  description:
+    "Seguro veterinario para tu perro o gato en Madrid desde el primer día. Sin burocracia, sin listas de espera. Urgencias, vacunas y más. Consulta gratis por WhatsApp.",
+  keywords: [
+    "seguro mascotas Madrid",
+    "seguro perro Madrid",
+    "seguro gato Madrid",
+    "seguro veterinario perros Madrid",
+    "seguro veterinario gatos Madrid",
+    "seguro mascotas sin copago Madrid",
+  ],
+  authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   openGraph: {
-    title: "Seguro para Mascotas en Madrid | Valentín",
-    description: "Seguro de mascotas en Madrid desde el primer día y sin burocracia. Cobertura veterinaria, vacunas y urgencias. Consulta gratis en 30 minutos.",
+    title: "Seguro para Mascotas en Madrid — Perros y Gatos | VPI",
+    description:
+      "Seguro veterinario para tu perro o gato en Madrid desde el primer día. Sin burocracia ni listas de espera. Consulta gratis por WhatsApp.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seguro para Mascotas en Madrid — Perros y Gatos",
+    description:
+      "Cobertura veterinaria para tu perro o gato desde el primer día. Sin sorpresas. Consulta gratis en 30 minutos.",
+  },
+  alternates: {
+    canonical: "https://valentinproteccionintegral.com/seguros/mascotas",
   },
 };
 
@@ -425,6 +445,18 @@ export default function MascotasPage() {
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#f59e0b" />
+
+        {/* INFO LEGAL — Enlace al blog */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
+            <p className="text-lg text-stone-600">
+              Más información sobre la normativa vigente:{' '}
+              <Link href="/blog/seguro-perros-madrid-ley-bienestar-2026" className="text-amber-600 font-semibold hover:text-amber-700 underline">
+                Ley de Bienestar Animal 2026: qué necesita tu perro en Madrid
+              </Link>
+            </p>
+          </div>
+        </section>
 
         {/* FAQ CHAT */}
         <FAQChat 

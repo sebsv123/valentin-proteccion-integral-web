@@ -10,7 +10,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
   description: "Agentes de seguros registrados DGSFP en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias. Consulta gratis por WhatsApp.",
-  keywords: ["asesores seguros Madrid Oeste", "seguros Boadilla", "seguros Majadahonda", "seguros Pozuelo", "mediador Madrid"],
+  keywords: ["asesores seguros Madrid Oeste", "seguros Boadilla", "seguros Majadahonda", "seguros Pozuelo", "agente seguros Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas" },
   openGraph: {
     title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
@@ -181,7 +181,7 @@ export default function ZonasPage() {
                 </h2>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                   Somos Rosa y Sebastián, Agentes registrados de seguros con más de 10 años de experiencia. 
-                  Trabajamos para ti, con asesoramiento personalizado y registro oficial DGSFP.
+                  Te ofrecemos asesoramiento personalizado con registro oficial DGSFP.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
@@ -198,7 +198,7 @@ export default function ZonasPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                       </svg>
                     </div>
-                    <span className="text-slate-700">Comparativa gratuita en 30 minutos</span>
+                    <span className="text-slate-700">Asesoría gratuita en 30 minutos</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -225,7 +225,7 @@ export default function ZonasPage() {
               ¿Buscas un asesor de seguros en Madrid?
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Estamos aquí para ayudarte. Comparativa gratis sin compromiso.
+              Estamos aquí para ayudarte. Asesoría gratis sin compromiso.
             </p>
             <a 
               href={wCotiza}

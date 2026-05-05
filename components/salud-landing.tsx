@@ -401,7 +401,7 @@ export function SaludLanding() {
                 &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://rrpp.dgsfp.mineco.es/Mediador"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-sm font-medium text-emerald-400 mb-6 hover:text-emerald-300 transition-colors underline underline-offset-2"
@@ -788,14 +788,14 @@ export function SaludLanding() {
             Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.
           </p>
           <a
-            href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20salud"
+            href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20salud"
             className={cn(
               buttonVariants({ size: "lg" }),
               "h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
             )}
           >
             <WhatsAppIcon className="h-5 w-5" />
-            Compara ahora gratis
+            Consúltanos gratis
           </a>
         </div>
       </motion.section>

@@ -382,7 +382,7 @@ export default function SaludDentalPage() {
           </div>
         </section>
 
-        {/* COMPARADOR — ¿Ya tienes seguro dental? */}
+        {/* NIVELES — ¿Ya tienes seguro dental? */}
         <section className="py-24 bg-gradient-to-br from-slate-50 via-sky-50/30 to-blue-50/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-sky-100/50 border border-sky-100">
@@ -412,11 +412,11 @@ export default function SaludDentalPage() {
               <div className="text-center">
                 <WhatsAppButton 
                   href={wCotiza}
-                  location="comparador"
+                  location="niveles"
                   showIcon
                   className="inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-sky-500/20 hover:shadow-xl"
                 >
-                  Compara tu seguro actual
+                  Revisa tu seguro actual
                 </WhatsAppButton>
               </div>
             </div>

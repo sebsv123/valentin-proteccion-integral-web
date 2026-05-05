@@ -106,7 +106,7 @@ export function AccidentesDecesosLanding() {
     },
     {
       q: "¿Y si ya tengo seguro de vida en el banco?",
-      a: "Es diferente. El seguro de vida del banco suele estar vinculado a una hipoteca y no siempre cubre lo mismo. Con una llamada te comparamos lo que tienes y lo que necesitas, sin compromiso.",
+      a: "Es diferente. El seguro de vida del banco suele estar vinculado a una hipoteca y no siempre cubre lo mismo. Con una llamada te analizamos lo que tienes y lo que necesitas, sin compromiso.",
     },
   ];
 
@@ -607,7 +607,7 @@ export function AccidentesDecesosLanding() {
                   {
                     num: "2",
                     title: "Te explicamos todo sin presión",
-                    desc: "Sin comparar marcas. Solo lo que te conviene a ti.",
+                    desc: "Sin mencionar marcas. Solo lo que te conviene a ti.",
                   },
                   {
                     num: "3",

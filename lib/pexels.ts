@@ -43,10 +43,10 @@ const slugToQuery: Record<string, string> = {
   'seguro-perros-madrid-ley-bienestar-2026': 'dog pet park madrid',
   'seguro-perro-obligatorio-madrid': 'dog walking park responsible owner',
   
-  // Posts de asesoramiento/comparadores
+  // Posts de asesoramiento
   'fiarse-opiniones-para-elegir-seguro': 'customer review feedback trust',
-  'ventajas-mediador-de-seguros': 'insurance advisor consultation office',
-  'asesor-seguros-vs-comparador-online': 'insurance advisor vs computer',
+  'ventajas-asesor-de-seguros': 'insurance advisor consultation office',
+  'asesor-seguros-vs-portal-online': 'insurance advisor vs computer',
   
   // Posts de pólizas/jurídico
   'donde-consultar-que-incluye-mi-poliza': 'insurance policy document contract',

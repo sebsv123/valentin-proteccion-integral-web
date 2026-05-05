@@ -105,7 +105,7 @@ export default function SobreNosotrosPage() {
                     {[
                       { icon: HeartHandshake, text: 'Enfoque personalizado' },
                       { icon: ShieldCheck, text: 'Sin presión comercial' },
-                      { icon: ClipboardList, text: 'Comparativa real' },
+                      { icon: ClipboardList, text: 'Asesoría real' },
                       { icon: MessageCircle, text: 'Escucha activa' },
                     ].map((item) => {
                       const Icon = item.icon;
@@ -126,7 +126,7 @@ export default function SobreNosotrosPage() {
                   Rosa y Sebastián: el equipo que protege a familias en Madrid desde hace más de 10 años
                 </h1>
                 <p className="mt-6 text-lg leading-9 text-[var(--muted)]">
-                  Valentín Protección Integral nace con una idea sencilla: ayudar a familias y particulares a entender mejor lo que están contratando. No se trata de empujar un producto, sino de comparar con criterio y acompañar cada decisión con más contexto.
+                  Valentín Protección Integral nace con una idea sencilla: ayudar a familias y particulares a entender mejor lo que están contratando. No se trata de empujar un producto, sino de decidir con criterio y acompañar cada decisión con más contexto.
                 </p>
 
                 {/* BLOQUE ROSA */}
@@ -171,7 +171,7 @@ export default function SobreNosotrosPage() {
                   <p className="text-base leading-8 text-[var(--muted)]">
                     No somos una compañía aseguradora. Somos agentes registrados en la DGSFP
                     (<strong>Nº C012479234434D · NIF 79234434D</strong>).
-                    Eso significa que trabajamos para ti, no para ninguna compañía.
+                    Eso significa que te asesoramos con criterio profesional y registro oficial.
                     Nuestro único objetivo es que tengas la mejor cobertura al precio más justo.
                   </p>
                 </div>

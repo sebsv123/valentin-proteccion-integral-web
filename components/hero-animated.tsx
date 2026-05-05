@@ -141,7 +141,7 @@ export function HeroLeadSection() {
               <div className="mt-6 hidden sm:grid gap-3 md:grid-cols-3">
                 {[
                   ['Te ayudamos a decidir', 'Analizamos según tu perfil y te explicamos la letra pequeña sin prisas ni presión.'],
-                  ['Experiencia a tu servicio', 'No somos un comparador automático. Hay un equipo experto detrás de cada recomendación.'],
+                  ['Experiencia a tu servicio', 'No somos un portal automático. Hay un equipo experto detrás de cada recomendación.'],
                   ['Consulta sin coste', 'Empieza por llamada, WhatsApp o formulario corto para resolver tus primeras dudas.'],
                 ].map(([title, copy]) => (
                   <div key={title} className="rounded-[22px] bg-white/92 p-4 shadow-sm backdrop-blur">

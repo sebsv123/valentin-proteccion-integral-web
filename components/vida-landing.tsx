@@ -324,7 +324,7 @@ export function VidaLanding() {
           </p>
           <a
             href={`https://wa.me/34603448765?text=${encodeURIComponent(
-              "Hola, tengo el seguro de vida con mi banco y quiero comparar precio."
+              "Hola, tengo el seguro de vida con mi banco y quiero revisar mi precio."
             )}`}
             className="mt-4 inline-flex items-center gap-2 text-amber-700 font-semibold hover:opacity-80 transition-opacity underline"
           >
@@ -380,7 +380,7 @@ export function VidaLanding() {
                 &ldquo;Sebastián lleva más de 10 años ayudando a familias de Madrid a proteger lo más importante: la tranquilidad económica de los suyos. Cada seguro de vida que gestiona lo trata como si fuera el de su propia familia.&rdquo;
               </p>
               <a
-                href="https://www.colegiomediadores.es"
+                href="https://rrpp.dgsfp.mineco.es/Mediador"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-400 mb-6 hover:text-blue-300 transition-colors underline underline-offset-2"

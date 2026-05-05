@@ -88,7 +88,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
         <div>
           <p className="kicker">Consulta sin compromiso</p>
           <h2 className="mt-2 font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">Cuéntanos qué necesitas</h2>
-          <p className="mt-3 text-base leading-8 text-[var(--muted)]">Te respondemos con una primera orientación clara para ayudarte a comparar y elegir mejor.</p>
+          <p className="mt-3 text-base leading-8 text-[var(--muted)]">Te respondemos con una primera orientación clara para ayudarte a decidir con criterio.</p>
         </div>
         <div className="hidden rounded-2xl bg-[var(--bg)] p-3 text-[var(--blue)] md:block">
           <ShieldCheck className="h-7 w-7" />

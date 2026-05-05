@@ -27,9 +27,11 @@ import { zonas } from '@/lib/zonas';
 
 export const metadata: Metadata = {
   title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
-  description: "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",
+  description:
+    "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias protegidas. Salud, vida, dental y mascotas. Sin letra pequeña, sin presión.",
   keywords: "asesor de seguros madrid, asesores de seguros madrid, seguro de salud madrid, seguro de vida madrid, agente seguros registrado DGSFP madrid, consulta seguros gratis madrid",
   authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   openGraph: {
     title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
     description: "Agente de seguros registrado DGSFP en Madrid. +10 años, +1.200 familias y seguros de salud, vida, dental y mascotas. Sin letra pequeña.",

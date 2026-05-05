@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Mediadores de seguros en Madrid" }],
+    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Agentes de seguros en Madrid" }],
   },
 };
 

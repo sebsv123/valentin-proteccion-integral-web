@@ -152,7 +152,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
 
             <div className='grid md:grid-cols-3 gap-6'>
               {[
-                { icon: Building2, title: 'Agente registrado DGSFP', desc: 'Asesoramiento personalizado con registro oficial. Trabajamos para ti, con transparencia total.' },
+                { icon: Building2, title: 'Agente registrado DGSFP', desc: 'Asesoramiento personalizado con registro oficial DGSFP.' },
                 { icon: Sparkles, title: 'Respuesta en 30 min', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
                 { icon: Heart, title: 'Gestión de siniestros', desc: 'No desaparecemos tras la firma. Te acompañamos en renovaciones, cambios y siniestros.' },
               ].map((item, i) => (

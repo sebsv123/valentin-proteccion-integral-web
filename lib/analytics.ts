@@ -31,7 +31,7 @@ export function trackEvent(eventName: string, params?: Record<string, unknown>):
 
 /**
  * Track WhatsApp click conversion
- * @param location - Where the button was clicked (e.g., 'hero', 'comparador', 'cta-final')
+ * @param location - Where the button was clicked (e.g., 'hero', 'niveles', 'cta-final')
  */
 export function trackWhatsAppClick(location: string): void {
   trackEvent('Contactar', {

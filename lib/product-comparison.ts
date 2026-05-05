@@ -36,8 +36,8 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         ],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
+        id: 'niveles',
+        label: 'Niveles',
         intro: 'Tabla orientativa para ver diferencias generales entre niveles. No es un presupuesto.',
         columns: ['Básico', 'Completo', 'Senior', 'Extranjeros'],
         rows: [
@@ -52,7 +52,7 @@ export const productCompare: Record<string, ProductCompareConfig> = {
       {
         id: 'consejos',
         label: 'Consejos',
-        intro: 'Lo que conviene saber antes de comparar precios.',
+        intro: 'Lo que conviene saber antes de revisar precios.',
         advice: [
           { title: 'Qué mirar antes del precio', desc: 'El precio mensual no lo dice todo. Revisa copagos, carencias, exclusiones y el cuadro médico disponible en tu zona.' },
           { title: 'Cuándo te interesa hospitalización', desc: 'Si tienes hijos menores, planeas una intervención o quieres estar cubierto ante ingresos, la hospitalización marca una diferencia real.' },
@@ -88,8 +88,8 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['No todas las soluciones de protección personal cubren el mismo riesgo.', 'Conviene separar VIDA de productos centrados en accidente.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
+        id: 'niveles',
+        label: 'Niveles',
         intro: 'Visión general orientativa entre niveles de protección.',
         columns: ['Base', 'Familiar', 'Protección ampliada'],
         rows: [
@@ -126,9 +126,9 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['Revisa si tu póliza de salud ya incluye dental básico.', 'Hay opciones con consultas incluidas y tratamientos a precio reducido.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
-        intro: 'Diferencias orientativas entre niveles de cobertura dental.',
+        id: 'niveles',
+        label: 'Niveles',
+        intro: 'Visión general orientativa entre niveles de cobertura dental.',
         columns: ['Básico', 'Intermedio', 'Completo'],
         rows: [
           { label: 'Revisiones y limpiezas', values: [yes, yes, yes] },
@@ -144,7 +144,7 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         intro: 'Lo que conviene saber antes de elegir un seguro dental.',
         advice: [
           { title: 'Revisa si ya tienes dental incluido', desc: 'Muchas pólizas de salud incluyen un cuadro dental básico. Antes de contratar por separado, verifica lo que ya tienes.' },
-          { title: 'Compara tratamientos, no solo cuotas', desc: 'Lo importante es qué tratamientos están incluidos y cuáles tienen copago. Las revisiones suelen ser gratuitas en todos los niveles.' },
+          { title: 'Revisa tratamientos, no solo cuotas', desc: 'Lo importante es qué tratamientos están incluidos y cuáles tienen copago. Las revisiones suelen ser gratuitas en todos los niveles.' },
           { title: 'Pregunta por ortodoncia e implantes', desc: 'Estos tratamientos suelen tener descuentos o copagos especiales. Si los necesitas, asegúrate de que están contemplados.' },
         ],
       },
@@ -164,8 +164,8 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['Los opcionales económicos pueden cambiar bastante.', 'Conviene revisar si la RC es principal u opcional.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
+        id: 'niveles',
+        label: 'Niveles',
         intro: 'Visión general orientativa entre tipos de cobertura para mascotas.',
         columns: ['Veterinaria', 'Mixto', 'RC reforzada'],
         rows: [
@@ -201,9 +201,9 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['Conviene diferenciarlo de un seguro de vida.', 'El capital y las garantías cambian según el enfoque.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
-        intro: 'Comparativa orientativa entre niveles de protección ante accidentes.',
+        id: 'niveles',
+        label: 'Niveles',
+        intro: 'Visión orientativa entre niveles de protección ante accidentes.',
         columns: ['Básico', 'Intermedio', 'Reforzado'],
         rows: [
           { label: 'Fallecimiento por accidente', values: [yes, yes, yes] },
@@ -238,9 +238,9 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['Conviene decidir entre prima nivelada y natural según tu edad.', 'Los servicios adicionales (asistencia jurídica, en viaje) pueden marcar la diferencia.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
-        intro: 'Diferencias generales entre tipos de póliza de decesos.',
+        id: 'niveles',
+        label: 'Niveles',
+        intro: 'Visión general entre tipos de póliza de decesos.',
         columns: ['Básico', 'Estándar', 'Completo'],
         rows: [
           { label: 'Servicio funerario completo', values: [yes, yes, yes] },
@@ -276,9 +276,9 @@ export const productCompare: Record<string, ProductCompareConfig> = {
         bullets: ['No es lo mismo un viaje puntual que estudios o multiviaje.', 'La anulación y el límite médico no siempre vienen igual.'],
       },
       {
-        id: 'comparador',
-        label: 'Comparador',
-        intro: 'Comparativa orientativa entre tipos de seguro de viaje.',
+        id: 'niveles',
+        label: 'Niveles',
+        intro: 'Visión orientativa entre tipos de seguro de viaje.',
         columns: ['Escapada', 'Frecuente', 'Especializado'],
         rows: [
           { label: 'Asistencia médica en viaje', values: [yes, yes, yes] },

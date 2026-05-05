@@ -72,7 +72,7 @@ export function Footer() {
         <div className="mt-10 grid gap-4 border-t border-[var(--border)] pt-6 text-sm leading-7 text-[var(--muted)] md:grid-cols-3">
           <p>La información mostrada es orientativa y no sustituye a la documentación contractual final de cada aseguradora.</p>
           <p>Las coberturas, límites, primas y condiciones pueden variar según modalidad, edad, provincia y aceptación del riesgo.</p>
-          <p>Valentín Protección Integral es tu agencia de confianza para asesorar, comparar y acompañarte en cada paso.</p>
+          <p>Valentín Protección Integral es tu agencia de confianza para asesorar y acompañarte en cada paso.</p>
         </div>
         <div className="mt-6 border-t border-[var(--border)] pt-6 text-center text-sm text-[var(--muted)]">
           <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>

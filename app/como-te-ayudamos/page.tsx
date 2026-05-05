@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   keywords: "cómo funciona seguros madrid, proceso seguros valentín, asesoría seguros madrid",
   openGraph: {
     title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
-    description: "No somos un comparador online. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene.",
+    description: "No somos un portal automático. Somos personas que escuchan tu situación y buscan el seguro que de verdad te conviene.",
     url: "https://valentinproteccionintegral.com/como-te-ayudamos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -86,7 +86,7 @@ export default function ComoTeAyudamosPage() {
               <div className="grid gap-0 lg:grid-cols-[1.02fr_0.98fr]">
                 <div className="p-7 md:p-10 lg:p-12">
                   <p className="kicker">Cómo te ayudamos</p>
-                  <h1 id="metodo-h1" className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">No somos un comparador. Somos tu asesor.</h1>
+                  <h1 id="metodo-h1" className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">No somos un portal automático. Somos tu asesor.</h1>
                   <p className="mt-3 font-heading text-2xl font-semibold text-[var(--blue)] md:text-3xl">
                     Tu asesor de seguros en Madrid, de principio a fin
                   </p>

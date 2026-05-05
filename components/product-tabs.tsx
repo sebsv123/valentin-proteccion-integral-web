@@ -8,7 +8,7 @@ import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 const icons = {
   modalidades: Layers3,
-  comparador: Scale,
+  niveles: Scale,
   consejos: Lightbulb,
   documentacion: FileText,
   preguntas: HelpCircle,

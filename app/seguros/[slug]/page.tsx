@@ -91,13 +91,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="bg-[#002244] text-white py-3 px-4">
             <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
               <p className="text-sm font-semibold text-white/90">
-                🛡️ <strong>Garantía de precio:</strong> Si tu banco o comparador te da el mismo seguro más barato, te lo igualamos. Sin letra pequeña.
+                🛡️ <strong>Garantía de precio:</strong> Si encuentras el mismo seguro más barato, te lo igualamos. Sin letra pequeña.
               </p>
               <a
-                href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
+                href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
                 className="flex-none text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
               >
-                Compara ahora →
+                Consúltanos →
               </a>
             </div>
           </div>
