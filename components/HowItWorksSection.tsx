@@ -15,8 +15,8 @@ const steps = [
   {
     num: '02',
     icon: Search,
-    title: 'Analizamos opciones reales',
-    desc: 'Analizamos según tu perfil y prioridades. Te explicamos qué cambia entre modalidades con total claridad.',
+    title: 'Te explicamos las opciones',
+    desc: 'Te asesoramos según tu perfil y prioridades. Te explicamos qué cambia entre modalidades con total claridad.',
   },
   {
     num: '03',

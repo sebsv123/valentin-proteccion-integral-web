@@ -25,7 +25,7 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 
 export const metadata: Metadata = {
   title: "Cómo Te Ayudamos · Seguros en Madrid | VPI",
-  description: "Te asesoramos gratis, buscamos la mejor opción y te acompañamos después de contratar. Así trabajamos en Valentín Protección Integral · Boadilla del Monte, Madrid.",
+  description: "Te asesoramos gratis, te asesoramos sobre la cobertura más adecuada para ti y te acompañamos después de contratar. Así trabajamos en Valentín Protección Integral · Boadilla del Monte, Madrid.",
   keywords: "cómo funciona seguros madrid, proceso seguros valentín, asesoría seguros madrid",
   openGraph: {
     title: "Cómo Trabajamos Contigo · Sin Compromiso | Valentín",
@@ -64,7 +64,7 @@ export default function ComoTeAyudamosPage() {
               "url": "https://valentinproteccionintegral.com"
             },
             "areaServed": { "@type": "City", "name": "Madrid" },
-            "description": "Asesoría de seguros sin compromiso en Madrid. Comparamos opciones de salud, vida, mascotas, dental, viaje y más para que elijas con criterio.",
+            "description": "Atención personalizada en seguros de salud, vida, mascotas, dental, viaje y más. Registro DGSFP nº C012479234434D.",
             "url": "https://valentinproteccionintegral.com/como-te-ayudamos",
             "serviceType": "Asesoría de Seguros",
             "offers": {
@@ -90,11 +90,11 @@ export default function ComoTeAyudamosPage() {
                   <p className="mt-3 font-heading text-2xl font-semibold text-[var(--blue)] md:text-3xl">
                     Tu asesor de seguros en Madrid, de principio a fin
                   </p>
-                  <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">Escuchamos tu situación, comparamos contigo y aterrizamos coberturas con un lenguaje que se entiende. La idea es ayudarte a elegir con más tranquilidad, no llenarte de ruido.</p>
+                  <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">Escuchamos tu situación, te explicamos contigo y aterrizamos coberturas con un lenguaje que se entiende. La idea es ayudarte a elegir con más tranquilidad, no llenarte de ruido.</p>
                   <div className="mt-7 grid gap-3 md:grid-cols-2">
                     {[
                       'Escuchamos qué quieres proteger y en qué momento estás.',
-                      'Comparamos opciones con una explicación que se entiende.',
+                      'Te presentamos las coberturas con una explicación que se entiende.',
                       'Traducimos coberturas, matices y diferencias a lenguaje claro.',
                       'Si algo falla después de contratar, somos nosotros quienes llamamos a la compañía por ti — nunca te dejamos solo ante un problema.',
                     ].map((line) => (
@@ -103,7 +103,7 @@ export default function ComoTeAyudamosPage() {
                   </div>
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                     <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
-                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y entender mejor mis opciones.')} className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp">Hablar por WhatsApp</a>
+                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y información sobre seguros para mi situación.')} className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp">Hablar por WhatsApp</a>
                   </div>
                 </div>
                 <div className="relative min-h-[360px]">
@@ -146,7 +146,7 @@ export default function ComoTeAyudamosPage() {
                 <div className="p-7 md:p-10">
                   <p className="kicker">Nuestro equipo</p>
                   <h2 id="equipo-title" className="mt-3 section-title">Rosa y Sebastián: 10 años acompañando lo que más importa</h2>
-                  <p className="section-copy mt-4">Rosa y Sebastián combinan cercanía, experiencia técnica y comparativa real entre opciones. Puedes empezar por el canal que más te convenga.</p>
+                  <p className="section-copy mt-4">Rosa y Sebastián combinan cercanía, experiencia técnica y asesoramiento honesto sobre coberturas. Puedes empezar por el canal que más te convenga.</p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost">Instagram · @segurosrosavalentin</a>
                     <Link href="/contacto" className="btn-secondary">Consulta sin compromiso</Link>
@@ -184,7 +184,7 @@ export default function ComoTeAyudamosPage() {
                     Más de 1.200 familias ya confían en nosotros
                   </h2>
                   <p className="section-copy mt-4">
-                    No trabajamos para las compañías. Trabajamos para ti.
+                    Trabajamos contigo: te explicamos todo sin presión para que decidas con criterio.
                     Por eso podemos decirte lo que realmente necesitas —
                     aunque a veces sea menos de lo que ibas a contratar.
                   </p>
