@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
   description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. Personal advisor in English. From 22.50€/month.",
   keywords: ["health insurance NIE Spain","health insurance TIE Spain","health insurance visa Spain","foreigners health insurance Madrid","expat health insurance Spain"],
+  authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
   openGraph: {
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
@@ -22,11 +24,15 @@ export const metadata: Metadata = {
     siteName: "Valentín Protección Integral",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa and Sebastián — Registered insurance agents in Madrid" }],
+    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa and Sebastián — Registered insurance agents in Madrid" }],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
     description: "No co-payments, certificate in 24h. Valid for all Spanish visas and residence permits. Personal advisor in English.",
+  },
+  other: {
+    'content-language': 'en',
   },
 };
 
