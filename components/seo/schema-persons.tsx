@@ -34,7 +34,7 @@ export default function SchemaPersons() {
       "Seguros para autónomos Madrid"
     ],
     "worksFor": {
-      "@type": "InsuranceAgency",
+      "@type": "LocalBusiness",
       "name": "Valentín Protección Integral",
       "url": "https://valentinproteccionintegral.com"
     }
@@ -91,7 +91,7 @@ export default function SchemaPersons() {
       "Análisis de datos económicos"
     ],
     "worksFor": {
-      "@type": "InsuranceAgency",
+      "@type": "LocalBusiness",
       "name": "Valentín Protección Integral",
       "url": "https://valentinproteccionintegral.com"
     }

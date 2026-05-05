@@ -692,7 +692,7 @@ export const blogPosts: BlogPost[] = [
     category: 'consejos',
     readTime: '18 min',
     metaTitle: 'Tipos de seguros de vida en España · Cuál elegir en 2026',
-    metaDescription: 'Temporal, ahorro, vida entera, hipotecario... Analizamos todos los tipos de seguro de vida para que elijas el que realmente necesitas hoy.',
+    metaDescription: 'Temporal, ahorro, vida entera, hipotecario... Te explicamos todos los tipos de seguro de vida para que elijas el que realmente necesitas hoy.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
     reviewCount: 47,
@@ -989,7 +989,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'mejor-seguro-salud-madrid-2026',
     title: 'Mejor Seguro de Salud en Madrid 2026: Guía completa de coberturas y hospitales',
-    excerpt: 'Analizamos las opciones de salud privada en Madrid para 2026: cuadros médicos, hospitales de referencia, precios y cómo elegir sin pagar de más.',
+    excerpt: 'Te explicamos las opciones de salud privada en Madrid para 2026: cuadros médicos, hospitales de referencia, precios y cómo elegir sin pagar de más.',
     image: '/images/blog/blog_salud_madrid_2026_1776077536984.webp',
     imageAlt: 'Consulta médica premium en Madrid',
     date: '2026-04-13',
@@ -1460,7 +1460,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Salud en Boadilla: Priorizando la agilidad y los mejores cuadros médicos',
         content: [
           'El seguro de salud es, sin duda, el producto más demandado en Boadilla del Monte. Esto se debe a que las familias del municipio valoran la inmediatez en el diagnóstico y la posibilidad de elegir a su pediatra o especialista de confianza sin las demoras del sistema público. Sin embargo, no todos los seguros de salud funcionan igual en la zona noroeste de Madrid. Es fundamental verificar que la aseguradora elegida tenga convenios sólidos con los centros de referencia de Boadilla y alrededores. Muchas pólizas "baratas" limitan el acceso a ciertos hospitales premium o imponen copagos elevados que acaban encareciendo el servicio si hay un uso recurrente, algo habitual en familias con niños en edad escolar.',
-          'Al analizar las opciones de salud para un vecino de Boadilla, siempre planteamos la duda entre la modalidad de cuadro médico y la de reembolso. En un entorno como el nuestro, donde muchos profesionales se desplazan a Madrid capital para trabajar, la modalidad de reembolso ofrece una libertad total: puedes acudir a cualquier médico del mundo y la compañía te devuelve entre el 80% y el 90% de la factura. Esto es ideal para quienes ya tienen un especialista de renombre fuera de las redes concertadas. Por otro lado, para familias que buscan comodidad, un seguro de salud completo sin copagos suele ser la opción más equilibrada, permitiendo acceder a urgencias, pruebas diagnósticas avanzadas y hospitalización sin desembolsos adicionales en cada visita.',
+          'Al revisar las opciones de salud para un vecino de Boadilla, siempre planteamos la duda entre la modalidad de cuadro médico y la de reembolso. En un entorno como el nuestro, donde muchos profesionales se desplazan a Madrid capital para trabajar, la modalidad de reembolso ofrece una libertad total: puedes acudir a cualquier médico del mundo y la compañía te devuelve entre el 80% y el 90% de la factura. Esto es ideal para quienes ya tienen un especialista de renombre fuera de las redes concertadas. Por otro lado, para familias que buscan comodidad, un seguro de salud completo sin copagos suele ser la opción más equilibrada, permitiendo acceder a urgencias, pruebas diagnósticas avanzadas y hospitalización sin desembolsos adicionales en cada visita.',
           'Además de los servicios básicos, en Boadilla damos mucha importancia a los extras que realmente aportan valor. Hablamos de la fisioterapia y la podología, servicios muy utilizados por los vecinos deportistas del municipio, o la asistencia psicológica y nutricional, cada vez más relevante tras los cambios de hábitos de los últimos años. Un buen asesor de seguros en Boadilla te ayudará a desglosar qué compañía ofrece el mejor servicio de telemedicina para esas consultas rápidas de madrugada con el pediatra y cuál garantiza una segunda opinión médica internacional en caso de enfermedades graves. La salud es lo más importante, y en Boadilla, disponer de una póliza robusta es sinónimo de paz mental para toda la familia.',
         ],
       },
@@ -1469,7 +1469,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           'Boadilla del Monte alberga a un gran número de autónomos y profesionales liberales que gestionan sus propios negocios o trabajan de forma remota para grandes empresas. Para este perfil, el seguro no es solo una protección personal, sino una herramienta de continuidad de negocio. Un autónomo de Boadilla que sufre una baja laboral por enfermedad o accidente se enfrenta a una pérdida de ingresos inmediata que la Seguridad Social apenas cubre con una prestación mínima. Por eso, asesoramos en la contratación de seguros de incapacidad temporal que garanticen una indemnización diaria desde el primer día de baja, permitiendo que el profesional mantenga su nivel de vida y cubra sus gastos fijos mientras se recupera.',
           'Otro aspecto vital es la Responsabilidad Civil Profesional. En una zona tan activa económicamente como Pozuelo, Majadahonda y Boadilla, cualquier error en la prestación de un servicio puede derivar en una reclamación patrimonial importante. Contar con una póliza de RC bien estructurada protege el patrimonio personal del autónomo. Además, recordamos siempre a nuestros clientes trabajadores por cuenta propia que el seguro de salud es deducible fiscalmente en el IRPF hasta 500 euros anuales por cada miembro de la unidad familiar, lo que supone un ahorro directo en impuestos que hace que la protección de alta gama sea mucho más asequible de lo que parece a primera vista.',
-          'La previsión de jubilación es el tercer pilar para el profesional en Boadilla. Dado que las pensiones públicas para autónomos suelen ser más reducidas, diseñar un plan de ahorro o un seguro de vida con componente de ahorro es una decisión financiera inteligente que hay que tomar lo antes posible. En nuestra consultoría en Boadilla, no vendemos productos financieros genéricos; analizamos tu capacidad de ahorro y tus horizontes temporales para recomendar instrumentos que combinen seguridad, rentabilidad y, sobre todo, una fiscalidad eficiente. El objetivo es que tu esfuerzo profesional de hoy se traduzca en una jubilación tranquila en el futuro, manteniendo la calidad de vida que has construido en nuestro municipio.',
+          'La previsión de jubilación es el tercer pilar para el profesional en Boadilla. Dado que las pensiones públicas para autónomos suelen ser más reducidas, diseñar un plan de ahorro o un seguro de vida con componente de ahorro es una decisión financiera inteligente que hay que tomar lo antes posible. En nuestra consultoría en Boadilla, no vendemos productos financieros genéricos; estudiamos tu capacidad de ahorro y tus horizontes temporales para recomendar instrumentos que combinen seguridad, rentabilidad y, sobre todo, una fiscalidad eficiente. El objetivo es que tu esfuerzo profesional de hoy se traduzca en una jubilación tranquila en el futuro, manteniendo la calidad de vida que has construido en nuestro municipio.',
         ],
       },
       {
@@ -1548,7 +1548,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Conclusión: La responsabilidad de un buen propietario',
         content: [
           'Tener un perro en Madrid en 2026 es una experiencia maravillosa que ahora conlleva una nueva responsabilidad formal ante la sociedad. El seguro obligatorio no debe verse como una carga impositiva más, sino como la garantía de que estamos protegiendo tanto a nuestra mascota como a nuestros vecinos y a nosotros mismos. En un mundo ideal, nunca tendremos que usar el seguro, pero saber que está ahí nos permite centrarnos en lo que realmente importa: el bienestar y la compañía de nuestro animal de compañía.',
-          'Si tiene dudas sobre si su seguro actual es suficiente o si necesita encontrar la opción más barata pero segura del mercado, en nuestra asesoría de seguros en Boadilla del Monte estamos para ayudarle. Analizamos su caso de forma personalizada, sin compromiso, y le damos la respuesta clara que los comparadores de internet no pueden proporcionarle. Proteja a su perro hoy mismo y camine con la seguridad de estar cumpliendo la ley con el respaldo de los mejores profesionales de Madrid.',
+          'Si tiene dudas sobre si su seguro actual es suficiente o si necesita encontrar la opción más barata pero segura del mercado, en nuestra asesoría de seguros en Boadilla del Monte estamos para ayudarle. Estudiamos su caso de forma personalizada, sin compromiso, y le damos la respuesta clara que los comparadores de internet no pueden proporcionarle. Proteja a su perro hoy mismo y camine con la seguridad de estar cumpliendo la ley con el respaldo de los mejores profesionales de Madrid.',
           'Para una revisión gratuita de su póliza de hogar o para contratar un seguro de mascotas específico, le invitamos a visitar nuestra sección de seguros para mascotas o a enviarnos un mensaje rápido por WhatsApp. Estaremos encantados de orientarle con la cercanía y profesionalidad que usted y su perro se merecen.',
         ],
       },
@@ -1611,7 +1611,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Conclusión: Por qué comparar con un profesional de Boadilla',
         content: [
-          'Elegir el seguro de salud adecuado en Madrid basándose solo en el precio del primer resultado de Google es un riesgo que puede salir caro a largo plazo. La salud privada es un sector de servicios donde la garantía de que el seguro responderá cuando surja una enfermedad compleja es lo único que realmente importa. En nuestra asesoría en Boadilla del Monte, aportamos ese criterio técnico humano. Analizamos no solo la prima, sino la calidad del cuadro médico en su barrio, el compromiso de permanencia, las carencias y, sobre todo, la evolución histórica de las subidas de precio de cada compañía.',
+          'Elegir el seguro de salud adecuado en Madrid basándose solo en el precio del primer resultado de Google es un riesgo que puede salir caro a largo plazo. La salud privada es un sector de servicios donde la garantía de que el seguro responderá cuando surja una enfermedad compleja es lo único que realmente importa. En nuestra asesoría en Boadilla del Monte, aportamos ese criterio técnico humano. Valoramos no solo la prima, sino la calidad del cuadro médico en su barrio, el compromiso de permanencia, las carencias y, sobre todo, la evolución histórica de las subidas de precio de cada compañía.',
           'Nuestra intermediación no tiene ningún coste adicional para usted. Las compañías nos pagan por captar y gestionar clientes fieles y bien informados, lo que significa que usted recibe un asesoramiento experto totalmente gratuito y con la garantía de un profesional colegiado. Madrid ofrece los mejores médicos del mundo; nosotros nos aseguramos de que usted tenga el mejor contrato del mercado para acceder a ellos sin preocupaciones económicas ni letra pequeña.',
           'Si está listo para dejar de adivinar y quiere una comparativa real ajustada a su edad y necesidades, le invitamos a enviarnos un mensaje rápido o a rellenar nuestro formulario de salud. En menos de 24 horas recibirá una propuesta clara, honesta y explicada punto por punto para que tome la mejor decisión posible en 2026. Su salud y la de su familia no pueden esperar a que la suerte decida por usted.',
         ],
@@ -1625,20 +1625,20 @@ export const blogPosts: BlogPost[] = [
     ],
     faqs: [
       { question: '¿Cuál es la aseguradora más barata en Madrid en 2026?', answer: 'No hay una única. Según el mes y las promociones, diferentes compañías lideran en precio. Lo importante es comparar capitales y exclusiones para que lo barato no salga caro.' },
-      { question: '¿Puedo contratar el seguro si ya tengo una enfermedad?', answer: 'Sí, pero es probable que esa enfermedad específica quede excluida de la cobertura o tenga un recargo. Lo analizamos caso por caso con transparencia total.' },
+      { question: '¿Puedo contratar el seguro si ya tengo una enfermedad?', answer: 'Sí, pero es probable que esa enfermedad específica quede excluida de la cobertura o tenga un recargo. Lo estudiamos caso por caso con transparencia total.' },
     ],
   },
   {
     slug: 'seguro-dental-familias-madrid',
     title: 'Seguro dental para familias en Madrid: guía sin letra pequeña 2026',
-    excerpt: '¿Merece la pena un seguro dental familiar en Madrid? Analizamos los actos gratuitos, los descuentos reales y cómo ahorrar en ortodoncia e implantes con transparencia total.',
+    excerpt: '¿Merece la pena un seguro dental familiar en Madrid? Te explicamos los actos gratuitos, los descuentos reales y cómo ahorrar en ortodoncia e implantes con transparencia total.',
     image: '/images/products/dental-hero.webp',
     imageAlt: 'Familia en Madrid cuidando su salud dental con un seguro profesional',
     date: '2026-04-14',
     category: 'consejos',
     readTime: '18 min',
     metaTitle: 'Seguro Dental Familias Madrid · ¿Merece la pena? Guía 2026',
-    metaDescription: 'Guía sobre seguros dentales familiares en Madrid. Analizamos coberturas, ahorros del 40% en tratamientos y consejos para elegir la mejor clínica en 2026.',
+    metaDescription: 'Guía sobre seguros dentales familiares en Madrid. Te explicamos en detalle cada cobertura, ahorros del 40% en tratamientos y consejos para elegir la mejor clínica en 2026.',
     sections: [
       {
         heading: 'La salud bucodental en Madrid: El gran vacío del sistema público',

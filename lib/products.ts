@@ -150,7 +150,7 @@ export const products: Product[] = [
     highlights: [
       'Asesoramiento directo con Sebastián para una protección real.',
       'Diferenciamos claramente entre protección familiar y seguros vinculados a hipoteca.',
-      'Analizamos tu caso para que el capital contratado sea el que de verdad necesitas.',
+      'Te asesoramos sobre tu caso para que el capital contratado sea el que de verdad necesitas.',
     ],
     benefits: [
       'Contacto directo y personal con Sebastián.',
@@ -516,7 +516,7 @@ export const subpages: ProductSubpage[] = [
 
 export const generalFaqs: FAQItem[] = [
   { q: '¿Puedo recibir asesoramiento sin compromiso?', a: 'Sí. La orientación es 100% gratuita y sin compromiso. Puedes consultar, entender mejor tus opciones y decidir con calma si quieres avanzar o no.' },
-  { q: '¿Trabajáis con distintas opciones de seguro?', a: 'Trabajamos con compañías líderes del mercado para ofrecerte la cobertura que mejor se adapta a ti.' },
+  { q: '¿Trabajáis con distintas opciones de seguro?', a: 'Trabajamos con una de las compañías más sólidas del mercado para ofrecerte la cobertura que mejor se adapta a ti.' },
   { q: '¿Me ayudáis a comparar coberturas?', a: 'Ese es nuestro principal valor. No somos un comparador automático de precios; traducimos la letra pequeña, te explicamos diferencias reales (ej. copago vs reembolso) y te ayudamos a elegir con criterio.' },
   { q: '¿Qué necesito para contratar?', a: 'Una vez hayamos elegido la mejor opción, nosotros nos encargamos de toda la gestión administrativa. Solo necesitaremos tus datos básicos y confirmar las condiciones pactadas.' },
   { q: '¿Puedo resolver dudas después de contratar?', a: 'Por supuesto. Nuestro trabajo no termina al firmar la póliza. Seguiremos a tu lado para ayudarte con autorizaciones, partes de siniestro o cambios en tus condiciones.' },

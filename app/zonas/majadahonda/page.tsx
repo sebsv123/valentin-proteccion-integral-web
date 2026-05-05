@@ -88,7 +88,7 @@ export default function MajadahondaPage() {
                 <p className="text-lg text-slate-400 mb-8 leading-relaxed">
                   Rosa y Sebastián son los asesores de seguros de referencia en Majadahonda. 
                   Más de 10 años ayudando a vecinos a elegir el mejor seguro, 
-                  analizando entre compañías líderes del mercado sin coste ni compromiso.
+                  con asesoramiento personalizado, sin coste ni compromiso.
                 </p>
                 <a 
                   href={wCotiza}
@@ -241,8 +241,8 @@ export default function MajadahondaPage() {
               </div>
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">2</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Analizamos tu caso gratis</h3>
-                <p className="text-slate-600">Analizamos opciones entre compañías líderes del mercado. Sin coste ni compromiso.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Te asesoramos sin coste</h3>
+                <p className="text-slate-600">Te explicamos en detalle cada cobertura. Sin coste ni compromiso.</p>
               </div>
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">3</div>
