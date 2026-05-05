@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -221,7 +222,10 @@ export default function DecesosPage() {
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               El seguro de decesos cubre todos los gastos del funeral y la repatriación 
               si es necesario. Tu familia no tendrá que preocuparse por el dinero 
-              ni por los trámites en el peor momento.
+              ni por los trámites en el peor momento. Si buscas cobertura específica para personas mayores, consulta nuestra sección de{' '}
+              <Link href="/para/seniors" className="text-indigo-600 font-semibold hover:text-indigo-700 underline">
+                Seguros de decesos para mayores en Madrid
+              </Link>.
             </p>
           </div>
         </section>

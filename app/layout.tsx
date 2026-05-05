@@ -58,8 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: site.title,
-    description: site.description,
+    // title y description se definen en cada página individualmente
     images: ['/og-image.webp'],
   },
   other: {

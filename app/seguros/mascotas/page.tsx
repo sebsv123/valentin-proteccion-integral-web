@@ -394,6 +394,58 @@ export default function MascotasPage() {
           </div>
         </section>
 
+        
+        {/* SEGURO PARA GATOS */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-14">
+              <h2 className="text-[36px] sm:text-[42px] font-bold text-stone-800 leading-tight mb-4">
+                Seguro para Gatos en Madrid
+              </h2>
+              <p className="text-xl text-stone-600">
+                Porque ellos también son familia
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4">¿Qué cubre el seguro para gatos?</h3>
+                <p className="text-lg text-stone-600 leading-relaxed mb-4">
+                  El seguro para gatos en Madrid cubre consultas veterinarias, urgencias, hospitalización, cirugías y medicación. También incluye pruebas diagnósticas como analíticas, radiografías y ecografías cuando el veterinario las considera necesarias. Muchas pólizas incluyen además la esterilización, la vacunación anual y la desparasitación, servicios que ayudan a mantener la salud preventiva de tu gato sin que cada visita se convierta en un gasto imprevisto.
+                </p>
+                <p className="text-lg text-stone-600 leading-relaxed">
+                  Al igual que con los perros, la cobertura se adapta a la edad y estilo de vida de tu gato. Si es un gato de interior, sus necesidades son distintas a las de uno que sale al exterior. Nosotros te ayudamos a entender qué coberturas tienen sentido para tu caso concreto, sin venderte extras que no vas a usar.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4">¿Tienen los gatos seguro obligatorio en Madrid?</h3>
+                <p className="text-lg text-stone-600 leading-relaxed mb-4">
+                  A diferencia de los perros, la Ley de Bienestar Animal no exige un seguro de responsabilidad civil obligatorio para gatos en Madrid. Sin embargo, eso no significa que no sea recomendable. Un gato que sale al exterior puede causar daños a terceros — arañazos a personas, rotura de objetos en casas vecinas o accidentes imprevistos. En esos casos, contar con un seguro evita que tengas que asumir los gastos de tu bolsillo.
+                </p>
+                <p className="text-lg text-stone-600 leading-relaxed">
+                  Además, el seguro veterinario para gatos te protege frente a los costes elevados de una urgencia o una enfermedad. Una intervención quirúrgica puede superar fácilmente los 1.000 euros, y tener a tu gato asegurado significa que podrás tomar la decisión pensando en su salud, no en el dinero. En Valentín Protección Integral te explicamos las opciones disponibles sin presión y te ayudamos a elegir la que mejor se adapta a tu gato y a tu tranquilidad.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4">Precio del seguro para gatos en Madrid</h3>
+                <p className="text-lg text-stone-600 leading-relaxed mb-4">
+                  El coste de un seguro para gatos en Madrid varía en función de la edad del animal, la raza y el nivel de cobertura que elijas. En general, los seguros para gatos suelen ser más económicos que los de perros, ya que los gatos tienden a tener menos incidencias y un menor riesgo de causar daños a terceros. Las pólizas básicas que cubren consultas y urgencias tienen primas muy accesibles, mientras que los planes más completos — que incluyen vacunación, esterilización y hospitalización — ofrecen una protección más amplia por un importe mensual muy razonable.
+                </p>
+                <p className="text-lg text-stone-600 leading-relaxed mb-4">
+                  Lo más importante es que no hay sorpresas: te explicamos exactamente qué incluye cada opción y cuánto pagarás al mes, sin costes ocultos ni permanencias abusivas. Nuestro objetivo es que puedas proteger a tu gato con la máxima tranquilidad y el mínimo quebradero de cabeza.
+                </p>
+                <p className="text-lg text-stone-600 leading-relaxed">
+                  Si quieres saber qué opciones hay para tu gato, escríbenos por WhatsApp al{' '}
+                  <a href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700 underline">603 44 87 65</a>.
+                  Te respondemos en menos de 30 minutos, sin compromiso.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section className="relative py-24 bg-amber-500 overflow-hidden">
           {/* Halo */}
