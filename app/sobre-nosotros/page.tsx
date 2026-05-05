@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_mesa.png", alt: "Rosa y Sebastián Valentín, mediadores de seguros en Boadilla del Monte, Madrid" }],
+    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian_mesa.png", alt: "Rosa y Sebastián Valentín, agentes de seguros en Boadilla del Monte, Madrid" }],
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/sobre-nosotros",
@@ -38,8 +38,8 @@ const rosaSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Rosa Valentín",
-  "jobTitle": "Mediadora de Seguros",
-  "description": "Mediadora de seguros independiente registrada en la DGSFP con más de 10 años asesorando familias en Madrid y Boadilla del Monte.",
+  "jobTitle": "Agente de Seguros",
+  "description": "Agente de seguros registrada en la DGSFP con más de 10 años asesorando familias en Madrid y Boadilla del Monte.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros Dentales", "Seguros de Decesos", "Seguros de Mascotas"],
   "areaServed": "Madrid",
@@ -52,8 +52,8 @@ const sebastianSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sebastián Valentín",
-  "jobTitle": "Mediador de Seguros",
-  "description": "Mediador de seguros independiente registrado en la DGSFP, especialista en seguros de salud, vida y acc identes para familias y autónomos en Madrid.",
+  "jobTitle": "Agente de Seguros",
+  "description": "Agente de seguros registrado en la DGSFP, especialista en seguros de salud, vida y accidentes para familias y autónomos en Madrid.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
   "areaServed": "Madrid",
@@ -131,12 +131,15 @@ export default function SobreNosotrosPage() {
 
                 {/* BLOQUE ROSA */}
                 <p className="kicker font-bold text-[var(--blue)] mt-8">Rosa Valentín</p>
-                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Mediadora de seguros registrada en DGSFP</p>
+                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Agente de seguros registrada en DGSFP</p>
                 <p className="text-base leading-8 text-[var(--muted)]">
                   Mi nombre es Rosa Valentín. Soy asesora certificada con <strong>más de 10 años de experiencia</strong> en seguros de salud, vida, mascotas, viaje, dental, accidentes, hospitalización y decesos. Trabajo desde <strong>Boadilla del Monte, Madrid</strong>, atendiendo a familias y particulares de toda España.
                 </p>
                 <p className="mt-4 text-base leading-8 text-[var(--muted)]">
                   No trabajo con presión comercial. Cada conversación empieza con tus preguntas, no con mis productos. Y cada orientación busca darte más claridad, no más confusión.
+                </p>
+                <p className="mt-4 text-base leading-8 text-[var(--muted)]">
+                  <strong>Agente registrada en la DGSFP con número C012479234434D.</strong>
                 </p>
 
                 {/* Stats */}
@@ -192,7 +195,7 @@ export default function SobreNosotrosPage() {
                     {/* Texto Sebastián */}
                     <div>
                       <p className="kicker font-bold text-[var(--blue)]">Sebastián Valentín</p>
-                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Mediador de seguros registrado en DGSFP · Especialista en Vida y Salud</p>
+                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Agente de seguros registrado en DGSFP · Especialista en Vida y Salud</p>
                       <h3 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-4">
                         El rigor técnico al servicio de tu tranquilidad
                       </h3>
@@ -204,6 +207,9 @@ export default function SobreNosotrosPage() {
                       <p className="mt-4 text-base leading-8 text-[var(--muted)]">
                         Cree que la confianza se construye siendo directo: explicando exactamente qué cubre
                         una póliza, qué no cubre y por qué. Sin atajos. Sin letra pequeña escondida.
+                      </p>
+                      <p className="mt-4 text-base leading-8 text-[var(--muted)]">
+                        <strong>Agente registrado en la DGSFP con número C012479234434D.</strong>
                       </p>
 
                       {/* Mini-stats Sebastián */}
