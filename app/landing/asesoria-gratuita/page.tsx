@@ -155,7 +155,7 @@ export default function AsesoriaGratuitaPage() {
               {[
                 { 
                   icon: Users, 
-                  title: "Independientes", 
+                  title: "Registro oficial DGSFP", 
                   desc: "No trabajamos para ninguna aseguradora. Nuestro único objetivo es encontrar lo mejor para ti."
                 },
                 { 
