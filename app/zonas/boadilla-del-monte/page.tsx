@@ -89,7 +89,7 @@ export default function BoadillaPage() {
                   Asesoría personal y sin intermediarios
                 </p>
                 <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-                  Rosa y Sebastián son los asesores de seguros de referencia en Boadilla del Monte. 
+                  Rosa y Sebastián son los Agentes de seguros registrados DGSFP en Boadilla del Monte. 
                   Más de 10 años ayudando a vecinos a elegir el mejor seguro, 
                   comparando entre todas las compañías sin coste ni compromiso.
                 </p>

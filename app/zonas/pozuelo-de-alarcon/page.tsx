@@ -38,7 +38,7 @@ const serviceSchema = {
     "longitude": -3.8142
   },
   "areaServed": ["Pozuelo de Alarcón", "Somosaguas", "La Finca", "Prado del Rey", "Madrid"],
-  "description": "Asesores de seguros independientes en Pozuelo de Alarcón. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
+  "description": "Agentes de seguros registrados DGSFP en Pozuelo de Alarcón. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",

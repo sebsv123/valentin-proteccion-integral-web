@@ -203,7 +203,7 @@ export default function AsesoriaGratuitaPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-medium mb-6">
                   <Award className="w-4 h-4" />
-                  Mediadores certificados
+                  Agentes certificados DGSFP
                 </div>
                 
                 <h2 className="text-[36px] sm:text-[40px] font-bold text-gray-900 leading-tight mb-6">
