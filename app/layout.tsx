@@ -15,6 +15,7 @@ import { BackgroundWrapper } from '@/components/background-wrapper';
 import { WebVitals } from "@/components/web-vitals";
 import { Analytics } from "@vercel/analytics/react";
 import { CookieBanner } from "@/components/cookie-banner";
+import { ChatWidget } from "@/components/ChatWidget";
 
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
 import SchemaPersons from '@/components/seo/schema-persons';
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         {children}
         <CookieBanner />
+        <ChatWidget />
         {/* Deferred tracking scripts - loaded after page is interactive to eliminate TBT */}
         <Script id="deferred-tracking" strategy="afterInteractive">
           {`
