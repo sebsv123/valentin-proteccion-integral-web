@@ -10,6 +10,8 @@ import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Home, Users, Baby, User, GraduationCap, Phone, Award, TrendingUp, Package } from "lucide-react";
+import dynamicImport from "next/dynamic";
+const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
   title: "Seguros para Familias en Madrid | Valentín",
@@ -111,7 +113,7 @@ export default function FamiliasPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Clock className="w-4 h-4 text-blue-600" />
-                    30 min gestión
+                    Respuesta en 10 min
                   </span>
                 </div>
               </div>
@@ -261,7 +263,7 @@ export default function FamiliasPage() {
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                       <TrendingUp className="w-5 h-5 text-blue-600" />
                     </div>
-                    <span className="text-slate-700">97% familias renuevan</span>
+                    <span className="text-slate-700">Clientes con nosotros desde 2014</span>
                   </div>
                 </div>
                 
@@ -315,88 +317,35 @@ export default function FamiliasPage() {
           </div>
         </section>
 
-        {/* FAQ - Familias */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="text-center mb-14">
-              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
-                Preguntas frecuentes
-              </h2>
-              <p className="text-lg text-slate-600">
-                Todo sobre seguros familiares
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              {[
-                { 
-                  q: "¿Puedo incluir a toda mi familia en un solo seguro?", 
-                  a: "Sí. Tenemos pólizas familiares que cubren a padres, hijos e incluso abuelos en una sola cuota, con descuentos especiales por familia numerosa." 
-                },
-                { 
-                  q: "¿El seguro dental incluye a los niños?", 
-                  a: "Sí, y con ventajas especiales: ortodoncia pediatrica, revisiones frecuentes y sin límite de edad para los hijos incluidos en la póliza familiar." 
-                },
-                { 
-                  q: "¿Qué pasa si nos mudamos fuera de Madrid?", 
-                  a: "El seguro te sigue. Las compañías con las que trabajamos tienen red nacional de centros. También cubrimos viajes por España y UE." 
-                },
-                { 
-                  q: "¿Cómo gestiono las bajas y altas de miembros?", 
-                  a: "Un simple WhatsApp. Nacimientos, nuevos matrimonios, cambios de dirección... lo gestionamos en 24h sin papeleo complicado." 
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de familias que confían en nosotros" />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "¿Puedo incluir a toda mi familia en un solo seguro?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sí. Tenemos pólizas familiares que cubren a padres, hijos e incluso abuelos en una sola cuota, con descuentos especiales por familia numerosa."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿El seguro dental incluye a los niños?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sí, y con ventajas especiales: ortodoncia pediatrica, revisiones frecuentes y sin límite de edad para los hijos incluidos en la póliza familiar."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Qué pasa si nos mudamos fuera de Madrid?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "El seguro te sigue. Las compañías con las que trabajamos tienen red nacional de centros. También cubrimos viajes por España y UE."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Cómo gestiono las bajas y altas de miembros?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Un simple WhatsApp. Nacimientos, nuevos matrimonios, cambios de dirección... lo gestionamos en 24h sin papeleo complicado."
-                  }
-                }
-              ]
-            })
-          }}
+        <FAQChat
+          brandColor="blue"
+          title="¿Tienes dudas sobre seguros familiares?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            {
+              q: "¿Puedo incluir a toda mi familia en un solo seguro?",
+              a: "Sí. Podemos cubrir a padres, hijos e incluso abuelos con descuentos especiales por póliza combinada."
+            },
+            {
+              q: "¿El seguro dental incluye a los niños?",
+              a: "Sí. Incluye revisiones, ortodoncia pediátrica y sin límite de edad para hijos en póliza familiar."
+            },
+            {
+              q: "¿Qué pasa si nos mudamos fuera de Madrid?",
+              a: "El seguro te sigue. Tenemos red nacional de centros y cobertura en viajes por España y UE."
+            },
+            {
+              q: "¿Cómo añado o quito miembros de la póliza?",
+              a: "Un WhatsApp. Nacimientos, cambios, altas y bajas resueltos en 24h sin papeleo."
+            },
+            {
+              q: "¿Hay descuento por contratar salud y vida juntos?",
+              a: "Sí. Muchos de nuestros clientes ahorran entre un 5% y un 10% combinando coberturas. Pregúntanos sin compromiso."
+            },
+          ]}
         />
 
         {/* CTA FINAL */}
@@ -406,7 +355,8 @@ export default function FamiliasPage() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
             <h2 className="text-[40px] sm:text-[48px] font-bold text-white leading-tight mb-6">
-              Tu familia merece lo mejor
+              Organiza la protección de tu familia hoy.{" "}
+              <span className="text-blue-200">En 30 minutos tienes todo claro.</span>
             </h2>
             
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
@@ -431,7 +381,7 @@ export default function FamiliasPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
                 <Clock className="w-4 h-4" />
-                30 min
+                Respuesta en 10 min
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
                 <Shield className="w-4 h-4" />
@@ -444,9 +394,6 @@ export default function FamiliasPage() {
             </p>
           </div>
         </section>
-
-        {/* RESEÑAS GOOGLE */}
-        <GoogleReviewsWidget title="Opiniones de familias que confían en nosotros" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#3b82f6" />
