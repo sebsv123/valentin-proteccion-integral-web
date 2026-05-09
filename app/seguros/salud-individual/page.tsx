@@ -143,7 +143,7 @@ export default async function SaludIndividualPage() {
           </p>
         </div>
       </div>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
@@ -158,7 +158,7 @@ export default async function SaludIndividualPage() {
           </WhatsAppLink>
         </div>
       </header>
-      <main className="min-h-screen bg-white pt-24">
+      <main className="min-h-screen bg-white pt-28">
         
         {/* HERO — Impacto y Confianza */}
         <section className="relative min-h-[85vh] flex items-center bg-gray-950 overflow-hidden">
@@ -283,9 +283,9 @@ export default async function SaludIndividualPage() {
             </div>
             <div className="grid sm:grid-cols-3 gap-8">
               {[
-                "Te ayudamos a elegir la cobertura correcta",
-                "Sin letra pequeña",
-                "Respuesta rápida por WhatsApp"
+                "Sin copagos ni carencias desde el primer día",
+                "Si hay un error nuestro, lo resolvemos sin coste para ti",
+                "Asesoramiento directo con Rosa o Sebastián — no con un bot"
               ].map((g, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 justify-center sm:justify-start">
                   <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
@@ -432,15 +432,14 @@ export default async function SaludIndividualPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-emerald-100/50 border border-emerald-100">
               <h2 className="text-[36px] sm:text-[44px] font-bold text-gray-900 leading-tight mb-6 text-center">
-                ¿Y si no te respondemos en 30 minutos?
+                Escríbenos ahora. Si en 2 horas no tienes tu presupuesto,{" "}
+                <span className="text-emerald-600">Rosa te llama personalmente.</span>
               </h2>
-              
               <p className="text-xl text-gray-600 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
-                Rosa o Sebastián te llaman directamente.
-                <br />
-                Sin esperas. Sin centralitas. Sin excusas.
-                <br />
-                <span className="text-emerald-600 font-semibold">Nadie en el sector ofrece esta garantía. Nosotros sí.</span>
+                Sin centralitas. Sin formularios. Sin excusas.{" "}
+                <span className="text-emerald-600 font-semibold">
+                  Nadie en el sector lo hace. Nosotros sí.
+                </span>
               </p>
               
               <div className="flex items-center justify-center gap-4 pt-4 border-t border-gray-100">
@@ -512,9 +511,8 @@ export default async function SaludIndividualPage() {
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Más de 10 años ayudando a personas a elegir correctamente su seguro de salud en España.
-                  <br /><br />
-                  Llevamos más de 10 años ayudando a personas a elegir correctamente su seguro de salud. Tu caso tiene atención directa y personalizada de principio a fin.
+                  Más de 10 años ayudando a familias a elegir correctamente su seguro de salud en España.
+                  Tu caso tiene atención directa y personalizada de principio a fin.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -582,7 +580,7 @@ export default async function SaludIndividualPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
                 <Clock className="w-4 h-4 text-emerald-500" />
-                30 min
+                Respuesta en 10 min
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
                 <Shield className="w-4 h-4 text-emerald-500" />
