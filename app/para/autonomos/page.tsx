@@ -10,6 +10,8 @@ import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, AlertTriangle, Briefcase, Stethoscope, Umbrella, Award, TrendingUp, Phone } from "lucide-react";
+import dynamicImport from "next/dynamic";
+const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
   title: "Seguros para Autónomos en Madrid | Valentín",
@@ -112,7 +114,7 @@ export default function AutonomosPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Clock className="w-4 h-4 text-slate-700" />
-                    30 min gestión
+                    Respuesta en 10 min
                   </span>
                 </div>
               </div>
@@ -227,7 +229,7 @@ export default function AutonomosPage() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-3 border-b border-slate-700">
                       <span className="text-slate-300">Prima anual seguro salud</span>
-                      <span className="font-semibold">Consultar</span>
+                      <span className="font-semibold">Precio según perfil</span>
                     </div>
                     <div className="flex justify-between items-center py-3 border-b border-slate-700">
                       <span className="text-slate-300">Deducción IRPF (50%)</span>
@@ -301,7 +303,7 @@ export default function AutonomosPage() {
                     <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
                       <TrendingUp className="w-5 h-5 text-slate-700" />
                     </div>
-                    <span className="text-slate-700">Ahorro fiscal garantizado</span>
+                    <span className="text-slate-700">Asesoramos a autónomos desde 2014</span>
                   </div>
                 </div>
                 
@@ -313,88 +315,35 @@ export default function AutonomosPage() {
           </div>
         </section>
 
-        {/* FAQ - Autónomos */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <div className="text-center mb-14">
-              <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
-                Preguntas frecuentes
-              </h2>
-              <p className="text-lg text-slate-600">
-                Todo lo que necesitas saber sobre seguros para autónomos
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              {[
-                { 
-                  q: "¿El seguro de autónomos es deducible en IRPF?", 
-                  a: "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración." 
-                },
-                { 
-                  q: "¿Qué pasa si tengo un accidente laboral?", 
-                  a: "Con el seguro de accidentes cubrimos incapacidad temporal y permanente, además de gastos médicos. Incluye accidentes de trayecto y en el trabajo." 
-                },
-                { 
-                  q: "¿Necesito seguro de RC profesional como autónomo?", 
-                  a: "Depende de tu actividad. Profesiones como médicos, abogados o consultores suelen requerirlo. Te asesoramos sin coste para saber si es obligatorio en tu caso." 
-                },
-                { 
-                  q: "¿Cuánto tiempo tarda la gestión?", 
-                  a: "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación." 
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de autónomos que confían en nosotros" />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "¿El seguro de autónomos es deducible en IRPF?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Qué pasa si tengo un accidente laboral?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Con el seguro de accidentes cubrimos incapacidad temporal y permanente, además de gastos médicos. Incluye accidentes de trayecto y en el trabajo."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Necesito seguro de RC profesional como autónomo?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Depende de tu actividad. Profesiones como médicos, abogados o consultores suelen requerirlo. Te asesoramos sin coste para saber si es obligatorio en tu caso."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Cuánto tiempo tarda la gestión?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación."
-                  }
-                }
-              ]
-            })
-          }}
+        <FAQChat
+          brandColor="slate"
+          title="¿Tienes dudas sobre seguros para autónomos?"
+          subtitle="Preguntas frecuentes"
+          items={[
+            {
+              q: "¿El seguro de autónomos es deducible en IRPF?",
+              a: "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración."
+            },
+            {
+              q: "¿Qué pasa si tengo un accidente laboral?",
+              a: "Con el seguro de accidentes cubrimos incapacidad temporal y permanente, además de gastos médicos. Incluye accidentes de trayecto y en el trabajo."
+            },
+            {
+              q: "¿Necesito seguro de RC profesional como autónomo?",
+              a: "Depende de tu actividad. Profesiones como médicos, abogados o consultores suelen requerirlo. Te asesoramos sin coste para saber si es obligatorio en tu caso."
+            },
+            {
+              q: "¿Cuánto tiempo tarda la gestión?",
+              a: "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación."
+            },
+            {
+              q: "¿Puedo deducirme también el seguro de vida?",
+              a: "En algunos casos sí, si está vinculado a la actividad profesional. Te lo revisamos sin compromiso en tu primera consulta."
+            },
+          ]}
         />
 
         {/* CTA FINAL */}
@@ -429,7 +378,7 @@ export default function AutonomosPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
                 <Clock className="w-4 h-4" />
-                30 min
+                Respuesta en 10 min
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
                 <Shield className="w-4 h-4" />
@@ -442,9 +391,6 @@ export default function AutonomosPage() {
             </p>
           </div>
         </section>
-
-        {/* RESEÑAS GOOGLE */}
-        <GoogleReviewsWidget title="Opiniones de autónomos que confían en nosotros" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#64748b" />
