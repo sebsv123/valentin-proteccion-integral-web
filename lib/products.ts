@@ -560,3 +560,36 @@ export function getProduct(slug: string) { return products.find((product) => pro
 export function getRelatedProducts(slugs: string[]) { return products.filter((product) => slugs.includes(product.slug)); }
 export function getProductSubpage(parent: string, subslug: string) { return subpages.find((item) => item.parent === parent && item.slug === subslug); }
 export function getSubpagesForProduct(parent: string) { return subpages.filter((item) => item.parent === parent); }
+
+/* ── WhatsApp messages por campaña ── */
+export const WHATSAPP_MESSAGES: Record<string, string> = {
+  '/seguros/salud-extranjeros': 'Hola, estoy interesado/a en un seguro médico para visado, NIE o TIE. Me gustaría recibir orientación sobre la opción más adecuada para mi situación y el proceso para contratarlo.',
+  '/seguros/health-insurance-foreigners-spain': 'Hello, I am interested in health insurance for a visa, NIE or TIE. I would like guidance on the most suitable option for my situation and the steps to arrange it.',
+  '/seguros/salud-individual': 'Hola, estoy interesado/a en un seguro de salud y me gustaría recibir orientación sobre la opción más adecuada según mi situación y el precio orientativo.',
+  '/landing/autonomos': 'Hola, soy autónomo/a y me gustaría recibir orientación sobre la opción de seguro más adecuada para mi situación profesional y personal.',
+  '/autonomos': 'Hola, soy autónomo/a y me gustaría recibir orientación sobre la opción de seguro más adecuada para mi situación profesional y personal.',
+  '/para/autonomos': 'Hola, soy autónomo/a y me gustaría recibir orientación sobre la opción de seguro más adecuada para mi situación profesional y personal.',
+};
+
+export const WHATSAPP_MESSAGE_DEFAULT = 'Hola, me gustaría recibir asesoramiento para encontrar la opción de seguro más adecuada según mi situación.';
+
+/**
+ * Devuelve el mensaje de WhatsApp correspondiente a una ruta.
+ * Si no hay coincidencia exacta, recorre las rutas registradas de mayor a menor
+ * longitud para encontrar un prefijo que coincida (ej. /seguros/salud-extranjeros/…).
+ * Si no encuentra ninguna, devuelve el mensaje por defecto.
+ */
+export function getWhatsAppMessage(pathname?: string): string {
+  if (!pathname) return WHATSAPP_MESSAGE_DEFAULT;
+
+  // 1. Coincidencia exacta
+  if (WHATSAPP_MESSAGES[pathname]) return WHATSAPP_MESSAGES[pathname];
+
+  // 2. Coincidencia por prefijo (rutas ordenadas de más larga a más corta)
+  const sorted = Object.keys(WHATSAPP_MESSAGES).sort((a, b) => b.length - a.length);
+  for (const key of sorted) {
+    if (pathname.startsWith(key)) return WHATSAPP_MESSAGES[key];
+  }
+
+  return WHATSAPP_MESSAGE_DEFAULT;
+}

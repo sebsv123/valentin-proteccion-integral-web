@@ -1,11 +1,13 @@
 'use client';
 import { useEffect, useState, MouseEvent } from 'react';
+import { usePathname } from 'next/navigation';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
-import { buildWhatsAppHref, site } from '@/lib/products';
+import { buildWhatsAppHref, getWhatsAppMessage } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
 
 export function StickyWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const timer = setTimeout(() => setShowTooltip(true), 5000);
@@ -21,8 +23,10 @@ export function StickyWhatsApp() {
     }, 200);
   };
 
-  const desktopHref = buildWhatsAppHref('Hola, quiero orientación sobre un seguro.');
-  const mobileHref = 'https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros.';
+  const message = getWhatsAppMessage(pathname);
+  const desktopHref = buildWhatsAppHref(message);
+  const mobileHref = buildWhatsAppHref(message);
+
 
   return (
     <>

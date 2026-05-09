@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { LeadForm } from './lead-form';
-import { buildWhatsAppHref, products } from '@/lib/products';
+import { buildWhatsAppHref, WHATSAPP_MESSAGE_DEFAULT, products } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { Phone, BadgePercent } from 'lucide-react';
 import { WhatsAppLink } from '@/components/whatsapp-link';
@@ -106,7 +106,7 @@ export function HeroContentClient() {
         <CSSReveal delay={0.4}>
           <div className="mt-6 flex flex-col gap-3">
             <WhatsAppLink
-              href="https://wa.me/34603448765?text=Hola%2C%20quiero%20una%20consulta%20gratuita%20sobre%20seguros."
+              href={buildWhatsAppHref(WHATSAPP_MESSAGE_DEFAULT)}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 text-lg font-bold shadow-xl shadow-green-500/20 transition-all hover:scale-105 w-full sm:w-auto"
@@ -114,6 +114,7 @@ export function HeroContentClient() {
               <WhatsAppIcon className="h-6 w-6 flex-none" />
               Hablar con un asesor — Consulta gratuita
             </WhatsAppLink>
+
             <a
               href="tel:+34603448765"
               className="flex items-center justify-center gap-1.5 text-center text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors font-medium"

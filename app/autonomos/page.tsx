@@ -93,7 +93,8 @@ const faqSchema = {
 export const dynamic = "force-static";
 
 export default function AutonomosRootPage() {
-  const wCotiza = buildWhatsAppHref("Hola, soy autónomo y quiero información sobre seguros deducibles IRPF en Madrid.");
+  const wCotiza = buildWhatsAppHref("Hola, soy autónomo/a y me gustaría recibir orientación sobre la opción de seguro más adecuada para mi situación profesional y personal.");
+
 
   return (
     <>

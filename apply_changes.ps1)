@@ -1,0 +1,1 @@
+[System.IO.File]::WriteAllText('c:\Users\Sebitas\valentin-web\app\seguros\health-insurance-foreigners-spain\page.tsx', $content, [System.Text.Encoding]::UTF8)  

@@ -12,8 +12,8 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguro Médico para NIE, TIE y Visado | VPI",
-  description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
-  keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España"],
+  description: "Seguro médico para extranjeros en España desde 22,50€/mes. Válido para visado, NIE y TIE. Sin copagos desde el primer día. Certificado en 24h. +100 trámites aprobados. Atención directa y personalizada.",
+  keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España","seguro medico para visado españa","seguro sin copagos extranjeros españa","certificado seguro medico consulado españa"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", languages: { en: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain" } },
   openGraph: {
     title: "Seguro Médico para NIE, TIE y Visado | VPI",
@@ -100,7 +100,8 @@ const faqSchema = {
 export const dynamic = "force-static";
 
 export default function SaludExtranjerosPage() {
-  const wVisado = buildWhatsAppHref("Quiero mi seguro para visado");
+  const wVisado = buildWhatsAppHref("Hola, estoy interesado/a en un seguro médico para visado, NIE o TIE. Me gustaría recibir orientación sobre la opción más adecuada para mi situación y el proceso para contratarlo.");
+
 
   return (
     <>
@@ -171,6 +172,10 @@ export default function SaludExtranjerosPage() {
                   <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">Te damos el seguro correcto en 24–48h.</span>
                 </p>
 
+                <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 text-amber-300 px-4 py-2 rounded-full text-sm font-black mb-6">
+                  ⚡ Tu cita de extranjería no espera — certificado listo en 24h o te avisamos antes
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
                   {[
                     "Válido para extranjería",
@@ -185,6 +190,17 @@ export default function SaludExtranjerosPage() {
                       {bullet}
                     </div>
                   ))}
+                </div>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex -space-x-2">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-white/20 border-2 border-emerald-400 flex items-center justify-center text-xs text-white font-bold">
+                        {["A","M","L","R","K"][i]}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-white/80 text-sm font-bold">+100 visados y NIE/TIE aprobados</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -362,6 +378,70 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
+
+        {/* Gancho A — Error frecuente */}
+        <section className="py-20 bg-slate-900 text-white">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30 
+            text-red-300 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-8">
+              ⚠️ Error frecuente
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
+              No te rechazan por no tener seguro.<br />
+              <span className="text-red-400">Te rechazan por tener el seguro equivocado.</span>
+            </h2>
+            <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Muchos seguros del mercado no cumplen los requisitos de extranjería — 
+              sin copagos, sin carencias, con cobertura mínima exigida. 
+              El error más común que vemos: contratar online sin verificar si el 
+              certificado es válido para el trámite concreto.
+            </p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-xl mx-auto mb-8">
+              <p className="text-emerald-400 font-black text-lg mb-2">
+                Nosotros lo verificamos por ti.
+              </p>
+              <p className="text-slate-400">
+                Antes de emitir cualquier certificado, confirmamos que cumple 
+                exactamente los requisitos de tu trámite específico.
+              </p>
+            </div>
+            <a
+              href={buildWhatsAppHref("Quiero que verifiquéis si mi seguro es válido para extranjería")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 
+              text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg"
+            >
+              <WhatsAppIcon className="w-5 h-5" />
+              Verificad mi caso ahora
+            </a>
+          </div>
+        </section>
+        {/* STATS VISUALES */}
+        <section className="py-20 bg-white border-y border-slate-100">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">100+ trámites. 0 rechazos por el seguro.</h2>
+              <p className="text-slate-500 mt-3">Llevamos años trabajando solo con este producto. Sabemos exactamente qué pide cada consulado y cada oficina de extranjería.</p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-8 text-center">
+              {
+                [
+                  { num: "+100", label: "NIE/TIE y visados aprobados", icon: "✅" },
+                  { num: "24h", label: "Certificado listo desde la contratación", icon: "⚡" },
+                  { num: "0", label: "Rechazos por motivo de seguro", icon: "🛡️" }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-50 rounded-[32px] p-10 border border-slate-100">
+                    <div className="text-4xl mb-3">{stat.icon}</div>
+                    <p className="text-5xl font-black text-slate-900 mb-2">{stat.num}</p>
+                    <p className="text-slate-500 font-bold text-sm">{stat.label}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </section>
+
         {/* 4. BLOQUE ESPECIALISTAS (Reposicionado y Protagonista) */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
           <div 
@@ -485,6 +565,59 @@ export default function SaludExtranjerosPage() {
           ]}
         />
 
+
+        {/* Gancho B — Calculadora de urgencia */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
+              ¿Cuándo tienes la cita?
+            </h2>
+            <p className="text-slate-500 mb-10">
+              Te ayudamos igual — pero cuanto antes nos escribas, más tranquilo vas a estar.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <a
+                href={buildWhatsAppHref("Tengo cita de extranjería URGENTE en menos de 7 días, necesito el seguro ya")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
+                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">🚨</span>
+                <span className="text-lg font-extrabold text-red-700">En menos de 7 días</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Es urgente — te damos prioridad inmediata
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Escribir ahora
+                </span>
+              </a>
+
+              <a
+                href={buildWhatsAppHref("Tengo cita de extranjería próximamente, quiero preparar el seguro con tiempo")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
+                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">📅</span>
+                <span className="text-lg font-extrabold text-emerald-700">Tengo tiempo</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Perfecto — lo preparamos bien y sin prisas
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Escribir ahora
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
         {/* 9. CTA FINAL */}
         <section className="py-24 bg-slate-900 text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-transparent" />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import dynamicImport from "next/dynamic";
 import { buildWhatsAppHref } from "@/lib/products";
@@ -11,18 +11,19 @@ import { getPexelsImage } from "@/lib/pexels";
 import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pill, FlaskConical, SmilePlus, Ambulance, Award, MapPin, TrendingUp, Activity, Phone, User, Check } from "lucide-react";
 import { WhatsAppLink } from '@/components/whatsapp-link';
 
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
 const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
   title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-  description: "Sin copagos, sin carencias, sin permanencia. Agentes registrados con +10 años y +1.200 familias protegidas.",
-  keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos"],
+  description: "Seguro de salud privado en Madrid desde 22,50€/mes. Sin copagos, sin carencias, sin permanencia. Asesoramiento directo con Rosa y Sebastián. Agentes certificados DGSFP. +1.200 familias protegidas.",
+  keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos","contratar seguro salud privado Madrid","seguro médico sin copagos Madrid precio","seguro médico privado sin carencias Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
     title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-    description: "Sin copagos, sin carencias, sin permanencia. Agentes registrados con +10 años y +1.200 familias protegidas.",
+    description: "Seguro de salud privado en Madrid desde 22,50€/mes. Sin copagos, sin carencias, sin permanencia. Asesoramiento directo con Rosa y Sebastián. Agentes certificados DGSFP. +1.200 familias protegidas.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -113,7 +114,10 @@ const faqSchema = {
 export const dynamic = "force-static";
 
 export default async function SaludIndividualPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro de salud privado individual en Madrid.");
+  const wCotiza = buildWhatsAppHref("Hola, estoy interesado/a en un seguro de salud y me gustaría recibir orientación sobre la opción más adecuada según mi situación y el precio orientativo.");
+  const wAsesoramiento = buildWhatsAppHref("Hola, necesito asesoramiento para elegir mi seguro de salud");
+  const wHeader = buildWhatsAppHref("Hola, quiero cotizar un seguro de salud privado");
+
   const pexelsImage = await getPexelsImage('salud-individual');
 
   return (
@@ -123,13 +127,23 @@ export default async function SaludIndividualPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
+      {/* Barra Garantía Superior */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-900 border-b border-slate-700 text-white py-2.5 text-center">
+        <div className="container mx-auto px-4">
+          <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
+            <Shield className="w-4 h-4 text-amber-400" />
+            <span className="hidden sm:inline">Sin respuesta en 30 min → <span className="text-amber-400">Rosa o Sebastián te llaman directamente</span></span>
+            <span className="sm:hidden">Sin respuesta en 30 min → <span className="text-amber-400 font-black">te llamamos</span></span>
+          </p>
+        </div>
+      </div>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-[#163300] text-lg tracking-tight">
             Valentín <span className="text-emerald-600">Protección Integral</span>
           </a>
           <WhatsAppLink
-            href="https://wa.me/34603448765"
+            href={wHeader}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
@@ -138,7 +152,7 @@ export default async function SaludIndividualPage() {
           </WhatsAppLink>
         </div>
       </header>
-      <main className="min-h-screen bg-white pt-16">
+      <main className="min-h-screen bg-white pt-24">
         
         {/* HERO — Impacto y Confianza */}
         <section className="relative min-h-[85vh] flex items-center bg-gray-950 overflow-hidden">
@@ -164,7 +178,7 @@ export default async function SaludIndividualPage() {
                 </div>
                 
                 <h1 className="text-[40px] sm:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
-                  Seguro de salud individual en España <span className="text-emerald-400">con asesoramiento personalizado</span>
+                  Tu seguro de salud privado en Madrid — <span className="text-emerald-400">sin copagos, sin listas de espera, desde 22,50€/mes</span>
                 </h1>
                 
                 <p className="text-xl text-white/70 leading-relaxed mb-4 max-w-2xl">
@@ -185,6 +199,17 @@ export default async function SaludIndividualPage() {
                       Respuesta en menos de 10 minutos
                     </p>
                   </div>
+                </div>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex -space-x-2">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-xs text-white font-bold">
+                        {["R","M","A","L","P"][i]}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-white/80 text-sm font-bold">+1.200 familias protegidas en Madrid</p>
                 </div>
 
                 {/* Bloque Asesores - Estilo Extranjería */}
@@ -306,11 +331,12 @@ export default async function SaludIndividualPage() {
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Te ayudamos a no pagar de más</h2>
             </div>
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-4 gap-6">
               {[
                 "Revisamos tu situación actual sin compromiso",
                 "Te ayudamos a elegir la cobertura adecuada",
-                "Evitamos errores en la contratación"
+                "Evitamos errores en la contratación",
+                "Revisamos gratis tu seguro actual — si puedes mejorar, te lo decimos sin compromiso"
               ].map((v, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white p-5 rounded-xl shadow-sm border border-slate-100 text-center justify-center">
                   <p className="text-slate-700 font-bold text-sm">✔ {v}</p>
@@ -365,7 +391,7 @@ export default async function SaludIndividualPage() {
 
             <p className="text-center text-sm text-gray-400 mt-8">
               * Precios orientativos para adulto entre 30-45 años en Madrid. El precio exacto depende de tu edad y modalidad.
-              <WhatsAppLink href="https://wa.me/34603448765" className="text-emerald-600 font-medium ml-1 hover:underline">
+              <WhatsAppLink href={buildWhatsAppHref("Hola, estoy interesado/a en un seguro de salud y me gustaría recibir orientación sobre la opción más adecuada según mi situación y el precio orientativo.")} className="text-emerald-600 font-medium ml-1 hover:underline">
                 Pídenos tu presupuesto sin compromiso →
               </WhatsAppLink>
             </p>
@@ -373,6 +399,26 @@ export default async function SaludIndividualPage() {
         </section>
 
 
+
+        {/* Gancho A — Descuento combinado */}
+        <section className="py-16 bg-amber-50 border-y border-amber-100">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-6">
+              <Sparkles className="w-4 h-4" />
+              Ventaja exclusiva
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">¿Tienes pareja o familiar en casa?</h2>
+            <p className="text-lg text-slate-600 mb-2">
+              Consulta por el <span className="font-black text-amber-700">descuento por póliza combinada</span>. Muchos de nuestros clientes ahorran entre un 5% y un 10% al combinar coberturas.
+            </p>
+            <p className="text-sm text-slate-400 mb-8">Cuéntanos tu situación y te decimos exactamente cuánto puedes ahorrar.</p>
+            <a href={buildWhatsAppHref("Hola, quiero saber si puedo ahorrar combinando pólizas")} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg">
+              <WhatsAppIcon className="w-5 h-5" />
+              Quiero saber cuánto ahorro
+            </a>
+          </div>
+        </section>
 
         {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
         <section className="py-24 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
@@ -409,6 +455,22 @@ export default async function SaludIndividualPage() {
           </div>
         </section>
 
+        {/* Gancho B — Referido */}
+        <section className="py-14 bg-slate-900 text-white text-center">
+          <div className="container mx-auto px-4 max-w-2xl">
+            <p className="text-amber-400 font-black uppercase tracking-widest text-xs mb-3">Para clientes nuevos</p>
+            <h2 className="text-2xl font-extrabold mb-3">¿Conoces a alguien que también necesite seguro?</h2>
+            <p className="text-slate-300 text-base mb-6">
+              Si en los <span className="text-amber-400 font-black">90 días siguientes</span> a tu contratación nos traes a un familiar o amigo, <span className="text-amber-400 font-black">ambos recibís un mes de cuota bonificada.</span> Sin condiciones ocultas.
+            </p>
+            <a href={buildWhatsAppHref("Hola, quiero información sobre el bono por referido")} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-black hover:bg-amber-400 transition-all text-sm">
+              <WhatsAppIcon className="w-4 h-4" />
+              Más información
+            </a>
+          </div>
+        </section>
+
         {/* EQUIPO Y CONFIANZA — Fondo blanco */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
@@ -441,7 +503,7 @@ export default async function SaludIndividualPage() {
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   Más de 10 años ayudando a personas a elegir correctamente su seguro de salud en España.
                   <br /><br />
-                  No trabajamos para una compañía. Trabajamos para ayudarte a tomar la mejor decisión.
+                  Llevamos más de 10 años ayudando a personas a elegir correctamente su seguro de salud. Tu caso tiene atención directa y personalizada de principio a fin.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -490,7 +552,7 @@ export default async function SaludIndividualPage() {
             </p>
             
             <WhatsAppButton 
-              href={wCotiza}
+              href={wAsesoramiento}
               location="salud-individual-cta-final"
               className="group inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-1"
             >
@@ -572,3 +634,7 @@ export default async function SaludIndividualPage() {
     </>
   );
 }
+
+
+
+
