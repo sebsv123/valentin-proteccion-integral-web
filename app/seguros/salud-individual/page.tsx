@@ -132,8 +132,14 @@ export default async function SaludIndividualPage() {
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">Sin respuesta en 30 min → <span className="text-amber-400">Rosa o Sebastián te llaman directamente</span></span>
-            <span className="sm:hidden">Sin respuesta en 30 min → <span className="text-amber-400 font-black">te llamamos</span></span>
+            <span className="hidden sm:inline">
+              ¿Tienes médico de cabecera mañana?{" "}
+              <span className="text-amber-400">Con nosotros tienes especialista hoy — escríbenos ahora</span>
+            </span>
+            <span className="sm:hidden">
+              Especialista hoy →{" "}
+              <span className="text-amber-400 font-black">escríbenos ahora</span>
+            </span>
           </p>
         </div>
       </div>
@@ -292,6 +298,26 @@ export default async function SaludIndividualPage() {
           </div>
         </section>
 
+        {/* Gancho A — Descuento combinado */}
+        <section className="py-16 bg-amber-50 border-y border-amber-100">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-6">
+              <Sparkles className="w-4 h-4" />
+              Ventaja exclusiva
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">¿Tienes pareja o familiar en casa?</h2>
+            <p className="text-lg text-slate-600 mb-2">
+              Consulta por el <span className="font-black text-amber-700">descuento por póliza combinada</span>. Muchos de nuestros clientes ahorran entre un 5% y un 10% al combinar coberturas.
+            </p>
+            <p className="text-sm text-slate-400 mb-8">Cuéntanos tu situación y te decimos exactamente cuánto puedes ahorrar.</p>
+            <a href={buildWhatsAppHref("Hola, quiero saber si puedo ahorrar combinando pólizas")} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg">
+              <WhatsAppIcon className="w-5 h-5" />
+              Quiero saber cuánto ahorro
+            </a>
+          </div>
+        </section>
+
         {/* 3. BLOQUE CÓMO FUNCIONA */}
         <section className="py-16 bg-white border-b border-slate-50">
           <div className="container mx-auto px-4 max-w-4xl">
@@ -324,6 +350,9 @@ export default async function SaludIndividualPage() {
             </div>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros de salud" />
 
         {/* 4. BLOQUE VALOR AÑADIDO */}
         <section className="py-16 bg-slate-50 border-b border-slate-100">
@@ -398,28 +427,6 @@ export default async function SaludIndividualPage() {
           </div>
         </section>
 
-
-
-        {/* Gancho A — Descuento combinado */}
-        <section className="py-16 bg-amber-50 border-y border-amber-100">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-6">
-              <Sparkles className="w-4 h-4" />
-              Ventaja exclusiva
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">¿Tienes pareja o familiar en casa?</h2>
-            <p className="text-lg text-slate-600 mb-2">
-              Consulta por el <span className="font-black text-amber-700">descuento por póliza combinada</span>. Muchos de nuestros clientes ahorran entre un 5% y un 10% al combinar coberturas.
-            </p>
-            <p className="text-sm text-slate-400 mb-8">Cuéntanos tu situación y te decimos exactamente cuánto puedes ahorrar.</p>
-            <a href={buildWhatsAppHref("Hola, quiero saber si puedo ahorrar combinando pólizas")} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg">
-              <WhatsAppIcon className="w-5 h-5" />
-              Quiero saber cuánto ahorro
-            </a>
-          </div>
-        </section>
-
         {/* GARANTÍA RESPUESTA — Fondo diferenciado */}
         <section className="py-24 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
@@ -461,7 +468,11 @@ export default async function SaludIndividualPage() {
             <p className="text-amber-400 font-black uppercase tracking-widest text-xs mb-3">Para clientes nuevos</p>
             <h2 className="text-2xl font-extrabold mb-3">¿Conoces a alguien que también necesite seguro?</h2>
             <p className="text-slate-300 text-base mb-6">
-              Si en los <span className="text-amber-400 font-black">90 días siguientes</span> a tu contratación nos traes a un familiar o amigo, <span className="text-amber-400 font-black">ambos recibís un mes de cuota bonificada.</span> Sin condiciones ocultas.
+              Si nos traes a un familiar o amigo que contrata con nosotros,{" "}
+              <span className="text-amber-400 font-black">
+                ambos recibís un 5% de descuento en vuestra cuota mensual.
+              </span>{" "}
+              Sin letra pequeña.
             </p>
             <a href={buildWhatsAppHref("Hola, quiero información sobre el bono por referido")} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-black hover:bg-amber-400 transition-all text-sm">
@@ -584,9 +595,6 @@ export default async function SaludIndividualPage() {
             </p>
           </div>
         </section>
-
-        {/* RESEÑAS GOOGLE */}
-        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros de salud" />
 
         {/* GARANTÍAS PREMIUM */}
         <GarantiasSection brandColor="#10b981" />
