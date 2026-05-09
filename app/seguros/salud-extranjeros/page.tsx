@@ -5,6 +5,7 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { Shield, CheckCircle2, Phone, Globe, FileCheck, Check, FileText, Heart, Users, Scale, MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
@@ -442,6 +443,59 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
+        {/* Gancho B — Calculadora de urgencia */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
+              ¿Cuándo tienes la cita?
+            </h2>
+            <p className="text-slate-500 mb-10">
+              Te ayudamos igual — pero cuanto antes nos escribas, más tranquilo vas a estar.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <a
+                href={buildWhatsAppHref("Tengo cita de extranjería URGENTE en menos de 7 días, necesito el seguro ya")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
+                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">🚨</span>
+                <span className="text-lg font-extrabold text-red-700">En menos de 7 días</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Es urgente — te damos prioridad inmediata
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Escribir ahora
+                </span>
+              </a>
+
+              <a
+                href={buildWhatsAppHref("Tengo cita de extranjería próximamente, quiero preparar el seguro con tiempo")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
+                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">📅</span>
+                <span className="text-lg font-extrabold text-emerald-700">Tengo tiempo</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Perfecto — lo preparamos bien y sin prisas
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Escribir ahora
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* 4. BLOQUE ESPECIALISTAS (Reposicionado y Protagonista) */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
           <div 
@@ -540,6 +594,9 @@ export default function SaludExtranjerosPage() {
           </div>
         </section>
 
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros para extranjeros" />
+
         {/* 8. FAQ */}
         <FAQChat
           brandColor="emerald"
@@ -564,60 +621,6 @@ export default function SaludExtranjerosPage() {
             }
           ]}
         />
-
-
-        {/* Gancho B — Calculadora de urgencia */}
-        <section className="py-20 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-              ¿Cuándo tienes la cita?
-            </h2>
-            <p className="text-slate-500 mb-10">
-              Te ayudamos igual — pero cuanto antes nos escribas, más tranquilo vas a estar.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <a
-                href={buildWhatsAppHref("Tengo cita de extranjería URGENTE en menos de 7 días, necesito el seguro ya")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
-                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
-                font-black transition-all group"
-              >
-                <span className="text-4xl">🚨</span>
-                <span className="text-lg font-extrabold text-red-700">En menos de 7 días</span>
-                <span className="text-sm text-slate-500 font-medium">
-                  Es urgente — te damos prioridad inmediata
-                </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
-                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Escribir ahora
-                </span>
-              </a>
-
-              <a
-                href={buildWhatsAppHref("Tengo cita de extranjería próximamente, quiero preparar el seguro con tiempo")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
-                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
-                font-black transition-all group"
-              >
-                <span className="text-4xl">📅</span>
-                <span className="text-lg font-extrabold text-emerald-700">Tengo tiempo</span>
-                <span className="text-sm text-slate-500 font-medium">
-                  Perfecto — lo preparamos bien y sin prisas
-                </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
-                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Escribir ahora
-                </span>
-              </a>
-            </div>
-          </div>
-        </section>
         {/* 9. CTA FINAL */}
         <section className="py-24 bg-slate-900 text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-transparent" />
