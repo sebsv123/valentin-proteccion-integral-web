@@ -5,6 +5,7 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { Shield, CheckCircle2, Phone, Globe, FileCheck, Check, FileText, Heart, Users, Scale, MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
@@ -411,6 +412,59 @@ export default function HealthInsuranceForeignersSpainPage() {
           </div>
         </section>
 
+        {/* Gancho B — Urgency selector */}
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
+              When is your appointment?
+            </h2>
+            <p className="text-slate-500 mb-10">
+              We help you either way — but the sooner you contact us, the more relaxed you'll be.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <a
+                href={buildWhatsAppHref("I have an URGENT immigration appointment in less than 7 days — I need the insurance now")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
+                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">🚨</span>
+                <span className="text-lg font-extrabold text-red-700">In less than 7 days</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Urgent — we give you immediate priority
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Message now
+                </span>
+              </a>
+
+              <a
+                href={buildWhatsAppHref("My immigration appointment is coming up — I want to prepare the insurance in advance")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
+                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
+                font-black transition-all group"
+              >
+                <span className="text-4xl">📅</span>
+                <span className="text-lg font-extrabold text-emerald-700">I have time</span>
+                <span className="text-sm text-slate-500 font-medium">
+                  Great — we'll prepare everything properly, no rush
+                </span>
+                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
+                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
+                  <WhatsAppIcon className="w-4 h-4" />
+                  Message now
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* SPECIALISTS */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
           <div 
@@ -493,7 +547,7 @@ export default function HealthInsuranceForeignersSpainPage() {
               <div>
                 <p className="text-emerald-600 font-black uppercase tracking-widest text-sm mb-4">We speak your language</p>
                 <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
-                  We speak your language
+                  Sebastián handles your case in English, personally
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">
                   SebastiÃ¡n speaks fluent English and will personally handle your case from the first WhatsApp message to the moment you receive your certificate. No language barriers. No miscommunication. Just clear, direct help from someone who understands exactly what you need.
@@ -506,6 +560,9 @@ export default function HealthInsuranceForeignersSpainPage() {
             </div>
           </div>
         </section>
+
+        {/* RESEÑAS GOOGLE */}
+        <GoogleReviewsWidget title="Client reviews — health insurance for foreigners in Spain" />
 
         {/* FAQ */}
         <FAQChat
@@ -531,59 +588,6 @@ export default function HealthInsuranceForeignersSpainPage() {
             }
           ]}
         />
-
-        {/* Gancho B — Urgency selector */}
-        <section className="py-20 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-              When is your appointment?
-            </h2>
-            <p className="text-slate-500 mb-10">
-              We help you either way — but the sooner you contact us, the more relaxed you'll be.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <a
-                href={buildWhatsAppHref("I have an URGENT immigration appointment in less than 7 days — I need the insurance now")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
-                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
-                font-black transition-all group"
-              >
-                <span className="text-4xl">🚨</span>
-                <span className="text-lg font-extrabold text-red-700">In less than 7 days</span>
-                <span className="text-sm text-slate-500 font-medium">
-                  Urgent — we give you immediate priority
-                </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
-                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Message now
-                </span>
-              </a>
-
-              <a
-                href={buildWhatsAppHref("My immigration appointment is coming up — I want to prepare the insurance in advance")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
-                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
-                font-black transition-all group"
-              >
-                <span className="text-4xl">📅</span>
-                <span className="text-lg font-extrabold text-emerald-700">I have time</span>
-                <span className="text-sm text-slate-500 font-medium">
-                  Great — we'll prepare everything properly, no rush
-                </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
-                px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
-                  <WhatsAppIcon className="w-4 h-4" />
-                  Message now
-                </span>
-              </a>
-            </div>
-          </div>
-        </section>
 
         {/* FINAL CTA */}
         <section className="py-24 bg-slate-900 text-white text-center relative overflow-hidden">
