@@ -14,15 +14,33 @@ import { Footer } from '@/components/footer';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { WhatsAppLink } from '@/components/whatsapp-link';
 import { CheckCircle } from 'lucide-react';
+import { captureUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+
+const SESSION_KEY = 'valentin_conversion_fired';
 
 export default function GraciasClientPage() {
   useEffect(() => {
-    // GA4 — Evento de conversión primaria
+    // Capture UTMs on the gracias page (in case they arrived via redirect)
+    captureUTMs();
+
+    // sessionStorage guard: only fire events once per session
+    if (typeof window !== 'undefined') {
+      try {
+        if (sessionStorage.getItem(SESSION_KEY)) {
+          return; // Already fired — skip to avoid duplicates on refresh
+        }
+        sessionStorage.setItem(SESSION_KEY, '1');
+      } catch { /* ignore */ }
+    }
+
+    // Fire lead_form_submit / thank_you_view as primary conversion event
+    trackLeadFormSubmit({
+      product_slug: 'gracias',
+      lead_type: 'thank_you_page',
+    });
+
+    // GA4 — Contactar event (secondary)
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'purchase', {
-        event_category: 'conversion',
-        event_label: 'gracias_page',
-      });
       window.gtag('event', 'Contactar', {
         event_category: 'conversion',
         event_label: 'gracias_page',
@@ -34,6 +52,7 @@ export default function GraciasClientPage() {
     }
     // Google Ads conversion tracking is handled via GTM — do not duplicate here
   }, []);
+
 
   return (
     <>

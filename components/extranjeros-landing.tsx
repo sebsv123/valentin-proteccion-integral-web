@@ -35,6 +35,8 @@ import {
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { captureUTMs, getStoredUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+
 
 const getFadeInUp = (prefersReducedMotion: boolean) => ({
   hidden: { opacity: prefersReducedMotion ? 1 : 0, y: prefersReducedMotion ? 0 : 20 },
@@ -73,6 +75,15 @@ export function ExtranjeroLanding() {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y necesito información sobre el seguro de salud para el extranjero.\n\n📞 Teléfono: ${form.telefono}\n✈️ Situación: ${form.situacion}\n\nGracias.`
     );
+    // Capture UTMs from URL
+    captureUTMs();
+    // Fire lead_form_submit event
+    trackLeadFormSubmit({
+      product_slug: 'salud-extranjeros',
+      lead_type: 'form_whatsapp',
+      page_location: typeof window !== 'undefined' ? window.location.href : '',
+    });
+    // Also fire Contactar for backward compatibility
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'Contactar', {
         event_category: 'engagement',

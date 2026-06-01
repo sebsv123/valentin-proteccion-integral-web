@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { ChevronDown } from "lucide-react";
+import { captureUTMs, trackLeadFormSubmit } from "@/lib/analytics";
 
 const DENTAL_WHATSAPP_MESSAGE = "Hola, me interesa un seguro dental. ¿Pueden asesorarme sin compromiso?";
 
@@ -14,6 +15,17 @@ export function DentalLeadForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Capture UTMs from URL
+    captureUTMs();
+
+    // Fire lead_form_submit event
+    trackLeadFormSubmit({
+      product_slug: 'dental',
+      lead_type: 'form_whatsapp',
+      page_location: typeof window !== 'undefined' ? window.location.href : '',
+    });
+
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );

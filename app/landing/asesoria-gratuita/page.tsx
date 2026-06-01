@@ -5,12 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { testimonials, buildWhatsAppHref } from '@/lib/products';
 import { CheckCircle2, Shield, Clock, HeartHandshake, Star, MessageCircle, Phone } from 'lucide-react';
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import { captureUTMs, trackLeadFormSubmit } from '@/lib/analytics';
 
 const PRODUCT_OPTIONS = [
   { value: '', label: '¿Qué tipo de seguro buscas?' },
@@ -35,6 +30,16 @@ export default function AsesoriaGratuitaLanding() {
     if (!name.trim() || !phone.trim() || !product) return;
     setSubmitting(true);
 
+    // Capture UTMs from URL
+    captureUTMs();
+
+    // Fire lead_form_submit event
+    trackLeadFormSubmit({
+      product_slug: 'asesoria-gratuita',
+      lead_type: 'form',
+      page_location: typeof window !== 'undefined' ? window.location.href : '',
+    });
+
     // GA4 event
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'Contactar', {
@@ -43,6 +48,14 @@ export default function AsesoriaGratuitaLanding() {
         value: product,
       });
     }
+
+    // Get stored UTMs to include in payload
+    const utms = typeof window !== 'undefined' ? (() => {
+      try {
+        const raw = sessionStorage.getItem('valentin_utm');
+        return raw ? JSON.parse(raw) : {};
+      } catch { return {}; }
+    })() : {};
 
     // Store lead data (could also send to API)
     try {
@@ -54,6 +67,7 @@ export default function AsesoriaGratuitaLanding() {
           phone: phone.trim(),
           product,
           source: 'landing-asesoria-gratuita',
+          ...utms,
         }),
       });
     } catch {
