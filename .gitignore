@@ -97,3 +97,8 @@ _test_*.json
 coverage/
 .coverage
 htmlcov/
+.vercel
+design-references/
+*.txt
+scrape_*
+reclassify_*

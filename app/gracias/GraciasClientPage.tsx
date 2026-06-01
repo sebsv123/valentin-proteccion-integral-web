@@ -19,6 +19,10 @@ export default function GraciasClientPage() {
   useEffect(() => {
     // GA4 — Evento de conversión primaria
     if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'purchase', {
+        event_category: 'conversion',
+        event_label: 'gracias_page',
+      });
       window.gtag('event', 'Contactar', {
         event_category: 'conversion',
         event_label: 'gracias_page',
@@ -43,7 +47,7 @@ export default function GraciasClientPage() {
               </div>
             </div>
             <h1 className="font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">
-              ¡Gracias! Ya tenemos tus datos.
+              ¡Recibido! Te llamamos en menos de 24 horas.
             </h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
               Rosa o Sebastián Valentín te contactarán en menos de 2 horas en horario de atención
@@ -61,8 +65,11 @@ export default function GraciasClientPage() {
               >
                 Escribir por WhatsApp
               </WhatsAppLink>
-              <Link href="/" className="btn-secondary inline-flex justify-center">
-                Volver al inicio
+              <Link href="/seguros" className="btn-secondary inline-flex justify-center">
+                Ver seguros
+              </Link>
+              <Link href="/opiniones" className="btn-ghost inline-flex justify-center">
+                Opiniones de clientes
               </Link>
             </div>
           </div>

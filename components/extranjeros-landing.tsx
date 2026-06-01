@@ -530,6 +530,21 @@ export function ExtranjeroLanding() {
                 fill
                 className="object-cover object-top"
               />
+              {/* Accreditation badge overlay */}
+              <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2.5 shadow-lg border border-blue-200">
+                <div className="flex items-center gap-2">
+                  <div className="flex-none w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-blue-900 leading-tight">Sebastián Valentín</p>
+                    <p className="text-[10px] text-blue-700 leading-tight">Mediador colegiado DGSFP</p>
+                    <p className="text-[9px] text-blue-500 leading-tight">Nº C012479234434D</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
             <motion.div variants={fadeInUpVariants} className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
