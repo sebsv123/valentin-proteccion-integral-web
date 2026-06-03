@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, CheckCircle, Clock, MessageCircle, FileText, ChevronRight } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
 import { buildWhatsAppHref } from '@/lib/products';
 import { FAQAccordion } from '@/components/faq-accordion';
@@ -72,16 +72,68 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                 </RevealLight>
               )}
 
-              {/* CTA */}
-              <div className="soft-card bg-[linear-gradient(135deg,rgba(0,34,68,0.96),rgba(0,51,102,0.9))] p-8 text-white md:p-10">
-                <p className="kicker !text-white/70">¿Te ha resultado útil?</p>
-                <h3 className="mt-3 font-heading text-3xl font-bold tracking-tight md:text-4xl">Podemos aterrizar esta información a tu caso concreto</h3>
-                <p className="mt-4 max-w-2xl text-lg leading-9 text-white/80">Si quieres una orientación personalizada sobre lo que has leído, escríbenos por WhatsApp o solicita una consulta sin compromiso.</p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <a href={buildWhatsAppHref(`Hola, vengo del artículo "${post.title}" y quiero una orientación.`)} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]">Hablar por WhatsApp</a>
-                  <Link href="/contacto" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Ir a contacto</Link>
+              {/* CTA - Editorial premium */}
+              <RevealLight>
+                <div className="relative overflow-hidden rounded-[32px] bg-[var(--blue-deep)] p-8 md:p-12 lg:p-14">
+                  {/* Decorative gradient orbs */}
+                  <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[var(--blue)]/20 blur-3xl" />
+                  <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-[var(--orange)]/10 blur-3xl" />
+                  
+                  <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
+                    {/* Left column: text content */}
+                    <div className="max-w-2xl">
+                      <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-white/80 backdrop-blur-sm">
+                        <ChevronRight className="h-3 w-3 text-[var(--orange)]" />
+                        ¿Te ha resultado útil?
+                      </p>
+                      <h3 className="mt-6 font-heading text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl">
+                        Aterriza esta información a tu caso concreto
+                      </h3>
+                      <p className="mt-4 text-lg leading-relaxed text-white/70 md:text-xl">
+                        Cada persona tiene una situación distinta. Lo que has leído es una guía general, pero si quieres saber cómo aplicarlo a tu caso, podemos ayudarte sin compromiso.
+                      </p>
+                      
+                      {/* Bullet list */}
+                      <ul className="mt-6 space-y-3">
+                        {[
+                          'Orientación 100% personalizada y sin compromiso',
+                          'Te explicamos las opciones que mejor se adaptan a ti',
+                          'Resolvemos tus dudas en menos de 5 minutos por WhatsApp',
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-white/80">
+                            <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[var(--orange)]" />
+                            <span className="text-base font-medium leading-relaxed md:text-lg">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Right column: buttons */}
+                    <div className="flex shrink-0 flex-col gap-4 lg:min-w-[260px]">
+                      <a
+                        href={buildWhatsAppHref(`Hola, vengo del artículo "${post.title}" y quiero una orientación personalizada.`)}
+                        className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-8 py-4 text-base font-bold text-[var(--blue-deep)] shadow-lg transition-all hover:bg-white/90 hover:shadow-xl active:scale-[0.98]"
+                      >
+                        <MessageCircle className="h-5 w-5" />
+                        Hablar por WhatsApp
+                      </a>
+                      <Link
+                        href="/contacto"
+                        className="inline-flex items-center justify-center gap-3 rounded-2xl border-2 border-white/25 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10 active:scale-[0.98]"
+                      >
+                        <FileText className="h-5 w-5" />
+                        Solicitar consulta
+                      </Link>
+                      <Link
+                        href="/blog"
+                        className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white/60 transition-all hover:text-white"
+                      >
+                        Más artículos <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </RevealLight>
             </div>
 
             {/* Sidebar */}

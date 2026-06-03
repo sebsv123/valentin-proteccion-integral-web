@@ -57,6 +57,9 @@ const slugToQuery: Record<string, string> = {
   // Post dental
   'seguro-dental-familias-madrid': 'dental care family dentist madrid',
 
+  // Post protector solar
+  'como-aplicar-protector-solar-beneficios': 'sunscreen protection skin care beach',
+
   // PRODUCTOS DE SEGUROS - Slugs de productos para uso en páginas de seguros
   // Salud y especialidades médicas
   'salud': 'doctor consultation healthcare medical hospital',

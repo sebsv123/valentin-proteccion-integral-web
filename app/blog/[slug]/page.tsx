@@ -49,8 +49,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  // Obtener imagen de Pexels (reemplaza TODAS las imágenes)
-  const imageUrl = await getPexelsImage(slug);
+  // Obtener imagen de Pexels solo si el post no tiene ya una imagen local
+  const imageUrl = post.image.startsWith('/images/')
+    ? post.image
+    : await getPexelsImage(slug);
 
   // Crear post con imagen actualizada
   const postWithImage = {
