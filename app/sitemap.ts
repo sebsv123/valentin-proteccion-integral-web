@@ -72,6 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/por-que-necesitas-mas-de-9-000e-en-proteccion-familiar-madrid-2026-must-have`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/pasaporte-europeo-mascotas-obligatorio-2026-vacunas-precio-madrid`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/blog/cuanto-te-indemniza-realmente-tu-seguro-hipoteca-nomina-en-invalidez-solo-50`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/blog/como-aplicar-protector-solar-beneficios`, lastModified: '2026-06-03', changeFrequency: 'monthly', priority: 0.6 },
 
     // CONTACTO
     { url: `${base}/contacto`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
