@@ -329,9 +329,17 @@ export default function ExtranjerosPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                     <Award className="w-4 h-4 text-amber-600" />
-                    DGSFP: C012479234434D
+                    DGSFP: C046172295271S
                   </span>
                 </div>
+
+                {/* Trust line */}
+                <p className="text-sm text-slate-500 mt-5 leading-relaxed">
+                  Atención clara, rápida y orientada a trámites reales de extranjería.
+                </p>
+                <p className="text-xs text-slate-400 mt-1">
+                  +1.200 familias protegidas · Agentes registrados DGSFP · Atención en toda España
+                </p>
 
                 {/* Disclaimer */}
                 <p className="text-xs text-slate-400 mt-6 leading-relaxed">
@@ -455,25 +463,17 @@ export default function ExtranjerosPage() {
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
                     Estudiante internacional
                   </h3>
-                  <p className="text-slate-600 leading-relaxed mb-6">
-                    Si vienes a estudiar a España (máster, grado, curso de español o
-                    doctorado), necesitas un seguro de salud que cumpla con los requisitos
-                    del visado de estudios. Sin copagos, sin carencias y con cobertura
-                    durante toda tu estancia.
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    Si vienes a estudiar a España, necesitas un seguro de salud que cumpla
+                    con los requisitos del visado de estudios. Sin copagos, sin carencias.
                   </p>
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      "Válido para visado de estudios",
-                      "Cobertura en periodos vacacionales",
-                      "Asistencia en viaje incluida",
-                      "Certificado para tu expediente",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
-                        <span className="text-slate-700">{item}</span>
-                      </li>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {["Estudios", "Prácticas", "Movilidad", "Formación"].map((chip, i) => (
+                      <span key={i} className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium border border-blue-100">
+                        {chip}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                   <WhatsAppButton
                     href={wEstudiantes}
                     location="extranjeros-estudiantes"
@@ -503,25 +503,18 @@ export default function ExtranjerosPage() {
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
                     Residente o familiar
                   </h3>
-                  <p className="text-slate-600 leading-relaxed mb-6">
-                    Si solicitas residencia no lucrativa, reagrupación familiar o
-                    cualquier otro permiso de residencia, el seguro de salud privado es
-                    un requisito obligatorio. Te ayudamos a cumplir con todos los
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    Si solicitas residencia o reagrupación familiar, el seguro de salud
+                    privado es un requisito obligatorio. Te ayudamos a cumplir con los
                     documentos que exige extranjería.
                   </p>
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      "Válido para NIE y TIE",
-                      "Sin copagos ni carencias",
-                      "Repatriación incluida",
-                      "Cobertura para toda la unidad familiar",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
-                        <span className="text-slate-700">{item}</span>
-                      </li>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {["Residencia", "Renovación", "Reagrupación", "Familia"].map((chip, i) => (
+                      <span key={i} className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-100">
+                        {chip}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                   <WhatsAppButton
                     href={wResidentes}
                     location="extranjeros-residentes"
@@ -677,6 +670,49 @@ export default function ExtranjerosPage() {
                 <ArrowRight className="w-5 h-5" />
               </WhatsAppButton>
             </div>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
+        {/* QUÉ SUELEN REVISAR — Educational section                    */}
+        {/* ============================================================ */}
+        <section className="py-20 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold tracking-widest text-blue-600 uppercase mb-3">
+                Requisitos habituales
+              </p>
+              <h2 className="text-[32px] sm:text-[38px] font-bold text-slate-900 leading-tight mb-4">
+                Qué suelen revisar en el seguro médico
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                En muchos trámites de extranjería se revisa que el seguro médico cumpla
+                ciertos requisitos de cobertura, periodo y documentación. Por eso revisamos
+                tu caso antes de orientarte.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Cobertura sanitaria suficiente", desc: "Que incluya asistencia médica, hospitalización y urgencias sin limitaciones." },
+                { title: "Periodo de cobertura adecuado", desc: "Que cubra toda la duración prevista de tu estancia o residencia." },
+                { title: "Sin copagos cuando el trámite lo exige", desc: "Muchos expedientes requieren que el seguro no tenga copagos obligatorios." },
+                { title: "Sin carencias cuando corresponde", desc: "Que puedas usar el seguro desde el primer día sin periodos de espera." },
+                { title: "Documentación clara para el expediente", desc: "Certificado con datos del tomador, coberturas y vigencia para presentar." },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white rounded-xl border border-slate-100 p-6 transition-all hover:shadow-md">
+                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs text-slate-400 text-center mt-8 max-w-xl mx-auto leading-relaxed">
+              La aplicación concreta puede depender del trámite, consulado u oficina correspondiente.
+            </p>
           </div>
         </section>
 
@@ -982,6 +1018,43 @@ export default function ExtranjerosPage() {
               <p className="text-sm text-slate-400 mt-6">
                 Respondemos en menos de 10 minutos · Sin compromiso · 100% gratuito
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
+        {/* BANDA DE CONFIANZA — Trust band antes del footer             */}
+        {/* ============================================================ */}
+        <section className="py-16 bg-slate-50/50 border-t border-slate-100">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="grid sm:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl border border-slate-100 p-8 text-center transition-all hover:shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Reseñas reales</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Clientes que ya han confiado en nosotros para resolver su seguro médico.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-100 p-8 text-center transition-all hover:shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-6 h-6 text-emerald-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Fuentes orientativas</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Trabajamos con referencia a información pública relevante para muchos trámites de extranjería.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl border border-slate-100 p-8 text-center transition-all hover:shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
+                  <HeartHandshake className="w-6 h-6 text-amber-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Atención profesional</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Orientación clara, contacto directo y seguimiento durante el proceso.
+                </p>
+              </div>
             </div>
           </div>
         </section>
