@@ -122,7 +122,7 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden items-center gap-2 xl:flex shrink-0 min-w-[380px] justify-end">
+            <div className="hidden items-center gap-2 xl:flex shrink-0 justify-end">
               <a
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-4 py-2.5 text-white/90
@@ -191,6 +191,31 @@ export function Header() {
             </div>
           </div>
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3 content-start">
+            {/* Extranjeros card destacada */}
+            <Link
+              href="/extranjeros"
+              className="group col-span-full flex flex-col justify-between rounded-[16px] border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-4 transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-1"
+              onClick={closeAll}
+            >
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="font-heading text-base font-bold tracking-tight text-blue-700 group-hover:text-blue-600">
+                    Extranjeros
+                  </span>
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                    <ChevronDown className="h-3 w-3 -rotate-90" />
+                  </div>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-slate-500">
+                  Seguro médico para visado, NIE, TIE, estudios y residencia.
+                </p>
+              </div>
+              <div className="mt-2 flex flex-wrap gap-1 border-t border-blue-100 pt-2">
+                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Estudios</span>
+                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Residencia</span>
+                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Familia</span>
+              </div>
+            </Link>
             {grouped.map((item) => (
               <Link
                 key={item.slug}
@@ -240,6 +265,7 @@ export function Header() {
         accentColor="#0F5E9C"
         items={[
           { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
+          { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
           ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: item.slug === 'vida' ? '/seguros/vida/hipoteca' : `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
         ]}

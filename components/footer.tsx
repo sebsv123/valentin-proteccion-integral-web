@@ -33,6 +33,7 @@ export function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Seguros</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/extranjeros">EXTRANJEROS</Link>
               {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={`/seguros/${product.slug}`}>{product.label}</Link>)}
             </div>
           </div>
