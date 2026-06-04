@@ -353,12 +353,13 @@ export default function ExtranjerosPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 to-emerald-100/20 rounded-3xl blur-2xl transform scale-95" />
                 <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
                   <Image
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Persona extranjera recibiendo asesoramiento en Madrid"
+                    src="/images/extranjeros/extranjeros-hero.png"
+                    alt="Personas revisando documentación para seguro médico de extranjería en España"
                     width={600}
                     height={450}
                     className="w-full h-auto object-cover object-top"
                     priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -748,11 +749,12 @@ export default function ExtranjerosPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 to-emerald-100/20 rounded-3xl blur-2xl transform scale-95" />
                   <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100">
                     <Image
-                      src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
-                      alt="Sebastián — Agente de seguros DGSFP"
+                      src="/images/agent/sebastian.jpg"
+                      alt="Sebastián Sifontes Valentín, agente de seguros vinculado registrado en la DGSFP"
                       width={400}
                       height={500}
                       className="w-full h-auto object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   {/* DGSFP badge */}
