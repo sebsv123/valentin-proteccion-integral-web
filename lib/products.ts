@@ -64,7 +64,7 @@ export const site = {
   phoneHref: '+34603448765',
   domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://valentinproteccionintegral.com',
   whatsappNumber: '34603448765',
-  instagram: 'https://www.instagram.com/segurosrosavalentin/',
+  instagram: 'https://www.instagram.com/segurosvalentin/',
   heroTagline: 'Tus asesores de seguros en Madrid',
   brandLine: '+10 años · +1.200 familias protegidas · Consulta gratuita',
   brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Accidentes · Decesos',
