@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { FAQAccordion } from "@/components/faq-accordion";
 import GarantiasSection from "@/components/GarantiasSection";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import {
   GraduationCap,
   Globe,
@@ -361,6 +362,63 @@ export default function ExtranjerosPage() {
         </section>
 
         {/* ============================================================ */}
+        {/* RESEÑAS — Google Reviews justo debajo del hero               */}
+        {/* ============================================================ */}
+        <GoogleReviewsWidget
+          subtitle="RESEÑAS"
+          title="Lo que dicen quienes ya han confiado en nosotros"
+        />
+
+        {/* ============================================================ */}
+        {/* FUENTES OFICIALES ORIENTATIVAS                               */}
+        {/* ============================================================ */}
+        <section className="py-16 bg-slate-50/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
+            <div className="text-center mb-10">
+              <p className="text-sm font-semibold tracking-widest text-blue-600 uppercase mb-3">
+                Fuentes de referencia
+              </p>
+              <h2 className="text-[32px] sm:text-[36px] font-bold text-slate-900 leading-tight mb-4">
+                Fuentes oficiales orientativas de referencia
+              </h2>
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Muchos trámites de extranjería se apoyan en información pública y requisitos
+                administrativos concretos. Nosotros te ayudamos con la parte del seguro médico,
+                basándonos en información orientativa y revisando cada caso.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 items-center">
+              <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 w-[260px] flex flex-col items-center">
+                <Image
+                  src="/images/extranjeros/fuente-exteriores.png"
+                  alt="Fuente orientativa del Ministerio de Asuntos Exteriores para trámites internacionales"
+                  width={220}
+                  height={80}
+                  className="h-auto object-contain"
+                  sizes="220px"
+                />
+              </div>
+              <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 w-[260px] flex flex-col items-center">
+                <Image
+                  src="/images/extranjeros/fuente-migraciones.png"
+                  alt="Fuente orientativa de Seguridad Social y Migraciones para trámites de extranjería"
+                  width={220}
+                  height={80}
+                  className="h-auto object-contain"
+                  sizes="220px"
+                />
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-400 text-center mt-8 max-w-2xl mx-auto leading-relaxed">
+              Valentín Protección Integral no es un organismo público. La información es orientativa
+              y puede variar según el tipo de trámite, consulado u oficina correspondiente.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
         {/* ELIGE TU SITUACIÓN — 2 cards: Students / Residents          */}
         {/* ============================================================ */}
         <section className="py-20 bg-white">
@@ -380,11 +438,19 @@ export default function ExtranjerosPage() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Card: Estudiantes */}
-              <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 p-8 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-100/40 to-transparent rounded-bl-full pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-                    <GraduationCap className="w-8 h-8 text-blue-700" />
+              <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="/images/extranjeros/extranjeros-students.jpg"
+                    alt="Estudiantes internacionales revisando documentación para estudiar en España"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4 -mt-12 relative z-10 border-4 border-white shadow-sm">
+                    <GraduationCap className="w-6 h-6 text-blue-700" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
                     Estudiante internacional
@@ -420,11 +486,19 @@ export default function ExtranjerosPage() {
               </div>
 
               {/* Card: Residentes */}
-              <div className="group relative bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-100 p-8 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald-100/40 to-transparent rounded-bl-full pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6">
-                    <Users className="w-8 h-8 text-emerald-700" />
+              <div className="group relative bg-gradient-to-br from-emerald-50 to-white rounded-2xl border border-emerald-100 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="/images/extranjeros/extranjeros-residents.jpg"
+                    alt="Persona preparando documentación para residencia o reagrupación familiar en España"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 -mt-12 relative z-10 border-4 border-white shadow-sm">
+                    <Users className="w-6 h-6 text-emerald-700" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
                     Residente o familiar
