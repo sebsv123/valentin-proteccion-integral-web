@@ -104,51 +104,44 @@ const faqItems = [
 
 const tramitesData = [
   {
-    category: "Visados y Residencia",
+    category: "Estudios y formación",
+    icon: GraduationCap,
+    items: [
+      "Estancia por estudios",
+      "Prácticas y actividades formativas",
+      "Movilidad de alumnos",
+      "Voluntariado",
+      "Modificaciones post-estudios",
+    ],
+  },
+  {
+    category: "Residencia y renovaciones",
     icon: ScrollText,
     items: [
-      "Visado de residencia no lucrativa",
-      "Visado de estudios",
-      "Visado por reagrupación familiar",
-      "Renovación de autorización de residencia",
-      "Solicitud de NIE",
-      "Tramitación del TIE",
+      "Residencia no lucrativa",
+      "Renovación de residencia",
+      "Residencia de larga duración cuando aplique",
+      "Cambios desde estancia por estudios",
     ],
   },
   {
-    category: "Salud y Asistencia",
-    icon: Stethoscope,
+    category: "Familia y reagrupación",
+    icon: Users,
     items: [
-      "Seguro médico sin copagos",
-      "Sin periodos de carencia",
-      "Cobertura de repatriación",
-      "Asistencia en viaje incluida",
-      "Urgencias 24 horas",
-      "Especialistas y pruebas diagnósticas",
+      "Reagrupación familiar",
+      "Familiares de españoles",
+      "Familiar de ciudadano comunitario",
+      "Movilidad y renovaciones familiares",
     ],
   },
   {
-    category: "Trámites Administrativos",
-    icon: Landmark,
+    category: "Otros perfiles",
+    icon: FileText,
     items: [
-      "Certificado para extranjería",
-      "Documentación para la Policía Nacional",
-      "Empadronamiento",
-      "Número de Seguridad Social",
-      "Tarjeta sanitaria pública",
-      "Apertura de cuenta bancaria",
-    ],
-  },
-  {
-    category: "Vida en España",
-    icon: Home,
-    items: [
-      "Asesoramiento sobre alquiler de vivienda",
-      "Seguro del hogar",
-      "Seguro de viaje para tu mudanza",
-      "Protección para tu vehículo",
-      "Orientación sobre colegios y guarderías",
-      "Recomendaciones de zonas en Madrid",
+      "Inversores / Ley 14/2013 cuando aplique",
+      "Casos con exigencia de seguro privado",
+      "Personas sin acceso efectivo a sanidad pública",
+      "Otros supuestos a revisar",
     ],
   },
 ];
@@ -685,6 +678,11 @@ export default function ExtranjerosPage() {
                 <p className="text-sm text-slate-400 mt-4">
                   Respondemos en menos de 10 minutos
                 </p>
+                <p className="text-xs text-slate-400 mt-6 max-w-lg mx-auto leading-relaxed">
+                  No envíes pasaporte, NIE ni información médica por formularios abiertos.
+                  Para una primera orientación solo necesitamos datos básicos. Si hiciera
+                  falta documentación adicional, te indicaremos el canal adecuado.
+                </p>
               </div>
             </div>
           </div>
@@ -734,6 +732,31 @@ export default function ExtranjerosPage() {
                 </div>
               ))}
             </div>
+
+            {/* Partners info block */}
+            <div className="mt-12 bg-blue-50 rounded-2xl border border-blue-100 p-8 md:p-10">
+              <div className="max-w-3xl mx-auto text-center">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  ¿Cómo funciona la colaboración?
+                </h3>
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  Podemos preparar un circuito sencillo para que tus alumnos o clientes
+                  sepan qué datos mínimos necesitamos, cómo contactarnos y qué pueden
+                  esperar del proceso. Trabajamos caso a caso, sin campañas invasivas y
+                  cuidando la protección de datos.
+                </p>
+                <WhatsAppButton
+                  href={buildWhatsAppHref(
+                    "Hola, soy un centro/asesoría y me gustaría saber cómo podemos colaborar en seguros para estudiantes internacionales o clientes extranjeros."
+                  )}
+                  location="extranjeros-partners-info"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+                >
+                  Hablemos de colaboración
+                  <ArrowRight className="w-5 h-5" />
+                </WhatsAppButton>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -760,7 +783,7 @@ export default function ExtranjerosPage() {
                   {/* DGSFP badge */}
                   <div className="absolute -bottom-3 -right-3 bg-white rounded-xl shadow-lg border border-slate-100 px-4 py-3">
                     <p className="text-xs font-bold text-slate-900">DGSFP</p>
-                    <p className="text-[10px] text-slate-500">C012479234434D</p>
+                    <p className="text-[10px] text-slate-500">C046172295271S</p>
                   </div>
                 </div>
               </div>
@@ -775,7 +798,7 @@ export default function ExtranjerosPage() {
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
                   Agente de seguros vinculado, registrado en la DGSFP con el número
-                  C012479234434D. Especializado en seguros para extranjeros y
+                  C046172295271S. Especializado en seguros para extranjeros y
                   estudiantes internacionales en Madrid.
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -874,6 +897,13 @@ export default function ExtranjerosPage() {
                   <Phone className="w-5 h-5" />
                   📞 603 44 87 65
                 </a>
+                <Link
+                  href="/seguros/salud-extranjeros"
+                  className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-5 rounded-xl text-lg font-medium border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-all"
+                >
+                  <Shield className="w-5 h-5" />
+                  Ver seguro salud extranjeros
+                </Link>
               </div>
               <p className="text-sm text-slate-400 mt-6">
                 Respondemos en menos de 10 minutos · Sin compromiso · 100% gratuito
