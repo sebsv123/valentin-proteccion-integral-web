@@ -564,6 +564,7 @@ export function getSubpagesForProduct(parent: string) { return subpages.filter((
 
 /* ── WhatsApp messages por campaña ── */
 export const WHATSAPP_MESSAGES: Record<string, string> = {
+  '/extranjeros': 'Hola, soy extranjero/a y necesito orientación sobre seguros para mi visado, NIE o TIE en Madrid. ¿Pueden ayudarme?',
   '/seguros/salud-extranjeros': 'Hola, estoy interesado/a en un seguro médico para visado, NIE o TIE. Me gustaría recibir orientación sobre la opción más adecuada para mi situación y el proceso para contratarlo.',
   '/seguros/health-insurance-foreigners-spain': 'Hello, I am interested in health insurance for a visa, NIE or TIE. I would like guidance on the most suitable option for my situation and the steps to arrange it.',
   '/seguros/salud-individual': 'Hola, estoy interesado/a en un seguro de salud y me gustaría recibir orientación sobre la opción más adecuada según mi situación y el precio orientativo.',
