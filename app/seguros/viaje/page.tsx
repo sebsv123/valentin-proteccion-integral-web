@@ -116,12 +116,6 @@ export default function ViajePage() {
             {/* Guarantee Badge */}
             <GuaranteeBadge type="viaje" />
 
-            {/* RESEÑAS GOOGLE */}
-            <GoogleReviewsWidget title="Opiniones de clientes sobre seguro de viaje" />
-
-            {/* GARANTÍAS PREMIUM */}
-            <GarantiasSection brandColor="#f59e0b" />
-
             {/* Team Image */}
             <div className="rounded-3xl shadow-2xl overflow-hidden border border-[#E5E7EB] max-w-2xl mx-auto mt-8">
               <Image
@@ -133,6 +127,17 @@ export default function ViajePage() {
                 className="w-full h-auto object-cover object-[center_20%]"
                 style={{ aspectRatio: '3/2' }}
               />
+            </div>
+
+            {/* CTA Strip — visible arriba */}
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <a
+                href={wCotiza}
+                className="inline-flex items-center gap-2 bg-[#2E7D32] hover:bg-[#1b5e20] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
+                Cotizar por WhatsApp
+              </a>
             </div>
           </div>
         </section>
