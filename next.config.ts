@@ -71,6 +71,12 @@ const nextConfig: NextConfig = {
         destination: '/autonomos',
         permanent: true,
       },
+      // Fusión landing campaña autónomos → ruta canónica
+      {
+        source: '/landing/autonomos',
+        destination: '/autonomos',
+        permanent: true,
+      },
     ];
   },
   async headers() {
