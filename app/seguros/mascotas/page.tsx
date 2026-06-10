@@ -193,7 +193,7 @@ export default function MascotasPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm">
                     <Heart className="w-4 h-4 text-amber-500" />
-                    Sin límite de edad
+                    Orientación clara
                   </span>
                 </div>
               </div>
