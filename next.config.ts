@@ -65,6 +65,12 @@ const nextConfig: NextConfig = {
       { source: '/seguros/proteccion-juridica', destination: '/seguros', permanent: true },
       { source: '/seguros/electrodomesticos', destination: '/seguros', permanent: true },
       { source: '/seguros/accidentes/pyme-autonomos', destination: '/seguros/accidentes-decesos', permanent: true },
+      // Consolidación ruta autónomos: /para/autonomos → /autonomos (canónica)
+      {
+        source: '/para/autonomos',
+        destination: '/autonomos',
+        permanent: true,
+      },
     ];
   },
   async headers() {

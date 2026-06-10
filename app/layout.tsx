@@ -8,7 +8,8 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-headin
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'], display: 'swap', preload: true });
 
 const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
-const META_PIXEL_ID = '1307875004562255';
+// Meta Pixel ID desde variable de entorno — evita hardcode en producción
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 import { BackgroundWrapper } from '@/components/background-wrapper';
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   manifest: '/manifest.json',
   alternates: {
-    canonical: '/',
+    // canonical se define en cada página individualmente
   },
   robots: {
     index: true,
@@ -114,7 +115,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     f.parentNode.insertBefore(j,f);
                   })(window,document,'script','dataLayer','GTM-TNB5FR4W');
                   
-                  // Meta Pixel
+                  // Meta Pixel — solo si la variable de entorno está definida
+                  ${META_PIXEL_ID ? `
                   !function(f,b,e,v,n,t,s)
                   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -125,6 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   'https://connect.facebook.net/en_US/fbevents.js');
                   fbq('init', '${META_PIXEL_ID}');
                   fbq('track', 'PageView');
+                  ` : ''}
                   
                   // Clarity
                   ${clarityId ? `(function(c,l,a,r,i,t,y){
@@ -137,15 +140,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+        {META_PIXEL_ID && (
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
       </body>
     </html>
   );

@@ -8,20 +8,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // PILAR — Home
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
 
-    // PRODUCTOS (alta intención de compra)
+    // PRODUCTOS (alta intención de compra) — añadidos vida, mascotas, viaje, senior
     { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-individual`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/seguros/salud-senior`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/seguros/vida`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/seguros/vida/hipoteca`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/seguros/mascotas`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/seguros/viaje`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/seguros/accidentes-decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    // /seguros/accidentes omitida: redirige a /seguros/accidentes-decesos (301) — no puede ser canónica
+    // /seguros/accidentes omitida: redirige a /seguros/accidentes-decesos (301)
     { url: `${base}/seguros/decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-extranjeros`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/seguros/health-insurance-foreigners-spain`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/extranjeros`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    // /para/autonomos excluida: redirige 301 a /autonomos
 
-    // ZONAS (SEO local)
+    // ZONAS (SEO local) — añadido hub
+    { url: `${base}/zonas`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/boadilla-del-monte`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/majadahonda`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/zonas/pozuelo-de-alarcon`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
@@ -32,19 +39,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/sobre-nosotros`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/opiniones`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/garantias`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // /landing/* excluidas: son campañas, no indexables orgánicamente
 
-    // AUDIENCIAS (si existen en app/para/)
+    // AUDIENCIAS (app/para/) — /para/autonomos excluida por redirect 301
     { url: `${base}/para/familias`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/para/autonomos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/para/seniors`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/para/jovenes-profesionales`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // BLOG — índice
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    // Artículos del blog (26 URLs explícitas para indexación fiable)
+    // Artículos del blog
     { url: `${base}/blog/mejor-seguro-medico-calidad-precio-espana`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/seguro-medico-privado-madrid`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/mejor-seguro-salud-madrid-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 }, // artículo existente en blog.ts
+    { url: `${base}/blog/mejor-seguro-salud-madrid-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/seguros-boadilla-del-monte`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/cuanto-cuesta-seguro-salud-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/blog/mejor-seguro-salud-autonomos-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
