@@ -7,15 +7,16 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { CheckCircle2, Shield, MapPin, Clock, Heart, Stethoscope, Wallet, Home, PawPrint, Plane, Globe, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
-  description: "Agentes de seguros registrados DGSFP en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias. Consulta gratis por WhatsApp.",
-  keywords: ["asesores seguros Madrid Oeste", "seguros Boadilla", "seguros Majadahonda", "seguros Pozuelo", "agente seguros Madrid"],
+  title: "Seguros en Boadilla del Monte y Madrid Oeste | Valentín Protección Integral",
+  description: "Atención personalizada en seguros en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. Orientación clara para familias, autónomos y extranjeros. Consulta por WhatsApp.",
+  keywords: ["seguros Boadilla del Monte", "seguros Majadahonda", "seguros Pozuelo de Alarcón", "seguros Madrid Oeste", "agente seguros DGSFP"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas" },
   openGraph: {
-    title: "Asesores de Seguros en Madrid Oeste | Valentín Protección Integral",
-    description: "Agentes de seguros registrados DGSFP en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. +10 años y +1.200 familias.",
+    title: "Seguros en Boadilla del Monte y Madrid Oeste | Valentín Protección Integral",
+    description: "Atención personalizada en seguros en Boadilla del Monte, Majadahonda, Pozuelo de Alarcón y Madrid. Orientación clara para familias, autónomos y extranjeros.",
     url: "https://valentinproteccionintegral.com/zonas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-const wCotiza = buildWhatsAppHref("Hola, estoy en Madrid Oeste y necesito información sobre seguros.");
+const wCotiza = buildWhatsAppHref("Hola, quiero recibir orientación sobre seguros en mi zona.");
 
 const zonas = [
   {
@@ -67,12 +68,12 @@ export default function ZonasPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                  Asesores de seguros en Madrid Oeste y toda la comunidad
+                  Atención personalizada en seguros en Boadilla del Monte y alrededores
                 </h1>
                 <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                  Rosa y Sebastián llevan más de 10 años ayudando a familias y autónomos 
-                  a encontrar el mejor seguro. Atendemos presencialmente en Boadilla del Monte 
-                  y por videollamada en toda la Comunidad de Madrid.
+                  Rosa y Sebastián te orientan con claridad desde hace más de 10 años. 
+                  Atendemos a familias, autónomos y personas que buscan entender mejor 
+                  sus opciones en salud, vida, decesos, dental, mascotas, viaje y extranjería.
                 </p>
                 <WhatsAppLink 
                   href={wCotiza}
