@@ -7,7 +7,7 @@ import { StickyWhatsApp } from "@/components/sticky-whatsapp";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppLink } from '@/components/whatsapp-link';
-import { CheckCircle2, Shield, MapPin, Clock, Heart, Stethoscope, Wallet, Home, PawPrint, Plane, Globe, Briefcase } from "lucide-react";
+import { CheckCircle2, Shield, Heart, Stethoscope, Wallet, Home, PawPrint, Plane, Globe, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguros en Boadilla del Monte y Madrid Oeste | Valentín Protección Integral",
@@ -158,6 +158,41 @@ export default function ZonasPage() {
                     </Link>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* QUÉ PUEDES REVISAR */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4">
+              Qué puedes revisar con nosotros
+            </h2>
+            <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+              Te orientamos con claridad en las principales áreas de protección, según tu situación y tu zona.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { icon: Stethoscope, label: "Salud", href: "/seguros/salud" },
+                { icon: Shield, label: "Vida", href: "/seguros/vida" },
+                { icon: Heart, label: "Decesos", href: "/seguros/decesos" },
+                { icon: Wallet, label: "Dental", href: "/seguros/dental" },
+                { icon: PawPrint, label: "Mascotas", href: "/seguros/mascotas" },
+                { icon: Plane, label: "Viaje", href: "/seguros/viaje" },
+                { icon: Globe, label: "Extranjería", href: "/extranjeros" },
+                { icon: Briefcase, label: "Autónomos", href: "/autonomos" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-slate-50 hover:bg-emerald-50 border border-slate-100 hover:border-emerald-200 transition-all"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <span className="text-slate-700 font-medium">{item.label}</span>
+                </Link>
               ))}
             </div>
           </div>
