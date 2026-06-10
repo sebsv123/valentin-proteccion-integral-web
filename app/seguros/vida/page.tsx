@@ -250,18 +250,19 @@ export default function VidaPage() {
                   Tu especialista en hipotecas
                 </div>
                 <h2 className="text-[48px] font-medium text-[#191c1f] leading-[1.21] tracking-[-0.48px] mb-4">
-                  Sebastián Valentín
+                  Sebastián Sifontes Valentín
                 </h2>
                 <p className="text-xl text-[#505a63] mb-6">
-                  Especialista en seguros de vida para hipotecas
+                  Agente registrado DGSFP · Especialista en seguros de vida
                 </p>
                 <p className="text-base text-[#505a63] leading-[1.50] mb-8">
-                  Más de 10 años ayudando a familias de Madrid a protegerse 
-                  ante las exigencias del banco. Te explico cada cobertura sin tecnicismos.
+                  Más de 10 años ayudando a familias de Madrid a protegerse con criterio.
+                  Te explico cada cobertura sin tecnicismos,
+                  para que elijas con claridad, no con prisas.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00a87e]/10 text-[#006400] text-sm">
                   <CheckCircle2 className="w-4 h-4" />
-                  DGSFP: C012479234434D
+                  DGSFP: C046172295271S
                 </div>
               </div>
             </div>
@@ -329,7 +330,7 @@ export default function VidaPage() {
             </div>
             
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D
+                  DGSFP: C046172295271S
             </p>
           </div>
         </section>
