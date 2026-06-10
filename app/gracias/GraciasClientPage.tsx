@@ -33,24 +33,11 @@ export default function GraciasClientPage() {
       } catch { /* ignore */ }
     }
 
-    // Fire lead_form_submit / thank_you_view as primary conversion event
+    // Fire lead_form_submit as primary conversion event (GA4 + Meta + dataLayer ya incluidos)
     trackLeadFormSubmit({
       product_slug: 'gracias',
       lead_type: 'thank_you_page',
     });
-
-    // GA4 — Contactar event (secondary)
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'Contactar', {
-        event_category: 'conversion',
-        event_label: 'gracias_page',
-      });
-    }
-    // Meta Pixel — Lead
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'Lead');
-    }
-    // Google Ads conversion tracking is handled via GTM — do not duplicate here
   }, []);
 
 
