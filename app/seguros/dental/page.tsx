@@ -105,10 +105,7 @@ export default function DentalPage() {
                   className="group inline-flex items-center gap-2 bg-[#18E299] hover:bg-[#0fa76e] text-white px-8 py-4 rounded-full text-lg font-medium transition-all hover:scale-105 shadow-[rgba(0,0,0,0.06)_0px_1px_2px]"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  💬 Cotizar WhatsApp
-                  <span className="hidden group-hover:inline text-sm ml-2">
-                    🌟 Dental + Salud = descuento
-                  </span>
+                  Cotizar por WhatsApp
                 </a>
                 <a 
                   href="#coberturas"
@@ -116,6 +113,22 @@ export default function DentalPage() {
                 >
                   Ver coberturas
                 </a>
+              </div>
+              
+              {/* Trust pills */}
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-[#666666] mb-8">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#18E299]" />
+                  Orientación personalizada
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#18E299]" />
+                  Particulares y familias
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#18E299]" />
+                  Sin pedir datos sensibles
+                </span>
               </div>
               
               {/* Hero image */}
