@@ -140,7 +140,7 @@ export default function SobreNosotrosPage() {
                   No trabajo con presión comercial. Cada conversación empieza con tus preguntas, no con mis productos. Y cada orientación busca darte más claridad, no más confusión.
                 </p>
                 <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-                  <strong>Agente registrada en la DGSFP con número C046172295271S.</strong>
+                  <strong>Agente registrada en la DGSFP con número C012479234434D.</strong>
                 </p>
 
                 {/* Stats */}
