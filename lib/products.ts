@@ -67,7 +67,7 @@ export const site = {
   instagram: 'https://www.instagram.com/segurosvalentin/',
   heroTagline: 'Tus asesores de seguros en Madrid',
   brandLine: '+10 años · +1.200 familias protegidas · Consulta gratuita',
-  brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Accidentes · Decesos',
+  brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Decesos',
   advisorName: 'Rosa Valentín',
 };
 
@@ -127,7 +127,7 @@ export const products: Product[] = [
     ],
     disclaimer:
       'Coberturas, copagos, hospitalización, reembolso y alcance territorial sujetos a modalidad y documentación contractual.',
-    related: ['vida', 'dental', 'accidentes'],
+    related: ['vida', 'dental', 'decesos'],
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
     metaTitle: 'Seguro de Salud Privado en Madrid | Desde 21€/mes · Valentín Protección Integral',
@@ -187,7 +187,7 @@ export const products: Product[] = [
     ],
     disclaimer:
       'Asistencia veterinaria, responsabilidad civil, opcionales y límites económicos sujetos a modalidad y condiciones de la póliza.',
-    related: ['salud', 'accidentes', 'viaje'],
+    related: ['salud', 'decesos', 'viaje'],
     whatsappMessage:
       'Hola, quiero orientación sobre MASCOTAS y saber qué modalidad me encaja mejor.',
     metaTitle: 'RC Perros Madrid · Obligatorio · Desde 5€/mes',
@@ -304,63 +304,6 @@ export const products: Product[] = [
     metaTitle: 'Seguro de Accidentes Madrid · Desde 15€/mes',
     metaDescription: 'Protección 24/7 ante accidentes, invalidez y fallecimiento. Sin examen médico y con una gestión rápida para particulares y autónomos.',
     h1: 'Seguro de Accidentes en Madrid: Cobertura 24/7',
-  },
-  {
-    slug: 'decesos',
-    name: 'Seguro de decesos',
-    label: 'DECESOS',
-    eyebrow: 'PREVISIÓN FAMILIAR',
-    heroTitle: 'El seguro de DECESOS puede ayudarte a dejar resueltas muchas gestiones y servicios importantes en un momento delicado',
-    heroCopy:
-      'No se trata solo del servicio funerario. Según contratación, puede incluir traslados, gestiones y servicios complementarios que ayudan a reducir carga para la familia en un momento delicado.',
-    heroImage: '/images/products/decesos-hero.webp',
-    heroAlt: 'Acompañamiento familiar con dignidad y apoyo',
-    cardImage: '/images/products/decesos-hero.webp',
-    cardAlt: 'Acompañamiento y previsión familiar',
-    summary:
-      'Una explicación más clara y humana de un ramo donde importa sentirse acompañado y entender qué gestiones y servicios pueden quedar resueltos.',
-    highlights: [
-      'No conviene reducir DECESOS solo al momento funerario.',
-      'Según contratación, este tipo de seguro puede incluir traslados, gestiones y servicios complementarios que alivian más carga a la familia.',
-      'Conviene revisar qué parte del servicio está incluida y qué puede depender de añadidos o modalidades distintas.',
-    ],
-    benefits: [
-      'Tono humano y explicaciones serenas.',
-      'Ayuda para entender qué cubre de verdad.',
-      'Acompañamiento desde la orientación hasta la decisión.',
-    ],
-    whatIncludes: [
-      'Servicios funerarios principales.',
-      'Gestiones administrativas básicas.',
-      'Posibles traslados nacionales e internacionales.',
-      'Servicios complementarios según contratación.',
-    ],
-    whatVaries: [
-      'El alcance del servicio.',
-      'Los traslados.',
-      'Las coberturas legales o adicionales.',
-      'Los servicios extra incorporados.',
-    ],
-    whatReview: [
-      'Qué gestiones están incluidas.',
-      'Si incorpora traslados.',
-      'Si incluye servicios legales o adicionales.',
-      'Qué parte del servicio depende de contratación extra.',
-    ],
-    cases: ['FAMILIAS', 'PREVISIÓN', 'TRANQUILIDAD'],
-    faqs: [
-      { q: "¿Qué cubre un seguro de decesos?", a: "Cubre todos los gastos derivados del fallecimiento: ataúd, flores, esquelas, traslados, gestiones administrativas y en muchos casos lápida y nicho. La familia no tiene que preocuparse de nada en el momento más difícil." },
-      { q: "¿Cuánto cuesta un seguro de decesos en Madrid?", a: "Desde 15-20€/mes para una persona adulta. El precio varía según la edad y las coberturas. Contratar joven resulta mucho más económico y sin esperas." },
-      { q: "¿Merece la pena un seguro de decesos o es mejor ahorrar?", a: "Un entierro en Madrid puede costar entre 3.000€ y 7.000€. El seguro de decesos garantiza esa cobertura por una cuota mensual pequeña, sin descapitalizar los ahorros familiares en un momento de duelo." },
-      { q: "¿Puedo incluir a toda la familia en un solo seguro de decesos?", a: "Sí. Los seguros de decesos familiares son más económicos que contratar pólizas individuales. Te ayudamos a calcular la opción más conveniente para toda la unidad familiar." }
-    ],
-    disclaimer:
-      'Servicio funerario, traslados, gestiones y coberturas complementarias sujetos a modalidad y contratación.',
-    related: ['vida', 'salud', 'accidentes'],
-    whatsappMessage: 'Hola, quiero orientación sobre DECESOS.',
-    metaTitle: 'Seguro de Decesos Madrid · Deja Todo Resuelto',
-    metaDescription: 'Previsión familiar con trato humano y claro. Deja resueltas gestiones y servicios para que los tuyos no tengan que preocuparse.',
-    h1: 'Seguro de Decesos en Madrid: Previsión Familiar',
   },
   {
     slug: 'viaje',
