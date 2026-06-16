@@ -54,9 +54,9 @@ const sebastianSchema = {
   "@type": "Person",
   "name": "Sebastián Valentín",
   "jobTitle": "Agente de Seguros",
-  "description": "Agente de seguros registrado en la DGSFP, especialista en seguros de salud, vida y accidentes para familias y autónomos en Madrid.",
+  "description": "Agente de seguros registrado en la DGSFP, especialista en seguros de salud y accidentes para familias y autónomos en Madrid.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
-  "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
+  "knowsAbout": ["Seguros de Salud", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
   "areaServed": "Madrid",
   "sameAs": [
     "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187/"
@@ -186,7 +186,7 @@ export default function SobreNosotrosPage() {
                                     shadow-xl border border-[var(--border)]">
                       <Image
                         src="/images/sebastian.png"
-                        alt="Sebastián Valentín, asesor de seguros especializado en vida y salud en Madrid"
+                        alt="Sebastián Valentín, asesor de seguros especializado en salud en Madrid"
                         fill
                         className="object-cover object-top"
                         loading="lazy"
@@ -196,13 +196,13 @@ export default function SobreNosotrosPage() {
                     {/* Texto Sebastián */}
                     <div>
                       <p className="kicker font-bold text-[var(--blue)]">Sebastián Valentín</p>
-                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Agente de seguros registrado en DGSFP · Especialista en Vida y Salud</p>
+                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Agente de seguros registrado en DGSFP · Especialista en Salud</p>
                       <h3 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-4">
                         El rigor técnico al servicio de tu tranquilidad
                       </h3>
                       <p className="text-base leading-8 text-[var(--muted)]">
                         Sebastián aporta al equipo una visión más técnica y analítica del mundo asegurador.
-                        Especializado en seguros de salud, vida y accidentes, su trabajo es asegurarse de
+                        Especializado en seguros de salud y accidentes, su trabajo es asegurarse de
                         que cada propuesta que llega al cliente es la más adecuada — no la más cómoda.
                       </p>
                       <p className="mt-4 text-base leading-8 text-[var(--muted)]">
@@ -216,7 +216,7 @@ export default function SobreNosotrosPage() {
                       {/* Mini-stats Sebastián */}
                       <div className="mt-6 grid grid-cols-2 gap-3">
                         {[
-                          { icon: ShieldCheck, text: 'Especialista Salud y Vida' },
+                          { icon: ShieldCheck, text: 'Especialista en Salud' },
                           { icon: ClipboardList, text: 'Análisis técnico detallado' },
                         ].map((item) => {
                           const Icon = item.icon;
