@@ -14,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/salud-senior`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/vida`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/vida/hipoteca`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/seguros/mascotas`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/viaje`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/seguros/accidentes-decesos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },

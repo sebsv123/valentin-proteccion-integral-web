@@ -46,7 +46,7 @@ export default function SchemaPersons() {
     "name": "Sebastián Sifontes Valentín",
     "jobTitle": "Agente de Seguros Vinculado Registrado DGSFP",
     "description": "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Agente de seguros vinculado registrado en la DGSFP (C046172295271S) y co-fundador de Bass Group Hispánica S.L., agencia de seguros con registro DGSFP. Atiende personalmente consultas sobre protección familiar y seguros vinculados a hipoteca.",
-    "url": "https://valentinproteccionintegral.com/seguros/vida",
+    "url": "https://valentinproteccionintegral.com",
     "telephone": "+34 689 791 380",
     "sameAs": [
       "https://wa.me/34689791380",

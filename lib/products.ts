@@ -134,70 +134,7 @@ export const products: Product[] = [
     metaDescription: 'Analiza seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento con registro oficial sin compromiso. Desde 21€/mes.',
     h1: 'Seguro de Salud en Madrid: Decide Sin Presión',
   },
-  {
-    slug: 'vida',
-    name: 'Seguro de vida',
-    label: 'VIDA',
-    eyebrow: 'PROTECCIÓN FAMILIAR',
-    heroTitle: 'Un seguro de VIDA no sirve solo para dejar un capital: te ayudo a proteger a tu familia y tu hipoteca con total seguridad',
-    heroCopy:
-      'Hola, soy Sebastián. Me especializo en encontrar la solución de VIDA que realmente responda a tu necesidad, ya sea protección familiar o asegurar tu hipoteca. El objetivo es tu tranquilidad absoluta.',
-    heroImage: '/images/agent/sebastian-enhanced.png',
-    heroAlt: 'Sebastián, asesor especialista en seguros de vida',
-    cardImage: '/images/agent/sebastian-enhanced.png',
-    cardAlt: 'Asesoría en seguros de vida',
-    summary:
-      'Protección económica, apoyo a tu familia y modalidades distintas según quieras cubrir una necesidad familiar, una deuda o una situación concreta.',
-    highlights: [
-      'Asesoramiento directo con Sebastián para una protección real.',
-      'Diferenciamos claramente entre protección familiar y seguros vinculados a hipoteca.',
-      'Te asesoramos sobre tu caso para que el capital contratado sea el que de verdad necesitas.',
-    ],
-    benefits: [
-      'Contacto directo y personal con Sebastián.',
-      'Claridad total en coberturas de fallecimiento e incapacidad.',
-      'Gestión ágil y sin complicaciones burocráticas.',
-    ],
-    whatIncludes: [
-      'Cobertura principal por fallecimiento.',
-      'Posibilidad de añadir incapacidad en algunas modalidades.',
-      'Opciones orientadas a hipoteca o deuda.',
-      'Soluciones con enfoque más específico según el riesgo cubierto.',
-    ],
-    whatVaries: [
-      'La incapacidad.',
-      'El tipo de capital.',
-      'La relación con hipoteca o deuda.',
-      'La cobertura por accidente frente a cualquier causa.',
-    ],
-    whatReview: [
-      'Qué riesgo principal quieres proteger.',
-      'Si necesitas cobertura ligada a hipoteca.',
-      'Si quieres incapacidad incluida.',
-      'Si la modalidad cubre cualquier causa o solo accidente en ciertos supuestos.',
-    ],
-    cases: ['FAMILIAS', 'HIPOTECA', 'PROTECCIÓN ECONÓMICA'],
-    faqs: [
-      { q: "¿Es obligatorio el seguro de vida con la hipoteca?", a: "No es legalmente obligatorio, aunque el banco puede exigirlo como condición del préstamo. Sin embargo, tienes derecho a contratarlo con cualquier aseguradora, no solo la del banco, lo que puede suponer un ahorro de hasta el 50%." },
-      { q: "¿Cuánto capital debo asegurar en el seguro de vida?", a: "Lo más habitual es cubrir entre 3 y 5 veces tus ingresos anuales, o el capital pendiente de tu hipoteca. En nuestra consulta gratuita calculamos la cobertura exacta que necesitas." },
-      { q: "¿Puedo contratar un seguro de vida con enfermedades previas?", a: "Sí, aunque las condiciones pueden variar. Trabajamos con varias compañías que tienen criterios diferentes, lo que nos permite encontrar una solución para casi cualquier perfil de salud." },
-      { q: "¿Cuándo debo contratar un seguro de vida?", a: "Cuanto antes mejor: el precio aumenta con la edad y puede verse afectado por el estado de salud. El momento ideal es al firmar una hipoteca, al tener hijos o al iniciar un negocio." }
-    ],
-    disclaimer:
-      'Capital, incapacidad, duración y alcance de la cobertura sujetos a modalidad y condiciones de contratación gestionadas por Sebastián.',
-    related: ['salud', 'accidentes', 'decesos'],
-    whatsappMessage: 'Hola, quiero orientación sobre un seguro de vida para mi familia o hipoteca.',
-    metaTitle: 'Seguro de Vida en Madrid · Protege a Tu Familia',
-    metaDescription: 'Protege a tu familia o tu hipoteca con un seguro de vida bien elegido. Te asesoramos para encontrar la opción que mejor encaja contigo.',
-    h1: 'Seguro de Vida en Madrid: Protege a tu Familia y tu Hipoteca',
-    customAdvisor: {
-      name: 'Rosa y Sebastián',
-      photo: '/images/rosa_y_sebastian_conversando.png',
-      phone: '+34 603 44 87 65',
-      phoneHref: '+34603448765',
-      whatsappNumber: '34603448765',
-    },
-  },
+
   {
     slug: 'mascotas',
     name: 'Seguro para mascotas',
@@ -507,7 +444,7 @@ export const subpages: ProductSubpage[] = [
   { parent: 'salud', slug: 'extranjeros', name: 'Salud para extranjeros', label: 'EXTRANJEROS', eyebrow: 'SALUD · VISADOS', title: 'Seguro médico para extranjeros en España con todo lo necesario para tu visado', summary: 'Cumple con los requisitos de extranjería: sin copagos, sin carencias y con repatriación incluida.', heroImage: '/images/products/salud-extranjeros.webp', heroAlt: 'Persona extranjera residiendo en España', bullets: ['Válido para solicitud de visado y permiso de residencia.', 'Sin copagos y sin periodos de carencia (acceso inmediato).', 'Incluye repatriación a país de origen por enfermedad o fallecimiento.', 'Asesoramiento personalizado con Sebastián, mediador de seguros colegiado.', 'Tramitación completa del certificado para tu expediente de extranjería.'], faqs: [{ q: '¿Sirve para el NIE o TIE?', a: 'Sí, el certificado cumple con todos los requisitos legales exigidos por las oficinas de extranjería.' }, { q: '¿Puedo contratar con pasaporte?', a: 'Sí, es posible realizar la contratación utilizando el número de pasaporte si aún no tienes el NIE.' }], whatsappMessage: 'Hola Sebastián, necesito un seguro médico para mis trámites de extranjería en España.', metaTitle: 'Seguro de Salud para Extranjeros en Madrid · Visado y NIE', metaDescription: 'Cumple los requisitos para tu visado de residencia en España. Seguro médico sin copagos ni carencias. Gestión incluida.', h1: 'Seguro de Salud para Extranjeros en España: Visados', advisorBadgeImage: '/images/acreditacion-sebastian-asisa.png' },
   { parent: 'salud', slug: 'reembolso', name: 'Salud con reembolso', label: 'REEMBOLSO', eyebrow: 'SALUD · LIBRE ELECCIÓN', title: 'Libertad total para elegir médico en cualquier parte del mundo', summary: 'Cuando quieres lo mejor de la sanidad privada sin límites de cuadro médico: tú elige, nosotros reembolsamos.', heroImage: '/images/products/reembolso-hero.webp', heroAlt: 'Paciente eligiendo libremente su atención médica', bullets: ['Libertad para acudir a cualquier especialista o centro mundial.', 'Reembolso de entre el 80% y el 90% de la factura.', 'Límites de cobertura muy amplios (hasta 1 millón de euros).'], faqs: [{ q: '¿Cómo funciona el reembolso?', a: 'Pagas la factura fuera de la red concertada, nos la envías y en unos 15 días te ingresamos el porcentaje correspondiente.' }, { q: '¿Incluye también el cuadro médico nacional?', a: 'Sí, además del reembolso fuera de red, tienes acceso al 100% de los centros concertados sin pagar nada.' }], whatsappMessage: 'Hola, quiero información sobre la modalidad de REEMBOLSO.', metaTitle: 'Seguro de Salud con Reembolso Madrid · Libre Elección', metaDescription: 'Elige el médico que quieras en cualquier parte del mundo. Te reembolsamos hasta el 90% de la factura. Consulta gratis hoy.', h1: 'Seguro de Salud con Reembolso en Madrid' },
   { parent: 'salud', slug: 'autonomos', name: 'Salud para autónomos', label: 'AUTÓNOMOS', eyebrow: 'SALUD · AUTÓNOMOS', title: 'Seguro médico para autónomos en Madrid con deducción fiscal incluida', summary: 'Seguro de salud privado para autónomos en Madrid con asesoramiento sobre deducción fiscal. Cobertura completa desde médico general hasta especialistas sin listas de espera.', heroImage: '/images/products/health-medical-care.webp', heroAlt: 'Autónomo trabajando con tranquilidad', bullets: ['Deducción de hasta 500€ en el IRPF por seguro médico privado.', 'Asesoramiento fiscal incluido: te explicamos cómo aplicar la deducción.', 'Cobertura completa: médico general, especialistas, urgencias 24h y pruebas diagnósticas.', 'Sin listas de espera: acceso directo al cuadro médico sin derivaciones.', 'Posibilidad de incluir cobertura dental y asistencia en viaje.'], faqs: [{ q: '¿Cuánto me puedo deducir exactamente?', a: 'Puedes deducirte hasta 500€ por persona al año. Si contratas para tu familia, cada miembro tiene su propio límite de 500€.' }, { q: '¿Qué cobertura incluye el seguro para autónomos?', a: 'Incluye médico de cabecera, todas las especialidades médicas, urgencias 24h, pruebas diagnósticas, hospitalización y cirugía. Puedes añadir cobertura dental.' }, { q: '¿Necesito tener una sociedad para deducirme el seguro?', a: 'No. Tanto si eres autónomo individual como si tienes sociedad, puedes deducirte el seguro siempre que esté contratado por ti o tu empresa.' }], whatsappMessage: 'Hola, soy autónomo y quiero información sobre seguro médico con deducción fiscal.', metaTitle: 'Seguro Médico para Autónomos Madrid · Deducción fiscal incluida', metaDescription: 'Seguro de salud privado para autónomos en Madrid con asesoramiento sobre deducción fiscal. Cobertura completa desde médico general hasta especialistas sin listas de espera.', h1: 'Seguro Médico para Autónomos en Madrid' },
-  { parent: 'vida', slug: 'hipoteca', name: 'Vida para hipoteca', label: 'HIPOTECA', eyebrow: 'VIDA · HIPOTECA', title: 'VIDA pensada para hipoteca o deuda ligada a vivienda', summary: 'Una forma más clara de entender el capital decreciente y cuándo tiene sentido.', heroImage: '/images/premium/life.webp', heroAlt: 'Familia en casa', bullets: ['Protección de una deuda concreta.', 'El capital no funciona igual que en una protección familiar estándar.', 'Te ayudamos a valorar capital, plazo y tranquilidad real.'], faqs: [{ q: '¿Es mejor para hipoteca que un VIDA general?', a: 'Depende. A veces interesa un producto muy ligado a deuda y otras una protección más abierta para la familia.' }], whatsappMessage: 'Hola, quiero orientación sobre VIDA para hipoteca.', metaTitle: 'Seguro de Vida para Hipoteca Madrid · Ahorra hasta el 50%', metaDescription: 'No pagues de más en el seguro de vida vinculado a tu hipoteca. Te ayudamos a cambiarlo y mejorar tus condiciones. Consulta sin compromiso.', h1: 'Seguro de Vida Vinculado a Hipoteca en Madrid' },
+
   { parent: 'mascotas', slug: 'responsabilidad-civil', name: 'Mascotas con responsabilidad civil', label: 'RESPONSABILIDAD CIVIL', eyebrow: 'MASCOTAS · RESPONSABILIDAD CIVIL', title: 'Cuando lo principal es la RESPONSABILIDAD CIVIL, conviene verlo claro desde el principio', summary: 'Ayuda a entender cuándo la RC es el núcleo del producto y cuándo se combina con servicios veterinarios.', heroImage: '/images/premium/happy-pets.webp', heroAlt: 'Creatividad de mascotas', bullets: ['Útil para quien prioriza daños a terceros y tranquilidad legal.', 'La asistencia veterinaria puede ir como apoyo o como producto principal.', 'Te ayudamos a diferenciar límites y extras sin ruido.'], faqs: [{ q: '¿La RESPONSABILIDAD CIVIL siempre viene igual?', a: 'No. Cambian los límites y la posición que ocupa dentro del producto.' }], whatsappMessage: 'Hola, quiero orientación sobre MASCOTAS con responsabilidad civil.', metaTitle: 'RC Perros Madrid · Obligatorio · Desde 5€/mes', metaDescription: 'Cumple la Ley de Bienestar Animal con el seguro de RC obligatorio para perros. Contratación rápida y clara. Activa tu protección hoy.', h1: 'Seguro de Responsabilidad Civil para Mascotas en Madrid' },
   { parent: 'dental', slug: 'familias', name: 'Dental para familias', label: 'FAMILIAS', eyebrow: 'DENTAL · FAMILIAS', title: 'DENTAL para familias con revisiones y tratamientos mejor explicados', summary: 'Pensada para ordenar qué aporta cada modalidad familiar antes de contratar.', heroImage: '/images/premium/dental-care.webp', heroAlt: 'Creatividad de dental', bullets: ['Buena opción para revisar actos incluidos y urgencias.', 'Aterriza diferencias entre uso puntual y base más estable.', 'Explicación clara antes de decidir.'], faqs: [{ q: '¿DENTAL familiar sirve para uso continuo?', a: 'Sí, especialmente cuando queréis tener una base más estable para revisiones y tratamientos.' }], whatsappMessage: 'Hola, quiero orientación sobre DENTAL para FAMILIAS.', metaTitle: 'Seguro Dental Familiar Madrid · Ahorra en Salud Bucal', metaDescription: 'Protege la sonrisa de toda tu familia. Revisiones, limpiezas y tratamientos incluidos o con grandes descuentos. Consulta gratis ya.', h1: 'Seguro Dental Profesional para Familias en Madrid' },
   { parent: 'accidentes', slug: 'pyme-autonomos', name: 'Accidentes para empresas', label: 'PYMES', eyebrow: 'ACCIDENTES · NEGOCIO', title: 'Protección para el motor de tu negocio: autónomos y empleados', summary: 'Seguro de accidentes que cumple con convenios y garantiza la estabilidad ante imprevistos laborales.', heroImage: '/images/products/accidentes-hero.webp', heroAlt: 'Oficina con equipo de trabajo protegido', bullets: ['Cumplimiento de obligaciones de convenios colectivos.', 'Garantía de ingresos ante incapacidad o fallecimiento accidental.', 'Primas deducibles al 100% para la empresa.'], faqs: [{ q: '¿Es obligatorio para mi empresa?', a: 'Muchos convenios colectivos obligan a contratar una póliza de accidentes para los trabajadores bajo pena de sanción.' }], whatsappMessage: 'Hola, quiero información sobre el seguro de ACCIDENTES para mi empresa.', metaTitle: 'Seguro Accidentes Autónomos Madrid · Baja Laboral', metaDescription: 'Protege tus ingresos ante una baja por accidente. Seguro para autónomos y pymes con gestión incluida. Consulta tu presupuesto hoy.', h1: 'Seguro de Accidentes para Autónomos y Pymes en Madrid' },

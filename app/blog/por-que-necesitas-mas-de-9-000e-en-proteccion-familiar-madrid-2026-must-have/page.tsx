@@ -460,8 +460,8 @@ export default function BlogPostPage() {
           <div className="container mx-auto px-4 max-w-3xl">
             <p className="text-sm text-slate-500 mb-4">Artículos relacionados:</p>
             <div className="flex flex-wrap gap-3">
-              <a href="/seguros/vida" className="px-4 py-2 bg-white rounded-full text-slate-600 hover:text-[#0F5E9C] border border-slate-200 text-sm font-medium transition-colors">
-                Seguro de Vida Madrid
+              <a href="/seguros/salud" className="px-4 py-2 bg-white rounded-full text-slate-600 hover:text-[#0F5E9C] border border-slate-200 text-sm font-medium transition-colors">
+                Seguro de Salud Madrid
               </a>
               <a href="/para/familias" className="px-4 py-2 bg-white rounded-full text-slate-600 hover:text-[#0F5E9C] border border-slate-200 text-sm font-medium transition-colors">
                 Protección para Familias

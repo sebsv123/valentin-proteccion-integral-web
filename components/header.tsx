@@ -266,7 +266,7 @@ export function Header() {
         items={[
           { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
           { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
-          ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: item.slug === 'vida' ? '/seguros/vida/hipoteca' : `/seguros/${item.slug}` })),
+          ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
         ]}
         socialItems={[

@@ -175,7 +175,7 @@ export default function ZonasPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
                 { icon: Stethoscope, label: "Salud", href: "/seguros/salud" },
-                { icon: Shield, label: "Vida", href: "/seguros/vida" },
+                { icon: Shield, label: "Accidentes", href: "/seguros/accidentes" },
                 { icon: Heart, label: "Decesos", href: "/seguros/decesos" },
                 { icon: Wallet, label: "Dental", href: "/seguros/dental" },
                 { icon: PawPrint, label: "Mascotas", href: "/seguros/mascotas" },

@@ -54,12 +54,6 @@ const nextConfig: NextConfig = {
         destination: '/seguros/accidentes-decesos',
         permanent: true,
       },
-      // Redirect URL rota vida-hipoteca
-      {
-        source: '/seguros/vida-hipoteca',
-        destination: '/seguros/vida/hipoteca',
-        permanent: true,
-      },
       // Productos retirados por política de agencia
       { source: '/seguros/negocio', destination: '/seguros', permanent: true },
       { source: '/seguros/proteccion-juridica', destination: '/seguros', permanent: true },

@@ -41,7 +41,7 @@ export function FAQAccordion({ items, contextualLinks = false }: { items: { q: s
                     <a href={buildWhatsAppHref(`Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                     <Link href="/contacto" className="btn-ghost !px-4 !py-3 text-sm">Pedir orientación</Link>
                     <Link href="/seguros/salud" className="btn-ghost !px-4 !py-3 text-sm">Ver SALUD</Link>
-                    <Link href="/seguros/vida" className="btn-ghost !px-4 !py-3 text-sm">Ver VIDA</Link>
+                    
                     <Link href="/seguros/mascotas" className="btn-ghost !px-4 !py-3 text-sm">Ver MASCOTAS</Link>
                     <Link href="/seguros/viaje" className="btn-ghost !px-4 !py-3 text-sm">Ver VIAJE</Link>
                   </div>

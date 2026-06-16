@@ -70,7 +70,7 @@ export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
       "name": "Seguros disponibles",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Salud", "url": "https://valentinproteccionintegral.com/seguros/salud" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Vida", "url": "https://valentinproteccionintegral.com/seguros/vida" } },
+        
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro para Mascotas", "url": "https://valentinproteccionintegral.com/seguros/mascotas" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro Dental", "url": "https://valentinproteccionintegral.com/seguros/dental" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Viaje", "url": "https://valentinproteccionintegral.com/seguros/viaje" } },
