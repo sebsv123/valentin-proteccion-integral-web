@@ -186,7 +186,7 @@ export default function SobreNosotrosPage() {
                                     shadow-xl border border-[var(--border)]">
                       <Image
                         src="/images/sebastian.png"
-                        alt="Sebastián Valentín, asesor de seguros especializado en salud en Madrid"
+                        alt="Sebastián Valentín, asesor de seguros especializado en salud"
                         fill
                         className="object-cover object-top"
                         loading="lazy"
