@@ -140,7 +140,7 @@ export default function SobreNosotrosPage() {
                   No trabajo con presión comercial. Cada conversación empieza con tus preguntas, no con mis productos. Y cada orientación busca darte más claridad, no más confusión.
                 </p>
                 <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-                  <strong>Agente registrada en la DGSFP con número C012479234434D.</strong>
+                  <strong>Agente registrada en la DGSFP con número C046172295271S.</strong>
                 </p>
 
                 {/* Stats */}
@@ -171,7 +171,7 @@ export default function SobreNosotrosPage() {
                   <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Agentes registrados</p>
                   <p className="text-base leading-8 text-[var(--muted)]">
                     No somos una compañía aseguradora. Somos agentes registrados en la DGSFP
-                    (<strong>Nº C012479234434D · NIF 79234434D</strong>).
+                    (<strong>Nº C046172295271S · NIF 79234434D</strong>).
                     Eso significa que te asesoramos con criterio profesional y registro oficial.
                     Nuestro único objetivo es que tengas la mejor cobertura al precio más justo.
                   </p>
@@ -210,7 +210,7 @@ export default function SobreNosotrosPage() {
                         una póliza, qué no cubre y por qué. Sin atajos. Sin letra pequeña escondida.
                       </p>
                       <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-                        <strong>Agente registrado en la DGSFP con número C012479234434D.</strong>
+                        <strong>Agente registrado en la DGSFP con número C046172295271S.</strong>
                       </p>
 
                       {/* Mini-stats Sebastián */}

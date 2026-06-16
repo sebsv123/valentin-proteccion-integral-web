@@ -378,9 +378,64 @@ export const products: Product[] = [
     metaDescription: 'Seguro de viaje en Madrid desde 3€/día. Asistencia médica, repatriación, anulación y equipaje. Puntual, multiviaje o para estudios. Rosa y Sebastián te orientan en 30 minutos, gratis.',
     h1: 'Seguro de Viaje en Madrid: Cobertura Médica, Anulación y Equipaje',
   },
+  {
+    slug: 'decesos',
+    name: 'Seguro de decesos',
+    label: 'DECESOS',
+    eyebrow: 'PREVISIÓN FAMILIAR',
+    heroTitle: 'Un seguro de DECESOS te permite dejar todo previsto para que tu familia solo tenga que preocuparse de lo importante',
+    heroCopy:
+      'Más allá del servicio funerario, un seguro de decesos bien elegido cubre gestiones, trámites y asistencia en momentos difíciles. Te ayudamos a entender qué incluye realmente cada opción y a elegir con serenidad.',
+    heroImage: '/images/products/accidentes-hero.webp',
+    heroAlt: 'Tranquilidad y previsión familiar con seguro de decesos',
+    cardImage: '/images/products/accidentes-hero.webp',
+    cardAlt: 'Protección familiar con seguro de decesos',
+    summary:
+      'Servicio funerario completo, asistencia familiar, gestiones administrativas y coberturas adicionales adaptadas a cada familia.',
+    highlights: [
+      'El servicio funerario básico suele incluir tanatorio, féretro, incineración o entierro y gestión de documentos. Si buscas algo más completo, conviene revisar opciones que añadan flores, esquelas o vehículo familiar.',
+      'Contamos con soluciones específicas para familias, con posibilidad de incluir a ascendientes y descendientes en la misma póliza sin coste adicional.',
+      'Hay coberturas que van más allá del fallecimiento: asistencia en viaje, orientación jurídica familiar o servicios de recuerdo online.',
+    ],
+    benefits: [
+      'Evitas que tu familia tenga que ocuparse de gestiones administrativas en un momento delicado.',
+      'Protección económica: los gastos de sepelio están cubiertos sin que tus seres queridos tengan que adelantar el dinero.',
+      'Tranquilidad de saber que está todo organizado y contratado con antelación.',
+    ],
+    whatIncludes: [
+      'Servicio funerario completo (tanatorio, féretro, incineración o entierro).',
+      'Gestión de documentación (certificado de defunción, licencia de enterramiento, etc.).',
+      'Traslado nacional e internacional del fallecido.',
+    ],
+    whatVaries: [
+      'El capital destinado al servicio funerario.',
+      'La inclusión de coberturas adicionales (flores, esquelas, vehículo familiar).',
+      'La posibilidad de contratar asistencia en viaje o servicios de recuerdo online.',
+    ],
+    whatReview: [
+      'Si buscas protección individual o para toda la familia.',
+      'Si prefieres un servicio básico o uno más completo con extras.',
+      'Qué coberturas adicionales pueden ser relevantes para tu situación.',
+    ],
+    cases: ['PARTICULARES', 'FAMILIAS', 'SENIORS', 'SIN LÍMITE DE EDAD'],
+    faqs: [
+      { q: "¿Qué diferencia hay entre un seguro de decesos y un servicio funerario contratado en el momento?", a: "El seguro de decesos se contrata con antelación y garantiza el servicio y las coberturas acordadas al precio pactado. Contratarlo en el momento suele ser más caro y con menos opciones de personalización." },
+      { q: "¿Puedo incluir a toda mi familia en la misma póliza?", a: "Sí. La mayoría de seguros de decesos permiten incluir al cónyuge, hijos, ascendientes y descendientes en la misma póliza, a menudo con descuentos por unidad familiar." },
+      { q: "¿Hay límite de edad para contratar?", a: "No. Existen opciones para todas las edades, aunque las primas pueden variar según la edad de contratación. Algunas aseguradoras no tienen límite de edad máxima." },
+      { q: "¿Qué cubre exactamente el servicio funerario?", a: "Generalmente incluye tanatorio, féretro, incineración o entierro, gestión de documentos y traslado. Las coberturas adicionales como flores, esquelas o vehículo familiar varían según la modalidad." }
+    ],
+    disclaimer:
+      'Servicio funerario, coberturas adicionales y capital asegurado sujetos a modalidad y condiciones del producto contratado.',
+    related: ['vida', 'salud', 'accidentes'],
+    whatsappMessage: 'Hola, quiero orientación sobre DECESOS para mí o para mi familia.',
+    metaTitle: 'Seguro de Decesos Madrid · Desde 10€/mes',
+    metaDescription: 'Deja todo previsto para que tu familia solo tenga que preocuparse de lo importante. Servicio funerario completo, asistencia y gestión incluida. Consulta gratis hoy.',
+    h1: 'Seguro de Decesos en Madrid: Previsión y Tranquilidad',
+  },
 ];
 
 export const subpages: ProductSubpage[] = [
+
   { parent: 'salud', slug: 'completa', name: 'Salud completa', label: 'COMPLETA', eyebrow: 'SALUD · COMPLETA', title: 'La modalidad más robusta: cobertura médica integral sin restricciones', summary: 'Hospitalización, cirugía, especialistas, urgencias y pruebas avanzadas con acceso directo al cuadro médico completo. La opción más fuerte para quien no quiere renunciar a nada.', heroImage: '/images/products/health-medical-care.webp', heroAlt: 'Atención médica integral y completa', bullets: ['Hospitalización y cirugía incluidas sin limitaciones de la modalidad básica.', 'Acceso directo a todos los especialistas del cuadro médico, sin derivaciones innecesarias.', 'Urgencias 24h, pruebas diagnósticas avanzadas (resonancia, TAC, analíticas) y segunda opinión médica.', 'Cobertura de asistencia en viaje y traslado sanitario en las principales opciones del mercado.', 'Posibilidad de incluir coberturas adicionales como salud mental, fisioterapia y medicina preventiva.'], faqs: [{ q: '¿Qué diferencia hay entre la modalidad básica y la completa?', a: 'La modalidad básica se centra en consultas, especialistas y pruebas ambulatorias. La completa añade hospitalización, cirugía, urgencias 24h y un cuadro médico más amplio. Es la diferencia más importante al elegir.' }, { q: '¿Tiene periodo de carencia?', a: 'Sí, como la mayoría de seguros de salud. Los periodos varían según la cobertura: urgencias suelen ser inmediatas, mientras que hospitalización y cirugía pueden tener entre 3 y 6 meses de carencia según aseguradora.' }, { q: '¿Puedo añadir dental o reembolso a la modalidad completa?', a: 'Sí. Muchas aseguradoras permiten complementar la modalidad completa con un módulo dental o con la opción de reembolso para libre elección de médico.' }], whatsappMessage: 'Hola, quiero orientación sobre la modalidad COMPLETA de SALUD.', metaTitle: 'Seguro de Salud Completo Madrid · Hospitalización Incluida', metaDescription: 'La máxima cobertura para tu salud. Hospitalización, especialistas y urgencias en Madrid. Compara opciones y pide tu consulta gratuita.', h1: 'Seguro de Salud Completo en Madrid: Cobertura Total' },
   { parent: 'salud', slug: 'familias', name: 'Salud para familias', label: 'FAMILIAS', eyebrow: 'SALUD · FAMILIAS', title: 'SALUD para familias con una orientación más útil y menos fría', summary: 'Pediatría, urgencias, hospitalización y equilibrio entre prima y uso ordenados para decidir mejor.', heroImage: '/images/premium/hero-family.webp', heroAlt: 'Familia caminando junta', bullets: ['Orientación sobre copago y sin copago según frecuencia de uso.', 'Especial atención a coberturas familiares y atención pediátrica según modalidad.', 'Ayuda para decidir sin perderte en términos técnicos.'], faqs: [{ q: '¿Compensa una modalidad con copago para una familia?', a: 'Depende del uso previsto y del equilibrio que busquéis entre prima y utilización. Lo revisamos con un criterio práctico.' }, { q: '¿Conviene mirar solo el precio?', a: 'No. En SALUD familiar suelen importar mucho las urgencias, la hospitalización y la flexibilidad del producto.' }], whatsappMessage: 'Hola, quiero orientación sobre SALUD para FAMILIAS.', metaTitle: 'Seguro de Salud para Familias Madrid · Pediatría Incluida', metaDescription: 'Protege a los que más quieres con un seguro de salud familiar. Comparamos opciones para encontrar el mejor equilibrio entre precio y cobertura.', h1: 'Seguro de Salud para Familias en Madrid' },
   { parent: 'salud', slug: 'senior', name: 'Salud senior', label: 'SENIOR', eyebrow: 'SALUD · SENIOR', title: 'SALUD para mayores de 55 con asesor médico personal', summary: 'Una opción pensada para quienes buscan tranquilidad, con un médico que te guía y sin sorpresas en el precio.', heroImage: '/images/products/salud-senior.webp', heroAlt: 'Pareja senior disfrutando con plenitud', bullets: ['Acceso a un asesor médico personal que gestiona tus citas y dudas.', 'Cobertura completa incluyendo hospitalización y cirugía.', 'Asistencia en viaje mundial hasta 12.000€.'], faqs: [{ q: '¿Hay límite de edad para contratar?', a: 'Está diseñado para personas de entre 55 y 84 años.' }, { q: '¿Qué es el asesor médico personal?', a: 'Es un especialista que te orienta sobre qué médico visitar y te ayuda a sacar el máximo partido a tu seguro.' }], whatsappMessage: 'Hola, quiero orientación sobre SALUD para mayores (Senior).', metaTitle: 'Seguro de Salud Senior Madrid · Mayores de 55', metaDescription: 'La tranquilidad que buscas para tu jubilación. Seguros de salud para mayores con cuadro médico completo y asesor médico personal.', h1: 'Seguro de Salud para Mayores en Madrid: Sin Esperas' },
