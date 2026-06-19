@@ -516,6 +516,7 @@ export function ExtranjeroLanding() {
                   className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 
                              underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
                 >
+                  <WhatsAppIcon className="h-4 w-4" />
                   Consultar póliza de empresa →
                 </WhatsAppLink>
               </div>

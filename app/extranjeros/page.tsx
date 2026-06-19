@@ -15,6 +15,7 @@ import { Header } from '@/components/header';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { googleReviews, googleReviewsSummary } from '@/lib/google-reviews';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import styles from './extranjeros-hero.module.css';
 
 const personalWhatsApp = buildWhatsAppHref('Hola, necesito orientación sobre un seguro médico para mi trámite en España.');
@@ -308,6 +309,7 @@ export default function ExtranjerosPage() {
                     <span className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</span>
                     <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
+                      {item.action === 'whatsapp_click' ? <WhatsAppIcon className="h-4 w-4" /> : null}
                       Enviar una consulta <ArrowRight className="h-4 w-4" />
                     </span>
                   </span>
@@ -471,7 +473,7 @@ export default function ExtranjerosPage() {
 	                        action="whatsapp_click"
 	                        label="professional_collaboration"
                       >
-                        <MessageCircle className="h-4 w-4" /> Consultar antes
+                        <WhatsAppIcon className="h-4 w-4" /> Consultar antes
                       </ForeignersTrackedLink>
                     </div>
                   </div>
@@ -537,7 +539,7 @@ export default function ExtranjerosPage() {
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
                 <a href={personalWhatsApp} className="btn-whatsapp sm:w-auto xl:w-fit">
-                  <MessageCircle className="h-4 w-4" /> Hablar por WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp
                 </a>
                 <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
               </div>
@@ -557,7 +559,7 @@ export default function ExtranjerosPage() {
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
                   <ForeignersTrackedLink href={personalWhatsApp} className="btn-whatsapp" action="whatsapp_click" label="final_cta">
-                    Revisar mi situación
+                    <WhatsAppIcon className="h-4 w-4" /> Revisar mi situación
                   </ForeignersTrackedLink>
 	                  <ForeignersTrackedLink href="#derivar-consulta" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]" action="cta_click" label="final_to_form">
 	                    Derivar un caso

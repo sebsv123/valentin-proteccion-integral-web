@@ -101,8 +101,9 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
           </p>
           <WhatsAppLink
             href="https://wa.me/34603448765?text=Hola%2C%20quiero%20revisar%20precios%20de%20seguro%20para%20mi%20mascota"
-            className="flex-none text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
+            className="inline-flex flex-none items-center gap-1.5 text-sm font-bold underline underline-offset-4 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
+            <WhatsAppIcon className="h-4 w-4" />
             Compruébalo gratis →
           </WhatsAppLink>
         </div>
@@ -353,6 +354,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                 href="https://wa.me/34603448765?text=Hola%2C%20quiero%20contratar%20la%20RC%20obligatoria%20para%20mi%20perro"
                 className="inline-flex items-center gap-1 text-sm font-bold text-[var(--blue)] mt-3 underline underline-offset-2 hover:text-[var(--blue-deep)] transition-colors"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 Contratar RC ahora →
               </WhatsAppLink>
             </div>

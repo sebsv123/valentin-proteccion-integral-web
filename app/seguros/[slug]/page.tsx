@@ -96,8 +96,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
               <WhatsAppLink
                 href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
-                className="flex-none text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
+                className="inline-flex flex-none items-center gap-1.5 text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 Consúltanos →
               </WhatsAppLink>
             </div>

@@ -9,6 +9,7 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import HowItWorksSection from '@/components/HowItWorksSection';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 
 export const metadata: Metadata = {
@@ -95,7 +96,7 @@ export default function ContactoPage() {
                     Estamos en Boadilla del Monte, Madrid. Llámanos al <strong>603 44 87 65</strong> o escíbenos por WhatsApp. Rosa y Sebastián Valentín responden en menos de 2 horas en horario de atención.
                   </p>
                   <div className="mt-6 grid gap-3">
-                    <a href={buildWhatsAppHref('Hola, quiero resolver una duda sobre seguros.')} className="btn-whatsapp justify-center">Consulta sin compromiso</a>
+                    <a href={buildWhatsAppHref('Hola, quiero resolver una duda sobre seguros.')} className="btn-whatsapp justify-center"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
                     <a href={`tel:${site.phoneHref}`} className="btn-secondary justify-center">Llamar al {site.phone}</a>
                   </div>
                 </div>

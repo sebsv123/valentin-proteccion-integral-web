@@ -15,6 +15,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { WhatsAppLink } from '@/components/whatsapp-link';
 import { CheckCircle } from 'lucide-react';
 import { captureUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 const SESSION_KEY = 'valentin_conversion_fired';
 
@@ -69,6 +70,7 @@ export default function GraciasClientPage() {
                 rel="noreferrer"
                 className="btn-whatsapp inline-flex justify-center"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 Escribir por WhatsApp
               </WhatsAppLink>
               <Link href="/seguros" className="btn-secondary inline-flex justify-center">

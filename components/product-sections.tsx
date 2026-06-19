@@ -27,7 +27,7 @@ export function ProductHero({ product }: { product: Product }) {
                 <h1 id="product-h1" className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl lg:text-7xl leading-[1.1]">{product.h1}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">{product.heroCopy}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Link href="/contacto" className="btn-primary hover-lift px-10"><WhatsAppIcon className="h-5 w-5" /> Solicitar orientación</Link>
+                  <Link href="/contacto" className="btn-primary hover-lift px-10">Solicitar orientación</Link>
                   <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
                 </div>
                 {subpages.length ? (
@@ -297,7 +297,7 @@ export function RelatedProducts({ product }: { product: Product }) {
                   <p className="text-base leading-relaxed text-[var(--muted)] flex-grow">{item.summary}</p>
                   <div className="mt-8 flex flex-col gap-3">
                     <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">Ver seguro de {item.name} <ArrowRight className="h-4 w-4" /></Link>
-                    <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur">Consulta rápida</a>
+                    <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur"><WhatsAppIcon className="h-4 w-4" /> Consulta rápida</a>
                   </div>
                 </div>
               </article>

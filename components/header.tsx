@@ -7,6 +7,7 @@ import { ChevronDown, Instagram, Menu, Phone, X } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { MouseEvent } from 'react';
+import { WhatsAppIcon } from './ui/whatsapp-icon';
 
 
 import PillNav from './ui/pill-nav';
@@ -137,6 +138,7 @@ export function Header() {
                 onClick={(e) => handleWhatsAppClick(e, 'nav-header', whatsappHref)}
                 className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)] min-w-[100px]"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
               </a>
               <a
@@ -186,7 +188,7 @@ export function Header() {
               Accede al producto que te interesa y, cuando tenga sentido, profundiza por perfil o modalidad.
             </p>
             <div className="mt-5 grid gap-3">
-              <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center">Consulta sin compromiso</a>
+              <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
               <a href={`tel:${site.phoneHref}`} className="btn-ghost !w-full !justify-center"><Phone className="h-4 w-4" /> {site.phone}</a>
             </div>
           </div>

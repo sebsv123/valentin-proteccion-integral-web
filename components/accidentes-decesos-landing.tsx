@@ -414,6 +414,7 @@ export function AccidentesDecesosLanding() {
                     href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, tengo salud con vosotros y quiero consultar sobre añadir accidentes y decesos.")}`}
                     className="text-sm font-bold text-amber-800 underline hover:text-amber-900"
                   >
+                    <WhatsAppIcon className="mr-1.5 inline h-4 w-4 align-[-2px]" />
                     Preguntar por combinado →
                   </WhatsAppLink>
                 </div>
@@ -576,8 +577,9 @@ export function AccidentesDecesosLanding() {
                 </p>
                 <WhatsAppLink
                   href={`https://wa.me/34603448765?text=${encodeURIComponent("Hola, me gustaría contratar accidentes/decesos y aprovechar la revisión gratuita de seguros.")}`}
-                  className="inline-flex items-center text-sm font-bold text-amber-800 underline hover:text-amber-900"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-amber-800 underline hover:text-amber-900"
                 >
+                  <WhatsAppIcon className="h-4 w-4" />
                   Quiero mi revisión gratuita →
                 </WhatsAppLink>
               </div>

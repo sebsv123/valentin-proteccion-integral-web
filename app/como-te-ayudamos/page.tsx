@@ -23,6 +23,7 @@ import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 export const metadata: Metadata = {
   title: "Cómo Te Ayudamos · Seguros en Madrid | VPI",
@@ -104,7 +105,7 @@ export default function ComoTeAyudamosPage() {
                   </div>
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                     <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
-                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y información sobre seguros para mi situación.')} className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp">Hablar por WhatsApp</a>
+                    <a href={buildWhatsAppHref('Hola, quiero orientación sobre un seguro y información sobre seguros para mi situación.')} className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                   </div>
                 </div>
                 <div className="relative min-h-[360px]">
@@ -217,6 +218,7 @@ export default function ComoTeAyudamosPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      <WhatsAppIcon className="h-4 w-4" />
                       Consulta gratuita ahora
                     </WhatsAppLink>
                   </div>
@@ -245,6 +247,7 @@ export default function ComoTeAyudamosPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      <WhatsAppIcon className="h-4 w-4" />
                       Hablar con Sebastián
                     </WhatsAppLink>
                   </div>

@@ -150,6 +150,7 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
                       href={buildWhatsAppHref(product.whatsappMessage || `Hola, quiero información sobre ${product.label}`)}
                       className="btn-whatsapp w-full justify-center font-bold"
                     >
+                      <WhatsAppIcon className="h-4 w-4" />
                       Consultar por WhatsApp
                     </a>
                     <Link
@@ -206,7 +207,7 @@ export function ComparisonCardsSection() {
                       {actions[index].cta}
                     </Link>
                     <a href={actions[index].wa} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur">
-                      Hablar por WhatsApp
+                      <WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp
                      </a>
                   </div>
                 </div>
@@ -292,7 +293,7 @@ export function GeneralFaqSection() {
               <h2 id="faq-title" className="mt-3 section-title">¿Tienes preguntas antes de empezar?</h2>
               <p className="section-copy mt-4">Aquí respondemos con más detalle a preguntas habituales. Y si prefieres una explicación más personal, puedes escribirnos por WhatsApp o pedir orientación.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
-                <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit" aria-label="Hablar con Rosa Valentín por WhatsApp">Hablar por WhatsApp</a>
+                <a href={buildWhatsAppHref('Hola, tengo una duda sobre seguros y quiero una orientación.')} className="btn-whatsapp sm:w-auto xl:w-fit" aria-label="Hablar con Rosa Valentín por WhatsApp"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                 <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit" aria-label="Solicitar consulta sin compromiso por formulario">Consulta sin compromiso</Link>
               </div>
             </div>
@@ -334,7 +335,7 @@ export function FinalCTASection() {
               </div>
               <div className="mt-10 flex flex-col gap-4 justify-center sm:flex-row">
                 <Link href="/contacto" className="btn-primary bg-white text-[var(--blue-deep)] hover:bg-white/90">Elegir mi seguro con Rosa</Link>
-                <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para revisar qué seguro me encaja mejor.')} className="btn-whatsapp bg-[#4CAF50] text-white border-none">Hablar por WhatsApp</a>
+                <a href={buildWhatsAppHref('Hola, quiero una consulta sin compromiso para revisar qué seguro me encaja mejor.')} className="btn-whatsapp bg-[#4CAF50] text-white border-none"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
               </div>
             </div>
           </div>
@@ -387,7 +388,7 @@ export function MascotHelperSection() {
                 </div>
                 <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                   <Link href="/como-te-ayudamos" className="btn-primary hover-lift px-8">Explorar cómo ayudamos</Link>
-                  <a href={buildWhatsAppHref('Hola, quiero una orientación para entender mejor qué seguro me conviene.')} className="btn-whatsapp animate-pulse-soft px-8 font-extrabold">Hablar con Rosa</a>
+                  <a href={buildWhatsAppHref('Hola, quiero una orientación para entender mejor qué seguro me conviene.')} className="btn-whatsapp animate-pulse-soft px-8 font-extrabold"><WhatsAppIcon className="h-4 w-4" /> Hablar con Rosa</a>
                 </div>
               </div>
             </div>

@@ -154,6 +154,7 @@ export default async function SaludIndividualPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
+            <WhatsAppIcon className="h-4 w-4" />
             Cotizar ahora
           </WhatsAppLink>
         </div>
@@ -421,6 +422,7 @@ export default async function SaludIndividualPage() {
             <p className="text-center text-sm text-gray-400 mt-8">
               * Precios orientativos para adulto entre 30-45 años en Madrid. El precio exacto depende de tu edad y modalidad.
               <WhatsAppLink href={buildWhatsAppHref("Hola, estoy interesado/a en un seguro de salud y me gustaría recibir orientación sobre la opción más adecuada según mi situación y el precio orientativo.")} className="text-emerald-600 font-medium ml-1 hover:underline">
+                <WhatsAppIcon className="mr-1 inline h-4 w-4 align-[-2px]" />
                 Pídenos tu presupuesto sin compromiso →
               </WhatsAppLink>
             </p>
@@ -640,7 +642,6 @@ export default async function SaludIndividualPage() {
     </>
   );
 }
-
 
 
 

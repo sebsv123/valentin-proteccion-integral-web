@@ -141,6 +141,7 @@ export default function HowItWorksSection() {
               )}
               className="btn-whatsapp"
             >
+              <WhatsAppIcon className="h-4 w-4" />
               Empezar ahora por WhatsApp
             </a>
           </div>

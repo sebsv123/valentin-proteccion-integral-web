@@ -10,6 +10,7 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { getPexelsImage } from '@/lib/pexels';
 import { BlogGrid } from '@/components/blog-grid';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 export const metadata: Metadata = {
   title: "Blog de Seguros · Consejos Sin Letra Pequeña | Valentín",
@@ -103,7 +104,7 @@ export default async function BlogPage() {
               <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Podemos pasar de la guía a tu caso concreto</h2>
               <p className="mt-4 max-w-3xl text-lg leading-9 text-white/80">Si quieres aterrizar lo que has leído a tu situación real, puedes escribirnos por WhatsApp o pedir orientación sin compromiso.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a href={buildWhatsAppHref('Hola, vengo del blog y quiero una orientación sobre seguros.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]">Hablar por WhatsApp</a>
+                <a href={buildWhatsAppHref('Hola, vengo del blog y quiero una orientación sobre seguros.')} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                 <Link href="/contacto" className="btn-secondary !bg-transparent !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Ir a contacto</Link>
               </div>
             </div>

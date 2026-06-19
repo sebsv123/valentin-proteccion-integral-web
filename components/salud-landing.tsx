@@ -526,6 +526,7 @@ export function SaludLanding() {
                   className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 
                              underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
                 >
+                  <WhatsAppIcon className="h-4 w-4" />
                   Consultarnos por WhatsApp →
                 </WhatsAppLink>
               </div>

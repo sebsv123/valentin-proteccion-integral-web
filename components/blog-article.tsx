@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Calendar, CheckCircle, Clock, MessageCircle, FileText, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, CheckCircle, Clock, FileText, ChevronRight } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
 import { buildWhatsAppHref } from '@/lib/products';
 import { FAQAccordion } from '@/components/faq-accordion';
 import RevealLight from '@/components/ui/reveal-light';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 export function BlogArticle({ post }: { post: BlogPost }) {
   const related = getRelatedPosts(post.slug);
@@ -114,7 +115,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                         href={buildWhatsAppHref(`Hola, vengo del artículo "${post.title}" y quiero una orientación personalizada.`)}
                         className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-8 py-4 text-base font-bold text-[var(--blue-deep)] shadow-lg transition-all hover:bg-white/90 hover:shadow-xl active:scale-[0.98]"
                       >
-                        <MessageCircle className="h-5 w-5" />
+                        <WhatsAppIcon className="h-5 w-5" />
                         Hablar por WhatsApp
                       </a>
                       <Link
@@ -166,7 +167,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                 <p className="font-heading text-xl font-bold text-[var(--blue-deep)]">¿Prefieres resolverlo en persona?</p>
                 <p className="mt-2 text-sm leading-7 text-[var(--muted)]">Puedes escribirnos por WhatsApp y te ayudamos a aterrizar cualquier información a tu caso concreto.</p>
                 <div className="mt-4 grid gap-3">
-                  <a href={buildWhatsAppHref('Hola, vengo del blog y quiero una orientación.')} className="btn-whatsapp w-full justify-center">WhatsApp</a>
+                  <a href={buildWhatsAppHref('Hola, vengo del blog y quiero una orientación.')} className="btn-whatsapp w-full justify-center"><WhatsAppIcon className="h-4 w-4" /> WhatsApp</a>
                   <Link href="/contacto" className="btn-ghost w-full justify-center">Formulario</Link>
                 </div>
               </div>
