@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronDown, Instagram, Menu, Phone, X } from 'lucide-react';
@@ -8,35 +7,12 @@ import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } fro
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { MouseEvent } from 'react';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
+import { BrandLockup } from './ui/brand-lockup';
 
 
 import PillNav from './ui/pill-nav';
 import { StaggeredMenu } from './ui/staggered-menu';
 import IridescenceBackground from './ui/iridescence-background';
-
-function Brand() {
-  return (
-    <Link href="/" className="flex items-center gap-3 shrink-0" aria-label={site.name}>
-      <div className="relative h-[52px] w-[52px] sm:h-[56px] sm:w-[56px] shrink-0">
-        <Image
-          src="/brand/logo-vpi.webp"
-          alt={site.name}
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
-      <div className="hidden sm:flex flex-col leading-none">
-        <span className="font-heading text-[20px] xl:text-[22px] font-extrabold tracking-tight text-white">
-          Valentín
-        </span>
-        <span className="text-[12px] xl:text-[13px] font-semibold tracking-wide text-white/80 mt-0.5">
-          Protección Integral
-        </span>
-      </div>
-    </Link>
-  );
-}
 
 export function Header() {
   const [mega, setMega] = useState(false);
@@ -84,7 +60,7 @@ export function Header() {
       <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
         <div className="container-shell mx-auto px-4 max-w-[1400px]">
           <div className="flex items-center justify-between gap-3 py-3 xl:gap-5 xl:py-4">
-            <Brand />
+            <BrandLockup variant="light" size="compact" priority />
 
             <nav className="hidden items-center gap-1 xl:flex">
               {/* Mega Menu trigger */}
@@ -262,7 +238,7 @@ export function Header() {
       <StaggeredMenu
         isFixed={true}
         position="right"
-        logoUrl="/brand/logo-vpi.webp"
+        brand={<BrandLockup variant="dark" size="compact" />}
         colors={['#002244', '#0F5E9C']}
         accentColor="#0F5E9C"
         items={[

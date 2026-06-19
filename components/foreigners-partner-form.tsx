@@ -88,11 +88,11 @@ export function ForeignersPartnerForm() {
     <form className="grid gap-5" onFocusCapture={markStarted} onSubmit={handleSubmit(onSubmit)} noValidate>
       <input type="text" className="hidden" tabIndex={-1} autoComplete="off" {...register('website')} />
 
-      <div className="flex flex-wrap items-center gap-2 rounded-[18px] border border-[var(--border)] bg-[var(--bg)] px-3 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--blue-deep)]">
+      <div className="grid items-center gap-1.5 rounded-[18px] border border-[var(--border)] bg-[var(--bg)] px-3 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--blue-deep)] sm:flex sm:flex-wrap sm:gap-2 sm:py-2">
         <span>01 Tus datos</span>
-        <span className="text-[var(--blue)]/45">→</span>
+        <span className="rotate-90 justify-self-start text-[var(--blue)]/45 sm:rotate-0">→</span>
         <span>02 Datos del caso</span>
-        <span className="text-[var(--blue)]/45">→</span>
+        <span className="rotate-90 justify-self-start text-[var(--blue)]/45 sm:rotate-0">→</span>
         <span>03 Confirmación</span>
       </div>
 

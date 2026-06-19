@@ -1072,3 +1072,133 @@
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .section {
+    overflow: hidden;
+    padding-block: 3.25rem;
+  }
+
+  .section::before {
+    inset: 8% 0 auto;
+    width: 100%;
+    height: 28rem;
+  }
+
+  .grid {
+    gap: 1.25rem;
+  }
+
+  .mapShell,
+  .mapPlaceholder {
+    min-height: 0;
+    height: auto;
+    border-radius: 26px;
+  }
+
+  .mapShell {
+    padding: 0.75rem;
+  }
+
+  .mapDecor {
+    min-height: clamp(17rem, 76vw, 20rem);
+    border-radius: 20px;
+  }
+
+  .canvasMount canvas {
+    transform: scale(0.94);
+    transform-origin: 50% 42%;
+  }
+
+  .expeditionCard {
+    margin-top: 0.7rem;
+    padding: 0.72rem;
+    border-radius: 18px;
+  }
+
+  .expeditionRow {
+    min-height: 2.15rem;
+  }
+
+  .copyColumn {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  .intro h2 {
+    font-size: clamp(2rem, 9vw, 2.55rem);
+    line-height: 1.02;
+  }
+
+  .intro p:last-child {
+    margin-top: 0.8rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .steps {
+    gap: 0.65rem;
+    margin-top: 1.1rem;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+
+  .stepsTrack,
+  .steps::before {
+    display: none;
+  }
+
+  .stepZone {
+    min-height: 0;
+  }
+
+  .stepCard {
+    grid-template-columns: 2.65rem minmax(0, 1fr);
+    gap: 0.72rem;
+    min-height: 0;
+    border-radius: 20px;
+    padding: 0.82rem;
+  }
+
+  .stepMeta {
+    gap: 0.32rem;
+  }
+
+  .stepNumber {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 14px;
+  }
+
+  .stepIcon {
+    width: 1.45rem;
+    height: 1.45rem;
+    margin-left: 0.42rem;
+  }
+
+  .stepHeadingRow {
+    min-height: 0;
+  }
+
+  .stepCard h3 {
+    font-size: 1.08rem;
+  }
+
+  .stepCard p {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .cta {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 1.1rem;
+  }
+
+  .trustLine {
+    margin-top: 0.75rem;
+    padding-bottom: 0;
+    text-align: center;
+  }
+}

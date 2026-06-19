@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
 import { WhatsAppButton } from './whatsapp-button';
+import { BrandLockup } from './ui/brand-lockup';
 
 export function Footer() {
   return (
@@ -10,9 +10,7 @@ export function Footer() {
         <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
-              <div className="relative h-20 w-[320px] max-w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-white p-3 shadow-sm">
-                <Image src="/brand/logo-vpi.webp" alt="Logotipo de Valentín Protección Integral - Asesoría de Seguros en Madrid" fill className="object-contain" />
-              </div>
+              <BrandLockup variant="dark" size="default" />
               <p className="text-[var(--muted)]">{site.brandLine}</p>
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece asesoramiento personalizado para asegurar tu tranquilidad. Una firma especializada en proteger lo que de verdad importa, acompañándote con cercanía antes y después de contratar.</p>

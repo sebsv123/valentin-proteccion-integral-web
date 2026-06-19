@@ -22,6 +22,7 @@ export interface StaggeredMenuProps {
   displayItemNumbering?: boolean;
   className?: string;
   logoUrl?: string;
+  brand?: React.ReactNode;
   menuButtonColor?: string;
   openMenuButtonColor?: string;
   accentColor?: string;
@@ -41,6 +42,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displayItemNumbering = true,
   className,
   logoUrl = '/brand/logo-vpi.webp',
+  brand,
   menuButtonColor = '#002244',
   openMenuButtonColor = '#002244',
   changeMenuColorOnOpen = true,
@@ -383,7 +385,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-[100] ${isFixed ? 'fixed top-0 left-0 w-screen h-[100dvh]' : 'w-full h-full'} pointer-events-none`}
+      className={`sm-scope z-[100] overflow-hidden ${isFixed ? 'fixed inset-x-0 top-0 h-[100dvh]' : 'w-full h-full'} pointer-events-none`}
     >
       <div
         className={
@@ -419,15 +421,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
-          <div className="sm-logo flex bg-white items-center select-none pointer-events-auto rounded-xl p-2 shadow-md border border-gray-100" aria-label="Logo">
-            {logoUrl ? <img
+          <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Marca">
+            {brand ?? (logoUrl ? <img
               src={logoUrl}
               alt="Logo"
               className="sm-logo-img block h-10 w-auto object-contain"
               draggable={false}
               width={110}
               height={32}
-            /> : null}
+            /> : null)}
           </div>
 
           <button
@@ -583,7 +585,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .staggered-menu-wrapper:not([data-open]) .staggered-menu-header { opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
 .sm-scope .staggered-menu-wrapper[data-open] .staggered-menu-header { opacity: 1; visibility: visible; transition: opacity 0.3s, visibility 0.3s; transition-delay: 0.2s; }
 @media (max-width: 1024px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); } }
-@media (max-width: 640px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); } }
+@media (max-width: 640px) {
+  .sm-scope .staggered-menu-panel {
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 5.75rem 1.25rem max(2rem, env(safe-area-inset-bottom));
+  }
+  .sm-scope .staggered-menu-header { padding: 1rem; }
+  .sm-scope .sm-panel-inner { justify-content: flex-start; gap: 1rem; }
+  .sm-scope .sm-panel-list { gap: 0; }
+  .sm-scope .sm-panel-itemWrap { margin-bottom: 0.85rem; overflow: visible; }
+  .sm-scope .sm-panel-item {
+    padding-right: 0;
+    font-size: clamp(1.6rem, 8vw, 2rem);
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  .sm-scope .sm-panel-item::after { display: none; }
+  .sm-scope .sm-socials { padding-top: 1rem; }
+  .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); }
+}
       `}</style>
     </div>
   );

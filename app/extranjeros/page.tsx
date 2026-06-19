@@ -229,7 +229,9 @@ export default function ExtranjerosPage() {
               <div className={styles.heroCopy}>
                 <p className={`${styles.eyebrow} kicker`}>SEGUROS DE SALUD · EXTRANJERÍA</p>
                 <h1 className="font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--blue-deep)] md:text-7xl">
-                  Tu seguro médico para estudiar o residir en España
+                  <span className={styles.mobileTitleLine}>Tu seguro médico</span>{' '}
+                  <span className={styles.mobileTitleLine}>para estudiar o</span>{' '}
+                  <span className={styles.mobileTitleLine}>residir en España</span>
                 </h1>
                 <p className="section-copy text-lg">
                   Revisamos contigo los requisitos del visado, la cobertura y la documentación, para que avances con claridad desde el primer paso.
@@ -286,26 +288,26 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section id="elige" className="section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]" data-foreigners-section="selector">
+        <section id="elige" className={`${styles.mobileSection} section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]`} data-foreigners-section="selector">
           <div className="container-shell">
             <div className="mb-8 max-w-3xl">
               <p className="kicker">Elige tu situación</p>
               <h2 className="mt-3 section-title">Empezamos por el tipo de trámite</h2>
               <p className="section-copy mt-4">Selecciona el perfil más parecido a tu caso para iniciar la consulta por el canal adecuado.</p>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div className={`${styles.profileGrid} grid gap-5 md:grid-cols-2 xl:grid-cols-4`}>
               {situationProfiles.map((item) => (
                 <ForeignersTrackedLink
                   key={item.title}
                   href={item.href}
                   action={item.action}
                   label={item.label}
-                  className="group overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                  className={`${styles.profileCard} group overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl`}
                 >
-                  <span className="relative block aspect-[4/3] overflow-hidden">
+                  <span className={`${styles.profileImage} relative block aspect-[4/3] overflow-hidden`}>
                     <Image src={item.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" />
                   </span>
-                  <span className="block p-5">
+                  <span className={`${styles.profileBody} block p-5`}>
                     <span className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</span>
                     <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
@@ -319,10 +321,10 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section className="section-pad bg-[var(--bg)]" data-foreigners-section="documentacion">
+        <section className={`${styles.mobileSection} section-pad bg-[var(--bg)]`} data-foreigners-section="documentacion">
           <div className="container-shell">
             <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-[var(--border)] bg-white shadow-sm md:min-h-[520px]">
+              <div className={`${styles.mobileEditorialImage} relative min-h-[360px] overflow-hidden rounded-[30px] border border-[var(--border)] bg-white shadow-sm md:min-h-[520px]`}>
                 <Image
                   src="/images/home/meeting-real.jpg"
                   alt="Documentación para revisar un trámite de extranjería"
@@ -350,7 +352,7 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section className="section-pad bg-white" data-foreigners-section="requisitos">
+        <section className={`${styles.mobileSection} section-pad bg-white`} data-foreigners-section="requisitos">
           <div className="container-shell">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
@@ -362,7 +364,7 @@ export default function ExtranjerosPage() {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {reviewItems.map((item) => (
-                  <div key={item} className="soft-card rounded-[24px] p-5 shadow-sm">
+                  <div key={item} className={`${styles.mobileReviewItem} soft-card rounded-[24px] p-5 shadow-sm`}>
                     <CheckCircle2 className="h-6 w-6 text-[var(--green)]" />
                     <p className="mt-3 font-semibold leading-7 text-[var(--blue-deep)]">{item}</p>
                   </div>
@@ -374,7 +376,7 @@ export default function ExtranjerosPage() {
 
         <IberiaJourneySection contactHref={personalWhatsApp} />
 
-        <section className="section-pad bg-[var(--bg)]" data-foreigners-section="proceso">
+        <section className={`${styles.mobileSection} section-pad bg-[var(--bg)]`} data-foreigners-section="proceso">
           <div className="container-shell">
             <div className="mb-8 max-w-3xl">
               <p className="kicker">Cómo funciona</p>
@@ -382,7 +384,7 @@ export default function ExtranjerosPage() {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {processSteps.map((step, index) => (
-                <article key={step.title} className="soft-card p-6">
+                <article key={step.title} className={`${styles.mobileProcessCard} soft-card p-6`}>
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--blue-deep)] font-heading text-lg font-bold text-white">{index + 1}</div>
                   <h3 className="mt-5 font-heading text-2xl font-bold text-[var(--blue-deep)]">{step.title}</h3>
                   <p className="mt-3 text-base leading-7 text-slate-700">{step.copy}</p>
@@ -392,9 +394,9 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section id="testimonios" className="section-pad bg-white" data-foreigners-section="opiniones">
+        <section id="testimonios" className={`${styles.mobileSection} section-pad bg-white`} data-foreigners-section="opiniones">
           <div className="container-shell">
-            <div className="mb-12 text-center">
+            <div className={`${styles.mobileReviewsHeading} mb-12 text-center`}>
               <h2 className="mx-auto mt-4 max-w-3xl section-title">Opiniones de clientes sobre seguros para extranjeros</h2>
             </div>
             <GoogleReviewsCarousel
@@ -406,11 +408,11 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section id="colaboradores" className="scroll-mt-[104px] py-12 md:scroll-mt-[120px] md:py-16" data-foreigners-section="colaboradores">
+        <section id="colaboradores" className={`${styles.mobileProfessionalSection} scroll-mt-[104px] py-12 md:scroll-mt-[120px] md:py-16`} data-foreigners-section="colaboradores">
           <div className="container-shell">
             <div className="mx-auto max-w-6xl">
               <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.12)] lg:grid lg:grid-cols-[0.42fr_0.58fr]">
-                <div className="bg-[var(--blue-deep)] p-6 text-white md:p-8 lg:p-10">
+                <div className={`${styles.mobileProfessionalIntro} bg-[var(--blue-deep)] p-6 text-white md:p-8 lg:p-10`}>
                   <p className="kicker !text-white/70">CANAL PROFESIONAL</p>
                   <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">Derivaciones para abogados, gestorías, academias y entidades</h2>
                   <p className="mt-5 text-base leading-8 text-white/78">
@@ -434,7 +436,7 @@ export default function ExtranjerosPage() {
                   </div>
                 </div>
 
-                <div className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-6 md:p-8 lg:p-10">
+                <div className={`${styles.mobileProfessionalFlow} bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-6 md:p-8 lg:p-10`}>
                   <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--blue)]">Así funciona la derivación</p>
                   <div className="relative mt-7 grid gap-6 md:grid-cols-3 md:gap-5">
                     <span className="absolute left-[11px] top-4 hidden h-px w-[calc(100%-22px)] bg-gradient-to-r from-[var(--blue-deep)]/18 via-[var(--blue)]/22 to-[var(--blue-deep)]/12 md:block" aria-hidden="true" />
@@ -458,7 +460,7 @@ export default function ExtranjerosPage() {
                   </div>
                   <div className="mt-8 border-t border-[var(--border)] pt-6 md:flex md:items-center md:justify-between md:gap-6">
                     <p className="max-w-md text-sm font-semibold leading-6 text-slate-700">Puedes enviarnos un caso ahora o consultarnos antes de derivarlo.</p>
-                    <div className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-0 md:shrink-0">
+                    <div className={`${styles.mobileButtonStack} mt-5 flex flex-col gap-3 sm:flex-row md:mt-0 md:shrink-0`}>
                       <ForeignersTrackedLink
                         href="#derivar-consulta"
                         className="btn-secondary"
@@ -483,7 +485,7 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section className="pb-12 pt-2 md:pb-16 md:pt-4" data-foreigners-section="legal_notice">
+        <section className={`${styles.mobileLegalNotice} pb-12 pt-2 md:pb-16 md:pt-4`} data-foreigners-section="legal_notice">
           <div className="container-shell">
             <div className="mx-auto flex max-w-5xl flex-col gap-4 rounded-[28px] border border-blue-100 bg-blue-50/70 p-7 text-left shadow-sm md:flex-row md:items-start md:gap-5 md:p-8">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[var(--blue)] shadow-sm">
@@ -499,7 +501,7 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section id="derivar" className="scroll-mt-[104px] pb-16 pt-2 md:scroll-mt-[120px] md:pb-20 md:pt-4" data-foreigners-section="formulario">
+        <section id="derivar" className={`${styles.mobileFormSection} scroll-mt-[104px] pb-16 pt-2 md:scroll-mt-[120px] md:pb-20 md:pt-4`} data-foreigners-section="formulario">
           <div className="container-shell">
             <div
               id="derivar-consulta"
@@ -507,7 +509,7 @@ export default function ExtranjerosPage() {
               style={{ scrollMarginTop: 'calc(var(--header-height, 88px) + 32px)' }}
             >
               <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.1)] lg:grid lg:grid-cols-[0.38fr_0.62fr]">
-                <div className="bg-[linear-gradient(180deg,#eef7fb_0%,#f8fcfd_100%)] p-6 md:p-8 lg:p-10">
+                <div className={`${styles.mobileFormIntro} bg-[linear-gradient(180deg,#eef7fb_0%,#f8fcfd_100%)] p-6 md:p-8 lg:p-10`}>
                   <p className="kicker">DERIVACIÓN SEGURA</p>
                   <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-[var(--blue-deep)] md:text-4xl">Derivar una consulta</h2>
                   <p className="mt-5 text-base leading-8 text-slate-700">Comparte únicamente los datos mínimos necesarios. No necesitamos documentación sensible en este primer contacto.</p>
@@ -521,7 +523,7 @@ export default function ExtranjerosPage() {
                   </div>
                   <p className="mt-8 rounded-[20px] border border-white/70 bg-white/65 p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">Nos pondremos en contacto con el cliente utilizando los datos autorizados.</p>
                 </div>
-                <div className="p-5 md:p-8 lg:p-10">
+                <div className={`${styles.mobileFormBody} p-5 md:p-8 lg:p-10`}>
                   <ForeignersPartnerForm />
                 </div>
               </div>
@@ -529,7 +531,7 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section className="section-pad bg-white" data-foreigners-section="faq">
+        <section className={`${styles.mobileSection} section-pad bg-white`} data-foreigners-section="faq">
           <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr]">
             <div>
               <p className="kicker">RESOLVEMOS TUS DUDAS</p>
@@ -544,13 +546,15 @@ export default function ExtranjerosPage() {
                 <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
               </div>
             </div>
-            <FAQAccordion items={faqItems} />
+            <div className={styles.mobileFaq}>
+              <FAQAccordion items={faqItems} />
+            </div>
           </div>
         </section>
 
-        <section className="section-pad pt-0" data-foreigners-section="cierre">
+        <section className={`${styles.mobileClosingSection} section-pad pt-0`} data-foreigners-section="cierre">
           <div className="container-shell">
-            <div className="rounded-[30px] bg-[var(--blue-deep)] p-8 text-white md:p-10">
+            <div className={`${styles.mobileClosingCard} rounded-[30px] bg-[var(--blue-deep)] p-8 text-white md:p-10`}>
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="max-w-3xl">
                   <p className="kicker !text-white/70">Siguiente paso</p>
@@ -571,7 +575,7 @@ export default function ExtranjerosPage() {
         </section>
       </main>
       <Footer />
-      <StickyWhatsApp />
+      <StickyWhatsApp mobileVariant="floating" mobileAvoidSelector={'#derivar-consulta, [data-foreigners-section="cierre"]'} />
     </>
   );
 }

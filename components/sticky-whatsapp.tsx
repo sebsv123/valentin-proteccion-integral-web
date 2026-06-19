@@ -5,8 +5,14 @@ import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, getWhatsAppMessage } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
 
-export function StickyWhatsApp() {
+type StickyWhatsAppProps = {
+  mobileVariant?: 'bar' | 'floating';
+  mobileAvoidSelector?: string;
+};
+
+export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: StickyWhatsAppProps = {}) {
   const [showTooltip, setShowTooltip] = useState(false);
+  const [hideMobile, setHideMobile] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -14,6 +20,25 @@ export function StickyWhatsApp() {
     const hideTimer = setTimeout(() => setShowTooltip(false), 10000);
     return () => { clearTimeout(timer); clearTimeout(hideTimer); };
   }, []);
+
+  useEffect(() => {
+    if (!mobileAvoidSelector) return undefined;
+
+    const nodes = [...document.querySelectorAll(mobileAvoidSelector)];
+    if (nodes.length === 0) return undefined;
+
+    const visibleNodes = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleNodes.add(entry.target);
+        else visibleNodes.delete(entry.target);
+      });
+      setHideMobile(visibleNodes.size > 0);
+    }, { threshold: 0.08 });
+
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, [mobileAvoidSelector]);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, location: string, href: string) => {
     e.preventDefault();
@@ -59,15 +84,15 @@ export function StickyWhatsApp() {
       {/* Móvil: barra sticky fija en la parte inferior */}
       <div 
         suppressHydrationWarning={true} 
-        className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#25D366]"
+        className={`${hideMobile ? 'pointer-events-none translate-y-4 opacity-0' : 'translate-y-0 opacity-100'} fixed z-50 transition duration-200 md:hidden ${mobileVariant === 'floating' ? 'bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3' : 'bottom-0 left-0 right-0 bg-[#25D366]'}`}
       >
         <a
           href={mobileHref}
           onClick={(e) => handleClick(e, 'sticky-mobile', mobileHref)}
-          className="flex items-center justify-center gap-2 w-full text-white py-3 px-4 text-sm font-semibold"
+          className={`flex items-center justify-center gap-2 text-white text-sm font-semibold ${mobileVariant === 'floating' ? 'min-h-12 rounded-full bg-[#128C7E] px-5 shadow-[0_12px_30px_rgba(18,140,126,0.35)]' : 'w-full bg-[#25D366] px-4 py-3'}`}
         >
           <WhatsAppIcon className="h-5 w-5 flex-none" />
-          Escríbenos por WhatsApp
+          {mobileVariant === 'floating' ? 'WhatsApp' : 'Escríbenos por WhatsApp'}
         </a>
       </div>
     </>
