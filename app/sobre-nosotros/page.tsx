@@ -271,7 +271,7 @@ export default function SobreNosotrosPage() {
                 <div className="mt-3 flex flex-col gap-3 sm:flex-row">
                   <a href={buildWhatsAppHref('Hola Rosa, quiero hablar contigo sobre un seguro.')} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
                   <Link href="/contacto" className="btn-secondary"><Phone className="h-4 w-4" /> Contactar</Link>
-                  <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
                   <a
                     href="https://www.linkedin.com/in/rosa-isabel-valentin-gonzalez-3a0b16141/"
                     target="_blank"
@@ -331,7 +331,7 @@ export default function SobreNosotrosPage() {
                   <WhatsAppLink
                     href="https://wa.me/34603448765?text=Quiero+conoceros+mejor"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-whatsapp mt-6 inline-flex"
                   >
                     <WhatsAppIcon className="h-4 w-4" /> Hablar con nosotros

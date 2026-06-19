@@ -126,7 +126,7 @@ export default function OpinionesPage() {
                     <p className="kicker !m-0">Síguenos en Instagram</p>
                   </div>
                   <h2 className="font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">
-                    Consejos, novedades y experiencias en @segurosrosavalentin
+                    Consejos, novedades y experiencias en @segurosvalentin
                   </h2>
                   <p className="mt-5 text-base leading-8 text-[var(--muted)]">
                     Contenido útil sobre seguros, consejos prácticos y un canal más cercano para estar al día. Sin presión, con información que de verdad ayuda a decidir.
@@ -140,7 +140,7 @@ export default function OpinionesPage() {
                     ))}
                   </div>
                   <div className="mt-7">
-                    <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-secondary">
+                    <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-secondary">
                       <Instagram className="h-4 w-4" /> Seguir en Instagram
                     </a>
                   </div>
@@ -156,7 +156,7 @@ export default function OpinionesPage() {
                       <a
                         href="https://www.google.com/maps/search/Valentín+Protección+Integral+Boadilla+del+Monte"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="btn-secondary"
                       >
                         Ver perfil oficial en Google
@@ -185,7 +185,7 @@ export default function OpinionesPage() {
                 <a
                   href="https://www.google.com/maps/search/Valentín+Protección+Integral+Boadilla+del+Monte"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="btn-ghost !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]"
                 >
                   Dejar reseña en Google

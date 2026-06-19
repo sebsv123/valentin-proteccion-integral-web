@@ -16,7 +16,7 @@ export default function SchemaPersons() {
       "addressCountry": "ES"
     },
     "sameAs": [
-      "https://www.instagram.com/segurosrosavalentin/",
+      "https://www.instagram.com/segurosvalentin/",
       "https://wa.me/34603448765"
     ],
     "knowsAbout": [

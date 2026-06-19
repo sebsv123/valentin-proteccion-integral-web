@@ -149,7 +149,7 @@ export default function ComoTeAyudamosPage() {
                   <h2 id="equipo-title" className="mt-3 section-title">Rosa y Sebastián: 10 años acompañando lo que más importa</h2>
                   <p className="section-copy mt-4">Rosa y Sebastián combinan cercanía, experiencia técnica y asesoramiento honesto sobre coberturas. Puedes empezar por el canal que más te convenga.</p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost">Instagram · @segurosrosavalentin</a>
+                    <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-ghost">Instagram · @segurosvalentin</a>
                     <Link href="/contacto" className="btn-secondary">Consulta sin compromiso</Link>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function ComoTeAyudamosPage() {
                       href="https://wa.me/34603448765?text=Hola%2C+quiero+una+consulta+gratuita+sobre+seguros"
                       className="btn-whatsapp" aria-label="Consulta gratuita sin compromiso por WhatsApp"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       Consulta gratuita ahora
                     </WhatsAppLink>
@@ -243,7 +243,7 @@ export default function ComoTeAyudamosPage() {
                       href="https://wa.me/34603448765?text=Hola%2C+quiero+hablar+con+Sebasti%C3%A1n+sobre+mis+opciones+de+seguro"
                       className="btn-whatsapp"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       Hablar con Sebastián
                     </WhatsAppLink>

@@ -142,7 +142,7 @@ export function Header() {
               <a
                 href={site.instagram}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2.5 text-white/95 text-sm
                            hover:opacity-90 rounded-[14px] font-semibold
                            transition-opacity shadow-md min-w-[100px]"

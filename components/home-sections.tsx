@@ -271,7 +271,7 @@ export function AgentTrustBlock() {
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contacto" className="btn-primary" aria-label="Contactar para consulta sin compromiso">Consulta sin compromiso</Link>
-                 <a href={site.instagram} target="_blank" rel="noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
+                 <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
             </div>
           </div>
