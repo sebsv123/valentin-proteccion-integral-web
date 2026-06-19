@@ -53,7 +53,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
       <StarRating rating={review.rating} />
-      <p className="mb-5 line-clamp-5 flex-1 text-sm leading-relaxed text-gray-700">
+      <p className="mb-5 flex-1 whitespace-pre-line text-sm leading-relaxed text-gray-700">
         &ldquo;{review.text}&rdquo;
       </p>
       <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export function GoogleReviewsCarousel({
         </div>
         <span className="text-2xl font-bold text-gray-900">{rating.toFixed(1)}</span>
         <span className="text-sm text-gray-500">
-          · {user_ratings_total}+ opiniones verificadas en Google
+          · {user_ratings_total} opiniones en Google
         </span>
         <a
           href={allReviewsUrl}
@@ -124,6 +124,7 @@ export function GoogleReviewsCarousel({
           {visibleReviews.map((review, index) => (
             <motion.div
               key={`${activeIndex}-${index}`}
+              className="h-full"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}

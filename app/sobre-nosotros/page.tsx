@@ -11,17 +11,15 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import CredentialsBar from '@/components/CredentialsBar';
 import RevealLight from '@/components/ui/reveal-light';
-import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP. Con asesoramiento centrado en ti.",
-  keywords: "rosa valentin agente seguros, sebastian valentin asesor seguros, equipo agentes seguros madrid, asesoria seguros boadilla del monte, DGSFP agentes madrid",
+  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Asesoramiento cercano y centrado en ti.",
+  keywords: "rosa valentin agente seguros, sebastian valentin asesor seguros, equipo agentes seguros madrid, asesoria seguros boadilla del monte",
   openGraph: {
     title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Agentes registrados en DGSFP.",
+    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Asesoramiento cercano y centrado en ti.",
     url: "https://valentinproteccionintegral.com/sobre-nosotros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -40,7 +38,7 @@ const rosaSchema = {
   "@type": "Person",
   "name": "Rosa Valentín",
   "jobTitle": "Agente de Seguros",
-  "description": "Agente de seguros registrada en la DGSFP con más de 10 años asesorando familias en Madrid y Boadilla del Monte.",
+  "description": "Asesora de seguros con más de 10 años acompañando a familias en Madrid y Boadilla del Monte.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros de Vida", "Seguros para Autónomos", "Seguros Dentales", "Seguros de Decesos", "Seguros de Mascotas"],
   "areaServed": "Madrid",
@@ -54,13 +52,10 @@ const sebastianSchema = {
   "@type": "Person",
   "name": "Sebastián Valentín",
   "jobTitle": "Agente de Seguros",
-  "description": "Agente de seguros registrado en la DGSFP, especialista en seguros de salud y accidentes para familias y autónomos en Madrid.",
+  "description": "Asesor especializado en seguros de salud y accidentes para familias y autónomos en Madrid.",
   "worksFor": { "@type": "LocalBusiness", "name": "Valentín Protección Integral" },
   "knowsAbout": ["Seguros de Salud", "Seguros para Autónomos", "Seguros de Accidentes", "Seguros Dentales"],
-  "areaServed": "Madrid",
-  "sameAs": [
-    "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187/"
-  ]
+  "areaServed": "Madrid"
 };
 
 export default function SobreNosotrosPage() {
@@ -132,15 +127,12 @@ export default function SobreNosotrosPage() {
 
                 {/* BLOQUE ROSA */}
                 <p className="kicker font-bold text-[var(--blue)] mt-8">Rosa Valentín</p>
-                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Agente de seguros registrada en DGSFP</p>
+                <p className="text-sm text-[var(--muted)] mb-4">Socia fundadora · Asesora de seguros</p>
                 <p className="text-base leading-8 text-[var(--muted)]">
                   Mi nombre es Rosa Valentín. Soy asesora certificada con <strong>más de 10 años de experiencia</strong> en seguros de salud, vida, mascotas, viaje, dental, accidentes, hospitalización y decesos. Trabajo desde <strong>Boadilla del Monte, Madrid</strong>, atendiendo a familias y particulares de toda España.
                 </p>
                 <p className="mt-4 text-base leading-8 text-[var(--muted)]">
                   No trabajo con presión comercial. Cada conversación empieza con tus preguntas, no con mis productos. Y cada orientación busca darte más claridad, no más confusión.
-                </p>
-                <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-                  <strong>Agente registrada en la DGSFP con número C012479234434D.</strong>
                 </p>
 
                 {/* Stats */}
@@ -166,37 +158,11 @@ export default function SobreNosotrosPage() {
                   <em className="text-base leading-8 text-[var(--muted)]">&ldquo;La prioridad es ayudarte a separar lo importante de lo accesorio, revisar qué cambia según modalidad y orientarte para que contrates con más tranquilidad y menos dudas.&rdquo;</em>
                 </div>
 
-                {/* Pilar 5 — Honestidad e independencia */}
-                <div className="mt-6 rounded-[24px] border border-[var(--blue-deep)]/20 bg-[var(--blue-deep)]/4 px-6 py-5">
-                  <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Agentes registrados</p>
-                  <p className="text-base leading-8 text-[var(--muted)]">
-                    No somos una compañía aseguradora. Somos agentes registrados en la DGSFP
-                    (<strong>Nº C046172295271S · NIF 79234434D</strong>).
-                    Eso significa que te asesoramos con criterio profesional y registro oficial.
-                    Nuestro único objetivo es que tengas la mejor cobertura al precio más justo.
-                  </p>
-                </div>
-
                 {/* BLOQUE SEBASTIÁN */}
                 <div className="mt-10 pt-8 border-t border-[var(--border)]">
-                  <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] items-start">
-
-                    {/* Foto Sebastián */}
-                    <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden
-                                    shadow-xl border border-[var(--border)]">
-                      <Image
-                        src="/images/sebastian.png"
-                        alt="Sebastián Valentín, asesor de seguros especializado en salud"
-                        fill
-                        className="object-cover object-top"
-                        loading="lazy"
-                      />
-                    </div>
-
-                    {/* Texto Sebastián */}
-                    <div>
+                  <div>
                       <p className="kicker font-bold text-[var(--blue)]">Sebastián Valentín</p>
-                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Agente de seguros registrado en DGSFP · Especialista en Salud</p>
+                      <p className="text-sm text-[var(--muted)] mb-4">Socio · Especialista en Salud</p>
                       <h3 className="font-heading text-2xl font-bold text-[var(--blue-deep)] mb-4">
                         El rigor técnico al servicio de tu tranquilidad
                       </h3>
@@ -209,10 +175,6 @@ export default function SobreNosotrosPage() {
                         Cree que la confianza se construye siendo directo: explicando exactamente qué cubre
                         una póliza, qué no cubre y por qué. Sin atajos. Sin letra pequeña escondida.
                       </p>
-                      <p className="mt-4 text-base leading-8 text-[var(--muted)]">
-                        <strong>Agente registrado en la DGSFP con número C046172295271S.</strong>
-                      </p>
-
                       {/* Mini-stats Sebastián */}
                       <div className="mt-6 grid grid-cols-2 gap-3">
                         {[
@@ -231,28 +193,6 @@ export default function SobreNosotrosPage() {
                           );
                         })}
                       </div>
-                      <a
-                        href="https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)] transition-colors"
-                        aria-label="Ver perfil de Sebastián en LinkedIn"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-4 w-4 shrink-0"
-                          aria-hidden="true"
-                        >
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        Ver perfil en LinkedIn
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5 opacity-60" aria-hidden="true">
-                          <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4zm6.5-1a.75.75 0 000 1.5h2.44l-6.97 6.97a.75.75 0 001.06 1.06L14.25 7.06v2.44a.75.75 0 001.5 0V4.75a.75.75 0 00-.75-.75h-4.25z" clipRule="evenodd" />
-                        </svg>
-                      </a>
-                    </div>
                   </div>
                 </div>
 
@@ -299,54 +239,29 @@ export default function SobreNosotrosPage() {
 
         <HowItWorksSection />
 
-        {/* Rosa lifestyle photo block */}
-         <RevealLight>
-          <section id="galeria" aria-label="Galería de Rosa Valentín" className="section-pad pt-0">
-            <div className="container-shell">
-              <div className="grid gap-6 md:grid-cols-2 items-center">
-                <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/rosa_y_sebastian_conversando.png" alt="Rosa y Sebastián Valentín en consulta con un cliente en Boadilla del Monte" fill className="object-cover object-[center_20%]" />
-                </div>
-                <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image src="/images/rosa_y_sebastian_mesa.png" alt="Rosa y Sebastián Valentín asesorando en su oficina de Boadilla del Monte" fill className="object-cover object-[center_20%]" />
-                </div>
-              </div>
-            </div>
-          </section>
-        </RevealLight>
-
-        {/* Así trabajamos con cada cliente */}
+        {/* Principios de trabajo */}
         <RevealLight>
-          <section className="section-pad pt-0">
+          <section aria-labelledby="principios-title" className="section-pad pt-0">
             <div className="container-shell">
-              <div className="grid xl:grid-cols-2 gap-10 items-center">
-                <div>
-                  <p className="kicker font-bold tracking-[0.3em]">Nuestro método</p>
-                  <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">
-                    Así trabajamos con cada cliente
+              <div className="rounded-[28px] border border-[var(--border)] bg-white px-7 py-9 shadow-sm md:px-10 md:py-11">
+                <div className="max-w-3xl">
+                  <p className="kicker font-bold tracking-[0.3em]">Nuestra forma de trabajar</p>
+                  <h2 id="principios-title" className="mt-4 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">
+                    Claridad antes de contratar y acompañamiento después
                   </h2>
-                  <p className="mt-5 text-base leading-8 text-[var(--muted)]">
-                    Cada familia tiene una situación diferente. Por eso empezamos siempre escuchando: qué tienes, qué te preocupa, qué quieres proteger. Sin prisas, sin formularios interminables. Una conversación real.
-                  </p>
-                  <WhatsAppLink
-                    href="https://wa.me/34603448765?text=Quiero+conoceros+mejor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp mt-6 inline-flex"
-                  >
-                    <WhatsAppIcon className="h-4 w-4" /> Hablar con nosotros
-                  </WhatsAppLink>
                 </div>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-[var(--border)]">
-                  <Image
-                    src="/images/sebastian_con_cliente.png"
-                    alt="Sebastián Valentín asesorando a un cliente sobre su seguro en Boadilla del Monte"
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 1280px) 100vw, 560px"
-                    quality={75}
-                    className="object-cover"
-                  />
+                <div className="mt-9 grid gap-7 border-t border-[var(--border)] pt-8 md:grid-cols-3 md:gap-0">
+                  {[
+                    ['01', 'Entendemos tu situación', 'Antes de recomendar una modalidad, revisamos qué necesitas y qué dudas quieres resolver.'],
+                    ['02', 'Te lo explicamos con claridad', 'Conocemos las coberturas y condiciones para ayudarte a tomar una decisión informada.'],
+                    ['03', 'Seguimos disponibles', 'Nuestro acompañamiento no termina cuando se formaliza la contratación.'],
+                  ].map(([number, title, copy], index) => (
+                    <div key={title} className={`md:px-7 ${index === 0 ? 'md:pl-0' : 'md:border-l md:border-[var(--border)]'} ${index === 2 ? 'md:pr-0' : ''}`}>
+                      <p className="text-xs font-bold tracking-[0.22em] text-[var(--blue)]">{number}</p>
+                      <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--blue-deep)]">{title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{copy}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -354,8 +269,6 @@ export default function SobreNosotrosPage() {
         </RevealLight>
 
         <GoogleReviewsWidget title="Lo que dicen quienes ya han confiado en nosotros" />
-
-        <CredentialsBar />
 
         {/* Final CTA */}
         <section id="cta-sobre-nosotros" aria-labelledby="cta-sobre-nosotros-title" className="section-pad pt-0">

@@ -38,7 +38,7 @@ const productBadges: Record<string, string> = {
 }
 
 
-export function TrustBadgesSection() {
+export function TrustBadgesSection({ imageSrc = '/images/home/handshake-enhanced.png' }: { imageSrc?: string } = {}) {
   const icons = [ShieldCheck, HeartHandshake, Stethoscope, BadgeCheck, BadgePercent];
   return (
      <section className="section-pad pb-6" style={{ background: 'linear-gradient(180deg, rgba(15,94,156,0.03), transparent 75%)' }}>
@@ -71,7 +71,7 @@ export function TrustBadgesSection() {
               </div>
               <div className="relative min-h-[360px] xl:min-h-full">
                 <Image
-                  src="/images/home/handshake-enhanced.png"
+                  src={imageSrc}
                   alt="Apretón de manos profesional que simboliza el compromiso, la transparencia y el acompañamiento experto de Valentín Protección Integral"
                   fill
                   sizes="(max-width: 1280px) 100vw, 50vw"
@@ -170,7 +170,7 @@ export function ProductCategoryGrid({ productsWithImages }: { productsWithImages
   );
 }
 
-export function ComparisonCardsSection() {
+export function ComparisonCardsSection({ imageSrc = '/images/agent/rosa-exterior-enhanced.png' }: { imageSrc?: string } = {}) {
   const actions = [
     { href: '/seguros', wa: buildWhatsAppHref('Hola, quiero una primera orientación para saber por dónde empezar.'), cta: 'Quiero una primera orientación' },
     { href: '/seguros/salud', wa: buildWhatsAppHref('Hola, ya sé el ramo pero quiero afinar qué modalidad me encaja.'), cta: 'Afina tu modalidad' },
@@ -218,8 +218,8 @@ export function ComparisonCardsSection() {
             <div className="soft-card overflow-hidden h-full">
               <div className="relative min-h-[520px] h-full">
                 <Image
-                  src="/images/agent/rosa-exterior-enhanced.png"
-                  alt="Rosa Valentín, asesora experta en seguros, en una actitud cercana y profesional lista para ayudarte en Madrid"
+                  src={imageSrc}
+                  alt="Reunión de asesoramiento para revisar opciones de seguro con claridad"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top"

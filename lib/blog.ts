@@ -2035,7 +2035,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'seguro-decesos-familiar-madrid-que-cubre',
     title: 'Seguro de decesos en Madrid: qué cubre, qué gestiona y por qué importa antes de necesitarlo',
     excerpt: 'El seguro de decesos no es solo para mayores. Cubre los gastos del sepelio, gestiona los trámites y acompaña a la familia. Te explicamos todo sin eufemismos.',
-    image: '/images/products/accidentes-decesos-hero.webp',
+    image: '/images/products/accidentes-hero.webp',
     imageAlt: 'Familia madrileña tranquila gracias a su seguro de decesos',
     date: '2026-04-17',
     dateModified: '2026-04-17',

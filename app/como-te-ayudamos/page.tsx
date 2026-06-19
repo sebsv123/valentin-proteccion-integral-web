@@ -125,10 +125,10 @@ export default function ComoTeAyudamosPage() {
           </div>
         </section>
 
-        <TrustBadgesSection />
+        <TrustBadgesSection imageSrc="/images/home/handshake-real.jpg" />
         <AgentTrustBlock />
         <HowItWorksSection />
-        <ComparisonCardsSection />
+        <ComparisonCardsSection imageSrc="/images/home/meeting-real.jpg" />
 
         <section id="equipo-ayuda" aria-labelledby="equipo-title" className="section-pad pt-0">
           <div className="container-shell">
@@ -230,7 +230,7 @@ export default function ComoTeAyudamosPage() {
         <section aria-label="Sebastián Valentín, asesor personal" className="section-pad pt-0">
           <div className="container-shell">
             <div className="soft-card overflow-hidden rounded-3xl">
-              <div className="grid gap-0 xl:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid gap-0 xl:grid-cols-[1.05fr_0.95fr]">
                 <div className="p-7 md:p-10 flex flex-col justify-center">
                   <p className="kicker">Tu asesor personal</p>
                   <h2 className="mt-3 section-title">
@@ -252,15 +252,15 @@ export default function ComoTeAyudamosPage() {
                     </WhatsAppLink>
                   </div>
                 </div>
-                <div className="relative min-h-[340px]">
+                <div className="relative min-h-[440px] sm:min-h-[700px] lg:min-h-[760px] xl:min-h-[420px]">
                   <Image
-                    src="/images/sebastian.png"
+                    src="/images/agent/sebastian.jpg"
                     alt="Sebastián Valentín, asesor de seguros en Boadilla del Monte y Madrid"
                     fill
                     loading="lazy"
                     sizes="(max-width: 1280px) 100vw, 550px"
                     quality={75}
-                    className="object-cover object-[center_20%]"
+                    className="object-cover object-[center_28%]"
                   />
                 </div>
               </div>
