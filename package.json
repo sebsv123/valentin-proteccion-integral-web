@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "node scripts/lint-production-content.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:related": "node scripts/validate-foreigners-page.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -30,6 +33,7 @@
     "swiper": "^11.1.14",
     "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.184.0",
     "web-vitals": "^5.2.0",
     "zod": "^3.23.8"
   },
@@ -39,6 +43,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/three": "^0.184.1",
     "postcss": "latest",
     "sharp": "^0.34.5",
     "tailwindcss": "latest",

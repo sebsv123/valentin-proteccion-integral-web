@@ -1,533 +1,358 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { StickyWhatsApp } from "@/components/sticky-whatsapp";
-import { buildWhatsAppHref, site } from "@/lib/products";
-import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { WhatsAppButton } from "@/components/whatsapp-button";
-import GarantiasSection from "@/components/GarantiasSection";
-import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import {
-  BookOpen,
-  GraduationCap,
-  Globe,
-  FileText,
-  Shield,
-  CheckCircle2,
-  Clock,
-  Phone,
-  Users,
-  ChevronRight,
-  Sparkles,
-  ArrowRight,
-  HeartHandshake,
-  Building2,
-  Home,
-  Briefcase,
-  Plane,
-  Search,
-  AlertTriangle,
-  HelpCircle,
-} from "lucide-react";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, CheckCircle2, FileText, MessageCircle, ShieldCheck } from 'lucide-react';
+import { FAQAccordion } from '@/components/faq-accordion';
+import { Footer } from '@/components/footer';
+import { IberiaJourneySection } from '@/components/extranjeros/iberia-journey-section';
+import { LatamGlobeOverlay } from '@/components/extranjeros/latam-globe-overlay';
+import SpainArrivalGlobe from '@/components/extranjeros/spain-arrival-globe';
+import { GoogleReviewsCarousel } from '@/components/google-reviews-carousel';
+import { Header } from '@/components/header';
+import { StickyWhatsApp } from '@/components/sticky-whatsapp';
+import { googleReviews, googleReviewsSummary } from '@/lib/google-reviews';
+import { buildWhatsAppHref, site } from '@/lib/products';
+import styles from './extranjeros-hero.module.css';
+
+const personalWhatsApp = buildWhatsAppHref('Hola, necesito orientación sobre un seguro médico para mi trámite en España.');
+const partnerWhatsApp = buildWhatsAppHref('Hola, trabajo con estudiantes o clientes extranjeros y me gustaría consultar una posible colaboración.');
+const partnerConsultWhatsApp = buildWhatsAppHref('Hola, quiero consultar un caso antes de realizar una derivación.');
+
+const situationProfiles = [
+  {
+    title: 'Vengo a estudiar',
+    copy: 'Para visado de estudios, estancias largas o formación en España.',
+    image: '/images/premium/travel.png',
+    href: buildWhatsAppHref('Hola, vengo a estudiar a España y quiero revisar qué seguro médico necesito.'),
+    action: 'whatsapp_click',
+    label: 'profile_studies',
+  },
+  {
+    title: 'Voy a residir en España',
+    copy: 'Para residencia, renovación o llegada familiar con requisitos sanitarios.',
+    image: '/images/products/proteccion-juridica.png',
+    href: buildWhatsAppHref('Hola, voy a residir en España y quiero revisar el seguro médico para mi trámite.'),
+    action: 'whatsapp_click',
+    label: 'profile_residence',
+  },
+  {
+    title: 'Necesito ayudar a un alumno o cliente',
+    copy: 'Para academias, asesorías, gestorías y profesionales que acompañan expedientes.',
+    image: '/images/home/handshake-real.jpg',
+    href: '#colaboradores',
+    action: 'cta_click',
+    label: 'profile_partner',
+  },
+  {
+    title: 'No sé qué seguro necesito',
+    copy: 'Para ordenar el caso antes de comparar opciones o contratar.',
+    image: '/images/products/health-medical-care.png',
+    href: buildWhatsAppHref('Hola, no sé qué seguro médico necesito para extranjería y quiero orientación.'),
+    action: 'whatsapp_click',
+    label: 'profile_unsure',
+  },
+] as const;
+
+const reviewItems = [
+  'Modalidad sin copagos cuando el trámite lo exige.',
+  'Certificado o documentación comercial disponible.',
+  'Cobertura sanitaria privada y ámbito territorial.',
+  'Plazos de contratación compatibles con la cita.',
+];
+
+const processSteps = [
+  {
+    title: 'Cuéntanos el trámite',
+    copy: 'Nos indicas si se trata de estudios, residencia, renovación, familia o una derivación profesional.',
+  },
+  {
+    title: 'Revisamos requisitos',
+    copy: 'Ordenamos qué conviene comprobar antes de contratar y evitamos pedir documentación sensible en el primer contacto.',
+  },
+  {
+    title: 'Recibes una orientación clara',
+    copy: 'Te explicamos la opción aseguradora y los siguientes pasos con lenguaje directo y seguimiento.',
+  },
+];
+
+const professionalSteps = [
+  {
+    number: '01',
+    title: 'Compartes el caso',
+    copy: 'Solo necesitamos los datos mínimos y la autorización de contacto.',
+    icon: FileText,
+  },
+  {
+    number: '02',
+    title: 'Atendemos al cliente',
+    copy: 'Le explicamos la opción aseguradora y la documentación necesaria.',
+    icon: MessageCircle,
+  },
+  {
+    number: '03',
+    title: 'Te mantenemos informado',
+    copy: 'Puedes conocer el avance sin asumir la gestión aseguradora.',
+    icon: CheckCircle2,
+  },
+] as const;
+
+const professionalBenefits = [
+  {
+    title: 'Tú conservas la relación con el cliente',
+    copy: 'Seguimos el caso sin interferir en tu acompañamiento profesional.',
+    icon: CheckCircle2,
+  },
+  {
+    title: 'Nosotros gestionamos la parte aseguradora',
+    copy: 'Orientamos, contratamos y resolvemos las dudas relacionadas con el seguro.',
+    icon: ShieldCheck,
+  },
+] as const;
+
+const faqItems = [
+  {
+    q: '¿La póliza sirve para los trámites de estudios o residencia en España?',
+    a: 'Sí. La modalidad está diseñada para los trámites habituales de estudios, visado y residencia en España, con cobertura médica completa, sin copagos y sin periodos de carencia. También emitimos la documentación necesaria para incorporar al expediente.',
+  },
+  {
+    q: '¿Puedo contratarla solo con mi pasaporte?',
+    a: 'Sí. Podemos tramitar la póliza con el pasaporte, aunque todavía no dispongas de NIE o TIE.',
+  },
+  {
+    q: '¿Qué documentación recibiré para presentar en mi trámite?',
+    a: 'Una vez emitida la póliza, recibirás el certificado del seguro y la documentación correspondiente para que puedas incorporarla a tu expediente.',
+  },
+  {
+    q: '¿La póliza tiene copagos o periodos de carencia?',
+    a: 'No. La modalidad que utilizamos para estos trámites no tiene copagos ni periodos de carencia.',
+  },
+  {
+    q: '¿Puedo contratar el seguro antes de viajar a España?',
+    a: 'Sí. La contratación puede realizarse antes del viaje, de manera que puedas disponer de la póliza y de la documentación necesaria para avanzar con el trámite.',
+  },
+  {
+    q: '¿Me ayudáis a elegir la opción adecuada para mi caso?',
+    a: 'Sí. Revisamos contigo si se trata de estudios, residencia, renovación o llegada familiar y te explicamos la opción aseguradora que puede encajar con tu situación.',
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Seguro médico para extranjeros en España | Valentín Protección Integral",
-  description:
-    "Orientación sobre seguro médico para estudiantes, residentes, familias y personas extranjeras que preparan trámites en España. Atención clara y personalizada.",
-  keywords: [
-    "seguro médico extranjeros España",
-    "seguro visado estudios España",
-    "seguro NIE TIE estudiantes",
-    "seguro residencia extranjeros Madrid",
-    "seguro salud extranjeros sin copagos",
-  ],
-  alternates: {
-    canonical: "https://valentinproteccionintegral.com/extranjeros",
-  },
+  title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
+  description: 'Seguro médico para estudios, visado, residencia o renovación en España. Orientación personalizada, contratación con pasaporte y documentación para el trámite.',
+  alternates: { canonical: `${site.domain}/extranjeros` },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Seguro médico para extranjeros en España | Valentín Protección Integral",
-    description:
-      "Orientación sobre seguro médico para estudiantes, residentes, familias y personas extranjeras que preparan trámites en España.",
-    url: "https://valentinproteccionintegral.com/extranjeros",
-    siteName: "Valentín Protección Integral",
-    locale: "es_ES",
-    type: "website",
+    title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
+    description: 'Seguro médico para estudios, visado, residencia o renovación en España. Orientación personalizada, contratación con pasaporte y documentación para el trámite.',
+    url: `${site.domain}/extranjeros`,
+    type: 'website',
+    siteName: site.name,
+    images: [{ url: '/images/products/salud-extranjeros.png', width: 1200, height: 800, alt: 'Seguro médico para extranjeros en España' }],
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Valentín Protección Integral",
-  "url": "https://valentinproteccionintegral.com",
-  "telephone": "+34603448765",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "C. de los Reyes Católicos, 1",
-    "addressLocality": "Boadilla del Monte",
-    "addressRegion": "Madrid",
-    "addressCountry": "ES",
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Seguro médico para extranjeros en España',
+  url: `${site.domain}/extranjeros`,
+  description: metadata.description,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.domain,
   },
-  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: site.domain,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Extranjeros',
+      item: `${site.domain}/extranjeros`,
+    },
+  ],
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Sirve cualquier seguro médico para trámites de extranjería?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No siempre. Según el trámite, pueden exigirse condiciones concretas: entidad autorizada en España, sin copagos, sin carencias, cobertura completa y repatriación. Te orientamos para que revises qué puede encajar con tu caso.",
-      },
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
     },
-    {
-      "@type": "Question",
-      "name": "¿El seguro debe estar contratado con entidad autorizada en España?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En la mayoría de trámites de residencia, estudios o renovación, sí. Las autoridades suelen requerir que la aseguradora opere legalmente en España. Conviene confirmarlo antes de contratar.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "¿Para estudios suelen pedir seguro sin copagos ni carencias?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Normalmente, los consulados y oficinas de extranjería exigen cobertura completa sin copagos ni periodos de carencia para visados de estudios. Te ayudamos a identificar qué opciones cumplen esos criterios.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "¿Tengo que enviar pasaporte o datos médicos por la web?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Para una primera orientación solo necesitamos saber tu situación y el tipo de trámite. No pedimos datos médicos ni documentación sensible por formularios abiertos.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "¿VPI sustituye a una asesoría de extranjería?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Valentín Protección Integral no es un organismo público ni sustituye el asesoramiento jurídico. Te ayudamos con la parte del seguro médico, para que entiendas qué puede necesitar tu caso.",
-      },
-    },
-  ],
+  })),
 };
 
-export const dynamic = "force-static";
-
 export default function ExtranjerosPage() {
-  const wWhatsAppMain = buildWhatsAppHref(
-    "Hola, soy extranjero/a y quiero orientación sobre seguro médico para mi trámite en España."
-  );
-  const wEstudios = buildWhatsAppHref(
-    "Hola, quiero revisar un seguro médico para visado o estancia por estudios en España."
-  );
-  const wResidencia = buildWhatsAppHref(
-    "Hola, quiero orientación sobre seguro médico para un trámite de residencia en España."
-  );
-  const wFamilia = buildWhatsAppHref(
-    "Hola, quiero revisar opciones de seguro médico para mi familia en España."
-  );
-  const wPartner = buildWhatsAppHref(
-    "Hola, trabajo con alumnos/clientes extranjeros y quiero hablar sobre una posible colaboración."
-  );
-  const wNoSe = buildWhatsAppHref(
-    "Hola, soy extranjero/a y no tengo claro qué seguro médico necesito para mi trámite en España."
-  );
-
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Inicio", url: "/" },
-          { name: "Extranjeros", url: "/extranjeros" },
-        ]}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
-      <main className="min-h-screen bg-white">
-        {/* ═══════════════════════════════════════════
-            HERO PREMIUM DOCUMENTAL
-            ═══════════════════════════════════════════ */}
-        <section className="relative pt-24 pb-16 bg-slate-900 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 via-slate-900 to-blue-950 opacity-60" />
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-300 text-sm mb-6 border border-blue-500/20">
-                  <Sparkles className="w-4 h-4" />
-                  Seguro médico para extranjeros en España
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-[1.08] tracking-tight mb-6">
-                  Tu llegada a España, con la parte del seguro más clara
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, faqSchema]) }}
+      />
+      <main>
+        <section className={`${styles.hero} section-pad pt-6 md:pt-10`} data-foreigners-section="hero">
+          <div className={styles.heroBackdrop} aria-hidden="true">
+            <div className={styles.copyGlow} aria-hidden="true" />
+            <div className={styles.globeGlow} aria-hidden="true" />
+            <div className={styles.meshWash} aria-hidden="true" />
+            <div className={styles.dotField} aria-hidden="true" />
+            <div className={styles.routeWhisper} aria-hidden="true">
+              <svg viewBox="0 0 1440 760" preserveAspectRatio="none">
+                <path d="M-80 650 C280 470 480 690 790 530 C1040 400 1210 420 1510 210" />
+                <path d="M120 780 C400 540 610 620 890 440 C1100 300 1270 340 1490 150" />
+                <path d="M-90 270 C230 160 490 250 720 170" />
+              </svg>
+            </div>
+          </div>
+          <div className={`${styles.heroContent} container-shell`}>
+            <div className="hero-grid items-center">
+              <div className={styles.heroCopy}>
+                <p className={`${styles.eyebrow} kicker`}>SEGUROS DE SALUD · EXTRANJERÍA</p>
+                <h1 className="font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--blue-deep)] md:text-7xl">
+                  Tu seguro médico para estudiar o residir en España
                 </h1>
-                <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-lg">
-                  Te orientamos según tu situación: estudios, residencia, renovación,
-                  familia o colaboración con academias y asesorías.
+                <p className="section-copy text-lg">
+                  Revisamos contigo los requisitos del visado, la cobertura y la documentación, para que avances con claridad desde el primer paso.
                 </p>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <WhatsAppButton
-                    href={wWhatsAppMain}
-                    location="extranjeros-hero"
-                    className="group inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 rounded-xl text-base font-semibold transition-all shadow-lg shadow-emerald-600/20"
-                  >
-                    Revisar mi caso por WhatsApp
-                  </WhatsAppButton>
-                  <a
-                    href="#elige"
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3.5 rounded-xl text-base font-medium border border-white/20 transition-all"
-                  >
-                    Ver qué suelen revisar
-                    <ChevronRight className="w-4 h-4" />
-                  </a>
+                <div className={styles.journeyGrid}>
+                  <article className={`${styles.journeyCard} ${styles.primaryJourney}`}>
+                    <p className={styles.cardEyebrow}>PARTICULARES</p>
+                    <h2>Necesito mi seguro</h2>
+                    <p>Te orientamos para estudios, residencia, renovación o llegada familiar.</p>
+                    <div className={styles.chipRow} aria-label="Perfiles particulares">
+                      {['Estudios', 'Residencia', 'Renovación', 'Familia'].map((chip) => (
+                        <span key={chip}>{chip}</span>
+                      ))}
+                    </div>
+                    <a
+                      href="#elige"
+                      className={styles.primaryCardCta}
+                    >
+                      Revisar mi situación <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </article>
+                  <article className={`${styles.journeyCard} ${styles.partnerJourney}`}>
+                    <p className={styles.cardEyebrow}>ACADEMIAS Y ASESORÍAS</p>
+                    <h2>Quiero colaborar</h2>
+                    <p>Atendemos a tus estudiantes o clientes y gestionamos la parte aseguradora desde España.</p>
+                    <div className={styles.chipRow} aria-label="Perfiles profesionales">
+                      {['Derivaciones', 'Estudiantes', 'Extranjería', 'Seguimiento'].map((chip) => (
+                        <span key={chip}>{chip}</span>
+                      ))}
+                    </div>
+                    <a
+                      href="#colaboradores"
+                      className={styles.partnerCardCta}
+                    >
+                      Ver colaboración <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </article>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {["Estudios y formación", "Residencia", "Familias", "Partners", "DGSFP"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 text-slate-300 text-xs border border-white/10"
-                      >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                        {item}
-                      </span>
-                    )
-                  )}
+                <div className={styles.trustBand} aria-label="Señales de confianza">
+                  <span>+10 años de experiencia</span>
+                  <span>+1.200 familias protegidas</span>
+                  <span>62+ opiniones verificadas en Google</span>
                 </div>
               </div>
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl" />
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 border border-white/10">
-                  <Image
-                    src="/images/extranjeros/v2/pasaporte-espanol.webp"
-                    alt="Seguro médico para trámites en España"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                </div>
-                {/* Floating trust cards */}
-                <div className="absolute -bottom-4 -right-2 bg-white rounded-xl p-3 shadow-xl border border-slate-100 text-xs">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
-                      <FileText className="w-4 h-4 text-emerald-600" />
+              <div className={`${styles.globeStage} relative min-h-[430px] lg:-mr-4 xl:mr-3`}>
+                <SpainArrivalGlobe />
+                <LatamGlobeOverlay />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="elige" className="section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]" data-foreigners-section="selector">
+          <div className="container-shell">
+            <div className="mb-8 max-w-3xl">
+              <p className="kicker">Elige tu situación</p>
+              <h2 className="mt-3 section-title">Empezamos por el tipo de trámite</h2>
+              <p className="section-copy mt-4">Selecciona el perfil más parecido a tu caso para iniciar la consulta por el canal adecuado.</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {situationProfiles.map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  className="group overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="relative block aspect-[4/3] overflow-hidden">
+                    <Image src={item.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" />
+                  </span>
+                  <span className="block p-5">
+                    <span className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</span>
+                    <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
+                      Enviar una consulta <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-pad bg-[var(--bg)]" data-foreigners-section="documentacion">
+          <div className="container-shell">
+            <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-[var(--border)] bg-white shadow-sm md:min-h-[520px]">
+                <Image
+                  src="/images/home/meeting-real.jpg"
+                  alt="Documentación para revisar un trámite de extranjería"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+              <div>
+                <p className="kicker">Visado · documentación · residencia</p>
+                <h2 className="mt-3 section-title">La parte aseguradora del expediente, explicada con claridad</h2>
+                <p className="section-copy mt-4">
+                  Revisamos qué tipo de seguro puede encajar con el trámite comunicado y qué documentación comercial conviene tener localizada antes de avanzar.
+                </p>
+                <div className="mt-7 grid gap-3">
+                  {['Estancias por estudios o formación.', 'Residencia, renovación o llegada familiar.', 'Derivaciones desde asesorías y entidades.'].map((item) => (
+                    <div key={item} className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold text-[var(--blue-deep)]">
+                      <FileText className="h-4 w-4 text-[var(--blue)]" />
+                      {item}
                     </div>
-                    <span className="text-slate-700 font-medium">Documentación clara</span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════
-            ELIGE TU SITUACIÓN
-            ═══════════════════════════════════════════ */}
-        <section id="elige" className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4">
-              Elige tu situación
-            </h2>
-            <p className="text-slate-600 text-center mb-12 max-w-xl mx-auto">
-              Cada trámite tiene sus particularidades. Te ayudamos a entender qué puede
-              necesitar tu caso.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* A — Estudios */}
-              <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src="/images/extranjeros/v2/estudiantes-modernos.webp"
-                    alt="Estudiantes extranjeros en España"
-                    width={700}
-                    height={350}
-                    className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-slate-800 text-sm font-medium">
-                      <GraduationCap className="w-4 h-4" />
-                      Vengo a estudiar
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-slate-600 mb-5 leading-relaxed">
-                    Para visado de estudios, estancia por formación o renovación, revisamos
-                    contigo qué condiciones puede exigir tu trámite.
-                  </p>
-                  <WhatsAppButton
-                    href={wEstudios}
-                    location="extranjeros-estudios"
-                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm"
-                  >
-                    Revisar seguro para estudios
-                    <ArrowRight className="w-4 h-4" />
-                  </WhatsAppButton>
-                </div>
+        <section className="section-pad bg-white" data-foreigners-section="requisitos">
+          <div className="container-shell">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="kicker">Criterio práctico</p>
+                <h2 className="mt-3 section-title">Qué revisamos antes de contratar</h2>
+                <p className="section-copy mt-4">
+                  Cada expediente puede requerir matices. Por eso ordenamos la conversación alrededor del trámite, el plazo, el perfil del solicitante y las condiciones del producto.
+                </p>
               </div>
-
-              {/* B — Residencia */}
-              <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src="/images/extranjeros/v2/familia-moderna.webp"
-                    alt="Familia preparando residencia en España"
-                    width={700}
-                    height={350}
-                    className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-slate-800 text-sm font-medium">
-                      <Home className="w-4 h-4" />
-                      Voy a residir en España
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-slate-600 mb-5 leading-relaxed">
-                    Si estás preparando residencia, renovación o un trámite familiar, te
-                    ayudamos a ordenar la parte del seguro médico.
-                  </p>
-                  <WhatsAppButton
-                    href={wResidencia}
-                    location="extranjeros-residencia"
-                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm"
-                  >
-                    Revisar seguro para residencia
-                    <ArrowRight className="w-4 h-4" />
-                  </WhatsAppButton>
-                </div>
-              </div>
-
-              {/* C — Partners/B2B */}
-              <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src="/images/extranjeros/v2/reunion-moderna.webp"
-                    alt="Colaboración profesional para seguros de extranjeros"
-                    width={700}
-                    height={350}
-                    className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-slate-800 text-sm font-medium">
-                      <Building2 className="w-4 h-4" />
-                      Necesito ayudar a un alumno o cliente
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-slate-600 mb-5 leading-relaxed">
-                    Para academias, escuelas, asesorías y colaboradores que trabajan con
-                    personas extranjeras.
-                  </p>
-                  <WhatsAppButton
-                    href={wPartner}
-                    location="extranjeros-partner"
-                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm"
-                  >
-                    Hablar sobre colaboración
-                    <ArrowRight className="w-4 h-4" />
-                  </WhatsAppButton>
-                </div>
-              </div>
-
-              {/* D — No sé mi caso */}
-              <div className="bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-center">
-                <div className="p-8 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mx-auto mb-5">
-                    <HelpCircle className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    No sé qué seguro necesito
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    Cuéntanos tu situación y te orientamos con claridad sobre qué puede
-                    encajar en tu caso.
-                  </p>
-                  <WhatsAppButton
-                    href={wNoSe}
-                    location="extranjeros-nose"
-                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-emerald-600/20"
-                  >
-                    Cuéntanos tu caso
-                  </WhatsAppButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════
-            SEMÁFORO DEL SEGURO
-            ═══════════════════════════════════════════ */}
-        <section className="py-20 bg-slate-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4">
-              Semáforo del seguro para extranjería
-            </h2>
-            <p className="text-slate-600 text-center mb-4 max-w-2xl mx-auto">
-              Los requisitos pueden variar según trámite, consulado o expediente. Te
-              orientamos sobre la parte del seguro, sin sustituir asesoramiento jurídico.
-            </p>
-            <p className="text-xs text-slate-400 text-center mb-12">
-              Fuentes: criterios habituales de consulados y oficinas de extranjería — información orientativa.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Verde */}
-              <div className="bg-white rounded-2xl p-8 border-l-4 border-emerald-500 shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 text-emerald-700">
-                  Normalmente importante revisar
-                </h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    Entidad autorizada para operar en España
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    Duración de la cobertura según trámite
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    Certificado o documentación clara
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    Prestaciones sanitarias adecuadas
-                  </li>
-                </ul>
-              </div>
-
-              {/* Amarillo */}
-              <div className="bg-white rounded-2xl p-8 border-l-4 border-amber-400 shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-amber-600" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 text-amber-700">
-                  Depende del caso
-                </h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0" />
-                    Copagos o deducibles
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0" />
-                    Carencias según modalidad
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0" />
-                    Familiares incluidos
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 flex-shrink-0" />
-                    Renovación o prórroga
-                  </li>
-                </ul>
-              </div>
-
-              {/* Rojo */}
-              <div className="bg-white rounded-2xl p-8 border-l-4 border-red-400 shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
-                  <AlertTriangle className="w-6 h-6 text-red-500" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 text-red-600">
-                  Evita improvisar
-                </h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    Asumir que cualquier seguro sirve para todos los trámites
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    Presentar documentación incompleta
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    Usar seguro turístico si el trámite exige seguro médico completo
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    Enviar pasaporte o datos médicos por formularios abiertos
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════
-            TU RUTA EN 4 PASOS
-            ═══════════════════════════════════════════ */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-14">
-              Tu ruta en 4 pasos
-            </h2>
-            <div className="relative">
-              {/* Línea de timeline en móvil — oculta, en desktop centrada */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2" />
-              <div className="space-y-10 relative">
-                {[
-                  {
-                    step: "1",
-                    title: "Nos cuentas tu situación",
-                    desc: "Estudios, residencia, renovación, familia o colaboración. Con eso ya podemos empezar a orientarte.",
-                    icon: Search,
-                  },
-                  {
-                    step: "2",
-                    title: "Revisamos qué suele pedir tu trámite",
-                    desc: "Según fuentes oficiales y experiencia, te contamos qué criterios suelen aplicar. Siempre con prudencia.",
-                    icon: FileText,
-                  },
-                  {
-                    step: "3",
-                    title: "Te orientamos sobre el seguro médico",
-                    desc: "Te explicamos qué opciones pueden encajar, qué condiciones conviene revisar y qué documentación necesitarás.",
-                    icon: Shield,
-                  },
-                  {
-                    step: "4",
-                    title: "Te acompañamos si decides contratar",
-                    desc: "Sin presión. Si tu opción encaja, te ayudamos con el proceso para que llegues al trámite con tranquilidad.",
-                    icon: HeartHandshake,
-                  },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-6 relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-blue-600/20 z-10">
-                      {item.step}
-                    </div>
-                    <div className="pt-2">
-                      <h3 className="text-xl font-bold text-slate-900 mb-1">{item.title}</h3>
-                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                    </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {reviewItems.map((item) => (
+                  <div key={item} className="soft-card rounded-[24px] p-5 shadow-sm">
+                    <CheckCircle2 className="h-6 w-6 text-[var(--green)]" />
+                    <p className="mt-3 font-semibold leading-7 text-[var(--blue-deep)]">{item}</p>
                   </div>
                 ))}
               </div>
@@ -535,215 +360,197 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════
-            MÓDULO B2B
-            ═══════════════════════════════════════════ */}
-        <section className="py-20 bg-blue-50/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
-              <Building2 className="w-4 h-4" />
-              Para profesionales
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              ¿Trabajas con alumnos o clientes extranjeros?
-            </h2>
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Podemos ayudarte a resolver la parte del seguro médico con un circuito sencillo,
-              atención personalizada y comunicación responsable.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {["Academias y escuelas", "Asesorías de extranjería", "Relocation", "Centros formativos"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="bg-white rounded-xl p-4 border border-slate-100 text-sm text-slate-700 font-medium"
-                  >
-                    {item}
+        <IberiaJourneySection contactHref={personalWhatsApp} />
+
+        <section className="section-pad bg-[var(--bg)]" data-foreigners-section="proceso">
+          <div className="container-shell">
+            <div className="mb-8 max-w-3xl">
+              <p className="kicker">Cómo funciona</p>
+              <h2 className="mt-3 section-title">Un recorrido simple, sin pedir documentos sensibles al inicio</h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {processSteps.map((step, index) => (
+                <article key={step.title} className="soft-card p-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--blue-deep)] font-heading text-lg font-bold text-white">{index + 1}</div>
+                  <h3 className="mt-5 font-heading text-2xl font-bold text-[var(--blue-deep)]">{step.title}</h3>
+                  <p className="mt-3 text-base leading-7 text-slate-700">{step.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonios" className="section-pad bg-white" data-foreigners-section="opiniones">
+          <div className="container-shell">
+            <div className="mb-12 text-center">
+              <h2 className="mx-auto mt-4 max-w-3xl section-title">Opiniones de clientes sobre seguros para extranjeros</h2>
+            </div>
+            <GoogleReviewsCarousel
+              reviews={googleReviews}
+              rating={googleReviewsSummary.rating}
+              user_ratings_total={googleReviewsSummary.user_ratings_total}
+              allReviewsUrl={googleReviewsSummary.allReviewsUrl}
+            />
+          </div>
+        </section>
+
+        <section id="colaboradores" className="scroll-mt-[104px] py-12 md:scroll-mt-[120px] md:py-16" data-foreigners-section="colaboradores">
+          <div className="container-shell">
+            <div className="mx-auto max-w-6xl">
+              <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.12)] lg:grid lg:grid-cols-[0.42fr_0.58fr]">
+                <div className="bg-[var(--blue-deep)] p-6 text-white md:p-8 lg:p-10">
+                  <p className="kicker !text-white/70">CANAL PROFESIONAL</p>
+                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">Derivaciones para abogados, gestorías, academias y entidades</h2>
+                  <p className="mt-5 text-base leading-8 text-white/78">
+                    Si acompañas expedientes de extranjería, puedes derivarnos la parte aseguradora con autorización del cliente. Nosotros nos ocupamos de orientarle y mantenerte informado del avance.
+                  </p>
+                  <div className="mt-8 grid gap-5">
+                    {professionalBenefits.map((benefit) => {
+                      const BenefitIcon = benefit.icon;
+                      return (
+                        <div key={benefit.title} className="flex gap-3">
+                          <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-white ring-1 ring-white/15">
+                            <BenefitIcon className="h-4 w-4" aria-hidden="true" />
+                          </span>
+                          <div>
+                            <h3 className="font-heading text-lg font-bold leading-tight text-white">{benefit.title}</h3>
+                            <p className="mt-1 text-sm leading-6 text-white/70">{benefit.copy}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                )
-              )}
-            </div>
-            <WhatsAppButton
-              href={wPartner}
-              location="extranjeros-b2b"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3.5 rounded-xl text-base font-semibold transition-all shadow-lg shadow-blue-600/20"
-            >
-              Hablar sobre colaboración
-            </WhatsAppButton>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════
-            NO SOMOS EXTRANJERÍA
-            ═══════════════════════════════════════════ */}
-        <section className="py-16 bg-white border-t border-slate-100">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl text-center">
-            <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-7 h-7 text-slate-600" />
-            </div>
-            <p className="text-slate-700 leading-relaxed font-medium">
-              Valentín Protección Integral no es un organismo público ni sustituye el
-              asesoramiento jurídico de extranjería. Te ayudamos con la parte del seguro
-              médico, para que entiendas qué puede necesitar tu caso y qué documentación
-              conviene revisar antes de presentar el trámite.
-            </p>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════
-            SEBASTIÁN DGSFP PREMIUM
-            ═══════════════════════════════════════════ */}
-        <section className="py-20 bg-slate-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl">
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-sm">
-              <div className="flex items-start gap-5">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">
-                    Sebastián Sifontes Valentín
-                  </h3>
-                  <p className="text-sm text-slate-500 mb-3">
-                    Agente de seguros vinculado registrado en la DGSFP
-                  </p>
-                  <p className="text-sm font-mono text-slate-600 mb-4 bg-slate-50 inline-block px-3 py-1.5 rounded-lg">
-                    Clave: C046172295271S
-                  </p>
-                  <p className="text-slate-600 leading-relaxed text-sm">
-                    Trabajo mi actividad comercial bajo la marca Valentín Protección Integral,
-                    con atención cercana para personas extranjeras, familias y colaboradores.
-                  </p>
+
+                <div className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-6 md:p-8 lg:p-10">
+                  <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--blue)]">Así funciona la derivación</p>
+                  <div className="relative mt-7 grid gap-6 md:grid-cols-3 md:gap-5">
+                    <span className="absolute left-[11px] top-4 hidden h-px w-[calc(100%-22px)] bg-gradient-to-r from-[var(--blue-deep)]/18 via-[var(--blue)]/22 to-[var(--blue-deep)]/12 md:block" aria-hidden="true" />
+                    {professionalSteps.map((step) => {
+                      const StepIcon = step.icon;
+                      return (
+                        <article key={step.number} className="relative grid grid-cols-[2.7rem_1fr] gap-3 md:block">
+                          <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--blue)]/15 bg-white font-heading text-sm font-black text-[var(--blue-deep)] shadow-sm">
+                            {step.number}
+                          </div>
+                          <div>
+                            <div className="hidden h-9 w-9 items-center justify-center rounded-2xl bg-[var(--bg)] text-[var(--blue)] md:mb-4 md:flex">
+                              <StepIcon className="h-4 w-4" aria-hidden="true" />
+                            </div>
+                            <h3 className="font-heading text-lg font-bold leading-tight text-[var(--blue-deep)]">{step.title}</h3>
+                            <p className="mt-2 text-sm leading-6 text-slate-700">{step.copy}</p>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                  <div className="mt-8 border-t border-[var(--border)] pt-6 md:flex md:items-center md:justify-between md:gap-6">
+                    <p className="max-w-md text-sm font-semibold leading-6 text-slate-700">Puedes enviarnos un caso ahora o consultarnos antes de derivarlo.</p>
+                    <div className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-0 md:shrink-0">
+                      <a
+                        href="#derivar-consulta"
+                        className="btn-secondary"
+                      >
+                        Derivar un caso
+                      </a>
+	                      <a
+	                        href={partnerConsultWhatsApp}
+	                        className="btn-whatsapp"
+                      >
+                        <MessageCircle className="h-4 w-4" /> Consultar antes
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════
-            FUENTES OFICIALES ORIENTATIVAS
-            ═══════════════════════════════════════════ */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl text-center">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              Nos guiamos por criterios oficiales, pero revisamos tu caso con prudencia
-            </h2>
-            <p className="text-slate-600 leading-relaxed text-sm mb-8">
-              Las fuentes oficiales pueden variar según consulado, trámite y momento de
-              presentación. Usamos esta información como orientación general y recomendamos
-              confirmar siempre los requisitos concretos de tu expediente.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm">
-                <BookOpen className="w-4 h-4" />
-                Fuentes consulares orientativas
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm">
-                <Globe className="w-4 h-4" />
-                Criterios de extranjería
-              </span>
+        <section className="pb-12 pt-2 md:pb-16 md:pt-4" data-foreigners-section="legal_notice">
+          <div className="container-shell">
+            <div className="mx-auto flex max-w-5xl flex-col gap-4 rounded-[28px] border border-blue-100 bg-blue-50/70 p-7 text-left shadow-sm md:flex-row md:items-start md:gap-5 md:p-8">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[var(--blue)] shadow-sm">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <div>
+                <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--blue-deep)]">Nos ocupamos exclusivamente de la parte aseguradora</h2>
+                <p className="mt-2 max-w-3xl text-base leading-8 text-slate-700">
+                  No somos un organismo público ni sustituimos el asesoramiento jurídico de extranjería. Orientamos sobre la contratación del seguro y la documentación aseguradora que conviene revisar según la situación comunicada.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════
-            FAQ COMERCIAL/COMPLIANCE
-            ═══════════════════════════════════════════ */}
-        <section className="py-20 bg-slate-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-12">
-              Preguntas frecuentes
-            </h2>
-            <div className="space-y-3">
-              {[
-                {
-                  q: "¿Sirve cualquier seguro médico para trámites de extranjería?",
-                  a: "No siempre. Según el trámite, pueden exigirse condiciones concretas: entidad autorizada en España, sin copagos, sin carencias, cobertura completa y repatriación. Te orientamos para que revises qué puede encajar con tu caso.",
-                },
-                {
-                  q: "¿El seguro debe estar contratado con entidad autorizada en España?",
-                  a: "En la mayoría de trámites de residencia, estudios o renovación, sí. Las autoridades suelen requerir que la aseguradora opere legalmente en España. Conviene confirmarlo antes de contratar.",
-                },
-                {
-                  q: "¿Para estudios suelen pedir seguro sin copagos ni carencias?",
-                  a: "Normalmente, los consulados y oficinas de extranjería exigen cobertura completa sin copagos ni periodos de carencia para visados de estudios. Te ayudamos a identificar qué opciones cumplen esos criterios.",
-                },
-                {
-                  q: "¿Puedo pagar mensual o debe cubrir toda la estancia?",
-                  a: "Depende del trámite. Algunos consulados exigen que la póliza cubra todo el periodo de estancia de una sola vez. Conviene revisar este punto antes de contratar.",
-                },
-                {
-                  q: "¿Qué pasa si voy con familiares?",
-                  a: "Cada familiar puede necesitar su propia cobertura según el tipo de visado o trámite. Te orientamos sobre qué opciones permiten incluir a familiares en la misma póliza o como pólizas independientes.",
-                },
-                {
-                  q: "¿Me podéis ayudar si soy academia o asesoría?",
-                  a: "Sí. Si trabajas con alumnos o clientes extranjeros, podemos establecer un circuito para resolver la parte del seguro médico de forma ágil. Escríbenos y lo hablamos sin compromiso.",
-                },
-                {
-                  q: "¿Tengo que enviar pasaporte o datos médicos por la web?",
-                  a: "No. Para una primera orientación solo necesitamos saber tu situación y el tipo de trámite. No pedimos datos médicos ni documentación sensible por formularios abiertos.",
-                },
-                {
-                  q: "¿VPI sustituye a una asesoría de extranjería?",
-                  a: "No. Valentín Protección Integral no es un organismo público ni sustituye el asesoramiento jurídico. Te ayudamos con la parte del seguro médico, para que entiendas qué puede necesitar tu caso.",
-                },
-              ].map((faq, i) => (
-                <details
-                  key={i}
-                  className="group bg-white rounded-xl border border-slate-100 overflow-hidden"
-                >
-                  <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-slate-50 transition-colors">
-                    <span className="font-medium text-slate-800 pr-4">{faq.q}</span>
-                    <ChevronRight className="w-5 h-5 text-slate-400 group-open:rotate-90 transition-transform flex-shrink-0" />
-                  </summary>
-                  <div className="px-5 pb-5 text-slate-600 leading-relaxed text-sm">
-                    {faq.a}
+        <section id="derivar" className="scroll-mt-[104px] pb-16 pt-2 md:scroll-mt-[120px] md:pb-20 md:pt-4" data-foreigners-section="formulario">
+          <div className="container-shell">
+            <div
+              id="derivar-consulta"
+              className="mx-auto max-w-6xl"
+              style={{ scrollMarginTop: 'calc(var(--header-height, 88px) + 32px)' }}
+            >
+              <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.1)] lg:grid lg:grid-cols-[0.38fr_0.62fr]">
+                <div className="bg-[linear-gradient(180deg,#eef7fb_0%,#f8fcfd_100%)] p-6 md:p-8 lg:p-10">
+                  <p className="kicker">DERIVACIÓN SEGURA</p>
+                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-[var(--blue-deep)] md:text-4xl">Derivar una consulta</h2>
+                  <p className="mt-5 text-base leading-8 text-slate-700">Comparte únicamente los datos mínimos necesarios. No necesitamos documentación sensible en este primer contacto.</p>
+                  <div className="mt-8 grid gap-3">
+                    {['Solo datos mínimos', 'Sin documentos sensibles', 'Contacto con autorización'].map((item) => (
+                      <div key={item} className="flex items-center gap-3 text-sm font-bold text-[var(--blue-deep)]">
+                        <CheckCircle2 className="h-4 w-4 text-[var(--green)]" aria-hidden="true" />
+                        {item}
+                      </div>
+                    ))}
                   </div>
-                </details>
-              ))}
+                  <p className="mt-8 rounded-[20px] border border-white/70 bg-white/65 p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">Nos pondremos en contacto con el cliente utilizando los datos autorizados.</p>
+                </div>
+                <div className="p-5 md:p-8 lg:p-10">
+                  <div aria-hidden="true" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════
-            RESEÑAS + GARANTÍAS
-            ═══════════════════════════════════════════ */}
-        <GoogleReviewsWidget title="Opiniones de clientes sobre seguros para extranjeros" />
-        <GarantiasSection brandColor="#2563eb" />
-
-        {/* ═══════════════════════════════════════════
-            CTA FINAL SEGMENTADO
-            ═══════════════════════════════════════════ */}
-        <section className="py-24 bg-slate-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              ¿Hablamos de tu caso?
-            </h2>
-            <p className="text-slate-300 mb-10 max-w-xl mx-auto">
-              Elige la opción que mejor describe tu situación y te respondemos con claridad.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {[
-                { label: "Soy estudiante", href: wEstudios, icon: GraduationCap },
-                { label: "Estoy preparando residencia", href: wResidencia, icon: Home },
-                { label: "Vengo con familia", href: wFamilia, icon: Users },
-                { label: "Soy academia o asesoría", href: wPartner, icon: Building2 },
-              ].map((item) => (
-                <WhatsAppButton
-                  key={item.label}
-                  href={item.href}
-                  location={`extranjeros-cta-${item.label}`}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3.5 rounded-xl text-sm font-medium border border-white/10 transition-all"
-                >
-                  <item.icon className="w-4 h-4" />
-                  {item.label}
-                </WhatsAppButton>
-              ))}
+        <section className="section-pad bg-white" data-foreigners-section="faq">
+          <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr]">
+            <div>
+              <p className="kicker">RESOLVEMOS TUS DUDAS</p>
+              <h2 className="mt-3 section-title">¿Tienes preguntas antes de avanzar?</h2>
+              <p className="section-copy mt-4">
+                Aquí respondemos a las dudas más habituales sobre la póliza, la documentación y los trámites en España. Si lo prefieres, también podemos orientarte personalmente.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
+                <a href={personalWhatsApp} className="btn-whatsapp sm:w-auto xl:w-fit">
+                  <MessageCircle className="h-4 w-4" /> Hablar por WhatsApp
+                </a>
+                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
+              </div>
             </div>
-            <p className="text-xs text-slate-500 mt-8">
-              WhatsApp: 34603448765 · DGSFP: C046172295271S
-            </p>
+            <FAQAccordion items={faqItems} />
+          </div>
+        </section>
+
+        <section className="section-pad pt-0" data-foreigners-section="cierre">
+          <div className="container-shell">
+            <div className="rounded-[30px] bg-[var(--blue-deep)] p-8 text-white md:p-10">
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div className="max-w-3xl">
+                  <p className="kicker !text-white/70">Siguiente paso</p>
+                  <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Revisa tu caso sin convertir el trámite en un laberinto</h2>
+                  <p className="mt-4 text-lg leading-9 text-white/80">Particulares y profesionales pueden iniciar la consulta con la información mínima necesaria.</p>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
+                  <a href={personalWhatsApp} className="btn-whatsapp">
+                    Revisar mi situación
+                  </a>
+	                  <a href="#derivar-consulta" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">
+	                    Derivar un caso
+	                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

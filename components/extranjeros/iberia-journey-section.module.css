@@ -1,0 +1,1074 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 17% 20%, rgba(191, 155, 108, 0.06), transparent 28%),
+    radial-gradient(circle at 82% 72%, rgba(0, 51, 102, 0.07), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%);
+  padding-block: clamp(4.75rem, 7vw, 7.5rem);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10% -14% auto auto;
+  width: 44rem;
+  height: 44rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(219, 234, 254, 0.28) 48%, transparent 72%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(1.25rem, 2.2vw, 2.4rem);
+}
+
+.visualColumn {
+  min-width: 0;
+  order: -1;
+  align-self: stretch;
+}
+
+.visualSticky {
+  position: relative;
+  width: 100%;
+}
+
+.copyColumn {
+  min-width: 0;
+  padding-bottom: clamp(6rem, 12vh, 8.5rem);
+}
+
+.intro {
+  max-width: 48rem;
+}
+
+.intro h2 {
+  margin-top: 0.75rem;
+}
+
+.intro p:last-child {
+  margin-top: 1.05rem;
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2vw, 28px);
+  margin-top: clamp(1.35rem, 2.4vw, 1.9rem);
+  padding-left: 1.05rem;
+  padding-bottom: clamp(120px, 16vh, 200px);
+}
+
+.stepZone {
+  position: relative;
+  min-height: clamp(180px, 27vh, 260px);
+  display: flex;
+  align-items: flex-start;
+}
+
+.stepsTrack {
+  position: absolute;
+  left: 1.42rem;
+  top: 0.45rem;
+  bottom: 0.45rem;
+  width: 1.15rem;
+  pointer-events: none;
+}
+
+.stepsTrackBase,
+.stepsTrackProgress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+}
+
+.stepsTrackBase {
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(26, 54, 86, 0.1), rgba(26, 54, 86, 0.18), rgba(26, 54, 86, 0.1));
+}
+
+.stepsTrackProgress {
+  top: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(0, 34, 68, 0.92), rgba(212, 168, 48, 0.92));
+  box-shadow: 0 0 12px rgba(212, 168, 48, 0.18);
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 1.42rem;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  width: 1px;
+  background: transparent;
+}
+
+.stepCard {
+  width: 100%;
+  appearance: none;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 2.9rem minmax(0, 1fr);
+  align-items: start;
+  gap: 0.82rem;
+  min-height: 5.45rem;
+  border: 1px solid rgba(123, 149, 177, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 12px 30px rgba(3, 18, 37, 0.04);
+  padding: 0.88rem 1rem 0.88rem 0.9rem;
+  opacity: 0.88;
+  transform: translateY(0);
+  transition:
+    opacity 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stepCard:hover,
+.stepCard:focus-visible {
+  opacity: 1;
+  border-color: rgba(0, 34, 68, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 36px rgba(3, 18, 37, 0.08);
+  transform: translateY(-1px) translateX(3px);
+}
+
+.stepCard:focus-visible {
+  outline: 2px solid rgba(0, 34, 68, 0.18);
+  outline-offset: 2px;
+}
+
+.stepCardActive {
+  opacity: 1;
+  border-color: rgba(212, 168, 48, 0.24);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 42px rgba(3, 18, 37, 0.11);
+  transform: translateY(-1px) translateX(4px);
+}
+
+.stepMeta {
+  display: grid;
+  place-items: start;
+  gap: 0.45rem;
+  padding-top: 0.04rem;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.36rem;
+  height: 2.36rem;
+  border-radius: 16px;
+  background: rgba(0, 34, 68, 0.08);
+  color: var(--blue-deep);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stepIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.58rem;
+  height: 1.58rem;
+  margin-left: 0.4rem;
+  border-radius: 999px;
+  background: rgba(0, 34, 68, 0.05);
+  color: rgba(0, 34, 68, 0.68);
+}
+
+.stepCardActive .stepNumber {
+  background: rgba(0, 34, 68, 0.96);
+  color: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 48, 0.42),
+    0 10px 18px rgba(18, 59, 104, 0.14);
+}
+
+.stepCard:not(.stepCardActive):hover .stepNumber,
+.stepCard:not(.stepCardActive):focus-visible .stepNumber {
+  background: rgba(0, 34, 68, 0.14);
+}
+
+.stepCardActive .stepIcon {
+  background: rgba(212, 168, 48, 0.14);
+  color: var(--blue-deep);
+}
+
+.stepCopy {
+  min-width: 0;
+}
+
+.stepHeadingRow {
+  min-height: 2.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.stepCard h3 {
+  color: var(--blue-deep);
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.04rem, 1.15vw, 1.24rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.stepCard p {
+  margin-top: 0.38rem;
+  color: #4e5b6c;
+  font-size: 0.94rem;
+  line-height: 1.58;
+  max-width: 34rem;
+}
+
+.stepCardActive p {
+  color: #425066;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1.02rem 1.55rem;
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.2);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 42px rgba(37, 211, 102, 0.28);
+}
+
+.trustLine {
+  margin-top: 0.95rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: rgba(37, 53, 74, 0.86);
+}
+
+.mapShell,
+.mapPlaceholder {
+  position: relative;
+  min-height: clamp(30rem, 60vw, 46rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 52% 39%, rgba(16, 43, 72, 0.7), rgba(8, 29, 52, 0.95) 34%, rgba(6, 22, 40, 0.98) 68%, rgba(5, 18, 31, 1) 100%),
+    linear-gradient(180deg, #0b2440 0%, #091f36 48%, #061625 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -18px 36px rgba(0, 0, 0, 0.18),
+    0 28px 70px rgba(2, 10, 20, 0.28);
+  touch-action: pan-y;
+}
+
+.mapShell::before {
+  content: "";
+  position: absolute;
+  inset: 8% 8% 14%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(216, 184, 119, 0.18), rgba(216, 184, 119, 0.06) 36%, transparent 72%);
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.mapShell::after {
+  content: "";
+  position: absolute;
+  inset: auto 12% 9% 12%;
+  height: 12%;
+  border-radius: 999px;
+  background: radial-gradient(ellipse, rgba(216, 184, 119, 0.1), rgba(0, 0, 0, 0) 72%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.mapPlaceholder::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(216, 184, 119, 0.2), rgba(0, 51, 102, 0.1), transparent 72%);
+  filter: blur(24px);
+}
+
+.mapGlow {
+  position: absolute;
+  inset: 8% 14% 13%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 248, 228, 0.16), rgba(216, 184, 119, 0.12) 38%, transparent 72%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.canvasMount {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.canvasMount canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.96);
+  transform-origin: 50% 46%;
+}
+
+.mapFallback {
+  position: absolute;
+  inset: 6%;
+  width: 88%;
+  height: 88%;
+  filter: drop-shadow(0 18px 26px rgba(2, 10, 20, 0.28));
+}
+
+.spainFallback {
+  fill: #e0c79a;
+  stroke: rgba(255, 250, 240, 0.8);
+  stroke-width: 1.6;
+}
+
+.portugalFallback {
+  fill: #7f90a0;
+  stroke: rgba(255, 250, 240, 0.62);
+  stroke-width: 1.6;
+}
+
+.journeyLine {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+}
+
+.journeyLine svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.journeyLinePath {
+  fill: none;
+  stroke: url(#iberia-atlantic-route);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-dasharray: 4 12;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 4px rgba(212, 168, 48, 0.18));
+  transition: opacity 420ms ease;
+}
+
+.journeyLineDot,
+.journeyLineDotSecondary {
+  fill: rgba(212, 168, 48, 0.6);
+  filter: drop-shadow(0 0 5px rgba(212, 168, 48, 0.16));
+}
+
+.journeyLineMuted {
+  opacity: 0.62;
+}
+
+.spainHalo {
+  position: absolute;
+  z-index: 5;
+  left: 57.2%;
+  top: 41.8%;
+  width: 6.1rem;
+  height: 6.1rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(191, 155, 108, 0.15), rgba(191, 155, 108, 0.05) 36%, transparent 72%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: iberiaHalo 4.8s ease-in-out infinite;
+}
+
+.spainHaloMuted {
+  opacity: 0.62;
+}
+
+.arrivalNodeLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.mapNode {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+  background: rgba(0, 34, 68, 0.12);
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(18, 59, 104, 0.1);
+  transform: translate(-50%, -50%);
+  transition:
+    background 360ms ease,
+    box-shadow 360ms ease,
+    transform 360ms ease;
+}
+
+.arrivalNode {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-color: rgba(0, 34, 68, 0.1);
+  background: rgba(0, 34, 68, 0.08);
+}
+
+.mapNodeInner {
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 999px;
+  background: rgba(0, 34, 68, 0.92);
+  box-shadow: 0 0 0 6px rgba(0, 34, 68, 0.08);
+}
+
+.arrivalNode::before {
+  content: "";
+  position: absolute;
+  inset: -0.42rem;
+  border-radius: inherit;
+  border: 1px solid rgba(212, 168, 48, 0.46);
+  box-shadow: 0 0 0 8px rgba(212, 168, 48, 0.08);
+  animation: arrivalPulse 4.8s ease-in-out infinite;
+}
+
+.mapNodeActive {
+  background: rgba(0, 34, 68, 0.92);
+  box-shadow:
+    0 14px 28px rgba(18, 59, 104, 0.14),
+    0 0 0 7px rgba(0, 34, 68, 0.08);
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+.arrivalLabel {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0.22rem 0.5rem;
+  border: 1px solid rgba(21, 74, 116, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(18, 59, 104, 0.08);
+  color: rgba(12, 38, 68, 0.78);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.arrivalLabelMuted {
+  opacity: 0.82;
+}
+
+.mapDecor {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.routeLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.routeLayer svg {
+  width: 100%;
+  height: 100%;
+}
+
+.routeSegment {
+  fill: none;
+  stroke: url(#iberia-atlantic-route);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.45;
+  stroke-dasharray: 4 10;
+  transition:
+    opacity 520ms ease,
+    stroke-width 520ms ease,
+    stroke 520ms ease,
+    filter 520ms ease;
+}
+
+.routeSegmentFuture {
+  stroke: rgba(216, 184, 119, 0.26);
+  opacity: 0.28;
+  filter: none;
+}
+
+.routeSegmentDone {
+  stroke: rgba(216, 184, 119, 0.58);
+  opacity: 0.68;
+  filter: drop-shadow(0 0 4px rgba(216, 184, 119, 0.16));
+}
+
+.routeSegmentActive {
+  stroke: rgba(244, 209, 124, 0.92);
+  opacity: 0.98;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 8px rgba(244, 209, 124, 0.3));
+}
+
+.routePulse {
+  fill: rgba(244, 209, 124, 0.95);
+  opacity: 0;
+}
+
+.routePulseActive {
+  animation: routePulseOnce 920ms ease-out 1;
+}
+
+.arrivalLink {
+  position: absolute;
+  left: 57.4%;
+  top: 39.2%;
+  width: 10.2rem;
+  height: 5.2rem;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.arrivalLink path {
+  fill: none;
+  stroke: rgba(244, 209, 124, 0.52);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-dasharray: 3 8;
+}
+
+.arrivalNodeLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.arrivalNode {
+  position: absolute;
+  left: 58.6%;
+  top: 41.2%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.28rem;
+  height: 2.28rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: rgba(0, 34, 68, 0.18);
+  box-shadow:
+    0 0 0 8px rgba(216, 184, 119, 0.12),
+    0 14px 28px rgba(2, 10, 20, 0.24);
+  transform: translate(-50%, -50%);
+}
+
+.arrivalNode::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  border-radius: inherit;
+  border: 1px solid rgba(216, 184, 119, 0.56);
+  opacity: 0.8;
+  animation: arrivalPulse 4.8s ease-in-out infinite;
+}
+
+.arrivalNodeCore {
+  width: 0.64rem;
+  height: 0.64rem;
+  border-radius: 999px;
+  background: var(--blue-deep);
+  box-shadow: 0 0 0 6px rgba(0, 34, 68, 0.08);
+}
+
+.arrivalNodeActive::before {
+  border-color: rgba(216, 184, 119, 0.62);
+}
+
+.arrivalNodeMuted {
+  opacity: 0.72;
+}
+
+.arrivalBadge {
+  position: absolute;
+  left: 60.5%;
+  top: 48.8%;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.34rem 0.62rem;
+  border: 1px solid rgba(21, 74, 116, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 24px rgba(2, 10, 20, 0.14);
+  transform: translate(-50%, -50%);
+}
+
+.arrivalBadgeLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--blue-deep);
+}
+
+.arrivalBadgeSub {
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: rgba(37, 53, 74, 0.76);
+}
+
+.arrivalBadgeMuted {
+  opacity: 0.78;
+}
+
+.expeditionCard {
+  position: absolute;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  z-index: 7;
+  pointer-events: none;
+  width: min(252px, 31%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 0.9rem 0.96rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 40px rgba(2, 10, 20, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.expeditionTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.expeditionTitle {
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: rgba(0, 34, 68, 0.76);
+}
+
+.expeditionStatus {
+  margin-top: 0.48rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--blue-deep);
+}
+
+.expeditionMicro {
+  margin-top: 0.22rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: rgba(37, 53, 74, 0.8);
+}
+
+.expeditionRows {
+  margin-top: 0.72rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.expeditionRow {
+  display: flex;
+  align-items: center;
+  gap: 0.58rem;
+  min-height: 2.45rem;
+  border-radius: 14px;
+  padding: 0.2rem 0.46rem;
+  background: rgba(248, 251, 255, 0.92);
+  color: rgba(47, 63, 84, 0.84);
+}
+
+.expeditionRowDone {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--blue-deep);
+  box-shadow: inset 0 0 0 1px rgba(216, 184, 119, 0.16);
+}
+
+.expeditionRowActive {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--blue-deep);
+  box-shadow:
+    inset 0 0 0 1px rgba(216, 184, 119, 0.26),
+    0 10px 22px rgba(2, 10, 20, 0.08);
+}
+
+.expeditionRowPending {
+  opacity: 0.76;
+}
+
+.expeditionRowBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.58rem;
+  height: 1.58rem;
+  border-radius: 999px;
+  background: rgba(108, 125, 146, 0.16);
+  color: rgba(0, 34, 68, 0.68);
+  flex: 0 0 auto;
+}
+
+.expeditionRowBadgeActive {
+  background: rgba(0, 34, 68, 0.96);
+  color: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 48, 0.42),
+    0 0 0 7px rgba(212, 168, 48, 0.1);
+}
+
+.expeditionRowBadgeDone {
+  background: rgba(65, 170, 114, 0.14);
+  color: #1b7f4a;
+}
+
+.expeditionRowLabel {
+  flex: 1 1 auto;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.expeditionFinal {
+  margin-top: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.62rem;
+  background: rgba(41, 204, 105, 0.12);
+  color: #1f7d4a;
+  font-size: 0.73rem;
+  font-weight: 800;
+}
+
+.expeditionFinal svg {
+  flex: 0 0 auto;
+}
+
+.expeditionFinalMuted {
+  opacity: 0.22;
+  background: rgba(41, 204, 105, 0.08);
+}
+
+.mapStatusIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  background: rgba(0, 34, 68, 0.1);
+  color: var(--blue-deep);
+}
+
+.mapStatusIconDone {
+  background: rgba(212, 168, 48, 0.12);
+}
+
+.mapStatusIconFinal {
+  background: rgba(41, 204, 105, 0.12);
+  color: #1f7d4a;
+}
+
+@keyframes iberiaHalo {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+@keyframes routePulseOnce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.65);
+  }
+}
+
+@keyframes arrivalPulse {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 0.88;
+    transform: scale(1.06);
+  }
+}
+
+@media (min-width: 768px) {
+  .stepCard {
+    min-height: 5.45rem;
+  }
+
+  .mapShell,
+  .mapPlaceholder {
+    min-height: 0;
+    height: clamp(540px, 66vh, 680px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: clamp(4.5rem, 5.5vw, 6.2rem);
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+    align-items: start;
+  }
+
+  .visualColumn {
+    order: 0;
+  }
+
+  .visualSticky {
+    position: sticky;
+    top: calc(var(--foreigners-header-offset, 88px) + 24px);
+    align-self: start;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .mapShell,
+  .mapPlaceholder {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-block: 4rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .mapShell,
+  .mapPlaceholder {
+    min-height: clamp(20rem, 88vw, 27rem);
+    border-radius: 28px;
+  }
+
+  .copyColumn {
+    margin-top: 0.25rem;
+    padding-bottom: 7.5rem;
+  }
+
+  .stepCard {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    opacity: 1;
+    padding: 0.88rem 0.92rem;
+    transform: none;
+    gap: 0.7rem;
+  }
+
+  .stepCardActive {
+    transform: none;
+    translate: none;
+  }
+
+  .stepZone {
+    min-height: auto;
+  }
+
+  .stepCard p {
+    max-width: none;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .steps {
+    padding-left: 0.92rem;
+  }
+
+  .stepsTrack {
+    left: 1.22rem;
+    top: 0.35rem;
+  }
+
+  .trustLine {
+    font-size: 0.82rem;
+  }
+
+  .mapShell::after {
+    bottom: 8%;
+  }
+
+  .canvasMount canvas {
+    transform: scale(0.98);
+    transform-origin: 50% 43%;
+  }
+
+  .mapShell {
+    display: flex;
+    flex-direction: column;
+    padding: 0.95rem;
+  }
+
+  .mapDecor {
+    position: relative;
+    min-height: clamp(20rem, 88vw, 27rem);
+    border-radius: 24px;
+  }
+
+  .visualColumn {
+    order: 0;
+  }
+
+  .visualSticky {
+    position: static;
+  }
+
+  .expeditionCard {
+    position: static;
+    width: 100%;
+    margin-top: 0.95rem;
+    padding: 0.82rem 0.86rem;
+    border-radius: 20px;
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 18px 34px rgba(2, 10, 20, 0.2);
+  }
+
+  .arrivalLink {
+    left: 57.5%;
+    top: 42%;
+    width: 7.2rem;
+    height: 4rem;
+  }
+
+  .arrivalBadge {
+    left: 61.5%;
+    top: 53%;
+    transform: translate(-50%, -50%) scale(0.92);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(18, 59, 104, 0.08);
+  }
+
+  .arrivalNode {
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+
+  .routeLayer svg path:nth-of-type(n + 3),
+  .routeLayer svg circle {
+    display: none;
+  }
+
+  .expeditionStatus {
+    font-size: 0.84rem;
+  }
+
+  .expeditionMicro {
+    font-size: 0.68rem;
+  }
+
+  .expeditionRow {
+    min-height: 2.35rem;
+  }
+
+  .expeditionRowLabel {
+    font-size: 0.72rem;
+  }
+
+  .expeditionFinal {
+    margin-top: 0.55rem;
+    font-size: 0.69rem;
+  }
+
+  .trustLine {
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepCard,
+  .cta,
+  .mapNode,
+  .spainHalo,
+  .arrivalNode::before {
+    animation: none;
+    transition: none;
+  }
+
+  .journeyLinePath {
+    transition: none;
+  }
+
+  .routePulse,
+  .routePulseActive {
+    animation: none;
+  }
+}

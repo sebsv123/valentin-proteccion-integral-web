@@ -1,0 +1,938 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      118deg,
+      #f9fcfd 0%,
+      #f1f8f7 34%,
+      #e5f2ef 58%,
+      #eef6fb 79%,
+      #f8fbfd 100%
+    );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.54) 58%,
+      #ffffff 100%
+    );
+}
+
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.55rem;
+  max-width: 820px;
+}
+
+.globeStage {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+  overflow: visible;
+  padding-bottom: clamp(4.4rem, 7vw, 5.5rem);
+}
+
+.globeStage [role="img"] {
+  overflow: visible;
+}
+
+.globeStage img {
+  transform: translateZ(0);
+  filter: drop-shadow(0 30px 46px rgba(22, 72, 116, 0.18));
+}
+
+.copyGlow {
+  position: absolute;
+  left: -12%;
+  top: 10%;
+  width: 58%;
+  height: 78%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.68) 34%,
+      rgba(219, 239, 232, 0.24) 66%,
+      transparent 78%
+    );
+  filter: blur(20px);
+}
+
+.globeGlow {
+  position: absolute;
+  right: -7%;
+  top: 5%;
+  width: 60%;
+  height: 88%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(116, 171, 224, 0.23) 0%,
+      rgba(157, 199, 232, 0.13) 40%,
+      rgba(212, 232, 244, 0.07) 61%,
+      transparent 76%
+    );
+  filter: blur(28px);
+}
+
+.meshWash {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  opacity: 0.72;
+  background:
+    radial-gradient(
+      circle at 35% 76%,
+      rgba(178, 220, 207, 0.30),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 67% 17%,
+      rgba(190, 219, 241, 0.24),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 78% 70%,
+      rgba(216, 231, 242, 0.20),
+      transparent 22%
+    );
+  filter: blur(18px);
+}
+
+.dotField {
+  position: absolute;
+  right: 1%;
+  top: 8%;
+  width: 49%;
+  height: 76%;
+  pointer-events: none;
+  opacity: 0.13;
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(12, 57, 96, 0.42) 0 1px,
+      transparent 1.4px
+    );
+  background-size: 28px 28px;
+  mask-image:
+    radial-gradient(
+      ellipse at 65% 46%,
+      black 0%,
+      rgba(0, 0, 0, 0.78) 42%,
+      transparent 77%
+    );
+}
+
+.routeWhisper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.20;
+}
+
+.routeWhisper svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.routeWhisper path {
+  fill: none;
+  stroke: rgba(105, 160, 193, 0.30);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 3 13;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  flex: 0 0 auto;
+  height: 2px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      90deg,
+      #d4a830,
+      rgba(212, 168, 48, 0.18)
+    );
+}
+
+.journeyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: 0.2rem;
+}
+
+.journeyCard {
+  display: flex;
+  min-height: 292px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid rgba(15, 68, 112, 0.12);
+  border-radius: 24px;
+  padding: clamp(1.1rem, 2vw, 1.45rem);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 20px 48px rgba(21, 72, 112, 0.10);
+  backdrop-filter: blur(14px);
+}
+
+.primaryJourney {
+  border-color: rgba(43, 191, 111, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 56px rgba(26, 112, 77, 0.13);
+}
+
+.partnerJourney {
+  background: rgba(246, 251, 254, 0.86);
+}
+
+.cardEyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.16em;
+  color: var(--blue);
+}
+
+.journeyCard h2 {
+  margin-top: 0.62rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: var(--blue-deep);
+}
+
+.journeyCard p:not(.cardEyebrow) {
+  margin-top: 0.75rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgb(71 85 105);
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.chipRow span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  border: 1px solid rgba(15, 68, 112, 0.10);
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  background: rgba(255, 255, 255, 0.74);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: rgb(41 61 86);
+}
+
+.primaryCardCta,
+.partnerCardCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 46px;
+  margin-top: auto;
+  border-radius: 999px;
+  padding: 0.78rem 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.primaryCardCta {
+  background: #24d265;
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(36, 210, 101, 0.24);
+}
+
+.partnerCardCta {
+  background: var(--blue-deep);
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(8, 42, 78, 0.18);
+}
+
+.primaryCardCta:hover,
+.partnerCardCta:hover {
+  transform: translateY(-1px);
+}
+
+.trustBand {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0;
+  align-items: center;
+  margin-top: 0.05rem;
+  border: 1px solid rgba(15, 68, 112, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 32px rgba(25, 78, 118, 0.08);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.trustBand span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: rgb(13 52 91);
+  white-space: nowrap;
+}
+
+.trustBand span + span {
+  border-left: 1px solid rgba(15, 68, 112, 0.10);
+}
+
+.internationalOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+.internationalRoutes {
+  position: absolute;
+  inset: -1% -5% -4% -2%;
+  z-index: 1;
+  width: 107%;
+  height: 105%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.latamRoute {
+  fill: none;
+  stroke: url(#latam-route-gradient);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-dasharray: 4 12;
+  opacity: 0.52;
+  filter: drop-shadow(0 0 4px rgba(255, 230, 160, 0.20));
+  transition:
+    opacity 180ms ease,
+    stroke-width 180ms ease,
+    filter 180ms ease;
+}
+
+.routeConvergence {
+  fill: #f4d17c;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 6px rgba(212, 168, 48, 0.3));
+}
+
+.routeMx,
+.routeCo,
+.routePe,
+.routeCl,
+.routeAr {
+  --route-anchor: 1;
+}
+
+.latamRoute.routeDimmed {
+  opacity: 0.20;
+}
+
+.latamRoute.routeActive {
+  opacity: 0.88;
+  stroke-width: 1.55;
+  filter: drop-shadow(0 0 6px rgba(244, 209, 124, 0.32));
+}
+
+.latamCityList {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 3;
+  width: 226px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.36rem;
+  border: 1px solid rgba(21, 74, 116, 0.10);
+  border-radius: 18px;
+  padding: 0.72rem;
+  background: rgba(249, 253, 255, 0.76);
+  box-shadow: 0 16px 34px rgba(17, 62, 105, 0.09);
+  backdrop-filter: blur(14px);
+  pointer-events: auto;
+}
+
+.cityListTitle {
+  margin-bottom: 0.16rem;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgba(0, 51, 102, 0.78);
+}
+
+.cityLabel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-height: 31px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0.22rem 0.4rem 0.22rem 0.24rem;
+  background: rgba(255, 255, 255, 0.34);
+  color: rgb(14 52 88);
+  font-size: 0.75rem;
+  font-weight: 780;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  animation: labelIn 520ms ease forwards;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.cityGuide {
+  width: 28px;
+  height: 1px;
+  margin-left: auto;
+  background: linear-gradient(90deg, rgba(212, 168, 48, 0.48), rgba(106, 160, 193, 0.08));
+}
+
+.cityNode {
+  display: inline-flex;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #f4d17c;
+  box-shadow:
+    0 0 0 4px rgba(212, 168, 48, 0.14),
+    0 0 10px rgba(212, 168, 48, 0.38);
+  transition:
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.cityFlag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(15, 68, 112, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+}
+
+.cityMx {
+  animation-delay: 80ms;
+}
+
+.cityCo {
+  animation-delay: 150ms;
+}
+
+.cityPe {
+  animation-delay: 220ms;
+}
+
+.cityCl {
+  animation-delay: 290ms;
+}
+
+.cityAr {
+  animation-delay: 360ms;
+}
+
+.benefitCluster {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  z-index: 4;
+  width: clamp(230px, 21vw, 270px);
+  pointer-events: none;
+  border: 1px solid rgba(21, 74, 116, 0.12);
+  border-radius: 22px;
+  padding: 0.84rem;
+  background: rgba(250, 253, 255, 0.82);
+  box-shadow: 0 20px 44px rgba(17, 62, 105, 0.12);
+  backdrop-filter: blur(16px);
+  transform: translate(10px, -12px);
+}
+
+.visadoGuide {
+  position: absolute;
+  right: 16px;
+  top: 50px;
+  z-index: 2;
+  width: min(420px, 36vw);
+  height: 192px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.visadoGuide svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.visadoGuidePath {
+  fill: none;
+  stroke: rgba(212, 168, 48, 0.34);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 2 11;
+  filter: drop-shadow(0 0 3px rgba(212, 168, 48, 0.12));
+}
+
+.visadoGuideDot {
+  fill: rgba(212, 168, 48, 0.62);
+  filter: drop-shadow(0 0 6px rgba(212, 168, 48, 0.22));
+}
+
+.benefitPrimary {
+  display: flex;
+  gap: 0.72rem;
+  align-items: center;
+}
+
+.benefitIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background: rgba(212, 168, 48, 0.16);
+  color: #b78a18;
+}
+
+.benefitPrimary strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.1;
+  color: var(--blue-deep);
+}
+
+.benefitPrimary small {
+  display: block;
+  margin-top: 0.26rem;
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: rgb(91 105 124);
+}
+
+.benefitSecondaryRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 0.78rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(21, 74, 116, 0.10);
+  padding-top: 0.62rem;
+}
+
+.benefitSecondaryRow span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.34rem;
+  min-height: 30px;
+  padding: 0.12rem 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: rgb(14 52 88);
+}
+
+.benefitSecondaryRow span + span {
+  border-left: 1px solid rgba(21, 74, 116, 0.10);
+}
+
+.benefitSecondaryRow svg {
+  flex: 0 0 auto;
+  color: #d4a830;
+}
+
+.spainPing {
+  position: absolute;
+  left: 50.2%;
+  top: 36%;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(244, 209, 124, 0.80);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.55);
+}
+
+.cityLabel:hover,
+.cityLabel:focus-visible,
+.cityLabel.cityActive {
+  border-color: rgba(212, 168, 48, 0.24);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.cityLabel:hover .cityNode,
+.cityLabel:focus-visible .cityNode,
+.cityLabel.cityActive .cityNode {
+  background: #fff0b8;
+  box-shadow:
+    0 0 0 5px rgba(212, 168, 48, 0.18),
+    0 0 14px rgba(212, 168, 48, 0.54);
+}
+
+.spainPingActive {
+  animation: spainSinglePulse 720ms ease-out 1;
+}
+
+@keyframes labelIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spainSinglePulse {
+  0% {
+    opacity: 0.90;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.4);
+  }
+}
+
+@media (max-width: 1139px) {
+  .dotField {
+    opacity: 0.09;
+  }
+
+  .routeWhisper {
+    opacity: 0.13;
+  }
+}
+
+@media (max-width: 1279px) {
+  .journeyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .journeyCard {
+    min-height: 286px;
+  }
+
+  .trustBand {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+
+  .cityMx,
+  .cityCl,
+  .routeMx,
+  .routeCl {
+    display: none;
+  }
+
+  .latamCityList {
+    left: 14px;
+    bottom: 14px;
+    width: 208px;
+  }
+
+  .cityLabel {
+    min-height: 31px;
+  }
+
+  .benefitCluster {
+    left: auto;
+    right: 14px;
+    top: 10px;
+    width: clamp(210px, 24vw, 240px);
+    transform: translate(8px, -10px);
+  }
+
+  .benefitSecondaryRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .benefitSecondaryRow span + span {
+    border-left: 1px solid rgba(21, 74, 116, 0.10);
+  }
+}
+
+@media (max-width: 719px) {
+  .journeyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .journeyCard {
+    min-height: auto;
+  }
+
+  .trustBand {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .trustBand span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trustBand span + span {
+    border-left: 0;
+    border-top: 1px solid rgba(15, 68, 112, 0.10);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroCopy {
+    gap: 1.25rem;
+  }
+
+  .globeStage {
+    min-height: 570px;
+    margin-top: 0.5rem;
+    padding-bottom: 0;
+  }
+
+  .copyGlow {
+    left: -45%;
+    top: 3%;
+    width: 145%;
+    height: 62%;
+    opacity: 0.72;
+  }
+
+  .globeGlow {
+    right: -42%;
+    top: 51%;
+    width: 150%;
+    height: 49%;
+    opacity: 0.60;
+  }
+
+  .meshWash {
+    opacity: 0.44;
+  }
+
+  .dotField {
+    right: -20%;
+    top: 57%;
+    width: 100%;
+    height: 38%;
+    opacity: 0.07;
+  }
+
+  .routeWhisper {
+    display: none;
+  }
+
+  .hero::after {
+    height: 72px;
+  }
+
+  .journeyGrid {
+    gap: 0.85rem;
+  }
+
+  .journeyCard {
+    border-radius: 22px;
+    padding: 1rem;
+  }
+
+  .journeyCard h2 {
+    font-size: 1.55rem;
+  }
+
+  .primaryCardCta,
+  .partnerCardCta {
+    width: 100%;
+  }
+
+  .trustBand {
+    width: 100%;
+  }
+
+  .trustBand span {
+    min-height: 34px;
+    border-radius: 0;
+    padding: 0.44rem 0.7rem;
+    font-size: 0.82rem;
+  }
+
+  .trustBand span:first-child {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .trustBand span:last-child {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  .internationalOverlay {
+    inset: 0;
+  }
+
+  .internationalRoutes {
+    inset: 0 -11% auto;
+    width: 122%;
+    height: 350px;
+  }
+
+  .cityMx,
+  .cityCl,
+  .cityPe,
+  .routePe {
+    display: none;
+  }
+
+  .latamCityList {
+    left: 16px;
+    right: 16px;
+    top: 454px;
+    bottom: auto;
+    width: auto;
+    padding: 0.68rem;
+    gap: 0.32rem;
+  }
+
+  .cityCo {
+    order: 1;
+  }
+
+  .cityAr {
+    order: 2;
+  }
+
+  .cityLabel {
+    min-height: 29px;
+    width: 100%;
+    padding: 0.26rem 0.38rem 0.26rem 0.24rem;
+    font-size: 0.7rem;
+  }
+
+  .cityGuide {
+    width: 18px;
+  }
+
+  .benefitCluster {
+    left: 16px;
+    right: 16px;
+    top: 354px;
+    width: auto;
+    padding: 0.76rem;
+    transform: none;
+  }
+
+  .visadoGuide {
+    right: 12px;
+    top: 12px;
+    width: 92%;
+    height: 156px;
+    opacity: 0.44;
+  }
+
+  .benefitPrimary {
+    align-items: flex-start;
+  }
+
+  .benefitPrimary strong {
+    font-size: 0.9rem;
+  }
+
+  .benefitPrimary small {
+    font-size: 0.7rem;
+  }
+
+  .benefitSecondaryRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0.56rem;
+    padding-top: 0.5rem;
+  }
+
+  .benefitSecondaryRow span {
+    font-size: 0.69rem;
+    justify-content: flex-start;
+  }
+
+  .benefitSecondaryRow span + span {
+    border-left: 1px solid rgba(21, 74, 116, 0.10);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cityLabel,
+  .spainPing {
+    animation: none !important;
+  }
+
+  .cityLabel {
+    opacity: 1;
+    transform: none;
+  }
+}

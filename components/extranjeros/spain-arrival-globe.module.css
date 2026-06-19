@@ -1,0 +1,175 @@
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  height: clamp(450px, 44vw, 590px);
+  overflow: visible;
+  isolation: isolate;
+  background: transparent;
+}
+
+.ambientGlow {
+  position: absolute;
+  z-index: 0;
+  inset: 6% 0 3% 8%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 60% 48%,
+      rgba(96, 156, 219, 0.22),
+      rgba(168, 188, 220, 0.09) 52%,
+      transparent 74%
+    );
+  filter: blur(30px);
+  animation: ambientBreath 8s ease-in-out infinite;
+}
+
+.globeMotion {
+  position: absolute;
+  z-index: 2;
+  inset: -1% -5% -4% -2%;
+  animation: globeFloat 7.5s ease-in-out infinite;
+  transform-origin: 58% 50%;
+}
+
+.globeImage {
+  z-index: 2;
+  object-fit: contain;
+  object-position: center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 92%, rgba(0, 0, 0, 0.25) 98%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 92%, rgba(0, 0, 0, 0.25) 98%, transparent 100%);
+  filter:
+    saturate(1.03)
+    contrast(1.02)
+    drop-shadow(0 28px 42px rgba(33, 88, 137, 0.16));
+}
+
+.routes {
+  position: absolute;
+  z-index: 3;
+  inset: -1% -5% -4% -2%;
+  width: 107%;
+  height: 105%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.routeBase {
+  fill: none;
+  stroke: rgba(212, 168, 48, 0.24);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+.routeFlow {
+  fill: none;
+  stroke: url(#vpi-route-gradient);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-dasharray: 5 14;
+  animation: routeDash 4.8s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(212, 168, 48, 0.32));
+}
+
+.routeParticle {
+  fill: #FFF0B8;
+}
+
+.spainPulse {
+  fill: none;
+  stroke: rgba(212, 168, 48, 0.76);
+  stroke-width: 2;
+  transform-origin: 458px 305px;
+  animation: spainPulse 3s ease-out infinite;
+}
+
+.spainPulseDelayed {
+  animation-delay: 1.5s;
+}
+
+@keyframes globeFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) scale(1.012);
+  }
+}
+
+@keyframes ambientBreath {
+  0%, 100% {
+    opacity: 0.62;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.025);
+  }
+}
+
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -190;
+  }
+}
+
+@keyframes spainPulse {
+  0% {
+    opacity: 0.92;
+    transform: scale(0.58);
+  }
+  78%, 100% {
+    opacity: 0;
+    transform: scale(2.3);
+  }
+}
+
+@media (max-width: 1139px) {
+  .root {
+    min-height: 380px;
+    height: min(60vw, 520px);
+    overflow: visible;
+  }
+
+  .globeMotion,
+  .routes {
+    inset: -1% -3% -4%;
+    width: 106%;
+  }
+}
+
+@media (max-width: 640px) {
+  .root {
+    min-height: 320px;
+    height: 340px;
+    overflow: visible;
+  }
+
+  .ambientGlow {
+    inset: 8% -12% 2%;
+  }
+
+  .globeMotion {
+    inset: 0 -11% -3%;
+  }
+
+  .routes {
+    inset: 0 -11% -3%;
+    width: 122%;
+    height: 103%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambientGlow,
+  .globeMotion,
+  .routeFlow,
+  .spainPulse {
+    animation: none !important;
+  }
+
+  .routeParticle {
+    display: none;
+  }
+}
