@@ -7,6 +7,9 @@ import { Footer } from '@/components/footer';
 import { IberiaJourneySection } from '@/components/extranjeros/iberia-journey-section';
 import { LatamGlobeOverlay } from '@/components/extranjeros/latam-globe-overlay';
 import SpainArrivalGlobe from '@/components/extranjeros/spain-arrival-globe';
+import { ForeignersPartnerForm } from '@/components/foreigners-partner-form';
+import { ForeignersPartnerTracking } from '@/components/foreigners-partner-tracking';
+import { ForeignersTrackedLink } from '@/components/foreigners-tracked-link';
 import { GoogleReviewsCarousel } from '@/components/google-reviews-carousel';
 import { Header } from '@/components/header';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
@@ -200,6 +203,7 @@ export default function ExtranjerosPage() {
   return (
     <>
       <Header />
+      <ForeignersPartnerTracking />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, faqSchema]) }}
@@ -239,12 +243,14 @@ export default function ExtranjerosPage() {
                         <span key={chip}>{chip}</span>
                       ))}
                     </div>
-                    <a
+                    <ForeignersTrackedLink
                       href="#elige"
                       className={styles.primaryCardCta}
+                      action="cta_click"
+                      label="hero_particulares"
                     >
                       Revisar mi situación <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </ForeignersTrackedLink>
                   </article>
                   <article className={`${styles.journeyCard} ${styles.partnerJourney}`}>
                     <p className={styles.cardEyebrow}>ACADEMIAS Y ASESORÍAS</p>
@@ -255,12 +261,14 @@ export default function ExtranjerosPage() {
                         <span key={chip}>{chip}</span>
                       ))}
                     </div>
-                    <a
+                    <ForeignersTrackedLink
                       href="#colaboradores"
                       className={styles.partnerCardCta}
+                      action="cta_click"
+                      label="hero_colaboradores"
                     >
                       Ver colaboración <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </ForeignersTrackedLink>
                   </article>
                 </div>
                 <div className={styles.trustBand} aria-label="Señales de confianza">
@@ -286,9 +294,11 @@ export default function ExtranjerosPage() {
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {situationProfiles.map((item) => (
-                <a
+                <ForeignersTrackedLink
                   key={item.title}
                   href={item.href}
+                  action={item.action}
+                  label={item.label}
                   className="group overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <span className="relative block aspect-[4/3] overflow-hidden">
@@ -301,7 +311,7 @@ export default function ExtranjerosPage() {
                       Enviar una consulta <ArrowRight className="h-4 w-4" />
                     </span>
                   </span>
-                </a>
+                </ForeignersTrackedLink>
               ))}
             </div>
           </div>
@@ -447,18 +457,22 @@ export default function ExtranjerosPage() {
                   <div className="mt-8 border-t border-[var(--border)] pt-6 md:flex md:items-center md:justify-between md:gap-6">
                     <p className="max-w-md text-sm font-semibold leading-6 text-slate-700">Puedes enviarnos un caso ahora o consultarnos antes de derivarlo.</p>
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-0 md:shrink-0">
-                      <a
+                      <ForeignersTrackedLink
                         href="#derivar-consulta"
                         className="btn-secondary"
+                        action="cta_click"
+                        label="b2b_to_form"
                       >
                         Derivar un caso
-                      </a>
-	                      <a
+                      </ForeignersTrackedLink>
+	                      <ForeignersTrackedLink
 	                        href={partnerConsultWhatsApp}
 	                        className="btn-whatsapp"
+	                        action="whatsapp_click"
+	                        label="professional_collaboration"
                       >
                         <MessageCircle className="h-4 w-4" /> Consultar antes
-                      </a>
+                      </ForeignersTrackedLink>
                     </div>
                   </div>
                 </div>
@@ -506,7 +520,7 @@ export default function ExtranjerosPage() {
                   <p className="mt-8 rounded-[20px] border border-white/70 bg-white/65 p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">Nos pondremos en contacto con el cliente utilizando los datos autorizados.</p>
                 </div>
                 <div className="p-5 md:p-8 lg:p-10">
-                  <div aria-hidden="true" />
+                  <ForeignersPartnerForm />
                 </div>
               </div>
             </div>
@@ -542,12 +556,12 @@ export default function ExtranjerosPage() {
                   <p className="mt-4 text-lg leading-9 text-white/80">Particulares y profesionales pueden iniciar la consulta con la información mínima necesaria.</p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
-                  <a href={personalWhatsApp} className="btn-whatsapp">
+                  <ForeignersTrackedLink href={personalWhatsApp} className="btn-whatsapp" action="whatsapp_click" label="final_cta">
                     Revisar mi situación
-                  </a>
-	                  <a href="#derivar-consulta" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">
+                  </ForeignersTrackedLink>
+	                  <ForeignersTrackedLink href="#derivar-consulta" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]" action="cta_click" label="final_to_form">
 	                    Derivar un caso
-	                  </a>
+	                  </ForeignersTrackedLink>
                 </div>
               </div>
             </div>

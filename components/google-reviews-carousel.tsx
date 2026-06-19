@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { trackForeignersPartner } from '@/lib/foreigners-partner-analytics';
 import type { GoogleReview } from '@/lib/google-reviews';
 
 type GoogleReviewsCarouselProps = {
@@ -111,6 +112,7 @@ export function GoogleReviewsCarousel({
           href={allReviewsUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackForeignersPartner({ action: 'google_reviews_click', label: 'reviews_carousel' })}
           className="text-sm font-medium text-blue-600 underline underline-offset-2 hover:text-blue-800"
         >
           Ver todas en Google →

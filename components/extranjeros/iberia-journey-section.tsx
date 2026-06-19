@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { ArrowRight } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { ForeignersTrackedLink } from '@/components/foreigners-tracked-link';
 import { iberiaJourneySteps } from './iberia-journey-data';
 import { IberiaJourneyStep } from './iberia-journey-step';
 import styles from './iberia-journey-section.module.css';
@@ -209,12 +210,14 @@ export function IberiaJourneySection({ contactHref }: { contactHref: string }) {
               ))}
             </div>
 
-            <a
+            <ForeignersTrackedLink
               href="#elige"
               className={styles.cta}
+              action="cta_click"
+              label="iberia_journey_cta"
             >
               Revisar mi situación <ArrowRight className="h-4 w-4" />
-            </a>
+            </ForeignersTrackedLink>
             <p className={styles.trustLine}>Con pasaporte · Atención desde España · Seguimiento hasta la documentación</p>
           </div>
         </div>

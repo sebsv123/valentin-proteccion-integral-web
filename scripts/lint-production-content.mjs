@@ -52,7 +52,7 @@ function walk(path) {
   });
 }
 
-roots.filter(existsSync).forEach(walk);
+roots.forEach(walk);
 
 if (matches.length) {
   console.error(matches.join('\n'));
