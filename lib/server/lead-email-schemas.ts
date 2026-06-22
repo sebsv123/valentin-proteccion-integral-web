@@ -118,8 +118,8 @@ export function professionalReferralToLeadEmail(payload: ProfessionalReferralPay
     message: [
       `Empresa o entidad: ${payload.empresa}`,
       `Alumno o cliente: ${payload.nombreCliente}`,
-    `Contacto del alumno o cliente: ${payload.contactoCliente}`,
-    `Tipo de trámite: ${payload.tipoTramite}`,
+      `Contacto del alumno o cliente: ${payload.contactoCliente}`,
+      `Tipo de trámite: ${payload.tipoTramite}`,
       `Confirmación de no enviar documentación sensible: ${payload.sensitiveNotice ? "Sí" : "No"}`,
     ].join("\n"),
     consent: true,
