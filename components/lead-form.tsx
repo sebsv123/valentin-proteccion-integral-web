@@ -7,7 +7,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
-import { captureUTMs, getStoredUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+import { captureUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+
+const CONTACT_EMAIL = 'contacto@valentinproteccionintegral.com';
+const FORM_DELIVERY_ERROR = `No hemos podido enviar el formulario. Escríbenos por WhatsApp o a ${CONTACT_EMAIL}.`;
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Indícanos tu nombre'),
@@ -54,9 +57,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
     };
 
     if (!endpoint) {
-      setServerMessage('Tu solicitud está lista para enviarse. Mientras terminamos la conexión automática, puedes escribirnos por WhatsApp y te ayudamos igualmente.');
-      reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
-      router.push('/gracias');
+      setServerError(FORM_DELIVERY_ERROR);
       return;
     }
 
@@ -70,12 +71,12 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error('No hemos podido enviar tu solicitud. Escríbenos por WhatsApp y lo resolvemos contigo.');
+      if (!response.ok) throw new Error(FORM_DELIVERY_ERROR);
 
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
       router.push('/gracias');
     } catch (error) {
-      setServerError(error instanceof Error ? error.message : 'Ha ocurrido un error inesperado.');
+      setServerError(error instanceof Error ? error.message : FORM_DELIVERY_ERROR);
     }
   };
 

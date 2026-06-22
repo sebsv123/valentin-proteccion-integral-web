@@ -24,11 +24,13 @@ export default function AsesoriaGratuitaLanding() {
   const [phone, setPhone] = useState('');
   const [product, setProduct] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim() || !product) return;
     setSubmitting(true);
+    setSubmitError(null);
 
     // Capture UTMs from URL
     captureUTMs();
@@ -57,9 +59,8 @@ export default function AsesoriaGratuitaLanding() {
       } catch { return {}; }
     })() : {};
 
-    // Store lead data (could also send to API)
     try {
-      await fetch('/api/wa/inbound', {
+      const response = await fetch('/api/wa/inbound', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -70,12 +71,16 @@ export default function AsesoriaGratuitaLanding() {
           ...utms,
         }),
       });
-    } catch {
-      // Silently fail — redirect anyway
-    }
 
-    // Redirect to gracias
-    router.push('/gracias');
+      if (!response.ok) {
+        throw new Error('No hemos podido enviar el formulario.');
+      }
+
+      router.push('/gracias');
+    } catch {
+      setSubmitError('No hemos podido enviar el formulario. Escríbenos por WhatsApp o a contacto@valentinproteccionintegral.com.');
+      setSubmitting(false);
+    }
   };
 
   const wHref = buildWhatsAppHref('Hola, quiero una asesoría gratuita sobre seguros. ¿Podéis ayudarme?');
@@ -246,6 +251,12 @@ export default function AsesoriaGratuitaLanding() {
                     >
                       {submitting ? 'Enviando...' : 'Solicitar asesoría gratuita'}
                     </button>
+
+                    {submitError ? (
+                      <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {submitError}
+                      </p>
+                    ) : null}
 
                     <p className="text-xs text-gray-400 text-center">
                       Al enviar aceptas nuestra{' '}
