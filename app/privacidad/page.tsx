@@ -31,18 +31,21 @@ export default function PrivacidadPage() {
               <strong>NIF:</strong> 79234434D<br />
               <strong>Actividad:</strong> Mediación de seguros — inscrita en el Registro de Mediadores de la DGSFP (Clave: C012479234434D)<br />
               <strong>Dirección:</strong> C. de los Reyes Católicos, 1, 28660 Boadilla del Monte, Madrid<br />
-              <strong>Teléfono:</strong> +34 603 44 87 65<br />
-              <strong>Email:</strong> hola@valentinproteccionintegral.com<br />
+              <strong>Teléfono:</strong> +34 603 448 765<br />
+              <strong>Email:</strong> contacto@valentinproteccionintegral.com<br />
               <strong>Web:</strong> https://valentinproteccionintegral.com
             </p>
 
             <h2>2. Datos que recogemos y con qué finalidad</h2>
-            <p>A través del formulario de contacto recogemos los siguientes datos:</p>
+            <p>A través de los formularios de contacto y landings recogemos los siguientes datos, según el formulario utilizado:</p>
             <ul>
               <li><strong>Nombre y apellidos</strong> — para identificarte y personalizar la respuesta.</li>
-              <li><strong>Teléfono</strong> — para contactar contigo y orientarte sobre el producto de interés.</li>
+              <li><strong>Teléfono</strong> — para contactar contigo y orientarte sobre el producto o consulta de interés.</li>
+              <li><strong>Correo electrónico</strong> — solo en formularios que lo solicitan expresamente, como colaboraciones profesionales.</li>
               <li><strong>Producto de interés y notas adicionales</strong> — para preparar una orientación útil y relevante a tu situación.</li>
+              <li><strong>Datos del alumno o cliente derivado</strong> — solo en formularios profesionales, cuando confirmas que cuentas con autorización para facilitar el contacto.</li>
               <li><strong>URL de la página de origen y referrer</strong> — datos técnicos de navegación recogidos automáticamente para mejorar el servicio.</li>
+              <li><strong>Parámetros UTM</strong> — cuando accedes desde campañas, para identificar el origen de la consulta.</li>
               <li><strong>Fecha y hora del envío</strong> — registro interno del formulario.</li>
             </ul>
             <p>
@@ -51,9 +54,10 @@ export default function PrivacidadPage() {
               precontractuales a petición del interesado (Art. 6.1.b RGPD).
             </p>
             <p>
-              Los datos <strong>no se utilizan para elaborar perfiles comerciales automatizados</strong>,
-              no se ceden a terceros salvo obligación legal,
-              y no se transfieren fuera del Espacio Económico Europeo.
+              Los datos <strong>no se utilizan para elaborar perfiles comerciales automatizados</strong>.
+              No se ceden a terceros salvo obligación legal o cuando resulte necesario para prestar
+              servicios técnicos vinculados a la web, analítica o comunicación, conforme a sus
+              correspondientes garantías contractuales.
             </p>
 
             <h2>3. Plazo de conservación</h2>
@@ -78,9 +82,14 @@ export default function PrivacidadPage() {
             </ul>
             <p>
               Para ejercer cualquiera de estos derechos, envía un correo a{' '}
-              <a href="mailto:hola@valentinproteccionintegral.com">hola@valentinproteccionintegral.com</a>{' '}
-              indicando el derecho que deseas ejercer y adjuntando una copia de tu DNI u otro documento
-              identificativo. Responderemos en el plazo máximo de 30 días hábiles.
+              <a href="mailto:contacto@valentinproteccionintegral.com">contacto@valentinproteccionintegral.com</a>{' '}
+              indicando el derecho que deseas ejercer. Solo podremos solicitar información adicional
+              para confirmar tu identidad cuando existan dudas razonables.
+            </p>
+            <p>
+              Responderemos en el plazo de un mes desde la recepción de la solicitud. Este plazo
+              podrá ampliarse otros dos meses cuando sea necesario por la complejidad o el número
+              de solicitudes, informándote de dicha ampliación.
             </p>
             <p>
               Si consideras que el tratamiento no se ajusta a la normativa vigente, tienes derecho a

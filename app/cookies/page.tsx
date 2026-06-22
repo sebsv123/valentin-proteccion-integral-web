@@ -32,8 +32,12 @@ export default function CookiesPage() {
               para recordar tus preferencias y para recopilar información estadística sobre el uso.
             </p>
 
-            <h2>2. Cookies que utiliza esta web</h2>
-            <p>Este sitio web utiliza únicamente las siguientes cookies:</p>
+            <h2>2. Cookies y servicios que utiliza esta web</h2>
+            <p>
+              Este sitio puede utilizar cookies y recursos externos vinculados a los siguientes
+              servicios. Las cookies no necesarias solo se instalarán cuando prestes tu consentimiento
+              mediante el panel de configuración.
+            </p>
             <div className="overflow-x-auto mt-4">
               <table className="w-full text-sm border-collapse">
                 <thead>
@@ -47,15 +51,13 @@ export default function CookiesPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="p-3 border border-[var(--border)]">_clck, _clsk</td>
-                    <td className="p-3 border border-[var(--border)]">Microsoft Clarity</td>
+                    <td className="p-3 border border-[var(--border)]">GTM / Google tags</td>
+                    <td className="p-3 border border-[var(--border)]">Google LLC</td>
                     <td className="p-3 border border-[var(--border)]">Analítica</td>
                     <td className="p-3 border border-[var(--border)]">
-                      Registro de comportamiento de navegación (mapas de calor, grabaciones
-                      de sesión) para mejorar la usabilidad del sitio. No recoge datos
-                      personales identificables.
+                      Gestión de etiquetas y medición de eventos de navegación tras consentimiento.
                     </td>
-                    <td className="p-3 border border-[var(--border)]">1 año / sesión</td>
+                    <td className="p-3 border border-[var(--border)]">Según configuración de Google</td>
                   </tr>
                   <tr>
                     <td className="p-3 border border-[var(--border)]">va_* (Vercel Analytics)</td>
@@ -68,19 +70,45 @@ export default function CookiesPage() {
                     </td>
                     <td className="p-3 border border-[var(--border)]">Sesión</td>
                   </tr>
+                  <tr>
+                    <td className="p-3 border border-[var(--border)]">_clck, _clsk</td>
+                    <td className="p-3 border border-[var(--border)]">Microsoft Clarity</td>
+                    <td className="p-3 border border-[var(--border)]">Analítica</td>
+                    <td className="p-3 border border-[var(--border)]">
+                      Mapas de calor y grabaciones de sesión para mejorar la usabilidad del sitio,
+                      solo si está configurado y aceptado.
+                    </td>
+                    <td className="p-3 border border-[var(--border)]">1 año / sesión</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-[var(--border)]">_fbp y similares</td>
+                    <td className="p-3 border border-[var(--border)]">Meta Platforms Ireland Ltd.</td>
+                    <td className="p-3 border border-[var(--border)]">Marketing</td>
+                    <td className="p-3 border border-[var(--border)]">
+                      Medición de campañas y eventos de conversión cuando la variable de Meta Pixel
+                      está configurada y has prestado consentimiento.
+                    </td>
+                    <td className="p-3 border border-[var(--border)]">Según configuración de Meta</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-[var(--border)]">Recursos de Google Maps</td>
+                    <td className="p-3 border border-[var(--border)]">Google LLC</td>
+                    <td className="p-3 border border-[var(--border)]">Funcional / externo</td>
+                    <td className="p-3 border border-[var(--border)]">
+                      Visualización del mapa de ubicación mediante iframe en el pie de página.
+                    </td>
+                    <td className="p-3 border border-[var(--border)]">Según configuración de Google</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4">
-              <strong>No utilizamos cookies publicitarias, de remarketing ni de seguimiento entre sitios.</strong>
-            </p>
 
             <h2>3. Base legal</h2>
             <p>
               Las cookies analíticas se instalan bajo tu <strong>consentimiento</strong>{' '}
-              (Art. 6.1.a RGPD y Art. 22 LSSI-CE). Al continuar navegando por este sitio
-              sin rechazarlas, aceptas su uso. Puedes retirar tu consentimiento en cualquier
-              momento siguiendo las instrucciones del apartado siguiente.
+              (Art. 6.1.a RGPD y Art. 22 LSSI-CE). Las cookies no necesarias solo se instalarán
+              cuando prestes tu consentimiento mediante el panel de configuración. Puedes aceptar,
+              rechazar o configurar su uso en cualquier momento.
             </p>
 
             <h2>4. Cómo gestionar o eliminar las cookies</h2>

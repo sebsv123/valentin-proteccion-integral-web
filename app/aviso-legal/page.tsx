@@ -35,17 +35,16 @@ export default function AvisoLegalPage() {
               <li><strong>Titular:</strong> Rosa Valentín</li>
               <li><strong>NIF:</strong> 79234434D</li>
               <li><strong>Clave de registro DGSFP:</strong> C012479234434D</li>
-              <li><strong>Co-titular / Colaborador:</strong> Sebastián Sifontes Valentín (NIF: 72295271S — Clave DGSFP: C046172295271S)</li>
               <li><strong>Denominación comercial:</strong> Valentín Protección Integral</li>
               <li><strong>Domicilio:</strong> C. de los Reyes Católicos, 1, 28660 Boadilla del Monte, Madrid, España</li>
-              <li><strong>Teléfono:</strong> +34 603 44 87 65</li>
-              <li><strong>Email:</strong> hola@valentinproteccionintegral.com</li>
+              <li><strong>Teléfono:</strong> +34 603 448 765</li>
+              <li><strong>Email:</strong> contacto@valentinproteccionintegral.com</li>
               <li><strong>Web:</strong> https://valentinproteccionintegral.com</li>
               <li>
                 <strong>Registro DGSFP:</strong> Inscritos en el Registro de Mediadores de
                 Seguros y Reaseguros de la Dirección General de Seguros y Fondos de Pensiones (DGSFP).
                 Consulta pública disponible en{' '}
-                <a href="https://rrpp.dgsfp.mineco.es/Mediador" target="_blank" rel="noreferrer">rrpp.dgsfp.mineco.es/Mediador</a>.
+                <a href="https://rrpp.dgsfp.mineco.es/Mediador" target="_blank" rel="noopener noreferrer">rrpp.dgsfp.mineco.es/Mediador</a>.
               </li>
             </ul>
 

@@ -6,6 +6,8 @@ import { Cookie, X, Settings } from 'lucide-react';
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [marketingEnabled, setMarketingEnabled] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
@@ -14,18 +16,23 @@ export function CookieBanner() {
     }
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
+  const updateConsent = (value: 'accepted' | 'rejected') => {
+    localStorage.setItem('cookie-consent', value);
+    window.dispatchEvent(new Event('cookie-consent-updated'));
     setIsVisible(false);
+    setShowSettings(false);
+  };
+
+  const handleAccept = () => {
+    updateConsent('accepted');
   };
 
   const handleReject = () => {
-    localStorage.setItem('cookie-consent', 'rejected');
-    setIsVisible(false);
+    updateConsent('rejected');
   };
 
   const handleClose = () => {
-    setIsVisible(false);
+    handleReject();
   };
 
   if (!isVisible) return null;
@@ -82,7 +89,7 @@ export function CookieBanner() {
                 Tu privacidad importa
               </h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
-                Utilizamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar el contenido. Puedes aceptar todas las cookies o gestionar tus preferencias.
+                Utilizamos cookies necesarias para que la web funcione. Las cookies analíticas o de marketing solo se instalarán si las aceptas o las configuras.
               </p>
 
               {/* Buttons */}
@@ -249,7 +256,8 @@ export function CookieBanner() {
                 <div className="relative">
                   <input
                     type="checkbox"
-                    defaultChecked
+                    checked={analyticsEnabled}
+                    onChange={(event) => setAnalyticsEnabled(event.target.checked)}
                     className="
                       w-11 h-6 rounded-full appearance-none
                       bg-[var(--border)] cursor-pointer
@@ -284,6 +292,8 @@ export function CookieBanner() {
                 <div className="relative">
                   <input
                     type="checkbox"
+                    checked={marketingEnabled}
+                    onChange={(event) => setMarketingEnabled(event.target.checked)}
                     className="
                       w-11 h-6 rounded-full appearance-none
                       bg-[var(--border)] cursor-pointer
@@ -303,9 +313,7 @@ export function CookieBanner() {
             <div className="flex gap-2">
               <button
                 onClick={() => {
-                  localStorage.setItem('cookie-consent', 'custom');
-                  setShowSettings(false);
-                  setIsVisible(false);
+                  updateConsent(analyticsEnabled || marketingEnabled ? 'accepted' : 'rejected');
                 }}
                 className="
                   flex-1 inline-flex items-center justify-center gap-2
