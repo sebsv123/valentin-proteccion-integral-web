@@ -630,7 +630,7 @@ export default function HealthInsuranceForeignersSpainPage() {
           <div className="flex items-center justify-center gap-4 mt-4 text-sm">
             <a href="tel:+34603448765" className="text-slate-400 hover:text-white transition-colors">603 44 87 65</a>
             <span className="text-slate-600">Â·</span>
-            <a href="mailto:rosavalenting@gmail.com" className="text-slate-400 hover:text-white transition-colors">rosavalenting@gmail.com</a>
+            <a href="mailto:contacto@valentinproteccionintegral.com" className="text-slate-400 hover:text-white transition-colors">contacto@valentinproteccionintegral.com</a>
           </div>
         </div>
       </footer>

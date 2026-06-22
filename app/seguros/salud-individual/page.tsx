@@ -635,7 +635,7 @@ export default async function SaludIndividualPage() {
         <div className="flex items-center justify-center gap-4 mt-3">
           <a href="tel:+34603448765" className="text-white/40 hover:text-white/70 transition-colors">603 44 87 65</a>
           <span className="text-white/20">·</span>
-          <a href="mailto:rosavalenting@gmail.com" className="text-white/40 hover:text-white/70 transition-colors">rosavalenting@gmail.com</a>
+          <a href="mailto:contacto@valentinproteccionintegral.com" className="text-white/40 hover:text-white/70 transition-colors">contacto@valentinproteccionintegral.com</a>
         </div>
       </footer>
       <StickyWhatsApp />

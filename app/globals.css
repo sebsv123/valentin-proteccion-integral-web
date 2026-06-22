@@ -306,22 +306,6 @@ img { max-width: 100%; height: auto; }
   opacity: 0;
 }
 
-/* ClickSpark dots */
-.click-spark-dot {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--spark-color, #25D366);
-  pointer-events: none;
-  transform-origin: 0 0;
-  animation: spark-shoot 0.55s ease-out forwards;
-}
-@keyframes spark-shoot {
-  0%   { transform: rotate(var(--angle, 0deg)) translateX(0)    scale(1); opacity: 1; }
-  100% { transform: rotate(var(--angle, 0deg)) translateX(44px) scale(0); opacity: 0; }
-}
-
 /* Dental hero glow badge */
 @keyframes dental-glow-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
@@ -440,4 +424,3 @@ img { max-width: 100%; height: auto; }
     transform: none;
   }
 }
-

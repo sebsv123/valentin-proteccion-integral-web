@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
 import { WhatsAppButton } from './whatsapp-button';
 import { BrandLockup } from './ui/brand-lockup';
+import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer() {
   return (
@@ -49,29 +50,20 @@ export function Footer() {
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Contacto</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
               <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">603 44 87 65</a>
-              <a href="mailto:rosavalenting@gmail.com" className="block hover:text-[var(--blue)] text-sm">rosavalenting@gmail.com</a>
+              <a href="mailto:contacto@valentinproteccionintegral.com" className="block hover:text-[var(--blue)] text-sm">contacto@valentinproteccionintegral.com</a>
               <p className="font-medium text-[var(--blue-deep)] text-sm">Boadilla del Monte, Madrid</p>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--blue)] text-sm">@segurosvalentin</a>
               <WhatsAppButton href={buildWhatsAppHref('Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)] text-sm">Abrir WhatsApp</WhatsAppButton>
             </div>
             <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24320.79618946965!2d-3.892!3d40.407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4189ae3e2492e3%3A0x6e9e5e3b0c8e0c0a!2sBoadilla%20del%20Monte%2C%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-                width="100%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación en Boadilla del Monte, Madrid"
-              />
+              <CookieAwareMap />
             </div>
           </div>
         </div>
         <div className="mt-10 grid gap-4 border-t border-[var(--border)] pt-6 text-sm leading-7 text-[var(--muted)] md:grid-cols-3">
           <p>La información mostrada es orientativa y no sustituye a la documentación contractual final de cada aseguradora.</p>
           <p>Las coberturas, límites, primas y condiciones pueden variar según modalidad, edad, provincia y aceptación del riesgo.</p>
-          <p>Valentín Protección Integral es tu agencia de confianza para asesorar y acompañarte en cada paso.</p>
+          <p>Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
         </div>
         <div className="mt-6 border-t border-[var(--border)] pt-6 text-center text-sm text-[var(--muted)]">
           <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>
