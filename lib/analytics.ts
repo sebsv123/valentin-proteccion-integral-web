@@ -139,3 +139,22 @@ export function trackLeadFormSubmit(params: {
 export function trackContactar(params?: Record<string, unknown>): void {
   trackEvent('Contactar', params);
 }
+
+/**
+ * Track when a user starts filling a form. No PII is sent.
+ */
+export function trackFormStart(formId: string): void {
+  trackEvent('form_start', {
+    form_id: formId,
+  });
+}
+
+/**
+ * Track form submission result. No PII is sent.
+ */
+export function trackFormSubmit(formId: string, success: boolean): void {
+  trackEvent('form_submit', {
+    form_id: formId,
+    success,
+  });
+}

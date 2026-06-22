@@ -32,24 +32,7 @@ export default function AsesoriaGratuitaLanding() {
     setSubmitting(true);
     setSubmitError(null);
 
-    // Capture UTMs from URL
     captureUTMs();
-
-    // Fire lead_form_submit event
-    trackLeadFormSubmit({
-      product_slug: 'asesoria-gratuita',
-      lead_type: 'form',
-      page_location: typeof window !== 'undefined' ? window.location.href : '',
-    });
-
-    // GA4 event
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'Contactar', {
-        event_category: 'conversion',
-        event_label: 'asesoria_gratuita_landing',
-        value: product,
-      });
-    }
 
     // Get stored UTMs to include in payload
     const utms = typeof window !== 'undefined' ? (() => {
@@ -60,20 +43,43 @@ export default function AsesoriaGratuitaLanding() {
     })() : {};
 
     try {
-      const response = await fetch('/api/wa/inbound', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          source: 'landing-asesoria-gratuita',
           name: name.trim(),
           phone: phone.trim(),
-          product,
-          source: 'landing-asesoria-gratuita',
-          ...utms,
+          interest: product,
+          message: 'Solicitud de asesoría gratuita',
+          consent: true,
+          website: '',
+          pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+          referrer: typeof document !== 'undefined' ? document.referrer || '' : '',
+          utm: utms,
         }),
       });
 
       if (!response.ok) {
         throw new Error('No hemos podido enviar el formulario.');
+      }
+
+      trackLeadFormSubmit({
+        product_slug: 'asesoria-gratuita',
+        lead_type: 'form',
+        page_location: typeof window !== 'undefined' ? window.location.href : '',
+      });
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'Contactar', {
+          event_category: 'conversion',
+          event_label: 'asesoria_gratuita_landing',
+          value: product,
+        });
+      }
+      if (typeof window !== 'undefined') {
+        try {
+          sessionStorage.setItem('valentin_conversion_fired', '1');
+        } catch { /* ignore */ }
       }
 
       router.push('/gracias');

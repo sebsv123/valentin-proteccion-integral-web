@@ -1,36 +1,73 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { ChevronDown } from "lucide-react";
-import { captureUTMs, trackLeadFormSubmit } from "@/lib/analytics";
-
-const DENTAL_WHATSAPP_MESSAGE = "Hola, me interesa un seguro dental. ¿Pueden asesorarme sin compromiso?";
+import { captureUTMs, getStoredUTMs, trackLeadFormSubmit } from "@/lib/analytics";
 
 export function DentalLeadForm() {
+  const router = useRouter();
   const [form, setForm] = useState({ nombre: "", telefono: "", personas: "Solo yo" });
-  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    setSubmitError(null);
 
-    // Capture UTMs from URL
-    captureUTMs();
+    const capturedUTMs = captureUTMs();
+    const storedUTMs = getStoredUTMs();
 
-    // Fire lead_form_submit event (incluye GA4 + Meta + dataLayer)
-    trackLeadFormSubmit({
-      product_slug: 'dental',
-      lead_type: 'form_whatsapp',
-      page_location: typeof window !== 'undefined' ? window.location.href : '',
-    });
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "dental-lead-form",
+          name: form.nombre.trim(),
+          phone: form.telefono.trim(),
+          interest: "dental",
+          message: `Personas: ${form.personas}`,
+          consent: true,
+          website: "",
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          referrer: typeof document !== "undefined" ? document.referrer || "" : "",
+          utm: { ...storedUTMs, ...capturedUTMs },
+        }),
+      });
 
+      if (!response.ok) {
+        throw new Error("No hemos podido enviar el formulario.");
+      }
+
+      trackLeadFormSubmit({
+        product_slug: "dental",
+        lead_type: "form",
+        page_location: typeof window !== "undefined" ? window.location.href : "",
+      });
+      if (typeof window !== "undefined") {
+        try {
+          sessionStorage.setItem("valentin_conversion_fired", "1");
+        } catch { /* ignore */ }
+      }
+
+      router.push("/gracias");
+    } catch {
+      setSubmitError("No hemos podido enviar el formulario. Escríbenos por WhatsApp o a contacto@valentinproteccionintegral.com.");
+      setSubmitting(false);
+    }
+  };
+
+  const whatsappHref = () => {
     const msg = encodeURIComponent(
       `Hola Rosa y Sebastián 👋\n\nMe llamo *${form.nombre}* y me gustaría información sobre el seguro dental.\n\n📞 Teléfono: ${form.telefono}\n👥 Para: ${form.personas}\n\nGracias.`
     );
-    window.open(`https://wa.me/34603448765?text=${msg}`, "_blank");
-    setSent(true);
+    return `https://wa.me/34603448765?text=${msg}`;
   };
 
   return (
@@ -78,22 +115,24 @@ export function DentalLeadForm() {
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
           </div>
         </div>
-        {sent ? (
-          <div className="w-full py-5 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
-            <p className="text-emerald-700 font-bold text-lg">✅ ¡Perfecto! WhatsApp abierto.</p>
-            <p className="text-emerald-600 text-sm mt-1">Rosa o Sebastián te responden en menos de 30 minutos.</p>
+        <button
+          type="submit"
+          disabled={submitting}
+          className={cn(buttonVariants({ size: "lg" }), "w-full h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform gap-2 disabled:cursor-not-allowed disabled:opacity-70")}
+        >
+          <WhatsAppIcon className="h-5 w-5" />
+          {submitting ? "Enviando..." : "Solicitar orientación dental"}
+        </button>
+        {submitError ? (
+          <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-center text-sm text-red-700">
+            <p>{submitError}</p>
+            <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-semibold underline underline-offset-4">
+              Abrir WhatsApp
+            </a>
           </div>
-        ) : (
-          <button
-            type="submit"
-            className={cn(buttonVariants({ size: "lg" }), "w-full h-14 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform gap-2")}
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            Enviar por WhatsApp
-          </button>
-        )}
+        ) : null}
         <p className="text-center text-sm text-muted-foreground opacity-70">
-          Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
+          Al enviar, recibimos tu consulta y te contactamos en horario de atención.
         </p>
         <p className="text-center text-xs font-semibold text-emerald-600 flex items-center justify-center gap-1.5">
           <span>🎁</span>

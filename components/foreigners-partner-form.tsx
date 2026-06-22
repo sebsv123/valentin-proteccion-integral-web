@@ -61,14 +61,18 @@ export function ForeignersPartnerForm() {
     setServerMessage(null);
 
     try {
-      const response = await fetch('/api/professional-referrals', {
+      const response = await fetch('/api/professional-referral', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+          referrer: typeof document !== 'undefined' ? document.referrer || '' : '',
+        }),
       });
 
-      const data = (await response.json()) as { ok?: boolean; message?: string };
-      if (!response.ok || !data.ok) {
+      const data = (await response.json()) as { ok?: boolean; success?: boolean; message?: string; error?: string };
+      if (!response.ok || (!data.ok && !data.success)) {
         throw new Error(data.message || 'No hemos podido enviar la derivación.');
       }
 

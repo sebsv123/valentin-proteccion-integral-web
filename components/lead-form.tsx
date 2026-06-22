@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
-import { captureUTMs, trackLeadFormSubmit } from '@/lib/analytics';
+import { captureUTMs, getStoredUTMs, trackLeadFormSubmit } from '@/lib/analytics';
 
 const CONTACT_EMAIL = 'contacto@valentinproteccionintegral.com';
 const FORM_DELIVERY_ERROR = `No hemos podido enviar el formulario. Escríbenos por WhatsApp o a ${CONTACT_EMAIL}.`;
@@ -37,41 +37,41 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
     setServerMessage(null);
     setServerError(null);
 
-    // Capture UTMs from URL
-    captureUTMs();
-
-    // Fire lead_form_submit event
-    trackLeadFormSubmit({
-      product_slug: values.productInterest,
-      lead_type: 'form',
-      page_location: typeof window !== 'undefined' ? window.location.href : '',
-    });
-
-    const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
-    const secret = process.env.NEXT_PUBLIC_LEAD_SECRET;
+    const capturedUTMs = captureUTMs();
+    const storedUTMs = getStoredUTMs();
 
     const payload = {
-      ...values,
-      page: typeof window !== 'undefined' ? { url: window.location.href, referrer: document.referrer || '' } : {},
-      timestamp: new Date().toISOString(),
+      source: 'lead-form',
+      name: values.fullName,
+      phone: values.phone,
+      interest: values.productInterest,
+      message: values.notes || '',
+      consent: values.consent,
+      website: values.website || '',
+      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+      referrer: typeof document !== 'undefined' ? document.referrer || '' : '',
+      utm: { ...storedUTMs, ...capturedUTMs },
     };
 
-    if (!endpoint) {
-      setServerError(FORM_DELIVERY_ERROR);
-      return;
-    }
-
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch('/api/leads', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(secret ? { 'X-Lead-Secret': secret } : {}),
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
       if (!response.ok) throw new Error(FORM_DELIVERY_ERROR);
+
+      trackLeadFormSubmit({
+        product_slug: values.productInterest,
+        lead_type: 'form',
+        page_location: typeof window !== 'undefined' ? window.location.href : '',
+      });
+      if (typeof window !== 'undefined') {
+        try {
+          sessionStorage.setItem('valentin_conversion_fired', '1');
+        } catch { /* ignore */ }
+      }
 
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
       router.push('/gracias');

@@ -112,6 +112,10 @@ export default function ProfessionalReferralForm() {
           nombreCliente: formData.nombreCliente.trim(),
           contactoCliente: formData.contactoCliente.trim(),
           tipoTramite: formData.tipoTramite.trim(),
+          autorizacion: formData.autorizacion,
+          website: honeypotRef.current?.value || "",
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          referrer: typeof document !== "undefined" ? document.referrer || "" : "",
         };
 
         // Attempt to send via API

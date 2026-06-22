@@ -1,14 +1,6 @@
 import { NextResponse } from "next/server";
-import { professionalReferralSchema, professionalReferralToLeadEmail } from "@/lib/server/lead-email-schemas";
 import { LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "@/lib/server/send-lead-email";
-
-/**
- * API route for professional referral form submissions.
- *
- * Since the /extranjeros page is force-static, this route handles
- * the form POST. It must not return success until a real delivery provider
- * has accepted the message.
- */
+import { leadEmailSchema } from "@/lib/server/lead-email-schemas";
 
 export const runtime = "nodejs";
 
@@ -21,13 +13,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Payload inválido." }, { status: 400 });
   }
 
-  const parsed = professionalReferralSchema.safeParse(body);
+  const parsed = leadEmailSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: "Payload inválido." }, { status: 400 });
   }
 
   try {
-    const result = await sendLeadEmail(professionalReferralToLeadEmail(parsed.data));
+    const result = await sendLeadEmail(parsed.data);
     return NextResponse.json({ success: true, messageId: result.messageId });
   } catch (error) {
     if (error instanceof LeadEmailConfigError) {
