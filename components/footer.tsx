@@ -14,7 +14,7 @@ export function Footer() {
               <BrandLockup variant="dark" size="default" />
               <p className="text-[var(--muted)]">{site.brandLine}</p>
             </div>
-            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece asesoramiento personalizado para asegurar tu tranquilidad. Una firma especializada en proteger lo que de verdad importa, acompañándote con cercanía antes y después de contratar.</p>
+            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
             <div className="flex flex-wrap gap-3">
               <WhatsAppButton href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href="/contacto" className="btn-ghost !px-5 !py-3">Formulario</Link>
@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Contacto</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">603 44 87 65</a>
+              <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">+34 603 448 765</a>
               <a href="mailto:contacto@valentinproteccionintegral.com" className="block hover:text-[var(--blue)] text-sm">contacto@valentinproteccionintegral.com</a>
               <p className="font-medium text-[var(--blue-deep)] text-sm">Boadilla del Monte, Madrid</p>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--blue)] text-sm">@segurosvalentin</a>
