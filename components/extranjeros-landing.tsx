@@ -551,8 +551,8 @@ export function ExtranjeroLanding() {
                     </svg>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-bold text-blue-900 leading-tight">Sebastián Valentín</p>
-                    <p className="text-[10px] text-blue-700 leading-tight">Mediador colegiado DGSFP</p>
+                    <p className="text-xs font-bold text-blue-900 leading-tight">Rosa Isabel Valentín González</p>
+                    <p className="text-[10px] text-blue-700 leading-tight">Agente de seguros registrada en la DGSFP</p>
                     <p className="text-[9px] text-blue-500 leading-tight">Nº C012479234434D</p>
                   </div>
                 </div>
