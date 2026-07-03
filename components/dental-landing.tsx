@@ -25,13 +25,13 @@ const DENTAL_WHATSAPP_URL = `https://wa.me/34603448765?text=${encodeURIComponent
 const benefits = [
   {
     icon: <ShieldCheck className="h-8 w-8" />,
-    title: "Sin carencias en lo esencial",
+    title: "Carencias reducidas según modalidad",
     desc: "Revisiones y limpiezas desde el primer día, sin esperar meses.",
     color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30",
   },
   {
     icon: <Clock className="h-8 w-8" />,
-    title: "Respuesta en 30 minutos",
+    title: "Respuesta en horario",
     desc: "Te llama Rosa o Sebastián personalmente. No un call center.",
     color: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30",
   },
@@ -79,7 +79,7 @@ export function DentalLanding() {
       <div className="sticky top-16 z-40 w-full bg-blue-700 text-white py-2 sm:py-3 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-between gap-3">
           <p className="text-sm font-semibold leading-tight text-center flex-1">
-            ¿Tienes ya un seguro dental? Tráenoslo — en 10 años y más de 1.200 familias siempre hemos encontrado uno mejor.
+            ¿Tienes ya un seguro dental? Tráenoslo y lo revisamos contigo entre las modalidades que podemos distribuir.
           </p>
           <a
             href="#contacto"
@@ -103,7 +103,7 @@ export function DentalLanding() {
               className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8"
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold">
-                <BadgeCheck className="h-4 w-4 mr-1.5" /> Más de 1.200 familias protegidas en Madrid
+                <BadgeCheck className="h-4 w-4 mr-1.5" /> Familias protegidas en Madrid
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight">
@@ -276,7 +276,7 @@ export function DentalLanding() {
                 <div className="flex gap-8 relative">
                   <div className="flex-none w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">2</div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Paso 2 — 📞 Te llamamos en 30 minutos</h3>
+                    <h3 className="text-2xl font-bold mb-2">Paso 2 — 📞 Te llamamos en nuestro horario de atención</h3>
                     <p className="text-muted-foreground text-lg">Rosa o Sebastián te explican la mejor opción para ti, sin presión.</p>
                   </div>
                 </div>
@@ -295,7 +295,7 @@ export function DentalLanding() {
                 <div className="p-5 rounded-2xl border-2 border-primary/30 bg-primary/5 flex items-start gap-4">
                   <span className="text-2xl flex-none">⏱️</span>
                   <p className="text-base font-semibold text-foreground leading-relaxed">
-                    Si no respondemos en 30 minutos, te lo explicamos y te compensamos con
+                    Te atendemos dentro de nuestro horario y, si lo prefieres, te lo explicamos en persona con
                     una revisión de toda tu póliza actual — gratis.
                   </p>
                 </div>
@@ -419,7 +419,7 @@ export function DentalLanding() {
                 El mismo seguro. Mejor precio. Garantizado.
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
               </p>
             </div>
           </div>

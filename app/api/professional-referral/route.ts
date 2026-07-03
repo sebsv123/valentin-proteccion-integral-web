@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { professionalReferralSchema, professionalReferralToLeadEmail } from "@/lib/server/lead-email-schemas";
-import { LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "@/lib/server/send-lead-email";
+import { LeadEmailBlockedError, LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "@/lib/server/send-lead-email";
 
 /**
  * API route for professional referral form submissions.
@@ -27,9 +27,18 @@ export async function POST(request: Request) {
   }
 
   try {
-    const result = await sendLeadEmail(professionalReferralToLeadEmail(parsed.data));
+    const result = await sendLeadEmail(professionalReferralToLeadEmail(parsed.data), {
+      requestHost: request.headers.get("host"),
+    });
     return NextResponse.json({ success: true, messageId: result.messageId });
   } catch (error) {
+    if (error instanceof LeadEmailBlockedError) {
+      const message =
+        error.mode === "preview-delivery-blocked"
+          ? "Entrega SMTP bloqueada en este entorno de vista previa."
+          : "Entrega SMTP local bloqueada.";
+      return NextResponse.json({ error: message, delivered: false, mode: error.mode }, { status: 503 });
+    }
     if (error instanceof LeadEmailConfigError) {
       return NextResponse.json({ error: "Entrega no configurada." }, { status: 503 });
     }

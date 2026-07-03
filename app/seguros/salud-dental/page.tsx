@@ -14,12 +14,12 @@ import { Sparkles, CheckCircle2, Clock, Shield, Heart, Smile, Stethoscope, Syrin
 
 export const metadata: Metadata = {
   title: "Seguro Dental en Madrid · Sin Carencias | Valentín",
-  description: "Seguro dental en Madrid sin carencias desde el día 1. Revisiones, empastes y ortodoncia desde 9€/mes. Respuesta garantizada en 30 minutos.",
+  description: "Seguro dental en Madrid: revisiones, empastes y ortodoncia según modalidad. Precios orientativos sujetos a la aseguradora. Te respondemos en nuestro horario de atención.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-dental" },
   openGraph: {
     title: "Seguro Dental en Madrid · Sin Carencias | Valentín",
-    description: "Seguro dental en Madrid sin carencias desde el día 1. Revisiones, empastes y ortodoncia desde 9€/mes. Respuesta garantizada en 30 minutos.",
+    description: "Seguro dental en Madrid: revisiones, empastes y ortodoncia según modalidad. Precios orientativos sujetos a la aseguradora. Te respondemos en nuestro horario de atención.",
     url: "https://valentinproteccionintegral.com/seguros/salud-dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -175,7 +175,7 @@ export default function SaludDentalPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Clock className="w-4 h-4 text-sky-500" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Shield className="w-4 h-4 text-sky-500" />
@@ -219,7 +219,7 @@ export default function SaludDentalPage() {
                 { 
                   icon: CheckCircle2, 
                   title: "Sin carencias", 
-                  desc: "Cobertura desde el día 1. Sin esperas ni papeleo. Empieza a usar tu seguro inmediatamente."
+                  desc: "Carencias y entrada en vigor según modalidad. Te lo explicamos antes de contratar. Empieza a usar tu seguro inmediatamente."
                 },
                 { 
                   icon: Stethoscope, 
@@ -362,7 +362,7 @@ export default function SaludDentalPage() {
                 { 
                   num: "02", 
                   title: "Cotizamos", 
-                  desc: "En 30 minutos tienes tu mejor opción adaptada a ti."
+                  desc: "Te preparamos la opción que mejor se ajuste a ti."
                 },
                 { 
                   num: "03", 
@@ -391,7 +391,7 @@ export default function SaludDentalPage() {
               </h2>
               
               <p className="text-lg text-slate-600 leading-relaxed mb-10 text-center max-w-2xl mx-auto">
-                Tráenoslo. En 10 años y +1.200 familias, siempre hemos encontrado uno mejor — o te lo decimos honestamente si el tuyo ya es bueno.
+                Tráenoslo. Lo revisamos contigo entre las modalidades que podemos distribuir, y te decimos con honestidad si el tuyo ya es una buena opción.
               </p>
               
               <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -438,7 +438,7 @@ export default function SaludDentalPage() {
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
               Sin carencias. Sin compromiso.
               <br />
-              Un WhatsApp. 30 minutos. Empieza a sonreír.
+              Un WhatsApp y te orientamos, sin compromiso.
             </p>
             
             <WhatsAppButton 
@@ -457,7 +457,7 @@ export default function SaludDentalPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <Clock className="w-4 h-4 text-sky-500" />
-                30 min
+                En horario
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <Shield className="w-4 h-4 text-sky-500" />

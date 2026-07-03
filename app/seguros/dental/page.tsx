@@ -81,7 +81,7 @@ export default function DentalPage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#d4fae8] text-[#0fa76e] text-sm mb-8">
                 <Sparkles className="w-4 h-4" />
-                +1.200 sonrisas protegidas · DGSFP
+                sonrisas protegidas · DGSFP
               </div>
               
               {/* H1 Mintlify — Inter 64px weight 600 */}
@@ -155,7 +155,7 @@ export default function DentalPage() {
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: CheckCircle2, title: "Sin carencias", desc: "Cobertura desde el día 1. Sin esperas ni papeleo." },
+                { icon: CheckCircle2, title: "Sin carencias", desc: "Carencias y entrada en vigor según modalidad. Te lo explicamos antes de contratar." },
                 { icon: Bone, title: "Implantes", desc: "Implantes dentales incluidos en tu seguro." },
                 { icon: Smile, title: "Ortodoncia adultos", desc: "Tratamientos de ortodoncia para todas las edades." },
               ].map((item, i) => (
@@ -243,7 +243,7 @@ export default function DentalPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { num: "1", title: "WhatsApp", desc: "Nos cuentas tus necesidades dentales." },
-                { num: "2", title: "Cotizamos", desc: "En 30 min tienes tu mejor opción." },
+                { num: "2", title: "Cotizamos", desc: "Te preparamos tu mejor opción." },
                 { num: "3", title: "Tarjeta", desc: "Tarjeta dental inmediata. Sin esperas." },
               ].map((step, i) => (
                 <div key={i} className="text-center">

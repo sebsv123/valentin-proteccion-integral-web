@@ -13,12 +13,12 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguro Médico para NIE, TIE y Visado | VPI",
-  description: "Seguro médico para extranjeros en España desde 22,50€/mes. Válido para visado, NIE y TIE. Sin copagos desde el primer día. Certificado en 24h. +100 trámites aprobados. Atención directa y personalizada.",
+  description: "Seguro médico para extranjeros en España (precios orientativos desde 22,50€/mes). Modalidades para visado, NIE y TIE. Revisamos que se ajuste a los requisitos habituales de tu trámite; la decisión final corresponde a la administración o consulado.",
   keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España","seguro medico para visado españa","seguro sin copagos extranjeros españa","certificado seguro medico consulado españa"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", languages: { en: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain" } },
   openGraph: {
     title: "Seguro Médico para NIE, TIE y Visado | VPI",
-    description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
+    description: "Modalidades para visado y residencia. Revisamos que se ajuste a los requisitos habituales de tu trámite; decide la administración o consulado.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -56,7 +56,7 @@ const serviceSchema = {
   "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
   "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h."
+  "description": "Seguro médico para residencia en España. Modalidades que pueden cubrir los requisitos habituales de NIE/TIE; la decisión final corresponde a la administración."
 };
 
 const faqSchema = {
@@ -68,7 +68,7 @@ const faqSchema = {
       "name": "¿El seguro es válido para solicitar el visado o NIE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, nuestros seguros cumplen todos los requisitos exigidos por el consulado o la comisaría de extranjería para visado, NIE y TIE."
+        "text": "Trabajamos con modalidades diseñadas para cubrir los requisitos habituales exigidos para visado, NIE y TIE. Revisamos tu caso concreto, aunque la decisión final corresponde al consulado o a la comisaría de extranjería."
       }
     },
     {
@@ -76,7 +76,7 @@ const faqSchema = {
       "name": "¿Cuánto tarda en emitirse el certificado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El certificado se emite en menos de 24 horas desde la contratación."
+        "text": "El certificado lo emite la aseguradora tras la contratación; te indicamos el plazo estimado según la compañía."
       }
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "¿Tiene copagos o carencias?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No tiene copagos ni carencias desde el primer día de cobertura."
+        "text": "Los copagos y las carencias dependen de la modalidad contratada; te detallamos las condiciones antes de contratar."
       }
     },
     {
@@ -117,8 +117,8 @@ export default function SaludExtranjerosPage() {
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">Si tu seguro no es válido para tu trámite → <span className="text-amber-400">te devolvemos el dinero</span></span>
-            <span className="sm:hidden">Si no es válido para tu trámite → <span className="text-amber-400 font-black">te devolvemos el dinero</span></span>
+            <span className="hidden sm:inline">Revisamos que la modalidad se ajuste a los requisitos habituales de tu trámite <span className="text-amber-400">antes de contratar</span></span>
+            <span className="sm:hidden">Comprobamos tu caso <span className="text-amber-400 font-black">antes de contratar</span></span>
           </p>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function SaludExtranjerosPage() {
       </header>
 
       <main className="min-h-screen bg-white pt-24 sm:pt-28">
-        
+
         {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
         <section className="relative py-20 lg:py-32 bg-[#1e3a5f] overflow-hidden min-h-[85vh] flex items-center">
           {/* Fondo con imagen multicultural - optimizada para LCP */}
@@ -159,14 +159,14 @@ export default function SaludExtranjerosPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent" />
           </div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
               <div>
                 <h1 className="text-[40px] sm:text-[60px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-                  Seguro de salud para extranjeros <span className="text-emerald-400">aprobado</span> para visado en España
+                  Seguro de salud para extranjeros <span className="text-emerald-400">válido</span> para visado en España, según la modalidad
                 </h1>
-                
+
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
                   Evita errores que puedan retrasar o rechazar tu visado.
                   <br />
@@ -174,7 +174,7 @@ export default function SaludExtranjerosPage() {
                 </p>
 
                 <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 text-amber-300 px-4 py-2 rounded-full text-sm font-black mb-6">
-                  ⚡ Tu cita de extranjería no espera — certificado listo en 24h o te avisamos antes
+                  ⚡ Preparamos tu certificado con tiempo para tu cita de extranjería; el plazo depende de la aseguradora
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
@@ -182,7 +182,7 @@ export default function SaludExtranjerosPage() {
                     "Válido para extranjería",
                     "Sin copagos",
                     "Documento listo",
-                    "Si no es válido, te devolvemos el dinero"
+                    "Comprobamos que la modalidad se ajuste a tu trámite"
                   ].map((bullet, i) => (
                     <div key={i} className="flex items-center gap-3 text-white font-bold">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
@@ -201,7 +201,7 @@ export default function SaludExtranjerosPage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-white/80 text-sm font-bold">+100 visados y NIE/TIE aprobados</p>
+                  <p className="text-white/80 text-sm font-bold">Modalidades para visado y NIE/TIE</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -220,7 +220,7 @@ export default function SaludExtranjerosPage() {
                       Respuesta en menos de 10 minutos
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
                       <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="64px" className="object-cover object-[center_20%]" />
@@ -240,21 +240,21 @@ export default function SaludExtranjerosPage() {
                 <div className="relative transform rotate-2 group-hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
                   <div className="relative">
                     <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
-                      <Image 
-                        src="/images/premium/certificado-oficial.png" 
-                        alt="Certificado Oficial de Seguro de Salud" 
-                        width={600} 
-                        height={800} 
+                      <Image
+                        src="/images/premium/certificado-oficial.png"
+                        alt="Certificado Oficial de Seguro de Salud"
+                        width={600}
+                        height={800}
                         className="rounded-[24px] w-full h-auto"
                       />
                     </div>
-                    
-                    {/* Badge flotante "Listo en 24h" - Ahora fuera del overflow */}
+
+                    {/* Badge flotante "Según la aseguradora" - Ahora fuera del overflow */}
                     <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft z-20">
                       <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
                         <Check className="w-5 h-5 text-white" />
                       </div>
-                      <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
+                      <p className="text-sm font-bold text-slate-700">Según la aseguradora</p>
                     </div>
                   </div>
                 </div>
@@ -275,17 +275,17 @@ export default function SaludExtranjerosPage() {
                 {
                   emoji: "🎓",
                   title: "Estudiante internacional",
-                  desc: "Cubre los requisitos de tu visado de estudios desde el primer día. Sin carencias, sin esperas."
+                  desc: "Puede cubrir los requisitos habituales del visado de estudios según la modalidad. Comprobamos tu caso antes."
                 },
                 {
                   emoji: "🏠",
                   title: "Residente en proceso de NIE/TIE",
-                  desc: "Certificado válido para comisaría en menos de 24h. Más de 100 trámites aprobados."
+                  desc: "Certificado válido para comisaría según la modalidad; el plazo de emisión depende de la aseguradora."
                 },
                 {
                   emoji: "💼",
                   title: "Trabajador o emprendedor extranjero",
-                  desc: "Sin copagos, sin carencias, compatible con tu situación laboral o de autónomo en España."
+                  desc: "Coberturas según modalidad (copagos y carencias varían), compatible con distintas situaciones en España."
                 }
               ].map((perfil, i) => (
                 <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
@@ -306,11 +306,11 @@ export default function SaludExtranjerosPage() {
                 Garantías reales para tu tranquilidad
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  t: "Si tu seguro no es válido para tu trámite → te devolvemos el dinero",
+                  t: "Comprobamos que la modalidad se ajuste a los requisitos habituales de tu trámite antes de contratar",
                   icon: <Shield className="w-10 h-10 text-emerald-600" />
                 },
                 {
@@ -343,7 +343,7 @@ export default function SaludExtranjerosPage() {
                 Lo tienes listo en 3 pasos
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
                 { num: "1", t: "Escribes por WhatsApp", d: "Analizamos tu trámite al momento." },
@@ -383,7 +383,7 @@ export default function SaludExtranjerosPage() {
         {/* Gancho A — Error frecuente */}
         <section className="py-20 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30 
+            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30
             text-red-300 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-8">
               ⚠️ Error frecuente
             </div>
@@ -392,9 +392,9 @@ export default function SaludExtranjerosPage() {
               <span className="text-red-400">Te rechazan por tener el seguro equivocado.</span>
             </h2>
             <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Muchos seguros del mercado no cumplen los requisitos de extranjería — 
-              sin copagos, sin carencias, con cobertura mínima exigida. 
-              El error más común que vemos: contratar online sin verificar si el 
+              Muchos seguros del mercado no cumplen los requisitos de extranjería —
+              con copagos y carencias según modalidad, y la cobertura mínima exigida.
+              El error más común que vemos: contratar online sin verificar si el
               certificado es válido para el trámite concreto.
             </p>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-xl mx-auto mb-8">
@@ -402,7 +402,7 @@ export default function SaludExtranjerosPage() {
                 Nosotros lo verificamos por ti.
               </p>
               <p className="text-slate-400">
-                Antes de emitir cualquier certificado, confirmamos que cumple 
+                Antes de emitir cualquier certificado, confirmamos que cumple
                 exactamente los requisitos de tu trámite específico.
               </p>
             </div>
@@ -410,11 +410,11 @@ export default function SaludExtranjerosPage() {
               href={buildWhatsAppHref("Quiero que verifiquéis si mi seguro es válido para extranjería")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700
               text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              Verificad mi caso ahora
+Revisar mi caso ahora
             </a>
           </div>
         </section>
@@ -428,8 +428,8 @@ export default function SaludExtranjerosPage() {
             <div className="grid sm:grid-cols-3 gap-8 text-center">
               {
                 [
-                  { num: "+100", label: "NIE/TIE y visados aprobados", icon: "✅" },
-                  { num: "24h", label: "Certificado listo desde la contratación", icon: "⚡" },
+                  { num: "NIE/TIE", label: "Modalidades para tu trámite", icon: "✅" },
+                  { num: "Ágil", label: "Certificado según la aseguradora", icon: "⚡" },
                   { num: "0", label: "Rechazos por motivo de seguro", icon: "🛡️" }
                 ].map((stat, i) => (
                   <div key={i} className="bg-slate-50 rounded-[32px] p-10 border border-slate-100">
@@ -457,8 +457,8 @@ export default function SaludExtranjerosPage() {
                 href={buildWhatsAppHref("Tengo cita de extranjería URGENTE en menos de 7 días, necesito el seguro ya")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
-                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
+                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200
+                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl
                 font-black transition-all group"
               >
                 <span className="text-4xl">🚨</span>
@@ -466,7 +466,7 @@ export default function SaludExtranjerosPage() {
                 <span className="text-sm text-slate-500 font-medium">
                   Es urgente — te damos prioridad inmediata
                 </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
+                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white
                 px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
                   <WhatsAppIcon className="w-4 h-4" />
                   Escribir ahora
@@ -477,8 +477,8 @@ export default function SaludExtranjerosPage() {
                 href={buildWhatsAppHref("Tengo cita de extranjería próximamente, quiero preparar el seguro con tiempo")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
-                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
+                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200
+                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl
                 font-black transition-all group"
               >
                 <span className="text-4xl">📅</span>
@@ -486,7 +486,7 @@ export default function SaludExtranjerosPage() {
                 <span className="text-sm text-slate-500 font-medium">
                   Perfecto — lo preparamos bien y sin prisas
                 </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
+                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white
                 px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
                   <WhatsAppIcon className="w-4 h-4" />
                   Escribir ahora
@@ -498,7 +498,7 @@ export default function SaludExtranjerosPage() {
 
         {/* 4. BLOQUE ESPECIALISTAS (Reposicionado y Protagonista) */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
-          <div 
+          <div
             className="absolute top-0 left-0 w-full h-full opacity-5"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5V4zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -518,7 +518,7 @@ export default function SaludExtranjerosPage() {
               Cada semana ayudamos a personas en tu misma situación.
             </p>
             <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
-              No recomendamos seguros al azar. 
+              No recomendamos seguros al azar.
               <br />
               Solo opciones que cumplen los requisitos reales de extranjería.
             </p>
@@ -533,7 +533,7 @@ export default function SaludExtranjerosPage() {
                 Te lo ponemos fácil de verdad
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { t: "Revisamos tu caso GRATIS antes de contratar", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
@@ -559,7 +559,7 @@ export default function SaludExtranjerosPage() {
               ¿Por qué necesitas este seguro?
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Para vivir en España sin trabajar o solicitar visado, es obligatorio contar con un <strong>seguro médico privado sin copagos</strong>, con cobertura completa y válido durante toda la estancia. Es el requisito que frena la mayoría de expedientes, y nosotros estamos aquí para que el tuyo sea aprobado a la primera.
+              Para vivir en España sin trabajar o solicitar visado, es obligatorio contar con un <strong>seguro médico privado con cobertura suficiente</strong> y válido durante la estancia según la modalidad. Es un requisito que frena muchos expedientes, y te ayudamos a preparar el tuyo; la decisión final corresponde a la administración o consulado.
             </p>
           </div>
         </section>

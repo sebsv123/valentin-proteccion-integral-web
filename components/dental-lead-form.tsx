@@ -73,7 +73,7 @@ export function DentalLeadForm() {
   return (
     <div className="bg-background border rounded-[2rem] p-5 sm:p-8 md:p-10 shadow-2xl shadow-primary/5">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto en 30 min</h2>
+        <h2 className="text-2xl font-bold tracking-tight mb-2">Recibe tu presupuesto sin compromiso</h2>
         <p className="text-muted-foreground">Sin compromiso. Sin letra pequeña.</p>
       </div>
       <form className="space-y-5" onSubmit={handleSubmit}>

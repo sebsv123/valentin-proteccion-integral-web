@@ -22,22 +22,37 @@ const optionalUrl = z
   .optional()
   .default("");
 
-export const leadEmailSchema = z.object({
-  source: z.string().trim().max(120).optional().default("lead-form"),
-  name: textField("Nombre", 160),
-  phone: textField("Teléfono", 80),
-  email: z.string().trim().email("Email no válido.").max(180).optional().or(z.literal("")).default(""),
-  interest: textField("Interés", 180),
-  message: optionalTextField(1500),
-  consent: z.literal(true, {
-    errorMap: () => ({ message: "El consentimiento es obligatorio." }),
-  }),
-  website: z.string().trim().max(0, "Solicitud no válida.").optional().default(""),
-  pageUrl: optionalUrl,
-  referrer: optionalUrl,
-  subject: z.string().trim().min(4).max(160).optional(),
-  utm: z.record(z.string().trim().max(120), z.string().trim().max(300)).optional().default({}),
-});
+export const leadEmailSchema = z
+  .object({
+    source: z.string().trim().max(120).optional().default("lead-form"),
+    name: textField("Nombre", 160),
+    // Teléfono opcional a nivel de esquema: se exige al menos un canal de
+    // contacto (teléfono o email) mediante el refine inferior. Los formularios
+    // existentes siguen enviando teléfono, por lo que la compatibilidad se
+    // mantiene.
+    phone: z.string().trim().max(80, "Teléfono demasiado largo.").optional().default(""),
+    email: z.string().trim().email("Email no válido.").max(180).optional().or(z.literal("")).default(""),
+    interest: textField("Interés", 180),
+    message: optionalTextField(1500),
+    consent: z.literal(true, {
+      errorMap: () => ({ message: "El consentimiento es obligatorio." }),
+    }),
+    website: z.string().trim().max(0, "Solicitud no válida.").optional().default(""),
+    pageUrl: optionalUrl,
+    referrer: optionalUrl,
+    subject: z.string().trim().min(4).max(160).optional(),
+    utm: z.record(z.string().trim().max(120), z.string().trim().max(300)).optional().default({}),
+    // Campos estructurados adicionales (p. ej. formulario de vivienda). No
+    // rompen a los formularios existentes: es opcional y con defecto vacío.
+    metadata: z
+      .record(z.string().trim().max(80), z.string().trim().max(500))
+      .optional()
+      .default({}),
+  })
+  .refine((data) => Boolean((data.phone && data.phone.length >= 6) || data.email), {
+    message: "Indica un teléfono o un email de contacto.",
+    path: ["phone"],
+  });
 
 export const professionalReferralSchema = z
   .object({
@@ -118,8 +133,8 @@ export function professionalReferralToLeadEmail(payload: ProfessionalReferralPay
     message: [
       `Empresa o entidad: ${payload.empresa}`,
       `Alumno o cliente: ${payload.nombreCliente}`,
-    `Contacto del alumno o cliente: ${payload.contactoCliente}`,
-    `Tipo de trámite: ${payload.tipoTramite}`,
+      `Contacto del alumno o cliente: ${payload.contactoCliente}`,
+      `Tipo de trámite: ${payload.tipoTramite}`,
       `Confirmación de no enviar documentación sensible: ${payload.sensitiveNotice ? "Sí" : "No"}`,
     ].join("\n"),
     consent: true,
@@ -127,5 +142,6 @@ export function professionalReferralToLeadEmail(payload: ProfessionalReferralPay
     pageUrl: payload.pageUrl,
     referrer: payload.referrer,
     utm: {},
+    metadata: {},
   };
 }

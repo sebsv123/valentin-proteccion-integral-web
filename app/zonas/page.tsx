@@ -84,7 +84,7 @@ export default function ZonasPage() {
                   </svg>
                   Escríbenos por WhatsApp
                 </WhatsAppLink>
-                <p className="text-sm text-slate-500 mt-4">Respuesta en menos de 30 minutos</p>
+                <p className="text-sm text-slate-500 mt-4">Respuesta en nuestro horario de atención</p>
               </div>
               
               <div className="relative">
@@ -110,7 +110,7 @@ export default function ZonasPage() {
         <section className="bg-black text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              +1.200 familias protegidas
+              Familias protegidas
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mt-4">
               En Madrid Oeste y toda la comunidad
@@ -235,7 +235,7 @@ export default function ZonasPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                       </svg>
                     </div>
-                    <span className="text-slate-700">Asesoría gratuita en 30 minutos</span>
+                    <span className="text-slate-700">Asesoría gratuita en horario de atención</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">

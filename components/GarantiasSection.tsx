@@ -31,10 +31,10 @@ export default function GarantiasSection({ brandColor = '#e23b4a' }: GarantiasSe
               <Clock className="w-7 h-7" style={{ color: brandColor }} />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight">
-              30 minutos o llamamos nosotros
+              Te contactamos en horario
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Si no respondemos en 30 minutos, Rosa o Sebastián te llaman directamente. Sin esperas. Sin excusas.
+              Te contactamos dentro de nuestro horario de atención. Las solicitudes recibidas fuera de horario se atienden el siguiente día laborable.
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export default function GarantiasSection({ brandColor = '#e23b4a' }: GarantiasSe
               ¿Y si no cumplimos lo que prometemos?
             </h3>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-              Si no te contactamos en 30 minutos, te ofrecemos una <strong>cita presencial gratuita</strong> en nuestra oficina de Boadilla del Monte.
+              Además de atenderte por WhatsApp, puedes solicitar una <strong>cita presencial</strong> en nuestra oficina de Boadilla del Monte.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
               Así de seguros estamos de lo que prometemos. Nadie en el sector ofrece esta garantía. Nosotros sí.

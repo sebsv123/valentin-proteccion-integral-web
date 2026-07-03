@@ -96,7 +96,7 @@ export default function SaludSeniorPage() {
                 <p className="text-2xl text-stone-600 leading-relaxed mb-8 max-w-lg">
                   Atención médica especializada para mayores.
                   <br />
-                  <span className="text-stone-500">Sin carencias. Sin copagos. Con acompañamiento.</span>
+                  <span className="text-stone-500">Coberturas según modalidad, con acompañamiento cercano.</span>
                 </p>
                 
                 {/* CTAs grandes y visibles */}

@@ -64,7 +64,7 @@ export function TrustBadgesSection({ imageSrc = '/images/home/handshake-enhanced
                                 border-2 border-[var(--blue)]/20 bg-[var(--blue)]/5 p-5">
                   <span className="text-2xl flex-none">⏱️</span>
                   <p className="text-base font-semibold text-[var(--blue-deep)] leading-relaxed">
-                    Respondemos en menos de 30 minutos o te explicamos por qué.
+                    Respondemos en nuestro horario de atención.
                     Siempre. Sin excusas. Sin call centers.
                   </p>
                 </div>
@@ -411,7 +411,7 @@ export function BlogPreviewSection() {
         <div className="fade-up">
           <div className="mb-12 text-center flex flex-col items-center">
             <p className="kicker">Tu seguridad es lo primero</p>
-            <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué más de 1.200 familias confían en Valentín</h2>
+            <h2 id="trust-title" className="mt-4 section-title mx-auto max-w-3xl">Por qué las familias confían en Valentín</h2>
             <p className="section-copy mt-4 mx-auto">Te ayudamos a resolver dudas reales y a mantenerte al día sobre seguros con nuestros artículos especializados.</p>
           </div>
         </div>

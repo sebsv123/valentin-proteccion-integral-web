@@ -96,7 +96,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
           <p className="text-sm font-semibold leading-tight flex-1">
             <span className="sm:hidden">Tráenos cualquier presupuesto que tengas.</span>
             <span className="hidden sm:inline">
-              <span className="font-bold">Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200 familias asesoradas, siempre encontramos uno mejor.</span>
+              <span className="font-bold">Tráenos cualquier presupuesto que tengas y lo revisamos contigo entre las modalidades que podemos distribuir.</span>
             </span>
           </p>
           <WhatsAppLink
@@ -131,7 +131,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             >
               <motion.div variants={fadeInUpVariants} className="mb-6">
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
-                  <span className="mr-1.5">🐾</span> +1.200 familias protegidas · Boadilla del Monte, Madrid
+                  <span className="mr-1.5">🐾</span> Familias protegidas · Boadilla del Monte, Madrid
                 </span>
               </motion.div>
 
@@ -162,7 +162,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                   <CheckCircle2 className="h-4 w-4 text-amber-600" /> Desde 5€/mes
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Respuesta en 30 min
+                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Respuesta en horario
                 </span>
               </motion.div>
 
@@ -400,7 +400,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
 
               <div className="grid sm:grid-cols-3 gap-6 mt-8">
                 {[
-                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Responde en menos de 30 minutos" },
+                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Responde en nuestro horario de atención" },
                   { icon: <FileText className="h-6 w-6" />, text: "Te explica todo antes de firmar" },
                   { icon: <UserCheck className="h-6 w-6" />, text: "Tu gestor personal de por vida" },
                 ].map((item, i) => (
@@ -431,7 +431,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en 30 minutos", desc: "O te llamamos nosotros" },
+              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en horario", desc: "O te llamamos nosotros" },
               { icon: <FileText className="h-8 w-8" />, title: "Sin letra pequeña", desc: "Te explicamos todo antes de firmar" },
               { icon: <UserCheck className="h-8 w-8" />, title: "Gestora personal de por vida", desc: "Rosa, siempre" },
               { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión anual gratuita", desc: "Revisamos tu cobertura cada año" },
@@ -458,7 +458,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
               ¿Y si no cumplimos lo que prometemos?
             </p>
             <p className="text-[var(--muted)] text-base leading-relaxed">
-              Si no te contactamos en 30 minutos, Rosa te ofrece una{" "}
+              Además de atenderte por WhatsApp, Rosa te ofrece una{" "}
               <span className="text-[var(--blue-deep)] font-semibold">
                 cita presencial gratuita en nuestra oficina
               </span>
@@ -499,7 +499,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                   },
                   {
                     num: "2",
-                    title: "Rosa te llama en menos de 30 minutos",
+                    title: "Rosa te llama en nuestro horario de atención",
                     desc: "Te explica sin presión qué modalidad encaja mejor con tu mascota.",
                   },
                   {
@@ -617,7 +617,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             Protege a tu mascota hoy. La RC es obligatoria.
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-8">
-            Rosa te responde en menos de 30 minutos. Desde 5€/mes.
+            Rosa te responde en nuestro horario de atención. Precios orientativos desde 5€/mes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <WhatsAppLink

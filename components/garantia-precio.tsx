@@ -30,9 +30,9 @@ export function GarantiaPrecio({
             <BadgeCheck className="h-5 w-5 text-blue-600" />
           </div>
           <div>
-            <p className="font-bold text-blue-900">Garantía de precio</p>
+            <p className="font-bold text-blue-900">Revisamos tu presupuesto</p>
             <p className="text-sm text-blue-700">
-              Tráenos cualquier presupuesto. Si no encontramos algo mejor, te lo decimos con honestidad.
+              Tráenos cualquier presupuesto y lo revisamos contigo entre las modalidades que podemos distribuir, con honestidad.
             </p>
           </div>
         </div>
@@ -53,11 +53,10 @@ export function GarantiaPrecio({
             <Shield className="h-8 w-8 text-blue-600" />
           </div>
           <h3 className="text-2xl font-bold text-blue-900 mb-3">
-            Garantía de precio
+            Revisamos tu presupuesto
           </h3>
           <p className="text-muted-foreground mb-6 max-w-md">
-            Tráenos cualquier presupuesto que tengas. En más de 10 años y 1.200
-            familias asesoradas, siempre encontramos una opción mejor.
+            Tráenos cualquier presupuesto que tengas y comparamos las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
           </p>
           {showCta && (
             <WhatsAppLink
@@ -86,12 +85,10 @@ export function GarantiaPrecio({
           </div>
           <div className="flex-1">
             <h3 className="text-2xl font-bold text-blue-900 mb-2">
-              Garantía de precio
+              Revisamos tu presupuesto
             </h3>
             <p className="text-lg text-blue-800">
-              Tráenos cualquier presupuesto que tengas. En más de 10 años y
-              1.200 familias asesoradas, siempre encontramos una opción
-              mejor.
+              Tráenos cualquier presupuesto que tengas y comparamos las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
             </p>
           </div>
           {showCta && (

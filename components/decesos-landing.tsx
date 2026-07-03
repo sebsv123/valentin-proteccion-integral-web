@@ -58,7 +58,7 @@ export function DecesosLanding() {
     },
     {
       q: "¿Cuánto cuesta un seguro de decesos en Madrid?",
-      a: "Los seguros de decesos que gestionamos en Madrid comienzan desde 5€ al mes por persona. El precio depende de la edad y las coberturas elegidas. Contacta con Rosa y Sebastián para un presupuesto personalizado sin compromiso en 30 minutos.",
+      a: "Los seguros de decesos que gestionamos en Madrid comienzan desde 5€ al mes por persona. El precio depende de la edad y las coberturas elegidas. Contacta con Rosa y Sebastián para un presupuesto personalizado sin compromiso en nuestro horario de atención.",
     },
     {
       q: "¿El seguro de decesos tiene permanencia?",
@@ -94,7 +94,7 @@ export function DecesosLanding() {
             >
               <motion.div variants={fadeInUpVariants} className="mb-6">
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
-                  <Heart className="h-4 w-4 mr-1.5" /> Más de 1.200 familias protegidas en Madrid
+                  <Heart className="h-4 w-4 mr-1.5" /> Familias protegidas en Madrid
                 </span>
               </motion.div>
 
@@ -129,7 +129,7 @@ export function DecesosLanding() {
                   <CheckCircle2 className="h-4 w-4 text-amber-600" /> Respuesta en 2 horas
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Sin permanencia
+                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Permanencia según póliza
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-amber-600" /> Gestión completa del funeral
@@ -337,7 +337,7 @@ export function DecesosLanding() {
         <div className="container mx-auto px-4">
           <motion.div variants={fadeInUpVariants} className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-bold sm:text-5xl mb-4">Precios orientativos</h2>
-            <p className="text-lg text-muted-foreground">Tu precio exacto en 30 minutos, gratis y sin compromiso.</p>
+            <p className="text-lg text-muted-foreground">Tu precio orientativo, gratis y sin compromiso.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -371,7 +371,7 @@ export function DecesosLanding() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            * Precios orientativos. Tu precio exacto en 30 min, gratis y sin compromiso.
+            * Precios orientativos. Tu precio orientativo, gratis y sin compromiso.
           </p>
         </div>
       </motion.section>
@@ -403,7 +403,7 @@ export function DecesosLanding() {
                   },
                   {
                     num: "2",
-                    title: "Te llamamos en menos de 30 minutos",
+                    title: "Te llamamos en nuestro horario de atención",
                     desc: "Te explican todo sin presión, respondiendo todas tus dudas.",
                   },
                   {
@@ -461,7 +461,7 @@ export function DecesosLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en 30 minutos", desc: "O te llamamos nosotros" },
+              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en horario", desc: "O te llamamos nosotros" },
               { icon: <FileText className="h-8 w-8" />, title: "Sin letra pequeña", desc: "Te explicamos todo antes de firmar" },
               { icon: <UserCheck className="h-8 w-8" />, title: "Gestor personal de por vida", desc: "Rosa o Sebastián, siempre" },
               { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión anual gratuita", desc: "Revisamos tu cobertura cada año" },

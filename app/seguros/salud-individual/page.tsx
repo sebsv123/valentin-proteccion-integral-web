@@ -18,12 +18,12 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-  description: "Seguro de salud privado en Madrid desde 22,50€/mes. Sin copagos, sin carencias, sin permanencia. Asesoramiento directo con Rosa y Sebastián. Agentes certificados DGSFP. +1.200 familias protegidas.",
+  description: "Seguro de salud privado en Madrid desde 22,50€/mes. Coberturas según modalidad y condiciones de la póliza. Asesoramiento directo con Rosa y Sebastián, agentes registrados en la DGSFP.",
   keywords: ["seguro salud privado Madrid","seguro medico privado Madrid","salud privada Madrid sin copagos","contratar seguro salud privado Madrid","seguro médico sin copagos Madrid precio","seguro médico privado sin carencias Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-individual" },
   openGraph: {
     title: "Seguro de Salud Privado en Madrid desde 22,50€/mes | Valentín",
-    description: "Seguro de salud privado en Madrid desde 22,50€/mes. Sin copagos, sin carencias, sin permanencia. Asesoramiento directo con Rosa y Sebastián. Agentes certificados DGSFP. +1.200 familias protegidas.",
+    description: "Seguro de salud privado en Madrid desde 22,50€/mes. Coberturas según modalidad y condiciones de la póliza. Asesoramiento directo con Rosa y Sebastián, agentes registrados en la DGSFP.",
     url: "https://valentinproteccionintegral.com/seguros/salud-individual",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -216,7 +216,7 @@ export default async function SaludIndividualPage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-white/80 text-sm font-bold">+1.200 familias protegidas en Madrid</p>
+                  <p className="text-white/80 text-sm font-bold">Familias protegidas en Madrid</p>
                 </div>
 
                 {/* Bloque Asesores - Estilo Extranjería */}
@@ -534,7 +534,7 @@ export default async function SaludIndividualPage() {
                     <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
                       <TrendingUp className="w-5 h-5 text-emerald-600" />
                     </div>
-                    <span className="text-gray-700">+1.200 clientes satisfechos</span>
+                    <span className="text-gray-700">clientes satisfechos</span>
                   </div>
                 </div>
                 
@@ -557,7 +557,7 @@ export default async function SaludIndividualPage() {
             </h2>
             
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Descubre el seguro que mejor se adapta a ti.
             </p>
@@ -582,7 +582,7 @@ export default async function SaludIndividualPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
                 <Clock className="w-4 h-4 text-emerald-500" />
-                Respuesta en 10 min
+                Respuesta en horario
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm shadow-sm">
                 <Shield className="w-4 h-4 text-emerald-500" />

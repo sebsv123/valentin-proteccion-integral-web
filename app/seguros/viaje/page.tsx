@@ -147,8 +147,8 @@ export default function ViajePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-[#E5E7EB]">
               <div className="text-center">
-                <p className="text-5xl font-bold text-[#163300]">+1.200</p>
-                <p className="text-[#4B5563] mt-2">viajeros protegidos</p>
+                <p className="text-5xl font-bold text-[#163300]">190+</p>
+                <p className="text-[#4B5563] mt-2">países con cobertura</p>
               </div>
               <div className="text-center border-l border-[#E5E7EB]">
                 <p className="text-5xl font-bold text-[#2E7D32]">60k€</p>

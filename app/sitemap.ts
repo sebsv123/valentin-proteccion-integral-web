@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seguros/salud-extranjeros`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/seguros/health-insurance-foreigners-spain`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/extranjeros`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/extranjeros/alquileres`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // /para/autonomos excluida: redirige 301 a /autonomos
 

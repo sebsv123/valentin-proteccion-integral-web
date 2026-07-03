@@ -72,3 +72,38 @@ Ahí sí puedes tener:
 - credenciales reales de n8n
 - almacenamiento persistente para leads
 - sistema anti-spam más fuerte como Turnstile o API intermedia
+# Pruebas seguras de leads
+
+Ejecuta `npm run test:leads`. El comando fuerza entorno de test y todos los
+envíos se capturan con un transporte SMTP instrumentado; no abre conexiones
+SMTP reales. Las peticiones a `/api/leads` y `/api/professional-referral` desde
+`localhost` o `127.0.0.1` devuelven `503`, `delivered: false` y el modo
+`local-delivery-blocked` por defecto. Solo `ALLOW_LOCAL_LEAD_DELIVERY=true`
+autoriza deliberadamente entrega real local. No uses esa variable en CI.
+
+## Entrega SMTP por entorno (Vercel)
+
+El envío real de correo depende de `VERCEL_ENV`, que Vercel define
+automáticamente en cada despliegue:
+
+- **`production`** — comportamiento normal: si hay configuración SMTP válida,
+  el correo se entrega.
+- **`preview`** — bloqueado por defecto (las URLs de Preview Deployments son
+  públicas/compartidas). Devuelve `503`, `delivered: false`,
+  `mode: "preview-delivery-blocked"`. Solo se permite si
+  `ALLOW_PREVIEW_LEAD_DELIVERY=true` está definido para ese entorno concreto.
+- **`development`** (`vercel dev`) — mismo bloqueo que `preview`, con el mismo
+  mecanismo de excepción.
+- **localhost / `127.0.0.1`** — sigue bloqueado por defecto por la regla
+  existente (`local-delivery-blocked`), independientemente de
+  `ALLOW_PREVIEW_LEAD_DELIVERY`.
+
+Cuando el envío está bloqueado, la respuesta nunca simula éxito y no se
+registran los datos personales completos del lead, solo el modo de bloqueo.
+
+Variables relacionadas (ver `.env.example`):
+
+- `ALLOW_LOCAL_LEAD_DELIVERY` — autoriza entrega real desde `localhost`/tests.
+- `ALLOW_PREVIEW_LEAD_DELIVERY` — autoriza entrega real en `preview` o
+  `development` de Vercel. No debe activarse a nivel de proyecto, solo para
+  una comprobación puntual y deliberada.

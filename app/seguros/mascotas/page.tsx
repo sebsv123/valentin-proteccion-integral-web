@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Seguro para Mascotas en Madrid — Perros y Gatos",
     description:
-      "Cobertura veterinaria para tu perro o gato desde el primer día. Sin sorpresas. Consulta gratis en 30 minutos.",
+      "Cobertura veterinaria para tu perro o gato según modalidad y condiciones de la póliza. Consulta gratis en nuestro horario de atención.",
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/seguros/mascotas",
@@ -329,7 +329,7 @@ export default function MascotasPage() {
                     <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-amber-600" />
                     </div>
-                    <span className="text-stone-700">+1.200 mascotas protegidas</span>
+                    <span className="text-stone-700">mascotas protegidas</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
@@ -440,7 +440,7 @@ export default function MascotasPage() {
                 <p className="text-lg text-stone-600 leading-relaxed">
                   Si quieres saber qué opciones hay para tu gato, escríbenos por WhatsApp al{' '}
                   <WhatsAppLink href="https://wa.me/34603448765" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700 underline">603 44 87 65</WhatsAppLink>.
-                  Te respondemos en menos de 30 minutos, sin compromiso.
+                  Te respondemos en nuestro horario de atención, sin compromiso.
                 </p>
               </div>
             </div>
@@ -458,7 +458,7 @@ export default function MascotasPage() {
             </h2>
             
             <p className="text-xl text-amber-100 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Tu mascota lo merece.
             </p>

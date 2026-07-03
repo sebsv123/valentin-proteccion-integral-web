@@ -17,6 +17,7 @@ type MailTransport = {
 type SendLeadEmailOptions = {
   env?: NodeJS.ProcessEnv;
   transport?: MailTransport;
+  requestHost?: string | null;
 };
 
 export type SendLeadEmailResult = {
@@ -38,8 +39,39 @@ export class LeadEmailDeliveryError extends Error {
   }
 }
 
+export type LeadEmailBlockedMode = "local-delivery-blocked" | "preview-delivery-blocked";
+
+export class LeadEmailBlockedError extends Error {
+  readonly mode: LeadEmailBlockedMode;
+
+  constructor(mode: LeadEmailBlockedMode = "local-delivery-blocked") {
+    super("Lead email delivery is blocked in this environment.");
+    this.name = "LeadEmailBlockedError";
+    this.mode = mode;
+  }
+}
+
 const DEFAULT_FROM_EMAIL = "contacto@valentinproteccionintegral.com";
 const DEFAULT_FROM_NAME = "Valentín Protección Integral";
+
+function isLocalHost(host: string | null | undefined) {
+  const hostname = (host || "").trim().toLowerCase().replace(/^\[/, "").split("]")[0].split(":")[0];
+  return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
+}
+
+function realDeliveryIsBlocked(env: NodeJS.ProcessEnv, requestHost?: string | null) {
+  if (env.ALLOW_LOCAL_LEAD_DELIVERY === "true") return false;
+  return env.NODE_ENV === "test" || env.LEAD_DELIVERY_CONTEXT === "test" || isLocalHost(requestHost);
+}
+
+// Vercel sets VERCEL_ENV to "production" | "preview" | "development" on every
+// deployment. Only "production" is trusted to send real SMTP by default;
+// Preview Deployments and `vercel dev` must opt in explicitly, since preview
+// URLs are shared/public and must never leak real customer emails.
+function previewDeliveryIsBlocked(env: NodeJS.ProcessEnv) {
+  if (env.ALLOW_PREVIEW_LEAD_DELIVERY === "true") return false;
+  return env.VERCEL_ENV === "preview" || env.VERCEL_ENV === "development";
+}
 
 function normalizeAddress(address: string | { address?: string }) {
   return typeof address === "string" ? address.toLowerCase() : (address.address || "").toLowerCase();
@@ -69,13 +101,17 @@ function formatRows(payload: LeadEmailPayload) {
   const rows: Array<[string, string]> = [
     ["Origen", payload.source],
     ["Nombre", payload.name],
-    ["Teléfono", payload.phone],
+    ["Teléfono", payload.phone || "No indicado"],
     ["Email", payload.email || "No indicado"],
     ["Interés", payload.interest],
     ["Mensaje", payload.message || "No indicado"],
     ["URL", payload.pageUrl || "No indicada"],
     ["Referrer", payload.referrer || "No indicado"],
   ];
+
+  for (const [key, value] of Object.entries(payload.metadata || {})) {
+    rows.push([key, value]);
+  }
 
   for (const [key, value] of Object.entries(payload.utm || {})) {
     rows.push([`UTM ${key}`, value]);
@@ -135,6 +171,20 @@ export async function sendLeadEmail(
   options: SendLeadEmailOptions = {}
 ): Promise<SendLeadEmailResult> {
   const env = options.env || process.env;
+
+  // An injected transport is the explicit test seam: it never opens an SMTP
+  // connection. Real SMTP is denied for local/test requests unless deliberately
+  // enabled with ALLOW_LOCAL_LEAD_DELIVERY=true.
+  if (!options.transport && realDeliveryIsBlocked(env, options.requestHost)) {
+    throw new LeadEmailBlockedError("local-delivery-blocked");
+  }
+
+  // Vercel Preview Deployments (and `vercel dev`) are blocked from sending
+  // real SMTP unless ALLOW_PREVIEW_LEAD_DELIVERY=true is set for that
+  // environment. Production is unaffected by this check.
+  if (!options.transport && previewDeliveryIsBlocked(env)) {
+    throw new LeadEmailBlockedError("preview-delivery-blocked");
+  }
 
   if (!hasSmtpConfig(env)) {
     throw new LeadEmailConfigError();

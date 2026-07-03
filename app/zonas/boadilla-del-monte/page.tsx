@@ -11,7 +11,7 @@ import { WhatsAppLink } from '@/components/whatsapp-link';
 export const metadata: Metadata = {
   title: "Seguros en Boadilla del Monte — Asesoría Personal | VPI",
   description:
-    "Agentes de seguros registrados DGSFP en Boadilla del Monte. Salud, vida, dental, mascotas y más. Sin copagos, sin permanencias. +10 años, +1.200 familias. Consulta gratis por WhatsApp.",
+    "Agentes de seguros registrados DGSFP en Boadilla del Monte. Salud, vida, dental, mascotas y más. Asesoramiento con registro oficial en la DGSFP. Consulta gratis por WhatsApp.",
   keywords: [
     "seguros Boadilla del Monte",
     "asesor seguros Boadilla del Monte",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seguros en Boadilla del Monte — Asesoría Personal | VPI",
     description:
-      "Agentes de seguros en Boadilla del Monte. Salud, vida, dental y mascotas. Sin copagos ni permanencias. +10 años de experiencia. Consulta gratis.",
+      "Agentes de seguros en Boadilla del Monte. Salud, vida, dental y mascotas. Asesoramiento cercano y con registro en la DGSFP. Consulta gratis.",
     url: "https://valentinproteccionintegral.com/zonas/boadilla-del-monte",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -123,7 +123,7 @@ export default function BoadillaPage() {
                   </svg>
                   Escríbenos por WhatsApp
                 </WhatsAppLink>
-                <p className="text-sm text-slate-500 mt-4">Respuesta en menos de 30 minutos</p>
+                <p className="text-sm text-slate-500 mt-4">Respuesta en nuestro horario de atención</p>
               </div>
               
               {/* Right: Foto del equipo */}
@@ -150,7 +150,7 @@ export default function BoadillaPage() {
         <section className="bg-black text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              +1.200 familias protegidas en Madrid Oeste
+              Familias protegidas en Madrid Oeste
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mt-4">
               +10 años en Boadilla del Monte
@@ -268,7 +268,7 @@ export default function BoadillaPage() {
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">1</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Nos escribes por WhatsApp</h3>
-                <p className="text-slate-600">Cuéntanos qué necesitas. Te respondemos en menos de 30 minutos.</p>
+                <p className="text-slate-600">Cuéntanos qué necesitas. Te respondemos en nuestro horario de atención.</p>
               </div>
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">2</div>
@@ -356,7 +356,7 @@ export default function BoadillaPage() {
               ¿Vives en Boadilla del Monte?
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Habla con nosotros hoy. Asesoría gratis en 30 minutos.
+              Habla con nosotros hoy. Te atendemos en nuestro horario de atención.
             </p>
             <WhatsAppLink 
               href={wCotiza}

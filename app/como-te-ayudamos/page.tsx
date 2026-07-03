@@ -183,7 +183,7 @@ export default function ComoTeAyudamosPage() {
                     id="prueba-social-title"
                     className="mt-3 section-title"
                   >
-                    Más de 1.200 familias ya confían en nosotros
+                    Muchas familias ya confían en nosotros
                   </h2>
                   <p className="section-copy mt-4">
                     Trabajamos contigo: te explicamos todo sin presión para que decidas con criterio.
@@ -198,9 +198,9 @@ export default function ComoTeAyudamosPage() {
                       </p>
                     </div>
                     <div className="rounded-[18px] bg-[var(--bg)] px-5 py-4">
-                      <p className="text-2xl font-bold text-[var(--blue-deep)]">+1.200</p>
+                      <p className="text-2xl font-bold text-[var(--blue-deep)]">DGSFP</p>
                       <p className="text-sm text-[var(--muted)] mt-1">
-                        familias protegidas en Madrid
+                        agente de seguros registrada
                       </p>
                     </div>
                     <div className="rounded-[18px] bg-[var(--bg)] px-5 py-4 sm:col-span-2">

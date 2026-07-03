@@ -113,7 +113,7 @@ export function ExtranjeroLanding() {
     },
     {
       q: "¿Hay diferencia de precio según el destino?",
-      a: "Puede haberla según la zona geográfica y la duración. Te preparamos un presupuesto personalizado en 30 minutos.",
+      a: "Puede haberla según la zona geográfica y la duración. Te preparamos un presupuesto personalizado en nuestro horario de atención.",
     },
     {
       q: "¿Y si ya tengo salud individual con vosotros?",
@@ -133,7 +133,7 @@ export function ExtranjeroLanding() {
               ✈️ Cobertura médica en 190+ países
             </span>
             <span className="hidden sm:inline">
-              ✈️ ¿Viajas al extranjero por trabajo o vives fuera? Cobertura médica completa desde el primer día.
+              ✈️ ¿Viajas al extranjero por trabajo o vives fuera? Cobertura médica adaptada a tu trámite, según la modalidad.
             </span>
           </p>
 
@@ -251,7 +251,7 @@ export function ExtranjeroLanding() {
             >
               <div className="bg-card border rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-2xl">
                 <h3 className="text-2xl font-bold mb-2">Dinos a dónde viajas y te preparamos tu cobertura</h3>
-                <p className="text-muted-foreground mb-6">Sin compromiso. Respuesta en 30 min.</p>
+                <p className="text-muted-foreground mb-6">Sin compromiso. Te respondemos en nuestro horario de atención.</p>
 
                 {sent ? (
                   <div className="text-center py-12">
@@ -261,7 +261,7 @@ export function ExtranjeroLanding() {
                       </svg>
                     </div>
                     <h4 className="text-xl font-bold mb-2">¡Mensaje enviado!</h4>
-                    <p className="text-muted-foreground">Rosa o Sebastián te contactarán en menos de 30 minutos.</p>
+                    <p className="text-muted-foreground">Una persona del equipo te contactará lo antes posible dentro de nuestro horario.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -551,8 +551,8 @@ export function ExtranjeroLanding() {
                     </svg>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-bold text-blue-900 leading-tight">Sebastián Valentín</p>
-                    <p className="text-[10px] text-blue-700 leading-tight">Mediador colegiado DGSFP</p>
+                    <p className="text-xs font-bold text-blue-900 leading-tight">Rosa Isabel Valentín González</p>
+                    <p className="text-[10px] text-blue-700 leading-tight">Agente de seguros registrada en la DGSFP</p>
                     <p className="text-[9px] text-blue-500 leading-tight">Nº C012479234434D</p>
                   </div>
                 </div>
@@ -561,7 +561,7 @@ export function ExtranjeroLanding() {
             <motion.div variants={fadeInUpVariants} className="text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8">Hablas con personas, no con un call center</h2>
               <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed italic font-light">
-                &ldquo;Rosa y Sebastián Valentín llevan más de 10 años ayudando a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal. Cada recomendación es honesta.&rdquo;
+                &ldquo;Rosa y Sebastián Valentín ayudan a familias de Madrid a encontrar la protección que realmente necesitan. Cada consulta es personal y cada recomendación, honesta.&rdquo;
               </p>
               <a
                 href="https://rrpp.dgsfp.mineco.es/Mediador"
@@ -577,7 +577,7 @@ export function ExtranjeroLanding() {
 
               <div className="grid sm:grid-cols-3 gap-6 mt-8">
                 {[
-                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Respondemos en menos de 30 minutos" },
+                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Respondemos dentro de nuestro horario de atención" },
                   { icon: <FileText className="h-6 w-6" />, text: "Te explicamos todo antes de firmar" },
                   { icon: <UserCheck className="h-6 w-6" />, text: "Un gestor personal de por vida" },
                 ].map((item, i) => (
@@ -602,16 +602,16 @@ export function ExtranjeroLanding() {
       >
         <div className="container mx-auto max-w-5xl px-4">
           <motion.div variants={fadeInUpVariants} className="text-center mb-12">
-            <h2 className="text-3xl font-bold sm:text-5xl mb-4">Nuestras garantías</h2>
-            <p className="text-xl text-white/80">Promesas que cumplimos</p>
+            <h2 className="text-3xl font-bold sm:text-5xl mb-4">Nuestros compromisos de atención</h2>
+            <p className="text-xl text-white/80">Cómo trabajamos contigo</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en 30 minutos", desc: "O te llamamos nosotros" },
-              { icon: <FileText className="h-8 w-8" />, title: "Sin letra pequeña", desc: "Te explicamos todo antes de firmar" },
-              { icon: <UserCheck className="h-8 w-8" />, title: "Gestor personal de por vida", desc: "Rosa o Sebastián, siempre" },
-              { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión anual gratuita", desc: "Revisamos tu cobertura cada año" },
+              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en horario", desc: "Te contactamos lo antes posible dentro de nuestro horario de atención" },
+              { icon: <FileText className="h-8 w-8" />, title: "Condiciones claras", desc: "Te explicamos coberturas, límites y exclusiones antes de firmar" },
+              { icon: <UserCheck className="h-8 w-8" />, title: "Trato personal", desc: "Una persona del equipo te acompaña en el proceso" },
+              { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión de tu cobertura", desc: "Revisamos contigo tu seguro cuando lo necesites" },
             ].map((garantia, i) => (
               <motion.div
                 key={i}
@@ -633,19 +633,19 @@ export function ExtranjeroLanding() {
                        bg-white/5 px-8 py-6 text-center"
           >
             <p className="text-lg font-bold text-white mb-2">
-              ¿Y si no cumplimos lo que prometemos?
+              ¿Prefieres que te lo expliquemos en persona?
             </p>
             <p className="text-white/70 text-base leading-relaxed">
-              Si no te contactamos en 30 minutos tras tu consulta, 
-              Rosa o Sebastián te ofrecen una{" "}
+              Además de atenderte por WhatsApp, puedes solicitar una{" "}
               <span className="text-white font-semibold">
-                cita presencial gratuita en nuestra oficina
+                cita presencial en nuestra oficina
               </span>
-              {" "}para explicarte todo en persona.
-              Así de seguros estamos de lo que prometemos.
+              {" "}para revisar tu caso con calma. Atendemos las solicitudes
+              dentro de nuestro horario; las recibidas fuera de horario se
+              atienden el siguiente día laborable.
             </p>
             <p className="mt-4 text-sm text-white/40 italic">
-              Nadie en el sector hace esta garantía. Nosotros sí.
+              Nuestros compromisos de atención, contigo desde el primer día.
             </p>
           </motion.div>
         </div>
@@ -747,7 +747,7 @@ export function ExtranjeroLanding() {
                   },
                   {
                     num: "2",
-                    title: "Rosa o Sebastián te llaman en menos de 30 minutos",
+                    title: "Una persona del equipo te llama lo antes posible dentro de nuestro horario",
                     desc: "Te explican todo sin presión, respondiendo todas tus dudas.",
                   },
                   {
@@ -899,10 +899,10 @@ export function ExtranjeroLanding() {
             </div>
             <div className="flex-1">
               <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
-                El mismo seguro. Mejor precio. Garantizado.
+                ¿Ya tienes un presupuesto? Lo revisamos contigo.
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+                Tráenos el precio de tu banco o gestoría y comparamos las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu trámite.
               </p>
             </div>
           </div>
@@ -922,7 +922,7 @@ export function ExtranjeroLanding() {
             El mundo es tu consulta médica. Protégete donde estés.
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-8">
-            Rosa y Sebastián te preparan tu cobertura internacional en menos de 30 minutos.
+Te ayudamos a preparar tu cobertura internacional y resolvemos tus dudas en nuestro horario de atención.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <WhatsAppLink

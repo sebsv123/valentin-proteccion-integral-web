@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
+import { siteConfig } from '@/lib/site-config';
 import { WhatsAppButton } from './whatsapp-button';
 import { BrandLockup } from './ui/brand-lockup';
 import { CookieAwareMap } from './cookie-aware-map';
@@ -8,13 +9,13 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-[var(--border)] bg-white/92">
       <div className="container-shell py-14">
-        <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-8 xl:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
               <BrandLockup variant="dark" size="default" />
               <p className="text-[var(--muted)]">{site.brandLine}</p>
             </div>
-            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece asesoramiento personalizado para asegurar tu tranquilidad. Una firma especializada en proteger lo que de verdad importa, acompañándote con cercanía antes y después de contratar.</p>
+            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
             <div className="flex flex-wrap gap-3">
               <WhatsAppButton href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href="/contacto" className="btn-ghost !px-5 !py-3">Formulario</Link>
@@ -49,7 +50,7 @@ export function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Contacto</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">603 44 87 65</a>
+              <a href="tel:+34603448765" className="block hover:text-[var(--blue)] text-sm">+34 603 448 765</a>
               <a href="mailto:contacto@valentinproteccionintegral.com" className="block hover:text-[var(--blue)] text-sm">contacto@valentinproteccionintegral.com</a>
               <p className="font-medium text-[var(--blue-deep)] text-sm">Boadilla del Monte, Madrid</p>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--blue)] text-sm">@segurosvalentin</a>
@@ -65,8 +66,28 @@ export function Footer() {
           <p>Las coberturas, límites, primas y condiciones pueden variar según modalidad, edad, provincia y aceptación del riesgo.</p>
           <p>Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
         </div>
-        <div className="mt-6 border-t border-[var(--border)] pt-6 text-center text-sm text-[var(--muted)]">
-          <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>
+        <div className="mt-6 border-t border-[var(--border)] pt-6 text-sm leading-7 text-[var(--muted)]">
+          <p>
+            <strong>{siteConfig.brand.name}</strong> es una marca comercial de mediación de
+            seguros; no es una compañía aseguradora. Responsable de la actividad:{' '}
+            <strong>{siteConfig.responsiblePerson.fullName}</strong>, agente de seguros con NIF{' '}
+            {siteConfig.responsiblePerson.nif} e inscripción en la DGSFP nº{' '}
+            {siteConfig.responsiblePerson.dgsfpCode} (comprobable en el{' '}
+            <a
+              href={siteConfig.responsiblePerson.dgsfpRegistryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--blue)]"
+            >
+              registro público de la DGSFP
+            </a>
+            ). Las aseguradoras son entidades terceras: la aceptación del riesgo, las coberturas y
+            el pago de prestaciones corresponden a cada aseguradora según las condiciones,
+            límites, exclusiones y carencias de la póliza.
+          </p>
+          <p className="mt-4 text-center">
+            © {new Date().getFullYear()} {site.name}. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

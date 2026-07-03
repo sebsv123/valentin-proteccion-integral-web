@@ -137,7 +137,7 @@ export function FAQChat({
             } animate-pulse`} />
             <span className="text-slate-600 text-sm">Habla con nosotros por WhatsApp</span>
             <span className="text-slate-400">•</span>
-            <span className="text-slate-500 text-sm">Respuesta en 30 min</span>
+            <span className="text-slate-500 text-sm">Respuesta en horario</span>
           </div>
         </div>
       </div>

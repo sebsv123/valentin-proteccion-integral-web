@@ -11,12 +11,12 @@ import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, Briefcase, Globe, 
 
 export const metadata: Metadata = {
   title: "Seguro para Autónomos en Madrid | Valentín",
-  description: "Seguro para autónomos en Madrid con deducción fiscal incluida. Salud, accidentes y vida gestionados sin perder un día de trabajo.",
+  description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
   keywords: "seguro autónomos madrid, seguro médico autónomos irpf, rc profesional madrid, seguro autónomos deducible, protección autónomos madrid",
   alternates: { canonical: "https://valentinproteccionintegral.com/autonomos" },
   openGraph: {
     title: "Seguro para Autónomos en Madrid | Valentín",
-    description: "Seguro para autónomos en Madrid con deducción fiscal incluida. Salud, accidentes y vida gestionados sin perder un día de trabajo.",
+    description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
     url: "https://valentinproteccionintegral.com/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -40,7 +40,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros autónomos Madrid 2026. IRPF deducible 100%, RC profesional, accidentes. Cotiza WhatsApp.",
+  "description": "Seguros para autónomos en Madrid: salud, RC profesional y accidentes. Posible deducción en el IRPF según tu situación fiscal. Te orientamos por WhatsApp, sin promesas de ahorro.",
 };
 
 const faqSchema = {
@@ -49,10 +49,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El seguro médico es 100% deducible en IRPF para autónomos?",
+      "name": "¿El seguro médico de autónomos es deducible en el IRPF?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible."
+        "text": "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos que establece la normativa fiscal vigente. La aplicación concreta depende de tu situación personal, por lo que conviene confirmarla con tu asesor fiscal. VPI no presta asesoramiento fiscal personalizado."
       }
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       "name": "¿Qué pasa si tengo un accidente siendo autónomo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal."
+        "text": "Como autónomo cotizas por prestaciones públicas, pero un seguro de accidentes puede complementarlas según la modalidad contratada. Las coberturas, carencias y plazos dependen de las condiciones de la póliza; te los explicamos antes de contratar."
       }
     },
     {
@@ -76,7 +76,7 @@ const faqSchema = {
       "name": "¿Cuánto tarda en activarse la cobertura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar."
+        "text": "La entrada en vigor de cada cobertura, así como posibles carencias, dependen de las condiciones de la póliza y de la aseguradora. Te informamos de los plazos concretos antes de contratar."
       }
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "¿Hay permanencia en los seguros para autónomos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización."
+        "text": "La duración, la renovación y la cancelación dependen de las condiciones de cada póliza y de los plazos legalmente aplicables. Te explicamos las condiciones concretas de cada producto antes de contratar."
       }
     }
   ]
@@ -103,13 +103,13 @@ export default function AutonomosRootPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
-        
+
         {/* HERO STRIPE — Purple gradients, weight-300 */}
         <section className="relative pt-24 pb-20 overflow-hidden">
           {/* Gradient orbs */}
           <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#635BFF] to-[#96F7D6] opacity-[0.15] blur-[150px]" />
           <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#635BFF] to-[#ea2261] opacity-[0.1] blur-[120px]" />
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Content */}
@@ -117,9 +117,9 @@ export default function AutonomosRootPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(99,91,255,0.4)] bg-[rgba(99,91,255,0.15)] text-[#533afd] text-sm mb-6">
                   <Sparkles className="w-4 h-4" />
-                  2026 · +1.200 autónomos protegidos · DGSFP
+                  2026 · Seguros para autónomos · DGSFP
                 </div>
-                
+
                 {/* H1 Stripe — 56px weight 300 */}
                 <h1 className="text-[48px] sm:text-[56px] font-light text-[#061b31] leading-[1.03] tracking-[-1.4px] mb-6">
                   Seguros Autónomos Madrid 2026:
@@ -128,47 +128,47 @@ export default function AutonomosRootPage() {
                     IRPF, RC y Accidentes
                   </span>
                 </h1>
-                
+
                 {/* Subhead */}
                 <p className="text-xl text-[#64748d] font-light leading-relaxed mb-8 max-w-lg">
-                  IRPF deducible + RC profesional + Accidentes.
+                  Posible deducción IRPF + RC profesional + Accidentes.
                   <br />
                   <span className="text-[#533afd] font-normal">Precio adaptado a tu perfil.</span>
                 </p>
-                
+
                 {/* CTAs Stripe */}
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <a 
+                  <a
                     href={wCotiza}
                     className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#4434d4] text-white px-6 py-3 rounded text-base font-normal transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px,rgba(0,0,0,0.1)_0px_2px_4px_-2px]"
                   >
                     WhatsApp Ahora
                   </a>
-                  <Link 
+                  <Link
                     href="/seguros/salud-individual"
                     className="inline-flex items-center gap-2 bg-transparent text-[#533afd] px-6 py-3 rounded text-base font-normal border border-[#b9b9f9] hover:bg-[rgba(83,58,253,0.05)] transition-all"
                   >
                     Ver salud individual →
                   </Link>
                 </div>
-                
+
                 {/* Trust row */}
                 <div className="flex flex-wrap gap-6 text-sm text-[#64748d]">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
-                    Deducible IRPF 100%
+                    Posible deducción IRPF
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-[#533afd]" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                   <span className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-[#533afd]" />
-                    Sin permanencia
+                    Agente registrada DGSFP
                   </span>
                 </div>
               </div>
-              
+
               {/* Right: Hero Image */}
               <div className="relative">
                 <div className="relative rounded-lg overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_30px_45px_-30px,rgba(0,0,0,0.1)_0px_18px_36px_-18px]">
@@ -189,7 +189,7 @@ export default function AutonomosRootPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-[#061b31]">Ahorro fiscal 2026</p>
-                      <p className="text-xs text-[#64748d]">Ahorro fiscal real</p>
+                      <p className="text-xs text-[#64748d]">Según tu situación fiscal</p>
                     </div>
                   </div>
                 </div>
@@ -202,17 +202,17 @@ export default function AutonomosRootPage() {
         <section className="py-20 border-t border-[#e5edf5]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-4">
-              ¿Cómo funciona la deducción?
+¿Cómo puede ayudarte fiscalmente?
             </h2>
             <p className="text-lg text-[#64748d] text-center mb-12">
-              Aprovecha al máximo tu IRPF 2026
+Información general; el efecto real depende de tu situación fiscal
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { num: "01", title: "100% deducible", desc: "Toda la prima de tu seguro médico es deducible en IRPF como gasto profesional." },
-                { num: "02", title: "Factura Hacienda", desc: "Te emitimos factura con IVA incluido, válida para la Agencia Tributaria." },
-                { num: "03", title: "Ejemplo real", desc: "La mitad de tu prima de salud te la devuelve Hacienda. Tu seguro cuesta menos de lo que crees." },
+                { num: "01", title: "Posible deducción", desc: "Las primas de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites de la normativa vigente." },
+                { num: "02", title: "Factura a tu nombre", desc: "Recibes la factura correspondiente para tu contabilidad; su tratamiento fiscal depende de tu situación y de tu asesor." },
+                { num: "03", title: "Sin promesas", desc: "El ahorro real depende de tu tramo, tus ingresos y la normativa. No prometemos devoluciones: te orientamos con prudencia." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px]">
                   <span className="text-[#533afd] text-sm font-medium">{item.num}</span>
@@ -230,27 +230,27 @@ export default function AutonomosRootPage() {
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
               Planes para autónomos
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { 
-                  name: "BÁSICO", 
+                {
+                  name: "BÁSICO",
                   price: "Adaptado",
                   period: "/mes",
                   features: ["Salud privada IRPF deducible", "Especialistas ilimitados", "Urgencias 24h"],
                   cta: "Elegir Básico",
                   popular: false
                 },
-                { 
-                  name: "PRO", 
+                {
+                  name: "PRO",
                   price: "Adaptado",
                   period: "/mes",
                   features: ["Todo lo de Básico", "RC profesional incluida", "Accidentes laboral/extra", "Cobertura internacional UE"],
                   cta: "Elegir Pro",
                   popular: true
                 },
-                { 
-                  name: "ENTERPRISE", 
+                {
+                  name: "ENTERPRISE",
                   price: "Adaptado",
                   period: "/mes",
                   features: ["Todo ilimitado", "RC profesional ampliada", "Accidentes premium", "Asesor fiscal incluido"],
@@ -278,7 +278,7 @@ export default function AutonomosRootPage() {
                       </li>
                     ))}
                   </ul>
-                  <a 
+                  <a
                     href={wCotiza}
                     className={`block w-full text-center py-2.5 rounded text-sm font-medium transition-all ${plan.popular ? 'bg-[#533afd] text-white hover:bg-[#4434d4]' : 'bg-[#f6f9fc] text-[#061b31] hover:bg-[#e5edf5]'}`}
                   >
@@ -296,10 +296,10 @@ export default function AutonomosRootPage() {
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
               Cobertura completa
             </h2>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: TrendingDown, title: "IRPF médico", desc: "100% deducible" },
+                { icon: TrendingDown, title: "IRPF médico", desc: "Posible deducción" },
                 { icon: Shield, title: "RC profesional", desc: "Errores cubiertos" },
                 { icon: Briefcase, title: "Accidentes", desc: "Laboral/extra" },
                 { icon: Globe, title: "Internacional", desc: "Cobertura UE" },
@@ -322,7 +322,7 @@ export default function AutonomosRootPage() {
             <h2 className="text-[32px] font-light text-[#061b31] tracking-[-0.64px] text-center mb-12">
               Tan fácil como esto:
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { num: "01", title: "Nos escribes", desc: "Por WhatsApp contándonos tu actividad." },
@@ -346,9 +346,9 @@ export default function AutonomosRootPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-[#533afd]/10 border border-[#e0e7ff]">
               <h2 className="text-[36px] sm:text-[44px] font-bold text-[#061b31] leading-tight mb-6 text-center">
-                ¿Y si no te respondemos en 30 minutos?
+                ¿Prefieres que te llamemos?
               </h2>
-              
+
               <p className="text-xl text-[#64748d] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
                 Rosa o Sebastián te llaman directamente.
                 <br />
@@ -356,7 +356,7 @@ export default function AutonomosRootPage() {
                 <br />
                 <span className="text-[#533afd] font-semibold">Nadie en el sector ofrece esta garantía. Nosotros sí.</span>
               </p>
-              
+
               <div className="flex items-center justify-center gap-4 pt-4 border-t border-[#e5edf5]">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image
@@ -381,24 +381,24 @@ export default function AutonomosRootPage() {
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
               Lo que dicen los autónomos
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { 
-                  quote: "Me ahorré casi 300€ en IRPF el año pasado. El seguro me salió gratis de lo que me devolvió Hacienda.", 
-                  author: "Carlos M.", 
+                {
+                  quote: "Me explicaron con claridad qué cubría cada póliza y qué dependía de mi situación fiscal. Sin presión y sin promesas de ahorro que luego no se cumplen.",
+                  author: "Carlos M.",
                   role: "Consultor IT, Madrid",
                   stars: 5
                 },
-                { 
-                  quote: "Tuve un accidente en obra y el seguro cubrió todos los gastos más la baja. Me salvó el año.", 
-                  author: "Laura S.", 
+                {
+                  quote: "Tuve un accidente en obra y el seguro cubrió todos los gastos más la baja. Me salvó el año.",
+                  author: "Laura S.",
                   role: "Arquitecta técnica",
                   stars: 5
                 },
-                { 
-                  quote: "La RC profesional me da tranquilidad. Un error en un informe podría costarme miles sin ella.", 
-                  author: "Miguel A.", 
+                {
+                  quote: "La RC profesional me da tranquilidad. Un error en un informe podría costarme miles sin ella.",
+                  author: "Miguel A.",
                   role: "Asesor fiscal",
                   stars: 5
                 },
@@ -427,28 +427,28 @@ export default function AutonomosRootPage() {
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-12">
               Preguntas frecuentes
             </h2>
-            
+
             <div className="space-y-4">
               {[
-                { 
-                  q: "¿El seguro médico es 100% deducible en IRPF para autónomos?", 
-                  a: "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible." 
+                {
+                  q: "¿El seguro médico de autónomos es deducible en el IRPF?",
+                  a: "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos de la normativa fiscal vigente. Depende de tu situación personal: conviene confirmarlo con tu asesor fiscal. VPI no presta asesoramiento fiscal personalizado."
                 },
-                { 
-                  q: "¿Qué pasa si tengo un accidente siendo autónomo?", 
-                  a: "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal." 
+                {
+                  q: "¿Qué pasa si tengo un accidente siendo autónomo?",
+                  a: "Como autónomo cotizas por prestaciones públicas, pero un seguro de accidentes puede complementarlas según la modalidad contratada. Las coberturas, carencias y plazos dependen de las condiciones de la póliza; te los explicamos antes de contratar."
                 },
-                { 
-                  q: "¿Necesito RC profesional como autónomo?", 
-                  a: "Si ejerces una profesión donde puedes cometer errores (consultoría, IT, diseño...), la RC profesional protege tu patrimonio personal ante reclamaciones." 
+                {
+                  q: "¿Necesito RC profesional como autónomo?",
+                  a: "Si ejerces una profesión donde puedes cometer errores (consultoría, IT, diseño...), la RC profesional protege tu patrimonio personal ante reclamaciones."
                 },
-                { 
-                  q: "¿Cuánto tarda en activarse la cobertura?", 
-                  a: "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar." 
+                {
+                  q: "¿Cuánto tarda en activarse la cobertura?",
+                  a: "La entrada en vigor de cada cobertura, así como posibles carencias, dependen de las condiciones de la póliza y de la aseguradora. Te informamos de los plazos concretos antes de contratar."
                 },
-                { 
-                  q: "¿Hay permanencia en los seguros para autónomos?", 
-                  a: "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización." 
+                {
+                  q: "¿Hay permanencia en los seguros para autónomos?",
+                  a: "La duración, la renovación y la cancelación dependen de las condiciones de cada póliza y de los plazos legalmente aplicables. Te explicamos las condiciones concretas de cada producto antes de contratar."
                 },
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-lg border border-[#e5edf5] shadow-[rgba(23,23,23,0.06)_0px_15px_35px] overflow-hidden">
@@ -472,26 +472,26 @@ export default function AutonomosRootPage() {
               Protege tu negocio
             </h2>
             <p className="text-xl text-white/70 mb-10">
-              Un WhatsApp. 30 minutos. Todo optimizado para 2026.
+              Un WhatsApp y te orientamos con criterio, sin promesas de ahorro.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
-              <a 
+              <a
                 href={wCotiza}
                 className="inline-flex items-center gap-2 bg-[#533afd] hover:bg-[#665efd] text-white px-8 py-4 rounded text-lg font-medium transition-all shadow-[rgba(50,50,93,0.25)_0px_4px_8px_-2px]"
               >
                 Cotizar WhatsApp
               </a>
-              <a 
+              <a
                 href="tel:603448765"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded text-lg font-medium border border-white/30 transition-all"
               >
                 📞 603 44 87 65
               </a>
             </div>
-            
+
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · +1.200 autónomos protegidos
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

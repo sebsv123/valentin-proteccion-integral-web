@@ -77,6 +77,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const busyRef = useRef(false);
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+  const reduceMotionRef = useRef(false);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -89,6 +90,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const textInner = textInnerRef.current;
 
       if (!panel || !plusH || !plusV || !icon || !textInner) return;
+
+      reduceMotionRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       let preLayers: HTMLElement[] = [];
       if (preContainer) {
@@ -207,7 +210,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       tl.eventCallback('onComplete', () => {
         busyRef.current = false;
       });
-      tl.play(0);
+      if (reduceMotionRef.current) tl.progress(1);
+      else tl.play(0);
     } else {
       busyRef.current = false;
     }
@@ -229,7 +233,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     closeTweenRef.current = gsap.to(all, {
       xPercent: offscreen,
-      duration: 0.32,
+      duration: reduceMotionRef.current ? 0 : 0.32,
       ease: 'power3.in',
       overwrite: 'auto',
       onComplete: () => {
@@ -383,9 +387,22 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     };
   }, [closeOnClickAway, open, closeMenu]);
 
+  React.useEffect(() => {
+    if (!open) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+        document.querySelector<HTMLButtonElement>('[aria-label="Abrir menú"]')?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [open, closeMenu]);
+
   return (
     <div
-      className={`sm-scope z-[100] overflow-hidden ${isFixed ? 'fixed inset-x-0 top-0 h-[100dvh]' : 'w-full h-full'} pointer-events-none`}
+      className={`sm-scope z-[100] ${isFixed ? 'fixed inset-0 h-[100dvh] overflow-hidden' : 'w-full h-full'} pointer-events-none`}
+      aria-hidden={!open}
     >
       <div
         className={
@@ -480,6 +497,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto"
           style={{ WebkitBackdropFilter: 'blur(12px)' }}
           aria-hidden={!open}
+          inert={!open}
         >
           <div className="sm-panel-inner flex-1 flex flex-col gap-5 justify-center">
             <ul
@@ -558,11 +576,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
 .sm-scope .sm-line { display: none !important; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 45vw, 620px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 45vw, 620px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; transform: translateX(100%); }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
 .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(260px, 45vw, 620px); pointer-events: none; z-index: 5; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
-.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
+.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(100%); }
 .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
 .sm-scope .sm-socials { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .sm-scope .sm-socials-title { margin: 0; font-size: 1rem; font-weight: 500; color: var(--sm-accent, #002244); text-transform: uppercase; letter-spacing: 1px; }
@@ -583,6 +601,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }
 .sm-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); position: absolute; top: 0.1em; right: 3.2em; font-size: 18px; font-weight: 400; color: var(--sm-accent, #0F5E9C); letter-spacing: 0; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
 .sm-scope .staggered-menu-wrapper:not([data-open]) .staggered-menu-header { opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+.sm-scope .staggered-menu-wrapper:not([data-open]) .staggered-menu-panel,
+.sm-scope .staggered-menu-wrapper:not([data-open]) .sm-prelayers { display: none; visibility: hidden; pointer-events: none; }
 .sm-scope .staggered-menu-wrapper[data-open] .staggered-menu-header { opacity: 1; visibility: visible; transition: opacity 0.3s, visibility 0.3s; transition-delay: 0.2s; }
 @media (max-width: 1024px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); } }
 @media (max-width: 640px) {
@@ -606,6 +626,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   .sm-scope .sm-socials { padding-top: 1rem; }
   .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); }
 }
+@media (prefers-reduced-motion: reduce) { .sm-scope * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
       `}</style>
     </div>
   );

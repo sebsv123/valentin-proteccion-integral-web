@@ -138,7 +138,7 @@ export default function BlogPostPage() {
               <Image src="/images/rosa_y_sebastian_mascotas.png" alt="Rosa y Sebastián - Pasaporte Europeo Mascotas Madrid" width={100} height={100} className="rounded-full object-cover" />
               <div>
                 <p className="font-bold text-slate-900">Rosa Valentín y Sebastián</p>
-                <p className="text-slate-600">+1.200 mascotas protegidas en Madrid</p>
+                <p className="text-slate-600">mascotas protegidas en Madrid</p>
                 <p className="text-sm text-slate-500">Especialistas seguro de mascotas · Boadilla del Monte</p>
               </div>
             </div>
@@ -473,7 +473,7 @@ export default function BlogPostPage() {
               WhatsApp: Check-up mascota gratis
             </a>
             <p className="mt-6 text-white/60 text-sm">
-              +1.200 mascotas protegidas · +10 años en Madrid · DGSFP C012479234434D
+              mascotas protegidas · +10 años en Madrid · DGSFP C012479234434D
             </p>
           </div>
         </section>
