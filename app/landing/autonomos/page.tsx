@@ -10,12 +10,12 @@ import { Sparkles, CheckCircle2, TrendingDown, AlertTriangle, Shield, Heart, Clo
 
 export const metadata: Metadata = {
   title: "Seguro Autónomos Madrid · Deducción Fiscal | Valentín",
-  description: "Seguro para autónomos en Madrid deducible en el IRPF. Salud, accidentes y vida con asesoría gratuita. Rosa o Sebastián te responden en 30 min.",
+  description: "Seguro para autónomos en Madrid: salud, accidentes y vida con asesoría gratuita. Posible deducción en el IRPF según tu situación fiscal. Te respondemos en horario de atención.",
   keywords: ["seguros autonomos Madrid","seguro autonomos deduccion IRPF","proteccion autonomos Madrid"],
   alternates: { canonical: "https://valentinproteccionintegral.com/landing/autonomos" },
   openGraph: {
     title: "Seguro Autónomos Madrid · Deducción Fiscal | Valentín",
-    description: "Seguro para autónomos en Madrid deducible en el IRPF. Salud, accidentes y vida con asesoría gratuita. Rosa o Sebastián te responden en 30 min.",
+    description: "Seguro para autónomos en Madrid: salud, accidentes y vida con asesoría gratuita. Posible deducción en el IRPF según tu situación fiscal. Te respondemos en horario de atención.",
     url: "https://valentinproteccionintegral.com/landing/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -163,7 +163,7 @@ export default function AutonomosLandingPage() {
               {[
                 { icon: AlertTriangle, title: "Baja por enfermedad", desc: "Sin cobertura pierdes el 100% de tus ingresos. Tu negocio se detiene." },
                 { icon: Shield, title: "Accidente laboral", desc: "Como autónomo no tienes prestación automática. ¿Tienes ahorros para 3 meses?" },
-                { icon: TrendingDown, title: "Sin deducción IRPF", desc: "Pagas impuestos de más cada año. El seguro médico es 100% deducible." },
+                { icon: TrendingDown, title: "Ventaja fiscal", desc: "Las primas de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites de la normativa vigente." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px]">
                   <div className="w-12 h-12 rounded bg-[#ea2261]/10 flex items-center justify-center mb-4">
@@ -189,8 +189,8 @@ export default function AutonomosLandingPage() {
             
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: Heart, title: "Salud", desc: "Deducible 100% en IRPF. Especialistas sin esperas." },
-                { icon: Shield, title: "Accidentes", desc: "Baja laboral cubierta. Incapacidad desde día 1." },
+                { icon: Heart, title: "Salud", desc: "Posible deducción en el IRPF según tu situación. Acceso a especialistas según la modalidad." },
+                { icon: Shield, title: "Accidentes", desc: "Puede complementar tus prestaciones públicas, según las coberturas y carencias de la póliza." },
                 { icon: Users, title: "Vida", desc: "Protección para tu familia si faltan ingresos." },
                 { icon: Home, title: "Decesos", desc: "Muy contratado por autónomos. Gestión completa." },
               ].map((item, i) => (
@@ -333,7 +333,7 @@ export default function AutonomosLandingPage() {
           items={[
             { 
               q: "¿Cómo funciona la deducción fiscal?", 
-              a: "La prima del seguro de salud para autónomos es 100% deducible en tu declaración de IRPF. Si pagas 100€/mes, te devuelven hasta 30€ en la declaración anual." 
+              a: "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos de la normativa fiscal vigente. El efecto real depende de tu situación personal, por lo que conviene confirmarlo con tu asesor fiscal. VPI no presta asesoramiento fiscal personalizado."
             },
             { 
               q: "¿Puedo contratar solo para mí o también para mi familia?", 
@@ -341,7 +341,7 @@ export default function AutonomosLandingPage() {
             },
             { 
               q: "¿Y si tengo una baja laboral?", 
-              a: "Recomendamos combinar el seguro de salud con un seguro de incapacidad temporal. Así cobras tu sueldo completo durante la baja médica." 
+              a: "Recomendamos valorar un seguro de incapacidad temporal que complemente tu salud. La indemnización y las condiciones dependen de la modalidad contratada y de la póliza; te las explicamos antes de contratar."
             },
             { 
               q: "¿Cuánto cuesta aproximadamente?", 
@@ -349,7 +349,7 @@ export default function AutonomosLandingPage() {
             },
             { 
               q: "¿Hay permanencia?", 
-              a: "Las pólizas de salud tienen permanencia de 1 año por normativa. El seguro de RC profesional suele ser sin permanencia. Te lo aclaramos todo antes de contratar." 
+              a: "La duración, la renovación y la cancelación dependen de las condiciones de cada póliza y de los plazos legalmente aplicables, y varían entre salud y RC profesional. Te aclaramos las condiciones concretas antes de contratar."
             },
           ]}
         />

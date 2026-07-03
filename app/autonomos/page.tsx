@@ -40,7 +40,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros autónomos Madrid 2026. IRPF deducible 100%, RC profesional, accidentes. Cotiza WhatsApp.",
+  "description": "Seguros para autónomos en Madrid: salud, RC profesional y accidentes. Posible deducción en el IRPF según tu situación fiscal. Te orientamos por WhatsApp, sin promesas de ahorro.",
 };
 
 const faqSchema = {
@@ -49,10 +49,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El seguro médico es 100% deducible en IRPF para autónomos?",
+      "name": "¿El seguro médico de autónomos es deducible en el IRPF?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible."
+        "text": "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos que establece la normativa fiscal vigente. La aplicación concreta depende de tu situación personal, por lo que conviene confirmarla con tu asesor fiscal. VPI no presta asesoramiento fiscal personalizado."
       }
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       "name": "¿Qué pasa si tengo un accidente siendo autónomo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal."
+        "text": "Como autónomo cotizas por prestaciones públicas, pero un seguro de accidentes puede complementarlas según la modalidad contratada. Las coberturas, carencias y plazos dependen de las condiciones de la póliza; te los explicamos antes de contratar."
       }
     },
     {
@@ -76,7 +76,7 @@ const faqSchema = {
       "name": "¿Cuánto tarda en activarse la cobertura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar."
+        "text": "La entrada en vigor de cada cobertura, así como posibles carencias, dependen de las condiciones de la póliza y de la aseguradora. Te informamos de los plazos concretos antes de contratar."
       }
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "¿Hay permanencia en los seguros para autónomos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización."
+        "text": "La duración, la renovación y la cancelación dependen de las condiciones de cada póliza y de los plazos legalmente aplicables. Te explicamos las condiciones concretas de cada producto antes de contratar."
       }
     }
   ]
@@ -156,15 +156,15 @@ export default function AutonomosRootPage() {
                 <div className="flex flex-wrap gap-6 text-sm text-[#64748d]">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#15be53]" />
-                    Deducible IRPF 100%
+                    Posible deducción IRPF
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-[#533afd]" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                   <span className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-[#533afd]" />
-                    Sin permanencia
+                    Agente registrada DGSFP
                   </span>
                 </div>
               </div>
@@ -202,17 +202,17 @@ export default function AutonomosRootPage() {
         <section className="py-20 border-t border-[#e5edf5]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <h2 className="text-[32px] font-light text-[#061b31] leading-[1.10] tracking-[-0.64px] text-center mb-4">
-              ¿Cómo funciona la deducción?
+¿Cómo puede ayudarte fiscalmente?
             </h2>
             <p className="text-lg text-[#64748d] text-center mb-12">
-              Aprovecha al máximo tu IRPF 2026
+Información general; el efecto real depende de tu situación fiscal
             </p>
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { num: "01", title: "100% deducible", desc: "Toda la prima de tu seguro médico es deducible en IRPF como gasto profesional." },
-                { num: "02", title: "Factura Hacienda", desc: "Te emitimos factura con IVA incluido, válida para la Agencia Tributaria." },
-                { num: "03", title: "Ejemplo real", desc: "La mitad de tu prima de salud te la devuelve Hacienda. Tu seguro cuesta menos de lo que crees." },
+                { num: "01", title: "Posible deducción", desc: "Las primas de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites de la normativa vigente." },
+                { num: "02", title: "Factura a tu nombre", desc: "Recibes la factura correspondiente para tu contabilidad; su tratamiento fiscal depende de tu situación y de tu asesor." },
+                { num: "03", title: "Sin promesas", desc: "El ahorro real depende de tu tramo, tus ingresos y la normativa. No prometemos devoluciones: te orientamos con prudencia." },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-lg p-6 border border-[#e5edf5] shadow-[rgba(50,50,93,0.25)_0px_13px_27px_-5px,rgba(0,0,0,0.1)_0px_8px_16px_-8px]">
                   <span className="text-[#533afd] text-sm font-medium">{item.num}</span>
@@ -299,7 +299,7 @@ export default function AutonomosRootPage() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: TrendingDown, title: "IRPF médico", desc: "100% deducible" },
+                { icon: TrendingDown, title: "IRPF médico", desc: "Posible deducción" },
                 { icon: Shield, title: "RC profesional", desc: "Errores cubiertos" },
                 { icon: Briefcase, title: "Accidentes", desc: "Laboral/extra" },
                 { icon: Globe, title: "Internacional", desc: "Cobertura UE" },
@@ -385,8 +385,8 @@ export default function AutonomosRootPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { 
-                  quote: "Me ahorré casi 300€ en IRPF el año pasado. El seguro me salió gratis de lo que me devolvió Hacienda.", 
-                  author: "Carlos M.", 
+                  quote: "Me explicaron con claridad qué cubría cada póliza y qué dependía de mi situación fiscal. Sin presión y sin promesas de ahorro que luego no se cumplen.",
+                  author: "Carlos M.",
                   role: "Consultor IT, Madrid",
                   stars: 5
                 },
@@ -431,12 +431,12 @@ export default function AutonomosRootPage() {
             <div className="space-y-4">
               {[
                 { 
-                  q: "¿El seguro médico es 100% deducible en IRPF para autónomos?", 
-                  a: "Sí, como autónomo puedes deducirte el 100% de la prima del seguro médico en tu IRPF. Es una deducción fiscal directa que reduce tu base imponible." 
+                  q: "¿El seguro médico de autónomos es deducible en el IRPF?",
+                  a: "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos de la normativa fiscal vigente. Depende de tu situación personal: conviene confirmarlo con tu asesor fiscal. VPI no presta asesoramiento fiscal personalizado."
                 },
                 { 
                   q: "¿Qué pasa si tengo un accidente siendo autónomo?", 
-                  a: "Sin seguro de accidentes, como autónomo no tienes prestación por incapacidad. Con nuestro seguro, cobertura desde el primer día incluyendo incapacidad temporal." 
+                  a: "Como autónomo cotizas por prestaciones públicas, pero un seguro de accidentes puede complementarlas según la modalidad contratada. Las coberturas, carencias y plazos dependen de las condiciones de la póliza; te los explicamos antes de contratar."
                 },
                 { 
                   q: "¿Necesito RC profesional como autónomo?", 
@@ -444,11 +444,11 @@ export default function AutonomosRootPage() {
                 },
                 { 
                   q: "¿Cuánto tarda en activarse la cobertura?", 
-                  a: "La cobertura de accidentes y urgencias es inmediata. Para salud y otras coberturas, depende de la compañía, pero te informamos antes de contratar." 
+                  a: "La entrada en vigor de cada cobertura, así como posibles carencias, dependen de las condiciones de la póliza y de la aseguradora. Te informamos de los plazos concretos antes de contratar." 
                 },
                 { 
                   q: "¿Hay permanencia en los seguros para autónomos?", 
-                  a: "No. Todos nuestros seguros para autónomos son sin permanencia. Puedes cancelar cuando quieras sin penalización." 
+                  a: "La duración, la renovación y la cancelación dependen de las condiciones de cada póliza y de los plazos legalmente aplicables. Te explicamos las condiciones concretas de cada producto antes de contratar."
                 },
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-lg border border-[#e5edf5] shadow-[rgba(23,23,23,0.06)_0px_15px_35px] overflow-hidden">

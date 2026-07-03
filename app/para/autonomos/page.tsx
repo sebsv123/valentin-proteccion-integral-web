@@ -44,7 +44,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros autónomos Madrid. IRPF 100% deducible. Salud, RC profesional, accidentes. Ahorra y protege.",
+  "description": "Seguros para autónomos en Madrid: salud, RC profesional y accidentes. Posible deducción en el IRPF según tu situación fiscal. Te orientamos con criterio, sin promesas de ahorro.",
 };
 
 export const dynamic = "force-static";
@@ -83,9 +83,9 @@ export default function AutonomosPage() {
                 
                 {/* Subheadline */}
                 <p className="text-2xl text-slate-600 leading-relaxed mb-8 max-w-lg">
-                  IRPF 100% deducible.
+                  Posible deducción en el IRPF.
                   <br />
-                  <span className="text-slate-500">Ahorra y protege tu negocio.</span>
+                  <span className="text-slate-500">Protege tu negocio con criterio.</span>
                 </p>
                 
                 {/* CTAs */}
@@ -242,9 +242,9 @@ export default function AutonomosPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-green-400 mb-2">50%</div>
-                  <p className="text-xl text-slate-300">de ahorro fiscal</p>
-                  <p className="text-slate-400 mt-4">El seguro médico de autónomos es 100% deducible en tu IRPF</p>
+                  <div className="text-6xl font-bold text-green-400 mb-2">IRPF</div>
+                  <p className="text-xl text-slate-300">posible ventaja fiscal</p>
+                  <p className="text-slate-400 mt-4">Las primas de salud pueden ser deducibles para autónomos en estimación directa, dentro de los límites de la normativa vigente. Consulta con tu asesor fiscal.</p>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@ export default function AutonomosPage() {
           items={[
             {
               q: "¿El seguro de autónomos es deducible en IRPF?",
-              a: "Sí. El seguro médico de autónomos es 100% deducible como gasto profesional. Te emitimos factura con IVA para que la incluyas en tu declaración."
+              a: "Las primas de seguro de salud pueden ser deducibles en el IRPF para autónomos en estimación directa, dentro de los límites y requisitos de la normativa fiscal vigente. Recibes la factura correspondiente, pero su tratamiento fiscal depende de tu situación: confírmalo con tu asesor. VPI no presta asesoramiento fiscal personalizado."
             },
             {
               q: "¿Qué pasa si tengo un accidente laboral?",

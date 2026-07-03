@@ -328,7 +328,7 @@ export default function JovenesPage() {
                 },
                 { 
                   q: "¿Puedo deducirme el seguro médico siendo autónomo?", 
-                  a: "Sí, si eres autónomo el 100% de la prima es deducible en IRPF. Si eres asalariado, depende de tu convenio. Lo revisamos gratis." 
+                  a: "Si eres autónomo en estimación directa, las primas de salud pueden ser deducibles en el IRPF dentro de los límites de la normativa vigente. Si eres asalariado, el tratamiento es distinto. Depende de tu situación: conviene confirmarlo con tu asesor fiscal." 
                 },
                 { 
                   q: "¿Qué pasa si cambio de trabajo?", 
@@ -372,7 +372,7 @@ export default function JovenesPage() {
                   "name": "¿Puedo deducirme el seguro médico siendo autónomo?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sí, si eres autónomo el 100% de la prima es deducible en IRPF. Si eres asalariado, depende de tu convenio. Lo revisamos gratis."
+                    "text": "Si eres autónomo en estimación directa, las primas de salud pueden ser deducibles en el IRPF dentro de los límites de la normativa vigente. Si eres asalariado, el tratamiento es distinto. Depende de tu situación: conviene confirmarlo con tu asesor fiscal."
                   }
                 },
                 {
