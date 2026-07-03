@@ -414,7 +414,7 @@ export default function SaludExtranjerosPage() {
               text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              Verificad mi caso ahora
+Revisar mi caso ahora
             </a>
           </div>
         </section>
