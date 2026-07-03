@@ -113,7 +113,7 @@ test("Vercel preview authorization actually lifts the guard (no transport, no ne
   await assert.rejects(
     () =>
       sendLeadEmail(leadEmailSchema.parse(validPayload), {
-        env: { VERCEL_ENV: "preview", ALLOW_PREVIEW_LEAD_DELIVERY: "true" } as NodeJS.ProcessEnv,
+        env: { NODE_ENV: "development", VERCEL_ENV: "preview", ALLOW_PREVIEW_LEAD_DELIVERY: "true" } as NodeJS.ProcessEnv,
         requestHost: "my-branch.vercel.app",
       }),
     LeadEmailConfigError
@@ -163,7 +163,7 @@ test("Vercel production is not gated by the preview guard (no transport, no netw
   await assert.rejects(
     () =>
       sendLeadEmail(leadEmailSchema.parse(validPayload), {
-        env: { VERCEL_ENV: "production" } as NodeJS.ProcessEnv,
+        env: { NODE_ENV: "production", VERCEL_ENV: "production" } as NodeJS.ProcessEnv,
         requestHost: "valentinproteccionintegral.com",
       }),
     LeadEmailConfigError
