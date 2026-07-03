@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { leadEmailSchema } from "../lib/server/lead-email-schemas";
-import { LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "../lib/server/send-lead-email";
+import { leadEmailSchema } from "../lib/server/lead-email-schemas.ts";
+import { LeadEmailBlockedError, LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "../lib/server/send-lead-email.ts";
 
 const env = {
+  NODE_ENV: "development",
   SMTP_HOST: "smtp.example.test",
   SMTP_PORT: "465",
   SMTP_SECURE: "true",
@@ -45,6 +46,23 @@ test("missing SMTP configuration throws config error", async () => {
   await assert.rejects(
     () => sendLeadEmail(leadEmailSchema.parse(validPayload), { env: {} as NodeJS.ProcessEnv }),
     LeadEmailConfigError
+  );
+});
+
+test("real SMTP is blocked for localhost by default", async () => {
+  await assert.rejects(
+    () => sendLeadEmail(leadEmailSchema.parse(validPayload), { env, requestHost: "localhost:3000" }),
+    LeadEmailBlockedError
+  );
+});
+
+test("real SMTP is blocked in test mode even for the production inbox", async () => {
+  await assert.rejects(
+    () => sendLeadEmail(leadEmailSchema.parse(validPayload), {
+      env: { ...env, NODE_ENV: "test" },
+      requestHost: "example.test",
+    }),
+    LeadEmailBlockedError
   );
 });
 

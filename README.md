@@ -72,3 +72,11 @@ Ahí sí puedes tener:
 - credenciales reales de n8n
 - almacenamiento persistente para leads
 - sistema anti-spam más fuerte como Turnstile o API intermedia
+# Pruebas seguras de leads
+
+Ejecuta `npm run test:leads`. El comando fuerza entorno de test y todos los
+envíos se capturan con un transporte SMTP instrumentado; no abre conexiones
+SMTP reales. Las peticiones a `/api/leads` y `/api/professional-referral` desde
+`localhost` o `127.0.0.1` devuelven `503`, `delivered: false` y el modo
+`local-delivery-blocked` por defecto. Solo `ALLOW_LOCAL_LEAD_DELIVERY=true`
+autoriza deliberadamente entrega real local. No uses esa variable en CI.

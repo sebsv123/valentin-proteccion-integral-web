@@ -355,8 +355,9 @@ export default function AlquileresForm() {
           {errors.comments ? <p id="al-comments-error" role="alert" className={errCls}>{errors.comments.message}</p> : null}
         </div>
 
-        <label className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
+        <label htmlFor="al-consent" className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
           <input
+            id="al-consent"
             type="checkbox"
             className="mt-1 h-4 w-4 rounded border-slate-300"
             aria-invalid={errors.consent ? true : undefined}

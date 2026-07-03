@@ -17,6 +17,7 @@ type MailTransport = {
 type SendLeadEmailOptions = {
   env?: NodeJS.ProcessEnv;
   transport?: MailTransport;
+  requestHost?: string | null;
 };
 
 export type SendLeadEmailResult = {
@@ -38,8 +39,27 @@ export class LeadEmailDeliveryError extends Error {
   }
 }
 
+export class LeadEmailBlockedError extends Error {
+  readonly mode = "local-delivery-blocked";
+
+  constructor() {
+    super("Lead email delivery is blocked in this environment.");
+    this.name = "LeadEmailBlockedError";
+  }
+}
+
 const DEFAULT_FROM_EMAIL = "contacto@valentinproteccionintegral.com";
 const DEFAULT_FROM_NAME = "Valentín Protección Integral";
+
+function isLocalHost(host: string | null | undefined) {
+  const hostname = (host || "").trim().toLowerCase().replace(/^\[/, "").split("]")[0].split(":")[0];
+  return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
+}
+
+function realDeliveryIsBlocked(env: NodeJS.ProcessEnv, requestHost?: string | null) {
+  if (env.ALLOW_LOCAL_LEAD_DELIVERY === "true") return false;
+  return env.NODE_ENV === "test" || env.LEAD_DELIVERY_CONTEXT === "test" || isLocalHost(requestHost);
+}
 
 function normalizeAddress(address: string | { address?: string }) {
   return typeof address === "string" ? address.toLowerCase() : (address.address || "").toLowerCase();
@@ -139,6 +159,13 @@ export async function sendLeadEmail(
   options: SendLeadEmailOptions = {}
 ): Promise<SendLeadEmailResult> {
   const env = options.env || process.env;
+
+  // An injected transport is the explicit test seam: it never opens an SMTP
+  // connection. Real SMTP is denied for local/test requests unless deliberately
+  // enabled with ALLOW_LOCAL_LEAD_DELIVERY=true.
+  if (!options.transport && realDeliveryIsBlocked(env, options.requestHost)) {
+    throw new LeadEmailBlockedError();
+  }
 
   if (!hasSmtpConfig(env)) {
     throw new LeadEmailConfigError();
