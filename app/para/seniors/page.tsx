@@ -76,7 +76,7 @@ export default function SeniorsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
-        
+
         {/* HERO — Tranquilo, claro, sin oscuros */}
         <section className="pt-20 pb-16 bg-stone-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
@@ -87,31 +87,31 @@ export default function SeniorsPage() {
                 <div className="mb-8">
                   <GuaranteeBadge type="senior" />
                 </div>
-                
+
                 {/* H1 grande y claro */}
                 <h1 className="text-[48px] sm:text-[56px] font-bold text-stone-800 leading-[1.05] mb-6">
                   Seguros para Mayores Madrid:
                   <br />
                   <span className="text-emerald-700">Decesos, Salud y Asistencia</span>
                 </h1>
-                
+
                 {/* Subheadline muy legible */}
                 <p className="text-2xl text-stone-600 leading-relaxed mb-8">
                   Decesos, salud y asistencia en casa.
                   <br />
                   Todo explicado con claridad.
                 </p>
-                
+
                 {/* Teléfono grande y visible */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <a 
+                  <a
                     href="tel:603448765"
                     className="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-5 rounded-xl text-xl font-semibold transition-all shadow-lg"
                   >
                     <Phone className="w-6 h-6" />
                     📞 603 44 87 65
                   </a>
-                  <WhatsAppButton 
+                  <WhatsAppButton
                     href={wCotiza}
                     location="seniors-hero"
                     className="group inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-teal-600/25 hover:shadow-xl hover:-translate-y-0.5"
@@ -119,13 +119,13 @@ export default function SeniorsPage() {
                     Proteger mi salud
                   </WhatsAppButton>
                 </div>
-                
+
                 {/* Info simple */}
                 <p className="text-lg text-stone-500">
                   Atención personalizada. Sin prisa.
                 </p>
               </div>
-              
+
               {/* Right: Imagen serena */}
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg border border-stone-100">
@@ -154,22 +154,22 @@ export default function SeniorsPage() {
                 Lo que necesitas ahora
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { 
-                  icon: HandHeart, 
-                  title: "Decesos", 
+                {
+                  icon: HandHeart,
+                  title: "Decesos",
                   desc: "Para que tu familia no se preocupe por nada. Gastos cubiertos y gestión completa."
                 },
-                { 
-                  icon: Heart, 
-                  title: "Salud", 
+                {
+                  icon: Heart,
+                  title: "Salud",
                   desc: "Médico cuando lo necesites. Sin listas de espera. Atención en casa si lo prefieres."
                 },
-                { 
-                  icon: Home, 
-                  title: "Asistencia", 
+                {
+                  icon: Home,
+                  title: "Asistencia",
                   desc: "Ayuda en tu hogar cuando la necesites. 24 horas, los 365 días del año."
                 },
               ].map((item, i) => (
@@ -196,7 +196,7 @@ export default function SeniorsPage() {
                 Sin letra pequeña
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 "Gastos de funeral cubiertos al 100%",
@@ -217,7 +217,7 @@ export default function SeniorsPage() {
           </div>
         </section>
 
-        
+
         {/* MAYORES DE 70 */}
         <section className="py-20 bg-stone-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
@@ -260,22 +260,22 @@ export default function SeniorsPage() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-base mb-8">
                   <HandHeart className="w-4 h-4" />
                   Te acompañamos
                 </div>
-                
+
                 <h2 className="text-[40px] sm:text-[48px] font-bold text-stone-800 leading-tight mb-6">
                   Rosa y Sebastián
                 </h2>
-                
+
                 <p className="text-xl text-stone-600 leading-relaxed mb-8">
-                  Llevamos más de 10 años ayudando a mayores de Madrid. 
+                  Llevamos más de 10 años ayudando a mayores de Madrid.
                   Sabemos que lo más importante es la confianza y el trato humano.
                 </p>
-                
+
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
@@ -296,7 +296,7 @@ export default function SeniorsPage() {
                     <span className="text-lg text-stone-700">Disponibles para ti</span>
                   </div>
                 </div>
-                
+
                 <p className="text-lg text-stone-500">
                   <span className="font-semibold text-stone-800">NIF:</span> 79234434D
                 </p>
@@ -316,22 +316,22 @@ export default function SeniorsPage() {
                 Tres pasos sencillos
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { 
-                  num: "1", 
-                  title: "Nos llamas", 
+                {
+                  num: "1",
+                  title: "Nos llamas",
                   desc: "Explicamos todo por teléfono. Sin prisa, con paciencia."
                 },
-                { 
-                  num: "2", 
-                  title: "Te asesoramos", 
+                {
+                  num: "2",
+                  title: "Te asesoramos",
                   desc: "Te proponemos lo que mejor se adapta a ti. Sin compromiso."
                 },
-                { 
-                  num: "3", 
-                  title: "Estás cubierto", 
+                {
+                  num: "3",
+                  title: "Estás cubierto",
                   desc: "Nosotros nos ocupamos de todo. Tú tranquilo."
                 },
               ].map((step, i) => (
@@ -358,24 +358,24 @@ export default function SeniorsPage() {
                 Resolvemos tus dudas con claridad
               </p>
             </div>
-            
+
             <div className="space-y-4">
               {[
-                { 
-                  q: "¿Es obligatorio el seguro de decesos?", 
-                  a: "No es obligatorio, pero sí muy recomendable. Un funeral puede costar más de 6.000€. Con el seguro, tu familia no paga nada y nosotros gestionamos todo." 
+                {
+                  q: "¿Es obligatorio el seguro de decesos?",
+                  a: "No es obligatorio, pero sí muy recomendable. Un funeral puede costar más de 6.000€. Con el seguro, tu familia no paga nada y nosotros gestionamos todo."
                 },
-                { 
-                  q: "¿El seguro de salud para mayores tiene carencias?", 
-                  a: "Depende del plan: las carencias varían según la modalidad. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti." 
+                {
+                  q: "¿El seguro de salud para mayores tiene carencias?",
+                  a: "Depende del plan: las carencias varían según la modalidad. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti."
                 },
-                { 
-                  q: "¿Puedo contratar seguro si tengo más de 70 años?", 
-                  a: "Sí, tenemos opciones para todas las edades. Incluso algunas pólizas admiten alta hasta los 80 años. Lo revisamos caso por caso sin compromiso." 
+                {
+                  q: "¿Puedo contratar seguro si tengo más de 70 años?",
+                  a: "Sí, tenemos opciones para todas las edades. Incluso algunas pólizas admiten alta hasta los 80 años. Lo revisamos caso por caso sin compromiso."
                 },
-                { 
-                  q: "¿Qué es la asistencia en domicilio?", 
-                  a: "Incluye ayuda para tareas del hogar, cuidados personales y aviso a familiares si es necesario. Para que puedas seguir viviendo en tu casa con seguridad." 
+                {
+                  q: "¿Qué es la asistencia en domicilio?",
+                  a: "Incluye ayuda para tareas del hogar, cuidados personales y aviso a familiares si es necesario. Para que puedas seguir viviendo en tu casa con seguridad."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
@@ -439,20 +439,20 @@ export default function SeniorsPage() {
               <br />
               y tu familia
             </h2>
-            
+
             <p className="text-2xl text-emerald-100 mb-10">
               Una llamada. Sin compromiso. Con toda la paciencia del mundo.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <WhatsAppButton 
+              <WhatsAppButton
                 href={wCotiza}
                 location="seniors-cta-final"
                 className="group inline-flex items-center gap-3 bg-white text-teal-600 px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 Hablar con Rosa
               </WhatsAppButton>
-              <a 
+              <a
                 href="tel:603448765"
                 className="inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-xl text-xl font-semibold transition-all shadow-lg"
               >
@@ -460,7 +460,7 @@ export default function SeniorsPage() {
                 📞 603 44 87 65
               </a>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-6 mt-10 text-emerald-100">
               <span className="flex items-center gap-2 text-lg">
                 <CheckCircle2 className="w-5 h-5" />
@@ -471,7 +471,7 @@ export default function SeniorsPage() {
                 DGSFP verificado
               </span>
             </div>
-            
+
             <p className="text-lg text-emerald-200/70 mt-8">
               DGSFP: C012479234434D
             </p>

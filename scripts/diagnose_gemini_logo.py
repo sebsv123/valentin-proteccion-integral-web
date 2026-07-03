@@ -7,7 +7,7 @@ to understand why the Gemini logo detection isn't working.
 
 Usage:
   python scripts/diagnose_gemini_logo.py [image_name]
-  
+
   If image_name is provided, only that image is analyzed.
   If omitted, all key images are analyzed one by one.
 """

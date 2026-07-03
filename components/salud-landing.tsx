@@ -523,7 +523,7 @@ export function SaludLanding() {
                   href={`https://wa.me/34603448765?text=${encodeURIComponent(
                     "Hola, vengo de otra aseguradora y me gustaría que me mantuvierais la antigüedad al cambiarme."
                   )}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700
                              underline underline-offset-2 hover:opacity-80 transition-opacity mt-2"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
@@ -532,7 +532,7 @@ export function SaludLanding() {
               </div>
             </div>
             <p className="mt-3 text-xs text-muted-foreground/70 italic">
-              Los plazos indicados son orientativos y pueden variar según el plan contratado. 
+              Los plazos indicados son orientativos y pueden variar según el plan contratado.
               Te lo explicamos todo antes de firmar, con total transparencia.
             </p>
           </div>
@@ -596,14 +596,14 @@ export function SaludLanding() {
 
           <motion.div
             variants={fadeInUpVariants}
-            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-white/20 
+            className="mt-12 mx-auto max-w-2xl rounded-2xl border border-white/20
                        bg-white/5 px-8 py-6 text-center"
           >
             <p className="text-lg font-bold text-white mb-2">
               ¿Y si no cumplimos lo que prometemos?
             </p>
             <p className="text-white/70 text-base leading-relaxed">
-              Además de atenderte por WhatsApp, 
+              Además de atenderte por WhatsApp,
               Rosa o Sebastián te ofrecen una{" "}
               <span className="text-white font-semibold">
                 cita presencial gratuita en nuestra oficina

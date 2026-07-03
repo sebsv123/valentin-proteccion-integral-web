@@ -141,7 +141,7 @@ export default function SaludExtranjerosPage() {
       </header>
 
       <main className="min-h-screen bg-white pt-24 sm:pt-28">
-        
+
         {/* 1. HERO — Impacto Inmediato (Fondo Restaurado) */}
         <section className="relative py-20 lg:py-32 bg-[#1e3a5f] overflow-hidden min-h-[85vh] flex items-center">
           {/* Fondo con imagen multicultural - optimizada para LCP */}
@@ -159,14 +159,14 @@ export default function SaludExtranjerosPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent" />
           </div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
               <div>
                 <h1 className="text-[40px] sm:text-[60px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
                   Seguro de salud para extranjeros <span className="text-emerald-400">válido</span> para visado en España, según la modalidad
                 </h1>
-                
+
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
                   Evita errores que puedan retrasar o rechazar tu visado.
                   <br />
@@ -220,7 +220,7 @@ export default function SaludExtranjerosPage() {
                       Respuesta en menos de 10 minutos
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
                       <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián" fill sizes="64px" className="object-cover object-[center_20%]" />
@@ -240,15 +240,15 @@ export default function SaludExtranjerosPage() {
                 <div className="relative transform rotate-2 group-hover:rotate-0 transition-all duration-700 hover:scale-[1.02]">
                   <div className="relative">
                     <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
-                      <Image 
-                        src="/images/premium/certificado-oficial.png" 
-                        alt="Certificado Oficial de Seguro de Salud" 
-                        width={600} 
-                        height={800} 
+                      <Image
+                        src="/images/premium/certificado-oficial.png"
+                        alt="Certificado Oficial de Seguro de Salud"
+                        width={600}
+                        height={800}
                         className="rounded-[24px] w-full h-auto"
                       />
                     </div>
-                    
+
                     {/* Badge flotante "Según la aseguradora" - Ahora fuera del overflow */}
                     <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft z-20">
                       <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
@@ -306,7 +306,7 @@ export default function SaludExtranjerosPage() {
                 Garantías reales para tu tranquilidad
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
@@ -343,7 +343,7 @@ export default function SaludExtranjerosPage() {
                 Lo tienes listo en 3 pasos
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
                 { num: "1", t: "Escribes por WhatsApp", d: "Analizamos tu trámite al momento." },
@@ -383,7 +383,7 @@ export default function SaludExtranjerosPage() {
         {/* Gancho A — Error frecuente */}
         <section className="py-20 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30 
+            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/30
             text-red-300 px-4 py-2 rounded-full text-sm font-black uppercase tracking-widest mb-8">
               ⚠️ Error frecuente
             </div>
@@ -392,9 +392,9 @@ export default function SaludExtranjerosPage() {
               <span className="text-red-400">Te rechazan por tener el seguro equivocado.</span>
             </h2>
             <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Muchos seguros del mercado no cumplen los requisitos de extranjería — 
-              con copagos y carencias según modalidad, y la cobertura mínima exigida. 
-              El error más común que vemos: contratar online sin verificar si el 
+              Muchos seguros del mercado no cumplen los requisitos de extranjería —
+              con copagos y carencias según modalidad, y la cobertura mínima exigida.
+              El error más común que vemos: contratar online sin verificar si el
               certificado es válido para el trámite concreto.
             </p>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-xl mx-auto mb-8">
@@ -402,7 +402,7 @@ export default function SaludExtranjerosPage() {
                 Nosotros lo verificamos por ti.
               </p>
               <p className="text-slate-400">
-                Antes de emitir cualquier certificado, confirmamos que cumple 
+                Antes de emitir cualquier certificado, confirmamos que cumple
                 exactamente los requisitos de tu trámite específico.
               </p>
             </div>
@@ -410,7 +410,7 @@ export default function SaludExtranjerosPage() {
               href={buildWhatsAppHref("Quiero que verifiquéis si mi seguro es válido para extranjería")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700
               text-white px-8 py-4 rounded-xl font-black transition-all shadow-lg"
             >
               <WhatsAppIcon className="w-5 h-5" />
@@ -457,8 +457,8 @@ Revisar mi caso ahora
                 href={buildWhatsAppHref("Tengo cita de extranjería URGENTE en menos de 7 días, necesito el seguro ya")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200 
-                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl 
+                className="flex flex-col items-center gap-3 bg-red-50 border-2 border-red-200
+                hover:border-red-400 hover:bg-red-100 text-slate-900 p-8 rounded-2xl
                 font-black transition-all group"
               >
                 <span className="text-4xl">🚨</span>
@@ -466,7 +466,7 @@ Revisar mi caso ahora
                 <span className="text-sm text-slate-500 font-medium">
                   Es urgente — te damos prioridad inmediata
                 </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white 
+                <span className="inline-flex items-center gap-2 mt-2 bg-red-600 text-white
                 px-5 py-2 rounded-xl text-sm font-black group-hover:bg-red-700 transition-all">
                   <WhatsAppIcon className="w-4 h-4" />
                   Escribir ahora
@@ -477,8 +477,8 @@ Revisar mi caso ahora
                 href={buildWhatsAppHref("Tengo cita de extranjería próximamente, quiero preparar el seguro con tiempo")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200 
-                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl 
+                className="flex flex-col items-center gap-3 bg-emerald-50 border-2 border-emerald-200
+                hover:border-emerald-400 hover:bg-emerald-100 text-slate-900 p-8 rounded-2xl
                 font-black transition-all group"
               >
                 <span className="text-4xl">📅</span>
@@ -486,7 +486,7 @@ Revisar mi caso ahora
                 <span className="text-sm text-slate-500 font-medium">
                   Perfecto — lo preparamos bien y sin prisas
                 </span>
-                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white 
+                <span className="inline-flex items-center gap-2 mt-2 bg-emerald-600 text-white
                 px-5 py-2 rounded-xl text-sm font-black group-hover:bg-emerald-700 transition-all">
                   <WhatsAppIcon className="w-4 h-4" />
                   Escribir ahora
@@ -498,7 +498,7 @@ Revisar mi caso ahora
 
         {/* 4. BLOQUE ESPECIALISTAS (Reposicionado y Protagonista) */}
         <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
-          <div 
+          <div
             className="absolute top-0 left-0 w-full h-full opacity-5"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5V4zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -518,7 +518,7 @@ Revisar mi caso ahora
               Cada semana ayudamos a personas en tu misma situación.
             </p>
             <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
-              No recomendamos seguros al azar. 
+              No recomendamos seguros al azar.
               <br />
               Solo opciones que cumplen los requisitos reales de extranjería.
             </p>
@@ -533,7 +533,7 @@ Revisar mi caso ahora
                 Te lo ponemos fácil de verdad
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { t: "Revisamos tu caso GRATIS antes de contratar", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },

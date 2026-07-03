@@ -109,7 +109,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 <div className='flex flex-wrap gap-3'>
                   <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
                     <CheckCircle2 className='w-4 h-4' />
-                    
+
                   </span>
                   <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
                     <Heart className='w-4 h-4' />

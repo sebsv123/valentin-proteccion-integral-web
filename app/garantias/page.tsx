@@ -116,8 +116,8 @@ export default function GarantiasPage() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
               </svg>
               <blockquote className="text-xl md:text-2xl text-[var(--blue-deep)] font-heading font-semibold leading-relaxed">
-                &ldquo;Llevo más de 10 años ayudando a familias a proteger lo que más quieren. 
-                No me gusta la letra pequeña ni las sorpresas. Por eso, lo que prometo, lo cumplo. 
+                &ldquo;Llevo más de 10 años ayudando a familias a proteger lo que más quieren.
+                No me gusta la letra pequeña ni las sorpresas. Por eso, lo que prometo, lo cumplo.
                 Siempre.&rdquo;
               </blockquote>
               <div className="mt-6 flex items-center justify-center gap-3">
@@ -143,7 +143,7 @@ export default function GarantiasPage() {
                 El mismo seguro. Mejor precio. Garantizado.
               </h2>
               <p className="section-copy text-[var(--muted)] mt-4 max-w-2xl mx-auto">
-                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, 
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir,
                 siempre hemos encontrado un precio mejor.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

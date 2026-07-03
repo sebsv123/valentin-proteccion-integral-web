@@ -56,12 +56,12 @@ export default function JovenesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <Header />
       <main className="min-h-screen bg-white">
-        
+
         {/* HERO — Moderno, aspiracional, limpio */}
         <section className="relative pt-24 pb-20 overflow-hidden">
           {/* Halo suave violeta */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-radial from-violet-100/60 via-fuchsia-50/30 to-transparent blur-3xl pointer-events-none" />
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left: Content */}
@@ -70,14 +70,14 @@ export default function JovenesPage() {
                 <div className="mb-8">
                   <GuaranteeBadge type="default" />
                 </div>
-                
+
                 {/* H1 moderno */}
                 <h1 className="text-[52px] sm:text-[60px] lg:text-[68px] font-bold text-slate-900 leading-[0.95] tracking-tight mb-6">
                   Seguros Jóvenes Profesionales Madrid:
                   <br />
                   <span className="text-violet-600">Salud e Hipoteca</span>
                 </h1>
-                
+
                 {/* Subhead aspiracional */}
                 <p className="text-2xl text-slate-500 leading-relaxed mb-10 max-w-md">
                   Tu primera hipoteca.
@@ -86,24 +86,24 @@ export default function JovenesPage() {
                   <br />
                   <span className="text-slate-900 font-medium">Protección real.</span>
                 </p>
-                
+
                 {/* CTAs modernos */}
                 <div className="flex flex-wrap gap-4 mb-10">
-                  <WhatsAppButton 
+                  <WhatsAppButton
                     href={wCotiza}
                     location="jovenes-hero"
                     className="group inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-violet-600/25 hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Cotizar ahora
                   </WhatsAppButton>
-                  <a 
+                  <a
                     href="#necesidades"
                     className="inline-flex items-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-full text-lg font-medium border border-slate-200 hover:border-violet-300 transition-all"
                   >
                     Ver opciones
                   </a>
                 </div>
-                
+
                 {/* Trust minimal */}
                 <div className="flex flex-wrap gap-6 text-slate-500">
                   <span className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function JovenesPage() {
                   </span>
                 </div>
               </div>
-              
+
               {/* Right: Imagen aspiracional */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-100/50 to-fuchsia-50/30 rounded-3xl blur-2xl transform scale-95" />
@@ -146,22 +146,22 @@ export default function JovenesPage() {
                 Tres momentos clave
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { 
-                  icon: Home, 
-                  title: "Primera hipoteca", 
+                {
+                  icon: Home,
+                  title: "Primera hipoteca",
                   desc: "El banco exige seguro de vida. Nosotros te conseguimos el mejor precio con la misma cobertura."
                 },
-                { 
-                  icon: Heart, 
-                  title: "Salud sin copagos", 
+                {
+                  icon: Heart,
+                  title: "Salud sin copagos",
                   desc: "Médico cuando lo necesites, sin pagar extra. Especialistas y urgencias incluidos."
                 },
-                { 
-                  icon: Briefcase, 
-                  title: "Protección real", 
+                {
+                  icon: Briefcase,
+                  title: "Protección real",
                   desc: "RC profesional, accidentes, responsabilidad. Tu futuro protegido desde el día 1."
                 },
               ].map((item, i) => (
@@ -188,7 +188,7 @@ export default function JovenesPage() {
                 Lo esencial, nada de más
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: Heart, title: "Salud", desc: "Sin copagos" },
@@ -219,7 +219,7 @@ export default function JovenesPage() {
                 Por qué elegirnos
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: "App para gestionar todo", desc: "Tu seguro en el móvil. Sin papeleo, sin llamadas eternas." },
@@ -259,22 +259,22 @@ export default function JovenesPage() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 text-violet-700 text-sm font-medium mb-8">
                   <Award className="w-4 h-4" />
                   También pasamos por esto
                 </div>
-                
+
                 <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
                   Rosa y Sebastián
                 </h2>
-                
+
                 <p className="text-xl text-slate-500 leading-relaxed mb-8">
-                  Sabemos lo que es la primera hipoteca, el gimnasio, los planes de fin de semana. 
+                  Sabemos lo que es la primera hipoteca, el gimnasio, los planes de fin de semana.
                   Entendemos tu ritmo y te proponemos seguros que realmente se adaptan a tu vida.
                 </p>
-                
+
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
@@ -295,7 +295,7 @@ export default function JovenesPage() {
                     <span className="text-slate-700">94% recomiendan</span>
                   </div>
                 </div>
-                
+
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm">
                   <span className="font-semibold text-slate-900">NIF:</span> 79234434D
                 </div>
@@ -315,24 +315,24 @@ export default function JovenesPage() {
                 Respuestas para jóvenes profesionales
               </p>
             </div>
-            
+
             <div className="space-y-4">
               {[
-                { 
-                  q: "¿Qué seguro necesito para mi primera hipoteca?", 
-                  a: "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco." 
+                {
+                  q: "¿Qué seguro necesito para mi primera hipoteca?",
+                  a: "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco."
                 },
-                { 
-                  q: "¿Me conviene seguro de salud sin copagos?", 
-                  a: "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo." 
+                {
+                  q: "¿Me conviene seguro de salud sin copagos?",
+                  a: "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo."
                 },
-                { 
-                  q: "¿Puedo deducirme el seguro médico siendo autónomo?", 
-                  a: "Si eres autónomo en estimación directa, las primas de salud pueden ser deducibles en el IRPF dentro de los límites de la normativa vigente. Si eres asalariado, el tratamiento es distinto. Depende de tu situación: conviene confirmarlo con tu asesor fiscal." 
+                {
+                  q: "¿Puedo deducirme el seguro médico siendo autónomo?",
+                  a: "Si eres autónomo en estimación directa, las primas de salud pueden ser deducibles en el IRPF dentro de los límites de la normativa vigente. Si eres asalariado, el tratamiento es distinto. Depende de tu situación: conviene confirmarlo con tu asesor fiscal."
                 },
-                { 
-                  q: "¿Qué pasa si cambio de trabajo?", 
-                  a: "El seguro te sigue. Al ser privado y contratado directamente, no depende de tu empresa. Perfecto para la movilidad laboral de los jóvenes." 
+                {
+                  q: "¿Qué pasa si cambio de trabajo?",
+                  a: "El seguro te sigue. Al ser privado y contratado directamente, no depende de tu empresa. Perfecto para la movilidad laboral de los jóvenes."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
@@ -392,28 +392,28 @@ export default function JovenesPage() {
         <section className="relative py-24 bg-violet-600 overflow-hidden">
           {/* Halo */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-violet-500/50 to-transparent blur-3xl pointer-events-none" />
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
             <h2 className="text-[44px] sm:text-[52px] font-bold text-white leading-tight mb-6">
               Decidí rápido.
               <br />
               <span className="text-violet-200">Decidí bien.</span>
             </h2>
-            
+
             <p className="text-xl text-violet-100 mb-12 max-w-2xl mx-auto">
               Un WhatsApp y te orientamos, sin compromiso.
               <br />
               La protección que necesitás, al precio justo.
             </p>
-            
-            <WhatsAppButton 
+
+            <WhatsAppButton
               href={wCotiza}
               location="jovenes-cta-final"
               className="group inline-flex items-center gap-3 bg-white text-violet-600 px-12 py-5 rounded-full text-xl font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               Empezar ahora
             </WhatsAppButton>
-            
+
             {/* Minimal badges */}
             <div className="flex flex-wrap justify-center gap-6 mt-12 text-violet-200">
               <span className="flex items-center gap-2">
@@ -425,7 +425,7 @@ export default function JovenesPage() {
                 En horario
               </span>
             </div>
-            
+
             <p className="text-lg text-violet-300/70 mt-10">
               DGSFP: C012479234434D
             </p>

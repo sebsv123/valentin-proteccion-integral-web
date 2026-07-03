@@ -136,10 +136,10 @@ def is_gemini_gradient_color(r, g, b, tolerance=120):
     """
     Check if a pixel color is close to the Gemini gradient palette
     (blue/purple/pink range).
-    
+
     The Gemini icon uses a gradient from blue (#4285F4) through purple (#9333EA)
     to pink (#EA4398). These colors have high saturation and specific hue ranges.
-    
+
     V4: MUCH more permissive - tolerance increased from 60 to 120, and added
     additional color range checks for better detection.
     """
@@ -147,10 +147,10 @@ def is_gemini_gradient_color(r, g, b, tolerance=120):
     max_val = max(r, g, b)
     min_val = min(r, g, b)
     saturation = max_val - min_val
-    
+
     if saturation < 20:
         return False
-    
+
     # Check if it's in the blue/purple/pink hue range
     # In RGB terms: blue has high B, purple has high R+B, pink has high R+B
     # The common pattern is: green is the lowest channel
@@ -159,7 +159,7 @@ def is_gemini_gradient_color(r, g, b, tolerance=120):
         # Check that the dominant channels are red and blue
         if r >= g * 1.1 or b >= g * 1.1:
             return True
-    
+
     # Also check specific Gemini colors with tolerance
     for gem_r, gem_g, gem_b in [GEMINI_BLUE, GEMINI_PURPLE, GEMINI_PINK]:
         dr = abs(r - gem_r)
@@ -167,7 +167,7 @@ def is_gemini_gradient_color(r, g, b, tolerance=120):
         db = abs(b - gem_b)
         if dr + dg + db < tolerance:
             return True
-    
+
     # Additional check: any pixel where the dominant channel is blue or red,
     # and green is significantly lower, with decent saturation
     # This catches Gemini-like colors that are far from the exact reference colors
@@ -178,7 +178,7 @@ def is_gemini_gradient_color(r, g, b, tolerance=120):
             return True
         if r > g * 1.2 and b > g * 1.2:  # Purple (both R and B high)
             return True
-    
+
     return False
 
 
@@ -301,12 +301,12 @@ def detect_color_cluster(region, dark_threshold=100, colorful_threshold=30):
 def detect_gemini_pattern(region, dark_threshold=100, colorful_threshold=30, white_threshold=180):
     """
     V5: STRICT - Detect the specific Gemini badge pattern.
-    
+
     The Gemini badge has a very specific spatial arrangement:
     - Dark background (rounded rectangle) throughout the badge
     - Colorful gradient icon (blue/purple/pink) in the center-left area
     - White "Gemini" text to the right of the icon
-    
+
     This function is now MUCH more strict to avoid false positives.
     It requires:
     1. Gemini-specific colors present (not just any colorful pixels)
@@ -318,16 +318,16 @@ def detect_gemini_pattern(region, dark_threshold=100, colorful_threshold=30, whi
     pixels = list(region.getdata())
     w, h = region.size
     total = len(pixels)
-    
+
     if total == 0:
         return 0.0
-    
+
     # Count pixel types across the entire region
     dark_count = 0
     colorful_count = 0
     white_count = 0
     gemini_count = 0
-    
+
     for y in range(h):
         for x in range(w):
             idx = y * w + x
@@ -336,7 +336,7 @@ def detect_gemini_pattern(region, dark_threshold=100, colorful_threshold=30, whi
             r, g, b = pixels[idx]
             brightness = (r + g + b) / 3
             cv = max(r, g, b) - min(r, g, b)
-            
+
             if brightness <= dark_threshold:
                 dark_count += 1
             if cv >= colorful_threshold:
@@ -345,29 +345,29 @@ def detect_gemini_pattern(region, dark_threshold=100, colorful_threshold=30, whi
                 white_count += 1
             if is_gemini_gradient_color(r, g, b):
                 gemini_count += 1
-    
+
     dark_ratio = dark_count / total
     colorful_ratio = colorful_count / total
     white_ratio = white_count / total
     gemini_ratio = gemini_count / total
-    
+
     # STRICT REQUIREMENT 1: Gemini-specific colors MUST be present
     # A real Gemini badge always has blue/purple/pink gradient pixels
     if gemini_ratio < 0.005:
         return 0.0
-    
+
     # STRICT REQUIREMENT 2: Must have ALL THREE components (dark + colorful + white)
     # A real badge has dark background, colorful icon, AND white text
     if dark_ratio < 0.02 or colorful_ratio < 0.02 or white_ratio < 0.01:
         return 0.0
-    
+
     # STRICT REQUIREMENT 3: The badge must be compact
     # Check that dark, colorful, and white pixels are clustered together
     # by finding the bounding box of all badge-like pixels
     min_y, max_y = h, 0
     min_x, max_x = w, 0
     badge_pixel_count = 0
-    
+
     for y in range(h):
         for x in range(w):
             idx = y * w + x
@@ -376,55 +376,55 @@ def detect_gemini_pattern(region, dark_threshold=100, colorful_threshold=30, whi
             r, g, b = pixels[idx]
             brightness = (r + g + b) / 3
             cv = max(r, g, b) - min(r, g, b)
-            
+
             is_badge = (
                 brightness <= dark_threshold
                 or cv >= colorful_threshold
                 or brightness >= white_threshold
             )
-            
+
             if is_badge:
                 min_y = min(min_y, y)
                 max_y = max(max_y, y)
                 min_x = min(min_x, x)
                 max_x = max(max_x, x)
                 badge_pixel_count += 1
-    
+
     if badge_pixel_count == 0:
         return 0.0
-    
+
     bbox_height = max_y - min_y + 1
     bbox_width = max_x - min_x + 1
     bbox_area = bbox_height * bbox_width
     fill_ratio = badge_pixel_count / bbox_area if bbox_area > 0 else 0
-    
+
     # The badge should be reasonably compact (fill_ratio > 0.3 means well-filled)
     if fill_ratio < 0.3:
         return 0.0
-    
+
     # Now calculate the pattern score
     pattern_score = 0.0
-    
+
     # Score 1: Gemini-specific color ratio (up to 40 points)
     pattern_score += min(gemini_ratio / 0.10, 1.0) * 40
-    
+
     # Score 2: Dark background ratio (up to 20 points)
     pattern_score += min(dark_ratio / 0.30, 1.0) * 20
-    
+
     # Score 3: Colorful icon ratio (up to 20 points)
     pattern_score += min(colorful_ratio / 0.20, 1.0) * 20
-    
+
     # Score 4: White text ratio (up to 15 points)
     pattern_score += min(white_ratio / 0.15, 1.0) * 15
-    
+
     # Score 5: Compactness bonus (up to 15 points)
     pattern_score += min(fill_ratio / 0.60, 1.0) * 15
-    
+
     # Score 6: Bounding box should be badge-sized (not too large)
     # A real Gemini badge is ~60x25 pixels
     if bbox_height <= 40 and bbox_width <= 80:
         pattern_score += 10  # Bonus for correct size
-    
+
     return pattern_score
 
 
@@ -432,40 +432,40 @@ def sliding_window_detect(img, config, fast_check_score=0):
     """
     Use a sliding window approach to find the Gemini badge at any position
     in the bottom-right corner of the image.
-    
+
     The badge is typically ~60x25 pixels. We slide a window of this size
     across the bottom-right area and score each position.
-    
+
     V4: Lowered fast_check_score gate from 5 to 2 so it actually runs on
     more images. Also added Gemini pattern detection to the window scoring.
     """
     # V4: Lowered threshold so sliding window runs on more images
     if fast_check_score < 2:
         return 0, None
-    
+
     width, height = img.size
-    
+
     # Search area: bottom-right corner, focused area
     search_left = max(0, width - 200)
     search_top = max(0, height - 80)
     search_right = width
     search_bottom = height
-    
+
     # If the image is small, adjust search area
     if width < 200:
         search_left = max(0, width - BADGE_WIDTH - 20)
     if height < 80:
         search_top = max(0, height - BADGE_HEIGHT - 20)
-    
+
     best_window_score = 0
     best_window_pos = None
-    
+
     # Use moderate stride for balance of speed and accuracy
     stride = 10
-    
+
     # Pre-compute the threshold for early exit
     early_exit_threshold = 40
-    
+
     for wy in range(search_top, search_bottom - BADGE_HEIGHT, stride):
         for wx in range(search_left, search_right - BADGE_WIDTH, stride):
             window = img.crop((wx, wy, wx + BADGE_WIDTH, wy + BADGE_HEIGHT))
@@ -475,63 +475,63 @@ def sliding_window_detect(img, config, fast_check_score=0):
                 config["colorful_threshold"],
                 config["white_threshold"],
             )
-            
+
             total = stats["total"]
             if total == 0:
                 continue
-            
+
             dark_ratio = stats["dark"] / total
             colorful_ratio = stats["colorful"] / total
             white_ratio = stats["white"] / total
             gemini_ratio = stats["gemini_color"] / total
-            
+
             # Quick reject: if no dark pixels and no colorful pixels, skip
             if dark_ratio < 0.01 and colorful_ratio < 0.01:
                 continue
-            
+
             # Score this window position
             score = 0
-            
+
             # Dark background (should be significant but not overwhelming)
             if dark_ratio > 0.05 and dark_ratio < 0.95:
                 score += min(dark_ratio / 0.40, 1.0) * 20
-            
+
             # Colorful icon
             if colorful_ratio > 0.02:
                 score += min(colorful_ratio / 0.20, 1.0) * 25
-            
+
             # White text
             if white_ratio > 0.01:
                 score += min(white_ratio / 0.15, 1.0) * 20
-            
+
             # Gemini-specific colors (strong signal)
             if gemini_ratio > 0.01:
                 score += min(gemini_ratio / 0.10, 1.0) * 25
-            
+
             # All three types present (dark + colorful + white) - this is key
             has_dark = dark_ratio > 0.03
             has_colorful = colorful_ratio > 0.02
             has_white = white_ratio > 0.01
             if has_dark and has_colorful and has_white:
                 score += 15  # Bonus for having all three badge components
-            
+
             # Rows diversity - badge should span multiple rows
             row_diversity = (stats["rows_with_dark"] + stats["rows_with_colorful"] + stats["rows_with_white"]) / 3
             if row_diversity >= 5:
                 score += min(row_diversity / BADGE_HEIGHT, 1.0) * 10
-            
+
             # V4: Add Gemini pattern score for this window
             pattern_score = detect_gemini_pattern(window, config["dark_threshold"], config["colorful_threshold"], config["white_threshold"])
             score += pattern_score * 0.3  # Weight pattern score
-            
+
             if score > best_window_score:
                 best_window_score = score
                 best_window_pos = (wx, wy)
-                
+
                 # Early exit: if we found a very strong match, stop searching
                 if best_window_score >= early_exit_threshold:
                     return best_window_score, best_window_pos
-    
+
     return best_window_score, best_window_pos
 
 
@@ -636,7 +636,7 @@ def has_gemini_logo(img_path: Path, sensitivity: str = "high") -> tuple[bool, fl
     asymmetry_score = 0
     if br_dark > bl_dark * 1.5 and br_colorful > bl_colorful * 1.5:
         asymmetry_score = min((br_dark - bl_dark) * 50, 1.0) * 5
-    
+
     # Gemini-specific asymmetry (strong signal)
     gemini_asymmetry_score = 0
     if br_gemini > bl_gemini * 2.0 and br_gemini > 0.01:
@@ -653,7 +653,7 @@ def has_gemini_logo(img_path: Path, sensitivity: str = "high") -> tuple[bool, fl
 
     # Composite score - Gemini-specific signals are weighted much higher
     composite_score = best_score + edge_score + cluster_score + asymmetry_score + gemini_asymmetry_score + sliding_score + pattern_score_weighted
-    
+
     # GATE: If no Gemini-specific colors found at all (gemini_ratio < 0.001 in best region),
     # AND pattern score is 0, then it's almost certainly a false positive
     # Only allow through if other strategies give an extremely strong signal
