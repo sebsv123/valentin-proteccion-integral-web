@@ -15,11 +15,18 @@ for (const width of widths) {
   const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: "no-preference" });
 
   for (const path of paths) {
+    const consoleErrors = [];
+    const onConsole = (message) => {
+      if (message.type() === "error") consoleErrors.push(message.text());
+    };
+    const onPageError = (error) => consoleErrors.push(error.message);
+    page.on("console", onConsole);
+    page.on("pageerror", onPageError);
     await page.goto(`${baseUrl}${path}`, { waitUntil: "domcontentloaded" });
     await page.evaluate(() => document.fonts.ready);
     const result = await page.evaluate(() => {
       const header = document.querySelector("header.sticky");
-      const brand = header?.querySelector('a[aria-label="Valentín Protección Integral"]');
+      const brand = header?.querySelector('a[aria-label="Valentín Protección Integral — Inicio"]');
       const logo = brand?.querySelector("img");
       const menu = header?.querySelector('button[aria-label="Abrir menú"]');
       const inlineNav = header?.querySelector('nav[aria-label="Primary"]')?.parentElement;
@@ -61,10 +68,29 @@ for (const width of widths) {
       whatsappAvailableInline: expectedCompact || result.whatsappVisible,
       closedPanelHidden: result.panelHidden &&
         (result.panelDisplay === "none" || (result.panelOffscreen && result.panelVisibility === "hidden")),
+      noConsoleErrors: consoleErrors.length === 0,
     };
 
     for (const [name, passed] of Object.entries(checks)) {
       if (!passed) failures.push({ width, path, name, result });
+    }
+
+    if (path === "/extranjeros/alquileres" && width === 390) {
+      await page.getByRole("button", { name: "Solicitar orientación" }).click();
+      const a11y = await page.evaluate(() => ({
+        focusedId: document.activeElement?.id,
+        consentInvalid: document.querySelector("#al-consent")?.getAttribute("aria-invalid"),
+        consentDescribedBy: document.querySelector("#al-consent")?.getAttribute("aria-describedby"),
+        consentErrorRole: document.querySelector("#al-consent-error")?.getAttribute("role"),
+      }));
+      if (
+        a11y.focusedId !== "al-name" ||
+        a11y.consentInvalid !== "true" ||
+        a11y.consentDescribedBy !== "al-consent-error" ||
+        a11y.consentErrorRole !== "alert"
+      ) {
+        failures.push({ width, path, name: "rentalFormAccessibleErrors", a11y });
+      }
     }
 
     if (path === "/" && screenshotWidths.has(width)) {
@@ -73,6 +99,8 @@ for (const width of widths) {
         clip: { x: 0, y: 0, width, height: 180 },
       });
     }
+    page.off("console", onConsole);
+    page.off("pageerror", onPageError);
   }
 
   if (width < 1536) {

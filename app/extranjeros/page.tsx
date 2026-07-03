@@ -209,7 +209,7 @@ export default function ExtranjerosPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, faqSchema]) }}
       />
-      <main>
+      <main className="overflow-x-clip">
         <section className={`${styles.hero} section-pad pt-6 md:pt-10`} data-foreigners-section="hero">
           <div className={styles.heroBackdrop} aria-hidden="true">
             <div className={styles.copyGlow} aria-hidden="true" />
