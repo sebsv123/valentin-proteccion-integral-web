@@ -4,7 +4,7 @@ export default function SchemaPersons() {
     "@type": "Person",
     "name": "Rosa Valentín",
     "jobTitle": "Agente de Seguros Registrada DGSFP",
-    "description": "Agente de seguros registrada en la DGSFP con más de 10 años de experiencia en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Asesora a más de 1.200 familias con claridad y sin presión comercial.",
+    "description": "Agente de seguros registrada en la DGSFP, responsable profesional de la marca Valentín Protección Integral en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, decesos y negocios. Asesora con claridad y sin presión comercial.",
     "url": "https://valentinproteccionintegral.com/sobre-nosotros",
     "image": "https://valentinproteccionintegral.com/og-image.webp",
     "telephone": "+34 603 448 765",
@@ -44,12 +44,10 @@ export default function SchemaPersons() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sebastián Sifontes Valentín",
-    "jobTitle": "Agente de Seguros Vinculado Registrado DGSFP",
-    "description": "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Agente de seguros vinculado registrado en la DGSFP (C046172295271S) y co-fundador de Bass Group Hispánica S.L., agencia de seguros con registro DGSFP. Atiende personalmente consultas sobre protección familiar y seguros vinculados a hipoteca.",
+    "jobTitle": "Especialista en seguros de vida, salud y accidentes",
+    "description": "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Forma parte del equipo de Valentín Protección Integral y atiende consultas sobre protección familiar y seguros de vida.",
     "url": "https://valentinproteccionintegral.com",
-    "telephone": "+34 689 791 380",
     "sameAs": [
-      "https://wa.me/34689791380",
       "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187"
     ],
     "alumniOf": [

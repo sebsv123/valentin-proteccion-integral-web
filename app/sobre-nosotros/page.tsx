@@ -139,7 +139,7 @@ export default function SobreNosotrosPage() {
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
                   {[
                     { icon: Award, stat: '+10 años', desc: 'Asesorando familias con cercanía' },
-                    { icon: Users, stat: '+1.200', desc: 'Familias protegidas en Madrid' },
+                    { icon: Users, stat: 'Cercanía', desc: 'Atención personal, sin presión comercial' },
                     { icon: Briefcase, stat: '8 ramos', desc: 'Salud, vida, mascotas, viaje y más' },
                   ].map((item) => {
                     const Icon = item.icon;
@@ -158,6 +158,17 @@ export default function SobreNosotrosPage() {
                   <em className="text-base leading-8 text-[var(--muted)]">&ldquo;La prioridad es ayudarte a separar lo importante de lo accesorio, revisar qué cambia según modalidad y orientarte para que contrates con más tranquilidad y menos dudas.&rdquo;</em>
                 </div>
 
+                {/* Pilar 5 — Honestidad e independencia */}
+                <div className="mt-6 rounded-[24px] border border-[var(--blue-deep)]/20 bg-[var(--blue-deep)]/4 px-6 py-5">
+                  <p className="text-sm font-bold uppercase tracking-widest text-[var(--blue-deep)] mb-2">Agentes registrados</p>
+                  <p className="text-base leading-8 text-[var(--muted)]">
+                    Valentín Protección Integral es una marca comercial, no una compañía
+                    aseguradora. La actividad la desarrolla una agente de seguros registrada en
+                    la DGSFP, cuya inscripción puede consultarse en el registro público de la
+                    DGSFP. Eso significa que te asesoramos con criterio profesional y registro
+                    oficial, orientándote entre los productos que podemos distribuir.
+                  </p>
+                </div>
                 {/* BLOQUE SEBASTIÁN */}
                 <div className="mt-10 pt-8 border-t border-[var(--border)]">
                   <div>
@@ -175,6 +186,10 @@ export default function SobreNosotrosPage() {
                         Cree que la confianza se construye siendo directo: explicando exactamente qué cubre
                         una póliza, qué no cubre y por qué. Sin atajos. Sin letra pequeña escondida.
                       </p>
+                      <p className="mt-4 text-base leading-8 text-[var(--muted)]">
+                        <strong>Forma parte del equipo de Valentín Protección Integral.</strong>
+                      </p>
+
                       {/* Mini-stats Sebastián */}
                       <div className="mt-6 grid grid-cols-2 gap-3">
                         {[
