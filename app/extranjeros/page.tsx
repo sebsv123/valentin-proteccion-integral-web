@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, FileText, Home, MessageCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FileText, MessageCircle, ShieldCheck } from 'lucide-react';
 import { FAQAccordion } from '@/components/faq-accordion';
 import { Footer } from '@/components/footer';
 import { IberiaJourneySection } from '@/components/extranjeros/iberia-journey-section';
@@ -321,38 +321,50 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <section className="bg-white py-12" data-foreigners-section="alquileres">
+        <section className="bg-white py-14 md:py-20" data-foreigners-section="alquileres">
           <div className="container-shell">
-            <div className="relative overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-8 sm:p-10">
-              <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700">
-                    <Home className="h-4 w-4" />
-                    Servicio complementario
-                  </span>
-                  <h2 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">
-                    ¿Además del seguro necesitas vivienda en Madrid?
-                  </h2>
-                  <p className="mt-3 max-w-xl leading-relaxed text-slate-600">
-                    Te acompañamos en la búsqueda de alquiler en Madrid para estudiantes,
-                    profesionales y familias internacionales: búsqueda, visitas, documentación
-                    y firma. Según tu perfil, fechas y zona, sin prometer vivienda garantizada.
-                  </p>
+            <div className="grid overflow-hidden rounded-[28px] border border-[var(--border)] shadow-sm lg:grid-cols-[0.45fr_0.55fr]">
+              <div className="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[480px]">
+                <Image
+                  src="/images/pexels/madrid-ciudad-pexels.webp"
+                  alt="Calle residencial de Madrid con edificios de balcones"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-col justify-center bg-[var(--blue-deep)] p-8 text-white sm:p-10 lg:p-12">
+                <p className="kicker !text-white/70">Vivienda en Madrid</p>
+                <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                  Alquileres para estudiantes, profesionales y familias internacionales
+                </h2>
+                <p className="mt-4 max-w-lg text-base leading-8 text-white/80">
+                  Te acompañamos en la búsqueda, las visitas, la documentación y el proceso de
+                  firma, incluso antes de que llegues a España.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {['Estudiantes', 'Familias', 'Profesionales'].map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/75">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <div className="flex flex-col gap-3">
-                  <Link
-                    href="/extranjeros/alquileres"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 font-semibold text-white transition-all hover:bg-emerald-500"
-                  >
-                    Ver alquileres <ArrowRight className="h-4 w-4" />
-                  </Link>
+                <div className="mt-8 flex flex-col items-start gap-4">
                   <ForeignersTrackedLink
-                    href={buildWhatsAppHref('Hola, quiero información sobre seguro + vivienda para mi llegada a España.')}
-                    action="whatsapp_click"
-                    label="alquileres_teaser"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-white px-6 py-3.5 font-semibold text-emerald-700 transition-all hover:bg-emerald-50"
+                    href="/extranjeros/alquileres"
+                    action="cta_click"
+                    label="alquileres_discovery_cta"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
                   >
-                    <WhatsAppIcon className="h-4 w-4" /> Quiero seguro + vivienda
+                    Explorar viviendas y alquileres <ArrowRight className="h-4 w-4" />
+                  </ForeignersTrackedLink>
+                  <ForeignersTrackedLink
+                    href={buildWhatsAppHref('Hola, quiero consultar mi caso de vivienda en Madrid.')}
+                    action="whatsapp_click"
+                    label="alquileres_discovery_whatsapp"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+                  >
+                    <WhatsAppIcon className="h-3.5 w-3.5" /> Consultar mi caso por WhatsApp
                   </ForeignersTrackedLink>
                 </div>
               </div>

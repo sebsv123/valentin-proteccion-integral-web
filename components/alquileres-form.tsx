@@ -190,7 +190,7 @@ export default function AlquileresForm() {
   };
 
   const inputCls =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1FB8A6] focus:outline-none focus:ring-2 focus:ring-[#1FB8A6]/20";
+    "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[var(--green)] focus:outline-none focus:ring-2 focus:ring-[var(--green)]/20";
   const labelCls = "mb-1.5 block text-sm font-semibold text-slate-700";
   const errCls = "mt-1.5 text-sm text-red-600";
   const optional = <span className="font-normal text-slate-400">(opcional)</span>;
@@ -199,7 +199,7 @@ export default function AlquileresForm() {
     <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold text-[#0E7C6B]">Sin compromiso</p>
+          <p className="text-sm font-semibold text-[var(--blue-deep)]">Sin compromiso</p>
           <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
             Cuéntanos qué vivienda necesitas
           </h2>
@@ -208,7 +208,7 @@ export default function AlquileresForm() {
             Sin prometer vivienda garantizada.
           </p>
         </div>
-        <div className="hidden rounded-2xl bg-[#E7F7F3] p-3 text-[#0E7C6B] sm:block">
+        <div className="hidden rounded-2xl bg-[#F7F3EA] p-3 text-[var(--blue-deep)] sm:block">
           <ShieldCheck className="h-7 w-7" />
         </div>
       </div>
@@ -369,7 +369,7 @@ export default function AlquileresForm() {
             trate mis datos para responder a mi solicitud de orientación en vivienda y seguro.
             Base jurídica: mi consentimiento. No se ceden a terceros salvo obligación legal.
             Puedo ejercer mis derechos escribiendo a {CONTACT_EMAIL}. Más información en la{" "}
-            <a href={siteConfig.legalLinks.privacidad} className="font-semibold text-[#0E7C6B] underline">
+            <a href={siteConfig.legalLinks.privacidad} className="font-semibold text-[var(--blue-deep)] underline">
               política de privacidad
             </a>.
           </span>
@@ -379,7 +379,7 @@ export default function AlquileresForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0E7C6B] px-6 py-4 text-base font-semibold text-white transition-all hover:bg-[#0b6559] disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-4 text-base font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 disabled:opacity-60"
         >
           {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
           Solicitar orientación
@@ -391,7 +391,7 @@ export default function AlquileresForm() {
             href={buildWhatsAppHref("Hola, me gustaría orientación sobre alquiler de vivienda en Madrid para mi llegada a España.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-[#0E7C6B] underline"
+            className="font-semibold text-[var(--blue-deep)] underline"
           >
             Hablar por WhatsApp
           </a>
