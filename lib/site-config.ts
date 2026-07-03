@@ -7,7 +7,7 @@
  * - La responsable profesional es Rosa Isabel Valentín González.
  * - Datos de Rosa (NIF y clave DGSFP) verificados: no mezclar con los de
  *   ningún otro miembro del equipo.
- * - El código DGSFP de Sebastián (C046172295271S) NO debe publicarse.
+ * - El código DGSFP personal de Sebastián NO debe publicarse en ninguna parte.
  * - ASISA / ASISA VIDA y cualquier aseguradora son ENTIDADES TERCERAS.
  *
  * Los componentes deben leer de aquí en lugar de escribir estos datos a mano.
