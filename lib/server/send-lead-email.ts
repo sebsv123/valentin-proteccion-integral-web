@@ -39,12 +39,15 @@ export class LeadEmailDeliveryError extends Error {
   }
 }
 
-export class LeadEmailBlockedError extends Error {
-  readonly mode = "local-delivery-blocked";
+export type LeadEmailBlockedMode = "local-delivery-blocked" | "preview-delivery-blocked";
 
-  constructor() {
+export class LeadEmailBlockedError extends Error {
+  readonly mode: LeadEmailBlockedMode;
+
+  constructor(mode: LeadEmailBlockedMode = "local-delivery-blocked") {
     super("Lead email delivery is blocked in this environment.");
     this.name = "LeadEmailBlockedError";
+    this.mode = mode;
   }
 }
 
@@ -59,6 +62,15 @@ function isLocalHost(host: string | null | undefined) {
 function realDeliveryIsBlocked(env: NodeJS.ProcessEnv, requestHost?: string | null) {
   if (env.ALLOW_LOCAL_LEAD_DELIVERY === "true") return false;
   return env.NODE_ENV === "test" || env.LEAD_DELIVERY_CONTEXT === "test" || isLocalHost(requestHost);
+}
+
+// Vercel sets VERCEL_ENV to "production" | "preview" | "development" on every
+// deployment. Only "production" is trusted to send real SMTP by default;
+// Preview Deployments and `vercel dev` must opt in explicitly, since preview
+// URLs are shared/public and must never leak real customer emails.
+function previewDeliveryIsBlocked(env: NodeJS.ProcessEnv) {
+  if (env.ALLOW_PREVIEW_LEAD_DELIVERY === "true") return false;
+  return env.VERCEL_ENV === "preview" || env.VERCEL_ENV === "development";
 }
 
 function normalizeAddress(address: string | { address?: string }) {
@@ -164,7 +176,14 @@ export async function sendLeadEmail(
   // connection. Real SMTP is denied for local/test requests unless deliberately
   // enabled with ALLOW_LOCAL_LEAD_DELIVERY=true.
   if (!options.transport && realDeliveryIsBlocked(env, options.requestHost)) {
-    throw new LeadEmailBlockedError();
+    throw new LeadEmailBlockedError("local-delivery-blocked");
+  }
+
+  // Vercel Preview Deployments (and `vercel dev`) are blocked from sending
+  // real SMTP unless ALLOW_PREVIEW_LEAD_DELIVERY=true is set for that
+  // environment. Production is unaffected by this check.
+  if (!options.transport && previewDeliveryIsBlocked(env)) {
+    throw new LeadEmailBlockedError("preview-delivery-blocked");
   }
 
   if (!hasSmtpConfig(env)) {

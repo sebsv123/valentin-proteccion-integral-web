@@ -33,10 +33,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, messageId: result.messageId });
   } catch (error) {
     if (error instanceof LeadEmailBlockedError) {
-      return NextResponse.json(
-        { error: "Entrega SMTP local bloqueada.", delivered: false, mode: error.mode },
-        { status: 503 }
-      );
+      const message =
+        error.mode === "preview-delivery-blocked"
+          ? "Entrega SMTP bloqueada en este entorno de vista previa."
+          : "Entrega SMTP local bloqueada.";
+      return NextResponse.json({ error: message, delivered: false, mode: error.mode }, { status: 503 });
     }
     if (error instanceof LeadEmailConfigError) {
       return NextResponse.json({ error: "Entrega no configurada." }, { status: 503 });
