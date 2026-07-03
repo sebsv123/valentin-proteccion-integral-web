@@ -331,7 +331,7 @@ export function ProductCTASection({ product, title, text, message }: { product: 
                 El mismo seguro. Mejor precio. Garantizado.
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
               </p>
             </div>
           </div>

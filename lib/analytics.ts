@@ -49,7 +49,7 @@ export function trackWhatsAppClick(location: string): void {
 export function handleWhatsAppClick(location: string, href: string): void {
   // Track the click
   trackWhatsAppClick(location);
-  
+
   // Give a small delay for the event to be sent before navigation
   // This is especially important for external links
   setTimeout(() => {
@@ -68,7 +68,7 @@ const STORAGE_KEY = 'valentin_utm';
  */
 export function captureUTMs(): Record<string, string> {
   if (typeof window === 'undefined') return {};
-  
+
   const params = new URLSearchParams(window.location.search);
   const utms: Record<string, string> = {};
 

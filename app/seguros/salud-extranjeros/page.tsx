@@ -13,12 +13,12 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguro Médico para NIE, TIE y Visado | VPI",
-  description: "Seguro médico para extranjeros en España desde 22,50€/mes. Válido para visado, NIE y TIE. Sin copagos desde el primer día. Certificado en 24h. +100 trámites aprobados. Atención directa y personalizada.",
+  description: "Seguro médico para extranjeros en España (precios orientativos desde 22,50€/mes). Modalidades para visado, NIE y TIE. Revisamos que se ajuste a los requisitos habituales de tu trámite; la decisión final corresponde a la administración o consulado.",
   keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España","seguro medico para visado españa","seguro sin copagos extranjeros españa","certificado seguro medico consulado españa"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", languages: { en: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain" } },
   openGraph: {
     title: "Seguro Médico para NIE, TIE y Visado | VPI",
-    description: "Sin copagos, certificado en 24h, válido para visado y residencia. +100 trámites aprobados.",
+    description: "Modalidades para visado y residencia. Revisamos que se ajuste a los requisitos habituales de tu trámite; decide la administración o consulado.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -56,7 +56,7 @@ const serviceSchema = {
   "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
   "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico residencia España 2026. Cumple requisitos NIE/TIE. +100 clientes latinos/EEUU aprobados. Certificado 24h."
+  "description": "Seguro médico para residencia en España. Modalidades que pueden cubrir los requisitos habituales de NIE/TIE; la decisión final corresponde a la administración."
 };
 
 const faqSchema = {
@@ -68,7 +68,7 @@ const faqSchema = {
       "name": "¿El seguro es válido para solicitar el visado o NIE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, nuestros seguros cumplen todos los requisitos exigidos por el consulado o la comisaría de extranjería para visado, NIE y TIE."
+        "text": "Trabajamos con modalidades diseñadas para cubrir los requisitos habituales exigidos para visado, NIE y TIE. Revisamos tu caso concreto, aunque la decisión final corresponde al consulado o a la comisaría de extranjería."
       }
     },
     {
@@ -76,7 +76,7 @@ const faqSchema = {
       "name": "¿Cuánto tarda en emitirse el certificado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El certificado se emite en menos de 24 horas desde la contratación."
+        "text": "El certificado lo emite la aseguradora tras la contratación; te indicamos el plazo estimado según la compañía."
       }
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "¿Tiene copagos o carencias?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No tiene copagos ni carencias desde el primer día de cobertura."
+        "text": "Los copagos y las carencias dependen de la modalidad contratada; te detallamos las condiciones antes de contratar."
       }
     },
     {
@@ -117,8 +117,8 @@ export default function SaludExtranjerosPage() {
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">Si tu seguro no es válido para tu trámite → <span className="text-amber-400">te devolvemos el dinero</span></span>
-            <span className="sm:hidden">Si no es válido para tu trámite → <span className="text-amber-400 font-black">te devolvemos el dinero</span></span>
+            <span className="hidden sm:inline">Revisamos que la modalidad se ajuste a los requisitos habituales de tu trámite <span className="text-amber-400">antes de contratar</span></span>
+            <span className="sm:hidden">Comprobamos tu caso <span className="text-amber-400 font-black">antes de contratar</span></span>
           </p>
         </div>
       </div>
@@ -164,7 +164,7 @@ export default function SaludExtranjerosPage() {
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
               <div>
                 <h1 className="text-[40px] sm:text-[60px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-                  Seguro de salud para extranjeros <span className="text-emerald-400">aprobado</span> para visado en España
+                  Seguro de salud para extranjeros <span className="text-emerald-400">válido</span> para visado en España, según la modalidad
                 </h1>
                 
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
@@ -174,7 +174,7 @@ export default function SaludExtranjerosPage() {
                 </p>
 
                 <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/30 text-amber-300 px-4 py-2 rounded-full text-sm font-black mb-6">
-                  ⚡ Tu cita de extranjería no espera — certificado listo en 24h o te avisamos antes
+                  ⚡ Preparamos tu certificado con tiempo para tu cita de extranjería; el plazo depende de la aseguradora
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
@@ -182,7 +182,7 @@ export default function SaludExtranjerosPage() {
                     "Válido para extranjería",
                     "Sin copagos",
                     "Documento listo",
-                    "Si no es válido, te devolvemos el dinero"
+                    "Comprobamos que la modalidad se ajuste a tu trámite"
                   ].map((bullet, i) => (
                     <div key={i} className="flex items-center gap-3 text-white font-bold">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
@@ -201,7 +201,7 @@ export default function SaludExtranjerosPage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-white/80 text-sm font-bold">+100 visados y NIE/TIE aprobados</p>
+                  <p className="text-white/80 text-sm font-bold">Modalidades para visado y NIE/TIE</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -249,12 +249,12 @@ export default function SaludExtranjerosPage() {
                       />
                     </div>
                     
-                    {/* Badge flotante "Listo en 24h" - Ahora fuera del overflow */}
+                    {/* Badge flotante "Según la aseguradora" - Ahora fuera del overflow */}
                     <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 animate-bounce-soft z-20">
                       <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
                         <Check className="w-5 h-5 text-white" />
                       </div>
-                      <p className="text-sm font-bold text-slate-700">Listo en 24h</p>
+                      <p className="text-sm font-bold text-slate-700">Según la aseguradora</p>
                     </div>
                   </div>
                 </div>
@@ -275,17 +275,17 @@ export default function SaludExtranjerosPage() {
                 {
                   emoji: "🎓",
                   title: "Estudiante internacional",
-                  desc: "Cubre los requisitos de tu visado de estudios desde el primer día. Sin carencias, sin esperas."
+                  desc: "Puede cubrir los requisitos habituales del visado de estudios según la modalidad. Comprobamos tu caso antes."
                 },
                 {
                   emoji: "🏠",
                   title: "Residente en proceso de NIE/TIE",
-                  desc: "Certificado válido para comisaría en menos de 24h. Más de 100 trámites aprobados."
+                  desc: "Certificado válido para comisaría según la modalidad; el plazo de emisión depende de la aseguradora."
                 },
                 {
                   emoji: "💼",
                   title: "Trabajador o emprendedor extranjero",
-                  desc: "Sin copagos, sin carencias, compatible con tu situación laboral o de autónomo en España."
+                  desc: "Coberturas según modalidad (copagos y carencias varían), compatible con distintas situaciones en España."
                 }
               ].map((perfil, i) => (
                 <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
@@ -310,7 +310,7 @@ export default function SaludExtranjerosPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  t: "Si tu seguro no es válido para tu trámite → te devolvemos el dinero",
+                  t: "Comprobamos que la modalidad se ajuste a los requisitos habituales de tu trámite antes de contratar",
                   icon: <Shield className="w-10 h-10 text-emerald-600" />
                 },
                 {
@@ -393,7 +393,7 @@ export default function SaludExtranjerosPage() {
             </h2>
             <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
               Muchos seguros del mercado no cumplen los requisitos de extranjería — 
-              sin copagos, sin carencias, con cobertura mínima exigida. 
+              con copagos y carencias según modalidad, y la cobertura mínima exigida. 
               El error más común que vemos: contratar online sin verificar si el 
               certificado es válido para el trámite concreto.
             </p>
@@ -428,8 +428,8 @@ Revisar mi caso ahora
             <div className="grid sm:grid-cols-3 gap-8 text-center">
               {
                 [
-                  { num: "+100", label: "NIE/TIE y visados aprobados", icon: "✅" },
-                  { num: "24h", label: "Certificado listo desde la contratación", icon: "⚡" },
+                  { num: "NIE/TIE", label: "Modalidades para tu trámite", icon: "✅" },
+                  { num: "Ágil", label: "Certificado según la aseguradora", icon: "⚡" },
                   { num: "0", label: "Rechazos por motivo de seguro", icon: "🛡️" }
                 ].map((stat, i) => (
                   <div key={i} className="bg-slate-50 rounded-[32px] p-10 border border-slate-100">
@@ -559,7 +559,7 @@ Revisar mi caso ahora
               ¿Por qué necesitas este seguro?
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Para vivir en España sin trabajar o solicitar visado, es obligatorio contar con un <strong>seguro médico privado sin copagos</strong>, con cobertura completa y válido durante toda la estancia. Es el requisito que frena la mayoría de expedientes, y nosotros estamos aquí para que el tuyo sea aprobado a la primera.
+              Para vivir en España sin trabajar o solicitar visado, es obligatorio contar con un <strong>seguro médico privado con cobertura suficiente</strong> y válido durante la estancia según la modalidad. Es un requisito que frena muchos expedientes, y te ayudamos a preparar el tuyo; la decisión final corresponde a la administración o consulado.
             </p>
           </div>
         </section>

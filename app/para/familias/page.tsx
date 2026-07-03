@@ -113,7 +113,7 @@ export default function FamiliasPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Clock className="w-4 h-4 text-blue-600" />
-                    Respuesta en 10 min
+                    Respuesta en horario
                   </span>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function FamiliasPage() {
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-blue-600" />
                     </div>
-                    <span className="text-slate-700">+1.200 familias protegidas</span>
+                    <span className="text-slate-700">Familias protegidas</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
@@ -356,11 +356,11 @@ export default function FamiliasPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
             <h2 className="text-[40px] sm:text-[48px] font-bold text-white leading-tight mb-6">
               Organiza la protección de tu familia hoy.{" "}
-              <span className="text-blue-200">En 30 minutos tienes todo claro.</span>
+              <span className="text-blue-200">Te lo dejamos todo claro.</span>
             </h2>
             
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Organizamos la protección completa de tu familia.
             </p>
@@ -381,7 +381,7 @@ export default function FamiliasPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
                 <Clock className="w-4 h-4" />
-                Respuesta en 10 min
+                Respuesta en horario
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm">
                 <Shield className="w-4 h-4" />

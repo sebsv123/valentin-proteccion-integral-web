@@ -112,7 +112,7 @@ export default function JovenesPage() {
                   </span>
                   <span className="flex items-center gap-2">
                     <Zap className="w-5 h-5 text-violet-600" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                 </div>
               </div>
@@ -223,8 +223,8 @@ export default function JovenesPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: "App para gestionar todo", desc: "Tu seguro en el móvil. Sin papeleo, sin llamadas eternas." },
-                { title: "Sin permanencia", desc: "Cambiás cuando quieras. Sin letras chicas ni sorpresas." },
-                { title: "30 minutos y listo", desc: "Cotización clara, sin tecnicismos. Decidís y ya está." },
+                { title: "Sin permanencia", desc: "Las condiciones de permanencia y cancelación dependen de cada póliza; te las explicamos antes." },
+                { title: "Cotización clara", desc: "Cotización clara, sin tecnicismos. Decidís y ya está." },
                 { title: "Precio justo", desc: "Sin comisiones ocultas. Pagás lo que ves, ni un euro más." },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-100">
@@ -280,7 +280,7 @@ export default function JovenesPage() {
                     <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-violet-600" />
                     </div>
-                    <span className="text-slate-700">+1.200 jóvenes protegidos</span>
+                    <span className="text-slate-700">jóvenes protegidos</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
@@ -401,7 +401,7 @@ export default function JovenesPage() {
             </h2>
             
             <p className="text-xl text-violet-100 mb-12 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               La protección que necesitás, al precio justo.
             </p>
@@ -422,7 +422,7 @@ export default function JovenesPage() {
               </span>
               <span className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                30 min
+                En horario
               </span>
             </div>
             

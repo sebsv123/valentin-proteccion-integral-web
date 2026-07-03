@@ -170,7 +170,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div className="mt-12 p-8 rounded-3xl bg-gray-50 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
                   <div className="max-w-xl text-center md:text-left">
                     <p className="text-gray-600 leading-relaxed italic">
-                      "Los precios varían según la edad y el código postal en Madrid. Lo ideal es que Rosa o Sebastián te preparen una comparativa real de las 3 opciones en 30 minutos."
+                      "Los precios varían según la edad y el código postal en Madrid. Lo ideal es que Rosa o Sebastián te preparen una comparativa de las opciones que podemos distribuir, en nuestro horario de atención."
                     </p>
                   </div>
                   <WhatsAppLink
@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </p>
             {slug === 'viaje' && (
               <p className="text-base text-emerald-300 font-medium mb-4 -mt-4">
-                ¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en menos de 30 minutos tienes opciones reales encima de la mesa.
+                ¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en nuestro horario de atención tienes opciones reales encima de la mesa.
               </p>
             )}
             <WhatsAppLink
@@ -343,7 +343,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">Rosa y Sebastián, tus asesores de seguros de salud en Madrid</h2>
                   <p className="text-lg text-[var(--muted)] leading-relaxed mb-6">
                     Con más de 10 años comparando seguros de salud en Madrid y más de 
-                    1.200 familias asesoradas, te ayudamos a elegir la modalidad que realmente 
+                    criterio profesional, te ayudamos a elegir la modalidad que realmente 
                     encaja contigo: sin presión, sin letra pequeña y con seguimiento real 
                     antes y después de contratar.
                   </p>
@@ -392,7 +392,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     Te explicamos qué hay detrás de cada modalidad antes de que contrates.
                   </p>
                   <p className="text-base font-semibold text-[var(--muted)] leading-relaxed mb-6">
-                    ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en menos de 30 minutos.
+                    ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en nuestro horario de atención.
                   </p>
                   <WhatsAppLink
                     href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."

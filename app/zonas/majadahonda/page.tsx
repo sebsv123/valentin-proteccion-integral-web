@@ -9,12 +9,12 @@ import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
   title: "Seguros en Majadahonda — Asesoría Personal | Valentín Protección Integral",
-  description: "Asesores de seguros en Majadahonda. Salud, vida, dental, mascotas y más. Sin copagos, sin permanencias. +10 años y +1.200 familias. Llámanos o escríbenos por WhatsApp.",
+  description: "Asesores de seguros en Majadahonda. Salud, vida, dental, mascotas y más. Asesoramiento cercano y con registro oficial en la DGSFP. Llámanos o escríbenos por WhatsApp.",
   keywords: ["seguros Majadahonda", "asesor seguros Majadahonda", "seguro salud Majadahonda", "agente seguros Majadahonda"],
   alternates: { canonical: "https://valentinproteccionintegral.com/zonas/majadahonda" },
   openGraph: {
     title: "Seguros en Majadahonda — Asesoría Personal | Valentín Protección Integral",
-    description: "Asesores de seguros en Majadahonda. Salud, vida, dental, mascotas y más. Sin copagos, sin permanencias. +10 años y +1.200 familias.",
+    description: "Asesores de seguros en Majadahonda. Salud, vida, dental, mascotas y más. Asesoramiento cercano y con registro oficial en la DGSFP.",
     url: "https://valentinproteccionintegral.com/zonas/majadahonda",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -100,7 +100,7 @@ export default function MajadahondaPage() {
                   </svg>
                   Escríbenos por WhatsApp
                 </WhatsAppLink>
-                <p className="text-sm text-slate-500 mt-4">Respuesta en menos de 30 minutos</p>
+                <p className="text-sm text-slate-500 mt-4">Respuesta en nuestro horario de atención</p>
               </div>
               
               <div className="relative">
@@ -126,7 +126,7 @@ export default function MajadahondaPage() {
         <section className="bg-black text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl text-center">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              +1.200 familias protegidas en Madrid Oeste
+              Familias protegidas en Madrid Oeste
             </p>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mt-4">
               Atendemos Majadahonda
@@ -238,7 +238,7 @@ export default function MajadahondaPage() {
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">1</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Nos escribes por WhatsApp</h3>
-                <p className="text-slate-600">Cuéntanos qué necesitas. Te respondemos en menos de 30 minutos.</p>
+                <p className="text-slate-600">Cuéntanos qué necesitas. Te respondemos en nuestro horario de atención.</p>
               </div>
               <div className="text-center">
                 <div className="text-6xl font-bold text-emerald-600 mb-4">2</div>
@@ -321,7 +321,7 @@ export default function MajadahondaPage() {
         <section className="bg-slate-900 text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">¿Vives en Majadahonda?</h2>
-            <p className="text-xl text-slate-300 mb-8">Habla con nosotros hoy. Asesoría gratis en 30 minutos.</p>
+            <p className="text-xl text-slate-300 mb-8">Habla con nosotros hoy. Te atendemos en nuestro horario de atención.</p>
             <WhatsAppLink 
               href={wCotiza}
               className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-full text-xl font-semibold transition-colors shadow-xl shadow-emerald-600/20"

@@ -101,7 +101,7 @@ export function SaludLanding() {
     },
     {
       q: "¿Cómo es el proceso de contratación?",
-      a: "Nos escribes, te llamamos en 30 minutos, te explicamos todo sin compromiso y solo firmas cuando estás seguro.",
+      a: "Nos escribes, te llamamos en nuestro horario de atención, te explicamos todo sin compromiso y solo firmas cuando estás seguro.",
     },
   ];
 
@@ -154,7 +154,7 @@ export function SaludLanding() {
                 className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 text-sm"
               >
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-green-600" /> Respuesta en 30 min
+                  <CheckCircle2 className="h-4 w-4 text-green-600" /> Respuesta en horario
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-green-600" /> Sin letra pequeña
@@ -200,7 +200,7 @@ export function SaludLanding() {
               className="relative"
             >
               <div className="bg-card rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl border p-5 sm:p-8">
-                <h2 className="text-2xl font-bold mb-2 text-center">Recibe tu presupuesto en 30 min</h2>
+                <h2 className="text-2xl font-bold mb-2 text-center">Recibe tu presupuesto sin compromiso</h2>
                 <p className="text-muted-foreground text-center mb-6">Sin compromiso. Te lo explicamos todo.</p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -232,7 +232,7 @@ export function SaludLanding() {
                   </select>
                   {sent ? (
                     <p className="text-center text-green-600 font-semibold flex items-center justify-center gap-1.5">
-                      <CheckCircle2 className="h-4 w-4" /> Mensaje enviado. Te llamamos en menos de 30 min.
+                      <CheckCircle2 className="h-4 w-4" /> Mensaje enviado. Te llamamos en nuestro horario de atención.
                     </p>
                   ) : (
                     <button
@@ -248,7 +248,7 @@ export function SaludLanding() {
                   )}
 
                   <p className="text-center text-sm text-muted-foreground opacity-70">
-                    Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en menos de 30 min.
+                    Al enviar, te abrimos WhatsApp con tus datos para que te llamemos en nuestro horario de atención.
                   </p>
                   <p className="text-center text-xs font-semibold text-emerald-600 flex items-center justify-center gap-1.5">
                     <Gift className="h-4 w-4 inline" />
@@ -421,7 +421,7 @@ export function SaludLanding() {
 
               <div className="grid sm:grid-cols-3 gap-6 mt-8">
                 {[
-                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Respondemos en menos de 30 minutos" },
+                  { icon: <WhatsAppIcon className="h-6 w-6" />, text: "Respondemos en nuestro horario de atención" },
                   { icon: <FileText className="h-6 w-6" />, text: "Te explicamos todo antes de firmar" },
                   { icon: <UserCheck className="h-6 w-6" />, text: "Un gestor personal de por vida" },
                 ].map((item, i) => (
@@ -552,7 +552,7 @@ export function SaludLanding() {
                 El mismo seguro. Mejor precio. Garantizado.
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
               </p>
             </div>
           </div>
@@ -575,7 +575,7 @@ export function SaludLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en 30 minutos", desc: "O te llamamos nosotros" },
+              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en horario", desc: "O te llamamos nosotros" },
               { icon: <FileText className="h-8 w-8" />, title: "Sin letra pequeña", desc: "Te explicamos todo antes de firmar" },
               { icon: <UserCheck className="h-8 w-8" />, title: "Gestor personal de por vida", desc: "Rosa o Sebastián, siempre" },
               { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión anual gratuita", desc: "Revisamos tu cobertura cada año" },
@@ -603,7 +603,7 @@ export function SaludLanding() {
               ¿Y si no cumplimos lo que prometemos?
             </p>
             <p className="text-white/70 text-base leading-relaxed">
-              Si no te contactamos en 30 minutos tras tu consulta, 
+              Además de atenderte por WhatsApp, 
               Rosa o Sebastián te ofrecen una{" "}
               <span className="text-white font-semibold">
                 cita presencial gratuita en nuestra oficina
@@ -645,7 +645,7 @@ export function SaludLanding() {
                 },
                 {
                   num: "2",
-                  title: "Rosa o Sebastián te llaman en menos de 30 minutos",
+                  title: "Una persona del equipo te llama en nuestro horario de atención",
                   desc: "Te explican todo sin presión, respondiendo todas tus dudas.",
                 },
                 {
@@ -881,7 +881,7 @@ export function SaludLanding() {
             Tu familia merece la mejor atención médica. Hoy mismo.
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-8">
-            Rosa y Sebastián te responden en menos de 30 minutos.
+            Te respondemos en nuestro horario de atención.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <WhatsAppLink

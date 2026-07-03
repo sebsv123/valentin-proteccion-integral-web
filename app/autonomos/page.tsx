@@ -11,12 +11,12 @@ import { Sparkles, CheckCircle2, Clock, Shield, TrendingDown, Briefcase, Globe, 
 
 export const metadata: Metadata = {
   title: "Seguro para Autónomos en Madrid | Valentín",
-  description: "Seguro para autónomos en Madrid con deducción fiscal incluida. Salud, accidentes y vida gestionados sin perder un día de trabajo.",
+  description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
   keywords: "seguro autónomos madrid, seguro médico autónomos irpf, rc profesional madrid, seguro autónomos deducible, protección autónomos madrid",
   alternates: { canonical: "https://valentinproteccionintegral.com/autonomos" },
   openGraph: {
     title: "Seguro para Autónomos en Madrid | Valentín",
-    description: "Seguro para autónomos en Madrid con deducción fiscal incluida. Salud, accidentes y vida gestionados sin perder un día de trabajo.",
+    description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
     url: "https://valentinproteccionintegral.com/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -117,7 +117,7 @@ export default function AutonomosRootPage() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(99,91,255,0.4)] bg-[rgba(99,91,255,0.15)] text-[#533afd] text-sm mb-6">
                   <Sparkles className="w-4 h-4" />
-                  2026 · +1.200 autónomos protegidos · DGSFP
+                  2026 · Seguros para autónomos · DGSFP
                 </div>
                 
                 {/* H1 Stripe — 56px weight 300 */}
@@ -131,7 +131,7 @@ export default function AutonomosRootPage() {
                 
                 {/* Subhead */}
                 <p className="text-xl text-[#64748d] font-light leading-relaxed mb-8 max-w-lg">
-                  IRPF deducible + RC profesional + Accidentes.
+                  Posible deducción IRPF + RC profesional + Accidentes.
                   <br />
                   <span className="text-[#533afd] font-normal">Precio adaptado a tu perfil.</span>
                 </p>
@@ -189,7 +189,7 @@ export default function AutonomosRootPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-[#061b31]">Ahorro fiscal 2026</p>
-                      <p className="text-xs text-[#64748d]">Ahorro fiscal real</p>
+                      <p className="text-xs text-[#64748d]">Según tu situación fiscal</p>
                     </div>
                   </div>
                 </div>
@@ -346,7 +346,7 @@ Información general; el efecto real depende de tu situación fiscal
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-[#533afd]/10 border border-[#e0e7ff]">
               <h2 className="text-[36px] sm:text-[44px] font-bold text-[#061b31] leading-tight mb-6 text-center">
-                ¿Y si no te respondemos en 30 minutos?
+                ¿Prefieres que te llamemos?
               </h2>
               
               <p className="text-xl text-[#64748d] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
@@ -472,7 +472,7 @@ Información general; el efecto real depende de tu situación fiscal
               Protege tu negocio
             </h2>
             <p className="text-xl text-white/70 mb-10">
-              Un WhatsApp. 30 minutos. Todo optimizado para 2026.
+              Un WhatsApp y te orientamos con criterio, sin promesas de ahorro.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -491,7 +491,7 @@ Información general; el efecto real depende de tu situación fiscal
             </div>
             
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · +1.200 autónomos protegidos
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

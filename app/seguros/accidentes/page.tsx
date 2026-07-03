@@ -129,7 +129,7 @@ export default function AccidentesPage() {
                   </span>
                   <span className="flex items-center gap-2">
                     <Zap className="w-4 h-4 text-[#ffbc33]" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function AccidentesPage() {
               Protegerme <span className="text-[#FF6363]">YA</span>
             </h2>
             <p className="text-xl text-[#cecece] mb-10">
-              Un WhatsApp. 30 minutos. Listo para salir.
+              Un WhatsApp y te orientamos antes de tu viaje.
             </p>
             
             <a 

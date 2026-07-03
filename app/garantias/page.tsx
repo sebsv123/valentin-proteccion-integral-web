@@ -143,7 +143,7 @@ export default function GarantiasPage() {
                 El mismo seguro. Mejor precio. Garantizado.
               </h2>
               <p className="section-copy text-[var(--muted)] mt-4 max-w-2xl mx-auto">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, 
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, 
                 siempre hemos encontrado un precio mejor.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

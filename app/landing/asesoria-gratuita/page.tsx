@@ -189,7 +189,7 @@ export default function AsesoriaGratuitaLanding() {
                     </div>
                   </div>
                   <p className="text-sm text-gray-500">
-                    +1.200 familias protegidas en Madrid
+                    Familias protegidas en Madrid
                   </p>
                 </div>
               </div>

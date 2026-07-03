@@ -16,7 +16,7 @@ import { Sparkles, CheckCircle2, Clock, Shield, Heart, Users, Umbrella, FileChec
 export const metadata: Metadata = {
   title: "Seguro de Decesos en Madrid — Gestión Completa Incluida | VPI",
   description:
-    "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Seguro de decesos en Madrid con gestión completa del sepelio desde el primer día. Sin carencias. Consulta gratuita.",
+    "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Seguro de decesos en Madrid con gestión del sepelio según las coberturas de la póliza. Consulta carencias y condiciones. Consulta gratuita.",
   keywords: [
     "seguro decesos Madrid",
     "seguro gastos sepelio Madrid",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seguro de Decesos en Madrid — Gestión Completa Incluida",
     description:
-      "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Gestión completa del sepelio desde el primer día. Sin carencias ni sorpresas.",
+      "Cuando ocurre lo peor, tu familia solo tiene que llamarnos. Gestión del sepelio según las coberturas de la póliza. Consulta carencias y condiciones.",
     url: "https://valentinproteccionintegral.com/seguros/decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -424,7 +424,7 @@ export default function DecesosPage() {
             </h2>
             
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Tu familia lo agradecerá.
             </p>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: "contacto asesora seguros madrid, consulta gratuita seguros boadilla del monte, telefono seguros madrid, agentes seguros madrid",
   openGraph: {
     title: "Contacto · Asesor de Seguros Boadilla | VPI",
-    description: "Rosa y Sebastián Valentín, agentes de seguros en Boadilla del Monte. Responden en menos de 30 minutos. Consulta gratuita.",
+    description: "Rosa y Sebastián Valentín, agentes de seguros en Boadilla del Monte. Responden en nuestro horario de atención. Consulta gratuita.",
     url: "https://valentinproteccionintegral.com/contacto",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -109,7 +109,7 @@ export default function ContactoPage() {
                           px-6 py-5 max-w-xl">
             <span className="text-2xl flex-none">⏱️</span>
             <p className="text-base font-semibold text-[var(--blue-deep)] leading-relaxed">
-              Respondemos en menos de 30 minutos en horario de atención.
+              Respondemos en nuestro horario de atención en horario de atención.
               Sin call centers. Sin formularios que nadie lee.
             </p>
           </div>

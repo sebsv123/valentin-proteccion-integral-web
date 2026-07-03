@@ -15,12 +15,12 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Seguros para Autónomos en Madrid | Valentín",
-  description: "Seguros adaptados para autónomos en Madrid. Deducción fiscal, protección real y asesoría sin complicaciones. Consulta gratis en 30 minutos.",
+  description: "Seguros adaptados para autónomos en Madrid: posible deducción fiscal según tu situación, protección real y asesoría sin complicaciones. Consulta gratis en nuestro horario.",
   keywords: ["seguros autonomos Madrid","seguro autonomos deducible IRPF","seguro RC autonomos Madrid","proteccion autonomos"],
   alternates: { canonical: "https://valentinproteccionintegral.com/para/autonomos" },
   openGraph: {
     title: "Seguros para Autónomos en Madrid | Valentín",
-    description: "Seguros adaptados para autónomos en Madrid. Deducción fiscal, protección real y asesoría sin complicaciones. Consulta gratis en 30 minutos.",
+    description: "Seguros adaptados para autónomos en Madrid: posible deducción fiscal según tu situación, protección real y asesoría sin complicaciones. Consulta gratis en nuestro horario.",
     url: "https://valentinproteccionintegral.com/para/autonomos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -110,11 +110,11 @@ export default function AutonomosPage() {
                 <div className="flex flex-wrap gap-3">
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <TrendingDown className="w-4 h-4 text-green-600" />
-                    IRPF deducible
+                    Posible deducción IRPF
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <Clock className="w-4 h-4 text-slate-700" />
-                    Respuesta en 10 min
+                    Respuesta en horario
                   </span>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function AutonomosPage() {
                     <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-slate-700" />
                     </div>
-                    <span className="text-slate-700">+1.200 autónomos ahorrando</span>
+                    <span className="text-slate-700">autónomos asesorados</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
@@ -337,7 +337,7 @@ export default function AutonomosPage() {
             },
             {
               q: "¿Cuánto tiempo tarda la gestión?",
-              a: "Desde el primer WhatsApp hasta tener el seguro activo, menos de 24 horas. Cotizamos en 30 minutos y gestionamos toda la documentación."
+              a: "El tiempo de alta depende de la aseguradora y de la documentación. Cotizamos en nuestro horario de atención y gestionamos la documentación."
             },
             {
               q: "¿Puedo deducirme también el seguro de vida?",
@@ -357,7 +357,7 @@ export default function AutonomosPage() {
             </h2>
             
             <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Descubre cuánto puedes ahorrar en tu IRPF.
             </p>
@@ -374,11 +374,11 @@ export default function AutonomosPage() {
             <div className="flex flex-wrap justify-center gap-4 mt-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
                 <TrendingDown className="w-4 h-4 text-green-400" />
-                IRPF deducible
+                Posible deducción IRPF
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
                 <Clock className="w-4 h-4" />
-                Respuesta en 10 min
+                Respuesta en horario
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
                 <Shield className="w-4 h-4" />

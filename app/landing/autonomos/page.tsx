@@ -39,7 +39,7 @@ const serviceSchema = {
     }
   },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguros para autónomos en Madrid con deducción IRPF 100%. Salud, accidentes, RC profesional.",
+  "description": "Seguros para autónomos en Madrid: salud, accidentes y RC profesional, con posible deducción en el IRPF según tu situación fiscal.",
 };
 
 export const dynamic = "force-static";
@@ -94,7 +94,7 @@ export default function AutonomosLandingPage() {
                 <div className="flex flex-wrap gap-6 text-sm text-[#64748d]">
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-[#533afd]" />
-                    Respuesta 30 min
+                    Respuesta en horario
                   </span>
                   <span className="flex items-center gap-2">
                     <FileCheck className="w-4 h-4 text-[#533afd]" />
@@ -123,7 +123,7 @@ export default function AutonomosLandingPage() {
                     </div>
                     <div>
                       <p className="text-sm font-normal text-[#061b31]">Ahorro fiscal</p>
-                      <p className="text-xs text-[#64748d]">Ahorro fiscal real</p>
+                      <p className="text-xs text-[#64748d]">Según tu situación fiscal</p>
                     </div>
                   </div>
                 </div>
@@ -137,8 +137,8 @@ export default function AutonomosLandingPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="grid grid-cols-3 gap-8 text-center">
               <div>
-                <p className="text-[32px] font-light text-[#061b31] tracking-[-0.64px]">+1.200</p>
-                <p className="text-sm text-[#64748d] mt-1">clientes protegidos</p>
+                <p className="text-[32px] font-light text-[#061b31] tracking-[-0.64px]">DGSFP</p>
+                <p className="text-sm text-[#64748d] mt-1">agente registrada</p>
               </div>
               <div className="border-x border-[#e5edf5]">
                 <p className="text-[32px] font-light text-[#061b31] tracking-[-0.64px]">+10</p>
@@ -273,7 +273,7 @@ export default function AutonomosLandingPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
             <div className="bg-white rounded-3xl p-10 md:p-14 shadow-xl shadow-[#533afd]/10 border border-[#e0e7ff]">
               <h2 className="text-[36px] sm:text-[44px] font-bold text-[#061b31] leading-tight mb-6 text-center">
-                ¿Y si no te respondemos en 30 minutos?
+                ¿Prefieres que te llamemos?
               </h2>
               
               <p className="text-xl text-[#64748d] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
@@ -309,7 +309,7 @@ export default function AutonomosLandingPage() {
               Protege tu negocio hoy.
             </h2>
             <p className="text-lg text-white/70 font-light mb-8">
-              Un WhatsApp. 30 minutos. Toda la tranquilidad.
+              Un WhatsApp y te orientamos con tranquilidad.
             </p>
             <WhatsAppButton 
               href={wCotiza}
@@ -320,7 +320,7 @@ export default function AutonomosLandingPage() {
               Hablar con Rosa ahora
             </WhatsAppButton>
             <p className="text-sm text-white/40 mt-8">
-              DGSFP: C012479234434D · +1.200 clientes protegidos
+              DGSFP: C012479234434D
             </p>
           </div>
         </section>

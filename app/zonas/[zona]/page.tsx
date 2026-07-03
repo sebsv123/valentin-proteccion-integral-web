@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ zona: str
   const zonaName = capitalizeZona(zona);
   return {
     title: `Seguros en ${zonaName} â€” Agente Registrado DGSFP | Valentín Protección Integral`,
-    description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas sin copagos. +10 aÃ±os Â· +1.200 familias. Consulta gratis.`,
+    description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas. Asesoramiento con registro en la DGSFP. Consulta gratis.`,
     keywords: [`seguros ${zonaName}`, `agente seguros ${zonaName}`, `seguro salud ${zonaName}`, `asesor seguros ${zonaName}`],
     alternates: { canonical: `https://valentinproteccionintegral.com/zonas/${zona}` },
     openGraph: {
       title: `Seguros en ${zonaName} â€” Agente Registrado DGSFP | Valentín Protección Integral`,
-      description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas sin copagos. +10 aÃ±os Â· +1.200 familias. Consulta gratis.`,
+      description: `Asesor de seguros en ${zonaName}. Salud privada, vida, dental y mascotas. Asesoramiento con registro en la DGSFP. Consulta gratis.`,
       url: `https://valentinproteccionintegral.com/zonas/${zona}`,
       siteName: 'ValentÃ­n ProtecciÃ³n Integral',
       locale: 'es_ES',
@@ -84,7 +84,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
 
                 {/* Subhead */}
                 <p className='text-xl text-[#4b4b4b] leading-relaxed mb-8 max-w-md'>
-                  Te asesoramos para encontrar la cobertura más adecuada para ti en {zonaName}. Sin permanencia. Sin letras pequeñas.
+                  Te asesoramos para encontrar la cobertura más adecuada para ti en {zonaName}. Te explicamos las condiciones de cada póliza, sin letras pequeñas.
                 </p>
 
                 {/* CTAs Uber â€” pill 999px */}
@@ -109,7 +109,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 <div className='flex flex-wrap gap-3'>
                   <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
                     <CheckCircle2 className='w-4 h-4' />
-                    +1.200 familias
+                    
                   </span>
                   <span className='inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#efefef] text-black text-sm'>
                     <Heart className='w-4 h-4' />
@@ -153,7 +153,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
             <div className='grid md:grid-cols-3 gap-6'>
               {[
                 { icon: Building2, title: 'Agente registrado DGSFP', desc: 'Asesoramiento personalizado con registro oficial DGSFP.' },
-                { icon: Sparkles, title: 'Respuesta en 30 min', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
+                { icon: Sparkles, title: 'Respuesta en horario', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
                 { icon: Heart, title: 'Gestión de siniestros', desc: 'No desaparecemos tras la firma. Te acompañamos en renovaciones, cambios y siniestros.' },
               ].map((item, i) => (
                 <div key={i} className='rounded-xl p-6 border border-[#333]'>
@@ -242,7 +242,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
 
             <div className='grid md:grid-cols-3 gap-8'>
               {[
-                { num: '1', title: 'WhatsApp', desc: `Escribe "${zonaName}" y tu necesidad. Te respondemos en menos de 30 minutos.` },
+                { num: '1', title: 'WhatsApp', desc: `Escribe "${zonaName}" y tu necesidad. Te respondemos en nuestro horario de atención.` },
                 { num: '2', title: 'Propuesta', desc: 'Te asesoramos y te recomendamos la cobertura más adecuada para tu caso.' },
                 { num: '3', title: 'ContrataciÃ³n', desc: 'Online o presencial en nuestra oficina de Boadilla del Monte.' },
               ].map((step, i) => (
@@ -263,7 +263,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
               {/* Left: CTA */}
               <div className='text-center lg:text-left'>
                 <h2 className='text-[36px] sm:text-[48px] font-bold leading-[1.22] mb-4'>Tu asesor de seguros en {zonaName}</h2>
-                <p className='text-xl text-[#afafaf] mb-8'>Con registro oficial. Sin comisiones ocultas. Sin permanencia.</p>
+                <p className='text-xl text-[#afafaf] mb-8'>Con registro oficial en la DGSFP. Te explicamos las condiciones de cada póliza.</p>
                 <WhatsAppButton
                   href={wCotiza}
                   location={`${zona}-cta-final`}

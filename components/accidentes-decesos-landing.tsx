@@ -129,7 +129,7 @@ export function AccidentesDecesosLanding() {
               🛡️ Desde 3€/mes. Accidentes y decesos.
             </span>
             <span className="hidden sm:inline">
-              🛡️ Protección familiar completa desde 3€ al mes. Sin sorpresas. Sin permanencia.
+              🛡️ Protección familiar desde 3€ al mes (precio orientativo). Consulta condiciones, límites y permanencia según la póliza.
             </span>
           </p>
 
@@ -187,8 +187,8 @@ export function AccidentesDecesosLanding() {
               <div className="flex flex-col gap-4 mb-8">
                 {[
                   "Desde 3€/mes (menos que un café al día)",
-                  "Sin permanencia. Cancelas cuando quieras.",
-                  "Gestión completa en 30 minutos",
+                  "Consulta las condiciones de permanencia y cancelación de cada póliza.",
+                  "Gestión completa sin complicaciones",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="flex-none w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">
@@ -236,7 +236,7 @@ export function AccidentesDecesosLanding() {
             >
               <div className="bg-card border rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-2xl">
                 <h3 className="text-2xl font-bold mb-2">¿Cuántos sois en casa?</h3>
-                <p className="text-muted-foreground mb-6">Te decimos el precio exacto en 30 minutos.</p>
+                <p className="text-muted-foreground mb-6">Te preparamos tu precio en nuestro horario de atención.</p>
 
                 {sent ? (
                   <div className="text-center py-12">
@@ -246,7 +246,7 @@ export function AccidentesDecesosLanding() {
                       </svg>
                     </div>
                     <h4 className="text-xl font-bold mb-2">¡Mensaje enviado!</h4>
-                    <p className="text-muted-foreground">Rosa o Sebastián te llamarán en menos de 30 minutos.</p>
+                    <p className="text-muted-foreground">Una persona del equipo te llamará en nuestro horario de atención.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -491,7 +491,7 @@ export function AccidentesDecesosLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en 30 minutos", desc: "O te llamamos nosotros" },
+              { icon: <Clock className="h-8 w-8" />, title: "Respuesta en horario", desc: "O te llamamos nosotros" },
               { icon: <FileText className="h-8 w-8" />, title: "Sin letra pequeña", desc: "Te explicamos todo antes de firmar" },
               { icon: <UserCheck className="h-8 w-8" />, title: "Gestor personal de por vida", desc: "Rosa o Sebastián, siempre" },
               { icon: <RefreshCw className="h-8 w-8" />, title: "Revisión anual gratuita", desc: "Revisamos tu cobertura cada año" },
@@ -563,7 +563,7 @@ export function AccidentesDecesosLanding() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mb-12">
-            * Precios orientativos. Tu precio exacto en 30 min, gratis y sin compromiso.
+            * Precios orientativos. Tu precio orientativo, gratis y sin compromiso.
           </p>
 
           {/* Sorpresa */}
@@ -611,7 +611,7 @@ export function AccidentesDecesosLanding() {
                   {
                     num: "1",
                     title: "Escríbenos o rellena el formulario",
-                    desc: "Nos cuentas para quién es y en 30 minutos tienes precio.",
+                    desc: "Nos cuentas para quién es y te preparamos el precio.",
                   },
                   {
                     num: "2",
@@ -621,7 +621,7 @@ export function AccidentesDecesosLanding() {
                   {
                     num: "3",
                     title: "Firmas solo cuando estás convencido",
-                    desc: "Sin permanencia. Sin letra pequeña. Sin sorpresas.",
+                    desc: "Condiciones claras. Consulta permanencia, límites y exclusiones según la póliza.",
                   },
                 ].map((paso, i) => (
                   <motion.div
@@ -817,7 +817,7 @@ export function AccidentesDecesosLanding() {
                 El mismo seguro. Mejor precio. Garantizado.
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría. En 10 años y más de 1.200 familias asesoradas, siempre hemos encontrado un precio mejor.
+                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
               </p>
             </div>
           </div>
@@ -837,7 +837,7 @@ export function AccidentesDecesosLanding() {
             Desde 3€/mes.* La tranquilidad no tiene precio.
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-2">
-            Rosa y Sebastián te lo montan en 30 minutos.
+            Te ayudamos a prepararlo sin complicaciones.
           </p>
           <p className="text-sm text-white/60 mb-8">
             *Precio orientativo. Requiere consulta para determinar cobertura según perfil.

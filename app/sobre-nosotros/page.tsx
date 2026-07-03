@@ -15,11 +15,11 @@ import RevealLight from '@/components/ui/reveal-light';
 
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-  description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Asesoramiento cercano y centrado en ti.",
-  keywords: "rosa valentin agente seguros, sebastian valentin asesor seguros, equipo agentes seguros madrid, asesoria seguros boadilla del monte",
+  description: "Rosa Valentín, agente de seguros registrada en la DGSFP, y Sebastián Valentín forman el equipo de Valentín Protección Integral en Madrid.",
+  keywords: "rosa valentin agente seguros, sebastian valentin equipo seguros, asesoria seguros boadilla del monte",
   openGraph: {
     title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
-    description: "Rosa y Sebastián Valentín — +10 años y +1.200 familias protegidas en Madrid. Asesoramiento cercano y centrado en ti.",
+    description: "Rosa Valentín es la agente registrada y Sebastián forma parte del equipo de Valentín Protección Integral.",
     url: "https://valentinproteccionintegral.com/sobre-nosotros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",

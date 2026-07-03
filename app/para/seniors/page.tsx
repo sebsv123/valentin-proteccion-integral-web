@@ -367,7 +367,7 @@ export default function SeniorsPage() {
                 },
                 { 
                   q: "¿El seguro de salud para mayores tiene carencias?", 
-                  a: "Depende del plan. Hay opciones sin carencias desde el primer día. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti." 
+                  a: "Depende del plan: las carencias varían según la modalidad. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti." 
                 },
                 { 
                   q: "¿Puedo contratar seguro si tengo más de 70 años?", 
@@ -407,7 +407,7 @@ export default function SeniorsPage() {
                   "name": "¿El seguro de salud para mayores tiene carencias?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Depende del plan. Hay opciones sin carencias desde el primer día. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti."
+                    "text": "Depende del plan: las carencias varían según la modalidad. Te explicamos cada cobertura con tranquilidad para que elijas lo que mejor se adapte a ti."
                   }
                 },
                 {

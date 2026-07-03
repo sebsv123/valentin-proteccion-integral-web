@@ -134,7 +134,7 @@ export default function AccidentesDecesosPage() {
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
                     <Clock className="w-4 h-4 text-amber-400" />
-                    30 min respuesta
+                    Respuesta en horario
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm border border-white/10">
                     <Shield className="w-4 h-4 text-amber-400" />
@@ -353,7 +353,7 @@ export default function AccidentesDecesosPage() {
                     <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
                       <TrendingUp className="w-5 h-5 text-amber-600" />
                     </div>
-                    <span className="text-slate-700">+1.200 familias protegidas</span>
+                    <span className="text-slate-700">Familias protegidas</span>
                   </div>
                 </div>
                 
@@ -378,7 +378,7 @@ export default function AccidentesDecesosPage() {
             </h2>
             
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-              Un WhatsApp. 30 minutos. Sin compromiso.
+              Un WhatsApp y te orientamos, sin compromiso.
               <br />
               Descubre el pack que mejor protege a ti y a tu familia.
             </p>
@@ -398,7 +398,7 @@ export default function AccidentesDecesosPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <Clock className="w-4 h-4 text-amber-500" />
-                30 min
+                En horario
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <Shield className="w-4 h-4 text-amber-500" />

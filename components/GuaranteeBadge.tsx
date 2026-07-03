@@ -52,11 +52,11 @@ const guarantees: Record<string, { title: string; subtitle: string }> = {
   },
   senior: { 
     title: "Especialistas en +65", 
-    subtitle: "Sin carencias · Sin copagos" 
+    subtitle: "Coberturas según modalidad" 
   },
   default: { 
     title: "Respuesta personal garantizada", 
-    subtitle: "Rosa o Sebastián en 30 minutos" 
+    subtitle: "Rosa o Sebastián en horario de atención" 
   },
 };
 
