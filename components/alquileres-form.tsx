@@ -219,8 +219,15 @@ export default function AlquileresForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="al-name" className={labelCls}>Nombre</label>
-            <input id="al-name" className={inputCls} placeholder="Tu nombre" {...register("fullName")} />
-            {errors.fullName ? <p className={errCls}>{errors.fullName.message}</p> : null}
+            <input
+              id="al-name"
+              className={inputCls}
+              placeholder="Tu nombre"
+              aria-invalid={errors.fullName ? true : undefined}
+              aria-describedby={errors.fullName ? "al-name-error" : undefined}
+              {...register("fullName")}
+            />
+            {errors.fullName ? <p id="al-name-error" role="alert" className={errCls}>{errors.fullName.message}</p> : null}
           </div>
           <div>
             <label htmlFor="al-pref" className={labelCls}>¿Cómo prefieres que te contactemos?</label>
@@ -235,13 +242,29 @@ export default function AlquileresForm() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="al-phone" className={labelCls}>WhatsApp / teléfono</label>
-            <input id="al-phone" className={inputCls} placeholder="Ej. 603 448 765" inputMode="tel" {...register("phone")} />
-            {errors.phone ? <p className={errCls}>{errors.phone.message}</p> : null}
+            <input
+              id="al-phone"
+              className={inputCls}
+              placeholder="Ej. 603 448 765"
+              inputMode="tel"
+              aria-invalid={errors.phone ? true : undefined}
+              aria-describedby={errors.phone ? "al-phone-error" : undefined}
+              {...register("phone")}
+            />
+            {errors.phone ? <p id="al-phone-error" role="alert" className={errCls}>{errors.phone.message}</p> : null}
           </div>
           <div>
             <label htmlFor="al-email" className={labelCls}>Email</label>
-            <input id="al-email" className={inputCls} placeholder="tucorreo@email.com" inputMode="email" {...register("email")} />
-            {errors.email ? <p className={errCls}>{errors.email.message}</p> : null}
+            <input
+              id="al-email"
+              className={inputCls}
+              placeholder="tucorreo@email.com"
+              inputMode="email"
+              aria-invalid={errors.email ? true : undefined}
+              aria-describedby={errors.email ? "al-email-error" : undefined}
+              {...register("email")}
+            />
+            {errors.email ? <p id="al-email-error" role="alert" className={errCls}>{errors.email.message}</p> : null}
           </div>
         </div>
 
@@ -257,8 +280,15 @@ export default function AlquileresForm() {
           </div>
           <div>
             <label htmlFor="al-city" className={labelCls}>Ciudad destino</label>
-            <input id="al-city" className={inputCls} placeholder="Madrid" {...register("destinationCity")} />
-            {errors.destinationCity ? <p className={errCls}>{errors.destinationCity.message}</p> : null}
+            <input
+              id="al-city"
+              className={inputCls}
+              placeholder="Madrid"
+              aria-invalid={errors.destinationCity ? true : undefined}
+              aria-describedby={errors.destinationCity ? "al-city-error" : undefined}
+              {...register("destinationCity")}
+            />
+            {errors.destinationCity ? <p id="al-city-error" role="alert" className={errCls}>{errors.destinationCity.message}</p> : null}
           </div>
         </div>
 
@@ -313,12 +343,26 @@ export default function AlquileresForm() {
 
         <div>
           <label htmlFor="al-comments" className={labelCls}>Comentarios {optional}</label>
-          <textarea id="al-comments" rows={3} className={inputCls} placeholder="Cuéntanos cualquier detalle útil de tu caso" {...register("comments")} />
-          {errors.comments ? <p className={errCls}>{errors.comments.message}</p> : null}
+          <textarea
+            id="al-comments"
+            rows={3}
+            className={inputCls}
+            placeholder="Cuéntanos cualquier detalle útil de tu caso"
+            aria-invalid={errors.comments ? true : undefined}
+            aria-describedby={errors.comments ? "al-comments-error" : undefined}
+            {...register("comments")}
+          />
+          {errors.comments ? <p id="al-comments-error" role="alert" className={errCls}>{errors.comments.message}</p> : null}
         </div>
 
         <label className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
-          <input type="checkbox" className="mt-1 h-4 w-4 rounded border-slate-300" {...register("consent")} />
+          <input
+            type="checkbox"
+            className="mt-1 h-4 w-4 rounded border-slate-300"
+            aria-invalid={errors.consent ? true : undefined}
+            aria-describedby={errors.consent ? "al-consent-error" : undefined}
+            {...register("consent")}
+          />
           <span>
             Acepto que <strong>{siteConfig.responsiblePerson.fullName}</strong> ({siteConfig.brand.name})
             trate mis datos para responder a mi solicitud de orientación en vivienda y seguro.
@@ -329,7 +373,7 @@ export default function AlquileresForm() {
             </a>.
           </span>
         </label>
-        {errors.consent ? <p className={errCls}>{errors.consent.message}</p> : null}
+        {errors.consent ? <p id="al-consent-error" role="alert" className={errCls}>{errors.consent.message}</p> : null}
 
         <button
           type="submit"
