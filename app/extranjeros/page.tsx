@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, FileText, MessageCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FileText, Home, MessageCircle, ShieldCheck } from 'lucide-react';
 import { FAQAccordion } from '@/components/faq-accordion';
 import { Footer } from '@/components/footer';
 import { IberiaJourneySection } from '@/components/extranjeros/iberia-journey-section';
@@ -317,6 +317,45 @@ export default function ExtranjerosPage() {
                   </span>
                 </ForeignersTrackedLink>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-12" data-foreigners-section="alquileres">
+          <div className="container-shell">
+            <div className="relative overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-8 sm:p-10">
+              <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700">
+                    <Home className="h-4 w-4" />
+                    Servicio complementario
+                  </span>
+                  <h2 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">
+                    ¿Además del seguro necesitas vivienda en Madrid?
+                  </h2>
+                  <p className="mt-3 max-w-xl leading-relaxed text-slate-600">
+                    Te acompañamos en la búsqueda de alquiler en Madrid para estudiantes,
+                    profesionales y familias internacionales: búsqueda, visitas, documentación
+                    y firma. Según tu perfil, fechas y zona, sin prometer vivienda garantizada.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Link
+                    href="/extranjeros/alquileres"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 font-semibold text-white transition-all hover:bg-emerald-500"
+                  >
+                    Ver alquileres <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <ForeignersTrackedLink
+                    href={buildWhatsAppHref('Hola, quiero información sobre seguro + vivienda para mi llegada a España.')}
+                    action="whatsapp_click"
+                    label="alquileres_teaser"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-white px-6 py-3.5 font-semibold text-emerald-700 transition-all hover:bg-emerald-50"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" /> Quiero seguro + vivienda
+                  </ForeignersTrackedLink>
+                </div>
+              </div>
             </div>
           </div>
         </section>
