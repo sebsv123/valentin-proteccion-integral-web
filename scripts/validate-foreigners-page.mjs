@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 const files = {
   page: readFileSync('app/extranjeros/page.tsx', 'utf8'),
   form: readFileSync('components/foreigners-partner-form.tsx', 'utf8'),
-  api: readFileSync('app/api/professional-referrals/route.ts', 'utf8'),
+  api: readFileSync('app/api/professional-referral/route.ts', 'utf8'),
   analytics: readFileSync('lib/foreigners-partner-analytics.ts', 'utf8'),
 };
 
@@ -17,10 +17,9 @@ const requiredSnippets = [
   ['authorization checkbox', files.form, 'clientAuthorization'],
   ['privacy link', files.form, '/privacidad'],
   ['sensitive document notice', files.form, 'No adjuntes pasaportes'],
-  ['server validation schema', files.api, 'referralSchema.safeParse'],
-  ['server lead webhook', files.api, 'LEAD_WEBHOOK_URL'],
-  ['server lead secret', files.api, 'LEAD_WEBHOOK_SECRET'],
-  ['lead secret header', files.api, "'X-Lead-Secret'"],
+  ['server validation schema', files.api, 'professionalReferralSchema.safeParse'],
+  ['server SMTP delivery', files.api, 'sendLeadEmail'],
+  ['local SMTP guard', files.api, 'LeadEmailBlockedError'],
   ['honeypot', files.form, 'website'],
   ['success state', files.form, "'success'"],
   ['error state', files.form, "'error'"],

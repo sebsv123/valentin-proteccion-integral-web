@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 const roots = [
   'app/extranjeros',
-  'app/api/professional-referrals',
+  'app/api/professional-referral',
   'components/extranjeros',
   'components/foreigners-partner-form.tsx',
   'components/foreigners-partner-tracking.tsx',
