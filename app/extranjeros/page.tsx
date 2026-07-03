@@ -326,11 +326,12 @@ export default function ExtranjerosPage() {
             <div className="grid overflow-hidden rounded-[28px] border border-[var(--border)] shadow-sm lg:grid-cols-[0.45fr_0.55fr]">
               <div className="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[480px]">
                 <Image
-                  src="/images/pexels/madrid-ciudad-pexels.webp"
-                  alt="Calle residencial de Madrid con edificios de balcones"
+                  src="/images/alquileres/acceso-visita-vivienda.webp"
+                  alt="Visita ilustrativa a una vivienda"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_25%]"
                   sizes="(min-width: 1024px) 45vw, 100vw"
+                  loading="lazy"
                 />
               </div>
               <div className="flex flex-col justify-center bg-[var(--blue-deep)] p-8 text-white sm:p-10 lg:p-12">

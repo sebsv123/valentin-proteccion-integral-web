@@ -191,7 +191,7 @@ export default function AlquileresPage() {
                   href="#solicitar"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
                 >
-                  Cuéntanos qué vivienda necesitas
+                  Iniciar mi búsqueda
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -214,10 +214,10 @@ export default function AlquileresPage() {
             <div>
               <div className="relative aspect-[5/4] overflow-hidden rounded-[24px] sm:aspect-[4/3] lg:aspect-[5/4]">
                 <Image
-                  src="/images/products/bebe-room.jpg"
-                  alt="Familia en el salón luminoso de su vivienda, con vistas a la ciudad"
+                  src="/images/alquileres/hero-interior-luminoso.webp"
+                  alt="Interior residencial contemporáneo con abundante luz natural"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(min-width: 1024px) 45vw, 100vw"
                   priority
                 />
@@ -265,6 +265,16 @@ export default function AlquileresPage() {
             ═══════════════════════════════════════════ */}
         <section className="bg-white py-20">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-[24px]">
+              <Image
+                src="/images/alquileres/madrid-arquitectura-contemporanea.webp"
+                alt="Arquitectura contemporánea en Madrid"
+                fill
+                className="object-cover"
+                sizes="100vw"
+                loading="lazy"
+              />
+            </div>
             <div className="rounded-[24px] bg-[var(--blue-deep)] p-8 text-white sm:p-12 lg:p-14">
               <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
                 <div>
@@ -299,30 +309,44 @@ export default function AlquileresPage() {
             PROCESO — línea editorial, numeración sobria
             ═══════════════════════════════════════════ */}
         <section className="bg-[#F7F3EA] py-20">
-          <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-2xl">
               <p className="kicker">Cómo funciona</p>
               <h2 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)] sm:text-4xl">
                 De la primera consulta a la firma
               </h2>
             </div>
-            <div className="border-t border-[var(--blue-deep)]/10">
-              {PROCESS_STEPS.map((step) => (
-                <div key={step.n} className="flex flex-col gap-2 border-b border-[var(--blue-deep)]/10 py-7 sm:flex-row sm:gap-8">
-                  <span className="font-heading text-3xl font-bold tabular-nums text-[var(--green)] sm:w-16 sm:shrink-0">
-                    {step.n}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-bold text-[var(--blue-deep)]">{step.title}</h3>
-                    <p className="mt-1.5 max-w-2xl leading-relaxed text-slate-600">{step.desc}</p>
-                  </div>
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
+              <div>
+                <div className="border-t border-[var(--blue-deep)]/10">
+                  {PROCESS_STEPS.map((step) => (
+                    <div key={step.n} className="flex flex-col gap-2 border-b border-[var(--blue-deep)]/10 py-7 sm:flex-row sm:gap-8">
+                      <span className="font-heading text-3xl font-bold tabular-nums text-[var(--green)] sm:w-16 sm:shrink-0">
+                        {step.n}
+                      </span>
+                      <div>
+                        <h3 className="text-lg font-bold text-[var(--blue-deep)]">{step.title}</h3>
+                        <p className="mt-1.5 max-w-2xl leading-relaxed text-slate-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <p className="mt-8 max-w-2xl text-sm text-slate-500">
+                  No prestamos asesoramiento jurídico sobre el contrato. Para la revisión legal del
+                  contrato de arrendamiento, recomendamos asesoramiento jurídico independiente.
+                </p>
+              </div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] lg:sticky lg:top-28">
+                <Image
+                  src="/images/alquileres/proceso-visita-vivienda.webp"
+                  alt="Personas durante una visita ilustrativa a una vivienda"
+                  fill
+                  className="object-cover object-[60%_40%]"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <p className="mx-auto mt-8 max-w-2xl text-sm text-slate-500">
-              No prestamos asesoramiento jurídico sobre el contrato. Para la revisión legal del
-              contrato de arrendamiento, recomendamos asesoramiento jurídico independiente.
-            </p>
           </div>
         </section>
 
@@ -342,11 +366,12 @@ export default function AlquileresPage() {
               <article>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
                   <Image
-                    src="/images/extranjeros/extranjeros-students.webp"
-                    alt="Estudiantes internacionales estudiando juntos en un aula"
+                    src="/images/alquileres/perfil-estudiantes.webp"
+                    alt="Estudiantes compartiendo un apartamento"
                     fill
-                    className="object-cover"
+                    className="object-cover object-[50%_30%]"
                     sizes="(min-width: 1024px) 50vw, 100vw"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="mt-6 font-heading text-xl font-bold text-[var(--blue-deep)]">Estudiantes internacionales</h3>
@@ -371,11 +396,12 @@ export default function AlquileresPage() {
               <article>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
                   <Image
-                    src="/images/home/family-window.jpg"
-                    alt="Familia en el interior luminoso de su vivienda"
+                    src="/images/alquileres/perfil-familias-mudanza.webp"
+                    alt="Familia durante una mudanza a su nuevo hogar"
                     fill
-                    className="object-cover"
+                    className="object-cover object-[60%_45%]"
                     sizes="(min-width: 1024px) 50vw, 100vw"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="mt-6 font-heading text-xl font-bold text-[var(--blue-deep)]">Familias y profesionales</h3>
@@ -413,6 +439,26 @@ export default function AlquileresPage() {
                 Hablar sobre colaboración
               </WhatsAppButton>
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            BREAKER EDITORIAL — pausa visual antes del formulario
+            ═══════════════════════════════════════════ */}
+        <section className="bg-white">
+          <div className="relative h-[38vh] min-h-[280px] w-full overflow-hidden sm:h-[46vh]">
+            <Image
+              src="/images/alquileres/interior-calido-ventanales.webp"
+              alt="Interior cálido con grandes ventanales y luz natural"
+              fill
+              className="object-cover object-[50%_35%]"
+              sizes="100vw"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/60 via-transparent to-transparent" />
+            <p className="absolute bottom-6 left-4 text-sm font-medium text-white/85 sm:left-6 lg:left-8">
+              Un hogar es, sobre todo, un lugar donde sentirte bien.
+            </p>
           </div>
         </section>
 
@@ -472,20 +518,21 @@ export default function AlquileresPage() {
             <h2 className="font-heading text-2xl font-bold sm:text-4xl">
               ¿Vienes a Madrid? Cuéntanos qué vivienda necesitas y te acompañamos.
             </h2>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-start gap-4">
+              <a
+                href="#solicitar"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105"
+              >
+                Iniciar mi búsqueda
+                <ArrowRight className="h-4 w-4" />
+              </a>
               <WhatsAppButton
                 href={wMain}
                 location="alquileres-cta-final-whatsapp"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white"
               >
                 Hablar por WhatsApp
               </WhatsAppButton>
-              <a
-                href="#solicitar"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 font-semibold text-white transition-all hover:bg-white/20"
-              >
-                Solicitar orientación
-              </a>
             </div>
           </div>
         </section>
