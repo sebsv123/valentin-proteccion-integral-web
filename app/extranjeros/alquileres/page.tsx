@@ -154,7 +154,7 @@ export default function AlquileresPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Header />
-      <main className="bg-[#F7F3EA]">
+      <main className="overflow-x-clip bg-[#F7F3EA]">
         {/* ═══════════════════════════════════════════
             HERO — azul noche + skyline abstracto
             ═══════════════════════════════════════════ */}

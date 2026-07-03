@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 
@@ -33,7 +33,7 @@ const PillNav: React.FC<PillNavProps> = ({
   hoveredPillTextColor = '#fff',
   pillTextColor,
   onMobileMenuClick,
-  initialLoadAnimation = true
+  initialLoadAnimation = false
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,7 +43,8 @@ const PillNav: React.FC<PillNavProps> = ({
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const navItemsRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const layout = () => {
       circleRefs.current.forEach(circle => {
         if (!circle?.parentElement) return;
@@ -102,16 +103,11 @@ const PillNav: React.FC<PillNavProps> = ({
       document.fonts.ready.then(layout).catch(() => {});
     }
 
-    if (initialLoadAnimation) {
+    if (initialLoadAnimation && !reducedMotion) {
       const navItems = navItemsRef.current;
 
       if (navItems) {
-        gsap.set(navItems, { width: 0, overflow: 'hidden' });
-        gsap.to(navItems, {
-          width: 'auto',
-          duration: 0.6,
-          ease
-        });
+        gsap.fromTo(navItems, { opacity: 0 }, { opacity: 1, duration: 0.35, ease });
       }
     }
 
@@ -174,7 +170,7 @@ const PillNav: React.FC<PillNavProps> = ({
     ['--hover-text']: hoveredPillTextColor,
     ['--pill-text']: resolvedPillTextColor,
     ['--nav-h']: '42px',
-    ['--pill-pad-x']: '18px',
+    ['--pill-pad-x']: '14px',
     ['--pill-gap']: '3px'
   } as React.CSSProperties;
 
@@ -249,7 +245,7 @@ const PillNav: React.FC<PillNavProps> = ({
             );
 
             const basePillClasses =
-              'relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-full box-border text-[15px] leading-[0] tracking-[0.2px] whitespace-nowrap cursor-pointer px-0';
+              'relative overflow-hidden inline-flex items-center justify-center h-full no-underline rounded-full box-border text-[14px] leading-[0] tracking-[0.1px] whitespace-nowrap cursor-pointer px-0';
 
             return (
               <li key={item.href} role="none" className="flex h-full">

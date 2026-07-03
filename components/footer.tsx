@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-[var(--border)] bg-white/92">
       <div className="container-shell py-14">
-        <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-8 xl:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
               <BrandLockup variant="dark" size="default" />

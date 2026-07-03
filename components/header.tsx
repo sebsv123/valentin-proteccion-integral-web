@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronDown, Instagram, Menu, Phone, X } from 'lucide-react';
+import { ChevronDown, Instagram, Menu, Phone } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { MouseEvent } from 'react';
@@ -41,6 +41,18 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClick as EventListener);
   }, [mega]);
 
+  useEffect(() => {
+    if (!mega) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMega(false);
+        document.getElementById('mega-trigger')?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [mega]);
+
   const grouped = useMemo(() => products.map((product) => ({ ...product, children: getSubpagesForProduct(product.slug) })), []);
 
   const closeAll = () => setMega(false);
@@ -58,17 +70,17 @@ export function Header() {
   return (
     <>
       <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
-        <div className="container-shell mx-auto px-4 max-w-[1400px]">
-          <div className="flex items-center justify-between gap-3 py-3 xl:gap-5 xl:py-4">
+        <div className="container-shell mx-auto max-w-[1760px]">
+          <div className="flex items-center justify-between gap-3 py-3 2xl:gap-4 2xl:py-4">
             <BrandLockup variant="light" size="compact" priority />
 
-            <nav className="hidden items-center gap-1 xl:flex">
+            <nav className="hidden min-w-0 items-center gap-0.5 2xl:flex">
               {/* Mega Menu trigger */}
               <div className="relative z-[110]">
                 <button
                   id="mega-trigger"
                   onClick={() => setMega((v) => !v)}
-                  className="group relative px-4 py-2"
+                  className="group relative px-3 py-2"
                   aria-expanded={mega}
                   aria-controls="mega-menu"
                 >
@@ -94,17 +106,17 @@ export function Header() {
                   pillColor="rgba(255,255,255,0.15)"
                   pillTextColor="white"
                   hoveredPillTextColor="white"
-                  className="scale-95 origin-left"
+                  initialLoadAnimation={false}
                 />
               </div>
             </nav>
 
-            <div className="hidden items-center gap-2 xl:flex shrink-0 justify-end">
+            <div className="hidden shrink-0 items-center justify-end gap-1.5 2xl:flex">
               <a
                 href={`tel:${site.phoneHref}`}
-                className="flex items-center gap-1.5 px-4 py-2.5 text-white/90
+                className="flex items-center gap-1.5 px-3 py-2.5 text-white/90
                            text-sm font-semibold rounded-[14px] border border-white/20
-                           hover:bg-white/10 transition-colors min-w-[160px]"
+                           hover:bg-white/10 transition-colors whitespace-nowrap"
               >
                 <Phone className="h-4 w-4" />
                 {site.phone}
@@ -112,7 +124,7 @@ export function Header() {
               <a
                 href={whatsappHref}
                 onClick={(e) => handleWhatsAppClick(e, 'nav-header', whatsappHref)}
-                className="btn-whatsapp !text-sm !px-5 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)] min-w-[100px]"
+                className="btn-whatsapp !text-sm !px-4 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)]"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
@@ -121,12 +133,12 @@ export function Header() {
                 href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2.5 text-white/95 text-sm
-                           hover:opacity-90 rounded-[14px] font-semibold
-                           transition-opacity shadow-md min-w-[100px]"
+                className="flex h-10 w-10 items-center justify-center text-white/95
+                           hover:bg-white/10 rounded-[14px]
+                           transition-colors"
+                aria-label="Instagram de Valentín Protección Integral"
               >
                 <Instagram className="h-4 w-4" />
-                Instagram
               </a>
             </div>
 
@@ -136,7 +148,7 @@ export function Header() {
                 y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
             */}
             <button
-              className="flex xl:hidden items-center gap-2 text-white/90 hover:text-white
+              className="flex 2xl:hidden items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}
@@ -156,6 +168,8 @@ export function Header() {
           transition-all duration-200 origin-top
           ${mega ? 'opacity-100 scale-y-100 translate-y-0 pointer-events-auto' : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'}`}
         ref={megaRef}
+        aria-hidden={!mega}
+        inert={!mega}
       >
         <div className="relative z-10 grid gap-5 lg:grid-cols-[300px_1fr]">
           <div className="rounded-[24px] bg-[linear-gradient(180deg,rgba(15,94,156,0.06),rgba(123,198,126,0.08))] p-5">
