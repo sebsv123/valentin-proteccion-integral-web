@@ -68,6 +68,23 @@ export const siteConfig = {
     avisoLegal: '/aviso-legal',
   },
 
+  /**
+   * Servicio de vivienda/alquiler (rama de extranjeros).
+   * Alcance inicial: Madrid. Autoría prudente hasta verificación jurídica.
+   */
+  housingService: {
+    scopeCity: 'Madrid',
+    // Línea de autoría provisional aprobada.
+    coordinatorLine:
+      'Servicio de vivienda coordinado por Valentín Protección Integral junto a colaboradores especializados en perfiles internacionales.',
+    // Nombre del colaborador: NO publicar hasta aprobación expresa.
+    // Para activarlo: showPartner = true y partnerName = 'VIP Global Perú'.
+    showPartner: false,
+    partnerName: null as string | null,
+    conditionsNote:
+      'Las viviendas están sujetas a disponibilidad, condiciones del propietario, estudio del perfil y aceptación de la documentación aportada. Las características de cada alquiler y los servicios prestados se informarán antes de iniciar el proceso.',
+  },
+
   /** Aseguradoras: SIEMPRE presentadas como entidades terceras. */
   insurers: {
     disclaimer:

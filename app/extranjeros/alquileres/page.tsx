@@ -8,40 +8,48 @@ import { siteConfig } from "@/lib/site-config";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import AlquileresForm from "@/components/alquileres-form";
+import { MadridSkyline } from "@/components/madrid-skyline";
 import {
   GraduationCap,
   Home,
   Users,
   Building2,
-  Search,
-  MessageSquare,
+  Briefcase,
+  MapPin,
   Compass,
-  ArrowRightLeft,
-  ClipboardCheck,
-  HeartHandshake,
-  Handshake,
+  Globe2,
+  SlidersHorizontal,
+  Search,
+  CalendarClock,
+  FileText,
+  KeyRound,
+  MessageSquare,
   ArrowRight,
-  Info,
+  Train,
+  BedDouble,
+  Sofa,
+  Handshake,
 } from "lucide-react";
 
 const CANONICAL = "https://valentinproteccionintegral.com/extranjeros/alquileres";
+const CITY = siteConfig.housingService.scopeCity;
 
 export const metadata: Metadata = {
-  title: "Alquileres para extranjeros en España | Valentín Protección Integral",
+  title: "Alquiler de pisos en Madrid para extranjeros | VPI",
   description:
-    "Si además del seguro necesitas ayuda con alquileres o vivienda para tu llegada a España, te orientamos según tu perfil, fechas y necesidades.",
+    "Ayuda para buscar alquiler en Madrid desde el extranjero. Orientación para estudiantes, profesionales y familias durante la búsqueda, las visitas y la documentación.",
   keywords: [
-    "alquiler extranjeros España",
-    "vivienda estudiantes internacionales Madrid",
-    "alquiler llegada a España",
-    "seguro y vivienda extranjeros",
-    "orientación alquiler residentes España",
+    "alquiler pisos Madrid extranjeros",
+    "alquiler Madrid estudiantes internacionales",
+    "vivienda Madrid desde el extranjero",
+    "alquiler Madrid familias internacionales",
+    "buscar piso Madrid antes de llegar",
   ],
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "Alquileres para tu llegada a España | Valentín Protección Integral",
+    title: "Alquiler de pisos en Madrid para estudiantes y familias internacionales",
     description:
-      "Además del seguro, también podemos ayudarte a orientarte con opciones de vivienda y alquiler según tu perfil, fechas y necesidades.",
+      "Encuentra tu hogar en Madrid antes de llegar, con acompañamiento durante la búsqueda, las visitas, la documentación y la firma.",
     url: CANONICAL,
     siteName: siteConfig.brand.name,
     locale: "es_ES",
@@ -52,11 +60,28 @@ export const metadata: Metadata = {
 export const dynamic = "force-static";
 
 const wMain = buildWhatsAppHref(
-  "Hola, además del seguro me gustaría orientación sobre alquiler / vivienda para mi llegada a España."
+  "Hola, me gustaría orientación sobre alquiler de vivienda en Madrid para mi llegada a España."
 );
-const wSeguroVivienda = buildWhatsAppHref(
-  "Hola, quiero información sobre seguro + vivienda para mi llegada a España."
+const wStudents = buildWhatsAppHref(
+  "Hola, soy estudiante internacional y busco alojamiento en Madrid para mi llegada."
 );
+const wFamilies = buildWhatsAppHref(
+  "Hola, somos familia/profesional y buscamos vivienda en Madrid para nuestro traslado."
+);
+const wPartner = buildWhatsAppHref(
+  "Hola, soy colaborador (academia/relocation/asesoría) y quiero derivar casos de vivienda + seguro."
+);
+
+const ZONES = [
+  "Chamberí",
+  "Moncloa y Argüelles",
+  "Nuevos Ministerios",
+  "Tribunal y Malasaña",
+  "Barrio de Salamanca",
+  "Retiro",
+  "Chamartín",
+  "Centro de Madrid",
+];
 
 const faqs = [
   {
@@ -65,27 +90,27 @@ const faqs = [
   },
   {
     q: "¿Trabajáis solo con estudiantes?",
-    a: "No. Orientamos a estudiantes internacionales, pero también a residentes, familias que se trasladan y perfiles en proceso de instalación en España.",
+    a: "No. Orientamos a estudiantes internacionales, pero también a profesionales, familias que se trasladan y perfiles en proceso de instalación en Madrid.",
   },
   {
     q: "¿También ayudáis a familias o residentes?",
-    a: "Sí. Revisamos el caso de familias y residentes para orientarte sobre opciones de vivienda más adecuadas a tu situación, fechas y zona.",
+    a: "Sí. Revisamos el caso de familias y profesionales para orientarte sobre opciones de vivienda más adecuadas a tu situación, fechas y zona.",
   },
   {
     q: "¿Tenéis pisos propios?",
-    a: "No somos una inmobiliaria ni disponemos de un inventario propio de pisos. Ofrecemos orientación y acompañamiento comercial, y coordinamos con colaboradores cuando corresponde.",
+    a: "No somos una inmobiliaria ni disponemos de un inventario propio de pisos. Ofrecemos orientación y acompañamiento durante la búsqueda, y coordinamos con propietarios, agencias y colaboradores cuando corresponde.",
   },
   {
     q: "¿La disponibilidad está garantizada?",
-    a: "No podemos garantizar disponibilidad. Las opciones dependen del perfil, la zona, las fechas y las condiciones del arrendador o colaborador correspondiente. Te orientamos con transparencia sobre lo que es realista en tu caso.",
+    a: "No podemos garantizar disponibilidad. Las opciones dependen del perfil, la zona, las fechas, el presupuesto y las condiciones de cada propiedad. Te orientamos con transparencia sobre lo que es realista en tu caso.",
   },
   {
     q: "¿Podéis ayudarme antes de llegar a España?",
-    a: "Sí. Puedes escribirnos antes de viajar para ir preparando la parte de seguro y orientarte sobre vivienda, de modo que llegues con más tranquilidad.",
+    a: "Sí. Puedes escribirnos antes de viajar para ir preparando la búsqueda y, si lo necesitas, tu seguro, de modo que llegues a Madrid con más tranquilidad.",
   },
   {
-    q: "¿En qué zonas o ciudades podéis ayudarme?",
-    a: "Trabajamos principalmente en Madrid y su entorno. Para otras zonas, cuéntanos tu caso y te decimos con honestidad hasta dónde podemos orientarte según disponibilidad.",
+    q: "¿En qué zonas de Madrid podéis ayudarme?",
+    a: "Trabajamos en Madrid y su área de influencia, orientando la búsqueda hacia zonas bien comunicadas. La disponibilidad concreta en cada barrio depende de las fechas, el presupuesto y las condiciones de cada propiedad.",
   },
 ];
 
@@ -102,22 +127,21 @@ const faqSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Alquileres para extranjeros en España",
+  name: `Alquiler de pisos en ${CITY} para extranjeros`,
   url: CANONICAL,
   description:
-    "Servicio complementario de orientación en vivienda y alquiler para personas extranjeras que llegan a España.",
-  isPartOf: {
-    "@type": "WebSite",
-    name: siteConfig.brand.name,
-    url: siteConfig.brand.domain,
-  },
-  about: {
-    "@type": "Organization",
-    name: siteConfig.brand.name,
-  },
+    "Servicio de orientación en vivienda y alquiler en Madrid para estudiantes, profesionales y familias internacionales.",
+  isPartOf: { "@type": "WebSite", name: siteConfig.brand.name, url: siteConfig.brand.domain },
+  about: { "@type": "Organization", name: siteConfig.brand.name },
 };
 
 export default function AlquileresPage() {
+  const { housingService } = siteConfig;
+  const coordinatorLine =
+    housingService.showPartner && housingService.partnerName
+      ? `${housingService.coordinatorLine} En colaboración con ${housingService.partnerName}.`
+      : housingService.coordinatorLine;
+
   return (
     <>
       <BreadcrumbSchema
@@ -130,45 +154,53 @@ export default function AlquileresPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Header />
-      <main>
+      <main className="bg-[#F7F3EA]">
         {/* ═══════════════════════════════════════════
-            HERO
+            HERO — azul noche + skyline abstracto
             ═══════════════════════════════════════════ */}
-        <section className="relative overflow-hidden bg-slate-900 pt-24 pb-16 text-white">
-          {/* Slot visual William (pendiente): fondo/ilustración de bienvenida.
-              Por ahora, gradiente neutro — NO usar fotos que aparenten pisos reales. */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/60" />
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
-          <div className="container relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-[#0A1E3F] pt-24 pb-40 text-white sm:pb-48">
+          {/* Formas grandes de fondo, sutiles */}
+          <div className="pointer-events-none absolute -top-32 -right-24 h-[26rem] w-[26rem] rounded-full bg-[#1FB8A6]/10 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-full bg-white/5 blur-2xl" />
+
+          <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
             <nav className="mb-6 text-sm text-slate-400" aria-label="Migas de pan">
               <Link href="/extranjeros" className="hover:text-white">Extranjeros</Link>
               <span className="mx-2">/</span>
               <span className="text-slate-200">Alquileres</span>
             </nav>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-sm font-medium text-emerald-300">
+
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1FB8A6]/15 px-4 py-1.5 text-sm font-medium text-[#7FEBD9]">
               <Home className="h-4 w-4" />
-              Servicio complementario
+              Vivienda para tu llegada a España
             </span>
-            <h1 className="mt-5 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
-              Encuentra seguro y resuelve tu llegada a España con más tranquilidad
+
+            <h1 className="mx-auto mt-5 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
+              Alquiler de pisos en Madrid para estudiantes y familias internacionales
             </h1>
-            <p className="mt-5 max-w-2xl text-lg text-slate-300">
-              Si además de tu seguro necesitas ayuda con alquileres, vivienda o una
-              solución adaptada a tu situación, también podemos acompañarte.
+
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-300">
+              Encuentra tu hogar en Madrid antes de llegar, con acompañamiento personalizado
+              durante la búsqueda, las visitas, la documentación y la firma.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Estudiantes", "Residentes", "Familias", "Perfiles internacionales"].map((t) => (
-                <span key={t} className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-slate-200">
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-[#7FEBD9]">
+              También podemos coordinar tu seguro para la llegada a España.
+            </p>
+
+            <div className="mt-7 flex flex-wrap justify-center gap-2">
+              {["Desde el extranjero", "Estudiantes y familias", "Madrid bien conectado"].map((t) => (
+                <span key={t} className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-slate-200">
                   {t}
                 </span>
               ))}
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a
                 href="#solicitar"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 font-semibold text-white transition-all hover:bg-emerald-400"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1FB8A6] px-6 py-3.5 font-semibold text-[#04231f] transition-all hover:bg-[#2fd0bc]"
               >
-                Cuéntanos qué necesitas
+                Cuéntanos qué vivienda necesitas
                 <ArrowRight className="h-4 w-4" />
               </a>
               <WhatsAppButton
@@ -179,100 +211,244 @@ export default function AlquileresPage() {
                 Hablar por WhatsApp
               </WhatsAppButton>
             </div>
+
+            <p className="mx-auto mt-6 max-w-md text-sm text-slate-400">
+              Búsqueda, visitas, documentación y acompañamiento hasta la firma.
+            </p>
+          </div>
+
+          {/* Skyline abstracto en la parte baja del hero */}
+          <MadridSkyline className="absolute bottom-0 left-0 z-0 h-32 w-full text-[#1FB8A6] sm:h-40" />
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            PROPUESTA DE VALOR
+            ═══════════════════════════════════════════ */}
+        <section className="bg-[#F7F3EA] py-20">
+          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="text-3xl font-bold text-[#0A1E3F] sm:text-4xl">
+                Tu hogar en Madrid, incluso antes de llegar
+              </h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                { icon: Compass, title: "Ubicación y conexión", desc: "Orientamos la búsqueda hacia zonas bien comunicadas con universidades, centros de estudio, áreas empresariales y servicios." },
+                { icon: Globe2, title: "Acompañamiento internacional", desc: "Coordinamos el proceso cuando el cliente todavía se encuentra fuera de España y facilitamos las distintas fases de la búsqueda." },
+                { icon: SlidersHorizontal, title: "Viviendas adaptadas", desc: "Revisamos presupuesto, fecha de llegada, número de personas, duración y preferencias de ubicación." },
+              ].map((c) => {
+                const Icon = c.icon;
+                return (
+                  <div key={c.title} className="rounded-3xl border border-[#0A1E3F]/10 bg-white p-7 shadow-[0_10px_40px_rgba(10,30,63,0.06)]">
+                    <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E7F7F3] text-[#0E7C6B]">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#0A1E3F]">{c.title}</h3>
+                    <p className="mt-2 leading-relaxed text-slate-600">{c.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ═══════════════════════════════════════════
-            QUÉ OFRECEMOS
+            MADRID BIEN CONECTADO — panel oscuro
             ═══════════════════════════════════════════ */}
-        <section className="bg-white py-20">
+        <section className="bg-[#F7F3EA] pb-20">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Qué ofrecemos</h2>
-              <p className="mt-3 text-slate-600">
-                Un acompañamiento realista, sin prometer lo que no podemos garantizar.
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#0A1E3F] p-8 text-white sm:p-12">
+              <div className="pointer-events-none absolute -top-20 -right-16 h-72 w-72 rounded-full bg-[#1FB8A6]/10 blur-2xl" />
+              <div className="relative grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-sm text-[#7FEBD9]">
+                    <Train className="h-4 w-4" />
+                    Madrid bien conectado
+                  </span>
+                  <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
+                    Zonas habituales de interés
+                  </h2>
+                  <p className="mt-3 max-w-md text-slate-300">
+                    Orientamos la búsqueda hacia barrios bien comunicados por transporte
+                    público y cercanos a universidades y áreas de trabajo.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {ZONES.map((z) => (
+                      <span key={z} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm text-slate-100">
+                        <MapPin className="h-3.5 w-3.5 text-[#7FEBD9]" />
+                        {z}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Diagrama abstracto de conexiones (no es un mapa geográfico) */}
+                <div className="relative">
+                  <svg viewBox="0 0 400 260" className="w-full" role="img" aria-label="Diagrama abstracto de conexiones entre zonas de Madrid">
+                    <g stroke="#1FB8A6" strokeWidth="2.5" opacity="0.5" fill="none">
+                      <path d="M60 60 L200 40 L340 70" />
+                      <path d="M40 140 L200 130 L360 150" />
+                      <path d="M70 210 L200 220 L330 200" />
+                      <path d="M200 40 L200 220" />
+                      <path d="M60 60 L200 130 L340 70" />
+                      <path d="M40 140 L200 220 L360 150" />
+                    </g>
+                    <g fill="#7FEBD9">
+                      {[
+                        [60, 60], [200, 40], [340, 70],
+                        [40, 140], [200, 130], [360, 150],
+                        [70, 210], [200, 220], [330, 200],
+                      ].map(([cx, cy]) => (
+                        <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="6" />
+                      ))}
+                    </g>
+                    <circle cx="200" cy="130" r="11" fill="none" stroke="#7FEBD9" strokeWidth="2.5" />
+                  </svg>
+                </div>
+              </div>
+
+              <p className="relative mt-8 border-t border-white/10 pt-5 text-sm leading-6 text-slate-400">
+                Las zonas indicadas representan áreas habituales de interés. La disponibilidad
+                depende de las fechas, el presupuesto, el perfil del solicitante y las
+                condiciones de cada propiedad.
               </p>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                { icon: Compass, title: "Orientación inicial", desc: "Te orientamos sobre vivienda y alquiler según tu perfil, fechas y zona." },
-                { icon: GraduationCap, title: "Ayuda a estudiantes", desc: "Apoyo a estudiantes internacionales que buscan alojamiento compatible con su llegada." },
-                { icon: Users, title: "Residentes y familias", desc: "Opciones para quienes se trasladan a España y buscan algo adecuado a su situación." },
-                { icon: ArrowRightLeft, title: "Coordinación seguro + llegada", desc: "Ordenamos juntos la parte del seguro y la de la vivienda para que encajen." },
-                { icon: ClipboardCheck, title: "Revisión de tu caso", desc: "Revisamos tu situación concreta y te decimos qué es realista según disponibilidad." },
-                { icon: HeartHandshake, title: "Acompañamiento comercial", desc: "Te acompañamos durante el proceso y coordinamos el siguiente paso contigo." },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                    <p className="mt-2 text-slate-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </section>
 
         {/* ═══════════════════════════════════════════
-            PARA QUIÉN ES
-            ═══════════════════════════════════════════ */}
-        <section className="bg-slate-50 py-20">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Para quién es</h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {[
-                { icon: GraduationCap, title: "Estudiantes internacionales", desc: "Si vienes a estudiar y además necesitas una habitación, piso o una opción de alojamiento compatible con tu llegada." },
-                { icon: Home, title: "Residentes y familias", desc: "Si te trasladas a España y buscas una opción de vivienda más adecuada para tu situación." },
-                { icon: Search, title: "Perfiles en proceso de instalación", desc: "Si necesitas coordinar seguro, documentación y vivienda en poco tiempo." },
-                { icon: Building2, title: "Colaboradores / partners", desc: "Si eres academia, relocation, asesoría o despacho y quieres derivar casos de seguro + vivienda." },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="flex gap-4 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-                    {/* Slot visual William (pendiente): imagen representativa por perfil. */}
-                    <div className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-slate-900 text-white">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                      <p className="mt-2 text-slate-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════
-            CÓMO FUNCIONA
+            PROCESO — 5 pasos con numeración grande
             ═══════════════════════════════════════════ */}
         <section className="bg-white py-20">
+          <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="text-3xl font-bold text-[#0A1E3F] sm:text-4xl">Cómo funciona</h2>
+            </div>
+            <div className="space-y-5">
+              {[
+                { n: "01", icon: Search, title: "Conocemos tu situación", desc: "Analizamos presupuesto, fechas, motivo del traslado, número de personas, universidad o lugar de trabajo y zonas preferidas." },
+                { n: "02", icon: SlidersHorizontal, title: "Buscamos opciones adecuadas", desc: "Filtramos opciones que encajen con el perfil y con las condiciones solicitadas por propietarios o agencias." },
+                { n: "03", icon: CalendarClock, title: "Coordinamos las visitas", desc: "Organizamos visitas presenciales o virtuales y facilitamos la comunicación entre las partes." },
+                { n: "04", icon: FileText, title: "Te orientamos con la documentación", desc: "Explicamos qué justificantes, garantías económicas y datos pueden solicitarse durante el proceso." },
+                { n: "05", icon: KeyRound, title: "Te acompañamos hasta la firma", desc: "Ayudamos a comprender los puntos esenciales y a completar el proceso con mayor claridad." },
+              ].map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.n} className="flex items-start gap-5 rounded-3xl border border-[#0A1E3F]/10 bg-[#F7F3EA] p-6 sm:gap-7 sm:p-7">
+                    <div className="font-bold leading-none text-[#1FB8A6]/40 text-4xl sm:text-6xl tabular-nums">
+                      {step.n}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 text-[#0E7C6B]">
+                        <Icon className="h-5 w-5" />
+                        <h3 className="text-lg font-bold text-[#0A1E3F]">{step.title}</h3>
+                      </div>
+                      <p className="mt-2 leading-relaxed text-slate-600">{step.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-slate-500">
+              No prestamos asesoramiento jurídico sobre el contrato. Para la revisión legal del
+              contrato de arrendamiento, recomendamos asesoramiento jurídico independiente.
+            </p>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            PERFILES PRINCIPALES
+            ═══════════════════════════════════════════ */}
+        <section className="bg-[#F7F3EA] py-20">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Cómo funciona</h2>
+              <h2 className="text-3xl font-bold text-[#0A1E3F] sm:text-4xl">Para quién es</h2>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { n: "1", title: "Nos cuentas tu caso", desc: "Perfil, fechas, zona y qué necesitas. Con eso empezamos." },
-                { n: "2", title: "Revisamos tus necesidades", desc: "Vemos qué es realista según tu situación y disponibilidad." },
-                { n: "3", title: "Te orientamos con opciones", desc: "Te explicamos las alternativas que encajan con tu caso." },
-                { n: "4", title: "Coordinamos el siguiente paso", desc: "Te acompañamos para avanzar, con seguro y vivienda alineados." },
-              ].map((step) => (
-                <div key={step.n} className="relative rounded-3xl border border-slate-100 bg-slate-50 p-6">
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-lg font-bold text-white">
-                    {step.n}
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-slate-600 leading-relaxed">{step.desc}</p>
+            <div className="grid gap-6 lg:grid-cols-2">
+              {/* Estudiantes */}
+              <div className="rounded-3xl border border-[#0A1E3F]/10 bg-white p-8 shadow-[0_10px_40px_rgba(10,30,63,0.06)]">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0A1E3F] text-white">
+                  <GraduationCap className="h-7 w-7" />
                 </div>
-              ))}
+                <h3 className="text-xl font-bold text-[#0A1E3F]">Estudiantes internacionales</h3>
+                <ul className="mt-4 space-y-3 text-slate-600">
+                  {[
+                    { icon: Compass, t: "Conexión con universidades y centros de estudio." },
+                    { icon: BedDouble, t: "Opciones individuales o compartidas." },
+                    { icon: Train, t: "Transporte público bien comunicado." },
+                    { icon: FileText, t: "Orientación sobre la documentación." },
+                  ].map((it) => {
+                    const Icon = it.icon;
+                    return (
+                      <li key={it.t} className="flex items-start gap-3">
+                        <Icon className="mt-0.5 h-5 w-5 flex-none text-[#0E7C6B]" />
+                        <span>{it.t}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <WhatsAppButton
+                  href={wStudents}
+                  location="alquileres-perfil-estudiantes"
+                  className="mt-6 inline-flex items-center gap-2 font-semibold text-[#0E7C6B] hover:text-[#0b6559]"
+                >
+                  Soy estudiante <ArrowRight className="h-4 w-4" />
+                </WhatsAppButton>
+              </div>
+
+              {/* Familias y profesionales */}
+              <div className="rounded-3xl border border-[#0A1E3F]/10 bg-white p-8 shadow-[0_10px_40px_rgba(10,30,63,0.06)]">
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0A1E3F] text-white">
+                  <Users className="h-7 w-7" />
+                </div>
+                <h3 className="text-xl font-bold text-[#0A1E3F]">Familias y profesionales</h3>
+                <ul className="mt-4 space-y-3 text-slate-600">
+                  {[
+                    { icon: Home, t: "Número de habitaciones según tu caso." },
+                    { icon: Briefcase, t: "Cercanía al trabajo o centro de estudios." },
+                    { icon: Train, t: "Servicios y transporte." },
+                    { icon: Sofa, t: "Amueblado o sin amueblar." },
+                    { icon: CalendarClock, t: "Estancias de media o larga duración." },
+                  ].map((it) => {
+                    const Icon = it.icon;
+                    return (
+                      <li key={it.t} className="flex items-start gap-3">
+                        <Icon className="mt-0.5 h-5 w-5 flex-none text-[#0E7C6B]" />
+                        <span>{it.t}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <WhatsAppButton
+                  href={wFamilies}
+                  location="alquileres-perfil-familias"
+                  className="mt-6 inline-flex items-center gap-2 font-semibold text-[#0E7C6B] hover:text-[#0b6559]"
+                >
+                  Somos familia o profesional <ArrowRight className="h-4 w-4" />
+                </WhatsAppButton>
+              </div>
+            </div>
+
+            {/* Colaboradores — secundario */}
+            <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-3xl border border-[#0A1E3F]/10 bg-white/60 p-6 sm:flex-row sm:items-center">
+              <div className="flex items-start gap-4">
+                <div className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#E7F7F3] text-[#0E7C6B]">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#0A1E3F]">Academias, relocation y asesorías</h3>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Si trabajas con perfiles internacionales y quieres derivar casos de vivienda + seguro.
+                  </p>
+                </div>
+              </div>
+              <WhatsAppButton
+                href={wPartner}
+                location="alquileres-perfil-colaboradores"
+                className="inline-flex flex-none items-center gap-2 rounded-xl border border-[#0A1E3F]/15 px-5 py-3 text-sm font-semibold text-[#0A1E3F] hover:bg-[#0A1E3F]/5"
+              >
+                Hablar sobre colaboración
+              </WhatsAppButton>
             </div>
           </div>
         </section>
@@ -280,42 +456,40 @@ export default function AlquileresPage() {
         {/* ═══════════════════════════════════════════
             FORMULARIO
             ═══════════════════════════════════════════ */}
-        <section id="solicitar" className="scroll-mt-24 bg-slate-50 py-20">
+        <section id="solicitar" className="scroll-mt-24 bg-white py-20">
           <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <AlquileresForm />
           </div>
         </section>
 
         {/* ═══════════════════════════════════════════
-            FAQ
+            FAQ + nota de condiciones
             ═══════════════════════════════════════════ */}
-        <section className="bg-white py-20">
+        <section className="bg-[#F7F3EA] py-20">
           <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <h2 className="mb-10 text-center text-3xl font-bold text-slate-900 sm:text-4xl">
+            <h2 className="mb-10 text-center text-3xl font-bold text-[#0A1E3F] sm:text-4xl">
               Preguntas frecuentes
             </h2>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.q} className="group rounded-2xl border border-slate-100 bg-slate-50 p-5">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-slate-900">
+                <details key={f.q} className="group rounded-2xl border border-[#0A1E3F]/10 bg-white p-5">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-[#0A1E3F]">
                     {f.q}
-                    <span className="text-emerald-600 transition-transform group-open:rotate-45">+</span>
+                    <span className="text-[#0E7C6B] transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+                  <p className="mt-3 leading-relaxed text-slate-600">{f.a}</p>
                 </details>
               ))}
             </div>
 
-            {/* Nota discreta obligatoria */}
-            <div className="mt-8 flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-6 text-slate-500">
-              <Info className="mt-0.5 h-5 w-5 flex-none text-slate-400" />
+            <div className="mt-8 rounded-2xl border border-[#0A1E3F]/10 bg-white p-5 text-sm leading-6 text-slate-500">
               <p>
-                La disponibilidad y las condiciones de las opciones de alquiler dependen del
-                perfil, la zona, las fechas y las condiciones del arrendador o colaborador
-                correspondiente. {siteConfig.brand.name} es una marca comercial de mediación de
-                seguros y ofrece la parte de vivienda como servicio complementario de
-                orientación, no como garantía de alojamiento.
+                Las viviendas están sujetas a disponibilidad, condiciones del propietario,
+                estudio del perfil y aceptación de la documentación aportada. Las características
+                de cada alquiler y los servicios prestados se informarán antes de iniciar el
+                proceso.
               </p>
+              <p className="mt-3 text-slate-400">{coordinatorLine}</p>
             </div>
           </div>
         </section>
@@ -323,17 +497,17 @@ export default function AlquileresPage() {
         {/* ═══════════════════════════════════════════
             CTA FINAL
             ═══════════════════════════════════════════ */}
-        <section className="bg-slate-900 py-20 text-white">
+        <section className="bg-[#0A1E3F] py-20 text-white">
           <div className="container mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <Handshake className="mx-auto mb-6 h-12 w-12 text-emerald-400" />
+            <Handshake className="mx-auto mb-6 h-12 w-12 text-[#7FEBD9]" />
             <h2 className="text-2xl font-bold sm:text-4xl">
-              Si vienes a España y quieres resolver seguro y vivienda con más claridad, cuéntanos tu caso
+              ¿Vienes a Madrid? Cuéntanos qué vivienda necesitas y te acompañamos
             </h2>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <WhatsAppButton
-                href={wSeguroVivienda}
+                href={wMain}
                 location="alquileres-cta-final-whatsapp"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 font-semibold text-white transition-all hover:bg-emerald-400"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1FB8A6] px-6 py-3.5 font-semibold text-[#04231f] transition-all hover:bg-[#2fd0bc]"
               >
                 <MessageSquare className="h-5 w-5" />
                 Hablar por WhatsApp

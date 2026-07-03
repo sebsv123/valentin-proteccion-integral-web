@@ -69,13 +69,17 @@ function formatRows(payload: LeadEmailPayload) {
   const rows: Array<[string, string]> = [
     ["Origen", payload.source],
     ["Nombre", payload.name],
-    ["Teléfono", payload.phone],
+    ["Teléfono", payload.phone || "No indicado"],
     ["Email", payload.email || "No indicado"],
     ["Interés", payload.interest],
     ["Mensaje", payload.message || "No indicado"],
     ["URL", payload.pageUrl || "No indicada"],
     ["Referrer", payload.referrer || "No indicado"],
   ];
+
+  for (const [key, value] of Object.entries(payload.metadata || {})) {
+    rows.push([key, value]);
+  }
 
   for (const [key, value] of Object.entries(payload.utm || {})) {
     rows.push([`UTM ${key}`, value]);
