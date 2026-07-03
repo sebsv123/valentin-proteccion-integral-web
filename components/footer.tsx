@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
+import { siteConfig } from '@/lib/site-config';
 import { WhatsAppButton } from './whatsapp-button';
 import { BrandLockup } from './ui/brand-lockup';
 import { CookieAwareMap } from './cookie-aware-map';
@@ -65,8 +66,28 @@ export function Footer() {
           <p>Las coberturas, límites, primas y condiciones pueden variar según modalidad, edad, provincia y aceptación del riesgo.</p>
           <p>Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
         </div>
-        <div className="mt-6 border-t border-[var(--border)] pt-6 text-center text-sm text-[var(--muted)]">
-          <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>
+        <div className="mt-6 border-t border-[var(--border)] pt-6 text-sm leading-7 text-[var(--muted)]">
+          <p>
+            <strong>{siteConfig.brand.name}</strong> es una marca comercial de mediación de
+            seguros; no es una compañía aseguradora. Responsable de la actividad:{' '}
+            <strong>{siteConfig.responsiblePerson.fullName}</strong>, agente de seguros con NIF{' '}
+            {siteConfig.responsiblePerson.nif} e inscripción en la DGSFP nº{' '}
+            {siteConfig.responsiblePerson.dgsfpCode} (comprobable en el{' '}
+            <a
+              href={siteConfig.responsiblePerson.dgsfpRegistryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--blue)]"
+            >
+              registro público de la DGSFP
+            </a>
+            ). Las aseguradoras son entidades terceras: la aceptación del riesgo, las coberturas y
+            el pago de prestaciones corresponden a cada aseguradora según las condiciones,
+            límites, exclusiones y carencias de la póliza.
+          </p>
+          <p className="mt-4 text-center">
+            © {new Date().getFullYear()} {site.name}. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

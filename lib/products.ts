@@ -54,21 +54,25 @@ export type ProductSubpage = {
   advisorBadgeImage?: string;
 };
 
+import { siteConfig } from './site-config';
+
+// `site` se deriva de la fuente única de verdad (site-config.ts) para los datos
+// de identidad y contacto, de modo que no vuelvan a divergir entre páginas.
 export const site = {
-  name: 'Valentín Protección Integral',
-  shortName: 'VPI',
-  title: 'Asesora de Seguros en Madrid · +10 Años de Experiencia',
+  name: siteConfig.brand.name,
+  shortName: siteConfig.brand.shortName,
+  title: 'Asesora de Seguros en Madrid · Registro oficial DGSFP',
   description:
-    'Asesoramiento personalizado en seguros en Madrid y Boadilla. +10 años de experiencia ayudando a familias a elegir con claridad. Consulta gratis.',
-  phone: '+34 603 448 765',
-  phoneHref: '+34603448765',
-  domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://valentinproteccionintegral.com',
-  whatsappNumber: '34603448765',
-  instagram: 'https://www.instagram.com/segurosvalentin/',
+    'Asesoramiento personalizado en seguros en Madrid y Boadilla del Monte. Te ayudamos a elegir con claridad, con registro oficial en la DGSFP. Consulta gratis.',
+  phone: siteConfig.contact.phone,
+  phoneHref: siteConfig.contact.phoneHref,
+  domain: siteConfig.brand.domain,
+  whatsappNumber: siteConfig.contact.whatsappNumber,
+  instagram: siteConfig.social.instagram,
   heroTagline: 'Tus asesores de seguros en Madrid',
-  brandLine: '+10 años · +1.200 familias protegidas · Consulta gratuita',
+  brandLine: 'Registro oficial DGSFP · Orientación cercana · Consulta gratuita',
   brandSubline: 'Salud · Vida · Mascotas · Dental · Viaje · Decesos',
-  advisorName: 'Rosa Valentín',
+  advisorName: siteConfig.responsiblePerson.displayName,
 };
 
 export const buildWhatsAppHref = (message: string) =>
