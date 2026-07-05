@@ -52,15 +52,23 @@ const wPartner = buildWhatsAppHref(
   "Hola, soy colaborador (academia/relocation/asesoría) y quiero derivar casos de vivienda + seguro."
 );
 
-const ZONES = [
-  { name: "Chamberí", desc: "Calles tranquilas y ambiente residencial, cerca del centro." },
-  { name: "Moncloa y Argüelles", desc: "Zona universitaria, muy solicitada por estudiantes." },
-  { name: "Nuevos Ministerios", desc: "Entorno de oficinas con buena oferta de transporte público." },
-  { name: "Tribunal y Malasaña", desc: "Ambiente joven, comercios y vida de barrio." },
-  { name: "Barrio de Salamanca", desc: "Zona residencial consolidada y bien conectada." },
-  { name: "Retiro", desc: "Tranquilidad y cercanía al parque, ambiente familiar." },
-  { name: "Chamartín", desc: "Zona de negocios con buenas conexiones de transporte." },
-  { name: "Centro de Madrid", desc: "Pleno centro, a pie de los principales servicios." },
+const ZONE_GROUPS = [
+  {
+    title: "Universidades y estudiantes",
+    zones: ["Moncloa y Argüelles", "Tribunal y Malasaña"],
+  },
+  {
+    title: "Trabajo y conexión",
+    zones: ["Nuevos Ministerios", "Chamartín"],
+  },
+  {
+    title: "Vida urbana",
+    zones: ["Centro de Madrid", "Chamberí"],
+  },
+  {
+    title: "Familias y tranquilidad",
+    zones: ["Barrio de Salamanca", "Retiro"],
+  },
 ];
 
 const VALUE_PROPS = [
@@ -70,24 +78,22 @@ const VALUE_PROPS = [
 ];
 
 const PROCESS_STEPS = [
-  { n: "01", title: "Conocemos tu situación", desc: "Analizamos presupuesto, fechas, motivo del traslado, número de personas, universidad o lugar de trabajo y zonas preferidas." },
-  { n: "02", title: "Buscamos opciones adecuadas", desc: "Filtramos opciones que encajen con el perfil y con las condiciones solicitadas por propietarios o agencias." },
-  { n: "03", title: "Coordinamos las visitas", desc: "Organizamos visitas presenciales o virtuales y facilitamos la comunicación entre las partes." },
-  { n: "04", title: "Te orientamos con la documentación", desc: "Explicamos qué justificantes, garantías económicas y datos pueden solicitarse durante el proceso." },
-  { n: "05", title: "Te acompañamos hasta la firma", desc: "Ayudamos a comprender los puntos esenciales y a completar el proceso con mayor claridad." },
+  { n: "01", title: "Perfil", desc: "Conocemos tu situación: presupuesto, fechas, motivo del traslado y zonas preferidas." },
+  { n: "02", title: "Búsqueda", desc: "Filtramos opciones que encajen con tu perfil y con las condiciones de propietarios o agencias." },
+  { n: "03", title: "Visitas", desc: "Coordinamos visitas presenciales o virtuales y la comunicación entre las partes." },
+  { n: "04", title: "Documentación", desc: "Te orientamos sobre justificantes, garantías económicas y datos habituales del proceso." },
+  { n: "05", title: "Firma", desc: "Te acompañamos hasta comprender y completar el proceso con claridad." },
 ];
 
 const STUDENT_POINTS = [
   "Conexión con universidades y centros de estudio.",
   "Opciones individuales o compartidas.",
-  "Transporte público bien comunicado.",
   "Orientación sobre la documentación.",
 ];
 
 const FAMILY_POINTS = [
   "Número de habitaciones según tu caso.",
-  "Cercanía al trabajo o al centro de estudios.",
-  "Amueblado o sin amueblar.",
+  "Amueblado o sin amueblar, cerca del trabajo o el colegio.",
   "Estancias de media o larga duración.",
 ];
 
@@ -164,75 +170,103 @@ export default function AlquileresPage() {
       <Header />
       <main className="overflow-x-clip bg-[#F7F3EA]">
         {/* ═══════════════════════════════════════════
-            HERO — editorial, con fotografía real
+            HERO — photo-led, imagen a sangre
             ═══════════════════════════════════════════ */}
-        <section className="relative overflow-hidden bg-[var(--blue-deep)] text-white">
-          <div className="container relative z-10 mx-auto grid gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-24">
-            <div>
-              <nav className="mb-6 text-sm text-white/45" aria-label="Migas de pan">
-                <Link href="/extranjeros" className="hover:text-white">Extranjeros</Link>
-                <span className="mx-2">/</span>
-                <span className="text-white/75">Alquileres</span>
-              </nav>
+        <section className="relative flex min-h-[640px] items-end overflow-hidden text-white sm:min-h-[720px] lg:min-h-[86vh]">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/alquileres/hero-interior-luminoso.webp"
+              alt="Interior residencial contemporáneo con abundante luz natural"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/92 via-[var(--blue-deep)]/55 to-[var(--blue-deep)]/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/70 via-transparent to-transparent" />
+          </div>
 
-              <p className="kicker !text-white/60">Vivienda para tu llegada a España</p>
+          <div className="container relative z-10 mx-auto px-4 pb-14 pt-32 sm:px-6 lg:px-8 lg:pb-20">
+            <nav className="mb-6 text-sm text-white/50" aria-label="Migas de pan">
+              <Link href="/extranjeros" className="hover:text-white">Extranjeros</Link>
+              <span className="mx-2">/</span>
+              <span className="text-white/80">Alquileres</span>
+            </nav>
 
-              <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
-                Alquiler de pisos en Madrid para estudiantes y familias internacionales
-              </h1>
+            <p className="kicker !text-white/65">Vivienda para tu llegada a España</p>
 
-              <p className="mt-5 max-w-xl text-lg leading-8 text-white/75">
-                Encuentra tu hogar en Madrid antes de llegar, con acompañamiento durante la
-                búsqueda, las visitas, la documentación y la firma.
-              </p>
+            <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              Alquiler de pisos en Madrid para estudiantes y familias internacionales
+            </h1>
 
-              <div className="mt-8">
-                <a
-                  href="#solicitar"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
-                >
-                  Iniciar mi búsqueda
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
+            <p className="mt-5 max-w-lg text-lg leading-8 text-white/80">
+              Encuentra tu hogar en Madrid antes de llegar, con acompañamiento durante la
+              búsqueda, las visitas, la documentación y la firma.
+            </p>
 
-              <p className="mt-5 text-sm text-white/55">
-                También podemos coordinar{" "}
-                <Link href="/extranjeros" className="font-semibold text-white/80 underline decoration-white/30 underline-offset-4 hover:text-white">
-                  tu seguro para la llegada a España
-                </Link>
-                .
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-sm text-white/55">
-                <span>Búsqueda desde el extranjero</span>
-                <span>Visitas presenciales o virtuales</span>
-                <span>Apoyo documental</span>
-              </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <a
+                href="#solicitar"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105"
+              >
+                Iniciar mi búsqueda
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <WhatsAppButton
+                href={wMain}
+                location="alquileres-hero-whatsapp"
+                className="text-sm font-semibold text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+              >
+                Hablar por WhatsApp
+              </WhatsAppButton>
             </div>
 
-            <div>
-              <div className="relative aspect-[5/4] overflow-hidden rounded-[24px] sm:aspect-[4/3] lg:aspect-[5/4]">
-                <Image
-                  src="/images/alquileres/hero-interior-luminoso.webp"
-                  alt="Interior residencial contemporáneo con abundante luz natural"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  priority
-                />
-              </div>
-              <p className="mt-3 text-sm text-white/45">
-                Búsqueda en Madrid según fechas, presupuesto y perfil.
-              </p>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-1.5 text-xs text-white/50">
+              <span>Búsqueda desde el extranjero</span>
+              <span>·</span>
+              <span>Visitas presenciales o virtuales</span>
+              <span>·</span>
+              <span>Apoyo documental</span>
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            MINI FICHA — banda editorial, enlaza al formulario
+            ═══════════════════════════════════════════ */}
+        <section className="relative bg-[#F7F3EA]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <a
+              href="#solicitar"
+              className="group relative -mt-10 mb-4 block rounded-[8px] border border-[var(--blue-deep)]/10 bg-white p-6 shadow-[0_20px_50px_-24px_rgba(0,34,68,0.35)] transition hover:border-[var(--blue-deep)]/20 sm:-mt-14 sm:p-8 lg:-mt-16"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--green)]">
+                Cuéntanos qué estás buscando
+              </p>
+              <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] lg:items-end lg:gap-8">
+                {[
+                  { label: "Perfil", value: "Estudiante, familia, profesional…" },
+                  { label: "Zona", value: "Chamberí, Retiro, Salamanca…" },
+                  { label: "Presupuesto", value: "Ej. 500–700 € / mes" },
+                  { label: "Fecha de llegada", value: "Ej. sept. 2026" },
+                ].map((f) => (
+                  <div key={f.label} className="border-b border-[var(--blue-deep)]/10 pb-3 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{f.label}</p>
+                    <p className="mt-1 text-base font-medium text-[var(--blue-deep)]">{f.value}</p>
+                  </div>
+                ))}
+                <div className="flex items-center gap-2 font-semibold text-[var(--blue-deep)] transition group-hover:text-[var(--green)] lg:justify-self-end">
+                  Iniciar mi búsqueda <ArrowRight className="h-4 w-4" />
+                </div>
+              </div>
+            </a>
           </div>
         </section>
 
         {/* ═══════════════════════════════════════════
             PROPUESTA DE VALOR
             ═══════════════════════════════════════════ */}
-        <section className="bg-[#F7F3EA] py-20">
+        <section className="bg-[#F7F3EA] pb-20">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
               <div>
@@ -261,43 +295,42 @@ export default function AlquileresPage() {
         </section>
 
         {/* ═══════════════════════════════════════════
-            MADRID BIEN CONECTADO — sección editorial
+            MADRID BIEN CONECTADO — experiencia visual
             ═══════════════════════════════════════════ */}
-        <section className="bg-white py-20">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-[24px]">
+        <section className="bg-[var(--blue-deep)] text-white">
+          <div className="grid lg:grid-cols-[0.4fr_0.6fr] 2xl:grid-cols-[0.36fr_0.64fr]">
+            <div className="relative min-h-[280px] sm:min-h-[380px] lg:min-h-0">
               <Image
                 src="/images/alquileres/madrid-arquitectura-contemporanea.webp"
                 alt="Arquitectura contemporánea en Madrid"
                 fill
                 className="object-cover"
-                sizes="100vw"
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/50 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[var(--blue-deep)]/30" />
             </div>
-            <div className="rounded-[24px] bg-[var(--blue-deep)] p-8 text-white sm:p-12 lg:p-14">
-              <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-                <div>
-                  <p className="kicker !text-white/60">Madrid bien conectado</p>
-                  <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl">
-                    Zonas habituales de interés
-                  </h2>
-                  <p className="mt-4 max-w-sm leading-relaxed text-white/65">
-                    Orientamos la búsqueda hacia barrios bien comunicados por transporte
-                    público y cercanos a universidades y áreas de trabajo.
-                  </p>
-                </div>
-                <div className="grid gap-x-10 sm:grid-cols-2">
-                  {ZONES.map((zone) => (
-                    <div key={zone.name} className="border-t border-white/10 py-4 first:border-t-0">
-                      <h3 className="font-semibold text-white">{zone.name}</h3>
-                      <p className="mt-1 text-sm leading-6 text-white/55">{zone.desc}</p>
-                    </div>
-                  ))}
-                </div>
+
+            <div className="px-4 py-16 sm:px-6 lg:px-14 lg:py-20 2xl:px-20 2xl:py-24">
+              <p className="kicker !text-white/60">Madrid bien conectado</p>
+              <h2 className="mt-3 max-w-2xl font-heading text-3xl font-bold sm:text-4xl 2xl:text-5xl">
+                Cada zona, una forma distinta de vivir Madrid
+              </h2>
+              <p className="mt-4 max-w-xl leading-relaxed text-white/65 2xl:text-lg">
+                Orientamos la búsqueda hacia barrios bien comunicados, agrupados por el tipo
+                de vida que ofrecen más que por su ubicación en un mapa.
+              </p>
+
+              <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:gap-x-16 2xl:mt-16 2xl:gap-x-20 2xl:gap-y-14">
+                {ZONE_GROUPS.map((group) => (
+                  <div key={group.title} className="border-t border-white/15 pt-4">
+                    <h3 className="font-heading text-lg font-bold text-white 2xl:text-xl">{group.title}</h3>
+                    <p className="mt-1.5 text-sm leading-6 text-white/60 2xl:text-base">{group.zones.join(" · ")}</p>
+                  </div>
+                ))}
               </div>
 
-              <p className="mt-10 border-t border-white/10 pt-6 text-sm leading-6 text-white/50">
+              <p className="mt-12 max-w-xl text-sm leading-6 text-white/45 2xl:mt-16">
                 La disponibilidad depende de las fechas, el presupuesto, el perfil y las
                 condiciones de cada propiedad.
               </p>
@@ -316,7 +349,17 @@ export default function AlquileresPage() {
                 De la primera consulta a la firma
               </h2>
             </div>
-            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] lg:sticky lg:top-28">
+                <Image
+                  src="/images/alquileres/proceso-visita-vivienda.webp"
+                  alt="Personas durante una visita ilustrativa a una vivienda"
+                  fill
+                  className="object-cover object-[60%_40%]"
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  loading="lazy"
+                />
+              </div>
               <div>
                 <div className="border-t border-[var(--blue-deep)]/10">
                   {PROCESS_STEPS.map((step) => (
@@ -336,16 +379,6 @@ export default function AlquileresPage() {
                   contrato de arrendamiento, recomendamos asesoramiento jurídico independiente.
                 </p>
               </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] lg:sticky lg:top-28">
-                <Image
-                  src="/images/alquileres/proceso-visita-vivienda.webp"
-                  alt="Personas durante una visita ilustrativa a una vivienda"
-                  fill
-                  className="object-cover object-[60%_40%]"
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </section>
@@ -364,7 +397,7 @@ export default function AlquileresPage() {
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-10">
               {/* Estudiantes */}
               <article>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
                   <Image
                     src="/images/alquileres/perfil-estudiantes.webp"
                     alt="Estudiantes compartiendo un apartamento"
@@ -394,7 +427,7 @@ export default function AlquileresPage() {
 
               {/* Familias y profesionales */}
               <article>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
                   <Image
                     src="/images/alquileres/perfil-familias-mudanza.webp"
                     alt="Familia durante una mudanza a su nuevo hogar"
@@ -468,9 +501,9 @@ export default function AlquileresPage() {
         <section id="solicitar" className="scroll-mt-24 bg-[#F7F3EA] py-20">
           <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 max-w-xl">
-              <p className="kicker">Solicitar orientación</p>
+              <p className="kicker">Ficha de búsqueda</p>
               <h2 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)] sm:text-4xl">
-                Cuéntanos qué vivienda necesitas
+                Cuéntanos cómo sería tu vivienda ideal
               </h2>
             </div>
             <AlquileresForm />

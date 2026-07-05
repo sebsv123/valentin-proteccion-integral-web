@@ -323,33 +323,26 @@ export default function ExtranjerosPage() {
 
         <section className="bg-white py-14 md:py-20" data-foreigners-section="alquileres">
           <div className="container-shell">
-            <div className="grid overflow-hidden rounded-[28px] border border-[var(--border)] shadow-sm lg:grid-cols-[0.45fr_0.55fr]">
-              <div className="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[480px]">
+            <div className="grid overflow-hidden rounded-[8px] lg:grid-cols-[0.56fr_0.44fr]">
+              <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[520px]">
                 <Image
                   src="/images/alquileres/acceso-visita-vivienda.webp"
                   alt="Visita ilustrativa a una vivienda"
                   fill
                   className="object-cover object-[center_25%]"
-                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 56vw, 100vw"
                   loading="lazy"
                 />
               </div>
               <div className="flex flex-col justify-center bg-[var(--blue-deep)] p-8 text-white sm:p-10 lg:p-12">
                 <p className="kicker !text-white/70">Vivienda en Madrid</p>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                  Alquileres para estudiantes, profesionales y familias internacionales
+                  Alquileres en Madrid para estudiantes, profesionales y familias internacionales
                 </h2>
                 <p className="mt-4 max-w-lg text-base leading-8 text-white/80">
                   Te acompañamos en la búsqueda, las visitas, la documentación y el proceso de
-                  firma, incluso antes de que llegues a España.
+                  firma, incluso antes de llegar a España.
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {['Estudiantes', 'Familias', 'Profesionales'].map((tag) => (
-                    <span key={tag} className="rounded-full border border-white/20 px-3 py-1 text-xs font-semibold text-white/75">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <div className="mt-8 flex flex-col items-start gap-4">
                   <ForeignersTrackedLink
                     href="/extranjeros/alquileres"

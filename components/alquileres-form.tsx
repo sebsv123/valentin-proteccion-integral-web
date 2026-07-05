@@ -195,13 +195,15 @@ export default function AlquileresForm() {
   const errCls = "mt-1.5 text-sm text-red-600";
   const optional = <span className="font-normal text-slate-400">(opcional)</span>;
 
+  const groupLabelCls = "text-xs font-bold uppercase tracking-[0.14em] text-[var(--green)]";
+
   return (
-    <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
-      <div className="mb-6 flex items-start justify-between gap-4">
+    <div className="rounded-[8px] border border-[var(--blue-deep)]/10 bg-[#FDFBF6] p-6 sm:p-8">
+      <div className="mb-8 flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold text-[var(--blue-deep)]">Sin compromiso</p>
           <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
-            Cuéntanos qué vivienda necesitas
+            Tu ficha de contacto
           </h2>
           <p className="mt-2 leading-relaxed text-slate-600">
             Revisamos tu caso y te orientamos según tu perfil, fechas, presupuesto y zona.
@@ -216,6 +218,7 @@ export default function AlquileresForm() {
       <form onSubmit={handleSubmit(onSubmit)} onChange={markStarted} className="grid gap-4" noValidate>
         <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" {...register("website")} />
 
+        <p className={groupLabelCls}>Datos de contacto</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="al-name" className={labelCls}>Nombre</label>
@@ -268,6 +271,7 @@ export default function AlquileresForm() {
           </div>
         </div>
 
+        <p className={`${groupLabelCls} mt-2`}>Búsqueda</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="al-profile" className={labelCls}>Tu perfil</label>
@@ -322,6 +326,7 @@ export default function AlquileresForm() {
           </div>
         </div>
 
+        <p className={`${groupLabelCls} mt-2`}>Preferencias</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="al-furnished" className={labelCls}>¿Amueblado?</label>
