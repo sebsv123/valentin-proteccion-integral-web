@@ -41,6 +41,14 @@ export function trackWhatsAppClick(location: string): void {
   });
 }
 
+/** Track clicks to Rosa's official SegurCaixa Adeslas agent-search channel. No PII is sent. */
+export function trackAdeslasAgentClick(location: string): void {
+  trackEvent('adeslas_agent_click', {
+    location,
+    destination: 'official_adeslas_agent_search',
+  });
+}
+
 /**
  * Handle WhatsApp link click with tracking
  * @param location - Where the button was clicked
