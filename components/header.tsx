@@ -184,12 +184,8 @@ export function Header() {
           </div>
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3 content-start">
             {/* Extranjeros card destacada */}
-            <Link
-              href="/extranjeros"
-              className="group col-span-full flex flex-col justify-between rounded-[16px] border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-4 transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-1"
-              onClick={closeAll}
-            >
-              <div>
+            <div className="group col-span-full flex flex-col justify-between rounded-[16px] border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-4 transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-1">
+              <Link href="/extranjeros" onClick={closeAll}>
                 <div className="flex items-center justify-between">
                   <span className="font-heading text-base font-bold tracking-tight text-blue-700 group-hover:text-blue-600">
                     Extranjeros
@@ -201,13 +197,22 @@ export function Header() {
                 <p className="mt-1 text-xs leading-5 text-slate-500">
                   Seguro médico para visado, NIE, TIE, estudios y residencia.
                 </p>
+              </Link>
+              <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-blue-100 pt-2">
+                <div className="flex flex-wrap gap-1">
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Estudios</span>
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Residencia</span>
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Familia</span>
+                </div>
+                <Link
+                  href="/extranjeros/alquileres"
+                  className="text-[11px] font-bold text-blue-600 underline decoration-blue-300 underline-offset-2 hover:text-blue-700"
+                  onClick={closeAll}
+                >
+                  Alquileres en Madrid →
+                </Link>
               </div>
-              <div className="mt-2 flex flex-wrap gap-1 border-t border-blue-100 pt-2">
-                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Estudios</span>
-                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Residencia</span>
-                <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Familia</span>
-              </div>
-            </Link>
+            </div>
             {grouped.map((item) => (
               <Link
                 key={item.slug}
@@ -258,6 +263,7 @@ export function Header() {
         items={[
           { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
           { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
+          { label: 'Alquileres en Madrid', ariaLabel: 'Alquileres en Madrid', link: '/extranjeros/alquileres' },
           ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
         ]}
