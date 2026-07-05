@@ -24,6 +24,7 @@ import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { WhatsAppLink } from '@/components/whatsapp-link';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
+import { AdeslasAgentLink } from '@/components/adeslas-agent-link';
 
 export const metadata: Metadata = {
   title: "Cómo Te Ayudamos · Seguros en Madrid | VPI",
@@ -126,6 +127,19 @@ export default function ComoTeAyudamosPage() {
         </section>
 
         <TrustBadgesSection imageSrc="/images/home/handshake-real.jpg" />
+        <section className="pb-10 md:pb-14" aria-label="Alternativa oficial de contacto">
+          <div className="container-shell">
+            <AdeslasAgentLink
+              location="como_te_ayudamos_preview_bridge"
+              variant="preview"
+              title="Antes de abrir Adeslas, te enseñamos qué vas a encontrar"
+              description="También puedes solicitar contacto desde el buscador oficial de agentes de SegurCaixa Adeslas. Es una página externa donde aparece el canal asociado a Rosa Valentín en Boadilla del Monte."
+              linkLabel="Abrir canal oficial de Adeslas"
+              secondaryHref="/contacto"
+              secondaryLabel="Prefiero que me orientéis primero"
+            />
+          </div>
+        </section>
         <AgentTrustBlock />
         <HowItWorksSection />
         <ComparisonCardsSection imageSrc="/images/home/meeting-real.jpg" />

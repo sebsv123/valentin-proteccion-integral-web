@@ -12,6 +12,7 @@ import { Sparkles, CheckCircle2, Clock, Shield, Heart, Hospital, Stethoscope, Pi
 import { WhatsAppLink } from '@/components/whatsapp-link';
 
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { AdeslasAgentLink } from "@/components/adeslas-agent-link";
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
 const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
@@ -546,6 +547,30 @@ export default async function SaludIndividualPage() {
           </div>
         </section>
 
+        <section className="bg-white py-16 sm:py-20" aria-labelledby="salud-caminos-title">
+          <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-700">Elige cómo avanzar</p>
+              <h2 id="salud-caminos-title" className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">Dos formas de avanzar</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <article className="rounded-3xl border-2 border-emerald-200 bg-emerald-50/50 p-7 shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-emerald-700">Opción recomendada</p>
+                <h3 className="mt-3 text-2xl font-bold text-gray-900">Hablar primero con un asesor</h3>
+                <p className="mt-4 leading-7 text-gray-600">Recomendado si quieres comparar modalidades, resolver dudas, revisar opciones familiares o entender qué encaja mejor antes de dejar tus datos.</p>
+                <WhatsAppButton href={wAsesoramiento} location="salud-individual-conversion-vpi" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</WhatsAppButton>
+              </article>
+              <AdeslasAgentLink
+                location="salud_individual_conversion_block"
+                variant="mini-preview"
+                title="Solicitar contacto desde Adeslas"
+                description="Recomendado si ya tienes claro que quieres avanzar por el canal oficial de SegurCaixa Adeslas asociado a Rosa Valentín. La vista previa muestra el destino antes de abrirlo."
+                linkLabel="Abrir canal oficial"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINAL — Fondo blanco con acento sutil */}
         <section className="relative py-24 bg-gray-50/50 overflow-hidden">
           {/* Acento visual sutil */}
@@ -642,6 +667,4 @@ export default async function SaludIndividualPage() {
     </>
   );
 }
-
-
 

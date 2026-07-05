@@ -6,6 +6,7 @@ import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, tru
 import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
+import { AdeslasAgentLink } from './adeslas-agent-link';
 
 const cardImages: Record<string, string> = {
   salud: '/images/premium/hero-family.webp',
@@ -273,6 +274,9 @@ export function AgentTrustBlock() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contacto" className="btn-primary" aria-label="Contactar para consulta sin compromiso">Consulta sin compromiso</Link>
                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
+              </div>
+              <div className="mt-6">
+                <AdeslasAgentLink location="home_compact_trust" variant="mini-preview" title="Rosa también figura en el buscador oficial de agentes de SegurCaixa Adeslas" description="Si prefieres dejar tus datos directamente en la página oficial para Boadilla del Monte, puedes acceder desde aquí." linkLabel="Ver canal oficial" />
               </div>
             </div>
           </div>

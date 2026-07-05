@@ -12,6 +12,7 @@ import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import RevealLight from '@/components/ui/reveal-light';
+import { AdeslasAgentLink } from '@/components/adeslas-agent-link';
 
 export const metadata: Metadata = {
   title: "Rosa y Sebastián · Asesores de Seguros en Madrid",
@@ -168,6 +169,15 @@ export default function SobreNosotrosPage() {
                     DGSFP. Eso significa que te asesoramos con criterio profesional y registro
                     oficial, orientándote entre los productos que podemos distribuir.
                   </p>
+                  <div className="mt-4">
+                    <AdeslasAgentLink
+                      location="about_rosa_profile"
+                      variant="mini-preview"
+                      title="Consulta el canal de Rosa en el buscador oficial de agentes"
+                      description="La vista previa te muestra qué encontrarás antes de abrir la página externa de SegurCaixa Adeslas para Boadilla del Monte."
+                      linkLabel="Ver canal oficial"
+                    />
+                  </div>
                 </div>
                 {/* BLOQUE SEBASTIÁN */}
                 <div className="mt-10 pt-8 border-t border-[var(--border)]">

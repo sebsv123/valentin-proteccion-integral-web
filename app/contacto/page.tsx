@@ -10,6 +10,7 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
+import { AdeslasAgentLink } from '@/components/adeslas-agent-link';
 
 
 export const metadata: Metadata = {
@@ -103,6 +104,15 @@ export default function ContactoPage() {
               </div>
             </div>
             <LeadForm compact />
+          </div>
+          <div className="mt-8 max-w-4xl">
+            <AdeslasAgentLink
+              location="contact_page_external_channel"
+              variant="mini-preview"
+              title="También puedes solicitar contacto desde el canal oficial de Adeslas"
+              description="Antes de salir de VPI, puedes comprobar que el enlace abre el buscador oficial de agentes con el canal asociado a Rosa Valentín en Boadilla del Monte."
+              linkLabel="Abrir canal oficial"
+            />
           </div>
           <div className="mt-10 flex items-center gap-4 rounded-[22px]
                           border-2 border-[var(--blue)]/20 bg-[var(--blue)]/5
