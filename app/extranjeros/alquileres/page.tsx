@@ -298,39 +298,39 @@ export default function AlquileresPage() {
             MADRID BIEN CONECTADO — experiencia visual
             ═══════════════════════════════════════════ */}
         <section className="bg-[var(--blue-deep)] text-white">
-          <div className="grid lg:grid-cols-[0.42fr_0.58fr]">
+          <div className="grid lg:grid-cols-[0.4fr_0.6fr] 2xl:grid-cols-[0.36fr_0.64fr]">
             <div className="relative min-h-[280px] sm:min-h-[380px] lg:min-h-0">
               <Image
                 src="/images/alquileres/madrid-arquitectura-contemporanea.webp"
                 alt="Arquitectura contemporánea en Madrid"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/50 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[var(--blue-deep)]/30" />
             </div>
 
-            <div className="px-4 py-16 sm:px-6 lg:px-14 lg:py-20">
+            <div className="px-4 py-16 sm:px-6 lg:px-14 lg:py-20 2xl:px-20 2xl:py-24">
               <p className="kicker !text-white/60">Madrid bien conectado</p>
-              <h2 className="mt-3 max-w-lg font-heading text-3xl font-bold sm:text-4xl">
+              <h2 className="mt-3 max-w-2xl font-heading text-3xl font-bold sm:text-4xl 2xl:text-5xl">
                 Cada zona, una forma distinta de vivir Madrid
               </h2>
-              <p className="mt-4 max-w-md leading-relaxed text-white/65">
+              <p className="mt-4 max-w-xl leading-relaxed text-white/65 2xl:text-lg">
                 Orientamos la búsqueda hacia barrios bien comunicados, agrupados por el tipo
                 de vida que ofrecen más que por su ubicación en un mapa.
               </p>
 
-              <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              <div className="mt-10 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:gap-x-16 2xl:mt-16 2xl:gap-x-20 2xl:gap-y-14">
                 {ZONE_GROUPS.map((group) => (
                   <div key={group.title} className="border-t border-white/15 pt-4">
-                    <h3 className="font-heading text-lg font-bold text-white">{group.title}</h3>
-                    <p className="mt-1.5 text-sm leading-6 text-white/60">{group.zones.join(" · ")}</p>
+                    <h3 className="font-heading text-lg font-bold text-white 2xl:text-xl">{group.title}</h3>
+                    <p className="mt-1.5 text-sm leading-6 text-white/60 2xl:text-base">{group.zones.join(" · ")}</p>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-12 max-w-lg text-sm leading-6 text-white/45">
+              <p className="mt-12 max-w-xl text-sm leading-6 text-white/45 2xl:mt-16">
                 La disponibilidad depende de las fechas, el presupuesto, el perfil y las
                 condiciones de cada propiedad.
               </p>
