@@ -51,24 +51,37 @@ const wFamilies = buildWhatsAppHref(
 const wPartner = buildWhatsAppHref(
   "Hola, soy colaborador (academia/relocation/asesoría) y quiero derivar casos de vivienda + seguro."
 );
+const wPeru = buildWhatsAppHref(
+  "Hola, quiero iniciar mi proceso de vivienda en Madrid desde Perú, en colaboración con VIP Global Perú."
+);
 
 const ZONE_GROUPS = [
   {
     title: "Universidades y estudiantes",
+    criteria: "Cerca de los campus y de la vida académica del día a día.",
     zones: ["Moncloa y Argüelles", "Tribunal y Malasaña"],
   },
   {
     title: "Trabajo y conexión",
+    criteria: "Entornos de oficinas con buen enlace de transporte.",
     zones: ["Nuevos Ministerios", "Chamartín"],
   },
   {
     title: "Vida urbana",
+    criteria: "Ritmo de ciudad, comercio de calle y ambiente social.",
     zones: ["Centro de Madrid", "Chamberí"],
   },
   {
     title: "Familias y tranquilidad",
+    criteria: "Espacios más calmados para el día a día en familia.",
     zones: ["Barrio de Salamanca", "Retiro"],
   },
+];
+
+const VIP_STEPS = [
+  { n: "01", label: "Orientación inicial en Perú" },
+  { n: "02", label: "Coordinación de vivienda en Madrid" },
+  { n: "03", label: "Acompañamiento en documentación y llegada" },
 ];
 
 const VALUE_PROPS = [
@@ -325,7 +338,8 @@ export default function AlquileresPage() {
                 {ZONE_GROUPS.map((group) => (
                   <div key={group.title} className="border-t border-white/15 pt-4">
                     <h3 className="font-heading text-lg font-bold text-white 2xl:text-xl">{group.title}</h3>
-                    <p className="mt-1.5 text-sm leading-6 text-white/60 2xl:text-base">{group.zones.join(" · ")}</p>
+                    <p className="mt-1.5 text-sm italic leading-6 text-white/50 2xl:text-base">{group.criteria}</p>
+                    <p className="mt-2 text-sm leading-6 text-white/70 2xl:text-base">{group.zones.join(" · ")}</p>
                   </div>
                 ))}
               </div>
@@ -394,21 +408,25 @@ export default function AlquileresPage() {
                 Estudiantes, familias y profesionales
               </h2>
             </div>
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-10">
+            <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
               {/* Estudiantes */}
               <article>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
+                <div className="relative aspect-[5/6] overflow-hidden rounded-[8px]">
                   <Image
                     src="/images/alquileres/perfil-estudiantes.webp"
                     alt="Estudiantes compartiendo un apartamento"
                     fill
                     className="object-cover object-[50%_30%]"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 45vw, 100vw"
                     loading="lazy"
                   />
                 </div>
-                <h3 className="mt-6 font-heading text-xl font-bold text-[var(--blue-deep)]">Estudiantes internacionales</h3>
-                <ul className="mt-3 space-y-2.5 text-slate-600">
+                <h3 className="mt-6 font-heading text-2xl font-bold text-[var(--blue-deep)]">Estudiantes internacionales</h3>
+                <p className="mt-2 leading-relaxed text-slate-600">
+                  Llegas a Madrid para estudiar y necesitas un sitio donde instalarte sin
+                  perder tiempo entre clases, trámites y primeras semanas de curso.
+                </p>
+                <ul className="mt-4 space-y-2.5 text-slate-600">
                   {STUDENT_POINTS.map((point) => (
                     <li key={point} className="flex items-start gap-2.5">
                       <span className="mt-2.5 h-1 w-1 flex-none rounded-full bg-[var(--green)]" aria-hidden="true" />
@@ -426,19 +444,23 @@ export default function AlquileresPage() {
               </article>
 
               {/* Familias y profesionales */}
-              <article>
+              <article className="lg:mt-20">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
                   <Image
                     src="/images/alquileres/perfil-familias-mudanza.webp"
                     alt="Familia durante una mudanza a su nuevo hogar"
                     fill
                     className="object-cover object-[60%_45%]"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
                     loading="lazy"
                   />
                 </div>
-                <h3 className="mt-6 font-heading text-xl font-bold text-[var(--blue-deep)]">Familias y profesionales</h3>
-                <ul className="mt-3 space-y-2.5 text-slate-600">
+                <h3 className="mt-6 font-heading text-2xl font-bold text-[var(--blue-deep)]">Familias y profesionales</h3>
+                <p className="mt-2 leading-relaxed text-slate-600">
+                  Un traslado a Madrid implica organizar mucho más que una mudanza. Te
+                  ayudamos a que la vivienda deje de ser la parte incierta del proceso.
+                </p>
+                <ul className="mt-4 space-y-2.5 text-slate-600">
                   {FAMILY_POINTS.map((point) => (
                     <li key={point} className="flex items-start gap-2.5">
                       <span className="mt-2.5 h-1 w-1 flex-none rounded-full bg-[var(--green)]" aria-hidden="true" />
@@ -457,7 +479,7 @@ export default function AlquileresPage() {
             </div>
 
             {/* Colaboradores — secundario, discreto */}
-            <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-[var(--blue-deep)]/10 pt-8 sm:flex-row sm:items-center">
+            <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-[var(--blue-deep)]/10 pt-8 sm:flex-row sm:items-center">
               <div>
                 <h3 className="font-semibold text-[var(--blue-deep)]">Academias, relocation y asesorías</h3>
                 <p className="mt-1 text-sm text-slate-500">
@@ -471,6 +493,57 @@ export default function AlquileresPage() {
               >
                 Hablar sobre colaboración
               </WhatsAppButton>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            COLABORACIÓN EN ORIGEN — VIP Global Perú
+            ═══════════════════════════════════════════ */}
+        <section className="bg-[#F7F3EA] py-20">
+          <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
+              <div className="flex items-center justify-center rounded-[8px] border border-[var(--blue-deep)]/10 bg-white p-10 sm:p-12">
+                <div className="relative h-16 w-full max-w-[260px] sm:h-20">
+                  <Image
+                    src="/images/partners/vip-global-peru.png"
+                    alt="VIP Global Perú - Soluciones Administrativas"
+                    fill
+                    className="object-contain"
+                    sizes="260px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <p className="kicker">Colaboración en origen</p>
+                <h2 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)] sm:text-4xl">
+                  Acompañamiento también desde Perú, junto a VIP Global Perú
+                </h2>
+                <p className="mt-4 max-w-xl leading-relaxed text-slate-600">
+                  Para quienes inician el proceso desde Perú, coordinamos la búsqueda de
+                  vivienda en Madrid en colaboración con VIP Global Perú, firma especializada
+                  en asesoría administrativa y trámites documentarios.
+                </p>
+
+                <div className="mt-8 border-t border-[var(--blue-deep)]/10">
+                  {VIP_STEPS.map((step) => (
+                    <div key={step.n} className="flex items-baseline gap-4 border-b border-[var(--blue-deep)]/10 py-4">
+                      <span className="font-heading text-lg font-bold text-[var(--green)]">{step.n}</span>
+                      <p className="text-sm font-semibold text-[var(--blue-deep)]">{step.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <WhatsAppButton
+                  href={wPeru}
+                  location="alquileres-vip-global-peru"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue-deep)] underline decoration-[var(--green)]/50 underline-offset-4 hover:text-[var(--green)]"
+                >
+                  Empezar mi proceso desde Perú <ArrowRight className="h-4 w-4" />
+                </WhatsAppButton>
+              </div>
             </div>
           </div>
         </section>
