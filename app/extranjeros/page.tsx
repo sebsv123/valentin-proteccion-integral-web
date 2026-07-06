@@ -323,23 +323,27 @@ export default function ExtranjerosPage() {
 
         <section className="bg-white py-14 md:py-20" data-foreigners-section="alquileres">
           <div className="container-shell">
-            <div className="grid overflow-hidden rounded-[8px] lg:grid-cols-[0.56fr_0.44fr]">
-              <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[520px]">
+            <div className="grid gap-6 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
+              <div className="relative min-h-[360px] overflow-hidden rounded-[8px] sm:min-h-[440px] lg:min-h-[560px]">
                 <Image
-                  src="/images/alquileres/acceso-visita-vivienda.webp"
-                  alt="Visita ilustrativa a una vivienda"
+                  src="/images/alquileres/interior-calido-ventanales.webp"
+                  alt="Interior cálido con grandes ventanales y luz natural"
                   fill
-                  className="object-cover object-[center_25%]"
-                  sizes="(min-width: 1024px) 56vw, 100vw"
-                  loading="lazy"
+                  className="object-cover object-[50%_35%]"
+                  sizes="(min-width: 1024px) 62vw, 100vw"
+                  loading="eager"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/55 via-transparent to-transparent" />
+                <p className="absolute bottom-6 left-6 max-w-xs font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
+                  Madrid empieza mejor cuando la vivienda no queda para el final.
+                </p>
               </div>
-              <div className="flex flex-col justify-center bg-[var(--blue-deep)] p-8 text-white sm:p-10 lg:p-12">
-                <p className="kicker !text-white/70">Vivienda en Madrid</p>
+              <div className="bg-[#F7F3EA] p-7 text-[var(--blue-deep)] sm:p-9 lg:-ml-24 lg:mb-12 lg:p-10">
+                <p className="kicker">Vivienda en Madrid</p>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
                   Alquileres en Madrid para estudiantes, profesionales y familias internacionales
                 </h2>
-                <p className="mt-4 max-w-lg text-base leading-8 text-white/80">
+                <p className="mt-4 max-w-lg text-base leading-8 text-slate-600">
                   Te acompañamos en la búsqueda, las visitas, la documentación y el proceso de
                   firma, incluso antes de llegar a España.
                 </p>
@@ -348,7 +352,7 @@ export default function ExtranjerosPage() {
                     href="/extranjeros/alquileres"
                     action="cta_click"
                     label="alquileres_discovery_cta"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
                   >
                     Explorar viviendas y alquileres <ArrowRight className="h-4 w-4" />
                   </ForeignersTrackedLink>
@@ -356,7 +360,7 @@ export default function ExtranjerosPage() {
                     href={buildWhatsAppHref('Hola, quiero consultar mi caso de vivienda en Madrid.')}
                     action="whatsapp_click"
                     label="alquileres_discovery_whatsapp"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--blue-deep)]/70 underline decoration-[var(--blue-deep)]/20 underline-offset-4 transition hover:text-[var(--green)]"
                   >
                     <WhatsAppIcon className="h-3.5 w-3.5" /> Consultar mi caso por WhatsApp
                   </ForeignersTrackedLink>

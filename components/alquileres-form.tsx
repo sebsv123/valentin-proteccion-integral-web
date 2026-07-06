@@ -190,7 +190,7 @@ export default function AlquileresForm() {
   };
 
   const inputCls =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[var(--green)] focus:outline-none focus:ring-2 focus:ring-[var(--green)]/20";
+    "w-full rounded-[8px] border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[var(--green)] focus:outline-none focus:ring-2 focus:ring-[var(--green)]/20";
   const labelCls = "mb-1.5 block text-sm font-semibold text-slate-700";
   const errCls = "mt-1.5 text-sm text-red-600";
   const optional = <span className="font-normal text-slate-400">(opcional)</span>;
@@ -198,7 +198,7 @@ export default function AlquileresForm() {
   const groupLabelCls = "text-xs font-bold uppercase tracking-[0.14em] text-[var(--green)]";
 
   return (
-    <div className="rounded-[8px] border border-[var(--blue-deep)]/10 bg-[#FDFBF6] p-6 sm:p-8">
+    <div className="border border-[var(--blue-deep)]/10 bg-[#FFFDF8] p-6 sm:p-8">
       <div className="mb-8 flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold text-[var(--blue-deep)]">Sin compromiso</p>
@@ -210,7 +210,7 @@ export default function AlquileresForm() {
             Sin prometer vivienda garantizada.
           </p>
         </div>
-        <div className="hidden rounded-2xl bg-[#F7F3EA] p-3 text-[var(--blue-deep)] sm:block">
+        <div className="hidden rounded-[8px] bg-[#F5EFE5] p-3 text-[var(--blue-deep)] sm:block">
           <ShieldCheck className="h-7 w-7" />
         </div>
       </div>
@@ -360,7 +360,7 @@ export default function AlquileresForm() {
           {errors.comments ? <p id="al-comments-error" role="alert" className={errCls}>{errors.comments.message}</p> : null}
         </div>
 
-        <label htmlFor="al-consent" className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
+        <label htmlFor="al-consent" className="flex items-start gap-3 rounded-[8px] bg-slate-50 p-4 text-sm leading-6 text-slate-600">
           <input
             id="al-consent"
             type="checkbox"
@@ -384,7 +384,7 @@ export default function AlquileresForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-4 text-base font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[var(--green)] px-6 py-4 text-base font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 disabled:opacity-60"
         >
           {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
           Solicitar orientación
@@ -403,7 +403,7 @@ export default function AlquileresForm() {
         </p>
 
         {serverError ? (
-          <div className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert" aria-live="assertive">
+          <div className="rounded-[8px] bg-red-50 px-4 py-3 text-sm text-red-700" role="alert" aria-live="assertive">
             {serverError}
           </div>
         ) : null}
