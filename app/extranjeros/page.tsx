@@ -236,6 +236,24 @@ export default function ExtranjerosPage() {
                 <p className="section-copy text-lg">
                   Revisamos contigo los requisitos del visado, la cobertura y la documentación, para que avances con claridad desde el primer paso.
                 </p>
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <ForeignersTrackedLink
+                    href="/extranjeros/alquileres"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--blue-deep)]/10 bg-white px-5 py-3 text-sm font-bold text-[var(--blue-deep)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--green)]/50 hover:shadow-md"
+                    action="cta_click"
+                    label="hero_alquileres"
+                  >
+                    Explorar alquileres <ArrowRight className="h-4 w-4" />
+                  </ForeignersTrackedLink>
+                  <ForeignersTrackedLink
+                    href={personalWhatsApp}
+                    className="inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)] underline decoration-[var(--blue)]/25 underline-offset-4"
+                    action="whatsapp_click"
+                    label="hero_whatsapp_secondary"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                  </ForeignersTrackedLink>
+                </div>
                 <div className={styles.journeyGrid}>
                   <article className={`${styles.journeyCard} ${styles.primaryJourney}`}>
                     <p className={styles.cardEyebrow}>PARTICULARES</p>
@@ -333,10 +351,13 @@ export default function ExtranjerosPage() {
                   sizes="(min-width: 1024px) 62vw, 100vw"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/55 via-transparent to-transparent" />
-                <p className="absolute bottom-6 left-6 max-w-xs font-heading text-3xl font-bold leading-tight text-white sm:text-4xl">
-                  Madrid empieza mejor cuando la vivienda no queda para el final.
-                </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/76 via-[var(--blue-deep)]/28 to-transparent" />
+                <div className="absolute bottom-6 left-6 max-w-sm border border-[#D7C3AA]/35 bg-[#041F3A] p-4 text-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.85)] sm:bottom-8 sm:left-8 sm:p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D7C3AA]">Además del seguro</p>
+                  <p className="mt-3 font-heading text-3xl font-bold leading-tight text-[#FFF8EC] sm:text-4xl">
+                    También te ayudamos con alquiler en Madrid.
+                  </p>
+                </div>
               </div>
               <div className="bg-[#F7F3EA] p-7 text-[var(--blue-deep)] sm:p-9 lg:-ml-24 lg:mb-12 lg:p-10">
                 <p className="kicker">Vivienda en Madrid</p>
@@ -354,7 +375,7 @@ export default function ExtranjerosPage() {
                     label="alquileres_discovery_cta"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
                   >
-                    Explorar viviendas y alquileres <ArrowRight className="h-4 w-4" />
+                    Explorar alquileres <ArrowRight className="h-4 w-4" />
                   </ForeignersTrackedLink>
                   <ForeignersTrackedLink
                     href={buildWhatsAppHref('Hola, quiero consultar mi caso de vivienda en Madrid.')}

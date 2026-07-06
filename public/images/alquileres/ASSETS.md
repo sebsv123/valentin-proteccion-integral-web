@@ -18,6 +18,7 @@ cliente real, un empleado de VPI, un testimonio ni un caso de éxito.
 | perfil-familias-mudanza.webp | pexels-mart-production-7414910.jpg | 7414910 | Mart Production — Según nombre del archivo descargado | Bloque de perfil "Familias y profesionales" | Imagen ilustrativa bajo licencia Pexels |
 | madrid-arquitectura-contemporanea.webp | pexels-daniel-ledesma-1524324436-29258684.jpg | 29258684 | Daniel Ledesma — Según nombre del archivo descargado | Transición hacia "Madrid bien conectado" | Imagen ilustrativa bajo licencia Pexels |
 | madrid-vida-urbana.webp | ed-orozco-NUIIeqgmtK0-unsplash.jpg | n/a | Ed Orozco — Según nombre del archivo descargado | Sección editorial "Madrid bien conectado" | Imagen ilustrativa de Madrid/vida urbana; descargada previamente por el usuario |
+| gran-via-madrid.webp | Gran_via.png.avif | n/a | Archivo descargado por el usuario en `/home/_sebastian/Descargas/Gran_via.png.avif` | Sección editorial "Madrid bien conectado" | Recorte horizontal 1800x1200 generado con `sharp` para un tratamiento más full-bleed |
 | interior-calido-ventanales.webp | pexels-tiago-alves-710726839-19650953.jpg | 19650953 | Tiago Alves — Según nombre del archivo descargado | Imagen secundaria entre secciones | Imagen ilustrativa bajo licencia Pexels |
 
 **Sobre la columna Autor:** solo `33575698` (Dominik Pajor) llevaba el nombre
@@ -32,6 +33,9 @@ quedan como "Pendiente de verificación".
 
 **Fecha de incorporación:** 2026-07-03. `madrid-vida-urbana.webp` se incorporó
 el 2026-07-06 desde `/home/_sebastian/Descargas/ed-orozco-NUIIeqgmtK0-unsplash.jpg`.
+`gran-via-madrid.webp` se incorporó el 2026-07-06 desde
+`/home/_sebastian/Descargas/Gran_via.png.avif` y se exportó como un recorte
+horizontal para ganar presencia editorial en la sección de Madrid.
 
 **Procesamiento:** las imágenes se redimensionaron y convirtieron a WebP con
 `sharp` (`.resize(width, null, { withoutEnlargement: true }).webp({ quality })`).
@@ -40,3 +44,5 @@ explícitamente, por lo que los archivos `.webp` de este directorio no
 contienen los metadatos de los JPG originales.
 `madrid-vida-urbana.webp` se redimensionó a 1800px de ancho y se exportó como
 WebP calidad 82.
+`gran-via-madrid.webp` se generó a 1800x1200 con `sharp` (`fit: "cover"`) y
+calidad 82.

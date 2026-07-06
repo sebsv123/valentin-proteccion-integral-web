@@ -92,17 +92,7 @@ const PROCESS_STEPS = [
   { n: "05", title: "Firma", desc: "Te acompañamos hasta comprender y completar el proceso con claridad." },
 ];
 
-const STUDENT_POINTS = [
-  "Conexión con universidades y centros de estudio.",
-  "Opciones individuales o compartidas.",
-  "Orientación sobre la documentación.",
-];
-
-const FAMILY_POINTS = [
-  "Número de habitaciones según tu caso.",
-  "Amueblado o sin amueblar, cerca del trabajo o el colegio.",
-  "Estancias de media o larga duración.",
-];
+const madridImage = "/images/alquileres/gran-via-madrid.webp";
 
 const faqs = [
   {
@@ -186,9 +176,8 @@ export default function AlquileresPage() {
               sizes="100vw"
               priority
             />
-            <div className="absolute inset-0 bg-[var(--blue-deep)]/32" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/94 via-[var(--blue-deep)]/52 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D2138]/86 via-[#0D2138]/18 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#06182B]/88 via-[#06182B]/34 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#06182B]/18" />
           </div>
 
           <div className="container relative z-10 mx-auto px-4 pb-0 pt-32 sm:px-6 lg:px-8">
@@ -199,12 +188,16 @@ export default function AlquileresPage() {
             </nav>
 
             <div className="grid gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(320px,0.42fr)] lg:items-end">
-              <div className="max-w-3xl pb-14 lg:pb-24">
-                <p className="kicker !text-white/62">Vivienda para tu llegada a España</p>
-                <h1 className="mt-5 max-w-3xl font-heading text-4xl font-bold leading-[1.02] sm:text-5xl lg:text-7xl">
+              <div
+                data-alquileres-hero-panel
+                className="max-w-3xl rounded-[8px] border border-[#D7C3AA]/55 p-6 shadow-[0_34px_90px_-54px_rgba(0,0,0,0.9)] sm:p-8 lg:mb-24 lg:p-10"
+                style={{ backgroundColor: "rgba(3, 24, 46, 0.94)" }}
+              >
+                <p className="kicker !text-[#D7C3AA]">Vivienda para tu llegada a España</p>
+                <h1 className="mt-5 max-w-3xl font-heading text-4xl font-bold leading-[1.02] text-[#FFF7EA] sm:text-5xl lg:text-7xl">
                   Alquiler de pisos en Madrid para estudiantes y familias internacionales
                 </h1>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-white/78">
+                <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
                   Encuentra tu hogar en Madrid antes de llegar, con acompañamiento durante la
                   búsqueda, las visitas, la documentación y la firma.
                 </p>
@@ -219,7 +212,7 @@ export default function AlquileresPage() {
                   <WhatsAppButton
                     href={wMain}
                     location="alquileres-hero-whatsapp"
-                    className="text-sm font-semibold text-white/68 underline decoration-white/25 underline-offset-4 transition hover:text-white"
+                    className="text-sm font-semibold text-[#F5EFE5] underline decoration-[#D7C3AA]/60 underline-offset-4 transition hover:text-white"
                   >
                     Hablar por WhatsApp
                   </WhatsAppButton>
@@ -227,8 +220,10 @@ export default function AlquileresPage() {
               </div>
 
               <a
+                data-alquileres-hero-brief
                 href="#solicitar"
-                className="group mb-[-54px] block border border-white/20 bg-[#F8F1E7]/95 p-6 text-[var(--blue-deep)] backdrop-blur-sm transition hover:border-white/40 sm:p-7 lg:mb-[-64px]"
+                className="group mb-10 block rounded-[8px] border border-[#C9B28D] p-6 text-[var(--blue-deep)] shadow-[0_18px_48px_-38px_rgba(0,0,0,0.7)] transition hover:border-[var(--green)]/60 sm:p-7 lg:mb-28"
+                style={{ backgroundColor: "#f7f1e6" }}
               >
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--green)]">
                   Nota de búsqueda privada
@@ -278,35 +273,33 @@ export default function AlquileresPage() {
           </div>
         </section>
 
-        <section className="relative bg-[#F5EFE5] py-10 text-white lg:py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative isolate min-h-[780px] overflow-hidden bg-[var(--blue-deep)] lg:min-h-[720px]">
+        <section className="relative bg-[#F5EFE5] py-8 text-white lg:-mt-8 lg:py-12">
+          <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
+            <div className="relative isolate overflow-hidden bg-[var(--blue-deep)] lg:min-h-[980px]">
               <Image
-                src="/images/alquileres/madrid-vida-urbana.webp"
-                alt="Calle urbana de Madrid con arquitectura residencial y comercios"
+                src={madridImage}
+                alt="Vista urbana de Gran Vía en Madrid con el edificio Capitol"
                 fill
-                className="object-cover object-[46%_50%]"
-                sizes="(min-width: 1280px) 1180px, 100vw"
+                className="object-cover object-[50%_44%]"
+                sizes="100vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/92 via-[var(--blue-deep)]/56 to-[var(--blue-deep)]/10" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--blue-deep)]/82 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#06182B]/82 via-[#06182B]/28 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#06182B]/20" />
 
-              <div className="relative z-10 grid min-h-[780px] gap-12 p-6 sm:p-10 lg:min-h-[720px] lg:grid-cols-[0.82fr_1fr] lg:p-14 xl:p-16">
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <p className="kicker !text-white/62">Madrid bien conectado</p>
-                    <h2 className="mt-4 max-w-lg font-heading text-4xl font-bold leading-[1.05] sm:text-5xl">
-                      Cada zona propone una forma distinta de llegar a casa.
-                    </h2>
-                  </div>
-                  <p className="max-w-md text-base leading-8 text-white/70">
+              <div className="relative z-10 mx-auto grid min-h-[980px] max-w-[88rem] gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-12">
+                <div className="self-start border border-[#D7C3AA]/45 bg-[#031C35] p-5 shadow-[0_24px_70px_-48px_rgba(0,0,0,0.88)] sm:p-7 lg:max-w-xl">
+                  <p className="kicker !text-[#D7C3AA]">Madrid bien conectado</p>
+                  <h2 className="mt-4 max-w-lg font-heading text-4xl font-bold leading-[1.05] sm:text-5xl">
+                    Cada zona propone una forma distinta de llegar a casa.
+                  </h2>
+                  <p className="mt-6 max-w-md text-base leading-8 text-[#F5EFE5]">
                     Orientamos la búsqueda hacia barrios bien comunicados, agrupados por el tipo
                     de vida que ofrecen más que por su ubicación en un mapa.
                   </p>
                 </div>
 
-                <div className="self-end bg-[#F5EFE5]/92 p-5 text-[var(--blue-deep)] backdrop-blur-sm sm:p-7 lg:ml-auto lg:max-w-2xl">
+                <div className="self-end border border-[#D7C3AA] bg-[#FFF8EC] p-5 text-[var(--blue-deep)] shadow-[0_28px_80px_-58px_rgba(0,0,0,0.8)] sm:p-7 lg:max-w-[44rem] lg:justify-self-end">
                   <div className="grid gap-x-10 gap-y-7 sm:grid-cols-2">
                     {ZONE_GROUPS.map((group) => (
                       <div key={group.title} className="border-t border-[var(--blue-deep)]/14 pt-4">
@@ -328,49 +321,70 @@ export default function AlquileresPage() {
           </div>
         </section>
 
-        <section className="bg-[#F5EFE5] py-16 sm:py-20">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-              <div>
-                <p className="kicker">Cómo funciona</p>
-                <h2 className="mt-4 max-w-md font-heading text-4xl font-bold leading-tight text-[var(--blue-deep)] sm:text-5xl">
-                  Acompañamiento humano, paso a paso.
-                </h2>
-                <p className="mt-5 max-w-sm leading-8 text-slate-600">
-                  La búsqueda no se trata como un trámite aislado: se ordena alrededor de tu
-                  llegada, tus tiempos y la documentación que puede pedir cada propiedad.
-                </p>
-              </div>
+        <section className="bg-[#F5EFE5] py-12 sm:py-16 lg:-mt-8">
+          <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
+            <div className="relative isolate overflow-hidden bg-[var(--blue-deep)] lg:min-h-[920px]">
+              <Image
+                src="/images/alquileres/proceso-visita-vivienda.webp"
+                alt="Personas durante una visita ilustrativa a una vivienda"
+                fill
+                className="object-cover object-[50%_44%]"
+                sizes="100vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#06182B]/84 via-[#06182B]/34 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#06182B]/18" />
 
-              <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-                <figure className="relative lg:sticky lg:top-28">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
-                    <Image
-                      src="/images/alquileres/proceso-visita-vivienda.webp"
-                      alt="Personas durante una visita ilustrativa a una vivienda"
-                      fill
-                      className="object-cover object-[60%_40%]"
-                      sizes="(min-width: 1024px) 28vw, 100vw"
-                      loading="lazy"
-                    />
-                  </div>
-                  <figcaption className="mt-3 text-sm leading-6 text-slate-500">
-                    Visitas presenciales o virtuales según tu momento de llegada.
-                  </figcaption>
-                </figure>
+              <div className="relative z-10 mx-auto grid min-h-[920px] max-w-[88rem] gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start lg:gap-10 lg:px-8 lg:py-12">
+                <div className="self-start border border-[#D7C3AA]/45 bg-[#031C35] p-5 text-white shadow-[0_24px_70px_-48px_rgba(0,0,0,0.88)] sm:p-7 lg:max-w-xl">
+                  <p className="kicker !text-[#D7C3AA]">Cómo funciona</p>
+                  <h2 className="mt-4 max-w-md font-heading text-4xl font-bold leading-tight text-[#FFF8EC] sm:text-5xl">
+                    Acompañamiento humano, paso a paso.
+                  </h2>
+                  <p className="mt-5 max-w-sm leading-8 text-[#F5EFE5]">
+                    La búsqueda no se trata como un trámite aislado: se ordena alrededor de tu
+                    llegada, tus tiempos y la documentación que puede pedir cada propiedad.
+                  </p>
+                </div>
 
-                <div className="space-y-7">
-                  {PROCESS_STEPS.map((step, index) => (
-                    <div
-                      key={step.n}
-                      className={index % 2 === 1 ? "ml-0 border-l border-[var(--blue-deep)]/12 pl-5 sm:ml-8" : "border-l border-[var(--blue-deep)]/12 pl-5"}
-                    >
-                      <p className="font-heading text-2xl font-bold tabular-nums text-[var(--green)]">{step.n}</p>
-                      <h3 className="mt-1 font-heading text-xl font-bold text-[var(--blue-deep)]">{step.title}</h3>
-                      <p className="mt-2 leading-7 text-slate-600">{step.desc}</p>
-                    </div>
-                  ))}
-                  <p className="border-t border-[var(--blue-deep)]/10 pt-5 text-sm leading-6 text-slate-500">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+                  {PROCESS_STEPS.map((step, index) => {
+                    const spanClass =
+                      index === 0 || index === 1
+                        ? "lg:col-span-3"
+                        : "lg:col-span-2";
+
+                    return (
+                      <article key={step.n} className={spanClass}>
+                        <div
+                          className={
+                            step.n === "01"
+                              ? "h-full border border-[#D7C3AA] bg-[#FFF8EC] p-5 text-[var(--blue-deep)] shadow-[0_24px_70px_-60px_rgba(0,0,0,0.55)] sm:grid sm:grid-cols-[0.56fr_0.44fr] sm:gap-5 sm:p-6"
+                              : "h-full border border-[#D7C3AA] bg-[#FFF8EC] p-5 text-[var(--blue-deep)] shadow-[0_24px_70px_-60px_rgba(0,0,0,0.55)] sm:p-6"
+                          }
+                        >
+                          <div>
+                            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--green)]">{step.n}</p>
+                            <h3 className="mt-2 font-heading text-xl font-bold">{step.title}</h3>
+                            <p className="mt-3 max-w-md leading-7 text-slate-600">{step.desc}</p>
+                          </div>
+                          {step.n === "01" ? (
+                            <div className="mt-4 grid gap-4 sm:mt-0">
+                              <div className="rounded-[8px] bg-white/75 p-4 text-sm leading-6 text-slate-600">
+                                Revisamos el perfil, el momento de llegada y el ritmo del traslado para
+                                ordenar la búsqueda con más contexto.
+                              </div>
+                              <div className="rounded-[8px] bg-white/75 p-4 text-sm leading-6 text-slate-600">
+                                Visitas, documentación y firma se coordinan sin presentar el proceso
+                                como una lista de control.
+                              </div>
+                            </div>
+                          ) : null}
+                        </div>
+                      </article>
+                    );
+                  })}
+                  <p className="sm:col-span-2 border border-[#D7C3AA] bg-[#FFF8EC] p-5 text-sm leading-6 text-slate-500 shadow-[0_24px_70px_-60px_rgba(0,0,0,0.45)] sm:p-6">
                     No prestamos asesoramiento jurídico sobre el contrato. Para la revisión legal del
                     contrato de arrendamiento, recomendamos asesoramiento jurídico independiente.
                   </p>
@@ -380,7 +394,7 @@ export default function AlquileresPage() {
           </div>
         </section>
 
-        <section className="bg-[#FFFDF8] py-16 sm:py-24">
+        <section className="bg-[#FFF8EC] py-16 sm:py-24">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="kicker">Para quién es</p>
@@ -393,67 +407,68 @@ export default function AlquileresPage() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.68fr)] lg:items-start lg:gap-16">
-              <article className="grid gap-7 lg:grid-cols-[0.95fr_0.82fr] lg:items-end">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[8px]">
-                  <Image
-                    src="/images/alquileres/perfil-estudiantes.webp"
-                    alt="Estudiantes compartiendo un apartamento"
-                    fill
-                    className="object-cover object-[50%_30%]"
-                    sizes="(min-width: 1024px) 38vw, 100vw"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="lg:pb-10">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Estudiantes</p>
-                  <h3 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)]">
-                    Primeras semanas, campus y una rutina que empieza.
-                  </h3>
-                  <p className="mt-4 leading-8 text-slate-600">
-                    Llegas a Madrid para estudiar y necesitas un sitio donde instalarte sin
-                    perder tiempo entre clases, trámites y primeras semanas de curso.
-                  </p>
-                  <p className="mt-4 text-sm leading-6 text-slate-500">
-                    {STUDENT_POINTS.join(" ")}
-                  </p>
-                  <WhatsAppButton
-                    href={wStudents}
-                    location="alquileres-perfil-estudiantes"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue-deep)] underline decoration-[var(--green)]/50 underline-offset-4 hover:text-[var(--green)]"
-                  >
-                    Soy estudiante <ArrowRight className="h-4 w-4" />
-                  </WhatsAppButton>
+            <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-stretch">
+              <article className="relative min-h-[560px] overflow-hidden rounded-[8px] bg-[var(--blue-deep)] text-white">
+                <Image
+                  src="/images/alquileres/perfil-estudiantes.webp"
+                  alt="Estudiantes compartiendo un apartamento"
+                  fill
+                  className="object-cover object-[50%_30%]"
+                  sizes="(min-width: 1024px) 48vw, 100vw"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#041F3A] via-[#041F3A]/42 to-transparent" />
+                <div className="relative z-10 flex min-h-[560px] items-end p-6 sm:p-8">
+                  <div className="max-w-lg border border-[#D7C3AA]/35 bg-[#041F3A] p-5 sm:p-6">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#D7C3AA]">Estudiantes internacionales</p>
+                    <h3 className="mt-3 font-heading text-3xl font-bold text-[#FFF8EC]">
+                      Primeras semanas, campus y una rutina que empieza.
+                    </h3>
+                    <p className="mt-4 leading-8 text-[#F5EFE5]">
+                      Llegas a Madrid para estudiar y necesitas un sitio donde instalarte sin
+                      perder tiempo entre clases, trámites y primeras semanas de curso.
+                    </p>
+                    <p className="mt-4 text-sm leading-6 text-[#F5EFE5]/85">
+                      Conexión con universidades, opciones individuales o compartidas y orientación documental.
+                    </p>
+                    <WhatsAppButton
+                      href={wStudents}
+                      location="alquileres-perfil-estudiantes"
+                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#FFF8EC] underline decoration-[var(--green)]/70 underline-offset-4 hover:text-[var(--green)]"
+                    >
+                      Soy estudiante <ArrowRight className="h-4 w-4" />
+                    </WhatsAppButton>
+                  </div>
                 </div>
               </article>
 
-              <article className="lg:mt-28">
-                <div className="relative aspect-[7/5] overflow-hidden rounded-[8px] lg:aspect-[4/5]">
+              <article className="grid gap-5 lg:grid-rows-[0.95fr_auto]">
+                <div className="relative min-h-[360px] overflow-hidden rounded-[8px] bg-[var(--blue-deep)] lg:min-h-0">
                   <Image
                     src="/images/alquileres/perfil-familias-mudanza.webp"
                     alt="Familia durante una mudanza a su nuevo hogar"
                     fill
                     className="object-cover object-[60%_45%]"
-                    sizes="(min-width: 1024px) 30vw, 100vw"
+                    sizes="(min-width: 1024px) 36vw, 100vw"
                     loading="lazy"
                   />
                 </div>
-                <div className="relative -mt-8 ml-5 bg-[#FFFDF8] p-5 sm:ml-10 sm:p-6 lg:ml-[-44px] lg:mt-[-70px]">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Familias y profesionales</p>
-                  <h3 className="mt-3 font-heading text-2xl font-bold text-[var(--blue-deep)]">
+                <div className="rounded-[8px] border border-[#D7C3AA] bg-[#041F3A] p-6 text-white sm:p-7">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#D7C3AA]">Familias/profesionales</p>
+                  <h3 className="mt-3 font-heading text-2xl font-bold text-[#FFF8EC]">
                     Una mudanza con más piezas que una maleta.
                   </h3>
-                  <p className="mt-3 leading-7 text-slate-600">
+                  <p className="mt-3 leading-7 text-[#F5EFE5]">
                     Un traslado a Madrid implica organizar mucho más que una mudanza. Te
                     ayudamos a que la vivienda deje de ser la parte incierta del proceso.
                   </p>
-                  <p className="mt-4 text-sm leading-6 text-slate-500">
-                    {FAMILY_POINTS.join(" ")}
+                  <p className="mt-4 text-sm leading-6 text-[#F5EFE5]/85">
+                    Habitaciones, colegio o trabajo, amueblado y duración se ordenan según el caso.
                   </p>
                   <WhatsAppButton
                     href={wFamilies}
                     location="alquileres-perfil-familias"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue-deep)] underline decoration-[var(--green)]/50 underline-offset-4 hover:text-[var(--green)]"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#FFF8EC] underline decoration-[var(--green)]/70 underline-offset-4 hover:text-[var(--green)]"
                   >
                     Somos familia o profesional <ArrowRight className="h-4 w-4" />
                   </WhatsAppButton>
@@ -479,97 +494,56 @@ export default function AlquileresPage() {
           </div>
         </section>
 
-        <section className="bg-[#FFFDF8] pb-16">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 border-y border-[var(--blue-deep)]/10 py-9 lg:grid-cols-[0.28fr_1fr_0.32fr] lg:items-center">
-              <div>
-                <p className="kicker">Colaboración en origen</p>
-                <h2 className="mt-3 font-heading text-2xl font-bold text-[var(--blue-deep)]">
-                  Coordinación desde Perú
-                </h2>
-              </div>
-              <p className="max-w-2xl leading-8 text-slate-600">
-                Para quienes inician el proceso desde Perú, coordinamos la búsqueda de vivienda
-                en Madrid en colaboración con VIP Global Perú, firma especializada en asesoría
-                administrativa y trámites documentarios.
-              </p>
-              <div className="flex items-center gap-4 lg:justify-end">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                  En colaboración con
-                </span>
-                <div className="relative h-10 w-28 flex-none">
-                  <Image
-                    src="/images/partners/vip-global-peru.png"
-                    alt="VIP Global Perú - Soluciones Administrativas"
-                    fill
-                    className="object-contain"
-                    sizes="112px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
-              <span>Orientación inicial en Perú</span>
-              <span className="text-slate-300">/</span>
-              <span>Coordinación de vivienda en Madrid</span>
-              <span className="text-slate-300">/</span>
-              <span>Acompañamiento en documentación y llegada</span>
-              <WhatsAppButton
-                href={wPeru}
-                location="alquileres-vip-global-peru"
-                className="font-semibold text-[var(--blue-deep)] underline decoration-[var(--green)]/50 underline-offset-4 hover:text-[var(--green)]"
-              >
-                Empezar mi proceso desde Perú
-              </WhatsAppButton>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#FFFDF8]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative isolate min-h-[520px] overflow-hidden rounded-[8px]">
+        <section id="solicitar" className="scroll-mt-24 bg-[#F5EFE5] pb-16 pt-0 sm:pb-20 lg:-mt-10">
+          <div className="relative left-1/2 right-1/2 -mt-12 w-screen -translate-x-1/2">
+            <div className="relative isolate overflow-hidden bg-[var(--blue-deep)] lg:min-h-[980px]">
               <Image
                 src="/images/alquileres/interior-calido-ventanales.webp"
                 alt="Interior cálido con grandes ventanales y luz natural"
                 fill
                 className="object-cover object-[50%_35%]"
-                sizes="(min-width: 1280px) 1180px, 100vw"
+                sizes="100vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/84 via-[var(--blue-deep)]/28 to-transparent" />
-              <div className="relative z-10 flex min-h-[520px] items-end p-6 sm:p-10 lg:p-14">
-                <p className="max-w-xl font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
-                  Un hogar es, sobre todo, un lugar donde sentirte bien.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#06182B]/86 via-[#06182B]/46 to-transparent" />
+              <div className="relative z-10 mx-auto grid min-h-[980px] max-w-[88rem] gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end lg:gap-10 lg:px-8 lg:py-12">
+                <div className="self-start border border-[#D7C3AA]/45 bg-[#031C35] p-5 text-white shadow-[0_24px_70px_-48px_rgba(0,0,0,0.88)] sm:p-7 lg:max-w-xl">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#D7C3AA]">Apoyo en origen</p>
+                  <p className="mt-3 max-w-xl leading-7 text-[#F5EFE5]">
+                    Para quienes inician el proceso desde Perú, coordinamos la búsqueda de vivienda
+                    en Madrid en colaboración con VIP Global Perú.
+                  </p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#D7C3AA]/80">
+                      Firma de colaboración
+                    </span>
+                    <div className="relative h-8 w-28 flex-none opacity-85">
+                      <Image
+                        src="/images/partners/vip-global-peru.png"
+                        alt="VIP Global Perú - Soluciones Administrativas"
+                        fill
+                        className="object-contain"
+                        sizes="128px"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <WhatsAppButton
+                    href={wPeru}
+                    location="alquileres-vip-global-peru"
+                    className="mt-5 inline-flex text-sm font-semibold text-[#FFF8EC] underline decoration-[var(--green)]/60 underline-offset-4 hover:text-[var(--green)]"
+                  >
+                    Empezar mi proceso desde Perú
+                  </WhatsAppButton>
+                </div>
 
-        <section id="solicitar" className="scroll-mt-24 bg-[#F5EFE5] pb-20 pt-0 sm:pb-24">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="relative -mt-14 grid gap-8 bg-[#F8F1E7] p-6 sm:p-8 lg:grid-cols-[0.42fr_0.58fr] lg:p-10">
-              <div className="pt-2">
-                <p className="kicker">Ficha de búsqueda</p>
-                <h2 className="mt-4 font-heading text-4xl font-bold leading-tight text-[var(--blue-deep)] sm:text-5xl">
-                  Cuéntanos cómo sería tu vivienda ideal
-                </h2>
-                <div className="mt-8 space-y-5 text-sm leading-7 text-slate-600">
-                  <p>
-                    Revisamos perfil, fechas, presupuesto, zona preferida y documentación habitual
-                    para responder con una orientación realista.
+                <div className="grid gap-6 lg:self-end lg:justify-self-end lg:max-w-3xl">
+                  <p className="max-w-2xl bg-[#041F3A] p-5 font-heading text-4xl font-bold leading-tight text-[#FFF8EC] shadow-[0_24px_70px_-60px_rgba(0,0,0,0.8)] sm:p-7 sm:text-5xl">
+                    Un hogar es, sobre todo, un lugar donde sentirte bien.
                   </p>
-                  <p>
-                    No prometemos vivienda garantizada ni disponibilidad concreta: cada propiedad
-                    depende de condiciones, fechas y aceptación del perfil.
-                  </p>
-                  <p>
-                    Te contactamos por el canal que indiques para ordenar los siguientes pasos.
-                  </p>
+                  <AlquileresForm />
                 </div>
               </div>
-              <AlquileresForm />
             </div>
           </div>
         </section>
