@@ -341,7 +341,7 @@ export default function ExtranjerosPage() {
 
         <section className="bg-white py-14 md:py-20" data-foreigners-section="alquileres">
           <div className="container-shell">
-            <div className="grid gap-6 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)] lg:items-stretch lg:gap-8 xl:gap-10">
               <div className="relative min-h-[360px] overflow-hidden rounded-[8px] sm:min-h-[440px] lg:min-h-[560px]">
                 <Image
                   src="/images/alquileres/interior-calido-ventanales.webp"
@@ -359,7 +359,7 @@ export default function ExtranjerosPage() {
                   </p>
                 </div>
               </div>
-              <div className="bg-[#F7F3EA] p-7 text-[var(--blue-deep)] sm:p-9 lg:-ml-24 lg:mb-12 lg:p-10">
+              <div className="rounded-[8px] border border-[#D7C3AA]/60 bg-[#F7F3EA] p-7 text-[var(--blue-deep)] shadow-[0_18px_48px_-40px_rgba(0,0,0,0.28)] sm:p-9 lg:min-h-[560px] lg:p-10">
                 <p className="kicker">Vivienda en Madrid</p>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
                   Alquileres en Madrid para estudiantes, profesionales y familias internacionales
