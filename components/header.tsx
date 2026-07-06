@@ -74,7 +74,14 @@ export function Header() {
           <div className="flex items-center justify-between gap-3 py-3 2xl:gap-4 2xl:py-4">
             <BrandLockup variant="light" size="compact" priority />
 
-            <nav className="hidden min-w-0 items-center gap-0.5 2xl:flex">
+            <nav className="hidden min-w-0 items-center gap-0.5 xl:flex">
+              <Link
+                href="/extranjeros/alquileres"
+                className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
+              >
+                Alquileres
+              </Link>
+
               {/* Mega Menu trigger */}
               <div className="relative z-[110]">
                 <button
@@ -111,7 +118,7 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden shrink-0 items-center justify-end gap-1.5 2xl:flex">
+            <div className="hidden shrink-0 items-center justify-end gap-1.5 xl:flex">
               <a
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-3 py-2.5 text-white/90
@@ -148,7 +155,7 @@ export function Header() {
                 y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
             */}
             <button
-              className="flex 2xl:hidden items-center gap-2 text-white/90 hover:text-white
+              className="flex xl:hidden items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}
@@ -262,8 +269,8 @@ export function Header() {
         accentColor="#0F5E9C"
         items={[
           { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
+          { label: 'Alquileres', ariaLabel: 'Alquileres', link: '/extranjeros/alquileres' },
           { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
-          { label: 'Alquileres en Madrid', ariaLabel: 'Alquileres en Madrid', link: '/extranjeros/alquileres' },
           ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
         ]}
