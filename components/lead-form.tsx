@@ -23,7 +23,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaultProduct?: string; compact?: boolean }) {
+export function LeadForm({ defaultProduct = 'salud', compact = false, homeVariant = false }: { defaultProduct?: string; compact?: boolean; homeVariant?: boolean }) {
   const router = useRouter();
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
@@ -81,16 +81,20 @@ export function LeadForm({ defaultProduct = 'salud', compact = false }: { defaul
   };
 
   return (
-    <div className="soft-card p-6 md:p-8">
+    <div className={`soft-card p-6 md:p-8 ${homeVariant ? 'h-full rounded-[28px] border border-[var(--line)] shadow-xl' : ''}`}>
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
-          <p className="kicker">Consulta sin compromiso</p>
-          <h2 className="mt-2 font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl">Cuéntanos qué necesitas</h2>
-          <p className="mt-3 text-base leading-8 text-[var(--muted)]">Te respondemos con una primera orientación clara para ayudarte a decidir con criterio.</p>
+          {!homeVariant ? <p className="kicker">Consulta sin compromiso</p> : null}
+          <h2 className={`${homeVariant ? '' : 'mt-2 '}font-heading text-3xl font-bold text-[var(--blue-deep)] md:text-4xl`}>Cuéntanos qué necesitas</h2>
+          <p className="mt-3 text-base leading-8 text-[var(--muted)]">
+            {homeVariant ? 'Te damos una primera orientación clara y sin compromiso.' : 'Te respondemos con una primera orientación clara para ayudarte a decidir con criterio.'}
+          </p>
         </div>
-        <div className="hidden rounded-2xl bg-[var(--bg)] p-3 text-[var(--blue)] md:block">
-          <ShieldCheck className="h-7 w-7" />
-        </div>
+        {!homeVariant ? (
+          <div className="hidden rounded-2xl bg-[var(--bg)] p-3 text-[var(--blue)] md:block">
+            <ShieldCheck className="h-7 w-7" />
+          </div>
+        ) : null}
       </div>
 
       <div className="mb-6 rounded-[24px] bg-[var(--bg)] p-4 text-sm leading-7 text-[var(--muted)] md:text-base">

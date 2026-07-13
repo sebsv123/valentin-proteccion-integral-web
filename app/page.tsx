@@ -8,7 +8,7 @@ import { ProductCategoryGrid } from '@/components/home-sections';
 import { getLocalPexelsImage } from '@/lib/pexels';
 
 // Framer-motion components isolated via 'use client' wrapper (ssr:false)
-import { HeroLeadSection, StatsSection } from '@/components/hero-sections-wrapper';
+import { HeroLeadSection, ProductAccessSection, StatsSection } from '@/components/hero-sections-wrapper';
 const GoogleReviewsWidget = dynamicImport(() => import('@/components/GoogleReviewsWidget'));
 const TrustBadgesSection = dynamicImport(() => import('@/components/home-sections').then(m => m.TrustBadgesSection));
 const MascotHelperSection = dynamicImport(() => import('@/components/home-sections').then(m => m.MascotHelperSection));
@@ -140,6 +140,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroLeadSection />
+        <ProductAccessSection />
         <StatsSection />
         <GoogleReviewsWidget />
         <TrustBadgesSection />

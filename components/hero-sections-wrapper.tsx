@@ -5,31 +5,65 @@
 import { HeroImageServer } from '@/components/hero-server';
 import { HeroContentClient, HeroLeadForm } from '@/components/hero-content-client';
 import { StatsSection } from '@/components/stats-section-client';
+import Link from 'next/link';
+import { BadgeCheck, Flower2, HeartPulse, PawPrint, Plane, Stethoscope } from 'lucide-react';
+import { products } from '@/lib/products';
 export { StatsSection };
+
+const heroProductSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
+const heroProductIcons = {
+  salud: Stethoscope,
+  mascotas: PawPrint,
+  dental: BadgeCheck,
+  accidentes: HeartPulse,
+  viaje: Plane,
+  decesos: Flower2,
+};
 
 // Hero completo — imagen SSR + contenido cliente
 export function HeroLeadSection() {
   return (
-    <section id="hero" aria-labelledby="hero-title" className="section-pad pt-4 md:pt-8 overflow-hidden bg-white-pure relative">
-      <div className="container-shell hero-grid items-stretch gap-8">
-        {/* Card principal con imagen SSR y contenido cliente */}
-        <div className="soft-card glass relative overflow-hidden p-8 md:p-12 xl:p-16 border-white/40 shadow-2xl bg-premium-glow">
-          {/* IMAGEN — SSR, aparece en View Source */}
-          <div className="absolute inset-0 overflow-hidden" style={{ willChange: 'transform' }}>
-            <div className="absolute inset-0 scale-110">
-              <HeroImageServer />
-            </div>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.94)_0%,rgba(248,250,252,0.88)_42%,rgba(248,250,252,0.68)_70%,rgba(248,250,252,0.18)_100%)]" />
+    <section id="hero" aria-labelledby="hero-title" className="overflow-hidden bg-white py-5 md:py-8">
+      <div className="container-shell hero-grid items-stretch gap-6 lg:gap-8">
+        <div className="relative isolate min-h-[620px] overflow-hidden rounded-[28px] border border-white/50 px-6 py-9 shadow-2xl sm:px-10 md:px-12 md:py-12 xl:px-14">
+          <div className="absolute inset-0">
+            <HeroImageServer />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.96)_0%,rgba(248,250,252,0.91)_45%,rgba(248,250,252,0.64)_72%,rgba(248,250,252,0.12)_100%)]" />
           </div>
-          
-          {/* CONTENIDO — Cliente con CSS animations */}
-          <div className="relative z-10">
+          <div className="relative z-10 h-full">
             <HeroContentClient />
           </div>
         </div>
-        
-        {/* Lead Form — separado del card principal */}
         <HeroLeadForm />
+      </div>
+    </section>
+  );
+}
+
+export function ProductAccessSection() {
+  const productsForHero = products
+    .filter((product) => heroProductSlugs.includes(product.slug))
+    .sort((a, b) => heroProductSlugs.indexOf(a.slug) - heroProductSlugs.indexOf(b.slug));
+
+  return (
+    <section aria-label="Accesos a seguros" className="bg-[var(--bg-soft)] py-8 md:py-10">
+      <div className="container-shell">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
+          {productsForHero.map((product) => {
+            const Icon = heroProductIcons[product.slug as keyof typeof heroProductIcons];
+
+            return (
+              <Link
+                key={product.slug}
+                href={`/seguros/${product.slug}`}
+                className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)] focus-visible:ring-offset-2"
+              >
+                <Icon className="h-8 w-8 text-[var(--blue)] transition-transform group-hover:scale-110" aria-hidden="true" />
+                <span className="text-sm font-bold tracking-wide text-[var(--blue-deep)]">{product.label}</span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
