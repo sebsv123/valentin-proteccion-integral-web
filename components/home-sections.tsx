@@ -7,36 +7,7 @@ import { blogPosts } from '@/lib/blog';
 import { FAQAccordion } from './faq-accordion';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { AdeslasAgentLink } from './adeslas-agent-link';
-
-const cardImages: Record<string, string> = {
-  salud: '/images/premium/hero-family.webp',
-  vida: '/images/products/vida-hero.webp',
-  mascotas: '/images/premium/happy-pets.webp',
-  dental: '/images/products/dental-hero.webp',
-  viaje: '/images/products/viaje-hero.webp',
-  accidentes: '/images/products/accidentes-hero.webp',
-  decesos: '/images/products/decesos-hero.webp',
-};
-
-const sectionTints: Record<string, string> = {
-  salud: 'from-[rgba(15,94,156,0.12)] to-[rgba(123,198,126,0.04)]',
-  vida: 'from-[rgba(18,59,104,0.09)] to-[rgba(242,140,40,0.05)]',
-  mascotas: 'from-[rgba(123,198,126,0.12)] to-[rgba(15,94,156,0.04)]',
-  viaje: 'from-[rgba(15,94,156,0.08)] to-[rgba(15,94,156,0.02)]',
-  dental: 'from-[rgba(242,140,40,0.08)] to-[rgba(15,94,156,0.04)]',
-  accidentes: 'from-[rgba(18,59,104,0.08)] to-[rgba(242,140,40,0.05)]',
-  decesos: 'from-[rgba(18,59,104,0.08)] to-[rgba(123,198,126,0.03)]',
-};
-
-const productBadges: Record<string, string> = {
-  salud: '⭐ Más consultado',
-  mascotas: '🐾 Ley vigente 2024',
-  vida: '🏠 Para hipotecas',
-  dental: '✨ Gran ahorro',
-  accidentes: '⚡ Para autónomos',
-  decesos: '💛 Para familias',
-  viaje: '✈️ Sin sorpresas',
-}
+import productGridStyles from './product-category-grid.module.css';
 
 
 export function TrustBadgesSection({ imageSrc = '/images/home/handshake-enhanced.png' }: { imageSrc?: string } = {}) {
@@ -95,76 +66,104 @@ export function TrustBadgesSection({ imageSrc = '/images/home/handshake-enhanced
 interface ProductWithImage {
   slug: string;
   cardAlt: string;
-  eyebrow?: string;
   label: string;
-  summary?: string;
-  whatsappMessage?: string;
-  cardImage?: string;
-  pexelsImage: string;
+  benefits: string[];
 }
 
+const specialtyOrder = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
+
+const specialtyPresentation = {
+  salud: {
+    image: '/images/pexels/salud-bienestar-pexels.webp',
+    description: 'Salud privada según tu situación.',
+    benefits: ['Criterio, no solo precio.', 'Copago y reembolso claros.'],
+    objectPosition: '35% center',
+    dark: false,
+  },
+  mascotas: {
+    image: '/images/pexels/mascota-familia-pexels.webp',
+    description: 'Veterinaria, RC y opciones para cuidar de los tuyos.',
+    benefits: ['Prioriza veterinaria, RC o ambas.', 'Revisa límites y servicios.'],
+    objectPosition: 'center',
+    dark: true,
+  },
+  dental: {
+    image: '/images/pexels/dental-salud-pexels.webp',
+    description: 'Revisiones y tratamientos según tu modalidad.',
+    benefits: ['Actos, descuentos y tarifas.', 'Todo explicado con claridad.'],
+    objectPosition: '62% center',
+    dark: false,
+  },
+  accidentes: {
+    image: '/images/pexels/autonomo-trabajo-pexels.webp',
+    description: 'Protección ante imprevistos personales.',
+    benefits: ['Para quien no puede permitirse parar.', 'Contratación ágil.'],
+    objectPosition: '70% center',
+    dark: true,
+  },
+  viaje: {
+    image: '/images/pexels/seguro-viaje-pexels.webp',
+    description: 'Opciones para cada destino y viaje.',
+    benefits: ['Aclara límites y destinos.', 'Elige según cada viaje.'],
+    objectPosition: 'center',
+    dark: false,
+  },
+  decesos: {
+    image: '/images/products/decesos-hero.webp',
+    description: 'Previsión para cada familia.',
+    benefits: ['Menos gestiones en momentos delicados.', 'Previsión con serenidad.'],
+    objectPosition: 'center',
+    dark: true,
+  },
+} as const;
+
 export function ProductCategoryGrid({ productsWithImages }: { productsWithImages: ProductWithImage[] }) {
+  const specialties = productsWithImages
+    .filter((product) => product.slug in specialtyPresentation)
+    .sort((a, b) => specialtyOrder.indexOf(a.slug) - specialtyOrder.indexOf(b.slug));
+
   return (
-     <section id="productos" aria-labelledby="products-title" className="section-pad bg-white-pure">
-      <div className="container-shell">
-        <div className="mb-12 max-w-3xl fade-up">
-            <p className="kicker">Nuestras especialidades</p>
-            <h2 id="products-title" className="mt-4 section-title">Encuentra el seguro que realmente encaje con tu vida</h2>
-             <p className="section-copy mt-4">Selecciona la categoría para la que necesitas cobertura y descubre las coberturas más adecuadas para tu perfil.</p>
+     <section id="productos" aria-labelledby="products-title" className={productGridStyles.section}>
+      <div className={productGridStyles.container}>
+        <header className={productGridStyles.heading}>
+          <div>
+            <p className={productGridStyles.eyebrow}>NUESTRAS SOLUCIONES</p>
+            <h2 id="products-title" className={productGridStyles.title}>Protección para cada etapa de tu vida</h2>
           </div>
-        <div className="grid gap-8 lg:grid-cols-2 2xl:grid-cols-4">
-          {productsWithImages.map((product, index) => (
-            <div className="fade-up" key={product.slug} style={{ transitionDelay: `${index * 0.08}s` }}>
-              <article className="soft-card overflow-hidden hover-lift border-white/20 shadow-lg h-full flex flex-col group">
-                <div className="relative h-72">
+          <p className={productGridStyles.intro}>Descubre las opciones que podemos ayudarte a valorar según tu situación, tu familia y lo que quieres proteger.</p>
+        </header>
+        <div className={productGridStyles.grid}>
+          {specialties.map((product) => {
+            const presentation = specialtyPresentation[product.slug as keyof typeof specialtyPresentation];
+            const toneClass = presentation.dark ? productGridStyles.dark : productGridStyles.light;
+
+            return (
+              <article className={`${productGridStyles.card} ${toneClass}`} key={product.slug}>
+                <div className={productGridStyles.mediaPanel}>
                   <Image
-                    src={product.pexelsImage}
+                    src={presentation.image}
                     alt={product.cardAlt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 1179px) 45vw, 190px"
+                    className={productGridStyles.image}
+                    style={{ objectPosition: presentation.objectPosition }}
                     loading="lazy"
                   />
-                  {productBadges[product.slug] && (
-                    <span
-                      className="absolute top-3 right-3 z-10 rounded-full
-                                 bg-[#f97316] px-2.5 py-1 text-[10px] md:text-xs font-black
-                                 text-white shadow-lg uppercase tracking-wide md:top-4 md:right-4 md:px-3 md:py-1.5"
-                    >
-                      {productBadges[product.slug]}
-                    </span>
-                  )}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${sectionTints[product.slug] || 'from-[rgba(18,59,104,0.6)] to-transparent'}`} />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="kicker !text-white/80">{product.eyebrow}</p>
-                    <h3 className="mt-2 font-heading text-4xl font-bold tracking-wide">{product.label}</h3>
-                  </div>
                 </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <p className="text-base leading-8 text-[var(--muted)]">{product.summary}</p>
-                  <p className="mt-3 text-xs text-[var(--blue)] font-semibold
-                                uppercase tracking-widest">
-                    Consulta gratuita · Sin compromiso
-                  </p>
-                  <div className="mt-5 flex flex-col gap-3">
-                    <a
-                      href={buildWhatsAppHref(product.whatsappMessage || `Hola, quiero información sobre ${product.label}`)}
-                      className="btn-whatsapp w-full justify-center font-bold"
-                    >
-                      <WhatsAppIcon className="h-4 w-4" />
-                      Consultar por WhatsApp
-                    </a>
-                    <Link
-                      href={`/seguros/${product.slug}`}
-                      className="btn-ghost w-full justify-center text-sm opacity-70 hover:opacity-100"
-                    >
-                      Ver más información <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                 </div>
+                <div className={productGridStyles.contentPanel}>
+                  <p className={productGridStyles.categoryLabel}>{product.label}</p>
+                  <h3>{product.label}</h3>
+                  <p className={productGridStyles.description}>{presentation.description}</p>
+                  <ul className={productGridStyles.benefits}>
+                    {presentation.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}
+                  </ul>
+                  <Link href={`/seguros/${product.slug}`} className={productGridStyles.productLink}>
+                    Ver cobertura <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
               </article>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
