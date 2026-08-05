@@ -264,15 +264,15 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
   );
 }
 
-export function RelatedProducts({ product }: { product: Product }) {
+export function RelatedProducts({ product, healthVariant = false }: { product: Product; healthVariant?: boolean }) {
   const related = getRelatedProducts(product.related);
   return (
     <section id="aspectos-clave" aria-labelledby="decision-title" className="section-pad bg-white-pure overflow-hidden">
       <div className="container-shell">
         <RevealLight>
           <div className="mb-12 max-w-3xl">
-            <p className="kicker">Decide con criterio</p>
-            <h2 id="decision-title" className="mt-3 section-title">Cuestiones clave para comparar {product.label} sin perderte en la letra pequeña</h2>
+            <p className="kicker">{healthVariant ? 'Otras formas de protegerte' : 'Decide con criterio'}</p>
+            <h2 id="decision-title" className="mt-3 section-title">{healthVariant ? 'También podemos ayudarte con otras necesidades de protección' : `Cuestiones clave para comparar ${product.label} sin perderte en la letra pequeña`}</h2>
           </div>
          </RevealLight>
         <div className="grid gap-8 lg:grid-cols-3">

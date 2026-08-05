@@ -1,0 +1,7 @@
+import { ArrowRight, MessageCircle, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { buildWhatsAppHref } from '@/lib/products';
+import styles from './business-health-final-cta.module.css';
+
+const commitments = ['Coberturas y límites claros.', 'Coste relacionado con la modalidad.', 'Acompañamiento en la implantación.'];
+export function BusinessHealthFinalCta() { return <section className={styles.section} aria-labelledby="business-health-final-title"><div className={`container-shell ${styles.shell}`}><div className={styles.panel}><div className={styles.copy}><p className={styles.eyebrow}><ShieldCheck aria-hidden="true" /> PARA DECIDIR CON DATOS</p><h2 id="business-health-final-title">Compara la cobertura antes de asumir el coste</h2><p>Indícanos cuántas personas podrían asegurarse y qué nivel de protección estás valorando. Revisaremos las opciones y sus condiciones con la empresa.</p><div className={styles.actions}><Link href="#solicitar-estudio" className={styles.primary}>Solicitar estudio empresarial <ArrowRight aria-hidden="true" /></Link><a href={buildWhatsAppHref('Hola Sebastián, quiero estudiar un seguro de salud para mi empresa.')} className={styles.secondary}><MessageCircle aria-hidden="true" /> Hablar con Sebastián</a></div></div><aside className={styles.commitments}><p>LO QUE PUEDES ESPERAR</p>{commitments.map((item,index)=><div key={item}><span>0{index+1}</span><strong>{item}</strong></div>)}</aside></div></div></section>; }

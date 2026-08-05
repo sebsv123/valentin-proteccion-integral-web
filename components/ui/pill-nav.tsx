@@ -256,6 +256,7 @@ const PillNav: React.FC<PillNavProps> = ({
                     className={basePillClasses}
                     style={pillStyle}
                     aria-label={item.ariaLabel || item.label}
+                    aria-current={isActive ? 'page' : undefined}
                     onMouseEnter={() => handleEnter(i)}
                     onMouseLeave={() => handleLeave(i)}
                   >
@@ -268,6 +269,7 @@ const PillNav: React.FC<PillNavProps> = ({
                     className={basePillClasses}
                     style={pillStyle}
                     aria-label={item.ariaLabel || item.label}
+                    aria-current={isActive ? 'page' : undefined}
                     onMouseEnter={() => handleEnter(i)}
                     onMouseLeave={() => handleLeave(i)}
                   >

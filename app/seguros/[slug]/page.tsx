@@ -7,6 +7,12 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { CasesAndForm, CoverageHighlights, ProductCTASection, ProductDecisionGrid, ProductFaqSection, ProductHero, RelatedProducts } from '@/components/product-sections';
 import { ProductTabs } from '@/components/product-tabs';
+import { HealthModalitiesSection } from '@/components/health-modalities-section';
+import { HealthSectionsTransition } from '@/components/health-sections-transition';
+import { HealthCoverageHighlightsSection, HealthDecisionGuideSection } from '@/components/health-insurance-insights';
+import { HealthContactProfilesSection } from '@/components/health-contact-profiles-section';
+import { HealthFaqSection } from '@/components/health-faq-section';
+import { HealthFinalGuidanceSection } from '@/components/health-final-guidance-section';
 import { getProduct, products, site } from '@/lib/products';
 import FaqSchema from '@/components/FaqSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
@@ -105,11 +111,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
         )}
 
-        <ProductTabs slug={product.slug} />
-        <CoverageHighlights product={product} />
+        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /></> : <ProductTabs slug={product.slug} />}
+        {product.slug === 'salud' ? <HealthCoverageHighlightsSection /> : <CoverageHighlights product={product} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
-        {slug === 'salud' && (
+        {false && slug === 'salud' && (
           <section className="py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="text-center mb-16">
@@ -240,11 +246,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </section>
         )}
 
-        <ProductDecisionGrid product={product} />
-        <CasesAndForm product={product} defaultProduct={product.slug} />
+        {product.slug === 'salud' ? <HealthDecisionGuideSection /> : <ProductDecisionGrid product={product} />}
+        {product.slug === 'salud' ? <HealthContactProfilesSection product={product} /> : <CasesAndForm product={product} defaultProduct={product.slug} />}
 
         {/* Sección Garantía de Precio Justo */}
-        <section className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white">
+        {slug !== 'salud' && <section className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
@@ -271,10 +277,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               Compara ahora gratis
             </WhatsAppLink>
           </div>
-        </section>
+        </section>}
 
-        <ProductFaqSection product={product} />
-        <GoogleReviewsWidget title={`Opiniones sobre nuestro seguro de ${product.label}`} />
+        {slug === 'salud' ? <>
+          <HealthFaqSection whatsappMessage={product.whatsappMessage} />
+          <HealthFinalGuidanceSection whatsappMessage={product.whatsappMessage} />
+        </> : <>
+          <ProductFaqSection product={product} />
+          <GoogleReviewsWidget title={`Opiniones sobre nuestro seguro de ${product.label}`} />
+        </>}
 
         {/* Sección Equipo - Solo para negocio */}
         {slug === 'negocio' && (
@@ -321,7 +332,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         )}
 
         {/* Sección Equipo - Solo para salud */}
-        {slug === 'salud' && (
+        {false && slug === 'salud' && (
           <section className="py-14 sm:py-20 lg:py-24 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -410,10 +421,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </section>
         )}
 
-        <ProductCTASection product={product} title={`¿Quieres que te ayudemos con ${product.label}?`} text={`Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.`} message={product.whatsappMessage} />
-        <RelatedProducts product={product} />
+        {slug !== 'salud' && <ProductCTASection product={product} title={`¿Quieres que te ayudemos con ${product.label}?`} text={`Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.`} message={product.whatsappMessage} />}
+        <RelatedProducts product={product} healthVariant={product.slug === 'salud'} />
       </main>
-      <Footer />
+      <Footer healthVariant={product.slug === 'salud'} />
       <StickyWhatsApp />
     </>
   );

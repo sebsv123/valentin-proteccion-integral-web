@@ -5,7 +5,7 @@ import { WhatsAppButton } from './whatsapp-button';
 import { BrandLockup } from './ui/brand-lockup';
 import { CookieAwareMap } from './cookie-aware-map';
 
-export function Footer() {
+export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   return (
     <footer className="mt-20 border-t border-[var(--border)] bg-white/92">
       <div className="container-shell py-14">
@@ -13,9 +13,9 @@ export function Footer() {
           <div className="space-y-4">
             <div className="space-y-3">
               <BrandLockup variant="dark" size="default" />
-              <p className="text-[var(--muted)]">{site.brandLine}</p>
+              <p className="text-[var(--muted)]">{healthVariant ? 'Seguros explicados con claridad' : site.brandLine}</p>
             </div>
-            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.</p>
+            <p className="max-w-xl text-base leading-8 text-[var(--muted)]">{healthVariant ? 'Te ayudamos a entender qué contratas y seguimos a tu lado cuando necesitas utilizar tu seguro.' : 'Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.'}</p>
             <div className="flex flex-wrap gap-3">
               <WhatsAppButton href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href="/contacto" className="btn-ghost !px-5 !py-3">Formulario</Link>
@@ -35,13 +35,15 @@ export function Footer() {
             <div className="mt-4 space-y-3 text-[var(--muted)]">
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/extranjeros">EXTRANJEROS</Link>
               {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={`/seguros/${product.slug}`}>{product.label}</Link>)}
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">SALUD PARA EMPRESAS</Link>
             </div>
           </div>
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Navegación</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">SALUD PARA EMPRESAS</Link>
               <Link className="block hover:text-[var(--blue)]" href="/zonas">Zonas que atendemos</Link>
-              {mainNav.map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={item.href}>{item.label}</Link>)}
+              {mainNav.filter((item) => item.label !== 'Empresas').map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={item.href}>{item.label}</Link>)}
               <Link className="block hover:text-[var(--blue)]" href="/privacidad">Privacidad</Link>
               <Link className="block hover:text-[var(--blue)]" href="/cookies">Cookies</Link>
               <Link className="block hover:text-[var(--blue)]" href="/aviso-legal">Aviso legal</Link>

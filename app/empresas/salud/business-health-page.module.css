@@ -1,0 +1,64 @@
+.page {
+  --business-body: var(--font-body), sans-serif;
+  --business-editorial: var(--font-heading), sans-serif;
+  font-family: var(--business-body);
+}
+
+.page :global(h1),
+.page :global(h2) {
+  font-family: var(--business-editorial) !important;
+}
+
+.page :global(h3),
+.page :global(p),
+.page :global(a),
+.page :global(button),
+.page :global(span),
+.page :global(li),
+.page :global(small),
+.page :global(label),
+.page :global(input),
+.page :global(select),
+.page :global(textarea) {
+  font-family: var(--business-body);
+}
+
+.page :global(p),
+.page :global(li) {
+  font-size: max(0.875rem, 1em);
+}
+
+.page :global(.item p) {
+  font-size: .9rem;
+}
+
+.page :global(.limits span),
+.page :global(.additional span) {
+  font-size: .9rem;
+}
+
+.page :global(.taxMain) :global(p),
+.page :global(.taxMain) :global(span),
+.page :global(.taxMain) :global(li),
+.page :global(.reimbursement) :global(p),
+.page :global(.reimbursement) :global(span),
+.page :global(.reimbursement) :global(li),
+.page :global(.reimbursement) :global(small) {
+  color: rgba(255, 255, 255, .88) !important;
+}
+
+.page :global(.taxMain) :global(.eyebrow),
+.page :global(.reimbursement) :global(.label) {
+  color: #d5f6ed !important;
+}
+
+.page :global(.taxMain) :global(.warning) {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .page :global(p),
+  .page :global(li) {
+    font-size: max(.875rem, 1em);
+  }
+}

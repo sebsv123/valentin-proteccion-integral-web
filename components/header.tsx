@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronDown, Instagram, Menu, Phone } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
@@ -18,6 +19,7 @@ export function Header() {
   const [mega, setMega] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -114,6 +116,7 @@ export function Header() {
                   pillTextColor="white"
                   hoveredPillTextColor="white"
                   initialLoadAnimation={false}
+                  activeHref={pathname}
                 />
               </div>
             </nav>
@@ -148,7 +151,6 @@ export function Header() {
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
-
             {/* TODO: FIX 1B - StaggeredMenu no acepta props isOpen/onClose aún.
                 Cuando se actualice el componente, añadir:
                 const [mobileOpen, setMobileOpen] = useState(false);

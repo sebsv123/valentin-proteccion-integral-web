@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, BadgePercent, HeartHandshake, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
+import { ArrowRight, BadgeCheck, BadgePercent, Building2, HeartHandshake, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
 import { LeadForm } from './lead-form';
 import { buildWhatsAppHref, comparisonProfiles, generalFaqs, products, site, trustBadges } from '@/lib/products';
 import { blogPosts } from '@/lib/blog';
@@ -9,6 +9,27 @@ import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { AdeslasAgentLink } from './adeslas-agent-link';
 import productGridStyles from './product-category-grid.module.css';
 
+
+export function ProductAccessSection() {
+  const productSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
+  return (
+    <section aria-label="Accesos a seguros" className="bg-[var(--off-white)] py-8 md:py-10">
+      <div className="container-shell">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
+          {products.filter((product) => productSlugs.includes(product.slug)).map((product) => (
+            <Link key={product.slug} href={`/seguros/${product.slug}`} className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-xl border border-[var(--border)] bg-white p-4 text-center shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[var(--blue)]/35 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+              <Stethoscope className="h-8 w-8 text-[var(--blue)]" aria-hidden="true" />
+              <span className="text-sm font-bold tracking-wide text-[var(--blue-deep)]">{product.label}</span>
+            </Link>
+          ))}
+        </div>
+        <Link href="/empresas/salud" className="mt-5 flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+          <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#2fa59b]">PARA EMPRESAS Y AUTÓNOMOS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Salud para tu equipo</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Coberturas desde dos asegurados, con opciones ambulatorias, hospitalización, reembolso y distintas formas de asumir el coste.</span></span></span><span className="hidden shrink-0 font-semibold text-[var(--blue)] sm:inline-flex sm:items-center sm:gap-2">Ver salud para empresas <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+        </Link>
+      </div>
+    </section>
+  );
+}
 
 export function TrustBadgesSection({ imageSrc = '/images/home/handshake-enhanced.png' }: { imageSrc?: string } = {}) {
   const icons = [ShieldCheck, HeartHandshake, Stethoscope, BadgeCheck, BadgePercent];

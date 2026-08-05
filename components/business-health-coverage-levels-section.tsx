@@ -1,0 +1,11 @@
+import Link from 'next/link';
+import { ArrowRight, Check } from 'lucide-react';
+import styles from './business-health-coverage-levels-section.module.css';
+
+const levels = [
+  { number:'01', label:'ASISTENCIA HABITUAL', tag:'ASISTENCIA AMBULATORIA', title:'Consultas, especialistas y pruebas sin hospitalización', copy:'Consultas, especialistas, pruebas y tratamientos sin hospitalización.', points:['Uso habitual de medicina privada.','Distintos sistemas de copago.','Sin ingreso hospitalario.'], note:'' },
+  { number:'02', label:'COBERTURA COMPLETA', tag:'COBERTURA COMPLETA', title:'Asistencia médica, hospitalización y cirugía', copy:'Añade hospitalización, cirugía y otras prestaciones hospitalarias.', points:['Ingreso y cirugía.','Hospital de día.','Embarazo y parto según condiciones.'], note:'' },
+  { number:'03', label:'LIBRE ELECCIÓN', tag:'COBERTURA CON REEMBOLSO', title:'Cuadro médico y libertad para acudir a otros profesionales', copy:'Combina cuadro médico con la posibilidad de acudir a profesionales externos.', points:['Hasta 90 % en España.','Hasta 80 % en el extranjero.','Límite anual de hasta 180.000 €.'], note:'' },
+];
+
+export function BusinessHealthCoverageLevelsSection(){return <section className={styles.section} aria-labelledby="business-health-levels-title"><div className={`container-shell ${styles.shell}`}><header className={styles.heading}><p className={styles.eyebrow}>NIVELES DE COBERTURA</p><h2 id="business-health-levels-title">Tres niveles de cobertura para el equipo</h2><p>La principal diferencia está en la hospitalización y en la posibilidad de acudir fuera del cuadro médico.</p></header><div className={styles.levels}>{levels.map(({number,label,tag,title,copy,points})=><article className={styles.level} key={number}><div className={styles.levelHead}><span>{number}</span><p>{label}</p></div><p className={styles.tag}>{tag}</p><h3>{title}</h3><p className={styles.copy}>{copy}</p><ul>{points.map(point=><li key={point}><Check aria-hidden="true" />{point}</li>)}</ul></article>)}</div><p className={styles.note}>Porcentajes, límites, copagos y carencias dependen de la modalidad contratada.</p><Link href="#solicitar-estudio" className={styles.cta}>Comparar niveles de cobertura <ArrowRight aria-hidden="true" /></Link></div></section>}
