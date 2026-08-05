@@ -8,6 +8,13 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
+      - name: Verify deploy hook secret is configured
+        run: |
+          if [ -z "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}" ]; then
+            echo "::error::VERCEL_DEPLOY_HOOK_URL secret is not set. Configure it in Settings > Secrets and variables > Actions before this workflow can run."
+            exit 1
+          fi
+
       - name: Trigger Vercel Deploy Hook
         run: |
-          curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_znwM3Z2Lpq6BXqHfdFusgFzINYct/EH5dtmCy4n"
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"

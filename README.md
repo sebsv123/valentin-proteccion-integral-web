@@ -107,3 +107,22 @@ Variables relacionadas (ver `.env.example`):
 - `ALLOW_PREVIEW_LEAD_DELIVERY` — autoriza entrega real en `preview` o
   `development` de Vercel. No debe activarse a nivel de proyecto, solo para
   una comprobación puntual y deliberada.
+
+## Deploy Hook de Vercel (`.github/workflows/weekly-rebuild.yml`)
+
+El workflow de rebuild semanal dispara un [Deploy Hook de
+Vercel](https://vercel.com/docs/deployments/deploy-hooks) mediante `curl`. La
+URL del hook **nunca debe escribirse literalmente** en el workflow ni en
+ningún otro archivo del repositorio:
+
+- Debe guardarse como GitHub Secret con el nombre exacto
+  `VERCEL_DEPLOY_HOOK_URL` (Settings → Secrets and variables → Actions).
+- El workflow la referencia como `${{ secrets.VERCEL_DEPLOY_HOOK_URL }}` y
+  falla explícitamente si el secret no está configurado, sin imprimir su
+  valor.
+- Si un hook llegó a commitearse alguna vez (aunque después se borre del
+  archivo), esa URL sigue siendo válida y explotable mientras exista en el
+  historial de git — **hay que eliminarlo o regenerarlo manualmente en
+  Vercel** (Project Settings → Git → Deploy Hooks) y crear uno nuevo antes de
+  guardarlo como secret. Borrar la línea del workflow no revoca el hook
+  antiguo por sí solo.
