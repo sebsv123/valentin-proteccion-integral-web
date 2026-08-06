@@ -7,8 +7,10 @@ import type { Product, ProductSubpage } from '@/lib/products';
 import { LeadForm } from './lead-form';
 import { FAQAccordion } from './faq-accordion';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
+import { EditorialProductHero } from './editorial-product-hero';
 
 export function ProductHero({ product }: { product: Product }) {
+  if (product.slug === 'salud') return <EditorialProductHero product={product} />;
   const subpages = getSubpagesForProduct(product.slug);
   const advisor = product.customAdvisor || {
     name: site.advisorName,
