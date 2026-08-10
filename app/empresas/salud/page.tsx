@@ -49,7 +49,7 @@ export default function BusinessHealthPage() {
     <Header />
     <Script id="business-health-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <main className={pageStyles.page}>
-      <div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Empresas' }, { label: 'Salud' }]} /></div>
+      <div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Empresas', href: '/empresas' }, { label: 'Salud' }]} /></div>
       <BusinessHealthHero />
       <BusinessHealthDualValueSection />
       <BusinessHealthImplementationSection />

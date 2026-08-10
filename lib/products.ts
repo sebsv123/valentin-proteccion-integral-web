@@ -489,7 +489,7 @@ export const mainNav = [
   { label: 'Inicio', href: '/' },
   { label: 'Seguros', href: '/seguros' },
   { label: 'Cómo te ayudamos', href: '/como-te-ayudamos' },
-  { label: 'Empresas', href: '/empresas/salud' },
+  { label: 'Empresas', href: '/empresas' },
   { label: 'Sobre nosotros', href: '/sobre-nosotros' },
   { label: 'Blog', href: '/blog' },
   { label: 'Opiniones', href: '/opiniones' },

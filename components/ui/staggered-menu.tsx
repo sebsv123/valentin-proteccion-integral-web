@@ -8,6 +8,7 @@ export interface StaggeredMenuItem {
   label: string;
   ariaLabel: string;
   link: string;
+  children?: StaggeredMenuItem[];
 }
 export interface StaggeredMenuSocialItem {
   label: string;
@@ -53,6 +54,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const openRef = useRef(false);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -251,6 +253,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         if (socialLinks.length) gsap.set(socialLinks, { y: 25, opacity: 0 });
 
         busyRef.current = false;
+        setExpandedItem(null);
         
         onMenuClose?.();
       }
@@ -507,19 +510,50 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             >
               {items && items.length ? (
                 items.map((it, idx) => (
-                  <li className="sm-panel-itemWrap relative overflow-hidden leading-none mb-4" key={it.label + idx}>
-                    <Link
-                      className="sm-panel-item relative text-[#002244] font-semibold text-[2rem] sm:text-[2.6rem] cursor-pointer leading-none tracking-[-1px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1em]"
-                      href={it.link}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}
-                      onClick={closeMenu}
-                      tabIndex={open ? 0 : -1}
-                    >
-                      <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
-                        {it.label}
-                      </span>
-                    </Link>
+                  <li className={`sm-panel-itemWrap relative leading-none mb-4 ${it.children?.length ? 'sm-panel-itemGroup' : 'overflow-hidden'}`} key={it.label + idx}>
+                    {it.children?.length ? (
+                      <>
+                        <button
+                          type="button"
+                          className="sm-panel-item sm-panel-itemToggle relative text-[#002244] font-semibold text-[2rem] sm:text-[2.6rem] cursor-pointer leading-none tracking-[-1px] uppercase transition-[background,color] duration-150 ease-linear inline-flex items-center gap-3 no-underline pr-[1em] bg-transparent border-0"
+                          aria-label={it.ariaLabel}
+                          aria-expanded={expandedItem === it.label}
+                          aria-controls={`sm-submenu-${idx}`}
+                          data-index={idx + 1}
+                          onClick={() => setExpandedItem((current) => current === it.label ? null : it.label)}
+                          tabIndex={open ? 0 : -1}
+                        >
+                          <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">{it.label}</span>
+                          <span aria-hidden="true" className="sm-panel-itemPlus text-[1.3rem] font-normal">{expandedItem === it.label ? '−' : '+'}</span>
+                        </button>
+                        <ul id={`sm-submenu-${idx}`} className={`sm-submenu mt-3 ml-1 flex flex-col gap-2 border-l-2 border-[#2eaaa0]/30 pl-4 ${expandedItem === it.label ? 'sm-submenu-open' : ''}`} hidden={expandedItem !== it.label}>
+                          {it.children.map((child, childIndex) => (
+                            <li key={child.label + childIndex}>
+                              <Link
+                                className="sm-submenu-link inline-block text-[1.05rem] font-semibold tracking-[-0.2px] text-[#0f5e9c] no-underline"
+                                href={child.link}
+                                aria-label={child.ariaLabel}
+                                onClick={closeMenu}
+                                tabIndex={open && expandedItem === it.label ? 0 : -1}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <Link
+                        className="sm-panel-item relative text-[#002244] font-semibold text-[2rem] sm:text-[2.6rem] cursor-pointer leading-none tracking-[-1px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1em]"
+                        href={it.link}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}
+                        onClick={closeMenu}
+                        tabIndex={open ? 0 : -1}
+                      >
+                        <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">{it.label}</span>
+                      </Link>
+                    )}
                   </li>
                 ))
               ) : (
@@ -596,6 +630,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-panel-title { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; text-transform: uppercase; }
 .sm-scope .sm-panel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .sm-scope .sm-panel-item { position: relative; color: #000; font-weight: 600; cursor: pointer; line-height: 1; letter-spacing: -2px; text-transform: uppercase; transition: background 0.25s, color 0.25s; display: inline-block; text-decoration: none; padding-right: 1.4em; }
+.sm-scope .sm-panel-itemToggle { font-family: inherit; text-align: left; }
+.sm-scope .sm-panel-itemPlus { color: var(--sm-accent, #0F5E9C); }
+.sm-scope .sm-submenu { list-style: none; margin-top: 0.8rem; }
+.sm-scope .sm-submenu-link { text-transform: none; transition: color 0.2s ease; }
+.sm-scope .sm-submenu-link:hover,
+.sm-scope .sm-submenu-link:focus-visible { color: var(--sm-accent, #002244); }
 .sm-scope .sm-panel-itemLabel { display: inline-block; will-change: transform; transform-origin: 50% 100%; }
 .sm-scope .sm-panel-item:hover { color: var(--sm-accent, #0F5E9C); }
 .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }

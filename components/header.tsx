@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronDown, Instagram, Menu, Phone } from 'lucide-react';
+import { ArrowRight, Building2, ChevronDown, Instagram, Menu, Phone, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { MouseEvent } from 'react';
@@ -17,8 +17,10 @@ import IridescenceBackground from './ui/iridescence-background';
 
 export function Header() {
   const [mega, setMega] = useState(false);
+  const [businessOpen, setBusinessOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -42,6 +44,27 @@ export function Header() {
     document.addEventListener('mousedown', handleClick as EventListener);
     return () => document.removeEventListener('mousedown', handleClick as EventListener);
   }, [mega]);
+
+  useEffect(() => {
+    if (!businessOpen) return;
+    const handleClick = (event: globalThis.MouseEvent) => {
+      if (businessRef.current && !businessRef.current.contains(event.target as Node)) {
+        setBusinessOpen(false);
+      }
+    };
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setBusinessOpen(false);
+        document.getElementById('business-trigger')?.focus();
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [businessOpen]);
 
   useEffect(() => {
     if (!mega) return;
@@ -103,9 +126,48 @@ export function Header() {
               </div>
 
               <div className="flex h-[42px] items-center gap-1">
+                <div
+                  ref={businessRef}
+                  className="relative h-full"
+                  onMouseEnter={() => setBusinessOpen(true)}
+                  onMouseLeave={() => setBusinessOpen(false)}
+                >
+                  <button
+                    id="business-trigger"
+                    type="button"
+                    className={`inline-flex h-[42px] items-center gap-1 rounded-full px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white ${pathname.startsWith('/empresas') ? 'bg-white/20 text-white' : ''}`}
+                    aria-expanded={businessOpen}
+                    aria-controls="business-menu"
+                    onClick={() => setBusinessOpen((open) => !open)}
+                    onFocus={() => setBusinessOpen(true)}
+                  >
+                    Empresas <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  </button>
+                  <div
+                    id="business-menu"
+                    role="menu"
+                    aria-label="Soluciones para empresas"
+                    className={`absolute right-0 top-[calc(100%+10px)] z-[220] w-[min(500px,calc(100vw-2rem))] rounded-[22px] border border-[var(--border)] bg-white p-3 text-left shadow-[0_18px_48px_rgba(18,59,104,0.2)] transition-all duration-150 ${businessOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-1 opacity-0'}`}
+                  >
+                    <p className="px-3 pb-2 pt-1 text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">SOLUCIONES PARA EMPRESAS</p>
+                    <Link href="/empresas/salud" role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#f1faf8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
+                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span>
+                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#2eaaa0]">SALUD PARA EMPRESAS</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">Cobertura médica para equipos y autónomos</span></span>
+                      <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </Link>
+                    <Link href="/empresas/ciberseguridad" role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#edf6f8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
+                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#eaf2fb] text-[var(--blue)]"><ShieldCheck className="h-5 w-5" aria-hidden="true" /></span>
+                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#0f5e9c]">CIBERSEGURIDAD</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">Continuidad, respuesta y protección ante incidentes digitales</span></span>
+                      <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    </Link>
+                    <Link href="/empresas" role="menuitem" onClick={() => setBusinessOpen(false)} className="mt-1 flex items-center justify-between rounded-[14px] border-t border-[var(--border)] px-3 pb-1 pt-3 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
+                      Ver todas las soluciones para empresas <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
                 <PillNav
                   items={[
-                    ...mainNav.slice(2).map(item => ({
+                    ...mainNav.slice(2).filter(item => item.label !== 'Empresas').map(item => ({
                       link: item.href,
                       label: item.label,
                       href: item.href
@@ -116,7 +178,7 @@ export function Header() {
                   pillTextColor="white"
                   hoveredPillTextColor="white"
                   initialLoadAnimation={false}
-                  activeHref={pathname}
+                  activeHref={pathname.startsWith('/empresas') ? '/empresas' : pathname}
                 />
               </div>
             </nav>
@@ -255,6 +317,21 @@ export function Header() {
                 ) : null}
               </Link>
             ))}
+            <div className="col-span-full mt-2 rounded-[18px] border border-[rgba(15,94,156,0.16)] bg-[linear-gradient(100deg,rgba(15,94,156,0.05),rgba(46,170,160,0.08))] p-4">
+              <p className="text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">PARA EMPRESAS</p>
+              <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                <Link href="/empresas/salud" onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
+                  <Building2 className="h-5 w-5 shrink-0 text-[var(--blue)]" aria-hidden="true" />
+                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">SALUD PARA EMPRESAS</span><span className="block text-xs text-[var(--muted)]">Cobertura médica para equipos y autónomos</span></span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+                <Link href="/empresas/ciberseguridad" onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-[var(--blue)]" aria-hidden="true" />
+                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">CIBERSEGURIDAD</span><span className="block text-xs text-[var(--muted)]">Continuidad, respuesta y protección ante incidentes digitales</span></span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -274,7 +351,18 @@ export function Header() {
           { label: 'Alquileres', ariaLabel: 'Alquileres', link: '/extranjeros/alquileres' },
           { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
           ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
-          ...mainNav.slice(2).map(item => ({ label: item.label, ariaLabel: item.label, link: item.href }))
+          ...mainNav.slice(2).map(item => item.label === 'Empresas'
+            ? {
+                label: 'Empresas',
+                ariaLabel: 'Soluciones para empresas',
+                link: '/empresas',
+                children: [
+                  { label: 'Todas las soluciones', ariaLabel: 'Todas las soluciones para empresas', link: '/empresas' },
+                  { label: 'Salud para empresas', ariaLabel: 'Salud para empresas', link: '/empresas/salud' },
+                  { label: 'Ciberseguridad', ariaLabel: 'Ciberseguridad para empresas', link: '/empresas/ciberseguridad' },
+                ],
+              }
+            : { label: item.label, ariaLabel: item.label, link: item.href })
         ]}
         socialItems={[
           { label: 'Instagram', link: site.instagram },

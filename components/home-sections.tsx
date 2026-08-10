@@ -23,9 +23,14 @@ export function ProductAccessSection() {
             </Link>
           ))}
         </div>
-        <Link href="/empresas/salud" className="mt-5 flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
-          <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#2fa59b]">PARA EMPRESAS Y AUTÓNOMOS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Salud para tu equipo</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Coberturas desde dos asegurados, con opciones ambulatorias, hospitalización, reembolso y distintas formas de asumir el coste.</span></span></span><span className="hidden shrink-0 font-semibold text-[var(--blue)] sm:inline-flex sm:items-center sm:gap-2">Ver salud para empresas <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
-        </Link>
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          <Link href="/empresas/salud" className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+            <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#2fa59b]">SALUD PARA EMPRESAS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Salud para tu equipo</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Coberturas desde dos asegurados y distintas modalidades.</span></span></span><ArrowRight className="h-5 w-5 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+          <Link href="/empresas/ciberseguridad" className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-[#edf6f8] px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+            <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[var(--blue)]"><ShieldCheck className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#287a91]">CIBERSEGURIDAD PARA EMPRESAS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Continuidad del negocio</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Respuesta ante incidentes e interrupciones de actividad.</span></span></span><ArrowRight className="h-5 w-5 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>
   );
