@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/extranjeros`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/extranjeros/alquileres`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/empresas/salud`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/empresas/ciberseguridad`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // /para/autonomos excluida: redirige 301 a /autonomos
 

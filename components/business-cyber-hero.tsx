@@ -1,0 +1,8 @@
+import Image from 'next/image';
+import { MessageCircle } from 'lucide-react';
+import { buildWhatsAppHref } from '@/lib/products';
+import styles from './business-cyber-hero.module.css';
+
+export function BusinessCyberHero() {
+  return <section className={styles.hero} aria-labelledby="cyber-hero-title"><div className={styles.heroGrid}><div className={styles.copy}><p className={styles.eyebrow}>CIBERPROTECCIÓN PARA EMPRESAS</p><h1 id="cyber-hero-title">Protege la continuidad de tu negocio frente a un ciberincidente</h1><p className={styles.intro}>Estudiamos soluciones para autónomos y empresas frente a ransomware, phishing, fraude por transferencia, accesos no autorizados, brechas de datos e interrupciones de actividad.</p><p className={styles.secondary}>La respuesta puede combinar apoyo técnico y legal, continuidad operativa y protección económica según modalidad y condiciones.</p><div className={styles.actions}><a href="#solicitar-estudio-ciber" className="btn-primary">Solicitar estudio</a><a href={buildWhatsAppHref('Hola, quiero estudiar una solución de ciberprotección para mi empresa.')} className="btn-whatsapp"><MessageCircle aria-hidden="true" className="h-5 w-5"/> Hablar por WhatsApp</a></div></div><div className={styles.visual}><div className={styles.photoBack} aria-hidden="true"/><div className={styles.photoFrame}><Image src="/images/ciberseguridad/equipo-trabajando.jpg" alt="Equipo trabajando en una oficina" fill priority sizes="(max-width: 1320px) 100vw, 52vw" className={styles.photo}/><div className={styles.photoLabel}><span>CONTINUIDAD OPERATIVA</span><strong>Sistemas · datos · comunicaciones</strong></div></div></div></div></section>;
+}

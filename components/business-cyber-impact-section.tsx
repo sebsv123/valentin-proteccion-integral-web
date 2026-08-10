@@ -1,0 +1,12 @@
+import { Activity, Scale, UsersRound } from 'lucide-react';
+import styles from './business-cyber-impact-section.module.css';
+
+const consequences = [
+  ['01', 'ECONÓMICA', 'Recuperar la actividad también genera costes', 'Servicios técnicos, pérdida de ingresos, fraude y gastos necesarios para analizar y remediar el incidente.', Scale],
+  ['02', 'LEGAL / PRIVACIDAD', 'Una brecha puede exigir decisiones rápidas', 'Debe analizarse la posible afectación de datos, las obligaciones de comunicación y las reclamaciones de terceros.', UsersRound],
+  ['03', 'REPUTACIÓN', 'La confianza también forma parte de la recuperación', 'Clientes, proveedores y empleados necesitan información clara cuando el incidente afecta al servicio o expone información.', Activity],
+] as const;
+
+export function BusinessCyberImpactSection() {
+  return <section className={styles.section} aria-labelledby="cyber-impact-title"><div className={styles.header}><p className="kicker">CUANDO EL INCIDENTE SALE DE LA PANTALLA</p><h2 id="cyber-impact-title">La empresa puede seguir sufriendo cuando el ataque técnico ya ha terminado</h2><p>La recuperación no se limita a volver a encender los sistemas. También puede ser necesario responder a pérdidas económicas, obligaciones de privacidad, reclamaciones y daños en la confianza.</p></div><div className={styles.composition}><article className={styles.primary}><div className={styles.primaryTop}><span>OPERATIVA</span><Activity aria-hidden="true" /></div><div className={styles.primaryNumber}>00</div><h3>La actividad se detiene antes que la empresa desaparezca de Internet</h3><p>Sistemas inaccesibles, herramientas bloqueadas, pedidos sin tramitar o imposibilidad de atender a clientes y proveedores.</p><div className={styles.primaryFooter}><strong>INTERRUPCIÓN</strong><span>La continuidad empieza por recuperar el trabajo diario.</span></div></article><div className={styles.side}>{consequences.map(([number, label, title, text, Icon]) => <article className={styles.consequence} key={number}><div className={styles.consequenceHead}><span>{number}</span><Icon aria-hidden="true" /></div><p className={styles.label}>{label}</p><h3>{title}</h3><p>{text}</p></article>)}</div></div><div className={styles.band}><strong>UN MISMO INCIDENTE, VARIAS CONSECUENCIAS</strong><span>La solución debe revisarse atendiendo a la actividad, los sistemas utilizados, los datos tratados y la dependencia tecnológica del negocio.</span></div></section>;
+}

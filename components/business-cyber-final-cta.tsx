@@ -1,0 +1,4 @@
+import { MessageCircle } from 'lucide-react';
+import { buildWhatsAppHref } from '@/lib/products';
+import styles from './business-cyber-final-cta.module.css';
+export function BusinessCyberFinalCta(){return <section className={styles.section} aria-labelledby="cyber-final-title"><div className={styles.inner}><div><p className="kicker">CUANDO LA ACTIVIDAD NO PUEDE ESPERAR</p><h2 id="cyber-final-title">Prepara la respuesta antes de necesitarla</h2><p>Revisamos la exposición de tu empresa, las medidas actuales y las consecuencias que merece la pena proteger.</p></div><div className={styles.actions}><a href="#solicitar-estudio-ciber">Solicitar estudio</a><a href={buildWhatsAppHref('Hola, quiero estudiar una solución de ciberprotección para mi empresa.')}><MessageCircle aria-hidden="true"/>Hablar por WhatsApp</a></div></div></section>}

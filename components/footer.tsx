@@ -36,12 +36,14 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/extranjeros">EXTRANJEROS</Link>
               {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={`/seguros/${product.slug}`}>{product.label}</Link>)}
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">SALUD PARA EMPRESAS</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">CIBERSEGURIDAD PARA EMPRESAS</Link>
             </div>
           </div>
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">Navegación</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">SALUD PARA EMPRESAS</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">CIBERSEGURIDAD PARA EMPRESAS</Link>
               <Link className="block hover:text-[var(--blue)]" href="/zonas">Zonas que atendemos</Link>
               {mainNav.filter((item) => item.label !== 'Empresas').map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={item.href}>{item.label}</Link>)}
               <Link className="block hover:text-[var(--blue)]" href="/privacidad">Privacidad</Link>
