@@ -488,6 +488,7 @@ export const comparisonProfiles = [
 export const mainNav = [
   { label: 'Inicio', href: '/' },
   { label: 'Seguros', href: '/seguros' },
+  { label: 'Internacional', href: '/internacional' },
   { label: 'Cómo te ayudamos', href: '/como-te-ayudamos' },
   { label: 'Empresas', href: '/empresas' },
   { label: 'Sobre nosotros', href: '/sobre-nosotros' },

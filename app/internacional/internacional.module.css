@@ -1,0 +1,50 @@
+.page { overflow: hidden; background: #f8f6f1; color: #17334a; }
+.hubHero { padding: 3rem 0 7rem; background: linear-gradient(135deg, #fbfaf6 0%, #f2f5f1 100%); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); align-items: center; gap: clamp(3rem, 8vw, 9rem); }
+.heroCopy { max-width: 650px; padding: 2rem 0; }
+.eyebrow { margin: 0 0 1.35rem; color: #2c817b; font-family: var(--font-body), sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .2em; line-height: 1.4; }
+.heroCopy h1, .sectionIntro h2, .growingSection h2, .destinationCopy h3 { margin: 0; color: #07365d; font-family: var(--font-heading), serif; font-weight: 700; letter-spacing: -.045em; line-height: .99; }
+.heroCopy h1 { font-size: clamp(3.1rem, 5.3vw, 6rem); }
+.heroCopy h1 em, .destinationCopy h3 em { color: #2d7e96; font-style: normal; }
+.lead { max-width: 520px; margin: 2rem 0 2.2rem; color: #60717c; font-size: clamp(1.05rem, 1.35vw, 1.28rem); line-height: 1.8; }
+.textCta, .destinationCta { display: inline-flex; align-items: center; gap: .6rem; color: #07365d; font-size: .9rem; font-weight: 700; }
+.textCta svg, .destinationCta svg { width: 18px; transition: transform .2s ease; }
+.textCta:hover svg, .destinationFeature:hover .destinationCta svg { transform: translateX(4px); }
+.heroImage { position: relative; min-height: 610px; overflow: hidden; border-radius: 2px 150px 2px 150px; box-shadow: 28px 32px 0 rgba(45, 126, 150, .1); }
+.heroImage::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(248,246,241,.04), transparent 40%); content: ''; }
+.heroImage img, .destinationPhoto img { object-fit: cover; }
+.imageNote { position: absolute; right: 1.4rem; bottom: 1.3rem; z-index: 1; padding: .7rem 1rem; background: rgba(7,54,93,.84); color: white; font-size: .67rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.destinationSection { padding: 8rem 0; background: #fffdf9; }
+.sectionIntro { display: grid; grid-template-columns: .65fr 1fr; gap: 3rem; align-items: end; margin-bottom: 3.8rem; }
+.sectionIntro .eyebrow { margin-bottom: .4rem; }
+.sectionIntro h2 { max-width: 800px; font-size: clamp(2.5rem, 4.1vw, 4.7rem); }
+.destinationFeature { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); min-height: 580px; background: #edf2ec; color: inherit; transition: transform .25s ease, box-shadow .25s ease; }
+.destinationFeature:hover { transform: translateY(-5px); box-shadow: 0 24px 55px rgba(7,54,93,.12); }
+.destinationPhoto { position: relative; min-height: 580px; overflow: hidden; }
+.destinationPhoto::after { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 65%, rgba(237,242,236,.94)); content: ''; }
+.destinationCopy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 6rem) clamp(2rem, 5vw, 6.5rem) clamp(2rem, 5vw, 5rem) 0; }
+.flagLine { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.7rem; color: #07365d; font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
+.flagLine img { width: 42px; height: 28px; box-shadow: 0 4px 10px rgba(7,54,93,.13); }
+.destinationCopy h3 { font-size: clamp(2.7rem, 4.4vw, 5rem); }
+.destinationCopy p { max-width: 500px; margin: 2rem 0 2.5rem; color: #60717c; font-size: 1rem; line-height: 1.9; }
+.growingSection { padding: 9rem 0 11rem; background: #07365d; color: white; text-align: center; }
+.growingSection .eyebrow { color: #8dd3c9; }
+.growingIcon { width: 42px; height: 42px; margin: 0 auto 2rem; color: #f28c28; stroke-width: 1; }
+.growingSection h2 { max-width: 900px; margin: 0 auto; color: #fff; font-size: clamp(2.5rem, 4.4vw, 5rem); }
+@media (max-width: 900px) {
+  .hubHero { padding: 2rem 0 5rem; }
+  .heroGrid, .sectionIntro, .destinationFeature { grid-template-columns: 1fr; }
+  .heroCopy { padding: 1rem 0 0; }
+  .heroImage { min-height: 510px; border-radius: 2px 80px 2px 80px; }
+  .sectionIntro { gap: 1.2rem; }
+  .destinationPhoto { min-height: 440px; }
+  .destinationPhoto::after { background: linear-gradient(0deg, rgba(237,242,236,.6), transparent 45%); }
+  .destinationCopy { padding: 2.5rem 1.5rem 3.5rem; }
+}
+@media (max-width: 560px) {
+  .heroCopy h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .heroImage { min-height: 390px; border-radius: 2px 48px 2px 48px; box-shadow: 14px 18px 0 rgba(45,126,150,.1); }
+  .destinationPhoto { min-height: 340px; }
+  .destinationCopy h3 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
+  .growingSection { padding: 6rem 0 7rem; }
+}
