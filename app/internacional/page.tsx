@@ -9,6 +9,7 @@ import { buildWhatsAppHref } from '@/lib/products';
 import styles from './internacional.module.css';
 
 const baseUrl = 'https://valentinproteccionintegral.com';
+const upcomingDestinations = ['Australia', 'Japón', 'Estados Unidos', 'Canadá', 'Perú', 'Ecuador', 'Venezuela', 'México'];
 
 export const metadata: Metadata = {
   title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
@@ -36,7 +37,7 @@ export default function InternacionalPage() {
   };
 
   return (
-    <>
+    <div className={styles.route}>
       <Header />
       <main className={styles.page}>
         <div className="container-shell">
@@ -83,6 +84,17 @@ export default function InternacionalPage() {
           </div>
         </section>
 
+        <section className={styles.growingSection} aria-labelledby="upcoming-title">
+          <div className={styles.upcomingInner}>
+            <p className={styles.eyebrow}>PRÓXIMAMENTE</p>
+            <h2 id="upcoming-title">Nuevos destinos están tomando forma.</h2>
+            <p className={styles.upcomingLead}>Estamos ampliando VPI Internacional con nuevos países y colaboradores, manteniendo el mismo criterio: preparar desde España lo que tenga sentido y sumar conocimiento local allí donde realmente aporte valor.</p>
+            <div className={styles.upcomingList} aria-label="Próximos destinos">
+              {upcomingDestinations.map((destination, index) => <div className={styles.upcomingDestination} key={destination}><span>0{index + 1}</span><strong>{destination}</strong></div>)}
+            </div>
+          </div>
+        </section>
+
         <section className={styles.growingSection} aria-labelledby="growing-title">
           <div className="container-shell">
             <Globe2 aria-hidden="true" className={styles.growingIcon} />
@@ -93,6 +105,6 @@ export default function InternacionalPage() {
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-    </>
+    </div>
   );
 }
