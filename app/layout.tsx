@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     images: [
       {
-        url: '/og-image.webp',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: site.name,
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     // title y description se definen en cada página individualmente
-    images: ['/og-image.webp'],
+    images: ['/og-image.png'],
   },
   other: {
     'facebook-domain-verification': 's7ts2da9rfedyxqu70u6zm5hbkhsj2',

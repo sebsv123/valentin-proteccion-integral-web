@@ -1,0 +1,323 @@
+.section {
+  background: #f6f1e4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+
+/* ── Main two-column grid ── */
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 380px minmax(0, 720px);
+  justify-content: space-between;
+  column-gap: 60px;
+  align-items: start;
+}
+
+.grid::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 410px;
+  width: 1px;
+  background: rgba(7, 54, 93, 0.1);
+  content: '';
+}
+
+/* ── Left column ── */
+.left {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  color: #2c817b;
+  font: 700 12px/1.4 var(--font-body), sans-serif;
+  letter-spacing: 0.2em;
+}
+
+.title {
+  margin: 0;
+  color: #07365d;
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: clamp(2.3rem, 2.9vw, 2.75rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.title em {
+  color: #187d6f;
+  font-style: normal;
+}
+
+.intro {
+  margin: 1.2rem 0 0;
+  color: #3d5063;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.quickFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.quickFact {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(7, 54, 93, 0.13);
+  border-radius: 999px;
+  color: #294a5f;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.disclaimer {
+  max-width: 380px;
+  margin: 2.2rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(7, 54, 93, 0.14);
+  color: #57697a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ── Right column: chapters ── */
+.chapters {
+  display: grid;
+  row-gap: 0;
+  min-width: 0;
+  margin-top: 0.4rem;
+}
+
+.chapter {
+  padding: 1.6rem 0 1.9rem;
+  border-bottom: 1px solid rgba(7, 54, 93, 0.13);
+}
+
+.chapter:first-child {
+  padding-top: 0;
+}
+
+.chapterHead {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 16px;
+  align-items: baseline;
+}
+
+.chapterNumber {
+  color: #187d6f;
+  font: 700 14px/1 var(--font-body), sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.chapterTitle {
+  margin: 0;
+  color: #07365d;
+  font-family: var(--font-heading), serif;
+  font-weight: 600;
+  font-size: clamp(1.3125rem, 1.6vw, 1.5rem);
+  letter-spacing: -0.01em;
+}
+
+.chapterBody {
+  margin-top: 1.25rem;
+  padding-left: 64px;
+}
+
+/* ── 01 Admission ── */
+.admissionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.subLabel {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #187d6f;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bulletList {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: #33475a;
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+
+.bulletList li::before {
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c1571f;
+  content: '';
+}
+
+/* ── 02 Language ── */
+.langChipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.langChip {
+  padding: 0.38rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(193, 87, 31, 0.1);
+  color: #a4471a;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.langPrimary {
+  margin: 0.9rem 0 0;
+  color: #07365d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.langSecondary {
+  margin: 0.4rem 0 0;
+  color: #4c6472;
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+/* ── 03 Budget ──
+   The stat row reclaims the chapter's title-indent (64px) so the three
+   values have the full chapter width to work with, and each stat carries
+   its own left padding + hairline divider (from the 2nd stat on) so the
+   three figures read as clearly separate units instead of touching. */
+.budgetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 28px;
+  margin-left: -64px;
+  width: calc(100% + 64px);
+}
+
+.budgetStat {
+  min-width: 0;
+  padding-left: 24px;
+  border-left: 1px solid rgba(7, 54, 93, 0.12);
+}
+
+.budgetStat:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.budgetValue {
+  display: block;
+  color: #07365d;
+  font-family: var(--font-heading), serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.budgetLabel {
+  display: block;
+  margin-top: 0.55rem;
+  color: #4c6472;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.budgetNote {
+  margin: 1.4rem 0 0;
+  color: #57697a;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ── 04 Life in Spain ── */
+.lifeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 20px;
+}
+
+.lifeItem {
+  min-width: 0;
+}
+
+.lifeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.6rem;
+  color: #187d6f;
+}
+
+.lifeIcon svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.6;
+}
+
+.lifeLabel {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #187d6f;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.lifeDesc {
+  margin: 0;
+  color: #33475a;
+  font-size: 15.5px;
+  line-height: 1.58;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: 1fr; row-gap: 3rem; }
+  .grid::before { display: none; }
+  .chapters { margin-top: 0; }
+}
+
+@media (max-width: 700px) {
+  .container { padding: 64px 20px; }
+  .title { font-size: clamp(2rem, 8.5vw, 2.4rem); }
+  .chapterBody { padding-left: 0; margin-top: 1rem; }
+  .admissionGrid { grid-template-columns: 1fr; row-gap: 1.4rem; }
+  .budgetGrid { grid-template-columns: 1fr; row-gap: 1.1rem; margin-left: 0; width: 100%; }
+  .budgetStat { padding-left: 0; padding-top: 1.1rem; border-left: none; border-top: 1px solid rgba(7, 54, 93, 0.12); }
+  .budgetStat:first-child { padding-top: 0; border-top: none; }
+  .lifeGrid { grid-template-columns: 1fr; row-gap: 1.3rem; }
+}

@@ -1,0 +1,296 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(6rem, 9vw, 9rem) 0;
+  background: #07365d;
+  color: white;
+}
+
+/* ── Header ── */
+.header {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  color: #f7c99a;
+  font: 700 12px/1.4 var(--font-body), sans-serif;
+  letter-spacing: 0.18em;
+}
+
+.title {
+  margin: 0;
+  color: white;
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: clamp(2.7rem, 4.2vw, 4.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.03;
+}
+
+.title em {
+  color: #f28c28;
+  font-style: normal;
+}
+
+/* ── Main 3-zone composition ── */
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 42fr) minmax(140px, 16fr) minmax(0, 42fr);
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: stretch;
+  margin-top: 2.75rem;
+}
+
+/* ── Side columns (Aara / VPI) ── */
+.side {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ghostWord {
+  position: absolute;
+  top: -0.06em;
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.045);
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: clamp(6rem, 12vw, 11rem);
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ghostIndia { left: -0.04em; }
+.ghostSpain { right: -0.04em; }
+
+.sideContent {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.sideHead {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.logoCard {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 46px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  background: white;
+}
+
+.logoCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.vpiMark {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+}
+
+.vpiMark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.originLabel {
+  color: #f7c99a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.originLabelVpi {
+  color: #9edbd1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.sideTitle {
+  margin: 0 0 1.7rem;
+  color: white;
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 2.6vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+.groupGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.4rem;
+  row-gap: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.group {
+  min-width: 0;
+}
+
+.groupTitle {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.aaraAccent { color: #f5a35c; }
+.vpiAccent { color: #9edbd1; }
+
+.groupDesc {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ── Handoff (center bridge) ── */
+.handoff {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.handoffLine {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.handoffLineTop {
+  top: 0;
+  height: calc(50% - 56px);
+  background: linear-gradient(180deg, transparent, rgba(242, 140, 40, 0.7));
+}
+
+.handoffLineBottom {
+  bottom: 0;
+  height: calc(50% - 56px);
+  background: linear-gradient(180deg, rgba(45, 165, 150, 0.7), transparent);
+}
+
+.handoffDot {
+  position: absolute;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.handoffDotTop { top: 0; background: #f28c28; }
+.handoffDotBottom { bottom: 0; background: #2d9187; }
+
+.handoffCapsule {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1.25rem 1.1rem;
+  border: 1px solid rgba(242, 140, 40, 0.38);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  text-align: center;
+}
+
+.handoffCapsule strong {
+  color: white;
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.handoffCapsule strong i {
+  margin: 0 0.15em;
+  color: rgba(255, 255, 255, 0.55);
+  font-style: normal;
+}
+
+.handoffRoute {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.handoffRoute em:first-child { color: #f5a35c; font-style: normal; }
+.handoffRoute em:last-child { color: #9edbd1; font-style: normal; }
+.handoffRoute i { color: rgba(255, 255, 255, 0.5); font-style: normal; }
+
+/* ── Closing statement ── */
+.closing {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 3.25rem auto 0;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  line-height: 1.42;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1099px) {
+  .grid { grid-template-columns: 1fr; row-gap: 3.25rem; }
+
+  .handoff { min-height: 0; flex-direction: row; justify-content: center; padding: 0.5rem 0; }
+  .handoffLine { top: 50%; left: 0; width: auto; height: 1px; transform: translateY(-50%); }
+  .handoffLineTop { right: 50%; bottom: auto; left: 0; width: calc(50% - 92px); height: 1px; background: linear-gradient(90deg, transparent, rgba(242, 140, 40, 0.7)); }
+  .handoffLineBottom { top: 50%; right: 0; bottom: auto; left: auto; width: calc(50% - 92px); height: 1px; background: linear-gradient(90deg, rgba(45, 165, 150, 0.7), transparent); }
+  .handoffDot { top: 50%; transform: translate(-50%, -50%); }
+  .handoffDotTop { left: 0; }
+  .handoffDotBottom { left: 100%; }
+
+  .ghostWord { font-size: clamp(5rem, 20vw, 8rem); }
+}
+
+@media (max-width: 639px) {
+  .groupGrid { grid-template-columns: 1fr; row-gap: 1.3rem; }
+  .title { font-size: clamp(2.1rem, 9vw, 2.6rem); }
+  .grid { margin-top: 2.25rem; row-gap: 2.75rem; }
+  .handoffCapsule { padding: 1.05rem 1rem; }
+  .handoffCapsule strong { font-size: 15px; }
+  .closing { font-size: 1.1rem; margin-top: 2.75rem; }
+}
