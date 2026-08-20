@@ -86,7 +86,7 @@ export default function InternacionalPage() {
                 <Image src="/images/internacional/australia/australia-hero-sydney.webp" alt="Ferry y paisaje urbano de Sídney, Australia" fill sizes="(max-width: 900px) 100vw, 48vw" />
               </div>
               <div className={styles.destinationCopy}>
-                <div className={styles.flagLine}><span>AUSTRALIA</span></div>
+                <div className={styles.flagLine}><Image src="/images/internacional/australia/bandera-australia.jpg" alt="Bandera de Australia" width={42} height={28} /><span>AUSTRALIA</span></div>
                 <h3>Australia tiene<br /><em>muchas formas de empezar</em></h3>
                 <p>Estudiar, trabajar, viajar o reunirte con tu familia pueden llevarte al mismo país por caminos muy distintos. Empieza por ordenar el motivo, la ruta y la cobertura.</p>
                 <span className={styles.destinationCta}>Explorar Australia <ArrowRight aria-hidden="true" /></span>
