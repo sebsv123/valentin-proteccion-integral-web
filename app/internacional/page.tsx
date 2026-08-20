@@ -9,11 +9,11 @@ import { buildWhatsAppHref } from '@/lib/products';
 import styles from './internacional.module.css';
 
 const baseUrl = 'https://valentinproteccionintegral.com';
-const upcomingDestinations = ['Australia', 'Japón', 'Estados Unidos', 'Canadá', 'Perú', 'Ecuador', 'Venezuela', 'México'];
+const upcomingDestinations = ['Japón', 'Estados Unidos', 'Canadá', 'Perú', 'Ecuador', 'Venezuela', 'México'];
 
 export const metadata: Metadata = {
   title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
-  description: 'VPI conecta la orientación aseguradora desde España con especialistas locales para preparar tu llegada y tu vida en Corea del Sur.',
+  description: 'VPI conecta la orientación aseguradora desde España con especialistas locales para preparar tu llegada y tu vida en Corea del Sur y Australia.',
   alternates: { canonical: `${baseUrl}/internacional` },
   openGraph: {
     title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
@@ -79,6 +79,17 @@ export default function InternacionalPage() {
                 <h3>Instalarte en Corea<br /><em>con apoyo local</em> y visión aseguradora</h3>
                 <p>VPI prepara contigo la parte aseguradora desde España y LandKorea aporta experiencia local para ayudarte a afrontar la llegada, la vivienda, los primeros pasos y la adaptación a Corea.</p>
                 <span className={styles.destinationCta}>Descubrir Corea del Sur <ArrowRight aria-hidden="true" /></span>
+              </div>
+            </Link>
+            <Link href="/internacional/australia" className={`${styles.destinationFeature} ${styles.destinationFeatureAustralia}`}>
+              <div className={styles.destinationPhoto}>
+                <Image src="/images/internacional/australia/australia-hero-sydney.webp" alt="Ferry y paisaje urbano de Sídney, Australia" fill sizes="(max-width: 900px) 100vw, 48vw" />
+              </div>
+              <div className={styles.destinationCopy}>
+                <div className={styles.flagLine}><span>AUSTRALIA</span></div>
+                <h3>Australia tiene<br /><em>muchas formas de empezar</em></h3>
+                <p>Estudiar, trabajar, viajar o reunirte con tu familia pueden llevarte al mismo país por caminos muy distintos. Empieza por ordenar el motivo, la ruta y la cobertura.</p>
+                <span className={styles.destinationCta}>Explorar Australia <ArrowRight aria-hidden="true" /></span>
               </div>
             </Link>
           </div>

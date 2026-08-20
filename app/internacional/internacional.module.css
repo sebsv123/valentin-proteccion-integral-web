@@ -21,6 +21,9 @@
 .sectionIntro h2 { max-width: 800px; font-size: clamp(2.5rem, 4.1vw, 4.7rem); }
 .destinationFeature { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); min-height: 580px; background: #edf2ec; color: inherit; transition: transform .25s ease, box-shadow .25s ease; }
 .destinationFeature:hover { transform: translateY(-5px); box-shadow: 0 24px 55px rgba(7,54,93,.12); }
+.destinationFeatureAustralia { margin-top: 2rem; background: #e7f0e9; }
+.destinationFeatureAustralia .destinationPhoto { order: 2; }
+.destinationFeatureAustralia .destinationCopy { order: 1; padding-right: 0; padding-left: clamp(2rem, 5vw, 6.5rem); }
 .destinationPhoto { position: relative; min-height: 580px; overflow: hidden; }
 .destinationPhoto::after { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 65%, rgba(237,242,236,.94)); content: ''; }
 .destinationCopy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 6rem) clamp(2rem, 5vw, 6.5rem) clamp(2rem, 5vw, 5rem) 0; }
@@ -49,6 +52,8 @@
   .destinationPhoto { min-height: 440px; }
   .destinationPhoto::after { background: linear-gradient(0deg, rgba(237,242,236,.6), transparent 45%); }
   .destinationCopy { padding: 2.5rem 1.5rem 3.5rem; }
+  .destinationFeatureAustralia .destinationPhoto { order: initial; }
+  .destinationFeatureAustralia .destinationCopy { order: initial; padding: 2.5rem 1.5rem 3.5rem; }
   .upcomingList { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; margin-top: 3.5rem; }
 }
 @media (max-width: 560px) {

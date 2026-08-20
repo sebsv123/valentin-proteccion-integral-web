@@ -1,0 +1,323 @@
+.route { overflow-x: clip; }
+.page { overflow: hidden; background: #f8f6f1; color: #17334a; }
+.eyebrow, .kicker { margin: 0 0 1.25rem; color: #2c817b; font: 700 .72rem/1.4 var(--font-body), sans-serif; letter-spacing: .2em; }
+.kicker { color: #739b83; }
+.hero { min-height: 760px; background: #f8f6f1; padding: 0 0 4.5rem; }
+.breadcrumb { padding-top: 1.25rem; }
+.heroIdentity { display: flex; align-items: center; gap: .9rem; margin-bottom: 2.6rem; }
+.flag { width: 40px; height: auto; }
+.heroIdentity span { display: grid; gap: .2rem; }
+.heroIdentity strong { color: #07365d; font-size: .8rem; letter-spacing: .2em; }
+.heroIdentity small { color: #2c817b; font-size: .64rem; font-weight: 800; letter-spacing: .18em; }
+.heroComposition { display: grid; grid-template-columns: minmax(0, .4fr) minmax(0, .6fr); gap: clamp(3.5rem, 4.8vw, 4.5rem); align-items: start; margin-top: 3.2rem; }
+.heroHeading { position: relative; z-index: 1; min-width: 0; margin: 0; padding: 0 0 3.2rem; }
+.heroIndex { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.7rem; color: #2c817b; font-size: .66rem; font-weight: 800; letter-spacing: .2em; }
+.heroIndex i { color: #b09b62; font-size: .85rem; font-style: normal; }
+.heroHeading h1, .sectionHeading h2, .coverageSection h2, .studentCopy h2, .workHeader h2, .familySection h2, .migrationSection h2, .lifeSection h2, .processSection h2, .faqSection h2, .contactSection h2 { margin: 0; color: #07365d; font-family: var(--font-heading), serif; font-weight: 700; letter-spacing: -.06em; line-height: .91; }
+.heroHeading h1 { display: grid; max-width: 100%; font-size: clamp(3.55rem, 5.2vw, 6.5rem); line-height: .9; overflow-wrap: normal; }
+.heroHeading h1 span:nth-child(2) { margin-left: clamp(1rem, 2.5vw, 2.5rem); }
+.heroHeading h1 em { margin-left: clamp(0rem, 1vw, 1rem); }
+.heroHeading h1 em, .sectionHeading h2 em, .coverageSection h2 em, .studentCopy h2 em, .workHeader h2 em, .familySection h2 em, .migrationSection h2 em, .lifeSection h2 em, .processSection h2 em, .faqSection h2 em, .contactSection h2 em { color: #2d7e96; font-style: normal; }
+.heroIntro { display: grid; gap: 1rem; margin: 2.4rem 0 1.4rem; color: #60717c; font-size: .98rem; line-height: 1.72; }
+.heroIntro p { margin: 0; }
+.heroLead { max-width: 32ch; color: #07365d; font-family: var(--font-heading), serif; font-size: clamp(1.25rem, 1.55vw, 1.65rem); letter-spacing: -.025em; line-height: 1.18; }
+.heroDescription { max-width: 48ch; }
+.heroRouteIndex { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .65rem; margin: 1.8rem 0 2rem; color: #07365d; font-size: .61rem; font-weight: 800; letter-spacing: .19em; line-height: 1.6; }
+.heroRouteIndex i { color: #f28c28; font-size: 1rem; font-style: normal; }
+.heroActions, .contactActions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.3rem; }
+.primaryCta, .lightCta { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 52px; padding: .85rem 1.25rem; background: #f28c28; color: white; font-size: .86rem; font-weight: 800; text-decoration: none; }
+.primaryCta svg, .lightCta svg, .textCta svg { width: 17px; }
+.textCta { display: inline-flex; align-items: center; gap: .45rem; color: #07365d; font-size: .85rem; font-weight: 800; text-decoration: none; }
+.textCta svg { color: #2c817b; }
+.textCta span { color: #2c817b; font-size: 1.05rem; }
+.heroPhotoWrap { position: relative; min-width: 0; width: 100%; margin: 0; }
+.heroPhotoFrame { position: relative; padding-left: 11px; }
+.heroPhotoFrame::before { position: absolute; top: 0; bottom: 0; left: 0; width: 1px; background: #07365d; content: ''; }
+.heroPhotoFrame::after { position: absolute; top: 0; left: 0; width: 42px; height: 42px; border-top: 3px solid #f28c28; border-left: 3px solid #f28c28; content: ''; }
+.heroPhoto { position: relative; height: clamp(560px, 39vw, 640px); overflow: hidden; background: #dfe7df; }
+.heroPhoto img, .studentPhoto img, .workPhoto img, .lifePhoto img { object-fit: cover; }
+.heroPhoto img { object-position: 50% 58%; }
+.photoLabel { display: flex; align-items: baseline; gap: 1.25rem; padding: .85rem 0 0 2.4rem; color: #07365d; font-size: .65rem; font-weight: 800; letter-spacing: .18em; line-height: 1.65; }
+.photoLabel::before { width: 42px; height: 1px; margin-left: -2.4rem; background: #f28c28; content: ''; }
+.photoLabel small { color: #2c817b; font-size: .58rem; letter-spacing: .13em; }
+.heroChapter { position: absolute; bottom: -1.15rem; left: -.1rem; color: transparent; font-family: var(--font-heading), serif; font-size: clamp(9rem, 16vw, 15rem); font-weight: 700; letter-spacing: -.12em; line-height: .7; -webkit-text-stroke: 1px rgba(7,54,93,.12); pointer-events: none; user-select: none; }
+.routesSection { padding: 9rem 0 10rem; background: #fffdf9; }
+.sectionHeading { display: grid; grid-template-columns: 1fr .7fr; gap: 6rem; align-items: end; margin-bottom: 5rem; }
+.sectionHeading h2, .coverageSection h2, .studentCopy h2, .workHeader h2, .familySection h2, .migrationSection h2, .lifeSection h2, .processSection h2, .faqSection h2, .contactSection h2 { font-size: clamp(3rem, 5.2vw, 5.8rem); }
+.sectionHeading > div:last-child > p { margin: 0; color: #60717c; font-size: 1rem; line-height: 1.8; }
+.disclaimer { margin-top: 1.15rem !important; color: #77908e !important; font-size: .78rem !important; }
+.routeList { position: relative; display: grid; gap: 0; margin-top: 1rem; }
+.routeList::before { position: absolute; top: 0; bottom: 0; left: 13%; width: 1px; background: linear-gradient(#b09b62, rgba(44,129,123,.12) 82%, transparent); content: ''; }
+.routeRow { position: relative; display: grid; grid-template-columns: minmax(190px, .7fr) 1.15fr minmax(260px, .85fr); gap: 2rem; align-items: center; min-height: 245px; padding: 2.5rem 0; border-bottom: 1px solid rgba(7,54,93,.16); }
+.routeMeta { display: grid; align-content: center; gap: 1.2rem; }
+.routeNumber { color: #2c817b; font-size: .68rem; font-weight: 800; letter-spacing: .16em; }
+.routeRow h3 { margin: 0; color: #07365d; font-size: .72rem; letter-spacing: .18em; line-height: 1.45; }
+.routeVisas { display: flex; align-items: baseline; gap: 1.1rem; color: #07365d; }
+.routeVisas strong { color: #b09b62; font-family: var(--font-heading), serif; font-size: clamp(4.7rem, 8vw, 8.5rem); font-weight: 700; letter-spacing: -.09em; line-height: .75; }
+.routeVisas span { color: #2c817b; font-size: .72rem; font-weight: 800; letter-spacing: .13em; }
+.routeVisas i { color: #2c817b; font-size: 1.1rem; font-style: normal; }
+.visaHero { color: #07365d !important; }
+.visaWorking { justify-content: space-between; padding-right: 8%; }
+.visaWorking strong:first-child { color: #07365d; }
+.visaSequence { display: flex; flex-direction: column; align-items: flex-start; gap: .65rem; }
+.visaSequence strong:last-child { color: #07365d; margin-left: 4.5rem; }
+.visaSequence i { width: 1px; height: 28px; margin-left: 2.4rem; background: #b09b62; }
+.visaSkilled { align-items: end; gap: clamp(.6rem, 2vw, 2rem); }
+.visaSkilled strong:nth-child(2) { color: #07365d; transform: translateY(-1.5rem); }
+.visaSkilled strong:nth-child(3) { position: relative; color: #b09b62; transform: translateY(1.3rem); }
+.visaSkilled small { display: block; margin-top: .35rem; color: #2c817b; font: 800 .52rem/1 var(--font-body), sans-serif; letter-spacing: .16em; }
+.visaFamily { display: grid; gap: .8rem; justify-content: start; }
+.visaFamily span { display: flex; align-items: baseline; gap: .7rem; }
+.visaFamily span strong { color: #07365d; font-size: clamp(2.4rem, 4vw, 4.4rem); }
+.visaFamily span:nth-child(2) strong:first-child { color: #b09b62; }
+.visaFamily > strong { margin-left: 7.5rem; color: #b09b62; font-size: clamp(3rem, 5vw, 5rem); }
+.routeRow p { max-width: 430px; margin: 0; color: #60717c; font-size: .9rem; line-height: 1.65; }
+.coverageSection { position: relative; isolation: isolate; overflow: hidden; padding: clamp(6.9rem, 8vw, 8rem) 0 clamp(5.8rem, 7vw, 7rem); background: radial-gradient(ellipse 62% 78% at 82% 45%, rgba(42,145,169,.10) 0%, rgba(30,116,143,.045) 42%, rgba(7,61,97,0) 72%), #073d61; color: white; }
+.coverageSection .eyebrow { color: #8dd3c9; }
+.coverageSection .container-shell { position: relative; }
+.coverageMapLayer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; user-select: none; z-index: 0; -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, rgba(0,0,0,.22) 38%, rgba(0,0,0,.72) 47%, #000 55%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, rgba(0,0,0,.22) 38%, rgba(0,0,0,.72) 47%, #000 55%, #000 100%); }
+.coverageGrid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .46fr) minmax(0, .54fr); gap: clamp(64px, 5vw, 92px); align-items: start; }
+.coverageEditorial, .coveragePath { min-width: 0; }
+.coverageEditorial { position: relative; z-index: 2; }
+.coverageSection h2.coverageTitle { display: grid; max-width: 680px; color: #f7f4ec; font-size: clamp(58px, 3.8vw, 78px); line-height: .94; letter-spacing: -.035em; }
+.coverageTitle span, .coverageTitle em { display: block; }
+.coverageTitle em { color: #8dd3c9; font-style: normal; }
+.coverageCopy { max-width: 620px; margin: 2.8rem 0 2.4rem; color: rgba(247,244,236,.82); font-size: clamp(1.05rem, 1.2vw, 1.16rem); line-height: 1.7; }
+.coverageCtaRow { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem 2rem; }
+.coverageCtaRow .lightCta { min-height: 56px; padding-inline: 1.45rem; transition: background .16s ease, transform .16s ease; }
+.coverageCtaRow .lightCta:hover { background: #dc7416; transform: translateY(-1px); }
+.coverageCtaRow .lightCta:active { background: #bd5f0f; transform: translateY(0); }
+.coverageNote { color: rgba(247,244,236,.68); font-size: .68rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; }
+.coveragePath { position: relative; z-index: 1; padding-top: .1rem; }
+.coveragePathLabel { position: relative; z-index: 1; margin: 0 0 2.2rem; color: #8dd3c9; font-size: .72rem; font-weight: 800; letter-spacing: .2em; }
+.coverageQuestions { position: relative; z-index: 1; display: grid; gap: 0; }
+.coverageStep { display: grid; grid-template-columns: 2.25rem 1px minmax(0, 1fr) 11px; gap: 1.15rem; align-items: center; min-height: 142px; border-bottom: 1px solid rgba(141,211,201,.42); }
+.coverageStep:first-child { border-top: 1px solid rgba(141,211,201,.42); }
+.coverageStep > strong { align-self: start; padding-top: 1.35rem; color: #f28c28; font-size: 1.6rem; font-weight: 800; letter-spacing: -.04em; }
+.coverageDivider { width: 1px; height: 78px; background: rgba(141,211,201,.48); }
+.coverageStep h3 { max-width: 500px; margin: 0 0 .7rem; color: #f7f4ec; font-family: var(--font-heading), serif; font-size: clamp(1.9rem, 2.6vw, 2.65rem); font-weight: 700; letter-spacing: -.045em; line-height: .98; }
+.coverageStep p { margin: 0; color: #8dd3c9; font-size: .68rem; font-weight: 800; letter-spacing: .15em; line-height: 1.55; }
+.coverageStep p i { color: #f28c28; font-style: normal; padding-inline: .25rem; }
+.coverageMarker { width: 10px; height: 10px; border-radius: 50%; background: #f28c28; }
+.coverageFooter { position: relative; z-index: 2; margin-top: clamp(3.6rem, 5vw, 5rem); padding-top: 1.25rem; border-top: 1px solid rgba(141,211,201,.42); }
+.coverageFooter span { color: #8dd3c9; font-size: .7rem; font-weight: 800; letter-spacing: .19em; line-height: 1.6; }
+.coverageFooter i { color: #f28c28; font-style: normal; padding-inline: .45rem; }
+.decisionMap { position: absolute; top: 50%; right: clamp(-170px, -7.5vw, -90px); display: block; width: min(88vw, 1800px); max-width: none; height: auto; transform: translateY(-49%); pointer-events: none; user-select: none; }
+.lightCta { background: #f28c28; color: white; }
+.studentSection { padding: 10rem 0; background: #edf2ec; }
+.studentGrid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(380px, 1.15fr); gap: clamp(3rem, 8vw, 9rem); align-items: center; }
+.studentPhoto { position: relative; height: 650px; overflow: hidden; }
+.studentPhoto img { object-position: 50% 45%; }
+.studentCopy { position: relative; padding: 2rem 0; }
+.studentCopy .eyebrow { position: relative; z-index: 1; }
+.studentCopy h2 { position: relative; z-index: 1; max-width: 650px; }
+.giantNumber { position: absolute; top: -6rem; right: 0; color: rgba(45,126,150,.13); font-family: var(--font-heading), serif; font-size: clamp(11rem, 24vw, 22rem); letter-spacing: -.1em; line-height: .7; }
+.studentCopy > p { position: relative; z-index: 1; max-width: 620px; margin: 2rem 0 0; color: #60717c; font-size: 1rem; line-height: 1.8; }
+.studentCopy > small { display: block; position: relative; z-index: 1; max-width: 560px; margin-top: 2rem; color: #77908e; font-size: .77rem; line-height: 1.55; }
+.workSection { padding: 10rem 0 8rem; background: #fffdf9; }
+.workHeader { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 5rem; align-items: end; }
+.workPhoto { position: relative; height: 390px; overflow: hidden; }
+.workPhoto img { object-position: 50% 42%; }
+.workBranches { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; margin-top: 7rem; }
+.branch { padding-top: 1.2rem; border-top: 1px solid rgba(7,54,93,.35); }
+.branchLabel { color: #2c817b; font-size: .68rem; font-weight: 800; letter-spacing: .16em; }
+.branchLine { display: flex; align-items: baseline; gap: 1.1rem; margin-top: 2rem; }
+.branchLine strong, .skillNumbers strong { color: #07365d; font-family: var(--font-heading), serif; font-size: clamp(3.3rem, 6vw, 6rem); letter-spacing: -.08em; line-height: .8; }
+.branchLine span, .skillNumbers span { color: #b09b62; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.branch > p { max-width: 330px; margin: 1.1rem 0 2.2rem; color: #60717c; font-size: .9rem; line-height: 1.65; }
+.skillNumbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2rem; }
+.skillNumbers > div { display: grid; align-content: start; gap: .75rem; padding-left: 1rem; border-left: 1px solid rgba(7,54,93,.18); }
+.skillNumbers strong { font-size: clamp(2.7rem, 4vw, 4.2rem); }
+.skillNumbers p { margin: .3rem 0 0; color: #60717c; font-size: .82rem; line-height: 1.55; }
+.skillNumbers small { color: #2c817b; font-size: .62rem; font-weight: 800; letter-spacing: .1em; }
+.graduateBridge { display: grid; grid-template-columns: auto auto 1fr; gap: 1.5rem; align-items: center; max-width: 800px; margin: 7rem auto 0; padding-top: 1.3rem; border-top: 1px solid rgba(7,54,93,.3); }
+.graduateBridge > span { color: #2c817b; font-size: .65rem; font-weight: 800; letter-spacing: .16em; }
+.graduateBridge > strong { color: #07365d; font-family: var(--font-heading), serif; font-size: 3rem; line-height: 1; }
+.graduateBridge b { color: #07365d; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+.graduateBridge p { margin: .5rem 0 0; color: #60717c; font-size: .85rem; line-height: 1.55; }
+.familySection { position: relative; overflow: hidden; padding: 11rem 0 12rem; background: #f8f6f1; }
+.familyGrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); grid-template-areas: "head photo" "body ."; column-gap: clamp(3rem, 6vw, 6rem); row-gap: 2.6rem; }
+.familyHead { grid-area: head; min-width: 0; }
+.familyBody { grid-area: body; min-width: 0; }
+.familySection h2 { max-width: 560px; }
+.familyPhoto { position: relative; grid-area: photo; height: clamp(440px, 40vw, 600px); border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(7, 54, 93, .35), 0 4px 18px rgba(7, 54, 93, .08); }
+.familyRoutes { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 1.7rem; margin-top: 3.5rem; }
+.familyRoutes > div { display: grid; gap: .65rem; min-width: 0; }
+.familyRoutes strong { color: #07365d; font-family: var(--font-heading), serif; font-size: clamp(2rem, 3vw, 3.5rem); letter-spacing: -.06em; line-height: 1; }
+.familyRoutes span { max-width: 220px; color: #60717c; font-size: .78rem; line-height: 1.5; }
+.familyRoutes i { color: #f28c28; font-size: 1.4rem; font-style: normal; }
+.familyNote { max-width: 520px; margin: 3rem 0 0; color: #60717c; font-size: .92rem; line-height: 1.7; }
+.migrationSection { padding: 9rem 0 10rem; background: #e7f0e9; }
+.migrationGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; max-width: 900px; margin: 2.5rem 0 2.3rem; color: #60717c; font-size: 1rem; line-height: 1.8; }
+.migrationGrid p { margin: 0; }
+.lifeSection { padding: 10rem 0 11rem; background: #fffdf9; }
+.lifeSection h2 { max-width: 800px; }
+.lifeGrid { display: grid; grid-template-columns: 1.15fr .85fr; grid-template-areas: 'move city' 'move breathe'; gap: 3rem 1.7rem; align-items: start; margin-top: 6rem; }
+.lifeGrid figure { margin: 0; }
+.lifeMove { grid-area: move; }
+.lifeCity { grid-area: city; margin-top: 5rem !important; }
+.lifeBreathe { grid-area: breathe; width: 75%; margin-left: auto !important; }
+.lifePhoto { position: relative; overflow: hidden; }
+.lifeMove .lifePhoto { height: 690px; }
+.lifeCity .lifePhoto { height: 390px; }
+.lifeBreathe .lifePhoto { height: 270px; }
+.lifeMove .lifePhoto img { object-position: 50% 48%; }
+.lifeCity .lifePhoto img { object-position: 50% 50%; }
+.lifeBreathe .lifePhoto img { object-position: 50% 55%; }
+.lifeGrid figcaption { display: grid; gap: .65rem; padding-top: 1.1rem; }
+.lifeGrid figcaption b { color: #07365d; font-size: .67rem; letter-spacing: .17em; }
+.lifeGrid figcaption span { max-width: 370px; color: #60717c; font-size: .88rem; line-height: 1.65; }
+.processSection { padding: 10rem 0; background: #edf2ec; }
+.processSection h2 { max-width: 800px; }
+.processGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; margin-top: 6rem; border-top: 1px solid rgba(7,54,93,.32); }
+.processStep { min-height: 245px; padding: 1.2rem 1rem 0 0; border-bottom: 1px solid rgba(7,54,93,.2); }
+.processStep span { color: #2c817b; font-size: .7rem; font-weight: 800; letter-spacing: .15em; }
+.processStep h3 { margin: 2.3rem 0 .9rem; color: #07365d; font-size: .76rem; letter-spacing: .13em; line-height: 1.4; }
+.processStep p { margin: 0; color: #60717c; font-size: .86rem; line-height: 1.65; }
+.faqSection { padding: 10rem 0 9rem; background: #fffdf9; }
+.faqSection h2 { max-width: 900px; }
+.faqList { max-width: 960px; margin-top: 5rem; border-top: 1px solid rgba(7,54,93,.28); }
+.faqList details { border-bottom: 1px solid rgba(7,54,93,.18); }
+.faqList summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.35rem 0; color: #07365d; cursor: pointer; font-size: 1rem; font-weight: 700; list-style: none; }
+.faqList summary::-webkit-details-marker { display: none; }
+.faqList summary svg { width: 18px; flex: 0 0 auto; color: #2c817b; transition: transform .2s ease; }
+.faqList details[open] summary svg { transform: rotate(180deg); }
+.faqList details p { max-width: 740px; margin: 0 0 1.4rem; color: #60717c; font-size: .92rem; line-height: 1.7; }
+.sourceNote { max-width: 840px; margin: 4rem 0 0; color: #77908e; font-size: .76rem; line-height: 1.6; }
+.contactSection { padding: 8rem 0 10rem; background: #07365d; color: white; }
+.contactSection .eyebrow { color: #8dd3c9; }
+.contactSection h2 { max-width: 900px; color: white; }
+.contactSection h2 em { color: #bce8dc; }
+.contactSection > .container-shell > p { max-width: 620px; margin: 2rem 0 2.2rem; color: rgba(255,255,255,.82); font-size: 1rem; line-height: 1.75; }
+.contactFlag { width: 40px; height: auto; margin-bottom: 2rem; }
+.contactSection .textCta { color: white; }
+@media (max-width: 1100px) {
+  .heroComposition { gap: 3rem; }
+  .heroHeading h1 { font-size: clamp(3.2rem, 5.1vw, 4.7rem); }
+  .heroPhoto { height: 560px; }
+  .photoLabel { gap: .85rem; padding-left: 1.8rem; font-size: .58rem; }
+  .photoLabel::before { margin-left: -1.8rem; width: 30px; }
+  .photoLabel small { font-size: .52rem; }
+  .sectionHeading { gap: 3rem; }
+  .coverageGrid { gap: 3.5rem; }
+  .coverageSection h2.coverageTitle { font-size: clamp(3.15rem, 5.1vw, 4.4rem); }
+  .coverageStep { grid-template-columns: 2rem 1px minmax(0, 1fr) 10px; gap: .9rem; min-height: 132px; }
+  .coverageStep h3 { font-size: clamp(1.7rem, 2.6vw, 2.25rem); }
+  .coverageStep p { font-size: .61rem; letter-spacing: .11em; }
+  .decisionMap { right: -15vw; width: min(1250px, 118vw); opacity: .7; }
+  .routeRow { grid-template-columns: minmax(150px, .65fr) 1.1fr minmax(220px, .9fr); gap: 1.2rem; }
+  .routeVisas strong { font-size: clamp(3.8rem, 7vw, 6rem); }
+  .studentGrid { gap: 3rem; }
+  .workBranches { gap: 2rem; }
+  .skillNumbers { gap: .6rem; }
+  .familyGrid { column-gap: 3rem; }
+  .familyPhoto { height: clamp(380px, 38vw, 460px); }
+}
+@media (max-width: 800px) {
+  .hero { min-height: 0; padding-bottom: 4rem; }
+  .heroIdentity { margin-bottom: 2.2rem; }
+  .heroComposition { display: block; margin-top: 3rem; }
+  .heroHeading { padding: 0; }
+  .heroIndex { gap: .55rem; margin-bottom: 1.7rem; font-size: .59rem; letter-spacing: .14em; }
+  .heroHeading h1 { font-size: clamp(3rem, 12.5vw, 4rem); line-height: .94; }
+  .heroHeading h1 span:nth-child(2) { margin-left: 1.6rem; }
+  .heroHeading h1 em { margin-left: .2rem; }
+  .heroIntro { gap: 1.2rem; margin-top: 2rem; font-size: .94rem; line-height: 1.7; }
+  .heroLead { font-size: 1.4rem; }
+  .heroRouteIndex { max-width: 290px; margin: 1.6rem 0 1.8rem; }
+  .heroActions { align-items: flex-start; gap: 1rem; }
+  .heroPhotoWrap { width: 100%; margin: 4rem 0 0; }
+  .heroPhotoFrame { padding-left: 9px; }
+  .heroPhotoFrame::after { width: 32px; height: 32px; border-width: 2px; }
+  .heroPhoto { height: auto; aspect-ratio: 4 / 3; }
+  .photoLabel { flex-wrap: wrap; gap: .45rem .7rem; padding-top: .7rem; font-size: .58rem; }
+  .photoLabel::before { width: 48px; }
+  .heroChapter { bottom: -1rem; font-size: 10rem; }
+  .routesSection, .coverageSection, .studentSection, .workSection, .familySection, .migrationSection, .lifeSection, .processSection, .faqSection { padding: 6.5rem 0; }
+  .sectionHeading { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+  .sectionHeading h2, .coverageSection h2, .studentCopy h2, .workHeader h2, .familySection h2, .migrationSection h2, .lifeSection h2, .processSection h2, .faqSection h2, .contactSection h2 { font-size: clamp(2.7rem, 10.5vw, 4rem); line-height: .96; }
+  .routeList { margin-top: 0; }
+  .routeList::before { left: 0; }
+  .routeRow { display: block; min-height: 0; padding: 2.2rem 0 2.6rem 1.35rem; }
+  .routeMeta { display: flex; align-items: baseline; gap: 1rem; }
+  .routeNumber { padding-top: .25rem; }
+  .routeRow h3 { font-size: .66rem; }
+  .routeVisas { margin: 1.6rem 0 1.4rem; }
+  .routeVisas strong { font-size: clamp(3.4rem, 17vw, 5.2rem); }
+  .routeVisas span { font-size: .62rem; }
+  .visaWorking { justify-content: flex-start; gap: 1.4rem; }
+  .visaSequence strong:last-child { margin-left: 3rem; }
+  .visaSequence i { margin-left: 1.45rem; }
+  .visaSkilled { gap: .75rem; }
+  .visaSkilled strong:nth-child(2) { transform: translateY(-1rem); }
+  .visaSkilled strong:nth-child(3) { transform: translateY(.8rem); }
+  .visaFamily > strong { margin-left: 5rem; }
+  .routeRow p { max-width: 440px; font-size: .87rem; }
+  .coverageGrid { grid-template-columns: minmax(0, 1fr); gap: 5.5rem; }
+  .coverageSection h2.coverageTitle { max-width: 600px; font-size: clamp(3rem, 10.5vw, 4.3rem); line-height: .96; }
+  .coverageCopy { margin-top: 2.3rem; }
+  .coveragePath { padding-top: 0; }
+  .coveragePathLabel { margin-bottom: 1.7rem; }
+  .coverageStep { min-height: 128px; }
+  .coverageStep h3 { font-size: clamp(1.8rem, 6vw, 2.55rem); }
+  .coverageStep p { font-size: .64rem; }
+  .studentGrid, .workHeader, .workBranches, .migrationGrid { grid-template-columns: 1fr; }
+  .studentPhoto { height: 460px; }
+  .studentCopy { padding-top: 3rem; }
+  .giantNumber { top: -3rem; font-size: 12rem; }
+  .studentCopy > p { font-size: .94rem; }
+  .workHeader { gap: 2.5rem; }
+  .workPhoto { height: 360px; width: 78%; margin-left: auto; }
+  .workBranches { margin-top: 4rem; gap: 3rem; }
+  .skillNumbers { grid-template-columns: 1fr; gap: 1.6rem; }
+  .skillNumbers > div { padding-left: .8rem; }
+  .graduateBridge { grid-template-columns: auto auto; gap: 1rem; margin-top: 4rem; }
+  .graduateBridge > div { grid-column: 1 / -1; }
+  .familyGrid { grid-template-columns: 1fr; grid-template-areas: "head" "photo" "body"; row-gap: 2.6rem; }
+  .familySection h2 { max-width: 520px; }
+  .familyPhoto { height: 420px; }
+  .familyRoutes { display: grid; grid-template-columns: 1fr auto; gap: 1rem; margin-top: 4rem; }
+  .familyRoutes > div { grid-column: 1; }
+  .familyRoutes i { grid-column: 2; grid-row: auto; align-self: center; }
+  .familyRoutes span { max-width: 280px; }
+  .migrationGrid { gap: 1rem; margin-top: 2rem; font-size: .94rem; }
+  .lifeGrid { grid-template-columns: 1fr; grid-template-areas: 'move' 'city' 'breathe'; gap: 3rem; margin-top: 4rem; }
+  .lifeCity { margin-top: 0 !important; }
+  .lifeBreathe { width: 82%; margin-left: auto !important; }
+  .lifeMove .lifePhoto { height: 460px; }
+  .lifeCity .lifePhoto { height: 330px; }
+  .lifeBreathe .lifePhoto { height: 250px; }
+  .processGrid { grid-template-columns: 1fr 1fr; gap: 0 1rem; margin-top: 4rem; }
+  .processStep { min-height: 225px; }
+  .processStep h3 { margin-top: 1.7rem; }
+  .faqList { margin-top: 3.5rem; }
+  .contactSection { padding: 6rem 0 7rem; }
+}
+@media (max-width: 767px) {
+  .decisionMap { display: none; }
+}
+@media (max-width: 390px) {
+  .heroHeading h1 { font-size: 2.85rem; }
+  .heroPhotoWrap { margin-top: 3.2rem; }
+  .photoLabel { display: grid; gap: .25rem; padding-left: 1.4rem; }
+  .photoLabel::before { grid-row: 1 / span 2; width: 24px; margin-left: -1.4rem; }
+  .heroChapter { display: none; }
+  .coverageSection { padding-top: 5.5rem; }
+  .coverageGrid { gap: 4rem; }
+  .coverageSection h2.coverageTitle { font-size: clamp(2.7rem, 13vw, 3.45rem); }
+  .coverageCopy { font-size: 1rem; }
+  .coverageCtaRow { align-items: flex-start; gap: 1rem; }
+  .coverageCtaRow .lightCta { width: 100%; }
+  .coverageNote { max-width: 220px; }
+  .coverageStep { grid-template-columns: 1.7rem 1px minmax(0, 1fr) 9px; gap: .7rem; min-height: 136px; }
+  .coverageStep > strong { font-size: 1.35rem; }
+  .coverageStep h3 { font-size: clamp(1.6rem, 8.5vw, 2.1rem); }
+  .coverageStep p { font-size: .58rem; letter-spacing: .08em; }
+  .coverageMarker { width: 9px; height: 9px; }
+  .coverageFooter span { font-size: .59rem; letter-spacing: .11em; }
+  .processGrid { grid-template-columns: 1fr; }
+  .processStep { min-height: 0; padding-bottom: 1.5rem; }
+  .processStep h3 { margin-top: 1.4rem; }
+  .workPhoto { width: 88%; }
+  .familyPhoto { height: 320px; border-radius: 20px; }
+}
