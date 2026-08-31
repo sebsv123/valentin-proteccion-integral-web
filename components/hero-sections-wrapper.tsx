@@ -8,6 +8,7 @@ import { StatsSection } from '@/components/stats-section-client';
 import Link from 'next/link';
 import { BadgeCheck, Flower2, HeartPulse, PawPrint, Plane, Stethoscope } from 'lucide-react';
 import { products } from '@/lib/products';
+import { getHomeContent, type HomeLocale } from './home-content';
 export { StatsSection };
 
 const heroProductSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
@@ -21,7 +22,7 @@ const heroProductIcons = {
 };
 
 // Hero completo — imagen SSR + contenido cliente
-export function HeroLeadSection() {
+export function HeroLeadSection({ locale = 'es' }: { locale?: HomeLocale } = {}) {
   return (
     <section id="hero" aria-labelledby="hero-title" className="overflow-hidden bg-white py-5 md:py-8">
       <div className="container-shell hero-grid items-stretch gap-6 lg:gap-8">
@@ -40,13 +41,14 @@ export function HeroLeadSection() {
   );
 }
 
-export function ProductAccessSection() {
+export function ProductAccessSection({ locale = 'es' }: { locale?: HomeLocale } = {}) {
+  const content = getHomeContent(locale).hero;
   const productsForHero = products
     .filter((product) => heroProductSlugs.includes(product.slug))
     .sort((a, b) => heroProductSlugs.indexOf(a.slug) - heroProductSlugs.indexOf(b.slug));
 
   return (
-    <section aria-label="Accesos a seguros" className="bg-[var(--bg-soft)] py-8 md:py-10">
+    <section aria-label={locale === 'en' ? 'Insurance access' : 'Accesos a seguros'} className="bg-[var(--bg-soft)] py-8 md:py-10">
       <div className="container-shell">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
           {productsForHero.map((product) => {
@@ -59,7 +61,7 @@ export function ProductAccessSection() {
                 className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)] focus-visible:ring-offset-2"
               >
                 <Icon className="h-8 w-8 text-[var(--blue)] transition-transform group-hover:scale-110" aria-hidden="true" />
-                <span className="text-sm font-bold tracking-wide text-[var(--blue-deep)]">{product.label}</span>
+                <span className="text-sm font-bold tracking-wide text-[var(--blue-deep)]">{content.products[product.slug] || product.label}</span>
               </Link>
             );
           })}

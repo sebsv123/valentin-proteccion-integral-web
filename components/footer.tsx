@@ -9,7 +9,7 @@ import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
-  const linkHref = (href: string) => href === '/' || href === '/internacional' || href === '/contacto' ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto') : href;
+  const linkHref = (href: string) => href === '/' || href === '/internacional' ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional') : href;
   const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
   return (
@@ -23,7 +23,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">{isEnglish ? 'Valentín Protección Integral offers clear insurance guidance and support before and after you buy.' : healthVariant ? 'Te ayudamos a entender qué contratas y seguimos a tu lado cuando necesitas utilizar tu seguro.' : 'Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.'}</p>
             <div className="flex flex-wrap gap-3">
-              <WhatsAppButton href={buildWhatsAppHref('Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
+              <WhatsAppButton href={buildWhatsAppHref(isEnglish ? 'Hello, I would like to speak with Valentín Protección Integral on WhatsApp.' : 'Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href={linkHref('/contacto')} className="btn-ghost !px-5 !py-3">{isEnglish ? 'Contact form' : 'Formulario'}</Link>
             </div>
           </div>

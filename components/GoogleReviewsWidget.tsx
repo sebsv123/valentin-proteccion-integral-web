@@ -1,8 +1,10 @@
 import ReviewsCarouselWrapper from './ReviewsCarouselWrapper'
+import type { HomeLocale } from './home-content'
 
 interface GoogleReviewsWidgetProps {
   title?: string
   subtitle?: string
+  locale?: HomeLocale
 }
 
 async function getReviews() {
@@ -18,7 +20,7 @@ async function getReviews() {
   }
 }
 
-export default async function GoogleReviewsWidget({ title, subtitle }: GoogleReviewsWidgetProps) {
+export default async function GoogleReviewsWidget({ title, subtitle, locale = 'es' }: GoogleReviewsWidgetProps) {
   const data = await getReviews()
 
   return (
@@ -35,6 +37,7 @@ export default async function GoogleReviewsWidget({ title, subtitle }: GoogleRev
             reviews={data.reviews}
             rating={data.rating}
             user_ratings_total={data.user_ratings_total}
+            locale={locale}
           />
         ) : (
           <div className="text-center py-12">
@@ -44,7 +47,7 @@ export default async function GoogleReviewsWidget({ title, subtitle }: GoogleRev
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium underline underline-offset-2"
             >
-              Ver nuestras opiniones en Google →
+              {locale === 'en' ? 'See our reviews on Google →' : 'Ver nuestras opiniones en Google →'}
             </a>
           </div>
         )}

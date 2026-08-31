@@ -29,7 +29,7 @@ export function Header() {
   const t = useTranslations('common');
 
   const localeHref = (href: string) => {
-    if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto') {
+    if (href === '/' || href === '/internacional' || href === '/internacional/peru') {
       return localizedPath(locale, href);
     }
     return href;
@@ -107,7 +107,7 @@ export function Header() {
     }, 200);
   };
 
-  const whatsappHref = buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.');
+  const whatsappHref = buildWhatsAppHref(locale === 'en' ? 'Hello, I would like a no-obligation consultation to choose insurance.' : 'Hola, quiero una consulta sin compromiso para elegir un seguro.');
 
   return (
     <>
@@ -270,7 +270,7 @@ export function Header() {
               Accede al producto que te interesa y, cuando tenga sentido, profundiza por perfil o modalidad.
             </p>
             <div className="mt-5 grid gap-3">
-              <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
+              <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'No-obligation consultation' : 'Consulta sin compromiso'}</a>
               <a href={`tel:${site.phoneHref}`} className="btn-ghost !w-full !justify-center"><Phone className="h-4 w-4" /> {site.phone}</a>
             </div>
           </div>
@@ -371,7 +371,7 @@ export function Header() {
           { label: localeLabel('Inicio'), ariaLabel: localeLabel('Inicio'), link: localeHref('/') },
           { label: localeLabel('Alquileres'), ariaLabel: localeLabel('Alquileres'), link: '/extranjeros/alquileres' },
           { label: locale === 'en' ? 'Foreigners' : 'Extranjeros', ariaLabel: locale === 'en' ? 'Foreigners' : 'Extranjeros', link: '/extranjeros' },
-          ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
+          ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => item.label === 'Empresas'
             ? {
                 label: locale === 'en' ? 'Businesses' : 'Empresas',
@@ -387,7 +387,7 @@ export function Header() {
         ]}
         socialItems={[
           { label: 'Instagram', link: site.instagram },
-          { label: 'WhatsApp', link: buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.') }
+          { label: 'WhatsApp', link: buildWhatsAppHref(locale === 'en' ? 'Hello, I would like a no-obligation consultation to choose insurance.' : 'Hola, quiero una consulta sin compromiso para elegir un seguro.') }
         ]}
         socialTitle={locale === 'en' ? 'Contact' : 'Contacto'}
       />

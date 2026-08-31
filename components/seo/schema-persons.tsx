@@ -1,11 +1,12 @@
 export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
+  const isEnglish = locale === 'en';
   const rosa = {
     "@context": "https://schema.org",
     "@type": "Person",
     "inLanguage": locale,
     "name": "Rosa Valentín",
-    "jobTitle": "Agente de Seguros Registrada DGSFP",
-    "description": "Agente de seguros registrada en la DGSFP, responsable profesional de la marca Valentín Protección Integral en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, decesos y negocios. Asesora con claridad y sin presión comercial.",
+    "jobTitle": isEnglish ? "Registered insurance agent (DGSFP)" : "Agente de Seguros Registrada DGSFP",
+    "description": isEnglish ? "DGSFP-registered insurance agent responsible for Valentín Protección Integral in Madrid. Specialist in health, pet, dental, travel, accident, funeral and business insurance. Clear advice without sales pressure." : "Agente de seguros registrada en la DGSFP, responsable profesional de la marca Valentín Protección Integral en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, decesos y negocios. Asesora con claridad y sin presión comercial.",
     "url": "https://valentinproteccionintegral.com/sobre-nosotros",
     "image": "https://valentinproteccionintegral.com/og-image.webp",
     "telephone": "+34 603 448 765",
@@ -20,7 +21,9 @@ export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
       "https://www.instagram.com/segurosvalentin/",
       "https://wa.me/34603448765"
     ],
-    "knowsAbout": [
+    "knowsAbout": isEnglish ? [
+      "Health insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Legal protection", "Home appliance insurance", "Funeral insurance", "Business insurance", "Insurance for international residents", "Pet liability insurance", "Insurance for self-employed people"
+    ] : [
       "Seguros de salud",
       "Seguros para mascotas",
       "Seguros dentales",

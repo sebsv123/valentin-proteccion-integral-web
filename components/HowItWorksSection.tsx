@@ -4,6 +4,7 @@ import { Search, FileCheck, HeartHandshake } from 'lucide-react'
 import { WhatsAppIcon } from './ui/whatsapp-icon'
 import Link from 'next/link'
 import { buildWhatsAppHref } from '@/lib/products'
+import { useLocale } from 'next-intl'
 
 const steps = [
   {
@@ -32,7 +33,16 @@ const steps = [
   },
 ]
 
+const englishSteps = [
+  { num: '01', icon: WhatsAppIcon, title: 'Tell us about your situation', desc: 'Tell us what concerns you and what you want to protect. No lengthy forms, no pressure, at your own pace.' },
+  { num: '02', icon: Search, title: 'We explain it clearly', desc: 'We advise you according to your profile and priorities, explaining what changes between options.' },
+  { num: '03', icon: FileCheck, title: 'No hidden fine print', desc: 'We translate cover and exclusions into clear language. Questions are always welcome.' },
+  { num: '04', icon: HeartHandshake, title: 'You decide with clarity', desc: 'Once you have the full context, you decide. And if something changes, we stay with you.' },
+]
+
 export default function HowItWorksSection() {
+  const isEnglish = useLocale() === 'en';
+  const localizedSteps = isEnglish ? englishSteps : steps;
   useEffect(() => {
     const els = document.querySelectorAll('.fade-up');
     if (!els.length) return;
@@ -57,18 +67,17 @@ export default function HowItWorksSection() {
     >
       <div className="container-shell">
         <div className="fade-up mb-14 text-center">
-            <p className="kicker !text-[#81C784]">Cómo trabajamos contigo</p>
+            <p className="kicker !text-[#81C784]">{isEnglish ? 'How we work with you' : 'Cómo trabajamos contigo'}</p>
             <h2
               id="hiw-title"
               className="mt-4 font-heading text-4xl font-extrabold
                          tracking-tight text-white md:text-6xl"
             >
-              Cuatro pasos para proteger lo que importa
+              {isEnglish ? 'Four steps to protect what matters' : 'Cuatro pasos para proteger lo que importa'}
             </h2>
             <p className="mt-4 mx-auto max-w-2xl text-base text-white/90
                           leading-8">
-              Un proceso claro, humano y sin presiones. Así trabajamos
-              en Valentín Protección Integral.
+              {isEnglish ? 'A clear, human process without pressure. This is how we work at Valentín Protección Integral.' : <>Un proceso claro, humano y sin presiones. Así trabajamos<br />en Valentín Protección Integral.</>}
             </p>
           </div>
 
@@ -81,7 +90,7 @@ export default function HowItWorksSection() {
           />
 
           <div className="grid gap-6 lg:grid-cols-4">
-            {steps.map(({ num, icon: Icon, title, desc }, index) => (
+            {localizedSteps.map(({ num, icon: Icon, title, desc }, index) => (
               <div className="fade-up" key={num} style={{ transitionDelay: `${index * 0.08}s` }}>
                 <div
                   className="relative flex flex-col items-center text-center
@@ -133,16 +142,16 @@ export default function HowItWorksSection() {
               className="btn-secondary !border-white/20 !text-white
                          hover:!bg-white hover:!text-[var(--blue-deep)]"
             >
-              Cómo te ayudamos en detalle
+              {isEnglish ? 'How we help in detail' : 'Cómo te ayudamos en detalle'}
             </Link>
             <a
               href={buildWhatsAppHref(
-                'Hola, quiero entender cómo funciona el proceso de asesoría.'
+                isEnglish ? 'Hello, I would like to understand how the advice process works.' : 'Hola, quiero entender cómo funciona el proceso de asesoría.'
               )}
               className="btn-whatsapp"
             >
               <WhatsAppIcon className="h-4 w-4" />
-              Empezar ahora por WhatsApp
+              {isEnglish ? 'Start now on WhatsApp' : 'Empezar ahora por WhatsApp'}
             </a>
           </div>
         </div>

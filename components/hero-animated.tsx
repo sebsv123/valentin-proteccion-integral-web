@@ -11,6 +11,8 @@ import CountUp from './ui/count-up';
 import { HeroImage } from './hero-image';
 import { Phone, BadgePercent } from 'lucide-react';
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { useLocale } from 'next-intl';
+import { getHomeContent } from './home-content';
 
 // CSS Animation wrapper for zero-JS animations
 function CSSReveal({ 
@@ -185,14 +187,16 @@ export function HeroLeadSection() {
 }
 
 export function StatsSection() {
+  const locale = useLocale() as 'es' | 'en';
+  const content = getHomeContent(locale).stats;
   const stats = [
-    { label: 'Años de experiencia', value: 10, suffix: '+' },
-    { label: 'Familias protegidas', value: 1200, suffix: '+' },
-    { label: 'Asesoría cercana', value: 100, suffix: '%' },
+    { label: content.labels[0], value: 10, suffix: '+' },
+    { label: content.labels[1], value: 1200, suffix: '+' },
+    { label: content.labels[2], value: 100, suffix: '%' },
   ];
 
   return (
-    <section id="stats" aria-label="Estadísticas de impacto" className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
+    <section id="stats" aria-label={content.aria} className="bg-[var(--blue-deep)] py-12 md:py-16 overflow-hidden">
       <div className="container-shell">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center">
           {stats.map((stat, index) => (
@@ -220,7 +224,7 @@ export function StatsSection() {
           >
             <Image
               src="/images/rosa_y_sebastian.jpeg"
-              alt="Rosa y Sebastián, equipo Valentín Protección Integral"
+              alt={content.imageAlt}
               width={400}
               height={300}
               sizes="(max-width: 640px) 80vw, 200px"

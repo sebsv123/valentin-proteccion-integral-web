@@ -15,6 +15,7 @@ interface Props {
   reviews: Review[]
   rating: number
   user_ratings_total: number
+  locale?: 'es' | 'en'
 }
 
 function Stars({ rating }: { rating: number }) {
@@ -35,7 +36,7 @@ function Stars({ rating }: { rating: number }) {
   )
 }
 
-export default function ReviewsCarousel({ reviews, rating, user_ratings_total }: Props) {
+export default function ReviewsCarousel({ reviews, rating, user_ratings_total, locale = 'es' }: Props) {
   const [current, setCurrent] = useState(0)
   const total = reviews.length
 
@@ -65,14 +66,14 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
           ))}
         </div>
         <span className="text-2xl font-bold text-gray-900">{rating?.toFixed(1)}</span>
-        <span className="text-gray-500 text-sm">· {user_ratings_total}+ opiniones verificadas en Google</span>
+        <span className="text-gray-500 text-sm">· {user_ratings_total}+ {locale === 'en' ? 'verified Google reviews' : 'opiniones verificadas en Google'}</span>
         <a
           href="https://search.google.com/local/reviews?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm font-medium text-blue-600 hover:text-blue-800 underline underline-offset-2"
         >
-          Ver todas en Google →
+          {locale === 'en' ? 'See all on Google →' : 'Ver todas en Google →'}
         </a>
       </div>
 
@@ -161,7 +162,7 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
         <button
           onClick={() => setCurrent(prev => (prev - 1 + total) % total)}
           className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition"
-          aria-label="Reseña anterior"
+          aria-label={locale === 'en' ? 'Previous review' : 'Reseña anterior'}
         >
           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -172,7 +173,7 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              aria-label={`Ver reseña ${i + 1}`}
+              aria-label={`${locale === 'en' ? 'View review' : 'Ver reseña'} ${i + 1}`}
               className={`h-2 w-2 rounded-full transition-all duration-300 origin-center ${
                 i === current
                   ? 'bg-blue-600 scale-x-[2.5]'
@@ -184,7 +185,7 @@ export default function ReviewsCarousel({ reviews, rating, user_ratings_total }:
         <button
           onClick={() => setCurrent(prev => (prev + 1) % total)}
           className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition"
-          aria-label="Siguiente reseña"
+          aria-label={locale === 'en' ? 'Next review' : 'Siguiente reseña'}
         >
           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

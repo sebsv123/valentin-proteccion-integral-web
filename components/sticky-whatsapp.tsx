@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, getWhatsAppMessage } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
+import { useLocale } from 'next-intl';
 
 type StickyWhatsAppProps = {
   mobileVariant?: 'bar' | 'floating';
@@ -14,6 +15,8 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
   const [showTooltip, setShowTooltip] = useState(false);
   const [hideMobile, setHideMobile] = useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
+  const isEnglish = locale === 'en';
 
   useEffect(() => {
     const timer = setTimeout(() => setShowTooltip(true), 5000);
@@ -48,7 +51,7 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
     }, 200);
   };
 
-  const message = getWhatsAppMessage(pathname);
+  const message = isEnglish ? 'Hello, I would like clear insurance guidance.' : getWhatsAppMessage(pathname);
   const desktopHref = buildWhatsAppHref(message);
   const mobileHref = buildWhatsAppHref(message);
 
@@ -59,14 +62,14 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
       <div className="hidden md:block fixed bottom-6 right-6 z-50">
         {showTooltip && (
           <div className="absolute bottom-16 right-0 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-xl shadow-lg whitespace-nowrap animate-fade-in border border-green-100">
-            💬 ¿Hablamos sin compromiso?
+            {isEnglish ? '💬 Shall we talk with no obligation?' : '💬 ¿Hablamos sin compromiso?'}
             <div className="absolute bottom-[-6px] right-5 w-3 h-3 bg-white border-r border-b border-green-100 rotate-45" />
           </div>
         )}
         <a
           href={desktopHref}
           onClick={(e) => handleClick(e, 'sticky-desktop', desktopHref)}
-          aria-label="Contactar por WhatsApp"
+          aria-label={isEnglish ? 'Contact us on WhatsApp' : 'Contactar por WhatsApp'}
           className="group flex items-center gap-3 bg-[#128C7E] hover:bg-[#0e6b60] text-white pl-4 pr-6 py-3 rounded-full shadow-2xl font-semibold transition-all duration-300 hover:scale-105"
           style={{ boxShadow: '0 4px 24px 0 rgba(18,140,126,0.45)' }}
         >
@@ -92,7 +95,7 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
           className={`flex items-center justify-center gap-2 text-white text-sm font-semibold ${mobileVariant === 'floating' ? 'min-h-12 rounded-full bg-[#128C7E] px-5 shadow-[0_12px_30px_rgba(18,140,126,0.35)]' : 'w-full bg-[#25D366] px-4 py-3'}`}
         >
           <WhatsAppIcon className="h-5 w-5 flex-none" />
-          {mobileVariant === 'floating' ? 'WhatsApp' : 'Escríbenos por WhatsApp'}
+          {mobileVariant === 'floating' ? 'WhatsApp' : (isEnglish ? 'Message us on WhatsApp' : 'Escríbenos por WhatsApp')}
         </a>
       </div>
     </>

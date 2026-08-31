@@ -14,6 +14,7 @@ interface ReviewsCarouselWrapperProps {
   reviews: Review[];
   rating: number;
   user_ratings_total: number;
+  locale?: 'es' | 'en';
 }
 
 // Dynamically import ReviewsCarousel with ssr:false to prevent framer-motion
@@ -34,12 +35,13 @@ const ReviewsCarousel = dynamic(
   }
 );
 
-export default function ReviewsCarouselWrapper({ reviews, rating, user_ratings_total }: ReviewsCarouselWrapperProps) {
+export default function ReviewsCarouselWrapper({ reviews, rating, user_ratings_total, locale }: ReviewsCarouselWrapperProps) {
   return (
     <ReviewsCarousel 
       reviews={reviews} 
       rating={rating} 
       user_ratings_total={user_ratings_total} 
+      locale={locale}
     />
   );
 }

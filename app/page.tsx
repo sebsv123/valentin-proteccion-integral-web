@@ -21,9 +21,10 @@ const FinalCTASection = dynamicImport(() => import('@/components/home-sections')
 const CredentialsBar = dynamicImport(() => import('@/components/CredentialsBar'));
 const GarantiaPrecio = dynamicImport(() => import('@/components/garantia-precio').then(m => m.GarantiaPrecio));
 import type { Metadata } from 'next';
-import { site, generalFaqs } from '@/lib/products';
+import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
+import { getHomeContent } from '@/components/home-content';
 
 export const metadata: Metadata = {
   title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
@@ -57,7 +58,10 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-export default function HomePage() {
+export function HomePageView({ content, locale }: { content?: unknown; locale?: 'es' | 'en' }) {
+  void content;
+  const currentLocale = locale || 'es';
+  const home = getHomeContent(currentLocale);
   // Usar imágenes locales de Pexels para mejor rendimiento (LCP)
   const { products }: { products: import('@/lib/products').Product[] } = require('@/lib/products');
   const productsWithImages = products.map((product: import('@/lib/products').Product) => {
@@ -77,8 +81,9 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "InsuranceAgency"],
             "name": "Valentín Protección Integral",
-            "description": "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
-            "url": "https://valentinproteccionintegral.com",
+            "description": currentLocale === 'en' ? home.meta.description : "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
+            "url": currentLocale === 'en' ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
+            "inLanguage": currentLocale,
             "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.webp",
             "sameAs": ["https://www.instagram.com/segurosvalentin/"],
             "telephone": "+34-603-44-87-65",
@@ -106,15 +111,10 @@ export default function HomePage() {
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Seguros disponibles",
+              "name": currentLocale === 'en' ? 'Insurance available' : "Seguros disponibles",
               "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Salud en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Vida en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro para Mascotas en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro Dental en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Viaje en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Accidentes en Madrid" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Decesos en Madrid" }}
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": currentLocale === 'en' ? "Health insurance in Madrid" : "Seguro de Salud en Madrid" }},
+                ...(['life', 'pets', 'dental', 'travel', 'accident', 'funeral'].map((name) => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": currentLocale === 'en' ? ({ life: 'Life insurance in Madrid', pets: 'Pet insurance in Madrid', dental: 'Dental insurance in Madrid', travel: 'Travel insurance in Madrid', accident: 'Accident insurance in Madrid', funeral: 'Funeral insurance in Madrid' } as Record<string, string>)[name] : ({ life: 'Seguro de Vida en Madrid', pets: 'Seguro para Mascotas en Madrid', dental: 'Seguro Dental en Madrid', travel: 'Seguro de Viaje en Madrid', accident: 'Seguro de Accidentes en Madrid', funeral: 'Seguro de Decesos en Madrid' } as Record<string, string>)[name] } })))
               ]
             }
           })
@@ -122,7 +122,7 @@ export default function HomePage() {
       />
       <SchemaBreadcrumb
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 }
+          { name: currentLocale === 'en' ? 'Home' : 'Inicio', item: currentLocale === 'en' ? `${site.domain}/en` : site.domain, position: 1 }
         ]}
       />
       <script
@@ -131,7 +131,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": generalFaqs.map((faq: { q: string; a: string }) => ({
+            "mainEntity": home.faq.items.map((faq: { q: string; a: string }) => ({
               "@type": "Question",
               "name": faq.q,
               "acceptedAnswer": {
@@ -144,20 +144,20 @@ export default function HomePage() {
       />
       <Header />
       <main>
-        <HeroLeadSection />
-        <ProductAccessSection />
+        <HeroLeadSection locale={currentLocale} />
+        <ProductAccessSection locale={currentLocale} />
         <StatsSection />
-        <GoogleReviewsWidget />
-        <TrustBadgesSection />
-        <MascotHelperSection />
-        <ProductCategoryGrid productsWithImages={productsWithImages} />
+        <GoogleReviewsWidget locale={currentLocale} />
+        <TrustBadgesSection locale={currentLocale} />
+        <MascotHelperSection locale={currentLocale} />
+        <ProductCategoryGrid productsWithImages={productsWithImages} locale={currentLocale} />
 
         {/* Sección ICP - Encuentra lo que necesitas según tu situación */}
         <section className="section-pad bg-[var(--bg-soft)]">
           <div className="container-shell">
-            <h2 className="section-title text-center mb-4">Encuentra lo que necesitas según tu situación</h2>
+            <h2 className="section-title text-center mb-4">{home.profiles.title}</h2>
             <p className="text-center text-[var(--muted)] mb-10 max-w-2xl mx-auto">
-              Cada etapa de la vida tiene sus prioridades. Elige el perfil que mejor te describe y descubre la protección que realmente necesitas.
+              {home.profiles.intro}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {/* Joven Profesional */}
@@ -165,12 +165,12 @@ export default function HomePage() {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <TrendingUp className="h-7 w-7 text-[var(--blue)]" />
                 </div>
-                <h3 className="font-heading text-lg font-bold mb-2">Joven Profesional</h3>
+                <h3 className="font-heading text-lg font-bold mb-2">{home.profiles.items[0].title}</h3>
                 <p className="text-[var(--muted)] text-sm">
-                  Acabas de emanciparte o tienes hipoteca reciente. Protege lo que estás construyendo.
+                  {home.profiles.items[0].copy}
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver mi protección →
+                  {home.profiles.items[0].cta}
                 </span>
               </Link>
 
@@ -179,12 +179,12 @@ export default function HomePage() {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Users className="h-7 w-7 text-[var(--blue)]" />
                 </div>
-                <h3 className="font-heading text-lg font-bold mb-2">Familias</h3>
+                <h3 className="font-heading text-lg font-bold mb-2">{home.profiles.items[1].title}</h3>
                 <p className="text-[var(--muted)] text-sm">
-                  Protege a quienes más quieres. Salud, dental, vida y decesos para toda la familia.
+                  {home.profiles.items[1].copy}
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Proteger a los míos →
+                  {home.profiles.items[1].cta}
                 </span>
               </Link>
 
@@ -193,12 +193,12 @@ export default function HomePage() {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Heart className="h-7 w-7 text-[var(--blue)]" />
                 </div>
-                <h3 className="font-heading text-lg font-bold mb-2">Seniors</h3>
+                <h3 className="font-heading text-lg font-bold mb-2">{home.profiles.items[2].title}</h3>
                 <p className="text-[var(--muted)] text-sm">
-                  Más de 60 años y quieres tener todo en orden. Tranquilidad para ti y los tuyos.
+                  {home.profiles.items[2].copy}
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Tener todo en orden →
+                  {home.profiles.items[2].cta}
                 </span>
               </Link>
 
@@ -207,39 +207,37 @@ export default function HomePage() {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Briefcase className="h-7 w-7 text-[var(--blue)]" />
                 </div>
-                <h3 className="font-heading text-lg font-bold mb-2">Autónomos</h3>
+                <h3 className="font-heading text-lg font-bold mb-2">{home.profiles.items[3].title}</h3>
                 <p className="text-[var(--muted)] text-sm">
-                  Dedúcete hasta 500€ en el IRPF. Aprovecha las ventajas fiscales que te corresponden.
+                  {home.profiles.items[3].copy}
                 </p>
                 <span className="inline-flex items-center gap-1 mt-4 text-[var(--blue)] font-medium text-sm group-hover:gap-2 transition-all">
-                  Ver ventajas fiscales →
+                  {home.profiles.items[3].cta}
                 </span>
               </Link>
             </div>
           </div>
         </section>
 
-        <ComparisonCardsSection />
-        <AgentTrustBlock />
+        <ComparisonCardsSection locale={currentLocale} />
+        <AgentTrustBlock locale={currentLocale} />
         <HowItWorksSection />
-        <BlogPreviewSection />
-        <GeneralFaqSection />
+        <BlogPreviewSection locale={currentLocale} />
+        <GeneralFaqSection locale={currentLocale} />
         <CredentialsBar />
         
         {/* Sección de zonas en la home */}
         <section className="bg-[var(--surface)] py-10 border-t">
           <div className="container-shell text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-2">
-              Cobertura local
-            </p>
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--muted)] mb-2">{home.zones.label}</p>
             <h2 className="font-heading text-xl sm:text-2xl font-bold text-[var(--blue-deep)] mb-6">
-              Atendemos en todo el noroeste de Madrid
+              {home.zones.title}
             </h2>
             <div className="flex flex-wrap justify-center gap-3">
               {zonas.map(z => (
                 <Link key={z.slug} href={`/zonas/${z.slug}`}
                   className="glass rounded-full border border-white/60 bg-white/40 px-5 py-3 text-sm font-semibold text-[var(--blue-deep)] hover:bg-white hover:border-[var(--blue)] transition-all">
-                  Seguros en {z.nombre}
+                  {home.zones.linkPrefix}{z.nombre}
                 </Link>
               ))}
             </div>
@@ -247,10 +245,14 @@ export default function HomePage() {
         </section>
 
         <GarantiaPrecio />
-        <FinalCTASection />
+        <FinalCTASection locale={currentLocale} />
       </main>
       <Footer />
       <StickyWhatsApp />
     </>
   );
+}
+
+export default function HomePage() {
+  return <HomePageView locale="es" />;
 }

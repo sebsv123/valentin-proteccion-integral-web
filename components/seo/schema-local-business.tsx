@@ -7,13 +7,14 @@ interface Props {
 }
 
 export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' }: Props) {
+  const isEnglish = locale === 'en';
   const schema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "inLanguage": locale,
     "name": site.name,
-    "description": "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
-    "url": "https://valentinproteccionintegral.com",
+    "description": isEnglish ? "DGSFP-registered insurance advice in Madrid. Personal guidance on health, life, pet, dental, travel, accident, legal protection, home appliance, funeral and business insurance. Over 10 years of experience. Initial consultation free." : "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
+    "url": isEnglish ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",
     "image": "https://valentinproteccionintegral.com/og-image.webp",
@@ -51,7 +52,9 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
       "https://www.instagram.com/segurosvalentin/",
       "https://wa.me/34603448765"
     ],
-    "knowsAbout": [
+    "knowsAbout": isEnglish ? [
+      "Health insurance", "Life insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Legal protection", "Home appliance insurance", "Funeral insurance", "Business insurance", "Insurance for international residents", "Pet liability insurance", "Mortgage life insurance", "Insurance for self-employed people"
+    ] : [
       "Seguro de salud",
       "Seguro de vida",
       "Seguro para mascotas",
@@ -69,7 +72,7 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Seguros disponibles",
+      "name": isEnglish ? "Insurance available" : "Seguros disponibles",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Salud", "url": "https://valentinproteccionintegral.com/seguros/salud" } },
         

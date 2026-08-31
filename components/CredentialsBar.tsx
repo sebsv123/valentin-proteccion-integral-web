@@ -1,6 +1,8 @@
 'use client'
 import { BadgeCheck, GraduationCap, Clock, ShieldCheck } from 'lucide-react'
 import RevealLight from '@/components/ui/reveal-light'
+import { useLocale } from 'next-intl'
+import { getHomeContent } from './home-content'
 
 const credentials = [
   {
@@ -26,18 +28,20 @@ const credentials = [
 ]
 
 export default function CredentialsBar() {
+  const locale = useLocale() as 'es' | 'en'
+  const content = getHomeContent(locale).credentials
   return (
     <section
-      aria-label="Credenciales profesionales"
+      aria-label={content.aria}
       className="border-y border-[var(--border)] bg-white py-10"
     >
       <div className="container-shell">
         <RevealLight>
           <p className="kicker text-center mb-8">
-            Asesoría con respaldo profesional real
+            {content.kicker}
           </p>
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {credentials.map(({ icon: Icon, label, sub }) => (
+            {credentials.map(({ icon: Icon }, index) => { const { label, sub } = content.items[index]; return (
               <div
                 key={label}
                 className="flex flex-col items-center gap-3 rounded-[22px]
@@ -59,7 +63,7 @@ export default function CredentialsBar() {
                   {sub}
                 </p>
               </div>
-            ))}
+            )})}
           </div>
         </RevealLight>
       </div>

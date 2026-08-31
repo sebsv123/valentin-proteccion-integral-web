@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { useLocale } from 'next-intl';
+import { getHomeContent } from './home-content';
 
 interface GarantiaPrecioProps {
   variant?: "default" | "compact" | "card";
@@ -17,6 +19,8 @@ export function GarantiaPrecio({
   showCta = true,
   className,
 }: GarantiaPrecioProps) {
+  const locale = useLocale() as 'es' | 'en';
+  const content = getHomeContent(locale).guarantee;
   if (variant === "compact") {
     return (
       <div
@@ -30,9 +34,9 @@ export function GarantiaPrecio({
             <BadgeCheck className="h-5 w-5 text-blue-600" />
           </div>
           <div>
-            <p className="font-bold text-blue-900">Revisamos tu presupuesto</p>
+            <p className="font-bold text-blue-900">{content.title}</p>
             <p className="text-sm text-blue-700">
-              Tráenos cualquier presupuesto y lo revisamos contigo entre las modalidades que podemos distribuir, con honestidad.
+              {content.compact}
             </p>
           </div>
         </div>
@@ -53,21 +57,21 @@ export function GarantiaPrecio({
             <Shield className="h-8 w-8 text-blue-600" />
           </div>
           <h3 className="text-2xl font-bold text-blue-900 mb-3">
-            Revisamos tu presupuesto
+            {content.title}
           </h3>
           <p className="text-muted-foreground mb-6 max-w-md">
-            Tráenos cualquier presupuesto que tengas y comparamos las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
+            {content.body}
           </p>
           {showCta && (
             <WhatsAppLink
-              href="https://wa.me/34603448765"
+              href={`https://wa.me/34603448765?text=${encodeURIComponent(content.whatsapp)}`}
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
               )}
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Solicitar comparación gratis
+              {locale === 'en' ? 'Request a free comparison' : 'Solicitar comparación gratis'}
             </WhatsAppLink>
           )}
         </div>
@@ -85,10 +89,10 @@ export function GarantiaPrecio({
           </div>
           <div className="flex-1">
             <h3 className="text-2xl font-bold text-blue-900 mb-2">
-              Revisamos tu presupuesto
+              {content.title}
             </h3>
             <p className="text-lg text-blue-800">
-              Tráenos cualquier presupuesto que tengas y comparamos las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
+              {content.body}
             </p>
           </div>
           {showCta && (
@@ -96,7 +100,7 @@ export function GarantiaPrecio({
               href="/como-te-ayudamos"
               className="flex-none text-sm font-bold text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors"
             >
-              Ver cómo funciona →
+              {content.cta}
             </a>
           )}
         </div>

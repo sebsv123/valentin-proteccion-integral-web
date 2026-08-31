@@ -5,9 +5,11 @@ import { useState } from 'react';
 import { ChevronDown, CircleHelp } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
+import { getHomeContent, type HomeLocale } from './home-content';
 
-export function FAQAccordion({ items, contextualLinks = false }: { items: { q: string; a: string }[]; contextualLinks?: boolean }) {
+export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: { items: { q: string; a: string }[]; contextualLinks?: boolean; locale?: HomeLocale }) {
   const [open, setOpen] = useState<number | null>(0);
+  const copy = getHomeContent(locale).faq;
 
   return (
     <div className="grid gap-4">
@@ -22,7 +24,7 @@ export function FAQAccordion({ items, contextualLinks = false }: { items: { q: s
                 </span>
                 <div>
                   <p className="font-heading text-lg font-semibold text-[var(--text)] md:text-xl">{item.q}</p>
-                  <p className="mt-1 text-sm text-[var(--muted)]">Haz clic para ver una explicación más clara y práctica.</p>
+                  <p className="mt-1 text-sm text-[var(--muted)]">{copy.expand}</p>
                 </div>
               </div>
               <ChevronDown className={`h-5 w-5 shrink-0 text-[var(--blue)] transition ${active ? 'rotate-180' : ''}`} />
@@ -38,12 +40,12 @@ export function FAQAccordion({ items, contextualLinks = false }: { items: { q: s
                 </div>
                 {contextualLinks ? (
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <a href={buildWhatsAppHref(`Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp</a>
-                    <Link href="/contacto" className="btn-ghost !px-4 !py-3 text-sm">Pedir orientación</Link>
-                    <Link href="/seguros/salud" className="btn-ghost !px-4 !py-3 text-sm">Ver SALUD</Link>
+                    <a href={buildWhatsAppHref(locale === 'en' ? `Hello, I have a question about: ${item.q}` : `Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'Chat on WhatsApp' : 'Hablar por WhatsApp'}</a>
+                    <Link href="/contacto" className="btn-ghost !px-4 !py-3 text-sm">{copy.ask}</Link>
+                    <Link href="/seguros/salud" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[0]}</Link>
                     
-                    <Link href="/seguros/mascotas" className="btn-ghost !px-4 !py-3 text-sm">Ver MASCOTAS</Link>
-                    <Link href="/seguros/viaje" className="btn-ghost !px-4 !py-3 text-sm">Ver VIAJE</Link>
+                    <Link href="/seguros/mascotas" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[1]}</Link>
+                    <Link href="/seguros/viaje" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[2]}</Link>
                   </div>
                 ) : null}
               </div>
