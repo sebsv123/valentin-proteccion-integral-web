@@ -9,7 +9,7 @@ import { buildWhatsAppHref } from '@/lib/products';
 import styles from './internacional.module.css';
 
 const baseUrl = 'https://valentinproteccionintegral.com';
-const upcomingDestinations = ['Japón', 'Estados Unidos', 'Canadá', 'Perú', 'Ecuador', 'Venezuela', 'México'];
+const upcomingDestinations = ['Japón', 'Estados Unidos', 'Canadá', 'Ecuador', 'Venezuela', 'México'];
 
 export const metadata: Metadata = {
   title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
@@ -90,6 +90,28 @@ export default function InternacionalPage() {
                 <h3>Australia tiene<br /><em>muchas formas de empezar</em></h3>
                 <p>Estudiar, trabajar, viajar o reunirte con tu familia pueden llevarte al mismo país por caminos muy distintos. Empieza por ordenar el motivo, la ruta y la cobertura.</p>
                 <span className={styles.destinationCta}>Explorar Australia <ArrowRight aria-hidden="true" /></span>
+              </div>
+            </Link>
+            <Link href="/internacional/india" className={`${styles.destinationFeature} ${styles.destinationFeatureIndia}`}>
+              <div className={styles.destinationPhoto}>
+                <Image src="/images/internacional/india/india-hero-estudiantes.jpg" alt="Estudiantes consultando material académico en una biblioteca en India" fill sizes="(max-width: 900px) 100vw, 48vw" />
+              </div>
+              <div className={styles.destinationCopy}>
+                <div className={styles.flagLine}><i className={`${styles.flagMark} ${styles.flagMarkIndia}`} aria-hidden="true" /><span>INDIA</span></div>
+                <h3>Tu camino de India<br /><em>a España</em> empieza mucho antes del vuelo</h3>
+                <p>Aara te acompaña desde India en la elección académica, la solicitud y el visado. VPI completa el recorrido desde España con apoyo especializado en seguro médico y llegada.</p>
+                <span className={styles.destinationCta}>Explorar India <ArrowRight aria-hidden="true" /></span>
+              </div>
+            </Link>
+            <Link href="/internacional/peru" className={`${styles.destinationFeature} ${styles.destinationFeaturePeru}`}>
+              <div className={styles.destinationPhoto}>
+                <Image src="/images/internacional/peru/peru-hero-lima.jpg" alt="Costa de Lima, Perú" fill sizes="(max-width: 900px) 100vw, 48vw" />
+              </div>
+              <div className={styles.destinationCopy}>
+                <div className={styles.flagLine}><i className={`${styles.flagMark} ${styles.flagMarkPeru}`} aria-hidden="true" /><span>PERÚ</span></div>
+                <h3>Perú puede ser<br /><em>el inicio.</em> O el destino.</h3>
+                <p>Visados, documentación y asesoría para moverte entre Perú, España y los principales destinos del mundo.</p>
+                <span className={styles.destinationCta}>Explorar Perú <ArrowRight aria-hidden="true" /></span>
               </div>
             </Link>
           </div>

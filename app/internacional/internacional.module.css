@@ -29,6 +29,10 @@
 .destinationCopy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 6rem) clamp(2rem, 5vw, 6.5rem) clamp(2rem, 5vw, 5rem) 0; }
 .flagLine { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.7rem; color: #07365d; font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
 .flagLine img { width: 42px; height: 28px; object-fit: cover; box-shadow: 0 4px 10px rgba(7,54,93,.13); }
+.flagMark { display: inline-block; width: 42px; height: 28px; box-shadow: 0 4px 10px rgba(7,54,93,.13); }
+.flagMarkIndia { background: linear-gradient(to bottom, #ff9933 0 33.333%, #fff 33.333% 66.666%, #128807 66.666% 100%); }
+.flagMarkIndia::after { display: block; width: 5px; height: 5px; margin: 11px auto 0; border: 1px solid #000080; border-radius: 50%; content: ''; }
+.flagMarkPeru { background: linear-gradient(to right, #d91023 0 33.333%, #fff 33.333% 66.666%, #d91023 66.666% 100%); }
 .destinationCopy h3 { font-size: clamp(2.7rem, 4.4vw, 5rem); }
 .destinationCopy p { max-width: 500px; margin: 2rem 0 2.5rem; color: #60717c; font-size: 1rem; line-height: 1.9; }
 .growingSection { padding: 9rem 0 11rem; background: #07365d; color: white; text-align: center; }
@@ -54,6 +58,8 @@
   .destinationCopy { padding: 2.5rem 1.5rem 3.5rem; }
   .destinationFeatureAustralia .destinationPhoto { order: initial; }
   .destinationFeatureAustralia .destinationCopy { order: initial; padding: 2.5rem 1.5rem 3.5rem; }
+  .destinationFeatureIndia .destinationPhoto, .destinationFeaturePeru .destinationPhoto { order: initial; }
+  .destinationFeatureIndia .destinationCopy, .destinationFeaturePeru .destinationCopy { order: initial; padding: 2.5rem 1.5rem 3.5rem; }
   .upcomingList { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; margin-top: 3.5rem; }
 }
 @media (max-width: 560px) {
