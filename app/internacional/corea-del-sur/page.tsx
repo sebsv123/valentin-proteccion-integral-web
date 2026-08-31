@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './corea.module.css';
 
@@ -75,7 +76,7 @@ export default function CoreaDelSurPage() {
                 <p className={styles.heroNewCopy}>VPI prepara contigo la parte aseguradora antes de salir. En Corea, LandKorea aporta el conocimiento local para ayudarte con tu llegada, vivienda, visado y primeros pasos.</p>
                 <div className={styles.heroNewActions}>
                   <a href="#contacto" className={styles.heroPrimary}>Preparar mi llegada <ArrowRight aria-hidden="true" /></a>
-                  <a href={whatsappHref} className={styles.heroSecondary}><MessageCircle aria-hidden="true" /> Hablar con nosotros <span aria-hidden="true">↗</span></a>
+                  <a href={whatsappHref} className={styles.heroSecondary}><WhatsAppIcon aria-hidden="true" /> Hablar con nosotros <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
               <figure className={styles.heroMedia}>
@@ -143,7 +144,7 @@ export default function CoreaDelSurPage() {
           <div className="container-shell"><SectionLabel>PREGUNTAS QUE CONVIENE HACERSE</SectionLabel><h2 id="faq-title">Antes de dar el paso,<br /><em>hablemos de lo concreto</em></h2><div className={styles.faqList}>{faqItems.map(([question, answer]) => <details key={question}><summary>{question}<ArrowDown aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div>
         </section>
 
-        <section id="contacto" className={styles.contact} aria-labelledby="contact-title"><div className="container-shell"><SectionLabel>COREA DEL SUR · VPI × LANDKOREA</SectionLabel><h2 id="contact-title">Quizá todavía no tengas todas las respuestas.<br /><em>Para empezar, basta con saber que te vas.</em></h2><p>Cuéntanos cuándo viajas, por qué vas y qué necesitas preparar. Ordenamos contigo los siguientes pasos antes de que Corea deje de ser un plan y empiece a convertirse en tu día a día.</p><div className={styles.contactActions}><a href={whatsappHref} className={styles.primaryCta}>Preparar mi llegada <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.contactGhost}><MessageCircle aria-hidden="true" /> Hablar por WhatsApp</a></div></div></section>
+        <section id="contacto" className={styles.contact} aria-labelledby="contact-title"><div className="container-shell"><SectionLabel>COREA DEL SUR · VPI × LANDKOREA</SectionLabel><h2 id="contact-title">Quizá todavía no tengas todas las respuestas.<br /><em>Para empezar, basta con saber que te vas.</em></h2><p>Cuéntanos cuándo viajas, por qué vas y qué necesitas preparar. Ordenamos contigo los siguientes pasos antes de que Corea deje de ser un plan y empiece a convertirse en tu día a día.</p><div className={styles.contactActions}><a href={whatsappHref} className={styles.primaryCta}>Preparar mi llegada <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.contactGhost}><WhatsAppIcon aria-hidden="true" /> Hablar por WhatsApp</a></div></div></section>
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

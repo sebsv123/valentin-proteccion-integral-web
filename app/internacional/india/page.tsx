@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref } from '@/lib/products';
 import { IndiaRoadmap } from './IndiaRoadmap';
 import { IndiaHandoff } from './IndiaHandoff';
@@ -72,7 +73,7 @@ export default function IndiaPage() {
                 <p className={styles.heroCopy}>Aara te acompaña desde India en la elección académica, la solicitud y el visado. VPI completa el recorrido desde España con apoyo especializado en seguro médico y llegada.</p>
                 <div className={styles.heroActions}>
                   <a href="#contacto" className={styles.primaryCta}>Empezar mi proceso <ArrowRight aria-hidden="true" /></a>
-                  <a href={whatsappHref} className={styles.secondaryCta}><MessageCircle aria-hidden="true" /> Hablar con un asesor</a>
+                  <a href={whatsappHref} className={styles.secondaryCta}><WhatsAppIcon aria-hidden="true" /> Hablar con un asesor</a>
                 </div>
               </div>
               <div className={styles.heroMedia}>
@@ -179,7 +180,7 @@ export default function IndiaPage() {
               <p>Aara Consultancy y VPI pueden ayudarte a convertir ese objetivo en un proceso mucho más claro.</p>
               <div className={styles.ctaActions}>
                 <Link href="/contacto" className={styles.primaryCta}>Empezar mi proceso <ArrowRight aria-hidden="true" /></Link>
-                <a href={whatsappHref} className={styles.ctaGhost}><MessageCircle aria-hidden="true" /> Hablar por WhatsApp</a>
+                <a href={whatsappHref} className={styles.ctaGhost}><WhatsAppIcon aria-hidden="true" /> Hablar por WhatsApp</a>
               </div>
             </div>
           </div>

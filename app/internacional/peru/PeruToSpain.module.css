@@ -1,0 +1,344 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5.5rem, 8vw, 8rem) 0 4rem;
+  background: #07365d;
+  color: #fffaf0;
+}
+
+.header {
+  max-width: 780px;
+}
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  color: #f0c49a;
+  font: 700 12px/1.4 var(--font-body), sans-serif;
+  letter-spacing: .18em;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: #fffaf0;
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: .98;
+}
+
+.title em {
+  color: #f28c28;
+  font-style: normal;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 1.5rem 0 0;
+  color: rgba(255, 250, 240, .72);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+.routeArea {
+  position: relative;
+  max-width: 1280px;
+  min-height: 360px;
+  margin: 2.1rem auto 0;
+}
+
+.endpointOrigin,
+.endpointDestination {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .55rem;
+  width: 170px;
+  text-align: center;
+}
+
+.endpointOrigin {
+  left: 0;
+}
+
+.endpointDestination {
+  right: 0;
+}
+
+.endpointLabel {
+  color: #f0c49a;
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.endpointNote {
+  color: rgba(255, 250, 240, .62);
+  font-size: .68rem;
+  line-height: 1.35;
+}
+
+.vipLogo {
+  display: block;
+  width: 138px;
+  height: 52px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 250, 240, .35);
+  border-radius: 10px;
+  background: #fffaf0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+  object-fit: contain;
+}
+
+.vpiMedallion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  background: transparent;
+}
+
+.vpiMedallion img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 6.25rem;
+}
+
+.timelineLine {
+  position: absolute;
+  z-index: 0;
+  top: 9.9rem;
+  right: 11.8%;
+  left: 11.8%;
+  height: 1px;
+  background: linear-gradient(90deg, #d28a5b 0%, #d28a5b 34%, #c48d70 46%, #91b6a0 57%, #9edbd1 67%, #9edbd1 100%);
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.stage {
+  position: relative;
+  min-width: 0;
+  padding: 0 1rem;
+}
+
+.stageNode {
+  position: absolute;
+  z-index: 1;
+  top: 3.65rem;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #d28a5b;
+  border-radius: 50%;
+  background: #07365d;
+  transform: translate(-50%, -50%);
+}
+
+.stageNumber {
+  display: block;
+  height: 3.4rem;
+  color: #d28a5b;
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.9rem, 4vw, 3.35rem);
+  line-height: .9;
+  text-align: left;
+}
+
+.stageLabel {
+  min-height: 1.15rem;
+  margin: 2rem 0 0;
+  color: #f0c49a;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.35;
+}
+
+.stage h3 {
+  display: flex;
+  align-items: flex-start;
+  min-height: 3.1rem;
+  margin: .55rem 0 0;
+  color: #fffaf0;
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.25rem, 1.55vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+
+.stageDescription {
+  max-width: 260px;
+  margin: .65rem 0 0;
+  color: rgba(255, 250, 240, .76);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.teal .stageNode {
+  border-color: #9edbd1;
+}
+
+.teal .stageNumber,
+.teal .stageLabel {
+  color: #9edbd1;
+}
+
+.transition .stageNode {
+  border-color: #9edbd1;
+  background: linear-gradient(135deg, #d28a5b 0 50%, #2d9187 50% 100%);
+  box-shadow: 0 0 0 3px rgba(210, 138, 91, .14);
+}
+
+.transition .stageNumber {
+  color: #e1a47a;
+}
+
+.transition .stageLabel {
+  color: #b7d8ce;
+}
+
+.closing {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  color: rgba(255, 250, 240, .92);
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.disclaimer {
+  max-width: 620px;
+  margin: 1.35rem auto 0;
+  color: rgba(255, 255, 255, .56);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .routeArea {
+    min-height: 0;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .endpointOrigin,
+  .endpointDestination {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 3.5rem;
+    text-align: left;
+  }
+
+  .endpointDestination {
+    margin-top: 2.3rem;
+  }
+
+  .endpointLabel {
+    min-width: 54px;
+  }
+
+  .timeline {
+    margin-top: 1.6rem;
+    padding: 0 0 0 3.5rem;
+  }
+
+  .timelineLine {
+    top: 1rem;
+    right: auto;
+    bottom: 1rem;
+    left: 0;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, #d28a5b 0%, #d28a5b 38%, #c48d70 48%, #91b6a0 58%, #9edbd1 70%, #9edbd1 100%);
+  }
+
+  .stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.8rem 2rem;
+  }
+
+  .stage {
+    padding: 0;
+  }
+
+  .stageNode {
+    top: 1rem;
+    left: -3.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4.5rem 0 3.2rem;
+  }
+
+  .title {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .routeArea {
+    margin-top: 1.4rem;
+  }
+
+  .stages {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .stageNumber {
+    height: 3.1rem;
+    font-size: 2.9rem;
+  }
+
+  .stageLabel {
+    margin-top: .55rem;
+  }
+
+  .stage h3 {
+    min-height: 0;
+    font-size: 1.3rem;
+  }
+
+  .stageDescription {
+    font-size: .88rem;
+  }
+
+  .closing {
+    margin-top: 1.2rem;
+    text-align: left;
+  }
+
+  .disclaimer {
+    text-align: left;
+  }
+}

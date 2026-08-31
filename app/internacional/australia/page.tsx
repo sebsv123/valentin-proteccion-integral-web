@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './australia.module.css';
 
@@ -93,7 +94,7 @@ export default function AustraliaPage() {
                 <h1 id="australia-title"><span>Australia tiene</span><span>muchas formas</span><em>de empezar.</em></h1>
                 <div className={styles.heroIntro}><p className={styles.heroLead}>La primera decisión no es qué seguro contratar. Es entender por qué vas.</p><p className={styles.heroDescription}>Estudiar, trabajar, viajar, migrar por tu profesión o reunirte con tu familia pueden llevarte al mismo país por caminos muy distintos. Empezamos por ordenar el escenario antes de hablar de cobertura.</p></div>
                 <div className={styles.heroRouteIndex} aria-label="Rutas principales"><span>ESTUDIAR</span><i>·</i><span>TRABAJAR</span><i>·</i><span>VIAJAR</span><i>·</i><span>FAMILIA</span></div>
-                <div className={styles.heroActions}><a href="#rutas" className={styles.primaryCta}>Entender mi situación <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.textCta}><MessageCircle aria-hidden="true" /> Hablar con nosotros <span>↗</span></a></div>
+                <div className={styles.heroActions}><a href="#rutas" className={styles.primaryCta}>Entender mi situación <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.textCta}><WhatsAppIcon aria-hidden="true" /> Hablar con nosotros <span>↗</span></a></div>
                 <span className={styles.heroChapter} aria-hidden="true">01</span>
               </div>
               <div className={styles.heroPhotoWrap}>
@@ -147,7 +148,7 @@ export default function AustraliaPage() {
 
         <section className={styles.faqSection} aria-labelledby="faq-title"><div className="container-shell"><Eyebrow>PREGUNTAS QUE CONVIENE HACERSE</Eyebrow><h2 id="faq-title">Australia cambia según<br /><em>la pregunta con la que empiezas.</em></h2><div className={styles.faqList}>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<ArrowDown aria-hidden="true" /></summary><p>{answer}</p></details>)}</div><p className={styles.sourceNote}>Información orientativa basada en las principales categorías publicadas por el Department of Home Affairs de Australia. Los requisitos, condiciones y denominaciones pueden cambiar. Comprueba siempre la información oficial vigente y, cuando corresponda, consulta a un profesional habilitado para prestar asistencia migratoria.</p></div></section>
 
-        <section id="contacto" className={styles.contactSection} aria-labelledby="contact-title"><div className="container-shell"><Image src={`${imageRoot}/bandera-australia.jpg`} alt="Bandera de Australia" width={400} height={206} className={styles.contactFlag} /><Eyebrow>AUSTRALIA · VPI INTERNACIONAL</Eyebrow><h2 id="contact-title">Cuéntanos por qué vas.<br /><em>El resto empieza a ordenarse desde ahí.</em></h2><p>No necesitamos que conozcas el número de tu visa. Cuéntanos qué quieres hacer en Australia, cuándo imaginas viajar y cuánto tiempo piensas quedarte.</p><div className={styles.contactActions}><a href="#rutas" className={styles.primaryCta}>Contar mi caso <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.textCta}><MessageCircle aria-hidden="true" /> Hablar por WhatsApp <span>↗</span></a></div></div></section>
+        <section id="contacto" className={styles.contactSection} aria-labelledby="contact-title"><div className="container-shell"><Image src={`${imageRoot}/bandera-australia.jpg`} alt="Bandera de Australia" width={400} height={206} className={styles.contactFlag} /><Eyebrow>AUSTRALIA · VPI INTERNACIONAL</Eyebrow><h2 id="contact-title">Cuéntanos por qué vas.<br /><em>El resto empieza a ordenarse desde ahí.</em></h2><p>No necesitamos que conozcas el número de tu visa. Cuéntanos qué quieres hacer en Australia, cuándo imaginas viajar y cuánto tiempo piensas quedarte.</p><div className={styles.contactActions}><a href="#rutas" className={styles.primaryCta}>Contar mi caso <ArrowRight aria-hidden="true" /></a><a href={whatsappHref} className={styles.textCta}><WhatsAppIcon aria-hidden="true" /> Hablar por WhatsApp <span>↗</span></a></div></div></section>
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
