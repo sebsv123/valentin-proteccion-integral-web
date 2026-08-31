@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import styles from './PeruToWorld.module.css';
+import type { PeruContent } from './peru-content';
+import { peruContent } from './peru-content';
 
 const imageRoot = '/images/internacional/peru';
 
@@ -23,20 +25,20 @@ const routeGroups = [
   },
 ];
 
-export function PeruToWorld() {
+export function PeruToWorld({ content = peruContent.es.toWorld }: { content?: PeruContent['toWorld'] }) {
   return (
     <section className={styles.section} aria-labelledby="peru-world-title">
       <div className="container-shell">
         <div className={styles.grid}>
           <div className={styles.photo}>
-            <Image src={`${imageRoot}/peru-aeropuerto.jpg`} alt="Viajera con pasaporte y maleta lista para un vuelo internacional" fill sizes="(max-width: 1023px) 100vw, 45vw" />
+            <Image src={`${imageRoot}/peru-aeropuerto.jpg`} alt={content.imageAlt} fill sizes="(max-width: 1023px) 100vw, 45vw" />
           </div>
           <div className={styles.copy}>
-            <p className={styles.eyebrow}>PERÚ → MUNDO</p>
-            <h2 id="peru-world-title" className={styles.title}>Perú también <em>conecta con otros destinos.</em></h2>
-            <p className={styles.intro}>VIP Global Perú trabaja distintos corredores internacionales desde Lima, más allá de España.</p>
+            <p className={styles.eyebrow}>{content.eyebrow}</p>
+            <h2 id="peru-world-title" className={styles.title}>{content.title[0]} <em>{content.title[1]}</em></h2>
+            <p className={styles.intro}>{content.intro}</p>
             <div className={styles.panel}>
-              {routeGroups.map((group) => (
+              {content.groups.map((group) => (
                 <div className={styles.group} key={group.label}>
                   <span className={styles.groupLabel}>{group.label}</span>
                   <div className={styles.routeList}>

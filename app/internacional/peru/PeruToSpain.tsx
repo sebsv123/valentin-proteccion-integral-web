@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 import styles from './PeruToSpain.module.css';
+import type { PeruContent } from './peru-content';
+import { peruContent } from './peru-content';
 
 const stages = [
   {
@@ -33,30 +35,30 @@ const stages = [
   },
 ] as const;
 
-export function PeruToSpain() {
+export function PeruToSpain({ content = peruContent.es.toSpain }: { content?: PeruContent['toSpain'] }) {
   return (
     <section className={styles.section} aria-labelledby="peru-spain-title">
       <div className="container-shell">
         <header className={styles.header}>
-          <p className={styles.eyebrow}>PERÚ → ESPAÑA</p>
+          <p className={styles.eyebrow}>{content.eyebrow}</p>
           <h2 id="peru-spain-title" className={styles.title}>
-            <span>Desde Perú hacia España,</span>
-            <em>con el proceso mucho más claro.</em>
+            <span>{content.title[0]}</span>
+            <em>{content.title[1]}</em>
           </h2>
-          <p className={styles.intro}>Del expediente en Perú al seguro médico y la llegada a España: cada etapa tiene un equipo especializado detrás.</p>
+          <p className={styles.intro}>{content.intro}</p>
         </header>
 
         <div className={styles.routeArea}>
           <div className={styles.endpointOrigin}>
-            <span className={styles.endpointLabel}>PERÚ</span>
-            <Image className={styles.vipLogo} src="/images/internacional/vip-global-peru-official.jpeg" alt="Logo oficial de VIP Global Perú" width={138} height={52} />
-            <span className={styles.endpointNote}>Origen y preparación</span>
+            <span className={styles.endpointLabel}>{content.origin}</span>
+            <Image className={styles.vipLogo} src="/images/internacional/vip-global-peru-official.jpeg" alt={content.vipAlt} width={138} height={52} />
+            <span className={styles.endpointNote}>{content.originNote}</span>
           </div>
 
           <div className={styles.timeline}>
             <div className={styles.timelineLine} aria-hidden="true" />
             <div className={styles.stages}>
-              {stages.map((stage) => (
+              {content.stages.map((stage) => (
                 <article className={`${styles.stage} ${styles[stage.tone]}`} key={stage.number}>
                   <span className={styles.stageNode} aria-hidden="true" />
                   <span className={styles.stageNumber}>{stage.number}</span>
@@ -69,16 +71,16 @@ export function PeruToSpain() {
           </div>
 
           <div className={styles.endpointDestination}>
-            <span className={styles.endpointLabel}>ESPAÑA</span>
+            <span className={styles.endpointLabel}>{content.destination}</span>
             <span className={styles.vpiMedallion}>
-                <Image src="/brand/vpi-isotipo.png" alt="Isotipo de VPI" width={70} height={70} />
+                <Image src="/brand/vpi-isotipo.png" alt={content.vpiAlt} width={70} height={70} />
             </span>
-            <span className={styles.endpointNote}>Seguro y llegada</span>
+            <span className={styles.endpointNote}>{content.destinationNote}</span>
           </div>
         </div>
 
-        <p className={styles.closing}>Un mismo recorrido, con el equipo adecuado en cada lado.</p>
-        <p className={styles.disclaimer}>Ningún proceso migratorio tiene una aprobación garantizada. Cada caso se revisa según su documentación y los requisitos vigentes de cada entidad.</p>
+        <p className={styles.closing}>{content.closing}</p>
+        <p className={styles.disclaimer}>{content.disclaimer}</p>
       </div>
     </section>
   );

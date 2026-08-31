@@ -13,6 +13,8 @@ import {
 } from 'lucide-react';
 
 import styles from './PeruHero.module.css';
+import type { PeruContent } from './peru-content';
+import { peruContent } from './peru-content';
 
 const imageRoot = '/images/internacional/peru';
 
@@ -35,35 +37,35 @@ const capabilities = [
   { label: 'CASOS COMPLEJOS', description: 'Familias, denegaciones y recursos.', Icon: FolderSearch },
 ] as const;
 
-export function PeruHero() {
+export function PeruHero({ content = peruContent.es.hero }: { content?: PeruContent['hero'] }) {
   return (
     <section className={styles.hero} aria-labelledby="peru-hero-title">
       <div className={styles.inner}>
         <div className={styles.main}>
           <div className={styles.copy}>
             <div className={styles.eyebrowRow}>
-              <span className={styles.peruFlag} aria-label="Perú" role="img" />
-              <p className={styles.eyebrow}>PERÚ · ESPAÑA · MOVILIDAD INTERNACIONAL</p>
+              <span className={styles.peruFlag} aria-label={content.eyebrow.split(' · ')[0]} role="img" />
+              <p className={styles.eyebrow}>{content.eyebrow}</p>
             </div>
             <h1 id="peru-hero-title" className={styles.title}>
-              <span>Perú puede ser</span>
-              <span>el inicio.</span>
-              <em>O el destino.</em>
+              <span>{content.title[0]}</span>
+              <span>{content.title[1]}</span>
+              <em>{content.title[2]}</em>
             </h1>
             <p className={styles.intro}>
-              Visados, documentación y asesoría para moverte entre Perú, España y los principales destinos del mundo.
-              <span>Con el respaldo de VIP Global Perú y VPI.</span>
+              {content.intro}
+              <span>{content.introSupport}</span>
             </p>
             <div className={styles.actions}>
               <a className={styles.primaryAction} href="#contacto">
-                Explorar mis opciones <span aria-hidden="true">→</span>
+                {content.primary} <span aria-hidden="true">→</span>
               </a>
               <a className={styles.secondaryAction} href="#contacto">
-                Hablar con un asesor
+                {content.secondary}
               </a>
             </div>
             <a className={styles.destinationLink} href="#residencia-peru">
-              ¿Quieres establecerte en Perú? Ver opciones de residencia, estudios y trabajo →
+              {content.tertiary}
             </a>
           </div>
 
@@ -71,7 +73,7 @@ export function PeruHero() {
             <div className={styles.photo}>
               <Image
                 src={`${imageRoot}/peru-hero-lima.jpg`}
-                alt="Costa de Lima, Perú"
+                alt={content.imageAlt}
                 fill
                 priority
                 sizes="(max-width: 767px) 100vw, 65vw"
@@ -79,9 +81,9 @@ export function PeruHero() {
             </div>
 
             <div className={styles.destinations}>
-              <p className={styles.destinationsLabel}>DESTINOS DESDE PERÚ</p>
+              <p className={styles.destinationsLabel}>{content.eyebrow.startsWith('PERU') ? 'DESTINATIONS FROM PERU' : 'DESTINOS DESDE PERÚ'}</p>
               <div className={styles.destinationGrid}>
-                {destinations.map(({ name, descriptor, Icon }) => (
+                {content.destinations.map(({ name, descriptor, Icon }) => (
                   <div className={styles.destination} key={name}>
                     <Icon aria-hidden="true" strokeWidth={1.5} />
                     <strong>{name}</strong>
@@ -94,7 +96,7 @@ export function PeruHero() {
         </div>
 
         <div className={styles.capabilities} aria-label="Capacidades de servicio">
-          {capabilities.map(({ label, description, Icon }) => (
+          {content.capabilities.map(({ label, description, Icon }) => (
             <div className={styles.capability} key={label}>
               <Icon aria-hidden="true" strokeWidth={1.5} />
               <div>
