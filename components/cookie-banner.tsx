@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { Cookie, X, Settings } from 'lucide-react';
+import { useLocale } from 'next-intl';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [marketingEnabled, setMarketingEnabled] = useState(false);
+  const isEnglish = useLocale() === 'en';
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
@@ -64,7 +66,7 @@ export function CookieBanner() {
               hover:bg-[var(--bg-soft)]
               transition-colors duration-200
             "
-            aria-label="Cerrar banner de cookies"
+            aria-label={isEnglish ? 'Close cookie banner' : 'Cerrar banner de cookies'}
           >
             <X className="w-4 h-4" />
           </button>
@@ -86,10 +88,10 @@ export function CookieBanner() {
             {/* Text content */}
             <div className="flex-1 pr-6">
               <h3 className="font-heading font-bold text-[var(--blue-deep)] text-base mb-1">
-                Tu privacidad importa
+                {isEnglish ? 'Your privacy matters' : 'Tu privacidad importa'}
               </h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
-                Utilizamos cookies necesarias para que la web funcione. Las cookies analíticas o de marketing solo se instalarán si las aceptas o las configuras.
+                {isEnglish ? 'We use necessary cookies to make the website work. Analytics and marketing cookies are only installed if you accept or configure them.' : 'Utilizamos cookies necesarias para que la web funcione. Las cookies analíticas o de marketing solo se instalarán si las aceptas o las configuras.'}
               </p>
 
               {/* Buttons */}
@@ -108,7 +110,7 @@ export function CookieBanner() {
                     transition-all duration-200
                   "
                 >
-                  Aceptar todas
+                  {isEnglish ? 'Accept all' : 'Aceptar todas'}
                 </button>
 
                 <button
@@ -125,7 +127,7 @@ export function CookieBanner() {
                     transition-all duration-200
                   "
                 >
-                  Rechazar
+                  {isEnglish ? 'Reject' : 'Rechazar'}
                 </button>
               </div>
 
@@ -141,7 +143,7 @@ export function CookieBanner() {
                 "
               >
                 <Settings className="w-3.5 h-3.5" />
-                Preferencias de cookies
+                {isEnglish ? 'Cookie preferences' : 'Preferencias de cookies'}
               </button>
             </div>
           </div>

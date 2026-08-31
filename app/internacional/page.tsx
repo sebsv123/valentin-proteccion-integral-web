@@ -14,7 +14,7 @@ const upcomingDestinations = ['Japón', 'Estados Unidos', 'Canadá', 'Ecuador', 
 export const metadata: Metadata = {
   title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
   description: 'VPI conecta la orientación aseguradora desde España con especialistas locales para preparar tu llegada y tu vida en Corea del Sur y Australia.',
-  alternates: { canonical: `${baseUrl}/internacional` },
+  alternates: { canonical: `${baseUrl}/internacional`, languages: { es: `${baseUrl}/internacional`, en: `${baseUrl}/en/international`, 'x-default': `${baseUrl}/internacional` } },
   openGraph: {
     title: 'VPI Internacional | Preparar tu llegada a nuevos destinos',
     description: 'Una red de orientación desde España y apoyo local para empezar bien en tu próximo destino.',
@@ -29,6 +29,7 @@ export default function InternacionalPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
+    inLanguage: 'es',
     name: 'VPI Internacional',
     url: `${baseUrl}/internacional`,
     description: metadata.description,

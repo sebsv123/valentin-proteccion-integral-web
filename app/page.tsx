@@ -47,6 +47,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com",
+    languages: {
+      es: "https://valentinproteccionintegral.com",
+      en: "https://valentinproteccionintegral.com/en",
+      "x-default": "https://valentinproteccionintegral.com",
+    },
   },
 };
 

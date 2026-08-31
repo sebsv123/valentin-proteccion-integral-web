@@ -1,7 +1,8 @@
-export default function SchemaPersons() {
+export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
   const rosa = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "inLanguage": locale,
     "name": "Rosa Valentín",
     "jobTitle": "Agente de Seguros Registrada DGSFP",
     "description": "Agente de seguros registrada en la DGSFP, responsable profesional de la marca Valentín Protección Integral en Madrid. Especialista en seguros de salud, mascotas, dental, viaje, accidentes, decesos y negocios. Asesora con claridad y sin presión comercial.",

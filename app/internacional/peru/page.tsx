@@ -17,7 +17,7 @@ const imageRoot = '/images/internacional/peru';
 export const metadata: Metadata = {
   title: 'Perú, España y movilidad internacional | VIP Global Perú × VPI',
   description: 'Asesoría para visados, movilidad internacional y procesos entre Perú, España y otros destinos, con VIP Global Perú y Valentín Protección Integral.',
-  alternates: { canonical: `${baseUrl}/internacional/peru` },
+  alternates: { canonical: `${baseUrl}/internacional/peru`, languages: { es: `${baseUrl}/internacional/peru`, en: `${baseUrl}/en/international/peru`, 'x-default': `${baseUrl}/internacional/peru` } },
   openGraph: {
     title: 'Perú, España y movilidad internacional | VIP Global Perú × VPI',
     description: 'VIP Global Perú acompaña procesos de visado y movilidad internacional desde Perú. VPI refuerza especialmente la parte de España: seguro médico y llegada.',
@@ -48,6 +48,7 @@ export default function PeruPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
+    inLanguage: 'es',
     name: 'Perú, España y movilidad internacional | VIP Global Perú × VPI',
     url: `${baseUrl}/internacional/peru`,
     description: metadata.description,

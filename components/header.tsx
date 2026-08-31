@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, Building2, ChevronDown, Instagram, Menu, Phone, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref, getSubpagesForProduct, mainNav, products, site } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
@@ -14,6 +15,8 @@ import { BrandLockup } from './ui/brand-lockup';
 import PillNav from './ui/pill-nav';
 import { StaggeredMenu } from './ui/staggered-menu';
 import IridescenceBackground from './ui/iridescence-background';
+import { LanguageSwitcher } from './language-switcher';
+import { localizedPath } from '@/i18n/navigation';
 
 export function Header() {
   const [mega, setMega] = useState(false);
@@ -22,6 +25,20 @@ export function Header() {
   const megaRef = useRef<HTMLDivElement>(null);
   const businessRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const locale = useLocale() as 'es' | 'en';
+  const t = useTranslations('common');
+
+  const localeHref = (href: string) => {
+    if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto') {
+      return localizedPath(locale, href);
+    }
+    return href;
+  };
+
+  const localeLabel = (label: string) => {
+    if (locale !== 'en') return label;
+    return ({ Inicio: t('home'), Internacional: t('international'), Contacto: t('contact'), Alquileres: 'Rentals', Seguros: 'Insurance', Empresas: 'Businesses', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Blog: 'Blog', Opiniones: 'Reviews', Zonas: 'Areas' } as Record<string, string>)[label] ?? label;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -104,7 +121,7 @@ export function Header() {
                 href="/extranjeros/alquileres"
                 className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
               >
-                Alquileres
+                {localeLabel('Alquileres')}
               </Link>
 
               {/* Mega Menu trigger */}
@@ -117,7 +134,7 @@ export function Header() {
                   aria-controls="mega-menu"
                 >
                   <div className="flex items-center gap-1.5 font-semibold text-white/90 hover:text-white transition-colors text-base">
-                    Seguros <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mega ? 'rotate-180' : ''}`} />
+                    {localeLabel('Seguros')} <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mega ? 'rotate-180' : ''}`} />
                   </div>
                   {/* CSS underline hover */}
                   <span className="absolute bottom-2 left-6 right-6 h-[2px] origin-center scale-x-0 group-hover:scale-x-100 bg-[var(--blue)] transition-transform duration-200" />
@@ -141,38 +158,38 @@ export function Header() {
                     onClick={() => setBusinessOpen((open) => !open)}
                     onFocus={() => setBusinessOpen(true)}
                   >
-                    Empresas <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                    {localeLabel('Empresas')} <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                   </button>
                   <div
                     id="business-menu"
                     role="menu"
-                    aria-label="Soluciones para empresas"
+                    aria-label={locale === 'en' ? 'Business solutions' : 'Soluciones para empresas'}
                     className={`absolute right-0 top-[calc(100%+10px)] z-[220] w-[min(500px,calc(100vw-2rem))] rounded-[22px] border border-[var(--border)] bg-white p-3 text-left shadow-[0_18px_48px_rgba(18,59,104,0.2)] transition-all duration-150 ${businessOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-1 opacity-0'}`}
                   >
-                    <p className="px-3 pb-2 pt-1 text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">SOLUCIONES PARA EMPRESAS</p>
+                    <p className="px-3 pb-2 pt-1 text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'BUSINESS SOLUTIONS' : 'SOLUCIONES PARA EMPRESAS'}</p>
                     <Link href="/empresas/salud" role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#f1faf8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span>
-                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#2eaaa0]">SALUD PARA EMPRESAS</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">Cobertura médica para equipos y autónomos</span></span>
+                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#2eaaa0]">{locale === 'en' ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">{locale === 'en' ? 'Health cover for teams and self-employed professionals' : 'Cobertura médica para equipos y autónomos'}</span></span>
                       <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
                     <Link href="/empresas/ciberseguridad" role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#edf6f8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#eaf2fb] text-[var(--blue)]"><ShieldCheck className="h-5 w-5" aria-hidden="true" /></span>
-                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#0f5e9c]">CIBERSEGURIDAD</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">Continuidad, respuesta y protección ante incidentes digitales</span></span>
+                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#0f5e9c]">{locale === 'en' ? 'CYBERSECURITY' : 'CIBERSEGURIDAD'}</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">{locale === 'en' ? 'Continuity, response and protection from digital incidents' : 'Continuidad, respuesta y protección ante incidentes digitales'}</span></span>
                       <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
                     <Link href="/empresas" role="menuitem" onClick={() => setBusinessOpen(false)} className="mt-1 flex items-center justify-between rounded-[14px] border-t border-[var(--border)] px-3 pb-1 pt-3 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
-                      Ver todas las soluciones para empresas <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      {locale === 'en' ? 'View all business solutions' : 'Ver todas las soluciones para empresas'} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
-                <PillNav
-                  items={[
-                    ...mainNav.slice(2).filter(item => item.label !== 'Empresas').map(item => ({
-                      link: item.href,
-                      label: item.label,
-                      href: item.href
-                    }))
-                  ]}
+                  <PillNav
+                    items={[
+                      ...mainNav.slice(2).filter(item => item.label !== 'Empresas').map(item => ({
+                    link: localeHref(item.href),
+                    label: localeLabel(item.label),
+                    href: localeHref(item.href)
+                      }))
+                    ]}
                   baseColor="#002244"
                   pillColor="rgba(255,255,255,0.15)"
                   pillTextColor="white"
@@ -184,6 +201,7 @@ export function Header() {
             </nav>
 
             <div className="hidden shrink-0 items-center justify-end gap-1.5 xl:flex">
+              <LanguageSwitcher />
               <a
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-3 py-2.5 text-white/90
@@ -218,8 +236,10 @@ export function Header() {
                 const [mobileOpen, setMobileOpen] = useState(false);
                 y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
             */}
+            <div className="flex items-center gap-2 xl:hidden">
+            <LanguageSwitcher />
             <button
-              className="flex xl:hidden items-center gap-2 text-white/90 hover:text-white
+              className="flex items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}
@@ -227,6 +247,7 @@ export function Header() {
             >
               <Menu className="h-5 w-5" /> Menú
             </button>
+            </div>
 
           </div>
         </div>
@@ -259,28 +280,28 @@ export function Header() {
               <Link href="/extranjeros" onClick={closeAll}>
                 <div className="flex items-center justify-between">
                   <span className="font-heading text-base font-bold tracking-tight text-blue-700 group-hover:text-blue-600">
-                    Extranjeros
+                    {locale === 'en' ? 'Foreigners' : 'Extranjeros'}
                   </span>
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
                     <ChevronDown className="h-3 w-3 -rotate-90" />
                   </div>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-slate-500">
-                  Seguro médico para visado, NIE, TIE, estudios y residencia.
+                  {locale === 'en' ? 'Health insurance for visas, NIE, TIE, studies and residence.' : 'Seguro médico para visado, NIE, TIE, estudios y residencia.'}
                 </p>
               </Link>
               <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-blue-100 pt-2">
                 <div className="flex flex-wrap gap-1">
-                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Estudios</span>
-                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Residencia</span>
-                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">Familia</span>
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">{locale === 'en' ? 'Studies' : 'Estudios'}</span>
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">{locale === 'en' ? 'Residence' : 'Residencia'}</span>
+                  <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600">{locale === 'en' ? 'Family' : 'Familia'}</span>
                 </div>
                 <Link
                   href="/extranjeros/alquileres"
                   className="text-[11px] font-bold text-blue-600 underline decoration-blue-300 underline-offset-2 hover:text-blue-700"
                   onClick={closeAll}
                 >
-                  Alquileres en Madrid →
+                  {locale === 'en' ? 'Rentals in Madrid →' : 'Alquileres en Madrid →'}
                 </Link>
               </div>
             </div>
@@ -318,16 +339,16 @@ export function Header() {
               </Link>
             ))}
             <div className="col-span-full mt-2 rounded-[18px] border border-[rgba(15,94,156,0.16)] bg-[linear-gradient(100deg,rgba(15,94,156,0.05),rgba(46,170,160,0.08))] p-4">
-              <p className="text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">PARA EMPRESAS</p>
+              <p className="text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'FOR BUSINESSES' : 'PARA EMPRESAS'}</p>
               <div className="mt-2 grid gap-2 sm:grid-cols-2">
                 <Link href="/empresas/salud" onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                   <Building2 className="h-5 w-5 shrink-0 text-[var(--blue)]" aria-hidden="true" />
-                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">SALUD PARA EMPRESAS</span><span className="block text-xs text-[var(--muted)]">Cobertura médica para equipos y autónomos</span></span>
+                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">{locale === 'en' ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</span><span className="block text-xs text-[var(--muted)]">{locale === 'en' ? 'Health cover for teams and self-employed professionals' : 'Cobertura médica para equipos y autónomos'}</span></span>
                   <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
                 <Link href="/empresas/ciberseguridad" onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                   <ShieldCheck className="h-5 w-5 shrink-0 text-[var(--blue)]" aria-hidden="true" />
-                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">CIBERSEGURIDAD</span><span className="block text-xs text-[var(--muted)]">Continuidad, respuesta y protección ante incidentes digitales</span></span>
+                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">{locale === 'en' ? 'CYBERSECURITY' : 'CIBERSEGURIDAD'}</span><span className="block text-xs text-[var(--muted)]">{locale === 'en' ? 'Continuity, response and protection from digital incidents' : 'Continuidad, respuesta y protección ante incidentes digitales'}</span></span>
                   <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               </div>
@@ -347,27 +368,28 @@ export function Header() {
         colors={['#002244', '#0F5E9C']}
         accentColor="#0F5E9C"
         items={[
-          { label: 'Inicio', ariaLabel: 'Inicio', link: '/' },
-          { label: 'Alquileres', ariaLabel: 'Alquileres', link: '/extranjeros/alquileres' },
-          { label: 'Extranjeros', ariaLabel: 'Extranjeros', link: '/extranjeros' },
+          { label: localeLabel('Inicio'), ariaLabel: localeLabel('Inicio'), link: localeHref('/') },
+          { label: localeLabel('Alquileres'), ariaLabel: localeLabel('Alquileres'), link: '/extranjeros/alquileres' },
+          { label: locale === 'en' ? 'Foreigners' : 'Extranjeros', ariaLabel: locale === 'en' ? 'Foreigners' : 'Extranjeros', link: '/extranjeros' },
           ...grouped.map(item => ({ label: item.label, ariaLabel: item.label, link: `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => item.label === 'Empresas'
             ? {
-                label: 'Empresas',
-                ariaLabel: 'Soluciones para empresas',
+                label: locale === 'en' ? 'Businesses' : 'Empresas',
+                ariaLabel: locale === 'en' ? 'Business solutions' : 'Soluciones para empresas',
                 link: '/empresas',
                 children: [
-                  { label: 'Todas las soluciones', ariaLabel: 'Todas las soluciones para empresas', link: '/empresas' },
-                  { label: 'Salud para empresas', ariaLabel: 'Salud para empresas', link: '/empresas/salud' },
-                  { label: 'Ciberseguridad', ariaLabel: 'Ciberseguridad para empresas', link: '/empresas/ciberseguridad' },
+                  { label: locale === 'en' ? 'All solutions' : 'Todas las soluciones', ariaLabel: locale === 'en' ? 'All business solutions' : 'Todas las soluciones para empresas', link: '/empresas' },
+                  { label: locale === 'en' ? 'Health for businesses' : 'Salud para empresas', ariaLabel: locale === 'en' ? 'Health for businesses' : 'Salud para empresas', link: '/empresas/salud' },
+                  { label: locale === 'en' ? 'Cybersecurity' : 'Ciberseguridad', ariaLabel: locale === 'en' ? 'Cybersecurity for businesses' : 'Ciberseguridad para empresas', link: '/empresas/ciberseguridad' },
                 ],
               }
-            : { label: item.label, ariaLabel: item.label, link: item.href })
+            : { label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: localeHref(item.href) })
         ]}
         socialItems={[
           { label: 'Instagram', link: site.instagram },
           { label: 'WhatsApp', link: buildWhatsAppHref('Hola, quiero una consulta sin compromiso para elegir un seguro.') }
         ]}
+        socialTitle={locale === 'en' ? 'Contact' : 'Contacto'}
       />
     </>
   );

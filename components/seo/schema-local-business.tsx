@@ -3,12 +3,14 @@ import { site } from '@/lib/products';
 interface Props {
   cityName?: string;
   postcode?: string;
+  locale?: string;
 }
 
-export default function SchemaLocalBusiness({ cityName, postcode }: Props) {
+export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' }: Props) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
+    "inLanguage": locale,
     "name": site.name,
     "description": "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
     "url": "https://valentinproteccionintegral.com",

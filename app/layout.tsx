@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { getLocale, getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { Playfair_Display, Montserrat } from 'next/font/google';
 import { site } from '@/lib/products';
 import './globals.css';
@@ -20,56 +22,41 @@ import { TrackingScripts } from "@/components/tracking-scripts";
 import SchemaLocalBusiness from '@/components/seo/schema-local-business';
 import SchemaPersons from '@/components/seo/schema-persons';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(site.domain),
-  title: site.title,
-  description: site.description,
-  applicationName: site.name,
-  manifest: '/manifest.json',
-  alternates: {
-    // canonical se define en cada página individualmente
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
-  icons: {
-    icon: [
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
-  },
-  openGraph: {
-    title: site.title,
-    description: site.description,
-    type: 'website',
-    url: site.domain,
-    siteName: site.name,
-    locale: 'es_ES',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: site.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    // title y description se definen en cada página individualmente
-    images: ['/og-image.png'],
-  },
-  other: {
-    'facebook-domain-verification': 's7ts2da9rfedyxqu70u6zm5hbkhsj2',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isEnglish = locale === 'en';
+  return {
+    metadataBase: new URL(site.domain),
+    title: isEnglish ? `${site.name} | Clear insurance guidance` : site.title,
+    description: isEnglish ? 'Clear, personal insurance guidance from Valentín Protección Integral.' : site.description,
+    applicationName: site.name,
+    manifest: '/manifest.json',
+    alternates: { },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+    icons: {
+      icon: [
+        { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+      ],
+      apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    },
+    openGraph: {
+      title: isEnglish ? `${site.name} | Clear insurance guidance` : site.title,
+      description: isEnglish ? 'Clear, personal insurance guidance from Valentín Protección Integral.' : site.description,
+      type: 'website', url: site.domain, siteName: site.name,
+      locale: isEnglish ? 'en_GB' : 'es_ES',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: site.name }],
+    },
+    twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
+    other: { 'facebook-domain-verification': 's7ts2da9rfedyxqu70u6zm5hbkhsj2' },
+  };
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang="es">
+    <html lang={locale}>
       <head>
         {/* Preconnect to Google Fonts CDN for faster font loading */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -79,13 +66,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
         <BackgroundWrapper />
-        <SchemaLocalBusiness />
-        <SchemaPersons />
-        {process.env.NODE_ENV === 'development' && <WebVitals />}
-        {children}
-        <CookieBanner />
-        <ChatWidget />
-        <TrackingScripts clarityId={clarityId} metaPixelId={META_PIXEL_ID} />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <SchemaLocalBusiness locale={locale} />
+          <SchemaPersons locale={locale} />
+          {process.env.NODE_ENV === 'development' && <WebVitals />}
+          {children}
+          <CookieBanner />
+          <ChatWidget />
+          <TrackingScripts clarityId={clarityId} metaPixelId={META_PIXEL_ID} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

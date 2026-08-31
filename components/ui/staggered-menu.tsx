@@ -32,6 +32,7 @@ export interface StaggeredMenuProps {
   closeOnClickAway?: boolean;
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
+  socialTitle?: string;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -51,7 +52,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   isFixed = false,
   closeOnClickAway = true,
   onMenuOpen,
-  onMenuClose
+  onMenuClose,
+  socialTitle = 'Contacto'
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
@@ -569,7 +571,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
             {displaySocials && socialItems && socialItems.length > 0 && (
               <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
-                <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#0F5E9C)]">Contacto</h3>
+                <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#0F5E9C)]">{socialTitle}</h3>
                 <ul
                   className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap"
                   role="list"

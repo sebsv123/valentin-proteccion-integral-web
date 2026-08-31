@@ -23,7 +23,7 @@ export function BrandLockup({
   return (
     <Link
       href="/"
-      aria-label="Valentín Protección Integral — Inicio"
+      aria-label="Valentín Protección Integral"
       className={`inline-flex shrink-0 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${compact ? 'gap-2.5' : 'gap-3'} ${className}`}
     >
       <span

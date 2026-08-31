@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useLocale } from 'next-intl';
 
 const AGENT_URL = process.env.NEXT_PUBLIC_AGENT_URL;
 
@@ -10,12 +11,13 @@ interface Message {
 }
 
 export function ChatWidget() {
+  const isEnglish = useLocale() === 'en';
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
       content:
-        '¡Hola! Soy Rosa, tu asesora de seguros. ¿En qué puedo ayudarte?',
+        isEnglish ? 'Hello! I am Rosa, your insurance advisor. How can I help?' : '¡Hola! Soy Rosa, tu asesora de seguros. ¿En qué puedo ayudarte?',
     },
   ]);
   const [input, setInput] = useState('');
@@ -63,7 +65,7 @@ export function ChatWidget() {
         {
           role: 'assistant',
           content:
-            'Lo siento, no he podido conectar con el servicio. Por favor, inténtalo de nuevo más tarde.',
+            isEnglish ? 'Sorry, I could not connect to the service. Please try again later.' : 'Lo siento, no he podido conectar con el servicio. Por favor, inténtalo de nuevo más tarde.',
         },
       ]);
     } finally {
@@ -89,16 +91,16 @@ export function ChatWidget() {
             />
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold leading-tight">
-                Rosa - Asesora de Seguros
+                {isEnglish ? 'Rosa - Insurance Advisor' : 'Rosa - Asesora de Seguros'}
               </p>
               <p className="text-[11px] leading-tight opacity-80">
-                Online • Responde en minutos
+                {isEnglish ? 'Online • Replies in minutes' : 'Online • Responde en minutos'}
               </p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
               className="flex h-7 w-7 items-center justify-center rounded-full hover:bg-white/20 transition-colors"
-              aria-label="Cerrar chat"
+                aria-label={isEnglish ? 'Close chat' : 'Cerrar chat'}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +158,7 @@ export function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Escribe tu mensaje..."
+                placeholder={isEnglish ? 'Write your message...' : 'Escribe tu mensaje...'}
                 disabled={isLoading}
                 className="flex-1 rounded-full border border-gray-300 bg-gray-50 px-4 py-2 text-sm outline-none transition-colors placeholder:text-gray-400 focus:border-[#01696f] focus:bg-white disabled:opacity-50"
               />
@@ -164,7 +166,7 @@ export function ChatWidget() {
                 onClick={handleSend}
                 disabled={isLoading || !input.trim()}
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#01696f] text-white transition-colors hover:bg-[#01555a] disabled:opacity-50"
-                aria-label="Enviar mensaje"
+                aria-label={isEnglish ? 'Send message' : 'Enviar mensaje'}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +191,7 @@ export function ChatWidget() {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="flex h-14 w-14 items-center justify-center rounded-full bg-[#01696f] text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
-        aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat'}
+        aria-label={isOpen ? (isEnglish ? 'Close chat' : 'Cerrar chat') : (isEnglish ? 'Open chat' : 'Abrir chat')}
       >
         {isOpen ? (
           <svg

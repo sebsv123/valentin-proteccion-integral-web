@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
   images: {
@@ -122,4 +125,6 @@ const nextConfig: NextConfig = {
 // Conditionally enable bundle analyzer when ANALYZE=true
 const isAnalyze = process.env.ANALYZE === 'true';
 
-export default isAnalyze ? withBundleAnalyzer({ enabled: true })(nextConfig) : nextConfig;
+const configuredNext = isAnalyze ? withBundleAnalyzer({ enabled: true })(nextConfig) : nextConfig;
+
+export default withNextIntl(configuredNext);

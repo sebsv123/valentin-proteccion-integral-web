@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // PILAR — Home
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/en`, lastModified: now, changeFrequency: 'weekly', priority: 1.0, alternates: { languages: { es: base, en: `${base}/en`, 'x-default': base } } },
 
     // PRODUCTOS (alta intención de compra) — añadidos vida, mascotas, viaje, senior
     { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -26,10 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/empresas/ciberseguridad`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/empresas`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/en/international`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional`, en: `${base}/en/international`, 'x-default': `${base}/internacional` } } },
     { url: `${base}/internacional/corea-del-sur`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional/australia`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional/india`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional/peru`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/en/international/peru`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional/peru`, en: `${base}/en/international/peru`, 'x-default': `${base}/internacional/peru` } } },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // /para/autonomos excluida: redirige 301 a /autonomos
 
