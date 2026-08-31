@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/internacional`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional/corea-del-sur`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/internacional/australia`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/internacional/peru`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // /para/autonomos excluida: redirige 301 a /autonomos
 
