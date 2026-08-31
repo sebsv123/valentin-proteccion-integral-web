@@ -108,14 +108,17 @@ export default function PeruPage() {
           <div className="container-shell">
             <div className={styles.worldGrid}>
               <div className={styles.worldCopy}>
-                <p className={styles.eyebrow}>MUNDO → PERÚ</p>
+                <p className={styles.eyebrow}><span className={styles.worldFlag} aria-hidden="true" /> MUNDO → PERÚ</p>
                 <h2 id="world-peru-title">Y si el destino es Perú,<br /><em>también hay camino.</em></h2>
                 <p>VIP Global Perú también acompaña a quienes quieren vivir, estudiar o trabajar en Perú.</p>
                 <div className={styles.worldList}>
-                  {worldToPeruItems.map((item) => (
+                  {worldToPeruItems.map((item, index) => (
                     <div className={styles.worldItem} key={item.title}>
-                      <strong>{item.title}</strong>
-                      <span>{item.desc}</span>
+                      <span className={styles.worldIndex}>{String(index + 1).padStart(2, '0')}</span>
+                      <div>
+                        <strong>{item.title}</strong>
+                        <span>{item.desc}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -123,6 +126,7 @@ export default function PeruPage() {
               </div>
               <div className={styles.worldPhoto}>
                 <Image src={`${imageRoot}/peru-profesional.jpg`} alt="Profesionales dándose la mano en una oficina" fill sizes="(max-width: 1100px) 100vw, 52vw" />
+                <span className={styles.worldPhotoLabel}>PERÚ · ACOMPAÑAMIENTO</span>
               </div>
             </div>
           </div>
