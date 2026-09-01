@@ -119,11 +119,11 @@ export function Header() {
   return (
     <>
       <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
-        <div className="container-shell mx-auto max-w-[1760px] min-[2200px]:max-w-[2200px]">
+        <div className="header-shell">
           <div className="flex items-center justify-between gap-3 py-3 2xl:gap-4 2xl:py-4">
             <BrandLockup variant="light" size="compact" priority href={localeHref('/')} />
 
-            <nav className="hidden min-w-0 items-center gap-0.5 min-[2200px]:flex">
+            <nav className="hidden min-w-0 items-center gap-0.5 min-[1850px]:flex">
               <Link
                 href={localeHref('/extranjeros/alquileres')}
                 className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
@@ -208,7 +208,7 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden shrink-0 items-center justify-end gap-1.5 min-[2200px]:flex">
+            <div className="hidden shrink-0 items-center justify-end gap-1.5 min-[1850px]:flex">
               <LanguageSwitcher />
               <a
                 href={`tel:${site.phoneHref}`}
@@ -244,7 +244,7 @@ export function Header() {
                 const [mobileOpen, setMobileOpen] = useState(false);
                 y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
             */}
-            <div className="flex items-center gap-2 min-[2200px]:hidden">
+            <div className="flex items-center gap-2 min-[1850px]:hidden">
             <LanguageSwitcher />
             <button
               className="flex items-center gap-2 text-white/90 hover:text-white

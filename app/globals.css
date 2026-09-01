@@ -44,11 +44,19 @@ a { text-decoration: none; }
 img { max-width: 100%; height: auto; }
 
 .container-shell { width: min(100%, 1820px); margin-inline: auto; padding-inline: clamp(1rem, 2.2vw, 2.4rem); }
+.header-shell { width: min(100%, 2200px); margin-inline: auto; padding-inline: clamp(1rem, 2.2vw, 2.4rem); }
 .section-pad { padding-block: clamp(3.5rem, 6vw, 6.25rem); }
 .section-title { font-family: var(--font-heading), sans-serif; font-size: clamp(2.35rem, 3.2vw, 4rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; color: var(--blue-deep); }
 .section-copy { max-width: 72ch; font-size: clamp(1rem, 1.15vw, 1.16rem); line-height: 1.9; color: var(--muted); }
 .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: .82rem; font-weight: 700; color: var(--blue); }
 .nav-link { font-size: 1.12rem; font-weight: 600; color: var(--blue-deep); }
+
+@media (min-width: 1850px) and (max-width: 2199px) {
+  .header-primary-nav {
+    --pill-pad-x: 8px;
+    --pill-gap: 2px;
+  }
+}
 
 .soft-card { border-radius: 32px; background: rgba(255,255,255,0.96); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(18, 59, 104, 0.08); }
 .hero-grid { display: grid; gap: 1.5rem; }
