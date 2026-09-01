@@ -13,7 +13,7 @@ export function LanguageSwitcher() {
   const supported = supportedPathnames.has(pathname);
 
   if (!supported) {
-    return <span className="text-xs font-semibold text-white/45" title="English version not available for this page">ES / EN</span>;
+    return <span className="text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
