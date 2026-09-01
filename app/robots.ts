@@ -9,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/gracias',
           '/api/',
-          '/_next/',
         ],
       },
     ],

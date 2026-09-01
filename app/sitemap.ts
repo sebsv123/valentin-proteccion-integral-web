@@ -30,9 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/how-we-help`, lastModified: now, changeFrequency: 'monthly', priority: 0.7, alternates: { languages: { es: `${base}/como-te-ayudamos`, en: `${base}/en/how-we-help`, 'x-default': `${base}/como-te-ayudamos` } } },
     { url: `${base}/en/about-us`, lastModified: now, changeFrequency: 'monthly', priority: 0.6, alternates: { languages: { es: `${base}/sobre-nosotros`, en: `${base}/en/about-us`, 'x-default': `${base}/sobre-nosotros` } } },
     { url: `${base}/en/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.6, alternates: { languages: { es: `${base}/opiniones`, en: `${base}/en/reviews`, 'x-default': `${base}/opiniones` } } },
-    { url: `${base}/en/legal-notice`, lastModified: now, changeFrequency: 'yearly', priority: 0.1, alternates: { languages: { es: `${base}/aviso-legal`, en: `${base}/en/legal-notice`, 'x-default': `${base}/aviso-legal` } } },
-    { url: `${base}/en/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.1, alternates: { languages: { es: `${base}/privacidad`, en: `${base}/en/privacy`, 'x-default': `${base}/privacidad` } } },
-    { url: `${base}/en/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.1, alternates: { languages: { es: `${base}/cookies`, en: `${base}/en/cookies`, 'x-default': `${base}/cookies` } } },
     { url: `${base}/en/business`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: { languages: { es: `${base}/empresas`, en: `${base}/en/business`, 'x-default': `${base}/empresas` } } },
     { url: `${base}/en/business/health-insurance`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: { languages: { es: `${base}/empresas/salud`, en: `${base}/en/business/health-insurance`, 'x-default': `${base}/empresas/salud` } } },
     { url: `${base}/en/business/cybersecurity`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: { languages: { es: `${base}/empresas/ciberseguridad`, en: `${base}/en/business/cybersecurity`, 'x-default': `${base}/empresas/ciberseguridad` } } },
@@ -132,8 +129,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contacto`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
 
     // LEGALES (baja prioridad)
-    { url: `${base}/aviso-legal`, lastModified: now, changeFrequency: 'yearly', priority: 0.1 },
-    { url: `${base}/privacidad`, lastModified: now, changeFrequency: 'yearly', priority: 0.1 },
-    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.1 },
   ];
 }
