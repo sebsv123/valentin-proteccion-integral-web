@@ -138,7 +138,7 @@ export default function HowItWorksSection() {
                        sm:justify-center"
           >
             <Link
-              href="/como-te-ayudamos"
+              href={isEnglish ? '/en/how-we-help' : '/como-te-ayudamos'}
               className="btn-secondary !border-white/20 !text-white
                          hover:!bg-white hover:!text-[var(--blue-deep)]"
             >

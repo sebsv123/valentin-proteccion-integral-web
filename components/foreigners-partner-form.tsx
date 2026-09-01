@@ -156,7 +156,7 @@ export function ForeignersPartnerForm() {
 
         <label className="flex items-start gap-3 py-3 text-sm leading-6 text-[var(--muted)]">
           <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 rounded border-[var(--border)]" {...register('sensitiveNotice')} />
-          <span>{en ? 'I confirm that I will not send sensitive documents through this form and have read the ' : 'Confirmo que no enviaré documentación sensible mediante este formulario y he revisado la '}<Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/privacidad">{en ? 'privacy policy' : 'política de privacidad'}</Link>.</span>
+          <span>{en ? 'I confirm that I will not send sensitive documents through this form and have read the ' : 'Confirmo que no enviaré documentación sensible mediante este formulario y he revisado la '}<Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href={en ? '/en/privacy' : '/privacidad'}>{en ? 'privacy policy' : 'política de privacidad'}</Link>.</span>
         </label>
         {errors.sensitiveNotice ? <p className="text-sm text-red-600">{errors.sensitiveNotice.message}</p> : null}
       </div>

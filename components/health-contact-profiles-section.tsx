@@ -140,7 +140,7 @@ export function HealthContactProfilesSection({ product }: { product: Product }) 
                 <label className={styles.consent}><input type="checkbox" {...register('consent')} /><span>{en ? 'I agree that my data may be used to answer my enquiry and guide me towards suitable options.' : 'Acepto que mis datos se utilicen para responder a mi consulta y orientarme sobre opciones que puedan encajar conmigo.'}</span></label>
                 {errors.consent ? <p className={styles.error}>{errors.consent.message}</p> : null}
                 <div className={styles.formActions}><button type="submit" disabled={isSubmitting}>{isSubmitting ? <Loader2 aria-hidden="true" className={styles.spinner} /> : <ArrowRight aria-hidden="true" />}{en ? 'Request guidance' : 'Solicitar orientación'}</button><a href={whatsappHref}><MessageCircle aria-hidden="true" />{en ? 'Talk on WhatsApp' : 'Hablar por WhatsApp'}</a></div>
-                <p className={styles.privacy}><LockKeyhole aria-hidden="true" />{en ? 'We handle your data confidentially and according to our ' : 'Tratamos tus datos con confidencialidad y conforme a nuestra '}<Link href="/privacidad">{en ? 'privacy policy' : 'política de privacidad'}</Link>.</p>
+                <p className={styles.privacy}><LockKeyhole aria-hidden="true" />{en ? 'We handle your data confidentially and according to our ' : 'Tratamos tus datos con confidencialidad y conforme a nuestra '}<Link href={en ? '/en/privacy' : '/privacidad'}>{en ? 'privacy policy' : 'política de privacidad'}</Link>.</p>
                 {serverMessage ? <p className={styles.success}>{serverMessage}</p> : null}
                 {serverError ? <p className={styles.errorBox}>{serverError}</p> : null}
               </form>

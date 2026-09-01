@@ -161,7 +161,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {/* Joven Profesional */}
-              <Link href="/para/jovenes-profesionales" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+              <Link href={currentLocale === 'en' ? '/en/for/young-professionals' : '/para/jovenes-profesionales'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <TrendingUp className="h-7 w-7 text-[var(--blue)]" />
                 </div>
@@ -175,7 +175,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
               </Link>
 
               {/* Familias */}
-              <Link href="/para/familias" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+              <Link href={currentLocale === 'en' ? '/en/for/families' : '/para/familias'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Users className="h-7 w-7 text-[var(--blue)]" />
                 </div>
@@ -189,7 +189,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
               </Link>
 
               {/* Seniors */}
-              <Link href="/para/seniors" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+              <Link href={currentLocale === 'en' ? '/en/for/seniors' : '/para/seniors'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Heart className="h-7 w-7 text-[var(--blue)]" />
                 </div>
@@ -203,7 +203,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
               </Link>
 
               {/* Autónomos */}
-              <Link href="/para/autonomos" className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+              <Link href={currentLocale === 'en' ? '/en/for/self-employed' : '/para/autonomos'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Briefcase className="h-7 w-7 text-[var(--blue)]" />
                 </div>

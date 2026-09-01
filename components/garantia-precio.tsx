@@ -97,7 +97,7 @@ export function GarantiaPrecio({
           </div>
           {showCta && (
             <a
-              href="/como-te-ayudamos"
+              href={locale === 'en' ? '/en/how-we-help' : '/como-te-ayudamos'}
               className="flex-none text-sm font-bold text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors"
             >
               {content.cta}

@@ -10,11 +10,12 @@ import { AdeslasAgentLink } from './adeslas-agent-link';
 import productGridStyles from './product-category-grid.module.css';
 import { getHomeContent, type HomeLocale } from './home-content';
 import { localizedPath } from '@/i18n/navigation';
+import { localizedProductPath } from '@/lib/product-locales';
 
 const homePath = (locale: HomeLocale, path: '/' | '/contacto' | '/seguros' | '/seguros/salud') => localizedPath(locale, path);
 
 
-export function ProductAccessSection() {
+export function ProductAccessSection({ locale = 'es' }: { locale?: HomeLocale } = {}) {
   const productSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
   return (
     <section aria-label="Accesos a seguros" className="bg-[var(--off-white)] py-8 md:py-10">
@@ -28,10 +29,10 @@ export function ProductAccessSection() {
           ))}
         </div>
         <div className="mt-5 grid gap-3 md:grid-cols-2">
-          <Link href="/empresas/salud" className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+          <Link href={locale === 'en' ? '/en/business/health-insurance' : '/empresas/salud'} className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
             <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#2fa59b]">SALUD PARA EMPRESAS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Salud para tu equipo</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Coberturas desde dos asegurados y distintas modalidades.</span></span></span><ArrowRight className="h-5 w-5 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
-          <Link href="/empresas/ciberseguridad" className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-[#edf6f8] px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
+          <Link href={locale === 'en' ? '/en/business/cybersecurity' : '/empresas/ciberseguridad'} className="group flex items-center justify-between gap-5 rounded-2xl border border-[rgba(15,94,156,0.16)] bg-[#edf6f8] px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--blue)]/20">
             <span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[var(--blue)]"><ShieldCheck className="h-5 w-5" aria-hidden="true" /></span><span><span className="block text-[11px] font-bold tracking-[0.16em] text-[#287a91]">CIBERSEGURIDAD PARA EMPRESAS</span><strong className="mt-1 block font-heading text-xl text-[var(--blue-deep)]">Continuidad del negocio</strong><span className="mt-1 block text-sm leading-6 text-[var(--muted)]">Respuesta ante incidentes e interrupciones de actividad.</span></span></span><ArrowRight className="h-5 w-5 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
@@ -188,7 +189,7 @@ export function ProductCategoryGrid({ productsWithImages, locale = 'es' }: { pro
                   <ul className={productGridStyles.benefits}>
                     {(content.benefits[product.slug] || presentation.benefits).map((benefit) => <li key={benefit}>{benefit}</li>)}
                   </ul>
-                  <Link href={product.slug === 'salud' ? homePath(locale, '/seguros/salud') : `/seguros/${product.slug}`} className={productGridStyles.productLink}>
+                  <Link href={product.slug === 'salud' ? homePath(locale, '/seguros/salud') : localizedProductPath(product.slug, locale === 'en' ? 'en' : 'es')} className={productGridStyles.productLink}>
                     {content.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
@@ -424,7 +425,7 @@ export function MascotHelperSection({ locale = 'es' }: { locale?: HomeLocale } =
                   ))}
                 </div>
                 <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                  <Link href="/como-te-ayudamos" className="btn-primary hover-lift px-8">{content.cta}</Link>
+                  <Link href={locale === 'en' ? '/en/how-we-help' : '/como-te-ayudamos'} className="btn-primary hover-lift px-8">{content.cta}</Link>
                   <a href={buildWhatsAppHref(content.whatsapp)} className="btn-whatsapp animate-pulse-soft px-8 font-extrabold"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'Chat with Rosa' : 'Hablar con Rosa'}</a>
                 </div>
               </div>
