@@ -10,7 +10,7 @@ import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
-  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies' } as Record<string, string>)[href] ?? href : href;
+  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href : href;
   const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', Seguros: 'Insurance', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
   return (
@@ -31,10 +31,10 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{isEnglish ? 'Who are you?' : '¿Quién eres tú?'}</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <Link className="block hover:text-[var(--blue)]" href="/para/jovenes-profesionales">{isEnglish ? 'I am a young professional' : 'Soy joven profesional'}</Link>
-              <Link className="block hover:text-[var(--blue)]" href="/para/familias">{isEnglish ? 'I have a family to protect' : 'Tengo familia que proteger'}</Link>
-              <Link className="block hover:text-[var(--blue)]" href="/para/seniors">{isEnglish ? 'I am a senior or retiring' : 'Soy senior o prejubilado'}</Link>
-              <Link className="block hover:text-[var(--blue)]" href="/para/autonomos">{isEnglish ? 'I am self-employed' : 'Soy autónomo'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/para/jovenes-profesionales')}>{isEnglish ? 'I am a young professional' : 'Soy joven profesional'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/para/familias')}>{isEnglish ? 'I have a family to protect' : 'Tengo familia que proteger'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/para/seniors')}>{isEnglish ? 'I am a senior or retiring' : 'Soy senior o prejubilado'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/para/autonomos')}>{isEnglish ? 'I am self-employed' : 'Soy autónomo'}</Link>
             </div>
           </div>
           <div>
@@ -42,15 +42,15 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
             <div className="mt-4 space-y-3 text-[var(--muted)]">
               <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/extranjeros')}>{isEnglish ? 'FOREIGNERS' : 'EXTRANJEROS'}</Link>
               {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={product.slug === 'salud' ? linkHref('/seguros/salud') : localizedProductPath(product.slug, isEnglish ? 'en' : 'es')}>{productLabel(product.label)}</Link>)}
-              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
-              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/empresas/salud')}>{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/empresas/ciberseguridad')}>{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
             </div>
           </div>
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{isEnglish ? 'Navigation' : 'Navegación'}</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
-              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/empresas/salud')}>{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/empresas/ciberseguridad')}>{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
               <Link className="block hover:text-[var(--blue)]" href="/zonas">{isEnglish ? 'Areas we cover' : 'Zonas que atendemos'}</Link>
               {mainNav.filter((item) => item.label !== 'Empresas').map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={linkHref(item.href)}>{footerLabel(item.label)}</Link>)}
               <Link className="block hover:text-[var(--blue)]" href={linkHref('/privacidad')}>{isEnglish ? 'Privacy' : 'Privacidad'}</Link>

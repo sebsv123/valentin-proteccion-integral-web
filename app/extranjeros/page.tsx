@@ -253,7 +253,7 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <ForeignersTrackedLink
-                    href="/extranjeros/alquileres"
+                    href={en ? '/en/foreigners/rentals' : '/extranjeros/alquileres'}
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--blue-deep)]/10 bg-white px-5 py-3 text-sm font-bold text-[var(--blue-deep)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--green)]/50 hover:shadow-md"
                     action="cta_click"
                     label="hero_alquileres"
@@ -384,7 +384,7 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
                 </p>
                 <div className="mt-8 flex flex-col items-start gap-4">
                   <ForeignersTrackedLink
-                    href="/extranjeros/alquileres"
+                    href={en ? '/en/foreigners/rentals' : '/extranjeros/alquileres'}
                     action="cta_click"
                     label="alquileres_discovery_cta"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"

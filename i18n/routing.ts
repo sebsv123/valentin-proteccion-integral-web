@@ -55,6 +55,14 @@ export const routing = defineRouting({
     '/aviso-legal': { es: '/aviso-legal', en: '/legal-notice' },
     '/privacidad': { es: '/privacidad', en: '/privacy' },
     '/cookies': { es: '/cookies', en: '/cookies' },
+    '/empresas': { es: '/empresas', en: '/business' },
+    '/empresas/salud': { es: '/empresas/salud', en: '/business/health-insurance' },
+    '/empresas/ciberseguridad': { es: '/empresas/ciberseguridad', en: '/business/cybersecurity' },
+    '/para/autonomos': { es: '/para/autonomos', en: '/for/self-employed' },
+    '/para/familias': { es: '/para/familias', en: '/for/families' },
+    '/para/jovenes-profesionales': { es: '/para/jovenes-profesionales', en: '/for/young-professionals' },
+    '/para/seniors': { es: '/para/seniors', en: '/for/seniors' },
+    '/extranjeros/alquileres': { es: '/extranjeros/alquileres', en: '/foreigners/rentals' },
   },
 });
 
