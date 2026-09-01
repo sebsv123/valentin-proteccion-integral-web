@@ -22,6 +22,10 @@ export const routing = defineRouting({
       es: '/internacional/india',
       en: '/international/india',
     },
+    '/internacional/corea-del-sur': {
+      es: '/internacional/corea-del-sur',
+      en: '/international/south-korea',
+    },
     '/contacto': {
       es: '/contacto',
       en: '/contact',

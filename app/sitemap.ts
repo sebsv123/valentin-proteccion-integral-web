@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/international/peru`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional/peru`, en: `${base}/en/international/peru`, 'x-default': `${base}/internacional/peru` } } },
     { url: `${base}/en/international/australia`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional/australia`, en: `${base}/en/international/australia`, 'x-default': `${base}/internacional/australia` } } },
     { url: `${base}/en/international/india`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional/india`, en: `${base}/en/international/india`, 'x-default': `${base}/internacional/india` } } },
+    { url: `${base}/en/international/south-korea`, lastModified: now, changeFrequency: 'weekly', priority: 0.85, alternates: { languages: { es: `${base}/internacional/corea-del-sur`, en: `${base}/en/international/south-korea`, 'x-default': `${base}/internacional/corea-del-sur` } } },
     { url: `${base}/autonomos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     // /para/autonomos excluida: redirige 301 a /autonomos
 
