@@ -14,6 +14,10 @@ export const routing = defineRouting({
       es: '/internacional/peru',
       en: '/international/peru',
     },
+    '/internacional/australia': {
+      es: '/internacional/australia',
+      en: '/international/australia',
+    },
     '/contacto': {
       es: '/contacto',
       en: '/contact',
