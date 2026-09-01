@@ -48,8 +48,9 @@ export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sebastián Sifontes Valentín",
-    "jobTitle": "Especialista en seguros de vida, salud y accidentes",
-    "description": "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Forma parte del equipo de Valentín Protección Integral y atiende consultas sobre protección familiar y seguros de vida.",
+    "inLanguage": locale,
+    "jobTitle": isEnglish ? "Life, health and accident insurance specialist" : "Especialista en seguros de vida, salud y accidentes",
+    "description": isEnglish ? "Economist and specialist in life, health and accident insurance. Part of the Valentín Protección Integral team, supporting enquiries about family protection and life insurance." : "Economista y especialista en seguros de vida, salud y accidentes. Graduado en Doble Grado de Gestión y Administración Pública y Economía por la Universidad Complutense de Madrid, con estancia académica en la Freie Universität Berlin. Máster en Big Data, Data Science e Inteligencia Artificial (UCM, 2025-2026). Forma parte del equipo de Valentín Protección Integral y atiende consultas sobre protección familiar y seguros de vida.",
     "url": "https://valentinproteccionintegral.com",
     "sameAs": [
       "https://www.linkedin.com/in/sebastian-sifontes-valentin-752665187"
@@ -80,7 +81,7 @@ export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
         "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Universidad Complutense de Madrid" }
       }
     ],
-    "knowsAbout": [
+    "knowsAbout": isEnglish ? ["Life insurance", "Mortgage-linked life insurance", "Family protection through insurance", "Health insurance", "Personal accident insurance", "Economic data analysis"] : [
       "Seguros de vida",
       "Seguro de vida vinculado a hipoteca",
       "Protección familiar mediante seguros",

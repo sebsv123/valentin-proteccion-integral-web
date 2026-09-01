@@ -13,13 +13,19 @@ interface FAQChatProps {
   title?: string;
   subtitle?: string;
   brandColor?: string;
+  ctaQuestion?: string;
+  ctaLabel?: string;
+  ctaResponse?: string;
 }
 
 export function FAQChat({ 
   items, 
   title = "Preguntas frecuentes",
   subtitle = "Resolvemos tus dudas",
-  brandColor = "emerald"
+  brandColor = "emerald",
+  ctaQuestion = '¿Tienes más preguntas?',
+  ctaLabel = 'Habla con nosotros por WhatsApp',
+  ctaResponse = 'Respuesta en horario',
 }: FAQChatProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -126,7 +132,7 @@ export function FAQChat({
 
         {/* Chat input style CTA */}
         <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm mb-4">¿Tienes más preguntas?</p>
+          <p className="text-slate-500 text-sm mb-4">{ctaQuestion}</p>
           <div className="inline-flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-3 shadow-sm">
             <div className={`w-2 h-2 rounded-full ${
               brandColor === 'emerald' ? 'bg-emerald-500' :
@@ -135,9 +141,9 @@ export function FAQChat({
               brandColor === 'amber' ? 'bg-amber-500' :
               'bg-rose-500'
             } animate-pulse`} />
-            <span className="text-slate-600 text-sm">Habla con nosotros por WhatsApp</span>
+            <span className="text-slate-600 text-sm">{ctaLabel}</span>
             <span className="text-slate-400">•</span>
-            <span className="text-slate-500 text-sm">Respuesta en horario</span>
+            <span className="text-slate-500 text-sm">{ctaResponse}</span>
           </div>
         </div>
       </div>

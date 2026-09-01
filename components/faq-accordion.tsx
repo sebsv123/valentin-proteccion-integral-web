@@ -7,7 +7,7 @@ import { buildWhatsAppHref } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { getHomeContent, type HomeLocale } from './home-content';
 
-export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: { items: { q: string; a: string }[]; contextualLinks?: boolean; locale?: HomeLocale }) {
+export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: { items: readonly { q: string; a: string }[]; contextualLinks?: boolean; locale?: HomeLocale }) {
   const [open, setOpen] = useState<number | null>(0);
   const copy = getHomeContent(locale).faq;
 

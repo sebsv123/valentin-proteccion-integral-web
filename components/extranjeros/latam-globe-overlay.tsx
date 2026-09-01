@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CheckCircle2, FileText, ShieldCheck } from 'lucide-react';
 import styles from '@/app/extranjeros/extranjeros-hero.module.css';
+import { useLocale } from 'next-intl';
 
 const cities = [
   { id: 'mx', flag: '🇲🇽', name: 'Ciudad de México', cityClass: styles.cityMx, routeClass: styles.routeMx, path: 'M 336 586 L 410 612 C 452 580, 438 438, 458 305' },
@@ -13,6 +14,7 @@ const cities = [
 ] as const;
 
 export function LatamGlobeOverlay() {
+  const en = useLocale() === 'en';
   const [activeCity, setActiveCity] = useState<string | null>(null);
 
   return (
@@ -46,7 +48,7 @@ export function LatamGlobeOverlay() {
       </svg>
       <span className={`${styles.spainPing} ${activeCity ? styles.spainPingActive : ''}`} aria-hidden="true" />
       <div className={styles.latamCityList} aria-hidden="true">
-        <p className={styles.cityListTitle}>Rutas desde Latinoamérica</p>
+        <p className={styles.cityListTitle}>{en ? 'Routes from Latin America' : 'Rutas desde Latinoamérica'}</p>
         {cities.map((city) => (
           <span
             key={city.id}
@@ -83,16 +85,16 @@ export function LatamGlobeOverlay() {
             <FileText className="h-4 w-4" />
           </span>
           <span>
-            <strong>Certificado para visado</strong>
-            <small>Documentación para incorporar a tu expediente</small>
+            <strong>{en ? 'Visa certificate' : 'Certificado para visado'}</strong>
+            <small>{en ? 'Documentation for your application' : 'Documentación para incorporar a tu expediente'}</small>
           </span>
         </div>
         <div className={styles.benefitSecondaryRow}>
           <span>
-            <ShieldCheck className="h-4 w-4" /> Sin copagos
+            <ShieldCheck className="h-4 w-4" /> {en ? 'No co-payments' : 'Sin copagos'}
           </span>
           <span>
-            <CheckCircle2 className="h-4 w-4" /> Sin carencias
+            <CheckCircle2 className="h-4 w-4" /> {en ? 'No waiting periods' : 'Sin carencias'}
           </span>
         </div>
       </div>

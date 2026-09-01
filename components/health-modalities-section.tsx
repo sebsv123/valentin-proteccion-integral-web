@@ -10,6 +10,7 @@ import {
   WalletCards,
 } from 'lucide-react';
 import styles from './health-modalities-section.module.css';
+import { useLocale } from 'next-intl';
 
 const modalities = [
   {
@@ -47,6 +48,13 @@ const modalities = [
 ] as const;
 
 export function HealthModalitiesSection() {
+  const en = useLocale() === 'en';
+  const visibleModalities = en ? modalities.map((item, index) => ({ ...item, ...([
+    { eyebrow: 'OUTPATIENT', title: 'Medical access without hospitalisation', copy: 'Consultations, specialists and diagnostic tests without hospitalisation. Designed for those seeking private medicine at a more contained monthly cost.', action: 'View outpatient option' },
+    { eyebrow: 'SENIOR', title: 'Cover adapted from age 55', copy: 'Options adapted for people from age 55; conditions and services should be reviewed according to each policyholder’s age and profile.', action: 'Ask about senior options' },
+    { eyebrow: 'REIMBURSEMENT', title: 'More freedom to choose your doctor', copy: 'Use the provider network and, depending on the policy, also see external professionals while recovering part of the bill.', action: 'Understand reimbursement' },
+    { eyebrow: 'STUDIES AND RESIDENCE', title: 'Health insurance for living in Spain', copy: 'Specific insurance for studies or residence in Spain, with cover and documentation adapted to the relevant process.', action: 'Go to insurance for foreigners' },
+  ][index]) })) : modalities;
   return (
     <section className={styles.section} aria-labelledby="health-modalities-title">
       <div className={styles.topography} aria-hidden="true">
@@ -59,44 +67,44 @@ export function HealthModalitiesSection() {
       <div className={`container-shell ${styles.shell}`}>
         <div className={styles.topRow}>
           <div className={styles.intro}>
-            <p className={styles.eyebrow}>MODALIDADES DE SALUD</p>
-            <h2 id="health-modalities-title">No todos los seguros de salud cubren lo mismo</h2>
+            <p className={styles.eyebrow}>{en ? 'HEALTH PLAN TYPES' : 'MODALIDADES DE SALUD'}</p>
+            <h2 id="health-modalities-title">{en ? 'Health insurance plans do not all cover the same things' : 'No todos los seguros de salud cubren lo mismo'}</h2>
             <div className={styles.curve} aria-hidden="true"><svg viewBox="0 0 164 24"><path d="M2 8c30 0 39 13 78 13 34 0 45-8 69-8" /><circle cx="157" cy="13" r="3" /></svg></div>
-            <p className={styles.introCopy}>La diferencia no está solo en el precio. Cambian la hospitalización, los copagos, el cuadro médico, la libre elección y la forma en que utilizarás la póliza.</p>
+            <p className={styles.introCopy}>{en ? 'The difference is not just the price. Hospitalisation, co-payments, provider networks, free choice and how you use the policy can all change.' : 'La diferencia no está solo en el precio. Cambian la hospitalización, los copagos, el cuadro médico, la libre elección y la forma en que utilizarás la póliza.'}</p>
           </div>
 
           <article className={styles.featuredPlan}>
             <div className={styles.featuredContent}>
-              <p className={styles.featuredTag}>SALUD COMPLETA</p>
-              <h3>Cobertura completa para el día a día y la hospitalización</h3>
-              <p>Consultas, especialistas, pruebas y hospitalización dentro de una misma póliza. Una opción completa para quienes quieren reunir asistencia ambulatoria y hospitalización en una misma póliza.</p>
+              <p className={styles.featuredTag}>{en ? 'COMPREHENSIVE HEALTH' : 'SALUD COMPLETA'}</p>
+              <h3>{en ? 'Complete cover for everyday care and hospitalisation' : 'Cobertura completa para el día a día y la hospitalización'}</h3>
+              <p>{en ? 'Consultations, specialists, tests and hospitalisation within one policy. A complete option for those who want outpatient and hospital care together.' : 'Consultas, especialistas, pruebas y hospitalización dentro de una misma póliza. Una opción completa para quienes quieren reunir asistencia ambulatoria y hospitalización en una misma póliza.'}</p>
               <ul>
-                {['Hospitalización incluida', 'Con o sin copagos', 'Para particulares y familias'].map((item) => <li key={item}><span aria-hidden="true"><Check /></span>{item}</li>)}
+                {(en ? ['Hospitalisation included', 'With or without co-payments', 'For individuals and families'] : ['Hospitalización incluida', 'Con o sin copagos', 'Para particulares y familias']).map((item) => <li key={item}><span aria-hidden="true"><Check /></span>{item}</li>)}
               </ul>
-              <Link href="/seguros/salud/completa" className={styles.primaryAction}>Explorar salud completa <ArrowRight aria-hidden="true" /></Link>
+              <Link href="/seguros/salud/completa" className={styles.primaryAction}>{en ? 'Explore comprehensive health cover' : 'Explorar salud completa'} <ArrowRight aria-hidden="true" /></Link>
             </div>
             <div className={styles.featuredImage}>
-              <Image src="/images/premium/hero-family.png" alt="Familia caminando junta al aire libre" fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 42vw, 460px" className={styles.familyPhoto} />
+              <Image src="/images/premium/hero-family.png" alt={en ? 'Family walking together outdoors' : 'Familia caminando junta al aire libre'} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 42vw, 460px" className={styles.familyPhoto} />
             </div>
           </article>
         </div>
 
         <div className={styles.modalityGrid}>
-          {modalities.map(({ eyebrow, title, copy, action, href, icon: Icon }) => (
+          {visibleModalities.map(({ eyebrow, title, copy, action, href, icon: Icon }) => (
             <article className={styles.modalityCard} key={eyebrow}>
               <span className={styles.modalityIcon} aria-hidden="true"><Icon /></span>
               <p className={styles.modalityEyebrow}>{eyebrow}</p>
               <h3>{title}</h3>
               <p className={styles.modalityCopy}>{copy}</p>
-              <Link href={href} className={styles.textAction}>{action}<ArrowRight aria-hidden="true" /></Link>
+              <Link href={en && href === '/extranjeros' ? '/en/foreigners' : href} className={styles.textAction}>{action}<ArrowRight aria-hidden="true" /></Link>
             </article>
           ))}
         </div>
 
         <aside className={styles.guidance} aria-labelledby="health-guidance-title">
           <span className={styles.guidanceIcon} aria-hidden="true"><MessageCircleMore /></span>
-          <div><h3 id="health-guidance-title">¿No sabes cuál elegir?</h3><p>Cuéntanos qué buscas y te ayudaremos a distinguir qué opciones tienen sentido para tu caso y cuáles puedes descartar.</p></div>
-          <Link href="/contacto" className={styles.guidanceAction}>Revisar mi caso <ArrowRight aria-hidden="true" /></Link>
+          <div><h3 id="health-guidance-title">{en ? 'Not sure which one to choose?' : '¿No sabes cuál elegir?'}</h3><p>{en ? 'Tell us what you need and we will help you distinguish which options make sense for your situation and which you can rule out.' : 'Cuéntanos qué buscas y te ayudaremos a distinguir qué opciones tienen sentido para tu caso y cuáles puedes descartar.'}</p></div>
+          <Link href={en ? '/en/contact' : '/contacto'} className={styles.guidanceAction}>{en ? 'Review my situation' : 'Revisar mi caso'} <ArrowRight aria-hidden="true" /></Link>
         </aside>
       </div>
     </section>

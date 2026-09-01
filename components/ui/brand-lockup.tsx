@@ -7,6 +7,7 @@ type BrandLockupProps = {
   showDescriptor?: boolean;
   className?: string;
   priority?: boolean;
+  href?: string;
 };
 
 export function BrandLockup({
@@ -15,6 +16,7 @@ export function BrandLockup({
   showDescriptor = true,
   className = '',
   priority = false,
+  href = '/',
 }: BrandLockupProps) {
   const compact = size === 'compact';
   const primaryColor = variant === 'light' ? 'text-white' : 'text-[var(--blue-deep)]';
@@ -22,7 +24,7 @@ export function BrandLockup({
 
   return (
     <Link
-      href="/"
+      href={href}
       aria-label="Valentín Protección Integral"
       className={`inline-flex shrink-0 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${compact ? 'gap-2.5' : 'gap-3'} ${className}`}
     >

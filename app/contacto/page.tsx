@@ -27,18 +27,25 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/contacto",
+    languages: { es: "https://valentinproteccionintegral.com/contacto", en: "https://valentinproteccionintegral.com/en/contact", "x-default": "https://valentinproteccionintegral.com/contacto" },
   },
 };
 
 export const dynamic = 'force-static';
 
-export default function ContactoPage() {
+export function ContactoPageView({ locale = 'es' }: { locale?: 'es' | 'en' } = {}) {
+  const en = locale === 'en';
+  const copy = en ? {
+    home: 'Home', crumb: 'Contact', kicker: 'Contact — Boadilla del Monte, Madrid', title: 'Contact us — Valentín Protección Integral', body: <>We are based in Boadilla del Monte, Madrid. Call us on <strong>603 44 87 65</strong> or message us on WhatsApp. Rosa and Sebastián Valentín reply during opening hours.</>, whatsapp: 'No-obligation consultation', phone: 'Call', response: <>We reply during our opening hours.<br />No call centres. No forms nobody reads.</>, reviews: 'Complete trust from our clients', alt: 'Rosa and Sebastián Valentín, insurance advisers in Boadilla del Monte', adeslasTitle: 'You can also contact us through the official Adeslas channel', adeslasDescription: 'Before leaving VPI, you can check that the link opens the official agent directory with Rosa Valentín’s associated channel in Boadilla del Monte.', adeslasCta: 'Open official channel'
+  } : {
+    home: 'Inicio', crumb: 'Contacto', kicker: 'Contacto — Boadilla del Monte, Madrid', title: 'Contacta con Nosotros — Valentín Protección Integral', body: <>Estamos en Boadilla del Monte, Madrid. Llámanos al <strong>603 44 87 65</strong> o escíbenos por WhatsApp. Rosa y Sebastián Valentín responden en horario de atención.</>, whatsapp: 'Consulta sin compromiso', phone: 'Llamar al', response: <>Respondemos en nuestro horario de atención.<br />Sin call centers. Sin formularios que nadie lee.</>, reviews: 'Confianza total de nuestros clientes', alt: 'Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte', adeslasTitle: 'También puedes solicitar contacto desde el canal oficial de Adeslas', adeslasDescription: 'Antes de salir de VPI, puedes comprobar que el enlace abre el buscador oficial de agentes con el canal asociado a Rosa Valentín en Boadilla del Monte.', adeslasCta: 'Abrir canal oficial'
+  };
   return (
     <>
       <SchemaBreadcrumb
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 },
-          { name: 'Contacto', item: `${site.domain}/contacto`, position: 2 }
+          { name: copy.home, item: en ? `${site.domain}/en` : site.domain, position: 1 },
+          { name: copy.crumb, item: en ? `${site.domain}/en/contact` : `${site.domain}/contacto`, position: 2 }
         ]}
       />
       <script
@@ -47,9 +54,10 @@ export default function ContactoPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
+            "inLanguage": locale,
             "name": "Valentín Protección Integral",
-            "description": "Agentes de seguros registrados DGSFP en Boadilla del Monte, Madrid. Asesoramiento personalizado en seguros de salud, vida, dental, mascotas, accidentes y viaje.",
-            "url": "https://valentinproteccionintegral.com",
+            "description": en ? "DGSFP-registered insurance advisers in Boadilla del Monte, Madrid. Personal guidance on health, life, dental, pet, accident and travel insurance." : "Agentes de seguros registrados DGSFP en Boadilla del Monte, Madrid. Asesoramiento personalizado en seguros de salud, vida, dental, mascotas, accidentes y viaje.",
+            "url": en ? "https://valentinproteccionintegral.com/en/contact" : "https://valentinproteccionintegral.com/contacto",
             "telephone": "+34603448765",
             "email": "info@valentinproteccionintegral.com",
             "address": {
@@ -76,14 +84,14 @@ export default function ContactoPage() {
       <Header />
       <main id="contacto-main" aria-labelledby="contact-h1" className="section-pad pt-6 md:pt-10">
         <div className="container-shell">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Contacto' }]} />
+          <Breadcrumbs items={[{ label: copy.home, href: en ? '/en' : '/' }, { label: copy.crumb }]} />
           <div className="grid gap-8 xl:grid-cols-[0.95fr_1.05fr]">
             <div className="soft-card overflow-hidden">
               <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[340px] overflow-hidden">
                   <Image
                     src="/images/rosa_y_sebastian.jpeg"
-                    alt="Rosa y Sebastián Valentín, asesores de seguros en Boadilla del Monte"
+                    alt={copy.alt}
                     fill
                     className="object-cover object-[center_20%]"
                     sizes="(max-width: 1024px) 100vw, 400px"
@@ -91,14 +99,14 @@ export default function ContactoPage() {
                   />
                 </div>
                 <div className="p-7 md:p-9">
-                  <p className="kicker">Contacto — Boadilla del Monte, Madrid</p>
-                  <h1 id="contact-h1" className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">Contacta con Nosotros — Valentín Protección Integral</h1>
+                  <p className="kicker">{copy.kicker}</p>
+                  <h1 id="contact-h1" className="mt-3 font-heading text-4xl font-bold tracking-tight text-[var(--blue-deep)] md:text-5xl">{copy.title}</h1>
                   <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">
-                    Estamos en Boadilla del Monte, Madrid. Llámanos al <strong>603 44 87 65</strong> o escíbenos por WhatsApp. Rosa y Sebastián Valentín responden en menos de 2 horas en horario de atención.
+                    {copy.body}
                   </p>
                   <div className="mt-6 grid gap-3">
-                    <a href={buildWhatsAppHref('Hola, quiero resolver una duda sobre seguros.')} className="btn-whatsapp justify-center"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
-                    <a href={`tel:${site.phoneHref}`} className="btn-secondary justify-center">Llamar al {site.phone}</a>
+                    <a href={buildWhatsAppHref(en ? 'Hello, I would like to resolve an insurance question.' : 'Hola, quiero resolver una duda sobre seguros.')} className="btn-whatsapp justify-center"><WhatsAppIcon className="h-4 w-4" /> {copy.whatsapp}</a>
+                    <a href={`tel:${site.phoneHref}`} className="btn-secondary justify-center">{copy.phone} {site.phone}</a>
                   </div>
                 </div>
               </div>
@@ -109,9 +117,10 @@ export default function ContactoPage() {
             <AdeslasAgentLink
               location="contact_page_external_channel"
               variant="mini-preview"
-              title="También puedes solicitar contacto desde el canal oficial de Adeslas"
-              description="Antes de salir de VPI, puedes comprobar que el enlace abre el buscador oficial de agentes con el canal asociado a Rosa Valentín en Boadilla del Monte."
-              linkLabel="Abrir canal oficial"
+              locale={locale}
+              title={copy.adeslasTitle}
+              description={copy.adeslasDescription}
+              linkLabel={copy.adeslasCta}
             />
           </div>
           <div className="mt-10 flex items-center gap-4 rounded-[22px]
@@ -119,12 +128,11 @@ export default function ContactoPage() {
                           px-6 py-5 max-w-xl">
             <span className="text-2xl flex-none">⏱️</span>
             <p className="text-base font-semibold text-[var(--blue-deep)] leading-relaxed">
-              Respondemos en nuestro horario de atención en horario de atención.
-              Sin call centers. Sin formularios que nadie lee.
+              {copy.response}
             </p>
           </div>
           <div className="mt-16">
-            <GoogleReviewsWidget title="Confianza total de nuestros clientes" />
+            <GoogleReviewsWidget title={copy.reviews} locale={locale} />
           </div>
         </div>
       </main>
@@ -134,3 +142,5 @@ export default function ContactoPage() {
     </>
   );
 }
+
+export default function ContactoPage() { return <ContactoPageView locale="es" />; }

@@ -9,8 +9,8 @@ import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
-  const linkHref = (href: string) => href === '/' || href === '/internacional' ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional') : href;
-  const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
+  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') : href;
+  const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', Seguros: 'Insurance', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
   return (
     <footer className="mt-20 border-t border-[var(--border)] bg-white/92">
@@ -18,7 +18,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
         <div className="grid gap-8 xl:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
-              <BrandLockup variant="dark" size="default" />
+              <BrandLockup variant="dark" size="default" href={linkHref('/')} />
               <p className="text-[var(--muted)]">{isEnglish ? 'Insurance explained clearly' : healthVariant ? 'Seguros explicados con claridad' : site.brandLine}</p>
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">{isEnglish ? 'Valentín Protección Integral offers clear insurance guidance and support before and after you buy.' : healthVariant ? 'Te ayudamos a entender qué contratas y seguimos a tu lado cuando necesitas utilizar tu seguro.' : 'Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.'}</p>
@@ -39,8 +39,8 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
           <div>
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{isEnglish ? 'Insurance' : 'Seguros'}</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
-              <Link className="block tracking-wide hover:text-[var(--blue)]" href="/extranjeros">{isEnglish ? 'FOREIGNERS' : 'EXTRANJEROS'}</Link>
-              {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={`/seguros/${product.slug}`}>{productLabel(product.label)}</Link>)}
+              <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/extranjeros')}>{isEnglish ? 'FOREIGNERS' : 'EXTRANJEROS'}</Link>
+              {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={product.slug === 'salud' ? linkHref('/seguros/salud') : `/seguros/${product.slug}`}>{productLabel(product.label)}</Link>)}
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
             </div>
@@ -80,7 +80,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
           <p>
             <strong>{siteConfig.brand.name}</strong> {isEnglish ? 'is a commercial insurance intermediary brand; it is not an insurer. Activity responsible person:' : 'es una marca comercial de mediación de seguros; no es una compañía aseguradora. Responsable de la actividad:'}{' '}
             <strong>{siteConfig.responsiblePerson.fullName}</strong>, {isEnglish ? 'insurance agent with tax ID' : 'agente de seguros con NIF'}{' '}
-            {siteConfig.responsiblePerson.nif} e inscripción en la DGSFP nº{' '}
+            {siteConfig.responsiblePerson.nif} {isEnglish ? 'and registered with the DGSFP under no.' : 'e inscripción en la DGSFP nº'}{' '}
             {siteConfig.responsiblePerson.dgsfpCode} ({isEnglish ? 'checkable in the' : 'comprobable en el'}{' '}
             <a
               href={siteConfig.responsiblePerson.dgsfpRegistryUrl}

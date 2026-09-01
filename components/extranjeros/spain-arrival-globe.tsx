@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./spain-arrival-globe.module.css";
+import { useLocale } from 'next-intl';
 
 const ROUTES = [
   {
@@ -31,11 +32,12 @@ const ROUTES = [
 ] as const;
 
 export default function SpainArrivalGlobe() {
+  const en = useLocale() === 'en';
   return (
     <div
       className={styles.root}
       role="img"
-      aria-label="Globo terrestre con rutas internacionales que convergen en España"
+      aria-label={en ? 'Globe with international routes converging in Spain' : 'Globo terrestre con rutas internacionales que convergen en España'}
     >
       <div className={styles.ambientGlow} aria-hidden="true" />
 

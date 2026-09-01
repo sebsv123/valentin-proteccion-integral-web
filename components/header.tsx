@@ -29,7 +29,7 @@ export function Header() {
   const t = useTranslations('common');
 
   const localeHref = (href: string) => {
-    if (href === '/' || href === '/internacional' || href === '/internacional/peru') {
+    if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto' || href === '/extranjeros' || href === '/seguros' || href === '/seguros/salud' || href === '/seguros/salud-extranjeros') {
       return localizedPath(locale, href);
     }
     return href;
@@ -37,7 +37,7 @@ export function Header() {
 
   const localeLabel = (label: string) => {
     if (locale !== 'en') return label;
-    return ({ Inicio: t('home'), Internacional: t('international'), Contacto: t('contact'), Alquileres: 'Rentals', Seguros: 'Insurance', Empresas: 'Businesses', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Blog: 'Blog', Opiniones: 'Reviews', Zonas: 'Areas' } as Record<string, string>)[label] ?? label;
+    return ({ Inicio: t('home'), Internacional: t('international'), Contacto: t('contact'), Alquileres: 'Rentals', Seguros: 'Insurance', SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL', COMPLETA: 'COMPLETE', 'RESPONSABILIDAD CIVIL': 'LIABILITY', PYMES: 'SMEs', ESTUDIOS: 'STUDIES', Empresas: 'Businesses', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Blog: 'Blog', Opiniones: 'Reviews', Zonas: 'Areas' } as Record<string, string>)[label] ?? label;
   };
 
   useEffect(() => {
@@ -114,7 +114,7 @@ export function Header() {
       <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
         <div className="container-shell mx-auto max-w-[1760px]">
           <div className="flex items-center justify-between gap-3 py-3 2xl:gap-4 2xl:py-4">
-            <BrandLockup variant="light" size="compact" priority />
+            <BrandLockup variant="light" size="compact" priority href={localeHref('/')} />
 
             <nav className="hidden min-w-0 items-center gap-0.5 xl:flex">
               <Link
@@ -226,7 +226,7 @@ export function Header() {
                 className="flex h-10 w-10 items-center justify-center text-white/95
                            hover:bg-white/10 rounded-[14px]
                            transition-colors"
-                aria-label="Instagram de Valentín Protección Integral"
+                aria-label={locale === 'en' ? 'Valentín Protección Integral on Instagram' : 'Instagram de Valentín Protección Integral'}
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -243,9 +243,9 @@ export function Header() {
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}
-              aria-label="Abrir menú"
+              aria-label={locale === 'en' ? 'Open menu' : 'Abrir menú'}
             >
-              <Menu className="h-5 w-5" /> Menú
+              <Menu className="h-5 w-5" /> {locale === 'en' ? 'Menu' : 'Menú'}
             </button>
             </div>
 
@@ -265,9 +265,9 @@ export function Header() {
       >
         <div className="relative z-10 grid gap-5 lg:grid-cols-[300px_1fr]">
           <div className="rounded-[24px] bg-[linear-gradient(180deg,rgba(15,94,156,0.06),rgba(123,198,126,0.08))] p-5">
-            <p className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">Te ayudamos a elegir con claridad</p>
+            <p className="font-heading text-2xl font-semibold text-[var(--blue-deep)]">{locale === 'en' ? 'We help you choose with confidence' : 'Te ayudamos a elegir con claridad'}</p>
             <p className="mt-2 text-base leading-8 text-[var(--muted)]">
-              Accede al producto que te interesa y, cuando tenga sentido, profundiza por perfil o modalidad.
+              {locale === 'en' ? 'Open the product that interests you and, when useful, explore it by profile or plan type.' : 'Accede al producto que te interesa y, cuando tenga sentido, profundiza por perfil o modalidad.'}
             </p>
             <div className="mt-5 grid gap-3">
               <a href={whatsappHref} onClick={(e) => handleWhatsAppClick(e, 'nav-mega-menu', whatsappHref)} className="btn-whatsapp !w-full !justify-center"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'No-obligation consultation' : 'Consulta sin compromiso'}</a>
@@ -277,7 +277,7 @@ export function Header() {
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3 content-start">
             {/* Extranjeros card destacada */}
             <div className="group col-span-full flex flex-col justify-between rounded-[16px] border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-4 transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-1">
-              <Link href="/extranjeros" onClick={closeAll}>
+              <Link href={localeHref('/extranjeros')} onClick={closeAll}>
                 <div className="flex items-center justify-between">
                   <span className="font-heading text-base font-bold tracking-tight text-blue-700 group-hover:text-blue-600">
                     {locale === 'en' ? 'Foreigners' : 'Extranjeros'}
@@ -308,27 +308,27 @@ export function Header() {
             {grouped.map((item) => (
               <Link
                 key={item.slug}
-                href={`/seguros/${item.slug}`}
+                  href={item.slug === 'salud' ? localeHref('/seguros/salud') : `/seguros/${item.slug}`}
                 className="group flex flex-col justify-between rounded-[16px] border border-[var(--border)] bg-white p-3 transition-all hover:border-[var(--blue)]/30 hover:shadow-lg hover:-translate-y-1"
                 onClick={closeAll}
               >
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="font-heading text-base font-bold tracking-tight text-[var(--blue-deep)] group-hover:text-[var(--blue)]">
-                      {item.label}
+                      {localeLabel(item.label)}
                     </span>
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--blue)] transition-colors group-hover:bg-[var(--blue)] group-hover:text-white">
                       <ChevronDown className="h-3 w-3 -rotate-90" />
                     </div>
                   </div>
-                  <p className="mt-1 text-xs leading-5 text-[var(--muted)] line-clamp-2">{item.summary}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)] line-clamp-2">{locale === 'en' ? ({ SALUD: 'Private health cover for individuals and families.', MASCOTAS: 'Protection and support for your pet.', DENTAL: 'Practical dental cover for everyday care.', ACCIDENTES: 'Support after an accidental injury.', VIAJE: 'Cover for unexpected events while travelling.', DECESOS: 'Support for families when it matters most.' } as Record<string, string>)[item.label] ?? item.summary : item.summary}</p>
                 </div>
 
                 {item.children.length ? (
                   <div className="mt-2 flex flex-wrap gap-1 border-t border-[var(--border)] pt-2">
                     {item.children.slice(0, 2).map((child) => (
                       <span key={child.slug} className="rounded bg-[var(--bg)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] group-hover:text-[var(--blue)]">
-                        {child.label}
+                        {locale === 'en' ? ({ FAMILIAS: 'FAMILIES', SENIOR: 'SENIORS', EXTRANJEROS: 'FOREIGNERS', COMPLETA: 'COMPLETE', 'RESPONSABILIDAD CIVIL': 'LIABILITY', PYMES: 'SMEs', ESTUDIOS: 'STUDIES' } as Record<string, string>)[child.label] ?? child.label : child.label}
                       </span>
                     ))}
                     {item.children.length > 2 && (
@@ -364,14 +364,14 @@ export function Header() {
       <StaggeredMenu
         isFixed={true}
         position="right"
-        brand={<BrandLockup variant="dark" size="compact" />}
+        brand={<BrandLockup variant="dark" size="compact" href={localeHref('/')} />}
         colors={['#002244', '#0F5E9C']}
         accentColor="#0F5E9C"
         items={[
           { label: localeLabel('Inicio'), ariaLabel: localeLabel('Inicio'), link: localeHref('/') },
           { label: localeLabel('Alquileres'), ariaLabel: localeLabel('Alquileres'), link: '/extranjeros/alquileres' },
-          { label: locale === 'en' ? 'Foreigners' : 'Extranjeros', ariaLabel: locale === 'en' ? 'Foreigners' : 'Extranjeros', link: '/extranjeros' },
-          ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: `/seguros/${item.slug}` })),
+          { label: locale === 'en' ? 'Foreigners' : 'Extranjeros', ariaLabel: locale === 'en' ? 'Foreigners' : 'Extranjeros', link: localeHref('/extranjeros') },
+          ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: item.slug === 'salud' ? localeHref('/seguros/salud') : `/seguros/${item.slug}` })),
           ...mainNav.slice(2).map(item => item.label === 'Empresas'
             ? {
                 label: locale === 'en' ? 'Businesses' : 'Empresas',

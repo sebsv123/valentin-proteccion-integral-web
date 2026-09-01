@@ -74,6 +74,11 @@ const nextConfig: NextConfig = {
         destination: '/autonomos',
         permanent: true,
       },
+      {
+        source: '/seguros/health-insurance-foreigners-spain',
+        destination: '/en/insurance/health/foreigners',
+        permanent: true,
+      },
     ];
   },
   async headers() {

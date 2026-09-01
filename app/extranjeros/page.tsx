@@ -17,6 +17,7 @@ import { googleReviews, googleReviewsSummary } from '@/lib/google-reviews';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import styles from './extranjeros-hero.module.css';
+import { foreignersContent } from './foreigners-content';
 
 const personalWhatsApp = buildWhatsAppHref('Hola, necesito orientación sobre un seguro médico para mi trámite en España.');
 const partnerWhatsApp = buildWhatsAppHref('Hola, trabajo con estudiantes o clientes extranjeros y me gustaría consultar una posible colaboración.');
@@ -140,10 +141,17 @@ const faqItems = [
   },
 ];
 
+const englishSituationProfiles = [
+  { title: 'I am coming to study', copy: 'For study visas, longer stays or training in Spain.', image: '/images/premium/travel.png', href: buildWhatsAppHref('Hello, I am coming to study in Spain and need to review the health insurance requirements.'), action: 'whatsapp_click', label: 'profile_studies' },
+  { title: 'I am moving to Spain', copy: 'For residence, renewals or family arrivals with health requirements.', image: '/images/products/proteccion-juridica.png', href: buildWhatsAppHref('Hello, I am moving to Spain and need to review the health insurance for my process.'), action: 'whatsapp_click', label: 'profile_residence' },
+  { title: 'I need to help a student or client', copy: 'For academies, advisers, agencies and professionals supporting applications.', image: '/images/home/handshake-real.jpg', href: '#colaboradores', action: 'cta_click', label: 'profile_partner' },
+  { title: 'I do not know which insurance I need', copy: 'To organise your case before comparing options or arranging cover.', image: '/images/products/health-medical-care.png', href: buildWhatsAppHref('Hello, I do not know which health insurance I need for immigration and would like guidance.'), action: 'whatsapp_click', label: 'profile_unsure' },
+] as const;
+
 export const metadata: Metadata = {
   title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
   description: 'Seguro médico para estudios, visado, residencia o renovación en España. Orientación personalizada, contratación con pasaporte y documentación para el trámite.',
-  alternates: { canonical: `${site.domain}/extranjeros` },
+  alternates: { canonical: `${site.domain}/extranjeros`, languages: { es: `${site.domain}/extranjeros`, en: `${site.domain}/en/foreigners`, 'x-default': `${site.domain}/extranjeros` } },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
@@ -200,14 +208,21 @@ const faqSchema = {
   })),
 };
 
-export default function ExtranjerosPage() {
+export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } = {}) {
+  const en = locale === 'en';
+  const personalHref = buildWhatsAppHref(en ? 'Hello, I need guidance about health insurance for my process in Spain.' : 'Hola, necesito orientación sobre un seguro médico para mi trámite en España.');
+  const visibleProfiles = en ? englishSituationProfiles : situationProfiles;
+  const visibleFaq = foreignersContent[locale].faq;
+  const localizedWebPageSchema = en ? { ...webPageSchema, inLanguage: 'en', name: 'Health insurance for foreigners in Spain', url: `${site.domain}/en/foreigners`, description: 'Health insurance guidance for studies, visas, residence and renewals in Spain.' } : { ...webPageSchema, inLanguage: 'es' };
+  const localizedBreadcrumbSchema = en ? { ...breadcrumbSchema, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${site.domain}/en` }, { '@type': 'ListItem', position: 2, name: 'Foreigners', item: `${site.domain}/en/foreigners` }] } : breadcrumbSchema;
+  const localizedFaqSchema = { ...faqSchema, inLanguage: locale, mainEntity: visibleFaq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) };
   return (
     <>
       <Header />
       <ForeignersPartnerTracking />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([webPageSchema, breadcrumbSchema, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([localizedWebPageSchema, localizedBreadcrumbSchema, localizedFaqSchema]) }}
       />
       <main className="overflow-x-clip">
         <section className={`${styles.hero} section-pad pt-6 md:pt-10`} data-foreigners-section="hero">
@@ -227,14 +242,14 @@ export default function ExtranjerosPage() {
           <div className={`${styles.heroContent} container-shell`}>
             <div className="hero-grid items-center">
               <div className={styles.heroCopy}>
-                <p className={`${styles.eyebrow} kicker`}>SEGUROS DE SALUD · EXTRANJERÍA</p>
+                <p className={`${styles.eyebrow} kicker`}>{en ? 'HEALTH INSURANCE · IMMIGRATION' : 'SEGUROS DE SALUD · EXTRANJERÍA'}</p>
                 <h1 className="font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--blue-deep)] md:text-7xl">
-                  <span className={styles.mobileTitleLine}>Tu seguro médico</span>{' '}
-                  <span className={styles.mobileTitleLine}>para estudiar o</span>{' '}
-                  <span className={styles.mobileTitleLine}>residir en España</span>
+                  <span className={styles.mobileTitleLine}>{en ? 'Your health insurance' : 'Tu seguro médico'}</span>{' '}
+                  <span className={styles.mobileTitleLine}>{en ? 'to study or' : 'para estudiar o'}</span>{' '}
+                  <span className={styles.mobileTitleLine}>{en ? 'live in Spain' : 'residir en España'}</span>
                 </h1>
                 <p className="section-copy text-lg">
-                  Revisamos contigo los requisitos del visado, la cobertura y la documentación, para que avances con claridad desde el primer paso.
+                  {en ? 'We review visa requirements, cover and documentation with you, so you can move forward clearly from the first step.' : 'Revisamos contigo los requisitos del visado, la cobertura y la documentación, para que avances con claridad desde el primer paso.'}
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <ForeignersTrackedLink
@@ -243,10 +258,10 @@ export default function ExtranjerosPage() {
                     action="cta_click"
                     label="hero_alquileres"
                   >
-                    Explorar alquileres <ArrowRight className="h-4 w-4" />
+                    {en ? 'Explore rentals' : 'Explorar alquileres'} <ArrowRight className="h-4 w-4" />
                   </ForeignersTrackedLink>
                   <ForeignersTrackedLink
-                    href={personalWhatsApp}
+                    href={personalHref}
                     className="inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)] underline decoration-[var(--blue)]/25 underline-offset-4"
                     action="whatsapp_click"
                     label="hero_whatsapp_secondary"
@@ -256,11 +271,11 @@ export default function ExtranjerosPage() {
                 </div>
                 <div className={styles.journeyGrid}>
                   <article className={`${styles.journeyCard} ${styles.primaryJourney}`}>
-                    <p className={styles.cardEyebrow}>PARTICULARES</p>
-                    <h2>Necesito mi seguro</h2>
-                    <p>Te orientamos para estudios, residencia, renovación o llegada familiar.</p>
-                    <div className={styles.chipRow} aria-label="Perfiles particulares">
-                      {['Estudios', 'Residencia', 'Renovación', 'Familia'].map((chip) => (
+                    <p className={styles.cardEyebrow}>{en ? 'INDIVIDUALS' : 'PARTICULARES'}</p>
+                    <h2>{en ? 'I need my insurance' : 'Necesito mi seguro'}</h2>
+                    <p>{en ? 'We guide you through studies, residence, renewals or family arrival.' : 'Te orientamos para estudios, residencia, renovación o llegada familiar.'}</p>
+                    <div className={styles.chipRow} aria-label={en ? 'Individual profiles' : 'Perfiles particulares'}>
+                      {(en ? ['Studies', 'Residence', 'Renewal', 'Family'] : ['Estudios', 'Residencia', 'Renovación', 'Familia']).map((chip) => (
                         <span key={chip}>{chip}</span>
                       ))}
                     </div>
@@ -270,15 +285,15 @@ export default function ExtranjerosPage() {
                       action="cta_click"
                       label="hero_particulares"
                     >
-                      Revisar mi situación <ArrowRight className="h-4 w-4" />
+                      {en ? 'Review my situation' : 'Revisar mi situación'} <ArrowRight className="h-4 w-4" />
                     </ForeignersTrackedLink>
                   </article>
                   <article className={`${styles.journeyCard} ${styles.partnerJourney}`}>
-                    <p className={styles.cardEyebrow}>ACADEMIAS Y ASESORÍAS</p>
-                    <h2>Quiero colaborar</h2>
-                    <p>Atendemos a tus estudiantes o clientes y gestionamos la parte aseguradora desde España.</p>
-                    <div className={styles.chipRow} aria-label="Perfiles profesionales">
-                      {['Derivaciones', 'Estudiantes', 'Extranjería', 'Seguimiento'].map((chip) => (
+                    <p className={styles.cardEyebrow}>{en ? 'ACADEMIES AND ADVISERS' : 'ACADEMIAS Y ASESORÍAS'}</p>
+                    <h2>{en ? 'I want to partner' : 'Quiero colaborar'}</h2>
+                    <p>{en ? 'We support your students or clients and manage the insurance side from Spain.' : 'Atendemos a tus estudiantes o clientes y gestionamos la parte aseguradora desde España.'}</p>
+                    <div className={styles.chipRow} aria-label={en ? 'Professional profiles' : 'Perfiles profesionales'}>
+                      {(en ? ['Referrals', 'Students', 'Immigration', 'Follow-up'] : ['Derivaciones', 'Estudiantes', 'Extranjería', 'Seguimiento']).map((chip) => (
                         <span key={chip}>{chip}</span>
                       ))}
                     </div>
@@ -288,14 +303,14 @@ export default function ExtranjerosPage() {
                       action="cta_click"
                       label="hero_colaboradores"
                     >
-                      Ver colaboración <ArrowRight className="h-4 w-4" />
+                      {en ? 'See how it works' : 'Ver colaboración'} <ArrowRight className="h-4 w-4" />
                     </ForeignersTrackedLink>
                   </article>
                 </div>
-                <div className={styles.trustBand} aria-label="Señales de confianza">
-                  <span>+10 años de experiencia</span>
-                  <span>+1.200 familias protegidas</span>
-                  <span>62+ opiniones verificadas en Google</span>
+                <div className={styles.trustBand} aria-label={en ? 'Trust signals' : 'Señales de confianza'}>
+                  <span>{en ? '+10 years of experience' : '+10 años de experiencia'}</span>
+                  <span>{en ? '+1,200 families protected' : '+1.200 familias protegidas'}</span>
+                  <span>{en ? '62+ verified Google reviews' : '62+ opiniones verificadas en Google'}</span>
                 </div>
               </div>
               <div className={`${styles.globeStage} relative min-h-[430px] lg:-mr-4 xl:mr-3`}>
@@ -309,12 +324,12 @@ export default function ExtranjerosPage() {
         <section id="elige" className={`${styles.mobileSection} section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]`} data-foreigners-section="selector">
           <div className="container-shell">
             <div className="mb-8 max-w-3xl">
-              <p className="kicker">Elige tu situación</p>
-              <h2 className="mt-3 section-title">Empezamos por el tipo de trámite</h2>
-              <p className="section-copy mt-4">Selecciona el perfil más parecido a tu caso para iniciar la consulta por el canal adecuado.</p>
+              <p className="kicker">{en ? 'CHOOSE YOUR SITUATION' : 'Elige tu situación'}</p>
+              <h2 className="mt-3 section-title">{en ? 'We start with the type of process' : 'Empezamos por el tipo de trámite'}</h2>
+              <p className="section-copy mt-4">{en ? 'Choose the profile closest to your case to start your enquiry through the right channel.' : 'Selecciona el perfil más parecido a tu caso para iniciar la consulta por el canal adecuado.'}</p>
             </div>
             <div className={`${styles.profileGrid} grid gap-5 md:grid-cols-2 xl:grid-cols-4`}>
-              {situationProfiles.map((item) => (
+              {visibleProfiles.map((item) => (
                 <ForeignersTrackedLink
                   key={item.title}
                   href={item.href}
@@ -330,7 +345,7 @@ export default function ExtranjerosPage() {
                     <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
                       {item.action === 'whatsapp_click' ? <WhatsAppIcon className="h-4 w-4" /> : null}
-                      Enviar una consulta <ArrowRight className="h-4 w-4" />
+                      {en ? 'Send an enquiry' : 'Enviar una consulta'} <ArrowRight className="h-4 w-4" />
                     </span>
                   </span>
                 </ForeignersTrackedLink>
@@ -345,7 +360,7 @@ export default function ExtranjerosPage() {
               <div className="relative min-h-[360px] overflow-hidden rounded-[8px] sm:min-h-[440px] lg:min-h-[560px]">
                 <Image
                   src="/images/alquileres/interior-calido-ventanales.webp"
-                  alt="Interior cálido con grandes ventanales y luz natural"
+                  alt={en ? 'Warm interior with large windows and natural light' : 'Interior cálido con grandes ventanales y luz natural'}
                   fill
                   className="object-cover object-[50%_35%]"
                   sizes="(min-width: 1024px) 62vw, 100vw"
@@ -353,20 +368,19 @@ export default function ExtranjerosPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--blue-deep)]/76 via-[var(--blue-deep)]/28 to-transparent" />
                 <div className="absolute bottom-6 left-6 max-w-sm border border-[#D7C3AA]/35 bg-[#041F3A] p-4 text-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.85)] sm:bottom-8 sm:left-8 sm:p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D7C3AA]">Además del seguro</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#D7C3AA]">{en ? 'Beyond insurance' : 'Además del seguro'}</p>
                   <p className="mt-3 font-heading text-3xl font-bold leading-tight text-[#FFF8EC] sm:text-4xl">
-                    También te ayudamos con alquiler en Madrid.
+                    {en ? 'We can also help you find a rental in Madrid.' : 'También te ayudamos con alquiler en Madrid.'}
                   </p>
                 </div>
               </div>
               <div className="rounded-[8px] border border-[#D7C3AA]/60 bg-[#F7F3EA] p-7 text-[var(--blue-deep)] shadow-[0_18px_48px_-40px_rgba(0,0,0,0.28)] sm:p-9 lg:min-h-[560px] lg:p-10">
-                <p className="kicker">Vivienda en Madrid</p>
+                <p className="kicker">{en ? 'Housing in Madrid' : 'Vivienda en Madrid'}</p>
                 <h2 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                  Alquileres en Madrid para estudiantes, profesionales y familias internacionales
+                  {en ? 'Madrid rentals for international students, professionals and families' : 'Alquileres en Madrid para estudiantes, profesionales y familias internacionales'}
                 </h2>
                 <p className="mt-4 max-w-lg text-base leading-8 text-slate-600">
-                  Te acompañamos en la búsqueda, las visitas, la documentación y el proceso de
-                  firma, incluso antes de llegar a España.
+                  {en ? 'We support you with the search, viewings, paperwork and signing process, even before you arrive in Spain.' : <>Te acompañamos en la búsqueda, las visitas, la documentación y el proceso de firma, incluso antes de llegar a España.</>}
                 </p>
                 <div className="mt-8 flex flex-col items-start gap-4">
                   <ForeignersTrackedLink
@@ -375,15 +389,15 @@ export default function ExtranjerosPage() {
                     label="alquileres_discovery_cta"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--green)] px-6 py-3.5 font-semibold text-[var(--blue-deep)] transition-all hover:brightness-105 sm:w-auto"
                   >
-                    Explorar alquileres <ArrowRight className="h-4 w-4" />
+                    {en ? 'Explore rentals' : 'Explorar alquileres'} <ArrowRight className="h-4 w-4" />
                   </ForeignersTrackedLink>
                   <ForeignersTrackedLink
-                    href={buildWhatsAppHref('Hola, quiero consultar mi caso de vivienda en Madrid.')}
+                    href={buildWhatsAppHref(en ? 'Hello, I would like to discuss my housing case in Madrid.' : 'Hola, quiero consultar mi caso de vivienda en Madrid.')}
                     action="whatsapp_click"
                     label="alquileres_discovery_whatsapp"
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--blue-deep)]/70 underline decoration-[var(--blue-deep)]/20 underline-offset-4 transition hover:text-[var(--green)]"
                   >
-                    <WhatsAppIcon className="h-3.5 w-3.5" /> Consultar mi caso por WhatsApp
+                    <WhatsAppIcon className="h-3.5 w-3.5" /> {en ? 'Discuss my case on WhatsApp' : 'Consultar mi caso por WhatsApp'}
                   </ForeignersTrackedLink>
                 </div>
               </div>
@@ -397,20 +411,20 @@ export default function ExtranjerosPage() {
               <div className={`${styles.mobileEditorialImage} relative min-h-[360px] overflow-hidden rounded-[30px] border border-[var(--border)] bg-white shadow-sm md:min-h-[520px]`}>
                 <Image
                   src="/images/home/meeting-real.jpg"
-                  alt="Documentación para revisar un trámite de extranjería"
+                  alt={en ? 'Documents for reviewing an immigration process' : 'Documentación para revisar un trámite de extranjería'}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
               <div>
-                <p className="kicker">Visado · documentación · residencia</p>
-                <h2 className="mt-3 section-title">La parte aseguradora del expediente, explicada con claridad</h2>
+                <p className="kicker">{en ? 'Visa · documentation · residence' : 'Visado · documentación · residencia'}</p>
+                <h2 className="mt-3 section-title">{en ? 'The insurance side of your application, explained clearly' : 'La parte aseguradora del expediente, explicada con claridad'}</h2>
                 <p className="section-copy mt-4">
-                  Revisamos qué tipo de seguro puede encajar con el trámite comunicado y qué documentación comercial conviene tener localizada antes de avanzar.
+                  {en ? 'We review which type of insurance may fit the process you describe and which insurance documents you should have ready before moving forward.' : 'Revisamos qué tipo de seguro puede encajar con el trámite comunicado y qué documentación comercial conviene tener localizada antes de avanzar.'}
                 </p>
                 <div className="mt-7 grid gap-3">
-                  {['Estancias por estudios o formación.', 'Residencia, renovación o llegada familiar.', 'Derivaciones desde asesorías y entidades.'].map((item) => (
+                  {(en ? ['Study or training stays.', 'Residence, renewal or family arrival.', 'Referrals from advisers and organisations.'] : ['Estancias por estudios o formación.', 'Residencia, renovación o llegada familiar.', 'Derivaciones desde asesorías y entidades.']).map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold text-[var(--blue-deep)]">
                       <FileText className="h-4 w-4 text-[var(--blue)]" />
                       {item}
@@ -426,14 +440,14 @@ export default function ExtranjerosPage() {
           <div className="container-shell">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
-                <p className="kicker">Criterio práctico</p>
-                <h2 className="mt-3 section-title">Qué revisamos antes de contratar</h2>
+                <p className="kicker">{en ? 'PRACTICAL GUIDANCE' : 'Criterio práctico'}</p>
+                <h2 className="mt-3 section-title">{en ? 'What we review before you buy' : 'Qué revisamos antes de contratar'}</h2>
                 <p className="section-copy mt-4">
-                  Cada expediente puede requerir matices. Por eso ordenamos la conversación alrededor del trámite, el plazo, el perfil del solicitante y las condiciones del producto.
+                  {en ? 'Every application may have its own details. We organise the conversation around the process, timing, applicant profile and product conditions.' : 'Cada expediente puede requerir matices. Por eso ordenamos la conversación alrededor del trámite, el plazo, el perfil del solicitante y las condiciones del producto.'}
                 </p>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
-                {reviewItems.map((item) => (
+                {foreignersContent[locale].reviewItems.map((item) => (
                   <div key={item} className={`${styles.mobileReviewItem} soft-card rounded-[24px] p-5 shadow-sm`}>
                     <CheckCircle2 className="h-6 w-6 text-[var(--green)]" />
                     <p className="mt-3 font-semibold leading-7 text-[var(--blue-deep)]">{item}</p>
@@ -444,16 +458,16 @@ export default function ExtranjerosPage() {
           </div>
         </section>
 
-        <IberiaJourneySection contactHref={personalWhatsApp} />
+        <IberiaJourneySection contactHref={personalHref} />
 
         <section className={`${styles.mobileSection} section-pad bg-[var(--bg)]`} data-foreigners-section="proceso">
           <div className="container-shell">
             <div className="mb-8 max-w-3xl">
-              <p className="kicker">Cómo funciona</p>
-              <h2 className="mt-3 section-title">Un recorrido simple, sin pedir documentos sensibles al inicio</h2>
+              <p className="kicker">{en ? 'HOW IT WORKS' : 'Cómo funciona'}</p>
+              <h2 className="mt-3 section-title">{en ? 'A simple process, without asking for sensitive documents at the start' : 'Un recorrido simple, sin pedir documentos sensibles al inicio'}</h2>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              {processSteps.map((step, index) => (
+              {(en ? foreignersContent.en.process : processSteps).map((step, index) => (
                 <article key={step.title} className={`${styles.mobileProcessCard} soft-card p-6`}>
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--blue-deep)] font-heading text-lg font-bold text-white">{index + 1}</div>
                   <h3 className="mt-5 font-heading text-2xl font-bold text-[var(--blue-deep)]">{step.title}</h3>
@@ -467,13 +481,14 @@ export default function ExtranjerosPage() {
         <section id="testimonios" className={`${styles.mobileSection} section-pad bg-white`} data-foreigners-section="opiniones">
           <div className="container-shell">
             <div className={`${styles.mobileReviewsHeading} mb-12 text-center`}>
-              <h2 className="mx-auto mt-4 max-w-3xl section-title">Opiniones de clientes sobre seguros para extranjeros</h2>
+              <h2 className="mx-auto mt-4 max-w-3xl section-title">{en ? 'Client reviews about insurance for foreigners' : 'Opiniones de clientes sobre seguros para extranjeros'}</h2>
             </div>
             <GoogleReviewsCarousel
               reviews={googleReviews}
               rating={googleReviewsSummary.rating}
               user_ratings_total={googleReviewsSummary.user_ratings_total}
               allReviewsUrl={googleReviewsSummary.allReviewsUrl}
+              locale={locale}
             />
           </div>
         </section>
@@ -483,13 +498,13 @@ export default function ExtranjerosPage() {
             <div className="mx-auto max-w-6xl">
               <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.12)] lg:grid lg:grid-cols-[0.42fr_0.58fr]">
                 <div className={`${styles.mobileProfessionalIntro} bg-[var(--blue-deep)] p-6 text-white md:p-8 lg:p-10`}>
-                  <p className="kicker !text-white/70">CANAL PROFESIONAL</p>
-                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">Derivaciones para abogados, gestorías, academias y entidades</h2>
+                  <p className="kicker !text-white/70">{en ? 'PROFESSIONAL CHANNEL' : 'CANAL PROFESIONAL'}</p>
+                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">{en ? 'Referrals for lawyers, agencies, academies and organisations' : 'Derivaciones para abogados, gestorías, academias y entidades'}</h2>
                   <p className="mt-5 text-base leading-8 text-white/78">
-                    Si acompañas expedientes de extranjería, puedes derivarnos la parte aseguradora con autorización del cliente. Nosotros nos ocupamos de orientarle y mantenerte informado del avance.
+                    {en ? 'If you support immigration applications, you can refer the insurance side to us with the client’s authorisation. We guide them and keep you informed of progress.' : 'Si acompañas expedientes de extranjería, puedes derivarnos la parte aseguradora con autorización del cliente. Nosotros nos ocupamos de orientarle y mantenerte informado del avance.'}
                   </p>
                   <div className="mt-8 grid gap-5">
-                    {professionalBenefits.map((benefit) => {
+                    {(en ? foreignersContent.en.professionalBenefits.map((item, index) => ({ ...item, icon: professionalBenefits[index].icon })) : professionalBenefits).map((benefit) => {
                       const BenefitIcon = benefit.icon;
                       return (
                         <div key={benefit.title} className="flex gap-3">
@@ -507,10 +522,10 @@ export default function ExtranjerosPage() {
                 </div>
 
                 <div className={`${styles.mobileProfessionalFlow} bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-6 md:p-8 lg:p-10`}>
-                  <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--blue)]">Así funciona la derivación</p>
+                  <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--blue)]">{en ? 'How the referral works' : 'Así funciona la derivación'}</p>
                   <div className="relative mt-7 grid gap-6 md:grid-cols-3 md:gap-5">
                     <span className="absolute left-[11px] top-4 hidden h-px w-[calc(100%-22px)] bg-gradient-to-r from-[var(--blue-deep)]/18 via-[var(--blue)]/22 to-[var(--blue-deep)]/12 md:block" aria-hidden="true" />
-                    {professionalSteps.map((step) => {
+                    {(en ? foreignersContent.en.professionalSteps.map((item, index) => ({ ...item, icon: professionalSteps[index].icon })) : professionalSteps).map((step) => {
                       const StepIcon = step.icon;
                       return (
                         <article key={step.number} className="relative grid grid-cols-[2.7rem_1fr] gap-3 md:block">
@@ -529,7 +544,7 @@ export default function ExtranjerosPage() {
                     })}
                   </div>
                   <div className="mt-8 border-t border-[var(--border)] pt-6 md:flex md:items-center md:justify-between md:gap-6">
-                    <p className="max-w-md text-sm font-semibold leading-6 text-slate-700">Puedes enviarnos un caso ahora o consultarnos antes de derivarlo.</p>
+                    <p className="max-w-md text-sm font-semibold leading-6 text-slate-700">{en ? 'You can send us a case now or speak to us before referring it.' : 'Puedes enviarnos un caso ahora o consultarnos antes de derivarlo.'}</p>
                     <div className={`${styles.mobileButtonStack} mt-5 flex flex-col gap-3 sm:flex-row md:mt-0 md:shrink-0`}>
                       <ForeignersTrackedLink
                         href="#derivar-consulta"
@@ -537,7 +552,7 @@ export default function ExtranjerosPage() {
                         action="cta_click"
                         label="b2b_to_form"
                       >
-                        Derivar un caso
+                        {en ? 'Refer a case' : 'Derivar un caso'}
                       </ForeignersTrackedLink>
 	                      <ForeignersTrackedLink
 	                        href={partnerConsultWhatsApp}
@@ -545,7 +560,7 @@ export default function ExtranjerosPage() {
 	                        action="whatsapp_click"
 	                        label="professional_collaboration"
                       >
-                        <WhatsAppIcon className="h-4 w-4" /> Consultar antes
+                        <WhatsAppIcon className="h-4 w-4" /> {en ? 'Ask us first' : 'Consultar antes'}
                       </ForeignersTrackedLink>
                     </div>
                   </div>
@@ -562,9 +577,9 @@ export default function ExtranjerosPage() {
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <div>
-                <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--blue-deep)]">Nos ocupamos exclusivamente de la parte aseguradora</h2>
+                <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--blue-deep)]">{en ? 'We handle the insurance side exclusively' : 'Nos ocupamos exclusivamente de la parte aseguradora'}</h2>
                 <p className="mt-2 max-w-3xl text-base leading-8 text-slate-700">
-                  No somos un organismo público ni sustituimos el asesoramiento jurídico de extranjería. Orientamos sobre la contratación del seguro y la documentación aseguradora que conviene revisar según la situación comunicada.
+                  {en ? 'We are not a public body and do not replace immigration legal advice. We guide you on arranging insurance and on the insurance documentation worth reviewing for the situation described.' : 'No somos un organismo público ni sustituimos el asesoramiento jurídico de extranjería. Orientamos sobre la contratación del seguro y la documentación aseguradora que conviene revisar según la situación comunicada.'}
                 </p>
               </div>
             </div>
@@ -580,18 +595,18 @@ export default function ExtranjerosPage() {
             >
               <div className="overflow-hidden rounded-[34px] border border-[var(--border)] bg-white shadow-[0_24px_70px_rgba(18,59,104,0.1)] lg:grid lg:grid-cols-[0.38fr_0.62fr]">
                 <div className={`${styles.mobileFormIntro} bg-[linear-gradient(180deg,#eef7fb_0%,#f8fcfd_100%)] p-6 md:p-8 lg:p-10`}>
-                  <p className="kicker">DERIVACIÓN SEGURA</p>
-                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-[var(--blue-deep)] md:text-4xl">Derivar una consulta</h2>
-                  <p className="mt-5 text-base leading-8 text-slate-700">Comparte únicamente los datos mínimos necesarios. No necesitamos documentación sensible en este primer contacto.</p>
+                  <p className="kicker">{en ? 'SECURE REFERRAL' : 'DERIVACIÓN SEGURA'}</p>
+                  <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-[var(--blue-deep)] md:text-4xl">{en ? 'Refer an enquiry' : 'Derivar una consulta'}</h2>
+                  <p className="mt-5 text-base leading-8 text-slate-700">{en ? 'Share only the minimum details needed. We do not need sensitive documents at this first contact.' : 'Comparte únicamente los datos mínimos necesarios. No necesitamos documentación sensible en este primer contacto.'}</p>
                   <div className="mt-8 grid gap-3">
-                    {['Solo datos mínimos', 'Sin documentos sensibles', 'Contacto con autorización'].map((item) => (
+                    {(en ? ['Minimum details only', 'No sensitive documents', 'Contact with authorisation'] : ['Solo datos mínimos', 'Sin documentos sensibles', 'Contacto con autorización']).map((item) => (
                       <div key={item} className="flex items-center gap-3 text-sm font-bold text-[var(--blue-deep)]">
                         <CheckCircle2 className="h-4 w-4 text-[var(--green)]" aria-hidden="true" />
                         {item}
                       </div>
                     ))}
                   </div>
-                  <p className="mt-8 rounded-[20px] border border-white/70 bg-white/65 p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">Nos pondremos en contacto con el cliente utilizando los datos autorizados.</p>
+                  <p className="mt-8 rounded-[20px] border border-white/70 bg-white/65 p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">{en ? 'We will contact the client using the authorised details.' : 'Nos pondremos en contacto con el cliente utilizando los datos autorizados.'}</p>
                 </div>
                 <div className={`${styles.mobileFormBody} p-5 md:p-8 lg:p-10`}>
                   <ForeignersPartnerForm />
@@ -604,20 +619,20 @@ export default function ExtranjerosPage() {
         <section className={`${styles.mobileSection} section-pad bg-white`} data-foreigners-section="faq">
           <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr]">
             <div>
-              <p className="kicker">RESOLVEMOS TUS DUDAS</p>
-              <h2 className="mt-3 section-title">¿Tienes preguntas antes de avanzar?</h2>
+                  <p className="kicker">{en ? 'WE ANSWER YOUR QUESTIONS' : 'RESOLVEMOS TUS DUDAS'}</p>
+              <h2 className="mt-3 section-title">{en ? 'Questions before you move forward?' : '¿Tienes preguntas antes de avanzar?'}</h2>
               <p className="section-copy mt-4">
-                Aquí respondemos a las dudas más habituales sobre la póliza, la documentación y los trámites en España. Si lo prefieres, también podemos orientarte personalmente.
+                {en ? 'Here we answer common questions about the policy, documentation and processes in Spain. If you prefer, we can also guide you personally.' : 'Aquí respondemos a las dudas más habituales sobre la póliza, la documentación y los trámites en España. Si lo prefieres, también podemos orientarte personalmente.'}
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
-                <a href={personalWhatsApp} className="btn-whatsapp sm:w-auto xl:w-fit">
-                  <WhatsAppIcon className="h-4 w-4" /> Hablar por WhatsApp
+                <a href={personalHref} className="btn-whatsapp sm:w-auto xl:w-fit">
+                  <WhatsAppIcon className="h-4 w-4" /> {en ? 'Talk on WhatsApp' : 'Hablar por WhatsApp'}
                 </a>
-                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit">Pedir orientación</Link>
+                <Link href={en ? '/en/contact' : '/contacto'} className="btn-secondary sm:w-auto xl:w-fit">{en ? 'Ask for guidance' : 'Pedir orientación'}</Link>
               </div>
             </div>
             <div className={styles.mobileFaq}>
-              <FAQAccordion items={faqItems} />
+              <FAQAccordion items={visibleFaq} locale={locale} />
             </div>
           </div>
         </section>
@@ -627,16 +642,16 @@ export default function ExtranjerosPage() {
             <div className={`${styles.mobileClosingCard} rounded-[30px] bg-[var(--blue-deep)] p-8 text-white md:p-10`}>
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="max-w-3xl">
-                  <p className="kicker !text-white/70">Siguiente paso</p>
-                  <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">Revisa tu caso sin convertir el trámite en un laberinto</h2>
-                  <p className="mt-4 text-lg leading-9 text-white/80">Particulares y profesionales pueden iniciar la consulta con la información mínima necesaria.</p>
+                  <p className="kicker !text-white/70">{en ? 'NEXT STEP' : 'Siguiente paso'}</p>
+                  <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">{en ? 'Review your case without turning the process into a maze' : 'Revisa tu caso sin convertir el trámite en un laberinto'}</h2>
+                  <p className="mt-4 text-lg leading-9 text-white/80">{en ? 'Individuals and professionals can start with only the minimum information needed.' : 'Particulares y profesionales pueden iniciar la consulta con la información mínima necesaria.'}</p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row md:shrink-0">
-                  <ForeignersTrackedLink href={personalWhatsApp} className="btn-whatsapp" action="whatsapp_click" label="final_cta">
-                    <WhatsAppIcon className="h-4 w-4" /> Revisar mi situación
+                  <ForeignersTrackedLink href={personalHref} className="btn-whatsapp" action="whatsapp_click" label="final_cta">
+                    <WhatsAppIcon className="h-4 w-4" /> {en ? 'Review my situation' : 'Revisar mi situación'}
                   </ForeignersTrackedLink>
 	                  <ForeignersTrackedLink href="#derivar-consulta" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]" action="cta_click" label="final_to_form">
-	                    Derivar un caso
+	                    {en ? 'Refer a case' : 'Derivar un caso'}
 	                  </ForeignersTrackedLink>
                 </div>
               </div>
@@ -649,3 +664,5 @@ export default function ExtranjerosPage() {
     </>
   );
 }
+
+export default function ExtranjerosPage() { return <ExtranjerosPageView locale="es" />; }

@@ -10,6 +10,7 @@ type GoogleReviewsCarouselProps = {
   rating: number;
   user_ratings_total: number;
   allReviewsUrl: string;
+  locale?: 'es' | 'en';
 };
 
 function StarRating({ rating }: { rating: number }) {
@@ -72,6 +73,7 @@ export function GoogleReviewsCarousel({
   rating,
   user_ratings_total,
   allReviewsUrl,
+  locale = 'es',
 }: GoogleReviewsCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const count = reviews.length;
@@ -106,7 +108,7 @@ export function GoogleReviewsCarousel({
         </div>
         <span className="text-2xl font-bold text-gray-900">{rating.toFixed(1)}</span>
         <span className="text-sm text-gray-500">
-          · {user_ratings_total} opiniones en Google
+          · {user_ratings_total} {locale === 'en' ? 'Google reviews' : 'opiniones en Google'}
         </span>
         <a
           href={allReviewsUrl}
@@ -115,7 +117,7 @@ export function GoogleReviewsCarousel({
           onClick={() => trackForeignersPartner({ action: 'google_reviews_click', label: 'reviews_carousel' })}
           className="text-sm font-medium text-blue-600 underline underline-offset-2 hover:text-blue-800"
         >
-          Ver todas en Google →
+          {locale === 'en' ? 'View all on Google →' : 'Ver todas en Google →'}
         </a>
       </div>
 
@@ -155,7 +157,7 @@ export function GoogleReviewsCarousel({
           type="button"
           onClick={() => setActiveIndex((current) => (current - 1 + count) % count)}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 transition hover:bg-gray-50"
-          aria-label="Reseña anterior"
+          aria-label={locale === 'en' ? 'Previous review' : 'Reseña anterior'}
         >
           <svg className="h-4 w-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -167,7 +169,7 @@ export function GoogleReviewsCarousel({
               key={`${review.author_name}-${index}`}
               type="button"
               onClick={() => setActiveIndex(index)}
-              aria-label={`Ver reseña ${index + 1}`}
+              aria-label={locale === 'en' ? `View review ${index + 1}` : `Ver reseña ${index + 1}`}
               className={`h-2 w-2 origin-center rounded-full transition-all duration-300 ${
                 index === activeIndex ? 'scale-x-[2.5] bg-blue-600' : 'bg-gray-300 opacity-60 hover:opacity-80'
               }`}
@@ -178,7 +180,7 @@ export function GoogleReviewsCarousel({
           type="button"
           onClick={() => setActiveIndex((current) => (current + 1) % count)}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 transition hover:bg-gray-50"
-          aria-label="Siguiente reseña"
+          aria-label={locale === 'en' ? 'Next review' : 'Siguiente reseña'}
         >
           <svg className="h-4 w-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

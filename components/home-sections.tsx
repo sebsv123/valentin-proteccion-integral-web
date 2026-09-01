@@ -9,6 +9,9 @@ import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { AdeslasAgentLink } from './adeslas-agent-link';
 import productGridStyles from './product-category-grid.module.css';
 import { getHomeContent, type HomeLocale } from './home-content';
+import { localizedPath } from '@/i18n/navigation';
+
+const homePath = (locale: HomeLocale, path: '/' | '/contacto' | '/seguros' | '/seguros/salud') => localizedPath(locale, path);
 
 
 export function ProductAccessSection() {
@@ -185,7 +188,7 @@ export function ProductCategoryGrid({ productsWithImages, locale = 'es' }: { pro
                   <ul className={productGridStyles.benefits}>
                     {(content.benefits[product.slug] || presentation.benefits).map((benefit) => <li key={benefit}>{benefit}</li>)}
                   </ul>
-                  <Link href={`/seguros/${product.slug}`} className={productGridStyles.productLink}>
+                  <Link href={product.slug === 'salud' ? homePath(locale, '/seguros/salud') : `/seguros/${product.slug}`} className={productGridStyles.productLink}>
                     {content.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
@@ -201,9 +204,9 @@ export function ProductCategoryGrid({ productsWithImages, locale = 'es' }: { pro
 export function ComparisonCardsSection({ imageSrc = '/images/agent/rosa-exterior-enhanced.png', locale = 'es' }: { imageSrc?: string; locale?: HomeLocale } = {}) {
   const content = getHomeContent(locale).comparison;
   const actions = locale === 'en' ? [
-    { href: '/seguros', wa: buildWhatsAppHref('Hello, I would like initial guidance on where to start.'), cta: 'Get initial guidance' },
-    { href: '/seguros/salud', wa: buildWhatsAppHref('Hello, I know the type of cover I need but would like help choosing the right option.'), cta: 'Refine your option' },
-    { href: '/contacto', wa: buildWhatsAppHref('Hello, I would like to resolve this quickly with real guidance.'), cta: 'Get started' },
+    { href: homePath(locale, '/seguros'), wa: buildWhatsAppHref('Hello, I would like initial guidance on where to start.'), cta: 'Get initial guidance' },
+    { href: homePath(locale, '/seguros/salud'), wa: buildWhatsAppHref('Hello, I know the type of cover I need but would like help choosing the right option.'), cta: 'Refine your option' },
+    { href: homePath(locale, '/contacto'), wa: buildWhatsAppHref('Hello, I would like to resolve this quickly with real guidance.'), cta: 'Get started' },
   ] : [
     { href: '/seguros', wa: buildWhatsAppHref('Hola, quiero una primera orientación para saber por dónde empezar.'), cta: 'Quiero una primera orientación' },
     { href: '/seguros/salud', wa: buildWhatsAppHref('Hola, ya sé el ramo pero quiero afinar qué modalidad me encaja.'), cta: 'Afina tu modalidad' },
@@ -304,7 +307,7 @@ export function AgentTrustBlock({ locale = 'es' }: { locale?: HomeLocale } = {})
                 {content.bullets.map((bullet) => <div key={bullet} className="flex items-center gap-4 rounded-[22px] bg-[var(--bg)] p-5"><div className="h-2 w-2 rounded-full bg-[var(--blue)]" /><p className="text-base font-semibold text-[var(--blue-deep)]">{bullet}</p></div>)}
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contacto" className="btn-primary" aria-label={content.aria}>{content.cta}</Link>
+                <Link href={homePath(locale, '/contacto')} className="btn-primary" aria-label={content.aria}>{content.cta}</Link>
                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Instagram className="h-4 w-4" /> Instagram</a>
               </div>
               <div className="mt-6">
@@ -331,7 +334,7 @@ export function GeneralFaqSection({ locale = 'es' }: { locale?: HomeLocale } = {
               <p className="section-copy mt-4">{content.intro}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row xl:flex-col">
                 <a href={buildWhatsAppHref(content.whatsapp)} className="btn-whatsapp sm:w-auto xl:w-fit" aria-label={content.whatsappAria}><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'Chat on WhatsApp' : 'Hablar por WhatsApp'}</a>
-                <Link href="/contacto" className="btn-secondary sm:w-auto xl:w-fit" aria-label={content.contactAria}>{content.contact}</Link>
+                <Link href={homePath(locale, '/contacto')} className="btn-secondary sm:w-auto xl:w-fit" aria-label={content.contactAria}>{content.contact}</Link>
               </div>
             </div>
           </div>
@@ -372,7 +375,7 @@ export function FinalCTASection({ locale = 'es' }: { locale?: HomeLocale } = {})
                 {content.response}
               </div>
               <div className="mt-10 flex flex-col gap-4 justify-center sm:flex-row">
-                <Link href="/contacto" className="btn-primary bg-white text-[var(--blue-deep)] hover:bg-white/90">{content.contact}</Link>
+                <Link href={homePath(locale, '/contacto')} className="btn-primary bg-white text-[var(--blue-deep)] hover:bg-white/90">{content.contact}</Link>
                 <a href={buildWhatsAppHref(content.whatsapp)} className="btn-whatsapp bg-[#4CAF50] text-white border-none"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'Chat on WhatsApp' : 'Hablar por WhatsApp'}</a>
               </div>
             </div>

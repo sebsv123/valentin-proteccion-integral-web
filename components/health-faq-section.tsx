@@ -5,6 +5,8 @@ import { useId, useState } from 'react';
 import { ArrowRight, BedDouble, ChevronDown, GraduationCap, MessageCircle, RefreshCw, Scale } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './health-faq-section.module.css';
+import { useLocale } from 'next-intl';
+import { healthContent } from '@/app/seguros/health-content';
 
 const questions = [
   { question: '¿Todos los seguros de SALUD incluyen hospitalización?', answer: 'No. Las modalidades básicas se centran en medicina ambulatoria, como consultas, especialistas y pruebas. Si buscas cobertura de ingreso y cirugía, debes optar por una modalidad completa.', Icon: BedDouble },
@@ -14,6 +16,8 @@ const questions = [
 ];
 
 export function HealthFaqSection({ whatsappMessage }: { whatsappMessage: string }) {
+  const en = useLocale() === 'en';
+  const visibleQuestions = (en ? healthContent.en.faq : healthContent.es.faq).map((item, index) => ({ ...item, Icon: questions[index].Icon }));
   const [openIndex, setOpenIndex] = useState(0);
   const baseId = useId();
   return <section className={styles.section} aria-labelledby="salud-faq-title">
@@ -21,18 +25,18 @@ export function HealthFaqSection({ whatsappMessage }: { whatsappMessage: string 
     <div className={`container-shell ${styles.shell}`}>
       <div className={styles.grid}>
         <div className={styles.intro}>
-          <p className={styles.eyebrow}>PREGUNTAS FRECUENTES DE SALUD</p>
-          <h2 id="salud-faq-title">Respuestas claras antes de contratar</h2>
+          <p className={styles.eyebrow}>{en ? 'HEALTH FAQs' : 'PREGUNTAS FRECUENTES DE SALUD'}</p>
+          <h2 id="salud-faq-title">{en ? 'Clear answers before you buy' : 'Respuestas claras antes de contratar'}</h2>
           <span className={styles.wave} aria-hidden="true"><svg viewBox="0 0 108 17"><path d="M2 12c14-12 29 4 43-2s23-8 33 0 18 5 28-4" /></svg></span>
-          <p>Estas son algunas de las dudas que más aparecen al comparar seguros de salud. Las respondemos de forma directa para que sepas qué conviene revisar en tu caso.</p>
+          <p>{en ? 'These are some of the questions that come up most when comparing health insurance. We answer them directly so you know what to review in your situation.' : 'Estas son algunas de las dudas que más aparecen al comparar seguros de salud. Las respondemos de forma directa para que sepas qué conviene revisar en tu caso.'}</p>
         </div>
         <div className={styles.accordion}>
-          {questions.map(({ question, answer, Icon }, index) => {
+          {visibleQuestions.map(({ question, answer, Icon }, index) => {
             const isOpen = openIndex === index;
             const panelId = `${baseId}-panel-${index}`;
             return <article key={question} className={`${styles.item} ${isOpen ? styles.open : ''}`}>
               <h3><button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenIndex(isOpen ? -1 : index)}><span className={styles.icon}><Icon aria-hidden="true" /></span><span>{question}</span><ChevronDown aria-hidden="true" className={styles.chevron} /></button></h3>
-              <div id={panelId} role="region" aria-label={question} className={styles.answer} hidden={!isOpen}><div><p>{answer}</p>{index === 0 ? <div className={styles.answerActions}><Link href="/contacto">Pedir orientación <ArrowRight aria-hidden="true" /></Link><a href={buildWhatsAppHref(whatsappMessage)}><MessageCircle aria-hidden="true" />Escríbenos por <strong>WhatsApp</strong></a></div> : null}</div></div>
+              <div id={panelId} role="region" aria-label={question} className={styles.answer} hidden={!isOpen}><div><p>{answer}</p>{index === 0 ? <div className={styles.answerActions}><Link href={en ? '/en/contact' : '/contacto'}>{en ? 'Ask for guidance' : 'Pedir orientación'} <ArrowRight aria-hidden="true" /></Link><a href={buildWhatsAppHref(en ? 'Hello, I would like guidance about health insurance.' : whatsappMessage)}><MessageCircle aria-hidden="true" />{en ? 'Message us on' : 'Escríbenos por'} <strong>WhatsApp</strong></a></div> : null}</div></div>
             </article>;
           })}
         </div>

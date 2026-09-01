@@ -25,4 +25,11 @@ export const iberiaJourneySteps = [
   },
 ] as const;
 
-export type IberiaJourneyStepData = (typeof iberiaJourneySteps)[number];
+export const iberiaJourneyStepsEn = [
+  { number: '01', title: 'We understand your process', copy: 'Tell us whether you are coming for studies, residence, renewal or family arrival, along with your expected dates.', icon: 'passport' },
+  { number: '02', title: 'We review what you need', copy: 'We check the plan type, cover, co-payments, waiting periods and available documentation.', icon: 'checklist' },
+  { number: '03', title: 'We choose with you', copy: 'We explain the options clearly so you can decide with enough information.', icon: 'shield' },
+  { number: '04', title: 'We issue and stay with you', copy: 'We arrange the policy, provide the documentation and answer any questions afterwards.', icon: 'certificate' },
+] as const;
+
+export type IberiaJourneyStepData = { number: string; title: string; copy: string; icon: 'passport' | 'checklist' | 'shield' | 'certificate' };

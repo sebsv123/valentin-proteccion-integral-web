@@ -8,8 +8,10 @@ import { LeadForm } from './lead-form';
 import { FAQAccordion } from './faq-accordion';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { EditorialProductHero } from './editorial-product-hero';
+import { useLocale } from 'next-intl';
 
 export function ProductHero({ product }: { product: Product }) {
+  const en = useLocale() === 'en';
   if (product.slug === 'salud') return <EditorialProductHero product={product} />;
   const subpages = getSubpagesForProduct(product.slug);
   const advisor = product.customAdvisor || {
@@ -29,7 +31,7 @@ export function ProductHero({ product }: { product: Product }) {
                 <h1 id="product-h1" className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-gradient md:text-6xl lg:text-7xl leading-[1.1]">{product.h1}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">{product.heroCopy}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Link href="/contacto" className="btn-primary hover-lift px-10">Solicitar orientación</Link>
+                  <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary hover-lift px-10">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
                   <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
                 </div>
                 {subpages.length ? (
@@ -202,6 +204,7 @@ export function CasesAndForm({ product, defaultProduct }: { product: Product; de
 }
 
 export function ProductFaqSection({ product }: { product: Product }) {
+  const locale = useLocale();
   return (
     <section id="faqs-producto" aria-labelledby="faq-product-title" className="section-pad bg-white-pure">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr] items-start">
@@ -213,7 +216,7 @@ export function ProductFaqSection({ product }: { product: Product }) {
           </div>
          </RevealLight>
         <RevealLight direction="left">
-          <FAQAccordion items={product.faqs} contextualLinks />
+          <FAQAccordion items={product.faqs} contextualLinks locale={locale as 'es' | 'en'} />
          </RevealLight>
       </div>
     </section>
@@ -267,14 +270,15 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
 }
 
 export function RelatedProducts({ product, healthVariant = false }: { product: Product; healthVariant?: boolean }) {
+  const en = useLocale() === 'en';
   const related = getRelatedProducts(product.related);
   return (
     <section id="aspectos-clave" aria-labelledby="decision-title" className="section-pad bg-white-pure overflow-hidden">
       <div className="container-shell">
         <RevealLight>
           <div className="mb-12 max-w-3xl">
-            <p className="kicker">{healthVariant ? 'Otras formas de protegerte' : 'Decide con criterio'}</p>
-            <h2 id="decision-title" className="mt-3 section-title">{healthVariant ? 'También podemos ayudarte con otras necesidades de protección' : `Cuestiones clave para comparar ${product.label} sin perderte en la letra pequeña`}</h2>
+            <p className="kicker">{healthVariant ? (en ? 'Other ways we can help' : 'Otras formas de protegerte') : 'Decide con criterio'}</p>
+            <h2 id="decision-title" className="mt-3 section-title">{healthVariant ? (en ? 'We can also help with other protection needs' : 'También podemos ayudarte con otras necesidades de protección') : `Cuestiones clave para comparar ${product.label} sin perderte en la letra pequeña`}</h2>
           </div>
          </RevealLight>
         <div className="grid gap-8 lg:grid-cols-3">
@@ -291,15 +295,15 @@ export function RelatedProducts({ product, healthVariant = false }: { product: P
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,34,68,0.7)] to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <p className="kicker !text-white/70 font-bold tracking-widest">{item.eyebrow}</p>
-                    <h3 className="mt-2 font-heading text-4xl font-bold tracking-tight">{item.label}</h3>
+                    <p className="kicker !text-white/70 font-bold tracking-widest">{en && healthVariant ? ({ dental: 'HEALTHY SMILE', decesos: 'FAMILY PLANNING', vida: 'FAMILY PROTECTION' } as Record<string, string>)[item.slug] ?? item.eyebrow : item.eyebrow}</p>
+                    <h3 className="mt-2 font-heading text-4xl font-bold tracking-tight">{en && healthVariant ? ({ dental: 'Dental', decesos: 'Funeral', vida: 'Life' } as Record<string, string>)[item.slug] ?? item.label : item.label}</h3>
                   </div>
                 </div>
                 <div className="p-8 flex-grow flex flex-col">
-                  <p className="text-base leading-relaxed text-[var(--muted)] flex-grow">{item.summary}</p>
+                    <p className="text-base leading-relaxed text-[var(--muted)] flex-grow">{en && healthVariant ? ({ dental: 'A clearer way to review check-ups, emergencies, specialist care and included services without reducing everything to one cleaning or one occasional visit.', decesos: 'Complete funeral service, family support, administrative arrangements and additional cover adapted to each family.', vida: 'Life protection explained clearly so your family can have financial support when it matters.' } as Record<string, string>)[item.slug] ?? item.summary : item.summary}</p>
                   <div className="mt-8 flex flex-col gap-3">
-                    <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">Ver seguro de {item.name} <ArrowRight className="h-4 w-4" /></Link>
-                    <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur"><WhatsAppIcon className="h-4 w-4" /> Consulta rápida</a>
+                    <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">{en && healthVariant ? `View ${({ dental: 'dental', decesos: 'funeral', vida: 'life' } as Record<string, string>)[item.slug] ?? item.name.toLowerCase()} insurance` : `Ver seguro de ${item.name}`} <ArrowRight className="h-4 w-4" /></Link>
+                    <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur"><WhatsAppIcon className="h-4 w-4" /> {en && healthVariant ? 'Quick enquiry' : 'Consulta rápida'}</a>
                   </div>
                 </div>
               </article>

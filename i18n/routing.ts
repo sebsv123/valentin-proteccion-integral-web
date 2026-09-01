@@ -18,6 +18,10 @@ export const routing = defineRouting({
       es: '/contacto',
       en: '/contact',
     },
+    '/extranjeros': { es: '/extranjeros', en: '/foreigners' },
+    '/seguros': { es: '/seguros', en: '/insurance' },
+    '/seguros/salud': { es: '/seguros/salud', en: '/insurance/health' },
+    '/seguros/salud-extranjeros': { es: '/seguros/salud-extranjeros', en: '/insurance/health/foreigners' },
   },
 });
 

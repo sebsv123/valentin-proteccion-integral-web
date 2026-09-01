@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   keywords: ["health insurance NIE Spain","health insurance TIE Spain","health insurance visa Spain","foreigners health insurance Madrid","expat health insurance Spain"],
   authors: [{ name: "Rosa ValentÃ­n" }],
   publisher: "ValentÃ­n ProtecciÃ³n Integral",
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
+  alternates: { canonical: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", en: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", 'x-default': "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
   openGraph: {
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
     description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. From 22.50â‚¬/month.",
-    url: "https://valentinproteccionintegral.com/seguros/health-insurance-foreigners-spain",
+    url: "https://valentinproteccionintegral.com/en/insurance/health/foreigners",
     siteName: "ValentÃ­n ProtecciÃ³n Integral",
     locale: "en_US",
     type: "website",
@@ -116,7 +116,7 @@ export default function HealthInsuranceForeignersSpainPage() {
   return (
     <>
       <link rel="preload" href="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900" as="image" fetchPriority="high" />
-      <BreadcrumbSchema items={[{name:"Home",url:"/"},{name:"Insurance",url:"/seguros"},{name:"Health Insurance for Foreigners",url:"/seguros/health-insurance-foreigners-spain"}]} />
+      <BreadcrumbSchema items={[{name:"Home",url:"/en"},{name:"Insurance",url:"/en/insurance"},{name:"Health Insurance for Foreigners",url:"/en/insurance/health/foreigners"}]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />

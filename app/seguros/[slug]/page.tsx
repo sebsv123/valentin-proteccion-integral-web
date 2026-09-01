@@ -23,6 +23,7 @@ import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { healthContent } from '@/app/seguros/health-content';
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -38,12 +39,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const twitterTitle = slug === 'salud'
     ? 'Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral'
     : product.metaTitle;
-
   return {
     title: product.metaTitle,
     description: product.metaDescription,
     alternates: {
       canonical: `${site.domain}/seguros/${product.slug}`,
+      ...(slug === 'salud' ? { languages: { es: `${site.domain}/seguros/salud`, en: `${site.domain}/en/insurance/health`, 'x-default': `${site.domain}/seguros/salud` } } : {}),
     },
     openGraph: {
       title: product.metaTitle,
@@ -61,35 +62,36 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export const dynamic = 'force-static';
 
-export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function ProductPageView({ slug, locale = 'es' }: { slug: string; locale?: 'es' | 'en' }) {
   const product = getProduct(slug);
   if (!product) notFound();
+  const en = locale === 'en';
+  const healthFaqs = en ? healthContent.en.faq : healthContent.es.faq;
 
   return (
     <>
       <BreadcrumbSchema
         items={[
-          { name: 'Inicio', url: '/' },
-          { name: 'Seguros', url: '/seguros' },
-          { name: product.name, url: `/seguros/${product.slug}` }
+          { name: en ? 'Home' : 'Inicio', url: en ? '/en' : '/' },
+          { name: en ? 'Insurance' : 'Seguros', url: en ? '/en/insurance' : '/seguros' },
+          { name: en ? 'Health insurance' : product.name, url: en ? '/en/insurance/health' : `/seguros/${product.slug}` }
         ]}
       />
-      <FaqSchema faqs={product.faqs} />
+      <FaqSchema faqs={slug === 'salud' ? healthFaqs.map((item) => ({ q: item.question, a: item.answer })) : product.faqs} />
       <Header />
 
       {/* Sticky Banner - Garantía de Precio */}
       <div className="sticky top-[68px] z-40 w-full bg-[#002244] text-white py-2 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-center">
           <p className="text-sm font-semibold leading-tight text-center">
-            ¿Tienes ya un presupuesto? Tráenoslo y lo mejoramos — o te decimos honestamente si ya es bueno.
+            {en ? 'Do you already have a quote? Bring it to us and we will improve it — or honestly tell you if it is already good.' : '¿Tienes ya un presupuesto? Tráenoslo y lo mejoramos — o te decimos honestamente si ya es bueno.'}
           </p>
         </div>
       </div>
 
       <main>
         <div className="container-shell pt-6 md:pt-8">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Seguros', href: '/seguros' }, { label: product.label }]} />
+          <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? 'Health insurance' : product.label }]} />
         </div>
         <ProductHero product={product} />
 
@@ -428,4 +430,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <StickyWhatsApp />
     </>
   );
+}
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <ProductPageView slug={slug} locale="es" />;
 }

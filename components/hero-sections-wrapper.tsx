@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { BadgeCheck, Flower2, HeartPulse, PawPrint, Plane, Stethoscope } from 'lucide-react';
 import { products } from '@/lib/products';
 import { getHomeContent, type HomeLocale } from './home-content';
+import { localizedPath } from '@/i18n/navigation';
 export { StatsSection };
 
 const heroProductSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
@@ -57,7 +58,7 @@ export function ProductAccessSection({ locale = 'es' }: { locale?: HomeLocale } 
             return (
               <Link
                 key={product.slug}
-                href={`/seguros/${product.slug}`}
+                href={product.slug === 'salud' ? localizedPath(locale, '/seguros/salud') : `/seguros/${product.slug}`}
                 className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)] focus-visible:ring-offset-2"
               >
                 <Icon className="h-8 w-8 text-[var(--blue)] transition-transform group-hover:scale-110" aria-hidden="true" />

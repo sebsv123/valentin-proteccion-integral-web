@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import { ArrowRight } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ForeignersTrackedLink } from '@/components/foreigners-tracked-link';
-import { iberiaJourneySteps } from './iberia-journey-data';
+import { iberiaJourneySteps, iberiaJourneyStepsEn } from './iberia-journey-data';
+import { useLocale } from 'next-intl';
 import { IberiaJourneyStep } from './iberia-journey-step';
 import styles from './iberia-journey-section.module.css';
 
@@ -17,6 +18,8 @@ const Iberia3DMap = dynamic(
 );
 
 export function IberiaJourneySection({ contactHref }: { contactHref: string }) {
+  const en = useLocale() === 'en';
+  const steps = en ? iberiaJourneyStepsEn : iberiaJourneySteps;
   const sectionRef = useRef<HTMLElement | null>(null);
   const stepRefs = useRef<Array<HTMLDivElement | null>>([]);
   const activeStepRef = useRef(0);
@@ -156,7 +159,7 @@ export function IberiaJourneySection({ contactHref }: { contactHref: string }) {
     };
   }, [isMobile, mapReady]);
 
-  const progressLine = `${Math.min(100, ((visualStep + 1) / iberiaJourneySteps.length) * 100)}%`;
+  const progressLine = `${Math.min(100, ((visualStep + 1) / steps.length) * 100)}%`;
 
   return (
     <section
@@ -179,21 +182,21 @@ export function IberiaJourneySection({ contactHref }: { contactHref: string }) {
 
           <div className={styles.copyColumn}>
             <div className={styles.intro}>
-              <p className="kicker">TU LLEGADA A ESPAÑA</p>
+              <p className="kicker">{en ? 'YOUR ARRIVAL IN SPAIN' : 'TU LLEGADA A ESPAÑA'}</p>
               <h2 id="iberia-journey-title" className="section-title">
-                Del primer requisito a tu póliza, contigo en cada paso
+                {en ? 'From the first requirement to your policy, with you every step of the way' : 'Del primer requisito a tu póliza, contigo en cada paso'}
               </h2>
               <p className="section-copy">
-                Revisamos tu trámite, comprobamos la documentación y te ayudamos a elegir la modalidad adecuada hasta que recibes la póliza.
+                {en ? 'We review your process, check the documentation and help you choose the right plan until you receive your policy.' : 'Revisamos tu trámite, comprobamos la documentación y te ayudamos a elegir la modalidad adecuada hasta que recibes la póliza.'}
               </p>
             </div>
 
-            <div className={styles.steps} aria-label="Etapas de acompañamiento">
+            <div className={styles.steps} aria-label={en ? 'Support stages' : 'Etapas de acompañamiento'}>
               <span className={styles.stepsTrack} aria-hidden="true">
                 <span className={styles.stepsTrackBase} />
                 <span className={styles.stepsTrackProgress} style={{ height: progressLine }} />
               </span>
-              {iberiaJourneySteps.map((step, index) => (
+              {steps.map((step, index) => (
                 <div key={step.number} ref={setStepRef(index)} className={styles.stepZone}>
                   <IberiaJourneyStep
                     step={step}
@@ -216,9 +219,9 @@ export function IberiaJourneySection({ contactHref }: { contactHref: string }) {
               action="cta_click"
               label="iberia_journey_cta"
             >
-              Revisar mi situación <ArrowRight className="h-4 w-4" />
+              {en ? 'Review my situation' : 'Revisar mi situación'} <ArrowRight className="h-4 w-4" />
             </ForeignersTrackedLink>
-            <p className={styles.trustLine}>Con pasaporte · Atención desde España · Seguimiento hasta la documentación</p>
+            <p className={styles.trustLine}>{en ? 'With passport · Support from Spain · Follow-up through to your documents' : 'Con pasaporte · Atención desde España · Seguimiento hasta la documentación'}</p>
           </div>
         </div>
       </div>
