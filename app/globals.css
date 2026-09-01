@@ -50,13 +50,6 @@ img { max-width: 100%; height: auto; }
 .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: .82rem; font-weight: 700; color: var(--blue); }
 .nav-link { font-size: 1.12rem; font-weight: 600; color: var(--blue-deep); }
 
-@media (min-width: 1536px) and (max-width: 2559px) {
-  .header-primary-nav {
-    --pill-pad-x: 1px !important;
-    --pill-gap: 0 !important;
-    font-size: 0.875rem;
-  }
-}
 .soft-card { border-radius: 32px; background: rgba(255,255,255,0.96); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(18, 59, 104, 0.08); }
 .hero-grid { display: grid; gap: 1.5rem; }
 @media (min-width: 1140px) { .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(430px, .92fr); } }
