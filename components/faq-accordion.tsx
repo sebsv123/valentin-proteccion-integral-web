@@ -41,11 +41,11 @@ export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: 
                 {contextualLinks ? (
                   <div className="mt-5 flex flex-wrap gap-3">
                     <a href={buildWhatsAppHref(locale === 'en' ? `Hello, I have a question about: ${item.q}` : `Hola, tengo una duda sobre: ${item.q}`)} className="btn-whatsapp !px-4 !py-3 text-sm"><WhatsAppIcon className="h-4 w-4" /> {locale === 'en' ? 'Chat on WhatsApp' : 'Hablar por WhatsApp'}</a>
-                    <Link href="/contacto" className="btn-ghost !px-4 !py-3 text-sm">{copy.ask}</Link>
-                    <Link href="/seguros/salud" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[0]}</Link>
+                    <Link href={locale === 'en' ? '/en/contact' : '/contacto'} className="btn-ghost !px-4 !py-3 text-sm">{copy.ask}</Link>
+                    <Link href={locale === 'en' ? '/en/insurance/health' : '/seguros/salud'} className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[0]}</Link>
                     
-                    <Link href="/seguros/mascotas" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[1]}</Link>
-                    <Link href="/seguros/viaje" className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[2]}</Link>
+                    <Link href={locale === 'en' ? '/en/insurance/pet-insurance' : '/seguros/mascotas'} className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[1]}</Link>
+                    <Link href={locale === 'en' ? '/en/insurance/travel-insurance' : '/seguros/viaje'} className="btn-ghost !px-4 !py-3 text-sm">{copy.productLinks[2]}</Link>
                   </div>
                 ) : null}
               </div>
