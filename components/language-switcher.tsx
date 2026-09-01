@@ -13,7 +13,7 @@ export function LanguageSwitcher() {
   const supported = supportedPathnames.has(pathname);
 
   if (!supported) {
-    return <span className="text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
+    return <span className="inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
@@ -22,7 +22,7 @@ export function LanguageSwitcher() {
       <a
         href={targetLocale === 'en' ? '/en' : '/'}
         aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
-        className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
+        className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
       >
         <span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span>
         <span className="text-white/35">/</span>
@@ -37,7 +37,7 @@ export function LanguageSwitcher() {
     <a
       href={targetHref}
       aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
-      className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
+      className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
     >
       <span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span>
       <span className="text-white/35">/</span>

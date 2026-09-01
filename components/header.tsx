@@ -126,7 +126,7 @@ export function Header() {
             <nav className="hidden min-w-0 items-center gap-0.5 xl:flex">
               <Link
                 href={localeHref('/extranjeros/alquileres')}
-                className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
+                className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 max-2xl:px-2 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
               >
                 {localeLabel('Alquileres')}
               </Link>
@@ -136,7 +136,7 @@ export function Header() {
                 <button
                   id="mega-trigger"
                   onClick={() => setMega((v) => !v)}
-                  className="group relative px-3 py-2"
+                  className="group relative px-3 max-2xl:px-1 py-2"
                   aria-expanded={mega}
                   aria-controls="mega-menu"
                 >
@@ -159,7 +159,7 @@ export function Header() {
                   <button
                     id="business-trigger"
                     type="button"
-                    className={`inline-flex h-[42px] items-center gap-1 rounded-full px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white ${pathname.startsWith('/empresas') ? 'bg-white/20 text-white' : ''}`}
+                    className={`inline-flex h-[42px] items-center gap-1 rounded-full px-4 max-2xl:px-2 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white ${pathname.startsWith('/empresas') ? 'bg-white/20 text-white' : ''}`}
                     aria-expanded={businessOpen}
                     aria-controls="business-menu"
                     onClick={() => setBusinessOpen((open) => !open)}
@@ -190,6 +190,7 @@ export function Header() {
                   </div>
                 </div>
                   <PillNav
+                    className="header-primary-nav"
                     items={[
                       ...mainNav.slice(2).filter(item => item.label !== 'Empresas').map(item => ({
                     link: localeHref(item.href),
@@ -207,12 +208,12 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden shrink-0 items-center justify-end gap-1.5 xl:flex">
+            <div className="hidden shrink-0 items-center justify-end gap-1.5 max-2xl:gap-1 xl:flex">
               <LanguageSwitcher />
               <a
                 href={`tel:${site.phoneHref}`}
                 className="flex items-center gap-1.5 px-3 py-2.5 text-white/90
-                           text-sm font-semibold rounded-[14px] border border-white/20
+                           max-2xl:px-1 text-sm font-semibold rounded-[14px] border border-white/20
                            hover:bg-white/10 transition-colors whitespace-nowrap"
               >
                 <Phone className="h-4 w-4" />
@@ -221,7 +222,7 @@ export function Header() {
               <a
                 href={whatsappHref}
                 onClick={(e) => handleWhatsAppClick(e, 'nav-header', whatsappHref)}
-                className="btn-whatsapp !text-sm !px-4 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)]"
+                className="btn-whatsapp !text-sm !px-4 max-2xl:!px-2 !py-2.5 shadow-[0_4px_14px_rgba(18,140,126,0.4)] hover:shadow-[0_6px_20px_rgba(18,140,126,0.6)]"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
