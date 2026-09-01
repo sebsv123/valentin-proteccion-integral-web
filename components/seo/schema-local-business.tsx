@@ -8,6 +8,20 @@ interface Props {
 
 export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' }: Props) {
   const isEnglish = locale === 'en';
+  const offerItems = isEnglish
+    ? [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health insurance", "url": "https://valentinproteccionintegral.com/en/insurance/health" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business insurance", "url": "https://valentinproteccionintegral.com/en/business" } },
+      ]
+    : [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Salud", "url": "https://valentinproteccionintegral.com/seguros/salud" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro para Mascotas", "url": "https://valentinproteccionintegral.com/seguros/mascotas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro Dental", "url": "https://valentinproteccionintegral.com/seguros/dental" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Viaje", "url": "https://valentinproteccionintegral.com/seguros/viaje" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Accidentes", "url": "https://valentinproteccionintegral.com/seguros/accidentes-decesos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguros para Negocios", "url": "https://valentinproteccionintegral.com/empresas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Decesos", "url": "https://valentinproteccionintegral.com/seguros/decesos" } },
+      ];
   const schema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
@@ -73,18 +87,7 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": isEnglish ? "Insurance available" : "Seguros disponibles",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Health insurance" : "Seguro de Salud", "url": isEnglish ? "https://valentinproteccionintegral.com/en/insurance/health" : "https://valentinproteccionintegral.com/seguros/salud" } },
-        
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Pet insurance" : "Seguro para Mascotas", "url": "https://valentinproteccionintegral.com/seguros/mascotas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Dental insurance" : "Seguro Dental", "url": "https://valentinproteccionintegral.com/seguros/dental" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Travel insurance" : "Seguro de Viaje", "url": "https://valentinproteccionintegral.com/seguros/viaje" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Accident insurance" : "Seguro de Accidentes", "url": "https://valentinproteccionintegral.com/seguros/accidentes" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Legal protection" : "Protección Jurídica", "url": "https://valentinproteccionintegral.com/seguros/proteccion-juridica" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Business insurance" : "Seguros para Negocios", "url": "https://valentinproteccionintegral.com/seguros/negocio" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Home appliance insurance" : "Seguro de Electrodomésticos", "url": "https://valentinproteccionintegral.com/seguros/electrodomesticos" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": isEnglish ? "Funeral insurance" : "Seguro de Decesos", "url": "https://valentinproteccionintegral.com/seguros/decesos" } }
-      ]
+      "itemListElement": offerItems
     }
   };
 
