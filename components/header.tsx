@@ -38,6 +38,7 @@ export function Header() {
     if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto' || href === '/extranjeros' || href === '/seguros' || href === '/seguros/salud' || href === '/seguros/salud-extranjeros') {
       return localizedPath(locale, href);
     }
+    if (locale === 'en') return ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies' } as Record<string, string>)[href] ?? href;
     return href;
   };
 

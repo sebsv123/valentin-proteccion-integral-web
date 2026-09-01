@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Política de Cookies | Valentín Protección Integral',
   description: 'Información sobre el uso de cookies en valentinproteccionintegral.com.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://valentinproteccionintegral.com/cookies' },
+  alternates: { canonical: 'https://valentinproteccionintegral.com/cookies', languages: { es: 'https://valentinproteccionintegral.com/cookies', en: 'https://valentinproteccionintegral.com/en/cookies', 'x-default': 'https://valentinproteccionintegral.com/cookies' } },
 };
 
 export const dynamic = 'force-static';

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Política de Privacidad | Valentín Protección Integral',
   description: 'Política de privacidad y tratamiento de datos personales conforme al RGPD.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://valentinproteccionintegral.com/privacidad' },
+  alternates: { canonical: 'https://valentinproteccionintegral.com/privacidad', languages: { es: 'https://valentinproteccionintegral.com/privacidad', en: 'https://valentinproteccionintegral.com/en/privacy', 'x-default': 'https://valentinproteccionintegral.com/privacidad' } },
 };
 
 export const dynamic = 'force-static';

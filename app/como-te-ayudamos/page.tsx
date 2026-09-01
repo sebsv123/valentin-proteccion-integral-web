@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/como-te-ayudamos",
+    languages: { es: "https://valentinproteccionintegral.com/como-te-ayudamos", en: "https://valentinproteccionintegral.com/en/how-we-help", 'x-default': "https://valentinproteccionintegral.com/como-te-ayudamos" },
   },
 };
 

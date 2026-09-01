@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  alternates: { canonical: 'https://valentinproteccionintegral.com/opiniones' },
+  alternates: { canonical: 'https://valentinproteccionintegral.com/opiniones', languages: { es: 'https://valentinproteccionintegral.com/opiniones', en: 'https://valentinproteccionintegral.com/en/reviews', 'x-default': 'https://valentinproteccionintegral.com/opiniones' } },
 };
 
 export const dynamic = 'force-static';

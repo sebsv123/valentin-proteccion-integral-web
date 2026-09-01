@@ -10,7 +10,7 @@ import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
-  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') : href;
+  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', href as '/' | '/internacional' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies' } as Record<string, string>)[href] ?? href : href;
   const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', Seguros: 'Insurance', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
   return (
@@ -53,9 +53,9 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
               <Link className="block hover:text-[var(--blue)]" href="/zonas">{isEnglish ? 'Areas we cover' : 'Zonas que atendemos'}</Link>
               {mainNav.filter((item) => item.label !== 'Empresas').map((item) => <Link className="block hover:text-[var(--blue)]" key={item.href} href={linkHref(item.href)}>{footerLabel(item.label)}</Link>)}
-              <Link className="block hover:text-[var(--blue)]" href="/privacidad">{isEnglish ? 'Privacy' : 'Privacidad'}</Link>
-              <Link className="block hover:text-[var(--blue)]" href="/cookies">Cookies</Link>
-              <Link className="block hover:text-[var(--blue)]" href="/aviso-legal">{isEnglish ? 'Legal notice' : 'Aviso legal'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/privacidad')}>{isEnglish ? 'Privacy' : 'Privacidad'}</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/cookies')}>Cookies</Link>
+              <Link className="block hover:text-[var(--blue)]" href={linkHref('/aviso-legal')}>{isEnglish ? 'Legal notice' : 'Aviso legal'}</Link>
             </div>
           </div>
           <div>

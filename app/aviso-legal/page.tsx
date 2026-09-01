@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Aviso Legal | Valentín Protección Integral',
   description: 'Aviso legal e información sobre el titular del sitio web valentinproteccionintegral.com.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://valentinproteccionintegral.com/aviso-legal' },
+  alternates: { canonical: 'https://valentinproteccionintegral.com/aviso-legal', languages: { es: 'https://valentinproteccionintegral.com/aviso-legal', en: 'https://valentinproteccionintegral.com/en/legal-notice', 'x-default': 'https://valentinproteccionintegral.com/aviso-legal' } },
 };
 
 export const dynamic = 'force-static';
