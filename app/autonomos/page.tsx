@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Seguro para Autónomos en Madrid | Valentín",
   description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
   keywords: "seguro autónomos madrid, seguro médico autónomos irpf, rc profesional madrid, seguro autónomos deducible, protección autónomos madrid",
-  alternates: { canonical: "https://valentinproteccionintegral.com/autonomos" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/autonomos", languages: { es: "https://valentinproteccionintegral.com/autonomos", en: "https://valentinproteccionintegral.com/en/for/self-employed", "x-default": "https://valentinproteccionintegral.com/autonomos" } },
   openGraph: {
     title: "Seguro para Autónomos en Madrid | Valentín",
     description: "Seguro para autónomos en Madrid: salud, accidentes y vida. Posible deducción en el IRPF según tu situación fiscal, gestionado sin complicaciones.",
