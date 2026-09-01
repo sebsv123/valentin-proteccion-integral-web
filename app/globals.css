@@ -50,9 +50,9 @@ img { max-width: 100%; height: auto; }
 .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: .82rem; font-weight: 700; color: var(--blue); }
 .nav-link { font-size: 1.12rem; font-weight: 600; color: var(--blue-deep); }
 
-@media (min-width: 1280px) and (max-width: 2559px) {
+@media (min-width: 1536px) and (max-width: 2559px) {
   .header-primary-nav {
-    --pill-pad-x: 4px !important;
+    --pill-pad-x: 1px !important;
     --pill-gap: 0 !important;
     font-size: 0.875rem;
   }
