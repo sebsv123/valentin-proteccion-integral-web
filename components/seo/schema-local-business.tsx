@@ -1,4 +1,5 @@
 import { site } from '@/lib/products';
+import { getSeoInsuranceCatalog } from '@/lib/seo-insurance-catalog';
 
 interface Props {
   cityName?: string;
@@ -8,26 +9,13 @@ interface Props {
 
 export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' }: Props) {
   const isEnglish = locale === 'en';
-  const offerItems = isEnglish
-    ? [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health insurance", "url": "https://valentinproteccionintegral.com/en/insurance/health" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business insurance", "url": "https://valentinproteccionintegral.com/en/business" } },
-      ]
-    : [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Salud", "url": "https://valentinproteccionintegral.com/seguros/salud" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro para Mascotas", "url": "https://valentinproteccionintegral.com/seguros/mascotas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro Dental", "url": "https://valentinproteccionintegral.com/seguros/dental" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Viaje", "url": "https://valentinproteccionintegral.com/seguros/viaje" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Accidentes", "url": "https://valentinproteccionintegral.com/seguros/accidentes-decesos" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguros para Negocios", "url": "https://valentinproteccionintegral.com/empresas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguro de Decesos", "url": "https://valentinproteccionintegral.com/seguros/decesos" } },
-      ];
+  const offerItems = getSeoInsuranceCatalog(isEnglish ? 'en' : 'es');
   const schema = {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "inLanguage": locale,
     "name": site.name,
-    "description": isEnglish ? "DGSFP-registered insurance advice in Madrid. Personal guidance on health, life, pet, dental, travel, accident, legal protection, home appliance, funeral and business insurance. Over 10 years of experience. Initial consultation free." : "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica, electrodomésticos, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
+    "description": isEnglish ? "DGSFP-registered insurance advice in Madrid. Personal guidance on health, pet, dental, travel, accident, funeral and business insurance. Over 10 years of experience. Initial consultation free." : "Agentes de seguros registrados en la DGSFP en Madrid. Asesoramiento personalizado en salud, mascotas, dental, viaje, accidentes, decesos y negocios. Más de 10 años de experiencia. Primera consulta gratuita.",
     "url": isEnglish ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",
@@ -67,21 +55,17 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
       "https://wa.me/34603448765"
     ],
     "knowsAbout": isEnglish ? [
-      "Health insurance", "Life insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Legal protection", "Home appliance insurance", "Funeral insurance", "Business insurance", "Insurance for international residents", "Pet liability insurance", "Mortgage life insurance", "Insurance for self-employed people"
+      "Health insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Funeral insurance", "Business insurance", "Insurance for international residents", "Pet liability insurance", "Insurance for self-employed people"
     ] : [
       "Seguro de salud",
-      "Seguro de vida",
       "Seguro para mascotas",
       "Seguro dental",
       "Seguro de viaje",
       "Seguro de accidentes",
-      "Protección jurídica",
-      "Seguro de electrodomésticos",
       "Seguro de decesos",
       "Seguros para negocios y pymes",
       "Seguros para extranjeros con visado",
       "Ley de Bienestar Animal seguros mascotas",
-      "Seguro de vida para hipoteca",
       "Seguros para autónomos"
     ],
     "hasOfferCatalog": {

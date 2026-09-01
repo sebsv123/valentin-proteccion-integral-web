@@ -25,6 +25,7 @@ import { site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 import { getHomeContent } from '@/components/home-content';
+import { getSeoInsuranceCatalog } from '@/lib/seo-insurance-catalog';
 
 export const metadata: Metadata = {
   title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
@@ -81,7 +82,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "InsuranceAgency"],
             "name": "Valentín Protección Integral",
-            "description": currentLocale === 'en' ? home.meta.description : "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
+            "description": currentLocale === 'en' ? "DGSFP-registered insurance advice in Madrid covering health, pet, dental, travel, accident, funeral and business insurance." : "Asesora de seguros en Madrid especializada en salud, mascotas, dental, viaje, accidentes, decesos y negocios. Más de 10 años de experiencia.",
             "url": currentLocale === 'en' ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
             "inLanguage": currentLocale,
             "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.webp",
@@ -112,10 +113,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": currentLocale === 'en' ? 'Insurance available' : "Seguros disponibles",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": currentLocale === 'en' ? "Health insurance in Madrid" : "Seguro de Salud en Madrid" }},
-                ...(['life', 'pets', 'dental', 'travel', 'accident', 'funeral'].map((name) => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": currentLocale === 'en' ? ({ life: 'Life insurance in Madrid', pets: 'Pet insurance in Madrid', dental: 'Dental insurance in Madrid', travel: 'Travel insurance in Madrid', accident: 'Accident insurance in Madrid', funeral: 'Funeral insurance in Madrid' } as Record<string, string>)[name] : ({ life: 'Seguro de Vida en Madrid', pets: 'Seguro para Mascotas en Madrid', dental: 'Seguro Dental en Madrid', travel: 'Seguro de Viaje en Madrid', accident: 'Seguro de Accidentes en Madrid', funeral: 'Seguro de Decesos en Madrid' } as Record<string, string>)[name] } })))
-              ]
+              "itemListElement": getSeoInsuranceCatalog(currentLocale).map((offer) => ({ ...offer, itemOffered: { ...offer.itemOffered, name: `${offer.itemOffered.name} ${currentLocale === 'en' ? 'in Madrid' : 'en Madrid'}` } }))
             }
           })
         }}
