@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './IndiaHandoff.module.css';
+import type { IndiaContent } from './india-content';
 
 const aaraGroups = [
   { title: 'EXPLORE', desc: 'Counselling · University selection' },
@@ -15,13 +16,13 @@ const vpiGroups = [
   { title: 'ARRIVE', desc: 'Acompañamiento relacionado con la llegada y necesidades locales.' },
 ];
 
-export function IndiaHandoff() {
+export function IndiaHandoff({ content }: { content: IndiaContent['handoff'] }) {
   return (
     <section className={styles.section} aria-labelledby="handoff-title">
       <div className="container-shell">
         <div className={styles.header}>
-          <p className={styles.eyebrow}>ONE JOURNEY · TWO TEAMS</p>
-          <h2 id="handoff-title" className={styles.title}>Un proceso. Dos equipos.<br /><em>Cada uno donde más valor aporta.</em></h2>
+          <p className={styles.eyebrow}>{content.eyebrow}</p>
+          <h2 id="handoff-title" className={styles.title}>{content.title[0]}<br /><em>{content.title[1]}</em></h2>
         </div>
 
         <div className={styles.grid}>
@@ -36,10 +37,10 @@ export function IndiaHandoff() {
               </div>
               <h3 className={styles.sideTitle}>Aara Consultancy</h3>
               <div className={styles.groupGrid}>
-                {aaraGroups.map((group) => (
-                  <div className={styles.group} key={group.title}>
-                    <span className={`${styles.groupTitle} ${styles.aaraAccent}`}>{group.title}</span>
-                    <p className={styles.groupDesc}>{group.desc}</p>
+                {content.aara.map((group: [string,string]) => (
+                  <div className={styles.group} key={group[0]}>
+                    <span className={`${styles.groupTitle} ${styles.aaraAccent}`}>{group[0]}</span>
+                    <p className={styles.groupDesc}>{group[1]}</p>
                   </div>
                 ))}
               </div>
@@ -68,10 +69,10 @@ export function IndiaHandoff() {
               </div>
               <h3 className={styles.sideTitle}>VPI</h3>
               <div className={styles.groupGrid}>
-                {vpiGroups.map((group) => (
-                  <div className={styles.group} key={group.title}>
-                    <span className={`${styles.groupTitle} ${styles.vpiAccent}`}>{group.title}</span>
-                    <p className={styles.groupDesc}>{group.desc}</p>
+                {content.vpi.map((group: [string,string]) => (
+                  <div className={styles.group} key={group[0]}>
+                    <span className={`${styles.groupTitle} ${styles.vpiAccent}`}>{group[0]}</span>
+                    <p className={styles.groupDesc}>{group[1]}</p>
                   </div>
                 ))}
               </div>
@@ -79,7 +80,7 @@ export function IndiaHandoff() {
           </div>
         </div>
 
-        <p className={styles.closing}>Aara prepara el camino desde India. VPI ayuda a resolver desde España una de las piezas clave del proceso.</p>
+        <p className={styles.closing}>{content.closing}</p>
       </div>
     </section>
   );

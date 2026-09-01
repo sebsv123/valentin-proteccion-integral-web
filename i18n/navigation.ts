@@ -3,6 +3,6 @@ import { routing } from './routing';
 
 export const { Link, redirect, usePathname, useRouter, getPathname } = createNavigation(routing);
 
-export function localizedPath(locale: 'es' | 'en', pathname: '/' | '/internacional' | '/internacional/peru' | '/internacional/australia' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') {
+export function localizedPath(locale: 'es' | 'en', pathname: '/' | '/internacional' | '/internacional/peru' | '/internacional/australia' | '/internacional/india' | '/contacto' | '/extranjeros' | '/seguros' | '/seguros/salud' | '/seguros/salud-extranjeros') {
   return getPathname({ locale, href: pathname });
 }

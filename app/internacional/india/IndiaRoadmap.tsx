@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react';
 import { Search, Landmark, FilePenLine, BadgeCheck, ShieldCheck, Luggage } from 'lucide-react';
 import styles from './IndiaRoadmap.module.css';
+import type { IndiaContent } from './india-content';
 
 type Role = 'aara' | 'both' | 'vpi';
 
@@ -48,19 +49,19 @@ function RoadmapStep({ step }: { step: Step }) {
   );
 }
 
-export function IndiaRoadmap() {
+export function IndiaRoadmap({ content }: { content: IndiaContent['roadmap'] }) {
   return (
     <section className={styles.section} aria-labelledby="india-roadmap-title">
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.eyebrow}>INDIA <span className={styles.eyebrowArrow}>→</span> SPAIN</p>
-          <h2 id="india-roadmap-title" className={styles.title}>De India a España,<br /><em>paso a paso.</em></h2>
-          <p className={styles.intro}>Un recorrido claro, acompañado de principio a fin. Aara te guía desde India y VPI resuelve contigo la parte española.</p>
+          <p className={styles.eyebrow}>{content.eyebrow.replace('→', '')}<span className={styles.eyebrowArrow}>→</span> SPAIN</p>
+          <h2 id="india-roadmap-title" className={styles.title}>{content.title[0]}<br /><em>{content.title[1]}</em></h2>
+          <p className={styles.intro}>{content.intro}</p>
         </div>
 
         <div className={styles.roadmap}>
           <div className={styles.grid}>
-            {STEPS_AARA.map((step) => <RoadmapStep key={step.number} step={step} />)}
+            {content.aara.map((step: [string,string], i: number) => <RoadmapStep key={step[0]} step={{number:`0${i+1}`,title:step[0],desc:step[1],role:'aara',roleLabel:'AARA',icon:STEPS_AARA[i].icon}} />)}
           </div>
 
           <div className={styles.transition}>
@@ -70,19 +71,19 @@ export function IndiaRoadmap() {
           </div>
 
           <div className={styles.grid}>
-            {STEPS_VPI.map((step) => <RoadmapStep key={step.number} step={step} />)}
+            {content.vpi.map((step: [string,string], i: number) => <RoadmapStep key={step[0]} step={{number:`0${i+4}`,title:step[0],desc:step[1],role:i===0?'both':'vpi',roleLabel:i===0?'AARA + VPI':'VPI',icon:STEPS_VPI[i].icon}} />)}
           </div>
         </div>
 
         <div className={styles.support}>
           <div className={styles.supportCol}>
             <strong className={styles.labelAara}>AARA CONSULTANCY</strong>
-            <p>Acompañamiento académico, selección, aplicaciones, documentación, visado y preparación desde India.</p>
+            <p>{content.supportAara}</p>
           </div>
           <div className={styles.supportDivider} aria-hidden="true" />
           <div className={styles.supportCol}>
             <strong className={styles.labelVpi}>VPI</strong>
-            <p>Especialistas en seguro médico para España y apoyo desde tu llegada.</p>
+            <p>{content.supportVpi}</p>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 
-const supportedPathnames = new Set(['/', '/internacional', '/internacional/peru', '/internacional/australia']);
+const supportedPathnames = new Set(['/', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india']);
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -31,7 +31,7 @@ export function LanguageSwitcher() {
   }
   return (
     <Link
-      href={pathname as '/' | '/internacional' | '/internacional/peru' | '/internacional/australia'}
+      href={pathname as '/' | '/internacional' | '/internacional/peru' | '/internacional/australia' | '/internacional/india'}
       locale={targetLocale}
       aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
       className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"

@@ -18,6 +18,10 @@ export const routing = defineRouting({
       es: '/internacional/australia',
       en: '/international/australia',
     },
+    '/internacional/india': {
+      es: '/internacional/india',
+      en: '/international/india',
+    },
     '/contacto': {
       es: '/contacto',
       en: '/contact',
