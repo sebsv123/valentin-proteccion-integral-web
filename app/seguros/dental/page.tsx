@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Seguro Dental Sin Carencias Madrid | Valentín Protección Integral",
   description: "Seguro dental económico Madrid. Sin carencias. WhatsApp cotización inmediata. Rosa y Sebastián.",
   keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/dental" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/dental", languages: { es: "https://valentinproteccionintegral.com/seguros/dental", en: "https://valentinproteccionintegral.com/en/insurance/dental-insurance", 'x-default': "https://valentinproteccionintegral.com/seguros/dental" } },
   openGraph: {
     title: "Seguro Dental Sin Carencias Madrid | Sin esperas",
     description: "Sin carencias desde día 1. Implantes incluidos. Cotiza WhatsApp 30min.",

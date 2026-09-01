@@ -1,0 +1,9 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { ProductPageView } from '@/app/seguros/[slug]/page';
+import { products } from '@/lib/products';
+import { getLocalizedProduct, localizedProductPath, resolveProductSlug } from '@/lib/product-locales';
+export const dynamic = 'force-dynamic';
+export function generateStaticParams() { return products.filter((p) => p.slug !== 'salud').flatMap((p) => [{ slug: p.slug }, { slug: ({ accidentes:'accident-insurance', decesos:'funeral-insurance', dental:'dental-insurance', mascotas:'pet-insurance', viaje:'travel-insurance' } as Record<string,string>)[p.slug] }]); }
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> { const { locale, slug } = await params; const product = products.find((p) => p.slug === resolveProductSlug(slug)); const url = product ? `https://valentinproteccionintegral.com${localizedProductPath(product.slug, 'en')}` : ''; return product && locale === 'en' ? { title: `${getLocalizedProduct(product,'en').metaTitle}`, description: getLocalizedProduct(product,'en').metaDescription, alternates: { canonical: url, languages: { es: `https://valentinproteccionintegral.com/seguros/${product.slug}`, en: url, 'x-default': `https://valentinproteccionintegral.com/seguros/${product.slug}` } }, openGraph: { title: getLocalizedProduct(product,'en').metaTitle, description: getLocalizedProduct(product,'en').metaDescription, url, locale: 'en_GB', type: 'website' } } : {}; }
+export default async function EnglishProductRoute({ params }: { params: Promise<{ locale: string; slug: string }> }) { const { locale, slug } = await params; if (locale !== 'en') notFound(); const resolved = resolveProductSlug(slug); if (resolved === 'salud') notFound(); return <ProductPageView slug={resolved} locale="en" />; }

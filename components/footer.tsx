@@ -3,6 +3,7 @@ import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
 import { siteConfig } from '@/lib/site-config';
 import { useLocale } from 'next-intl';
 import { localizedPath } from '@/i18n/navigation';
+import { localizedProductPath } from '@/lib/product-locales';
 import { WhatsAppButton } from './whatsapp-button';
 import { BrandLockup } from './ui/brand-lockup';
 import { CookieAwareMap } from './cookie-aware-map';
@@ -40,7 +41,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
             <p className="font-heading text-lg font-semibold text-[var(--blue-deep)]">{isEnglish ? 'Insurance' : 'Seguros'}</p>
             <div className="mt-4 space-y-3 text-[var(--muted)]">
               <Link className="block tracking-wide hover:text-[var(--blue)]" href={linkHref('/extranjeros')}>{isEnglish ? 'FOREIGNERS' : 'EXTRANJEROS'}</Link>
-              {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={product.slug === 'salud' ? linkHref('/seguros/salud') : `/seguros/${product.slug}`}>{productLabel(product.label)}</Link>)}
+              {products.map((product) => <Link className="block tracking-wide hover:text-[var(--blue)]" key={product.slug} href={product.slug === 'salud' ? linkHref('/seguros/salud') : localizedProductPath(product.slug, isEnglish ? 'en' : 'es')}>{productLabel(product.label)}</Link>)}
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/salud">{isEnglish ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</Link>
               <Link className="block tracking-wide hover:text-[var(--blue)]" href="/empresas/ciberseguridad">{isEnglish ? 'CYBERSECURITY FOR BUSINESSES' : 'CIBERSEGURIDAD PARA EMPRESAS'}</Link>
             </div>

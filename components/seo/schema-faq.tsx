@@ -3,12 +3,13 @@ export type FAQItem = {
   answer: string;
 };
 
-export default function SchemaFAQ({ faqs }: { faqs: FAQItem[] }) {
+export default function SchemaFAQ({ faqs, locale }: { faqs: FAQItem[]; locale?: 'es' | 'en' }) {
   if (!faqs || faqs.length === 0) return null;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(locale ? { inLanguage: locale } : {}),
     "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,

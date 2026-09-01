@@ -5,6 +5,8 @@ import { Check, ChevronRight, FileText, HelpCircle, Layers3, LifeBuoy, Lightbulb
 import { productCompare } from '@/lib/product-comparison';
 import { buildWhatsAppHref } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
+import { translateProductText } from '@/lib/product-locales';
+import { useLocale } from 'next-intl';
 
 const icons = {
   modalidades: Layers3,
@@ -40,13 +42,15 @@ const tagColors: Record<string, string> = {
   'Viajeros frecuentes': 'bg-[rgba(76,175,80,0.1)] text-[#2E7D32]',
 };
 
-export function ProductTabs({ slug }: { slug: string }) {
+export function ProductTabs({ slug, locale }: { slug: string; locale?: 'es'|'en' }) {
   const config = productCompare[slug];
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   const [active, setActive] = useState(config?.tabs[0]?.id ?? '');
 
   if (!config) return null;
 
   const current = config.tabs.find((tab) => tab.id === active) ?? config.tabs[0];
+  const tx = (value: string) => en ? translateProductText(value) : value;
   const hasTable = current.columns && current.rows;
   const hasCards = current.cards && current.cards.length > 0;
   const hasAdvice = current.advice && current.advice.length > 0;
@@ -67,7 +71,7 @@ export function ProductTabs({ slug }: { slug: string }) {
                   className={`inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold tracking-wide transition-all duration-200 md:text-base ${selected ? 'border-[var(--blue)] bg-[var(--blue)] text-white shadow-lg scale-[1.02]' : 'border-[var(--border)] bg-white text-[var(--blue-deep)] hover:border-[var(--blue)] hover:text-[var(--blue)] hover:shadow-md'}`}
                 >
                   <Icon className="h-4 w-4" />
-                  {tab.label}
+                  {tx(tab.label)}
                 </button>
               );
             })}
@@ -77,7 +81,7 @@ export function ProductTabs({ slug }: { slug: string }) {
           <div className="mt-6">
             {/* Intro */}
             {current.intro && (
-              <p className="mb-6 text-base leading-8 text-[var(--muted)] max-w-3xl">{current.intro}</p>
+            <p className="mb-6 text-base leading-8 text-[var(--muted)] max-w-3xl">{current.intro && tx(current.intro)}</p>
             )}
 
             {/* Table View */}
@@ -87,24 +91,24 @@ export function ProductTabs({ slug }: { slug: string }) {
                   <table className="min-w-full border-collapse text-left">
                     <thead>
                       <tr className="bg-[var(--blue-deep)] text-white">
-                        <th className="px-5 py-4 font-heading text-sm font-semibold uppercase tracking-wider md:text-base">Característica</th>
+                        <th className="px-5 py-4 font-heading text-sm font-semibold uppercase tracking-wider md:text-base">{en ? 'Feature' : 'Característica'}</th>
                         {current.columns!.map((col) => (
-                          <th key={col} className="px-5 py-4 font-heading text-sm font-semibold uppercase tracking-wider md:text-base text-center">{col}</th>
+                          <th key={col} className="px-5 py-4 font-heading text-sm font-semibold uppercase tracking-wider md:text-base text-center">{tx(col)}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       {current.rows!.map((row, idx) => (
                         <tr key={row.label} className={`transition-colors hover:bg-[rgba(15,94,156,0.04)] ${idx % 2 === 0 ? 'bg-white' : 'bg-[var(--bg)]'}`}>
-                          <td className="px-5 py-4 text-sm font-semibold text-[var(--text)] md:text-base border-r border-[var(--border)]">{row.label}</td>
+                          <td className="px-5 py-4 text-sm font-semibold text-[var(--text)] md:text-base border-r border-[var(--border)]">{tx(row.label)}</td>
                           {row.values.map((value, valueIdx) => (
                             <td key={`${row.label}-${valueIdx}`} className="px-5 py-4 text-sm text-center md:text-base">
                               {value === 'Sí' ? (
-                                <span className="inline-flex items-center gap-1.5 font-semibold text-[#2E7D32]"><Check className="h-4 w-4" /> Sí</span>
+                                <span className="inline-flex items-center gap-1.5 font-semibold text-[#2E7D32]"><Check className="h-4 w-4" /> {en ? 'Yes' : 'Sí'}</span>
                               ) : value === 'No' ? (
                                 <span className="text-[var(--muted)] font-medium">—</span>
                               ) : (
-                                <span className="text-[var(--muted)] font-medium">{value}</span>
+                                <span className="text-[var(--muted)] font-medium">{typeof value === 'string' ? tx(value) : value}</span>
                               )}
                             </td>
                           ))}
@@ -114,7 +118,7 @@ export function ProductTabs({ slug }: { slug: string }) {
                   </table>
                 </div>
                 <div className="px-5 py-3 bg-[var(--bg)] border-t border-[var(--border)]">
-                  <p className="text-xs text-[var(--muted)] italic">Tabla orientativa. Las coberturas exactas dependen de la compañía y la modalidad elegida.</p>
+                  <p className="text-xs text-[var(--muted)] italic">{en ? 'General guide. Exact cover depends on the insurer and selected plan.' : 'Tabla orientativa. Las coberturas exactas dependen de la compañía y la modalidad elegida.'}</p>
                 </div>
               </div>
             )}
@@ -133,10 +137,10 @@ export function ProductTabs({ slug }: { slug: string }) {
                   return (
                   <div key={card.title} className={`group rounded-[22px] border p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--blue)]/20 hover:-translate-y-0.5 ${cardClass}`}>
                     {card.tag && (
-                      <span className={`inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-widest mb-4 ${tagColors[card.tag] || 'bg-[var(--bg)] text-[var(--blue-deep)]'}`}>{card.tag}</span>
+                      <span className={`inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-widest mb-4 ${tagColors[card.tag] || 'bg-[var(--bg)] text-[var(--blue-deep)]'}`}>{tx(card.tag)}</span>
                     )}
-                    <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)] leading-tight">{card.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{card.desc}</p>
+                    <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)] leading-tight">{tx(card.title)}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{tx(card.desc)}</p>
                   </div>
                   );
                 })}
@@ -151,8 +155,8 @@ export function ProductTabs({ slug }: { slug: string }) {
                     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--blue-deep)] text-sm font-bold text-white shadow-md">
                       {String(idx + 1).padStart(2, '0')}
                     </div>
-                    <h3 className="font-heading text-lg font-bold text-[var(--blue-deep)] leading-tight">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{item.desc}</p>
+                    <h3 className="font-heading text-lg font-bold text-[var(--blue-deep)] leading-tight">{tx(item.title)}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{tx(item.desc)}</p>
                   </div>
                 ))}
               </div>
@@ -164,7 +168,7 @@ export function ProductTabs({ slug }: { slug: string }) {
                 {current.bullets.map((bullet) => (
                   <div key={bullet} className="flex items-start gap-3 rounded-[20px] border border-[var(--border)] bg-white px-5 py-5 shadow-sm">
                     <ChevronRight className="h-5 w-5 shrink-0 text-[var(--blue)] mt-0.5" />
-                    <p className="text-sm leading-7 text-[var(--text)] md:text-base">{bullet}</p>
+                    <p className="text-sm leading-7 text-[var(--text)] md:text-base">{tx(bullet)}</p>
                   </div>
                 ))}
               </div>
@@ -172,8 +176,8 @@ export function ProductTabs({ slug }: { slug: string }) {
 
             {/* Contextual CTA */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row items-start">
-              <a href={buildWhatsAppHref(`Hola, quiero orientación sobre seguro de ${slug} (${current.label}).`)} className="btn-whatsapp">
-                <WhatsAppIcon className="h-4 w-4" /> Resolver por WhatsApp
+              <a href={buildWhatsAppHref(en ? `Hello, I would like guidance about ${slug} insurance (${current.label}).` : `Hola, quiero orientación sobre seguro de ${slug} (${current.label}).`)} className="btn-whatsapp">
+                <WhatsAppIcon className="h-4 w-4" /> {en ? 'Ask on WhatsApp' : 'Resolver por WhatsApp'}
               </a>
             </div>
           </div>

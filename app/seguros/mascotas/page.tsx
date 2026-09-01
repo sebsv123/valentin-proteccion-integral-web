@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/seguros/mascotas",
+    languages: { es: "https://valentinproteccionintegral.com/seguros/mascotas", en: "https://valentinproteccionintegral.com/en/insurance/pet-insurance", 'x-default': "https://valentinproteccionintegral.com/seguros/mascotas" },
   },
 };
 

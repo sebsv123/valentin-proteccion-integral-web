@@ -4,10 +4,11 @@ export type BreadcrumbItem = {
   position: number;
 };
 
-export default function SchemaBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
+export default function SchemaBreadcrumb({ items, locale }: { items: BreadcrumbItem[]; locale?: 'es' | 'en' }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(locale ? { inLanguage: locale } : {}),
     "itemListElement": items.map(item => ({
       "@type": "ListItem",
       "position": item.position,

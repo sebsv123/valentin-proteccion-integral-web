@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Seguro Viaje Temporal Madrid | Desde Salida Aeropuerto",
   description: "Cobertura única desde casa. Temporal <90 días. Protegido desde salida aeropuerto Madrid. Repatriación incluida. Sin franquicia inicial.",
   keywords: ["seguro viaje temporal España","cobertura salida aeropuerto Madrid","seguro viaje 90 días","seguro viaje corto Madrid"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/viaje" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/seguros/viaje", languages: { es: "https://valentinproteccionintegral.com/seguros/viaje", en: "https://valentinproteccionintegral.com/en/insurance/travel-insurance", 'x-default': "https://valentinproteccionintegral.com/seguros/viaje" } },
   openGraph: {
     title: "Seguro Viaje Temporal Madrid | Desde Salida Aeropuerto",
     description: "Cobertura única desde casa. Temporal <90 días. Protegido desde salida aeropuerto Madrid. Repatriación incluida.",

@@ -13,6 +13,7 @@ import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import RevealLight from '@/components/ui/reveal-light';
 import { getLocalPexelsImage } from '@/lib/pexels';
 import { localizedPath } from '@/i18n/navigation';
+import { localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
 
 export const metadata: Metadata = {
   title: "Todos Nuestros Seguros en Madrid | Valentín Protección",
@@ -107,14 +108,14 @@ export function InsuranceHubPageView({ locale = 'es' }: { locale?: 'es' | 'en' }
                       {children.length ? (
                         <div className="mt-5 flex flex-wrap gap-2">
                               {children.map((child) => (
-                            <Link key={child.slug} href={en && product.slug === 'salud' && child.slug === 'extranjeros' ? '/en/insurance/health/foreigners' : `/seguros/${product.slug}/${child.slug}`} className="rounded-full bg-white/50 backdrop-blur-sm border border-[var(--border)] px-3 py-1.5 text-xs font-bold text-[var(--blue-deep)] hover:bg-[var(--blue)] hover:text-white transition-all">
+                            <Link key={child.slug} href={localizedSubpagePath(product.slug, child.slug, en ? 'en' : 'es')} className="rounded-full bg-white/50 backdrop-blur-sm border border-[var(--border)] px-3 py-1.5 text-xs font-bold text-[var(--blue-deep)] hover:bg-[var(--blue)] hover:text-white transition-all">
                               {en ? (childLabelEnglish[child.slug] ?? child.label) : child.label}
                             </Link>
                           ))}
                         </div>
                       ) : null}
                       <div className="mt-8 flex flex-col gap-3">
-                        <Link href={product.slug === 'salud' ? localizedPath(locale, '/seguros/salud') : `/seguros/${product.slug}`} className="btn-secondary w-full justify-center">{copy.details}</Link>
+                        <Link href={product.slug === 'salud' ? localizedPath(locale, '/seguros/salud') : localizedProductPath(product.slug, en ? 'en' : 'es')} className="btn-secondary w-full justify-center">{copy.details}</Link>
                         <a 
                           href={buildWhatsAppHref(
                             en ? `Hello, I would like information about ${localizedProduct?.label ?? product.label}.` : `Hola, me interesa información sobre ${product.label}.`

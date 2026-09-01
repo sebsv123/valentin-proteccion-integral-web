@@ -44,6 +44,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/seguros/decesos",
+    languages: { es: "https://valentinproteccionintegral.com/seguros/decesos", en: "https://valentinproteccionintegral.com/en/insurance/funeral-insurance", 'x-default': "https://valentinproteccionintegral.com/seguros/decesos" },
   },
 };
 

@@ -2,8 +2,9 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
+import { productPathnames } from '@/lib/product-locales';
 
-const supportedPathnames = new Set(['/', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india', '/internacional/corea-del-sur']);
+const supportedPathnames = new Set(['/', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india', '/internacional/corea-del-sur', ...Object.keys(productPathnames)]);
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -30,8 +31,8 @@ export function LanguageSwitcher() {
     );
   }
   const targetHref = targetLocale === 'en'
-    ? ({ '/internacional': '/en/international', '/internacional/peru': '/en/international/peru', '/internacional/australia': '/en/international/australia', '/internacional/india': '/en/international/india', '/internacional/corea-del-sur': '/en/international/south-korea' } as Record<string, string>)[pathname] ?? '/en'
-    : ({ '/internacional': '/internacional', '/internacional/peru': '/internacional/peru', '/internacional/australia': '/internacional/australia', '/internacional/india': '/internacional/india', '/internacional/corea-del-sur': '/internacional/corea-del-sur' } as Record<string, string>)[pathname] ?? '/';
+    ? ({ '/contacto': '/en/contact', '/extranjeros': '/en/foreigners', '/seguros': '/en/insurance', '/seguros/salud': '/en/insurance/health', '/seguros/salud-extranjeros': '/en/insurance/health/foreigners', '/internacional': '/en/international', '/internacional/peru': '/en/international/peru', '/internacional/australia': '/en/international/australia', '/internacional/india': '/en/international/india', '/internacional/corea-del-sur': '/en/international/south-korea', ...productPathnames } as Record<string, string>)[pathname] ?? '/en'
+    : ({ '/contacto': '/contacto', '/extranjeros': '/extranjeros', '/seguros': '/seguros', '/seguros/salud': '/seguros/salud', '/seguros/salud-extranjeros': '/seguros/salud-extranjeros', '/internacional': '/internacional', '/internacional/peru': '/internacional/peru', '/internacional/australia': '/internacional/australia', '/internacional/india': '/internacional/india', '/internacional/corea-del-sur': '/internacional/corea-del-sur', ...Object.fromEntries(Object.keys(productPathnames).map((path) => [path, path])) } as Record<string, string>)[pathname] ?? '/';
   return (
     <a
       href={targetHref}

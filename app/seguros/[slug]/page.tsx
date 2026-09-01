@@ -14,6 +14,7 @@ import { HealthContactProfilesSection } from '@/components/health-contact-profil
 import { HealthFaqSection } from '@/components/health-faq-section';
 import { HealthFinalGuidanceSection } from '@/components/health-final-guidance-section';
 import { getProduct, products, site } from '@/lib/products';
+import { getLocalizedProduct, localizedProductPath } from '@/lib/product-locales';
 import FaqSchema from '@/components/FaqSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
@@ -63,21 +64,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export const dynamic = 'force-static';
 
 export async function ProductPageView({ slug, locale = 'es' }: { slug: string; locale?: 'es' | 'en' }) {
-  const product = getProduct(slug);
-  if (!product) notFound();
+  const baseProduct = getProduct(slug);
+  if (!baseProduct) notFound();
+  const product = getLocalizedProduct(baseProduct, locale);
   const en = locale === 'en';
   const healthFaqs = en ? healthContent.en.faq : healthContent.es.faq;
 
   return (
     <>
       <BreadcrumbSchema
+        locale={locale}
         items={[
           { name: en ? 'Home' : 'Inicio', url: en ? '/en' : '/' },
           { name: en ? 'Insurance' : 'Seguros', url: en ? '/en/insurance' : '/seguros' },
-          { name: en ? 'Health insurance' : product.name, url: en ? '/en/insurance/health' : `/seguros/${product.slug}` }
+          { name: product.name, url: en ? localizedProductPath(product.slug, 'en') : `/seguros/${product.slug}` }
         ]}
       />
-      <FaqSchema faqs={slug === 'salud' ? healthFaqs.map((item) => ({ q: item.question, a: item.answer })) : product.faqs} />
+      <FaqSchema locale={locale} faqs={slug === 'salud' ? healthFaqs.map((item) => ({ q: item.question, a: item.answer })) : product.faqs} />
       <Header />
 
       {/* Sticky Banner - Garantía de Precio */}
@@ -93,28 +96,28 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? 'Health insurance' : product.label }]} />
         </div>
-        <ProductHero product={product} />
+        <ProductHero product={product} locale={locale} />
 
         {/* Garantía de precio destacada para viaje */}
         {slug === 'viaje' && (
           <div className="bg-[#002244] text-white py-3 px-4">
             <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
               <p className="text-sm font-semibold text-white/90">
-                🛡️ <strong>Garantía de precio:</strong> Si encuentras el mismo seguro más barato, te lo igualamos. Sin letra pequeña.
+                🛡️ <strong>{en ? 'Price guarantee:' : 'Garantía de precio:'}</strong> {en ? 'If you find the same insurance cheaper, we match it. No small print.' : 'Si encuentras el mismo seguro más barato, te lo igualamos. Sin letra pequeña.'}
               </p>
               <WhatsAppLink
                 href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
                 className="inline-flex flex-none items-center gap-1.5 text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
               >
                 <WhatsAppIcon className="h-4 w-4" />
-                Consúltanos →
+                {en ? 'Ask us' : 'Consúltanos'} →
               </WhatsAppLink>
             </div>
           </div>
         )}
 
-        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /></> : <ProductTabs slug={product.slug} />}
-        {product.slug === 'salud' ? <HealthCoverageHighlightsSection /> : <CoverageHighlights product={product} />}
+        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
+        {product.slug === 'salud' ? <HealthCoverageHighlightsSection /> : <CoverageHighlights product={product} locale={locale} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
         {false && slug === 'salud' && (
@@ -248,8 +251,8 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           </section>
         )}
 
-        {product.slug === 'salud' ? <HealthDecisionGuideSection /> : <ProductDecisionGrid product={product} />}
-        {product.slug === 'salud' ? <HealthContactProfilesSection product={product} /> : <CasesAndForm product={product} defaultProduct={product.slug} />}
+        {product.slug === 'salud' ? <HealthDecisionGuideSection /> : <ProductDecisionGrid product={product} locale={locale} />}
+        {product.slug === 'salud' ? <HealthContactProfilesSection product={product} /> : <CasesAndForm product={product} defaultProduct={product.slug} locale={locale} />}
 
         {/* Sección Garantía de Precio Justo */}
         {slug !== 'salud' && <section className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white">
@@ -258,14 +261,14 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                 <Shield className="h-5 w-5" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Nuestra Garantía de Precio Justo</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold">{en ? 'Our fair-price guarantee' : 'Nuestra Garantía de Precio Justo'}</h2>
             </div>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.
+              {en ? 'If you find the same insurance cheaper with another agency, we match it. No small print.' : 'Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.'}
             </p>
             {slug === 'viaje' && (
               <p className="text-base text-emerald-300 font-medium mb-4 -mt-4">
-                ¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en nuestro horario de atención tienes opciones reales encima de la mesa.
+                {en ? 'Have you already set your travel dates? Tell us your destination and duration — we will put clear options on the table.' : '¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en nuestro horario de atención tienes opciones reales encima de la mesa.'}
               </p>
             )}
             <WhatsAppLink
@@ -276,7 +279,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
               )}
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Compara ahora gratis
+              {en ? 'Compare for free now' : 'Compara ahora gratis'}
             </WhatsAppLink>
           </div>
         </section>}
@@ -285,8 +288,8 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           <HealthFaqSection whatsappMessage={product.whatsappMessage} />
           <HealthFinalGuidanceSection whatsappMessage={product.whatsappMessage} />
         </> : <>
-          <ProductFaqSection product={product} />
-          <GoogleReviewsWidget title={`Opiniones sobre nuestro seguro de ${product.label}`} />
+          <ProductFaqSection product={product} locale={locale} />
+          <GoogleReviewsWidget title={en ? `Reviews of our ${product.label}` : `Opiniones sobre nuestro seguro de ${product.label}`} />
         </>}
 
         {/* Sección Equipo - Solo para negocio */}
@@ -397,15 +400,13 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
                 </div>
                 <div className="text-center lg:text-left">
                   <h2 className="text-3xl sm:text-4xl font-bold text-[var(--blue-deep)] mb-4">
-                    Rosa y Sebastián te ayudan a elegir el seguro de viaje que realmente necesitas
+                    {en ? 'Rosa and Sebastián help you choose the travel insurance you actually need' : 'Rosa y Sebastián te ayudan a elegir el seguro de viaje que realmente necesitas'}
                   </h2>
                   <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">
-                    Con más de 10 años comparando opciones para familias y viajeros frecuentes en Madrid,
-                    sabemos que el seguro que vende el banco rara vez es el más completo.
-                    Te explicamos qué hay detrás de cada modalidad antes de que contrates.
+                    {en ? 'With more than 10 years comparing options for families and frequent travellers in Madrid, we know that the insurance sold by a bank is rarely the most comprehensive. We explain what sits behind each plan before you arrange it.' : 'Con más de 10 años comparando opciones para familias y viajeros frecuentes en Madrid, sabemos que el seguro que vende el banco rara vez es el más completo. Te explicamos qué hay detrás de cada modalidad antes de que contrates.'}
                   </p>
                   <p className="text-base font-semibold text-[var(--muted)] leading-relaxed mb-6">
-                    ¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en nuestro horario de atención.
+                    {en ? 'Travelling soon? Tell us your destination and dates — we will prepare options during our opening hours.' : '¿Viajas pronto? Cuéntanos destino y fechas — te preparamos opciones en nuestro horario de atención.'}
                   </p>
                   <WhatsAppLink
                     href="https://wa.me/34603448765?text=Hola%2C%20quiero%20orientaci%C3%B3n%20sobre%20un%20seguro%20de%20viaje."
@@ -414,8 +415,8 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
                       'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
                     )}
                   >
-                    <WhatsAppIcon className="h-5 w-5" />
-                    Hablar con Rosa Valentín
+                      <WhatsAppIcon className="h-5 w-5" />
+                      {en ? 'Talk to Rosa Valentín' : 'Hablar con Rosa Valentín'}
                   </WhatsAppLink>
                 </div>
               </div>
@@ -423,8 +424,8 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           </section>
         )}
 
-        {slug !== 'salud' && <ProductCTASection product={product} title={`¿Quieres que te ayudemos con ${product.label}?`} text={`Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.`} message={product.whatsappMessage} />}
-        <RelatedProducts product={product} healthVariant={product.slug === 'salud'} />
+        {slug !== 'salud' && <ProductCTASection product={product} locale={locale} title={en ? `Would you like help with ${product.label}?` : `¿Quieres que te ayudemos con ${product.label}?`} text={en ? 'We help you understand, compare and choose with clear, human guidance before arranging cover.' : 'Te ayudamos a entender, comparar y elegir mejor, con una orientación humana y útil antes de contratar.'} message={product.whatsappMessage} />}
+        <RelatedProducts product={product} locale={locale} healthVariant={product.slug === 'salud'} />
       </main>
       <Footer healthVariant={product.slug === 'salud'} />
       <StickyWhatsApp />

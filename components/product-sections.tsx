@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, BadgePercent, Check, CircleHelp, ClipboardList, HeartHandshake, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
 import RevealLight from './ui/reveal-light';
 import { buildWhatsAppHref, getRelatedProducts, getSubpagesForProduct, site } from '@/lib/products';
+import { getLocalizedProduct, localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
 import type { Product, ProductSubpage } from '@/lib/products';
 import { LeadForm } from './lead-form';
 import { FAQAccordion } from './faq-accordion';
@@ -10,8 +11,8 @@ import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { EditorialProductHero } from './editorial-product-hero';
 import { useLocale } from 'next-intl';
 
-export function ProductHero({ product }: { product: Product }) {
-  const en = useLocale() === 'en';
+export function ProductHero({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   if (product.slug === 'salud') return <EditorialProductHero product={product} />;
   const subpages = getSubpagesForProduct(product.slug);
   const advisor = product.customAdvisor || {
@@ -32,12 +33,12 @@ export function ProductHero({ product }: { product: Product }) {
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">{product.heroCopy}</p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary hover-lift px-10">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
-                  <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
+                  <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(product.whatsappMessage)}`} className="btn-whatsapp animate-pulse-soft px-10"><WhatsAppIcon className="h-5 w-5" /> {en ? 'Talk to' : 'Hablar con'} {advisor.name}</a>
                 </div>
                 {subpages.length ? (
                   <div className="mt-7 flex flex-wrap gap-3">
                     {subpages.map((sub) => (
-                      <Link key={sub.slug} href={`/seguros/${product.slug}/${sub.slug}`} className="rounded-full border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold tracking-wide text-[var(--blue-deep)] hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all hover:shadow-md">
+                      <Link key={sub.slug} href={localizedSubpagePath(product.slug, sub.slug, en ? 'en' : 'es')} className="rounded-full border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold tracking-wide text-[var(--blue-deep)] hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all hover:shadow-md">
                         {sub.label}
                       </Link>
                     ))}
@@ -64,17 +65,18 @@ export function ProductHero({ product }: { product: Product }) {
   );
 }
 
-export function CoverageHighlights({ product }: { product: Product }) {
+export function CoverageHighlights({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
   const isNegocio = product.slug === 'negocio';
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   
   return (
      <section id="coberturas" aria-labelledby="coverage-title" className="section-pad bg-alternate">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
         <RevealLight direction="right">
           <div>
-            <p className="kicker">Coberturas destacadas</p>
-            <h2 id="coverage-title" className="mt-3 section-title">Lo importante de {product.label}, explicado con más orden</h2>
-            <p className="section-copy mt-4">Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.</p>
+            <p className="kicker">{en ? 'Featured cover' : 'Coberturas destacadas'}</p>
+            <h2 id="coverage-title" className="mt-3 section-title">{en ? `What matters about ${product.label}, explained clearly` : `Lo importante de ${product.label}, explicado con más orden`}</h2>
+            <p className="section-copy mt-4">{en ? 'A short summary of what usually shapes the decision, what varies and what is worth checking before arranging cover.' : 'Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.'}</p>
             {isNegocio && (
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">
                 Un seguro de negocio bien diseñado protege tanto el continente (local, instalaciones, mobiliario) como el contenido (stock, equipos, mercancía) y la responsabilidad frente a terceros. Las coberturas más habituales en un multirriesgo de comercio o pyme incluyen:
@@ -102,24 +104,25 @@ export function CoverageHighlights({ product }: { product: Product }) {
   );
 }
 
-export function ProductDecisionGrid({ product }: { product: Product }) {
+export function ProductDecisionGrid({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   const blocks = [
     {
-      title: 'Qué suele incluir',
+      title: en ? 'What it usually includes' : 'Qué suele incluir',
       items: product.whatIncludes,
       icon: ClipboardList,
       tint: 'bg-[rgba(15,94,156,0.06)]',
       accent: 'border-l-[var(--blue)]',
     },
     {
-      title: 'Qué no siempre viene igual',
+      title: en ? 'What does not always come the same way' : 'Qué no siempre viene igual',
       items: product.whatVaries,
       icon: ShieldAlert,
       tint: 'bg-[rgba(242,140,40,0.08)]',
       accent: 'border-l-[var(--orange)]',
     },
     {
-      title: 'Qué conviene revisar antes de contratar',
+      title: en ? 'What to review before arranging cover' : 'Qué conviene revisar antes de contratar',
       items: product.whatReview,
       icon: CircleHelp,
       tint: 'bg-[rgba(123,198,126,0.12)]',
@@ -132,9 +135,9 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
       <div className="container-shell">
         <RevealLight>
           <div className="mb-8 max-w-3xl">
-            <p className="kicker">Lo que conviene tener claro</p>
-            <h2 className="mt-3 section-title">Una lectura breve para entender mejor {product.label}</h2>
-            <p className="section-copy mt-4">Este bloque resume qué suele incluir, qué puede cambiar según modalidad y qué merece la pena revisar antes de decidir. Sirve para orientar sin saturarte.</p>
+            <p className="kicker">{en ? 'What is worth knowing' : 'Lo que conviene tener claro'}</p>
+            <h2 className="mt-3 section-title">{en ? `A short guide to understand ${product.label}` : `Una lectura breve para entender mejor ${product.label}`}</h2>
+            <p className="section-copy mt-4">{en ? 'This section summarises what is usually included, what may vary by plan and what is worth checking before deciding.' : 'Este bloque resume qué suele incluir, qué puede cambiar según modalidad y qué merece la pena revisar antes de decidir. Sirve para orientar sin saturarte.'}</p>
           </div>
          </RevealLight>
          <div className="grid gap-5 xl:grid-cols-3">
@@ -169,16 +172,17 @@ export function ProductDecisionGrid({ product }: { product: Product }) {
   );
 }
 
-export function CasesAndForm({ product, defaultProduct }: { product: Product; defaultProduct?: string }) {
+export function CasesAndForm({ product, defaultProduct, locale }: { product: Product; defaultProduct?: string; locale?: 'es'|'en' }) {
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   return (
      <section id="contacto-producto" aria-labelledby="contact-product-title" className="section-pad bg-alternate">
       <div className="container-shell">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <RevealLight direction="left">
             <div>
-              <p className="kicker">Aterrizamos tu caso</p>
-              <h2 id="contact-product-title" className="mt-3 section-title">Podemos resolver tus dudas sobre {product.label} ahora mismo</h2>
-              <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">No todo el mundo necesita leer el producto igual. Estos perfiles te ayudan a ver más rápido si esta opción va contigo o si conviene mirar otra modalidad.</p>
+              <p className="kicker">{en ? 'Let us make it practical' : 'Aterrizamos tu caso'}</p>
+              <h2 id="contact-product-title" className="mt-3 section-title">{en ? `We can answer your questions about ${product.label} now` : `Podemos resolver tus dudas sobre ${product.label} ahora mismo`}</h2>
+              <p className="mt-4 text-base leading-8 text-[var(--muted)] md:text-lg">{en ? 'These profiles help you quickly see whether this option fits or whether another plan is worth considering.' : 'No todo el mundo necesita leer el producto igual. Estos perfiles te ayudan a ver más rápido si esta opción va contigo o si conviene mirar otra modalidad.'}</p>
                <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {product.cases.map((item, idx) => (
                   <RevealLight 
@@ -203,16 +207,17 @@ export function CasesAndForm({ product, defaultProduct }: { product: Product; de
   );
 }
 
-export function ProductFaqSection({ product }: { product: Product }) {
+export function ProductFaqSection({ product, locale: explicitLocale }: { product: Product; locale?: 'es'|'en' }) {
   const locale = useLocale();
+  const en = explicitLocale ? explicitLocale === 'en' : locale === 'en';
   return (
     <section id="faqs-producto" aria-labelledby="faq-product-title" className="section-pad bg-white-pure">
       <div className="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr] items-start">
         <RevealLight direction="right">
           <div>
-            <p className="kicker">Preguntas frecuentes</p>
-            <h2 id="faq-product-title" className="mt-3 section-title">Lo que más se suele preguntar sobre {product.label}</h2>
-            <p className="section-copy mt-4">Hemos recogido preguntas que suelen aparecer antes de contratar este tipo de seguro. La idea es ayudarte a decidir mejor, no llenarte de texto sin contexto.</p>
+            <p className="kicker">{en ? 'Frequently asked questions' : 'Preguntas frecuentes'}</p>
+            <h2 id="faq-product-title" className="mt-3 section-title">{en ? `What people ask most about ${product.label}` : `Lo que más se suele preguntar sobre ${product.label}`}</h2>
+            <p className="section-copy mt-4">{en ? 'We have collected questions that often come up before arranging this type of insurance, so you can decide with context.' : 'Hemos recogido preguntas que suelen aparecer antes de contratar este tipo de seguro. La idea es ayudarte a decidir mejor, no llenarte de texto sin contexto.'}</p>
           </div>
          </RevealLight>
         <RevealLight direction="left">
@@ -224,6 +229,7 @@ export function ProductFaqSection({ product }: { product: Product }) {
 }
 
 export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
+  const en = useLocale() === 'en';
   return (
     <section className="section-pad pt-6 md:pt-10 bg-white-pure relative overflow-hidden">
       <div className="container-shell">
@@ -235,8 +241,8 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">{subpage.h1}</h1>
                 <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">{subpage.summary}</p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <Link href="/contacto" className="btn-primary">Solicitar orientación</Link>
-                  <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> Consulta sin compromiso</a>
+                  <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
+                  <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> {en ? 'No-obligation enquiry' : 'Consulta sin compromiso'}</a>
                 </div>
                 <div className="mt-7 grid gap-3">
                   {subpage.bullets.map((item, idx) => (
@@ -269,9 +275,9 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
   );
 }
 
-export function RelatedProducts({ product, healthVariant = false }: { product: Product; healthVariant?: boolean }) {
-  const en = useLocale() === 'en';
-  const related = getRelatedProducts(product.related);
+export function RelatedProducts({ product, healthVariant = false, locale }: { product: Product; healthVariant?: boolean; locale?: 'es'|'en' }) {
+  const en = locale ? locale === 'en' : useLocale() === 'en';
+  const related = getRelatedProducts(product.related).map((item) => en ? getLocalizedProduct(item, 'en') : item);
   return (
     <section id="aspectos-clave" aria-labelledby="decision-title" className="section-pad bg-white-pure overflow-hidden">
       <div className="container-shell">
@@ -302,7 +308,7 @@ export function RelatedProducts({ product, healthVariant = false }: { product: P
                 <div className="p-8 flex-grow flex flex-col">
                     <p className="text-base leading-relaxed text-[var(--muted)] flex-grow">{en && healthVariant ? ({ dental: 'A clearer way to review check-ups, emergencies, specialist care and included services without reducing everything to one cleaning or one occasional visit.', decesos: 'Complete funeral service, family support, administrative arrangements and additional cover adapted to each family.', vida: 'Life protection explained clearly so your family can have financial support when it matters.' } as Record<string, string>)[item.slug] ?? item.summary : item.summary}</p>
                   <div className="mt-8 flex flex-col gap-3">
-                    <Link href={`/seguros/${item.slug}`} className="btn-secondary w-full justify-center shadow-lg">{en && healthVariant ? `View ${({ dental: 'dental', decesos: 'funeral', vida: 'life' } as Record<string, string>)[item.slug] ?? item.name.toLowerCase()} insurance` : `Ver seguro de ${item.name}`} <ArrowRight className="h-4 w-4" /></Link>
+                    <Link href={localizedProductPath(item.slug, en ? 'en' : 'es')} className="btn-secondary w-full justify-center shadow-lg">{en ? `View ${item.name.toLowerCase()}` : `Ver seguro de ${item.name}`} <ArrowRight className="h-4 w-4" /></Link>
                     <a href={buildWhatsAppHref(item.whatsappMessage)} className="btn-ghost w-full justify-center border-white/40 bg-white/40 backdrop-blur"><WhatsAppIcon className="h-4 w-4" /> {en && healthVariant ? 'Quick enquiry' : 'Consulta rápida'}</a>
                   </div>
                 </div>
@@ -315,7 +321,8 @@ export function RelatedProducts({ product, healthVariant = false }: { product: P
   );
 }
 
-export function ProductCTASection({ product, title, text, message }: { product: Product; title: string; text: string; message: string }) {
+export function ProductCTASection({ product, title, text, message, locale }: { product: Product; title: string; text: string; message: string; locale?: 'es'|'en' }) {
+  const en = locale ? locale === 'en' : useLocale() === 'en';
   const advisor = product.customAdvisor || {
     name: site.advisorName,
     whatsappNumber: site.whatsappNumber,
@@ -334,10 +341,10 @@ export function ProductCTASection({ product, title, text, message }: { product: 
             </div>
             <div className="flex-1">
               <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
-                El mismo seguro. Mejor precio. Garantizado.
+                {en ? 'The same insurance. A better price. Guaranteed.' : 'El mismo seguro. Mejor precio. Garantizado.'}
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
+                {en ? 'Bring us your bank or broker quote and we will review it with you across the plans we can distribute, so you can assess which option fits your case best.' : 'Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.'}
               </p>
             </div>
           </div>
@@ -350,16 +357,16 @@ export function ProductCTASection({ product, title, text, message }: { product: 
           <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
             {/* Content side */}
             <div className="bg-[linear-gradient(135deg,rgba(18,59,104,0.96),rgba(15,94,156,0.9))] p-8 md:p-10 lg:p-12 text-white">
-              <p className="kicker !text-white/60">Tu siguiente paso</p>
+              <p className="kicker !text-white/60">{en ? 'Your next step' : 'Tu siguiente paso'}</p>
               <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">{title}</h2>
               <p className="mt-4 max-w-xl text-lg leading-9 text-white/80">{text}</p>
 
               {/* 3-step mini process */}
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {[
-                  { step: '01', label: 'Cuéntanos', desc: 'Tu situación y qué quieres proteger' },
-                  { step: '02', label: 'Analizamos', desc: 'Opciones reales con explicación clara' },
-                  { step: '03', label: 'Decides tú', desc: 'Sin presión, con todo el contexto' },
+                  { step: '01', label: en ? 'Tell us' : 'Cuéntanos', desc: en ? 'Your situation and what you want to protect' : 'Tu situación y qué quieres proteger' },
+                  { step: '02', label: en ? 'We assess' : 'Analizamos', desc: en ? 'Real options with a clear explanation' : 'Opciones reales con explicación clara' },
+                  { step: '03', label: en ? 'You decide' : 'Decides tú', desc: en ? 'No pressure, with the full context' : 'Sin presión, con todo el contexto' },
                 ].map((item) => (
                   <div key={item.step} className="rounded-[20px] bg-white/10 p-5 backdrop-blur">
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-sm font-extrabold">{item.step}</span>
@@ -370,8 +377,8 @@ export function ProductCTASection({ product, title, text, message }: { product: 
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(message)}`} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-5 w-5" /> Hablar con {advisor.name}</a>
-                <Link href="/contacto" className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">Solicitar orientación</Link>
+                <a href={`https://wa.me/${advisor.whatsappNumber}?text=${encodeURIComponent(message)}`} className="btn-whatsapp !bg-white !text-[var(--blue-deep)]"><WhatsAppIcon className="h-5 w-5" /> {en ? 'Talk to' : 'Hablar con'} {advisor.name}</a>
+                <Link href={en ? '/en/contact' : '/contacto'} className="btn-secondary !border-white/30 !text-white hover:!bg-white hover:!text-[var(--blue-deep)]">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
               </div>
             </div>
 
@@ -382,24 +389,24 @@ export function ProductCTASection({ product, title, text, message }: { product: 
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--blue-deep)] text-white"><Users className="h-5 w-5" /></div>
                   <div>
                     <p className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{product.slug === 'vida' ? '900+' : '1.200+'}</p>
-                    <p className="text-sm text-[var(--muted)]">{product.slug === 'vida' ? 'Clientes protegidos por Sebastián' : 'Familias atendidas por Rosa'}</p>
+                    <p className="text-sm text-[var(--muted)]">{product.slug === 'vida' ? (en ? 'Clients protected by Sebastián' : 'Clientes protegidos por Sebastián') : (en ? 'Families supported by Rosa' : 'Familias atendidas por Rosa')}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 rounded-[22px] border border-[var(--border)] bg-white p-5 shadow-sm">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#4CAF50] text-white"><ShieldCheck className="h-5 w-5" /></div>
                   <div>
                     <p className="font-heading text-2xl font-bold text-[var(--blue-deep)]">+10 años</p>
-                    <p className="text-sm text-[var(--muted)]">Experiencia y formación continua</p>
+                    <p className="text-sm text-[var(--muted)]">{en ? 'Experience and continuous training' : 'Experiencia y formación continua'}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 rounded-[22px] border border-[var(--border)] bg-white p-5 shadow-sm">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--orange)] text-white"><HeartHandshake className="h-5 w-5" /></div>
                   <div>
                     <p className="font-heading text-2xl font-bold text-[var(--blue-deep)]">100%</p>
-                    <p className="text-sm text-[var(--muted)]">Orientación sin compromiso</p>
+                    <p className="text-sm text-[var(--muted)]">{en ? 'No-obligation guidance' : 'Orientación sin compromiso'}</p>
                   </div>
                 </div>
-                <a href={`tel:${advisor.phoneHref}`} className="btn-ghost w-full justify-center mt-2"><Phone className="h-4 w-4" /> Llamar al {advisor.phone || site.phone}</a>
+                <a href={`tel:${advisor.phoneHref}`} className="btn-ghost w-full justify-center mt-2"><Phone className="h-4 w-4" /> {en ? 'Call' : 'Llamar al'} {advisor.phone || site.phone}</a>
               </div>
             </div>
           </div>

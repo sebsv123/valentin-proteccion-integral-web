@@ -9,6 +9,7 @@ import { getProduct, getProductSubpage, site, subpages } from '@/lib/products';
 import SchemaFAQ from '@/components/seo/schema-faq';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import { getLocalizedProduct, getLocalizedSubpage, localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
 
 export function generateStaticParams() {
   return subpages.map((subpage) => ({ slug: subpage.parent, subslug: subpage.slug }));
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: subpage.metaDescription,
     alternates: {
       canonical: `${site.domain}/seguros/${subpage.parent}/${subpage.slug}`,
+      languages: { es: `${site.domain}/seguros/${subpage.parent}/${subpage.slug}`, en: `${site.domain}${localizedSubpagePath(subpage.parent, subpage.slug, 'en')}`, 'x-default': `${site.domain}/seguros/${subpage.parent}/${subpage.slug}` },
     },
     openGraph: {
       title: subpage.metaTitle,
@@ -35,10 +37,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export const dynamic = 'force-static';
 
-export default async function ProductSubpagePage({ params }: { params: Promise<{ slug: string; subslug: string }> }) {
-  const { slug, subslug } = await params;
-  const product = getProduct(slug);
-  const subpage = getProductSubpage(slug, subslug);
+export async function ProductSubpagePageView({ parent, subpage: originalSubpage, locale = 'es' }: { parent: string; subpage: NonNullable<ReturnType<typeof getProductSubpage>>; locale?: 'es'|'en' }) {
+  const originalProduct = getProduct(parent);
+  const product = originalProduct ? getLocalizedProduct(originalProduct, locale) : undefined;
+  const subpage = getLocalizedSubpage(originalSubpage, locale);
   if (!product || !subpage) notFound();
 
   const faqProduct = { ...product, faqs: subpage.faqs };
@@ -46,28 +48,31 @@ export default async function ProductSubpagePage({ params }: { params: Promise<{
   return (
     <>
       <SchemaBreadcrumb 
+        locale={locale}
         items={[
-          { name: 'Inicio', item: site.domain, position: 1 },
-          { name: 'Seguros', item: `${site.domain}/seguros`, position: 2 },
-          { name: product.name, item: `${site.domain}/seguros/${product.slug}`, position: 3 },
-          { name: subpage.name, item: `${site.domain}/seguros/${product.slug}/${subpage.slug}`, position: 4 }
+          { name: locale === 'en' ? 'Home' : 'Inicio', item: locale === 'en' ? `${site.domain}/en` : site.domain, position: 1 },
+          { name: locale === 'en' ? 'Insurance' : 'Seguros', item: locale === 'en' ? `${site.domain}/en/insurance` : `${site.domain}/seguros`, position: 2 },
+          { name: product.name, item: `${site.domain}${locale === 'en' ? localizedProductPath(product.slug, 'en') : `/seguros/${product.slug}`}`, position: 3 },
+          { name: subpage.name, item: `${site.domain}${locale === 'en' ? localizedSubpagePath(product.slug, subpage.slug, 'en') : `/seguros/${product.slug}/${subpage.slug}`}`, position: 4 }
         ]} 
       />
-      <SchemaFAQ faqs={subpage.faqs.map(f => ({ question: f.q, answer: f.a }))} />
+      <SchemaFAQ locale={locale} faqs={subpage.faqs.map(f => ({ question: f.q, answer: f.a }))} />
       <Header />
       <main>
         <div className="container-shell pt-6 md:pt-8">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Seguros', href: '/seguros' }, { label: product.label, href: `/seguros/${product.slug}` }, { label: subpage.label }]} />
+          <Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Insurance' : 'Seguros', href: locale === 'en' ? '/en/insurance' : '/seguros' }, { label: product.label, href: locale === 'en' ? localizedProductPath(product.slug, 'en') : `/seguros/${product.slug}` }, { label: subpage.label }]} />
         </div>
         <SubpageHero subpage={subpage} />
-        <ProductDecisionGrid product={product} />
-        <ProductFaqSection product={faqProduct} />
-        <GoogleReviewsWidget title={`Opiniones sobre nuestro asesoramiento en ${product.label}`} />
-        <ProductCTASection product={product} title={`¿Quieres que revisemos ${product.label} con más calma?`} text="Si este perfil o modalidad encaja contigo, te ayudamos a aterrizar matices, resolver dudas y decidir con más tranquilidad." message={subpage.whatsappMessage} />
-        <RelatedProducts product={product} />
+        <ProductDecisionGrid product={product} locale={locale} />
+        <ProductFaqSection product={faqProduct} locale={locale} />
+        <GoogleReviewsWidget title={locale === 'en' ? `Reviews of our ${product.label} guidance` : `Opiniones sobre nuestro asesoramiento en ${product.label}`} />
+        <ProductCTASection product={product} locale={locale} title={locale === 'en' ? `Would you like us to review ${product.label} in more detail?` : `¿Quieres que revisemos ${product.label} con más calma?`} text={locale === 'en' ? 'If this profile or plan fits you, we can clarify the details, answer your questions and help you decide with greater confidence.' : 'Si este perfil o modalidad encaja contigo, te ayudamos a aterrizar matices, resolver dudas y decidir con más tranquilidad.'} message={subpage.whatsappMessage} />
+        <RelatedProducts product={product} locale={locale} />
       </main>
       <Footer />
       <StickyWhatsApp />
     </>
   );
 }
+
+export default async function ProductSubpagePage({ params }: { params: Promise<{ slug: string; subslug: string }> }) { const { slug, subslug } = await params; const subpage = getProductSubpage(slug, subslug); if (!subpage) notFound(); return <ProductSubpagePageView parent={slug} subpage={subpage} />; }

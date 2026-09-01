@@ -1,8 +1,9 @@
 // components/BreadcrumbSchema.tsx
-export default function BreadcrumbSchema({ items }: { items: { name: string; url: string }[] }) {
+export default function BreadcrumbSchema({ items, locale }: { items: { name: string; url: string }[]; locale?: 'es' | 'en' }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(locale ? { inLanguage: locale } : {}),
     "itemListElement": items.map((item, i) => ({
       "@type": "ListItem",
       "position": i + 1,

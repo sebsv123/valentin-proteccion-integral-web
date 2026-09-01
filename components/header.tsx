@@ -17,6 +17,7 @@ import { StaggeredMenu } from './ui/staggered-menu';
 import IridescenceBackground from './ui/iridescence-background';
 import { LanguageSwitcher } from './language-switcher';
 import { localizedPath } from '@/i18n/navigation';
+import { localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
 
 export function Header() {
   const [mega, setMega] = useState(false);
@@ -29,6 +30,11 @@ export function Header() {
   const t = useTranslations('common');
 
   const localeHref = (href: string) => {
+    if (locale === 'en' && href.startsWith('/seguros/') && href !== '/seguros/salud-extranjeros') {
+      const parts = href.split('/');
+      if (parts.length === 3) return localizedProductPath(parts[2], 'en');
+      if (parts.length === 4) return localizedSubpagePath(parts[2], parts[3], 'en');
+    }
     if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto' || href === '/extranjeros' || href === '/seguros' || href === '/seguros/salud' || href === '/seguros/salud-extranjeros') {
       return localizedPath(locale, href);
     }
@@ -308,7 +314,7 @@ export function Header() {
             {grouped.map((item) => (
               <Link
                 key={item.slug}
-                  href={item.slug === 'salud' ? localeHref('/seguros/salud') : `/seguros/${item.slug}`}
+                  href={item.slug === 'salud' ? localeHref('/seguros/salud') : localizedProductPath(item.slug, locale === 'en' ? 'en' : 'es')}
                 className="group flex flex-col justify-between rounded-[16px] border border-[var(--border)] bg-white p-3 transition-all hover:border-[var(--blue)]/30 hover:shadow-lg hover:-translate-y-1"
                 onClick={closeAll}
               >
@@ -371,7 +377,7 @@ export function Header() {
           { label: localeLabel('Inicio'), ariaLabel: localeLabel('Inicio'), link: localeHref('/') },
           { label: localeLabel('Alquileres'), ariaLabel: localeLabel('Alquileres'), link: '/extranjeros/alquileres' },
           { label: locale === 'en' ? 'Foreigners' : 'Extranjeros', ariaLabel: locale === 'en' ? 'Foreigners' : 'Extranjeros', link: localeHref('/extranjeros') },
-          ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: item.slug === 'salud' ? localeHref('/seguros/salud') : `/seguros/${item.slug}` })),
+          ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: item.slug === 'salud' ? localeHref('/seguros/salud') : localizedProductPath(item.slug, locale === 'en' ? 'en' : 'es') })),
           ...mainNav.slice(2).map(item => item.label === 'Empresas'
             ? {
                 label: locale === 'en' ? 'Businesses' : 'Empresas',
