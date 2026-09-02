@@ -782,7 +782,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'ventajas-agente-de-seguros',
     title: '¿Cuáles son las ventajas de tener un agente de seguros? | Guía 2026',
     excerpt: 'Contratar un seguro es fácil. Usarlo cuando lo necesitas, no tanto. Descubre qué cambia cuando tienes un agente de seguros de tu lado y por qué importa más de lo que crees.',
-    image: '/images/blog/ventajas-agente-de-seguros.webp',
+    image: '/images/blog/ventajas-mediador-de-seguros.webp',
     imageAlt: 'Asesoría con registro oficial y cercana de seguros en Madrid',
     date: '2026-04-13',
     dateModified: '2026-04-13',
