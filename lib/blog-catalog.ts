@@ -82,6 +82,11 @@ const englishSlugs: Record<string, string> = {
   'mejor-seguro-salud-madrid-2026': 'best-health-insurance-madrid-2026',
   'guia-seguro-salud-espana-2026': 'health-insurance-guide-spain-2026',
   'cuanto-cuesta-seguro-salud-madrid': 'health-insurance-cost-madrid',
+  'incluir-personas-poliza-medica': 'add-people-to-health-insurance',
+  'seguros-salud-cubren-recien-nacidos': 'health-insurance-newborn-cover',
+  'mejor-seguro-salud-autonomos-madrid': 'best-health-insurance-self-employed-madrid',
+  'seguro-medico-autonomos-madrid-deduccion-fiscal': 'self-employed-health-insurance-tax-deduction',
+  'seguro-dental-vs-salud-completa-madrid': 'dental-vs-comprehensive-health-insurance',
 };
 
 const fromBlogPost = (post: BlogPost): BlogCatalogEntry => ({
@@ -231,6 +236,15 @@ export function validateBlogCatalog() {
     ids.add(post.id);
     slugs.add(post.slug.es);
     if (post.slug.en && !hasCompleteContent(post.content.en)) throw new Error(`EN slug without complete EN content: ${post.slug.en}`);
+  }
+  const englishSlugEntries = blogCatalog.filter((post) => post.slug.en);
+  const publishedEnglish = getPublishedEnglishPosts();
+  if (blogCatalog.length !== 32) throw new Error('Expected 32 blog catalog entries, found ' + blogCatalog.length);
+  if (englishSlugEntries.length !== 10 || publishedEnglish.length !== 10) {
+    throw new Error('Expected exactly 10 complete EN blog entries, found ' + englishSlugEntries.length + ' slugs and ' + publishedEnglish.length + ' published');
+  }
+  if (blogCatalog.length - publishedEnglish.length !== 22) {
+    throw new Error('Expected 22 Spanish-only blog entries, found ' + (blogCatalog.length - publishedEnglish.length));
   }
   return true;
 }

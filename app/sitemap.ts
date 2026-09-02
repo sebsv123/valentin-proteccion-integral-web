@@ -101,6 +101,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: post.priority,
       ...(post.enSlug ? { alternates: { languages: { es: `${base}/blog/${post.slug}`, en: `${base}/en/blog/${post.enSlug}`, 'x-default': `${base}/blog/${post.slug}` } } } : {}),
     })),
+    ...getPublishedEnglishPosts().map((post) => ({
+      url: `${base}/en/blog/${post.slug.en}`,
+      lastModified: post.shared.date,
+      changeFrequency: 'monthly' as const,
+      priority: post.sitemap.priority,
+      alternates: { languages: { es: `${base}/blog/${post.slug.es}`, en: `${base}/en/blog/${post.slug.en}`, 'x-default': `${base}/blog/${post.slug.es}` } },
+    })),
 
     // CONTACTO
     { url: `${base}/contacto`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },

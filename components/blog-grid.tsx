@@ -15,8 +15,8 @@ interface BlogGridProps {
 
 export function BlogGrid({ posts, locale = 'es' }: BlogGridProps) {
   const labels = locale === 'en'
-    ? { empty: 'There are no articles in this category yet.', viewAll: 'View all articles' }
-    : { empty: 'No hay artículos en esta categoría aún.', viewAll: 'Ver todos los artículos' };
+    ? { empty: 'There are no articles in this category yet.', viewAll: 'View all articles', readMore: 'Read more', showing: 'Showing' }
+    : { empty: 'No hay artículos en esta categoría aún.', viewAll: 'Ver todos los artículos', readMore: 'Seguir leyendo', showing: 'Mostrando' };
   const categoryLabels: Record<string, string> = locale === 'en'
     ? { todos: 'All', salud: 'Health', autonomos: 'Self-employed', vida: 'Life', familia: 'Family', consejos: 'Guides', mascotas: 'Pets', legal: 'Legal' }
     : Object.fromEntries(blogCategories.map((category) => [category.id, category.label]));
@@ -123,7 +123,7 @@ export function BlogGrid({ posts, locale = 'es' }: BlogGridProps) {
                       <div className="flex items-center gap-3 text-xs text-white/80">
                         <span className="inline-flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
-                          {new Date(post.date).toLocaleDateString('es-ES', {
+                          {new Date(post.date).toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', {
                             year: 'numeric',
                             month: 'short',
                             day: 'numeric',
@@ -144,7 +144,7 @@ export function BlogGrid({ posts, locale = 'es' }: BlogGridProps) {
                       {post.excerpt}
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--blue)]">
-                      Seguir leyendo
+                      {labels.readMore}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export function BlogGrid({ posts, locale = 'es' }: BlogGridProps) {
 
         {/* Results count */}
         <p className="mt-6 text-sm text-[var(--muted)] text-center">
-          Mostrando {filteredPosts.length} de {posts.length} artículos
+          {labels.showing} {filteredPosts.length} {locale === 'en' ? 'of' : 'de'} {posts.length} {locale === 'en' ? 'articles' : 'artículos'}
         </p>
       </div>
     </>

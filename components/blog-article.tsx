@@ -13,12 +13,12 @@ import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 export function BlogArticle({ post, locale = 'es', relatedPosts }: { post: BlogPost; locale?: BlogLocale; relatedPosts?: BlogPost[] }) {
   const related = relatedPosts ?? getRelatedPosts(post.slug);
   const copy = locale === 'en' ? {
-    back: 'Back to the blog', read: 'reading', faq: 'Frequently asked questions', faqTitle: 'We answer your questions on this topic', useful: 'Was this useful?',
+    back: 'Back to the blog', read: 'reading', faq: 'Frequently asked questions', faqTitle: 'We answer your questions on this topic', useful: 'Was this useful?', readMore: 'Read more',
     ctaTitle: 'Apply this information to your situation', ctaCopy: 'Everyone’s situation is different. This is a general guide, but we can help you apply it to your case without obligation.',
     bullets: ['Personalised guidance with no obligation', 'We explain the options that best fit you', 'Get your questions answered on WhatsApp in under 5 minutes'], speak: 'Talk on WhatsApp', consultation: 'Request a consultation', more: 'More articles', quick: 'Quick tips', inPerson: 'Would you rather solve it in person?', inPersonCopy: 'Write to us on WhatsApp and we will help you apply this information to your situation.', form: 'Form'
   } : {
     back: 'Volver al blog', read: 'lectura', faq: 'Preguntas frecuentes', faqTitle: 'Resolvemos tus dudas sobre este tema', useful: '¿Te ha resultado útil?',
-    ctaTitle: 'Aterriza esta información a tu caso concreto', ctaCopy: 'Cada persona tiene una situación distinta. Lo que has leído es una guía general, pero si quieres saber cómo aplicarlo a tu caso, podemos ayudarte sin compromiso.',
+    ctaTitle: 'Aterriza esta información a tu caso concreto', ctaCopy: 'Cada persona tiene una situación distinta. Lo que has leído es una guía general, pero si quieres saber cómo aplicarlo a tu caso, podemos ayudarte sin compromiso.', readMore: 'Leer más',
     bullets: ['Orientación 100% personalizada y sin compromiso', 'Te explicamos las opciones que mejor se adaptan a ti', 'Resolvemos tus dudas en menos de 5 minutos por WhatsApp'], speak: 'Hablar por WhatsApp', consultation: 'Solicitar consulta', more: 'Más artículos', quick: 'Consejos rápidos', inPerson: '¿Prefieres resolverlo en persona?', inPersonCopy: 'Puedes escribirnos por WhatsApp y te ayudamos a aterrizar cualquier información a tu caso concreto.', form: 'Formulario'
   };
 
@@ -190,7 +190,7 @@ export function BlogArticle({ post, locale = 'es', relatedPosts }: { post: BlogP
                         <div className="rounded-[18px] border border-[var(--border)] bg-white p-4 transition-all hover:border-[var(--blue)] hover:shadow-sm">
                           <p className="font-heading text-lg font-semibold text-[var(--blue-deep)] group-hover:text-[var(--blue)]">{relPost.title}</p>
                           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{relPost.excerpt}</p>
-                          <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[var(--blue)]">Leer más <ArrowRight className="h-3.5 w-3.5" /></span>
+                        <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[var(--blue)]">{copy.readMore} <ArrowRight className="h-3.5 w-3.5" /></span>
                         </div>
                       </Link>
                     ))}

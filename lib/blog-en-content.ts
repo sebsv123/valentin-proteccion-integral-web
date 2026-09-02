@@ -455,5 +455,418 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "answer": "Yes, but that specific illness will likely be excluded from coverage or incur a surcharge. We study it case by case with total transparency."
       }
     ]
-  }
+  },
+  "incluir-personas-poliza-medica": {
+  "title": "Can I include more people in the medical policy? Complete guide 2026",
+  "excerpt": "Yes you can, but not to anyone or at any time. We explain who can enter, how to do it, what happens with the price and what happens when someone has to be removed.",
+  "metaTitle": "Add people to health insurance · Who can enter and how 2026",
+  "metaDescription": "Do you want to include your partner, children or parents in your medical policy? We explain the requirements, deadlines, price changes and how to manage cancellations.",
+  "imageAlt": "Advisor Rosa Valentín explaining the management of a family health policy",
+  "sections": [
+    {
+      "heading": "Everything you need to know to manage your family insurance",
+      "content": [
+        "The short answer is yes. But the useful answer is more nuanced: not to anyone, not at any time, and—something that almost no one explains—you also have to know when and how to remove someone.",
+        "This article explains who can be included, the key difference between policyholder and insured, and what processes to follow when the family changes due to separation or a child becoming independent."
+      ]
+    },
+    {
+      "heading": "The key distinction: Policyholder vs. Insured",
+      "content": [
+        "• Policyholder: This is the person who takes out, signs and pays for the policy. They are the contract holder and the only person authorised to add or remove insured people.",
+        "• Insured: This is the person whose health is covered. You can use the insurance, but you cannot manage it or cancel it yourself (key asymmetry in divorces).",
+        "Understanding that the policyholder has control and the insured has the right to use is essential to avoid situations where people continue to pay for people who should no longer be on the policy."
+      ]
+    },
+    {
+      "heading": "Who can you usually include?",
+      "content": [
+        "• Spouse or registered common-law partner: Requires family book or registration certificate.",
+        "• Minor and older dependent children: Normally up to 25-26 years of age if they do not have their own income.",
+        "• Parents or in-laws: Not all policies allow this; They usually require a maximum age (65-70 years) and an exhaustive health questionnaire.",
+        "• Cohabitants: Some companies accept people without family ties if they prove cohabitation through joint registration."
+      ]
+    },
+    {
+      "heading": "How does it affect the price and waiting periods?",
+      "content": [
+        "• Price: The premium increases for each insured according to their age and health. However, \"family discounts\" often make the joint policy cheaper than several individual ones.",
+        "• Waiting periods: The added person enters with their own waiting periods (3-6 months for surgery, etc.), even if the policyholder has been on the policy for years. If they already had previous insurance, these can sometimes be waived."
+      ]
+    },
+    {
+      "heading": "Manage withdrawal (The great forgotten)",
+      "content": [
+        "• Divorce: The policyholder must request the ex-spouse's withdrawal in writing. Otherwise, you will continue to pay your premium indefinitely.",
+        "• Children becoming independent: When they reach the age limit or start working, their enrolment does not disappear on its own; the policyholder must manage it so the premium can be adjusted.",
+        "• Change of policyholder: If the policyholder wants to leave the policy but the rest continue, another adult must formally assume ownership of the contract."
+      ]
+    }
+  ],
+  "tips": [
+    "Review your list of policyholders at each annual renewal.",
+    "Take advantage of family discounts: from the 3rd insured the savings are usually greater.",
+    "In divorce situations, the policyholder has the legal responsibility to update the policy.",
+    "Report any change of address: it affects the validity of the cohabitation certificates."
+  ],
+  "faqs": [
+    {
+      "question": "Can I include my partner if we are not married?",
+      "answer": "Yes, if you are a registered de facto couple. If you only live together, it depends on the company; some accept it with a joint registration certificate."
+    },
+    {
+      "question": "What happens if my son turns 26?",
+      "answer": "Normally you should leave the family policy and take out an individual policy. The policyholder must notify the company so that the receipt is updated."
+    },
+    {
+      "question": "Does the person I add have to undergo a medical examination?",
+      "answer": "You will have to fill out a health questionnaire. Depending on the answers, the company will accept the inclusion, apply exclusions or revise the premium."
+    },
+    {
+      "question": "Can I add someone at any time of the year?",
+      "answer": "Depends. Some companies only allow it on renewal, but life events (marriage, birth) usually open windows of immediate inclusion."
+    },
+    {
+      "question": "What is the difference between policyholder and insured?",
+      "answer": "The policyholder is the owner of the contract (pays and commands). The insured is the one who receives the medical care (uses the insurance)."
+    },
+    {
+      "question": "Can I include my parents if they are over 70 years old?",
+      "answer": "It is difficult in standard policies. It is usually more efficient to look for an individual policy designed specifically for the senior profile."
+    }
+  ]
+},
+  "seguros-salud-cubren-recien-nacidos": {
+  "title": "Does health insurance cover newborns? Complete guide 2026",
+  "excerpt": "Is your baby covered from birth? It depends on when you notify, if the delivery was through insurance and what company you have. Everything explained without technicalities, with the deadlines that matter.",
+  "metaTitle": "Does health insurance cover newborns? Complete guide 2026",
+  "metaDescription": "Is your baby covered from birth? We resolve all doubts: enrolment deadlines, neonatal ICU coverage and enrolment without a medical questionnaire.",
+  "imageAlt": "Family protecting and caring for their newborn",
+  "sections": [
+    {
+      "heading": "Everything you need to know before (and after) your baby is born",
+      "content": [
+        "When a baby is born, the list of urgent things is long. Enrolling your newborn in health insurance doesn't sound like something that can't wait, but it has a critical deadline.",
+        "If the enrolment is managed within that period (normally 15-30 days), the baby is added without a medical questionnaire and without waiting periods, even if they were born with complications.",
+        "This article explains what insurance covers from birth, how long automatic coverage lasts, and what happens in scenarios that no one usually tells you about."
+      ]
+    },
+    {
+      "heading": "Initial automatic coverage",
+      "content": [
+        "If the mother has maternity insurance and the birth is covered by the company, the baby usually has automatic provisional coverage:",
+        "• Duration: According to the company, it covers from the first 48 hours to the first 28-30 days of life.",
+        "• What it includes: While the baby is admitted with the mother, they are protected. When the mother is officially discharged, that provisional coverage ends.",
+        "Important: This period is a window to manage the formal inclusion process. It is not permanent coverage for the little one."
+      ]
+    },
+    {
+      "heading": "The critical period for permanent enrolment",
+      "content": [
+        "For coverage to be full and immediate, you must communicate the baby's enrolment within a period of between 15 and 30 days from birth:",
+        "1. Inclusion without questionnaire: The insurer accepts the baby regardless of its health status at birth.",
+        "2. No waiting periods: You will be able to use a pediatrician, specialists and hospitalization from minute one.",
+        "If you miss the deadline: The baby will be treated as a \"new standard insured\", which involves filling out a health questionnaire and waiting for the usual waiting periods (months)."
+      ]
+    },
+    {
+      "heading": "What happens if the baby needs a neonatal intensive care unit?",
+      "content": [
+        "It is the greatest anguish for parents. If the enrolment is completed on time and the delivery was private:",
+        "• Incubator and neonatal admission expenses are covered under the mother's policy during the initial hospitalization (up to a limit of days, usually 28).",
+        "• Once included in your own policy, possible conditions detected at birth are covered for life as part of your insured history.",
+        "If the birth was in public healthcare, consult your advisor: some companies also allow favourable enrolment without waiting periods if you have been insured for more than 10 months."
+      ]
+    },
+    {
+      "heading": "How to include the baby step by step",
+      "content": [
+        "1. Call your insurer or use the online customer area as soon as you can after giving birth.",
+        "2. Bring the birth certificate or family book.",
+        "3. Choose between including it in your family policy (it is usually cheaper due to discounts) or taking out an individual policy for the baby.",
+        "4. Request written confirmation that the enrolment has been processed without waiting periods or exclusions."
+      ]
+    }
+  ],
+  "tips": [
+    "Don't wait to leave the hospital to notify your insurance: the first days at home are chaotic.",
+    "Check if your policy has a maternity benefit before you get pregnant.",
+    "Choose a policy with a comprehensive pediatric medical plan: it will be the service you use the most.",
+    "24-hour pediatric telemedicine is a salvation for nighttime doubts in the first months."
+  ],
+  "faqs": [
+    {
+      "question": "How long do I have to enrol the newborn?",
+      "answer": "Between 15 and 30 days from birth, depending on the insurance company. Meeting this deadline is vital for enrolment without waiting periods."
+    },
+    {
+      "question": "Does insurance cover neonatal ICU?",
+      "answer": "Yes, it is usually covered under the mother's policy during the initial admission and the first month, if the birth was covered by private insurance."
+    },
+    {
+      "question": "Can I insure the baby if I don't have health insurance?",
+      "answer": "Yes, you can take out an individual policy for him, but he will have to pass a standard health questionnaire."
+    },
+    {
+      "question": "What happens if the birth was in a public hospital?",
+      "answer": "The initial automatic coverage is not activated, but many companies allow enrolment without waiting periods if it is requested in time and the parents have been insured for some time."
+    },
+    {
+      "question": "What does elective pediatrics include?",
+      "answer": "Being able to choose the pediatrician you want within the medical team and have continuity: always the same professional taking care of your child."
+    },
+    {
+      "question": "Do I have to pay more for the baby from day 1?",
+      "answer": "Yes, once the registration is formalized, the bill will increase proportionally (there are usually discounts per family group)."
+    }
+  ]
+},
+  "mejor-seguro-salud-autonomos-madrid": {
+  "title": "Best health insurance for the self-employed in Madrid: Tax and medical guide 2026",
+  "excerpt": "Are you self-employed in Madrid? Take advantage of the tax advantages and choose the health insurance that truly protects you against sick leave and unforeseen events.",
+  "metaTitle": "Self-Employed Health Insurance Madrid 2026 · Tax Guide and Prices",
+  "metaDescription": "Are you looking for the best health insurance for the self-employed in Madrid? Discover how to deduct up to €500/year in personal income tax and what coverage protects your professional activity.",
+  "imageAlt": "Self-employed in Madrid managing your business with the peace of mind of good health insurance",
+  "sections": [
+    {
+      "heading": "The self-employed in Madrid: The need for their own safety network",
+      "content": [
+        "Working on your own in a community as dynamic as Madrid is a constant challenge that requires excellent health. For the more than 400,000 self-employed workers who support Madrid's economy, from the liberal professional in La Castellana to the small business owner in Boadilla, time is literally money. An illness that prevents you from attending a meeting or taking care of business represents an immediate loss of income that Social Security barely compensates with minimum benefits and slow bureaucratic processes. Therefore, private health insurance in Madrid is not a luxury, but rather a fundamental risk management tool for any self-employed worker in 2026.",
+        "The public health system, although excellent in critical situations, usually presents delays in specialist consultations and diagnostic tests that a self-employed person cannot afford. Having private insurance guarantees that, in the event of any symptoms, you can have a diagnosis and treatment in a matter of days, minimizing professional downtime. In Madrid, the offer is immense, but for a self-employed person, the choice must go beyond the monthly price of the premium. It is about looking for a policy that understands your reality: that includes high-quality telemedicine so as not to waste entire mornings in waiting rooms and that offers temporary disability coverage that protects your billing if the recovery is prolonged.",
+        "Furthermore, the context of Madrid offers a unique competitive advantage: the concentration of the best hospital centers in Spain. As an insurance advisor in Madrid, I help the self-employed navigate between the different offers to find those that not only save them taxes, but also give them preferential access to the best specialists in occupational medicine and functional recovery. In this guide, we will explore the keys to choosing the best health insurance for the self-employed in Madrid in 2026, combining medical efficiency with the maximum tax savings allowed by law."
+      ]
+    },
+    {
+      "heading": "Tax advantages in Madrid: Real deductions in personal income tax",
+      "content": [
+        "One of the most unknown and valuable aspects of health insurance for the self-employed in Madrid is its tax treatment. The Spanish State, aware of the lack of protection of the group, allows the cost of health insurance to be considered a deductible expense in the Personal Income Tax (IRPF). In 2026, the law establishes that a self-employed person can deduct up to 500 euros annually from the premium paid for their own health insurance. But the advantage does not end there: this deductibility extends to the premium of the spouse and each child under 25 years of age who lives in the home, with the same limit of 500 euros per person per year.",
+        "Imagine a family of four in Boadilla where one of the spouses is self-employed. The total tax deduction could amount to 2,000 euros per year. If the self-employed person is in a medium tax bracket, this represents a net saving on their tax bill of between 400 and 600 euros per year. In practical terms, it is as if the State paid you for several months of your health insurance. For self-employed people with disabilities, these deduction limits increase to 1,500 euros per person, further reinforcing the incentive to have first-level health protection.",
+        "In our consultancy in Madrid, we work closely with our clients' managers to ensure that these premiums are correctly accounted for as an expense related to the activity. It is essential that the insurance receipt is in the name of the self-employed person and that the payment is made from an account linked to their activity or owned by them. This tax savings makes taking out high-end \"No Copays\" insurance much financially smarter than opting for basic options that don't offer the same protection but hardly represent any real savings after taxes. Health insurance is the most profitable investment that a self-employed person in Madrid can make for their well-being and their pocketbook."
+      ]
+    },
+    {
+      "heading": "Critical coverage for the professional: IT and digital health",
+      "content": [
+        "Beyond conventional medical assistance, a self-employed person in Madrid needs specific coverage that alleviates his or her contractual vulnerability. The most important is Temporary Disability (IT). Many health policies for the self-employed optionally offer daily compensation in case of sick leave or accident. This means that if you break your leg and cannot work for a month, the insurer will pay you an agreed daily amount (for example, 60 or 100 euros per day) regardless of what you receive from the Social Security mutual insurance company. In Madrid, where rental costs for premises and freelancers are high, this supplement is what keeps the business afloat during the recovery.",
+        "Digital health is the second pillar. In 2026, a self-employed person from Madrid does not have time to travel around Castellana just to have some analytical results explained to him. We are looking for insurance that offers 24/7 medical video consultations, direct chat with specialists and, most importantly, private electronic prescription that arrives directly to your mobile. This agility allows a small health scare to be resolved in 15 minutes from the office, without interrupting the work day. In addition, many companies are including online psychology and nutrition services, essential for managing the stress and lifestyle that comes with entrepreneurship in such a demanding capital.",
+        "Finally, we advise on waiting periods. A self-employed person who decides to take out insurance now should not have to wait months to have access to the services they need. We negotiate with companies to eliminate or reduce these waiting times if the client already came from another insurer, allowing a smooth transition. In Boadilla and Majadahonda, where many self-employed people have young families, we also focus on maternity and pediatric coverage, ensuring that the insurance not only covers the professional side, but is the total umbrella of peace of mind for your home in Madrid."
+      ]
+    },
+    {
+      "heading": "How much should a self-employed person pay for the best health in Madrid?",
+      "content": [
+        "The price of health insurance for the self-employed in Madrid is very competitive due to the volume of business. In 2026, a self-employed person between 30 and 45 years old can find complete \"No Copayments\" policies designed specifically for their group for a range ranging from 48 to 65 euros per month. If the professional prefers to adjust his monthly spending and only goes to the doctor for annual check-ups, there are very efficient \"With Copay\" modalities for just 35 euros per month, maintaining the same elite medical team.",
+        "The important thing when comparing prices in Madrid is not to be fooled by aggressive \"six months free\" offers that then apply disproportionate premium increases on the first renewal. In our technical consulting, we look at the \"level premium\" over the long term. We prefer to recommend companies that have a history of stability in their prices, allowing the self-employed from Boadilla or Madrid to budget their year without scares in the bank account. Health insurance is to be used when necessary, and the worst experience is having the price raised just when you have started to have a chronic health problem.",
+        "We also remember the option of reimbursement of expenses for those self-employed who already have their own trusted doctors outside the standard tables. Although the premium is higher (usually starting at 90-110 euros), it allows absolute freedom. In short, the cost of the best health insurance for the self-employed in Madrid is a minimal fraction of your income that, after tax deduction and time savings, ends up being almost free. Don't wait until you have a problem to evaluate private healthcare; Hire today with the peace of mind of knowing that your greatest asset – yourself – is protected by the best specialists in the capital."
+      ]
+    },
+    {
+      "heading": "Conclusion: Your business thrives if you are healthy",
+      "content": [
+        "In Madrid's competitive business ecosystem, health is its quietest competitive advantage. A well-protected freelancer is a freelancer who can focus on their clients, their projects, and their growth without the constant fear of \"what will happen if I get sick.\" Health insurance is the partner that never fails you, guaranteeing that the best medical resources in Madrid are at your disposal at the exact moment you need them.",
+        "If you are looking to optimize your current insurance or want to take out your first self-employed policy with the guarantee of taking advantage of all tax deductions, our insurance consultancy in Madrid is here to guide you. We offer you a transparent analysis, analyzing the best companies on the market and designing a solution that fits your budget and your pace of life. Don't leave your health to chance; Trust an expert who understands the value of your time and professional effort.",
+        "We invite you to request a health consultation for self-employed people today. In less than 24 hours, we will present you with a personalized study with the most efficient options in the Madrid market for 2026. Protect your present and secure your professional future with us. We are at your side in Madrid, Boadilla and the entire northwest area."
+      ]
+    }
+  ],
+  "tips": [
+    "Make sure your insurance includes Temporary Disability coverage to protect your income if you can't work.",
+    "Take advantage of telemedicine: save hours of traveling around Madrid for routine consultations.",
+    "Consult with your manager about the deduction of €500 in personal income tax to maximize your annual savings.",
+    "Check if your policy has international agreements if you usually travel for business outside of Spain."
+  ],
+  "faqs": [
+    {
+      "question": "Can I deduct the insurance if my partner also works with me?",
+      "answer": "Yes, if you are both self-employed you can deduct your premiums individually, increasing the tax savings of the family unit."
+    },
+    {
+      "question": "What happens to the insurance if I close my self-employed activity?",
+      "answer": "You will be able to maintain your health insurance by switching to an individual policy, although you will lose tax deductibility in your professional activity."
+    }
+  ]
+},
+  "seguro-medico-autonomos-madrid-deduccion-fiscal": {
+  "title": "Medical insurance for the self-employed in Madrid: how to deduct up to €500 in personal income tax",
+  "excerpt": "If you are self-employed in Madrid, your private health insurance may be deductible in personal income tax. We explain how much, how and what type of coverage is best for you depending on your situation.",
+  "metaTitle": "Self-employed medical insurance Madrid: €500 personal income tax deduction",
+  "metaDescription": "If you are self-employed in Madrid, your private health insurance may be deductible in personal income tax. We explain how much, how and what type of coverage is best for you depending on your situation.",
+  "imageAlt": "Self-employed working with peace of mind thanks to your deductible health insurance",
+  "sections": [
+    {
+      "heading": "The deduction that many self-employed people are unaware of",
+      "content": [
+        "If you are self-employed in Madrid, every euro counts. Between the self-employed fee, VAT, personal income tax and day-to-day expenses, the monthly tax bill is a constant reality. Therefore, when there is a legal deduction that can reduce your tax burden, it is worth knowing it in detail and taking advantage of it.",
+        "Since 2018, the self-employed can deduct up to 500 euros per year per person in personal income tax for the health insurance they take out for themselves, their spouse or common-law partner, and their children under 25 years of age. This deduction is applied directly to the full personal income tax rate, which means that it is a real saving, not a reduction in the tax base.",
+        "However, many self-employed workers in Madrid do not know this deduction or do not know how to apply it correctly. Others have health insurance that does not meet the legal requirements to be deductible. In this article we explain everything you need to know to take advantage of this tax benefit without problems with the Treasury."
+      ]
+    },
+    {
+      "heading": "What insurances qualify for the deduction?",
+      "content": [
+        "Not all health insurance is deductible. In order for private health insurance to be subject to personal income tax deduction as a self-employed person, it must meet a series of requirements established in tax regulations:",
+        "• The insurance must be health insurance: This includes medical health insurance, sickness insurance and insurance that covers healthcare. Exclusively dental, life or accident insurance does NOT qualify for this specific deduction.",
+        "• The payment must be made by the self-employed person: The premium must be paid by the self-employed worker, either directly or through their managing entity. If the insurance is paid for by another person, it is not deductible.",
+        "• There must be proof of the contractual relationship: It is important to keep the policy and payment invoices, since the Treasury may require supporting documentation in the event of a tax inspection.",
+        "• The deduction is per insured person: You can deduct up to 500 euros for yourself, another 500 for your spouse or common-law partner, and an additional 500 euros for each child under 25 years of age that you have included in the policy. A family can deduct 2,000 euros per year if both parents are self-employed."
+      ]
+    },
+    {
+      "heading": "How to apply the deduction in your personal income tax return",
+      "content": [
+        "Applying this deduction is relatively simple, but requires attention to details to avoid errors that could lead to Treasury penalties.",
+        "In the personal income tax return (form 100), the deduction is included in the section corresponding to deductions for family and personal circumstances. You must enter the total amount of premiums paid during the fiscal year, with a maximum limit of 500 euros per insured person.",
+        "If you contracted the insurance in the middle of the year, the deduction is prorated for the months of contract. For example, if you signed your policy in July, you will be able to deduct the proportional part of those 500 euros corresponding to the remaining 6 months of the year.",
+        "It is essential that you keep all the documentation: the insurance contract that proves the illness coverage, the invoices for the premiums paid and the proof of payment. The Treasury can claim these documents up to four years after the declaration."
+      ]
+    },
+    {
+      "heading": "What coverage is best for you as a self-employed person?",
+      "content": [
+        "Taking advantage of the tax deduction is important, but more important is having the coverage you really need. As a freelancer, you don't have the safety net of a company to keep you on payroll during a prolonged sick leave. If you get sick and need quick medical attention to return to work, good health insurance becomes a profitable investment, not an expense.",
+        "For young and healthy self-employed people, insurance with a moderate co-payment is usually the most economical option. You pay a low monthly premium and assume a small cost for each consultation. If you rarely go to the doctor, the combination of low premium + co-payment is more profitable than insurance without co-payment.",
+        "If you have children or medical pre-existing conditions, insurance without co-payment will give you the peace of mind of knowing exactly how much you are going to pay each month, without unforeseen events. The monthly cost is higher, but you have unlimited access to specialists at no additional cost.",
+        "For self-employed people over 45 years of age, we recommend evaluating insurance with coverage for prostheses, rehabilitation and preventive medicine. At this age, regular check-ups and early detection can avoid long breaks in your professional activity."
+      ]
+    },
+    {
+      "heading": "Real savings: concrete numbers",
+      "content": [
+        "Let's see with real numbers how much you can save. Imagine that you are self-employed in Madrid with health insurance without co-payment that costs €55/month (€660/year). If your marginal personal income tax rate is 24% (the usual range for self-employed workers with average income), the €500 deduction means a saving of €120 on your return.",
+        "But the savings don't end there. If you need a consultation with a public health specialist, you can wait weeks or months. As a freelancer, every day without working is a day without billing. Private insurance that gives you access to a specialist within 48-72 hours can prevent you from losing hundreds or thousands of euros of income due to prolonged sick leave.",
+        "In addition, many health insurance policies for the self-employed include telemedicine, which allows you to obtain diagnoses and prescriptions without leaving your home or workplace. This is especially valuable if your job requires constant travel or if you serve clients and cannot afford long absences."
+      ]
+    },
+    {
+      "heading": "Conclusion: Deduction is just the beginning",
+      "content": [
+        "The deduction of €500 per year is a welcome help, but the true value of private health insurance for the self-employed goes far beyond taxation. It means having the peace of mind that, if something happens to you, you will have fast, quality medical care without depending on the waiting lists of the public system.",
+        "If you do not yet have private health insurance, I encourage you to calculate how much a week without being able to work would cost you due to an illness that could have been diagnosed and treated in time. Compare that cost to the annual premium for good insurance minus the tax deduction. Normally, the numbers speak for themselves.",
+        "In our insurance consultancy in Madrid, we help self-employed people find the health insurance that best suits their real situation, taking into account their professional activity, their age, their medical history and, of course, tax optimization. If you want us to review your particular case, we are at your disposal for a no-obligation consultation."
+      ]
+    }
+  ],
+  "tips": [
+    "The €500 deduction is per person: you, your spouse and each child under 25 can add up to €2,000 family deduction.",
+    "Always keep the policy and payment invoices: The Treasury can ask you for documentation up to 4 years later.",
+    "If you register a child or spouse in the middle of the year, the deduction is prorated by month.",
+    "The insurance must cover illness: exclusively dental or life insurance does not qualify for this deduction.",
+    "For self-employed workers over 45, consider prosthesis and rehabilitation coverage: they will avoid long breaks in your activity."
+  ],
+  "faqs": [
+    {
+      "question": "Can I deduct dental insurance if I am self-employed?",
+      "answer": "No, the specific deduction of €500 only applies to illness or medical health insurance. Exclusively dental insurance does not qualify for this deduction, although it may be deductible as a business expense if you take one out for your employees."
+    },
+    {
+      "question": "What happens if I am self-employed and my partner is also self-employed? Can we both deduct the same insurance?",
+      "answer": "If you are both self-employed and you pay for the insurance, each of you can deduct up to €500 for each insured person. If you pay for family insurance between €1,200 and €2,000, technically you could both deduct the same policy, but it is safer for each of you to have your own individual insurance to avoid conflicts with the Treasury."
+    },
+    {
+      "question": "When should I take out insurance to be able to deduct it all year?",
+      "answer": "To deduct the full €500, you must have the insurance contracted since January 1. If you hire it in the middle of the year, the deduction is prorated. However, even if you hire it in November, you can deduct the proportional part (about €83 for two months) and the following year deduct the full €500."
+    },
+    {
+      "question": "Is the health insurance of my child over 25 who is studying deductible?",
+      "answer": "No. The regulations specifically establish \"children under 25 years of age.\" Once they turn 25, the child stops generating the right to deduction, even if they are studying or are financially dependent on you."
+    }
+  ]
+},
+  "seguro-dental-vs-salud-completa-madrid": {
+  "title": "Dental insurance or comprehensive health? What no one explains to you before hiring in Madrid",
+  "excerpt": "Many people in Madrid have only dental insurance without knowing that for little more they can have complete medical coverage. We help you decide without pressure.",
+  "metaTitle": "Dental insurance or comprehensive health? Madrid Guide",
+  "metaDescription": "Many people in Madrid have only dental insurance without knowing that for little more they can have complete medical coverage. We help you decide without pressure.",
+  "imageAlt": "Comparison between dental insurance and comprehensive health insurance in Madrid",
+  "sections": [
+    {
+      "heading": "The “dental only” trap",
+      "content": [
+        "In Madrid, many people have dental insurance that cost them very little money, often included as a benefit on a credit card or as an add-on to home insurance. And they think: \"My mouth is covered, that's it.\" But there is a problem: having only dental insurance is like having good windshield insurance but not having damage coverage for the rest of the car.",
+        "Dental insurance covers cleanings, fillings, extractions and some other specialties such as root canals or dental prosthetics. But it doesn't cover anything else. If your knee hurts, if you have abdominal discomfort, if you need a blood test or a gynecological examination, dental insurance is of no use to you.",
+        "Here's the revelation that many don't know: the price jump between good dental insurance and comprehensive health insurance with dental coverage included is much smaller than you think. Often, for €15-25 more per month, you go from having just your mouth covered to having access to all medical specialties, hospitalization, emergencies and diagnostic tests."
+      ]
+    },
+    {
+      "heading": "Honest comparison: what does each one cover?",
+      "content": [
+        "Let's see clearly what each type of insurance offers so you can make an informed decision:",
+        "Basic Dental Insurance (€15-25/month):",
+        "• Annual inspection and cleaning included",
+        "• Simple fillings and extractions",
+        "• Dental x-rays",
+        "• Discounts on prostheses and aesthetic treatments (normally not included 100%)",
+        "• No or very low copay for most treatments",
+        "",
+        "Health Insurance with Dental included (€40-70/month depending on age):",
+        "• All of the above plus: access to a family doctor and all medical specialties",
+        "• Complete hospitalization (single room in many cases)",
+        "• 24-hour emergencies with immediate attention",
+        "• Diagnostic tests (analysis, x-rays, MRIs)",
+        "• Scheduled and urgent surgery",
+        "• Complete dental coverage: cleanings, fillings, extractions, root canals"
+      ]
+    },
+    {
+      "heading": "Profiles: which one suits you?",
+      "content": [
+        "There is no one-size-fits-all answer. It depends on your age, your family situation, your medical history and your ability to save. Here are some guidelines:",
+        "• \"Dental Only\" is suitable for you if: You are young (less than 30 years old), you are healthy, you do not have dependent children, and your priority is to maintain oral health without worrying about the rest. It is a risky profile, but understandable if your income is limited.",
+        "• \"Complete health with dental\" is right for you if: You are over 35 years old, you have children (the included pediatricians are a luxury), you have a controlled medical condition (hypertension, hypothyroidism, etc.), or you simply prefer the peace of mind of knowing that any medical problem is covered.",
+        "• If you are self-employed: Complete health insurance is almost mandatory. You don't have the safety net of a company to keep you on payroll during a sick leave. You need to diagnose and cure quickly to return to work. And, in addition, you can deduct up to €500 a year in personal income tax."
+      ]
+    },
+    {
+      "heading": "The real cost: numbers without makeup",
+      "content": [
+        "Let's talk about money honestly. Basic dental insurance in Madrid will cost you between €15 and €25 per month. Comprehensive health insurance with dental coverage included will cost you between €40 and €70 per month, depending on your age and the type of co-payment you choose.",
+        "The difference, in the worst case, is about €45 per month (€540 per year). But let's think about what that additional €540 includes: unlimited access to specialists, covered hospitalization, emergencies without co-payment, diagnostic tests...",
+        "A single visit to the emergency room at a private hospital in Madrid can cost between €150 and €300. An MRI, between €200 and €400. One day of hospitalization, between €800 and €1,500. That is to say: a single moderate medical incident already amortizes the annual price difference.",
+        "And if you are self-employed, remember: the deduction of €500 per year in personal income tax means that complete health insurance will cost you, in net terms, practically the same as dental insurance."
+      ]
+    },
+    {
+      "heading": "The psychological factor: tranquility has value",
+      "content": [
+        "Not everything can be measured in euros and cents. There is an intangible but invaluable factor: mental peace of mind.",
+        "When you only have dental insurance, every physical discomfort that is not of the mouth creates a dilemma: Do I go to the public emergency room and risk waiting 4 hours? Do I pay out of pocket for a private consultation that costs €80? Should I wait to see if it passes? This anxiety is real and affects your quality of life.",
+        "When you have comprehensive health insurance, that anxiety disappears. Something hurts, you make an appointment with the specialist, they diagnose you in 48-72 hours, they treat you, and you continue with your life. There are no dilemmas, no financial worries, no agonizing waits.",
+        "For families with children, this tranquility is multiplied. A child with a fever at 3 in the morning is a family emergency. Having insurance that allows you to go to private pediatric emergencies without thinking about the cost is a huge relief for parents."
+      ]
+    },
+    {
+      "heading": "Conclusion: The decision is yours, but let it be informed",
+      "content": [
+        "If after reading this you decide to keep only your dental insurance, that's perfect. It's your decision and we respect it. But let it be a conscious decision, not due to ignorance of what the market offers.",
+        "In our experience as insurance advisors in Madrid, most people who start with just dental and then try comprehensive health insurance do not go back. Once you experience the peace of mind of having everything covered, saving €30 a month stops seeming important.",
+        "If you want us to review your particular situation, we can compare your current dental insurance with comprehensive health options that include dental. Most of the time, the price difference is less than you imagine. And if you decide to stick with just dental, that's fine too. Our job is to inform you, not pressure you."
+      ]
+    }
+  ],
+  "tips": [
+    "If you are over 35 or have children, comprehensive insurance is usually more cost-effective in the long term.",
+    "Compare the maximum annual copay: “cheap” insurance with high copays can cost you a lot.",
+    "The self-employed can deduct up to €500 from the complete health insurance in personal income tax.",
+    "Ask if the insurance includes telemedicine: it is very useful for quick consultations without traveling.",
+    "Verify that the medical team has good coverage in your area of ​​Madrid before contracting."
+  ],
+  "faqs": [
+    {
+      "question": "Can I add dental to my health insurance later?",
+      "answer": "Yes, most companies allow dental coverage to be included in your existing health insurance, although there may be a waiting period of 3-6 months for some specific dental treatments."
+    },
+    {
+      "question": "Does dental insurance include implants and orthodontics?",
+      "answer": "Normally not 100%. Most dental insurance covers cleanings, fillings and extractions, but implants, orthodontics and cosmetic treatments usually have discounts (20-40%) rather than full coverage."
+    },
+    {
+      "question": "Is it better to have two separate insurance policies (health + dental) or a combined one?",
+      "answer": "Depends. Combined insurance is usually cheaper and more convenient to manage, but if you already have good health insurance without dental, adding separate dental can be more flexible."
+    },
+    {
+      "question": "Do children need their own dental insurance or is it included?",
+      "answer": "In family health insurance with dental included, minor children usually have complete dental coverage. If you purchase only dental insurance, there are family options that include children for a small increase in premium."
+    }
+  ]
+}
 };
