@@ -6,12 +6,20 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { blogCategories } from '@/lib/blog';
 import type { BlogPost } from '@/lib/blog';
+import type { BlogLocale } from '@/lib/blog-catalog';
 
 interface BlogGridProps {
   posts: (BlogPost & { pexelsImage: string })[];
+  locale?: BlogLocale;
 }
 
-export function BlogGrid({ posts }: BlogGridProps) {
+export function BlogGrid({ posts, locale = 'es' }: BlogGridProps) {
+  const labels = locale === 'en'
+    ? { empty: 'There are no articles in this category yet.', viewAll: 'View all articles' }
+    : { empty: 'No hay artículos en esta categoría aún.', viewAll: 'Ver todos los artículos' };
+  const categoryLabels: Record<string, string> = locale === 'en'
+    ? { todos: 'All', salud: 'Health', autonomos: 'Self-employed', vida: 'Life', familia: 'Family', consejos: 'Guides', mascotas: 'Pets', legal: 'Legal' }
+    : Object.fromEntries(blogCategories.map((category) => [category.id, category.label]));
   const [activeCategory, setActiveCategory] = useState('todos');
 
   const filteredPosts = useMemo(() => {
@@ -52,7 +60,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
                   }
                 `}
               >
-                {cat.label}
+                {categoryLabels[cat.id] || cat.label}
                 <span
                   className={`
                     inline-flex items-center justify-center
@@ -76,14 +84,14 @@ export function BlogGrid({ posts }: BlogGridProps) {
       <div className="container-shell">
         {filteredPosts.length === 0 ? (
           <div className="soft-card p-12 text-center">
-            <p className="text-lg text-[var(--muted)]">
-              No hay artículos en esta categoría aún.
+              <p className="text-lg text-[var(--muted)]">
+              {labels.empty}
             </p>
             <button
               onClick={() => setActiveCategory('todos')}
               className="mt-4 text-[var(--blue)] font-semibold hover:underline underline-offset-4"
             >
-              Ver todos los artículos
+              {labels.viewAll}
             </button>
           </div>
         ) : (
@@ -94,7 +102,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
                 className="soft-card overflow-hidden group animate-in fade-in slide-in-from-bottom-4 duration-500"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <Link href={`/blog/${post.slug}`} className="block">
+                <Link href={locale === 'en' ? `/en/blog/${post.slug}` : `/blog/${post.slug}`} className="block">
                   <div className="relative h-60 overflow-hidden">
                     <Image
                       src={post.pexelsImage}
@@ -107,7 +115,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-xs font-semibold text-[var(--blue-deep)] shadow-sm">
-                        {blogCategories.find((c) => c.id === post.category)?.label || post.category}
+                {categoryLabels[post.category] || post.category}
                       </span>
                     </div>
 

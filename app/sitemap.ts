@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getBlogSitemapEntries } from '@/lib/blog-catalog';
+import { getBlogSitemapEntries, getPublishedEnglishPosts } from '@/lib/blog-catalog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://valentinproteccionintegral.com';
@@ -92,12 +92,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // BLOG — índice
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${base}/en/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6, alternates: { languages: { es: `${base}/blog`, en: `${base}/en/blog`, 'x-default': `${base}/blog` } } },
     // Artículos del blog: fuente única del inventario canónico
     ...getBlogSitemapEntries('es').map((post) => ({
       url: `${base}/blog/${post.slug}`,
       lastModified: post.date,
       changeFrequency: 'monthly' as const,
       priority: post.priority,
+      ...(post.enSlug ? { alternates: { languages: { es: `${base}/blog/${post.slug}`, en: `${base}/en/blog/${post.enSlug}`, 'x-default': `${base}/blog/${post.slug}` } } } : {}),
     })),
 
     // CONTACTO

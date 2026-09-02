@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/blog",
+    languages: { es: "https://valentinproteccionintegral.com/blog", en: "https://valentinproteccionintegral.com/en/blog", "x-default": "https://valentinproteccionintegral.com/blog" },
   },
 };
 
@@ -54,6 +55,7 @@ export default async function BlogPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
+            "inLanguage": "es",
             "name": "Blog de Seguros · Valentín Protección Integral",
             "url": "https://valentinproteccionintegral.com/blog",
             "description": "Guías y consejos honestos sobre seguros explicados sin tecnicismos.",

@@ -1,5 +1,6 @@
 import type { BlogPost } from '@/lib/blog';
 import { blogPosts } from '@/lib/blog';
+import { blogEnglishContent } from '@/lib/blog-en-content';
 
 export type BlogLocale = 'es' | 'en';
 
@@ -75,9 +76,17 @@ const sharedContent = (post: BlogPost): BlogContent => ({
   faqs: post.faqs,
 });
 
+const englishSlugs: Record<string, string> = {
+  'mejor-seguro-medico-calidad-precio-espana': 'best-value-health-insurance-spain',
+  'seguro-medico-privado-madrid': 'private-health-insurance-madrid',
+  'mejor-seguro-salud-madrid-2026': 'best-health-insurance-madrid-2026',
+  'guia-seguro-salud-espana-2026': 'health-insurance-guide-spain-2026',
+  'cuanto-cuesta-seguro-salud-madrid': 'health-insurance-cost-madrid',
+};
+
 const fromBlogPost = (post: BlogPost): BlogCatalogEntry => ({
   id: stableIds[post.slug],
-  slug: { es: post.slug },
+  slug: { es: post.slug, ...(englishSlugs[post.slug] ? { en: englishSlugs[post.slug] } : {}) },
   shared: {
     date: post.date,
     dateModified: post.dateModified,
@@ -87,7 +96,7 @@ const fromBlogPost = (post: BlogPost): BlogCatalogEntry => ({
     googleReviewsUrl: post.googleReviewsUrl,
     googleWriteReviewUrl: post.googleWriteReviewUrl,
   },
-  content: { es: sharedContent(post) },
+  content: { es: sharedContent(post), ...(blogEnglishContent[post.slug] ? { en: { ...blogEnglishContent[post.slug], image: post.image } } : {}) },
   renderer: 'shared',
   sitemap: { indexableEs: true, priority: [
     'mejor-seguro-medico-calidad-precio-espana',
@@ -195,11 +204,18 @@ export function getLocalizedBlogPath(id: string, locale: BlogLocale) {
   return slug ? (locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`) : undefined;
 }
 
+export function toLegacyBlogPost(post: BlogCatalogEntry, locale: BlogLocale): BlogPost | undefined {
+  const content = post.content[locale];
+  if (!content) return undefined;
+  return { ...content, ...post.shared, slug: post.slug[locale] ?? post.slug.es };
+}
+
 export function getBlogSitemapEntries(locale: 'es') {
   return blogCatalog
     .filter((post) => post.sitemap.indexableEs && post.slug[locale])
     .map((post) => ({
       slug: post.slug[locale],
+      enSlug: post.slug.en,
       date: post.shared.date,
       priority: post.sitemap.priority,
     }));

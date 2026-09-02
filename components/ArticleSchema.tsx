@@ -7,6 +7,7 @@ export default function ArticleSchema({
   imageUrl,
   articleUrl,
   authorUrl = "https://valentinproteccionintegral.com/sobre-nosotros",
+  inLanguage,
 }: {
   title: string;
   datePublished: string;
@@ -15,10 +16,12 @@ export default function ArticleSchema({
   imageUrl?: string;
   articleUrl?: string;
   authorUrl?: string;
+  inLanguage?: 'es' | 'en';
 }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    ...(inLanguage ? { "inLanguage": inLanguage } : {}),
     "headline": title,
     "description": description,
     "datePublished": datePublished,

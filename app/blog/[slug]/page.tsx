@@ -11,6 +11,7 @@ import { getPexelsImage } from '@/lib/pexels';
 import SchemaFAQ from '@/components/seo/schema-faq';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import ArticleSchema from '@/components/ArticleSchema';
+import { getBlogPostBySlug } from '@/lib/blog-catalog';
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -27,9 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle,
     description: post.metaDescription,
-    alternates: {
-      canonical: `${site.domain}/blog/${post.slug}`,
-    },
+    alternates: { canonical: `${site.domain}/blog/${post.slug}`, ...(getBlogPostBySlug('es', post.slug)?.slug.en ? { languages: { es: `${site.domain}/blog/${post.slug}`, en: `${site.domain}/en/blog/${getBlogPostBySlug('es', post.slug)?.slug.en}`, 'x-default': `${site.domain}/blog/${post.slug}` } } : {}) },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
@@ -77,6 +76,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         imageUrl={imageUrl.startsWith('http') ? imageUrl : `https://valentinproteccionintegral.com${imageUrl}`}
         articleUrl={`https://valentinproteccionintegral.com/blog/${post.slug}`}
         authorUrl="https://valentinproteccionintegral.com/sobre-nosotros"
+        inLanguage="es"
       />
       {post.faqs && <SchemaFAQ faqs={post.faqs} />}
       <Header />

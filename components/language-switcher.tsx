@@ -1,22 +1,41 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { productPathnames } from '@/lib/product-locales';
+import { getBlogPostBySlug } from '@/lib/blog-catalog';
+import type { BlogLocale } from '@/lib/blog-catalog';
 
-const supportedPathnames = new Set(['/', '/autonomos', '/contacto', '/extranjeros', '/extranjeros/alquileres', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india', '/internacional/corea-del-sur', '/como-te-ayudamos', '/sobre-nosotros', '/opiniones', '/aviso-legal', '/privacidad', '/cookies', '/empresas', '/empresas/salud', '/empresas/ciberseguridad', '/para/autonomos', '/para/familias', '/para/jovenes-profesionales', '/para/seniors', ...Object.keys(productPathnames)]);
+const supportedPathnames = new Set(['/', '/blog', '/autonomos', '/contacto', '/extranjeros', '/extranjeros/alquileres', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india', '/internacional/corea-del-sur', '/como-te-ayudamos', '/sobre-nosotros', '/opiniones', '/aviso-legal', '/privacidad', '/cookies', '/empresas', '/empresas/salud', '/empresas/ciberseguridad', '/para/autonomos', '/para/familias', '/para/jovenes-profesionales', '/para/seniors', ...Object.keys(productPathnames)]);
 
 export function LanguageSwitcher() {
-  const locale = useLocale();
+  const locale = useLocale() as BlogLocale;
   const pathname = usePathname();
   const t = useTranslations('common');
-  const supported = supportedPathnames.has(pathname);
+  const [browserPathname, setBrowserPathname] = useState<string | null>(null);
+  useEffect(() => {
+    const currentPath = window.location.pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+    setBrowserPathname(currentPath);
+  }, []);
+  const effectivePathname = browserPathname ?? pathname;
+  const blogSlug = effectivePathname.startsWith('/blog/') ? effectivePathname.slice('/blog/'.length) : undefined;
+  const blogPost = blogSlug ? getBlogPostBySlug(locale, blogSlug) : undefined;
+  const blogEquivalent = effectivePathname === '/blog' || Boolean(blogPost?.slug.en);
+  const supported = supportedPathnames.has(effectivePathname) || blogEquivalent;
 
   if (!supported) {
     return <span className="inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
+  if (effectivePathname === '/blog') {
+    return <a href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"><span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span><span className="text-white/35">/</span><span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span></a>;
+  }
+  if (blogPost?.slug.en) {
+    const targetHref = targetLocale === 'en' ? `/en/blog/${blogPost.slug.en}` : `/blog/${blogPost.slug.es}`;
+    return <a href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"><span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span><span className="text-white/35">/</span><span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span></a>;
+  }
   if (pathname === '/') {
     return (
       <a

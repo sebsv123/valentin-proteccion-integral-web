@@ -63,6 +63,8 @@ export const routing = defineRouting({
     '/para/jovenes-profesionales': { es: '/para/jovenes-profesionales', en: '/for/young-professionals' },
     '/para/seniors': { es: '/para/seniors', en: '/for/seniors' },
     '/extranjeros/alquileres': { es: '/extranjeros/alquileres', en: '/foreigners/rentals' },
+    '/blog': { es: '/blog', en: '/blog' },
+    '/blog/[slug]': { es: '/blog/[slug]', en: '/blog/[slug]' },
   },
 });
 
