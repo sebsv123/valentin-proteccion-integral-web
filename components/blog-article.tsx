@@ -77,6 +77,7 @@ export function BlogArticle({ post, locale = 'es', relatedPosts }: { post: BlogP
                       <FAQAccordion
                         items={post.faqs.map(f => ({ q: f.question, a: f.answer }))}
                         contextualLinks={true}
+                        locale={locale}
                       />
                     </div>
                   </div>
