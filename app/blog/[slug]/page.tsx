@@ -76,6 +76,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         dateModified={post.dateModified}
         imageUrl={imageUrl.startsWith('http') ? imageUrl : `https://valentinproteccionintegral.com${imageUrl}`}
         articleUrl={`https://valentinproteccionintegral.com/blog/${post.slug}`}
+        authorUrl="https://valentinproteccionintegral.com/sobre-nosotros"
       />
       {post.faqs && <SchemaFAQ faqs={post.faqs} />}
       <Header />
@@ -83,7 +84,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.title }]} />
         </div>
-        <BlogArticle post={postWithImage} />
+          <BlogArticle post={postWithImage} locale="es" />
       </main>
       <Footer />
       <StickyWhatsApp />

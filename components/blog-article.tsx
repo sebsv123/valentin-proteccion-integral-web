@@ -4,12 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle, Clock, FileText, ChevronRight } from 'lucide-react';
 import { BlogPost, getRelatedPosts } from '@/lib/blog';
+import type { BlogLocale } from '@/lib/blog-catalog';
 import { buildWhatsAppHref } from '@/lib/products';
 import { FAQAccordion } from '@/components/faq-accordion';
 import RevealLight from '@/components/ui/reveal-light';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
-export function BlogArticle({ post }: { post: BlogPost }) {
+export function BlogArticle({ post, locale = 'es' }: { post: BlogPost; locale?: BlogLocale }) {
   const related = getRelatedPosts(post.slug);
 
   return (

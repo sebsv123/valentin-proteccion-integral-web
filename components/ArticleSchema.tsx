@@ -6,6 +6,7 @@ export default function ArticleSchema({
   description,
   imageUrl,
   articleUrl,
+  authorUrl = "https://valentinproteccionintegral.com/sobre-nosotros",
 }: {
   title: string;
   datePublished: string;
@@ -13,6 +14,7 @@ export default function ArticleSchema({
   description: string;
   imageUrl?: string;
   articleUrl?: string;
+  authorUrl?: string;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -24,7 +26,7 @@ export default function ArticleSchema({
     "author": {
       "@type": "Person",
       "name": "Rosa Valentín",
-      "url": "https://valentinproteccionintegral.com/sobre-nosotros"
+      "url": authorUrl
     },
     "publisher": {
       "@type": "Organization",

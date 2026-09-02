@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { getBlogSitemapEntries } from '@/lib/blog-catalog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://valentinproteccionintegral.com';
@@ -91,39 +92,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // BLOG — índice
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    // Artículos del blog
-    { url: `${base}/blog/mejor-seguro-medico-calidad-precio-espana`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/seguro-medico-privado-madrid`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/mejor-seguro-salud-madrid-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/seguros-boadilla-del-monte`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/cuanto-cuesta-seguro-salud-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/mejor-seguro-salud-autonomos-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/seguros-vida-hipoteca-boadilla-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/seguro-medico-autonomos-madrid-deduccion-fiscal`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog/ventajas-asesor-de-seguros`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/fiarse-opiniones-para-elegir-seguro`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/incluir-personas-poliza-medica`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguros-salud-cubren-recien-nacidos`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/donde-consultar-que-incluye-mi-poliza`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-medico-asistencia-en-viaje-que-cubre`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-de-vida-riesgo-que-es`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/tipos-de-seguros-de-vida`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-perros-madrid-ley-bienestar-2026`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/asesor-seguros-vs-portal-online`, lastModified: '2026-04-13', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/guia-seguro-salud-espana-2026`, lastModified: '2026-02-15', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-vida-esencial-familia`, lastModified: '2026-01-28', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-vida-hipoteca-obligatorio`, lastModified: '2026-02-10', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguros-mascotas-2026-vale-la-pena`, lastModified: '2026-03-01', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-perro-obligatorio-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-dental-familias-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-accidentes-convenio-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-ahorro-jubilacion-madrid`, lastModified: '2026-04-14', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-decesos-familiar-madrid-que-cubre`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/seguro-dental-vs-salud-completa-madrid`, lastModified: '2026-04-17', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/por-que-necesitas-mas-de-9-000e-en-proteccion-familiar-madrid-2026-must-have`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/pasaporte-europeo-mascotas-obligatorio-2026-vacunas-precio-madrid`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/cuanto-te-indemniza-realmente-tu-seguro-hipoteca-nomina-en-invalidez-solo-50`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/blog/como-aplicar-protector-solar-beneficios`, lastModified: '2026-06-03', changeFrequency: 'monthly', priority: 0.6 },
+    // Artículos del blog: fuente única del inventario canónico
+    ...getBlogSitemapEntries('es').map((post) => ({
+      url: `${base}/blog/${post.slug}`,
+      lastModified: post.date,
+      changeFrequency: 'monthly' as const,
+      priority: post.priority,
+    })),
 
     // CONTACTO
     { url: `${base}/contacto`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
