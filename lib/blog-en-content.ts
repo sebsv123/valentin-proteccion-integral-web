@@ -868,5 +868,388 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "answer": "In family health insurance with dental included, minor children usually have complete dental coverage. If you purchase only dental insurance, there are family options that include children for a small increase in premium."
     }
   ]
+  },
+  "seguro-medico-asistencia-en-viaje-que-cubre": {
+  "title": "What does travel assistance medical insurance cover? Complete guide 2026",
+  "excerpt": "Medical expenses, repatriation, cancellation, loss of luggage... and what no one explains: what happens when you really need it. Honest guide to travel insurance in 2026.",
+  "metaTitle": "What does travel assistance medical insurance cover? Guide 2026",
+  "metaDescription": "Medical expenses, repatriation, lost suitcases and more. Everything you need to know about travel insurance before leaving Spain in 2026.",
+  "imageAlt": "Travelers planning their next adventure abroad",
+  "sections": [
+    {
+      "heading": "Everything you need to know before you leave",
+      "content": [
+        "A medical emergency abroad does not warn. When it happens, the question is not \"should I have gotten insurance?\" The question is \"what do I do now?\" — and the answer depends on whether you have one or not.",
+        "This guide explains what travel assistance insurance covers, what it does not cover, when it is mandatory and, above all, what to do if you really need it at some point.",
+        "It is not a luxury: the cost of a night's hospitalization in the US can exceed €10,000, while insurance usually costs between €3 and €8 per day."
+      ]
+    },
+    {
+      "heading": "What exactly does travel insurance cover?",
+      "content": [
+        "• Medical and surgical assistance: Emergencies, hospitalization, diagnoses and medications prescribed at the destination.",
+        "• Health repatriation: The most expensive service. It covers medical transfer to Spain (by medical plane if necessary) when you cannot return under normal conditions.",
+        "• Accompanying expenses: Travel and stay of a family member if you are hospitalized alone abroad.",
+        "• Cancellation and interruption: Reimbursement of non-recoverable expenses if you cannot travel for serious and justified reasons.",
+        "• Luggage and RC: Coverage for theft or loss of suitcases and civil liability for involuntary damage to third parties."
+      ]
+    },
+    {
+      "heading": "The European Health Card vs Private Insurance",
+      "content": [
+        "The EHIC is free and useful in the EU, but it has critical limitations that many are unaware of:",
+        "1. It does NOT cover medical repatriation (the highest cost of all).",
+        "2. It only gives access to public health, sometimes non-existent in tourist areas.",
+        "3. Does not cover theft, cancellations or legal assistance.",
+        "Within Europe, private insurance complements the EHIC in points where it does not reach. Outside Europe, the EHIC is not valid."
+      ]
+    },
+    {
+      "heading": "Guide to action in an emergency",
+      "content": [
+        "Critical steps if something happens to you outside of Spain:",
+        "1. First call the insurance's 24-hour center: They manage the contracted hospital and direct payment.",
+        "2. Don't sign anything without understanding it: Insurance usually provides interpreters if there is a language barrier.",
+        "3. Save all documentation: Reports, original invoices and pharmacy receipts to request reimbursements.",
+        "4. Contact again: If the situation is so urgent that you go on your own, notify the insurance as soon as you can."
+      ]
+    },
+    {
+      "heading": "Indicative prices for traveling in 2026",
+      "content": [
+        "• Europe (7 days): €10 – €25.",
+        "• Family in Europe (14 days): €35 – €70.",
+        "• USA / Canada (10 days): €40 – €90 (Most expensive medical system in the world).",
+        "• Southeast Asia (15 days): €35 – €80.",
+        "• Annual multi-trip: €80 – €180 per year (Ideal if you travel more than 3 times/year)."
+      ]
+    }
+  ],
+  "tips": [
+    "Always carry the insurance assistance number saved in your cell phone.",
+    "Check if the destination you are going to requires mandatory visa insurance.",
+    "Repatriation is the most critical service: never travel without it.",
+    "If you are a high-risk athlete, make sure you include the corresponding supplement."
+  ],
+  "faqs": [
+    {
+      "question": "Does the EHIC replace travel insurance?",
+      "answer": "No. The EHIC does not cover medicalized transfers to Spain or care in private centers. It is not valid outside the EU."
+    },
+    {
+      "question": "What happens if I have a pre-existing condition?",
+      "answer": "You must declare it. Some policies exclude it, but others cover unforeseen complications if they are correctly informed when contracting."
+    },
+    {
+      "question": "Is it mandatory for the Schengen visa?",
+      "answer": "Yes. The consulate requires insurance with a minimum coverage of €30,000 and repatriation to grant an entry visa to the EU."
+    },
+    {
+      "question": "Does it cover COVID-19?",
+      "answer": "Most current policies cover it like any other infectious disease initiated during travel."
+    },
+    {
+      "question": "How do I choose according to the destination?",
+      "answer": "In Europe, €100,000 of medical capital is enough. In the US, Canada or Japan we recommend a minimum of €500,000 due to the high hospital cost."
+    },
+    {
+      "question": "Can I contract if I am already traveling?",
+      "answer": "Very few insurers allow it and they usually include waiting periods of 72 hours to avoid fraud. The ideal is to hire before leaving."
+    }
+  ]
+},
+  "seguros-mascotas-2026-vale-la-pena": {
+  "title": "Pet insurance in 2026: Is it worth it?",
+  "excerpt": "Veterinary care, civil liability and optional cover: everything you need to know before taking out insurance for your dog or cat.",
+  "metaTitle": "Pet insurance in 2026: Is it worth taking out? | VPI",
+  "metaDescription": "Guide to pet insurance in Spain 2026: veterinary, civil liability, prices and whether it is really worth hiring one for your dog or cat.",
+  "imageAlt": "Dog and cat together at home",
+  "sections": [
+    {
+      "heading": "Why is there so much talk about pet insurance now?",
+      "content": [
+        "In recent years, Spanish legislation on responsible animal ownership has evolved a lot. The Animal Welfare Law and regional regulations have increased the obligations of owners.",
+        "Civil liability insurance for dogs is already mandatory in many autonomous communities, and there are breeds for which it has always been mandatory.",
+        "But beyond the legal obligation, veterinary expenses can be very high: an emergency operation can exceed €2,000-3,000. This is where pet insurance starts to make real sense."
+      ]
+    },
+    {
+      "heading": "Civil liability vs. veterinary assistance",
+      "content": [
+        "Not all pet insurance covers the same thing. There are two large blocks that should be understood separately:",
+        "Civil liability covers damages that your pet may cause to third parties: bites, destruction and accidents. It is the mandatory part in many cases.",
+        "Veterinary assistance covers the animal's health expenses: consultations, vaccines, surgeries, emergencies. It is not always included in all modalities.",
+        "Some policies focus on civil liability and others on veterinary care. The most complete ones combine both, but the cost is higher."
+      ]
+    },
+    {
+      "heading": "What optional coverages exist?",
+      "content": [
+        "Depending on the modality, you can find additional coverage such as:",
+        "• Theft or loss of the animal.",
+        "• Accidental death: compensation for the value of the animal.",
+        "• Stay expenses if you need hospitalization and no one can take care of your pet.",
+        "• 24-hour telephone veterinary advice.",
+        "• Sacrifice necessary due to illness or accident.",
+        "Not all of these coverages are necessary for everyone. The important thing is to assess which ones give you real peace of mind."
+      ]
+    },
+    {
+      "heading": "Indicative prices in 2026",
+      "content": [
+        "Pet insurance prices in Spain vary depending on species, breed, age and coverage included:",
+        "• Basic civil liability for dogs: from €40-70/year.",
+        "• Civil liability + basic veterinary assistance: from €120-200/year.",
+        "• Complete cover (civil liability + veterinary care + optional cover): from €250-400/year.",
+        "• For cats, prices are usually somewhat lower, since the risk of civil liability is lower.",
+        "These ranges are indicative. The key is to compare what each option includes, not just the annual price."
+      ]
+    },
+    {
+      "heading": "Is it worth it or not?",
+      "content": [
+        "The answer depends on three factors:",
+        "1. Legal obligation: If you need mandatory civil liability insurance, there is not much to think about. It is essential.",
+        "2. Potential veterinary expense: if your pet is prone to health problems or is elderly, veterinary care can be amortized with a single emergency.",
+        "3. Peace of mind: knowing that you are covered for unforeseen events (bite on a neighbor, animal accident) has a value that is not measured only in euros.",
+        "In our experience, pet insurance is especially worth it when you combine civil liability with a reasonable level of veterinary assistance. The key is not to pay for coverage that you don't need, but also not to fall short on the ones that do matter."
+      ]
+    },
+    {
+      "heading": "5 questions before hiring",
+      "content": [
+        "1. Do I need mandatory civil liability insurance because of my autonomous community or my pet's breed?",
+        "2. How much do I currently spend per year on a veterinarian?",
+        "3. Which optional options provide me with real value and which ones are dispensable?",
+        "4. Is there an age limit to hire or renew?",
+        "5. Does the insurance cover pre-existing events or only new events?"
+      ]
+    }
+  ],
+  "tips": [
+    "Civil liability insurance is already mandatory in many autonomous communities.",
+    "A veterinary emergency can exceed €2,000.",
+    "Not all pet insurance includes veterinary care.",
+    "Compare optional items judiciously: don't pay for what you don't need."
+  ]
+},
+  "seguro-perro-obligatorio-madrid": {
+  "title": "Mandatory dog ​​insurance in Madrid: what it covers and how much it costs in 2026",
+  "excerpt": "Do you have a dog in Madrid? The new law requires civil liability insurance for all breeds. We explain what coverage you need, what the regulations say and how to avoid fines.",
+  "metaTitle": "Mandatory Dog Insurance Madrid 2026 · Animal Welfare Law Guide",
+  "metaDescription": "Is dog insurance mandatory in Madrid? Yes, for all breeds. Discover the requirements of the Animal Welfare Law, civil liability coverage and 2026 prices.",
+  "imageAlt": "Happy dog ​​in a park in Madrid complying with mandatory insurance",
+  "sections": [
+    {
+      "heading": "The new mandatory nature of dog insurance in Madrid and throughout Spain",
+      "content": [
+        "The entry into force of the Law for the Protection of Animal Rights and Welfare has marked a before and after for all dog owners in the Community of Madrid. Until very recently, the obligation to take out civil liability insurance was limited exclusively to dogs classified as \"potentially dangerous.\" However, with the new legal framework of 2026, this requirement has been extended to all dogs, regardless of their breed, size or weight. This means that if you live in Madrid and have a dog, no matter how small or sociable, the law requires you to have current protection that covers possible damages to third parties.",
+        "This measure seeks to guarantee that in the event of any unforeseen event—from an accidental trip that causes injuries to a passerby to material damage to a local business—the owner has the necessary financial support to pay compensation. In a city with such a density of pets as Madrid is, mandatory dog ​​insurance is not just an administrative procedure, but a tool for coexistence. As insurance advisors, we receive daily queries from dog owners in Boadilla, Majadahonda and central Madrid who are concerned about complying with the regulations correctly and avoiding the high penalties contemplated in the new legislation.",
+        "It is important to understand that this national law is complemented by the municipal ordinances of each city council in the Madrid region. Although civil liability insurance is the core of the obligation, the minimum recommended coverage may vary depending on the use made of public spaces. In this detailed article, we are going to explain to you what exactly your policy should include, how much it will really cost you in 2026 and how to check if your home insurance is already giving you the coverage you need to avoid paying twice for the same thing."
+      ]
+    },
+    {
+      "heading": "What exactly should the minimum Civil Liability policy cover?",
+      "content": [
+        "Civil liability is the key cover in compulsory dog insurance in Madrid. Its function is to cover personal and material damage caused by the animal to third parties. Imagine that your dog, in a moment of excitement in Retiro or on the Boadilla mountain, causes a cyclist to lose balance and suffer an injury. Without liability insurance, you as the owner would have to respond with all your personal assets to the medical and damage claim. With the policy in force, the insurer is responsible for the compensation up to the limit agreed in the contract.",
+        "In the Community of Madrid, given recent jurisprudence and the costs of compensation for personal accidents, we recommend that the civil liability capital be not less than 150,000 euros, with limits of 300,000 euros being highly advisable for complete peace of mind. Many basic offers on the market offer very low capital that could be insufficient in the event of a serious incident. In addition to direct damages, a good policy should include legal protection, guaranteeing that you will have a legal defense in case you are unfairly reported for your pet's behavior.",
+        "Another vital point is that the insurance is \"without deductible\" or with a reduced deductible. If your insurance has a deductible of 200 euros, any small damage caused by your dog below that figure will have to be paid for out of your own pocket. As DGSFP registered agents in Madrid, we analyze the conditions of each company to ensure that compliance with the law is comfortable for your economy. It is not just about having a role to teach the municipal police, but about having a real safety net that protects your financial stability from the unpredictable behavior of any living being."
+      ]
+    },
+    {
+      "heading": "Home insurance versus specific pet insurance",
+      "content": [
+        "One of the most recurring doubts among Madrid residents is whether their home's multi-risk insurance already covers the civil liability of their dog. Historically, many home policies in Madrid included the RC for acts of private life, within which the acts of companion animals are framed. However, with the legal change of 2026, the situation has become more complex. Many insurers have begun to require an express declaration of the existence of the dog in the policy for the coverage to be effective, or have even limited this protection to dogs that do not exceed a certain weight, leaving out all medium and large breeds regardless of their character.",
+        "Reviewing your home insurance for free is one of the procedures we carry out most in our consultancy. If your home company confirms in writing that the dog is included and that the coverage meets the requirements of the new Animal Welfare Law, you do not need to purchase anything else. However, if we detect that the limits are insufficient or that there are abusive exclusions, we will recommend specific pet insurance. These products not only cover mandatory civil liability, but for a very low price they can add veterinary assistance in the event of an accident, theft or even the costs of sacrifice and disposal of the corpse, an issue that is difficult but necessary to anticipate.",
+        "Opting for specific insurance also has the advantage that the policy travels with the dog and does not depend on the situation of the property. For people who rent in Madrid or who change residence frequently, having dog insurance independently greatly simplifies the procedures and ensures that protection is never lost due to an administrative oversight. In Boadilla and similar residential areas, where contact between dogs in parks is constant, the clarity of coverage offered by specialized insurance usually compensates for the minimal financial investment it represents per year."
+      ]
+    },
+    {
+      "heading": "Costs, fines and practical advice for dog owners in Madrid 2026",
+      "content": [
+        "Let's talk about money, which is what usually worries us after a legal change. The cost of civil liability insurance for a dog not classified as dangerous in Madrid is remarkably low. In 2026, very solid options can be found between 25 and 45 euros per year. That is, for just 3 euros per month, you comply with the law and protect your assets. If you want to go one step further and take out complete veterinary health insurance (including hospitalization for illness, vaccinations and consultations), prices usually range between 15 and 35 euros per month, depending on the age and breed of the animal.",
+        "On the other side of the scale are the fines. Not having mandatory dog ​​insurance in Madrid is considered a minor infraction under the new regulations, but the amount of sanctions can range from 500 to 10,000 euros depending on the severity and whether any mishap has occurred. The Municipal Police in public parks in Madrid and Boadilla are beginning to systematically request proof of hiring or the last paid receipt. It is a totally unnecessary economic risk due to the low cost of the minimum policy.",
+        "As an expert tip, we suggest that you always save a digital copy of the insurance receipt on your mobile phone. Thus, in the event of any request from the authorities or in the event of an unforeseen event with another dog on the street, you will be able to prove the coverage immediately without having to return home. If you live in Boadilla and enjoy walks in the mountains, remember that civil liability protects you even if the dog causes an accident to a cyclist or runner. The law seeks protection, we seek that you enjoy your pet with maximum real peace of mind and without any small print that keeps you up at night."
+      ]
+    },
+    {
+      "heading": "Conclusion: The responsibility of a good owner",
+      "content": [
+        "Having a dog in Madrid in 2026 is a wonderful experience that now entails a new formal responsibility to society. Mandatory insurance should not be seen as another tax burden, but as a guarantee that we are protecting our pet, our neighbors and ourselves. In an ideal world, we will never have to use insurance, but knowing it is there allows us to focus on what really matters: the well-being and companionship of our pet.",
+        "If you have doubts about whether your current insurance is sufficient or if you need to find the cheapest but safest option on the market, our insurance consultancy in Boadilla del Monte is here to help you. We study your case in a personalized way, without obligation, and give you the clear answer that internet comparators cannot provide. Protect your dog today and walk with the security of complying with the law with the support of the best professionals in Madrid.",
+        "For a free review of your home policy or to take out specific pet insurance, we invite you to visit our pet insurance section or send us a quick message on WhatsApp. We will be happy to guide you with the closeness and professionalism that you and your dog deserve."
+      ]
+    }
+  ],
+  "tips": [
+    "Always carry a digital copy of the insurance on your cell phone to avoid problems with the Municipal Police.",
+    "Check if your home insurance already covers you: you can save between €30 and €50 a year.",
+        "A civil liability limit of €300,000 is ideal for Madrid; €150,000 usually falls short in the event of serious injuries.",
+    "If your dog travels with you, check that the insurance has coverage throughout the European Union."
+  ],
+  "faqs": [
+    {
+      "question": "Is it mandatory for all dogs in Madrid without exception?",
+      "answer": "Yes, the national Animal Welfare Law requires all dogs, from a Chihuahua to a Great Dane, to have liability insurance regardless of their breed."
+    },
+    {
+      "question": "What happens if my dog ​​causes an accident? Does insurance help me?",
+      "answer": "Liability insurance is responsible for compensation for material and personal damages, in addition to paying for your legal defense if necessary."
+    }
+  ]
+},
+  "seguro-dental-familias-madrid": {
+  "title": "Dental insurance for families in Madrid: guide without fine print 2026",
+  "excerpt": "Is family dental insurance in Madrid worth it? We explain the free events, real discounts and how to save on orthodontics and implants with total transparency.",
+  "metaTitle": "Family Dental Insurance Madrid · Is it worth it? Guide 2026",
+  "metaDescription": "Guide to family dental insurance in Madrid. We explain each coverage in detail, savings of 40% on treatments and tips for choosing the best clinic in 2026.",
+  "imageAlt": "Family in Madrid taking care of their dental health with professional insurance",
+  "sections": [
+    {
+      "heading": "Oral health in Madrid: The great gap in the public system",
+      "content": [
+        "Dental health is, historically, the great pending issue of public health in Spain. In the Community of Madrid, despite having large centers of medical excellence, Social Security dental coverage is practically limited to emergency extractions and little else. This leaves Madrid families in a situation of economic vulnerability when the need arises for common but expensive treatments, such as endodontics, children's orthodontics or replacement of parts through implants. In 2026, the cost of private dental treatments in the capital of Madrid and municipalities such as Boadilla has continued an upward trend, making dental insurance go from being a secondary option to becoming a key piece of family financial planning.",
+        "Taking out family dental insurance is not only a measure for when a toothache arises; It is, above all, a preventive savings tool. Many people wonder if it is really \"worth it\" to pay a monthly fee for this service. The short answer is yes, as long as you understand how it works and what you are contracting for. Dental insurance operates under a franchise model: for a small monthly fee, you access a network of top-level clinics with agreed and fixed prices that are usually between 30% and 50% lower than market prices for individuals. Added to this is that many basic services are completely free for the insured, which encourages prevention that, in the long run, saves thousands of euros in complex treatments.",
+        "In our consultancy with official registration in Boadilla del Monte, we break down these contracts so that Madrid families see the real value they provide. It's not just about seeing discounts in a brochure, but about understanding which clinics near your home are included and how to protect your children's smiles without affecting your budget. In this detailed guide, we are going to explain to you in no small print how dental insurance in Madrid works in 2026 and why it is one of the smartest protection decisions you can make this year for a surprisingly low price."
+      ]
+    },
+    {
+      "heading": "Free acts and real savings through dental franchises",
+      "content": [
+        "The basis of any serious dental insurance in Madrid is what we call \"free acts\". These are services that have no additional cost to the policyholder and typically include annual oral cleanings, panoramic x-rays (vital for complex initial diagnoses), periodic check-ups and simple extractions that do not require surgery. Just by having two members of a family undergo a dental cleaning and a complete check-up each year, the cost of the dental policy is usually already practically amortized. It is a way to force yourself to take care of your oral health on a regular basis without the fear of the final bill.",
+        "For treatments that do have a cost, such as fillings, porcelain covers or gum treatments, the \"dental franchise\" comes into play. These are scaled prices that the insurer imposes on the dental clinic. You, as the insured, will know in advance exactly how much a filling in Pozuelo or a root canal in the center of Madrid will cost, without last minute surprises based on \"personalized quotes\" that sometimes inflate costs unnecessarily. This price control is especially valuable in Madrid, where the range of rates between different neighborhoods can be abysmal. Dental insurance unifies quality and price, giving you negotiating power that as an individual is difficult to achieve.",
+        "In highly specialized treatments such as implants, the savings with dental insurance are massive. A complete process that could cost 1,500 euros going it alone can be reduced to 800 or 900 euros with a good family policy. In addition, modern dental policies in Madrid now usually include complementary dental aesthetic services (whitening, veneers) with significant discounts, reflecting the reality of what families demand today. As experts, we help compare not only the price catalog, but the technology used by the associated clinics, ensuring that the savings do not come at the expense of the required medical quality."
+      ]
+    },
+    {
+      "heading": "Children and youth orthodontics in Madrid: The concern of parents",
+      "content": [
+        "For families residing in Boadilla, Majadahonda and other areas of Madrid with a high rate of child population, orthodontics is the reigning topic in dental insurance consultations. We know that the cost of braces or invisible aligner treatment (such as Invisalign) is a very significant outlay that usually comes just when the family has other high educational expenses. Having dental insurance from when children are young allows access to free periodic orthodontic check-ups that detect malocclusion problems before they become serious and much more expensive to correct.",
+        "When the time comes for orthodontics, good family dental insurance in Madrid offers two critical advantages: the retention appliance and the first phase of the study are usually free or have a symbolic price, and the monthly treatment has a reduced cost. In a 24-month treatment, the total accumulated savings can easily exceed 1,000 euros for each child. Some insurers even offer \"specialized orthodontic modules\" for teenagers in Madrid that prioritize aesthetics with invisible systems, making what was previously prohibitive now accessible to the average family through secure, installment payments.",
+        "Furthermore, most dental insurances in 2026 not only cover the aesthetic part of orthodontics, but also monitor comprehensive oral health throughout the process. This includes the prevention of cavities during the use of appliances and mandatory hygiene checks. As local advisors, we know which insurance companies in the Boadilla area have agreements with the most reputable orthodontists, ensuring that your children are in the best hands. Don't settle for the cheapest clinic; Find the balance between a price determined by insurance and an impeccable clinical reputation that we help you contrast."
+      ]
+    },
+    {
+      "heading": "How to choose the best clinic and avoid traps in Madrid",
+      "content": [
+        "The dental market in Madrid is saturated with aggressive offers and low-cost \"franchise clinics\" that sometimes prioritize profitability over quality of care. The advantage of contracting your dental insurance through a leading company (as we recommend in our Boadilla consultancy) is that these insurers periodically audit the clinics that are part of their network. If a clinic in Madrid receives constant complaints or its treatments do not meet certain technical standards, the company expels it from its medical staff. This provides a layer of security and quality assurance that you would never have by blindly going to an unknown clinic.",
+        "When choosing your family dental insurance in Madrid, look at three key points: first, that it does not have unjustified waiting periods (you should be able to use it immediately for a cleaning or a filling); second, that the list of clinics near your home in Boadilla or your work in Madrid is extensive so that you have something to choose from; and third, that 24-hour dental emergencies are covered and well located. A tooth that starts to hurt on a Saturday night in Boadilla requires a quick response, and your insurance must provide you with a helpline and an operational emergency clinic on the way to Madrid capital.",
+        "In our advice, we not only give you the price of the dental policy (which for a family of 4 people is usually around 15-20 euros per month in total), but we help you read the fine print about the materials used in implants and the orthodontic brands allowed. We want you to understand that dental insurance is a service contract where transparency is the only thing that guarantees your long-term satisfaction. Madrid has fantastic dental professionals; We only give you the master key to access them with the best prices on the market and without any small print that spoils your smile or your budget."
+      ]
+    },
+    {
+      "heading": "Conclusion: Your family's smile deserves an expert plan",
+      "content": [
+        "Investing in family dental insurance is, in essence, buying peace of mind. It is knowing that your children's oral health is monitored from childhood and that you will be able to face any unforeseen dental event without decapitalizing your savings. In Madrid, where the pace of life and the level of demands are high, dental prevention is one of the best wellness decisions you can make. For the price of a few dinners a year, your entire family will be guaranteed top-notch dental care and access to trusted specialists in Boadilla and surrounding areas.",
+        "If you have questions about which dental insurance offers the best savings for a specific treatment or if you want an honest comparison between the main insurers in Spain with a network in Madrid, we are here to assist you. Our consultancy in Boadilla del Monte offers you that vision with official and professional registration that automatic comparators cannot give you. Let's talk about your peace of mind and the health of your loved ones today so that the next dental treatment is not a problem, but rather one more step in caring for your family.",
+        "For a personalized comparison of dental insurance or to resolve any questions about coverage and clinics in your Madrid neighborhood, we invite you to visit our dental section or contact us through our contact form. We are looking forward to helping you take care of your family's smile with the professionalism and closeness that characterizes us throughout the Community of Madrid."
+      ]
+    }
+  ],
+  "tips": [
+    "Use free annual cleanings: they not only improve your health, but they amortize the entire cost of insurance.",
+    "If you plan to have children's orthodontics, take out dental insurance a few months in advance to benefit from free preventive check-ups.",
+    "Always compare the estimated cost with deductible against the particular price of the same clinic: the savings usually exceed 40%.",
+    "Check that the dental insurance is valid throughout Spain, ideal if you travel or spend time outside of Madrid."
+  ],
+  "faqs": [
+    {
+      "question": "Are there waiting periods to use dental insurance in Madrid?",
+      "answer": "Most dental insurance in Madrid offers immediate access for emergency cleanings and fillings. Some major treatments could have a minimum waiting period of a few months."
+    },
+    {
+      "question": "Can I choose my usual dentist?",
+      "answer": "You can choose any dentist who is part of the insurance company's medical team, which in Madrid and Boadilla usually includes the most prestigious clinics in each area."
+    }
+  ]
+},
+  "seguro-decesos-familiar-madrid-que-cubre": {
+  "title": "Funeral insurance in Madrid: what it covers, what it manages and why it matters before you need it",
+  "excerpt": "Funeral insurance is not just for the elderly. It covers funeral expenses, manages the procedures and supports the family. We explain everything without euphemisms.",
+  "metaTitle": "Funeral insurance in Madrid: what it covers and manages",
+  "metaDescription": "Funeral insurance is not just for the elderly. It covers funeral expenses, manages the procedures and supports the family. We explain everything without euphemisms.",
+  "imageAlt": "Madrid family calm thanks to their funeral insurance",
+  "sections": [
+    {
+      "heading": "The taboo we leave aside",
+      "content": [
+        "Talking about one's own death or that of a loved one is uncomfortable. It is a taboo ingrained in our culture. But precisely because it is uncomfortable, many families in Madrid suddenly find themselves preparing for a death without having prepared it, adding the pain of loss to the stress of procedures, budgets and urgent decisions that they do not know how to make.",
+        "Funeral insurance is not a product for \"old people.\" It is for families who want to protect themselves from an inevitable moment that, sooner or later, comes to everyone. And when it arrives, the last thing a family needs is to worry about whether they have money in the account to pay for the funeral, or waste hours in civil registry offices and unknown funeral homes.",
+        "In this article we are going to talk without euphemisms about what funeral insurance really covers, what it manages, how much it costs and why it is one of the most intelligent and humane decisions that a family with a long-term vision can make."
+      ]
+    },
+    {
+      "heading": "What exactly does funeral insurance cover?",
+      "content": [
+        "When we talk about funeral insurance coverage, we are referring to all the procedures and expenses derived from the death of a person. It's not just \"paying for the funeral.\" It is much more complete:",
+        "• Burial expenses: Includes the coffin, the funeral urn, the funeral home service (wake room), the hearse vehicle for transportation, and the cremation or burial service according to the will of the deceased or the family.",
+        "• Process management: The insurer is responsible for obtaining the death certificate, registering the death in the Civil Registry, managing the burial or cremation license, and notifying the death to the relevant entities (banks, social security, etc.).",
+        "• Transfers: Covers the transfer of the deceased from the place of death to the funeral home, and if necessary, the transfer from any point in Spain or abroad to the place where the burial will be held.",
+        "• Additional services: Many insurance policies include legal and tax advice for the family, psychological help for relatives, inheritance management and even coverage for repatriation if the death occurs outside the country of residence."
+      ]
+    },
+    {
+      "heading": "The different modalities: which one suits you?",
+      "content": [
+        "Funeral insurance can be taken out in different ways, depending on the needs and family situation of each person:",
+        "• Individual funeral insurance: Covers one person's funeral. It is the cheapest option and is usually taken out by single people or those whose family members already have their own coverage.",
+        "• Family funeral insurance: Covers all members of the family unit (spouse, common-law partner, children, ascendants in some cases). It is the most common and profitable option for families with children.",
+        "• Senior funeral insurance: Designed specifically for people over 70 years of age. Premiums tend to be higher, but they guarantee coverage at a stage of life where the risk is greater.",
+        "• Level premium insurance: You pay the same fee from the first day to the end, calculated for life. It is more expensive at first but it protects you from price increases due to age.",
+        "• Insurance with a natural premium: The premium varies depending on the age of the insured. It is cheaper when you are young and goes up as you get older."
+      ]
+    },
+    {
+      "heading": "How much does funeral insurance cost in Madrid?",
+      "content": [
+        "The cost of funeral insurance in Madrid varies widely depending on the type, the age of the insured, the capital chosen for the funeral and the additional coverage included.",
+        "For a person aged 35-40, individual funeral insurance can cost between €40 and €80 per year. Family insurance that covers spouse and children can range between €120 and €200 per year. The younger you are when you take it out, the cheaper it will be for your entire life.",
+        "For people over 70 years of age, premiums rise considerably and can range between €200 and €400 per year, depending on the insured capital. That is why it is so advisable to take out this insurance as soon as possible: if you do it at 40, you can have lifelong coverage for less than €100 per year.",
+        "The insured capital (what the complete funeral would cost) usually ranges between €3,000 and €9,000. For Madrid capital, we recommend capital of at least €6,000, since funeral costs are higher than the national average."
+      ]
+    },
+    {
+      "heading": "Why it is important to hire it before you need it",
+      "content": [
+        "It is obvious, but it is worth repeating: funeral insurance is of no use if you take it out when you are already sick or when you have turned 80. Insurance companies, logically, do not assume risks that are already certainties.",
+        "Most funeral insurance policies have a waiting period of 6 months. This means that, if you die before 6 months have passed since taking out the policy, the company returns the premiums paid but does not cover the funeral. It is a measure to avoid anti-selection (which only hires those who know they are sick).",
+        "Furthermore, if you take out the insurance when you are young, you are guaranteed the price for life. If you wait until you're 70, the premiums will be triple or quadruple. And most importantly, you ensure that when the time comes, your family won't have to worry about anything other than saying goodbye with dignity.",
+        "It is an act of responsibility and love. It's telling your family: \"When I'm gone, you won't have to worry about paperwork or money. You can focus on what's important.\""
+      ]
+    },
+    {
+      "heading": "Conclusion: A gesture of family responsibility",
+      "content": [
+        "Funeral insurance is one of those products that you hope to never use, but that gives you immense peace of mind for the well-being of those you leave behind. It is not an expense, it is an investment in peace of mind for your family.",
+        "If you are the breadwinner of your family, it is almost a moral obligation to have this covered. If you are the child of elderly people who do not have insurance, hiring one for them is one of the best gifts you can give them (and yourself, avoiding future complications).",
+        "In our insurance consultancy in Madrid, we treat this issue with the delicacy it deserves, but also with the clarity necessary for you to make the right decision. If you want information about funeral insurance for you or your family, we are here to help you without obligation."
+      ]
+    }
+  ],
+  "tips": [
+    "Hire before 50: premiums triple if you wait until retirement.",
+    "Make sure the capital covers at least €6,000 in Madrid capital: funeral costs are high.",
+    "Family insurance is usually cheaper than adding several individual insurance policies.",
+    "Check if it includes international transfer: important if you travel frequently or have family abroad.",
+    "Ask about psychological assistance: many insurance policies include support sessions for family members after death."
+  ],
+  "faqs": [
+    {
+      "question": "Does funeral insurance cover death abroad?",
+      "answer": "Yes, most funeral insurance policies include repatriation or management of a death abroad. It is important to verify the maximum capital covered for repatriation and whether there are geographical exclusions."
+    },
+    {
+      "question": "Can I take out funeral insurance for my elderly parents if I pay?",
+      "answer": "Yes, you can take out and pay for the insurance as the policyholder, even if your parents are the insured. This is very common when children want to ensure their elderly parents are covered."
+    },
+    {
+      "question": "What happens if I already have a serious illness when I contract?",
+      "answer": "It depends on the company and the disease. Some insurers may apply temporary or permanent exclusions for certain conditions. In cases of terminal illness, it may not be possible to hire or a special grace period may apply."
+    },
+    {
+      "question": "Does funeral insurance cover the niche in the cemetery?",
+      "answer": "It depends on the insured capital. The niche or tomb usually costs between €3,000 and €8,000 in Madrid, depending on the cemetery. A capital of €6,000-€9,000 usually covers the entire funeral including the niche."
+    }
+  ]
 }
 };
