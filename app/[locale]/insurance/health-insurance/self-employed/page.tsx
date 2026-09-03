@@ -1,0 +1,9 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { ProductSubpagePageView } from '@/app/seguros/[slug]/[subslug]/page';
+import { subpages } from '@/lib/products';
+import { getLocalizedSubpage } from '@/lib/product-locales';
+const subpage = subpages.find((item) => item.parent === 'salud' && item.slug === 'autonomos')!;
+const english = getLocalizedSubpage(subpage, 'en'); const url = 'https://valentinproteccionintegral.com/en/insurance/health-insurance/self-employed'; const esUrl = 'https://valentinproteccionintegral.com/seguros/salud/autonomos';
+export const metadata: Metadata = { title: english.metaTitle, description: english.metaDescription, alternates: { canonical: url, languages: { es: esUrl, en: url, 'x-default': esUrl } }, openGraph: { title: english.metaTitle, description: english.metaDescription, url, locale: 'en_GB', type: 'website' } };
+export default async function EnglishHealthSelfEmployed({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; if (locale !== 'en') notFound(); return <ProductSubpagePageView parent="salud" subpage={subpage} locale="en" />; }
