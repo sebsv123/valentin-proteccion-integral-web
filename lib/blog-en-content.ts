@@ -1,8 +1,10 @@
 import type { BlogContent } from '@/lib/blog-catalog';
 import { blogEnglishBatch4 } from '@/lib/blog-en-batch4';
+import { blogEnglishBatch5 } from '@/lib/blog-en-batch5';
 
 export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   ...blogEnglishBatch4,
+  ...blogEnglishBatch5,
   "mejor-seguro-medico-calidad-precio-espana": {
     "title": "What is the best quality-price health insurance in Spain? Honest Guide 2026",
     "excerpt": "There is no single best health insurance. There is the best one for your age, your health, where you live and what you need to cover. Here is the guide that comparators cannot give you.",
