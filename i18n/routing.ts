@@ -26,7 +26,7 @@ export const routing = defineRouting({
       es: '/internacional/corea-del-sur',
       en: '/international/south-korea',
     },
-    '/contacto': {
+    '/contact': {
       es: '/contacto',
       en: '/contact',
     },
