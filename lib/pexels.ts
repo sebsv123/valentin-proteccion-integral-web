@@ -87,7 +87,7 @@ const slugToQuery: Record<string, string> = {
 export async function getPexelsImage(query: string): Promise<string> {
   if (!PEXELS_API_KEY) {
     console.warn('PEXELS_API_KEY not set, using default image');
-    return '/images/blog/default.jpg';
+    return '/images/blog/default.webp';
   }
 
   // Usar el mapeo si existe, o el query directamente
@@ -104,14 +104,14 @@ export async function getPexelsImage(query: string): Promise<string> {
 
     if (!res.ok) {
       console.error('Pexels API error:', res.status, res.statusText);
-      return '/images/blog/default.jpg';
+      return '/images/blog/default.webp';
     }
 
     const data: PexelsResponse = await res.json();
-    return data.photos?.[0]?.src?.large || '/images/blog/default.jpg';
+    return data.photos?.[0]?.src?.large || '/images/blog/default.webp';
   } catch (error) {
     console.error('Error fetching Pexels image:', error);
-    return '/images/blog/default.jpg';
+    return '/images/blog/default.webp';
   }
 }
 
