@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
-import { productPathnames } from '@/lib/product-locales';
+import { productPathnames, unavailableLocalePathnames } from '@/lib/product-locales';
 import { getBlogPostBySlug } from '@/lib/blog-catalog';
 import type { BlogLocale } from '@/lib/blog-catalog';
 
@@ -19,12 +19,13 @@ export function LanguageSwitcher() {
     setBrowserPathname(currentPath);
   }, []);
   const effectivePathname = browserPathname ?? pathname;
+  const localeUnavailable = (unavailableLocalePathnames[locale] as readonly string[]).includes(effectivePathname) || (unavailableLocalePathnames[locale] as readonly string[]).includes(pathname);
   const blogSlug = effectivePathname.startsWith('/blog/') ? effectivePathname.slice('/blog/'.length) : undefined;
   const blogPost = blogSlug ? getBlogPostBySlug(locale, blogSlug) : undefined;
   const blogEquivalent = effectivePathname === '/blog' || Boolean(blogPost?.slug.en);
   const supported = supportedPathnames.has(effectivePathname) || blogEquivalent;
 
-  if (!supported) {
+  if (!supported || localeUnavailable) {
     return <span className="inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 

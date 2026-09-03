@@ -20,6 +20,25 @@ export const productPathnames = {
 } as const;
 
 export type ProductPathname = keyof typeof productPathnames;
+const productLocaleAvailability: Record<string, { es: boolean; en: boolean }> = {
+  'accidentes': { es: false, en: true },
+  'accidentes/pyme-autonomos': { es: false, en: true },
+};
+
+export const unavailableLocalePathnames = {
+  es: ['/seguros/accidentes-decesos'],
+  en: ['/insurance/accident-insurance', '/insurance/accident-insurance/business-self-employed', '/seguros/accidentes', '/seguros/accidentes/pyme-autonomos'],
+} as const;
+
+export function getProductAlternateLanguages(key: string, esUrl: string, enUrl: string) {
+  const availability = productLocaleAvailability[key] ?? { es: true, en: true };
+  const languages: Record<string, string> = {};
+  if (availability.es) languages.es = esUrl;
+  if (availability.en) languages.en = enUrl;
+  if (availability.es && availability.en) languages['x-default'] = esUrl;
+  return languages;
+}
+
 const mainPaths: Record<string, string> = { accidentes: '/en/insurance/accident-insurance', decesos: '/en/insurance/funeral-insurance', dental: '/en/insurance/dental-insurance', mascotas: '/en/insurance/pet-insurance', viaje: '/en/insurance/travel-insurance', salud: '/en/insurance/health' };
 const names: Record<string, string> = { accidentes: 'Accident insurance', decesos: 'Funeral insurance', dental: 'Dental insurance', mascotas: 'Pet insurance', viaje: 'Travel insurance', salud: 'Health insurance' };
 const labels: Record<string, string> = { accidentes: 'ACCIDENT INSURANCE', decesos: 'FUNERAL INSURANCE', dental: 'DENTAL INSURANCE', mascotas: 'PET INSURANCE', viaje: 'TRAVEL INSURANCE', salud: 'HEALTH INSURANCE' };
