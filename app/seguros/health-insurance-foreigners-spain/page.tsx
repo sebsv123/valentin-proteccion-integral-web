@@ -13,19 +13,19 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
-  description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. Personal advisor in English. From 22.50â‚¬/month.",
+  description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. Personal advisor in English. From 22.50€/month.",
   keywords: ["health insurance NIE Spain","health insurance TIE Spain","health insurance visa Spain","foreigners health insurance Madrid","expat health insurance Spain"],
-  authors: [{ name: "Rosa ValentÃ­n" }],
-  publisher: "ValentÃ­n ProtecciÃ³n Integral",
+  authors: [{ name: "Rosa Valentín" }],
+  publisher: "Valentín Protección Integral",
   alternates: { canonical: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", en: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", 'x-default': "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
   openGraph: {
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
-    description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. From 22.50â‚¬/month.",
+    description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. From 22.50€/month.",
     url: "https://valentinproteccionintegral.com/en/insurance/health/foreigners",
-    siteName: "ValentÃ­n ProtecciÃ³n Integral",
+    siteName: "Valentín Protección Integral",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa and SebastiÃ¡n â€” Registered insurance agents in Madrid" }],
+    images: [{ url: "https://valentinproteccionintegral.com/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa and Sebastián — Registered insurance agents in Madrid" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "ValentÃ­n ProtecciÃ³n Integral",
+  "name": "Valentín Protección Integral",
   "url": "https://valentinproteccionintegral.com",
   "telephone": "+34603448765",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "C. de los Reyes CatÃ³licos, 1",
+    "streetAddress": "C. de los Reyes Católicos, 1",
     "addressLocality": "Boadilla del Monte",
     "addressRegion": "Madrid",
     "addressCountry": "ES"
   },
-  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de AlarcÃ³n"],
+  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -63,9 +63,9 @@ const localBusinessSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Health Insurance NIE/TIE Foreigners Spain â€” ValentÃ­n ProtecciÃ³n Integral",
+  "name": "Health Insurance NIE/TIE Foreigners Spain — Valentín Protección Integral",
   "provider": localBusinessSchema,
-  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de AlarcÃ³n", "Las Rozas"],
+  "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Health insurance for residence in Spain 2026. Meets NIE/TIE requirements. +100 international clients approved. Certificate in 24h."
 };
 
@@ -94,7 +94,7 @@ const faqSchema = {
       "name": "Do I need to pay co-payments when I visit the doctor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Our policies have zero co-payments â€” you pay your monthly premium and that's it. No surprise costs."
+        "text": "No. Our policies have zero co-payments — you pay your monthly premium and that's it. No surprise costs."
       }
     },
     {
@@ -121,13 +121,13 @@ export default function HealthInsuranceForeignersSpainPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceSchema)}} />
 
-      {/* Top Bar â€” Money-back guarantee */}
+      {/* Top Bar — Money-back guarantee */}
       <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-900 border-b border-slate-700 text-white py-2.5 text-center overflow-hidden">
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">If your insurance is not valid for your application â†’ <span className="text-amber-400">we refund your money</span></span>
-            <span className="sm:hidden">If not valid for your application â†’ <span className="text-amber-400 font-black">we refund your money</span></span>
+            <span className="hidden sm:inline">If your insurance is not valid for your application → <span className="text-amber-400">we refund your money</span></span>
+            <span className="sm:hidden">If not valid for your application → <span className="text-amber-400 font-black">we refund your money</span></span>
           </p>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function HealthInsuranceForeignersSpainPage() {
       <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
           <a href="/" className="font-bold text-slate-900 text-lg tracking-tight">
-            ValentÃ­n <span className="text-emerald-600">ProtecciÃ³n Integral</span>
+            Valentín <span className="text-emerald-600">Protección Integral</span>
           </a>
           <a
             href={wVisado}
@@ -157,7 +157,7 @@ export default function HealthInsuranceForeignersSpainPage() {
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt="Health insurance for foreigners in Spain â€” NIE TIE visa consulate"
+              alt="Health insurance for foreigners in Spain — NIE TIE visa consulate"
               width={900}
               height={600}
               className="object-cover opacity-30 w-full h-full"
@@ -179,7 +179,7 @@ export default function HealthInsuranceForeignersSpainPage() {
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
                   Avoid mistakes that could delay or reject your visa.
                   <br />
-                  <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">We get you the right insurance in 24â€“48h.</span>
+                  <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">We get you the right insurance in 24–48h.</span>
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
@@ -217,11 +217,11 @@ export default function HealthInsuranceForeignersSpainPage() {
                   
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full border-4 border-emerald-500/20 overflow-hidden shadow-xl ring-4 ring-white/10">
-                      <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa and SebastiÃ¡n" fill sizes="64px" className="object-cover object-[center_20%]" />
+                  <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa and Sebastián" fill sizes="64px" className="object-cover object-[center_20%]" />
                     </div>
                     <div className="pl-2">
                       <p className="text-xs text-white/50 font-bold uppercase tracking-widest">Direct assistance</p>
-                      <p className="text-lg font-bold text-white leading-none">Rosa and SebastiÃ¡n</p>
+                      <p className="text-lg font-bold text-white leading-none">Rosa and Sebastián</p>
                       <p className="text-xs text-emerald-400 mt-1 font-medium italic">Your personal advisors</p>
                     </div>
                   </div>
@@ -267,17 +267,17 @@ export default function HealthInsuranceForeignersSpainPage() {
             <div className="grid sm:grid-cols-3 gap-6">
               {[
                 {
-                  emoji: "ðŸŽ“",
+                  emoji: "🎓",
                   title: "International Student",
-                  desc: "Studying in Spain and need health insurance for your student visa? We provide the certificate your consulate requires â€” fast, clear and hassle-free."
+                  desc: "Studying in Spain and need health insurance for your student visa? We provide the certificate your consulate requires — fast, clear and hassle-free."
                 },
                 {
-                  emoji: "ðŸ ",
+                  emoji: "🏠",
                   title: "NIE/TIE Residence Applicant",
                   desc: "Applying for NIE or TIE in Spain? Health insurance is mandatory. We handle everything so your application goes through without delays."
                 },
                 {
-                  emoji: "ðŸ’¼",
+                  emoji: "💼",
                   title: "Foreign Worker or Entrepreneur",
                   desc: "Moving to Spain to work or start a business? We find the right coverage for your specific situation, with no hidden fees and no complicated paperwork."
                 }
@@ -304,7 +304,7 @@ export default function HealthInsuranceForeignersSpainPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  t: "If your insurance is not valid for your application â†’ we refund your money",
+                  t: "If your insurance is not valid for your application → we refund your money",
                   icon: <Shield className="w-10 h-10 text-emerald-600" />
                 },
                 {
@@ -340,8 +340,8 @@ export default function HealthInsuranceForeignersSpainPage() {
             
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { num: "1", t: "Contact us on WhatsApp", d: "Tell us your situation â€” visa type, nationality, where you live. We respond the same day." },
-                { num: "2", t: "We find your policy", d: "We select the right option for your specific case. No generic policies â€” just what you actually need." },
+                { num: "1", t: "Contact us on WhatsApp", d: "Tell us your situation — visa type, nationality, where you live. We respond the same day." },
+                { num: "2", t: "We find your policy", d: "We select the right option for your specific case. No generic policies — just what you actually need." },
                 { num: "3", t: "Receive your certificate", d: "Your insurance certificate arrives in 24 hours, ready to submit to the consulate or immigration office." }
               ].map((paso, i) => (
                 <div key={i} className="relative">
@@ -484,7 +484,7 @@ export default function HealthInsuranceForeignersSpainPage() {
               Specialists in health insurance for visa and residency in Spain
             </h2>
             <p className="text-2xl md:text-3xl text-emerald-100/70 leading-relaxed mb-8 font-medium">
-              We have helped over 100 people successfully obtain their NIE, TIE and visa with our health insurance. We know exactly what each consulate and immigration office requires â€” so you don't have to figure it out alone.
+              We have helped over 100 people successfully obtain their NIE, TIE and visa with our health insurance. We know exactly what each consulate and immigration office requires — so you don't have to figure it out alone.
             </p>
             <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
               More than 10 years helping people from over 30 countries settle in Spain with the right insurance for their visa and residency process.
@@ -503,9 +503,9 @@ export default function HealthInsuranceForeignersSpainPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { t: "âœ“ No co-payments from day one", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
-                { t: "âœ“ Certificate ready in 24 hours", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
-                { t: "âœ“ Valid for all Spanish consulates and immigration offices", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> }
+                { t: "✓ No co-payments from day one", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
+                { t: "✓ Certificate ready in 24 hours", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
+                { t: "✓ Valid for all Spanish consulates and immigration offices", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center p-8 rounded-[32px] bg-slate-50 border border-slate-100">
                   <div className="mb-6">{item.icon}</div>
@@ -526,7 +526,7 @@ export default function HealthInsuranceForeignersSpainPage() {
               Why do you need this insurance?
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Spanish immigration law requires proof of private health insurance to obtain a visa, NIE or TIE. Without it, your application will be rejected â€” regardless of how complete the rest of your documentation is. Not just any insurance will do. It must meet specific requirements set by each consulate or immigration office. We know exactly what those requirements are and make sure your policy meets all of them.
+              Spanish immigration law requires proof of private health insurance to obtain a visa, NIE or TIE. Without it, your application will be rejected — regardless of how complete the rest of your documentation is. Not just any insurance will do. It must meet specific requirements set by each consulate or immigration office. We know exactly what those requirements are and make sure your policy meets all of them.
             </p>
           </div>
         </section>
@@ -538,7 +538,7 @@ export default function HealthInsuranceForeignersSpainPage() {
               <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/rosa_y_sebastian.jpeg"
-                  alt="Rosa and SebastiÃ¡n â€” ValentÃ­n ProtecciÃ³n Integral"
+                  alt="Rosa and Sebastián — Valentín Protección Integral"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-[center_20%]"
@@ -550,11 +550,11 @@ export default function HealthInsuranceForeignersSpainPage() {
                   Sebastián handles your case in English, personally
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">
-                  SebastiÃ¡n speaks fluent English and will personally handle your case from the first WhatsApp message to the moment you receive your certificate. No language barriers. No miscommunication. Just clear, direct help from someone who understands exactly what you need.
+                  Sebastián speaks fluent English and will personally handle your case from the first WhatsApp message to the moment you receive your certificate. No language barriers. No miscommunication. Just clear, direct help from someone who understands exactly what you need.
                 </p>
                 <div className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100">
                   <Heart className="w-6 h-6 text-emerald-500" />
-                  <a href={wVisado} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-800 hover:text-emerald-600 transition-colors">Message SebastiÃ¡n in English â†’</a>
+                  <a href={wVisado} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-800 hover:text-emerald-600 transition-colors">Message Sebastián in English →</a>
                 </div>
               </div>
             </div>
@@ -567,7 +567,7 @@ export default function HealthInsuranceForeignersSpainPage() {
         {/* FAQ */}
         <FAQChat
           brandColor="emerald"
-          title="â“ Frequently asked questions"
+          title="❓ Frequently asked questions"
           subtitle="Everything you need to know for your visa"
           items={[
             {
@@ -580,11 +580,11 @@ export default function HealthInsuranceForeignersSpainPage() {
             },
             {
               q: "Do I need to pay co-payments when I visit the doctor?",
-              a: "No. Our policies have zero co-payments â€” you pay your monthly premium and that's it. No surprise costs."
+              a: "No. Our policies have zero co-payments — you pay your monthly premium and that's it. No surprise costs."
             },
             {
               q: "What happens if the consulate rejects my insurance?",
-              a: "It has never happened with our policies. But if there were ever an error on our part, we resolve it at no cost to you â€” that is our guarantee."
+              a: "It has never happened with our policies. But if there were ever an error on our part, we resolve it at no cost to you — that is our guarantee."
             }
           ]}
         />
@@ -615,7 +615,7 @@ export default function HealthInsuranceForeignersSpainPage() {
               </p>
               <p className="flex items-center gap-2">
                 <FileCheck className="w-5 h-5 text-emerald-500" />
-                Complete processing in 24â€“48h
+                Complete processing in 24–48h
               </p>
             </div>
           </div>
@@ -625,11 +625,11 @@ export default function HealthInsuranceForeignersSpainPage() {
 
       <footer className="bg-slate-950 text-slate-500 py-12 border-t border-slate-900">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-bold text-white mb-4">ValentÃ­n ProtecciÃ³n Integral</p>
-          <p className="text-sm">Â© 2026 Â· Registered insurance agents DGSFP Â· NIF 79234434D Â· Boadilla del Monte, Madrid</p>
+          <p className="font-bold text-white mb-4">Valentín Protección Integral</p>
+          <p className="text-sm">© 2026 · Registered insurance agents DGSFP · NIF 79234434D · Boadilla del Monte, Madrid</p>
           <div className="flex items-center justify-center gap-4 mt-4 text-sm">
             <a href="tel:+34603448765" className="text-slate-400 hover:text-white transition-colors">603 44 87 65</a>
-            <span className="text-slate-600">Â·</span>
+            <span className="text-slate-600">·</span>
             <a href="mailto:contacto@valentinproteccionintegral.com" className="text-slate-400 hover:text-white transition-colors">contacto@valentinproteccionintegral.com</a>
           </div>
         </div>
