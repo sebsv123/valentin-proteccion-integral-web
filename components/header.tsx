@@ -36,7 +36,7 @@ export function Header() {
       if (parts.length === 4) return localizedSubpagePath(parts[2], parts[3], 'en');
     }
     if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/contacto' || href === '/extranjeros' || href === '/seguros' || href === '/seguros/salud' || href === '/seguros/salud-extranjeros') {
-      return localizedPath(locale, href === '/contacto' ? '/contact' : href);
+      return localizedPath(locale, href === '/contacto' ? '/contact' : href === '/internacional' ? '/international' : href);
     }
     if (locale === 'en') return ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href;
     return href;

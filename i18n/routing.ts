@@ -6,7 +6,7 @@ export const routing = defineRouting({
   localePrefix: 'as-needed',
   pathnames: {
     '/': '/',
-    '/internacional': {
+    '/international': {
       es: '/internacional',
       en: '/international',
     },
@@ -49,8 +49,8 @@ export const routing = defineRouting({
     '/seguros/salud/senior': { es: '/seguros/salud/senior', en: '/insurance/health-insurance/senior' },
     '/seguros/viaje': { es: '/seguros/viaje', en: '/insurance/travel-insurance' },
     '/seguros/viaje/estudios': { es: '/seguros/viaje/estudios', en: '/insurance/travel-insurance/students' },
-    '/como-te-ayudamos': { es: '/como-te-ayudamos', en: '/how-we-help' },
-    '/sobre-nosotros': { es: '/sobre-nosotros', en: '/about-us' },
+    '/how-we-help': { es: '/como-te-ayudamos', en: '/how-we-help' },
+    '/about-us': { es: '/sobre-nosotros', en: '/about-us' },
     '/opiniones': { es: '/opiniones', en: '/reviews' },
     '/aviso-legal': { es: '/aviso-legal', en: '/legal-notice' },
     '/privacidad': { es: '/privacidad', en: '/privacy' },
