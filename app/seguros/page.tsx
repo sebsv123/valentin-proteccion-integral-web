@@ -70,7 +70,7 @@ export function InsuranceHubPageView({ locale = 'es' }: { locale?: 'es' | 'en' }
       <BreadcrumbSchema 
         items={[
           { name: copy.home, url: en ? '/en' : '/' },
-          { name: copy.crumb, url: localizedPath(locale, '/seguros') }
+          { name: copy.crumb, url: localizedPath(locale, '/insurance') }
         ]} 
       />
       <Header />
@@ -115,7 +115,7 @@ export function InsuranceHubPageView({ locale = 'es' }: { locale?: 'es' | 'en' }
                         </div>
                       ) : null}
                       <div className="mt-8 flex flex-col gap-3">
-                        <Link href={product.slug === 'salud' ? localizedPath(locale, '/seguros/salud') : localizedProductPath(product.slug, en ? 'en' : 'es')} className="btn-secondary w-full justify-center">{copy.details}</Link>
+                        <Link href={product.slug === 'salud' ? localizedPath(locale, '/insurance/health') : localizedProductPath(product.slug, en ? 'en' : 'es')} className="btn-secondary w-full justify-center">{copy.details}</Link>
                         <a 
                           href={buildWhatsAppHref(
                             en ? `Hello, I would like information about ${localizedProduct?.label ?? product.label}.` : `Hola, me interesa información sobre ${product.label}.`

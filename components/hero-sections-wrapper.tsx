@@ -59,7 +59,7 @@ export function ProductAccessSection({ locale = 'es' }: { locale?: HomeLocale } 
             return (
               <Link
                 key={product.slug}
-                href={product.slug === 'salud' ? localizedPath(locale, '/seguros/salud') : localizedProductPath(product.slug, locale === 'en' ? 'en' : 'es')}
+                href={product.slug === 'salud' ? localizedPath(locale, '/insurance/health') : localizedProductPath(product.slug, locale === 'en' ? 'en' : 'es')}
                 className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--blue)]/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)] focus-visible:ring-offset-2"
               >
                 <Icon className="h-8 w-8 text-[var(--blue)] transition-transform group-hover:scale-110" aria-hidden="true" />

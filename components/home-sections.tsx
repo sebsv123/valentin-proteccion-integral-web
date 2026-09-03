@@ -12,7 +12,7 @@ import { getHomeContent, type HomeLocale } from './home-content';
 import { localizedPath } from '@/i18n/navigation';
 import { localizedProductPath } from '@/lib/product-locales';
 
-const homePath = (locale: HomeLocale, path: '/' | '/contact' | '/seguros' | '/seguros/salud') => localizedPath(locale, path);
+const homePath = (locale: HomeLocale, path: '/' | '/contact' | '/insurance' | '/insurance/health') => localizedPath(locale, path);
 
 
 export function ProductAccessSection({ locale = 'es' }: { locale?: HomeLocale } = {}) {
@@ -189,7 +189,7 @@ export function ProductCategoryGrid({ productsWithImages, locale = 'es' }: { pro
                   <ul className={productGridStyles.benefits}>
                     {(content.benefits[product.slug] || presentation.benefits).map((benefit) => <li key={benefit}>{benefit}</li>)}
                   </ul>
-                  <Link href={product.slug === 'salud' ? homePath(locale, '/seguros/salud') : localizedProductPath(product.slug, locale === 'en' ? 'en' : 'es')} className={productGridStyles.productLink}>
+                  <Link href={product.slug === 'salud' ? homePath(locale, '/insurance/health') : localizedProductPath(product.slug, locale === 'en' ? 'en' : 'es')} className={productGridStyles.productLink}>
                     {content.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
@@ -205,8 +205,8 @@ export function ProductCategoryGrid({ productsWithImages, locale = 'es' }: { pro
 export function ComparisonCardsSection({ imageSrc = '/images/agent/rosa-exterior-enhanced.png', locale = 'es' }: { imageSrc?: string; locale?: HomeLocale } = {}) {
   const content = getHomeContent(locale).comparison;
   const actions = locale === 'en' ? [
-    { href: homePath(locale, '/seguros'), wa: buildWhatsAppHref('Hello, I would like initial guidance on where to start.'), cta: 'Get initial guidance' },
-    { href: homePath(locale, '/seguros/salud'), wa: buildWhatsAppHref('Hello, I know the type of cover I need but would like help choosing the right option.'), cta: 'Refine your option' },
+    { href: homePath(locale, '/insurance'), wa: buildWhatsAppHref('Hello, I would like initial guidance on where to start.'), cta: 'Get initial guidance' },
+    { href: homePath(locale, '/insurance/health'), wa: buildWhatsAppHref('Hello, I know the type of cover I need but would like help choosing the right option.'), cta: 'Refine your option' },
     { href: homePath(locale, '/contact'), wa: buildWhatsAppHref('Hello, I would like to resolve this quickly with real guidance.'), cta: 'Get started' },
   ] : [
     { href: '/seguros', wa: buildWhatsAppHref('Hola, quiero una primera orientación para saber por dónde empezar.'), cta: 'Quiero una primera orientación' },
