@@ -102,6 +102,10 @@ const englishSlugs: Record<string, string> = {
   'seguro-vida-esencial-familia': 'life-insurance-family-protection',
   'seguro-vida-hipoteca-obligatorio': 'life-insurance-required-with-mortgage',
   'seguro-ahorro-jubilacion-madrid': 'retirement-savings-insurance-madrid',
+  'seguro-perros-madrid-ley-bienestar-2026': 'dog-liability-insurance-madrid-2026',
+  'seguros-boadilla-del-monte': 'insurance-boadilla-del-monte',
+  'seguros-vida-hipoteca-boadilla-madrid': 'mortgage-life-insurance-boadilla',
+  'como-aplicar-protector-solar-beneficios': 'how-to-apply-sunscreen',
 };
 
 const fromBlogPost = (post: BlogPost): BlogCatalogEntry => ({
@@ -255,11 +259,11 @@ export function validateBlogCatalog() {
   const englishSlugEntries = blogCatalog.filter((post) => post.slug.en);
   const publishedEnglish = getPublishedEnglishPosts();
   if (blogCatalog.length !== 32) throw new Error('Expected 32 blog catalog entries, found ' + blogCatalog.length);
-  if (englishSlugEntries.length !== 25 || publishedEnglish.length !== 25) {
-    throw new Error('Expected exactly 25 complete EN blog entries, found ' + englishSlugEntries.length + ' slugs and ' + publishedEnglish.length + ' published');
+  if (englishSlugEntries.length !== 29 || publishedEnglish.length !== 29) {
+    throw new Error('Expected exactly 29 complete EN blog entries, found ' + englishSlugEntries.length + ' slugs and ' + publishedEnglish.length + ' published');
   }
-  if (blogCatalog.length - publishedEnglish.length !== 7) {
-    throw new Error('Expected 7 Spanish-only blog entries, found ' + (blogCatalog.length - publishedEnglish.length));
+  if (blogCatalog.length - publishedEnglish.length !== 3) {
+    throw new Error('Expected 3 Spanish-only blog entries, found ' + (blogCatalog.length - publishedEnglish.length));
   }
   return true;
 }
