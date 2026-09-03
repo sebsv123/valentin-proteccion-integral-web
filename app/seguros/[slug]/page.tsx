@@ -94,7 +94,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
 
       <main>
         <div className="container-shell pt-6 md:pt-8">
-          <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? 'Health insurance' : product.label }]} />
+          <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? product.name : product.label }]} />
         </div>
         <ProductHero product={product} locale={locale} />
 
