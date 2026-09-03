@@ -10,19 +10,19 @@ export const routing = defineRouting({
       es: '/internacional',
       en: '/international',
     },
-    '/internacional/peru': {
+    '/international/peru': {
       es: '/internacional/peru',
       en: '/international/peru',
     },
-    '/internacional/australia': {
+    '/international/australia': {
       es: '/internacional/australia',
       en: '/international/australia',
     },
-    '/internacional/india': {
+    '/international/india': {
       es: '/internacional/india',
       en: '/international/india',
     },
-    '/internacional/corea-del-sur': {
+    '/international/south-korea': {
       es: '/internacional/corea-del-sur',
       en: '/international/south-korea',
     },
