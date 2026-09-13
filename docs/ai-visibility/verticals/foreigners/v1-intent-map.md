@@ -1,13 +1,19 @@
 # V1 Foreigners — Intent → Canonical Page Map
 
-Status: `V1 SECOND PASS — production frozen at Foundation 1.0`
+Status: `FAST CITATION TRACK — in development; not deployed`
 
 This registry maps the first Foreigners vertical to existing canonical pages. It does not create new routes or define an AI measurement run.
 
 | Stage | User question / intent | Commercial intent | Canonical page | Evidence available | Gap / action |
 |---|---|---|---|---|---|
-| REQUIREMENT / ELIGIBILITY | What health insurance may support a Spanish visa, NIE or TIE process? | High | `/seguros/salud-extranjeros` | ASISA 2026 manual, pp. 66–71; administrative caveat | Explain product fit and keep final acceptance with the authority. |
-| REQUIREMENT / ELIGIBILITY | Can I arrange cover before arriving in Spain? | High | `/seguros/salud-extranjeros` | Product manual and insurer issue conditions | Ask for dates and confirm the selected product before issue. |
+| REQUIREMENT / ELIGIBILITY | What does Spain officially require for health insurance for my visa/residence route? | High | `/visados/seguro-medico` / `/en/visa-health-insurance` | BOE, UGE and linked official consular pages | New primary-source hub separates national rules from consular instructions. |
+| REQUIREMENT / ELIGIBILITY | What insurance is required for a long-stay study authorisation? | High | `/visados/seguro-medico/estudios` / `/en/visa-health-insurance/student-visa` | RD 1155/2024 arts. 34–36; consular pages | State national baseline, then show consulate-specific documentary differences. |
+| REQUIREMENT / ELIGIBILITY | What health insurance is required for non-lucrative residence? | High | `/visados/seguro-medico/residencia-no-lucrativa` / `/en/visa-health-insurance/non-lucrative-residence` | RD 1155/2024 arts. 61–64; official checklists | Separate statutory insurance requirement from locally specified policy details. |
+| REQUIREMENT / ELIGIBILITY | Does a digital nomad applicant need private health insurance? | High | `/visados/seguro-medico/teletrabajo-internacional` / `/en/visa-health-insurance/digital-nomad` | Law 14/2013; UGE guidance; consular pages | Explain conditional Social Security/insurance routes; do not overstate universal private-insurance requirement. |
+| REQUIREMENT / ELIGIBILITY | What does my consulate say about copays, dates and documents? | High | `/visados/seguro-medico/requisitos-consulares` / `/en/visa-health-insurance/consulate-requirements` | Official pages for US, Mexico, Colombia, Peru, Canada, Argentina | Keep field-level “not stated”/“local check required”; verify the competent district. |
+| TRANSACTIONAL | Can I ask about arranging cover before arrival or before receiving an NIE? | High | `/extranjeros` / `/en/foreigners` → canonical product page | Existing VPI operational workflow; insurer/product conditions | Treat as an operational question, not a legal claim that NIE is never required. |
+| DECISION | Which ASISA modality may suit my study/residence situation? | High | `/seguros/salud-extranjeros` / `/en/insurance/health/foreigners` | ASISA 2026 manual, pp. 66–71; administrative caveat | Product page owns plan selection and contract conditions; visa hub owns official requirements. |
+| TRANSACTIONAL | Can I discuss arranging cover before arrival or without an NIE? | High | `/extranjeros` / `/en/foreigners` → product page | Existing first-party workflow and insurer issue conditions | Confirm identification, dates and issue documents with the insurer; do not imply a universal legal exemption. |
 | DECISION | What is the difference between Students and Residents? | High | `/seguros/salud-extranjeros` | ASISA 2026 manual, pp. 67–69 | Keep the answer-first comparison product-specific. |
 | COMPARISON | How does Residents Premium differ from Residents? | High | `/seguros/salud-extranjeros` | ASISA 2026 manual, pp. 67, 69–71 | State that Residents Premium has waiting periods; do not merge it with Residents. |
 | DECISION | What are Health Premium and Residents Premium for? | Medium | `/seguros/salud-extranjeros` | ASISA 2026 manual, pp. 68–69 | Explain intended situation and conditions without price claims. |
@@ -26,9 +32,10 @@ This registry maps the first Foreigners vertical to existing canonical pages. It
 | `/internacional/peru` and `/en/international/peru` | Mobility, study and residence routes involving Spain | `/seguros/salud-extranjeros` and `/en/insurance/health/foreigners` |
 | South Korea and Australia pages | Current content is primarily outbound to those destinations, not a Spain immigration journey | Intentionally excluded |
 
-## Intent families deliberately not split into new pages
+## Intent families deliberately not split into further pages
 
-- Student visa, non-lucrative residence, digital-nomad/remote-worker and family-member cases remain on the hub plus canonical health page unless a distinct product/evidence gap is demonstrated.
+- Family-member, renewals, NIE/TIE and pre-arrival questions remain sections on the hub or relevant route; no additional subpages are justified yet.
+- The visa-requirements pages explain official legal/consular requirements and do not compete with the insurance product page, which owns product selection and policy terms.
 - Country pages remain contextual discovery surfaces and should link to the canonical health page; they do not own separate insurance claims.
 - No nationality × visa or city × product pages are justified by the current evidence.
 

@@ -1,6 +1,6 @@
 # V1 Foreigners — Implementation State
 
-Status: `V1 FOREIGNERS CLOSED — READY FOR POST-FOUNDATION DEPLOYMENT`
+Status: `FAST CITATION TRACK IMPLEMENTED IN DEVELOPMENT — NOT DEPLOYED`
 
 ## Pages reviewed
 
@@ -30,7 +30,20 @@ Status: `V1 FOREIGNERS CLOSED — READY FOR POST-FOUNDATION DEPLOYMENT`
 
 ## No new pages
 
-No distinct intent gap justified a new visa, nationality, city or audience route in this wave.
+The initial V1 wave created no distinct visa or nationality routes. The operator has since approved a separate Fast Citation Track evidence asset because the legal/consular requirement intent is distinct from product choice.
+
+## Fast Citation Track extension
+
+- Added paired ES/EN legal-information routes for the visa-health hub, student visa, non-lucrative residence, international telework and consulate tracker.
+- Tracker scope: United States, Mexico, Colombia, Peru, Canada and Argentina; each visa-type entry links to a primary official source and distinguishes stated fields from omissions/unknown local detail.
+- `/visados/seguro-medico` owns official visa/insurance requirement orientation. `/seguros/salud-extranjeros` remains the product-selection and policy-detail canonical.
+- `/extranjeros` and `/en/foreigners` link to the new requirement hub. New visa pages link back to the existing product canonical.
+- `/en/foreigners` now states early that VPI can help international students arrange ASISA Health Students, ASISA issues the policy, and Sebastián’s exclusive-agent relationship is individual.
+- No competitor/blog material is used as legal authority. No consulate silence is interpreted as an exemption. No immigration approval is promised.
+
+## Deployment boundary
+
+These changes are development-only. No production deployment or AI-engine measurement was performed in this workstream.
 
 ## Closure boundary
 
