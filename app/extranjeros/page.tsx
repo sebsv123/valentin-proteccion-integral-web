@@ -121,8 +121,8 @@ const faqItems = [
     a: 'Depende del producto. Algunas modalidades pueden incluir cobertura médica sin copagos ni periodos de carencia cuando esas condiciones constan en la póliza o certificado. La documentación se incorpora al expediente una vez emitida por la aseguradora.',
   },
   {
-    q: '¿Puedo contratarla solo con mi pasaporte?',
-    a: 'Sí. Podemos tramitar la póliza con el pasaporte, aunque todavía no dispongas de NIE o TIE.',
+    q: '¿Puedo iniciar la contratación con mi pasaporte antes de tener NIE o TIE?',
+    a: 'Algunas modalidades pueden tramitarse con pasaporte antes de disponer de NIE o TIE, según el producto y los requisitos de la aseguradora. Lo confirmamos antes de contratar.',
   },
   {
     q: '¿Qué documentación recibiré para presentar en mi trámite?',
@@ -151,12 +151,12 @@ const englishSituationProfiles = [
 
 export const metadata: Metadata = {
   title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
-  description: 'Seguro médico para estudios, visado, residencia o renovación en España. Orientación personalizada, contratación con pasaporte y documentación para el trámite.',
+  description: 'Seguro médico para estudios, visado, residencia o renovación en España. Algunas modalidades pueden tramitarse con pasaporte antes de disponer de NIE o TIE, según el producto y los requisitos de la aseguradora.',
   alternates: { canonical: `${site.domain}/extranjeros`, languages: { es: `${site.domain}/extranjeros`, en: `${site.domain}/en/foreigners`, 'x-default': `${site.domain}/extranjeros` } },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Seguro médico para extranjeros en España | Valentín Protección Integral',
-    description: 'Seguro médico para estudios, visado, residencia o renovación en España. Orientación personalizada, contratación con pasaporte y documentación para el trámite.',
+    description: 'Seguro médico para estudios, visado, residencia o renovación en España. Algunas modalidades pueden tramitarse con pasaporte antes de disponer de NIE o TIE, según el producto y los requisitos de la aseguradora.',
     url: `${site.domain}/extranjeros`,
     type: 'website',
     siteName: site.name,

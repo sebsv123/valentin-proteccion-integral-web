@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import dynamicImport from "next/dynamic";
 import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -278,6 +279,14 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
           answer={en ? 'ASISA Health Students and ASISA Health Residents are described in the 2026 product manual as no-copayment, no-waiting-period products for different immigration situations. ASISA Health Residents Premium is intended for people who already have residence or a visa: it has no copayments but does have waiting periods.' : 'El manual de producto 2026 describe ASISA Health Students y ASISA Health Residents como productos sin copagos ni carencias para situaciones migratorias distintas. ASISA Health Residents Premium está pensado para personas que ya tienen residencia o visado: no tiene copagos, pero sí periodos de carencia.'}
           facts={en ? ['Students: student visa, 2 months to 1 year, non-renewable initial product.', 'Residents: residence/NIE/long-stay visa, one year, renewal conditions apply.', 'Health Premium: visa/residence, 2 months to 1 year, non-renewable.', 'Certificate, refund, travel assistance and repatriation depend on the named product and policy.'] : ['Students: visado de estudiante, de 2 meses a 1 año y producto inicial no renovable.', 'Residents: residencia/NIE/visado de larga estancia, un año y renovación condicionada.', 'Health Premium: visado/residencia, de 2 meses a 1 año y no renovable.', 'Certificado, devolución, asistencia y repatriación dependen del producto y la póliza.']}
         />
+
+        <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-6 text-slate-600">
+          {en ? (
+            <>For visa and consulate evidence, see the <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/en/visa-health-insurance">Spain visa health-insurance guide</Link>.</>
+          ) : (
+            <>Para consultar las fuentes sobre visados y requisitos consulares, revisa la <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/visados/seguro-medico">guía de seguro médico para visados en España</Link>.</>
+          )}
+        </p>
 
         <ForeignersProductComparison locale={locale} />
 

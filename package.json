@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
     "lint": "node scripts/lint-production-content.mjs",
     "typecheck": "tsc --noEmit",
     "test:related": "node scripts/validate-foreigners-page.mjs",

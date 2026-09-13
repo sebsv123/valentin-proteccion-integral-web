@@ -103,5 +103,6 @@ htmlcov/
 .vercel
 design-references/
 *.txt
+!public/1b1763f6cf5cabcbfbeaf2b49f07a528.txt
 scrape_*
 reclassify_*
