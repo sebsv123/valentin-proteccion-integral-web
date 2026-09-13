@@ -32,7 +32,7 @@ const notStated: TrackedField = { status: 'unknown', value: 'Not confirmed from 
 
 const sources = {
   us: {
-    student: ['https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Servicios-consulares.aspx?scca=Visados&scco=Estados+Unidos&scd=48&scs=Visados+Nacionales+-+Visado+de+estudios', 'Embajada/servicios consulares de España en Estados Unidos — estudios'],
+    student: ['https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Servicios-consulares.aspx?scca=Visados&scco=Estados+Unidos&scd=48&scs=Visados+Nacionales+-+Visado+de+estudios', 'MAEC — estudios en Estados Unidos (oficina/demarcación no confirmada)'],
     nonLucrative: ['https://www.exteriores.gob.es/Consulados/houston/es/ServiciosConsulares/Paginas/index.aspx?scca=Visados&scco=Estados+Unidos&scd=155&scs=Visados+Nacionales+-+Visado+de+residencia+no+lucrativa', 'Consulado de España en Houston — residencia no lucrativa'],
     digitalNomad: ['https://www.exteriores.gob.es/Consulados/nuevayork/es/ServiciosConsulares/Paginas/index.aspx?scca=Visados&scco=Estados+Unidos&scd=215&scs=Visados+Nacionales+-+Visado+de+residencia+para+teletrabajo+%28n%C3%B3mada+digital%29', 'Consulado de España en Nueva York — teletrabajo internacional'],
   },
@@ -93,6 +93,8 @@ function record(country: CountryKey, visaType: VisaType): VisaTrackerRecord {
       ? { status: 'conditional', value: 'For the private-insurance route, the official guidance specifies an insurer authorised to operate in Spain; social-security coordination evidence may apply instead.' }
       : country === 'us' || country === 'canada'
         ? { status: 'stated', value: 'The linked consular instructions refer to public/private health insurance with an insurer authorised to operate in Spain.' }
+        : country === 'mexico' || country === 'colombia' || country === 'peru' || country === 'argentina'
+          ? { status: 'stated', value: 'The linked consular instructions require public/private health insurance contracted with an insurer authorised to operate in Spain.' }
         : { status: 'not_stated_in_source', value: 'Not stated in the linked jurisdiction-specific page; the national rule requires health insurance. Confirm with the competent consulate.' };
 
   const base: VisaTrackerRecord = {
@@ -115,8 +117,10 @@ function record(country: CountryKey, visaType: VisaType): VisaTrackerRecord {
         ? { status: 'conditional', value: 'Cover or qualifying social-security evidence must match the applicable authorisation period; local page may set document/date details.' }
         : { status: 'local_check_required', value: 'Confirm the policy period and effective date against the current consular checklist and requested residence period.' },
     paymentProof: notStated,
-    certificate: isStudent && ['us', 'mexico', 'colombia', 'canada'].includes(country)
+    certificate: isStudent && ['mexico', 'colombia', 'canada'].includes(country)
       ? { status: 'stated', value: 'The linked official checklist asks for a certificate or proof of insurance; confirm acceptable original/copy and document format locally.' }
+      : isStudent && country === 'us'
+        ? { status: 'local_check_required', value: 'The linked MAEC entry could not be tied to a named competent consular office in this audit; confirm whether that office requires a certificate and which format it accepts.' }
       : isDnv && ['us', 'colombia', 'peru', 'canada', 'argentina'].includes(country)
         ? { status: 'stated', value: 'The linked official checklist asks for a certificate or proof of insurance/coverage; confirm acceptable original/copy and document format locally.' }
       : notStated,
@@ -137,6 +141,31 @@ function record(country: CountryKey, visaType: VisaType): VisaTrackerRecord {
     base.certificate = { status: 'stated', value: 'The checklist requires an original and copy of public/private insurance evidence; a quotation or intermediary-issued document is not accepted in place of policy proof.' };
     base.coverageStartEnd = { status: 'stated', value: 'The checklist describes the study period and additional days in its date rules; check the current official page for the exact case.' };
   }
+  if (country === 'colombia' && visaType === 'nonLucrative') {
+    base.copayment = { status: 'stated', value: 'Bogotá checklist requires cover without copay.' };
+    base.waitingPeriod = { status: 'stated', value: 'Bogotá checklist requires cover without waiting periods.' };
+    base.reimbursementOrDeductible = { status: 'stated', value: 'Bogotá checklist requires 100% cover without limits, reimbursements or franchises.' };
+    base.coverageStartEnd = { status: 'stated', value: 'Bogotá checklist says the policy must cover the first 12 months from the expected travel date.' };
+    base.certificate = { status: 'stated', value: 'Bogotá requires insurer-issued proof of cover; proposals, pending applications and intermediary/agent certificates are not accepted instead of the insurer document.' };
+  }
+  if (country === 'peru' && visaType === 'nonLucrative') {
+    base.copayment = { status: 'stated', value: 'Lima checklist requires cover without copayment.' };
+    base.waitingPeriod = { status: 'stated', value: 'Lima checklist requires cover without waiting periods.' };
+    base.reimbursementOrDeductible = { status: 'stated', value: 'Lima checklist requires cover without reimbursement, coverage limit or franchise.' };
+  }
+  if (country === 'mexico' && visaType === 'nonLucrative') {
+    base.certificate = { status: 'stated', value: 'Mexico City requests an original and copy of the public/private health-insurance certificate.' };
+  }
+  if (country === 'peru' && visaType === 'nonLucrative') {
+    base.certificate = { status: 'stated', value: 'Lima requests an original and copy of the public/private health-insurance certificate.' };
+  }
+  if (country === 'peru' && isStudent) {
+    base.insurerAuthorisation = { status: 'stated', value: 'Lima checklist requires an insurer authorised to operate in Spain.' };
+    base.copayment = { status: 'stated', value: 'Lima checklist says the health policy must have no copayment.' };
+    base.waitingPeriod = { status: 'stated', value: 'Lima checklist says the health policy must have no waiting periods.' };
+    base.reimbursementOrDeductible = { status: 'stated', value: 'Lima checklist says no reimbursement basis or coverage limit; it requires 100% medical, hospital and outpatient expenses without franchise.' };
+    base.certificate = { status: 'stated', value: 'Lima requires an original and copy of the public/private health-insurance certificate.' };
+  }
   if (country === 'mexico' && isStudent) {
     base.copayment = { status: 'stated', value: 'The linked Mexico consular instructions state no copayment/deductible for the specified study-insurance checklist.' };
     base.waitingPeriod = { status: 'stated', value: 'The linked Mexico consular instructions state no waiting periods for the specified study-insurance checklist.' };
@@ -153,16 +182,25 @@ function record(country: CountryKey, visaType: VisaType): VisaTrackerRecord {
     base.certificate = { status: 'stated', value: 'Ottawa requests an original and copy of the public/private health-insurance certificate.' };
   }
   if (country === 'argentina' && visaType === 'nonLucrative') {
+    base.copayment = { status: 'stated', value: 'Buenos Aires checklist requires 100% medical coverage without copay.' };
+    base.waitingPeriod = { status: 'stated', value: 'Buenos Aires checklist requires cover without waiting periods.' };
+    base.coverageStartEnd = { status: 'stated', value: 'Buenos Aires requires medical coverage during the first year of residence.' };
     base.certificate = { status: 'stated', value: 'Buenos Aires requests an original and copy of the public/private health-insurance certificate.' };
   }
-  if ((country === 'peru' || country === 'argentina') && isStudent) {
-    base.certificate = { status: 'local_check_required', value: 'The exact insurance-certificate requirement was not confirmed from the selected source view; check the linked consular checklist.' };
+  if (country === 'argentina' && isStudent) {
+    base.insurerAuthorisation = { status: 'stated', value: 'Buenos Aires checklist requires insurance from an insurer authorised to operate in Spain.' };
+    base.copayment = { status: 'stated', value: 'Buenos Aires checklist requires 100% medical, hospital and outpatient cover without copayments.' };
+    base.waitingPeriod = { status: 'stated', value: 'Buenos Aires checklist requires cover without waiting periods.' };
+    base.certificate = { status: 'stated', value: 'Buenos Aires requires the health-insurance certificate; the linked checklist distinguishes it from travel or credit-card insurance.' };
   }
   if (country === 'mexico' && isDnv) {
     base.certificate = { status: 'local_check_required', value: 'No Mexico-specific digital-nomad checklist was verified in this pass; check the consulate responsible for residence.' };
   }
   if (country === 'us' && visaType === 'nonLucrative') {
     base.insuranceRequirement = { status: 'stated', value: 'Houston checklist: health insurance must cover all risks insured by Spain’s public health system.' };
+    base.copayment = { status: 'stated', value: 'Houston checklist excludes copayments.' };
+    base.waitingPeriod = { status: 'stated', value: 'Houston checklist excludes waiting periods.' };
+    base.reimbursementOrDeductible = { status: 'stated', value: 'Houston checklist excludes coverage limits.' };
     base.certificate = { status: 'stated', value: 'Houston requests a public/private health-insurance certificate.' };
   }
   return base;
