@@ -61,6 +61,9 @@ desktop.ini
 # ==============================
 # SECURITY — NEVER COMMIT THESE
 # ==============================
+# Sanitised operational evidence ledger (private source data; never commit).
+private/evidence/
+
 # Accidental shell output files
 tatus
 status

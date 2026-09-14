@@ -1,0 +1,631 @@
+{
+  "schema_version": "vpi-original-evidence-public-v0.3",
+  "source_schema_version": "vpi-original-evidence-ledger-v0.3",
+  "publication_status": "stage_scoped_cohorts_only",
+  "editorial_review_status": "not_reviewed",
+  "reviewed_on": null,
+  "privacy_min_sample": 10,
+  "publication_min_sample": 20,
+  "publication_language": "Observed among documented VPI cases",
+  "cohort_policy": "Every denominator and aggregate is scoped to exactly one workflow_stage. No cross-stage aggregate is generated.",
+  "methodology": {
+    "version": "0.3.0",
+    "scope": "Observed among documented VPI cases only; these records do not represent all Spanish visa applicants.",
+    "workflow_stage_rule": "workflow_stage is VPI’s internal operational/commercial stage only. sale_closed does not imply policy_issued; policy_issued does not imply visa/residence approval. Neither stage populates outcome. A missing stage remains unknown.",
+    "cohort_rule": "Each cohort includes exactly one workflow_stage and has its own denominator. Stages are never silently combined.",
+    "usable_case_rule": "Schema-valid rows with a known data_source and unique private import identity.",
+    "case_date_rule": "case_date is the date the case entered VPI workflow/intake. It is never substituted with policy start, policy issue, payment, or visa-decision dates. Missing intake dates remain unknown.",
+    "privacy_rule": "Public counts require at least the privacy minimum within the exact workflow-stage cohort and per populated bucket. A whole dimension is withheld if any bucket is below that minimum.",
+    "publication_rule": "Percentages, rates, trends, and headline insights require the publication minimum within the exact declared cohort and relevant slice. Version 0 emits no percentages, rates, trends, or headline insights.",
+    "review_rule": "Outcome, documentation issue, issue category, and consulate values are treated as unknown in public aggregates until their corresponding human review status is reviewed.",
+    "outcome_rule": "Outcome counts use the full workflow-stage cohort denominator, including pending, unknown, and unreviewed outcomes. No approval rate is calculated.",
+    "date_precision": "Case date ranges are reported by calendar month within each workflow-stage cohort only when at least the privacy minimum have known intake dates."
+  },
+  "generated_on": "2026-09-15",
+  "cohorts": [
+    {
+      "workflow_stage": "intake_received",
+      "cohort_label": "Observed among documented VPI intake cases",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is intake_received. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "qualified",
+      "cohort_label": "Observed among documented VPI cases at the qualified stage",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is qualified. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "quote_sent",
+      "cohort_label": "Observed among documented VPI cases at the quote sent stage",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is quote_sent. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "sale_closed",
+      "cohort_label": "Observed among documented VPI cases at the sale closed stage",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is sale_closed. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "policy_issued",
+      "cohort_label": "Observed among documented VPI cases with policy issued",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is policy_issued. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "cancelled",
+      "cohort_label": "Observed among documented VPI cases at the cancelled stage",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is cancelled. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    },
+    {
+      "workflow_stage": "unknown",
+      "cohort_label": "Observed among documented VPI cases with unknown workflow stage",
+      "cohort_definition": "Only documented VPI cases whose internal operational/commercial workflow_stage is unknown. This is not an immigration outcome.",
+      "publication_status": "suppressed_below_privacy_minimum",
+      "publication_threshold_met": false,
+      "usable_cases": {
+        "value": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "case_date_range": {
+        "from_month": null,
+        "to_month": null,
+        "status": "suppressed_below_privacy_minimum"
+      },
+      "unknown_counts": {
+        "case_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_type": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "application_country": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "competent_consulate": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "applying_from_abroad": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "already_in_spain": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "had_nie_when_arranging": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "insurance_product": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_start_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "requested_end_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "certificate_requested": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "documentation_issue": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "issue_category": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_source": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        },
+        "outcome_verified_date": {
+          "value": null,
+          "status": "suppressed_below_privacy_minimum"
+        }
+      },
+      "aggregates": [],
+      "insights": [],
+      "insights_status": "blocked_below_publication_minimum",
+      "generated_on": "2026-09-15"
+    }
+  ],
+  "insights": [],
+  "insights_status": "no_insights_generated_in_v0"
+}
