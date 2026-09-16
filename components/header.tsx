@@ -28,6 +28,21 @@ export function Header() {
   const pathname = usePathname();
   const locale = useLocale() as 'es' | 'en';
   const t = useTranslations('common');
+  const homeEvidenceLinks = pathname === '/' || pathname === '/en'
+    ? (locale === 'en'
+      ? [
+        { href: '/en/visa-health-insurance', label: 'Visa health-insurance guide' },
+        { href: '/en/visa-health-insurance/student-visa', label: 'Student visa insurance' },
+        { href: '/en/visa-health-insurance/non-lucrative-residence', label: 'Non-lucrative residence insurance' },
+        { href: '/en/visa-health-insurance/consulate-requirements', label: 'Insurance requirements by consulate' },
+      ]
+      : [
+        { href: '/visados/seguro-medico', label: 'Seguro médico para visados' },
+        { href: '/visados/seguro-medico/estudios', label: 'Seguro médico para visado de estudios' },
+        { href: '/visados/seguro-medico/residencia-no-lucrativa', label: 'Seguro para residencia no lucrativa' },
+        { href: '/visados/seguro-medico/requisitos-consulares', label: 'Requisitos del seguro según consulado' },
+      ])
+    : [];
 
   const localeHref = (href: string) => {
     if (locale === 'en' && href.startsWith('/seguros/') && href !== '/seguros/salud-extranjeros') {
@@ -312,6 +327,15 @@ export function Header() {
                   {locale === 'en' ? 'Rentals in Madrid →' : 'Alquileres en Madrid →'}
                 </Link>
               </div>
+              {homeEvidenceLinks.length > 0 && (
+                <nav className="mt-3 flex flex-wrap gap-x-3 gap-y-1 border-t border-blue-100 pt-3 text-[11px] leading-5" aria-label={locale === 'en' ? 'Visa health-insurance guides' : 'Guías de seguro médico para visados'}>
+                  {homeEvidenceLinks.map((link) => (
+                    <Link key={link.href} href={link.href} onClick={closeAll} className="font-semibold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900">
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              )}
             </div>
             {grouped.map((item) => (
               <Link

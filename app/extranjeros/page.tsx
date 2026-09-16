@@ -327,7 +327,21 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
           title={en ? 'The product page owns the insurance decision' : 'La página de producto concentra la decisión aseguradora'}
           answer={en ? 'International students can get help through Valentín Protección Integral arranging ASISA Health Students. ASISA issues the policy; Sebastián Sifontes Valentín is a co-founder of VPI and an individual exclusive insurance agent for ASISA. The foreigners hub helps you identify whether your case is studies, residence, renewal or family arrival, while the canonical health page explains product-specific copay, waiting-period, duration and certificate conditions.' : 'Este hub te ayuda a identificar si tu caso es de estudios, residencia, renovación o llegada familiar. La página canónica de salud explica las condiciones de copagos, carencias, duración y certificado según cada producto.'}
           facts={en ? ['Students and Residents are distinct ASISA products.', 'Residents Premium has different waiting-period conditions.', 'The administration or consulate makes the final decision on the procedure.', 'The insurer and policy determine the certificate and contractual conditions.'] : ['Students y Residents son productos ASISA distintos.', 'Residents Premium tiene condiciones de carencia diferentes.', 'La administración o el consulado toman la decisión final del trámite.', 'La aseguradora y la póliza determinan el certificado y las condiciones contractuales.']}
-          links={en ? [{ label: 'Open the canonical health page', href: '/en/insurance/health/foreigners' }, { label: 'Visa insurance requirements and consulate tracker', href: '/en/visa-health-insurance' }, { label: 'Review the health hub', href: '/en/insurance/health' }] : [{ label: 'Ver el seguro de salud para extranjeros', href: '/seguros/salud-extranjeros' }, { label: 'Requisitos oficiales de seguro y tracker consular', href: '/visados/seguro-medico' }, { label: 'Ver el hub de salud', href: '/seguros/salud' }]}
+          links={en ? [
+            { label: 'Open the canonical health page', href: '/en/insurance/health/foreigners' },
+            { label: 'Visa insurance requirements and consulate tracker', href: '/en/visa-health-insurance' },
+            { label: 'Student visa insurance guidance', href: '/en/visa-health-insurance/student-visa' },
+            { label: 'Non-lucrative residence insurance guidance', href: '/en/visa-health-insurance/non-lucrative-residence' },
+            { label: 'Consulate-specific insurance requirements', href: '/en/visa-health-insurance/consulate-requirements' },
+            { label: 'Review the health hub', href: '/en/insurance/health' },
+          ] : [
+            { label: 'Ver el seguro de salud para extranjeros', href: '/seguros/salud-extranjeros' },
+            { label: 'Requisitos oficiales de seguro y tracker consular', href: '/visados/seguro-medico' },
+            { label: 'Seguro médico para visado de estudios', href: '/visados/seguro-medico/estudios' },
+            { label: 'Seguro para residencia no lucrativa', href: '/visados/seguro-medico/residencia-no-lucrativa' },
+            { label: 'Requisitos del seguro según consulado', href: '/visados/seguro-medico/requisitos-consulares' },
+            { label: 'Ver el hub de salud', href: '/seguros/salud' },
+          ]}
         />
 
         <section id="elige" className={`${styles.mobileSection} section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]`} data-foreigners-section="selector">
