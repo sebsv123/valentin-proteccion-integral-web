@@ -57,7 +57,7 @@ The exact header and order are enforced by the validator:
 | `outcome_review_status` | `reviewed`, `unreviewed` | Imported values always start unreviewed. |
 | `outcome_source` | `official_decision`, `applicant_confirmation`, `insurer_confirmation`, `vpi_follow_up`, `unknown` | Category only; no URL, quote, or file name. |
 | `outcome_verified_date` | `YYYY-MM-DD` or blank | Required for a reviewed known/pending outcome; blank for unknown. |
-| `data_source` | `google_forms`, `google_sheets`, `crm`, `case_record`, `other`, `unknown` | Category only. `unknown` excludes the row from public usable-case counts. |
+| `data_source` | `google_forms`, `google_sheets`, `crm`, `case_record`, `blueprint_2026`, `other`, `unknown` | Category only. `blueprint_2026` identifies the sanitised Blueprint_2026 cohort. `unknown` excludes the row from public usable-case counts. |
 
 `workflow_stage` describes only VPI’s operational/commercial process. In
 particular, `sale_closed` does not imply `policy_issued`, and `policy_issued`
@@ -135,6 +135,11 @@ cohort carries a clear label, its own denominator and intake-date range. No
 stage counts or metrics are pooled; there is no cross-stage total. A
 publication-eligible cohort does not make any other cohort eligible.
 
+V0 does not report an all-source/all-stage unique-case total until
+cross-source deduplication has been completed. Stage-specific source cohorts
+may be counted separately, with the source and workflow stage named in the
+cohort label and denominator.
+
 Missing `case_date` remains unknown. A month-level date range is emitted only
 when at least ten cases in that same stage cohort have a known intake date.
 Unknown and pending outcomes stay in the exact stage cohort denominator. No
@@ -160,6 +165,7 @@ shape of one such cohort; the built JSON contains one per allowed stage:
   "publication_min_sample": 20,
   "publication_language": "Observed among documented VPI cases",
   "cohort_policy": "Every denominator and aggregate is scoped to exactly one workflow_stage. No cross-stage aggregate is generated.",
+  "cross_source_deduplication_rule": "Do not report an all-source/all-stage unique-case total until cross-source deduplication has been completed. Stage-specific source cohorts may be counted separately.",
   "cohorts": [
     {
       "workflow_stage": "policy_issued",

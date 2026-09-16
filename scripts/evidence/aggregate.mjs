@@ -138,11 +138,13 @@ export function buildPublicAggregate(rows, generatedOn) {
     publication_min_sample: PUBLICATION_MIN_SAMPLE,
     publication_language: 'Observed among documented VPI cases',
     cohort_policy: 'Every denominator and aggregate is scoped to exactly one workflow_stage. No cross-stage aggregate is generated.',
+    cross_source_deduplication_rule: 'Do not report an all-source/all-stage unique-case total until cross-source deduplication has been completed. Stage-specific source cohorts may be counted separately.',
     methodology: {
       version: METHODOLOGY_VERSION,
       scope: 'Observed among documented VPI cases only; these records do not represent all Spanish visa applicants.',
       workflow_stage_rule: 'workflow_stage is VPI’s internal operational/commercial stage only. sale_closed does not imply policy_issued; policy_issued does not imply visa/residence approval. Neither stage populates outcome. A missing stage remains unknown.',
       cohort_rule: 'Each cohort includes exactly one workflow_stage and has its own denominator. Stages are never silently combined.',
+      cross_source_deduplication_rule: 'Do not report an all-source/all-stage unique-case total until cross-source deduplication has been completed. Stage-specific source cohorts may be counted separately.',
       usable_case_rule: 'Schema-valid rows with a known data_source and unique private import identity.',
       case_date_rule: 'case_date is the date the case entered VPI workflow/intake. It is never substituted with policy start, policy issue, payment, or visa-decision dates. Missing intake dates remain unknown.',
       privacy_rule: 'Public counts require at least the privacy minimum within the exact workflow-stage cohort and per populated bucket. A whole dimension is withheld if any bucket is below that minimum.',

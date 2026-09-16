@@ -205,6 +205,7 @@ try {
   }
   assert.equal('usable_cases' in stageOutputJson, false);
   assert.equal(stageOutputJson.cohort_policy.includes('No cross-stage aggregate'), true);
+  assert.equal(stageOutputJson.cross_source_deduplication_rule.includes('cross-source deduplication'), true);
 
   const missingStageInput = resolve(temp, 'missing-stage.csv');
   const missingStageColumns = IMPORT_COLUMNS.filter((column) => column !== 'workflow_stage'
