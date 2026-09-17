@@ -16,13 +16,13 @@ const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp"
 const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.FAQChat));
 
 export const metadata: Metadata = {
-  title: "Seguro Médico para NIE, TIE y Visado | VPI",
-  description: "Seguro médico para extranjeros en España (precios orientativos desde 22,50€/mes). Modalidades para visado, NIE y TIE. Revisamos que se ajuste a los requisitos habituales de tu trámite; la decisión final corresponde a la administración o consulado.",
-  keywords: ["seguro médico NIE España","seguro residencia Madrid latinos 2026","seguro médico extranjeros","NIE TIE seguro Madrid","seguro extranjería España","seguro medico para visado españa","seguro sin copagos extranjeros españa","certificado seguro medico consulado españa"],
+  title: "Seguro médico para visado y residencia en España | VPI",
+  description: "Seguro médico para visado de estudios, residencia y estancias de larga duración en España, cuando el procedimiento lo requiere. Revisamos los requisitos aplicables; la decisión final corresponde a la administración o al consulado.",
+  keywords: ["seguro médico para visado de estudios en España", "seguro médico para residencia en España", "seguro médico para estancia de larga duración"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", en: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", 'x-default': "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
   openGraph: {
-    title: "Seguro Médico para NIE, TIE y Visado | VPI",
-    description: "Modalidades para visado y residencia. Revisamos que se ajuste a los requisitos habituales de tu trámite; decide la administración o consulado.",
+    title: "Seguro médico para visado y residencia en España | VPI",
+    description: "Modalidades para visado de estudios, residencia y estancias de larga duración cuando el procedimiento requiere seguro médico. La decisión final corresponde a la administración o al consulado.",
     url: "https://valentinproteccionintegral.com/seguros/salud-extranjeros",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -57,10 +57,10 @@ const localBusinessSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Seguro Médico NIE/TIE Extranjeros Madrid - Valentín Protección Integral",
+  "name": "Seguro médico para visados y residencia en España - Valentín Protección Integral",
   "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico para residencia en España. Modalidades que pueden cubrir los requisitos habituales de NIE/TIE; la decisión final corresponde a la administración."
+  "description": "Seguro médico para procedimientos de visado, residencia y larga estancia en España cuando requieren cobertura sanitaria. La decisión final corresponde a la administración o al consulado."
 };
 
 const faqSchema = {
@@ -69,10 +69,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El seguro es válido para solicitar el visado o NIE?",
+      "name": "¿Cuándo puede requerirse seguro médico en un trámite de visado o residencia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trabajamos con modalidades diseñadas para cubrir los requisitos habituales exigidos para visado, NIE y TIE. Revisamos tu caso concreto, aunque la decisión final corresponde al consulado o a la comisaría de extranjería."
+        "text": "Algunos procedimientos de visado, residencia o larga estancia pueden exigir seguro médico con condiciones específicas. Revisamos el producto y el trámite concreto; la decisión final corresponde a la administración o al consulado."
       }
     },
     {
@@ -107,15 +107,15 @@ export const dynamic = "force-static";
 export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } = {}) {
   const en = locale === 'en';
   const c = healthForeignersContent[locale];
-  const wVisado = buildWhatsAppHref(en ? "Hello, I am interested in health insurance for a visa, NIE or TIE. I would like guidance on the right option for my situation and how to arrange it." : "Hola, estoy interesado/a en un seguro médico para visado, NIE o TIE. Me gustaría recibir orientación sobre la opción más adecuada para mi situación y el proceso para contratarlo.");
+  const wVisado = buildWhatsAppHref(en ? "Hello, I am interested in health insurance for a study visa or a residence or long-stay process where it is required. I would like guidance on the right option for my situation and how to arrange it." : "Hola, me interesa un seguro médico para visado de estudios o para un procedimiento de residencia o larga estancia que lo requiera. Me gustaría recibir orientación sobre la opción adecuada para mi situación y cómo contratarla.");
   const localizedSchemas = en ? {
     ...localBusinessSchema,
     inLanguage: 'en',
     url: 'https://valentinproteccionintegral.com/en/insurance/health/foreigners',
     name: 'Valentín Protección Integral',
-    description: 'Health insurance guidance for visa, NIE and TIE applications in Spain.',
+    description: 'Health insurance guidance for study visas, residence and long-stay processes in Spain where cover is required.',
   } : { ...localBusinessSchema, inLanguage: 'es' };
-  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { ...localBusinessSchema, inLanguage: 'en' }, name: 'Health insurance for foreigners in Spain - Valentín Protección Integral', description: 'Health insurance options for visa, NIE and TIE applications in Spain.' } : { ...serviceSchema, inLanguage: 'es' };
+  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { ...localBusinessSchema, inLanguage: 'en' }, name: 'Health insurance for visas and residence in Spain - Valentín Protección Integral', description: 'Health insurance options for study visa, residence and long-stay processes in Spain where cover is required.' } : { ...serviceSchema, inLanguage: 'es' };
   const localizedFaq = { ...faqSchema, inLanguage: locale, mainEntity: c.faqs.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) };
 
 
@@ -163,7 +163,7 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt={en ? 'Health insurance for foreigners in Spain — NIE, TIE and visa' : 'Seguro médico para extranjeros en España — NIE TIE visado consulado'}
+              alt={en ? 'Health insurance for study visas and residence processes in Spain' : 'Seguro médico para visados de estudios y trámites de residencia en España'}
               width={900}
               height={600}
               className="object-cover opacity-30 w-full h-full"
@@ -277,7 +277,7 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
           eyebrow={en ? 'Product differences' : 'Diferencias entre productos'}
           title={en ? 'Students, Residents and Residents Premium are not interchangeable' : 'Students, Residents y Residents Premium no son intercambiables'}
           answer={en ? 'ASISA Health Students and ASISA Health Residents are described in the 2026 product manual as no-copayment, no-waiting-period products for different immigration situations. ASISA Health Residents Premium is intended for people who already have residence or a visa: it has no copayments but does have waiting periods.' : 'El manual de producto 2026 describe ASISA Health Students y ASISA Health Residents como productos sin copagos ni carencias para situaciones migratorias distintas. ASISA Health Residents Premium está pensado para personas que ya tienen residencia o visado: no tiene copagos, pero sí periodos de carencia.'}
-          facts={en ? ['Students: student visa, 2 months to 1 year, non-renewable initial product.', 'Residents: residence/NIE/long-stay visa, one year, renewal conditions apply.', 'Health Premium: visa/residence, 2 months to 1 year, non-renewable.', 'Certificate, refund, travel assistance and repatriation depend on the named product and policy.'] : ['Students: visado de estudiante, de 2 meses a 1 año y producto inicial no renovable.', 'Residents: residencia/NIE/visado de larga estancia, un año y renovación condicionada.', 'Health Premium: visado/residencia, de 2 meses a 1 año y no renovable.', 'Certificado, devolución, asistencia y repatriación dependen del producto y la póliza.']}
+          facts={en ? ['Students: student visa, 2 months to 1 year, non-renewable initial product.', 'Residents: residence or long-stay visa, one year; renewal conditions apply.', 'Health Premium: visa/residence, 2 months to 1 year, non-renewable.', 'Certificate, refund, travel assistance and repatriation depend on the named product and policy.'] : ['Students: visado de estudiante, de 2 meses a 1 año y producto inicial no renovable.', 'Residents: residencia o visado de larga estancia, un año y renovación condicionada.', 'Health Premium: visado/residencia, de 2 meses a 1 año y no renovable.', 'Certificado, devolución, asistencia y repatriación dependen del producto y la póliza.']}
         />
 
         <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-6 text-slate-600">
