@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Vercel Deploy Hook
+        env:
+          VERCEL_WEEKLY_REBUILD_HOOK: ${{ secrets.VERCEL_WEEKLY_REBUILD_HOOK }}
         run: |
-          curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_znwM3Z2Lpq6BXqHfdFusgFzINYct/EH5dtmCy4n"
+          curl -X POST "$VERCEL_WEEKLY_REBUILD_HOOK"
