@@ -288,6 +288,50 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
           )}
         </p>
 
+        <section className="mx-auto max-w-4xl px-4 py-10 text-slate-700">
+          <h2 className="mb-6 text-2xl font-bold text-slate-900">
+            {en ? 'Arranging ASISA Health Students before you arrive' : 'Contratar ASISA Health Students antes de llegar a España'}
+          </h2>
+          <div className="space-y-5">
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                {en ? 'Can I arrange ASISA Health Students before travelling to Spain?' : '¿Puedo contratar ASISA Health Students antes de viajar a España?'}
+              </h3>
+              <p className="mt-1 leading-6">
+                {en
+                  ? 'Yes. ASISA currently states that Health Students can be contracted online from abroad before travelling to Spain. VPI can guide you through the insurance process before your move.'
+                  : 'Sí. ASISA indica actualmente que Health Students puede contratarse online desde el extranjero antes de viajar a España. VPI puede orientarte durante el proceso del seguro antes de tu traslado.'}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                {en ? 'Do I need a NIE or a Spanish bank account to arrange it?' : '¿Necesito NIE o una cuenta bancaria española para contratarlo?'}
+              </h3>
+              <p className="mt-1 leading-6">
+                {en
+                  ? 'For ASISA Health Students, ASISA currently states that neither a NIE nor a Spanish bank account is required for the online contracting process. Product and identity requirements must still be checked for the specific application.'
+                  : 'Para ASISA Health Students, ASISA indica actualmente que no se necesita NIE ni cuenta bancaria española para la contratación online. Los requisitos del producto y de identificación deben comprobarse para cada caso concreto.'}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900">
+                {en ? 'Who issues the insurance certificate for the visa application?' : '¿Quién emite el certificado del seguro para el visado?'}
+              </h3>
+              <p className="mt-1 leading-6">
+                {en
+                  ? 'ASISA is the insurer and issues the policy and corresponding certificate after contracting. VPI does not issue the insurance certificate.'
+                  : 'ASISA es la aseguradora y emite la póliza y el certificado correspondiente tras la contratación. VPI no emite el certificado del seguro.'}
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 text-sm leading-6 text-slate-600">
+            {en ? 'Product source: ' : 'Fuente del producto: '}
+            <a className="font-semibold text-[var(--blue)] underline underline-offset-4" href="https://www.asisa.es/seguros-medicos/extranjeros/estudios">
+              ASISA Health Students
+            </a>
+          </p>
+        </section>
+
         <ForeignersProductComparison locale={locale} />
 
         {/* SECCIÓN PERFILES — ¿Para quién es este seguro? */}
