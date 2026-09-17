@@ -365,6 +365,17 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
           </div>
         </section>
 
+        <section className="border-b border-slate-200 bg-white py-6">
+          <div className="container-shell">
+            <h2 className="text-lg font-bold text-slate-900">{en ? 'What does VPI add if ASISA already offers Health Students?' : '¿Qué aporta VPI si ASISA ya ofrece Health Students?'}</h2>
+            <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-700">
+              {en
+                ? 'ASISA is the insurer and the official source for the product terms. VPI adds human guidance around the insurance process: helping you identify whether your case involves studies, residence, renewal or a family arrival, and helping you review the relevant dates and documents before contracting. For ASISA Health Students, insurance mediation is carried out through Sebastián Sifontes Valentín, VPI co-founder and ASISA exclusive insurance agent. The competent authority or consulate still decides whether the documents meet the requirements of your procedure.'
+                : 'ASISA es la aseguradora y la fuente oficial de las condiciones del producto. VPI aporta orientación humana durante el proceso del seguro: te ayuda a identificar si tu caso es de estudios, residencia, renovación o llegada familiar y a revisar las fechas y los documentos relevantes antes de contratar. Para ASISA Health Students, la mediación de seguros se realiza a través de Sebastián Sifontes Valentín, cofundador de VPI y agente exclusivo de seguros de ASISA. La autoridad competente o el consulado siguen siendo quienes deciden si la documentación cumple los requisitos de tu trámite.'}
+            </p>
+          </div>
+        </section>
+
         <section id="elige" className={`${styles.mobileSection} section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]`} data-foreigners-section="selector">
           <div className="container-shell">
             <div className="mb-8 max-w-3xl">
