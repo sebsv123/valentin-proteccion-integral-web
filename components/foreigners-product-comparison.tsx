@@ -5,13 +5,13 @@ type ForeignersProductComparisonProps = { locale: 'es' | 'en' };
 const products = {
   es: [
     { name: 'ASISA Health Students', forWho: 'Visado de estudiante y estancias de estudios.', copay: 'Sin copagos', waiting: 'Sin carencias', term: 'De 2 meses a 1 año; producto inicial no renovable.' },
-    { name: 'ASISA Health Residents', forWho: 'Residencia, NIE o visado de larga estancia.', copay: 'Sin copagos', waiting: 'Sin carencias', term: 'Un año; condiciones de renovación según producto.' },
+    { name: 'ASISA Health Residents', forWho: 'Trámites de residencia o visado de larga estancia.', copay: 'Sin copagos', waiting: 'Sin carencias', term: 'Un año; condiciones de renovación según producto.' },
     { name: 'ASISA Health Premium', forWho: 'Situaciones de visado o residencia que requieren otra modalidad.', copay: 'Sin copagos', waiting: 'Sin carencias', term: 'De 2 meses a 1 año; producto inicial no renovable.' },
     { name: 'ASISA Health Residents Premium', forWho: 'Personas que ya tienen residencia o visado y necesitan esta modalidad.', copay: 'Sin copagos', waiting: 'Con carencias', term: 'Un año; renovación automática según las condiciones aplicables.' },
   ],
   en: [
     { name: 'ASISA Health Students', forWho: 'Student visas and study stays.', copay: 'No co-payments', waiting: 'No waiting periods', term: '2 months to 1 year; initial product is non-renewable.' },
-    { name: 'ASISA Health Residents', forWho: 'Residence, NIE or long-stay visa situations.', copay: 'No co-payments', waiting: 'No waiting periods', term: 'One year; renewal conditions depend on the product.' },
+    { name: 'ASISA Health Residents', forWho: 'Residence or long-stay visa processes.', copay: 'No co-payments', waiting: 'No waiting periods', term: 'One year; renewal conditions depend on the product.' },
     { name: 'ASISA Health Premium', forWho: 'Visa or residence situations requiring another plan.', copay: 'No co-payments', waiting: 'No waiting periods', term: '2 months to 1 year; initial product is non-renewable.' },
     { name: 'ASISA Health Residents Premium', forWho: 'People who already have residence or a visa and need this plan.', copay: 'No co-payments', waiting: 'Waiting periods apply', term: 'One year; automatic renewal subject to the applicable conditions.' },
   ],
@@ -29,7 +29,7 @@ export function ForeignersProductComparison({ locale }: ForeignersProductCompari
     term: 'Duration and renewal',
     note: 'The insurer issues the certificate. Travel assistance, repatriation, refund conditions and advance contracting depend on the named product and policy.',
     decision: 'A simple starting point',
-    steps: ['Student visa or study context → start with Students.', 'Residence, NIE or long-stay context → review Residents and its conditions.', 'Need a broader or different structure → ask about the Premium options.', 'Before buying, confirm dates, certificate and conditions for your process.'],
+    steps: ['Student visa or study context → start with Students.', 'Residence or long-stay process → review Residents and its conditions.', 'Need a broader or different structure → ask about the Premium options.', 'Before buying, confirm dates, certificate and conditions for your process.'],
     cta: 'Ask which plan fits my process',
     contact: '/en/contact',
   } : {
@@ -42,7 +42,7 @@ export function ForeignersProductComparison({ locale }: ForeignersProductCompari
     term: 'Duración y renovación',
     note: 'La aseguradora emite el certificado. La asistencia, repatriación, devolución y contratación anticipada dependen del producto y de la póliza concreta.',
     decision: 'Un punto de partida sencillo',
-    steps: ['Visado de estudiante o estudios → empieza revisando Students.', 'Residencia, NIE o larga estancia → revisa Residents y sus condiciones.', 'Necesitas otra estructura → pregunta por las modalidades Premium.', 'Antes de contratar, confirma fechas, certificado y condiciones del trámite.'],
+    steps: ['Visado de estudiante o estudios → empieza revisando Students.', 'Residencia o larga estancia → revisa Residents y sus condiciones.', 'Necesitas otra estructura → pregunta por las modalidades Premium.', 'Antes de contratar, confirma fechas, certificado y condiciones del trámite.'],
     cta: 'Preguntar qué modalidad encaja',
     contact: '/contacto',
   };

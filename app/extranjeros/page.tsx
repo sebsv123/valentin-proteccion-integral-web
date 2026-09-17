@@ -322,10 +322,11 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
           </div>
         </section>
 
+        {/* ASISA Health Students contracting details checked against https://www.asisa.es/seguros-medicos/extranjeros/estudios on 2026-09-17. */}
         <AnswerFirstSection
           eyebrow={en ? 'Quick answer' : 'Respuesta rápida'}
-          title={en ? 'The product page owns the insurance decision' : 'La página de producto concentra la decisión aseguradora'}
-          answer={en ? 'International students can get help through Valentín Protección Integral arranging ASISA Health Students. ASISA issues the policy; Sebastián Sifontes Valentín is a co-founder of VPI and an individual exclusive insurance agent for ASISA. The foreigners hub helps you identify whether your case is studies, residence, renewal or family arrival, while the canonical health page explains product-specific copay, waiting-period, duration and certificate conditions.' : 'Este hub te ayuda a identificar si tu caso es de estudios, residencia, renovación o llegada familiar. La página canónica de salud explica las condiciones de copagos, carencias, duración y certificado según cada producto.'}
+          title={en ? 'Can VPI arrange student health insurance before I move to Spain?' : '¿Puede VPI tramitar mi seguro de estudiante antes de viajar a España?'}
+          answer={en ? 'VPI can guide international students through arranging ASISA Health Students before travelling to Spain. ASISA is the insurer and issues the policy. For ASISA Health Students, insurance mediation is carried out through Sebastián Sifontes Valentín, VPI co-founder and ASISA exclusive insurance agent. ASISA currently states that ASISA Health Students can be arranged online from abroad, without a NIE or Spanish bank account, and that the Spanish visa certificate is supplied after contracting. Check dates and documents against your actual visa or residence route and the competent consulate.' : 'VPI puede orientar a estudiantes internacionales en la contratación de ASISA Health Students antes de viajar a España. ASISA es la aseguradora y emite la póliza. Para ASISA Health Students, la mediación de seguros se realiza a través de Sebastián Sifontes Valentín, cofundador de VPI y agente exclusivo de seguros de ASISA. ASISA indica actualmente que ASISA Health Students puede contratarse online desde el extranjero, sin NIE ni cuenta bancaria española, y que el certificado español para el visado se facilita después de contratar. Comprueba las fechas y los documentos según tu vía concreta de visado o residencia y el consulado competente.'}
           facts={en ? ['Students and Residents are distinct ASISA products.', 'Residents Premium has different waiting-period conditions.', 'The administration or consulate makes the final decision on the procedure.', 'The insurer and policy determine the certificate and contractual conditions.'] : ['Students y Residents son productos ASISA distintos.', 'Residents Premium tiene condiciones de carencia diferentes.', 'La administración o el consulado toman la decisión final del trámite.', 'La aseguradora y la póliza determinan el certificado y las condiciones contractuales.']}
           links={en ? [
             { label: 'Open the canonical health page', href: '/en/insurance/health/foreigners' },
@@ -343,6 +344,26 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
             { label: 'Ver el hub de salud', href: '/seguros/salud' },
           ]}
         />
+
+        <section className="border-b border-slate-200 bg-white py-6" aria-labelledby="foreigners-roles-title">
+          <div className="container-shell">
+            <h2 id="foreigners-roles-title" className="text-sm font-bold text-slate-900">{en ? 'Who does what?' : '¿Quién hace qué?'}</h2>
+            <dl className="mt-3 grid gap-3 text-sm leading-6 text-slate-700 md:grid-cols-3">
+              <div>
+                <dt className="font-semibold text-slate-900">VPI</dt>
+                <dd>{en ? 'Guidance and customer support around the insurance process.' : 'Orientación y acompañamiento al cliente durante el proceso del seguro.'}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-slate-900">Sebastián Sifontes Valentín</dt>
+                <dd>{en ? 'VPI co-founder and ASISA exclusive insurance agent. Insurance mediation for ASISA Health Students is carried out through him.' : 'Cofundador de VPI y agente exclusivo de seguros de ASISA. La mediación de ASISA Health Students se realiza a través de él.'}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-slate-900">ASISA</dt>
+                <dd>{en ? 'The insurer. ASISA issues the policy and the corresponding certificate.' : 'La aseguradora. ASISA emite la póliza y el certificado correspondiente.'}</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
 
         <section id="elige" className={`${styles.mobileSection} section-pad scroll-mt-[104px] bg-white md:scroll-mt-[120px]`} data-foreigners-section="selector">
           <div className="container-shell">
