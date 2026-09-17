@@ -25,6 +25,32 @@ accepted once and counted as duplicates; conflicting rows with the same key in
 one import are rejected as a group. Human-reviewed ledger values are never
 overwritten by a later import.
 
+### Cross-source reconciliation (private, human-confirmed)
+
+When an operator later confirms that records from two operational sources are
+the same real case, record the link only in the ignored private file
+`private/evidence/cross-source-links.csv`. The file has this exact header:
+
+```text
+canonical_case_id,source_record_key,match_status,confirmed_on
+```
+
+`canonical_case_id` is one random private `CASE-` token, and each linked
+`source_record_key` is the random `SRC-` token already stored in the ledger.
+`match_status` is `confirmed` or `unreviewed`; `confirmed_on` is an ISO date
+required only for `confirmed`. The file contains no names, contact details,
+documents, notes, or matching rationale.
+
+An operator reviews the source records outside this repository and writes one
+`confirmed` line per source key only after human confirmation. The same
+canonical case may therefore have an intake key and a Blueprint key (or keys
+from other sources). The engine must reject duplicate source keys, ignore
+`unreviewed` links for deduplication, and collapse every confirmed group to one
+canonical case before calculating any future all-source unique-case metric.
+There is no automatic matching by dates, product, stage, nationality, or any
+other field. Until this map is confirmed and applied, source cohorts remain
+separate and no all-source/all-stage unique-case total is reported.
+
 `docs/evidence/sanitised-ledger.sample.csv` contains fictional rows only. The
 aggregate builder never reads that sample.
 
@@ -57,7 +83,7 @@ The exact header and order are enforced by the validator:
 | `outcome_review_status` | `reviewed`, `unreviewed` | Imported values always start unreviewed. |
 | `outcome_source` | `official_decision`, `applicant_confirmation`, `insurer_confirmation`, `vpi_follow_up`, `unknown` | Category only; no URL, quote, or file name. |
 | `outcome_verified_date` | `YYYY-MM-DD` or blank | Required for a reviewed known/pending outcome; blank for unknown. |
-| `data_source` | `google_forms`, `google_sheets`, `crm`, `case_record`, `blueprint_2026`, `other`, `unknown` | Category only. `blueprint_2026` identifies the sanitised Blueprint_2026 cohort. `unknown` excludes the row from public usable-case counts. |
+| `data_source` | `google_forms`, `google_sheets`, `crm`, `case_record`, `blueprint_2026`, `general_intake`, `other`, `unknown` | Category only. `blueprint_2026` identifies the sanitised Blueprint_2026 cohort and `general_intake` identifies the sanitised general intake cohort. `unknown` excludes the row from public usable-case counts. |
 
 `workflow_stage` describes only VPI’s operational/commercial process. In
 particular, `sale_closed` does not imply `policy_issued`, and `policy_issued`
@@ -194,3 +220,29 @@ must retain that cohort’s label and denominator. It should display the
 month-level intake-date range, methodology, human review date, and
 non-representativeness statement. Do not combine stages in a metric or use
 `generated_on` as “Last reviewed.” No block is active in v0.
+
+## Prospective evidence capture gap
+
+Begin collecting only these optional, non-PII questions when the applicant may
+know the answer. Use controlled choices plus `unknown` rather than free text:
+
+1. **From which country will you submit your immigration application?**
+2. **Which Spanish consulate or embassy will handle it, if known?**
+3. **Are you already in Spain?**
+4. **Do you already have a NIE?**
+5. **Which exact immigration procedure are you applying for?**
+
+The form should allow “I don't know yet” for each question where that is a
+genuine possibility. Do not request names, document numbers, addresses,
+medical information, uploaded documents, or identifying free-text explanations
+for this evidence layer.
+
+## Intake wording audit
+
+The current generic wording **“When would you like your coverage to end? (1
+year minimum)”** should be flagged for product review because VPI’s foreigner
+products do not all have a universal one-year duration. Do not silently change
+the connected Google Form from this repository. A concise replacement proposal
+is:
+
+> **What date should your coverage end? Please enter the end date required for your visa or residence application.**

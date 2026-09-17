@@ -47,7 +47,7 @@ export const ENUMS = {
   issue_category: ['none', 'incomplete_certificate', 'coverage_scope', 'start_date', 'payment', 'translation_or_format', 'other_documentation', 'other', 'unknown'],
   outcome: ['approved', 'rejected_insurance_reason', 'rejected_other_reason', 'pending', 'unknown'],
   outcome_source: ['official_decision', 'applicant_confirmation', 'insurer_confirmation', 'vpi_follow_up', 'unknown'],
-  data_source: ['google_forms', 'google_sheets', 'crm', 'case_record', 'blueprint_2026', 'other', 'unknown'],
+  data_source: ['google_forms', 'google_sheets', 'crm', 'case_record', 'blueprint_2026', 'general_intake', 'other', 'unknown'],
   competent_consulate_review_status: ['reviewed', 'unreviewed'],
   documentation_issue_review_status: ['reviewed', 'unreviewed'],
   issue_category_review_status: ['reviewed', 'unreviewed'],
