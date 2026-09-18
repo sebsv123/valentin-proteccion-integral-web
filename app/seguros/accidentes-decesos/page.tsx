@@ -51,9 +51,9 @@ const localBusinessSchema = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
+  "@type": "Service",
   "name": "Seguro Accidentes + Decesos Madrid - Valentín Protección Integral",
-  "provider": localBusinessSchema,
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Pack combinado accidentes + decesos. Protección completa para hoy y mañana."
 };

@@ -74,9 +74,9 @@ const localBusinessSchema = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
+  "@type": "Service",
   "name": "Seguro de Decesos Madrid - Valentín Protección Integral",
-  "provider": localBusinessSchema,
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Seguro de decesos con servicio funerario y gestión según el capital y las coberturas de la póliza."
 };

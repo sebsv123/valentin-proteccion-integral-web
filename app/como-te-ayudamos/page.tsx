@@ -62,11 +62,7 @@ export default function ComoTeAyudamosPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Asesoría de Seguros Personalizada en Madrid",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Valentín Protección Integral",
-              "url": "https://valentinproteccionintegral.com"
-            },
+            "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
             "areaServed": { "@type": "City", "name": "Madrid" },
             "description": "Atención personalizada en seguros de salud, vida, mascotas, dental, viaje y más. Registro DGSFP nº C012479234434D.",
             "url": "https://valentinproteccionintegral.com/como-te-ayudamos",

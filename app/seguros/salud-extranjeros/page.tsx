@@ -59,7 +59,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Orientación sobre seguro médico para visados y residencia en España - Valentín Protección Integral",
-  "provider": localBusinessSchema,
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "VPI ofrece orientación sobre las opciones de seguro y el proceso asegurador; la aseguradora proporciona y emite el producto de seguro."
 };
@@ -116,7 +116,7 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
     name: 'Valentín Protección Integral',
     description: 'Health insurance guidance for study visas, residence and long-stay processes in Spain where cover is required.',
   } : { ...localBusinessSchema, inLanguage: 'es' };
-  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { ...localBusinessSchema, inLanguage: 'en' }, name: 'Health-insurance guidance for visas and residence in Spain - Valentín Protección Integral', description: 'VPI provides guidance around insurance options and the insurance process; the insurer provides and issues the insurance product.' } : { ...serviceSchema, inLanguage: 'es' };
+  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { '@id': 'https://valentinproteccionintegral.com/#organization' }, name: 'Health-insurance guidance for visas and residence in Spain - Valentín Protección Integral', description: 'VPI provides guidance around insurance options and the insurance process; the insurer provides and issues the insurance product.' } : { ...serviceSchema, inLanguage: 'es' };
   const localizedFaq = { ...faqSchema, inLanguage: locale, mainEntity: c.faqs.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) };
 
 
