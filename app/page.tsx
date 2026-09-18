@@ -26,6 +26,7 @@ import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import { zonas } from '@/lib/zonas';
 import { getHomeContent } from '@/components/home-content';
 import { getSeoInsuranceCatalog } from '@/lib/seo-insurance-catalog';
+import { googleReviewsSummary } from '@/lib/google-reviews';
 
 export const metadata: Metadata = {
   title: "Asesor de Seguros en Madrid — Salud, Vida y Más | VPI",
@@ -111,9 +112,9 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
             }],
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "5.0",
+              "ratingValue": googleReviewsSummary.rating,
               "bestRating": "5",
-              "ratingCount": "49"
+              "ratingCount": googleReviewsSummary.user_ratings_total
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",

@@ -26,7 +26,7 @@ export const foreignersContent = {
     ],
     professionalBenefits: [
       { title: 'You keep the client relationship', copy: 'We follow the case without interfering with your professional support.' },
-      { title: 'We manage the insurance side', copy: 'We guide, arrange cover and answer insurance-related questions.' },
+      { title: 'We support the insurance process', copy: 'We guide the client, review the applicable insurance option and answer insurance-related questions throughout the process.' },
     ],
     faq: [
       { q: 'Which plan may fit a study or residence process in Spain?', a: 'It depends on the process and product. ASISA Health Students and ASISA Health Residents are described for different immigration situations and without co-payments or waiting periods; Residents Premium has waiting periods. The administration or consulate makes the final decision, and the policy or certificate sets the applicable conditions.' },
