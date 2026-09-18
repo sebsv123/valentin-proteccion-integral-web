@@ -10,6 +10,7 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { healthForeignersContent } from '@/app/seguros/health-foreigners-content';
 import { AnswerFirstSection } from '@/components/answer-first-section';
 import { ForeignersProductComparison } from '@/components/foreigners-product-comparison';
+import { googleReviewsSummary } from '@/lib/google-reviews';
 
 // Dynamic imports for non-critical components (reduce initial JS bundle)
 const StickyWhatsApp = dynamicImport(() => import("@/components/sticky-whatsapp").then(m => m.StickyWhatsApp));
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Agentes de seguros en Madrid" }],
+    images: [{ url: "/images/rosa_y_sebastian.jpeg", width: 1200, height: 630, alt: "Rosa y Sebastián - Valentín Protección Integral" }],
   },
 };
 
@@ -47,8 +48,8 @@ const localBusinessSchema = {
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
+    "ratingValue": googleReviewsSummary.rating,
+    "reviewCount": googleReviewsSummary.user_ratings_total,
     "bestRating": "5",
     "worstRating": "1"
   }
@@ -56,11 +57,11 @@ const localBusinessSchema = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Seguro médico para visados y residencia en España - Valentín Protección Integral",
+  "@type": "Service",
+  "name": "Orientación sobre seguro médico para visados y residencia en España - Valentín Protección Integral",
   "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico para procedimientos de visado, residencia y larga estancia en España cuando requieren cobertura sanitaria. La decisión final corresponde a la administración o al consulado."
+  "description": "VPI ofrece orientación sobre las opciones de seguro y el proceso asegurador; la aseguradora proporciona y emite el producto de seguro."
 };
 
 const faqSchema = {
@@ -115,7 +116,7 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
     name: 'Valentín Protección Integral',
     description: 'Health insurance guidance for study visas, residence and long-stay processes in Spain where cover is required.',
   } : { ...localBusinessSchema, inLanguage: 'es' };
-  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { ...localBusinessSchema, inLanguage: 'en' }, name: 'Health insurance for visas and residence in Spain - Valentín Protección Integral', description: 'Health insurance options for study visa, residence and long-stay processes in Spain where cover is required.' } : { ...serviceSchema, inLanguage: 'es' };
+  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { ...localBusinessSchema, inLanguage: 'en' }, name: 'Health-insurance guidance for visas and residence in Spain - Valentín Protección Integral', description: 'VPI provides guidance around insurance options and the insurance process; the insurer provides and issues the insurance product.' } : { ...serviceSchema, inLanguage: 'es' };
   const localizedFaq = { ...faqSchema, inLanguage: locale, mainEntity: c.faqs.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) };
 
 

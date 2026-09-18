@@ -109,8 +109,8 @@ const professionalBenefits = [
     icon: CheckCircle2,
   },
   {
-    title: 'Nosotros gestionamos la parte aseguradora',
-    copy: 'Orientamos, contratamos y resolvemos las dudas relacionadas con el seguro.',
+    title: 'Acompañamos la parte aseguradora',
+    copy: 'Orientamos al cliente, revisamos la opción aseguradora aplicable y resolvemos dudas durante el proceso.',
     icon: ShieldCheck,
   },
 ] as const;
@@ -292,7 +292,7 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
                   <article className={`${styles.journeyCard} ${styles.partnerJourney}`}>
                     <p className={styles.cardEyebrow}>{en ? 'ACADEMIES AND ADVISERS' : 'ACADEMIAS Y ASESORÍAS'}</p>
                     <h2>{en ? 'I want to partner' : 'Quiero colaborar'}</h2>
-                    <p>{en ? 'We support your students or clients and manage the insurance side from Spain.' : 'Atendemos a tus estudiantes o clientes y gestionamos la parte aseguradora desde España.'}</p>
+                    <p>{en ? 'We support your students or clients through the insurance process from Spain.' : 'Atendemos a tus estudiantes o clientes y les acompañamos durante el proceso del seguro desde España.'}</p>
                     <div className={styles.chipRow} aria-label={en ? 'Professional profiles' : 'Perfiles profesionales'}>
                       {(en ? ['Referrals', 'Students', 'Immigration', 'Follow-up'] : ['Derivaciones', 'Estudiantes', 'Extranjería', 'Seguimiento']).map((chip) => (
                         <span key={chip}>{chip}</span>
@@ -310,7 +310,7 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
                 </div>
                 <div className={styles.trustBand} aria-label={en ? 'Trust signals' : 'Señales de confianza'}>
                   <span>{en ? '+10 years of experience' : '+10 años de experiencia'}</span>
-                  <span>{en ? '+1,200 families protected' : '+1.200 familias protegidas'}</span>
+                  <span>{en ? 'Human guidance and follow-up' : 'Atención humana y seguimiento'}</span>
                   <span>{en ? '62+ verified Google reviews' : '62+ opiniones verificadas en Google'}</span>
                 </div>
               </div>
