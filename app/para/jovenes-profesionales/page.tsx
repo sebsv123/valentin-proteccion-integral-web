@@ -28,19 +28,9 @@ export const metadata: Metadata = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
+  "@type": "Service",
   "name": "Seguros Jóvenes Profesionales Madrid - Valentín Protección Integral",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Valentín Protección Integral",
-    "telephone": "+34603448765",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Boadilla del Monte",
-      "addressRegion": "Madrid",
-      "addressCountry": "ES"
-    }
-  },
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Seguros para jóvenes profesionales Madrid. Hipoteca, salud, protección. Simple y moderno.",
 };

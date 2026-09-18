@@ -31,7 +31,7 @@ const cyberFaq = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Service', name: 'Ciberprotección para empresas', provider: { '@type': 'Organization', name: site.name }, areaServed: 'España', serviceType: 'Orientación sobre soluciones de ciberprotección empresarial', url: `${site.domain}/empresas/ciberseguridad` },
+    { '@type': 'Service', name: 'Ciberprotección para empresas', provider: { '@id': `${site.domain}/#organization` }, areaServed: 'España', serviceType: 'Orientación sobre soluciones de ciberprotección empresarial', url: `${site.domain}/empresas/ciberseguridad` },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: site.domain }, { '@type': 'ListItem', position: 2, name: 'Empresas' }, { '@type': 'ListItem', position: 3, name: 'Ciberseguridad', item: `${site.domain}/empresas/ciberseguridad` }] },
     { '@type': 'FAQPage', mainEntity: cyberFaq.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
   ],

@@ -31,7 +31,7 @@ const businessFaq = [
 ] as const;
 
 const jsonLd = { '@context': 'https://schema.org', '@graph': [
-  { '@type': 'Service', name: 'Seguro de salud para empresas y autónomos', provider: { '@type': 'Organization', name: site.name }, areaServed: 'España', serviceType: 'Orientación y contratación de seguros de salud para empresas y autónomos', url: `${site.domain}/empresas/salud` },
+  { '@type': 'Service', name: 'Seguro de salud para empresas y autónomos', provider: { '@id': `${site.domain}/#organization` }, areaServed: 'España', serviceType: 'Orientación y contratación de seguros de salud para empresas y autónomos', url: `${site.domain}/empresas/salud` },
   { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: site.domain }, { '@type': 'ListItem', position: 2, name: 'Empresas' }, { '@type': 'ListItem', position: 3, name: 'Salud', item: `${site.domain}/empresas/salud` }] },
   { '@type': 'FAQPage', mainEntity: businessFaq.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
 ] };

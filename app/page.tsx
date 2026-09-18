@@ -81,10 +81,10 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "InsuranceAgency"],
+            "@type": "LocalBusiness",
             "name": "Valentín Protección Integral",
             "@id": "https://valentinproteccionintegral.com/#organization",
-            "description": currentLocale === 'en' ? "Commercial insurance mediation brand and project co-founded by Rosa and Sebastián; not an insurer or independent brokerage." : "Marca comercial y proyecto de mediación de seguros cofundado por Rosa y Sebastián; no es una aseguradora ni una correduría independiente.",
+            "description": currentLocale === 'en' ? "Valentín Protección Integral is a commercial brand and project co-founded by Rosa Valentín and Sebastián Sifontes Valentín, providing customer guidance and support around insurance processes." : "Valentín Protección Integral es una marca y proyecto comercial cofundado por Rosa Valentín y Sebastián Sifontes Valentín que ofrece orientación y acompañamiento al cliente en procesos relacionados con seguros.",
             "founder": [
               { "@type": "Person", "@id": "https://valentinproteccionintegral.com/sobre-nosotros#rosa-valentin", "name": "Rosa Isabel Valentín González" },
               { "@type": "Person", "@id": "https://valentinproteccionintegral.com/sobre-nosotros#sebastian-valentin", "name": "Sebastián Sifontes Valentín" }

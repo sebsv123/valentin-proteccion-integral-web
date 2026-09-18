@@ -12,11 +12,11 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
   const offerItems = getSeoInsuranceCatalog(isEnglish ? 'en' : 'es');
   const schema = {
     "@context": "https://schema.org",
-    "@type": "InsuranceAgency",
+    "@type": "LocalBusiness",
     "@id": "https://valentinproteccionintegral.com/#organization",
     "inLanguage": locale,
     "name": site.name,
-    "description": isEnglish ? "Commercial insurance mediation brand and project in Madrid, not an insurer or an independent brokerage. Personal guidance on available health, pet, dental, travel, accident, funeral and business cover." : "Marca comercial y proyecto de mediación de seguros en Madrid; no es una aseguradora ni una correduría independiente. Orientación personalizada sobre las coberturas disponibles de salud, mascotas, dental, viaje, accidentes, decesos y negocios.",
+    "description": isEnglish ? "Valentín Protección Integral is a commercial brand and project co-founded by Rosa Valentín and Sebastián Sifontes Valentín, providing customer guidance and support around insurance processes." : "Valentín Protección Integral es una marca y proyecto comercial cofundado por Rosa Valentín y Sebastián Sifontes Valentín que ofrece orientación y acompañamiento al cliente en procesos relacionados con seguros.",
     "url": isEnglish ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",

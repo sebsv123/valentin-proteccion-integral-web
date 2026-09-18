@@ -51,9 +51,9 @@ const localBusinessSchema = {
 
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
+  "@type": "Service",
   "name": "Seguro Viaje Temporal Madrid - Valentín Protección Integral",
-  "provider": localBusinessSchema,
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
   "description": "Seguro viaje temporal España. Cobertura desde salida aeropuerto Madrid. Médica 60.000€ mundial. Sin franquicia. Repatriación incluida."
 };

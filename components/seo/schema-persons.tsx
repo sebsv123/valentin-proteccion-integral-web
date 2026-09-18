@@ -10,12 +10,12 @@ export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'InsuranceAgency',
+        '@type': 'LocalBusiness',
         '@id': brandId,
         name: 'Valentín Protección Integral',
         description: isEnglish
-          ? 'Commercial insurance mediation brand and project, not an insurer or an independent brokerage.'
-          : 'Marca comercial y proyecto de mediación de seguros; no es una aseguradora ni una correduría independiente.',
+          ? 'Valentín Protección Integral is a commercial brand and project co-founded by Rosa Valentín and Sebastián Sifontes Valentín, providing customer guidance and support around insurance processes.'
+          : 'Valentín Protección Integral es una marca y proyecto comercial cofundado por Rosa Valentín y Sebastián Sifontes Valentín que ofrece orientación y acompañamiento al cliente en procesos relacionados con seguros.',
         founder: [{ '@id': rosaId }, { '@id': sebastianId }],
       },
       {
