@@ -39,7 +39,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': [
 export const metadata: Metadata = {
   title: 'Seguro de salud para empresas y autónomos | Valentín Protección Integral',
   description: 'Valora opciones de seguro de salud para empresas desde dos asegurados, con opciones ambulatorias, hospitalización, reembolso y ventajas fiscales según contratación.',
-  alternates: { canonical: `${site.domain}/empresas/salud` },
+  alternates: { canonical: `${site.domain}/empresas/salud`, languages: { es: `${site.domain}/empresas/salud`, en: `${site.domain}/en/business/health-insurance`, 'x-default': `${site.domain}/empresas/salud` } },
   robots: { index: true, follow: true },
   openGraph: { title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, con hospitalización, reembolso, asistencia en viajes y distintas formas de asumir el coste.', url: `${site.domain}/empresas/salud`, type: 'website', images: [{ url: `${site.domain}/brand/logo-vpi.jpeg`, alt: site.name }] },
   twitter: { card: 'summary_large_image', title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, explicadas con claridad.', images: [`${site.domain}/brand/logo-vpi.jpeg`] },

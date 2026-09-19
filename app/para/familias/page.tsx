@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Seguros para Familias en Madrid | Valentín",
   description: "Seguros pensados para proteger a toda tu familia en Madrid. Salud, vida, dental y decesos con asesoría clara y personalizada. Sin letra pequeña.",
   keywords: ["seguros familias Madrid","seguro familia completa Madrid","seguro salud vida hogar familia"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/para/familias" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/para/familias", languages: { es: "https://valentinproteccionintegral.com/para/familias", en: "https://valentinproteccionintegral.com/en/for/families", "x-default": "https://valentinproteccionintegral.com/para/familias" } },
   openGraph: {
     title: "Seguros para Familias en Madrid | Valentín",
     description: "Seguros pensados para proteger a toda tu familia en Madrid. Salud, vida, dental y decesos con asesoría clara y personalizada. Sin letra pequeña.",

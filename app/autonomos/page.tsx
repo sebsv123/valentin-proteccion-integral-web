@@ -136,10 +136,10 @@ export default function AutonomosRootPage() {
                     WhatsApp Ahora
                   </a>
                   <Link
-                    href="/seguros/salud-individual"
+                    href="/seguros/salud/autonomos"
                     className="inline-flex items-center gap-2 bg-transparent text-[#533afd] px-6 py-3 rounded text-base font-normal border border-[#b9b9f9] hover:bg-[rgba(83,58,253,0.05)] transition-all"
                   >
-                    Ver salud individual →
+                    Ver salud para autónomos →
                   </Link>
                 </div>
 

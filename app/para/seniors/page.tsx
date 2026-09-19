@@ -43,6 +43,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://valentinproteccionintegral.com/para/seniors",
+    languages: { es: "https://valentinproteccionintegral.com/para/seniors", en: "https://valentinproteccionintegral.com/en/for/seniors", "x-default": "https://valentinproteccionintegral.com/para/seniors" },
   },
 };
 

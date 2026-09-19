@@ -33,36 +33,13 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Valentín Protección Integral",
-  "url": "https://valentinproteccionintegral.com",
-  "telephone": "+34603448765",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "C. de los Reyes Católicos, 1",
-    "addressLocality": "Boadilla del Monte",
-    "addressRegion": "Madrid",
-    "addressCountry": "ES"
-  },
-  "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-};
-
 const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Seguro Salud Privado Madrid - Valentín Protección Integral",
-  "provider": localBusinessSchema,
+  "@type": "Service",
+  "name": "Orientación sobre seguro de salud privado en Madrid - Valentín Protección Integral",
+  "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Seguro médico privado Madrid sin copagos. Cobertura inmediata. Especialistas sin lista de espera."
+  "description": "VPI ofrece orientación y acompañamiento al cliente durante el proceso del seguro de salud; la aseguradora establece las condiciones y emite la póliza."
 };
 
 const faqSchema = {
@@ -125,7 +102,6 @@ export default async function SaludIndividualPage() {
     <>
       <link rel="preload" href="/images/hero-salud.webp" as="image" fetchPriority="high" type="image/webp" />
       <BreadcrumbSchema items={[{name:"Inicio",url:"/"},{name:"Seguros",url:"/seguros"},{name:"Salud Individual",url:"/seguros/salud-individual"}]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(localBusinessSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
       {/* Barra Garantía Superior */}

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Seguros para Jóvenes Profesionales Madrid | Valentín",
   description: "Seguros para jóvenes profesionales en Madrid. Salud privada, dental y accidentes desde precios accesibles. Consulta gratuita sin compromiso.",
   keywords: ["seguros jovenes profesionales Madrid","seguro hipoteca joven Madrid","seguro salud millennials Madrid"],
-  alternates: { canonical: "https://valentinproteccionintegral.com/para/jovenes-profesionales" },
+  alternates: { canonical: "https://valentinproteccionintegral.com/para/jovenes-profesionales", languages: { es: "https://valentinproteccionintegral.com/para/jovenes-profesionales", en: "https://valentinproteccionintegral.com/en/for/young-professionals", "x-default": "https://valentinproteccionintegral.com/para/jovenes-profesionales" } },
   openGraph: {
     title: "Seguros para Jóvenes Profesionales Madrid | Valentín",
     description: "Seguros para jóvenes profesionales en Madrid. Salud privada, dental y accidentes desde precios accesibles. Consulta gratuita sin compromiso.",
