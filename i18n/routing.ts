@@ -39,6 +39,8 @@ export const routing = defineRouting({
     '/insurance': { es: '/seguros', en: '/insurance' },
     '/insurance/health': { es: '/seguros/salud', en: '/insurance/health' },
     '/insurance/health/foreigners': { es: '/seguros/salud-extranjeros', en: '/insurance/health/foreigners' },
+    '/insurance/health/foreigners/asisa-health-students': { es: '/seguros/salud-extranjeros/asisa-health-students', en: '/insurance/health/foreigners/asisa-health-students' },
+    '/insurance/health/foreigners/asisa-health-residents': { es: '/seguros/salud-extranjeros/asisa-health-residents', en: '/insurance/health/foreigners/asisa-health-residents' },
     '/seguros/accidentes': { es: '/seguros/accidentes', en: '/insurance/accident-insurance' },
     '/seguros/accidentes/pyme-autonomos': { es: '/seguros/accidentes/pyme-autonomos', en: '/insurance/accident-insurance/business-self-employed' },
     '/insurance/funeral-insurance': { es: '/seguros/decesos', en: '/insurance/funeral-insurance' },

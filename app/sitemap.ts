@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Stable source-content/review dates for Fast Citation routes, never build time.
   const foreignersHubLastModified = '2026-09-13';
   const foreignersProductLastModified = '2026-09-13';
+  const asisaForeignersProductsLastModified = '2026-09-19';
   const visaKnowledgeLastModified = visaKnowledgeLastVerified;
   return [
     // PILAR — Home
@@ -44,6 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/insurance/health`, lastModified: now, changeFrequency: 'weekly', priority: 0.9, alternates: { languages: { es: `${base}/seguros/salud`, en: `${base}/en/insurance/health`, 'x-default': `${base}/seguros/salud` } } },
     { url: `${base}/seguros/salud-extranjeros`, lastModified: foreignersProductLastModified, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/en/insurance/health/foreigners`, lastModified: foreignersProductLastModified, changeFrequency: 'monthly', priority: 0.85, alternates: { languages: { es: `${base}/seguros/salud-extranjeros`, en: `${base}/en/insurance/health/foreigners`, 'x-default': `${base}/seguros/salud-extranjeros` } } },
+    { url: `${base}/seguros/salud-extranjeros/asisa-health-students`, lastModified: asisaForeignersProductsLastModified, changeFrequency: 'monthly', priority: 0.8, alternates: { languages: { es: `${base}/seguros/salud-extranjeros/asisa-health-students`, en: `${base}/en/insurance/health/foreigners/asisa-health-students`, 'x-default': `${base}/seguros/salud-extranjeros/asisa-health-students` } } },
+    { url: `${base}/en/insurance/health/foreigners/asisa-health-students`, lastModified: asisaForeignersProductsLastModified, changeFrequency: 'monthly', priority: 0.8, alternates: { languages: { es: `${base}/seguros/salud-extranjeros/asisa-health-students`, en: `${base}/en/insurance/health/foreigners/asisa-health-students`, 'x-default': `${base}/seguros/salud-extranjeros/asisa-health-students` } } },
+    { url: `${base}/seguros/salud-extranjeros/asisa-health-residents`, lastModified: asisaForeignersProductsLastModified, changeFrequency: 'monthly', priority: 0.8, alternates: { languages: { es: `${base}/seguros/salud-extranjeros/asisa-health-residents`, en: `${base}/en/insurance/health/foreigners/asisa-health-residents`, 'x-default': `${base}/seguros/salud-extranjeros/asisa-health-residents` } } },
+    { url: `${base}/en/insurance/health/foreigners/asisa-health-residents`, lastModified: asisaForeignersProductsLastModified, changeFrequency: 'monthly', priority: 0.8, alternates: { languages: { es: `${base}/seguros/salud-extranjeros/asisa-health-residents`, en: `${base}/en/insurance/health/foreigners/asisa-health-residents`, 'x-default': `${base}/seguros/salud-extranjeros/asisa-health-residents` } } },
     { url: `${base}/en/how-we-help`, lastModified: now, changeFrequency: 'monthly', priority: 0.7, alternates: { languages: { es: `${base}/como-te-ayudamos`, en: `${base}/en/how-we-help`, 'x-default': `${base}/como-te-ayudamos` } } },
     { url: `${base}/en/about-us`, lastModified: now, changeFrequency: 'monthly', priority: 0.6, alternates: { languages: { es: `${base}/sobre-nosotros`, en: `${base}/en/about-us`, 'x-default': `${base}/sobre-nosotros` } } },
     { url: `${base}/en/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.6, alternates: { languages: { es: `${base}/opiniones`, en: `${base}/en/reviews`, 'x-default': `${base}/opiniones` } } },
