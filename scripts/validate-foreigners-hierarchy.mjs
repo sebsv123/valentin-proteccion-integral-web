@@ -2,6 +2,8 @@ import { existsSync, readFileSync } from 'node:fs';
 
 const files = {
   hubContent: readFileSync('app/seguros/health-foreigners-content.ts', 'utf8'),
+  hubPage: readFileSync('app/seguros/salud-extranjeros/page.tsx', 'utf8'),
+  comparison: readFileSync('components/foreigners-product-comparison.tsx', 'utf8'),
   audienceContent: readFileSync('app/extranjeros/foreigners-content.ts', 'utf8'),
   audiencePage: readFileSync('app/extranjeros/page.tsx', 'utf8'),
   visaPage: readFileSync('components/visa-health-knowledge-page.tsx', 'utf8'),
@@ -40,9 +42,15 @@ const crossLinkErrors = [
   residenceRoutes.includes('asisa-health-students') ? 'residence route points to Students as primary' : null,
 ].filter(Boolean);
 const missingRoutes = routeFiles.filter((file) => !existsSync(file));
+const currentProducts = ['ASISA Health Students', 'ASISA Health Residents'];
+const missingCurrentProducts = currentProducts.filter((product) => !files.comparison.includes(product) || !files.hubPage.includes(product));
+const legacyCommercialTerms = /Health Premium|Residents Premium|Newcomers|modalidades Premium|Premium options/i.test(`${files.comparison}\n${files.hubPage}\n${files.hubContent}\n${files.audienceContent}\n${files.audiencePage}`);
 
-if (missing.length || crossLinkErrors.length || missingRoutes.length) {
-  console.error(`Foreigners hierarchy validation failed: ${[...missing, ...crossLinkErrors, ...missingRoutes].join(', ')}`);
+if (missing.length || crossLinkErrors.length || missingRoutes.length || missingCurrentProducts.length || legacyCommercialTerms) {
+  const errors = [...missing, ...crossLinkErrors, ...missingRoutes];
+  if (missingCurrentProducts.length) errors.push(`missing current product: ${missingCurrentProducts.join(', ')}`);
+  if (legacyCommercialTerms) errors.push('legacy Premium/Newcomers term exposed by current commercial files');
+  console.error(`Foreigners hierarchy validation failed: ${errors.join(', ')}`);
   process.exit(1);
 }
 
