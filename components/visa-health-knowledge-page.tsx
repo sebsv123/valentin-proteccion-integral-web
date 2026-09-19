@@ -6,18 +6,40 @@ import { visaKnowledgeLastVerified, visaKnowledgePages, type VisaKnowledgePage, 
 import { trackerFieldLabels, visaTrackerRecords, visaTypeLabels, type VisaType } from '@/lib/visa-health-tracker';
 
 const base = 'https://valentinproteccionintegral.com';
-const relatedLinks = {
-  es: [
-    { label: 'Seguro de salud para extranjeros (página de producto)', href: '/seguros/salud-extranjeros' },
-    { label: 'Orientación para extranjeros', href: '/extranjeros' },
-    { label: 'Contactar con VPI', href: '/contacto' },
-  ],
-  en: [
-    { label: 'Health insurance for foreigners (product page)', href: '/en/insurance/health/foreigners' },
-    { label: 'Guidance for people moving to Spain', href: '/en/foreigners' },
-    { label: 'Contact VPI', href: '/en/contact' },
-  ],
-};
+type RelatedLink = { label: string; href: string };
+
+function getRelatedLinks(pageKey: VisaKnowledgePageKey, locale: 'es' | 'en'): RelatedLink[] {
+  if (pageKey === 'tracker') return [];
+  if (pageKey === 'hub') return [];
+  return locale === 'en'
+    ? [
+        { label: 'Open the consulate tracker', href: '/en/visa-health-insurance/consulate-requirements' },
+        { label: 'Visa-health hub', href: '/en/visa-health-insurance' },
+      ]
+    : [
+        { label: 'Abrir el tracker consular', href: '/visados/seguro-medico/requisitos-consulares' },
+        { label: 'Hub de seguro para visados', href: '/visados/seguro-medico' },
+      ];
+}
+
+function getProductRecommendation(pageKey: VisaKnowledgePageKey, locale: 'es' | 'en') {
+  if (pageKey === 'student') {
+    return locale === 'en'
+      ? { label: 'ASISA Health Students: view the insurance option', href: '/en/insurance/health/foreigners/asisa-health-students', note: 'Review the named ASISA product separately from the student-visa requirements.' }
+      : { label: 'ASISA Health Students: ver la opción de seguro', href: '/seguros/salud-extranjeros/asisa-health-students', note: 'Revisa el producto ASISA por separado de los requisitos del visado de estudios.' };
+  }
+  if (pageKey === 'nonLucrative') {
+    return locale === 'en'
+      ? { label: 'ASISA Health Residents: review this insurance option for the process', href: '/en/insurance/health/foreigners/asisa-health-residents', note: 'This is an insurance option to review for the procedure, not a guarantee of acceptance.' }
+      : { label: 'ASISA Health Residents: revisar esta opción de seguro para el trámite', href: '/seguros/salud-extranjeros/asisa-health-residents', note: 'Es una opción de seguro para revisar según el trámite, no una garantía de aceptación.' };
+  }
+  if (pageKey === 'digitalNomad') {
+    return locale === 'en'
+      ? { label: 'If your route requires private insurance, review ASISA Health Residents', href: '/en/insurance/health/foreigners/asisa-health-residents', note: 'Check first whether qualifying Social Security coverage applies to your international-telework route.' }
+      : { label: 'Si tu vía requiere seguro privado, revisar ASISA Health Residents', href: '/seguros/salud-extranjeros/asisa-health-residents', note: 'Comprueba primero si tu vía de teletrabajo internacional admite cobertura de Seguridad Social aplicable.' };
+  }
+  return null;
+}
 
 function getPath(key: VisaKnowledgePageKey, locale: 'es' | 'en') {
   return visaKnowledgePages[key].path[locale];
@@ -86,6 +108,8 @@ function Tracker({ locale }: { locale: 'es' | 'en' }) {
 function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey }) {
   const en = locale === 'en';
   const current = page.path[locale];
+  const productRecommendation = getProductRecommendation(pageKey, locale);
+  const relatedLinks = getRelatedLinks(pageKey, locale);
   const breadcrumb = [
     { label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' },
     { label: en ? 'Visa health insurance' : 'Seguro médico para visados', href: getPath('hub', locale) },
@@ -151,6 +175,22 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
               <div className="mt-3 grid gap-3 sm:grid-cols-3">
                 {(['student', 'nonLucrative', 'digitalNomad'] as const).map((key) => <Link key={key} href={getPath(key, locale)} className="rounded-xl border border-slate-200 p-4 font-semibold text-[var(--blue)] underline underline-offset-4">{visaKnowledgePages[key].title[locale]} →</Link>)}
               </div>
+              <div className="mt-6 border-t border-slate-200 pt-5">
+                <p className="text-sm font-semibold text-slate-700">{en ? 'Commercial product options' : 'Opciones comerciales de producto'}</p>
+                <div className="mt-3 flex flex-wrap gap-x-6 gap-y-3">
+                  <Link href={en ? '/en/insurance/health/foreigners' : '/seguros/salud-extranjeros'} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Health insurance for foreigners' : 'Seguro de salud para extranjeros'} →</Link>
+                  <Link href={en ? '/en/insurance/health/foreigners/asisa-health-students' : '/seguros/salud-extranjeros/asisa-health-students'} className="font-semibold text-[var(--blue)] underline underline-offset-4">ASISA Health Students →</Link>
+                  <Link href={en ? '/en/insurance/health/foreigners/asisa-health-residents' : '/seguros/salud-extranjeros/asisa-health-residents'} className="font-semibold text-[var(--blue)] underline underline-offset-4">ASISA Health Residents →</Link>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {productRecommendation && (
+            <section className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5" aria-labelledby="related-product-option">
+              <h2 id="related-product-option" className="text-xl font-bold text-[var(--blue-deep)]">{en ? 'Related insurance option' : 'Opción de seguro relacionada'}</h2>
+              <p className="mt-2 leading-relaxed text-slate-700">{productRecommendation.note}</p>
+              <Link href={productRecommendation.href} className="mt-4 inline-flex font-semibold text-[var(--blue)] underline underline-offset-4">{productRecommendation.label} →</Link>
             </section>
           )}
 
@@ -174,9 +214,9 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
           </section>
 
           <nav aria-label={en ? 'Related pages' : 'Páginas relacionadas'} className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200 py-6">
-            {relatedLinks[locale].map((link) => <Link key={link.href} href={link.href} className="font-semibold text-[var(--blue)] underline underline-offset-4">{link.label} →</Link>)}
+            {relatedLinks.map((link) => <Link key={link.href} href={link.href} className="font-semibold text-[var(--blue)] underline underline-offset-4">{link.label} →</Link>)}
             {pageKey !== 'tracker' && <Link href={getPath('tracker', locale)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Open consulate tracker' : 'Abrir tracker consular'} →</Link>}
-            {pageKey === 'tracker' && <Link href={getPath('hub', locale)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Visa-health hub' : 'Hub de seguro para visados'} →</Link>}
+            {pageKey === 'tracker' && <Link href={en ? '/en/insurance/health/foreigners' : '/seguros/salud-extranjeros'} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Health insurance for foreigners' : 'Seguro de salud para extranjeros'} →</Link>}
           </nav>
         </div>
       </main>

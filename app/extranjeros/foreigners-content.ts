@@ -1,7 +1,13 @@
 export type ForeignersLocale = 'es' | 'en';
+export type ForeignersSituationRoute = 'students' | 'residence' | 'uncertain';
 
 export const foreignersContent = {
   es: {
+    situationRoutes: {
+      students: { primaryHref: '/seguros/salud-extranjeros/asisa-health-students', primaryLabel: 'Ver ASISA Health Students', secondaryHref: '/visados/seguro-medico/estudios', secondaryLabel: 'Revisar requisitos del visado de estudios' },
+      residence: { primaryHref: '/seguros/salud-extranjeros/asisa-health-residents', primaryLabel: 'Ver ASISA Health Residents', secondaryHref: '/visados/seguro-medico/residencia-no-lucrativa', secondaryLabel: 'Revisar requisitos de residencia no lucrativa' },
+      uncertain: { primaryHref: '/visados/seguro-medico', primaryLabel: 'Consultar requisitos de seguro', secondaryHref: '/visados/seguro-medico/teletrabajo-internacional', secondaryLabel: 'Si es teletrabajo internacional, revisar requisitos' },
+    },
     reviewItems: ['Modalidades sin copagos cuando el producto y el trámite lo requieren.', 'Certificado o documentación del producto tras la emisión.', 'Cobertura sanitaria privada y ámbito territorial.', 'Fechas y emisión revisadas según la aseguradora.'],
     faq: [
       { q: '¿Qué modalidad puede encajar con un trámite de estudios o residencia?', a: 'Depende del trámite y del producto. ASISA Health Students y ASISA Health Residents están descritos para situaciones migratorias distintas y sin copagos ni carencias; Residents Premium tiene carencias. La administración o el consulado toma la decisión final y la póliza o certificado fija las condiciones aplicables.' },
@@ -13,6 +19,11 @@ export const foreignersContent = {
     ],
   },
   en: {
+    situationRoutes: {
+      students: { primaryHref: '/en/insurance/health/foreigners/asisa-health-students', primaryLabel: 'View ASISA Health Students', secondaryHref: '/en/visa-health-insurance/student-visa', secondaryLabel: 'Review student visa requirements' },
+      residence: { primaryHref: '/en/insurance/health/foreigners/asisa-health-residents', primaryLabel: 'View ASISA Health Residents', secondaryHref: '/en/visa-health-insurance/non-lucrative-residence', secondaryLabel: 'Review non-lucrative residence requirements' },
+      uncertain: { primaryHref: '/en/visa-health-insurance', primaryLabel: 'Check insurance requirements', secondaryHref: '/en/visa-health-insurance/digital-nomad', secondaryLabel: 'If this is international telework, check the requirements' },
+    },
     reviewItems: ['No-copayment plans when the product and process require them.', 'Product certificate or documentation after issue.', 'Private healthcare cover and territorial scope.', 'Dates and issue timing checked with the insurer.'],
     process: [
       { title: 'Tell us about the process', copy: 'Tell us whether this is for studies, residence, renewal, family or a professional referral.' },

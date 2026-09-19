@@ -333,6 +333,31 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
           </p>
         </section>
 
+        <section className="border-y border-slate-200 bg-slate-50 py-10 md:py-14" aria-labelledby="foreigners-product-selector">
+          <div className="container-shell max-w-5xl">
+            <h2 id="foreigners-product-selector" className="font-heading text-2xl font-bold text-[var(--blue-deep)] md:text-3xl">
+              {c.productSelectorTitle}
+            </h2>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              {c.productSelector.map((product) => (
+                <article key={product.key} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="font-heading text-xl font-bold text-[var(--blue-deep)]">{product.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-700">{product.copy}</p>
+                  <Link className="mt-5 inline-flex font-semibold text-[var(--blue)] underline underline-offset-4" href={product.href}>
+                    {product.cta} →
+                  </Link>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-6 text-slate-600">
+              {c.productSelectorSecondary}{' '}
+              <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href={c.productSelectorSecondaryHref}>
+                {c.productSelectorSecondaryCta} →
+              </Link>
+            </p>
+          </div>
+        </section>
+
         <ForeignersProductComparison locale={locale} />
 
         {/* SECCIÓN PERFILES — ¿Para quién es este seguro? */}

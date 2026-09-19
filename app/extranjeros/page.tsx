@@ -18,7 +18,7 @@ import { googleReviews, googleReviewsSummary } from '@/lib/google-reviews';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import styles from './extranjeros-hero.module.css';
-import { foreignersContent } from './foreigners-content';
+import { foreignersContent, type ForeignersSituationRoute } from './foreigners-content';
 
 const personalWhatsApp = buildWhatsAppHref('Hola, necesito orientación sobre un seguro médico para mi trámite en España.');
 const partnerWhatsApp = buildWhatsAppHref('Hola, trabajo con estudiantes o clientes extranjeros y me gustaría consultar una posible colaboración.');
@@ -32,14 +32,16 @@ const situationProfiles = [
     href: buildWhatsAppHref('Hola, vengo a estudiar a España y quiero revisar qué seguro médico necesito.'),
     action: 'whatsapp_click',
     label: 'profile_studies',
+    route: 'students' as ForeignersSituationRoute,
   },
   {
     title: 'Voy a residir en España',
-    copy: 'Para residencia, renovación o llegada familiar con requisitos sanitarios.',
+    copy: 'Para residencia, renovación o llegada familiar cuando el trámite requiere seguro privado.',
     image: '/images/products/proteccion-juridica.png',
     href: buildWhatsAppHref('Hola, voy a residir en España y quiero revisar el seguro médico para mi trámite.'),
     action: 'whatsapp_click',
     label: 'profile_residence',
+    route: 'residence' as ForeignersSituationRoute,
   },
   {
     title: 'Necesito ayudar a un alumno o cliente',
@@ -48,14 +50,16 @@ const situationProfiles = [
     href: '#colaboradores',
     action: 'cta_click',
     label: 'profile_partner',
+    route: null,
   },
   {
     title: 'No sé qué seguro necesito',
-    copy: 'Para ordenar el caso antes de comparar opciones o contratar.',
+    copy: 'Para trabajadores, emprendedores o si no tienes claro qué exige tu trámite.',
     image: '/images/products/health-medical-care.png',
     href: buildWhatsAppHref('Hola, no sé qué seguro médico necesito para extranjería y quiero orientación.'),
     action: 'whatsapp_click',
     label: 'profile_unsure',
+    route: 'uncertain' as ForeignersSituationRoute,
   },
 ] as const;
 
@@ -143,10 +147,10 @@ const faqItems = [
 ];
 
 const englishSituationProfiles = [
-  { title: 'I am coming to study', copy: 'For study visas, longer stays or training in Spain.', image: '/images/premium/travel.png', href: buildWhatsAppHref('Hello, I am coming to study in Spain and need to review the health insurance requirements.'), action: 'whatsapp_click', label: 'profile_studies' },
-  { title: 'I am moving to Spain', copy: 'For residence, renewals or family arrivals with health requirements.', image: '/images/products/proteccion-juridica.png', href: buildWhatsAppHref('Hello, I am moving to Spain and need to review the health insurance for my process.'), action: 'whatsapp_click', label: 'profile_residence' },
-  { title: 'I need to help a student or client', copy: 'For academies, advisers, agencies and professionals supporting applications.', image: '/images/home/handshake-real.jpg', href: '#colaboradores', action: 'cta_click', label: 'profile_partner' },
-  { title: 'I do not know which insurance I need', copy: 'To organise your case before comparing options or arranging cover.', image: '/images/products/health-medical-care.png', href: buildWhatsAppHref('Hello, I do not know which health insurance I need for immigration and would like guidance.'), action: 'whatsapp_click', label: 'profile_unsure' },
+  { title: 'I am coming to study', copy: 'For study visas, longer stays or training in Spain.', image: '/images/premium/travel.png', href: buildWhatsAppHref('Hello, I am coming to study in Spain and need to review the health insurance requirements.'), action: 'whatsapp_click', label: 'profile_studies', route: 'students' as ForeignersSituationRoute },
+  { title: 'I am moving to Spain', copy: 'For residence, renewals or family arrivals when the process requires private insurance.', image: '/images/products/proteccion-juridica.png', href: buildWhatsAppHref('Hello, I am moving to Spain and need to review the health insurance for my process.'), action: 'whatsapp_click', label: 'profile_residence', route: 'residence' as ForeignersSituationRoute },
+  { title: 'I need to help a student or client', copy: 'For academies, advisers, agencies and professionals supporting applications.', image: '/images/home/handshake-real.jpg', href: '#colaboradores', action: 'cta_click', label: 'profile_partner', route: null },
+  { title: 'I do not know which insurance I need', copy: 'For workers, entrepreneurs or when you are not sure what your process requires.', image: '/images/products/health-medical-care.png', href: buildWhatsAppHref('Hello, I do not know which health insurance I need for immigration and would like guidance.'), action: 'whatsapp_click', label: 'profile_unsure', route: 'uncertain' as ForeignersSituationRoute },
 ] as const;
 
 export const metadata: Metadata = {
@@ -384,27 +388,43 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
               <p className="section-copy mt-4">{en ? 'Choose the profile closest to your case to start your enquiry through the right channel.' : 'Selecciona el perfil más parecido a tu caso para iniciar la consulta por el canal adecuado.'}</p>
             </div>
             <div className={`${styles.profileGrid} grid gap-5 md:grid-cols-2 xl:grid-cols-4`}>
-              {visibleProfiles.map((item) => (
-                <ForeignersTrackedLink
-                  key={item.title}
-                  href={item.href}
-                  action={item.action}
-                  label={item.label}
-                  className={`${styles.profileCard} group overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl`}
-                >
-                  <span className={`${styles.profileImage} relative block aspect-[4/3] overflow-hidden`}>
-                    <Image src={item.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" />
-                  </span>
-                  <span className={`${styles.profileBody} block p-5`}>
-                    <span className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</span>
-                    <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
-                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
-                      {item.action === 'whatsapp_click' ? <WhatsAppIcon className="h-4 w-4" /> : null}
-                      {en ? 'Send an enquiry' : 'Enviar una consulta'} <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </span>
-                </ForeignersTrackedLink>
-              ))}
+              {visibleProfiles.map((item) => {
+                const route = item.route ? foreignersContent[locale].situationRoutes[item.route] : null;
+                const primaryHref = route?.primaryHref ?? item.href;
+                const primaryLabel = route?.primaryLabel ?? (en ? 'See how it works' : 'Ver colaboración');
+                return (
+                  <div key={item.title} className="min-w-0">
+                    <ForeignersTrackedLink
+                      href={primaryHref}
+                      action="cta_click"
+                      label={item.label}
+                      className={`${styles.profileCard} group block overflow-hidden rounded-[28px] border border-[var(--border)] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl`}
+                    >
+                      <span className={`${styles.profileImage} relative block aspect-[4/3] overflow-hidden`}>
+                        <Image src={item.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" />
+                      </span>
+                      <span className={`${styles.profileBody} block p-5`}>
+                        <span className="font-heading text-2xl font-bold text-[var(--blue-deep)]">{item.title}</span>
+                        <span className="mt-3 block text-base leading-7 text-slate-700">{item.copy}</span>
+                        <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue)]">
+                          {route ? null : item.action === 'whatsapp_click' ? <WhatsAppIcon className="h-4 w-4" /> : null}
+                          {primaryLabel} <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </span>
+                    </ForeignersTrackedLink>
+                    {route ? (
+                      <ForeignersTrackedLink
+                        href={route.secondaryHref}
+                        action="cta_click"
+                        label={`${item.label}_evidence`}
+                        className="mt-3 inline-flex text-sm font-semibold text-[var(--blue)] underline decoration-[var(--blue)]/25 underline-offset-4"
+                      >
+                        {route.secondaryLabel} →
+                      </ForeignersTrackedLink>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
