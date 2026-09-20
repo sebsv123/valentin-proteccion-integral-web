@@ -13,5 +13,22 @@
 .networkActions { display:flex; flex-wrap:wrap; gap:1rem 1.5rem; margin-top:1.25rem; }
 .networkActions a + a { color:var(--blue-deep); }
 .directoryLink { color:var(--blue-deep)!important; }
+.policySection { padding:clamp(3rem,5vw,5.25rem) 0; background:#fff; border-top:1px solid rgba(15,94,156,.08); }
+.policySection h2,.policyTerms h3 { max-width:900px; margin:0; color:var(--blue-deep); font-weight:800; letter-spacing:-.035em; line-height:1.1; }
+.policySection h2 { font-size:clamp(2rem,3.4vw,3.4rem); }
+.policyGrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:2rem; }
+.policyCard { padding:1.3rem; border:1px solid rgba(15,94,156,.12); border-radius:20px; background:#f8fbfd; }
+.policyCard h3 { margin:0; color:var(--blue-deep); font-size:1.1rem; font-weight:750; }
+.policyCard p,.policyTerms p { margin:.55rem 0 0; color:var(--muted); font-size:.9rem; line-height:1.65; }
+.sourceLink { display:inline-flex; margin-top:.7rem; color:#0f5e9c; font-size:.82rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
+.policyTerms { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(15,94,156,.1); }
+.policyTerms h3 { font-size:clamp(1.35rem,2vw,2rem); }
+.termGrid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1.25rem; }
+.termGrid > div { padding:1rem; border-left:3px solid rgba(15,94,156,.2); background:#f8fbfd; }
+.termGrid strong { color:var(--blue-deep); font-size:.95rem; }
+.termGrid p { font-size:.82rem; }
+.policyNote { max-width:860px; margin-top:1.25rem!important; }
+.policyCta { display:inline-flex; margin-top:1.5rem; padding:.8rem 1.1rem; border-radius:999px; background:var(--blue-deep); color:#fff; font-size:.86rem; font-weight:800; text-decoration:none; }
 @media (max-width:1100px) { .scenarioGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:640px) { .section,.networkSection { padding:2.75rem 0; }.scenarioGrid { grid-template-columns:1fr; gap:.8rem; }.scenario { min-height:0; }.networkActions { display:grid; gap:.65rem; } }
+@media (max-width:1100px) { .termGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px) { .section,.networkSection,.policySection { padding:2.75rem 0; }.scenarioGrid,.policyGrid,.termGrid { grid-template-columns:1fr; gap:.8rem; }.scenario,.policyCard { min-height:0; }.networkActions { display:grid; gap:.65rem; } }
