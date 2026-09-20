@@ -38,9 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const ogImage = await getPexelsImage(slug);
 
-  const twitterTitle = slug === 'salud'
-    ? 'Seguro de Salud en Madrid · Desde 30€/mes | Valentín Protección Integral'
-    : product.metaTitle;
+  const twitterTitle = product.metaTitle;
   return {
     title: product.metaTitle,
     description: product.metaDescription,
@@ -88,7 +86,9 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
       <div className="sticky top-[68px] z-40 w-full bg-[#002244] text-white py-2 px-4 shadow-md">
         <div className="container mx-auto max-w-5xl flex items-center justify-center">
           <p className="text-sm font-semibold leading-tight text-center">
-            {en ? 'Do you already have a quote? Bring it to us and we will improve it — or honestly tell you if it is already good.' : '¿Tienes ya un presupuesto? Tráenoslo y lo mejoramos — o te decimos honestamente si ya es bueno.'}
+            {slug === 'salud'
+              ? (en ? 'Already have insurance or a quote? Before switching, we review what you have, what would change and what is worth checking with you.' : '¿Ya tienes seguro o un presupuesto? Antes de cambiar, revisamos contigo qué tienes, qué cambiaría y qué conviene comprobar.')
+              : (en ? 'Do you already have a quote? Bring it to us and we will review it with you — or honestly tell you if it already fits.' : '¿Tienes ya un presupuesto? Tráenoslo y lo revisamos contigo — o te decimos honestamente si ya encaja.')}
           </p>
         </div>
       </div>

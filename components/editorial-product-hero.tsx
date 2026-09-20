@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, BriefcaseBusiness, Check, ChartNoAxesColumnIncreasing, HeartPulse, ListChecks, MessageCircle, Scale, ShieldCheck, Users, UsersRound } from 'lucide-react';
+import { ArrowRight, BadgeCheck, BriefcaseBusiness, Check, ChartNoAxesColumnIncreasing, HeartPulse, ListChecks, MessageCircle, Scale, ShieldCheck, UsersRound } from 'lucide-react';
 import type { Product } from '@/lib/products';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './editorial-product-hero.module.css';
@@ -18,7 +18,7 @@ export function EditorialProductHero({ product }: { product: Product }) {
           <div className={styles.copy}>
             <p className={styles.eyebrow}>{en ? 'HEALTH INSURANCE · MEDICAL CARE' : 'SEGUROS DE SALUD · ASISTENCIA MÉDICA'}</p>
             <h1 id="salud-hero-title">{en ? 'Choose your health insurance ' : 'Elige tu seguro de salud '}<em>{en ? 'with confidence' : 'sin decidir a ciegas'}</em></h1>
-            <p className={styles.intro}>{en ? 'We compare co-payments, hospitalisation, provider networks, reimbursement and plan types with you, so you know what you are choosing.' : 'Comparamos contigo copagos, hospitalización, cuadro médico, reembolso y modalidades para que elijas con criterio y sepas qué estás contratando.'}</p>
+            <p className={styles.intro}>{en ? 'We review co-payments, hospitalisation, provider networks, reimbursement and plan types with you, so you know what you are choosing.' : 'Revisamos contigo copagos, hospitalización, cuadro médico, reembolso y modalidades para que elijas con criterio y sepas qué estás contratando.'}</p>
             <div className={styles.actions}>
               <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary"><MessageCircle aria-hidden="true" className="h-5 w-5" /> {en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
               <a href={buildWhatsAppHref(en ? 'Hello, I would like guidance choosing health insurance.' : product.whatsappMessage)} className={styles.whatsapp}><MessageCircle aria-hidden="true" className="h-5 w-5" /> {en ? 'Talk on WhatsApp' : 'Hablar por WhatsApp'}</a>
@@ -35,7 +35,7 @@ export function EditorialProductHero({ product }: { product: Product }) {
             <aside className={styles.reviewCard} aria-label={en ? 'What we review with you' : 'Qué revisamos contigo'}><div className={styles.reviewHeading}><span aria-hidden="true"><ListChecks /></span><h2>{en ? 'What we review with you' : 'Qué revisamos contigo'}</h2></div><ul>{(en ? ['Co-payments', 'Hospitalisation', 'Provider network', 'Reimbursement'] : reviewItems).map((item) => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul></aside>
           </div>
         </div>
-        <div className={styles.trustRow} aria-label={en ? 'Experience and trust' : 'Experiencia y confianza'}><p><span aria-hidden="true"><ShieldCheck /></span><strong>{en ? '+10 years' : '+10 años'}</strong> {en ? 'of experience' : 'de experiencia'}</p><p><span aria-hidden="true"><Users /></span><strong>+1.200</strong> {en ? 'families protected' : 'familias protegidas'}</p><p><span aria-hidden="true"><BadgeCheck /></span>{en ? 'Officially registered insurance guidance' : 'Orientación de seguros con registro oficial'}</p></div>
+        <div className={styles.trustRow} aria-label={en ? 'Experience and trust' : 'Experiencia y confianza'}><p><span aria-hidden="true"><ShieldCheck /></span><strong>{en ? 'Experienced guidance' : 'Orientación con experiencia'}</strong></p><p><span aria-hidden="true"><UsersRound /></span><strong>{en ? 'Close follow-up' : 'Seguimiento cercano'}</strong></p><p><span aria-hidden="true"><BadgeCheck /></span>{en ? 'Officially registered insurance guidance' : 'Orientación de seguros con registro oficial'}</p></div>
       </div>
     </section>
   );

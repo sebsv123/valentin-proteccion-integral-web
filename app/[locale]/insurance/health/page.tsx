@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import { ProductPageView } from '@/app/seguros/[slug]/page';
 
 export const metadata: Metadata = {
-  title: 'Health insurance in Madrid | Valentín Protección Integral',
-  description: 'Compare health insurance options in Madrid with clear, personal guidance.',
+  title: 'Health insurance: how to choose cover, copayments and plan type | VPI',
+  description: 'A practical guide to choosing health insurance by cover, copayments, hospitalisation, reimbursement and how you expect to use it.',
   alternates: { canonical: 'https://valentinproteccionintegral.com/en/insurance/health', languages: { es: 'https://valentinproteccionintegral.com/seguros/salud', en: 'https://valentinproteccionintegral.com/en/insurance/health', 'x-default': 'https://valentinproteccionintegral.com/seguros/salud' } },
-  openGraph: { title: 'Health insurance in Madrid | Valentín Protección Integral', description: 'Compare health insurance options in Madrid with clear, personal guidance.', url: 'https://valentinproteccionintegral.com/en/insurance/health', locale: 'en_GB', type: 'website' },
+  openGraph: { title: 'Health insurance: how to choose cover, copayments and plan type | VPI', description: 'A practical guide to choosing health insurance by cover, copayments, hospitalisation, reimbursement and how you expect to use it.', url: 'https://valentinproteccionintegral.com/en/insurance/health', locale: 'en_GB', type: 'website' },
 };
 
 export default async function EnglishHealth({ params }: { params: Promise<{ locale: string }> }) {

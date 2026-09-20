@@ -124,18 +124,18 @@ export const products: Product[] = [
     ],
     cases: ['COMPLETA', 'FAMILIAS', 'AUTÓNOMOS', 'SENIOR', 'REEMBOLSO', 'CON COPAGO', 'SIN COPAGO'],
     faqs: [
-      { q: "¿Cuánto cuesta un seguro de salud en Madrid?", a: "El precio de un seguro de salud en Madrid varía desde 21€/mes según la compañía, edad y coberturas. En Valentín Protección Integral te asesoramos con registro oficial y de forma personalizada, sin coste para ti." },
-      { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "No existe una única respuesta válida para todos. El mejor seguro de salud es el que mejor encaja con tu perfil, uso y presupuesto. Una modalidad completa funciona bien para uso frecuente o familias; el reembolso es mejor si necesitas libertad de elección; y las opciones senior o para extranjeros están diseñadas para necesidades concretas. Te ayudamos a comparar sin centrarlo todo en el precio." },
-      { q: "¿Puedo cambiar de seguro de salud sin perder mis coberturas?", a: "Sí, en la mayoría de los casos puedes cambiar de seguro de salud sin perder coberturas, aunque conviene revisar los períodos de carencia de la nueva póliza. En algunos casos, si llevas más de dos años con una compañía, puedes negociar la reducción o eliminación de carencias. Te ayudamos a gestionar el cambio sin que quedes desprotegido en ningún momento." },
-      { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Depende de tu situación y uso. La sanidad pública ofrece cobertura universal, pero los tiempos de espera para especialistas y pruebas pueden ser largos. Un seguro privado te da acceso inmediato a especialidades, urgencias privadas y pruebas diagnósticas sin esperas. Para familias con hijos, seniors o autónomos que no pueden permitirse baja médica prolongada, suele merecer la pena desde el primer uso." }
+      { q: "¿Qué conviene revisar antes de contratar un seguro de salud?", a: "Conviene revisar la modalidad, el copago, la hospitalización, el cuadro médico, las carencias y las condiciones de uso. El precio depende de la compañía, la edad, la modalidad y las coberturas concretas." },
+      { q: "¿Cuál es el mejor seguro de salud del mercado?", a: "No existe una única respuesta válida para todos. La modalidad que encaja depende de tu perfil, uso y presupuesto. Una modalidad completa puede tener sentido si prevés un uso frecuente o necesitas hospitalización; el reembolso puede encajar si valoras acudir fuera del cuadro médico, según las condiciones y límites de la póliza. Conviene revisar las opciones disponibles sin elegir solo por precio." },
+      { q: "¿Qué debo comprobar antes de cambiar de seguro de salud?", a: "Antes de cambiar, revisa las carencias, el cuestionario de salud, las exclusiones, las reglas de continuidad, la fecha de efecto y los plazos de renovación o cancelación. El tratamiento depende de la aseguradora y de la póliza concreta." },
+      { q: "¿Merece la pena un seguro de salud privado si ya tengo la Seguridad Social?", a: "Depende de tu situación y uso. La sanidad pública ofrece cobertura universal y el acceso a la medicina privada depende de la modalidad, la red médica y las condiciones de la póliza. Conviene revisar la disponibilidad de especialistas, pruebas y urgencias antes de contratar y valorar qué uso esperas hacer." }
     ],
     disclaimer:
       'Coberturas, copagos, hospitalización, reembolso y alcance territorial sujetos a modalidad y documentación contractual.',
     related: ['vida', 'dental', 'decesos'],
     whatsappMessage:
       'Hola, quiero orientación sobre SALUD y entender qué modalidad me encaja mejor.',
-    metaTitle: 'Seguro de Salud Privado en Madrid | Desde 21€/mes · Valentín Protección Integral',
-    metaDescription: 'Analiza seguros de salud privados en Madrid: modalidad completa, familiar, senior, extranjeros y reembolso. Asesoramiento con registro oficial sin compromiso. Desde 21€/mes.',
+    metaTitle: 'Seguro de salud: cómo elegir cobertura, copagos y modalidad | VPI',
+    metaDescription: 'Guía para elegir seguro de salud según cobertura, copagos, hospitalización, reembolso y uso. VPI te ayuda a revisar las condiciones antes de contratar.',
     h1: 'Seguro de Salud en Madrid: Decide Sin Presión',
   },
 
