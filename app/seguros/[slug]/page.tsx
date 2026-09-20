@@ -9,7 +9,7 @@ import { CasesAndForm, CoverageHighlights, ProductCTASection, ProductDecisionGri
 import { ProductTabs } from '@/components/product-tabs';
 import { HealthModalitiesSection } from '@/components/health-modalities-section';
 import { HealthSectionsTransition } from '@/components/health-sections-transition';
-import { HealthCoverageHighlightsSection, HealthDecisionGuideSection } from '@/components/health-insurance-insights';
+import { HealthDecisionGuideSection } from '@/components/health-insurance-insights';
 import { HealthContactProfilesSection } from '@/components/health-contact-profiles-section';
 import { HealthFaqSection } from '@/components/health-faq-section';
 import { HealthFinalGuidanceSection } from '@/components/health-final-guidance-section';
@@ -128,7 +128,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
         )}
 
         {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
-        {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthUseGuidance /><HealthCoverageHighlightsSection /></> : <CoverageHighlights product={product} locale={locale} />}
+        {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthUseGuidance /></> : <CoverageHighlights product={product} locale={locale} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
         {false && slug === 'salud' && (

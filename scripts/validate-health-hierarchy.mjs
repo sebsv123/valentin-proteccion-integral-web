@@ -68,6 +68,7 @@ const healthDecisionErrors = [
   ...(['health-coverage-axis-title', 'health-profile-axis-title', '/seguros/salud/completa', '/seguros/salud/reembolso', '/seguros/salud/familias', '/seguros/salud/autonomos', '/seguros/salud/senior', '/seguros/salud-extranjeros'].some((item) => !healthModalitiesSource.includes(item)) ? ['coverage/profile axis or destination missing'] : []),
   ...(['health-copayment-title', 'health-network-title', 'asisa.es/cuadro-medico', 'segurcaixaadeslas.es/cuadromedico', '/en/insurance/health-insurance/reimbursement'].some((item) => !healthDecisionSupportSource.includes(item)) || !healthInsightsSource.includes('health-five-checks-title') ? ['decision-support block or destination missing'] : []),
   ...(['InsuranceAgency', 'MedicalBusiness'].some((type) => healthPageSource.includes(type) || healthDecisionSupportSource.includes(type)) ? ['health schema role regression'] : []),
+  ...(healthPageSource.includes('HealthCoverageHighlightsSection') ? ['redundant legacy coverage highlights still rendered'] : []),
 ];
 const healthSwitchingErrors = [
   ...(['health-switching-title', 'health questionnaire', 'pre-existing', 'conforme a lo que pregunte la aseguradora', 'according to what the insurer asks', 'por escrito', 'BOE-A-1980-22501'].some((item) => !healthSwitchingSource.toLowerCase().includes(item.toLowerCase())) ? ['switching/underwriting guidance missing'] : []),
