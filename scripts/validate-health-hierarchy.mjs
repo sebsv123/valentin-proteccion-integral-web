@@ -14,6 +14,7 @@ const healthModalitiesSource = readFileSync('components/health-modalities-sectio
 const healthDecisionSupportSource = readFileSync('components/health-decision-support.tsx', 'utf8');
 const healthInsightsSource = readFileSync('components/health-insurance-insights.tsx', 'utf8');
 const healthSwitchingSource = readFileSync('components/health-switching-guidance.tsx', 'utf8');
+const healthUseSource = readFileSync('components/health-use-guidance.tsx', 'utf8');
 
 const legacyRoutes = ['/seguros/salud-individual', '/seguros/salud-dental'];
 const destinations = ['/seguros/salud', '/seguros/dental'];
@@ -72,8 +73,12 @@ const healthSwitchingErrors = [
   ...(['health-switching-title', 'health questionnaire', 'pre-existing', 'conforme a lo que pregunte la aseguradora', 'according to what the insurer asks', 'por escrito', 'BOE-A-1980-22501'].some((item) => !healthSwitchingSource.toLowerCase().includes(item.toLowerCase())) ? ['switching/underwriting guidance missing'] : []),
   ...(['guarantee continuity', 'sin perder ninguna cobertura', 'te lo mejoramos', 'we will improve your current policy'].some((claim) => healthSwitchingSource.toLowerCase().includes(claim.toLowerCase())) ? ['universal switching or improvement claim'] : []),
 ];
+const healthUseErrors = [
+  ...(['health-use-title', 'health-use', 'authorisation', 'Appointment the same as authorisation', 'segurcaixaadeslas.es/particulares/seguros-medicos/preguntas-frecuentes', 'asisa.es/preguntas-frecuentes/area-privada/pedir-cita', '/en/insurance/health-insurance/reimbursement'].some((item) => !healthUseSource.toLowerCase().includes(item.toLowerCase())) ? ['practical-use guidance missing'] : []),
+  ...(['VPI authorises medical services', 'VPI autoriza servicios médicos'].some((claim) => healthUseSource.includes(claim)) ? ['VPI issuer/authoriser role regression'] : []),
+];
 
-if (missingRedirects.length || sitemapLeaks.length || liveLinkReferences.length || !redirectDestinationsAreCanonical || healthClaimErrors.length || healthDecisionErrors.length || healthSwitchingErrors.length) {
+if (missingRedirects.length || sitemapLeaks.length || liveLinkReferences.length || !redirectDestinationsAreCanonical || healthClaimErrors.length || healthDecisionErrors.length || healthSwitchingErrors.length || healthUseErrors.length) {
   const errors = [
     ...missingRedirects.map((route) => `missing permanent redirect: ${route}`),
     ...sitemapLeaks.map((route) => `legacy sitemap URL remains: ${route}`),
@@ -82,6 +87,7 @@ if (missingRedirects.length || sitemapLeaks.length || liveLinkReferences.length 
     ...healthClaimErrors,
     ...healthDecisionErrors,
     ...healthSwitchingErrors,
+    ...healthUseErrors,
   ];
   console.error(`Health hierarchy validation failed: ${errors.join(', ')}`);
   process.exit(1);

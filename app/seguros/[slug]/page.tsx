@@ -15,6 +15,7 @@ import { HealthFaqSection } from '@/components/health-faq-section';
 import { HealthFinalGuidanceSection } from '@/components/health-final-guidance-section';
 import { HealthCopaymentSection, HealthNetworkSection } from '@/components/health-decision-support';
 import { HealthSwitchingGuidance } from '@/components/health-switching-guidance';
+import { HealthUseGuidance } from '@/components/health-use-guidance';
 import { getProduct, products, site } from '@/lib/products';
 import { getLocalizedProduct, localizedProductPath } from '@/lib/product-locales';
 import FaqSchema from '@/components/FaqSchema';
@@ -127,7 +128,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
         )}
 
         {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
-        {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthCoverageHighlightsSection /></> : <CoverageHighlights product={product} locale={locale} />}
+        {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthUseGuidance /><HealthCoverageHighlightsSection /></> : <CoverageHighlights product={product} locale={locale} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
         {false && slug === 'salud' && (

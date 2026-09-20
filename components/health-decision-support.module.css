@@ -29,6 +29,20 @@
 .termGrid p { font-size:.82rem; }
 .policyNote { max-width:860px; margin-top:1.25rem!important; }
 .policyCta { display:inline-flex; margin-top:1.5rem; padding:.8rem 1.1rem; border-radius:999px; background:var(--blue-deep); color:#fff; font-size:.86rem; font-weight:800; text-decoration:none; }
+.useSection { padding:clamp(3rem,5vw,5.25rem) 0; background:#f5faf9; border-top:1px solid rgba(15,94,156,.08); }
+.useSection h2 { max-width:920px; margin:0; color:var(--blue-deep); font-size:clamp(2rem,3.4vw,3.4rem); font-weight:800; letter-spacing:-.045em; line-height:1.05; }
+.processGrid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.8rem; margin-top:2rem; }
+.useCard { padding:1.05rem; border:1px solid rgba(15,94,156,.12); border-radius:18px; background:#fff; }
+.useCard strong { color:#0f5e9c; font-size:.78rem; letter-spacing:.12em; }
+.useCard h3 { margin:.45rem 0 0; color:var(--blue-deep); font-size:.98rem; font-weight:750; line-height:1.2; }
+.useCard p,.useNotes p,.useEmergency { margin:.5rem 0 0; color:var(--muted); font-size:.82rem; line-height:1.6; }
+.useNotes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+.useNotes article { padding:1.2rem; border-left:3px solid rgba(15,94,156,.22); background:#fff; }
+.useNotes h3 { margin:0; color:var(--blue-deep); font-size:1.08rem; font-weight:750; line-height:1.25; }
+.useEmergency { max-width:880px; margin-top:1.25rem; }
+.useLinks { display:flex; flex-wrap:wrap; gap:1rem 1.5rem; margin-top:1.25rem; }
+.useLinks a { color:var(--blue-deep); font-size:.8rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
 @media (max-width:1100px) { .scenarioGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:1100px) { .termGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:640px) { .section,.networkSection,.policySection { padding:2.75rem 0; }.scenarioGrid,.policyGrid,.termGrid { grid-template-columns:1fr; gap:.8rem; }.scenario,.policyCard { min-height:0; }.networkActions { display:grid; gap:.65rem; } }
+@media (max-width:1100px) { .processGrid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:640px) { .section,.networkSection,.policySection,.useSection { padding:2.75rem 0; }.scenarioGrid,.policyGrid,.termGrid,.processGrid,.useNotes { grid-template-columns:1fr; gap:.8rem; }.scenario,.policyCard { min-height:0; }.networkActions,.useLinks { display:grid; gap:.65rem; } }
