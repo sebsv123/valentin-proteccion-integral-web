@@ -13,6 +13,7 @@ import { HealthCoverageHighlightsSection, HealthDecisionGuideSection } from '@/c
 import { HealthContactProfilesSection } from '@/components/health-contact-profiles-section';
 import { HealthFaqSection } from '@/components/health-faq-section';
 import { HealthFinalGuidanceSection } from '@/components/health-final-guidance-section';
+import { HealthCopaymentSection, HealthNetworkSection } from '@/components/health-decision-support';
 import { getProduct, products, site } from '@/lib/products';
 import { getLocalizedProduct, localizedProductPath } from '@/lib/product-locales';
 import FaqSchema from '@/components/FaqSchema';
@@ -124,7 +125,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           </div>
         )}
 
-        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
+        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
         {product.slug === 'salud' ? <HealthCoverageHighlightsSection /> : <CoverageHighlights product={product} locale={locale} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
@@ -259,7 +260,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           </section>
         )}
 
-        {product.slug === 'salud' ? <HealthDecisionGuideSection /> : <ProductDecisionGrid product={product} locale={locale} />}
+        {product.slug !== 'salud' && <ProductDecisionGrid product={product} locale={locale} />}
         {product.slug === 'salud' ? <HealthContactProfilesSection product={product} /> : <CasesAndForm product={product} defaultProduct={product.slug} locale={locale} />}
 
         {/* Sección Garantía de Precio Justo */}

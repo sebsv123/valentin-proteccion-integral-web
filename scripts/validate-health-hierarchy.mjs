@@ -10,6 +10,9 @@ const englishHealthPageSource = readFileSync('app/[locale]/insurance/health/page
 const healthContentSource = readFileSync('app/seguros/health-content.ts', 'utf8');
 const healthGuidanceSource = readFileSync('components/health-final-guidance-section.tsx', 'utf8');
 const healthHeroSource = readFileSync('components/editorial-product-hero.tsx', 'utf8');
+const healthModalitiesSource = readFileSync('components/health-modalities-section.tsx', 'utf8');
+const healthDecisionSupportSource = readFileSync('components/health-decision-support.tsx', 'utf8');
+const healthInsightsSource = readFileSync('components/health-insurance-insights.tsx', 'utf8');
 
 const legacyRoutes = ['/seguros/salud-individual', '/seguros/salud-dental'];
 const destinations = ['/seguros/salud', '/seguros/dental'];
@@ -59,14 +62,20 @@ const healthClaimErrors = [
   ...(['sin carencias', 'no waiting periods'].some((claim) => healthPageSource.includes(claim) || healthContentSource.includes(claim)) ? ['universal waiting-period claim on health hub'] : []),
   ...(['te lo mejoramos', 'we will improve it', 'más de dos años', 'more than two years'].some((claim) => healthPageSource.includes(claim) || healthProductSource.match(/slug: 'salud',[\s\S]*?slug: 'mascotas'/)?.[0]?.includes(claim)) ? ['unsupported quote or continuity claim'] : []),
 ];
+const healthDecisionErrors = [
+  ...(['health-coverage-axis-title', 'health-profile-axis-title', '/seguros/salud/completa', '/seguros/salud/reembolso', '/seguros/salud/familias', '/seguros/salud/autonomos', '/seguros/salud/senior', '/seguros/salud-extranjeros'].some((item) => !healthModalitiesSource.includes(item)) ? ['coverage/profile axis or destination missing'] : []),
+  ...(['health-copayment-title', 'health-network-title', 'asisa.es/cuadro-medico', 'segurcaixaadeslas.es/cuadromedico', '/en/insurance/health-insurance/reimbursement'].some((item) => !healthDecisionSupportSource.includes(item)) || !healthInsightsSource.includes('health-five-checks-title') ? ['decision-support block or destination missing'] : []),
+  ...(['InsuranceAgency', 'MedicalBusiness'].some((type) => healthPageSource.includes(type) || healthDecisionSupportSource.includes(type)) ? ['health schema role regression'] : []),
+];
 
-if (missingRedirects.length || sitemapLeaks.length || liveLinkReferences.length || !redirectDestinationsAreCanonical || healthClaimErrors.length) {
+if (missingRedirects.length || sitemapLeaks.length || liveLinkReferences.length || !redirectDestinationsAreCanonical || healthClaimErrors.length || healthDecisionErrors.length) {
   const errors = [
     ...missingRedirects.map((route) => `missing permanent redirect: ${route}`),
     ...sitemapLeaks.map((route) => `legacy sitemap URL remains: ${route}`),
     ...liveLinkReferences.map((file) => `live internal legacy link: ${file}`),
     ...(!redirectDestinationsAreCanonical ? ['redirect chain risk'] : []),
     ...healthClaimErrors,
+    ...healthDecisionErrors,
   ];
   console.error(`Health hierarchy validation failed: ${errors.join(', ')}`);
   process.exit(1);
