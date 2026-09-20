@@ -57,8 +57,11 @@ export function HealthNetworkSection() {
         <h2 id="health-network-title">{en ? 'Do you want a specific doctor or hospital? Check before you buy' : '¿Quieres un médico u hospital concreto? Compruébalo antes de contratar'}</h2>
         <p className={styles.lead}>{en ? 'Medical networks vary by insurer and product. Check the current official directory for the option you are considering, then verify again before arranging cover because networks can change. Reimbursement is a different mechanism to review when provider freedom matters.' : 'El cuadro médico cambia según la aseguradora y el producto. Comprueba el cuadro médico oficial de la opción que estés valorando y vuelve a verificarlo antes de contratar, porque las redes pueden cambiar. El reembolso es un mecanismo distinto que conviene revisar si valoras la libertad de elección.'}</p>
         <div className={styles.networkActions}>
-          {insurerDirectories.map((directory) => <a key={directory.href} className={styles.directoryLink} href={directory.href} target="_blank" rel="noreferrer">{en ? directory.labelEn : directory.label}</a>)}
-          <Link href={en ? '/en/insurance/health-insurance/reimbursement' : '/seguros/salud/reembolso'}>{en ? 'Review reimbursement cover' : 'Revisar salud con reembolso'}</Link>
+          <p className={styles.sourceLabel}>{en ? 'Official sources for checking current information' : 'Fuentes oficiales para comprobar información'}</p>
+          <div className={styles.sourceLinks}>
+            {insurerDirectories.map((directory) => <a key={directory.href} className={styles.directoryLink} href={directory.href} target="_blank" rel="noreferrer">{en ? directory.labelEn : directory.label}</a>)}
+          </div>
+          <Link className={styles.secondaryLink} href={en ? '/en/insurance/health-insurance/reimbursement' : '/seguros/salud/reembolso'}>{en ? 'Review reimbursement cover' : 'Revisar salud con reembolso'}</Link>
         </div>
       </div>
     </section>

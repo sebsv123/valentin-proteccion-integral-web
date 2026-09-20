@@ -8,11 +8,13 @@
 .scenario { min-height:150px; padding:1.3rem; border:1px solid rgba(15,94,156,.12); border-radius:20px; background:#f8fbfd; }
 .scenario h3 { margin:0; color:var(--blue-deep); font-size:1.05rem; font-weight:750; line-height:1.2; }
 .scenario p { margin:.55rem 0 0; color:var(--muted); font-size:.86rem; line-height:1.6; }
-.networkActions a { display:inline-flex; align-items:center; margin-top:.8rem; color:#0f5e9c; font-size:.78rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
+.networkActions a { display:inline-flex; align-items:center; color:#0f5e9c; font-size:.78rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
 .networkSection h2 { max-width:850px; }
 .networkActions { display:flex; flex-wrap:wrap; gap:1rem 1.5rem; margin-top:1.25rem; }
-.networkActions a + a { color:var(--blue-deep); }
+.sourceLabel { margin:1.25rem 0 .35rem; color:var(--blue-deep); font-size:.76rem; font-weight:800; letter-spacing:.02em; }
+.sourceLinks { display:flex; flex-wrap:wrap; gap:.65rem 1.25rem; }
 .directoryLink { color:var(--blue-deep)!important; }
+.secondaryLink { margin-top:.8rem; }
 .policySection { padding:clamp(3rem,5vw,5.25rem) 0; background:#fff; border-top:1px solid rgba(15,94,156,.08); }
 .policySection h2,.policyTerms h3 { max-width:900px; margin:0; color:var(--blue-deep); font-weight:800; letter-spacing:-.035em; line-height:1.1; }
 .policySection h2 { font-size:clamp(2rem,3.4vw,3.4rem); }
@@ -40,9 +42,10 @@
 .useNotes article { padding:1.2rem; border-left:3px solid rgba(15,94,156,.22); background:#fff; }
 .useNotes h3 { margin:0; color:var(--blue-deep); font-size:1.08rem; font-weight:750; line-height:1.25; }
 .useEmergency { max-width:880px; margin-top:1.25rem; }
-.useLinks { display:flex; flex-wrap:wrap; gap:1rem 1.5rem; margin-top:1.25rem; }
+.useLinks { margin-top:1.25rem; }
+.useLinks .sourceLabel { margin-top:0; }
 .useLinks a { color:var(--blue-deep); font-size:.8rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
 @media (max-width:1100px) { .scenarioGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:1100px) { .termGrid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:1100px) { .processGrid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-@media (max-width:640px) { .section,.networkSection,.policySection,.useSection { padding:2.75rem 0; }.scenarioGrid,.policyGrid,.termGrid,.processGrid,.useNotes { grid-template-columns:1fr; gap:.8rem; }.scenario,.policyCard { min-height:0; }.networkActions,.useLinks { display:grid; gap:.65rem; } }
+@media (max-width:640px) { .section,.networkSection,.policySection,.useSection { padding:2.75rem 0; }.scenarioGrid,.policyGrid,.termGrid,.processGrid,.useNotes { grid-template-columns:1fr; gap:.8rem; }.scenario,.policyCard { min-height:0; }.networkActions,.sourceLinks { display:grid; gap:.65rem; } }

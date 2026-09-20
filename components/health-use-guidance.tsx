@@ -46,8 +46,11 @@ export function HealthUseGuidance() {
         <p className={styles.useEmergency}>{en ? 'For an emergency, use the insurer’s current emergency channels and the instructions for the applicable product; VPI is not an emergency service.' : 'Ante una urgencia, utiliza los canales de urgencias vigentes de la aseguradora y las instrucciones del producto aplicable; VPI no es un servicio de urgencias.'}</p>
 
         <div className={styles.useLinks}>
-          {insurerGuidance.map((source) => <a key={source.href} href={source.href} target="_blank" rel="noreferrer">{en ? source.labelEn : source.label}</a>)}
-          <Link href={en ? '/en/insurance/health-insurance/reimbursement' : '/seguros/salud/reembolso'}>{en ? 'Review reimbursement cover' : 'Revisar salud con reembolso'}</Link>
+          <p className={styles.sourceLabel}>{en ? 'Official sources consulted' : 'Fuentes oficiales consultadas'}</p>
+          <div className={styles.sourceLinks}>
+            {insurerGuidance.map((source) => <a key={source.href} href={source.href} target="_blank" rel="noreferrer">{en ? source.labelEn : source.label}</a>)}
+          </div>
+          <Link className={styles.secondaryLink} href={en ? '/en/insurance/health-insurance/reimbursement' : '/seguros/salud/reembolso'}>{en ? 'Review reimbursement cover' : 'Revisar salud con reembolso'}</Link>
         </div>
       </div>
     </section>
