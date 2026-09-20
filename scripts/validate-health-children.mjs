@@ -3,6 +3,8 @@ import fs from 'node:fs';
 const products = fs.readFileSync('lib/products.ts', 'utf8');
 const locales = fs.readFileSync('lib/product-locales.ts', 'utf8');
 const sections = fs.readFileSync('components/product-sections.tsx', 'utf8');
+const subpageRoute = fs.readFileSync('app/seguros/[slug]/[subslug]/page.tsx', 'utf8');
+const comprehensiveGuidance = fs.readFileSync('components/health-comprehensive-guidance.tsx', 'utf8');
 const failures = [];
 
 const esEntries = ['completa', 'reembolso', 'familias', 'autonomos', 'senior'];
@@ -47,6 +49,10 @@ for (const [slug, patterns] of Object.entries(forbiddenEn)) {
 if (products.includes('/images/products/reembolso-hero.webp')) failures.push('missing reimbursement hero asset still referenced');
 if (!fs.existsSync('public/images/products/health-medical-care.webp')) failures.push('replacement reimbursement hero asset missing');
 if (!sections.includes('Key questions for comparing ${product.label} without getting lost in the fine print')) failures.push('English child related-products heading missing');
+if (!subpageRoute.includes('isComprehensive') || !subpageRoute.includes('HealthComprehensiveGuidance') || !subpageRoute.includes('<ProductDecisionGrid product={product} locale={locale} />')) failures.push('Comprehensive child does not own its decision guidance');
+if (!comprehensiveGuidance.includes('comprehensive-change-title') || !comprehensiveGuidance.includes('comprehensive-scenarios-title') || !comprehensiveGuidance.includes('comprehensive-checks-title') || !comprehensiveGuidance.toLowerCase().includes('waiting periods') || !comprehensiveGuidance.toLowerCase().includes('prior authorisation')) failures.push('Comprehensive decision guidance or checks missing');
+if (!subpageRoute.includes('suppressPriceGuarantee={isComprehensive}') || !subpageRoute.includes('suppressTrustMetrics={isComprehensive}')) failures.push('Comprehensive unsupported shared claims not suppressed');
+if (es.completa.includes('1.200+') || en['salud-completa'].includes('1,200+') || es.completa.includes('Mejor precio') || en['salud-completa'].includes('better price')) failures.push('Unsupported Comprehensive trust or price claim remains');
 
 if (failures.length) {
   console.error(failures.join('\n'));
