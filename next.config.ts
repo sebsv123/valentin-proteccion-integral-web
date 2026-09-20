@@ -66,6 +66,9 @@ const nextConfig: NextConfig = {
       { source: '/seguros/salud/extranjeros', destination: '/seguros/salud-extranjeros', permanent: true },
       // Consolidación de salud senior en la jerarquía de subpáginas de salud
       { source: '/seguros/salud-senior', destination: '/seguros/salud/senior', permanent: true },
+      // Consolidación de las landings de salud individuales en sus destinos canónicos
+      { source: '/seguros/salud-individual', destination: '/seguros/salud', permanent: true },
+      { source: '/seguros/salud-dental', destination: '/seguros/dental', permanent: true },
       // Consolidación ruta autónomos: /para/autonomos → /autonomos (canónica)
       {
         source: '/para/autonomos',

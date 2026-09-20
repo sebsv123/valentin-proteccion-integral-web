@@ -19,8 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // PRODUCTOS (alta intención de compra) — añadidos vida, mascotas, viaje, senior
     { url: `${base}/seguros`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/salud-individual`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/seguros/salud-dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/dental`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/mascotas`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/seguros/viaje`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
