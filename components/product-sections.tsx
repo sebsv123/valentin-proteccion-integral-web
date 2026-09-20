@@ -321,7 +321,7 @@ export function RelatedProducts({ product, healthVariant = false, locale }: { pr
   );
 }
 
-export function ProductCTASection({ product, title, text, message, locale, suppressPriceGuarantee = false, suppressTrustMetrics = false }: { product: Product; title: string; text: string; message: string; locale?: 'es'|'en'; suppressPriceGuarantee?: boolean; suppressTrustMetrics?: boolean }) {
+export function ProductCTASection({ product, title, text, message, locale, suppressPriceGuarantee = false, suppressTrustMetrics = false, trustTitle, trustText }: { product: Product; title: string; text: string; message: string; locale?: 'es'|'en'; suppressPriceGuarantee?: boolean; suppressTrustMetrics?: boolean; trustTitle?: string; trustText?: string }) {
   const en = locale ? locale === 'en' : useLocale() === 'en';
   const advisor = product.customAdvisor || {
     name: site.advisorName[en ? 'en' : 'es'],
@@ -387,8 +387,8 @@ export function ProductCTASection({ product, title, text, message, locale, suppr
                 {suppressTrustMetrics ? <>
                   <div>
                     <p className="kicker">{en ? 'What we review' : 'Qué revisamos contigo'}</p>
-                    <h3 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)]">{en ? 'A clearer hospital-cover decision' : 'Una decisión más clara sobre hospitalización'}</h3>
-                    <p className="mt-3 text-base leading-7 text-[var(--muted)]">{en ? 'We help you connect your expected use with the network, waiting periods, authorisations and policy conditions.' : 'Te ayudamos a conectar tu uso previsto con el cuadro médico, las carencias, las autorizaciones y las condiciones de la póliza.'}</p>
+                    <h3 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)]">{trustTitle ?? (en ? 'A clearer hospital-cover decision' : 'Una decisión más clara sobre hospitalización')}</h3>
+                    <p className="mt-3 text-base leading-7 text-[var(--muted)]">{trustText ?? (en ? 'We help you connect your expected use with the network, waiting periods, authorisations and policy conditions.' : 'Te ayudamos a conectar tu uso previsto con el cuadro médico, las carencias, las autorizaciones y las condiciones de la póliza.')}</p>
                   </div>
                 </> : <>
                 <div className="flex items-center gap-4 rounded-[22px] border border-[var(--border)] bg-white p-5 shadow-sm">
