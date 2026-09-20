@@ -284,7 +284,7 @@ export function RelatedProducts({ product, healthVariant = false, locale }: { pr
         <RevealLight>
           <div className="mb-12 max-w-3xl">
             <p className="kicker">{healthVariant ? (en ? 'Other ways we can help' : 'Otras formas de protegerte') : 'Decide con criterio'}</p>
-            <h2 id="decision-title" className="mt-3 section-title">{healthVariant ? (en ? 'We can also help with other protection needs' : 'También podemos ayudarte con otras necesidades de protección') : `Cuestiones clave para comparar ${product.label} sin perderte en la letra pequeña`}</h2>
+            <h2 id="decision-title" className="mt-3 section-title">{healthVariant ? (en ? 'We can also help with other protection needs' : 'También podemos ayudarte con otras necesidades de protección') : (product.slug === 'salud' && en ? `Key questions for comparing ${product.label} without getting lost in the fine print` : `Cuestiones clave para comparar ${product.label} sin perderte en la letra pequeña`)}</h2>
           </div>
          </RevealLight>
         <div className="grid gap-8 lg:grid-cols-3">
