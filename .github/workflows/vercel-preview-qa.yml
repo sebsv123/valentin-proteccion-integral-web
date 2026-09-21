@@ -1,0 +1,58 @@
+name: Vercel Preview QA
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+  deployments: read
+  id-token: write
+
+jobs:
+  preview-qa:
+    name: Smoke-test the current Vercel development preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: vercel-preview-qa-development
+      cancel-in-progress: true
+    steps:
+      - name: Check out the current development QA harness
+        uses: actions/checkout@v4
+        with:
+          ref: development
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate deployment eligibility and SHA
+        id: guard
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/vercel-preview-qa.mjs guard
+
+      - name: Mint the Vercel Trusted Source OIDC token
+        if: steps.guard.outputs.run == 'true'
+        id: oidc
+        uses: actions/github-script@v7
+        env:
+          TOKEN_FILE: ${{ runner.temp }}/vpi-vercel-trusted-oidc-token
+        with:
+          script: |
+            const fs = require('node:fs');
+            const token = await core.getIDToken();
+            core.setSecret(token);
+            fs.writeFileSync(process.env.TOKEN_FILE, token, { mode: 0o600 });
+            core.setOutput('token_file', process.env.TOKEN_FILE);
+
+      - name: Run deployed route and content QA
+        if: steps.guard.outputs.run == 'true'
+        env:
+          PREVIEW_URL: ${{ steps.guard.outputs.preview_url }}
+          DEPLOYMENT_SHA: ${{ steps.guard.outputs.deployment_sha }}
+          DEVELOPMENT_HEAD: ${{ steps.guard.outputs.development_head }}
+          VERCEL_OIDC_TOKEN_FILE: ${{ steps.oidc.outputs.token_file }}
+        run: node scripts/vercel-preview-qa.mjs qa
