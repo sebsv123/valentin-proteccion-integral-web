@@ -207,7 +207,7 @@ export function CasesAndForm({ product, defaultProduct, locale }: { product: Pro
   );
 }
 
-export function ProductFaqSection({ product, locale: explicitLocale }: { product: Product; locale?: 'es'|'en' }) {
+export function ProductFaqSection({ product, locale: explicitLocale, contextualLinks = true }: { product: Product; locale?: 'es'|'en'; contextualLinks?: boolean }) {
   const locale = useLocale();
   const en = explicitLocale ? explicitLocale === 'en' : locale === 'en';
   return (
@@ -221,14 +221,14 @@ export function ProductFaqSection({ product, locale: explicitLocale }: { product
           </div>
          </RevealLight>
         <RevealLight direction="left">
-          <FAQAccordion items={product.faqs} contextualLinks locale={locale as 'es' | 'en'} />
+          <FAQAccordion items={product.faqs} contextualLinks={contextualLinks} locale={locale as 'es' | 'en'} />
          </RevealLight>
       </div>
     </section>
   );
 }
 
-export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
+export function SubpageHero({ subpage, showActions = true }: { subpage: ProductSubpage; showActions?: boolean }) {
   const en = useLocale() === 'en';
   return (
     <section className="section-pad pt-6 md:pt-10 bg-white-pure relative overflow-hidden">
@@ -240,10 +240,10 @@ export function SubpageHero({ subpage }: { subpage: ProductSubpage }) {
                 <p className="kicker">{subpage.eyebrow}</p>
                 <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">{subpage.h1}</h1>
                 <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">{subpage.summary}</p>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                {showActions && <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
                   <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> {en ? 'No-obligation enquiry' : 'Consulta sin compromiso'}</a>
-                </div>
+                </div>}
                 <div className="mt-7 grid gap-3">
                   {subpage.bullets.map((item, idx) => (
                     <RevealLight 
@@ -321,7 +321,7 @@ export function RelatedProducts({ product, healthVariant = false, locale }: { pr
   );
 }
 
-export function ProductCTASection({ product, title, text, message, locale }: { product: Product; title: string; text: string; message: string; locale?: 'es'|'en' }) {
+export function ProductCTASection({ product, title, text, message, locale, suppressPriceGuarantee = false, suppressTrustMetrics = false, trustTitle, trustText }: { product: Product; title: string; text: string; message: string; locale?: 'es'|'en'; suppressPriceGuarantee?: boolean; suppressTrustMetrics?: boolean; trustTitle?: string; trustText?: string }) {
   const en = locale ? locale === 'en' : useLocale() === 'en';
   const advisor = product.customAdvisor || {
     name: site.advisorName[en ? 'en' : 'es'],
@@ -332,8 +332,7 @@ export function ProductCTASection({ product, title, text, message, locale }: { p
 
   return (
     <>
-      {/* GARANTÍA DE PRECIO */}
-      <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
+      {!suppressPriceGuarantee && <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
             <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
@@ -349,7 +348,7 @@ export function ProductCTASection({ product, title, text, message, locale }: { p
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* CTA PRINCIPAL */}
       <section className="section-pad bg-white-pure">
@@ -385,6 +384,11 @@ export function ProductCTASection({ product, title, text, message, locale }: { p
             {/* Trust side */}
             <div className="p-8 md:p-10 lg:p-12 bg-gradient-to-br from-[rgba(15,94,156,0.03)] to-[rgba(123,198,126,0.05)]">
               <div className="flex flex-col gap-6 h-full justify-center">
+                {suppressTrustMetrics ? <div>
+                  <p className="kicker">{en ? 'What we review' : 'Qué revisamos contigo'}</p>
+                  <h3 className="mt-3 font-heading text-3xl font-bold text-[var(--blue-deep)]">{trustTitle ?? (en ? 'A clearer family health decision' : 'Una decisión de salud familiar más clara')}</h3>
+                  <p className="mt-3 text-base leading-7 text-[var(--muted)]">{trustText ?? (en ? 'We help you review the household use, network and policy conditions that matter before deciding.' : 'Te ayudamos a revisar el uso familiar, el cuadro médico y las condiciones de la póliza que conviene comprobar antes de decidir.')}</p>
+                </div> : <>
                 <div className="flex items-center gap-4 rounded-[22px] border border-[var(--border)] bg-white p-5 shadow-sm">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--blue-deep)] text-white"><Users className="h-5 w-5" /></div>
                   <div>
@@ -406,6 +410,7 @@ export function ProductCTASection({ product, title, text, message, locale }: { p
                     <p className="text-sm text-[var(--muted)]">{en ? 'No-obligation guidance' : 'Orientación sin compromiso'}</p>
                   </div>
                 </div>
+                </>}
                 <a href={`tel:${advisor.phoneHref}`} className="btn-ghost w-full justify-center mt-2"><Phone className="h-4 w-4" /> {en ? 'Call' : 'Llamar al'} {advisor.phone || site.phone}</a>
               </div>
             </div>
