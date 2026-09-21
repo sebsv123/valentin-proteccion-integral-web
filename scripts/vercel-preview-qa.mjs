@@ -37,6 +37,33 @@ const FAMILY_MARKERS = {
   ],
 };
 
+const COMPREHENSIVE_MARKERS = {
+  ES: [
+    'Quiero revisar si necesito hospitalización',
+    '¿Qué cambia al añadir hospitalización?',
+    '¿Necesitas hospitalización o principalmente especialistas y pruebas?',
+    'Antes de elegir cobertura con hospitalización, comprueba esto',
+    'Cuadro médico hospitalario',
+    'Carencias',
+    'Autorización previa',
+    'Cuestionario y suscripción',
+    'Exclusiones y límites',
+    'Fecha de efecto',
+  ],
+  EN: [
+    'I want to review whether I need hospital cover',
+    'What changes when hospital cover is added?',
+    'Do you need hospital cover or mainly specialists and tests?',
+    'Before choosing hospital cover, check this',
+    'Hospital network',
+    'Waiting periods',
+    'Prior authorisation',
+    'Questionnaire and underwriting',
+    'Exclusions and limits',
+    'Effective date',
+  ],
+};
+
 function eventPayload() {
   const eventPath = process.env.GITHUB_EVENT_PATH;
   if (!eventPath) throw new Error('GITHUB_EVENT_PATH is not available');
@@ -214,6 +241,22 @@ function forbiddenFamilyMarkers(text) {
   return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
 }
 
+function forbiddenComprehensiveMarkers(text, locale) {
+  const checks = [
+    ['obsolete unrestricted coverage', locale === 'ES'
+      ? /cobertura médica integral sin restricciones|sin limitaciones de la modalidad básica|todos los especialistas del cuadro médico|\bcobertura total\b|\bmáxima cobertura\b|\bopción más fuerte\b/i
+      : /without the limits of a basic plan|\bunrestricted\b|\bunlimited access\b|\ball specialists\b|\bfull access to (?:the )?(?:full )?medical network\b|\btotal coverage\b|\bmaximum coverage\b|\bstrongest option\b/i],
+    ['universal numeric waiting period', locale === 'ES'
+      ? /entre\s+3\s+y\s+6\s+meses|3\s*(?:-|–|—|a)\s*6\s+meses/i
+      : /(?:between\s+)?3\s*(?:-|–|—|to)\s*6\s+months|three\s+to\s+six\s+months/i],
+    ['generic ProductDecisionGrid', /Una lectura breve para entender mejor|A short guide to understand|Qué suele incluir|What it usually includes/i],
+    ['generic Dental/Funeral ending', /Otras formas de protegerte|We can also help with other protection needs|Ver seguro de Dental|Dental insurance|Seguro de Decesos|Funeral insurance/i],
+    ['shared price guarantee', /El mismo seguro\. Mejor precio\. Garantizado\.|The same insurance\. A better price\. Guaranteed\./i],
+    ['unsupported trust metrics', /1\.200\+|1,200\+|Familias atendidas por Rosa|Families supported by Rosa|\+10 años|100%\s+(?:Orientación sin compromiso|No-obligation guidance)/i],
+  ];
+  return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
+}
+
 async function fetchRoute(baseUrl, route, token) {
   const url = new URL(route.path, baseUrl);
   try {
@@ -233,9 +276,9 @@ async function fetchRoute(baseUrl, route, token) {
   }
 }
 
-function markerResult(text, locale) {
-  const missing = FAMILY_MARKERS[locale].filter((marker) => !text.includes(marker));
-  const forbidden = forbiddenFamilyMarkers(text);
+function markerResult(text, locale, markerSet, forbiddenMarkers) {
+  const missing = markerSet[locale].filter((marker) => !text.includes(marker));
+  const forbidden = forbiddenMarkers(text, locale);
   return { missing, forbidden };
 }
 
@@ -247,13 +290,19 @@ async function qa() {
 
   const results = await Promise.all(ROUTES.map((route) => fetchRoute(baseUrl, route, token)));
   const families = results.filter((route) => route.path.endsWith('/familias') || route.path.endsWith('/families'));
-  const markerResults = families.map((route) => ({
+  const comprehensive = results.filter((route) => route.path.endsWith('/completa') || route.path.endsWith('/comprehensive'));
+  const familyMarkerResults = families.map((route) => ({
     locale: route.locale,
-    missing: markerResult(stripMarkup(route.body), route.locale).missing,
-    forbidden: markerResult(stripMarkup(route.body), route.locale).forbidden,
+    missing: markerResult(stripMarkup(route.body), route.locale, FAMILY_MARKERS, (text) => forbiddenFamilyMarkers(text)).missing,
+    forbidden: markerResult(stripMarkup(route.body), route.locale, FAMILY_MARKERS, (text) => forbiddenFamilyMarkers(text)).forbidden,
+  }));
+  const comprehensiveMarkerResults = comprehensive.map((route) => ({
+    locale: route.locale,
+    missing: markerResult(stripMarkup(route.body), route.locale, COMPREHENSIVE_MARKERS, forbiddenComprehensiveMarkers).missing,
+    forbidden: markerResult(stripMarkup(route.body), route.locale, COMPREHENSIVE_MARKERS, forbiddenComprehensiveMarkers).forbidden,
   }));
   const routeFailures = results.filter((route) => route.failures.length > 0);
-  const markerFailures = markerResults.filter((result) => result.missing.length > 0 || result.forbidden.length > 0);
+  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults].filter((result) => result.missing.length > 0 || result.forbidden.length > 0);
 
   summary([
     '## Vercel Preview QA',
@@ -267,7 +316,10 @@ async function qa() {
     ...results.map((route) => `| ${route.locale} | \`${route.path}\` | ${route.status} | \`${route.host}\` | ${route.failures.length ? `FAIL: ${route.failures.join('; ')}` : 'PASS'} |`),
     '',
     '**Families markers**',
-    ...markerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
+    ...familyMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
+    '',
+    '**Comprehensive markers**',
+    ...comprehensiveMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
   ].join('\n'));
 
   if (routeFailures.length || markerFailures.length) {
