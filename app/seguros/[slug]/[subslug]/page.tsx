@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { ProductCTASection, ProductDecisionGrid, ProductFaqSection, RelatedProducts, SubpageHero } from '@/components/product-sections';
+import { HealthComprehensiveGuidance } from '@/components/health-comprehensive-guidance';
 import { HealthFamiliesGuidance } from '@/components/health-families-guidance';
 import { getProduct, getProductSubpage, site, subpages } from '@/lib/products';
 import SchemaFAQ from '@/components/seo/schema-faq';
@@ -44,6 +45,7 @@ export async function ProductSubpagePageView({ parent, subpage: originalSubpage,
   const subpage = getLocalizedSubpage(originalSubpage, locale);
   if (!product || !subpage) notFound();
 
+  const isComprehensive = parent === 'salud' && subpage.slug === 'completa';
   const isFamilies = parent === 'salud' && subpage.slug === 'familias';
   const faqProduct = { ...product, ...(isFamilies ? { name: subpage.name, label: subpage.label } : {}), faqs: subpage.faqs };
 
@@ -64,12 +66,12 @@ export async function ProductSubpagePageView({ parent, subpage: originalSubpage,
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Insurance' : 'Seguros', href: locale === 'en' ? '/en/insurance' : '/seguros' }, { label: product.label, href: locale === 'en' ? localizedProductPath(product.slug, 'en') : `/seguros/${product.slug}` }, { label: subpage.label }]} />
         </div>
-        <SubpageHero subpage={subpage} showActions={!isFamilies} />
-        {isFamilies ? <HealthFamiliesGuidance locale={locale} /> : <ProductDecisionGrid product={product} locale={locale} />}
-        <ProductFaqSection product={faqProduct} locale={locale} contextualLinks={!isFamilies} />
+        <SubpageHero subpage={subpage} showActions={!isComprehensive && !isFamilies} />
+        {isComprehensive ? <HealthComprehensiveGuidance locale={locale} /> : isFamilies ? <HealthFamiliesGuidance locale={locale} /> : <ProductDecisionGrid product={product} locale={locale} />}
+        <ProductFaqSection product={faqProduct} locale={locale} contextualLinks={!isComprehensive && !isFamilies} />
         <GoogleReviewsWidget title={locale === 'en' ? `Reviews of our ${isFamilies ? subpage.label : product.label} guidance` : `Opiniones sobre nuestro asesoramiento en ${isFamilies ? subpage.label : product.label}`} />
-        <ProductCTASection product={product} locale={locale} suppressPriceGuarantee={isFamilies} suppressTrustMetrics={isFamilies} trustTitle={isFamilies ? (locale === 'en' ? 'A clearer family health decision' : 'Una decisión de salud familiar más clara') : undefined} trustText={isFamilies ? (locale === 'en' ? 'We help you review household use, paediatric access and the policy conditions that matter before deciding.' : 'Te ayudamos a revisar el uso en casa, el acceso pediátrico y las condiciones de la póliza que conviene comprobar antes de decidir.') : undefined} title={isFamilies ? (locale === 'en' ? 'I want to review which option fits my family' : 'Quiero revisar qué opción encaja con mi familia') : (locale === 'en' ? `Would you like us to review ${product.label} in more detail?` : `¿Quieres que revisemos ${product.label} con más calma?`)} text={isFamilies ? (locale === 'en' ? 'We can help you organise the expected use for each household member and the questions to check in the policy.' : 'Te ayudamos a ordenar el uso previsto de cada persona y las preguntas que conviene comprobar en la póliza.') : (locale === 'en' ? 'If this profile or plan fits you, we can clarify the details, answer your questions and help you decide with greater confidence.' : 'Si este perfil o modalidad encaja contigo, te ayudamos a aterrizar matices, resolver dudas y decidir con más tranquilidad.')} message={subpage.whatsappMessage} />
-        {!isFamilies && <RelatedProducts product={product} locale={locale} />}
+        <ProductCTASection product={product} locale={locale} suppressPriceGuarantee={isComprehensive || isFamilies} suppressTrustMetrics={isComprehensive || isFamilies} trustTitle={isComprehensive ? (locale === 'en' ? 'A clearer hospital-cover decision' : 'Una decisión más clara sobre hospitalización') : isFamilies ? (locale === 'en' ? 'A clearer family health decision' : 'Una decisión de salud familiar más clara') : undefined} trustText={isComprehensive ? (locale === 'en' ? 'We help you clarify how you expect to use private healthcare and what to verify in the hospital-cover policy before deciding.' : 'Te ayudamos a aclarar cómo esperas usar la sanidad privada y qué comprobar en la póliza con hospitalización antes de decidir.') : isFamilies ? (locale === 'en' ? 'We help you review household use, paediatric access and the policy conditions that matter before deciding.' : 'Te ayudamos a revisar el uso en casa, el acceso pediátrico y las condiciones de la póliza que conviene comprobar antes de decidir.') : undefined} title={isComprehensive ? (locale === 'en' ? 'I want to review whether I need hospital cover' : 'Quiero revisar si necesito hospitalización') : isFamilies ? (locale === 'en' ? 'I want to review which option fits my family' : 'Quiero revisar qué opción encaja con mi familia') : (locale === 'en' ? `Would you like us to review ${product.label} in more detail?` : `¿Quieres que revisemos ${product.label} con más calma?`)} text={isComprehensive ? (locale === 'en' ? 'We can help you clarify how you expect to use private healthcare and what to verify in the hospital-cover policy before deciding.' : 'Te ayudamos a aclarar cómo esperas usar la sanidad privada y qué comprobar en la póliza con hospitalización antes de decidir.') : isFamilies ? (locale === 'en' ? 'We can help you organise the expected use for each household member and the questions to check in the policy.' : 'Te ayudamos a ordenar el uso previsto de cada persona y las preguntas que conviene comprobar en la póliza.') : (locale === 'en' ? 'If this profile or plan fits you, we can clarify the details, answer your questions and help you decide with greater confidence.' : 'Si este perfil o modalidad encaja contigo, te ayudamos a aterrizar matices, resolver dudas y decidir con más tranquilidad.')} message={subpage.whatsappMessage} />
+        {!isComprehensive && !isFamilies && <RelatedProducts product={product} locale={locale} />}
       </main>
       <Footer />
       <StickyWhatsApp />
