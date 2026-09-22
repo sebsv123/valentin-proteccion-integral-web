@@ -298,14 +298,14 @@ function forbiddenReimbursementMarkers(text, locale) {
       ? /\bLibertad total\b|cualquier médico o especialista en el mundo|cualquier parte del mundo/i
       : /\bComplete freedom\b|any doctor or specialist worldwide|anywhere in the world/i],
     ['universal reimbursement percentage', locale === 'ES'
-      ? /(?:reembolso|reembolsamos|te reembolsamos)\s+(?:de|del|entre|hasta)\s+(?:el\s+)?(?:80|90|100)\s*%/i
-      : /(?:reimbursement|we reimburse)\s+(?:of|between|up to)\s+(?:80|90|100)\s*%/i],
+      ? /(?:reembolso|reembolsamos|te reembolsamos)[^.]{0,80}\b(?:80|90|100)\s*%|\b(?:80|90|100)\s*%[^.]{0,80}(?:reembolso|reembolsamos|te reembolsamos)/i
+      : /(?:reimbursement|we reimburse)[^.]{0,80}\b(?:80|90|100)\s*%|\b(?:80|90|100)\s*%[^.]{0,80}(?:reimbursement|we reimburse)/i],
     ['generic million-euro limit', locale === 'ES'
       ? /hasta\s+1\s*millon(?:es)?|1[.,]?000[.,]?000\s*€/i
       : /up to\s+€?1\s*million|€1\s*m/i],
     ['universal outside-network eligibility', locale === 'ES'
-      ? /todos los proveedores|cualquier especialista o centro mundial/i
-      : /every outside-network provider|any provider outside the network/i],
+      ? /todos los proveedores|cualquier especialista o centro mundial|\bcualquier (?:médico|especialista|proveedor|profesional|centro)\s+(?:fuera del cuadro|fuera de red|en el mundo|del mundo|mundial)/i
+      : /every outside-network provider|any provider outside the network|\bany (?:doctor|specialist|provider|professional|centre|center)\s+(?:outside the network|outside network|worldwide|in the world)/i],
     ['generic ProductDecisionGrid', /Una lectura breve para entender mejor|A short guide to understand|Qué suele incluir|What it usually includes/i],
     ['generic Dental/Funeral ending', /Otras formas de protegerte|We can also help with other protection needs|Ver seguro de Dental|Dental insurance|Seguro de Decesos|Funeral insurance/i],
     ['shared price guarantee', /El mismo seguro\. Mejor precio\. Garantizado\.|The same insurance\. A better price\. Guaranteed\./i],
