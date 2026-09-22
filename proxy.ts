@@ -1,6 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
+import { isfasPartners } from './lib/mutualistas/partners';
 
 const handleLocale = createMiddleware({
   ...routing,
@@ -26,6 +27,20 @@ const internalEnglishPaths = new Set([
 ]);
 
 export default function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === '/mutualistas/isfas') {
+    const params = request.nextUrl.searchParams;
+    if (params.size === 0) return NextResponse.next();
+    const refs = params.getAll('ref');
+    if (params.size === 1 && refs.length === 1 && Object.hasOwn(isfasPartners, refs[0])) {
+      return NextResponse.next();
+    }
+    const cleanUrl = request.nextUrl.clone();
+    cleanUrl.search = '';
+    if (refs.length === 1 && Object.hasOwn(isfasPartners, refs[0])) {
+      cleanUrl.searchParams.set('ref', refs[0]);
+    }
+    return NextResponse.redirect(cleanUrl, 307);
+  }
   if (internalEnglishPaths.has(request.nextUrl.pathname)) return NextResponse.next();
   return handleLocale(request);
 }
@@ -33,5 +48,5 @@ export default function proxy(request: NextRequest) {
 export const config = {
   // The Spanish tree is legacy and must remain untouched. The pilot only
   // needs locale negotiation for the new /en routes.
-  matcher: ['/en', '/en/:path*'],
+  matcher: ['/en', '/en/:path*', '/mutualistas/isfas'],
 };
