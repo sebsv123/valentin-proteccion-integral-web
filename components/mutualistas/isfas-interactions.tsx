@@ -5,11 +5,17 @@ import { trackEvent } from '@/lib/analytics';
 
 const storageKey = 'vpi_isfas_partner';
 const pagePath = '/mutualistas/isfas';
+const trackedActions = new Set([
+  'entidad_asisa', 'entidad_adeslas', 'modalidad_desconocida',
+  'whatsapp_click', 'phone_click', 'official_isfas_click',
+  'medical_directory_click', 'authorization_click', 'emergency_click',
+]);
 
 type Props = { partners: Record<string, string>; whatsappNumber: string };
 
 export function IsfasInteractions({ partners, whatsappNumber }: Props) {
   useEffect(() => {
+    let selectedEntity: 'asisa' | 'adeslas' | '' = '';
     const params = new URLSearchParams(window.location.search);
     const requestedRef = params.get('ref');
     let ref = '';
@@ -32,17 +38,37 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
       ...extra,
     });
 
+    const refreshWhatsAppLinks = () => {
+      document.querySelectorAll<HTMLAnchorElement>('[data-isfas-page] a[data-isfas-message]').forEach((anchor) => {
+        const message = anchor.dataset.isfasMessage || '';
+        const entity = anchor.dataset.isfasEntity;
+        const routedMessage = anchor.dataset.isfasContext !== 'new' && !entity && selectedEntity
+          ? message.replace('soy mutualista ISFAS y necesito', `soy mutualista ISFAS y estoy con ${selectedEntity === 'asisa' ? 'ASISA' : 'Adeslas'}. Necesito`)
+          : message;
+        const origin = ref ? ` Vengo de ${partners[ref]}.` : '';
+        anchor.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(routedMessage + origin)}`;
+      });
+    };
+    refreshWhatsAppLinks();
+
     const hasConsent = () => {
       try { return window.localStorage.getItem('cookie-consent') === 'accepted'; }
       catch { return false; }
     };
     let pageViewSent = false;
+    let partnerSent = false;
     const sendPageView = () => {
-      if (!hasConsent() || pageViewSent) return;
-      pageViewSent = true;
+      if (!hasConsent()) return;
       window.dataLayer ||= [];
-      // GA/Vercel already send their standard page_view; this identifies the ISFAS guide.
-      trackEvent('isfas_page_view', eventParams());
+      if (!pageViewSent) {
+        pageViewSent = true;
+        // GA/Vercel may also send their standard page_view.
+        trackEvent('isfas_page_view', eventParams());
+      }
+      if (ref && !partnerSent) {
+        partnerSent = true;
+        trackEvent('isfas_partner_ref', eventParams());
+      }
     };
     sendPageView();
     window.addEventListener('cookie-consent-updated', sendPageView);
@@ -54,13 +80,15 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
       if (!anchor || !anchor.closest('[data-isfas-page]')) return;
 
       const action = anchor.dataset.isfasTrack;
-      const context = anchor.dataset.isfasContext || '';
-      if (action && hasConsent()) trackEvent(`isfas_${action}`, eventParams(context ? { context } : {}));
-
-      const message = anchor.dataset.isfasMessage;
-      if (message) {
-        const origin = ref ? ` Vengo de ${partners[ref]}.` : '';
-        anchor.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + origin)}`;
+      const entity = anchor.dataset.isfasEntity;
+      if (entity === 'asisa' || entity === 'adeslas') { selectedEntity = entity; refreshWhatsAppLinks(); }
+      if (entity === 'unknown') { selectedEntity = ''; refreshWhatsAppLinks(); }
+      if (action && trackedActions.has(action) && hasConsent()) {
+        const entityEvent = action === 'whatsapp_click' || action === 'entidad_asisa' || action === 'entidad_adeslas';
+        trackEvent(`isfas_${action}`, eventParams(entityEvent && selectedEntity ? { entity: selectedEntity } : {}));
+        if (action === 'emergency_click' && anchor.href.startsWith('tel:')) {
+          trackEvent('isfas_phone_click', eventParams({ purpose: 'emergency' }));
+        }
       }
     };
 
