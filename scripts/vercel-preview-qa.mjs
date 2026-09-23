@@ -99,6 +99,40 @@ const REIMBURSEMENT_MARKERS = {
   ],
 };
 
+const SELF_EMPLOYED_MARKERS = {
+  ES: [
+    'Quiero revisar mi seguro de salud como autónomo',
+    'Seguro y fiscalidad: conviene separarlos',
+    'estimación directa',
+    '500 € por cada persona elegible',
+    '1.500 € por cada persona elegible con discapacidad',
+    'cónyuge e hijos menores de veinticinco años que convivan con él',
+    'Un límite de gasto deducible no es una devolución de 500 €',
+    'VPI no presta asesoramiento fiscal individual',
+    'Agencia Tributaria — primas de seguro de enfermedad',
+    'BOE — Ley del IRPF, artículo 30',
+    'Primero la cobertura. Después, la fiscalidad.',
+  ],
+  EN: [
+    'I want to review my health insurance as a self-employed professional',
+    'Insurance and tax treatment are separate questions',
+    'direct-estimation method',
+    '€500 per eligible person',
+    '€1,500 per eligible person with a disability',
+    'spouse and children under 25 who live with them',
+    'A deductible-expense limit is not a €500 tax refund',
+    'VPI does not provide individual tax advice',
+    'Spanish Tax Agency — health-insurance premiums',
+    'BOE — Spanish Personal Income Tax Act, Article 30',
+    'Coverage first. Tax treatment second.',
+  ],
+};
+
+const SELF_EMPLOYED_SOURCE_URLS = [
+  'https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-ayuda-presentacion/irpf-2025/7-cumplimentacion-irpf/7_4-rendimientos-actividades-economicas/7_4_2-regimen-estimacion-directa/7_4_2_3-gastos-fiscalmente-deducibles/otros-gastos-personal.html',
+  'https://www.boe.es/eli/es/l/2006/11/28/35/con',
+];
+
 function eventPayload() {
   const eventPath = process.env.GITHUB_EVENT_PATH;
   if (!eventPath) throw new Error('GITHUB_EVENT_PATH is not available');
@@ -314,6 +348,28 @@ function forbiddenReimbursementMarkers(text, locale) {
   return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
 }
 
+function forbiddenSelfEmployedMarkers(text, locale) {
+  const checks = [
+    ['obsolete tax marketing', locale === 'ES'
+      ? /deducci[oó]n fiscal incluida|asesoramiento fiscal incluido|deducci[oó]n autom[aá]tica/i
+      : /tax deduction included|tax advice included|automatic(?:ally)? deductible/i],
+    ['guaranteed tax saving or refund', locale === 'ES'
+      ? /(?:^|[.!?]\s*)(?:hacienda|la agencia tributaria)[^.?!]{0,50}(?:te devuelve|devuelve|ahorro fiscal garantizado)[^.?!]{0,20}(?:500|quinientos)/i
+      : /(?:^|[.!?]\s*)(?:the tax authority|tax authority)[^.?!]{0,50}(?:refunds|returns|guaranteed tax saving)[^.?!]{0,20}(?:€?\s*500|five hundred)/i],
+    ['universal family tax treatment', locale === 'ES'
+      ? /cada miembro de la familia[^.?!]{0,80}(?:500|deduc|l[ií]mite)|siempre que est[eé] contratado por ti o tu empresa/i
+      : /every family member[^.?!]{0,80}(?:€?\s*500|deduct)|provided it is contracted by you or your company/i],
+    ['absolute health coverage', locale === 'ES'
+      ? /cobertura completa|todas las especialidades|sin listas de espera|acceso directo al cuadro m[eé]dico/i
+      : /complete(?: or unrestricted)? health coverage|all specialists|no waiting lists|direct access to the medical network/i],
+    ['generic ProductDecisionGrid', /Una lectura breve para entender mejor|A short guide to understand|Qu[eé] suele incluir|What it usually includes/i],
+    ['generic Dental/Funeral ending', /Otras formas de protegerte|We can also help with other protection needs|Ver seguro de Dental|Dental insurance|Seguro de Decesos|Funeral insurance/i],
+    ['shared price guarantee', /El mismo seguro\. Mejor precio\. Garantizado\.|The same insurance\. A better price\. Guaranteed\./i],
+    ['unsupported trust metrics', /1\.200\+|1,200\+|Familias atendidas por Rosa|Families supported by Rosa|\+10 años|100%\s+(?:Orientación sin compromiso|No-obligation guidance)/i],
+  ];
+  return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
+}
+
 async function fetchRoute(baseUrl, route, token) {
   const url = new URL(route.path, baseUrl);
   try {
@@ -349,6 +405,7 @@ async function qa() {
   const families = results.filter((route) => route.path.endsWith('/familias') || route.path.endsWith('/families'));
   const comprehensive = results.filter((route) => route.path.endsWith('/completa') || route.path.endsWith('/comprehensive'));
   const reimbursement = results.filter((route) => route.path.endsWith('/reembolso') || route.path.endsWith('/reimbursement'));
+  const selfEmployed = results.filter((route) => route.path.endsWith('/autonomos') || route.path.endsWith('/self-employed'));
   const familyMarkerResults = families.map((route) => ({
     locale: route.locale,
     missing: markerResult(stripMarkup(route.body), route.locale, FAMILY_MARKERS, (text) => forbiddenFamilyMarkers(text)).missing,
@@ -364,8 +421,13 @@ async function qa() {
     missing: markerResult(stripMarkup(route.body), route.locale, REIMBURSEMENT_MARKERS, forbiddenReimbursementMarkers).missing,
     forbidden: markerResult(stripMarkup(route.body), route.locale, REIMBURSEMENT_MARKERS, forbiddenReimbursementMarkers).forbidden,
   }));
+  const selfEmployedMarkerResults = selfEmployed.map((route) => {
+    const result = markerResult(stripMarkup(route.body), route.locale, SELF_EMPLOYED_MARKERS, forbiddenSelfEmployedMarkers);
+    const missingSources = SELF_EMPLOYED_SOURCE_URLS.filter((url) => !route.body.includes(url));
+    return { locale: route.locale, missing: result.missing, forbidden: result.forbidden, missingSources };
+  });
   const routeFailures = results.filter((route) => route.failures.length > 0);
-  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults].filter((result) => result.missing.length > 0 || result.forbidden.length > 0);
+  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults, ...selfEmployedMarkerResults].filter((result) => result.missing.length > 0 || result.forbidden.length > 0 || result.missingSources?.length > 0);
 
   summary([
     '## Vercel Preview QA',
@@ -386,6 +448,9 @@ async function qa() {
     '',
     '**Reimbursement markers**',
     ...reimbursementMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
+    '',
+    '**Self-Employed markers**',
+    ...selfEmployedMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length || result.missingSources.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}${result.missingSources.length ? `; missing official sources: ${result.missingSources.join(', ')}` : ''}` : 'PASS'}`),
   ].join('\n'));
 
   if (routeFailures.length || markerFailures.length) {
