@@ -10,7 +10,6 @@ export const productPathnames = {
   '/seguros/dental/familias': '/en/insurance/dental-insurance/families',
   '/seguros/mascotas': '/en/insurance/pet-insurance',
   '/seguros/mascotas/responsabilidad-civil': '/en/insurance/pet-insurance/civil-liability',
-  '/seguros/salud/autonomos': '/en/insurance/health-insurance/self-employed',
   '/seguros/salud/completa': '/en/insurance/health-insurance/comprehensive',
   '/seguros/salud/familias': '/en/insurance/health-insurance/families',
   '/seguros/salud/reembolso': '/en/insurance/health-insurance/reimbursement',
