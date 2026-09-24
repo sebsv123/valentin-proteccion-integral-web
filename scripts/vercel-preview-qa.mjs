@@ -10,14 +10,23 @@ const ROUTES = [
   { locale: 'ES', path: '/seguros/salud' },
   { locale: 'ES', path: '/seguros/salud/completa' },
   { locale: 'ES', path: '/seguros/salud/reembolso' },
-  { locale: 'ES', path: '/seguros/salud/autonomos' },
+  { locale: 'ES', path: '/empresas' },
+  { locale: 'ES', path: '/empresas/salud' },
+  { locale: 'ES', path: '/autonomos' },
   { locale: 'ES', path: '/seguros/salud/senior' },
   { locale: 'EN', path: '/en/insurance/health-insurance/families' },
   { locale: 'EN', path: '/en/insurance/health' },
   { locale: 'EN', path: '/en/insurance/health-insurance/comprehensive' },
   { locale: 'EN', path: '/en/insurance/health-insurance/reimbursement' },
-  { locale: 'EN', path: '/en/insurance/health-insurance/self-employed' },
+  { locale: 'EN', path: '/en/business' },
+  { locale: 'EN', path: '/en/business/health-insurance' },
+  { locale: 'EN', path: '/en/for/self-employed' },
   { locale: 'EN', path: '/en/insurance/health-insurance/senior' },
+];
+
+const REDIRECT_ROUTES = [
+  { locale: 'ES', path: '/seguros/salud/autonomos', destination: '/empresas/salud' },
+  { locale: 'EN', path: '/en/insurance/health-insurance/self-employed', destination: '/en/business/health-insurance' },
 ];
 
 const FAMILY_MARKERS = {
@@ -101,37 +110,33 @@ const REIMBURSEMENT_MARKERS = {
 
 const SELF_EMPLOYED_MARKERS = {
   ES: [
-    'Quiero revisar mi seguro de salud como autónomo',
-    'Seguro y fiscalidad: conviene separarlos',
-    'estimación directa',
-    '500 € por cada persona elegible',
-    '1.500 € por cada persona elegible con discapacidad',
-    'cónyuge e hijos menores de veinticinco años que convivan con él',
-    'Un límite de gasto deducible no es una devolución de 500 €',
-    'VPI no presta asesoramiento fiscal individual',
-    'Agencia Tributaria — primas de seguro de enfermedad',
-    'BOE — Ley del IRPF, artículo 30',
+    'Seguros y soluciones para autónomos',
+    'empresas y autónomos',
+    'Ver salud para autónomos y pymes',
     'Primero la cobertura. Después, la fiscalidad.',
   ],
   EN: [
-    'I want to review my health insurance as a self-employed professional',
-    'Insurance and tax treatment are separate questions',
-    'direct-estimation method',
-    '€500 per eligible person',
-    '€1,500 per eligible person with a disability',
-    'spouse and children under 25 who live with them',
-    'A deductible-expense limit is not a €500 tax refund',
-    'VPI does not provide individual tax advice',
-    'Spanish Tax Agency — health-insurance premiums',
-    'BOE — Spanish Personal Income Tax Act, Article 30',
+    'Insurance and solutions for self-employed professionals',
+    'Businesses & Self-employed',
+    'View health for self-employed professionals and SMEs',
     'Coverage first. Tax treatment second.',
   ],
 };
 
-const SELF_EMPLOYED_SOURCE_URLS = [
-  'https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-ayuda-presentacion/irpf-2025/7-cumplimentacion-irpf/7_4-rendimientos-actividades-economicas/7_4_2-regimen-estimacion-directa/7_4_2_3-gastos-fiscalmente-deducibles/otros-gastos-personal.html',
-  'https://www.boe.es/eli/es/l/2006/11/28/35/con',
-];
+const BUSINESS_MARKERS = {
+  ES: ['Seguro de salud para autónomos y pymes', '¿Cuál es tu caso?', 'Soy autónomo', 'Represento una empresa', 'AMBULATORIA', 'COMPLETA', 'REEMBOLSO', 'mínimo de 2 asegurados', 'estimación directa', '500 € por cada persona elegible', '1.500 € por cada persona elegible con discapacidad', 'cónyuge', 'hijos menores de 25 años', 'tratamiento fiscal', 'VPI no presta asesoramiento fiscal individual', 'Agencia Tributaria — primas de seguro de enfermedad', 'BOE — Ley del IRPF, artículo 30', 'Solicitar estudio'],
+  EN: ['Health insurance for self-employed professionals and SMEs', 'Which best describes you?', 'I am self-employed', 'I represent a business', 'OUTPATIENT', 'COMPREHENSIVE', 'REIMBURSEMENT', 'minimum of 2 insured people', 'direct-estimation framework', '€500 per eligible person', '€1,500 per eligible person with a disability', 'spouse', 'children under 25', 'tax treatment', 'VPI guides customers on insurance, but does not provide individual tax advice', 'Spanish Tax Agency — health-insurance premiums', 'BOE — Spanish Personal Income Tax Act, Article 30', 'Request a review'],
+};
+
+const BUSINESS_ROOT_MARKERS = {
+  ES: ['Empresas y Autónomos', 'Soluciones para empresas y autónomos', 'SALUD PARA EMPRESAS Y AUTÓNOMOS', 'CIBERPROTECCIÓN PARA EMPRESAS'],
+  EN: ['BUSINESSES & SELF-EMPLOYED', 'Solutions for businesses and self-employed professionals', 'HEALTH FOR BUSINESSES & SELF-EMPLOYED', 'CYBERSECURITY FOR BUSINESSES'],
+};
+
+const BUSINESS_FORBIDDEN = {
+  ES: /RC profesional(?: incluida| ampliada)?|asesor fiscal incluido|asesoramiento fiscal incluido|todo ilimitado|\bBÁSICO\b|\bPRO\b|\bENTERPRISE\b|te cuesta la mitad|ahorro fiscal garantizado|Hacienda te devuelve 500|cada miembro de la familia|sin listas de espera|cobertura completa/i,
+  EN: /professional liability(?: included| extended)?|tax adviser included|tax advice included|everything unlimited|\bBASIC\b|\bPRO\b|\bENTERPRISE\b|costs half|guaranteed tax saving|tax authority refunds €?500|every family member|no waiting lists|complete health coverage/i,
+};
 
 function eventPayload() {
   const eventPath = process.env.GITHUB_EVENT_PATH;
@@ -370,6 +375,11 @@ function forbiddenSelfEmployedMarkers(text, locale) {
   return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
 }
 
+function forbiddenBusinessBranchMarkers(text, locale) {
+  const pattern = locale === 'ES' ? BUSINESS_FORBIDDEN.ES : BUSINESS_FORBIDDEN.EN;
+  return pattern.test(text) ? ['unsupported business/self-employed commercial claim'] : [];
+}
+
 async function fetchRoute(baseUrl, route, token) {
   const url = new URL(route.path, baseUrl);
   try {
@@ -389,6 +399,22 @@ async function fetchRoute(baseUrl, route, token) {
   }
 }
 
+async function fetchRedirectRoute(baseUrl, route, token) {
+  const url = new URL(route.path, baseUrl);
+  try {
+    const response = await fetch(url, { headers: { 'x-vercel-trusted-oidc-idp-token': token }, redirect: 'manual' });
+    const location = response.headers.get('location') || '';
+    const destination = location ? new URL(location, baseUrl) : null;
+    const failures = [];
+    if (![301, 308].includes(response.status)) failures.push(`HTTP ${response.status}, expected permanent redirect`);
+    if (!destination || destination.pathname !== route.destination) failures.push(`Location ${location || 'missing'}`);
+    if (destination && !PREVIEW_HOST.test(destination.hostname)) failures.push(`redirect host ${destination.hostname}`);
+    return { ...route, status: response.status, location, host: destination?.hostname || 'missing', failures };
+  } catch (error) {
+    return { ...route, status: 'ERR', location: '', host: 'unavailable', failures: [error instanceof Error ? error.message : 'redirect request failed'] };
+  }
+}
+
 function markerResult(text, locale, markerSet, forbiddenMarkers) {
   const missing = markerSet[locale].filter((marker) => !text.includes(marker));
   const forbidden = forbiddenMarkers(text, locale);
@@ -401,11 +427,16 @@ async function qa() {
   const baseUrl = previewUrl(process.env.PREVIEW_URL || '');
   if (!token || !baseUrl) throw new Error('QA token or approved preview URL is unavailable');
 
-  const results = await Promise.all(ROUTES.map((route) => fetchRoute(baseUrl, route, token)));
+  const [results, redirectResults] = await Promise.all([
+    Promise.all(ROUTES.map((route) => fetchRoute(baseUrl, route, token))),
+    Promise.all(REDIRECT_ROUTES.map((route) => fetchRedirectRoute(baseUrl, route, token))),
+  ]);
   const families = results.filter((route) => route.path.endsWith('/familias') || route.path.endsWith('/families'));
   const comprehensive = results.filter((route) => route.path.endsWith('/completa') || route.path.endsWith('/comprehensive'));
   const reimbursement = results.filter((route) => route.path.endsWith('/reembolso') || route.path.endsWith('/reimbursement'));
-  const selfEmployed = results.filter((route) => route.path.endsWith('/autonomos') || route.path.endsWith('/self-employed'));
+  const selfEmployed = results.filter((route) => route.path === '/autonomos' || route.path === '/en/for/self-employed');
+  const businessRoot = results.filter((route) => route.path === '/empresas' || route.path === '/en/business');
+  const businessHealth = results.filter((route) => route.path === '/empresas/salud' || route.path === '/en/business/health-insurance');
   const familyMarkerResults = families.map((route) => ({
     locale: route.locale,
     missing: markerResult(stripMarkup(route.body), route.locale, FAMILY_MARKERS, (text) => forbiddenFamilyMarkers(text)).missing,
@@ -422,12 +453,15 @@ async function qa() {
     forbidden: markerResult(stripMarkup(route.body), route.locale, REIMBURSEMENT_MARKERS, forbiddenReimbursementMarkers).forbidden,
   }));
   const selfEmployedMarkerResults = selfEmployed.map((route) => {
-    const result = markerResult(stripMarkup(route.body), route.locale, SELF_EMPLOYED_MARKERS, forbiddenSelfEmployedMarkers);
-    const missingSources = SELF_EMPLOYED_SOURCE_URLS.filter((url) => !route.body.includes(url));
-    return { locale: route.locale, missing: result.missing, forbidden: result.forbidden, missingSources };
+    const text = stripMarkup(route.body);
+    const result = markerResult(text, route.locale, SELF_EMPLOYED_MARKERS, (body, locale) => forbiddenSelfEmployedMarkers(body, locale));
+    return { locale: route.locale, missing: result.missing, forbidden: result.forbidden };
   });
-  const routeFailures = results.filter((route) => route.failures.length > 0);
-  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults, ...selfEmployedMarkerResults].filter((result) => result.missing.length > 0 || result.forbidden.length > 0 || result.missingSources?.length > 0);
+  const businessRootMarkerResults = businessRoot.map((route) => { const result = markerResult(stripMarkup(route.body), route.locale, BUSINESS_ROOT_MARKERS, () => []); return { locale: route.locale, missing: result.missing, forbidden: result.forbidden }; });
+  const businessHealthMarkerResults = businessHealth.map((route) => { const text = stripMarkup(route.body); const result = markerResult(text, route.locale, BUSINESS_MARKERS, forbiddenBusinessBranchMarkers); const missingSources = ['https://sede.agenciatributaria.gob.es/', 'https://www.boe.es/eli/es/l/2006/11/28/35/con'].filter((url) => !route.body.includes(url)); return { locale: route.locale, missing: result.missing, forbidden: result.forbidden, missingSources }; });
+  const businessForbiddenResults = [...businessRoot, ...businessHealth, ...selfEmployed].map((route) => ({ locale: route.locale, path: route.path, forbidden: forbiddenBusinessBranchMarkers(stripMarkup(route.body), route.locale) }));
+  const routeFailures = [...results, ...redirectResults].filter((route) => route.failures.length > 0);
+  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults, ...selfEmployedMarkerResults, ...businessRootMarkerResults, ...businessHealthMarkerResults, ...businessForbiddenResults].filter((result) => result.missing?.length > 0 || result.forbidden?.length > 0 || result.missingSources?.length > 0);
 
   summary([
     '## Vercel Preview QA',
@@ -440,6 +474,9 @@ async function qa() {
     '| --- | --- | ---: | --- | --- |',
     ...results.map((route) => `| ${route.locale} | \`${route.path}\` | ${route.status} | \`${route.host}\` | ${route.failures.length ? `FAIL: ${route.failures.join('; ')}` : 'PASS'} |`),
     '',
+    '**Legacy self-employed health redirects**',
+    ...redirectResults.map((route) => `- ${route.locale} \`${route.path}\` → \`${route.destination}\`: ${route.failures.length ? `FAIL: ${route.failures.join('; ')}` : `PASS (${route.status})`}`),
+    '',
     '**Families markers**',
     ...familyMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
     '',
@@ -450,7 +487,16 @@ async function qa() {
     ...reimbursementMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
     '',
     '**Self-Employed markers**',
-    ...selfEmployedMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length || result.missingSources.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}${result.missingSources.length ? `; missing official sources: ${result.missingSources.join(', ')}` : ''}` : 'PASS'}`),
+    ...selfEmployedMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}` : 'PASS'}`),
+    '',
+    '**Businesses & Self-employed root markers**',
+    ...businessRootMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length ? `FAIL; missing: ${result.missing.join(', ')}` : 'PASS'}`),
+    '',
+    '**Business health markers**',
+    ...businessHealthMarkerResults.map((result) => `- ${result.locale}: ${result.missing.length || result.forbidden.length || result.missingSources.length ? `FAIL${result.missing.length ? `; missing: ${result.missing.join(', ')}` : ''}${result.forbidden.length ? `; forbidden: ${result.forbidden.join(', ')}` : ''}${result.missingSources.length ? `; missing official sources: ${result.missingSources.join(', ')}` : ''}` : 'PASS'}`),
+    '',
+    '**Business branch forbidden-content checks**',
+    ...businessForbiddenResults.map((result) => `- ${result.locale} \`${result.path}\`: ${result.forbidden.length ? `FAIL: ${result.forbidden.join(', ')}` : 'PASS'}`),
   ].join('\n'));
 
   if (routeFailures.length || markerFailures.length) {

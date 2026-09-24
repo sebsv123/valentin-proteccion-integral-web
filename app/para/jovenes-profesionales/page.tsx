@@ -151,8 +151,8 @@ export default function JovenesPage() {
                 },
                 {
                   icon: Briefcase,
-                  title: "Protección real",
-                  desc: "RC profesional, accidentes, responsabilidad. Tu futuro protegido desde el día 1."
+                  title: "Protección para tu actividad",
+                  desc: "Revisa salud y accidentes según tu actividad y las condiciones concretas del producto."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-2xl p-8 border border-slate-100">

@@ -91,8 +91,8 @@ const profileOptions: Record<'es' | 'en', DecisionOption[]> = {
       eyebrow: 'SITUACIÓN',
       title: 'Autónomos',
       copy: 'Revisa las necesidades de cobertura médica junto con tu situación profesional.',
-      action: 'Ver salud para autónomos',
-      href: '/seguros/salud/autonomos',
+      action: 'Ver salud para autónomos y pymes',
+      href: '/empresas/salud',
       icon: BriefcaseBusiness,
     },
     {
@@ -125,8 +125,8 @@ const profileOptions: Record<'es' | 'en', DecisionOption[]> = {
       eyebrow: 'SITUATION',
       title: 'Self-employed',
       copy: 'Review your health-cover needs alongside your self-employed situation.',
-      action: 'View self-employed health cover',
-      href: '/en/insurance/health-insurance/self-employed',
+      action: 'View business health for self-employed professionals and SMEs',
+      href: '/en/business/health-insurance',
       icon: BriefcaseBusiness,
     },
     {

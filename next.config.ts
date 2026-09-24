@@ -81,6 +81,17 @@ const nextConfig: NextConfig = {
         destination: '/autonomos',
         permanent: true,
       },
+      // Consolidación de salud para autónomos en la rama Empresas y Autónomos
+      {
+        source: '/seguros/salud/autonomos',
+        destination: '/empresas/salud',
+        permanent: true,
+      },
+      {
+        source: '/en/insurance/health-insurance/self-employed',
+        destination: '/en/business/health-insurance',
+        permanent: true,
+      },
       {
         source: '/seguros/health-insurance-foreigners-spain',
         destination: '/en/insurance/health/foreigners',

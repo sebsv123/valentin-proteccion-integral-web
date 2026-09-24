@@ -207,7 +207,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
               </Link>
 
               {/* Autónomos */}
-              <Link href={currentLocale === 'en' ? '/en/for/self-employed' : '/para/autonomos'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
+              <Link href={currentLocale === 'en' ? '/en/for/self-employed' : '/autonomos'} className="glass-card-premium p-6 hover:shadow-lg transition-all group text-center">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--blue)]/10 flex items-center justify-center">
                   <Briefcase className="h-7 w-7 text-[var(--blue)]" />
                 </div>

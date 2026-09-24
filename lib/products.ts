@@ -501,7 +501,7 @@ export const mainNav = [
 export function getProduct(slug: string) { return products.find((product) => product.slug === slug); }
 export function getRelatedProducts(slugs: string[]) { return products.filter((product) => slugs.includes(product.slug)); }
 export function getProductSubpage(parent: string, subslug: string) { return subpages.find((item) => item.parent === parent && item.slug === subslug); }
-export function getSubpagesForProduct(parent: string) { return subpages.filter((item) => item.parent === parent); }
+export function getSubpagesForProduct(parent: string) { return subpages.filter((item) => item.parent === parent && !(item.parent === 'salud' && item.slug === 'autonomos')); }
 
 /* ── WhatsApp messages por campaña ── */
 export const WHATSAPP_MESSAGES: Record<string, string> = {

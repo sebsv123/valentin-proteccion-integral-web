@@ -66,7 +66,7 @@ const healthClaimErrors = [
   ...(['te lo mejoramos', 'we will improve it', 'más de dos años', 'more than two years'].some((claim) => healthPageSource.includes(claim) || healthProductSource.match(/slug: 'salud',[\s\S]*?slug: 'mascotas'/)?.[0]?.includes(claim)) ? ['unsupported quote or continuity claim'] : []),
 ];
 const healthDecisionErrors = [
-  ...(['health-coverage-axis-title', 'health-profile-axis-title', '/seguros/salud/completa', '/seguros/salud/reembolso', '/seguros/salud/familias', '/seguros/salud/autonomos', '/seguros/salud/senior', '/seguros/salud-extranjeros'].some((item) => !healthModalitiesSource.includes(item)) ? ['coverage/profile axis or destination missing'] : []),
+  ...(['health-coverage-axis-title', 'health-profile-axis-title', '/seguros/salud/completa', '/seguros/salud/reembolso', '/seguros/salud/familias', '/empresas/salud', '/seguros/salud/senior', '/seguros/salud-extranjeros'].some((item) => !healthModalitiesSource.includes(item)) ? ['coverage/profile axis or destination missing'] : []),
   ...(['health-copayment-title', 'health-network-title', 'asisa.es/cuadro-medico', 'segurcaixaadeslas.es/cuadromedico', '/en/insurance/health-insurance/reimbursement'].some((item) => !healthDecisionSupportSource.includes(item)) || !healthInsightsSource.includes('health-five-checks-title') ? ['decision-support block or destination missing'] : []),
   ...(['InsuranceAgency', 'MedicalBusiness'].some((type) => healthPageSource.includes(type) || healthDecisionSupportSource.includes(type)) ? ['health schema role regression'] : []),
   ...(healthPageSource.includes('HealthCoverageHighlightsSection') ? ['redundant legacy coverage highlights still rendered'] : []),
