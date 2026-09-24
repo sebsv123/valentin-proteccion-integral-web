@@ -12,6 +12,7 @@ const ROUTES = [
   { locale: 'ES', path: '/seguros/salud/reembolso' },
   { locale: 'ES', path: '/empresas' },
   { locale: 'ES', path: '/empresas/salud' },
+  { locale: 'ES', path: '/empresas/ciberseguridad' },
   { locale: 'ES', path: '/autonomos' },
   { locale: 'ES', path: '/seguros/salud/senior' },
   { locale: 'EN', path: '/en/insurance/health-insurance/families' },
@@ -20,6 +21,7 @@ const ROUTES = [
   { locale: 'EN', path: '/en/insurance/health-insurance/reimbursement' },
   { locale: 'EN', path: '/en/business' },
   { locale: 'EN', path: '/en/business/health-insurance' },
+  { locale: 'EN', path: '/en/business/cybersecurity' },
   { locale: 'EN', path: '/en/for/self-employed' },
   { locale: 'EN', path: '/en/insurance/health-insurance/senior' },
 ];
