@@ -111,7 +111,7 @@ const REIMBURSEMENT_MARKERS = {
 const SELF_EMPLOYED_MARKERS = {
   ES: [
     'Seguros y soluciones para autónomos',
-    'empresas y autónomos',
+    'Empresas y Autónomos',
     'Ver salud para autónomos y pymes',
     'Primero la cobertura. Después, la fiscalidad.',
   ],
