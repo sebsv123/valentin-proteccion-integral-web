@@ -72,7 +72,7 @@ export default function JovenesPage() {
                 <p className="text-2xl text-slate-500 leading-relaxed mb-10 max-w-md">
                   Tu primera hipoteca.
                   <br />
-                  Salud sin copagos.
+                  Salud según modalidad.
                   <br />
                   <span className="text-slate-900 font-medium">Protección real.</span>
                 </p>
@@ -146,8 +146,8 @@ export default function JovenesPage() {
                 },
                 {
                   icon: Heart,
-                  title: "Salud sin copagos",
-                  desc: "Médico cuando lo necesites, sin pagar extra. Especialistas y urgencias incluidos."
+                  title: "Salud según modalidad",
+                  desc: "Revisa especialistas, pruebas, copagos y urgencias según el producto y la póliza."
                 },
                 {
                   icon: Briefcase,
@@ -181,9 +181,9 @@ export default function JovenesPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: Heart, title: "Salud", desc: "Sin copagos" },
+                { icon: Heart, title: "Salud", desc: "Según modalidad" },
                 { icon: Home, title: "Vida", desc: "Hipoteca" },
-                { icon: Briefcase, title: "RC", desc: "Profesional" },
+                { icon: Briefcase, title: "Actividad", desc: "Según necesidad" },
                 { icon: Shield, title: "Accidentes", desc: "Protección" },
               ].map((item, i) => (
                 <div key={i} className="text-center">
@@ -310,11 +310,11 @@ export default function JovenesPage() {
               {[
                 {
                   q: "¿Qué seguro necesito para mi primera hipoteca?",
-                  a: "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco."
+                  a: "El banco puede exigir un seguro de vida vinculado a la hipoteca. Puedes revisar con nosotros las condiciones de la póliza que te ofrezcan y las alternativas que podamos distribuir."
                 },
                 {
-                  q: "¿Me conviene seguro de salud sin copagos?",
-                  a: "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo."
+                  q: "¿Me conviene un seguro de salud con o sin copagos?",
+                  a: "Depende de la frecuencia de uso que esperes y de las condiciones de cada modalidad. Te ayudamos a comparar cuota, copagos, cuadro médico y servicios antes de decidir."
                 },
                 {
                   q: "¿Puedo deducirme el seguro médico siendo autónomo?",
@@ -346,15 +346,15 @@ export default function JovenesPage() {
                   "name": "¿Qué seguro necesito para mi primera hipoteca?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "El banco te exigirá un seguro de vida vinculado a la hipoteca. Pero puedes contratarlo con nosotros y ahorrar hasta 50% respecto al del banco."
+                    "text": "El banco puede exigir un seguro de vida vinculado a la hipoteca. Puedes revisar con nosotros las condiciones de la póliza que te ofrezcan y las alternativas que podamos distribuir."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "¿Me conviene seguro de salud sin copagos?",
+                  "name": "¿Me conviene un seguro de salud con o sin copagos?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Si vas al médico más de 3-4 veces al año, sí. Sin copagos pagas una cuota fija y todas las consultas están incluidas. Te ayudamos a calcularlo."
+                    "text": "Depende de la frecuencia de uso que esperes y de las condiciones de cada modalidad. Te ayudamos a comparar cuota, copagos, cuadro médico y servicios antes de decidir."
                   }
                 },
                 {
