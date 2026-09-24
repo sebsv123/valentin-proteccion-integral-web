@@ -500,6 +500,17 @@ async function qa() {
   ].join('\n'));
 
   if (routeFailures.length || markerFailures.length) {
+    console.error(JSON.stringify({
+      routeFailures: routeFailures.map((route) => ({
+        locale: route.locale,
+        path: route.path,
+        status: route.status,
+        finalUrl: route.finalUrl,
+        location: route.location,
+        failures: route.failures,
+      })),
+      markerFailures,
+    }, null, 2));
     process.exitCode = 1;
   }
 }
