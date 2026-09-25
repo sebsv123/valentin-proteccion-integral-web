@@ -17,7 +17,7 @@ import { WhatsAppLink } from '@/components/whatsapp-link';
 export const metadata: Metadata = {
   title: "Seguro para Mascotas en Madrid — Perros y Gatos | VPI",
   description:
-    "Seguro veterinario para tu perro o gato en Madrid desde el primer día. Sin burocracia, sin listas de espera. Urgencias, vacunas y más. Consulta gratis por WhatsApp.",
+    "Seguro veterinario para tu perro o gato en Madrid, con coberturas y servicios según modalidad. Consulta las condiciones por WhatsApp.",
   keywords: [
     "seguro mascotas Madrid",
     "seguro perro Madrid",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seguro para Mascotas en Madrid — Perros y Gatos | VPI",
     description:
-      "Seguro veterinario para tu perro o gato en Madrid desde el primer día. Sin burocracia ni listas de espera. Consulta gratis por WhatsApp.",
+      "Seguro veterinario para tu perro o gato en Madrid, con coberturas y servicios según modalidad. Consulta gratis por WhatsApp.",
     url: "https://valentinproteccionintegral.com/seguros/mascotas",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -63,13 +63,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -239,7 +232,7 @@ export default function MascotasPage() {
                 { 
                   icon: Stethoscope, 
                   title: "Mejor atención", 
-                  desc: "Acceso a los mejores veterinarios de Madrid. Sin esperas, sin listas de espera."
+                  desc: "Acceso a servicios veterinarios según la modalidad, la red disponible y las condiciones de la póliza."
                 },
                 { 
                   icon: Shield, 

@@ -156,7 +156,7 @@ export default function SeniorsPage() {
                 {
                   icon: Heart,
                   title: "Salud",
-                  desc: "Médico cuando lo necesites. Sin listas de espera. Atención en casa si lo prefieres."
+                  desc: "Médico y servicios según la modalidad, la red disponible y las condiciones de la póliza. Atención en casa si la opción lo contempla."
                 },
                 {
                   icon: Home,
@@ -192,7 +192,7 @@ export default function SeniorsPage() {
               {[
                 "Gastos de funeral cubiertos al 100%",
                 "Capital para tu familia (hasta 50.000€)",
-                "Médico especialista sin esperas",
+                "Médico especialista según modalidad y disponibilidad",
                 "Atención en tu domicilio",
                 "Traslado al hospital si es necesario",
                 "Gestión de todos los trámites",

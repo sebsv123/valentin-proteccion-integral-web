@@ -63,13 +63,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -188,7 +181,7 @@ export default function DecesosPage() {
                 <div className="flex flex-wrap gap-3">
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-indigo-500" />
-                    Gastos cubiertos al 100%
+                    Gastos y capital según póliza
                   </span>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm">
                     <HandHeart className="w-4 h-4 text-indigo-500" />
@@ -289,7 +282,7 @@ export default function DecesosPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-[36px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
-                Cobertura completa
+                Coberturas según modalidad
               </h2>
               <p className="text-lg text-slate-600">
                 Todo lo que incluye tu seguro de decesos
@@ -302,8 +295,8 @@ export default function DecesosPage() {
                 { icon: Umbrella, title: "Repatriación", desc: "Según modalidad" },
                 { icon: Users, title: "Traslado funerario", desc: "Según cobertura" },
                 { icon: FileCheck, title: "Gestoría", desc: "Trámites cubiertos" },
-                { icon: Shield, title: "Protección familiar", desc: "Cobertura completa" },
-                { icon: Clock, title: "Servicio 24h", desc: "Siempre disponible" },
+                { icon: Shield, title: "Protección familiar", desc: "Coberturas según modalidad" },
+                { icon: Clock, title: "Servicio y asistencia", desc: "Según garantías contratadas" },
               ].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                   <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 shadow-sm">
@@ -369,7 +362,7 @@ export default function DecesosPage() {
                     <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
                       <TrendingUp className="w-5 h-5 text-indigo-600" />
                     </div>
-                    <span className="text-slate-700">Gestión disponible 24h</span>
+                    <span className="text-slate-700">Gestión y asistencia según garantías contratadas</span>
                   </div>
                 </div>
                 
@@ -451,7 +444,7 @@ export default function DecesosPage() {
             <div className="flex flex-wrap justify-center gap-4 mt-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <CheckCircle2 className="w-4 h-4 text-indigo-500" />
-                Gastos cubiertos 100%
+                Gastos y capital según póliza
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm shadow-sm">
                 <HandHeart className="w-4 h-4 text-indigo-500" />

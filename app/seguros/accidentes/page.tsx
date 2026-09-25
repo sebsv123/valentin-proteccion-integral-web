@@ -13,12 +13,12 @@ import { Sparkles, CheckCircle2, Mountain, Bike, Dumbbell, Bike as BikeIcon, Tro
 
 export const metadata: Metadata = {
   title: "Seguro Accidentes Deportes Madrid | Valentín Protección Integral",
-  description: "Seguro accidentes deportivos Madrid desde muy poco al mes. Esquí, moto, running. Cotiza WhatsApp 30min. Rosa y Sebastián.",
+  description: "Seguro de accidentes deportivos en Madrid para revisar actividades, capitales y condiciones según modalidad.",
   keywords: ["seguro accidentes deportes Madrid","seguro deportes extremos Madrid","seguro accidentes esqui moto"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/accidentes-decesos" },
   openGraph: {
     title: "Seguro Accidentes Deportes Madrid | Esquí, Moto, BTT",
-    description: "Desde muy poco al mes. Esquí, moto, BTT, gym. Cobertura inmediata. WhatsApp 30min.",
+    description: "Opciones para esquí, moto, BTT y gimnasio; revisamos capitales, exclusiones y entrada en vigor antes de contratar.",
     url: "https://valentinproteccionintegral.com/seguros/accidentes-decesos",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -40,13 +40,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -96,7 +89,7 @@ export default function AccidentesPage() {
                 
                 {/* Subhead */}
                 <p className="text-xl text-[#cecece] leading-relaxed mb-8 max-w-md">
-                  Desde muy poco al mes.
+                  Precio y condiciones según modalidad.
                   <br />
                   Esquí, moto, BTT, gym.
                 </p>
@@ -182,7 +175,7 @@ export default function AccidentesPage() {
         <section id="coberturas" className="py-20 bg-[#101111] border-t border-[#252829]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl">
             <h2 className="text-[32px] font-medium text-white leading-[1.17] tracking-[0.2px] text-center mb-12">
-              Cobertura completa
+              Coberturas según modalidad
             </h2>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -261,7 +254,7 @@ export default function AccidentesPage() {
               {[
                 { num: "1", title: "WhatsApp", desc: "Dinos qué deportes practicas." },
                 { num: "2", title: "Específico", desc: "Cotización a medida en 30min." },
-                { num: "3", title: "Inmediata", desc: "Cobertura desde el primer día." },
+                { num: "3", title: "Entrada en vigor", desc: "La cobertura comienza según la póliza y sus condiciones." },
               ].map((step, i) => (
                 <div key={i} className="text-center">
                   <div className="w-12 h-12 rounded-full bg-[#1b1c1e] border border-[#2f3031] text-[#FF6363] flex items-center justify-center text-lg font-semibold mx-auto mb-4">

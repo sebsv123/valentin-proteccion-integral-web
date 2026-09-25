@@ -38,7 +38,6 @@ import {
   Globe as GlobeIcon,
   Stethoscope,
   BadgeCheck,
-  BadgePercent,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { WhatsAppLink } from '@/components/whatsapp-link';
@@ -126,10 +125,10 @@ export function AccidentesDecesosLanding() {
           {/* Texto CORTO en móvil, texto LARGO en desktop */}
           <p className="text-sm font-medium leading-snug flex-1 min-w-0">
             <span className="sm:hidden">
-              🛡️ Desde 3€/mes. Accidentes y decesos.
+              🛡️ Accidentes y decesos según modalidad y condiciones.
             </span>
             <span className="hidden sm:inline">
-              🛡️ Protección familiar desde 3€ al mes (precio orientativo). Consulta condiciones, límites y permanencia según la póliza.
+              🛡️ Protección familiar según modalidad. Consulta precio, condiciones, límites y permanencia de la póliza.
             </span>
           </p>
 
@@ -168,7 +167,7 @@ export function AccidentesDecesosLanding() {
             <div className="text-center lg:text-left">
               <div className="mb-6">
                 <AnimatedShinyText className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">
-                  🛡️ El seguro que toda familia necesita — desde 3€/mes
+                  🛡️ Una forma de revisar la protección familiar
                 </AnimatedShinyText>
               </div>
 
@@ -186,7 +185,7 @@ export function AccidentesDecesosLanding() {
 
               <div className="flex flex-col gap-4 mb-8">
                 {[
-                  "Desde 3€/mes (menos que un café al día)",
+                  "Condiciones y precio según la modalidad elegida",
                   "Consulta las condiciones de permanencia y cancelación de cada póliza.",
                   "Gestión completa sin complicaciones",
                 ].map((item, i) => (
@@ -663,8 +662,9 @@ export function AccidentesDecesosLanding() {
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">La protección completa es más barata de lo que crees</h3>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Nuestros clientes que combinan accidentes + salud individual pagan menos por separado. 
-              Un solo gestor, una sola llamada para todo.
+              Podemos revisar conjuntamente accidentes y salud para que entiendas
+              qué aporta cada póliza y qué condiciones tendría la combinación.
+              Un solo gestor, una sola llamada para resolver tus dudas.
             </p>
           </div>
 
@@ -684,7 +684,7 @@ export function AccidentesDecesosLanding() {
 
           <div className="text-center">
             <a
-              href="/seguros/salud-individual"
+              href="/seguros/salud"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "h-12 px-6 bg-amber-600 hover:bg-amber-700 text-white"
@@ -805,25 +805,6 @@ export function AccidentesDecesosLanding() {
         </div>
       </motion.section>
 
-      {/* 10.5. GARANTÍA DE PRECIO */}
-      <section className="py-10 sm:py-14 bg-[var(--bg-soft)] border-y border-[var(--border)]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
-              <BadgePercent className="h-6 w-6 text-amber-600" />
-            </div>
-            <div className="flex-1">
-              <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
-                El mismo seguro. Mejor precio. Garantizado.
-              </p>
-              <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 11. CTA FINAL */}
       <motion.section
         initial="hidden"
@@ -834,7 +815,7 @@ export function AccidentesDecesosLanding() {
       >
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4">
-            Desde 3€/mes.* La tranquilidad no tiene precio.
+            Precio y condiciones según edad, actividad y modalidad.*
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-2">
             Te ayudamos a prepararlo sin complicaciones.

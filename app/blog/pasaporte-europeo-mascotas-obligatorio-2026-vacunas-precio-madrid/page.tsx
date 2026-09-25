@@ -150,7 +150,7 @@ export default function BlogPostPage() {
               
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-6">
                 <p className="text-amber-900 font-bold text-lg mb-2">⚠️ La realidad en Madrid 2026:</p>
-                <p className="text-amber-800">Más de <strong>500.000 mascotas</strong> en la Comunidad de Madrid están afectadas por esta normativa. El proceso completo (chip + vacunas rabia + pasaporte) cuesta entre <strong>100€ y 150€</strong>. Sin seguro, este gasto sale directo de tu bolsillo. Con nuestras pólizas, está cubierto al 100%.</p>
+                <p className="text-amber-800">La normativa afecta a los requisitos de identificación y viaje de las mascotas. El coste del proceso (chip, vacuna de rabia y pasaporte) y cualquier posible cobertura dependen del veterinario, la modalidad y las condiciones de la póliza.</p>
               </div>
 
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -300,7 +300,7 @@ export default function BlogPostPage() {
               <div className="bg-green-50 rounded-2xl p-6 border border-green-200">
                 <p className="text-green-900 font-bold mb-3">✓ Con nuestra póliza mascotas</p>
                 <ul className="text-green-700 text-sm space-y-2">
-                  <li>• 100% cubierto: chip + vacunas + pasaporte</li>
+                  <li>• Comprueba si la modalidad contempla alguno de estos gastos</li>
                   <li>• Reembolso gastos expedición</li>
                   <li>• Veterinario ilimitado viajes UE</li>
                   <li>• Accidentes/enfermedades: cubierto</li>

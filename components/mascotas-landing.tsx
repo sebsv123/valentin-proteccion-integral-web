@@ -64,11 +64,11 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
   const faqs = [
     {
       q: "¿Es obligatorio el seguro para perros en España?",
-      a: "Sí. Desde la Ley de Bienestar Animal 7/2023, todos los perros en España deben tener seguro de responsabilidad civil. El incumplimiento puede acarrear multas de hasta 10.000€. El seguro de RC parte desde 5€/mes.",
+      a: "La normativa aplicable exige revisar la responsabilidad civil de los perros en España. Las obligaciones, posibles sanciones y condiciones del seguro deben comprobarse según el caso y la normativa vigente.",
     },
     {
       q: "¿Cuánto cuesta un seguro para mascotas en Madrid?",
-      a: "El seguro de RC obligatoria para perros parte desde 5€/mes. Los seguros con veterinaria completa oscilan entre 20€ y 60€/mes según raza, edad y coberturas. En nuestra consulta gratuita te explicamos las opciones reales.",
+      a: "El precio de la responsabilidad civil o de la asistencia veterinaria depende de la raza, edad, modalidad y coberturas. En nuestra consulta gratuita te explicamos las opciones reales y sus condiciones.",
     },
     {
       q: "¿Los seguros de mascotas cubren al gato también?",
@@ -141,7 +141,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
               >
                 Seguro Veterinario para Mascotas en Madrid:{" "}
                 <span className="underline decoration-amber-500 decoration-4 underline-offset-4">Perros y Gatos</span>{" "}
-                desde 5€/mes
+                según modalidad
               </motion.h1>
 
               <motion.p
@@ -159,7 +159,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                   <CheckCircle2 className="h-4 w-4 text-amber-600" /> RC obligatoria cubierta
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Desde 5€/mes
+                  <CheckCircle2 className="h-4 w-4 text-amber-600" /> Precio según modalidad
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-amber-600" /> Respuesta en horario
@@ -301,7 +301,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
               {
                 icon: <Shield className="h-6 w-6" />,
                 title: "Responsabilidad Civil",
-                desc: "Obligatoria para perros desde 2023. Cubre daños a terceras personas o sus bienes causados por tu mascota. Desde 5€/mes.",
+                desc: "La responsabilidad civil aplicable a perros debe revisarse según la normativa vigente y las condiciones de la modalidad.",
               },
               {
                 icon: <Heart className="h-6 w-6" />,
@@ -348,7 +348,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
                 Ley de Bienestar Animal 2023 — Es obligatorio
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
-                Desde la entrada en vigor de la Ley 7/2023, todos los perros en España necesitan seguro de responsabilidad civil. Las multas por incumplimiento pueden llegar a 10.000€. Contratar desde 5€/mes es la solución más sencilla.
+                La responsabilidad civil de los perros debe revisarse según la normativa vigente, el caso concreto y las condiciones de la póliza. Te ayudamos a entender qué opción puede encajar.
               </p>
               <WhatsAppLink
                 href="https://wa.me/34603448765?text=Hola%2C%20quiero%20contratar%20la%20RC%20obligatoria%20para%20mi%20perro"
@@ -617,7 +617,7 @@ export function MascotasLanding({ teamImageSrc = "/images/rosa_y_sebastian.jpeg"
             Protege a tu mascota hoy. La RC es obligatoria.
           </h2>
           <p className="text-base sm:text-xl text-white/80 mb-8">
-            Rosa te responde en nuestro horario de atención. Precios orientativos desde 5€/mes.
+            Rosa te responde en nuestro horario de atención. El precio se confirma según modalidad, características y condiciones.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <WhatsAppLink

@@ -677,7 +677,7 @@ export function ExtranjeroLanding() {
               {
                 name: "Lucía y Javier",
                 role: "Familia, 6 meses en Alemania",
-                text: "Nos fuimos a vivir a Múnich temporalmente con dos niños. Rosa nos montó una póliza que cubría a los cuatro, con pediatra incluido. Sin esperas, sin burocracia.",
+                text: "Nos fuimos a vivir a Múnich temporalmente con dos niños. Rosa nos ayudó a revisar una póliza para los cuatro y la documentación que necesitábamos, con pediatría según las condiciones contratadas.",
                 flag: "🇩🇪",
               },
               {
@@ -806,7 +806,7 @@ export function ExtranjeroLanding() {
                 Al combinarlo, las condiciones son mejores.
               </p>
               <a
-                href="/seguros/salud-individual"
+                href="/seguros/salud"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "sm" }),
                   "border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold"

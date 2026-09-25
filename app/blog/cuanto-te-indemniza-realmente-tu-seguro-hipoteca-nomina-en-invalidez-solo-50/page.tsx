@@ -149,7 +149,7 @@ export default function BlogPostPage() {
                 <div>
                   <p className="font-bold text-slate-900">Rosa Valentín y Sebastián</p>
                   <p className="text-slate-600">Valentín Protección Integral · Boadilla del Monte</p>
-                  <p className="text-sm text-slate-500">+10 años · +1.200 familias protegidas</p>
+                  <p className="text-sm text-slate-500">Orientación registrada · información clara antes de contratar</p>
                 </div>
               </div>
             </div>
@@ -426,7 +426,7 @@ export default function BlogPostPage() {
               WhatsApp: Calcula tu gap en 2 minutos
             </a>
             <p className="mt-6 text-white/60 text-sm">
-              +1.200 familias de Madrid y Boadilla del Monte ya protegidas · DGSFP C012479234434D
+              Orientación de seguros registrada · DGSFP C012479234434D
             </p>
           </div>
         </section>

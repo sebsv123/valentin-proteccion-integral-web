@@ -138,7 +138,7 @@ export default function BlogPostPage() {
               <Image src="/images/rosa_y_sebastian.jpeg" alt="Rosa y Sebastián - Protección familiar Madrid" width={100} height={100} className="rounded-full object-cover" />
               <div>
                 <p className="font-bold text-slate-900">Rosa Valentín y Sebastián</p>
-                <p className="text-slate-600">+1.200 familias tranquilas en Madrid</p>
+                <p className="text-slate-600">Orientación registrada para decisiones de protección en Madrid</p>
                 <p className="text-sm text-slate-500">Valentín Protección Integral · Boadilla del Monte</p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function BlogPostPage() {
                   <ul className="text-sm text-white/80 space-y-1">
                     <li>• Funeral: -5.000€</li>
                     <li>• Gestor comisión: -900€ (10%)</li>
-                    <li>• Demora: 3-6 meses</li>
+                    <li>• Plazos y condiciones: según producto</li>
                     <li>• Recibe familia: ~3.000€</li>
                   </ul>
                 </div>
@@ -275,8 +275,8 @@ export default function BlogPostPage() {
                   <ul className="text-sm text-white/80 space-y-1">
                     <li>• Funeral: -5.000€</li>
                     <li>• Sin gestor: 0€</li>
-                    <li>• Día 15: ~13.000€ netos</li>
-                    <li>• Colchón primeros meses: ✓</li>
+                    <li>• Resultado: según póliza y tramitación</li>
+                    <li>• Condiciones revisadas antes de contratar: ✓</li>
                   </ul>
                 </div>
               </div>

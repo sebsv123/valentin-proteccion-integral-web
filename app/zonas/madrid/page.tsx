@@ -40,12 +40,6 @@ const serviceSchema = {
   },
   "areaServed": ["Madrid", "Madrid Centro", "Chamberí", "Salamanca", "Retiro", "Latina", "Carabanchel", "Vallecas", "Madrid Oeste"],
   "description": "Orientación de seguros con registro oficial en Madrid. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "ratingCount": "60"
-  }
 };
 
 export const dynamic = "force-static";

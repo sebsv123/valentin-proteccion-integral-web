@@ -22,7 +22,6 @@ import FaqSchema from '@/components/FaqSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { getPexelsImage } from '@/lib/pexels';
-import { Shield } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -109,24 +108,6 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
           links={en ? [{ label: 'Health for foreigners', href: '/en/insurance/health/foreigners' }, { label: 'Senior health', href: '/en/insurance/health-insurance/senior' }, { label: 'Reimbursement', href: '/en/insurance/health-insurance/reimbursement' }] : [{ label: 'Salud para extranjeros', href: '/seguros/salud-extranjeros' }, { label: 'Salud senior', href: '/seguros/salud/senior' }, { label: 'Salud con reembolso', href: '/seguros/salud/reembolso' }]}
         />}
 
-        {/* Garantía de precio destacada para viaje */}
-        {slug === 'viaje' && (
-          <div className="bg-[#002244] text-white py-3 px-4">
-            <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-              <p className="text-sm font-semibold text-white/90">
-                🛡️ <strong>{en ? 'Price guarantee:' : 'Garantía de precio:'}</strong> {en ? 'If you find the same insurance cheaper, we match it. No small print.' : 'Si encuentras el mismo seguro más barato, te lo igualamos. Sin letra pequeña.'}
-              </p>
-              <WhatsAppLink
-                href="https://wa.me/34603448765?text=Quiero%20revisar%20mi%20presupuesto%20de%20seguro%20de%20viaje"
-                className="inline-flex flex-none items-center gap-1.5 text-sm font-bold text-emerald-400 underline underline-offset-4 hover:text-emerald-300 transition-colors whitespace-nowrap"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-                {en ? 'Ask us' : 'Consúltanos'} →
-              </WhatsAppLink>
-            </div>
-          </div>
-        )}
-
         {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
         {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthUseGuidance /></> : <CoverageHighlights product={product} locale={locale} />}
 
@@ -211,36 +192,6 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
 
         {product.slug !== 'salud' && <ProductDecisionGrid product={product} locale={locale} />}
         {product.slug === 'salud' ? <HealthContactProfilesSection product={product} /> : <CasesAndForm product={product} defaultProduct={product.slug} locale={locale} />}
-
-        {/* Sección Garantía de Precio Justo */}
-        {slug !== 'salud' && <section className="py-14 sm:py-20 lg:py-24 bg-[#002244] text-white">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <Shield className="h-5 w-5" />
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">{en ? 'Our fair-price guarantee' : 'Nuestra Garantía de Precio Justo'}</h2>
-            </div>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              {en ? 'If you find the same insurance cheaper with another agency, we match it. No small print.' : 'Si encuentras el mismo seguro más barato con otra agencia de seguros, te lo igualamos. Sin letra pequeña.'}
-            </p>
-            {slug === 'viaje' && (
-              <p className="text-base text-emerald-300 font-medium mb-4 -mt-4">
-                {en ? 'Have you already set your travel dates? Tell us your destination and duration — we will put clear options on the table.' : '¿Tienes fecha de viaje fijada? Cuéntanos destino y duración — en nuestro horario de atención tienes opciones reales encima de la mesa.'}
-              </p>
-            )}
-            <WhatsAppLink
-              href="https://wa.me/34603448765?text=Quiero%20comparar%20mi%20presupuesto"
-              className={cn(
-                buttonVariants({ size: 'lg' }),
-                'h-14 px-8 text-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-white gap-2 inline-flex items-center'
-              )}
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              {en ? 'Compare for free now' : 'Compara ahora gratis'}
-            </WhatsAppLink>
-          </div>
-        </section>}
 
         {slug === 'salud' ? <>
           <HealthFaqSection whatsappMessage={product.whatsappMessage} />

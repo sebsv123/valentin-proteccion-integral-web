@@ -59,7 +59,7 @@ export function AccidentesLanding() {
     },
     {
       q: "¿Cuánto cuesta un seguro de accidentes en Madrid?",
-      a: "Los seguros de accidentes que gestionamos en Madrid comienzan desde 3€ al mes. El precio depende de la edad, profesión y capital asegurado. Los autónomos y deportistas suelen necesitar coberturas más altas. Contacta con Rosa y Sebastián para un presupuesto personalizado en nuestro horario de atención.",
+      a: "El precio de los seguros de accidentes depende de la edad, profesión, capital asegurado y modalidad. Los autónomos y deportistas pueden necesitar coberturas distintas. Contacta con Rosa y Sebastián para revisar un presupuesto personalizado en nuestro horario de atención.",
     },
     {
       q: "¿El seguro de accidentes cubre el deporte?",
@@ -119,7 +119,7 @@ export function AccidentesLanding() {
                 variants={fadeInUpVariants}
                 className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
               >
-                Trabajo, tráfico, deporte, casa. Un accidente puede dejarte sin ingresos en cualquier momento. Desde 3€/mes, protege tu economía y la de tu familia.
+                Trabajo, tráfico, deporte, casa. Un accidente puede dejarte sin ingresos en cualquier momento. Revisa la protección que encaja con tu actividad, tu economía y tu familia.
               </motion.p>
 
               <motion.div
@@ -340,19 +340,19 @@ export function AccidentesLanding() {
               {
                 icon: <UserCheck className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Perfil básico",
-                precio: "desde ~3€/mes",
+                precio: "Según modalidad",
                 desc: "Jóvenes, trabajadores de oficina",
               },
               {
                 icon: <Briefcase className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Autónomos",
-                precio: "desde ~6€/mes",
+                precio: "Según modalidad",
                 desc: "Mayor cobertura de incapacidad",
               },
               {
                 icon: <Bike className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Deportistas",
-                precio: "desde ~8€/mes",
+                precio: "Según modalidad",
                 desc: "Cobertura específica deportiva",
               },
             ].map((precio, i) => (

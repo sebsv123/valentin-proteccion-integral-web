@@ -11,7 +11,7 @@ export const seoInsuranceCatalog: InsuranceCatalogEntry[] = [
   { key: 'dental', name: { es: 'Seguro Dental', en: 'Dental insurance' }, url: { es: '/seguros/dental', en: '/en/insurance/dental-insurance' } },
   { key: 'travel', name: { es: 'Seguro de Viaje', en: 'Travel insurance' }, url: { es: '/seguros/viaje', en: '/en/insurance/travel-insurance' } },
   { key: 'accident', name: { es: 'Seguro de Accidentes', en: 'Accident insurance' }, url: { es: '/seguros/accidentes-decesos', en: '/en/insurance/accident-insurance' } },
-  { key: 'business', name: { es: 'Seguros para Negocios', en: 'Business insurance' }, url: { es: '/empresas', en: '/en/business' } },
+  { key: 'business', name: { es: 'Soluciones para empresas y autónomos', en: 'Business and self-employed solutions' }, url: { es: '/empresas', en: '/en/business' } },
   { key: 'funeral', name: { es: 'Seguro de Decesos', en: 'Funeral insurance' }, url: { es: '/seguros/decesos', en: '/en/insurance/funeral-insurance' } },
 ];
 

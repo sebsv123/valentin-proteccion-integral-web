@@ -40,13 +40,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -55,7 +48,7 @@ const serviceSchema = {
   "name": "Seguro Accidentes + Decesos Madrid - Valentín Protección Integral",
   "provider": { "@id": "https://valentinproteccionintegral.com/#organization" },
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Pack combinado accidentes + decesos. Protección completa para hoy y mañana."
+  "description": "Orientación sobre opciones combinadas de accidentes y decesos, con capitales, garantías y condiciones según modalidad."
 };
 
 export const dynamic = "force-static";
@@ -105,7 +98,7 @@ export default function AccidentesDecesosPage() {
                 
                 {/* Subheadline clara */}
                 <p className="text-xl sm:text-2xl text-white/80 leading-relaxed mb-10 max-w-lg">
-                  Protección completa para ti y tu familia.
+                  Opciones de protección para ti y tu familia, según modalidad.
                   <br />
                   <span className="text-white/60">Hoy y mañana, siempre cubiertos.</span>
                 </p>
@@ -218,7 +211,7 @@ export default function AccidentesDecesosPage() {
                     "Capital según modalidad",
                     "Servicio funerario según modalidad",
                     "Repatriación cuando esté incluida",
-                    "Gestión completa del trámite"
+                    "Gestión del trámite según garantías"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-700">
                       <CheckCircle2 className="w-5 h-5 text-slate-500 flex-shrink-0" />
@@ -372,7 +365,7 @@ export default function AccidentesDecesosPage() {
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl relative z-10 text-center">
             <h2 className="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-tight mb-6">
-              Protección completa,
+              Protección adecuada,
               <br />
               <span className="text-amber-500">un solo paso</span>
             </h2>

@@ -25,7 +25,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       {
         "heading": "The best insurance policies by profile in 2026",
         "content": [
-          "• Young and Healthy Profile: Insurers specializing in prevention stand out for their flexibility and prices from €26-33/month with controlled co-payment.",
+          "• Young and Healthy Profile: Insurers specializing in prevention may offer different modalities and co-payment structures; compare the actual premium and conditions for your profile.",
           "• Families: Options with the largest medical networks in Spain are ideal due to their excellent pediatric care.",
           "• Self-employed: Review expected use and policy conditions first; any tax treatment of the premium depends on direct estimation, current rules and your circumstances.",
           "• Premium Coverage: Certain entities are unbeatable if you prioritize access to your own high-level centers and renowned specialists."
@@ -181,7 +181,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       },
       {
         "question": "Can the self-employed deduct health insurance?",
-        "answer": "Yes, up to €500 per year per person (you, partner and children) in personal income tax. In case of disability, the limit rises to €1,500."
+        "answer": "Under the direct-estimation framework, the rule may treat health-insurance premiums for the taxpayer, spouse and children under 25 living with the taxpayer as a deductible expense, subject to the applicable requirements. The limit is €500 per eligible person and €1,500 where the disability rule applies; this is not an automatic tax refund. Confirm your case with the Spanish Tax Agency or a tax adviser."
       },
       {
         "question": "What does the base coverage in Madrid include?",
@@ -189,7 +189,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       },
       {
         "question": "Is it worth it if I already have Social Security?",
-        "answer": "Public insurance is excellent for complex processes, but private insurance saves you the usual 3-6 months of waiting to see a specialist in Madrid."
+        "answer": "Public insurance is essential for complex processes. Private insurance may offer different channels or providers, but access times depend on the product, network and appointment availability."
       }
     ]
   },
@@ -197,7 +197,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
     "title": "Best Health Insurance in Madrid 2026: Complete guide to coverage and hospitals",
     "excerpt": "We explain the private health options in Madrid for 2026: medical tables, reference hospitals, prices and how to choose without paying more.",
     "metaTitle": "Best health insurance Madrid 2026 | Valentine",
-    "metaDescription": "Guide updated April 2026 to choose the best private health insurance in Madrid. Medical charts, prices, hospitals and +39 5-star reviews. Advice without obligation.",
+    "metaDescription": "Guide updated April 2026 to choose private health insurance in Madrid. Medical charts, prices, hospitals and the conditions worth checking before you decide.",
     "imageAlt": "Premium medical consultation in Madrid",
     "sections": [
       {
@@ -215,7 +215,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
           "• Basic / essential frame: reduced network, suitable for occasional use. Good option for young and healthy people.",
           "• Broad/complete list: more than 40,000 doctors in Spain, including large private hospitals in Madrid. Ideal for families.",
           "• Table without co-payment: same scope as the previous one, but without payment per visit. Recommended if you use the insurance frequently.",
-          "• Premium / top table: access to the best private reference hospitals, guaranteed single room, advanced diagnostic technology.",
+          "• Premium / top table: it may offer broader hospital and diagnostic options, but the exact network, room terms and services depend on the product.",
           "Before contracting, we always check together that your trusted doctor and the hospital closest to your home are included in the chosen option."
         ]
       },
@@ -239,9 +239,9 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "heading": "Indicative prices in Madrid in 2026",
         "content": [
           "Prices vary depending on age, coverage and modality. As an indicative reference for 2026:",
-          "• Young person (25-35 years): from €30-50/month in basic modality with co-payment.",
-          "• Adult (35-50 years): between €60-100/month in full modality without co-payment.",
-          "• Family of 4 members: between €120-200/month depending on age and coverage chosen.",
+          "• Young person: price depends on age, modality, co-payment and acceptance conditions.",
+          "• Adult: a full modality can vary according to age, cover, co-payment and health questionnaire.",
+          "• Family: the combined premium depends on ages, composition, modality and product conditions.",
           "• From 50 years old: prices rise progressively, so it is important not to wait.",
           "These ranges are indicative. The most important thing is not just the price, but what exactly the policy includes and how it fits with your actual situation."
         ]
@@ -257,8 +257,8 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       {
         "heading": "Does it make sense to have private insurance if I already have Social Security?",
         "content": [
-          "Yes, and a lot. Social Security offers universal coverage but with waiting lists that can exceed 3-6 months for a consultation with a specialist or a diagnostic test.",
-          "Private insurance gives you immediate access: the same day or the next day in most cases. For many families in Madrid it is the difference between waiting 4 months to see the traumatologist or doing so this week.",
+          "Yes. Social Security offers universal coverage. A private policy may offer different channels or providers, but appointments and access conditions depend on the product and current network.",
+          "A private policy may offer different channels or providers, but appointments and access conditions depend on the product and current network.",
           "It is not about replacing public health, but rather complementing it for times when time matters."
         ]
       },
@@ -266,7 +266,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "heading": "How can I help you choose without pressure?",
         "content": [
           "As a registered insurance agent, I help you review the products and cover options available through the professional relationships we work with, explaining the differences before you decide.",
-          "The process is simple: a 15-20 minute conversation on WhatsApp or phone in which I ask you the right questions (your current doctor, your actual use, your budget), and I present two or three options with compared coverage.",
+          "The process starts with a conversation on WhatsApp or phone in which I ask about your current doctor, actual use and budget, then explain the available options and their conditions.",
           "No endless forms, no pressure, no hidden fine print. Only clear information so you can decide wisely."
         ]
       }
@@ -289,7 +289,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       },
       {
         "question": "How much does private health insurance cost in Madrid?",
-        "answer": "A young person (25-35 years old) can find coverage from €30-50/month. A family of 4 members ranges between €120-200/month depending on age and coverage. After 50 years of age, prices rise. The important thing is not to choose only by price but by what it includes."
+        "answer": "There is no universal figure. The premium depends on ages, composition, modality, co-payments, health questionnaire and acceptance conditions. The important thing is not to choose only by price but by what it includes."
       },
       {
         "question": "What hospitals are included in health insurance in Madrid?",
@@ -301,7 +301,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       },
       {
         "question": "Does it make sense to have private insurance if I already have Social Security?",
-        "answer": "Yes. Social Security has waiting lists of 3-6 months for specialists. With private insurance you access the same day or the next day in most cases. It is a way to complement public health, not replace it."
+        "answer": "Yes. Private insurance can complement public healthcare with different channels or providers, but appointment timing and access depend on the selected product and current network."
       },
       {
         "question": "What is the deficiency and how long does it last?",
@@ -373,9 +373,9 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "heading": "Indicative prices in 2026",
         "content": [
           "Health insurance prices in Spain vary greatly depending on age, province, type and company. As general guidance in 2026:",
-          "• Basic modality with co-payment: from €35-50/month for young adults.",
-          "• Complete modality without co-payment: from €80-120/month depending on age and coverage.",
-          "• Reimbursement mode: from €150-250/month, depending on percentages and limits.",
+          "• Outpatient modality with co-payment: review the premium and per-use cost for the specific product.",
+          "• Complete modality without co-payment: review hospitalisation, waiting periods, authorisations and premium according to age and cover.",
+          "• Reimbursement mode: review percentages, limits, eligible services and premium for the specific product.",
           "These ranges are indicative. What matters is not just the price, but what it includes and how it fits with your real situation."
         ]
       },
@@ -407,15 +407,15 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       {
         "heading": "Understanding the private health market in the Community of Madrid",
         "content": [
-          "The Community of Madrid is not only the economic center of Spain, but also the market with the densest and most competitive private healthcare offer in the entire country. This technical and commercial competition translates into a huge variety of health insurance options, but also widespread confusion about actual prices. When a Madrid resident searches for \"how much does health insurance cost?\", they come across advertisements for \"insurance from 15 euros\" which, in practice, are rarely complete solutions for a family or a self-employed person. In 2026, the cost of private healthcare is influenced by advanced medical technology, agreements with large hospital groups and, of course, by the age and medical history of the insured.",
-          "It is vital to understand that health insurance in Madrid is an investment in time and peace of mind. Avoiding Social Security waiting lists and having direct access to specialists in Boadilla, Majadahonda or Madrid center has an intrinsic value that varies depending on the contracted modality. In our consultancy in Boadilla del Monte, we carry out this analysis daily for hundreds of neighbors, bringing price expectations to market reality. Insurance that seems extremely cheap usually hides long gaps (waiting time for interventions) or co-payments that can increase the monthly cost if you have a recurring health problem. In this detailed article, we break down the rates according to the most common profiles and the most popular coverage modalities in Madrid.",
+          "The Community of Madrid has a wide private-health offer and a corresponding variety of prices. Advertised starting prices can describe a limited modality and should not be treated as a complete solution for a family or a self-employed person. In 2026, the cost of private healthcare is influenced by the modality, medical network, age, health questionnaire and acceptance conditions.",
+          "It is vital to understand that health insurance in Madrid is an investment in time and peace of mind. A private policy may offer different channels and providers, but availability and access depend on the contracted modality, medical network and appointment conditions. In our consultancy in Boadilla del Monte, we use this framework to bring price expectations back to the actual policy terms. A low premium may also come with exclusions, waiting periods or co-payments, so compare the full conditions before deciding.",
           "The goal of this guide is to provide transparency. We want you, when you finish reading, to know what price range is reasonable for your personal situation and what factors you should keep an eye on so that your health premium doesn't go up unjustifiably next year. Madrid is possibly the best place in Spain to take out health insurance due to the number of specialists available, but it requires a clinical eye to choose the option that truly offers the best value for money without last-minute commercial tricks."
         ]
       },
       {
         "heading": "Variables determining price: Age, Modality and Co-payments",
         "content": [
-          "The number one factor that determines the price of your health insurance in Madrid is your age. Health insurance bases its risk on statistics of longevity and use of the health system. Thus, a 25-year-old is perceived as a low risk and his or her premium will be very low, while a 65-year-old person is in a higher cost bracket due to the greater probability of surgeries or chronic treatments. In 2026, we are seeing how companies adjust these tables in a very competitive way in family sections, rewarding the entry of groups of 3 or more people with discounts that can reach 20% on the individual rate.",
+          "The number one factor that determines the price of your health insurance in Madrid is your age. The premium also depends on modality, co-payments, health questionnaire and acceptance. A younger person may fall into a different tariff band from a 65-year-old person, but the actual quote and renewal price must be confirmed for the selected product. Some insurers offer different family conditions; check the composition and applicable tariff.",
           "The type of insurance is the second major variable. The most economical option is the so-called \"Without Hospitalization\", which only covers consultations and basic diagnostic tests, ideal for those who only seek agility with the specialist. However, the star modality in Madrid is the \"Complete Insurance with Medical Chart\", which includes everything: from blood tests to complex surgery and hospitalization in a single room. Within this complete insurance, you can choose \"With Copay\" or \"Without Copay\". The co-payment allows you to greatly reduce the monthly bill (the premium) in exchange for paying a small amount (between 2 and 20 euros) each time you use medical services. If you visit the doctor infrequently, the annual savings can be very important.",
           "Finally, previous medical history is a component that is often ignored by online comparators but is critical. If you have a pre-existing condition, such as a herniated disc or a diagnosed heart pathology, the insurer may \"exclude\" that pathology or apply a small surcharge. This is the reason why a generic web budget can change radically after taking the health questionnaire. In our officially registered consultancy, we know which companies in Madrid are more flexible with certain histories and which offer the best medical responses for each specific condition, avoiding unpleasant surprises after signing the contract."
         ]
@@ -423,25 +423,25 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       {
         "heading": "Real price ranges in Madrid by profiles (January 2026)",
         "content": [
-          "Young and Adult Individuals (18-40 years old): For this section, the Madrid market is very balanced. Complete insurance without co-payments usually ranges between 45 and 60 euros per month. If you opt for a low or balanced co-payment, the premium can drop to 25 or 35 euros. It is the profile that benefits the most from welcome offers, although we always advise looking at the price of the second year, which is where many online platforms \"nail\" unforeseen increases.",
-          "Families (Pack 2 adults + 2 children): This is the profile where there is the most competition in Madrid. In 2026, a family group can get premium coverage without co-payments for between 150 and 200 euros per month for four members. If the family resides in northwest areas such as Boadilla, we especially value those companies that include free basic dental services for children and a powerful network of private pediatric emergencies, since the indirect savings in these services are very high.",
-          "Seniors and People over 65 years of age: This is a delicate section of advice. Many companies close their hiring after 65 or 70 years of age. For those who already have insurance, we ensure that renewals are fair. For new hires, prices normally start at 100-120 euros per month. In this profile, we focus on insurance that offers a personal medical manager who helps with procedures and coordinates appointments, something vital to improve the user experience in large hospital groups in Madrid."
+          "Young and Adult Individuals (18-40 years old): The premium depends on age, modality, co-payments, health questionnaire and acceptance conditions. Compare the actual quote and the price at renewal rather than relying on a generic range.",
+          "Families: This profile requires reviewing composition, expected use, modality, co-payments and medical network; the premium and pediatric or dental services depend on the specific policy.",
+          "Seniors and People over 65 years of age: This is a delicate section of advice. Contracting age, acceptance, health questionnaire and premium depend on the product and current conditions; confirm them before deciding."
         ]
       },
       {
         "heading": "Tax advantages for self-employed people in Madrid: \"Free\" insurance",
         "content": [
         "Under the direct-estimation framework, Spanish rules may allow health-insurance premiums paid by a self-employed taxpayer to be considered a deductible expense for the taxpayer and certain eligible family members, subject to the €500 and €1,500 statutory limits and other requirements. That limit is not an automatic refund or a euro-for-euro reduction in tax due; the individual tax effect must be checked with the official source or a tax adviser.",
-          "This makes private healthcare for a self-employed person in Madrid not a luxury, but a logical business decision. The speed in a diagnosis allows an earlier return to work and avoids unproductive periods of sick leave. In addition, many insurers in Madrid offer specific insurance for the self-employed that includes daily compensation in case of hospitalization, reinforcing the professional's safety net. We calculate the annual net savings for our self-employed clients so that they see that, in real terms, having the best private healthcare for their family can end up costing them very little money per month after adjusting their accounts with the Treasury.",
-          "For SMEs and local businesses in Boadilla and Madrid with more than 5 employees, there are also collective health policies. These offer even lower prices than individual hiring and are a top-level talent loyalty tool. The employee receives the insurance as a highly valued salary in kind, and for the company, the cost is fully deductible in Corporate Tax. It is one of the most efficient forms of emotional remuneration in the current work environment in Madrid."
+          "Private healthcare is a coverage decision for a self-employed person, not a guaranteed tax outcome. Some products may include daily compensation or other benefits, but those conditions belong to the selected policy and should be reviewed separately from the tax treatment.",
+          "For SMEs and local businesses there are collective health policies that can be studied according to the number of people, modality and contribution structure. The treatment of a company-paid premium and any employment-tax consequences depend on the structure and applicable rules; VPI explains the insurance, not individual tax advice."
         ]
       },
       {
         "heading": "Conclusion: Why compare with a Boadilla professional",
         "content": [
           "Choosing the right health insurance in Madrid based only on the price of the first Google result is a risk that can be expensive in the long term. Private healthcare is a service sector where the guarantee that insurance will respond when a complex illness arises is the only thing that really matters. In our consultancy in Boadilla del Monte, we provide that human technical criterion. We value not only the premium, but the quality of the medical staff in your neighborhood, the commitment to permanence, the shortcomings and, above all, the historical evolution of the price increases of each company.",
-          "Our intermediation has no additional cost to you. Companies pay us to attract and manage loyal and well-informed clients, which means that you receive expert advice completely free of charge and with the guarantee of a licensed professional. Madrid offers the best doctors in the world; We make sure that you have the best contract on the market to access them without financial worries or small print.",
-          "If you're ready to stop guessing and want a real comparison tailored to your age and needs, we invite you to send us a quick message or fill out our health form. In less than 24 hours you will receive a clear, honest and explained point by point proposal so that you can make the best possible decision in 2026. Your health and that of your family cannot wait for luck to decide for you."
+          "Our intermediation has no additional cost to you. We explain the available options, network and conditions so you can decide with clear information; the insurer and policy determine the services and providers available.",
+          "If you're ready to stop guessing and want a review tailored to your age and needs, you can send us a message or fill out our health form. We will review the case and explain the available options and conditions before you decide."
         ]
       }
     ],
@@ -497,7 +497,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "heading": "How does it affect the price and waiting periods?",
       "content": [
         "• Price: The premium increases for each insured according to their age and health. However, \"family discounts\" often make the joint policy cheaper than several individual ones.",
-        "• Waiting periods: The added person enters with their own waiting periods (3-6 months for surgery, etc.), even if the policyholder has been on the policy for years. If they already had previous insurance, these can sometimes be waived."
+        "• Waiting periods: The added person may enter with conditions or waiting periods of their own, even if the policyholder has been insured for years. Previous insurance may affect this only where the product and insurer allow it; request confirmation in writing."
       ]
     },
     {
@@ -569,7 +569,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
     {
       "heading": "The critical period for permanent enrolment",
       "content": [
-        "For coverage to be full and immediate, you must communicate the baby's enrolment within a period of between 15 and 30 days from birth:",
+        "To request the applicable newborn terms, communicate the baby's enrolment within the period set by the insurer, often between 15 and 30 days from birth:",
         "1. Inclusion without questionnaire: The insurer accepts the baby regardless of its health status at birth.",
         "2. Check waiting periods: access to paediatrics, specialists and hospital care depends on the product and policy conditions.",
         "If you miss the deadline: The baby will be treated as a \"new standard insured\", which involves filling out a health questionnaire and waiting for the usual waiting periods (months)."
@@ -579,9 +579,9 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "heading": "What happens if the baby needs a neonatal intensive care unit?",
       "content": [
         "It is the greatest anguish for parents. If the enrolment is completed on time and the delivery was private:",
-        "• Incubator and neonatal admission expenses are covered under the mother's policy during the initial hospitalization (up to a limit of days, usually 28).",
-        "• Once included in your own policy, possible conditions detected at birth are covered for life as part of your insured history.",
-        "If the birth was in public healthcare, consult your advisor: some companies also allow favourable enrolment without waiting periods if you have been insured for more than 10 months."
+        "• Incubator and neonatal admission expenses may be covered under the mother's policy during the initial hospitalisation, subject to the policy's limits and terms.",
+        "• Once included in a policy, conditions detected at birth are handled according to the insurer's acceptance decision and the final policy terms.",
+        "If the birth was in public healthcare, consult the insurer or an insurance adviser: any favourable enrolment terms, waiting periods or exclusions must be confirmed for the product."
       ]
     },
     {
@@ -590,7 +590,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "1. Call your insurer or use the online customer area as soon as you can after giving birth.",
         "2. Bring the birth certificate or family book.",
         "3. Choose between including it in your family policy (it is usually cheaper due to discounts) or taking out an individual policy for the baby.",
-        "4. Request written confirmation that the enrolment has been processed without waiting periods or exclusions."
+        "4. Request written confirmation of the enrolment date, waiting periods and exclusions that apply."
       ]
     }
   ],
@@ -603,7 +603,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   "faqs": [
     {
       "question": "How long do I have to enrol the newborn?",
-      "answer": "Between 15 and 30 days from birth, depending on the insurance company. Meeting this deadline is vital for enrolment without waiting periods."
+      "answer": "Many products set a period after birth for requesting enrolment. The deadline and any waiting-period treatment depend on the insurer and policy, so request the applicable terms in writing."
     },
     {
       "question": "Does insurance cover neonatal ICU?",
@@ -615,7 +615,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
     },
     {
       "question": "What happens if the birth was in a public hospital?",
-      "answer": "The initial automatic coverage is not activated, but many companies allow enrolment without waiting periods if it is requested in time and the parents have been insured for some time."
+      "answer": "The initial automatic coverage is not activated. Some products may offer specific enrolment terms where a request is made in time, but the insurer must confirm the applicable waiting periods and exclusions."
     },
     {
       "question": "What does elective pediatrics include?",
@@ -654,7 +654,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "heading": "Critical coverage for the professional: IT and digital health",
       "content": [
         "Beyond conventional medical assistance, a self-employed person in Madrid needs specific coverage that alleviates his or her contractual vulnerability. The most important is Temporary Disability (IT). Many health policies for the self-employed optionally offer daily compensation in case of sick leave or accident. This means that if you break your leg and cannot work for a month, the insurer will pay you an agreed daily amount (for example, 60 or 100 euros per day) regardless of what you receive from the Social Security mutual insurance company. In Madrid, where rental costs for premises and freelancers are high, this supplement is what keeps the business afloat during the recovery.",
-        "Digital health is the second pillar. In 2026, a self-employed person from Madrid does not have time to travel around Castellana just to have some analytical results explained to him. We are looking for insurance that offers 24/7 medical video consultations, direct chat with specialists and, most importantly, private electronic prescription that arrives directly to your mobile. This agility allows a small health scare to be resolved in 15 minutes from the office, without interrupting the work day. In addition, many companies are including online psychology and nutrition services, essential for managing the stress and lifestyle that comes with entrepreneurship in such a demanding capital.",
+        "Digital health is the second pillar. In 2026, a self-employed person in Madrid may value video consultations, specialist chat and electronic prescriptions where the selected product includes them. These channels can help organise consultations without travel, but the service, availability and scope depend on the policy. Some insurers also include online psychology and nutrition; check the conditions before deciding.",
         "Finally, we advise on waiting periods. A self-employed person who decides to take out insurance now should not have to wait months to have access to the services they need. We negotiate with companies to eliminate or reduce these waiting times if the client already came from another insurer, allowing a smooth transition. In Boadilla and Majadahonda, where many self-employed people have young families, we also focus on maternity and pediatric coverage, ensuring that the insurance not only covers the professional side, but is the total umbrella of peace of mind for your home in Madrid."
       ]
     },
@@ -786,24 +786,24 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "content": [
         "In Madrid, many people have dental insurance that cost them very little money, often included as a benefit on a credit card or as an add-on to home insurance. And they think: \"My mouth is covered, that's it.\" But there is a problem: having only dental insurance is like having good windshield insurance but not having damage coverage for the rest of the car.",
         "Dental insurance covers cleanings, fillings, extractions and some other specialties such as root canals or dental prosthetics. But it doesn't cover anything else. If your knee hurts, if you have abdominal discomfort, if you need a blood test or a gynecological examination, dental insurance is of no use to you.",
-        "Here's the revelation that many don't know: the price jump between good dental insurance and comprehensive health insurance with dental coverage included is much smaller than you think. Often, for €15-25 more per month, you go from having just your mouth covered to having access to all medical specialties, hospitalization, emergencies and diagnostic tests."
+        "Here's the point many people miss: the price difference between dental insurance and a health policy with dental cover depends on age, modality, co-payments and acceptance. The health policy may add hospitalisation, emergencies or diagnostic tests, but the available services must be checked in its documentation."
       ]
     },
     {
       "heading": "Honest comparison: what does each one cover?",
       "content": [
         "Let's see clearly what each type of insurance offers so you can make an informed decision:",
-        "Basic Dental Insurance (€15-25/month):",
+        "Basic Dental Insurance: services and price depend on the selected product:",
         "• Annual inspection and cleaning included",
         "• Simple fillings and extractions",
         "• Dental x-rays",
         "• Discounts on prostheses and aesthetic treatments (normally not included 100%)",
         "• No or very low copay for most treatments",
         "",
-        "Health Insurance with Dental included (€40-70/month depending on age):",
-        "• All of the above plus: access to a family doctor and all medical specialties",
+        "Health Insurance with Dental included: modality, price and services depend on the selected product:",
+        "• All of the above plus: access to the services and medical network stated in the selected policy",
         "• Complete hospitalization (single room in many cases)",
-        "• 24-hour emergencies with immediate attention",
+        "• Emergency channels and availability according to the modality",
         "• Diagnostic tests (analysis, x-rays, MRIs)",
         "• Scheduled and urgent surgery",
         "• Complete dental coverage: cleanings, fillings, extractions, root canals"
@@ -855,7 +855,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   "faqs": [
     {
       "question": "Can I add dental to my health insurance later?",
-      "answer": "Yes, most companies allow dental coverage to be included in your existing health insurance, although there may be a waiting period of 3-6 months for some specific dental treatments."
+      "answer": "Some products allow dental cover to be included or added, although certain treatments may have waiting periods or specific conditions. Check the selected policy before relying on it."
     },
     {
       "question": "Does dental insurance include implants and orthodontics?",
@@ -1000,9 +1000,9 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "heading": "Indicative prices in 2026",
       "content": [
         "Pet insurance prices in Spain vary depending on species, breed, age and coverage included:",
-        "• Basic civil liability for dogs: from €40-70/year.",
-        "• Civil liability + basic veterinary assistance: from €120-200/year.",
-        "• Complete cover (civil liability + veterinary care + optional cover): from €250-400/year.",
+        "• Basic civil liability for dogs: the premium depends on the animal, territorial scope, limits and product conditions.",
+        "• Civil liability plus veterinary assistance: compare the selected cover, exclusions and actual quote.",
+        "• Broader cover: the price depends on civil-liability limits, veterinary services and optional cover.",
         "• For cats, prices are usually somewhat lower, since the risk of civil liability is lower.",
         "These ranges are indicative. The key is to compare what each option includes, not just the annual price."
       ]
@@ -1071,7 +1071,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "content": [
         "Let's talk about money, which is what usually worries us after a legal change. The cost of civil liability insurance for a dog not classified as dangerous in Madrid is remarkably low. In 2026, very solid options can be found between 25 and 45 euros per year. That is, for just 3 euros per month, you comply with the law and protect your assets. If you want to go one step further and take out complete veterinary health insurance (including hospitalization for illness, vaccinations and consultations), prices usually range between 15 and 35 euros per month, depending on the age and breed of the animal.",
         "On the other side of the scale are the fines. Not having mandatory dog ​​insurance in Madrid is considered a minor infraction under the new regulations, but the amount of sanctions can range from 500 to 10,000 euros depending on the severity and whether any mishap has occurred. The Municipal Police in public parks in Madrid and Boadilla are beginning to systematically request proof of hiring or the last paid receipt. It is a totally unnecessary economic risk due to the low cost of the minimum policy.",
-        "As an expert tip, we suggest that you always save a digital copy of the insurance receipt on your mobile phone. Thus, in the event of any request from the authorities or in the event of an unforeseen event with another dog on the street, you will be able to prove the coverage immediately without having to return home. If you live in Boadilla and enjoy walks in the mountains, remember that civil liability protects you even if the dog causes an accident to a cyclist or runner. The law seeks protection, we seek that you enjoy your pet with maximum real peace of mind and without any small print that keeps you up at night."
+        "As an expert tip, we suggest that you always save a digital copy of the insurance receipt on your mobile phone. Thus, in the event of any request from the authorities or an unforeseen event with another dog on the street, you can prove the coverage without having to return home. Check the territorial scope, limits and exclusions of the selected product before relying on it."
       ]
     },
     {
@@ -1104,14 +1104,14 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   "title": "Dental insurance for families in Madrid: guide without fine print 2026",
   "excerpt": "Is family dental insurance in Madrid worth it? We explain the free events, real discounts and how to save on orthodontics and implants with total transparency.",
   "metaTitle": "Family Dental Insurance Madrid · Is it worth it? Guide 2026",
-  "metaDescription": "Guide to family dental insurance in Madrid. We explain each coverage in detail, savings of 40% on treatments and tips for choosing the best clinic in 2026.",
+  "metaDescription": "Guide to family dental insurance in Madrid. We explain cover, provider networks, treatment tariffs and what to check before choosing a clinic in 2026.",
   "imageAlt": "Family in Madrid taking care of their dental health with professional insurance",
   "sections": [
     {
       "heading": "Oral health in Madrid: The great gap in the public system",
       "content": [
         "Dental health is, historically, the great pending issue of public health in Spain. In the Community of Madrid, despite having large centers of medical excellence, Social Security dental coverage is practically limited to emergency extractions and little else. This leaves Madrid families in a situation of economic vulnerability when the need arises for common but expensive treatments, such as endodontics, children's orthodontics or replacement of parts through implants. In 2026, the cost of private dental treatments in the capital of Madrid and municipalities such as Boadilla has continued an upward trend, making dental insurance go from being a secondary option to becoming a key piece of family financial planning.",
-        "Taking out family dental insurance is not only a measure for when a toothache arises; It is, above all, a preventive savings tool. Many people wonder if it is really \"worth it\" to pay a monthly fee for this service. The short answer is yes, as long as you understand how it works and what you are contracting for. Dental insurance operates under a franchise model: for a small monthly fee, you access a network of top-level clinics with agreed and fixed prices that are usually between 30% and 50% lower than market prices for individuals. Added to this is that many basic services are completely free for the insured, which encourages prevention that, in the long run, saves thousands of euros in complex treatments.",
+        "Taking out family dental insurance can help organise preventive care and the cost of some treatments, as long as you understand what you are taking out. The premium, network, included services and agreed tariffs depend on the product documents. Some policies include services at no additional cost and others apply reduced tariffs; check each treatment before deciding.",
         "In our consultancy with official registration in Boadilla del Monte, we break down these contracts so that Madrid families see the real value they provide. It's not just about seeing discounts in a brochure, but about understanding which clinics near your home are included and how to protect your children's smiles without affecting your budget. In this detailed guide, we are going to explain to you in no small print how dental insurance in Madrid works in 2026 and why it is one of the smartest protection decisions you can make this year for a surprisingly low price."
       ]
     },
@@ -1120,14 +1120,14 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "content": [
         "The basis of any serious dental insurance in Madrid is what we call \"free acts\". These are services that have no additional cost to the policyholder and typically include annual oral cleanings, panoramic x-rays (vital for complex initial diagnoses), periodic check-ups and simple extractions that do not require surgery. Just by having two members of a family undergo a dental cleaning and a complete check-up each year, the cost of the dental policy is usually already practically amortized. It is a way to force yourself to take care of your oral health on a regular basis without the fear of the final bill.",
         "For treatments that do have a cost, such as fillings, porcelain covers or gum treatments, the \"dental franchise\" comes into play. These are scaled prices that the insurer imposes on the dental clinic. You, as the insured, will know in advance exactly how much a filling in Pozuelo or a root canal in the center of Madrid will cost, without last minute surprises based on \"personalized quotes\" that sometimes inflate costs unnecessarily. This price control is especially valuable in Madrid, where the range of rates between different neighborhoods can be abysmal. Dental insurance unifies quality and price, giving you negotiating power that as an individual is difficult to achieve.",
-        "In highly specialized treatments such as implants, the savings with dental insurance are massive. A complete process that could cost 1,500 euros going it alone can be reduced to 800 or 900 euros with a good family policy. In addition, modern dental policies in Madrid now usually include complementary dental aesthetic services (whitening, veneers) with significant discounts, reflecting the reality of what families demand today. As experts, we help compare not only the price catalog, but the technology used by the associated clinics, ensuring that the savings do not come at the expense of the required medical quality."
+        "For specialised treatments such as implants, the final cost depends heavily on the clinic, treatment and policy. Some products apply agreed tariffs or discounts, but an example should not be treated as a promise: check the tariff and the specific quotation. Dental aesthetic services may also have their own conditions."
       ]
     },
     {
       "heading": "Children and youth orthodontics in Madrid: The concern of parents",
       "content": [
         "For families residing in Boadilla, Majadahonda and other areas of Madrid with a high rate of child population, orthodontics is the reigning topic in dental insurance consultations. We know that the cost of braces or invisible aligner treatment (such as Invisalign) is a very significant outlay that usually comes just when the family has other high educational expenses. Having dental insurance from when children are young allows access to free periodic orthodontic check-ups that detect malocclusion problems before they become serious and much more expensive to correct.",
-        "When the time comes for orthodontics, good family dental insurance in Madrid offers two critical advantages: the retention appliance and the first phase of the study are usually free or have a symbolic price, and the monthly treatment has a reduced cost. In a 24-month treatment, the total accumulated savings can easily exceed 1,000 euros for each child. Some insurers even offer \"specialized orthodontic modules\" for teenagers in Madrid that prioritize aesthetics with invisible systems, making what was previously prohibitive now accessible to the average family through secure, installment payments.",
+        "When orthodontic treatment becomes relevant, check whether the study, retention, treatment and payment terms have specific conditions. Some insurers offer orthodontic modules or agreed tariffs, but the scope and cost depend on the product, clinic and patient's circumstances.",
         "Furthermore, most dental insurances in 2026 not only cover the aesthetic part of orthodontics, but also monitor comprehensive oral health throughout the process. This includes the prevention of cavities during the use of appliances and mandatory hygiene checks. As local advisors, we know which insurance companies in the Boadilla area have agreements with the most reputable orthodontists, ensuring that your children are in the best hands. Don't settle for the cheapest clinic; Find the balance between a price determined by insurance and an impeccable clinical reputation that we help you contrast."
       ]
     },
@@ -1135,14 +1135,14 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "heading": "How to choose the best clinic and avoid traps in Madrid",
       "content": [
         "The dental market in Madrid is saturated with aggressive offers and low-cost \"franchise clinics\" that sometimes prioritize profitability over quality of care. The advantage of contracting your dental insurance through a leading company (as we recommend in our Boadilla consultancy) is that these insurers periodically audit the clinics that are part of their network. If a clinic in Madrid receives constant complaints or its treatments do not meet certain technical standards, the company expels it from its medical staff. This provides a layer of security and quality assurance that you would never have by blindly going to an unknown clinic.",
-        "When choosing your family dental insurance in Madrid, look at three key points: first, that it does not have unjustified waiting periods (you should be able to use it immediately for a cleaning or a filling); second, that the list of clinics near your home in Boadilla or your work in Madrid is extensive so that you have something to choose from; and third, that 24-hour dental emergencies are covered and well located. A tooth that starts to hurt on a Saturday night in Boadilla requires a quick response, and your insurance must provide you with a helpline and an operational emergency clinic on the way to Madrid capital.",
-        "In our advice, we not only give you the price of the dental policy (which for a family of 4 people is usually around 15-20 euros per month in total), but we help you read the fine print about the materials used in implants and the orthodontic brands allowed. We want you to understand that dental insurance is a service contract where transparency is the only thing that guarantees your long-term satisfaction. Madrid has fantastic dental professionals; We only give you the master key to access them with the best prices on the market and without any small print that spoils your smile or your budget."
+        "When choosing family dental insurance in Madrid, check which services have waiting periods or are available from the start, whether the provider network suits your home or workplace, and how emergencies and assistance channels work. A toothache on a Saturday night makes it important to know which channel and clinic the policy actually provides.",
+        "In our advice, we review the dental policy price and the fine print about implant materials and permitted orthodontic brands. The cost depends on family composition and modality; the product documents should explain what is included and what is paid separately."
       ]
     },
     {
       "heading": "Conclusion: Your family's smile deserves an expert plan",
       "content": [
-        "Investing in family dental insurance is, in essence, buying peace of mind. It is knowing that your children's oral health is monitored from childhood and that you will be able to face any unforeseen dental event without decapitalizing your savings. In Madrid, where the pace of life and the level of demands are high, dental prevention is one of the best wellness decisions you can make. For the price of a few dinners a year, your entire family will be guaranteed top-notch dental care and access to trusted specialists in Boadilla and surrounding areas.",
+        "Family dental insurance can help organise check-ups and treatment costs, but the available care, network and tariffs depend on the policy. In Madrid, check which clinics and professionals are included before arranging cover.",
         "If you have questions about which dental insurance offers the best savings for a specific treatment or if you want an honest comparison between the main insurers in Spain with a network in Madrid, we are here to assist you. Our consultancy in Boadilla del Monte offers you that vision with official and professional registration that automatic comparators cannot give you. Let's talk about your peace of mind and the health of your loved ones today so that the next dental treatment is not a problem, but rather one more step in caring for your family.",
         "For a personalized comparison of dental insurance or to resolve any questions about coverage and clinics in your Madrid neighborhood, we invite you to visit our dental section or contact us through our contact form. We are looking forward to helping you take care of your family's smile with the professionalism and closeness that characterizes us throughout the Community of Madrid."
       ]
@@ -1151,13 +1151,13 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   "tips": [
     "Use free annual cleanings: they not only improve your health, but they amortize the entire cost of insurance.",
     "If you plan to have children's orthodontics, take out dental insurance a few months in advance to benefit from free preventive check-ups.",
-    "Always compare the estimated cost with deductible against the particular price of the same clinic: the savings usually exceed 40%.",
+    "Compare the estimated tariff with the clinic's private price and check the treatment conditions.",
     "Check that the dental insurance is valid throughout Spain, ideal if you travel or spend time outside of Madrid."
   ],
   "faqs": [
     {
       "question": "Are there waiting periods to use dental insurance in Madrid?",
-      "answer": "Most dental insurance in Madrid offers immediate access for emergency cleanings and fillings. Some major treatments could have a minimum waiting period of a few months."
+      "answer": "Access to cleanings, fillings and other treatments depends on the selected dental product. Some services may be available from the start while major treatments can have waiting periods; check the policy conditions."
     },
     {
       "question": "Can I choose my usual dentist?",

@@ -40,13 +40,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -159,8 +152,8 @@ export default function ViajePage() {
                 <p className="text-[#4B5563] mt-2">franquicia inicial</p>
               </div>
               <div className="text-center border-l border-[#E5E7EB]">
-                <p className="text-5xl font-bold text-[#2E7D32]">24h</p>
-                <p className="text-[#4B5563] mt-2">asistencia global</p>
+                <p className="text-5xl font-bold text-[#2E7D32]">Según póliza</p>
+                <p className="text-[#4B5563] mt-2">asistencia y límites territoriales</p>
               </div>
             </div>
           </div>
@@ -280,7 +273,7 @@ export default function ViajePage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: "✈️", title: "Desde casa", desc: "Cobertura taxi aeropuerto" },
+                { icon: "✈️", title: "Desde casa", desc: "Revisa cuándo empieza la cobertura" },
                 { icon: "🏥", title: "Médica", desc: "60.000€ mundial" },
                 { icon: "🚁", title: "Repatriación", desc: "Familiar incluida" },
                 { icon: "💊", title: "Farmacia", desc: "Urgencias cubiertas" },
@@ -306,7 +299,7 @@ export default function ViajePage() {
               Presupuesto Viaje Temporal
             </h2>
             <p className="text-lg text-[#4B5563] mb-8">
-              Cotiza en 2 minutos. Viaja protegido desde la puerta de casa.
+              Revisa tu modalidad y viaja con las condiciones claras.
             </p>
             <a 
               href={wCotiza}

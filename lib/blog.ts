@@ -50,7 +50,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Buscas un seguro médico con buena relación calidad-precio en 2026? Revisamos productos y coberturas que pueden encajar para familias, autónomos y particulares. Guía honesta.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'La guía que los comparadores no pueden darte',
@@ -63,7 +62,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Los mejores seguros por perfil en 2026',
         content: [
-          '• Perfil Joven y Sano: Aseguradoras especialistas en prevención destacan por su flexibilidad y precios desde 26-33€/mes con copago controlado.',
+          '• Perfil Joven y Sano: Algunas aseguradoras ofrecen modalidades con copago y otras estructuras de precio; compara la prima real y las condiciones de tu perfil.',
           '• Familias: Las opciones con las redes médicas más amplias de España son ideales por su excelente cuadro pediátrico.',
           '• Autónomos: La cobertura debe elegirse según el uso previsto y las condiciones del producto; el tratamiento fiscal de la prima depende de la estimación directa, la norma aplicable y las circunstancias del contribuyente.',
           '• Cobertura Premium: Ciertas entidades son imbatibles si priorizas acceso a centros propios de alto nivel y especialistas de renombre.',
@@ -139,7 +138,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Antes de elegir seguro, lee esto. Desvelamos la verdad sobre las reseñas de Google, rankings de la OCU y los límites de los comparadores online.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'La verdad que comparadores y rankings no suelen contarte',
@@ -233,7 +231,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Quieres incluir a tu pareja, hijos o padres en tu póliza médica? Te explicamos los requisitos, plazos, cambios en el precio y cómo gestionar las bajas.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber para gestionar tu seguro familiar',
@@ -263,7 +260,7 @@ export const blogPosts: BlogPost[] = [
         heading: '¿Cómo afecta al precio y a las carencias?',
         content: [
           '• Precio: La prima aumenta por cada asegurado según su edad y salud. Sin embargo, los "descuentos familiares" suelen hacer que la póliza conjunta sea más barata que varias individuales.',
-          '• Carencias: La persona añadida entra con sus propios periodos de espera (3-6 meses para cirugía, etc.), aunque lleve el tomador años en la póliza. Si ya tenía seguro previo, a veces se pueden eliminar.',
+          '• Carencias: La persona añadida puede entrar con condiciones o periodos de espera propios, aunque el tomador lleve años en la póliza. Un seguro previo solo puede cambiar el análisis si la aseguradora y el producto lo admiten; pide confirmación por escrito.',
         ],
       },
       {
@@ -322,7 +319,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Tu bebé está cubierto desde que nace? Resolvemos todas las dudas: plazos para el alta, cobertura UCI neonatal y alta sin cuestionario médico.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes (y después) de que nazca tu bebé',
@@ -416,7 +412,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿No sabes qué cubre tu seguro? Te enseñamos a encontrar tu póliza, entender la letra pequeña y localizar coberturas duplicadas o seguros antiguos.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Entender lo que tienes contratado',
@@ -501,7 +496,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Gastos médicos, repatriación, pérdida de maletas y más. Todo lo que necesitas saber sobre el seguro de viaje antes de salir de España en 2026.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes de salir',
@@ -599,7 +593,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Entiende por fin el seguro de vida riesgo. Qué cubre, qué NO cubre, cuánto cuesta según tu edad y por qué es vital para proteger a tu familia.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Lo que cubre, lo que no cubre y cuándo contratarlo',
@@ -695,7 +688,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Temporal, ahorro, vida entera, hipotecario... Te explicamos todos los tipos de seguro de vida para que elijas el que realmente necesitas hoy.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Todo lo que necesitas saber antes de contratar',
@@ -708,7 +700,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Los seguros de vida de riesgo: protección cuando algo va mal',
         content: [
-          '• Seguro temporal de fallecimiento: El más contratado. Cubre un periodo determinado (10, 20 o 30 años). Ideal para proteger a hijos menores o cubrir deudas hipotecarias. Es el más asequible: por menos de 10 €/mes puedes tener una cobertura seria.',
+          '• Seguro temporal de fallecimiento: Cubre un periodo determinado. Puede encajar para proteger a hijos menores o cubrir deudas hipotecarias, pero la prima depende de edad, capital, plazo y aceptación.',
           '• Seguro de vida entera: Cubre toda la vida sin fecha de caducidad. Es más caro pero garantiza que la prestación se pagará en algún momento. Útil para planificación de herencias o gastos de decesos.',
           '• Seguro de invalidez o incapacidad: El gran olvidado y el más necesario. Te protege a ti cuando sigues estando pero ya no puedes generar ingresos por enfermedad o accidente. Vital para autónomos.',
           '• Seguro de dependencia: Cubre los gastos si necesitas ayuda de terceros para vivir. Recomendado a partir de los 50-55 años para planificar el futuro sin depender de los hijos.',
@@ -792,7 +784,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: '¿Contratar directo o con agente? Te contamos las ventajas reales de contar con un asesor experto que te defienda ante la aseguradora en 2026.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Lo que nadie te explica al contratar un seguro',
@@ -815,7 +806,7 @@ export const blogPosts: BlogPost[] = [
           '1. Asesoramiento personalizado con registro oficial DGSFP: Un agente de seguros colegiado analiza tu situación real y te recomienda lo que encaja con tu perfil y necesidades.',
           '2. Asesoramiento preventivo: Evita errores caros antes de contratar, revisando carencias, límites y preexistencias que suelen pasar desapercibidas.',
           '3. Traducción de lenguaje técnico: Te explica lo que dice tu póliza en términos que tengan sentido para tu vida real.',
-          '4. Gestión sin laberintos telefónicos: Cuando hay un siniestro, tienes a alguien que ya sabe quién eres y qué tienes contratado. Sin esperas de 40 minutos.',
+          '4. Gestión sin laberintos telefónicos: Cuando hay un siniestro, tienes a alguien que ya sabe quién eres y qué tienes contratado, con un canal claro para revisar el caso.',
           '5. Ahorro real y detección de duplicidades: Muchos clientes pagan por coberturas repetidas (muerte en varios seguros, fallecimiento en bancos, etc.). Un agente de seguros detecta esto en la primera revisión.',
           '6. Servicio postventa continuado: Si cambia tu situación familiar o tienes dudas sobre una carta de la compañía, tienes a quién preguntar directamente.',
           '7. Representación formal en conflictos: Si hay una discrepancia seria en la tasación o cobertura, el agente te representa con criterio técnico ante la aseguradora.',
@@ -885,7 +876,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Antes de contratar un seguro médico privado en Madrid, lee esto. Sin marcas, sin presión. Te explicamos qué mirar, cuánto cuesta y cómo elegir bien según tu situación.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Guía sin marcas ni presiones para elegir en Madrid',
@@ -982,7 +972,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Merece la pena si ya tengo Seguridad Social?',
-        answer: 'La pública es excelente para procesos complejos, pero el seguro privado te ahorra los 3-6 meses de espera habituales para ver a un especialista en Madrid.',
+        answer: 'La disponibilidad no funciona igual en todos los servicios. Una póliza privada puede ofrecer canales y redes distintas, pero la cita, la especialidad y cualquier carencia dependen del producto y del cuadro médico vigente.',
       },
     ],
   },
@@ -997,10 +987,9 @@ export const blogPosts: BlogPost[] = [
     category: 'consejos',
     readTime: '10 min',
     metaTitle: 'Mejor seguro de salud Madrid 2026 | Valentín',
-    metaDescription: 'Guía actualizada abril 2026 para elegir el mejor seguro médico privado en Madrid. Cuadros médicos, precios, hospitales y +39 reseñas de 5 estrellas. Asesoramiento sin compromiso.',
+    metaDescription: 'Guía actualizada abril 2026 para elegir un seguro médico privado en Madrid. Cuadros médicos, precios, hospitales y condiciones que conviene comprobar antes de decidir.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 39,
     sections: [
       {
         heading: 'El panorama de la salud privada en Madrid en 2026',
@@ -1017,7 +1006,7 @@ export const blogPosts: BlogPost[] = [
           '• Cuadro básico / esencial: red reducida, adecuada para uso ocasional. Buena opción para personas jóvenes y sanas.',
           '• Cuadro amplio / completo: más de 40.000 médicos en España, grandes hospitales privados de Madrid incluidos. Ideal para familias.',
           '• Cuadro sin copago: misma amplitud que el anterior, pero sin pago por visita. Recomendado si usas el seguro con frecuencia.',
-          '• Cuadro premium / top: acceso a los mejores hospitales privados de referencia, habitación individual garantizada, tecnología diagnóstica avanzada.',
+          '• Cuadro premium / top: una red y servicios más amplios según la modalidad; comprueba hospitales, habitación y tecnología en la documentación.',
           'Antes de contratar, siempre comprobamos juntos que tu médico de confianza y el hospital más cercano a tu casa estén incluidos en la opción elegida.',
         ],
       },
@@ -1041,9 +1030,9 @@ export const blogPosts: BlogPost[] = [
         heading: 'Precios orientativos en Madrid en 2026',
         content: [
           'Los precios varían según edad, cobertura y modalidad. Como referencia orientativa para 2026:',
-          '• Persona joven (25-35 años): desde 30-50 €/mes en modalidad básica con copago.',
-          '• Adulto (35-50 años): entre 60-100 €/mes en modalidad completa sin copago.',
-          '• Familia de 4 miembros: entre 120-200 €/mes según edades y cobertura elegida.',
+          '• Persona joven: el precio depende de la edad, modalidad, copago y condiciones de aceptación.',
+          '• Adulto: una modalidad completa puede cambiar de precio según edad, cobertura, copago y cuestionario.',
+          '• Familia: la prima conjunta depende de las edades, composición, modalidad y condiciones del producto.',
           '• A partir de 50 años: los precios suben de forma progresiva, por eso es importante no esperar.',
           'Estos rangos son orientativos. Lo más importante no es solo el precio, sino qué incluye exactamente la póliza y cómo encaja con tu situación real.',
         ],
@@ -1059,7 +1048,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '¿Tiene sentido tener seguro privado si ya tengo la Seguridad Social?',
         content: [
-          'Sí, y mucho. La Seguridad Social ofrece cobertura universal pero con listas de espera que pueden superar los 3-6 meses para una consulta con especialista o una prueba diagnóstica.',
+          'Puede ser útil por motivos distintos. La disponibilidad de la sanidad pública y la de una póliza privada dependen del servicio, la zona y las condiciones concretas; conviene comparar sin dar por garantizado un plazo de cita.',
           'El seguro privado te da acceso inmediato: el mismo día o al día siguiente en la mayoría de los casos. Para muchas familias en Madrid es la diferencia entre esperar 4 meses para ver al traumatólogo o hacerlo esta semana.',
           'No se trata de sustituir la sanidad pública, sino de complementarla para los momentos en que el tiempo importa.',
         ],
@@ -1091,7 +1080,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Cuánto cuesta un seguro de salud privado en Madrid?',
-        answer: 'Una persona joven (25-35 años) puede encontrar cobertura desde 30-50 €/mes. Una familia de 4 miembros oscila entre 120-200 €/mes según edades y cobertura. A partir de los 50 años los precios suben. Lo importante es no elegir solo por precio sino por lo que incluye.',
+        answer: 'No hay una cifra universal. La prima depende de las edades, la composición, la modalidad, los copagos, el cuestionario y las condiciones de aceptación. Lo importante es no elegir solo por precio sino por lo que incluye.',
       },
       {
         question: '¿Qué hospitales están incluidos en los seguros de salud en Madrid?',
@@ -1103,7 +1092,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Tiene sentido tener seguro privado si ya tengo la Seguridad Social?',
-        answer: 'Sí. La Seguridad Social tiene listas de espera de 3-6 meses para especialistas. Con seguro privado accedes el mismo día o al día siguiente en la mayoría de los casos. Es una forma de complementar la sanidad pública, no de sustituirla.',
+        answer: 'La disponibilidad no funciona igual en todos los servicios. Una póliza privada puede ofrecer canales y redes distintas, pero la cita, la especialidad y cualquier carencia dependen del producto y del cuadro médico vigente.',
       },
       {
         question: '¿Qué es la carencia y cuánto dura?',
@@ -1180,9 +1169,9 @@ export const blogPosts: BlogPost[] = [
         heading: 'Precios orientativos en 2026',
         content: [
           'Los precios de seguros de salud en España varían mucho según edad, provincia, modalidad y compañía. Como orientación general en 2026:',
-          '• Modalidad básica con copago: desde 35-50 €/mes para adultos jóvenes.',
-          '• Modalidad completa sin copago: desde 80-120 €/mes según edad y cobertura.',
-          '• Modalidad con reembolso: desde 150-250 €/mes, dependiendo de porcentajes y límites.',
+          '• Modalidad ambulatoria con copago: revisa la prima y el coste por uso según producto.',
+          '• Modalidad completa sin copago: revisa hospitalización, carencias, autorizaciones y prima según edad y cobertura.',
+          '• Modalidad con reembolso: revisa porcentajes, límites, servicios elegibles y prima según producto.',
           'Estos rangos son orientativos. Lo que importa no es solo el precio, sino qué incluye y cómo encaja con tu situación real.',
         ],
       },
@@ -1324,9 +1313,9 @@ export const blogPosts: BlogPost[] = [
         heading: 'Precios orientativos en 2026',
         content: [
           'Los precios de seguros para mascotas en España varían según especie, raza, edad y coberturas incluidas:',
-          '• RC básica para perro: desde 40-70 €/año.',
-          '• RC + asistencia veterinaria básica: desde 120-200 €/año.',
-          '• Modalidad completa (RC + veterinaria + opcionales): desde 250-400 €/año.',
+          '• RC básica para perro: la prima depende del animal, el ámbito territorial, los límites y las condiciones del producto.',
+          '• RC + asistencia veterinaria básica: compara las coberturas, exclusiones y el presupuesto real.',
+          '• Modalidad más amplia: el precio depende de los límites de responsabilidad civil, los servicios veterinarios y los opcionales.',
           '• Para gatos, los precios suelen ser algo inferiores, ya que el riesgo de RC es menor.',
           'Estos rangos son orientativos. La clave es comparar qué incluye cada opción, no solo el precio anual.',
         ],
@@ -1459,9 +1448,9 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Salud en Boadilla: Priorizando la agilidad y los mejores cuadros médicos',
         content: [
-          'El seguro de salud es, sin duda, el producto más demandado en Boadilla del Monte. Esto se debe a que las familias del municipio valoran la inmediatez en el diagnóstico y la posibilidad de elegir a su pediatra o especialista de confianza sin las demoras del sistema público. Sin embargo, no todos los seguros de salud funcionan igual en la zona noroeste de Madrid. Es fundamental verificar que la aseguradora elegida tenga convenios sólidos con los centros de referencia de Boadilla y alrededores. Muchas pólizas "baratas" limitan el acceso a ciertos hospitales premium o imponen copagos elevados que acaban encareciendo el servicio si hay un uso recurrente, algo habitual en familias con niños en edad escolar.',
+          'El seguro de salud es, sin duda, uno de los productos más consultados en Boadilla del Monte. Las familias suelen valorar el cuadro médico, la disponibilidad y la posibilidad de revisar un pediatra o especialista de confianza. Sin embargo, no todos los seguros de salud funcionan igual en la zona noroeste de Madrid. Es fundamental verificar que la aseguradora elegida tenga convenios sólidos con los centros de referencia de Boadilla y alrededores. Muchas pólizas limitan el acceso a ciertos hospitales o imponen copagos elevados que pueden encarecer el servicio si hay un uso recurrente, algo habitual en familias con niños en edad escolar.',
           'Al revisar las opciones de salud para un vecino de Boadilla, siempre planteamos la diferencia entre la modalidad de cuadro médico y la de reembolso. El reembolso puede permitir acudir a profesionales o centros externos elegibles según la póliza, pero hay que comprobar el porcentaje, los límites, los servicios, el ámbito geográfico y la documentación. Para familias que buscan comodidad, una modalidad sin copagos puede ser una opción a valorar, siempre según las condiciones concretas del producto.',
-          'Además de los servicios básicos, en Boadilla damos mucha importancia a los extras que realmente aportan valor. Hablamos de la fisioterapia y la podología, servicios muy utilizados por los vecinos deportistas del municipio, o la asistencia psicológica y nutricional, cada vez más relevante tras los cambios de hábitos de los últimos años. Un buen asesor de seguros en Boadilla te ayudará a desglosar qué compañía ofrece el mejor servicio de telemedicina para esas consultas rápidas de madrugada con el pediatra y cuál garantiza una segunda opinión médica internacional en caso de enfermedades graves. La salud es lo más importante, y en Boadilla, disponer de una póliza robusta es sinónimo de paz mental para toda la familia.',
+          'Además de los servicios básicos, en Boadilla conviene revisar qué modalidad incluye fisioterapia, podología, asistencia psicológica, nutrición o telemedicina. La segunda opinión médica internacional, si se ofrece, debe comprobarse en la documentación del producto. La salud es lo más importante, y una póliza robusta debe encajar con el uso previsto y sus condiciones.',
         ],
       },
       {
@@ -1539,7 +1528,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Costes, multas y consejos prácticos para dueños de perros en Madrid 2026',
         content: [
-          'Hablemos de dinero, que es lo que suele preocupar tras un cambio legal. El coste de un seguro de responsabilidad civil para un perro no catalogado como peligroso en Madrid es notablemente bajo. En 2026, se pueden encontrar opciones muy sólidas entre los 25 y los 45 euros anuales. Es decir, por apenas 3 euros al mes, usted cumple con la legalidad y protege su patrimonio. Si desea dar un paso más y contratar un seguro de salud veterinaria completo (que incluya hospitalización por enfermedad, vacunas y consultas), los precios suelen oscilar entre los 15 y los 35 euros mensuales, dependiendo de la edad y raza del animal.',
+          'Hablemos de dinero, que es lo que suele preocupar tras un cambio legal. El coste de la responsabilidad civil para un perro depende del animal, el ámbito territorial, los límites y el producto seleccionado. Si desea añadir asistencia veterinaria, compruebe también la edad y raza del animal, las exclusiones, los servicios y la prima real antes de decidir.',
           'En el otro lado de la balanza están las multas. No disponer del seguro de perro obligatorio en Madrid se considera una infracción leve bajo la nueva normativa, pero el importe de las sanciones puede graduarse desde los 500 hasta los 10.000 euros dependiendo de la gravedad y de si se ha producido algún percance. La Policía Municipal en parques públicos de Madrid y Boadilla está empezando a solicitar de forma sistemática el justificante de contratación o el último recibo pagado. Es un riesgo económico totalmente innecesario por el bajo coste que tiene la póliza mínima.',
           'Como consejo experto, le sugerimos que guarde siempre una copia digital del recibo del seguro en su teléfono móvil. Así, ante cualquier requerimiento de las autoridades o ante un imprevisto con otro perro en la calle, podrá acreditar la cobertura de inmediato sin necesidad de volver a casa. Si vive en Boadilla y disfruta de los paseos por el monte, recuerde que la responsabilidad civil le protege incluso si el perro causa un accidente a algún ciclista o corredor. La ley busca protección, nosotros buscamos que usted disfrute de su mascota con la máxima tranquilidad real y sin ninguna letra pequeña que le quite el sueño.',
         ],
@@ -1580,14 +1569,14 @@ export const blogPosts: BlogPost[] = [
         heading: 'Entendiendo el mercado de la salud privada en la Comunidad de Madrid',
         content: [
           'La Comunidad de Madrid no es solo el centro económico de España, sino también el mercado con la oferta sanitaria privada más densa y competitiva de todo el país. Esta competencia técnica y comercial se traduce en una enorme variedad de opciones de seguro de salud, pero también en una confusión generalizada sobre los precios reales. Cuando un madrileño busca "¿cuánto cuesta un seguro de salud?", se encuentra con anuncios de "seguros desde 15 euros" que, en la práctica, rara vez son soluciones completas para una familia o un autónomo. En 2026, el coste de la sanidad privada está influenciado por la tecnología médica avanzada, los acuerdos con grandes grupos hospitalarios y, por supuesto, por la edad y el historial médico del asegurado.',
-          'Es vital entender que un seguro de salud en Madrid es una inversión en tiempo y tranquilidad. Evitar las listas de espera de la Seguridad Social y tener acceso directo a especialistas en Boadilla, Majadahonda o Madrid centro tiene un valor intrínseco que varía según la modalidad contratada. En nuestra consultoría en Boadilla del Monte, realizamos este análisis de forma diaria para cientos de vecinos, aterrizando las expectativas de precio a la realidad del mercado. Un seguro que parece extremadamente barato suele esconder carencias largas (tiempo de espera para intervenciones) o copagos que pueden disparar el coste mensual si se tiene un problema de salud recurrente. En este artículo detallado, desglosamos las tarifas según los perfiles más comunes y las modalidades de cobertura más populares en Madrid.',
+          'Es vital entender que un seguro de salud en Madrid es una decisión sobre atención, red y condiciones. Algunas modalidades ofrecen canales y profesionales distintos a la sanidad pública, pero la disponibilidad, las carencias y los copagos dependen del producto concreto. En nuestra consultoría en Boadilla del Monte, revisamos esos elementos y aterrizamos las expectativas de precio a la realidad del mercado. Un seguro que parece extremadamente barato puede tener límites, carencias o copagos que conviene leer antes de decidir. En este artículo detallado, desglosamos los criterios según los perfiles más comunes y las modalidades de cobertura más populares en Madrid.',
           'El objetivo de esta guía es proporcionar transparencia. Queremos que, al terminar de leer, sepa qué horquilla de precios es razonable para su situación personal y qué factores debe vigilar para que su prima de salud no suba de forma injustificada el próximo año. Madrid es posiblemente el mejor lugar de España para contratar un seguro de salud por la cantidad de especialistas disponibles, pero requiere ojo clínico para elegir la opción que realmente ofrezca la mejor relación calidad-precio sin trampas comerciales de último minuto.',
         ],
       },
       {
         heading: 'Variables determinantes del precio: Edad, Modalidad y Copagos',
         content: [
-          'El factor número uno que determina el precio de su seguro médico en Madrid es su edad. Los seguros de salud basan su riesgo en estadísticas de longevidad y uso del sistema sanitario. Así, un joven de 25 años es percibido como un riesgo bajo y su prima será muy reducida, mientras que una persona de 65 años se sitúa en un tramo de coste superior debido a la mayor probabilidad de cirugías o tratamientos crónicos. En 2026, estamos viendo cómo las compañías ajustan estas tablas de forma muy competitiva en tramos familiares, premiando la entrada de grupos de 3 o más personas con descuentos que pueden llegar al 20% sobre la tarifa individual.',
+          'El factor número uno que determina el precio de su seguro médico en Madrid es su edad. Los seguros de salud basan su riesgo en estadísticas de longevidad y uso del sistema sanitario. Así, un joven de 25 años puede situarse en un tramo de prima distinto al de una persona de 65 años, pero la tarifa y las condiciones deben confirmarse para el producto concreto. Algunas compañías ofrecen condiciones distintas para grupos familiares; comprueba la composición, el número de asegurados y la tarifa aplicable.',
           'La modalidad de seguro es la segunda gran variable. La opción más económica es la denominada "Sín Hospitalización", que solo cubre consultas y pruebas diagnósticas básicas, ideal para quienes solo buscan agilidad con el especialista. No obstante, la modalidad estrella en Madrid es el "Seguro Completo con Cuadro Médico", que incluye todo: desde el análisis de sangre hasta la cirugía compleja y la hospitalización en habitación individual. Dentro de este seguro completo, usted puede elegir "Con Copago" o "Sin Copago". El copago permite reducir mucho la factura mensual (la prima) a cambio de pagar una pequeña cantidad (entre 2 y 20 euros) cada vez que use los servicios médicos. Si visita poco al médico, el ahorro anual puede ser muy importante.',
           'Finalmente, el historial médico previo es un componente que los comparadores de internet suelen ignorar pero que es crítico. Si usted tiene una preexistencia, como una hernia discal o una patología cardíaca diagnosticada, la aseguradora puede "excluir" esa patología o aplicarle un pequeño recargo. Esta es la razón por la cual un presupuesto genérico web puede cambiar radicalmente tras realizar el cuestionario de salud. En nuestra asesoría con registro oficial, conocemos qué compañías en Madrid son más flexibles con ciertos historiales y cuáles ofrecen las mejores respuestas médicas para cada condición específica, evitando que se lleve sorpresas desagradables tras firmar el contrato.',
         ],
@@ -1595,9 +1584,9 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Horquillas de precios reales en Madrid por perfiles (Enero 2026)',
         content: [
-          'Particulares Jóvenes y Adultos (18-40 años): Para este tramo, el mercado madrileño está muy balanceado. Un seguro completo sin copagos suele oscilar entre los 45 y los 60 euros mensuales. Si se opta por un copago bajo o equilibrado, la prima puede descender hasta los 25 o 35 euros. Es el perfil que más se beneficia de las ofertas de bienvenida, aunque siempre asesoramos mirar el precio del segundo año, que es donde muchas plataformas online "clavan" subidas imprevistas.',
-          'Familias (Pack 2 adultos + 2 niños): Este es el perfil donde más competencia existe en Madrid. En 2026, un grupo familiar puede conseguir una cobertura premium sin copagos por una horquilla de entre 150 y 200 euros mensuales para los cuatro miembros. Si la familia reside en zonas del noroeste como Boadilla, valoramos especialmente aquellas compañías que incluyen servicios dentales básicos gratuitos para los niños y una red potente de urgencias pediátricas privadas, ya que el ahorro indirecto en estos servicios es muy alto.',
-          'Seniors y Mayores de 65 años: Se trata de un tramo de asesoramiento delicado. Muchas compañías cierran su contratación a partir de los 65 o 70 años. Para quienes ya tienen un seguro, vigilamos que las renovaciones sean justas. Para nuevas contrataciones, los precios parten normalmente de los 100-120 euros mensuales. En este perfil, nos enfocamos en seguros que ofrezcan un gestor médico personal que ayude con los trámites y coordine las citas, algo vital para mejorar la experiencia de uso en grandes grupos hospitalarios madrileños.',
+          'Particulares Jóvenes y Adultos (18-40 años): La prima depende de la edad, la modalidad, los copagos, el cuestionario de salud y la aceptación. Compara el presupuesto real y el precio de renovación en lugar de tomar una horquilla general como promesa.',
+          'Familias (Pack 2 adultos + 2 niños): Este perfil requiere revisar composición, uso previsto, modalidad, copagos y red médica; la prima y los servicios dentales o pediátricos dependen de la póliza concreta.',
+          'Seniors y Mayores de 65 años: Se trata de un tramo de asesoramiento delicado. La edad de contratación, la aceptación, el cuestionario y la prima dependen del producto y de las condiciones vigentes; conviene confirmarlos antes de decidir.',
         ],
       },
       {
@@ -1612,8 +1601,8 @@ export const blogPosts: BlogPost[] = [
         heading: 'Conclusión: Por qué comparar con un profesional de Boadilla',
         content: [
           'Elegir el seguro de salud adecuado en Madrid basándose solo en el precio del primer resultado de Google es un riesgo que puede salir caro a largo plazo. La salud privada es un sector de servicios donde la garantía de que el seguro responderá cuando surja una enfermedad compleja es lo único que realmente importa. En nuestra asesoría en Boadilla del Monte, aportamos ese criterio técnico humano. Valoramos no solo la prima, sino la calidad del cuadro médico en su barrio, el compromiso de permanencia, las carencias y, sobre todo, la evolución histórica de las subidas de precio de cada compañía.',
-          'Nuestra intermediación no tiene ningún coste adicional para usted. Las compañías nos pagan por captar y gestionar clientes fieles y bien informados, lo que significa que usted recibe un asesoramiento experto totalmente gratuito y con la garantía de un profesional colegiado. Madrid ofrece los mejores médicos del mundo; nosotros nos aseguramos de que usted tenga el mejor contrato del mercado para acceder a ellos sin preocupaciones económicas ni letra pequeña.',
-          'Si está listo para dejar de adivinar y quiere una comparativa real ajustada a su edad y necesidades, le invitamos a enviarnos un mensaje rápido o a rellenar nuestro formulario de salud. En menos de 24 horas recibirá una propuesta clara, honesta y explicada punto por punto para que tome la mejor decisión posible en 2026. Su salud y la de su familia no pueden esperar a que la suerte decida por usted.',
+          'Nuestra intermediación no tiene ningún coste adicional para usted. Explicamos las opciones, el cuadro médico y las condiciones para que decida con información clara; la aseguradora y la póliza determinan los servicios y profesionales disponibles.',
+          'Si está listo para dejar de adivinar y quiere una revisión ajustada a su edad y necesidades, puede enviarnos un mensaje o rellenar nuestro formulario de salud. Revisaremos el caso y explicaremos las opciones y condiciones antes de que decida.',
         ],
       },
     ],
@@ -1638,13 +1627,13 @@ export const blogPosts: BlogPost[] = [
     category: 'consejos',
     readTime: '18 min',
     metaTitle: 'Seguro Dental Familias Madrid · ¿Merece la pena? Guía 2026',
-    metaDescription: 'Guía sobre seguros dentales familiares en Madrid. Te explicamos en detalle cada cobertura, ahorros del 40% en tratamientos y consejos para elegir la mejor clínica en 2026.',
+    metaDescription: 'Guía sobre seguros dentales familiares en Madrid. Te explicamos coberturas, redes, tarifas de tratamientos y qué revisar antes de elegir clínica en 2026.',
     sections: [
       {
         heading: 'La salud bucodental en Madrid: El gran vacío del sistema público',
         content: [
           'La salud dental es, históricamente, la gran asignatura pendiente de la sanidad pública en España. En la Comunidad de Madrid, a pesar de contar con grandes centros de excelencia médica, la cobertura odontológica de la Seguridad Social se limita prácticamente a extracciones de urgencia y poco más. Esto deja a las familias madrileñas en una situación de vulnerabilidad económica cuando surge la necesidad de tratamientos comunes pero costosos, como una endodoncia, una ortodoncia infantil o la reposición de piezas mediante implantes. En 2026, el coste de los tratamientos dentales privados en Madrid capital y municipios como Boadilla ha seguido una tendencia al alza, haciendo que el seguro dental pase de ser una opción secundaria a convertirse en una pieza clave de la planificación financiera familiar.',
-          'Contratar un seguro dental familiar no es solo una medida para cuando surge el dolor de muela; es, ante todo, una herramienta de ahorro preventivo. Muchas personas se preguntan si realmente "merece la pena" pagar una cuota mensual por este servicio. La respuesta corta es que sí, siempre y cuando se entienda cómo funciona y qué se está contratando. El seguro dental opera bajo un modelo de franquicia: por una pequeña cuota mensual, usted accede a una red de clínicas de primer nivel con precios pactados y cerrados que suelen ser entre un 30% y un 50% inferiores a los precios de mercado para particulares. A esto se suma que muchos servicios básicos son totalmente gratuitos para el asegurado, lo que incentiva una prevención que, a la larga, ahorra miles de euros en tratamientos complejos.',
+          'Contratar un seguro dental familiar puede ayudar a ordenar la prevención y el coste de algunos tratamientos, siempre que se entienda qué se está contratando. La prima, la red, los actos incluidos y los precios baremados dependen de la modalidad y la documentación del producto. Algunas pólizas incluyen servicios sin coste adicional y otras aplican tarifas reducidas; conviene comprobar cada tratamiento antes de decidir.',
           'En nuestra asesoría con registro oficial en Boadilla del Monte, desgranamos estos contratos para que las familias madrileñas vean el valor real que aportan. No se trata solo de ver descuentos en un folleto, sino de entender qué clínicas cerca de su domicilio están incluidas y cómo proteger la sonrisa de los hijos sin que el presupuesto se resienta. En esta guía detallada, vamos a explicarle sin letra pequeña cómo funciona el seguro dental en Madrid en 2026 y por qué es una de las decisiones de protección más inteligentes que puede tomar este año por un precio sorprendentemente reducido.',
         ],
       },
@@ -1653,14 +1642,14 @@ export const blogPosts: BlogPost[] = [
         content: [
           'La base de cualquier seguro dental serio en Madrid es lo que denominamos "actos gratuitos". Se trata de servicios que no tienen ningún coste adicional para el titular de la póliza y que suelen incluir las limpiezas de boca anuales, las radiografías panorámicas (vitales para diagnósticos iniciales complejos), las revisiones periódicas y las extracciones simples que no requieran cirugía. Solo con que dos miembros de una familia se realicen una limpieza bucal y una revisión completa al año, el coste de la póliza dental suele estar ya prácticamente amortizado. Es una forma de obligarse a cuidar la salud bucal de forma regular sin el miedo a la factura final.',
           'Para los tratamientos que sí tienen coste, como los empastes, las fundas de porcelana o los tratamientos de encías, entra en juego la "franquicia dental". Estos son precios baremados que la aseguradora impone a la clínica dental. Usted, como asegurado, sabrá de antemano exactamente cuánto le va a costar un empaste en Pozuelo o una endodoncia en el centro de Madrid, sin sorpresas de última hora basadas en "presupuestos personalizados" que a veces inflan los costes innecesariamente. Este control de precios es especialmente valioso en Madrid, donde el rango de tarifas entre diferentes barrios puede ser abismal. El seguro dental unifica la calidad y el precio, dándole un poder de negociación que como particular es difícil de conseguir.',
-          'En tratamientos de alta especialización como los implantes, el ahorro con seguro dental es masivo. Un proceso completo que podría costar 1.500 euros yendo por libre, puede reducirse a 800 o 900 euros con una buena póliza familiar. Además, las pólizas dentales modernas en Madrid suelen incluir ahora servicios complementarios de estética dental (blanqueamientos, carillas) con descuentos importantes, reflejando la realidad de lo que las familias demandan hoy en día. Como expertos, ayudamos a comparar no solo el catálogo de precios, sino la tecnología que usan las clínicas asociadas, asegurando que el ahorro no vaya en detrimento de la calidad médica exigida.',
+          'En tratamientos de alta especialización como los implantes, el coste final depende mucho de la clínica, el tratamiento y la modalidad. Algunas pólizas aplican precios concertados o descuentos, pero no conviene convertir un ejemplo en una promesa: revisa el cuadro de tarifas y el presupuesto concreto. Los servicios de estética dental también pueden tener condiciones propias.',
         ],
       },
       {
         heading: 'Ortodoncia infantil y juvenil en Madrid: La preocupación de los padres',
         content: [
           'Para las familias que residen en Boadilla, Majadahonda y otras zonas de Madrid con una alta tasa de población infantil, la ortodoncia es el tema reina en las consultas de seguros dentales. Sabemos que el coste de un tratamiento de brackets o de alineadores invisibles (como Invisalign) es un desembolso muy importante que suele llegar justo cuando la familia tiene otros gastos educativos elevados. Contar con un seguro dental desde que los niños son pequeños permite acceder a revisiones ortodónticas periódicas gratuitas que detectan problemas de maloclusión antes de que sean graves y mucho más caros de corregir.',
-          'Cuando llega el momento de la ortodoncia, un buen seguro dental familiar en Madrid ofrece dos ventajas críticas: el aparato de retención y la primera fase del estudio suelen ser gratuitos o tener un precio simbólico, y el tratamiento mensual tiene un coste bonificado. En un tratamiento de 24 meses, el ahorro total acumulado puede superar fácilmente los 1.000 euros por cada hijo. Algunas aseguradoras incluso ofrecen "módulos de ortodoncia especializada" para adolescentes de Madrid que priorizan la estética con sistemas invisibles, haciendo que lo que antes era prohibitivo sea ahora accesible para una familia media mediante pagos fraccionados y seguros.',
+          'Cuando llega el momento de la ortodoncia, revisa si el estudio, la retención, el tratamiento y la forma de pago tienen condiciones específicas. Algunas aseguradoras ofrecen módulos de ortodoncia o precios concertados, pero el alcance y el coste dependen del producto, la clínica y la situación de cada paciente.',
           'Además, la mayoría de seguros dentales en 2026 no solo cubren la parte estética de la ortodoncia, sino que vigilan la salud bucal integral durante todo el proceso. Esto incluye la prevención de caries durante el uso de los aparatos y las revisiones de higiene obligatorias. Como asesores locales, conocemos qué aseguradoras en el entorno de Boadilla tienen convenios con los ortodoncistas más reputados, asegurando que sus hijos estén en las mejores manos. No se conforme con la clínica más barata; busque el equilibrio entre un precio baremado por el seguro y una reputación clínica impecable que nosotros le ayudamos a contrastar.',
         ],
       },
@@ -1668,14 +1657,14 @@ export const blogPosts: BlogPost[] = [
         heading: 'Cómo elegir la mejor clínica y evitar trampas en Madrid',
         content: [
           'El mercado dental en Madrid está saturado de ofertas agresivas y "clínicas franquicia" de bajo coste que a veces priman la rentabilidad sobre la calidad asistencial. La ventaja de contratar su seguro dental a través de una compañía líder (como recomendamos en nuestra consultoría de Boadilla) es que estas aseguradoras auditan periódicamente las clínicas que forman parte de su red. Si una clínica en Madrid recibe quejas constantes o sus tratamientos no cumplen ciertos estándares técnicos, la compañía la expulsa de su cuadro médico. Esto proporciona una capa de seguridad y garantía de calidad que usted nunca tendría yendo a ciegas a una clínica desconocida.',
-          'A la hora de elegir su seguro dental familiar en Madrid, fíjese en tres puntos clave: primero, que no tenga periodos de carencia injustificados (debería poder usarlo de inmediato para una limpieza o un empaste); segundo, que el cuadro de clínicas cerca de su casa en Boadilla o su trabajo en Madrid sea amplio para tener donde elegir; y tercero, que las urgencias dentales 24 horas estén cubiertas y bien ubicadas. Una muela que empieza a doler un sábado por la noche en Boadilla requiere una respuesta rápida, y su seguro debe proporcionarle un teléfono de asistencia y una clínica de urgencias operativa en el trayecto hacia Madrid capital.',
-          'En nuestra asesoría, no solo le damos el precio de la póliza dental (que para una familia de 4 personas suele rondar los 15-20 euros mensuales en total), sino que le ayudamos a leer la letra pequeña sobre los materiales usados en implantes y las marcas de ortodoncia permitidas. Queremos que entienda que el seguro dental es un contrato de servicios donde la transparencia es lo único que garantiza su satisfacción a largo plazo. Madrid tiene fantásticos profesionales dentales; nosotros solo le damos la llave maestra para acceder a ellos con los mejores precios del mercado y sin ninguna letra pequeña que estropee su sonrisa ni su presupuesto.',
+          'A la hora de elegir su seguro dental familiar en Madrid, fíjese en tres puntos clave: primero, qué actos tienen carencia o disponibilidad desde el inicio; segundo, que el cuadro de clínicas cerca de su casa o trabajo sea adecuado; y tercero, cómo funcionan las urgencias y los canales de asistencia. Una muela que empieza a doler un sábado por la noche requiere comprobar previamente qué canal y qué clínica contempla la póliza.',
+          'En nuestra asesoría, revisamos el precio de la póliza y la letra pequeña sobre materiales, implantes y marcas de ortodoncia permitidas. El coste depende de la composición familiar y la modalidad; la documentación del producto debe explicar qué se incluye y qué se paga aparte.',
         ],
       },
       {
         heading: 'Conclusión: La sonrisa de su familia merece un plan experto',
         content: [
-          'Invertir en un seguro dental familiar es, en esencia, comprar tranquilidad. Es saber que la salud bucal de sus hijos está vigilada desde la infancia y que usted podrá afrontar cualquier imprevisto odontológico sin descapitalizar sus ahorros. En Madrid, donde el ritmo de vida y el nivel de exigencia son altos, la prevención dental es una de las mejores decisiones de bienestar que puede tomar. Por el precio de unas pocas cenas al año, toda su familia tendrá garantizada una atención dental de primer nivel y acceso a especialistas de confianza en Boadilla y alrededores.',
+          'Invertir en un seguro dental familiar puede ayudar a planificar revisiones y tratamientos, pero la atención disponible, la red y los precios dependen de la póliza. En Madrid conviene comprobar qué clínicas y profesionales están incluidos antes de contratar.',
           'Si tiene dudas sobre qué seguro dental le ofrece el mejor ahorro para un tratamiento específico o si quiere una comparativa honesta entre las principales aseguradoras de España con red en Madrid, estamos aquí para atenderle. Nuestra consultoría en Boadilla del Monte le ofrece esa visión con registro oficial y profesional que los comparadores automáticos no pueden darle. Hablemos de su tranquilidad y de la salud de los suyos hoy mismo para que el próximo tratamiento dental no sea un problema, sino un paso más en el cuidado de su familia.',
           'Para una comparativa personalizada de seguros dentales o para resolver cualquier duda sobre coberturas y clínicas en su barrio de Madrid, le invitamos a visitar nuestra sección dental o a contactarnos a través de nuestro formulario de contacto. Estamos deseando ayudarle a cuidar la sonrisa de su familia con la profesionalidad y cercanía que nos caracteriza en toda la Comunidad de Madrid.',
         ],
@@ -1684,7 +1673,7 @@ export const blogPosts: BlogPost[] = [
     tips: [
       'Usa las limpiezas gratuitas anuales: no solo mejoran tu salud, sino que amortizan el coste total del seguro.',
       'Si planeas una ortodoncia infantil, contrata el seguro dental unos meses antes para beneficiarte de revisiones preventivas gratuitas.',
-      'Compara siempre el coste estimado con franquicia frente al precio particular de la misma clínica: el ahorro suele superar el 40%.',
+      'Compara siempre el coste estimado con franquicia frente al precio particular de la misma clínica y comprueba las condiciones del tratamiento.',
       'Verifica que el seguro dental sea válido en toda España, ideal si viajas o pasas tiempo fuera de Madrid.',
     ],
     faqs: [
@@ -1724,7 +1713,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Coberturas críticas para el profesional: IT y salud digital',
         content: [
           'Más allá de la asistencia médica convencional, un autónomo en Madrid necesita coberturas específicas que palien su vulnerabilidad contractual. La más importante es la Incapacidad Temporal (IT). Muchas pólizas de salud para autónomos ofrecen opcionalmente una indemnización diaria en caso de baja por enfermedad o accidente. Esto significa que si usted se rompe una pierna y no puede trabajar durante un mes, la aseguradora le pagará una cantidad diaria pactada (por ejemplo, 60 o 100 euros al día) independientemente de lo que perciba de la mutua de la Seguridad Social. En Madrid, donde los costes de alquiler de locales y autónomos son elevados, este suplemento es lo que mantiene a flote el negocio durante la recuperación.',
-          'La salud digital es el segundo pilar. En 2026, un autónomo de Madrid no tiene tiempo para desplazarse por la Castellana solo para que le expliquen unos resultados de analítica. Buscamos seguros que ofrezcan videoconsultas médicas 24/7, chat directo con especialistas y, lo más importante, receta electrónica privada que llegue directamente al móvil. Esta agilidad permite que un pequeño susto de salud se resuelva en 15 minutos desde el despacho, sin interrumpir la jornada laboral. Además, muchas compañías están incluyendo servicios de psicología y nutrición online, fundamentales para gestionar el estrés y el estilo de vida que conlleva el emprendimiento en una capital tan exigente.',
+          'La salud digital es el segundo pilar. En 2026, un autónomo de Madrid puede valorar videoconsultas médicas, chat con especialistas y receta electrónica cuando el producto lo incluya. Estos canales pueden ayudar a organizar consultas sin desplazamientos, pero el servicio, la disponibilidad y el alcance dependen de la póliza. Además, algunas compañías incluyen psicología y nutrición online; comprueba las condiciones antes de decidir.',
           'Finalmente, asesoramos sobre los periodos de carencia. Un autónomo que decide contratar ahora un seguro no debe esperar meses para tener acceso a los servicios que necesita. Negociamos con las compañías para eliminar o reducir estos tiempos de espera si el cliente ya venía de otra aseguradora, permitiendo una transición fluida. En Boadilla y Majadahonda, donde muchos autónomos tienen familias jóvenes, también ponemos el foco en las coberturas de maternidad y pediatría, asegurando que el seguro no solo cubra el lado profesional, sino que sea el paraguas total de tranquilidad para su hogar en Madrid.',
         ],
       },
@@ -1741,7 +1730,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           'En el competitivo ecosistema empresarial de Madrid, la salud merece una decisión propia. Un seguro puede ayudar a organizar el acceso a la atención prevista, pero las coberturas, la disponibilidad y las autorizaciones dependen de la modalidad y de la póliza.',
           'Si busca revisar sus seguros actuales o contratar su primera póliza como autónomo, en nuestra asesoría de seguros en Madrid podemos ayudarle a ordenar el uso previsto, el cuadro médico y las condiciones que conviene comprobar. Si también quiere valorar el tratamiento fiscal, le indicamos la fuente oficial y la documentación que debe revisar con su asesor.',
-          'Le invitamos a solicitar una consultoría de salud para autónomos hoy mismo. En menos de 24 horas, le presentaremos un estudio personalizado con las opciones más eficientes del mercado madrileño para 2026. Proteja su presente y asegure su futuro profesional con nosotros. Estamos a su lado en Madrid, Boadilla y toda la zona noroeste.',
+          'Le invitamos a solicitar una revisión de salud para autónomos. Podemos ordenar el uso previsto, el cuadro médico y las condiciones de las opciones disponibles antes de que decida. Estamos a su lado en Madrid, Boadilla y toda la zona noroeste.',
         ],
       },
     ],
@@ -1860,7 +1849,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Proceso de contratación y costes para la pyme madrileña',
         content: [
           'Contratar este seguro es uno de los procesos más rápidos y sencillos en nuestra asesoría de Madrid. Solo necesitamos conocer el convenio colectivo aplicable y el número de trabajadores dados de alta (TC2). Para empresas con número variable de empleados, existen modalidades de regularización anual para que siempre pague lo justo por el personal real que ha tenido durante el ejercicio, lo que ayuda a optimizar los costes operativos de su negocio en Madrid o Boadilla.',
-          'En cuanto al precio, se sorprendería de lo asequible que resulta. Para una oficina técnica en Madrid con 3 empleados, el seguro de accidentes de convenio obligatorio puede costar menos de 100 euros al año en TOTAL para toda la plantilla. Es decir, por apenas 30 euros por empleado al año, está eliminando un riesgo de sanción de miles de euros y protegiendo el futuro de sus trabajadores. En sectores de mayor riesgo como el transporte en Madrid, el precio sube proporcionalmente, pero sigue siendo un gasto marginal dentro de la cuenta de resultados que, además, es 100% deducible en el Impuesto de Sociedades.',
+          'En cuanto al precio, depende del convenio, la actividad, el número de empleados, los capitales y las condiciones de la póliza. En sectores de mayor riesgo como el transporte, el coste puede cambiar de forma relevante. La fiscalidad de la prima también depende de la empresa, su contabilidad y la normativa aplicable; conviene confirmarla con un asesor fiscal.',
           'No espere a recibir una visita de la Inspección de Trabajo para poner en orden sus seguros de convenio en Madrid. Nosotros le entregamos un certificado de cobertura inmediato que garantiza que su empresa cumple con la legalidad vigente desde el minuto uno. Ya sea que su negocio esté en el Parque Empresarial de Boadilla, en el centro de Madrid o en cualquier punto de la Comunidad, estamos listos para ser su departamento de seguros externo y quitarle este problema de la cabeza.',
         ],
       },
@@ -1962,7 +1951,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Revisa la cobertura de salud para autónomos y el alcance fiscal de las primas según la estimación directa, la normativa y tus circunstancias.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'Cobertura y tratamiento fiscal son decisiones distintas',
@@ -2041,7 +2029,6 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'El seguro de decesos no es solo para mayores. Cubre los gastos del sepelio, gestiona los trámites y acompaña a la familia. Te explicamos todo sin eufemismos.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'El tabú que dejamos de lado',
@@ -2127,31 +2114,30 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Muchas personas en Madrid tienen solo seguro dental sin saber que por poco más pueden tener cobertura médica completa. Te ayudamos a decidir sin presión.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
-    reviewCount: 47,
     sections: [
       {
         heading: 'La trampa del "solo dental"',
         content: [
           'En Madrid, muchas personas tienen un seguro dental que les costó muy poco dinero, a menudo incluido como beneficio en una tarjeta de crédito o como addon de un seguro de hogar. Y piensan: "Tengo la boca cubierta, ya está". Pero hay un problema: tener solo seguro dental es como tener un buen seguro de lunas pero no tener cobertura de daños para el resto del coche.',
           'El seguro dental cubre limpiezas, empastes, extracciones y alguna que otra especialidad como endodoncias o prótesis dentales. Pero no cubre nada más. Si te duele la rodilla, si tienes una molestia abdominal, si necesitas un análisis de sangre o una revisión ginecológica, el seguro dental no te sirve de nada.',
-          'Aquí está la revelación que muchos desconocen: el salto de precio entre un buen seguro dental y un seguro de salud completo con cobertura dental incluida es mucho menor de lo que piensas. A menudo, por 15-25€ más al mes, pasas de tener solo la boca cubierta a tener acceso a todas las especialidades médicas, hospitalización, urgencias y pruebas diagnósticas.',
+          'Aquí está el punto que muchos pasan por alto: la diferencia entre un seguro dental y una póliza de salud con dental depende de la edad, la modalidad, los copagos y la aceptación. La póliza de salud puede añadir hospitalización, urgencias o pruebas, pero los servicios disponibles deben comprobarse en su documentación.',
         ],
       },
       {
         heading: 'Comparativa honesta: ¿qué cubre cada uno?',
         content: [
           'Veamos con claridad qué ofrece cada tipo de seguro para que puedas tomar una decisión informada:',
-          'Seguro Dental Básico (15-25€/mes):',
+          'Seguro Dental Básico: modalidad con servicios y precio según producto:',
           '• Revisión y limpieza anual incluida',
           '• Empastes simples y extracciones',
           '• Radiografías dentales',
           '• Descuentos en prótesis y tratamientos estéticos (normalmente no incluidos al 100%)',
           '• Sin copago o copago muy bajo en la mayoría de tratamientos',
           '',
-          'Seguro de Salud con Dental incluido (40-70€/mes según edad):',
-          '• Todo lo anterior más: acceso a médico de cabecera y todas las especialidades médicas',
+          'Seguro de Salud con Dental incluido: modalidad, precio y servicios según producto:',
+          '• Todo lo anterior más: acceso a los servicios y al cuadro médico que indique la póliza elegida',
           '• Hospitalización completa (habitación individual en muchos casos)',
-          '• Urgencias 24h con atención inmediata',
+          '• Urgencias y canales de atención según modalidad',
           '• Pruebas diagnósticas (análisis, radiografías, resonancias)',
           '• Cirugía programada y urgente',
           '• Cobertura dental completa: limpiezas, empastes, extracciones, endodoncias',
@@ -2169,7 +2155,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'El coste real: números sin maquillaje',
         content: [
-          'Vamos a hablar de dinero con honestidad. Un seguro dental básico en Madrid te costará entre 15€ y 25€ al mes. Un seguro de salud completo con cobertura dental incluida te costará entre 40€ y 70€ al mes, dependiendo de tu edad y del tipo de copago que elijas.',
+          'Vamos a hablar de dinero con honestidad. El precio de un seguro dental o de una modalidad de salud con dental depende de la edad, la modalidad, los copagos y las condiciones de aceptación; conviene comparar la prima real y el servicio incluido.',
           'La diferencia, en el peor de los casos, es de unos 45€ al mes (540€ al año). Pero pensemos en lo que incluye esos 540€ adicionales: acceso ilimitado a especialistas, hospitalización cubierta, urgencias sin copago, pruebas diagnósticas...',
           'Una consulta privada, una prueba o un servicio hospitalario tienen un coste que varía según el proveedor, la modalidad y las circunstancias. La póliza debe revisarse por sus propias condiciones, sin asumir que una incidencia amortiza automáticamente la diferencia.',
           'Y si eres autónomo, recuerda que cualquier tratamiento fiscal de una prima de salud depende de la regla de estimación directa y de tus circunstancias; no hace que el seguro de salud completo cueste automáticamente lo mismo que el seguro dental.',
@@ -2201,7 +2187,7 @@ export const blogPosts: BlogPost[] = [
       'Verifica que el cuadro médico tenga buena cobertura en tu zona de Madrid antes de contratar.',
     ],
     faqs: [
-      { question: '¿Puedo añadir dental a mi seguro de salud más tarde?', answer: 'Sí, la mayoría de compañías permiten incluir cobertura dental en tu seguro de salud existente, aunque puede haber un periodo de carencia de 3-6 meses para algunos tratamientos dentales específicos.' },
+      { question: '¿Puedo añadir dental a mi seguro de salud más tarde?', answer: 'Algunos productos permiten añadir cobertura dental, pero la disponibilidad, los actos incluidos y cualquier carencia dependen de la aseguradora y de la modalidad concreta.' },
       { question: '¿El seguro dental incluye implantes y ortodoncia?', answer: 'Normalmente no al 100%. La mayoría de seguros dentales cubren limpiezas, empastes y extracciones, pero los implantes, ortodoncia y tratamientos estéticos suelen tener descuentos (20-40%) más que cobertura completa.' },
       { question: '¿Es mejor dos seguros separados (salud + dental) o uno combinado?', answer: 'Depende. Un seguro combinado suele ser más económico y cómodo de gestionar, pero si ya tienes un buen seguro de salud sin dental, añadir un dental separado puede ser más flexible.' },
       { question: '¿Los niños necesitan seguro dental propio o van incluidos?', answer: 'En un seguro familiar de salud con dental incluido, los hijos menores suelen tener cobertura dental completa. Si contratas solo seguro dental, hay opciones familiares que incluyen a los hijos por un pequeño incremento de prima.' },
