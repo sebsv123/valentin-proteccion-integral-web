@@ -2053,7 +2053,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           'Los seguros de decesos pueden contratarse de diferentes formas, según las necesidades y la situación familiar de cada persona:',
           '• Seguro de decesos individual: Cubre el fallecimiento de una única persona. Es la opción más económica y suele contratarse por personas solteras o cuyos familiares ya tienen su propia cobertura.',
-          '• Seguro de decesos familiar: Cubre a todos los miembros de la unidad familiar (cónyuge, pareja de hecho, hijos, ascendientes en algunos casos). Es la opción más común y rentable para familias con hijos.',
+          '• Seguro de decesos familiar: Puede organizar la cobertura de varias personas —por ejemplo, cónyuge, pareja, hijos u otros familiares— según la composición, la modalidad y las condiciones de la póliza. Conviene revisar quién queda incluido antes de contratar.',
           '• Seguro de decesos senior: Diseñado específicamente para personas mayores de 70 años. Suelen tener primas más altas, pero garantizan la cobertura en una etapa de la vida donde el riesgo es mayor.',
           '• Seguro con prima nivelada: Pagas la misma cuota desde el primer día hasta el final, calculada para toda la vida. Es más cara al principio pero te protege de subidas de precio por edad.',
           '• Seguro con prima natural: La prima varía según la edad del asegurado. Es más barata cuando eres joven y va subiendo conforme envejeces.',
