@@ -90,7 +90,7 @@ const faqSchema = {
       "name": "¿Cuánto cuesta un seguro de vida que cubra el 100% del gap?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El precio depende de la edad, el capital asegurado y las coberturas elegidas. Para un perfil de 40 años en Madrid, una protección integral que cubra el capital de la hipoteca más un capital adicional para gastos familiares (mínimo 18.000€, frente a los ~9.000€ de la competencia) puede costar menos de lo que imaginas. Rosa y Sebastián calculan tu presupuesto personalizado en 30 minutos, sin compromiso."
+        "text": "El precio depende de la edad, el capital asegurado y las coberturas elegidas. Para un perfil de 40 años en Madrid, conviene revisar el capital de la hipoteca, las garantías y las exclusiones antes de comparar propuestas. Rosa y Sebastián pueden ayudarte a ordenar la información sin compromiso."
       }
     }
   ]
@@ -390,7 +390,7 @@ export default function BlogPostPage() {
                 { q: "¿El convenio colectivo de trabajo cubre todo en caso de invalidez?", a: "No. El convenio colectivo añade una indemnización extra sobre la base de la prestación por incapacidad permanente de la Seguridad Social (que es el 55% de la base reguladora). La indemnización convenio típica en Madrid oscila entre 30.000€ y 50.000€, insuficiente para cubrir el déficit de ingresos a largo plazo de una familia." },
                 { q: "¿Cuánto recibe una viuda en Madrid tras el fallecimiento del cónyuge?", a: "La pensión de viudedad de la Seguridad Social oscila entre el 52% y el 70% de la base reguladora del fallecido. En Madrid, esto suele traducirse en aproximadamente 1.200€ mensuales. Si la hipoteca son 900€/mes, quedan solo 300€ para cubrir alimentación, guardería (400€), transporte y demás gastos familiares, generando un déficit de al menos 1.000€ mensuales." },
                 { q: "¿Qué diferencia hay entre el seguro de vida del banco y una póliza independiente?", a: "El seguro de vida del banco suele tener primas más elevadas (entre 30% y 60% más caras) y coberturas estandarizadas que no se adaptan a la situación familiar real. Una póliza independiente permite personalizar el capital asegurado, añadir coberturas como invalidez permanente total y parcial, y el capital se paga directamente al beneficiario (notario), no al banco. Además, el suicidio está cubierto desde el primer año en pólizas independientes." },
-                { q: "¿Cuánto cuesta un seguro de vida que cubra el 100% del gap?", a: "El precio depende de la edad, el capital asegurado y las coberturas elegidas. Para un perfil de 40 años en Madrid, una protección integral que cubra el capital de la hipoteca más un capital adicional para gastos familiares (mínimo 18.000€, frente a los ~9.000€ de la competencia) puede costar menos de lo que imaginas. Rosa y Sebastián calculan tu presupuesto personalizado en 30 minutos, sin compromiso." }
+                { q: "¿Cuánto cuesta un seguro de vida que cubra el capital que necesito?", a: "El precio depende de la edad, el capital asegurado y las coberturas elegidas. Conviene revisar el capital de la hipoteca, las garantías y las exclusiones antes de comparar propuestas. Rosa y Sebastián pueden ayudarte a ordenar la información sin compromiso." }
               ].map((faq, i) => (
                 <details key={i} className="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-slate-100 transition-colors">

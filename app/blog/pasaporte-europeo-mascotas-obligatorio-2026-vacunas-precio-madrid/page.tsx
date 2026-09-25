@@ -90,7 +90,7 @@ const faqSchema = {
       "name": "¿Cubre el seguro de mascotas los gastos del pasaporte europeo y vacunas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Las pólizas de seguro de mascotas que gestionamos incluyen cobertura del 100% para las vacunas obligatorias (rabia), microchip, expedición del pasaporte europeo y revisión veterinaria previa al viaje. Además, cubrimos gastos veterinarios durante los viajes por la UE, incluyendo urgencias, accidentes y enfermedades. También ofrecemos un 10% de descuento si contratas el seguro de mascotas junto con el de salud familiar."
+        "text": "Algunas pólizas de mascotas pueden incluir gastos relacionados con vacunas, microchip, pasaporte europeo o asistencia veterinaria durante un viaje, pero el alcance, los límites y las exclusiones dependen del producto. También conviene comprobar por separado cualquier ventaja al combinar pólizas."
       }
     }
   ]
@@ -381,7 +381,7 @@ export default function BlogPostPage() {
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">2</div>
                 <h3 className="font-bold mb-2">Sencillez total</h3>
-                <p className="text-slate-300 text-sm">WhatsApp → Check-up veterinario → Póliza activa. En 30 minutos.</p>
+                <p className="text-slate-300 text-sm">WhatsApp → revisión veterinaria y de documentación → propuesta según modalidad.</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">3</div>
@@ -391,7 +391,7 @@ export default function BlogPostPage() {
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">4</div>
                 <h3 className="font-bold mb-2">Garantías sólidas</h3>
-                <p className="text-slate-300 text-sm">Reembolso 100% vacunas/pasaporte si viajas. Veterinario 24h en toda la UE.</p>
+                <p className="text-slate-300 text-sm">Revisa si la modalidad contempla vacunas, pasaporte, urgencias o asistencia durante el viaje y bajo qué límites.</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur md:col-span-2">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">5</div>
@@ -437,7 +437,7 @@ export default function BlogPostPage() {
                 { q: "¿Cuánto cuesta sacar el pasaporte europeo a una mascota en Madrid?", a: "El coste total en Madrid para obtener el pasaporte europeo oscila entre 100€ y 150€. Este importe incluye: microchip (20-40€), vacuna de la rabia (30-50€), pasaporte oficial expedido por veterinario autorizado (25-40€), y revisión veterinaria general. Además, si la mascota viaja por primera vez después de los 12 meses de la vacunación, se requiere una titulación serológica adicional (50-70€)." },
                 { q: "¿Qué vacunas son obligatorias para el pasaporte europeo de mascotas?", a: "La única vacuna obligatoria para obtener el pasaporte europeo es la de la rabia. La mascota debe tener al menos 12 semanas de edad para recibir la primera dosis, y el pasaporte se puede expedir desde el día 21 después de la vacunación. Aunque otras vacunas (como moquillo o parvovirus) no son obligatorias para viajar, se recomiendan para proteger la salud del animal." },
                 { q: "¿Cuál es la multa por viajar sin pasaporte europeo con mi mascota?", a: "Viajar sin pasaporte europeo puede acarrear una multa de hasta 600€ en la frontera, además de la retención del animal en cuarentena hasta que se regularice su situación sanitaria. El coste de la cuarentena y el traslado corren por cuenta del propietario, pudiendo superar los 1.000€ en total. Estas sanciones están establecidas en el RD 83/2023 de normativa comunitaria sobre movilidad de animales de compañía." },
-                { q: "¿Cubre el seguro de mascotas los gastos del pasaporte europeo y vacunas?", a: "Sí. Las pólizas de seguro de mascotas que gestionamos incluyen cobertura del 100% para las vacunas obligatorias (rabia), microchip, expedición del pasaporte europeo y revisión veterinaria previa al viaje. Además, cubrimos gastos veterinarios durante los viajes por la UE, incluyendo urgencias, accidentes y enfermedades. También ofrecemos un 10% de descuento si contratas el seguro de mascotas junto con el de salud familiar." }
+                { q: "¿Cubre el seguro de mascotas los gastos del pasaporte europeo y vacunas?", a: "Depende de la modalidad. Revisa si incluye vacunas, microchip, pasaporte o asistencia veterinaria durante el viaje, junto con sus límites, exclusiones y requisitos." }
               ].map((faq, i) => (
                 <details key={i} className="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-slate-100 transition-colors">
@@ -460,7 +460,7 @@ export default function BlogPostPage() {
               Evita multas: Protege a tu compañero hoy
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              No dejes el pasaporte para última hora. Un simple WhatsApp y en 30 minutos sabrás exactamente qué necesitas y cuánto cuesta. Check-up veterinario gratuito para mascotas de Madrid y Boadilla del Monte.
+              No dejes el pasaporte para última hora. Un simple WhatsApp permite revisar la documentación y las condiciones de la modalidad que pueda encajar con tu mascota y tu viaje.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a href="tel:603448765" className="inline-flex items-center justify-center gap-3 text-2xl font-bold text-white hover:text-amber-300 transition-colors">

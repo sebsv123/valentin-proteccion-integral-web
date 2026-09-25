@@ -66,7 +66,6 @@ export function ProductHero({ product, locale }: { product: Product; locale?: 'e
 }
 
 export function CoverageHighlights({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
-  const isNegocio = product.slug === 'negocio';
   const en = locale ? locale === 'en' : useLocale() === 'en';
   
   return (
@@ -77,11 +76,6 @@ export function CoverageHighlights({ product, locale }: { product: Product; loca
             <p className="kicker">{en ? 'Featured cover' : 'Coberturas destacadas'}</p>
             <h2 id="coverage-title" className="mt-3 section-title">{en ? `What matters about ${product.label}, explained clearly` : `Lo importante de ${product.label}, explicado con más orden`}</h2>
             <p className="section-copy mt-4">{en ? 'A short summary of what usually shapes the decision, what varies and what is worth checking before arranging cover.' : 'Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.'}</p>
-            {isNegocio && (
-              <p className="mt-4 text-base leading-7 text-[var(--muted)]">
-                Un seguro de negocio bien diseñado protege tanto el continente (local, instalaciones, mobiliario) como el contenido (stock, equipos, mercancía) y la responsabilidad frente a terceros. Las coberturas más habituales en un multirriesgo de comercio o pyme incluyen:
-              </p>
-            )}
           </div>
          </RevealLight>
          <div className="grid gap-6 md:grid-cols-2">

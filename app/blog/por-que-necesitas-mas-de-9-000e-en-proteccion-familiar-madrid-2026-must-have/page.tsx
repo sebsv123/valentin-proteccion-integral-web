@@ -150,7 +150,7 @@ export default function BlogPostPage() {
               
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
                 <p className="text-red-900 font-bold text-lg mb-2">Madrid 2026: La realidad económica</p>
-                <p className="text-red-800">Las hipotecas han subido un 5% en el último año. El coste de vida de una familia con niños en Madrid supera los 2.500€/mes. Y si el siniestro es invalidez en lugar de fallecimiento, tu seguro de hipoteca cubre solo el <strong>50% del capital</strong>. ¿Proteges realmente a tu familia o dejas un hueco económico que la hundirá?</p>
+              <p className="text-red-800">Las hipotecas y el coste de vida pueden presionar el presupuesto familiar. Además, la cobertura ante invalidez puede diferir de la cobertura por fallecimiento según la póliza. Revisa capitales, exclusiones y condiciones para saber qué hueco económico quedaría en tu caso.</p>
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function BlogPostPage() {
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Hay dos ventajas que diferencian una protección real de una póliza "estándar": la <strong>cobertura completa desde el primer día</strong>, incluso en situaciones que otras compañías excluyen, y la <strong>liquidación directa sin intermediarios</strong>.
+              Hay dos aspectos que diferencian una protección adecuada de una póliza estándar: que los capitales y garantías respondan al riesgo que quieres cubrir y que el procedimiento de siniestro esté claro desde el principio. Las exclusiones y los plazos siempre dependen del contrato.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -250,7 +250,7 @@ export default function BlogPostPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-3">Directo al notario: Sin gestores</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  El capital se paga íntegramente al beneficiario a través del notario, sin gestores ni intermediarios que retengan comisiones. La familia recibe el 100% del capital en <strong>10-15 días</strong>, frente a los meses que pueden tardar otras compañías con procesos burocráticos complejos.
+                  El capital y el procedimiento de pago dependen de la póliza, la documentación y la gestión del siniestro. Conviene revisar quién interviene, qué plazos se indican y qué requisitos debe cumplir el beneficiario.
                 </p>
               </div>
             </div>
@@ -369,7 +369,7 @@ export default function BlogPostPage() {
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">4</div>
                 <h3 className="font-bold mb-2">Garantías legales</h3>
-                <p className="text-slate-300 text-sm">Directo notario (LCS asegura pago íntegro). Respuesta en 30 minutos o cita gratuita.</p>
+                <p className="text-slate-300 text-sm">Revisamos capitales, garantías y documentación antes de decidir. Consulta sin compromiso.</p>
               </div>
             </div>
 

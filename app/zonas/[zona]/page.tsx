@@ -153,7 +153,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
             <div className='grid md:grid-cols-3 gap-6'>
               {[
                 { icon: Building2, title: 'Agente registrado DGSFP', desc: 'Asesoramiento personalizado con registro oficial DGSFP.' },
-                { icon: Sparkles, title: 'Respuesta en horario', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas, sin esperas, sin robots.' },
+                    { icon: Sparkles, title: 'Respuesta en horario', desc: 'Contacto directo con Rosa o Sebastián por WhatsApp. Sin centralitas ni robots.' },
                 { icon: Heart, title: 'Gestión de siniestros', desc: 'No desaparecemos tras la firma. Te acompañamos en renovaciones, cambios y siniestros.' },
               ].map((item, i) => (
                 <div key={i} className='rounded-xl p-6 border border-[#333]'>
@@ -178,7 +178,7 @@ export default async function ZonaPage({ params }: { params: Promise<{ zona: str
                 { icon: Stethoscope, title: 'Salud privada', desc: 'Coberturas y tiempos según modalidad.' },
                 { icon: Home, title: 'Vida familiar', desc: 'Protege tu patrimonio.' },
                 { icon: Dog, title: 'Mascotas', desc: 'La ley obliga. Te lo gestionamos.' },
-                { icon: Heart, title: 'Dental', desc: 'Revisiones sin espera.' },
+                { icon: Heart, title: 'Dental', desc: 'Revisiones y tratamientos según modalidad.' },
               ].map((item, i) => (
                 <div key={i} className='rounded-xl p-5 shadow-[rgba(0,0,0,0.12)_0px_4px_16px_0px] hover:shadow-[rgba(0,0,0,0.16)_0px_4px_20px_0px] transition-shadow'>
                   <div className='w-10 h-10 rounded-lg bg-[#efefef] flex items-center justify-center mb-3'>

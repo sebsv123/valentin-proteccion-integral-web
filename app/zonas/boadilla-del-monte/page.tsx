@@ -76,7 +76,7 @@ export default function BoadillaPage() {
   const wCotiza = buildWhatsAppHref("Hola, soy de Boadilla del Monte y necesito información sobre seguros.");
 
   const seguros = [
-    { nombre: "Salud", desc: "Médicos y hospitales sin esperas ni copagos ocultos." },
+    { nombre: "Salud", desc: "Médicos y hospitales según modalidad, cuadro médico y condiciones." },
     { nombre: "Vida", desc: "Protección para tu familia ante cualquier imprevisto." },
     { nombre: "Dental", desc: "Revisiones, limpiezas y tratamientos sin sorpresas." },
     { nombre: "Mascotas", desc: "Veterinario, vacunas y responsabilidad civil incluidos." },

@@ -27,7 +27,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "content": [
           "• Young and Healthy Profile: Insurers specializing in prevention stand out for their flexibility and prices from €26-33/month with controlled co-payment.",
           "• Families: Options with the largest medical networks in Spain are ideal due to their excellent pediatric care.",
-          "• Self-employed: Leading companies offer the best combination of coverage and digital services, taking advantage of the tax deduction of up to €500/year.",
+          "• Self-employed: Review expected use and policy conditions first; any tax treatment of the premium depends on direct estimation, current rules and your circumstances.",
           "• Premium Coverage: Certain entities are unbeatable if you prioritize access to your own high-level centers and renowned specialists."
         ]
       },
@@ -44,7 +44,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "heading": "When the cheapest is expensive",
         "content": [
           "Choosing based on price alone has risks. A €20 policy that excludes your hypertension will force you to pay for cardiologists out of your pocket. At the end of the year, you will have spent more than taking out a €50 policy that would cover everything.",
-          "For the self-employed, the tax deduction changes the equation: a better policy can be cheaper in net terms thanks to the savings in personal income tax."
+          "For the self-employed, keep the cover decision separate from any tax treatment: the applicable rule and its effect depend on the taxpayer's circumstances."
         ]
       },
       {
@@ -71,7 +71,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       },
       {
         "question": "Can the self-employed deduct health insurance?",
-        "answer": "Yes, up to €500 per year per insured (owner, spouse and children under 25 years of age) in personal income tax."
+        "answer": "Under direct estimation, Article 30.2.5.a) of the Spanish Personal Income Tax Act may cover premiums for the taxpayer, their spouse and children under 25 who live with them, subject to a €500 limit per eligible person, the €1,500 disability limit when applicable and the requirements. It is not an automatic refund."
       },
       {
         "question": "Is it better with a copay or without a copay?",
@@ -431,7 +431,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       {
         "heading": "Tax advantages for self-employed people in Madrid: \"Free\" insurance",
         "content": [
-          "If you are self-employed in the Community of Madrid, the real cost of your health insurance is significantly lower than what appears on your bank receipt thanks to Spanish taxation. The current law allows the self-employed worker to deduct as an expense from his professional activity up to 500 euros per year for himself, another 500 for his spouse and 500 euros for each child under 25 years of age who lives with him. This deduction is applied directly to the personal income tax tax base, which in practice means that approximately 20% to 30% of the insurance premium (depending on your tax bracket) will be returned to you in the form of a lower tax payment.",
+        "Under the direct-estimation framework, Spanish rules may allow health-insurance premiums paid by a self-employed taxpayer to be considered a deductible expense for the taxpayer and certain eligible family members, subject to the €500 and €1,500 statutory limits and other requirements. That limit is not an automatic refund or a euro-for-euro reduction in tax due; the individual tax effect must be checked with the official source or a tax adviser.",
           "This makes private healthcare for a self-employed person in Madrid not a luxury, but a logical business decision. The speed in a diagnosis allows an earlier return to work and avoids unproductive periods of sick leave. In addition, many insurers in Madrid offer specific insurance for the self-employed that includes daily compensation in case of hospitalization, reinforcing the professional's safety net. We calculate the annual net savings for our self-employed clients so that they see that, in real terms, having the best private healthcare for their family can end up costing them very little money per month after adjusting their accounts with the Treasury.",
           "For SMEs and local businesses in Boadilla and Madrid with more than 5 employees, there are also collective health policies. These offer even lower prices than individual hiring and are a top-level talent loyalty tool. The employee receives the insurance as a highly valued salary in kind, and for the company, the cost is fully deductible in Corporate Tax. It is one of the most efficient forms of emotional remuneration in the current work environment in Madrid."
         ]
@@ -448,7 +448,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
     "tips": [
       "Always evaluate the medical team in your area: cheap insurance is of no use if you do not have specialists nearby in Madrid or Boadilla.",
       "If you go to the doctor rarely, insurance with a balanced co-payment can save you more than €400 a year.",
-      "As a self-employed person, add up the tax savings when comparing: your health insurance is one of the best professional investments you can make.",
+      "As a self-employed person, compare the health use, policy conditions and any applicable tax scope separately; the insurance decision should not depend on an assumed saving.",
       "Always check the waiting period for interventions and deliveries: it is usually 6 to 10 months."
     ],
     "faqs": [
@@ -571,7 +571,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "content": [
         "For coverage to be full and immediate, you must communicate the baby's enrolment within a period of between 15 and 30 days from birth:",
         "1. Inclusion without questionnaire: The insurer accepts the baby regardless of its health status at birth.",
-        "2. No waiting periods: You will be able to use a pediatrician, specialists and hospitalization from minute one.",
+        "2. Check waiting periods: access to paediatrics, specialists and hospital care depends on the product and policy conditions.",
         "If you miss the deadline: The baby will be treated as a \"new standard insured\", which involves filling out a health questionnaire and waiting for the usual waiting periods (months)."
       ]
     },
@@ -628,26 +628,26 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   ]
 },
   "mejor-seguro-salud-autonomos-madrid": {
-  "title": "Best health insurance for the self-employed in Madrid: Tax and medical guide 2026",
-  "excerpt": "Are you self-employed in Madrid? Take advantage of the tax advantages and choose the health insurance that truly protects you against sick leave and unforeseen events.",
-  "metaTitle": "Self-Employed Health Insurance Madrid 2026 · Tax Guide and Prices",
-  "metaDescription": "Are you looking for the best health insurance for the self-employed in Madrid? Discover how to deduct up to €500/year in personal income tax and what coverage protects your professional activity.",
+  "title": "Best health insurance for the self-employed in Madrid: cover and tax scope",
+  "excerpt": "Review health cover for self-employed professionals in Madrid and keep the insurance decision separate from any tax treatment, which depends on the applicable rules and your circumstances.",
+  "metaTitle": "Self-Employed Health Insurance Madrid 2026 · Cover and Tax Scope",
+  "metaDescription": "Review health cover for self-employed professionals and the possible treatment of premiums under direct estimation, current rules and individual circumstances.",
   "imageAlt": "Self-employed in Madrid managing your business with the peace of mind of good health insurance",
   "sections": [
     {
       "heading": "The self-employed in Madrid: The need for their own safety network",
       "content": [
         "Working on your own in a community as dynamic as Madrid is a constant challenge that requires excellent health. For the more than 400,000 self-employed workers who support Madrid's economy, from the liberal professional in La Castellana to the small business owner in Boadilla, time is literally money. An illness that prevents you from attending a meeting or taking care of business represents an immediate loss of income that Social Security barely compensates with minimum benefits and slow bureaucratic processes. Therefore, private health insurance in Madrid is not a luxury, but rather a fundamental risk management tool for any self-employed worker in 2026.",
-        "The public health system, although excellent in critical situations, usually presents delays in specialist consultations and diagnostic tests that a self-employed person cannot afford. Having private insurance guarantees that, in the event of any symptoms, you can have a diagnosis and treatment in a matter of days, minimizing professional downtime. In Madrid, the offer is immense, but for a self-employed person, the choice must go beyond the monthly price of the premium. It is about looking for a policy that understands your reality: that includes high-quality telemedicine so as not to waste entire mornings in waiting rooms and that offers temporary disability coverage that protects your billing if the recovery is prolonged.",
-        "Furthermore, the context of Madrid offers a unique competitive advantage: the concentration of the best hospital centers in Spain. As an insurance advisor in Madrid, I help the self-employed navigate between the different offers to find those that not only save them taxes, but also give them preferential access to the best specialists in occupational medicine and functional recovery. In this guide, we will explore the keys to choosing the best health insurance for the self-employed in Madrid in 2026, combining medical efficiency with the maximum tax savings allowed by law."
+        "The public and private systems have different routes and conditions. For a self-employed person, the choice should go beyond the monthly premium: review the modality, medical network, waiting periods, co-payments and whether any temporary-disability cover is a separate product. Telemedicine and availability always depend on the policy.",
+        "Madrid has a broad healthcare offer, but it must be checked against the specific network and modality. As an insurance agent, I help self-employed professionals review the available conditions without presenting universal medical access or tax outcomes. This guide explains how to keep the health decision separate from any applicable tax review."
       ]
     },
     {
       "heading": "Tax advantages in Madrid: Real deductions in personal income tax",
       "content": [
-        "One of the most unknown and valuable aspects of health insurance for the self-employed in Madrid is its tax treatment. The Spanish State, aware of the lack of protection of the group, allows the cost of health insurance to be considered a deductible expense in the Personal Income Tax (IRPF). In 2026, the law establishes that a self-employed person can deduct up to 500 euros annually from the premium paid for their own health insurance. But the advantage does not end there: this deductibility extends to the premium of the spouse and each child under 25 years of age who lives in the home, with the same limit of 500 euros per person per year.",
-        "Imagine a family of four in Boadilla where one of the spouses is self-employed. The total tax deduction could amount to 2,000 euros per year. If the self-employed person is in a medium tax bracket, this represents a net saving on their tax bill of between 400 and 600 euros per year. In practical terms, it is as if the State paid you for several months of your health insurance. For self-employed people with disabilities, these deduction limits increase to 1,500 euros per person, further reinforcing the incentive to have first-level health protection.",
-        "In our consultancy in Madrid, we work closely with our clients' managers to ensure that these premiums are correctly accounted for as an expense related to the activity. It is essential that the insurance receipt is in the name of the self-employed person and that the payment is made from an account linked to their activity or owned by them. This tax savings makes taking out high-end \"No Copays\" insurance much financially smarter than opting for basic options that don't offer the same protection but hardly represent any real savings after taxes. Health insurance is the most profitable investment that a self-employed person in Madrid can make for their well-being and their pocketbook."
+        "Under the direct-estimation framework, Article 30.2.5.a) of the Spanish Personal Income Tax Act may treat health-insurance premiums paid by the taxpayer for their own cover, their spouse and children under 25 who live with them as a deductible expense. The limit is €500 per eligible person and €1,500 per eligible person with a disability when applicable, subject to requirements and circumstances. This is not an automatic refund or a euro-for-euro reduction of tax payable.",
+        "For example, if an eligible annual premium is €420, the deductible expense cannot exceed the amount actually paid; if it is €700, the statutory limit may cap the amount considered under this rule. The final tax effect depends on the taxpayer's situation and cannot be turned into a universal saving figure.",
+        "The documents, payer and accounting treatment should be checked with the Spanish Tax Agency or a tax adviser. VPI can help explain the insurance documentation, but it does not apply the rule, file tax returns or provide individual tax advice."
       ]
     },
     {
@@ -661,30 +661,30 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
     {
       "heading": "How much should a self-employed person pay for the best health in Madrid?",
       "content": [
-        "The price of health insurance for the self-employed in Madrid is very competitive due to the volume of business. In 2026, a self-employed person between 30 and 45 years old can find complete \"No Copayments\" policies designed specifically for their group for a range ranging from 48 to 65 euros per month. If the professional prefers to adjust his monthly spending and only goes to the doctor for annual check-ups, there are very efficient \"With Copay\" modalities for just 35 euros per month, maintaining the same elite medical team.",
+        "The price of health insurance for the self-employed in Madrid depends on age, health questions, modality, area, co-payments and the product conditions. It can make sense to compare a co-payment and a no-co-payment modality according to expected use, without turning an indicative price into a universal promise.",
         "The important thing when comparing prices in Madrid is not to be fooled by aggressive \"six months free\" offers that then apply disproportionate premium increases on the first renewal. In our technical consulting, we look at the \"level premium\" over the long term. We prefer to recommend companies that have a history of stability in their prices, allowing the self-employed from Boadilla or Madrid to budget their year without scares in the bank account. Health insurance is to be used when necessary, and the worst experience is having the price raised just when you have started to have a chronic health problem.",
-        "We also remember the option of reimbursement of expenses for those self-employed who already have their own trusted doctors outside the standard tables. Although the premium is higher (usually starting at 90-110 euros), it allows absolute freedom. In short, the cost of the best health insurance for the self-employed in Madrid is a minimal fraction of your income that, after tax deduction and time savings, ends up being almost free. Don't wait until you have a problem to evaluate private healthcare; Hire today with the peace of mind of knowing that your greatest asset – yourself – is protected by the best specialists in the capital."
+        "There is also reimbursement cover for self-employed professionals who want to review using eligible providers or centres outside the network. Eligibility, percentage, limits, geographic scope, documents and any advance payment depend on the policy. Tax treatment does not make insurance free: first check whether the cover fits, then review your tax case."
       ]
     },
     {
       "heading": "Conclusion: Your business thrives if you are healthy",
       "content": [
-        "In Madrid's competitive business ecosystem, health is its quietest competitive advantage. A well-protected freelancer is a freelancer who can focus on their clients, their projects, and their growth without the constant fear of \"what will happen if I get sick.\" Health insurance is the partner that never fails you, guaranteeing that the best medical resources in Madrid are at your disposal at the exact moment you need them.",
-        "If you are looking to optimize your current insurance or want to take out your first self-employed policy with the guarantee of taking advantage of all tax deductions, our insurance consultancy in Madrid is here to guide you. We offer you a transparent analysis, analyzing the best companies on the market and designing a solution that fits your budget and your pace of life. Don't leave your health to chance; Trust an expert who understands the value of your time and professional effort.",
-        "We invite you to request a health consultation for self-employed people today. In less than 24 hours, we will present you with a personalized study with the most efficient options in the Madrid market for 2026. Protect your present and secure your professional future with us. We are at your side in Madrid, Boadilla and the entire northwest area."
+        "In Madrid's competitive business ecosystem, health deserves its own decision. A policy can help organise expected access to care, but cover, availability and authorisations depend on the modality and policy.",
+        "If you want to review your current insurance or arrange a first policy as a self-employed professional, our insurance consultancy in Madrid can help you organise expected use, the medical network and the conditions to check. For tax treatment, we point you to the official source and documentation to review with your adviser.",
+        "We invite you to request a health consultation for self-employed people today. We can review the information needed to understand which conditions may fit your situation; timing and any proposal depend on the case and the product."
       ]
     }
   ],
   "tips": [
     "Make sure your insurance includes Temporary Disability coverage to protect your income if you can't work.",
     "Take advantage of telemedicine: save hours of traveling around Madrid for routine consultations.",
-    "Consult with your manager about the deduction of €500 in personal income tax to maximize your annual savings.",
+    "Consult the Spanish Tax Agency or a tax adviser about the treatment of health-insurance premiums under direct estimation; the limit is not an automatic refund.",
     "Check if your policy has international agreements if you usually travel for business outside of Spain."
   ],
   "faqs": [
     {
       "question": "Can I deduct the insurance if my partner also works with me?",
-      "answer": "Yes, if you are both self-employed you can deduct your premiums individually, increasing the tax savings of the family unit."
+      "answer": "The treatment depends on each taxpayer's situation, who pays the premium and the direct-estimation rule. The cited provision refers to the taxpayer, their spouse and children under 25 who live with them, subject to limits and requirements; confirm it with the Spanish Tax Agency or a tax adviser."
     },
     {
       "question": "What happens to the insurance if I close my self-employed activity?",
@@ -693,84 +693,80 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   ]
 },
   "seguro-medico-autonomos-madrid-deduccion-fiscal": {
-  "title": "Medical insurance for the self-employed in Madrid: how to deduct up to €500 in personal income tax",
+  "title": "Medical insurance for the self-employed in Madrid: cover and tax scope",
   "excerpt": "If you are self-employed in Madrid, your private health insurance may be deductible in personal income tax. We explain how much, how and what type of coverage is best for you depending on your situation.",
-  "metaTitle": "Self-employed medical insurance Madrid: €500 personal income tax deduction",
-  "metaDescription": "If you are self-employed in Madrid, your private health insurance may be deductible in personal income tax. We explain how much, how and what type of coverage is best for you depending on your situation.",
+  "metaTitle": "Self-employed medical insurance Madrid: cover and tax scope",
+  "metaDescription": "Review health cover for self-employed professionals and the possible treatment of premiums under direct estimation, current rules and individual circumstances.",
   "imageAlt": "Self-employed working with peace of mind thanks to your deductible health insurance",
   "sections": [
     {
-      "heading": "The deduction that many self-employed people are unaware of",
+      "heading": "Cover and tax treatment are separate decisions",
       "content": [
-        "If you are self-employed in Madrid, every euro counts. Between the self-employed fee, VAT, personal income tax and day-to-day expenses, the monthly tax bill is a constant reality. Therefore, when there is a legal deduction that can reduce your tax burden, it is worth knowing it in detail and taking advantage of it.",
-        "Since 2018, the self-employed can deduct up to 500 euros per year per person in personal income tax for the health insurance they take out for themselves, their spouse or common-law partner, and their children under 25 years of age. This deduction is applied directly to the full personal income tax rate, which means that it is a real saving, not a reduction in the tax base.",
-        "However, many self-employed workers in Madrid do not know this deduction or do not know how to apply it correctly. Others have health insurance that does not meet the legal requirements to be deductible. In this article we explain everything you need to know to take advantage of this tax benefit without problems with the Treasury."
+        "If you are self-employed in Madrid, first choose cover that fits your expected use: doctors, specialists, tests, hospitalisation, co-payments and waiting periods according to the modality.",
+        "Under the direct-estimation framework, Article 30.2.5.a) of the Spanish Personal Income Tax Act may treat health-insurance premiums paid by the taxpayer for their own cover, their spouse and children under 25 who live with them as a deductible expense. The limit is €500 per eligible person and €1,500 per eligible person with a disability when applicable, subject to requirements and circumstances.",
+        "That deductible-expense limit is not an automatic refund or a euro-for-euro reduction of tax payable. Confirm the application with the Spanish Tax Agency or a tax adviser."
       ]
     },
     {
       "heading": "What insurances qualify for the deduction?",
       "content": [
-        "Not all health insurance is deductible. In order for private health insurance to be subject to personal income tax deduction as a self-employed person, it must meet a series of requirements established in tax regulations:",
-        "• The insurance must be health insurance: This includes medical health insurance, sickness insurance and insurance that covers healthcare. Exclusively dental, life or accident insurance does NOT qualify for this specific deduction.",
-        "• The payment must be made by the self-employed person: The premium must be paid by the self-employed worker, either directly or through their managing entity. If the insurance is paid for by another person, it is not deductible.",
+        "Not all premiums receive the same treatment. To assess a health-insurance premium under the cited rule, review the estimation method, who pays, who is covered and the requirements in the tax rules:",
+        "• The provision refers to the taxpayer's own cover, their spouse and children under 25 who live with them, subject to the applicable limits. It does not automatically include every relative.",
+        "• The policy, payer and supporting documents must be checked case by case. If a company pays the premium or another structure applies, the analysis may differ.",
         "• There must be proof of the contractual relationship: It is important to keep the policy and payment invoices, since the Treasury may require supporting documentation in the event of a tax inspection.",
-        "• The deduction is per insured person: You can deduct up to 500 euros for yourself, another 500 for your spouse or common-law partner, and an additional 500 euros for each child under 25 years of age that you have included in the policy. A family can deduct 2,000 euros per year if both parents are self-employed."
+        "• The limit is €500 per eligible person and €1,500 per eligible person with a disability when applicable; it is not an amount the tax authority automatically refunds."
       ]
     },
     {
       "heading": "How to apply the deduction in your personal income tax return",
       "content": [
-        "Applying this deduction is relatively simple, but requires attention to details to avoid errors that could lead to Treasury penalties.",
-        "In the personal income tax return (form 100), the deduction is included in the section corresponding to deductions for family and personal circumstances. You must enter the total amount of premiums paid during the fiscal year, with a maximum limit of 500 euros per insured person.",
-        "If you contracted the insurance in the middle of the year, the deduction is prorated for the months of contract. For example, if you signed your policy in July, you will be able to deduct the proportional part of those 500 euros corresponding to the remaining 6 months of the year.",
-        "It is essential that you keep all the documentation: the insurance contract that proves the illness coverage, the invoices for the premiums paid and the proof of payment. The Treasury can claim these documents up to four years after the declaration."
+        "This is not an automatic operation: confirm how to record the expense and which documents are required with the Spanish Tax Agency or a tax adviser.",
+        "Keep the policy, invoices and proof of payment that may evidence the cover and premium. The official source and the taxpayer's circumstances control any general example."
       ]
     },
     {
       "heading": "What coverage is best for you as a self-employed person?",
       "content": [
-        "Taking advantage of the tax deduction is important, but more important is having the coverage you really need. As a freelancer, you don't have the safety net of a company to keep you on payroll during a prolonged sick leave. If you get sick and need quick medical attention to return to work, good health insurance becomes a profitable investment, not an expense.",
+        "Tax treatment should not replace the cover decision. Review expected use, the medical network and whether co-payments, hospital cover or another modality make sense for you.",
         "For young and healthy self-employed people, insurance with a moderate co-payment is usually the most economical option. You pay a low monthly premium and assume a small cost for each consultation. If you rarely go to the doctor, the combination of low premium + co-payment is more profitable than insurance without co-payment.",
-        "If you have children or medical pre-existing conditions, insurance without co-payment will give you the peace of mind of knowing exactly how much you are going to pay each month, without unforeseen events. The monthly cost is higher, but you have unlimited access to specialists at no additional cost.",
+        "If you have children or pre-existing conditions, check acceptance, exclusions, co-payments and limits. No product should be described as unlimited access without support in its policy terms.",
         "For self-employed people over 45 years of age, we recommend evaluating insurance with coverage for prostheses, rehabilitation and preventive medicine. At this age, regular check-ups and early detection can avoid long breaks in your professional activity."
       ]
     },
     {
-      "heading": "Real savings: concrete numbers",
+      "heading": "How to understand the limit without turning it into a promise",
       "content": [
-        "Let's see with real numbers how much you can save. Imagine that you are self-employed in Madrid with health insurance without co-payment that costs €55/month (€660/year). If your marginal personal income tax rate is 24% (the usual range for self-employed workers with average income), the €500 deduction means a saving of €120 on your return.",
-        "But the savings don't end there. If you need a consultation with a public health specialist, you can wait weeks or months. As a freelancer, every day without working is a day without billing. Private insurance that gives you access to a specialist within 48-72 hours can prevent you from losing hundreds or thousands of euros of income due to prolonged sick leave.",
-        "In addition, many health insurance policies for the self-employed include telemedicine, which allows you to obtain diagnoses and prescriptions without leaving your home or workplace. This is especially valuable if your job requires constant travel or if you serve clients and cannot afford long absences."
+        "If an eligible annual premium is €420, the deductible expense cannot exceed the amount actually paid. If it is €700, the statutory limit may cap the amount considered under this rule. The final tax effect depends on the taxpayer's situation and cannot be calculated as a universal saving.",
+        "Availability of specialists, telemedicine, authorisations and timing depends on the modality and policy. Check it before choosing on price or a general promise."
       ]
     },
     {
-      "heading": "Conclusion: Deduction is just the beginning",
+      "heading": "Conclusion: cover first, tax treatment second",
       "content": [
-        "The deduction of €500 per year is a welcome help, but the true value of private health insurance for the self-employed goes far beyond taxation. It means having the peace of mind that, if something happens to you, you will have fast, quality medical care without depending on the waiting lists of the public system.",
-        "If you do not yet have private health insurance, I encourage you to calculate how much a week without being able to work would cost you due to an illness that could have been diagnosed and treated in time. Compare that cost to the annual premium for good insurance minus the tax deduction. Normally, the numbers speak for themselves.",
-        "In our insurance consultancy in Madrid, we help self-employed people find the health insurance that best suits their real situation, taking into account their professional activity, their age, their medical history and, of course, tax optimization. If you want us to review your particular case, we are at your disposal for a no-obligation consultation."
+        "The deductible-expense limit may matter in some cases, but it is not an automatic refund. The first step is to check whether the modality, policy and medical network fit your expected use.",
+        "VPI can help explain the insurance and available documentation. To record the premium or apply the rule to your situation, consult the Spanish Tax Agency or a tax adviser."
       ]
     }
   ],
   "tips": [
-    "The €500 deduction is per person: you, your spouse and each child under 25 can add up to €2,000 family deduction.",
+    "Under direct estimation, the rule has a €500 limit per eligible person and €1,500 per eligible person with a disability when applicable; it is not an automatic refund.",
     "Always keep the policy and payment invoices: The Treasury can ask you for documentation up to 4 years later.",
-    "If you register a child or spouse in the middle of the year, the deduction is prorated by month.",
+    "If the policy or insured people change, check how that affects the documents and applicable treatment.",
     "The insurance must cover illness: exclusively dental or life insurance does not qualify for this deduction.",
     "For self-employed workers over 45, consider prosthesis and rehabilitation coverage: they will avoid long breaks in your activity."
   ],
   "faqs": [
     {
       "question": "Can I deduct dental insurance if I am self-employed?",
-      "answer": "No, the specific deduction of €500 only applies to illness or medical health insurance. Exclusively dental insurance does not qualify for this deduction, although it may be deductible as a business expense if you take one out for your employees."
+      "answer": "The cited rule concerns health or illness premiums and its application depends on the law, policy and circumstances. Do not automatically extend it to a dental policy; check with the Spanish Tax Agency or a tax adviser."
     },
     {
       "question": "What happens if I am self-employed and my partner is also self-employed? Can we both deduct the same insurance?",
-      "answer": "If you are both self-employed and you pay for the insurance, each of you can deduct up to €500 for each insured person. If you pay for family insurance between €1,200 and €2,000, technically you could both deduct the same policy, but it is safer for each of you to have your own individual insurance to avoid conflicts with the Treasury."
+      "answer": "The treatment depends on each taxpayer's circumstances, who pays the premium and the direct-estimation rule. Confirm it with the Spanish Tax Agency or a tax adviser before filing."
     },
     {
       "question": "When should I take out insurance to be able to deduct it all year?",
-      "answer": "To deduct the full €500, you must have the insurance contracted since January 1. If you hire it in the middle of the year, the deduction is prorated. However, even if you hire it in November, you can deduct the proportional part (about €83 for two months) and the following year deduct the full €500."
+      "answer": "The amount that may be considered depends on the premium actually paid, the limit and the applicable requirements. Do not calculate a tax proration without confirming it with the Spanish Tax Agency or a tax adviser."
     },
     {
       "question": "Is the health insurance of my child over 25 who is studying deductible?",
@@ -819,7 +815,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
         "There is no one-size-fits-all answer. It depends on your age, your family situation, your medical history and your ability to save. Here are some guidelines:",
         "• \"Dental Only\" is suitable for you if: You are young (less than 30 years old), you are healthy, you do not have dependent children, and your priority is to maintain oral health without worrying about the rest. It is a risky profile, but understandable if your income is limited.",
         "• \"Complete health with dental\" is right for you if: You are over 35 years old, you have children (the included pediatricians are a luxury), you have a controlled medical condition (hypertension, hypothyroidism, etc.), or you simply prefer the peace of mind of knowing that any medical problem is covered.",
-        "• If you are self-employed: Complete health insurance is almost mandatory. You don't have the safety net of a company to keep you on payroll during a sick leave. You need to diagnose and cure quickly to return to work. And, in addition, you can deduct up to €500 a year in personal income tax."
+        "• If you are self-employed: Review the expected use, medical network and policy conditions. Any tax treatment of the premium must be checked under the applicable direct-estimation rule and is not an automatic €500 refund."
       ]
     },
     {
@@ -827,8 +823,8 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
       "content": [
         "Let's talk about money honestly. Basic dental insurance in Madrid will cost you between €15 and €25 per month. Comprehensive health insurance with dental coverage included will cost you between €40 and €70 per month, depending on your age and the type of co-payment you choose.",
         "The difference, in the worst case, is about €45 per month (€540 per year). But let's think about what that additional €540 includes: unlimited access to specialists, covered hospitalization, emergencies without co-payment, diagnostic tests...",
-        "A single visit to the emergency room at a private hospital in Madrid can cost between €150 and €300. An MRI, between €200 and €400. One day of hospitalization, between €800 and €1,500. That is to say: a single moderate medical incident already amortizes the annual price difference.",
-        "And if you are self-employed, remember: the deduction of €500 per year in personal income tax means that complete health insurance will cost you, in net terms, practically the same as dental insurance."
+        "A private consultation, test or hospital service has a cost that varies by provider, modality and circumstances. The policy should be reviewed on its own terms rather than assuming that one incident amortises the difference.",
+        "If you are self-employed, remember that any tax treatment of a health premium depends on the direct-estimation rule and your circumstances; it does not make comprehensive health insurance automatically cost the same as dental insurance."
       ]
     },
     {
@@ -852,7 +848,7 @@ export const blogEnglishContent: Record<string, Omit<BlogContent, 'image'>> = {
   "tips": [
     "If you are over 35 or have children, comprehensive insurance is usually more cost-effective in the long term.",
     "Compare the maximum annual copay: “cheap” insurance with high copays can cost you a lot.",
-    "The self-employed can deduct up to €500 from the complete health insurance in personal income tax.",
+    "The direct-estimation rule may apply to health premiums subject to its limits and requirements; it is not an automatic €500 refund.",
     "Ask if the insurance includes telemedicine: it is very useful for quick consultations without traveling.",
     "Verify that the medical team has good coverage in your area of ​​Madrid before contracting."
   ],

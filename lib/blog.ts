@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
         content: [
           '• Perfil Joven y Sano: Aseguradoras especialistas en prevención destacan por su flexibilidad y precios desde 26-33€/mes con copago controlado.',
           '• Familias: Las opciones con las redes médicas más amplias de España son ideales por su excelente cuadro pediátrico.',
-          '• Autónomos: Compañías líderes ofrecen la mejor combinación de cobertura y servicios digitales, aprovechando la deducción fiscal de hasta 500€/año.',
+          '• Autónomos: La cobertura debe elegirse según el uso previsto y las condiciones del producto; el tratamiento fiscal de la prima depende de la estimación directa, la norma aplicable y las circunstancias del contribuyente.',
           '• Cobertura Premium: Ciertas entidades son imbatibles si priorizas acceso a centros propios de alto nivel y especialistas de renombre.',
         ],
       },
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Cuándo el más barato sale caro',
         content: [
           'Elegir solo por precio tiene riesgos. Una póliza de 20€ que excluye tu hipertensión te obligará a pagar los cardiólogos de tu bolsillo. Al final de año, habrás gastado más que contratando una póliza de 50€ que sí lo cubriera todo.',
-          'Para autónomos, la deducción fiscal cambia la ecuación: una póliza mejor puede salirte más barata en términos netos gracias al ahorro en el IRPF.',
+          'Para autónomos, conviene separar la elección de la cobertura de cualquier tratamiento fiscal: una prima puede recibir el tratamiento previsto por la norma solo si concurren sus requisitos y circunstancias.',
         ],
       },
       {
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Los autónomos pueden deducirse el seguro médico?',
-        answer: 'Sí, hasta 500€ anuales por asegurado (titular, cónyuge e hijos menores de 25 años) en el IRPF.',
+        answer: 'En estimación directa, el artículo 30.2.5.ª.a) de la Ley del IRPF puede contemplar las primas de enfermedad del contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con un límite de 500 € por persona y los requisitos aplicables. No es una devolución automática.',
       },
       {
         question: '¿Es mejor con copago o sin copago?',
@@ -644,7 +644,7 @@ export const blogPosts: BlogPost[] = [
         heading: '¿Cuándo tiene sentido para ti?',
         content: [
           'Tiene sentido si tienes hijos menores, hipoteca activa, deudas avaladas por terceros o si eres el principal motor económico de tu casa. Por el contrario, puede ser innecesario si tus hijos ya son mayores de edad y tu patrimonio está consolidado.',
-          'Consulta con un agente de seguros antes de renovar automáticamente el seguro del banco; podrías ahorrar un 40% anual simplemente analizando.',
+          'Consulta con un agente de seguros antes de renovar automáticamente el seguro del banco; comparar prima, capital, garantías y exclusiones puede ayudarte a decidir con mejor información.',
         ],
       },
     ],
@@ -974,7 +974,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: '¿Los autónomos pueden deducirse el seguro médico?',
-        answer: 'Sí, hasta 500 € anuales por persona (tú, pareja e hijos) en el IRPF. En caso de discapacidad, el límite sube a 1.500 €.',
+        answer: 'En estimación directa, la regla puede contemplar las primas de enfermedad del contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con un límite de 500 € por persona y de 1.500 € por persona con discapacidad cuando corresponda. Es un límite de gasto deducible, no una devolución automática.',
       },
       {
         question: '¿Qué incluye la cobertura base en Madrid?',
@@ -1460,15 +1460,15 @@ export const blogPosts: BlogPost[] = [
         heading: 'Salud en Boadilla: Priorizando la agilidad y los mejores cuadros médicos',
         content: [
           'El seguro de salud es, sin duda, el producto más demandado en Boadilla del Monte. Esto se debe a que las familias del municipio valoran la inmediatez en el diagnóstico y la posibilidad de elegir a su pediatra o especialista de confianza sin las demoras del sistema público. Sin embargo, no todos los seguros de salud funcionan igual en la zona noroeste de Madrid. Es fundamental verificar que la aseguradora elegida tenga convenios sólidos con los centros de referencia de Boadilla y alrededores. Muchas pólizas "baratas" limitan el acceso a ciertos hospitales premium o imponen copagos elevados que acaban encareciendo el servicio si hay un uso recurrente, algo habitual en familias con niños en edad escolar.',
-          'Al revisar las opciones de salud para un vecino de Boadilla, siempre planteamos la duda entre la modalidad de cuadro médico y la de reembolso. En un entorno como el nuestro, donde muchos profesionales se desplazan a Madrid capital para trabajar, la modalidad de reembolso ofrece una libertad total: puedes acudir a cualquier médico del mundo y la compañía te devuelve entre el 80% y el 90% de la factura. Esto es ideal para quienes ya tienen un especialista de renombre fuera de las redes concertadas. Por otro lado, para familias que buscan comodidad, un seguro de salud completo sin copagos suele ser la opción más equilibrada, permitiendo acceder a urgencias, pruebas diagnósticas avanzadas y hospitalización sin desembolsos adicionales en cada visita.',
+          'Al revisar las opciones de salud para un vecino de Boadilla, siempre planteamos la diferencia entre la modalidad de cuadro médico y la de reembolso. El reembolso puede permitir acudir a profesionales o centros externos elegibles según la póliza, pero hay que comprobar el porcentaje, los límites, los servicios, el ámbito geográfico y la documentación. Para familias que buscan comodidad, una modalidad sin copagos puede ser una opción a valorar, siempre según las condiciones concretas del producto.',
           'Además de los servicios básicos, en Boadilla damos mucha importancia a los extras que realmente aportan valor. Hablamos de la fisioterapia y la podología, servicios muy utilizados por los vecinos deportistas del municipio, o la asistencia psicológica y nutricional, cada vez más relevante tras los cambios de hábitos de los últimos años. Un buen asesor de seguros en Boadilla te ayudará a desglosar qué compañía ofrece el mejor servicio de telemedicina para esas consultas rápidas de madrugada con el pediatra y cuál garantiza una segunda opinión médica internacional en caso de enfermedades graves. La salud es lo más importante, y en Boadilla, disponer de una póliza robusta es sinónimo de paz mental para toda la familia.',
         ],
       },
       {
         heading: 'Seguros para autónomos y profesionales en el noroeste de Madrid',
         content: [
-          'Boadilla del Monte alberga a un gran número de autónomos y profesionales liberales que gestionan sus propios negocios o trabajan de forma remota para grandes empresas. Para este perfil, el seguro no es solo una protección personal, sino una herramienta de continuidad de negocio. Un autónomo de Boadilla que sufre una baja laboral por enfermedad o accidente se enfrenta a una pérdida de ingresos inmediata que la Seguridad Social apenas cubre con una prestación mínima. Por eso, asesoramos en la contratación de seguros de incapacidad temporal que garanticen una indemnización diaria desde el primer día de baja, permitiendo que el profesional mantenga su nivel de vida y cubra sus gastos fijos mientras se recupera.',
-          'Otro aspecto vital es la Responsabilidad Civil Profesional. En una zona tan activa económicamente como Pozuelo, Majadahonda y Boadilla, cualquier error en la prestación de un servicio puede derivar en una reclamación patrimonial importante. Contar con una póliza de RC bien estructurada protege el patrimonio personal del autónomo. Además, recordamos siempre a nuestros clientes trabajadores por cuenta propia que el seguro de salud es deducible fiscalmente en el IRPF hasta 500 euros anuales por cada miembro de la unidad familiar, lo que supone un ahorro directo en impuestos que hace que la protección de alta gama sea mucho más asequible de lo que parece a primera vista.',
+          'Boadilla del Monte alberga a un gran número de autónomos y profesionales liberales que gestionan sus propios negocios o trabajan de forma remota para grandes empresas. Para este perfil, conviene separar la protección sanitaria de cualquier cobertura de accidentes o incapacidad temporal. Un autónomo que sufre una baja laboral por enfermedad o accidente puede revisar qué prestaciones necesita y qué condiciones ofrece cada producto; ninguna indemnización ni fecha de inicio debe darse por garantizada sin consultar la póliza.',
+          'En una zona con mucha actividad profesional, conviene revisar por separado los riesgos de la actividad y las coberturas que realmente se distribuyen para cada caso. En cuanto al seguro de salud, la regla de IRPF aplicable a la estimación directa puede contemplar un gasto deducible para el contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con límites y requisitos; no es un ahorro directo ni se extiende automáticamente a toda la unidad familiar.',
           'La previsión de jubilación es el tercer pilar para el profesional en Boadilla. Dado que las pensiones públicas para autónomos suelen ser más reducidas, diseñar un plan de ahorro o un seguro de vida con componente de ahorro es una decisión financiera inteligente que hay que tomar lo antes posible. En nuestra consultoría en Boadilla, no vendemos productos financieros genéricos; estudiamos tu capacidad de ahorro y tus horizontes temporales para recomendar instrumentos que combinen seguridad, rentabilidad y, sobre todo, una fiscalidad eficiente. El objetivo es que tu esfuerzo profesional de hoy se traduzca en una jubilación tranquila en el futuro, manteniendo la calidad de vida que has construido en nuestro municipio.',
         ],
       },
@@ -1476,7 +1476,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Protección del hogar y seguros de vida vinculados a hipotecas en Boadilla',
         content: [
           'La mayoría de las viviendas en Boadilla del Monte representan la mayor inversión económica de sus propietarios. Ya sea en residenciales de obra nueva o en urbanizaciones consolidadas, el seguro de hogar debe ser exhaustivo. Un siniestro por agua mal resuelto o un robo con capitales de joyas mal declarados pueden convertirse en pesadillas legales y financieras. Como asesores locales, insistimos en realizar un inventario correcto de los bienes y en asegurar que la póliza incluya coberturas de Responsabilidad Civil de al menos 300.000 euros, protegiendo así ante cualquier daño que se pueda causar involuntariamente a vecinos o transeúntes.',
-          'En relación con el seguro de vida, muchas familias en Boadilla mantienen pólizas vinculadas a su préstamo hipotecario contratadas directamente con el banco. Es importante saber que, en la gran mayoría de los casos, estas pólizas bancarias son considerablemente más caras y menos flexibles que las que se pueden contratar en el mercado libre de seguros. Ayudamos a los vecinos de Boadilla a desvincular su seguro de vida de la entidad bancaria, logrando ahorros que a menudo superan el 40% anual en la prima, manteniendo exactamente la misma protección para la cancelación de la deuda o la protección de su familia. Es una de las formas más rápidas y sencillas de optimizar los gastos fijos del hogar sin renunciar a la seguridad.',
+          'En relación con el seguro de vida, muchas familias en Boadilla mantienen pólizas vinculadas a su préstamo hipotecario contratadas directamente con el banco. Antes de cambiar, conviene comparar prima, capital, garantías, exclusiones y condiciones de aceptación. El precio y el alcance pueden variar; no es responsable prometer un porcentaje de ahorro ni afirmar que otra póliza ofrece exactamente la misma protección sin revisar ambos contratos.',
           'En conclusión, ser residente o profesional en Boadilla del Monte conlleva una serie de retos y oportunidades en el ámbito de la protección. Contar con un agente de seguros registrado DGSFP, que conozca el código postal 28660 y sus alrededores, es la mejor garantía de que no solo estás contratando un papel, sino un servicio de acompañamiento real. En nuestra asesoría, traducimos la complejidad técnica de los seguros al lenguaje del día a día, permitiéndote tomar decisiones informadas y seguras. Si buscas una revisión de tus pólizas actuales o necesitas contratar una nueva protección para tu familia o negocio en Boadilla, estamos a tu disposición para una consulta gratuita y sin compromiso.',
         ],
       },
@@ -1491,7 +1491,7 @@ export const blogPosts: BlogPost[] = [
     ],
     tips: [
       'Valora siempre la cercanía de los especialistas: un seguro que no tiene centros en Boadilla o Majadahonda no es práctico para tu día a día.',
-      'Si eres autónomo, recuerda que tu seguro de salud es una herramienta de ahorro fiscal importante.',
+      'Si eres autónomo, revisa primero que la cobertura encaje contigo y consulta la fuente oficial o a tu asesor sobre cualquier tratamiento fiscal de la prima.',
       'Revisa el seguro de vida de tu hipoteca: es el producto donde más dinero se suele regalar al banco por falta de información.',
       'No escatimes en la Responsabilidad Civil de tu seguro de hogar: en urbanizaciones, los daños por agua a terceros pueden ser muy costosos.',
     ],
@@ -1603,9 +1603,9 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Ventajas fiscales para autónomos de Madrid: El seguro "gratis"',
         content: [
-          'Si es usted autónomo en la Comunidad de Madrid, el coste real de su seguro de salud es significativamente menor al que aparece en su recibo bancario gracias a la fiscalidad española. La ley actual permite que el trabajador por cuenta propia se deduzca como gasto de su actividad profesional hasta 500 euros anuales por él mismo, otros 500 por su cónyuge y 500 euros por cada hijo menor de 25 años que conviva con él. Esta deducción se aplica directamente en la base imponible del IRPF, lo que en la práctica supone que aproximadamente entre el 20% y el 30% de la prima del seguro (según su tramo impositivo) le será devuelta en forma de menor pago de impuestos.',
+          'Si es usted autónomo en la Comunidad de Madrid, conviene separar el precio del seguro de cualquier análisis fiscal. En el marco de la estimación directa, el artículo 30.2.5.ª.a) de la Ley del IRPF puede contemplar como gasto deducible las primas de enfermedad del contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con un límite de 500 € por persona y de 1.500 € por persona con discapacidad cuando corresponda, sujeto a requisitos. Ese límite no equivale a una devolución automática ni permite calcular por sí solo el impuesto final.',
           'Esto hace que la salud privada para un autónomo en Madrid no sea un lujo, sino una decisión empresarial lógica. La rapidez en un diagnóstico permite una reincorporación al trabajo más temprana y evita periodos de baja improductivos. Además, muchas aseguradoras en Madrid ofrecen seguros específicos para autónomos que incluyen indemnizaciones diarias en caso de hospitalización, reforzando la red de seguridad del profesional. Nosotros calculamos para nuestros clientes autónomos el ahorro neto anual para que vean que, en términos reales, tener la mejor sanidad privada para su familia puede acabar costándoles muy poco dinero al mes tras ajustar sus cuentas con Hacienda.',
-          'Para pymes y negocios locales en Boadilla y Madrid con más de 5 empleados, existen además las pólizas de salud colectivas. Estas ofrecen precios aún más reducidos que la contratación individual y son una herramienta de fidelización de talento de primer nivel. El empleado recibe el seguro como un salario en especie altamente valorado, y para la empresa, el coste es totalmente deducible en el Impuesto de Sociedades. Es una de las formas más eficientes de retribución emocional en el entorno laboral actual de Madrid.',
+          'Para pymes y negocios locales en Boadilla y Madrid existen pólizas de salud colectivas que pueden estudiarse según el número de personas, la modalidad y la forma de aportación. El tratamiento de una prima pagada por la empresa y su posible consideración como retribución en especie o gasto deben revisarse según la estructura y la normativa aplicable; VPI orienta sobre el seguro, no presta asesoramiento fiscal individual.',
         ],
       },
       {
@@ -1620,7 +1620,7 @@ export const blogPosts: BlogPost[] = [
     tips: [
       'Valora siempre el cuadro médico de tu zona: de nada sirve un seguro barato si no tienes especialistas cerca en Madrid o Boadilla.',
       'Si vas poco al médico, un seguro con copago equilibrado puede ahorrarte más de 400€ al año.',
-      'Como autónomo, suma el ahorro fiscal al comparar: tu seguro médico es una de las mejores inversiones profesionales que puedes hacer.',
+      'Como autónomo, compara primero el uso previsto, el cuadro médico y las condiciones del seguro; después consulta la fuente oficial o a tu asesor sobre cualquier tratamiento fiscal.',
       'Revisa siempre el periodo de carencia para intervenciones y partos: suele ser de 6 a 10 meses.',
     ],
     faqs: [
@@ -1702,22 +1702,22 @@ export const blogPosts: BlogPost[] = [
     category: 'consejos',
     readTime: '24 min',
     metaTitle: 'Seguro Salud Autónomos Madrid 2026 · Guía Fiscal y Precios',
-    metaDescription: 'Buscas el mejor seguro de salud para autónomos en Madrid? Descubre cómo deducir hasta 500€/año en IRPF y qué coberturas protegen tu actividad profesional.',
+    metaDescription: 'Buscas seguro de salud para autónomos en Madrid? Revisa qué coberturas pueden encajar y cómo comprobar, de forma condicional, el tratamiento fiscal de la prima.',
     sections: [
       {
         heading: 'El autónomo en Madrid: La necesidad de una red de seguridad propia',
         content: [
           'Trabajar por cuenta propia en una comunidad tan dinámica como Madrid es un reto constante que requiere de una salud de hierro. Para los más de 400.000 autónomos que sostienen la economía madrileña, desde el profesional liberal de la Castellana hasta el pequeño comerciante de Boadilla, el tiempo es literalmente dinero. Una indisposición que impida acudir a una reunión o atender un negocio supone una pérdida de ingresos inmediata que la Seguridad Social apenas compensa con prestaciones mínimas y procesos burocráticos lentos. Por eso, el seguro de salud privado en Madrid no es un lujo, sino una herramienta de gestión de riesgos fundamental para cualquier trabajador autónomo en 2026.',
-          'El sistema público de salud, aunque excelente en situaciones críticas, suele presentar demoras en consultas de especialistas y pruebas diagnósticas que un autónomo no puede permitirse. Contar con un seguro privado garantiza que, ante cualquier síntoma, usted pueda tener un diagnóstico y un tratamiento en cuestión de días, minimizando el tiempo de inactividad profesional. En Madrid, la oferta es inmensa, pero para un autónomo, la elección debe ir más allá del precio mensual de la prima. Se trata de buscar una póliza que entienda su realidad: que incluya telemedicina de alta calidad para no perder mañanas enteras en salas de espera y que ofrezca coberturas de incapacidad temporal que protejan su facturación si la recuperación se alarga.',
-          'Además, el contexto de Madrid ofrece una ventaja competitiva única: la concentración de los mejores centros hospitalarios de España. Como asesor de seguros en Madrid, ayudo a los autónomos a navegar entre las diferentes ofertas para encontrar aquellas que no solo les ahorren impuestos, sino que les den paso preferente a los mejores especialistas en medicina del trabajo y recuperación funcional. En esta guía, exploraremos las claves para elegir el mejor seguro de salud para autónomos en Madrid in 2026, combinando la eficiencia médica con el máximo ahorro fiscal permitido por ley.',
+          'El sistema público y el privado tienen circuitos y condiciones diferentes. Para un autónomo, la elección debe ir más allá del precio mensual: conviene revisar la modalidad, el cuadro médico, las carencias, los copagos y si existe alguna cobertura de incapacidad temporal separada. La telemedicina y la disponibilidad dependen siempre del producto contratado.',
+          'Además, el contexto de Madrid ofrece una amplia oferta sanitaria que conviene contrastar con el cuadro médico y la modalidad concreta. Como agente de seguros, ayudo a los autónomos a revisar las condiciones disponibles sin presentar un tratamiento fiscal o un acceso médico universal. En esta guía, exploraremos cómo separar la decisión sanitaria de la revisión de la normativa fiscal aplicable.',
         ],
       },
       {
         heading: 'Ventajas fiscales en Madrid: Deducciones reales en el IRPF',
         content: [
-          'Uno de los aspectos más desconocidos y valiosos del seguro de salud para autónomos en Madrid es su tratamiento fiscal. El Estado español, consciente de la desprotección del colectivo, permite que el coste del seguro médico sea considerado un gasto deducible en el Impuesto sobre la Renta de las Personas Físicas (IRPF). En 2026, la ley establece que un autónomo puede deducirse hasta 500 euros anuales de la prima pagada por su propio seguro de salud. Pero la ventaja no acaba ahí: esta deducibilidad se extiende a la prima del cónyuge y de cada hijo menor de 25 años que conviva en el hogar, con el mismo límite de 500 euros por persona al año.',
-          'Imagine una familia de cuatro miembros en Boadilla donde uno de los cónyuges es autónomo. La deducción fiscal total podría ascender a 2.000 euros anuales. Si el autónomo se encuentra en un tramo impositivo medio, esto supone un ahorro neto en su factura de Hacienda de entre 400 y 600 euros al año. En términos prácticos, es como si el Estado le pagara varios meses de su seguro de salud. Para los autónomos con discapacidad, estos límites de deducción aumentan hasta los 1.500 euros por persona, reforzando aún más el incentivo para contar con una protección sanitaria de primer nivel.',
-          'En nuestra asesoría en Madrid, trabajamos codo con codo con los gestores de nuestros clientes para asegurar que estas primas se contabilicen correctamente como gasto afecto a la actividad. Es fundamental que el recibo del seguro esté a nombre del autónomo y que el pago se realice desde una cuenta vinculada a su actividad o de su titularidad. Este ahorro fiscal hace que contratar un seguro "Sin Copagos" de alta gama sea, financieramente, mucho más inteligente que optar por opciones básicas que no ofrecen la misma protección pero que apenas suponen un ahorro real tras impuestos. El seguro de salud es la inversión más rentable que un autónomo de Madrid puede hacer por su bienestar y su bolsillo.',
+          'En el marco de la estimación directa, el artículo 30.2.5.ª.a) de la Ley del IRPF puede contemplar como gasto deducible las primas de enfermedad pagadas por el contribuyente para su propia cobertura, la de su cónyuge y la de sus hijos menores de 25 años que convivan con él. El límite es de 500 € por persona y de 1.500 € por persona con discapacidad cuando corresponda, sujeto a requisitos y circunstancias. No es una devolución automática ni una reducción euro por euro del impuesto a pagar.',
+          'Un ejemplo ayuda a entender el mecanismo: si una prima elegible anual es de 420 €, el gasto deducible no puede superar lo efectivamente pagado; si es de 700 €, el límite legal puede restringir la cantidad considerada bajo esta regla. El efecto fiscal final depende de la situación del contribuyente y no se puede convertir en una cifra universal de ahorro o devolución.',
+          'La documentación, quién paga la prima y la forma de registrar el gasto deben comprobarse con la AEAT o con un asesor fiscal. VPI puede ayudarte a entender la documentación del seguro, pero no aplica la regla, no presenta la declaración y no presta asesoramiento fiscal individual.',
         ],
       },
       {
@@ -1731,16 +1731,16 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '¿Cuánto debe pagar un autónomo por la mejor salud en Madrid?',
         content: [
-          'El precio del seguro de salud para autónomos en Madrid es muy competitivo debido al volumen de negocio. En 2026, un autónomo de entre 30 y 45 años puede encontrar pólizas completas "Sin Copagos" diseñadas específicamente para su colectivo por una horquilla que va desde los 48 a los 65 euros mensuales. Si el profesional prefiere ajustar su gasto mensual y solo acude al médico para revisiones anuales, existen modalidades "Con Copago" muy eficientes por apenas 35 euros al mes, manteniendo el mismo cuadro médico de élite.',
+          'El precio del seguro de salud para autónomos en Madrid depende de la edad, el cuestionario, la modalidad, la zona, los copagos y las condiciones del producto. Puede tener sentido comparar una modalidad con copago y otra sin copago según el uso previsto, sin convertir una tarifa orientativa en una promesa universal.',
           'Lo importante al comparar precios en Madrid es no dejarse engañar por ofertas agresivas de "seis meses gratis" que luego aplican subidas de prima desproporcionadas en la primera renovación. En nuestra consultoría técnica, analizamos la "prima nivelada" a largo plazo. Preferimos recomendar compañías que tengan un histórico de estabilidad en sus precios, permitiendo que el autónomo de Boadilla o Madrid pueda presupuestar su año sin sustos en la cuenta bancaria. Un seguro de salud es para usarlo cuando hace falta, y la peor experiencia es que le suban el precio justo cuando ha empezado a tener un problema de salud crónico.',
-          'Recordamos también la opción del reembolso de gastos para aquellos autónomos que ya tienen sus propios médicos de confianza fuera de los cuadros estándar. Aunque la prima es superior (suele partir de los 90-110 euros), permite una libertad absoluta. En definitiva, el coste del mejor seguro de salud para autónomos en Madrid es una fracción mínima de sus ingresos que, tras la deducción fiscal y el ahorro de tiempo, acaba resultando casi gratuito. No espere a tener un problema para valorar la sanidad privada; contrate hoy la tranquilidad de saber que su mayor activo —usted mismo— está protegido por los mejores especialistas de la capital.',
+          'También existe la modalidad de reembolso para quienes quieren revisar el uso de profesionales o centros fuera del cuadro médico. La elegibilidad, el porcentaje, los límites, el ámbito geográfico, la documentación y el posible pago inicial dependen de la póliza. La fiscalidad no convierte el seguro en gratuito: revise primero si la cobertura encaja y después consulte su caso fiscal.',
         ],
       },
       {
         heading: 'Conclusión: Su negocio prospera si usted está sano',
         content: [
-          'En el competitivo ecosistema empresarial de Madrid, la salud es su ventaja competitiva más silenciosa. Un autónomo bien protegido es un autónomo que puede centrarse en sus clientes, en sus proyectos y en su crecimiento sin el miedo constante al "qué pasará si me pongo malo". El seguro de salud es el socio que nunca le falla, garantizando que los mejores recursos médicos de Madrid estén a su disposición en el momento exacto en que los necesite.',
-          'Si busca optimizar sus seguros actuales o quiere contratar su primera póliza de autónomo con la garantía de aprovechar todas las deducciones fiscales, en nuestra asesoría de seguros en Madrid estamos para guiarle. Le ofrecemos un análisis transparente, analizando las mejores compañías del mercado y diseñando una solución que se ajuste a su presupuesto y su ritmo de vida. No deje su salud al azar; confíe en un experto que entiende el valor de su tiempo y de su esfuerzo profesional.',
+          'En el competitivo ecosistema empresarial de Madrid, la salud merece una decisión propia. Un seguro puede ayudar a organizar el acceso a la atención prevista, pero las coberturas, la disponibilidad y las autorizaciones dependen de la modalidad y de la póliza.',
+          'Si busca revisar sus seguros actuales o contratar su primera póliza como autónomo, en nuestra asesoría de seguros en Madrid podemos ayudarle a ordenar el uso previsto, el cuadro médico y las condiciones que conviene comprobar. Si también quiere valorar el tratamiento fiscal, le indicamos la fuente oficial y la documentación que debe revisar con su asesor.',
           'Le invitamos a solicitar una consultoría de salud para autónomos hoy mismo. En menos de 24 horas, le presentaremos un estudio personalizado con las opciones más eficientes del mercado madrileño para 2026. Proteja su presente y asegure su futuro profesional con nosotros. Estamos a su lado en Madrid, Boadilla y toda la zona noroeste.',
         ],
       },
@@ -1748,11 +1748,11 @@ export const blogPosts: BlogPost[] = [
     tips: [
       'Asegúrate de que el seguro incluya cobertura de Incapacidad Temporal para proteger tus ingresos si no puedes trabajar.',
       'Sácale partido a la telemedicina: ahorra horas de desplazamientos por Madrid para consultas rutinarias.',
-      'Consulta con tu gestor la deducción de los 500€ en el IRPF para maximizar tu ahorro anual.',
+      'Consulta con la AEAT o con tu asesor fiscal el tratamiento aplicable a las primas de enfermedad en estimación directa; el límite no es una devolución automática.',
       'Revisa si tu póliza tiene acuerdos internacionales si sueles viajar por negocios fuera de España.',
     ],
     faqs: [
-      { question: '¿Puedo deducir el seguro si mi pareja también trabaja conmigo?', answer: 'Sí, si ambos sois autónomos podéis deducir vuestras primas de forma individual, aumentando el ahorro fiscal de la unidad familiar.' },
+      { question: '¿Puedo deducir el seguro si mi pareja también trabaja conmigo?', answer: 'La aplicación depende de la situación de cada contribuyente y de la regla de estimación directa. El artículo 30.2.5.ª.a) menciona al contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con límites y requisitos; conviene confirmarlo con la AEAT o un asesor fiscal.' },
       { question: '¿Qué pasa con el seguro si cierro mi actividad como autónomo?', answer: 'Podrás mantener el seguro de salud pasando a una póliza de particulares, aunque perderás la deducibilidad fiscal en tu actividad profesional.' },
     ],
   },
@@ -1950,84 +1950,80 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'seguro-medico-autonomos-madrid-deduccion-fiscal',
-    title: 'Seguro médico para autónomos en Madrid: cómo deducirte hasta 500€ en el IRPF',
+    title: 'Seguro médico para autónomos en Madrid: cobertura y alcance fiscal',
     excerpt: 'Si eres autónomo en Madrid, tu seguro médico privado puede ser deducible en el IRPF. Te explicamos cuánto, cómo y qué tipo de cobertura te conviene según tu situación.',
     image: '/images/products/health-medical-care.webp',
-    imageAlt: 'Autónomo trabajando con tranquilidad gracias a su seguro médico deducible',
+    imageAlt: 'Autónomo revisando opciones de seguro médico y su documentación fiscal',
     date: '2026-04-17',
     dateModified: '2026-04-17',
     category: 'consejos',
     readTime: '18 min',
-    metaTitle: 'Seguro médico autónomos Madrid: deducción 500€ IRPF',
-    metaDescription: 'Si eres autónomo en Madrid, tu seguro médico privado puede ser deducible en el IRPF. Te explicamos cuánto, cómo y qué tipo de cobertura te conviene según tu situación.',
+    metaTitle: 'Seguro médico para autónomos en Madrid: cobertura y fiscalidad',
+    metaDescription: 'Revisa la cobertura de salud para autónomos y el alcance fiscal de las primas según la estimación directa, la normativa y tus circunstancias.',
     googleReviewsUrl: 'https://www.google.com/search?q=Valent%C3%ADn+Protecci%C3%B3n+Integral+Rese%C3%B1as&tbm=lcl#lkt=LocalPoiReviews',
     googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA',
     reviewCount: 47,
     sections: [
       {
-        heading: 'La deducción que muchos autónomos desconocen',
+        heading: 'Cobertura y tratamiento fiscal son decisiones distintas',
         content: [
-          'Si eres autónomo en Madrid, cada euro cuenta. Entre la cuota de autónomos, el IVA, el IRPF y los gastos del día a día, la factura fiscal mensual es una realidad constante. Por eso, cuando existe una deducción legal que puede reducir tu carga tributaria, merece la pena conocerla en detalle y aprovecharla.',
-          'Desde 2018, los autónomos pueden deducirse hasta 500 euros anuales por persona en el IRPF por los seguros de enfermedad que contraten para sí mismos, su cónyuge o pareja de hecho, y sus hijos menores de 25 años. Esta deducción se aplica directamente sobre la cuota íntegra del IRPF, lo que significa que es un ahorro real, no una reducción de la base imponible.',
-          'Sin embargo, muchos autónomos en Madrid no conocen esta deducción o no saben cómo aplicarla correctamente. Otros tienen seguros de salud que no cumplen los requisitos legales para ser deducibles. En este artículo te explicamos todo lo que necesitas saber para aprovechar este beneficio fiscal sin problemas con Hacienda.',
+          'Si eres autónomo en Madrid, primero conviene elegir una cobertura que encaje con tu uso previsto: médicos, especialistas, pruebas, hospitalización, copagos y carencias según la modalidad.',
+          'En el marco de la estimación directa, el artículo 30.2.5.ª.a) de la Ley del IRPF puede contemplar como gasto deducible las primas de enfermedad del contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él. El límite es de 500 € por persona y de 1.500 € por persona con discapacidad cuando corresponda, sujeto a requisitos y circunstancias.',
+          'Ese límite de gasto deducible no es una devolución automática ni una reducción euro por euro del impuesto. La aplicación concreta debe confirmarse con la Agencia Tributaria o con un asesor fiscal.',
         ],
       },
       {
         heading: '¿Qué seguros califican para la deducción?',
         content: [
-          'No todos los seguros de salud son deducibles. Para que un seguro médico privado pueda ser objeto de deducción en el IRPF como autónomo, debe cumplir una serie de requisitos establecidos en la normativa fiscal:',
-          '• El seguro debe ser de enfermedad: Esto incluye seguros de salud médica, seguros de enfermedad y seguros que cubran asistencia sanitaria. Los seguros exclusivamente dentales, de vida o de accidentes NO califican para esta deducción específica.',
-          '• El pago debe ser efectuado por el autónomo: La prima debe estar pagada por el trabajador por cuenta propia, ya sea de forma directa o a través de su entidad gestora. Si el seguro lo paga otra persona, no es deducible.',
+          'No todas las primas reciben el mismo tratamiento. Para valorar una prima de enfermedad en el IRPF deben revisarse el método de estimación, quién paga, quién está cubierto y los requisitos establecidos en la normativa fiscal:',
+          '• La regla citada se refiere a la cobertura del contribuyente, su cónyuge y sus hijos menores de 25 años que convivan con él, con los límites aplicables. No equivale a incluir automáticamente a cualquier familiar.',
+          '• La documentación, la relación contractual y el pago deben comprobarse en cada caso. Si la póliza la paga una empresa o existe otra estructura, el análisis puede ser distinto.',
           '• Debe haber constancia de la relación contractual: Es importante conservar la póliza y las facturas de pago, ya que Hacienda puede requerir documentación acreditativa en caso de inspección tributaria.',
-          '• La deducción es por persona asegurada: Puedes deducirte hasta 500 euros por ti mismo, otros 500 por tu cónyuge o pareja de hecho, y 500 euros adicionales por cada hijo menor de 25 años que tengas incluido en la póliza. Una familia puede llegar a deducirse 2.000 euros al año si ambos progenitores son autónomos.',
+          '• El límite es de 500 € por persona elegible y de 1.500 € por persona con discapacidad cuando corresponda; no es una cantidad que Hacienda devuelva automáticamente.',
         ],
       },
       {
         heading: 'Cómo aplicar la deducción en tu declaración del IRPF',
         content: [
-          'Aplicar esta deducción es relativamente sencillo, pero requiere atención en los detalles para evitar errores que puedan derivar en sanciones de Hacienda.',
-          'En la declaración del IRPF (modelo 100), la deducción se incluye en el apartado correspondiente a deducciones por familia y circunstancias personales. Deberás consignar el importe total de las primas pagadas durante el ejercicio fiscal, con un límite máximo de 500 euros por persona asegurada.',
-          'Si contrataste el seguro a mitad de año, la deducción se prorratea por los meses de contratación. Por ejemplo, si firmaste tu póliza en julio, podrás deducir la parte proporcional de esos 500 euros correspondiente a los 6 meses restantes del año.',
-          'Es fundamental que conserves toda la documentación: el contrato de seguro que acredite la cobertura de enfermedad, las facturas de las primas pagadas y los justificantes de pago. Hacienda puede reclamar estos documentos hasta cuatro años después de la declaración.',
+          'No es una operación automática: la forma de declarar el gasto y la documentación exigible deben confirmarse con la AEAT o con un asesor fiscal.',
+          'Conserva el contrato, las facturas y los justificantes de pago que puedan acreditar la cobertura y la prima. La fuente oficial y la situación del contribuyente mandan sobre cualquier ejemplo general.',
         ],
       },
       {
         heading: '¿Qué cobertura te conviene como autónomo?',
         content: [
-          'Aprovechar la deducción fiscal es importante, pero más importante es tener la cobertura que realmente necesitas. Como autónomo, no tienes la red de seguridad de una empresa que te mantenga la nómina durante una baja prolongada. Si enfermas y necesitas atención médica rápida para volver a trabajar, un buen seguro de salud se convierte en una inversión rentable, no en un gasto.',
+          'La fiscalidad no debe sustituir a la decisión sobre la cobertura. Como autónomo, revisa qué uso prevés hacer, qué cuadro médico necesitas y si te convienen copagos, hospitalización o una modalidad distinta.',
           'Para autónomos jóvenes y sanos, un seguro con copago moderado suele ser la opción más económica. Pagas una prima mensual baja y asumes un pequeño coste por cada consulta. Si vas poco al médico, la combinación de prima baja + copago te sale más rentable que un seguro sin copago.',
-          'Si tienes hijos o preexistencias médicas, un seguro sin copago te dará la tranquilidad de saber exactamente cuánto vas a pagar cada mes, sin imprevistos. El coste mensual es mayor, pero tienes acceso ilimitado a especialistas sin coste adicional.',
+          'Si tienes hijos o preexistencias médicas, comprueba la aceptación, las exclusiones, los copagos y los límites de la modalidad. Ningún producto debe describirse como acceso ilimitado sin el respaldo de sus condiciones.',
           'Para autónomos mayores de 45 años, recomendamos evaluar seguros con cobertura de prótesis, rehabilitación y medicina preventiva. A esta edad, los chequeos regulares y la detección precoz pueden evitar parones largos en tu actividad profesional.',
         ],
       },
       {
-        heading: 'El ahorro real: números concretos',
+        heading: 'Cómo entender el límite sin convertirlo en una promesa',
         content: [
-          'Veamos con números reales cuánto puedes ahorrarte. Imagina que eres un autónomo en Madrid con un seguro de salud sin copago que cuesta 55€/mes (660€/al año). Si tu tipo impositivo marginal en el IRPF es del 24% (tramo habitual para autónomos con ingresos medios), la deducción de 500€ te supone un ahorro de 120€ en tu declaración.',
-          'Pero el ahorro no termina ahí. Si necesitas una consulta con un especialista en la sanidad pública, puedes esperar semanas o meses. Como autónomo, cada día sin trabajar es un día sin facturar. Un seguro privado que te dé acceso a un especialista en 48-72 horas puede evitar que pierdas cientos o miles de euros de ingresos por una baja prolongada.',
-          'Además, muchos seguros de salud para autónomos incluyen telemedicina, que te permite obtener diagnósticos y recetas sin desplazarte desde tu domicilio o lugar de trabajo. Esto es especialmente valioso si tu trabajo te exige desplazamientos constantes o si atiendes clientes y no puedes permitirte largas ausencias.',
+          'Si una prima elegible anual es de 420 €, el gasto deducible no puede superar lo efectivamente pagado. Si es de 700 €, el límite legal puede restringir la cantidad considerada bajo esta regla. El resultado fiscal depende de la situación del contribuyente y no puede calcularse como un ahorro universal.',
+          'La disponibilidad de especialistas, telemedicina, autorizaciones y tiempos depende de la modalidad y de la póliza. Compruébalo antes de elegir por precio o por una promesa general.',
         ],
       },
       {
-        heading: 'Conclusión: La deducción es solo el principio',
+        heading: 'Conclusión: primero la cobertura, después la fiscalidad',
         content: [
-          'La deducción de 500€ al año es una ayuda bienvenida, pero el verdadero valor de un seguro médico privado para autónomos va mucho más allá de la fiscalidad. Es tener la tranquilidad de que, si algo te pasa, tendrás atención médica rápida y de calidad sin depender de las listas de espera del sistema público.',
-          'Si aún no tienes seguro médico privado, te animo a que calcules cuánto te costaría una semana sin poder trabajar por una enfermedad que se podría haber diagnosticado y tratado a tiempo. Compara ese coste con la prima anual de un buen seguro menos la deducción fiscal. Normalmente, los números hablan solos.',
-          'En nuestra asesoría de seguros en Madrid, ayudamos a autónomos a encontrar el seguro de salud que mejor se adapta a su situación real, teniendo en cuenta su actividad profesional, su edad, su historial médico y, por supuesto, la optimización fiscal. Si quieres que revisemos tu caso particular, estamos a tu disposición para una consulta sin compromiso.',
+          'El límite de gasto deducible puede ser relevante en determinados casos, pero no es una devolución automática. El verdadero primer paso es comprobar que la modalidad, la póliza y el cuadro médico encajan con tu uso previsto.',
+          'En VPI te ayudamos a revisar el seguro y la documentación disponible. Para saber cómo registrar la prima o aplicar la norma a tu situación, consulta la AEAT o a tu asesor fiscal.',
         ],
       },
     ],
     tips: [
-      'La deducción de 500€ es por persona: tú, cónyuge y cada hijo menor de 25 pueden sumar hasta 2.000€ de deducción familiar.',
+      'La regla de estimación directa contempla un límite de 500 € por persona elegible y de 1.500 € por persona con discapacidad cuando corresponda; no es una devolución automática.',
       'Conserva siempre la póliza y las facturas de pago: Hacienda puede pedirte documentación hasta 4 años después.',
-      'Si das de alta a un hijo o cónyuge a mitad de año, la deducción se prorratea por meses.',
+      'Si cambia la póliza o las personas cubiertas, consulta cómo afecta a la documentación y al tratamiento aplicable.',
       'El seguro debe cubrir enfermedad: los seguros exclusivamente dentales o de vida no califican para esta deducción.',
       'Para autónomos mayores de 45, valorar cobertura de prótesis y rehabilitación: evitarán parones largos en tu actividad.',
     ],
     faqs: [
-      { question: '¿Puedo deducirme el seguro dental si soy autónomo?', answer: 'No, la deducción específica de 500€ solo aplica a seguros de enfermedad o salud médica. Los seguros exclusivamente dentales no califican para esta deducción, aunque sí pueden ser deducibles como gasto de empresa si contratas uno para tus empleados.' },
-      { question: '¿Qué pasa si soy autónomo y mi pareja también lo es? ¿Ambos nos podemos deducir el mismo seguro?', answer: 'Si ambos sois autónomos y pagáis vosotros el seguro, cada uno puede deducirse hasta 500€ por cada persona asegurada. Si pagáis un seguro familiar entre 1.200€ y 2.000€, técnicamente ambos podríais deducir la misma póliza, pero es más seguro que cada uno tenga su propio seguro individual para evitar conflictos con Hacienda.' },
-      { question: '¿Cuándo debo contratar el seguro para poder deducirlo todo el año?', answer: 'Para deducir los 500€ completos, debes tener el seguro contratado desde el 1 de enero. Si lo contratas a mitad de año, la deducción se prorratea. Sin embargo, aunque lo contrates en noviembre, puedes deducir la parte proporcional (unos 83€ por dos meses) y el año siguiente deducir los 500€ completos.' },
+      { question: '¿Puedo deducirme el seguro dental si soy autónomo?', answer: 'La regla citada se refiere a primas de enfermedad y su aplicación depende de la norma, la modalidad y las circunstancias. No extrapoles automáticamente ese tratamiento a una póliza dental; consulta la AEAT o a un asesor.' },
+      { question: '¿Qué pasa si soy autónomo y mi pareja también lo es? ¿Ambos nos podemos deducir el mismo seguro?', answer: 'La aplicación depende de la situación de cada contribuyente, de quién paga la prima y de la regla de estimación directa. Confirma el tratamiento con la AEAT o con un asesor fiscal antes de presentar la declaración.' },
+      { question: '¿Cuándo debo contratar el seguro para poder deducirlo todo el año?', answer: 'La cantidad que pueda considerarse depende de la prima efectivamente pagada, el límite y los requisitos aplicables. No calcules una prorrata fiscal sin confirmarla con la AEAT o con un asesor.' },
       { question: '¿El seguro de salud de mi hijo mayor de 25 que estudia es deducible?', answer: 'No. La normativa establece específicamente "hijos menores de 25 años". Una vez cumplidos los 25, el hijo deja de generar derecho a deducción, aunque esté estudiando o a tu cargo económico.' },
     ],
   },
@@ -2167,7 +2163,7 @@ export const blogPosts: BlogPost[] = [
           'No hay una respuesta única para todos. Depende de tu edad, tu situación familiar, tu historial médico y tu capacidad de ahorro. Aquí van algunas pautas:',
           '• El "Solo dental" te conviene si: Eres joven (menos de 30 años), estás sano, no tienes hijos a cargo, y tu prioridad es mantener la salud bucal sin preocuparte por el resto. Es un perfil arriesgado, pero entendible si tus ingresos son limitados.',
           '• El "Salud completo con dental" te conviene si: Tienes más de 35 años, tienes hijos (los pediatras incluidos son un lujo), tienes alguna condición médica controlada (hipertensión, hipotiroidismo, etc.), o simplemente prefieres la tranquilidad de saber que cualquier problema médico está cubierto.',
-          '• Si eres autónomo: El seguro de salud completo es casi obligatorio. No tienes la red de seguridad de una empresa que te mantenga la nómina durante una baja. Necesitas diagnosticar y curarte rápido para volver a trabajar. Y, además, puedes deducirte hasta 500€ al año en el IRPF.',
+          '• Si eres autónomo: Revisa el uso previsto, el cuadro médico y las condiciones de la póliza. El tratamiento fiscal de la prima debe comprobarse según la regla de estimación directa aplicable y no equivale a una devolución automática de 500 €.',
         ],
       },
       {
@@ -2175,8 +2171,8 @@ export const blogPosts: BlogPost[] = [
         content: [
           'Vamos a hablar de dinero con honestidad. Un seguro dental básico en Madrid te costará entre 15€ y 25€ al mes. Un seguro de salud completo con cobertura dental incluida te costará entre 40€ y 70€ al mes, dependiendo de tu edad y del tipo de copago que elijas.',
           'La diferencia, en el peor de los casos, es de unos 45€ al mes (540€ al año). Pero pensemos en lo que incluye esos 540€ adicionales: acceso ilimitado a especialistas, hospitalización cubierta, urgencias sin copago, pruebas diagnósticas...',
-          'Una sola visita a urgencias en un hospital privado de Madrid puede costar entre 150€ y 300€. Una resonancia magnética, entre 200€ y 400€. Un día de hospitalización, entre 800€ y 1.500€. Es decir: una sola incidencia médica moderada ya amortiza la diferencia de precio anual.',
-          'Y si eres autónomo, recuerda: la deducción de 500€ anuales en el IRPF hace que el seguro de salud completo te salga, en términos netos, prácticamente igual que el seguro dental.',
+          'Una consulta privada, una prueba o un servicio hospitalario tienen un coste que varía según el proveedor, la modalidad y las circunstancias. La póliza debe revisarse por sus propias condiciones, sin asumir que una incidencia amortiza automáticamente la diferencia.',
+          'Y si eres autónomo, recuerda que cualquier tratamiento fiscal de una prima de salud depende de la regla de estimación directa y de tus circunstancias; no hace que el seguro de salud completo cueste automáticamente lo mismo que el seguro dental.',
         ],
       },
       {
@@ -2200,7 +2196,7 @@ export const blogPosts: BlogPost[] = [
     tips: [
       'Si tienes más de 35 años o hijos, el seguro completo suele ser más rentable a largo plazo.',
       'Compara el copago anual máximo: un seguro "barato" con copagos altos puede salirte caro.',
-      'Los autónomos pueden deducirse hasta 500€ del seguro de salud completo en el IRPF.',
+      'En estimación directa, la normativa puede contemplar la prima de enfermedad como gasto deducible para el contribuyente y determinadas personas de su familia, con límites y requisitos. No equivale a una devolución automática de 500 €.',
       'Pregunta si el seguro incluye telemedicina: es muy útil para consultas rápidas sin desplazarte.',
       'Verifica que el cuadro médico tenga buena cobertura en tu zona de Madrid antes de contratar.',
     ],
@@ -2275,7 +2271,7 @@ export const blogPosts: BlogPost[] = [
           '• Niños a partir de 6 meses: Usa siempre protector solar mineral (con óxido de zinc o dióxido de titanio) de SPF 50+, ya que es menos irritante. Aplica generosamente y reaplica cada 2 horas o después de cada baño.',
           '• Protección física adicional: Además del protector solar, usa camisetas con protección UV (UPF 50+), sombreros de ala ancha, gafas de sol con filtro UV y busca la sombra durante las horas centrales del día (12:00-16:00).',
           '• Cuidado con los aerosoles: Son cómodos, pero es fácil aplicar menos cantidad de la necesaria. Si usas aerosol, aplica hasta que la piel brille visiblemente y luego extiende con la mano para asegurar una cobertura uniforme.',
-          'Para las familias, tener un seguro de salud con cobertura dermatológica es una tranquilidad adicional. Si tu hijo sufre una quemadura solar o desarrolla una reacción alérgica, poder acudir a un dermatólogo sin listas de espera marca la diferencia.',
+          'Para las familias, tener un seguro de salud con cobertura dermatológica puede ser una tranquilidad adicional. Si tu hijo sufre una quemadura solar o desarrolla una reacción alérgica, conviene comprobar la disponibilidad y las condiciones de dermatología de la modalidad.',
         ],
       },
       {

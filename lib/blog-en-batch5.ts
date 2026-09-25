@@ -39,7 +39,7 @@ export const blogEnglishBatch5: Record<string, EnglishContent> = {
       ] },
       { heading: 'When does it make sense for you?', content: [
         'It makes sense if you have minor children, an active mortgage, debts guaranteed by third parties or if you are the main financial provider in your household. Conversely, it may be unnecessary if your children are adults and your assets are already consolidated.',
-        'Speak to an insurance advisor before automatically renewing the policy offered by your bank; simply reviewing it could save you 40% a year.',
+        'Speak to an insurance advisor before automatically renewing the policy offered by your bank; reviewing the premium, capital, guarantees and exclusions can help you decide with better information.',
       ] },
     ],
     tips: [

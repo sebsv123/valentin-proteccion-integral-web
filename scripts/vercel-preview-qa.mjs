@@ -15,6 +15,11 @@ const ROUTES = [
   { locale: 'ES', path: '/empresas/ciberseguridad' },
   { locale: 'ES', path: '/autonomos' },
   { locale: 'ES', path: '/seguros/salud/senior' },
+  { locale: 'ES', path: '/zonas/boadilla-del-monte' },
+  { locale: 'ES', path: '/zonas/majadahonda' },
+  { locale: 'ES', path: '/zonas/pozuelo-de-alarcon' },
+  { locale: 'ES', path: '/zonas/las-rozas' },
+  { locale: 'ES', path: '/zonas/madrid' },
   { locale: 'EN', path: '/en/insurance/health-insurance/families' },
   { locale: 'EN', path: '/en/insurance/health' },
   { locale: 'EN', path: '/en/insurance/health-insurance/comprehensive' },
@@ -382,6 +387,25 @@ function forbiddenBusinessBranchMarkers(text, locale) {
   return pattern.test(text) ? ['unsupported business/self-employed commercial claim'] : [];
 }
 
+function forbiddenZoneMarkers(text, locale) {
+  const checks = locale === 'ES' ? [
+    ['professional-liability sales claim', /RC profesional|responsabilidad civil profesional/i],
+    ['business multirisk sales claim', /seguro multirriesgo(?:\s+(?:para|de)\s+(?:tu|su)\s+)?(?:negocio|empresa|pyme)|multirriesgo[^.]{0,100}(?:te asesoramos|contrata|VPI)/i],
+    ['tax-advice or guaranteed-tax claim', /asesor(?:amiento)? fiscal incluido|deducci[oó]n fiscal (?:incluida|autom[aá]tica)|ahorro fiscal garantizado|Hacienda te devuelve 500/i],
+    ['universal-health-access claim', /sin listas de espera|cualquier médico del mundo|libertad total|(?:80|90|100)\s*%[^.]{0,80}(?:reembolso|factura)/i],
+    ['unsupported response or price promise', /respuesta inmediata|en 30 minutos|desde [35]\s*€\s*\/\s*mes|te cuesta la mitad/i],
+    ['invented package claim', /todo ilimitado|\bBÁSICO\b|\bPRO\b|\bENTERPRISE\b/i],
+  ] : [
+    ['professional-liability sales claim', /professional liability(?:\s+(?:included|extended))?|professional liability insurance/i],
+    ['business multirisk sales claim', /business multirisk|commercial multirisk/i],
+    ['tax-advice or guaranteed-tax claim', /tax advice included|tax deduction included|guaranteed tax saving|tax authority refunds €?500/i],
+    ['universal-health-access claim', /no waiting lists|any doctor in the world|complete freedom|(?:80|90|100)\s*%[^.]{0,80}(?:reimbursement|invoice)/i],
+    ['unsupported response or price promise', /immediate response|within 30 minutes|from €?[35]\s*\/\s*month|costs half/i],
+    ['invented package claim', /everything unlimited|\bBASIC\b|\bPRO\b|\bENTERPRISE\b/i],
+  ];
+  return checks.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
+}
+
 async function fetchRoute(baseUrl, route, token) {
   const url = new URL(route.path, baseUrl);
   try {
@@ -439,6 +463,7 @@ async function qa() {
   const selfEmployed = results.filter((route) => route.path === '/autonomos' || route.path === '/en/for/self-employed');
   const businessRoot = results.filter((route) => route.path === '/empresas' || route.path === '/en/business');
   const businessHealth = results.filter((route) => route.path === '/empresas/salud' || route.path === '/en/business/health-insurance');
+  const zones = results.filter((route) => route.path.startsWith('/zonas/'));
   const familyMarkerResults = families.map((route) => ({
     locale: route.locale,
     missing: markerResult(stripMarkup(route.body), route.locale, FAMILY_MARKERS, (text) => forbiddenFamilyMarkers(text)).missing,
@@ -462,8 +487,9 @@ async function qa() {
   const businessRootMarkerResults = businessRoot.map((route) => { const result = markerResult(stripMarkup(route.body), route.locale, BUSINESS_ROOT_MARKERS, () => []); return { locale: route.locale, missing: result.missing, forbidden: result.forbidden }; });
   const businessHealthMarkerResults = businessHealth.map((route) => { const text = stripMarkup(route.body); const result = markerResult(text, route.locale, BUSINESS_MARKERS, forbiddenBusinessBranchMarkers); const missingSources = ['https://sede.agenciatributaria.gob.es/', 'https://www.boe.es/eli/es/l/2006/11/28/35/con'].filter((url) => !route.body.includes(url)); return { locale: route.locale, missing: result.missing, forbidden: result.forbidden, missingSources }; });
   const businessForbiddenResults = [...businessRoot, ...businessHealth, ...selfEmployed].map((route) => ({ locale: route.locale, path: route.path, forbidden: forbiddenBusinessBranchMarkers(stripMarkup(route.body), route.locale) }));
+  const zoneForbiddenResults = zones.map((route) => ({ locale: route.locale, path: route.path, forbidden: forbiddenZoneMarkers(stripMarkup(route.body), route.locale) }));
   const routeFailures = [...results, ...redirectResults].filter((route) => route.failures.length > 0);
-  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults, ...selfEmployedMarkerResults, ...businessRootMarkerResults, ...businessHealthMarkerResults, ...businessForbiddenResults].filter((result) => result.missing?.length > 0 || result.forbidden?.length > 0 || result.missingSources?.length > 0);
+  const markerFailures = [...familyMarkerResults, ...comprehensiveMarkerResults, ...reimbursementMarkerResults, ...selfEmployedMarkerResults, ...businessRootMarkerResults, ...businessHealthMarkerResults, ...businessForbiddenResults, ...zoneForbiddenResults].filter((result) => result.missing?.length > 0 || result.forbidden?.length > 0 || result.missingSources?.length > 0);
 
   summary([
     '## Vercel Preview QA',
@@ -499,6 +525,9 @@ async function qa() {
     '',
     '**Business branch forbidden-content checks**',
     ...businessForbiddenResults.map((result) => `- ${result.locale} \`${result.path}\`: ${result.forbidden.length ? `FAIL: ${result.forbidden.join(', ')}` : 'PASS'}`),
+    '',
+    '**Zone forbidden-content checks**',
+    ...zoneForbiddenResults.map((result) => `- ${result.locale} \`${result.path}\`: ${result.forbidden.length ? `FAIL: ${result.forbidden.join(', ')}` : 'PASS'}`),
   ].join('\n'));
 
   if (routeFailures.length || markerFailures.length) {
