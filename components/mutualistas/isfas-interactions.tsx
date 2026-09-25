@@ -15,7 +15,28 @@ type Props = { partners: Record<string, string>; whatsappNumber: string };
 
 export function IsfasInteractions({ partners, whatsappNumber }: Props) {
   useEffect(() => {
-    let selectedEntity: 'asisa' | 'adeslas' | '' = '';
+    let selectedEntity: 'asisa' | 'adeslas' | '' = window.location.hash === '#asisa' ? 'asisa' : window.location.hash === '#adeslas' ? 'adeslas' : '';
+    const faqTabs = document.querySelector<HTMLElement>('[data-isfas-faq-tabs]');
+    const faqGroups = document.querySelector<HTMLElement>('[data-isfas-faq-groups]');
+    const faqIds = ['faq-isfas', 'faq-asisa', 'faq-adeslas'];
+    const activateFaq = (id: string) => {
+      if (!faqIds.includes(id)) return;
+      faqGroups?.querySelectorAll<HTMLDetailsElement>('details[id^="faq-"]').forEach((group) => {
+        if (faqIds.includes(group.id)) group.open = group.id === id;
+      });
+      faqTabs?.querySelectorAll<HTMLButtonElement>('button[data-isfas-faq-tab]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.isfasFaqTab === id));
+      });
+    };
+    const openFaqFromHash = () => {
+      const id = window.location.hash.slice(1);
+      if (faqIds.includes(id)) activateFaq(id);
+    };
+    activateFaq(faqIds.includes(window.location.hash.slice(1)) ? window.location.hash.slice(1) : 'faq-isfas');
+    if (faqTabs && faqGroups) {
+      faqTabs.hidden = false;
+      faqGroups.dataset.enhanced = 'true';
+    }
     const params = new URLSearchParams(window.location.search);
     const requestedRef = params.get('ref');
     let ref = '';
@@ -76,6 +97,10 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
     const onClick = (event: MouseEvent) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
+      const faqLink = target.closest<HTMLAnchorElement>('a[data-isfas-faq-target]');
+      if (faqLink) {
+        activateFaq(faqLink.dataset.isfasFaqTarget || '');
+      }
       const anchor = target.closest<HTMLAnchorElement>('a[data-isfas-track]');
       if (!anchor || !anchor.closest('[data-isfas-page]')) return;
 
@@ -92,9 +117,25 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
       }
     };
 
+    const onFaqTabClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const button = target.closest<HTMLButtonElement>('button[data-isfas-faq-tab]');
+      const id = button?.dataset.isfasFaqTab;
+      if (!id || !faqIds.includes(id)) return;
+      activateFaq(id);
+      const url = new URL(window.location.href);
+      url.hash = id;
+      window.history.replaceState(null, '', url);
+    };
+
     document.addEventListener('click', onClick, true);
+    faqTabs?.addEventListener('click', onFaqTabClick);
+    window.addEventListener('hashchange', openFaqFromHash);
     return () => {
       document.removeEventListener('click', onClick, true);
+      faqTabs?.removeEventListener('click', onFaqTabClick);
+      window.removeEventListener('hashchange', openFaqFromHash);
       window.removeEventListener('cookie-consent-updated', sendPageView);
     };
   }, [partners, whatsappNumber]);
