@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BadgePercent, Check, CircleHelp, ClipboardList, HeartHandshake, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, Check, CircleHelp, ClipboardList, HeartHandshake, Phone, ShieldAlert, ShieldCheck, Users } from 'lucide-react';
 import RevealLight from './ui/reveal-light';
 import { buildWhatsAppHref, getRelatedProducts, getSubpagesForProduct, site } from '@/lib/products';
 import { getLocalizedProduct, localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
@@ -66,7 +66,6 @@ export function ProductHero({ product, locale }: { product: Product; locale?: 'e
 }
 
 export function CoverageHighlights({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
-  const isNegocio = product.slug === 'negocio';
   const en = locale ? locale === 'en' : useLocale() === 'en';
   
   return (
@@ -77,11 +76,6 @@ export function CoverageHighlights({ product, locale }: { product: Product; loca
             <p className="kicker">{en ? 'Featured cover' : 'Coberturas destacadas'}</p>
             <h2 id="coverage-title" className="mt-3 section-title">{en ? `What matters about ${product.label}, explained clearly` : `Lo importante de ${product.label}, explicado con más orden`}</h2>
             <p className="section-copy mt-4">{en ? 'A short summary of what usually shapes the decision, what varies and what is worth checking before arranging cover.' : 'Aquí resumimos los puntos que más suelen condicionar la decisión: qué se valora, qué cambia entre modalidades y qué preguntas merece la pena hacerse antes de contratar.'}</p>
-            {isNegocio && (
-              <p className="mt-4 text-base leading-7 text-[var(--muted)]">
-                Un seguro de negocio bien diseñado protege tanto el continente (local, instalaciones, mobiliario) como el contenido (stock, equipos, mercancía) y la responsabilidad frente a terceros. Las coberturas más habituales en un multirriesgo de comercio o pyme incluyen:
-              </p>
-            )}
           </div>
          </RevealLight>
          <div className="grid gap-6 md:grid-cols-2">
@@ -336,11 +330,11 @@ export function ProductCTASection({ product, title, text, message, locale, suppr
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl bg-white border border-[var(--border)] shadow-sm">
             <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
-              <BadgePercent className="h-6 w-6 text-amber-600" />
+              <ClipboardList className="h-6 w-6 text-amber-600" />
             </div>
             <div className="flex-1">
               <p className="font-heading text-lg sm:text-xl font-bold text-[var(--blue-deep)]">
-                {en ? 'The same insurance. A better price. Guaranteed.' : 'El mismo seguro. Mejor precio. Garantizado.'}
+                {en ? 'We review your quote' : 'Revisamos tu presupuesto'}
               </p>
               <p className="text-sm sm:text-base text-[var(--muted)] mt-1">
                 {en ? 'Bring us your bank or broker quote and we will review it with you across the plans we can distribute, so you can assess which option fits your case best.' : 'Tráenos el precio de tu banco o gestoría y lo revisamos contigo entre las modalidades que podemos distribuir, para que valores la opción que mejor se ajusta a tu caso.'}

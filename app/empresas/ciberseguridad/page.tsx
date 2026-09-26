@@ -32,7 +32,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'Service', name: 'Ciberprotección para empresas', provider: { '@id': `${site.domain}/#organization` }, areaServed: 'España', serviceType: 'Orientación sobre soluciones de ciberprotección empresarial', url: `${site.domain}/empresas/ciberseguridad` },
-    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: site.domain }, { '@type': 'ListItem', position: 2, name: 'Empresas' }, { '@type': 'ListItem', position: 3, name: 'Ciberseguridad', item: `${site.domain}/empresas/ciberseguridad` }] },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: site.domain }, { '@type': 'ListItem', position: 2, name: 'Empresas y Autónomos' }, { '@type': 'ListItem', position: 3, name: 'Ciberseguridad', item: `${site.domain}/empresas/ciberseguridad` }] },
     { '@type': 'FAQPage', mainEntity: cyberFaq.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) },
   ],
 };
@@ -47,5 +47,5 @@ export const metadata: Metadata = {
 };
 
 export default function CybersecurityPage() {
-  return <div className={styles.page}><Header /><Script id="business-cyber-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><main><div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Empresas', href: '/empresas' }, { label: 'Ciberseguridad' }]} /></div><BusinessCyberHero /><BusinessCyberValueStrip /><BusinessCyberImpactSection /><BusinessCyberIncidentsSection /><BusinessCyberProtectionSection /><BusinessCyberPreventionVsResponse /><BusinessCyberResponseProcess /><BusinessCyberProfilesSection /><BusinessCyberPreventionSection /><BusinessCyberFaqSection /><BusinessCyberLeadForm /><BusinessCyberFinalCta /></main><Footer /></div>;
+  return <div className={styles.page}><Header /><Script id="business-cyber-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><main><div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Empresas y Autónomos', href: '/empresas' }, { label: 'Ciberseguridad' }]} /></div><BusinessCyberHero /><BusinessCyberValueStrip /><BusinessCyberImpactSection /><BusinessCyberIncidentsSection /><BusinessCyberProtectionSection /><BusinessCyberPreventionVsResponse /><BusinessCyberResponseProcess /><BusinessCyberProfilesSection /><BusinessCyberPreventionSection /><BusinessCyberFaqSection /><BusinessCyberLeadForm /><BusinessCyberFinalCta /></main><Footer /></div>;
 }

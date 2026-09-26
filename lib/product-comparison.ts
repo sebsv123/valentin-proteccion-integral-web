@@ -17,63 +17,6 @@ const yes = 'Sí';
 const medium = 'Según modalidad';
 
 export const productCompare: Record<string, ProductCompareConfig> = {
-  salud: {
-    tabs: [
-      {
-        id: 'modalidades',
-        label: 'Modalidades',
-        intro: 'No todas las opciones funcionan igual. Elige antes qué tipo de uso le darás al seguro.',
-        cards: [
-          { title: 'Seguro de Salud Básico o Ambulatorio', desc: 'Acceso rápido a medicina general, especialidades y pruebas diagnósticas sin necesidad de ingreso hospitalario. Ideal para personas jóvenes y sanas que buscan una alternativa privada ágil a las listas de espera de la sanidad pública. Con o sin copago según modalidad.', tag: 'Más accesible' },
-          { title: 'Seguro de Salud para Mayores de 55 años', desc: 'Diseñado para quienes buscan tranquilidad y acompañamiento médico en la etapa senior. Incluye asesor médico personal, sin copagos y asistencia ampliada en viaje. Una opción pensada para la plenitud, no solo para la enfermedad.', tag: 'Especializado' },
-          { title: 'Seguro de Salud para Extranjeros con Visado', desc: 'Sin copagos, sin carencias y con repatriación incluida. Cumple los requisitos exigidos para tramitar la residencia o el visado en España. Apto para reagrupación familiar y estudiantes internacionales.', tag: 'Visado OK' },
-          { title: 'Seguro de Salud con Reembolso y Libre Elección', desc: 'Libertad total para elegir cualquier médico o especialista en el mundo, dentro o fuera del cuadro médico. Recuperas entre el 80% y el 90% de la factura. La opción preferida por quienes ya tienen médico de confianza o necesitan cobertura internacional habitual.', tag: 'Más libertad' },
-        ],
-        bullets: [
-          'Hay opciones ambulatorias y otras completas que incluyen hospitalización y cirugía.',
-          'Las modalidades senior y para extranjeros resuelven necesidades muy específicas.',
-          'El reembolso permite acudir a médicos fuera del cuadro médico concertado.',
-        ],
-      },
-      {
-        id: 'niveles',
-        label: 'Niveles',
-        intro: 'Tabla orientativa para ver diferencias generales entre niveles. No es un presupuesto.',
-        columns: ['Básico', 'Completo', 'Senior', 'Extranjeros'],
-        rows: [
-          { label: 'Medicina y especialistas', values: [yes, yes, yes, yes] },
-          { label: 'Urgencias y pruebas', values: [yes, yes, yes, yes] },
-          { label: 'Hospitalización y cirugía', values: ['No', yes, yes, yes] },
-          { label: 'Asesor Médico Personal', values: ['No', 'No', yes, 'No'] },
-          { label: 'Repatriación', values: ['No', 'No', 'No', yes] },
-          { label: 'Sin copagos', values: ['No siempre', medium, yes, yes] },
-        ],
-      },
-      {
-        id: 'consejos',
-        label: 'Consejos',
-        intro: 'Lo que conviene saber antes de revisar precios.',
-        advice: [
-          { title: 'Qué mirar antes del precio', desc: 'El precio mensual no lo dice todo. Revisa copagos, carencias, exclusiones y el cuadro médico disponible en tu zona.' },
-          { title: 'Cuándo te interesa hospitalización', desc: 'Si tienes hijos menores, planeas una intervención o quieres estar cubierto ante ingresos, la hospitalización marca una diferencia real.' },
-          { title: 'Qué cambia con reembolso', desc: 'Reembolso permite ir a cualquier especialista, incluso fuera del cuadro médico. Ideal si ya tienes un médico de confianza.' },
-          { title: 'Cuándo conviene copago', desc: 'Si usas poco el seguro, el copago abarata la cuota mensual. Pero si necesitas atención frecuente, puede salir más caro a medio plazo.' },
-          { title: 'Qué preguntar antes de contratar', desc: 'Pregunta siempre por carencias, periodo de permanencia, topes en pruebas diagnósticas y cobertura dental incluida.' },
-        ],
-      },
-      {
-        id: 'preguntas',
-        label: 'Tus preguntas',
-        intro: 'Preguntas que aparecen a menudo antes de decidir.',
-        advice: [
-          { title: '¿Seguro familiar o individual?', desc: 'Depende de cuántas personas necesitan cobertura y qué tipo de uso harán del seguro. Una conversación previa aclara mucho.' },
-          { title: '¿Copago o sin copago?', desc: 'Copago reduce la cuota pero pagas por consulta. Sin copago cuesta más al mes pero no pagas al usarlo. La clave es tu frecuencia de uso.' },
-          { title: '¿Red cerrada o libre elección?', desc: 'Red cerrada tiene cuadro médico definido. Libre elección o reembolso permite ir a cualquier especialista.' },
-          { title: '¿Necesito cobertura internacional?', desc: 'Si viajas con frecuencia o tienes familia fuera, la asistencia internacional o en viaje puede ser importante.' },
-        ],
-      },
-    ],
-  },
   vida: {
     tabs: [
       {

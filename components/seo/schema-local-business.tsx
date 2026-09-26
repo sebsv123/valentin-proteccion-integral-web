@@ -56,7 +56,7 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
       "https://wa.me/34603448765"
     ],
     "knowsAbout": isEnglish ? [
-      "Health insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Funeral insurance", "Business insurance", "Insurance for international residents", "Pet liability insurance", "Insurance for self-employed people"
+      "Health insurance", "Pet insurance", "Dental insurance", "Travel insurance", "Accident insurance", "Funeral insurance", "Business health insurance", "Business cybersecurity", "Insurance for international residents", "Pet liability insurance", "Insurance for self-employed people"
     ] : [
       "Seguro de salud",
       "Seguro para mascotas",
@@ -64,7 +64,8 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
       "Seguro de viaje",
       "Seguro de accidentes",
       "Seguro de decesos",
-      "Seguros para negocios y pymes",
+      "Salud para empresas y autónomos",
+      "Ciberseguridad para empresas",
       "Seguros para extranjeros con visado",
       "Ley de Bienestar Animal seguros mascotas",
       "Seguros para autónomos"

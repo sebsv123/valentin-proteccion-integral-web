@@ -15,8 +15,9 @@ F3 consolidates one deterministic duplicate route and records the remaining inte
 | Senior health | `/seguros/salud/senior` | `/seguros/salud-senior`, `/para/seniors` | The hierarchical product subpage is canonical; the standalone legacy page permanently redirects. `/para/seniors` remains the broader audience page. |
 | Foreigners, visa, NIE and TIE health insurance | `/seguros/salud-extranjeros` | `/seguros/salud/extranjeros`, `/extranjeros` | Specialized product page is canonical; duplicate subpage permanently redirects. `/extranjeros` remains the broader audience hub. |
 | Student travel insurance | `/seguros/viaje/estudios` | `/extranjeros`, international pages | Product detail owns student travel intent; audience/international pages remain contextual. |
-| Self-employed audience | `/autonomos` | `/seguros/salud/autonomos`, `/para/autonomos` | `/autonomos` owns audience proposition; `/para/autonomos` already redirects. Product subpage owns health-product intent. |
-| Business audience | `/empresas` | `/empresas/salud`, `/empresas/ciberseguridad` | Hub owns business insurance intent; service pages own health and cybersecurity details. |
+| Self-employed audience | `/autonomos` | `/para/autonomos`, `/empresas` | `/autonomos` is the audience gateway to the unified branch; it is not a product catalogue. `/para/autonomos` redirects here. |
+| Business + self-employed branch | `/empresas` | `/empresas/salud`, `/empresas/ciberseguridad`, `/autonomos` | Unified commercial branch for the real VPI business and self-employed offerings. |
+| Business/self-employed health | `/empresas/salud` | `/seguros/salud/autonomos`, `/autonomos` | The old self-employed health URL redirects here; composition, modalities and tax treatment remain conditional. |
 | Life and mortgage protection | No dedicated current canonical page; `/seguros` is the current broad catalogue destination | Product mentions and blog content | No new page was created in F3; dedicated life-intent architecture is deferred. |
 | Accident insurance | `/seguros/accidentes-decesos` | `/seguros/accidentes`, `/seguros/accidentes/pyme-autonomos` | Combined page is current canonical; both legacy/narrow paths redirect or are excluded. |
 | Dental insurance | `/seguros/dental` | `/seguros/dental/familias` | Hub/detail split is intentional. |
@@ -43,7 +44,7 @@ F3 consolidates one deterministic duplicate route and records the remaining inte
 
 - The senior health decision is resolved in favour of the hierarchical product route because the product inventory, internal modality links, English equivalent and sitemap alternate structure all use `/seguros/salud/senior`; the standalone page had no equivalent English route or internal links.
 - `/extranjeros` is an audience/immigration hub, while `/seguros/salud-extranjeros` is a product destination.
-- `/autonomos` and `/seguros/salud/autonomos` serve audience and product intent respectively.
+- `/autonomos` owns broad self-employed audience intent, while `/empresas/salud` owns the business/self-employed health-product journey. `/seguros/salud/autonomos` is a permanent redirect and is not an active product.
 - Zone pages remain local-intent pages and are not merged with product pages.
 - The English `next-intl` aliases (`/en/reviews`, `/en/business`, `/en/for/*`, `/en/foreigners/rentals` and the localized legal pages) now resolve through one middleware rewrite to the internal filesystem route and return 200. The proxy bypasses only those internal rewritten paths to prevent the prior self-referential 307 loop.
 

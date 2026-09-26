@@ -13,14 +13,14 @@ const FAQChat = dynamicImport(() => import("@/components/faq-chat").then(m => m.
 
 export const metadata: Metadata = {
   title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
-  description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. Personal advisor in English. From 22.50€/month.",
+  description: "Review health-insurance options for visas and residence permits in Spain, including documentation, co-payments and policy conditions.",
   keywords: ["health insurance NIE Spain","health insurance TIE Spain","health insurance visa Spain","foreigners health insurance Madrid","expat health insurance Spain"],
   authors: [{ name: "Rosa Valentín" }],
   publisher: "Valentín Protección Integral",
   alternates: { canonical: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", languages: { es: "https://valentinproteccionintegral.com/seguros/salud-extranjeros", en: "https://valentinproteccionintegral.com/en/insurance/health/foreigners", 'x-default': "https://valentinproteccionintegral.com/seguros/salud-extranjeros" } },
   openGraph: {
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
-    description: "No co-payments, certificate in 24h, valid for visa and residence permit. +100 approved cases. From 22.50€/month.",
+    description: "Review health-insurance options for visas and residence permits in Spain, including documentation, co-payments and policy conditions.",
     url: "https://valentinproteccionintegral.com/en/insurance/health/foreigners",
     siteName: "Valentín Protección Integral",
     locale: "en_US",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Health Insurance for Foreigners in Spain | NIE, TIE & Visa",
-    description: "No co-payments, certificate in 24h. Valid for all Spanish visas and residence permits. Personal advisor in English.",
+    description: "Review health-insurance options for visas and residence permits in Spain, including documentation and policy conditions.",
   },
   other: {
     'content-language': 'en',
@@ -51,13 +51,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {
@@ -66,7 +59,7 @@ const serviceSchema = {
   "name": "Health Insurance NIE/TIE Foreigners Spain — Valentín Protección Integral",
   "provider": localBusinessSchema,
   "areaServed": ["Madrid", "Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas"],
-  "description": "Health insurance for residence in Spain 2026. Meets NIE/TIE requirements. +100 international clients approved. Certificate in 24h."
+  "description": "Guidance on health-insurance options and documentation for residence procedures in Spain, subject to the selected policy and authority requirements."
 };
 
 const faqSchema = {
@@ -86,7 +79,7 @@ const faqSchema = {
       "name": "How quickly will I receive my insurance certificate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In 24 hours from the moment you confirm your policy. In urgent cases, we do everything possible to get it to you the same day."
+        "text": "Timing depends on the selected policy, documentation and the relevant authority requirements. We explain the process before you decide."
       }
     },
     {
@@ -126,8 +119,8 @@ export default function HealthInsuranceForeignersSpainPage() {
         <div className="container mx-auto px-4">
           <p className="text-xs sm:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-2">
             <Shield className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">If your insurance is not valid for your application → <span className="text-amber-400">we refund your money</span></span>
-            <span className="sm:hidden">If not valid for your application → <span className="text-amber-400 font-black">we refund your money</span></span>
+            <span className="hidden sm:inline">We review whether the selected insurance fits your application before you decide.</span>
+            <span className="sm:hidden">We review the requirements before you decide.</span>
           </p>
         </div>
       </div>
@@ -173,21 +166,21 @@ export default function HealthInsuranceForeignersSpainPage() {
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
               <div>
                 <h1 className="text-[40px] sm:text-[60px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-                  Health insurance for foreigners <span className="text-emerald-400">approved</span> for visa in Spain
+                  Health insurance for foreigners in Spain: review the requirements before you decide
                 </h1>
                 
                 <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-10 font-medium">
                   Avoid mistakes that could delay or reject your visa.
                   <br />
-                  <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">We get you the right insurance in 24–48h.</span>
+                  <span className="text-emerald-400 font-bold underline decoration-emerald-400/30 underline-offset-8">We help you review the right documentation and policy conditions.</span>
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
                   {[
                     "Valid for immigration offices",
-                    "No co-payments",
-                    "Certificate ready",
-                    "If not valid, we refund your money"
+                    "Co-payment conditions explained",
+                    "Certificate process explained",
+                    "Requirements reviewed before contracting"
                   ].map((bullet, i) => (
                     <div key={i} className="flex items-center gap-3 text-white font-bold">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
@@ -211,7 +204,7 @@ export default function HealthInsuranceForeignersSpainPage() {
                     </a>
                     <p className="text-center mt-3 text-white font-bold flex items-center justify-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      Response in less than 10 minutes
+                      Clear guidance during our opening hours
                     </p>
                   </div>
                   
@@ -304,7 +297,7 @@ export default function HealthInsuranceForeignersSpainPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  t: "If your insurance is not valid for your application → we refund your money",
+                  t: "We review whether the policy fits your application",
                   icon: <Shield className="w-10 h-10 text-emerald-600" />
                 },
                 {
@@ -340,9 +333,9 @@ export default function HealthInsuranceForeignersSpainPage() {
             
             <div className="grid md:grid-cols-3 gap-12 text-center">
               {[
-                { num: "1", t: "Contact us on WhatsApp", d: "Tell us your situation — visa type, nationality, where you live. We respond the same day." },
+                { num: "1", t: "Contact us on WhatsApp", d: "Tell us your situation — visa type, nationality and where you live. We review the relevant process and documentation." },
                 { num: "2", t: "We find your policy", d: "We select the right option for your specific case. No generic policies — just what you actually need." },
-                { num: "3", t: "Receive your certificate", d: "Your insurance certificate arrives in 24 hours, ready to submit to the consulate or immigration office." }
+                { num: "3", t: "Receive your certificate", d: "Once the policy and documents are confirmed, we explain how to obtain the certificate for the consulate or immigration office." }
               ].map((paso, i) => (
                 <div key={i} className="relative">
                   <div className="text-[120px] font-black text-slate-100 absolute -top-20 left-1/2 -translate-x-1/2 z-0 opacity-50 select-none">
@@ -504,7 +497,7 @@ export default function HealthInsuranceForeignersSpainPage() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { t: "✓ No co-payments from day one", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
-                { t: "✓ Certificate ready in 24 hours", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
+                { t: "✓ Certificate process explained before contracting", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> },
                 { t: "✓ Valid for all Spanish consulates and immigration offices", icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" /> }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center p-8 rounded-[32px] bg-slate-50 border border-slate-100">
@@ -576,7 +569,7 @@ export default function HealthInsuranceForeignersSpainPage() {
             },
             {
               q: "How quickly will I receive my insurance certificate?",
-              a: "In 24 hours from the moment you confirm your policy. In urgent cases, we do everything possible to get it to you the same day."
+              a: "Timing depends on the selected policy, documentation and the relevant authority requirements. We explain the process before you decide."
             },
             {
               q: "Do I need to pay co-payments when I visit the doctor?",
@@ -584,7 +577,7 @@ export default function HealthInsuranceForeignersSpainPage() {
             },
             {
               q: "What happens if the consulate rejects my insurance?",
-              a: "It has never happened with our policies. But if there were ever an error on our part, we resolve it at no cost to you — that is our guarantee."
+              a: "We review the documentation and policy conditions with you before contracting. The competent authority and the insurer determine whether the application and policy meet the applicable requirements."
             }
           ]}
         />

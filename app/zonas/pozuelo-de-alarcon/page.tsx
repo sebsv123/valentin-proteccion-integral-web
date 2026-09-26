@@ -40,12 +40,6 @@ const serviceSchema = {
   },
   "areaServed": ["Pozuelo de Alarcón", "Somosaguas", "La Finca", "Prado del Rey", "Madrid"],
   "description": "Orientación de seguros con registro oficial en Pozuelo de Alarcón. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "ratingCount": "60"
-  }
 };
 
 export const dynamic = "force-static";
@@ -54,7 +48,7 @@ export default function PozueloPage() {
   const wCotiza = buildWhatsAppHref("Hola, soy de Pozuelo de Alarcón y necesito información sobre seguros.");
 
   const seguros = [
-    { nombre: "Salud", desc: "Médicos y hospitales sin esperas ni copagos ocultos." },
+    { nombre: "Salud", desc: "Médicos y hospitales según modalidad, cuadro médico y condiciones." },
     { nombre: "Vida", desc: "Protección para tu familia ante cualquier imprevisto." },
     { nombre: "Dental", desc: "Revisiones, limpiezas y tratamientos sin sorpresas." },
     { nombre: "Mascotas", desc: "Veterinario, vacunas y responsabilidad civil incluidos." },

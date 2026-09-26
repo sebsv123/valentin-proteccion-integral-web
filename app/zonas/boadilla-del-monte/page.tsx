@@ -62,12 +62,6 @@ const serviceSchema = {
   },
   "areaServed": ["Boadilla del Monte", "Majadahonda", "Pozuelo de Alarcón", "Las Rozas", "Madrid"],
   "description": "Orientación de seguros con registro oficial en Boadilla del Monte. Salud, vida, dental, mascotas, decesos y seguros para autónomos.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "ratingCount": "60"
-  }
 };
 
 export const dynamic = "force-static";
@@ -76,7 +70,7 @@ export default function BoadillaPage() {
   const wCotiza = buildWhatsAppHref("Hola, soy de Boadilla del Monte y necesito información sobre seguros.");
 
   const seguros = [
-    { nombre: "Salud", desc: "Médicos y hospitales sin esperas ni copagos ocultos." },
+    { nombre: "Salud", desc: "Médicos y hospitales según modalidad, cuadro médico y condiciones." },
     { nombre: "Vida", desc: "Protección para tu familia ante cualquier imprevisto." },
     { nombre: "Dental", desc: "Revisiones, limpiezas y tratamientos sin sorpresas." },
     { nombre: "Mascotas", desc: "Veterinario, vacunas y responsabilidad civil incluidos." },

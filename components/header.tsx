@@ -53,7 +53,7 @@ export function Header() {
     if (href === '/' || href === '/internacional' || href === '/internacional/peru' || href === '/internacional/australia' || href === '/internacional/india' || href === '/internacional/corea-del-sur' || href === '/contacto' || href === '/extranjeros' || href === '/seguros' || href === '/seguros/salud' || href === '/seguros/salud-extranjeros') {
       return localizedPath(locale, href === '/contacto' ? '/contact' : href === '/internacional' ? '/international' : href === '/internacional/peru' ? '/international/peru' : href === '/internacional/australia' ? '/international/australia' : href === '/internacional/india' ? '/international/india' : href === '/internacional/corea-del-sur' ? '/international/south-korea' : href === '/extranjeros' ? '/foreigners' : href === '/seguros' ? '/insurance' : href === '/seguros/salud' ? '/insurance/health' : href === '/seguros/salud-extranjeros' ? '/insurance/health/foreigners' : href);
     }
-    if (locale === 'en') return ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href;
+    if (locale === 'en') return ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/autonomos': '/en/for/self-employed', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href;
     return href;
   };
 
@@ -180,7 +180,7 @@ export function Header() {
                     onClick={() => setBusinessOpen((open) => !open)}
                     onFocus={() => setBusinessOpen(true)}
                   >
-                    {localeLabel('Empresas')} <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                    {locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos'} <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                   </button>
                   <div
                     id="business-menu"
@@ -188,10 +188,10 @@ export function Header() {
                     aria-label={locale === 'en' ? 'Business solutions' : 'Soluciones para empresas'}
                     className={`absolute right-0 top-[calc(100%+10px)] z-[220] w-[min(500px,calc(100vw-2rem))] rounded-[22px] border border-[var(--border)] bg-white p-3 text-left shadow-[0_18px_48px_rgba(18,59,104,0.2)] transition-all duration-150 ${businessOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-1 opacity-0'}`}
                   >
-                    <p className="px-3 pb-2 pt-1 text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'BUSINESS SOLUTIONS' : 'SOLUCIONES PARA EMPRESAS'}</p>
+                    <p className="px-3 pb-2 pt-1 text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'BUSINESSES & SELF-EMPLOYED' : 'EMPRESAS Y AUTÓNOMOS'}</p>
                     <Link href={localeHref('/empresas/salud')} role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#f1faf8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#e8f7f4] text-[var(--blue)]"><Building2 className="h-5 w-5" aria-hidden="true" /></span>
-                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#2eaaa0]">{locale === 'en' ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">{locale === 'en' ? 'Health cover for teams and self-employed professionals' : 'Cobertura médica para equipos y autónomos'}</span></span>
+                      <span className="min-w-0 flex-1"><span className="block text-[11px] font-bold tracking-[0.13em] text-[#2eaaa0]">{locale === 'en' ? 'HEALTH FOR BUSINESSES & SELF-EMPLOYED' : 'SALUD PARA EMPRESAS Y AUTÓNOMOS'}</span><span className="mt-0.5 block text-sm text-[var(--blue-deep)]">{locale === 'en' ? 'Health insurance for self-employed professionals, teams and SMEs' : 'Seguro de salud para autónomos, equipos y pymes'}</span></span>
                       <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
                     <Link href={localeHref('/empresas/ciberseguridad')} role="menuitem" onClick={() => setBusinessOpen(false)} className="group flex items-center gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-[#edf6f8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
@@ -200,7 +200,7 @@ export function Header() {
                       <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
                     <Link href={localeHref('/empresas')} role="menuitem" onClick={() => setBusinessOpen(false)} className="mt-1 flex items-center justify-between rounded-[14px] border-t border-[var(--border)] px-3 pb-1 pt-3 text-sm font-semibold text-[var(--blue)] hover:text-[var(--blue-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
-                      {locale === 'en' ? 'View all business solutions' : 'Ver todas las soluciones para empresas'} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      {locale === 'en' ? 'View all business and self-employed solutions' : 'Ver todas las soluciones para empresas y autónomos'} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -371,11 +371,11 @@ export function Header() {
               </Link>
             ))}
             <div className="col-span-full mt-2 rounded-[18px] border border-[rgba(15,94,156,0.16)] bg-[linear-gradient(100deg,rgba(15,94,156,0.05),rgba(46,170,160,0.08))] p-4">
-              <p className="text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'FOR BUSINESSES' : 'PARA EMPRESAS'}</p>
+              <p className="text-[11px] font-bold tracking-[0.16em] text-[#2eaaa0]">{locale === 'en' ? 'BUSINESSES & SELF-EMPLOYED' : 'EMPRESAS Y AUTÓNOMOS'}</p>
               <div className="mt-2 grid gap-2 sm:grid-cols-2">
                 <Link href={localeHref('/empresas/salud')} onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
                   <Building2 className="h-5 w-5 shrink-0 text-[var(--blue)]" aria-hidden="true" />
-                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">{locale === 'en' ? 'HEALTH FOR BUSINESSES' : 'SALUD PARA EMPRESAS'}</span><span className="block text-xs text-[var(--muted)]">{locale === 'en' ? 'Health cover for teams and self-employed professionals' : 'Cobertura médica para equipos y autónomos'}</span></span>
+                  <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[var(--blue-deep)]">{locale === 'en' ? 'HEALTH FOR BUSINESSES & SELF-EMPLOYED' : 'SALUD PARA EMPRESAS Y AUTÓNOMOS'}</span><span className="block text-xs text-[var(--muted)]">{locale === 'en' ? 'Health insurance for self-employed professionals, teams and SMEs' : 'Seguro de salud para autónomos, equipos y pymes'}</span></span>
                   <ArrowRight className="h-4 w-4 shrink-0 text-[var(--blue)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
                 <Link href={localeHref('/empresas/ciberseguridad')} onClick={closeAll} className="group flex items-center gap-3 rounded-[14px] bg-white/80 px-3 py-2.5 transition hover:bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--blue)]/40">
@@ -406,12 +406,12 @@ export function Header() {
           ...grouped.map(item => ({ label: localeLabel(item.label), ariaLabel: localeLabel(item.label), link: item.slug === 'salud' ? localeHref('/seguros/salud') : localizedProductPath(item.slug, locale === 'en' ? 'en' : 'es') })),
           ...mainNav.slice(2).map(item => item.label === 'Empresas'
             ? {
-                label: locale === 'en' ? 'Businesses' : 'Empresas',
+                label: locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos',
                 ariaLabel: locale === 'en' ? 'Business solutions' : 'Soluciones para empresas',
                 link: localeHref('/empresas'),
                 children: [
-                  { label: locale === 'en' ? 'All solutions' : 'Todas las soluciones', ariaLabel: locale === 'en' ? 'All business solutions' : 'Todas las soluciones para empresas', link: localeHref('/empresas') },
-                  { label: locale === 'en' ? 'Health for businesses' : 'Salud para empresas', ariaLabel: locale === 'en' ? 'Health for businesses' : 'Salud para empresas', link: localeHref('/empresas/salud') },
+                  { label: locale === 'en' ? 'All business and self-employed solutions' : 'Todas las soluciones para empresas y autónomos', ariaLabel: locale === 'en' ? 'All business and self-employed solutions' : 'Todas las soluciones para empresas y autónomos', link: localeHref('/empresas') },
+                  { label: locale === 'en' ? 'Health for businesses and self-employed' : 'Salud para empresas y autónomos', ariaLabel: locale === 'en' ? 'Health for businesses and self-employed' : 'Salud para empresas y autónomos', link: localeHref('/empresas/salud') },
                   { label: locale === 'en' ? 'Cybersecurity' : 'Ciberseguridad', ariaLabel: locale === 'en' ? 'Cybersecurity for businesses' : 'Ciberseguridad para empresas', link: localeHref('/empresas/ciberseguridad') },
                 ],
               }

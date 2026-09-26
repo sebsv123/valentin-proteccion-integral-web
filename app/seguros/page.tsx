@@ -49,7 +49,7 @@ const productEnglish: Record<string, { label: string; summary: string }> = {
   accidentes: { label: 'Accident insurance', summary: 'Financial protection for the unexpected, in your personal and professional life.' },
 };
 const childLabelEnglish: Record<string, string> = {
-  completa: 'Comprehensive', familias: 'Families', senior: 'Senior', extranjeros: 'Foreigners', reembolso: 'Reimbursement', autonomos: 'Self-employed',
+  completa: 'Comprehensive', familias: 'Families', senior: 'Senior', extranjeros: 'Foreigners', reembolso: 'Reimbursement',
   'responsabilidad-civil': 'Civil liability', 'pyme-autonomos': 'Business and self-employed', estudios: 'Studies',
 };
 

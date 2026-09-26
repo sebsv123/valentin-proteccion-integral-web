@@ -27,8 +27,8 @@ const guarantees = [
   },
   {
     icon: Clock,
-    title: "Respuesta en menos de 24h",
-    body: "Respondemos en menos de 24 horas laborables. Si no es así, te llamamos nosotros con una explicación y una disculpa real.",
+    title: "Respuesta según nuestro horario",
+    body: "Respondemos en nuestro horario de atención y te explicamos con claridad qué podemos revisar en tu caso.",
   },
   {
     icon: HeartHandshake,
@@ -213,7 +213,7 @@ export default function GarantiasPage() {
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0.1}
               className="section-copy text-[var(--muted)] mb-10"
             >
-              Cuéntanos qué necesitas. Te responderemos en menos de 24h con una propuesta honesta.
+              Cuéntanos qué necesitas. Te responderemos en nuestro horario de atención con una propuesta clara.
             </motion.p>
             <motion.div
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0.2}

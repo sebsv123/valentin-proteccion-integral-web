@@ -33,7 +33,7 @@ export default function SchemaPersons({ locale = 'es' }: { locale?: string }) {
         identifier: { '@type': 'PropertyValue', propertyID: 'DGSFP', value: siteConfig.coFounders[0].dgsfpCode },
         affiliation: { '@id': brandId },
         sameAs: ['https://www.instagram.com/segurosvalentin/', 'https://wa.me/34603448765', 'https://www.linkedin.com/in/rosa-isabel-valentin-gonzalez-3a0b16141/'],
-        knowsAbout: isEnglish ? ['Health insurance', 'Pet insurance', 'Dental insurance', 'Travel insurance', 'Accident insurance', 'Funeral insurance', 'Business insurance'] : ['Seguros de salud', 'Seguros para mascotas', 'Seguros dentales', 'Seguros de viaje', 'Seguros de accidentes', 'Seguros de decesos', 'Seguros para negocios y pymes'],
+        knowsAbout: isEnglish ? ['Health insurance', 'Pet insurance', 'Dental insurance', 'Travel insurance', 'Accident insurance', 'Funeral insurance', 'Business health insurance', 'Business cybersecurity'] : ['Seguros de salud', 'Seguros para mascotas', 'Seguros dentales', 'Seguros de viaje', 'Seguros de accidentes', 'Seguros de decesos', 'Salud para empresas y autónomos', 'Ciberseguridad para empresas'],
       },
       {
         '@type': 'Person',

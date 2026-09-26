@@ -135,7 +135,7 @@ export default function AsesoriaGratuitaLanding() {
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
                   Te ayudamos a elegir el seguro que realmente necesitas.
                   <br />
-                  <span className="font-semibold text-gray-900">Sin presión. Sin compromiso. En menos de 24h.</span>
+                  <span className="font-semibold text-gray-900">Sin presión. Sin compromiso. Te respondemos en nuestro horario de atención.</span>
                 </p>
 
                 {/* Trust points */}
@@ -154,8 +154,8 @@ export default function AsesoriaGratuitaLanding() {
                       <Clock className="w-4 h-4 text-blue-600" />
                     </div>
                     <div className="text-left">
-                      <p className="font-semibold text-gray-900 text-sm">Respuesta Rápida</p>
-                      <p className="text-xs text-gray-500">En menos de 24h</p>
+                      <p className="font-semibold text-gray-900 text-sm">Atención cercana</p>
+                      <p className="text-xs text-gray-500">En nuestro horario de atención</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
@@ -198,7 +198,7 @@ export default function AsesoriaGratuitaLanding() {
               <div className="w-full max-w-md mx-auto lg:mx-0">
                 <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-8">
                   <h2 className="text-xl font-bold text-gray-900 mb-2">Solicita tu asesoría gratuita</h2>
-                  <p className="text-sm text-gray-500 mb-6">Rellena el formulario y te llamamos en menos de 24h</p>
+                  <p className="text-sm text-gray-500 mb-6">Rellena el formulario y te llamamos en nuestro horario de atención</p>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -267,7 +267,7 @@ export default function AsesoriaGratuitaLanding() {
                     <p className="text-xs text-gray-400 text-center">
                       Al enviar aceptas nuestra{' '}
                       <a href="/privacidad" className="underline hover:text-gray-600">política de privacidad</a>.
-                      Te llamaremos en menos de 24h en horario de atención (L-V 9h-19h, S 10h-14h).
+                      Te llamaremos en nuestro horario de atención (L-V 9h-19h, S 10h-14h).
                     </p>
                   </form>
 
@@ -341,7 +341,7 @@ export default function AsesoriaGratuitaLanding() {
               ¿Hablamos?
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
-              Un WhatsApp o un formulario. Te orientamos en menos de 24h.
+              Un WhatsApp o un formulario. Te orientamos en nuestro horario de atención.
               <br />
               <span className="font-semibold text-gray-900">Sin presión. Sin letra pequeña.</span>
             </p>

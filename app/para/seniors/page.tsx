@@ -155,7 +155,7 @@ export default function SeniorsPage() {
                 {
                   icon: Heart,
                   title: "Salud",
-                  desc: "Médico cuando lo necesites. Sin listas de espera. Atención en casa si lo prefieres."
+                  desc: "Médico y servicios según la modalidad, la red disponible y las condiciones de la póliza. Atención en casa si la opción lo contempla."
                 },
                 {
                   icon: Home,
@@ -191,7 +191,7 @@ export default function SeniorsPage() {
               {[
                 "Gastos de funeral cubiertos al 100%",
                 "Capital para tu familia (hasta 50.000€)",
-                "Médico especialista sin esperas",
+                "Médico especialista según modalidad y disponibilidad",
                 "Atención en tu domicilio",
                 "Traslado al hospital si es necesario",
                 "Gestión de todos los trámites",
@@ -222,7 +222,7 @@ export default function SeniorsPage() {
                 Esta es una de las preguntas que más escuchamos en Valentín Protección Integral. Muchas personas creen que al cumplir 70 años ya no pueden contratar un seguro de salud privado, pero la realidad es más matizada. Sí, es cierto que algunas opciones del mercado ponen límites de edad para nuevas contrataciones, pero existen alternativas específicas para personas mayores de 70 años que ofrecen coberturas adaptadas a esta etapa de la vida.
               </p>
               <p className="text-lg text-stone-600 leading-relaxed">
-                En nuestro día a día trabajamos con personas mayores de 70 años que buscan un seguro de salud sin listas de espera, un seguro de decesos que deje todo resuelto para su familia, o un seguro de vida que proteja a los suyos. Estudiamos cada caso de forma personalizada porque no es lo mismo una persona de 72 años con buena salud que otra de 78 con patologías previas. No aplicamos recetas genéricas: escuchamos tu situación real y buscamos la opción que mejor se adapta a ti, con transparencia y sin prisas.
+                En nuestro día a día trabajamos con personas mayores de 70 años que buscan un seguro de salud con una modalidad y un cuadro médico que encajen con sus necesidades, un seguro de decesos que deje todo ordenado para su familia, o un seguro de vida que proteja a los suyos. Estudiamos cada caso de forma personalizada porque no es lo mismo una persona de 72 años con buena salud que otra de 78 con patologías previas. No aplicamos recetas genéricas: escuchamos tu situación real y buscamos la opción que mejor se adapta a ti, con transparencia y sin prisas.
               </p>
               <p className="text-lg text-stone-600 leading-relaxed">
                 Las opciones para mayores de 70 años en Madrid incluyen seguros de salud con acceso a especialistas, pruebas diagnósticas y hospitalización; seguros de decesos con gestión completa del sepelio desde el primer día y sin carencias; y seguros de vida con capitales adaptados a las necesidades familiares. En todos los casos, te explicamos las condiciones con claridad, sin letra pequeña y sin presión comercial. Si tienes más de 70 años y quieres saber qué opciones reales hay para ti, escríbenos por WhatsApp al{' '}

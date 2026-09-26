@@ -43,9 +43,9 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Boadilla del Monte — Salud, Vida y Más | VPI',
     metaDescription: 'Asesoramiento de seguros en Boadilla del Monte con sede propia. Salud, vida, mascotas y dental. Responsable profesional: Rosa Valentín, agente registrada DGSFP C012479234434D.',
     h1: 'Seguros en Boadilla del Monte – Tu Asesor Local con +10 Años',
-    heroSubtitle: 'Sede en Boadilla del Monte. Rosa y Sebastián llevan más de 10 años protegiendo a familias, autónomos y vecinos del municipio. Sin call center — respuesta personal en 30 minutos.',
+    heroSubtitle: 'Sede en Boadilla del Monte. Rosa y Sebastián ayudan a familias, autónomos y vecinos del municipio. Sin call center — contacto personal en nuestro horario de atención.',
     intro: 'Somos agentes de seguros registrados con sede en Boadilla del Monte. Llevamos más de 10 años ayudando a familias, autónomos y vecinos del municipio a elegir el seguro que realmente necesitan. Te acompañamos para que elijas con toda la información — sin letra pequeña y sin presión comercial. La consulta es gratuita y puedes contactarnos por WhatsApp, teléfono o videollamada.',
-    porQueElegirNos: 'Boadilla del Monte es uno de los municipios con mayor calidad de vida y mayor renta per cápita de España. Ese perfil se traduce en familias con hipotecas, autónomos con negocio propio y un perfil senior creciente que busca cobertura completa. Las necesidades de protección son amplias y diversas — y ningún portal automático puede sustituir a alguien que conoce el municipio de primera mano.\n\nBoadilla no tiene hospital propio. El centro hospitalario de referencia más cercano es el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 10 minutos, y el HM Montepríncipe a escasos 5 minutos. Esto hace que un seguro de salud privado sea especialmente valioso para los residentes: elimina listas de espera para especialistas, pruebas diagnósticas y urgencias sin necesidad de desplazarse. Las listas de espera en la sanidad pública madrileña superan los 60 días de media para especialistas.\n\nNuestra sede está en Boadilla del Monte. No somos un call center ni una plataforma digital — somos Rosa y Sebastián, asesores que viven y trabajan en el municipio. Conocemos los colegios, las urbanizaciones, el Prado del Espino, las necesidades reales de las familias de aquí. Atendemos presencialmente y también por teléfono, WhatsApp o videollamada para quien prefiera no desplazarse.',
+    porQueElegirNos: 'Boadilla del Monte es uno de los municipios con mayor calidad de vida y mayor renta per cápita de España. Ese perfil se traduce en familias con hipotecas, autónomos con negocio propio y un perfil senior creciente que busca una cobertura bien explicada. Las necesidades de protección son amplias y diversas — y ningún portal automático puede sustituir a alguien que conoce el municipio de primera mano.\n\nBoadilla no tiene hospital propio. El centro hospitalario de referencia más cercano es el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 10 minutos, y el HM Montepríncipe a escasos 5 minutos. Esto hace que convenga comprobar la modalidad, el cuadro médico, la disponibilidad y las condiciones de cada seguro de salud antes de decidir.\n\nNuestra sede está en Boadilla del Monte. No somos un call center ni una plataforma digital — somos Rosa y Sebastián, asesores que viven y trabajan en el municipio. Conocemos los colegios, las urbanizaciones, el Prado del Espino, las necesidades reales de las familias de aquí. Atendemos presencialmente y también por teléfono, WhatsApp o videollamada para quien prefiera no desplazarse.',
     datosLocales: {
       poblacion: '52.000 habitantes',
       hospitalMasCercano: 'HM Montepríncipe (~5 min) y Hospital Universitario Puerta de Hierro, Majadahonda (~10 min)',
@@ -68,15 +68,15 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué seguros necesita una familia en Boadilla del Monte?',
-        a: 'Las familias de Boadilla suelen priorizar seguro de salud (sin listas de espera y con pediatría), seguro de vida (especialmente con hipoteca), seguro para mascotas y seguro dental. Al no haber hospital público en el municipio, el acceso rápido a especialistas privados es especialmente valorado. Te ayudamos a entender qué cubre cada uno y cuál tiene más sentido para tu situación.',
+        a: 'Las familias de Boadilla suelen priorizar seguro de salud (con pediatría y condiciones que conviene revisar), seguro de vida (especialmente con hipoteca), seguro para mascotas y seguro dental. Al no haber hospital público en el municipio, muchas personas comparan la disponibilidad de especialistas privados y la ubicación del cuadro médico. Te ayudamos a entender qué cubre cada uno y cuál tiene más sentido para tu situación.',
       },
       {
         q: '¿Es obligatorio el seguro de perro en Boadilla del Monte?',
-        a: 'Sí. La Ley de Bienestar Animal de 2023 obliga a todos los propietarios de perros en España, incluido Boadilla del Monte, a tener un seguro de responsabilidad civil. Te asesoramos para elegir la cobertura adecuada. Las opciones que gestionamos empiezan desde 5€/mes para RC básica.',
+        a: 'La normativa aplicable a la responsabilidad civil de los perros debe comprobarse según su vigencia y alcance. Si buscas una póliza para tu mascota, revisamos contigo las coberturas, los límites y el precio que correspondan a tu caso, sin presentar una tarifa desde como universal.',
       },
       {
         q: '¿Qué necesita un autónomo en Boadilla del Monte para estar bien protegido?',
-        a: 'Un autónomo en Boadilla del Monte necesita como mínimo: seguro de accidentes (que cubre incapacidad temporal cuando no puedes trabajar), seguro de salud privado para no depender de listas de espera, y responsabilidad civil profesional según la actividad. Además, el seguro de salud para autónomos tiene ventajas fiscales reales — es deducible como gasto de la actividad. Rosa y Sebastián te lo explican sin tecnicismos en 30 minutos.',
+        a: 'Un autónomo en Boadilla del Monte puede valorar un seguro de accidentes, salud o vida según su actividad y sus prioridades. La cobertura sanitaria depende de la modalidad y la póliza. Si revisas el tratamiento fiscal de la prima, la regla de IRPF aplicable a la estimación directa contempla requisitos, personas elegibles y límites; no equivale a una devolución automática. Rosa y Sebastián te ayudan a separar ambas decisiones en nuestro horario de atención.',
       },
     ],
     segurosDestacados: ['salud', 'vida', 'mascotas', 'dental'],
@@ -113,9 +113,9 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Las Rozas — Salud, Vida, Autónomos | VPI',
     metaDescription: 'Asesoramiento de seguros para Las Rozas de Madrid. Salud, vida, autónomos y RC mascotas. Responsable profesional: Rosa Valentín, agente registrada DGSFP C012479234434D.',
     h1: 'Seguros en Las Rozas de Madrid – Orientación con registro oficial y +10 años',
-    heroSubtitle: 'Orientación de seguros para familias, autónomos y profesionales de Las Rozas. Salud, vida, mascotas y más — sin call center, sin letra pequeña. Rosa y Sebastián responden en 30 minutos.',
+    heroSubtitle: 'Orientación de seguros para familias, autónomos y profesionales de Las Rozas. Salud, vida, mascotas y más — sin call center, sin letra pequeña. Rosa y Sebastián responden en nuestro horario de atención.',
     intro: 'Atendemos a familias, autónomos y profesionales de Las Rozas de Madrid con asesoramiento especializado en seguros. Analizamos tu situación real, te acompañamos para que elijas con toda la información y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin coste. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
-    porQueElegirNos: 'Las Rozas de Madrid ha crecido hasta convertirse en uno de los municipios más dinámicos del noroeste metropolitano, con más de 100.000 habitantes y una alta concentración de familias jóvenes, autónomos digitales y profesionales de empresa. Este perfil mixto genera necesidades muy diversas: desde familias con hipoteca que necesitan un seguro de vida bien dimensionado, hasta autónomos tech que deben proteger sus ingresos ante una incapacidad, pasando por familias con mascotas que buscan RC y cobertura veterinaria.\n\nLas Rozas no tiene hospital público propio. El centro hospitalario de referencia más cercano es el HM Montepríncipe en Boadilla del Monte, a unos 12 minutos, y el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 15 minutos. Esto hace que un seguro de salud privado sea especialmente valioso: elimina las listas de espera para especialistas — que en Madrid superan los 67 días de media — y da acceso a consultas en 24-48h.\n\nLas Rozas también alberga uno de los mayores polos empresariales del noroeste — lo que hace que el seguro para autónomos y pymes sea una de las coberturas más demandadas en la zona. Conocemos el perfil del municipio y ofrecemos orientación con registro oficial. Atendemos presencialmente desde Boadilla y por videollamada o WhatsApp para quien prefiera no desplazarse.',
+    porQueElegirNos: 'Las Rozas de Madrid ha crecido hasta convertirse en uno de los municipios más dinámicos del noroeste metropolitano, con más de 100.000 habitantes y una alta concentración de familias jóvenes, autónomos digitales y profesionales de empresa. Este perfil mixto genera necesidades muy diversas: desde familias con hipoteca que necesitan un seguro de vida bien dimensionado, hasta autónomos tech que deben proteger sus ingresos ante una incapacidad, pasando por familias con mascotas que buscan RC y cobertura veterinaria.\n\nLas Rozas no tiene hospital público propio. El centro hospitalario de referencia más cercano es el HM Montepríncipe en Boadilla del Monte, a unos 12 minutos, y el Hospital Universitario Puerta de Hierro en Majadahonda, a unos 15 minutos. Para salud privada conviene revisar la modalidad, el cuadro médico, la disponibilidad y las condiciones concretas, en lugar de prometer un plazo universal.\n\nLas Rozas también alberga uno de los mayores polos empresariales del noroeste — lo que hace que el seguro para autónomos y pymes sea una de las coberturas más demandadas en la zona. Conocemos el perfil del municipio y ofrecemos orientación con registro oficial. Atendemos presencialmente desde Boadilla y por videollamada o WhatsApp para quien prefiera no desplazarse.',
     datosLocales: {
       poblacion: 'Más de 100.000 habitantes',
       hospitalMasCercano: 'HM Montepríncipe (Boadilla del Monte, ~12 min) y Hospital Universitario Puerta de Hierro (Majadahonda, ~15 min)',
@@ -130,7 +130,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué seguro necesita un autónomo o profesional tech en Las Rozas?',
-        a: 'Los autónomos y profesionales digitales en Las Rozas necesitan como mínimo: seguro de accidentes con incapacidad temporal (para cuando no puedes trabajar), seguro de salud privado para no depender de listas de espera, y RC profesional según la actividad. El seguro de salud para autónomos además es deducible como gasto de la actividad en el IRPF. Rosa y Sebastián te asesoran sin tecnicismos en 30 minutos.',
+        a: 'Los autónomos y profesionales digitales en Las Rozas pueden valorar accidentes, salud o vida según su actividad y sus prioridades. La cobertura sanitaria y cualquier tratamiento fiscal de la prima dependen de la modalidad, la normativa aplicable y las circunstancias del contribuyente. Rosa y Sebastián te ayudan a revisar esas preguntas sin tecnicismos en nuestro horario de atención.',
       },
       {
         q: '¿Puedo cambiar de seguro de salud en Las Rozas sin perder coberturas?',
@@ -142,11 +142,11 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué seguro necesita una pyme o negocio en Las Rozas Business Park?',
-        a: 'Una pyme en Las Rozas necesita como mínimo seguro multirriesgo de negocio (continente, contenido y RC), seguro de vida para socios clave y, según la actividad, RC profesional. Te asesoramos sin coste para encontrar la cobertura adecuada a tu sector y tamaño de empresa.',
+        a: 'Una pyme en Las Rozas puede empezar revisando salud para el equipo y ciberseguridad, según su actividad y el producto que quiera estudiar. La composición de personas, el nivel de cobertura y las condiciones deben concretarse antes de hacer una propuesta. Te ayudamos a ordenar esas prioridades sin inventar un paquete universal.',
       },
       {
         q: '¿Es obligatorio el seguro de perro en Las Rozas de Madrid?',
-        a: 'Sí. La Ley de Bienestar Animal de 2023 obliga a todos los propietarios de perros en España, incluido Las Rozas de Madrid, a tener un seguro de responsabilidad civil. Las opciones que gestionamos empiezan desde 5€/mes para RC básica. Si quieres añadir cobertura veterinaria, Rosa y Sebastián te calculan el precio para tu perro en 30 minutos.',
+        a: 'La normativa aplicable a la responsabilidad civil de los perros debe comprobarse según su vigencia y alcance. Si buscas una póliza para tu mascota, revisamos contigo las coberturas, los límites y el precio que correspondan a tu caso, también si quieres añadir asistencia veterinaria.',
       },
     ],
     segurosDestacados: ['salud', 'vida', 'accidentes', 'mascotas'],
@@ -183,9 +183,9 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Majadahonda — Salud, Vida y Autónomos | VPI',
     metaDescription: 'Asesoramiento de seguros para Majadahonda. Salud, vida, autónomos y dental. Responsable profesional: Rosa Valentín, agente registrada DGSFP C012479234434D.',
     h1: 'Seguros en Majadahonda – Tu Asesor Local con +10 Años',
-    heroSubtitle: 'Orientación de seguros a 10 minutos de Majadahonda. Rosa y Sebastián llevan más de 10 años protegiendo a familias y autónomos del noroeste de Madrid. Respuesta personal en 30 minutos — sin call center.',
+    heroSubtitle: 'Orientación de seguros a 10 minutos de Majadahonda. Rosa y Sebastián ayudan a familias y autónomos del noroeste de Madrid. Respuesta personal en nuestro horario de atención — sin call center.',
     intro: 'Asesoramos a particulares, familias y autónomos de Majadahonda en seguros de salud, vida, dental, accidentes y más. Nuestra sede está en Boadilla del Monte, a 10 minutos, y atendemos también por videollamada, teléfono o WhatsApp. Te acompañamos para que elijas con toda la información y para que la recomendación sea siempre la que te conviene a ti — no la que más comisión da.',
-    porQueElegirNos: 'Majadahonda tiene un perfil demográfico muy particular: alta concentración de profesionales liberales, sanitarios, directivos y familias de nivel medio-alto. El municipio acoge el Hospital Universitario Puerta de Hierro, uno de los centros más grandes de la Comunidad de Madrid — pero ese hospital es público y sujeto a las listas de espera del sistema sanitario madrileño, que superan los 60 días para especialistas. Un seguro de salud privado elimina esas esperas y da acceso a consultas en 24-48h.\n\nMajadahonda también concentra una alta actividad deportiva — golf, tenis, pádel, running — que hace que las coberturas de accidentes deportivos sean especialmente relevantes para muchos residentes. Un accidente durante la práctica deportiva puede generar gastos médicos y, sobre todo, tiempo sin trabajar. Un seguro de accidentes bien dimensionado cubre ambas cosas.\n\nLos autónomos y profesionales liberales de Majadahonda — abogados, médicos, consultores, diseñadores — necesitan protección específica: RC profesional, incapacidad temporal y salud. Rosa y Sebastián conocen esos perfiles desde hace más de 10 años y asesoran de forma personalizada, sin plantillas ni soluciones genéricas.',
+    porQueElegirNos: 'Majadahonda tiene un perfil demográfico muy particular: alta concentración de profesionales liberales, sanitarios, directivos y familias de nivel medio-alto. El municipio acoge el Hospital Universitario Puerta de Hierro, uno de los centros más grandes de la Comunidad de Madrid — pero ese hospital es público y está sujeto a las condiciones del sistema sanitario madrileño. Un seguro de salud privado puede ofrecer otra vía de atención, pero conviene revisar la modalidad, la disponibilidad, el cuadro médico y las condiciones concretas.\n\nMajadahonda también concentra una alta actividad deportiva — golf, tenis, pádel, running — que hace que las coberturas de accidentes deportivos sean especialmente relevantes para muchos residentes. Un accidente durante la práctica deportiva puede generar gastos médicos y, sobre todo, tiempo sin trabajar. Un seguro de accidentes bien dimensionado cubre ambas cosas.\n\nLos autónomos y profesionales liberales de Majadahonda — abogados, médicos, consultores, diseñadores — pueden valorar incapacidad temporal y salud según su situación. Rosa y Sebastián conocen esos perfiles y asesoran de forma personalizada, sin plantillas ni soluciones genéricas.',
     datosLocales: {
       poblacion: '75.000 habitantes',
       hospitalMasCercano: 'Hospital Universitario Puerta de Hierro (en el propio municipio)',
@@ -196,15 +196,15 @@ export const zonas: Zona[] = [
     faqsLocales: [
       {
         q: '¿Merece la pena un seguro de salud privado en Majadahonda teniendo el Puerta de Hierro?',
-        a: 'El Hospital Puerta de Hierro es público y sujeto a las listas de espera de la Comunidad de Madrid, que superan los 60 días para especialistas. Un seguro de salud privado da acceso a consultas en 24-48h, pruebas diagnósticas rápidas y hospitalización sin esperas en centros privados. Rosa y Sebastián te calculan el precio para tu perfil en 30 minutos, gratis y sin compromiso.',
+        a: 'El Hospital Puerta de Hierro es público y sus tiempos dependen de la organización del sistema sanitario. Un seguro de salud privado puede ofrecer una vía distinta para consultas, pruebas u hospitalización según la modalidad, el cuadro médico y la póliza. Rosa y Sebastián te ayudan a revisar el precio y las condiciones de tu perfil en nuestro horario de atención, sin compromiso.',
       },
       {
         q: '¿Qué seguro necesita un autónomo o profesional liberal en Majadahonda?',
-        a: 'Los autónomos y profesionales liberales en Majadahonda (médicos, abogados, consultores) necesitan como mínimo: RC profesional, seguro de accidentes con incapacidad temporal y seguro de salud privado. Además, el seguro de salud para autónomos es deducible como gasto de la actividad en el IRPF. Te asesoramos para cubrir exactamente lo que necesitas según tu sector, sin pagar de más.',
+        a: 'Los autónomos y profesionales liberales en Majadahonda (médicos, abogados, consultores) pueden valorar accidentes con incapacidad temporal y salud según su actividad. El tratamiento fiscal de una prima puede depender de la estimación directa, las personas elegibles, los límites y las circunstancias del contribuyente. Te ayudamos a revisar las condiciones del seguro sin presentar una conclusión fiscal universal.',
       },
       {
         q: '¿Existe algún seguro de accidentes deportivos para residentes de Majadahonda?',
-        a: 'Sí. Los seguros de accidentes cubren lesiones durante la práctica deportiva — golf, pádel, tenis, running, ciclismo — incluyendo gastos médicos e incapacidad temporal si no puedes trabajar. Son especialmente relevantes para autónomos y profesionales que no tienen cobertura laboral. Desde 3€/mes para coberturas básicas. Rosa y Sebastián te calculan la opción adecuada para tu actividad.',
+        a: 'Los seguros de accidentes pueden cubrir lesiones durante la práctica deportiva — golf, pádel, tenis, running o ciclismo — incluyendo gastos médicos e incapacidad temporal si así lo establece la modalidad. Son especialmente relevantes para autónomos y profesionales que quieren revisar esa protección. El precio depende de la actividad y las coberturas; Rosa y Sebastián te ayudan a concretar la opción adecuada.',
       },
       {
         q: '¿Puedo contratar un seguro dental para toda la familia en Majadahonda?',
@@ -216,7 +216,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Cuánto cuesta un seguro de vida en Majadahonda?',
-        a: 'El precio de un seguro de vida en Majadahonda depende de la edad, el capital asegurado y si hay hipoteca. Para un perfil de 40 años con hipoteca, las coberturas habituales empiezan por un precio mensual accesible. Rosa y Sebastián te calculan el capital que necesitas y el precio real para tu situación en 30 minutos, gratis y sin compromiso.',
+        a: 'El precio de un seguro de vida en Majadahonda depende de la edad, el capital asegurado, la aceptación y si hay hipoteca. Rosa y Sebastián te ayudan a revisar el capital y las condiciones que pueden encajar con tu situación, sin presentar un precio desde como universal.',
       },
     ],
     segurosDestacados: ['salud', 'vida', 'accidentes', 'dental'],
@@ -253,7 +253,7 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Pozuelo de Alarcón — Salud Premium | VPI',
     metaDescription: 'Asesoramiento de seguros para Pozuelo de Alarcón. Salud, vida y protección jurídica. Responsable profesional: Rosa Valentín, agente registrada DGSFP C012479234434D.',
     h1: 'Seguros en Pozuelo de Alarcón – Asesoramiento Experto con Registro Oficial DGSFP',
-    heroSubtitle: 'Orientación de seguros para familias y profesionales de Pozuelo de Alarcón. Salud, vida, hogar y protección jurídica — coberturas que responden cuando las necesitas. Rosa y Sebastián, respuesta personal en 30 minutos.',
+    heroSubtitle: 'Orientación de seguros para familias y profesionales de Pozuelo de Alarcón. Salud, vida, hogar y protección jurídica — coberturas que conviene revisar según tu caso. Rosa y Sebastián, respuesta personal en nuestro horario de atención.',
     intro: 'Ayudamos a familias y profesionales de Pozuelo de Alarcón a elegir seguros con criterio. Analizamos tu situación real, te acompañamos para que elijas con toda la información y te recomendamos la opción más adecuada — sin presión, sin letra pequeña y sin compromisos. Nuestra sede está en Boadilla del Monte, a 15 minutos, y atendemos también por videollamada, teléfono o WhatsApp.',
     porQueElegirNos: 'Pozuelo de Alarcón es uno de los municipios con mayor renta per cápita de España. Ese perfil se traduce en necesidades de protección amplias y bien definidas: familias con hipotecas de capital elevado que necesitan seguros de vida correctamente dimensionados, profesionales con demanda de salud premium con libre elección médica o reembolso, y autónomos con facturaciones altas que deben proteger su actividad y sus ingresos ante cualquier imprevisto.\n\nEl perfil de Pozuelo también incluye familias con hijos en colegios privados e internacionales, propiedades de valor elevado que justifican un seguro de hogar bien cubierto, y un perfil senior con patrimonio que busca dejar todo en orden para sus hijos. No se trata de pagar más por lo mismo — se trata de tener la cobertura que realmente responde en el momento que la necesitas.\n\nNuestro compromiso es contigo: te explicamos cada opción con claridad, sin tecnicismos y con honestidad total. Llevamos más de 10 años haciéndolo para familias y profesionales del noroeste de Madrid. Atendemos por videollamada o presencialmente desde nuestra sede en Boadilla del Monte, a menos de 15 minutos de Pozuelo.',
     datosLocales: {
@@ -266,7 +266,7 @@ export const zonas: Zona[] = [
     faqsLocales: [
       {
         q: '¿Cuánto cuesta un seguro de salud con reembolso en Pozuelo de Alarcón?',
-        a: 'Los seguros de salud con reembolso permiten acudir a cualquier médico del mundo y recuperar parte del coste. Son especialmente valorados en Pozuelo por perfiles que viajan frecuentemente o quieren total libertad de elección médica. El precio depende de la edad, el capital de reembolso y las coberturas. Rosa y Sebastián te asesoran sobre las coberturas disponibles para tu perfil concreto en 30 minutos, gratis y sin compromiso.',
+        a: 'Los seguros de salud con reembolso pueden permitir acudir a profesionales o centros fuera del cuadro médico cuando son elegibles según la póliza. Debes revisar el porcentaje, los límites, los servicios, el ámbito geográfico y la documentación; no existe una libertad universal ni un porcentaje común a todos los productos. Rosa y Sebastián te ayudan a revisar las coberturas disponibles para tu perfil, sin compromiso.',
       },
       {
         q: '¿Cómo dimensionar bien un seguro de vida en Pozuelo de Alarcón?',
@@ -278,7 +278,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué seguro necesita un autónomo o directivo en Pozuelo de Alarcón?',
-        a: 'Los autónomos y directivos en Pozuelo suelen necesitar RC profesional, seguro de salud privado, accidentes con incapacidad temporal y seguro de vida. Si tienen empleados, también cobertura de convenio colectivo. Además, el seguro de salud para autónomos es deducible como gasto de la actividad. Te asesoramos para cubrir exactamente lo que necesitas según tu sector y facturación.',
+        a: 'Los autónomos y directivos en Pozuelo pueden valorar salud, accidentes con incapacidad temporal y seguro de vida según su actividad. Si tienen empleados, también deben revisar las obligaciones del convenio colectivo que les corresponda. El tratamiento fiscal de una prima depende de la norma aplicable y de las circunstancias del contribuyente; te ayudamos a separar esa cuestión de la decisión sobre la cobertura.',
       },
       {
         q: '¿Merece la pena contratar el seguro de vida para hipoteca fuera del banco en Pozuelo?',
@@ -323,7 +323,7 @@ export const zonas: Zona[] = [
     metaTitle: 'Seguros en Madrid — Orientación con registro oficial | VPI',
     metaDescription: 'Asesoramiento de seguros en Madrid. Salud, vida, autónomos y más. Responsable profesional: Rosa Valentín, agente registrada DGSFP C012479234434D.',
     h1: 'Seguros en Madrid – Orientación clara que trabaja para ti',
-    heroSubtitle: 'En Madrid hay cientos de opciones de seguros. Rosa y Sebastián llevan más de 10 años ayudando a familias y autónomos a elegir la correcta — registrados en la DGSFP, con asesoramiento personalizado y sin letra pequeña, con respuesta personal en 30 minutos.',
+    heroSubtitle: 'En Madrid hay cientos de opciones de seguros. Rosa y Sebastián ayudan a familias y autónomos a revisar la que puede encajar — registrados en la DGSFP, con asesoramiento personalizado y sin letra pequeña, con respuesta personal en nuestro horario de atención.',
     intro: 'Somos agentes de seguros registrados con más de 10 años de experiencia ayudando a particulares, familias y autónomos en Madrid a elegir el seguro adecuado. Te acompañamos para que elijas con toda la información y te explicamos cada opción con claridad — sin tecnicismos, sin presión y sin letra pequeña. Atendemos por videollamada, teléfono o WhatsApp en toda la Comunidad de Madrid.',
     porQueElegirNos: 'Madrid tiene más de 3,3 millones de habitantes y una de las mayores demandas de seguros de salud privados de España. Las listas de espera en la sanidad pública madrileña para especialistas superan los 67 días de media, lo que hace que cada vez más familias opten por complementar o sustituir la sanidad pública con un seguro privado. La oferta es enorme — el problema no es encontrar un seguro, sino encontrar el correcto para tu situación concreta.\n\nAhí es donde entramos nosotros. A diferencia de los portales automáticos que muestran resultados por algoritmo, Rosa y Sebastián estudian tu perfil real, tus necesidades y tu presupuesto — y te presentan la opción que de verdad tiene sentido para ti, con orientación profesional y registro oficial. Sin coste, sin compromiso y sin presión comercial.\n\nLlevamos más de 10 años haciéndolo para familias y autónomos de Madrid y el noroeste de la Comunidad. Atendemos por videollamada, teléfono o WhatsApp en toda la Comunidad de Madrid — sin necesidad de desplazarse a ninguna oficina.',
     datosLocales: {
@@ -344,7 +344,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué seguros son obligatorios en Madrid?',
-        a: 'En Madrid son obligatorios el seguro de responsabilidad civil para vehículos, el seguro de RC para perros (Ley de Bienestar Animal 2023) y determinados seguros de RC profesional según el sector. El seguro de hogar no es obligatorio por ley, pero la mayoría de hipotecas lo exigen. Te asesoramos sobre qué es obligatorio en tu situación concreta.',
+        a: 'En Madrid existen seguros obligatorios para algunos vehículos y pueden existir obligaciones específicas según la actividad o el sector. El seguro de hogar no es obligatorio por ley, aunque muchas hipotecas lo exigen. Te ayudamos a identificar qué debes comprobar en tu situación concreta y a distinguirlo de las coberturas que VPI realmente distribuye.',
       },
       {
         q: '¿Puedo contratar un seguro de salud para extranjeros en Madrid?',
@@ -356,7 +356,7 @@ export const zonas: Zona[] = [
       },
       {
         q: '¿Qué necesita un autónomo en Madrid para estar bien protegido?',
-        a: 'Un autónomo en Madrid necesita como mínimo: seguro de accidentes con incapacidad temporal (para cuando no puedes trabajar), seguro de salud privado para no depender de listas de espera, y RC profesional según la actividad. El seguro de salud para autónomos además es deducible como gasto de la actividad en el IRPF. Rosa y Sebastián te lo explican sin tecnicismos en 30 minutos.',
+        a: 'Un autónomo en Madrid puede valorar un seguro de accidentes con incapacidad temporal, salud o vida según su actividad y sus prioridades. La cobertura sanitaria depende de la modalidad y la póliza. Si revisas el tratamiento fiscal de la prima, la regla aplicable a la estimación directa contempla requisitos, personas elegibles y límites; no equivale a una devolución automática. Rosa y Sebastián te ayudan a separar ambas decisiones en nuestro horario de atención.',
       },
     ],
     segurosDestacados: ['salud', 'vida', 'mascotas', 'viaje'],
@@ -377,7 +377,6 @@ export const zonas: Zona[] = [
       'agentes seguros registrados madrid',
       'seguro salud madrid',
       'seguro salud privado madrid',
-      'seguro salud sin esperas madrid',
       'seguro autonomos madrid',
       'seguro vida hipoteca madrid',
       'seguros madrid registro oficial',

@@ -40,13 +40,6 @@ const localBusinessSchema = {
     "addressCountry": "ES"
   },
   "areaServed": ["Boadilla del Monte", "Madrid", "Majadahonda", "Pozuelo de Alarcón"],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "60",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
 };
 
 const serviceSchema = {

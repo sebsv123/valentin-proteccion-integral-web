@@ -58,7 +58,7 @@ export function DecesosLanding() {
     },
     {
       q: "¿Cuánto cuesta un seguro de decesos en Madrid?",
-      a: "Los seguros de decesos que gestionamos en Madrid comienzan desde 5€ al mes por persona. El precio depende de la edad y las coberturas elegidas. Contacta con Rosa y Sebastián para un presupuesto personalizado sin compromiso en nuestro horario de atención.",
+      a: "El precio de los seguros de decesos depende de la edad, las coberturas y la modalidad elegida. Contacta con Rosa y Sebastián para revisar un presupuesto personalizado sin compromiso en nuestro horario de atención.",
     },
     {
       q: "¿El seguro de decesos tiene permanencia?",
@@ -275,7 +275,7 @@ export function DecesosLanding() {
               {
                 icon: <Headphones className="h-6 w-6" />,
                 title: "Asistencia 24h desde el primer aviso",
-                desc: "Una llamada y todo se pone en marcha. Teléfono directo, sin esperas ni buzones.",
+                desc: "Una llamada y todo se pone en marcha. Teléfono directo y un canal claro para resolver tus dudas.",
               },
               {
                 icon: <Landmark className="h-6 w-6" />,
@@ -345,17 +345,17 @@ export function DecesosLanding() {
               {
                 icon: <UserCheck className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Solo tú",
-                precio: "desde ~5€/mes",
+                precio: "Según modalidad",
               },
               {
                 icon: <Users className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Pareja",
-                precio: "desde ~9€/mes",
+                precio: "Según modalidad",
               },
               {
                 icon: <Heart className="h-8 w-8 text-muted-foreground mb-4" />,
                 title: "Padres o mayores",
-                precio: "desde ~7€/mes por persona",
+                precio: "Según modalidad",
               },
             ].map((precio, i) => (
               <motion.div

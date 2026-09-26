@@ -11,13 +11,13 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Sparkles, CheckCircle2, Clock, Smile, Stethoscope, Syringe, Scan, XCircle, Bone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Seguro Dental Sin Carencias Madrid | Valentín Protección Integral",
-  description: "Seguro dental económico Madrid. Sin carencias. WhatsApp cotización inmediata. Rosa y Sebastián.",
-  keywords: ["seguro dental Madrid","seguro dental sin carencias","seguro dental barato Madrid"],
+  title: "Seguro Dental en Madrid | Coberturas y condiciones",
+  description: "Revisamos opciones de seguro dental en Madrid, su cuadro de servicios, tarifas y condiciones antes de contratar.",
+  keywords: ["seguro dental Madrid","coberturas seguro dental","condiciones seguro dental"],
   alternates: { canonical: "https://valentinproteccionintegral.com/seguros/dental", languages: { es: "https://valentinproteccionintegral.com/seguros/dental", en: "https://valentinproteccionintegral.com/en/insurance/dental-insurance", 'x-default': "https://valentinproteccionintegral.com/seguros/dental" } },
   openGraph: {
-    title: "Seguro Dental Sin Carencias Madrid | Sin esperas",
-    description: "Sin carencias desde día 1. Implantes incluidos. Cotiza WhatsApp 30min.",
+    title: "Seguro Dental en Madrid | Coberturas y condiciones",
+    description: "Revisamos opciones dentales, servicios incluidos y condiciones de contratación según la modalidad.",
     url: "https://valentinproteccionintegral.com/seguros/dental",
     siteName: "Valentín Protección Integral",
     locale: "es_ES",
@@ -61,7 +61,7 @@ const serviceSchema = {
 export const dynamic = "force-static";
 
 export default function DentalPage() {
-  const wCotiza = buildWhatsAppHref("Hola, quiero información sobre seguro dental en Madrid. Sin carencias.");
+  const wCotiza = buildWhatsAppHref("Hola, quiero revisar las opciones de seguro dental en Madrid y sus condiciones.");
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function DentalPage() {
               
               {/* Subhead */}
               <p className="text-xl text-[#666666] leading-[1.50] mb-10 max-w-2xl mx-auto">
-                Sin carencias. Precio adaptado.
+                Condiciones claras. Precio adaptado.
                 <br />
                 Tu sonrisa, protegida desde hoy.
               </p>
@@ -155,7 +155,7 @@ export default function DentalPage() {
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: CheckCircle2, title: "Sin carencias", desc: "Carencias y entrada en vigor según modalidad. Te lo explicamos antes de contratar." },
+                { icon: CheckCircle2, title: "Entrada en vigor", desc: "Carencias y acceso a servicios según modalidad. Te lo explicamos antes de contratar." },
                 { icon: Bone, title: "Implantes", desc: "Implantes dentales incluidos en tu seguro." },
                 { icon: Smile, title: "Ortodoncia adultos", desc: "Tratamientos de ortodoncia para todas las edades." },
               ].map((item, i) => (
@@ -244,7 +244,7 @@ export default function DentalPage() {
               {[
                 { num: "1", title: "WhatsApp", desc: "Nos cuentas tus necesidades dentales." },
                 { num: "2", title: "Cotizamos", desc: "Te preparamos tu mejor opción." },
-                { num: "3", title: "Tarjeta", desc: "Tarjeta dental inmediata. Sin esperas." },
+                { num: "3", title: "Tarjeta", desc: "Tarjeta dental según modalidad y condiciones de la póliza." },
               ].map((step, i) => (
                 <div key={i} className="text-center">
                   <div className="w-14 h-14 rounded-full bg-[#18E299] text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4">
@@ -265,7 +265,7 @@ export default function DentalPage() {
               Sonrisa perfecta, ya.
             </h2>
             <p className="text-xl text-[#666666] mb-10">
-              Sin carencias. Sin compromiso.
+              Condiciones claras. Sin compromiso.
             </p>
             
             <a 
@@ -282,7 +282,7 @@ export default function DentalPage() {
             {/* Garantías verdes */}
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               {[
-                "30min respuesta",
+                "Atención en horario de apertura",
                 "Sin permanencia",
                 "DGSFP verificado",
               ].map((item, i) => (
