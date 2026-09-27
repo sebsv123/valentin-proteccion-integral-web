@@ -120,7 +120,7 @@ export default function BlogPostPage() {
               Pasaporte Europeo Mascotas Obligatorio 2026: Vacunas, Precio Madrid y Cómo Cumplir Sin Multas
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Desde el 22 de abril de 2026, viajar sin pasaporte europeo con tu perro o gato puede costarte <strong>600€ de multa</strong> en la frontera. Descubre qué necesitas, cuánto cuesta en Madrid y cómo cubrirlo todo con tu seguro de mascotas.
+              Desde el 22 de abril de 2026, viajar sin pasaporte europeo con tu perro o gato puede costarte <strong>600€ de multa</strong> en la frontera. Descubre qué necesitas y cuánto cuesta en Madrid.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={wConsulta} className={cn(buttonVariants({size:"lg"}),"h-16 px-8 text-lg font-bold bg-[#128C7E] hover:bg-[#0e6b60] text-white gap-2")}>
@@ -154,7 +154,7 @@ export default function BlogPostPage() {
               </div>
 
               <p className="text-lg text-slate-600 leading-relaxed">
-                En esta guía te explicamos paso a paso qué exige la nueva normativa, cuánto cuesta realmente en Madrid, qué riesgos corres si no cumples, y cómo una póliza de mascotas integral te cubre todo: desde las vacunas obligatorias hasta los gastos veterinarios si tu perro o gato enferma de camino a París.
+                En esta guía te explicamos paso a paso qué exige la nueva normativa, cuánto cuesta realmente en Madrid, qué riesgos corres si no cumples.
               </p>
             </div>
           </div>
@@ -301,9 +301,6 @@ export default function BlogPostPage() {
                 <p className="text-green-900 font-bold mb-3">✓ Con nuestra póliza mascotas</p>
                 <ul className="text-green-700 text-sm space-y-2">
                   <li>• Comprueba si la modalidad contempla alguno de estos gastos</li>
-                  <li>• Reembolso gastos expedición</li>
-                  <li>• Veterinario ilimitado viajes UE</li>
-                  <li>• Accidentes/enfermedades: cubierto</li>
                 </ul>
               </div>
             </div>
@@ -369,7 +366,7 @@ export default function BlogPostPage() {
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl lg:text-4xl font-black mb-8 text-center">
-              Póliza mascotas que cubre TODO: Vacunas, pasaporte, viajes
+              ¿Cubre el seguro de mascotas los gastos del pasaporte europeo y vacunas?
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
@@ -385,16 +382,11 @@ export default function BlogPostPage() {
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">3</div>
-                <h3 className="font-bold mb-2">Sorpresas reales</h3>
-                <p className="text-slate-300 text-sm">Primer check-up gratuito. 10% dto si contratas mascota + salud familiar.</p>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">4</div>
                 <h3 className="font-bold mb-2">Garantías sólidas</h3>
                 <p className="text-slate-300 text-sm">Revisa si la modalidad contempla vacunas, pasaporte, urgencias o asistencia durante el viaje y bajo qué límites.</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur md:col-span-2">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">5</div>
+                <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-3 text-amber-300 font-bold">4</div>
                 <h3 className="font-bold mb-2">Honestidad</h3>
                 <p className="text-slate-300 text-sm">"Cubrimos lo que los veterinarios no: viajes sin estrés ni multas." Orientación de seguros con registro oficial.</p>
               </div>

@@ -4,32 +4,11 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { businessHealthSchema, buildBusinessHealthLeadPayload, isBusinessHealthLeadSuccess, type BusinessHealthValues } from '@/lib/business-health-lead';
 import { ArrowRight, Loader2, MessageCircle, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './business-health-lead-form-section.module.css';
 
-const schema = z.object({
-  profile: z.enum(['autonomo', 'empresa'], { message: 'Selecciona tu perfil' }),
-  fullName: z.string().min(2, 'Indica tu nombre y apellidos'),
-  company: z.string().optional(),
-  email: z.string().email('Añade un email válido'),
-  phone: z.string().min(6, 'Añade un teléfono válido'),
-  province: z.string().min(2, 'Indica la provincia'),
-  teamSize: z.string().min(1, 'Selecciona una opción'),
-  coverage: z.string().min(1, 'Selecciona una opción'),
-  startDate: z.string().optional(),
-  financing: z.string().optional(),
-  message: z.string().max(1000).optional(),
-  consent: z.boolean().refine(Boolean, 'Necesitamos tu consentimiento para responderte'),
-  website: z.string().max(0).optional(),
-}).superRefine((values, context) => {
-  if (values.profile === 'empresa' && (!values.company || values.company.trim().length < 2)) {
-    context.addIssue({ code: z.ZodIssueCode.custom, path: ['company'], message: 'Indica el nombre de la empresa' });
-  }
-});
-
-type Values = z.infer<typeof schema>;
 type Locale = 'es' | 'en';
 
 const inputClass = styles.input;
@@ -41,18 +20,16 @@ export function BusinessHealthLeadFormSection({ locale = 'es' }: { locale?: Loca
   const en = locale === 'en';
   const [message, setMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
-  const { register, handleSubmit, watch, formState: { errors, isSubmitting }, reset } = useForm<Values>({ resolver: zodResolver(schema), defaultValues: { consent: false, website: '' } });
+  const { register, handleSubmit, watch, formState: { errors, isSubmitting }, reset } = useForm<BusinessHealthValues>({ resolver: zodResolver(businessHealthSchema), defaultValues: { consent: false, website: '' } });
   const profile = watch('profile');
 
-  const onSubmit = async (values: Values) => {
+  const onSubmit = async (values: BusinessHealthValues) => {
     setMessage(null);
     setServerError(null);
-    const profileLabel = values.profile === 'autonomo' ? (en ? 'self-employed' : 'autónomo') : (en ? 'business' : 'empresa');
-    const notes = [`Origen: /${en ? 'en/business/health-insurance' : 'empresas/salud'}`, `Perfil: ${profileLabel}`, values.company ? `Empresa: ${values.company}` : '', `Email: ${values.email}`, `Provincia: ${values.province}`, `Personas: ${values.teamSize}`, `Cobertura: ${values.coverage}`, values.startDate ? `Implantación: ${values.startDate}` : '', values.financing ? `Financiación: ${values.financing}` : '', values.message ? `Observaciones: ${values.message}` : ''].filter(Boolean).join('\n');
     try {
-      const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fullName: values.fullName, phone: values.phone, productInterest: 'salud-empresas-autonomos', notes, consent: values.consent, website: values.website || '', page: { url: window.location.href, referrer: document.referrer || '' }, timestamp: new Date().toISOString() }) });
-      const data = await response.json() as { ok?: boolean; message?: string };
-      if (!response.ok || !data.ok) throw new Error(data.message || (en ? 'We could not send your request. You can contact us on WhatsApp.' : 'No hemos podido enviar tu solicitud. Puedes escribirnos por WhatsApp.'));
+      const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(buildBusinessHealthLeadPayload(values, locale, { url: window.location.href, referrer: document.referrer || '' })) });
+      const data = await response.json() as { success?: boolean; error?: string };
+      if (!isBusinessHealthLeadSuccess(response.ok, data)) throw new Error(data.error || (en ? 'We could not send your request. You can contact us on WhatsApp.' : 'No hemos podido enviar tu solicitud. Puedes escribirnos por WhatsApp.'));
       setMessage(en ? 'Thank you. We have received your details and can prepare an initial review.' : 'Gracias. Hemos recibido tus datos y podremos preparar una primera orientación.');
       reset({ consent: false, website: '' });
     } catch (error) {

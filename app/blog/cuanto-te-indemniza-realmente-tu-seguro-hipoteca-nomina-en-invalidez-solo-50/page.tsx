@@ -82,7 +82,7 @@ const faqSchema = {
       "name": "¿Qué diferencia hay entre el seguro de vida del banco y una póliza independiente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El seguro de vida del banco suele tener primas más elevadas (entre 30% y 60% más caras) y coberturas estandarizadas que no se adaptan a la situación familiar real. Una póliza independiente permite personalizar el capital asegurado, añadir coberturas como invalidez permanente total y parcial, y el capital se paga directamente al beneficiario (notario), no al banco. Además, el suicidio está cubierto desde el primer año en pólizas independientes."
+        "text": "El seguro de vida del banco suele tener primas más elevadas (entre 30% y 60% más caras) y coberturas estandarizadas que no se adaptan a la situación familiar real. Una póliza independiente permite personalizar el capital asegurado, añadir coberturas como invalidez permanente total y parcial, y el capital se paga directamente al beneficiario (notario), no al banco."
       }
     },
     {
@@ -327,13 +327,6 @@ export default function BlogPostPage() {
                 <p className="text-slate-300 text-sm">Doble que la competencia (~9.000€). Cobertura real para gastos inmediatos: funeral, trámites, supervivencia primeros meses.</p>
               </div>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Suicidio cubierto año 1</h3>
-                <p className="text-slate-300 text-sm">A diferencia de la mayoría de pólizas del mercado, incluimos cobertura desde el primer día incluso en caso de suicidio (ley LCS).</p>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
                 <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
                   <Calculator className="w-6 h-6 text-amber-400" />
                 </div>
@@ -389,7 +382,7 @@ export default function BlogPostPage() {
                 { q: "¿Cuánto paga el seguro de hipoteca en caso de invalidez permanente?", a: "El seguro de hipoteca vinculado al préstamo cubre el 100% del capital en caso de fallecimiento, pero en invalidez permanente absoluta (IPA) la cobertura suele ser del 50% del capital pendiente, salvo que contrates explícitamente la cobertura del 100% (opcional y con recargo). Esto significa que si debes 200.000€, el seguro podría pagar solo 100.000€, dejando a tu familia con una deuda mensual significativa." },
                 { q: "¿El convenio colectivo de trabajo cubre todo en caso de invalidez?", a: "No. El convenio colectivo añade una indemnización extra sobre la base de la prestación por incapacidad permanente de la Seguridad Social (que es el 55% de la base reguladora). La indemnización convenio típica en Madrid oscila entre 30.000€ y 50.000€, insuficiente para cubrir el déficit de ingresos a largo plazo de una familia." },
                 { q: "¿Cuánto recibe una viuda en Madrid tras el fallecimiento del cónyuge?", a: "La pensión de viudedad de la Seguridad Social oscila entre el 52% y el 70% de la base reguladora del fallecido. En Madrid, esto suele traducirse en aproximadamente 1.200€ mensuales. Si la hipoteca son 900€/mes, quedan solo 300€ para cubrir alimentación, guardería (400€), transporte y demás gastos familiares, generando un déficit de al menos 1.000€ mensuales." },
-                { q: "¿Qué diferencia hay entre el seguro de vida del banco y una póliza independiente?", a: "El seguro de vida del banco suele tener primas más elevadas (entre 30% y 60% más caras) y coberturas estandarizadas que no se adaptan a la situación familiar real. Una póliza independiente permite personalizar el capital asegurado, añadir coberturas como invalidez permanente total y parcial, y el capital se paga directamente al beneficiario (notario), no al banco. Además, el suicidio está cubierto desde el primer año en pólizas independientes." },
+                { q: "¿Qué diferencia hay entre el seguro de vida del banco y una póliza independiente?", a: "El seguro de vida del banco suele tener primas más elevadas (entre 30% y 60% más caras) y coberturas estandarizadas que no se adaptan a la situación familiar real. Una póliza independiente permite personalizar el capital asegurado, añadir coberturas como invalidez permanente total y parcial, y el capital se paga directamente al beneficiario (notario), no al banco." },
                 { q: "¿Cuánto cuesta un seguro de vida que cubra el capital que necesito?", a: "El precio depende de la edad, el capital asegurado y las coberturas elegidas. Conviene revisar el capital de la hipoteca, las garantías y las exclusiones antes de comparar propuestas. Rosa y Sebastián pueden ayudarte a ordenar la información sin compromiso." }
               ].map((faq, i) => (
                 <details key={i} className="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">

@@ -30,7 +30,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Por qué necesitas más de 9.000€ en protección familiar Madrid 2026: El must-have que nadie cuenta",
-  "description": "Análisis real: 9.000€ es insuficiente. Funeral 4-6k€ + hipoteca + deudas = déficit 15k€+. Por qué 18.000€ directos al notario es el must-have 2026.",
+  "description": "Análisis real: 9.000€ es insuficiente. Funeral 4-6k€ + hipoteca + deudas = déficit 15k€+.",
   "image": "https://valentinproteccionintegral.com/images/rosa_y_sebastian.jpeg",
   "author": {
     "@type": "Organization",
@@ -63,18 +63,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Está cubierto el suicidio en el primer año de la póliza?",
+      "name": "¿Qué conviene revisar sobre el procedimiento de pago?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. A diferencia de la mayoría de pólizas del mercado que excluyen el suicidio durante el primer año o incluso los dos primeros años, nuestras pólizas incluyen cobertura desde el día uno. Esto está respaldado por la Ley de Contrato de Seguro (LCS) artículo 27, que garantiza el pago íntegro al beneficiario incluso en caso de suicidio, siempre que se cumplan las condiciones contractuales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿El pago es directo al notario o hay intermediarios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El pago se realiza directamente al beneficiario designado a través del notario, sin gestores ni intermediarios. Esto garantiza que la familia reciba el capital íntegro de forma ágil, normalmente en un plazo de 10-15 días desde la declaración de fallecimiento. La Ley de Contrato de Seguro (LCS) asegura este derecho, evitando demoras burocráticas que pueden extenderse meses en otras compañías."
+        "text": "El capital y el procedimiento de pago dependen de la póliza, la documentación y la gestión del siniestro. Conviene revisar quién interviene, qué plazos se indican y qué requisitos debe cumplir el beneficiario."
       }
     },
     {
@@ -217,7 +209,7 @@ export default function BlogPostPage() {
                 <h3 className="font-bold text-green-900 text-xl">Nuestra propuesta: 18.000€ mínimo directos</h3>
               </div>
               <p className="text-green-800 leading-relaxed">
-                En Valentín Protección Integral, el capital mínimo que gestionamos es de <strong>18.000€</strong>, el doble de la competencia. Este importe cubre el funeral, liquida deudas pendientes deja un colchón de 8.000-10.000€ para que la familia respire durante los primeros meses mientras reorganiza sus finanzas. Y lo más importante: <strong>pago directo al notario, sin intermediarios ni gestores que se queden con comisiones.</strong>
+                En Valentín Protección Integral, el capital mínimo que gestionamos es de <strong>18.000€</strong>, el doble de la competencia. Este importe cubre el funeral, liquida deudas pendientes deja un colchón de 8.000-10.000€ para que la familia respire durante los primeros meses mientras reorganiza sus finanzas.
               </p>
             </div>
           </div>
@@ -227,7 +219,7 @@ export default function BlogPostPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8">
-              Cobertura año 1 completa + directo notario
+              Capitales, garantías y procedimiento de siniestro
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
@@ -236,19 +228,10 @@ export default function BlogPostPage() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="font-bold text-slate-900 mb-3">Suicidio cubierto año 1</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  La mayoría de pólizas excluyen el suicidio durante el primer año (e incluso los dos primeros). Nuestras pólizas lo cubren desde el día uno, respaldado por la <strong>Ley de Contrato de Seguro (LCS) artículo 27</strong>. Una ventaja brutal que protege a la familia incluso en las circunstancias más difíciles.
-                </p>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="font-bold text-slate-900 mb-3">Directo al notario: Sin gestores</h3>
+                <h3 className="font-bold text-slate-900 mb-3">Procedimiento de pago</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   El capital y el procedimiento de pago dependen de la póliza, la documentación y la gestión del siniestro. Conviene revisar quién interviene, qué plazos se indican y qué requisitos debe cumplir el beneficiario.
                 </p>
@@ -411,8 +394,7 @@ export default function BlogPostPage() {
             <div className="space-y-4">
               {[
                 { q: "¿Cuánto es el capital mínimo de protección familiar en España?", a: "El capital mínimo típico en el mercado español oscila entre 9.000€ y 10.000€, pero este importe resulta insuficiente para cubrir las necesidades reales de una familia en Madrid. Considerando funeral (4.000-6.000€), deudas pendientes, hipoteca y gastos del primer mes sin ingresos, el déficit real supera los 15.000€. Por eso, en Valentín Protección Integral recomendamos un mínimo de 18.000€, el doble de la competencia." },
-                { q: "¿Está cubierto el suicidio en el primer año de la póliza?", a: "Sí. A diferencia de la mayoría de pólizas del mercado que excluyen el suicidio durante el primer año o incluso los dos primeros años, nuestras pólizas incluyen cobertura desde el día uno. Esto está respaldado por la Ley de Contrato de Seguro (LCS) artículo 27, que garantiza el pago íntegro al beneficiario incluso en caso de suicidio, siempre que se cumplan las condiciones contractuales." },
-                { q: "¿El pago es directo al notario o hay intermediarios?", a: "El pago se realiza directamente al beneficiario designado a través del notario, sin gestores ni intermediarios. Esto garantiza que la familia reciba el capital íntegro de forma ágil, normalmente en un plazo de 10-15 días desde la declaración de fallecimiento. La Ley de Contrato de Seguro (LCS) asegura este derecho, evitando demoras burocráticas que pueden extenderse meses en otras compañías." },
+                { q: "¿Qué conviene revisar sobre el procedimiento de pago?", a: "El capital y el procedimiento de pago dependen de la póliza, la documentación y la gestión del siniestro. Conviene revisar quién interviene, qué plazos se indican y qué requisitos debe cumplir el beneficiario." },
                 { q: "¿Cuánto cuesta un funeral en Madrid en 2026?", a: "El coste medio de un funeral en Madrid en 2026 oscila entre 4.000€ y 6.000€, dependiendo del tipo de servicio (cremación o inhumación), flores, esquelas y otros gastos asociados. Este importe consume casi la totalidad de los 9.000€ típicos de capital mínimo en pólizas básicas, dejando a la familia sin recursos para afrontar hipoteca, deudas y gastos de subsistencia." },
                 { q: "¿Por qué 18.000€ es el must-have para familias en Madrid 2026?", a: "Porque el cálculo real de necesidades de una familia madrileña media revela un déficit de al menos 15.000€ en el primer año tras un fallecimiento: funeral (5.000€), hipoteca pendiente (50% del capital no cubierto por seguro hipoteca en invalidez), gastos de subsistencia (1.000€/mes x 12 meses = 12.000€), menos la pensión de viudedad (~14.400€/año). Los 18.000€ directos cierran este gap y permiten a la familia mantener su nivel de vida mientras reorganiza sus finanzas." }
               ].map((faq, i) => (

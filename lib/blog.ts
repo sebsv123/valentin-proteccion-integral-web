@@ -1049,7 +1049,6 @@ export const blogPosts: BlogPost[] = [
         heading: '¿Tiene sentido tener seguro privado si ya tengo la Seguridad Social?',
         content: [
           'Puede ser útil por motivos distintos. La disponibilidad de la sanidad pública y la de una póliza privada dependen del servicio, la zona y las condiciones concretas; conviene comparar sin dar por garantizado un plazo de cita.',
-          'El seguro privado te da acceso inmediato: el mismo día o al día siguiente en la mayoría de los casos. Para muchas familias en Madrid es la diferencia entre esperar 4 meses para ver al traumatólogo o hacerlo esta semana.',
           'No se trata de sustituir la sanidad pública, sino de complementarla para los momentos en que el tiempo importa.',
         ],
       },
