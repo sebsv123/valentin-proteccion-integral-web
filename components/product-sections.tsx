@@ -230,9 +230,9 @@ export function SubpageHero({ subpage, showActions = true }: { subpage: ProductS
         <RevealLight>
           <div className="soft-card overflow-hidden border border-[var(--border)] shadow-xl">
             <div className="grid items-stretch gap-0 lg:grid-cols-[1fr_1fr]">
-              <div className="p-7 md:p-10 lg:p-12">
+              <div className="min-w-0 p-7 md:p-10 lg:p-12">
                 <p className="kicker">{subpage.eyebrow}</p>
-                <h1 className="mt-3 font-heading text-5xl font-bold tracking-tight text-[var(--blue-deep)] md:text-6xl">{subpage.h1}</h1>
+                <h1 className="mt-3 break-words font-heading text-3xl font-bold tracking-tight text-[var(--blue-deep)] sm:text-4xl md:text-6xl">{subpage.h1}</h1>
                 <p className="mt-5 max-w-2xl text-lg leading-9 text-[var(--muted)] md:text-xl">{subpage.summary}</p>
                 {showActions && <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
@@ -251,7 +251,7 @@ export function SubpageHero({ subpage, showActions = true }: { subpage: ProductS
                   ))}
                 </div>
               </div>
-              <div className="relative min-h-[340px]">
+              <div className="relative min-h-[340px] min-w-0">
                 <Image
                   src={subpage.heroImage}
                   alt={`Imagen representativa de ${subpage.h1}`}

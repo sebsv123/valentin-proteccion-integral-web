@@ -32,6 +32,8 @@ export interface StaggeredMenuProps {
   closeOnClickAway?: boolean;
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
   socialTitle?: string;
 }
 
@@ -53,9 +55,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   closeOnClickAway = true,
   onMenuOpen,
   onMenuClose,
+  isOpen,
+  onOpenChange,
   socialTitle = 'Contacto'
 }: StaggeredMenuProps) => {
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const controlled = isOpen !== undefined;
+  const open = controlled ? isOpen : internalOpen;
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const openRef = useRef(false);
 
@@ -82,6 +88,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
   const reduceMotionRef = useRef(false);
+
+  const requestOpenChange = useCallback((nextOpen: boolean) => {
+    if (!controlled) setInternalOpen(nextOpen);
+    onOpenChange?.(nextOpen);
+  }, [controlled, onOpenChange]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -345,32 +356,60 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   }, []);
 
   const toggleMenu = useCallback(() => {
-    const target = !openRef.current;
-    openRef.current = target;
-    setOpen(target);
+    requestOpenChange(!openRef.current);
+  }, [requestOpenChange]);
 
-    if (target) {
+  const closeMenu = useCallback(() => {
+    if (openRef.current) requestOpenChange(false);
+  }, [requestOpenChange]);
+
+  React.useEffect(() => {
+    const nextOpen = Boolean(open);
+    if (openRef.current === nextOpen) return;
+
+    openRef.current = nextOpen;
+    if (nextOpen) {
       onMenuOpen?.();
       playOpen();
     } else {
       playClose();
     }
 
-    animateIcon(target);
-    animateColor(target);
-    animateText(target);
-  }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen]);
+    animateIcon(nextOpen);
+    animateColor(nextOpen);
+    animateText(nextOpen);
+  }, [open, playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen]);
 
-  const closeMenu = useCallback(() => {
-    if (openRef.current) {
-      openRef.current = false;
-      setOpen(false);
-      playClose();
-      animateIcon(false);
-      animateColor(false);
-      animateText(false);
-    }
-  }, [playClose, animateIcon, animateColor, animateText]);
+  React.useEffect(() => {
+    if (!open || typeof window === 'undefined') return;
+    if (!window.matchMedia('(max-width: 1024px)').matches) return;
+
+    const body = document.body;
+    const html = document.documentElement;
+    const scrollY = window.scrollY;
+    const previous = {
+      bodyPosition: body.style.position,
+      bodyTop: body.style.top,
+      bodyWidth: body.style.width,
+      bodyOverflow: body.style.overflow,
+      htmlOverscroll: html.style.overscrollBehavior,
+    };
+
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+    html.style.overscrollBehavior = 'none';
+
+    return () => {
+      body.style.position = previous.bodyPosition;
+      body.style.top = previous.bodyTop;
+      body.style.width = previous.bodyWidth;
+      body.style.overflow = previous.bodyOverflow;
+      html.style.overscrollBehavior = previous.htmlOverscroll;
+      window.scrollTo(0, scrollY);
+    };
+  }, [open]);
 
   React.useEffect(() => {
     if (!closeOnClickAway || !open) return;
@@ -397,7 +436,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         closeMenu();
-        document.querySelector<HTMLButtonElement>('[aria-label="Abrir menú"]')?.focus();
+        document.querySelector<HTMLButtonElement>('[data-mobile-menu-trigger="true"]')?.focus();
       }
     };
     document.addEventListener('keydown', handleEscape);
@@ -456,7 +495,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
           <button
             ref={toggleBtnRef}
-            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${
+            className={`sm-toggle relative inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${
               open ? 'text-black' : 'text-white'
             }`}
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -499,7 +538,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto"
+          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto overscroll-contain z-10 backdrop-blur-[12px] pointer-events-auto"
           style={{ WebkitBackdropFilter: 'blur(12px)' }}
           aria-hidden={!open}
           inert={!open}
@@ -612,11 +651,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
 .sm-scope .sm-line { display: none !important; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 45vw, 620px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; transform: translateX(100%); }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 45vw, 620px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; overscroll-behavior: contain; z-index: 10; }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
 .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(260px, 45vw, 620px); pointer-events: none; z-index: 5; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
-.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(100%); }
+.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; }
 .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
 .sm-scope .sm-socials { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .sm-scope .sm-socials-title { margin: 0; font-size: 1rem; font-weight: 500; color: var(--sm-accent, #002244); text-transform: uppercase; letter-spacing: 1px; }
@@ -647,6 +686,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .staggered-menu-wrapper:not([data-open]) .sm-prelayers { display: none; visibility: hidden; pointer-events: none; }
 .sm-scope .staggered-menu-wrapper[data-open] .staggered-menu-header { opacity: 1; visibility: visible; transition: opacity 0.3s, visibility 0.3s; transition-delay: 0.2s; }
 @media (max-width: 1024px) { .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } .sm-scope .staggered-menu-wrapper[data-open] .sm-logo-img { filter: invert(0%); } }
+@media (max-width: 1024px) { .sm-scope { width: 100dvw; max-width: 100dvw; } }
 @media (max-width: 640px) {
   .sm-scope .staggered-menu-panel {
     width: 100%;

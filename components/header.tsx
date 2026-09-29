@@ -22,6 +22,7 @@ import { localizedProductPath, localizedSubpagePath } from '@/lib/product-locale
 export function Header() {
   const [mega, setMega] = useState(false);
   const [businessOpen, setBusinessOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
   const businessRef = useRef<HTMLDivElement>(null);
@@ -68,6 +69,10 @@ export function Header() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   // Close mega menu on outside click
   useEffect(() => {
@@ -177,8 +182,10 @@ export function Header() {
                     className={`inline-flex h-[42px] items-center gap-1 rounded-full px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white ${pathname.startsWith('/empresas') ? 'bg-white/20 text-white' : ''}`}
                     aria-expanded={businessOpen}
                     aria-controls="business-menu"
-                    onClick={() => setBusinessOpen((open) => !open)}
-                    onFocus={() => setBusinessOpen(true)}
+                    onClick={(event) => {
+                      if (event.detail === 0) setBusinessOpen((open) => !open);
+                      else setBusinessOpen(true);
+                    }}
                   >
                     {locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos'} <ChevronDown className={`h-4 w-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                   </button>
@@ -254,19 +261,18 @@ export function Header() {
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
-            {/* TODO: FIX 1B - StaggeredMenu no acepta props isOpen/onClose aún.
-                Cuando se actualice el componente, añadir:
-                const [mobileOpen, setMobileOpen] = useState(false);
-                y pasar isOpen={mobileOpen} onClose={() => setMobileOpen(false)} al StaggeredMenu
-            */}
             <div className="flex items-center gap-2 min-[1850px]:hidden">
             <LanguageSwitcher />
             <button
-              className="flex items-center gap-2 text-white/90 hover:text-white
+              className="flex min-h-[44px] items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
+                         max-[360px]:gap-1 max-[360px]:px-2
                          transition-colors font-semibold border border-white/20 shrink-0"
-              onClick={() => document.querySelector<HTMLButtonElement>('.sm-toggle')?.click()}
-              aria-label={locale === 'en' ? 'Open menu' : 'Abrir menú'}
+              onClick={() => setMobileOpen((open) => !open)}
+              aria-label={mobileOpen ? (locale === 'en' ? 'Close menu' : 'Cerrar menú') : (locale === 'en' ? 'Open menu' : 'Abrir menú')}
+              aria-expanded={mobileOpen}
+              aria-controls="staggered-menu-panel"
+              data-mobile-menu-trigger="true"
             >
               <Menu className="h-5 w-5" /> {locale === 'en' ? 'Menu' : 'Menú'}
             </button>
@@ -395,6 +401,8 @@ export function Header() {
       */}
       <StaggeredMenu
         isFixed={true}
+        isOpen={mobileOpen}
+        onOpenChange={setMobileOpen}
         position="right"
         brand={<BrandLockup variant="dark" size="compact" href={localeHref('/')} />}
         colors={['#002244', '#0F5E9C']}

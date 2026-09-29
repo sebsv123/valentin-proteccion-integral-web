@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Cookie, X, Settings } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
@@ -9,6 +9,7 @@ export function CookieBanner() {
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [marketingEnabled, setMarketingEnabled] = useState(false);
+  const settingsCloseRef = useRef<HTMLButtonElement>(null);
   const isEnglish = useLocale() === 'en';
 
   useEffect(() => {
@@ -17,6 +18,16 @@ export function CookieBanner() {
       setIsVisible(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (!showSettings) return;
+    settingsCloseRef.current?.focus();
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowSettings(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [showSettings]);
 
   const updateConsent = (value: 'accepted' | 'rejected') => {
     localStorage.setItem('cookie-consent', value);
@@ -45,8 +56,10 @@ export function CookieBanner() {
       <div
         className={`
           fixed bottom-4 right-4 left-4 md:left-auto md:w-[420px] z-[100]
-          animate-in slide-in-from-bottom-4 fade-in duration-500
+          animate-in slide-in-from-bottom-4 fade-in duration-500 max-h-[calc(100dvh-2rem)] overflow-y-auto
         `}
+        role="region"
+        aria-label={isEnglish ? 'Cookie notice' : 'Aviso de cookies'}
       >
         <div
           className="
@@ -154,16 +167,19 @@ export function CookieBanner() {
       {showSettings && (
         <div
           className="
-            fixed inset-0 z-[110]
+          fixed inset-0 z-[110]
             bg-black/40 backdrop-blur-sm
             flex items-center justify-center p-4
             animate-in fade-in duration-200
           "
           onClick={() => setShowSettings(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="cookie-preferences-title"
         >
           <div
             className="
-              w-full max-w-md rounded-2xl
+              w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl
               bg-white border border-[var(--border)]
               shadow-[0_25px_80px_rgba(18,59,104,0.2)]
               p-6
@@ -183,7 +199,7 @@ export function CookieBanner() {
                   <Settings className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-[var(--blue-deep)] text-lg">
+                  <h3 id="cookie-preferences-title" className="font-heading font-bold text-[var(--blue-deep)] text-lg">
                     Preferencias
                   </h3>
                   <p className="text-sm text-[var(--muted)]">
@@ -192,7 +208,9 @@ export function CookieBanner() {
                 </div>
               </div>
               <button
+                ref={settingsCloseRef}
                 onClick={() => setShowSettings(false)}
+                aria-label={isEnglish ? 'Close cookie preferences' : 'Cerrar preferencias de cookies'}
                 className="
                   p-2 rounded-full
                   text-[var(--muted)] hover:text-[var(--text)]

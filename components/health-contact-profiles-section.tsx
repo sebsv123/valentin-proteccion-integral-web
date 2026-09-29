@@ -75,15 +75,20 @@ export function HealthContactProfilesSection({ product }: { product: Product }) 
     setServerError(null);
     const detail = [selectionDetail, values.notes?.trim()].filter(Boolean).join(' — ');
     const payload = {
-      ...values,
-      notes: detail,
-      page: typeof window !== 'undefined' ? { url: window.location.href, referrer: document.referrer || '' } : {},
-      timestamp: new Date().toISOString(),
+      source: 'health-contact-profiles',
+      name: values.fullName,
+      phone: values.phone,
+      interest: values.productInterest,
+      message: detail,
+      consent: values.consent,
+      website: values.website || '',
+      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+      referrer: typeof document !== 'undefined' ? document.referrer || '' : '',
     };
     try {
       const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      const data = (await response.json()) as { ok?: boolean; message?: string };
-      if (!response.ok || !data.ok) throw new Error(data.message || (en ? 'We could not send your request. Write to us on WhatsApp and we will help you.' : 'No hemos podido enviar tu solicitud. Escríbenos por WhatsApp y lo resolvemos contigo.'));
+      const data = (await response.json()) as { success?: boolean; error?: string };
+      if (!response.ok || data.success !== true) throw new Error(data.error || (en ? 'We could not send your request. Write to us on WhatsApp and we will help you.' : 'No hemos podido enviar tu solicitud. Escríbenos por WhatsApp y lo resolvemos contigo.'));
       setServerMessage(en ? 'Thank you. We have received your request and will reply with initial guidance as soon as possible.' : 'Gracias. Hemos recibido tu solicitud y te responderemos con una orientación inicial lo antes posible.');
       reset({ fullName: '', phone: '', productInterest: 'salud', notes: '', consent: false, website: '' });
       setSelectedProfile(null);
