@@ -445,12 +445,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-[100] ${isFixed ? 'fixed inset-0 h-[100dvh] overflow-hidden' : 'w-full h-full'} pointer-events-none`}
+      className={`sm-scope z-[200] ${isFixed ? 'fixed inset-0 h-[100dvh] overflow-hidden' : 'w-full h-full'} pointer-events-none`}
       aria-hidden={!open}
     >
       <div
         className={
-          (className ? className + ' ' : '') + 'staggered-menu-wrapper pointer-events-none relative w-full h-[100dvh] z-[100]'
+          (className ? className + ' ' : '') + 'staggered-menu-wrapper pointer-events-none relative w-full h-[100dvh] z-[200]'
         }
         style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
         data-position={position}
