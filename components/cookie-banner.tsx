@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Cookie, X, Settings } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
@@ -9,6 +9,9 @@ export function CookieBanner() {
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [marketingEnabled, setMarketingEnabled] = useState(false);
+  const settingsCloseRef = useRef<HTMLButtonElement>(null);
+  const settingsTriggerRef = useRef<HTMLButtonElement>(null);
+  const settingsDialogRef = useRef<HTMLDivElement>(null);
   const isEnglish = useLocale() === 'en';
 
   useEffect(() => {
@@ -17,6 +20,76 @@ export function CookieBanner() {
       setIsVisible(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (!isVisible && !showSettings) return;
+
+    const root = document.documentElement;
+    const updateViewportGeometry = () => {
+      const viewport = window.visualViewport;
+      const height = viewport?.height ?? window.innerHeight;
+      const offsetTop = viewport?.offsetTop ?? 0;
+      const bottomGap = Math.max(0, window.innerHeight - (offsetTop + height));
+
+      root.style.setProperty('--cookie-visual-viewport-height', `${height}px`);
+      root.style.setProperty('--cookie-visual-viewport-offset-top', `${offsetTop}px`);
+      root.style.setProperty('--cookie-visual-viewport-bottom-gap', `${bottomGap}px`);
+    };
+
+    updateViewportGeometry();
+    window.addEventListener('resize', updateViewportGeometry);
+    window.addEventListener('orientationchange', updateViewportGeometry);
+    window.visualViewport?.addEventListener('resize', updateViewportGeometry);
+
+    return () => {
+      window.removeEventListener('resize', updateViewportGeometry);
+      window.removeEventListener('orientationchange', updateViewportGeometry);
+      window.visualViewport?.removeEventListener('resize', updateViewportGeometry);
+      root.style.removeProperty('--cookie-visual-viewport-height');
+      root.style.removeProperty('--cookie-visual-viewport-offset-top');
+      root.style.removeProperty('--cookie-visual-viewport-bottom-gap');
+    };
+  }, [isVisible, showSettings]);
+
+  const closeSettings = useCallback(() => {
+    setShowSettings(false);
+    window.requestAnimationFrame(() => settingsTriggerRef.current?.focus());
+  }, []);
+
+  useEffect(() => {
+    if (!showSettings) return;
+    settingsCloseRef.current?.focus();
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeSettings();
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+      const dialog = settingsDialogRef.current;
+      if (!dialog) return;
+
+      const focusable = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), input:not([disabled]), [href], select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((element) => element.getClientRects().length > 0);
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [showSettings, closeSettings]);
 
   const updateConsent = (value: 'accepted' | 'rejected') => {
     localStorage.setItem('cookie-consent', value);
@@ -44,9 +117,15 @@ export function CookieBanner() {
       {/* Main Cookie Banner */}
       <div
         className={`
-          fixed bottom-4 right-4 left-4 md:left-auto md:w-[420px] z-[100]
-          animate-in slide-in-from-bottom-4 fade-in duration-500
+          fixed right-4 left-4 md:left-auto md:w-[420px] z-[100]
+          animate-in slide-in-from-bottom-4 fade-in duration-500 overflow-y-auto
         `}
+        style={{
+          bottom: 'calc(1rem + var(--cookie-visual-viewport-bottom-gap, 0px) + env(safe-area-inset-bottom))',
+          maxHeight: 'calc(var(--cookie-visual-viewport-height, 100dvh) - 2rem - env(safe-area-inset-bottom))',
+        }}
+        role="region"
+        aria-label={isEnglish ? 'Cookie notice' : 'Aviso de cookies'}
       >
         <div
           className="
@@ -62,6 +141,7 @@ export function CookieBanner() {
             onClick={handleClose}
             className="
               absolute top-3 right-3 p-1.5 rounded-full
+              min-h-11 min-w-11
               text-[var(--muted)] hover:text-[var(--text)]
               hover:bg-[var(--bg-soft)]
               transition-colors duration-200
@@ -86,7 +166,7 @@ export function CookieBanner() {
             </div>
 
             {/* Text content */}
-            <div className="flex-1 pr-6">
+            <div className="flex-1 pr-10">
               <h3 className="font-heading font-bold text-[var(--blue-deep)] text-base mb-1">
                 {isEnglish ? 'Your privacy matters' : 'Tu privacidad importa'}
               </h3>
@@ -100,7 +180,7 @@ export function CookieBanner() {
                   onClick={handleAccept}
                   className="
                     inline-flex items-center justify-center gap-2
-                    px-4 py-2 rounded-full
+                    min-h-11 px-4 py-2 rounded-full
                     bg-[var(--orange)] text-white
                     font-semibold text-sm
                     shadow-lg shadow-orange-500/25
@@ -117,7 +197,7 @@ export function CookieBanner() {
                   onClick={handleReject}
                   className="
                     inline-flex items-center justify-center gap-2
-                    px-4 py-2 rounded-full
+                    min-h-11 px-4 py-2 rounded-full
                     bg-white text-[var(--blue-deep)]
                     font-semibold text-sm
                     border border-[var(--border)]
@@ -133,9 +213,10 @@ export function CookieBanner() {
 
               {/* Settings link */}
               <button
+                ref={settingsTriggerRef}
                 onClick={() => setShowSettings(true)}
                 className="
-                  inline-flex items-center gap-1.5 mt-3
+                  inline-flex min-h-11 items-center gap-1.5 mt-3
                   text-sm font-medium text-[var(--blue)]
                   hover:text-[var(--blue-deep)]
                   hover:underline underline-offset-4
@@ -154,21 +235,31 @@ export function CookieBanner() {
       {showSettings && (
         <div
           className="
-            fixed inset-0 z-[110]
+          fixed inset-x-0 z-[300]
             bg-black/40 backdrop-blur-sm
             flex items-center justify-center p-4
             animate-in fade-in duration-200
           "
-          onClick={() => setShowSettings(false)}
+          style={{
+            top: 'var(--cookie-visual-viewport-offset-top, 0px)',
+            height: 'var(--cookie-visual-viewport-height, 100dvh)',
+            paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))',
+          }}
+          onClick={closeSettings}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="cookie-preferences-title"
         >
           <div
             className="
-              w-full max-w-md rounded-2xl
+              w-full max-w-md overflow-y-auto rounded-2xl
               bg-white border border-[var(--border)]
               shadow-[0_25px_80px_rgba(18,59,104,0.2)]
               p-6
               animate-in zoom-in-95 duration-200
             "
+            ref={settingsDialogRef}
+            style={{ maxHeight: 'calc(var(--cookie-visual-viewport-height, 100dvh) - 2rem - env(safe-area-inset-bottom))' }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-5">
@@ -183,7 +274,7 @@ export function CookieBanner() {
                   <Settings className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-[var(--blue-deep)] text-lg">
+                  <h3 id="cookie-preferences-title" className="font-heading font-bold text-[var(--blue-deep)] text-lg">
                     Preferencias
                   </h3>
                   <p className="text-sm text-[var(--muted)]">
@@ -192,9 +283,12 @@ export function CookieBanner() {
                 </div>
               </div>
               <button
-                onClick={() => setShowSettings(false)}
+                ref={settingsCloseRef}
+                onClick={closeSettings}
+                aria-label={isEnglish ? 'Close cookie preferences' : 'Cerrar preferencias de cookies'}
                 className="
                   p-2 rounded-full
+                  min-h-11 min-w-11
                   text-[var(--muted)] hover:text-[var(--text)]
                   hover:bg-[var(--bg-soft)]
                   transition-colors duration-200
@@ -319,7 +413,7 @@ export function CookieBanner() {
                 }}
                 className="
                   flex-1 inline-flex items-center justify-center gap-2
-                  px-4 py-2.5 rounded-full
+                  min-h-11 px-4 py-2.5 rounded-full
                   bg-[var(--blue-deep)] text-white
                   font-semibold text-sm
                   shadow-lg shadow-blue-900/25
@@ -332,9 +426,9 @@ export function CookieBanner() {
                 Guardar preferencias
               </button>
               <button
-                onClick={() => setShowSettings(false)}
+                onClick={closeSettings}
                 className="
-                  px-4 py-2.5 rounded-full
+                  min-h-11 px-4 py-2.5 rounded-full
                   text-[var(--muted)] font-semibold text-sm
                   hover:text-[var(--text)]
                   hover:bg-[var(--bg-soft)]

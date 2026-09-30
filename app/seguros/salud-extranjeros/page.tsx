@@ -141,18 +141,27 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
 
       <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-16">
-          <a href={en ? '/en' : '/'} className="font-bold text-slate-900 text-lg tracking-tight">
+          <a href={en ? '/en' : '/'} className="min-w-0 truncate font-bold text-slate-900 text-sm tracking-tight sm:text-lg">
             Valentín <span className="text-emerald-600">Protección Integral</span>
           </a>
-          <a
-            href={wVisado}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all"
-          >
-            <WhatsAppIcon className="w-4 h-4" />
-            <span className="hidden sm:inline">{en ? 'Quote ' : 'Presupuesto '}</span>WhatsApp
-          </a>
+          <div className="flex shrink-0 items-center gap-1">
+            <a
+              href={en ? '/seguros/salud-extranjeros' : '/en/insurance/health/foreigners'}
+              aria-label={en ? 'Ver la página en español' : 'View the page in English'}
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg px-2 text-xs font-bold text-slate-700 transition-colors hover:bg-slate-100"
+            >
+              {en ? 'ES' : 'EN'}
+            </a>
+            <a
+              href={wVisado}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-emerald-600 px-3 text-sm font-bold text-white transition-all hover:bg-emerald-700"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              <span className="hidden sm:inline">{en ? 'Quote ' : 'Presupuesto '}</span>WhatsApp
+            </a>
+          </div>
         </div>
       </header>
 

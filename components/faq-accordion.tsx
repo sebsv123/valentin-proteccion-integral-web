@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { ChevronDown, CircleHelp } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
@@ -9,6 +9,7 @@ import { getHomeContent, type HomeLocale } from './home-content';
 
 export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: { items: readonly { q: string; a: string }[]; contextualLinks?: boolean; locale?: HomeLocale }) {
   const [open, setOpen] = useState<number | null>(0);
+  const baseId = useId();
   const copy = getHomeContent(locale).faq;
 
   return (
@@ -17,7 +18,7 @@ export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: 
         const active = open === index;
         return (
           <div key={item.q} className="soft-card overflow-hidden">
-            <button onClick={() => setOpen(active ? null : index)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8 md:py-6">
+            <button id={`${baseId}-trigger-${index}`} type="button" aria-expanded={active} aria-controls={`${baseId}-panel-${index}`} onClick={() => setOpen(active ? null : index)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8 md:py-6">
               <div className="flex items-start gap-4">
                 <span className={`mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full ${active ? 'bg-[rgba(79,175,78,0.14)] text-[var(--green)]' : 'bg-[rgba(15,94,156,0.08)] text-[var(--blue)]'}`}>
                   <CircleHelp className="h-5 w-5" />
@@ -30,7 +31,12 @@ export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: 
               <ChevronDown className={`h-5 w-5 shrink-0 text-[var(--blue)] transition ${active ? 'rotate-180' : ''}`} />
             </button>
             {/* SEO-friendly: texto siempre en DOM, colapsado visualmente con max-height */}
-            <div 
+            <div
+              id={`${baseId}-panel-${index}`}
+              role="region"
+              aria-labelledby={`${baseId}-trigger-${index}`}
+              aria-hidden={!active}
+              inert={!active}
               className="overflow-hidden transition-all duration-300 ease-in-out"
               style={{ maxHeight: active ? '1000px' : '0', opacity: active ? 1 : 0 }}
             >

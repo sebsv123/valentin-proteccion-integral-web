@@ -87,7 +87,7 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
       {/* Móvil: barra sticky fija en la parte inferior */}
       <div 
         suppressHydrationWarning={true} 
-        className={`${hideMobile ? 'pointer-events-none translate-y-4 opacity-0' : 'translate-y-0 opacity-100'} fixed z-50 transition duration-200 md:hidden ${mobileVariant === 'floating' ? 'bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3' : 'bottom-0 left-0 right-0 bg-[#25D366]'}`}
+        className={`${hideMobile ? 'pointer-events-none translate-y-4 opacity-0' : 'translate-y-0 opacity-100'} fixed z-50 max-w-[100dvw] transition duration-200 md:hidden ${mobileVariant === 'floating' ? 'bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-3' : 'bottom-0 left-0 right-0 bg-[#25D366]'}`}
       >
         <a
           href={mobileHref}

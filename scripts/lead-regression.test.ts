@@ -127,3 +127,24 @@ test("Extra. Metadata de alquileres válida → acepta y conserva campos", () =>
     assert.equal(parsed.data.metadata["Zona preferida"], "Chamberí");
   }
 });
+
+test("General Health canonical payload → accepts the current API contract", () => {
+  const generalHealth = {
+    source: "health-contact-profiles",
+    name: "Persona Salud",
+    phone: "603448765",
+    interest: "salud",
+    message: "Perfil: Particular o familia · Uso preferido: Reembolso",
+    consent: true,
+    website: "",
+    pageUrl: "https://valentinproteccionintegral.com/seguros/salud",
+    referrer: "",
+  };
+  assert.equal(ok(generalHealth), true);
+  assert.equal(ok({
+    fullName: generalHealth.name,
+    productInterest: generalHealth.interest,
+    phone: generalHealth.phone,
+    consent: true,
+  }), false);
+});
