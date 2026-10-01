@@ -214,10 +214,11 @@ async function assertWaveMarkers(page, route) {
 }
 
 async function clickAndReturnContext(page, route) {
-  const cta = page.locator('a[data-mobile-primary-cta]').first();
+  const expectedPath = route.locale === 'EN' ? '/en/contact' : '/contacto';
+  const cta = page.locator(`a[data-mobile-primary-cta][href="${expectedPath}"]:visible`).first();
   if (!await cta.count()) return { status: 'not-applicable' };
   const before = page.url();
-  const expectedPath = route.locale === 'EN' ? '/en/contact' : '/contacto';
+  await cta.scrollIntoViewIfNeeded();
   const navigation = page.waitForURL((url) => url.pathname === expectedPath, { timeout: 5000 }).catch(() => null);
   await cta.click({ force: true });
   await navigation;
@@ -282,10 +283,10 @@ async function menuCheck(browser, baseUrl, approvedHost, token, size) {
   const { page, context, runtime } = opened;
   await assertApp(page, '/');
   await acceptCookies(page);
-  const open = page.locator('button[aria-label="Abrir menú"], button[aria-label="Open menu"]').first();
+  const open = page.locator('button[data-mobile-menu-trigger="true"]:visible').first();
   await open.click({ force: true });
   await wait(300);
-  const close = page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').first();
+  const close = page.locator('button[data-mobile-menu-trigger="true"]:visible').first();
   const nested = page.getByRole('button', { name: /Empresas y Autónomos|Businesses & Self-employed/i }).first();
   if (await nested.count()) {
     await nested.click({ force: true });
@@ -300,12 +301,12 @@ async function menuCheck(browser, baseUrl, approvedHost, token, size) {
   };
   await close.click({ force: true });
   await page.waitForFunction(() => {
-    const button = document.querySelector('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]');
+    const button = document.querySelector('button[data-mobile-menu-trigger="true"]');
     return !button || button.getAttribute('aria-expanded') === 'false';
   }, null, { timeout: 3000 }).catch(() => {});
   await wait(350);
-  result.close = await page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').count() === 0
-    || await page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').first().getAttribute('aria-expanded') === 'false';
+  result.close = await page.locator('button[data-mobile-menu-trigger="true"]').count() === 0
+    || await page.locator('button[data-mobile-menu-trigger="true"]').first().getAttribute('aria-expanded') === 'false';
   result.scrollRestored = await page.evaluate(() => getComputedStyle(document.body).overflow !== 'hidden');
   await context.close();
   return { viewport: `${size.width}x${size.height}`, ...result, runtime };
