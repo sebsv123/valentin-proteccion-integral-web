@@ -350,7 +350,7 @@ export function ProductCTASection({ product, title, text, message, locale, suppr
         <div className="container-shell">
           <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
             {/* Content side */}
-            <div className="bg-[linear-gradient(135deg,rgba(18,59,104,0.96),rgba(15,94,156,0.9))] p-8 md:p-10 lg:p-12 text-white">
+            <div className="min-w-0 bg-[linear-gradient(135deg,rgba(18,59,104,0.96),rgba(15,94,156,0.9))] p-8 md:p-10 lg:p-12 text-white">
               <p className="kicker !text-white/60">{en ? 'Your next step' : 'Tu siguiente paso'}</p>
               <h2 className="mt-3 font-heading text-4xl font-bold tracking-tight md:text-5xl">{title}</h2>
               <p className="mt-4 max-w-xl text-lg leading-9 text-white/80">{text}</p>
@@ -377,7 +377,7 @@ export function ProductCTASection({ product, title, text, message, locale, suppr
             </div>
 
             {/* Trust side */}
-            <div className="p-8 md:p-10 lg:p-12 bg-gradient-to-br from-[rgba(15,94,156,0.03)] to-[rgba(123,198,126,0.05)]">
+            <div className="min-w-0 p-8 md:p-10 lg:p-12 bg-gradient-to-br from-[rgba(15,94,156,0.03)] to-[rgba(123,198,126,0.05)]">
               <div className="flex flex-col gap-6 h-full justify-center">
                 {suppressTrustMetrics ? <>
                   <div>
