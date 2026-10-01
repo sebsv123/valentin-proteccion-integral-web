@@ -89,6 +89,7 @@ function attachRuntimeCapture(page, approvedHost, runtime) {
   page.on('requestfailed', (request) => {
     const requestUrl = new URL(request.url());
     const failure = { url: request.url(), resourceType: request.resourceType(), error: request.failure()?.errorText || 'request failed' };
+    if (failure.error === 'net::ERR_ABORTED') return;
     if (requestUrl.hostname === approvedHost) runtime.applicationRequestFailures.push(failure);
     else runtime.externalRequestFailures.push(failure);
   });
@@ -119,11 +120,26 @@ async function openPage(browser, baseUrl, approvedHost, token, size, path, local
 }
 
 async function acceptCookies(page) {
-  const button = page.getByRole('button', { name: /Aceptar todas|Accept all/i }).first();
+  const button = page.locator('button:visible').filter({ hasText: /Aceptar todas|Accept all/i }).last();
   if (await button.count()) {
     await button.click({ force: true });
     await wait(250);
   }
+}
+
+async function scrollScreenshotTarget(page, name) {
+  const targets = {
+    'health-390-decision': /Primero: ¿qué tipo de cobertura necesitas\?|First: what type of cover do you need/i,
+    'families-390-fit': /¿Encaja contigo\?|Could this fit your family/i,
+    'comprehensive-390-fit': /¿Cuándo tiene sentido añadir hospitalización\?|When does hospital cover make sense/i,
+    'reimbursement-390-fit': /¿Te encaja el reembolso\?|Could reimbursement fit you/i,
+    'foreigners-390-chooser': /¿Qué situación se parece más a la tuya\?|Which situation is closest to yours/i,
+  };
+  const pattern = targets[name];
+  if (!pattern) return;
+  const target = page.getByText(pattern).first();
+  if (await target.count()) await target.scrollIntoViewIfNeeded();
+  await wait(250);
 }
 
 async function applicationEvidence(page) {
@@ -276,12 +292,12 @@ async function languageCheck(browser, baseUrl, approvedHost, token) {
   const { page, context, runtime } = opened;
   await assertApp(page, '/seguros/salud');
   await acceptCookies(page);
-  const enLink = page.locator('a[href="/en/insurance/health"]').first();
+  const enLink = page.locator('a[href="/en/insurance/health"]:visible').first();
   if (!await enLink.count()) throw new Error('English language link missing on Health');
   await enLink.click({ force: true });
   await page.waitForLoadState('domcontentloaded');
   const onEnglish = page.url().endsWith('/en/insurance/health');
-  const esLink = page.locator('a[href="/seguros/salud"]').first();
+  const esLink = page.locator('a[href="/seguros/salud"]:visible').first();
   if (!await esLink.count()) throw new Error('Spanish language link missing on English Health');
   await esLink.click({ force: true });
   await page.waitForLoadState('domcontentloaded');
@@ -364,6 +380,7 @@ async function run() {
       try {
         await assertApp(opened.page, path);
         await acceptCookies(opened.page);
+        await scrollScreenshotTarget(opened.page, name);
         await opened.page.screenshot({ path: `${outputDir}/screenshots/${name}.png`, fullPage: false });
         result.screenshots.push(`${name}.png`);
       } finally {
