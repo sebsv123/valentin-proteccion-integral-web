@@ -12,7 +12,7 @@ jobs:
   preview-qa:
     name: Smoke-test the current Vercel development preview
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     concurrency:
       group: vercel-preview-qa-development
       cancel-in-progress: true
@@ -56,3 +56,30 @@ jobs:
           DEVELOPMENT_HEAD: ${{ steps.guard.outputs.development_head }}
           VERCEL_OIDC_TOKEN_FILE: ${{ steps.oidc.outputs.token_file }}
         run: node scripts/vercel-preview-qa.mjs qa
+
+      - name: Install browser QA dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Install Chromium for browser QA
+        if: steps.guard.outputs.run == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Run trusted Preview browser QA
+        if: steps.guard.outputs.run == 'true'
+        env:
+          PREVIEW_URL: ${{ steps.guard.outputs.preview_url }}
+          DEPLOYMENT_SHA: ${{ steps.guard.outputs.deployment_sha }}
+          DEVELOPMENT_HEAD: ${{ steps.guard.outputs.development_head }}
+          VERCEL_OIDC_TOKEN_FILE: ${{ steps.oidc.outputs.token_file }}
+          PREVIEW_BROWSER_QA_OUTPUT: artifacts/preview-browser-qa
+        run: node scripts/vercel-preview-browser-qa.mjs
+
+      - name: Upload Preview browser QA evidence
+        if: always() && steps.guard.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-browser-qa-${{ steps.guard.outputs.deployment_sha }}
+          path: artifacts/preview-browser-qa/
+          if-no-files-found: error
+          retention-days: 7
