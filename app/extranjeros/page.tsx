@@ -322,6 +322,20 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'en' } 
           </div>
         </section>
 
+        <section className="border-y border-slate-200 bg-slate-50/80 py-7 md:py-10" aria-labelledby="foreigners-quick-intent-title">
+          <div className="container-shell">
+            <p className="kicker">{en ? 'START WITH YOUR PROCESS' : 'EMPIEZA POR TU TRÁMITE'}</p>
+            <h2 id="foreigners-quick-intent-title" className="mt-2 max-w-3xl text-2xl font-bold tracking-tight text-[var(--blue-deep)] md:text-3xl">{en ? 'Which situation is closest to yours?' : '¿Qué situación se parece más a la tuya?'}</h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">{en ? 'Choose a starting point and we will take you to the relevant product or requirements.' : 'Elige un punto de partida y te llevamos al producto o a los requisitos que corresponden.'}</p>
+            <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+              {visibleProfiles.map((item) => {
+                return <ForeignersTrackedLink key={`quick-${item.title}`} href={item.href} action="cta_click" label={`quick_${item.label}`} className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-[var(--blue-deep)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--blue)]/30 hover:shadow-md">{item.title}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 text-[var(--blue)]" /></ForeignersTrackedLink>;
+              })}
+            </div>
+            <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary mt-4 inline-flex min-h-11 items-center gap-2 px-5" data-mobile-primary-cta>{en ? 'Review my case' : 'Revisar mi caso'}<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+          </div>
+        </section>
+
         {/* ASISA Health Students contracting details checked against https://www.asisa.es/seguros-medicos/extranjeros/estudios on 2026-09-17. */}
         <AnswerFirstSection
           eyebrow={en ? 'Quick answer' : 'Respuesta rápida'}

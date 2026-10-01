@@ -92,7 +92,7 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
         </div>
       </div>
 
-      <main>
+      <main className="overflow-x-clip">
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? product.name : product.label }]} />
         </div>

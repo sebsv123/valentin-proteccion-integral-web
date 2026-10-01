@@ -11,7 +11,6 @@ import { getLocalPexelsImage } from '@/lib/pexels';
 import { HeroLeadSection, ProductAccessSection, StatsSection } from '@/components/hero-sections-wrapper';
 const GoogleReviewsWidget = dynamicImport(() => import('@/components/GoogleReviewsWidget'));
 const TrustBadgesSection = dynamicImport(() => import('@/components/home-sections').then(m => m.TrustBadgesSection));
-const MascotHelperSection = dynamicImport(() => import('@/components/home-sections').then(m => m.MascotHelperSection));
 const ComparisonCardsSection = dynamicImport(() => import('@/components/home-sections').then(m => m.ComparisonCardsSection));
 const AgentTrustBlock = dynamicImport(() => import('@/components/home-sections').then(m => m.AgentTrustBlock));
 const HowItWorksSection = dynamicImport(() => import('@/components/HowItWorksSection'));
@@ -153,7 +152,6 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
         <StatsSection />
         <GoogleReviewsWidget locale={currentLocale} />
         <TrustBadgesSection locale={currentLocale} />
-        <MascotHelperSection locale={currentLocale} />
         <ProductCategoryGrid productsWithImages={productsWithImages} locale={currentLocale} />
 
         {/* Sección ICP - Encuentra lo que necesitas según tu situación */}
