@@ -17,12 +17,10 @@ Copia `.env.example` a `.env.local`:
 cp .env.example .env.local
 ```
 
-Configura:
-
-- `NEXT_PUBLIC_SITE_URL`
-- `NEXT_PUBLIC_WHATSAPP_URL`
-- `NEXT_PUBLIC_LEAD_ENDPOINT`
-- `NEXT_PUBLIC_LEAD_SECRET`
+Las variables públicas e integraciones opcionales están documentadas en
+`.env.example`. Las credenciales de Google, Pexels, SMTP y cualquier destino
+de servidor deben permanecer server-only y configurarse en el proveedor de
+despliegue, nunca como `NEXT_PUBLIC_*`.
 
 ## 2) Desarrollo local
 

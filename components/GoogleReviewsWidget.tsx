@@ -1,5 +1,6 @@
 import ReviewsCarouselWrapper from './ReviewsCarouselWrapper'
 import type { HomeLocale } from './home-content'
+import { getGoogleReviews } from '@/lib/server/google-reviews'
 
 interface GoogleReviewsWidgetProps {
   title?: string
@@ -7,21 +8,8 @@ interface GoogleReviewsWidgetProps {
   locale?: HomeLocale
 }
 
-async function getReviews() {
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://valentinproteccionintegral.com'
-    const res = await fetch(`${baseUrl}/api/reviews`, {
-      next: { revalidate: 86400 },
-    })
-    if (!res.ok) return null
-    return res.json()
-  } catch {
-    return null
-  }
-}
-
 export default async function GoogleReviewsWidget({ title, subtitle, locale = 'es' }: GoogleReviewsWidgetProps) {
-  const data = await getReviews()
+  const data = await getGoogleReviews()
 
   return (
     <section className="section-pad pt-0">
@@ -32,7 +20,7 @@ export default async function GoogleReviewsWidget({ title, subtitle, locale = 'e
             {title && <h2 className="mt-4 section-title mx-auto max-w-3xl">{title}</h2>}
           </div>
         )}
-        {data?.reviews?.length > 0 ? (
+        {data && data.reviews.length > 0 ? (
           <ReviewsCarouselWrapper
             reviews={data.reviews}
             rating={data.rating}

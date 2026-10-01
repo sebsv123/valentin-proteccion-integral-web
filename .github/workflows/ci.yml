@@ -15,11 +15,29 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (Static Export)
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: ISFAS regression tests
+        run: npm run test:isfas
+
+      - name: Related validation
+        run: npm run test:related
+
+      - name: Hardening regression tests
+        run: npm run test:hardening
+
+      - name: Lead safety tests
+        run: npm run test:leads
+
+      - name: Build
         run: npm run build

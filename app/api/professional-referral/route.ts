@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { professionalReferralSchema, professionalReferralToLeadEmail } from "@/lib/server/lead-email-schemas";
 import { LeadEmailBlockedError, LeadEmailConfigError, LeadEmailDeliveryError, sendLeadEmail } from "@/lib/server/send-lead-email";
+import { RequestBodyTooLargeError, readLimitedJson } from "@/lib/server/read-limited-json";
 
 /**
  * API route for professional referral form submissions.
@@ -16,8 +17,11 @@ export async function POST(request: Request) {
   let body: unknown;
 
   try {
-    body = await request.json();
-  } catch {
+    body = await readLimitedJson(request);
+  } catch (error) {
+    if (error instanceof RequestBodyTooLargeError) {
+      return NextResponse.json({ error: "Payload demasiado grande." }, { status: 413 });
+    }
     return NextResponse.json({ error: "Payload inválido." }, { status: 400 });
   }
 
