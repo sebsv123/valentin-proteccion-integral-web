@@ -218,9 +218,9 @@ async function clickAndReturnContext(page, route) {
   const cta = page.locator(`a[data-mobile-primary-cta][href="${expectedPath}"]:visible`).first();
   if (!await cta.count()) return { status: 'not-applicable' };
   const before = page.url();
-  await cta.scrollIntoViewIfNeeded();
+  await cta.evaluate((element) => element.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' }));
   const navigation = page.waitForURL((url) => url.pathname === expectedPath, { timeout: 5000 }).catch(() => null);
-  await cta.click({ force: true });
+  await cta.click();
   await navigation;
   await page.waitForLoadState('domcontentloaded').catch(() => {});
   await wait(250);
