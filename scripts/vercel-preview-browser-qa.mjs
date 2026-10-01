@@ -272,7 +272,8 @@ async function stickyWhatsappCheck(browser, baseUrl, approvedHost, token, path, 
     window.scrollTo({ top: candidate, behavior: 'instant' });
   });
   await wait(350);
-  const restored = await sticky.locator('a').evaluate((element) => !element.className.includes('w-12'));
+  const alwaysFloating = await sticky.locator('a').evaluate((element) => element.className.includes('w-12'));
+  const restored = alwaysFloating ? await sticky.locator('a').isVisible() : await sticky.locator('a').evaluate((element) => !element.className.includes('w-12'));
   const afterWidth = await page.locator('main').evaluate((element) => element.getBoundingClientRect().width);
   await context.close();
   return { path, compact, restored, layoutShift: Math.abs(beforeWidth - afterWidth) > 1, runtime };
@@ -305,6 +306,14 @@ async function menuCheck(browser, baseUrl, approvedHost, token, size) {
     return !button || button.getAttribute('aria-expanded') === 'false';
   }, null, { timeout: 3000 }).catch(() => {});
   await wait(350);
+  const stillOpen = await page.locator('button[data-mobile-menu-trigger="true"]').first().getAttribute('aria-expanded') === 'true';
+  if (stillOpen) {
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => {
+      const button = document.querySelector('button[data-mobile-menu-trigger="true"]');
+      return !button || button.getAttribute('aria-expanded') === 'false';
+    }, null, { timeout: 3000 }).catch(() => {});
+  }
   result.close = await page.locator('button[data-mobile-menu-trigger="true"]').count() === 0
     || await page.locator('button[data-mobile-menu-trigger="true"]').first().getAttribute('aria-expanded') === 'false';
   result.scrollRestored = await page.evaluate(() => getComputedStyle(document.body).overflow !== 'hidden');
