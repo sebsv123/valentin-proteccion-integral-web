@@ -11,6 +11,10 @@ const trackedActions = new Set([
   'medical_directory_click', 'authorization_click', 'emergency_click',
 ]);
 
+// Keep ISFAS events intentionally small and local: no WhatsApp text, href or
+// user-entered value is ever copied into an event payload.
+const allowedEventFields = new Set(['page_path', 'partner_ref', 'entity', 'purpose']);
+
 type Props = { partners: Record<string, string>; whatsappNumber: string };
 
 export function IsfasInteractions({ partners, whatsappNumber }: Props) {
@@ -45,7 +49,12 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
       ref = requestedRef;
       try { window.sessionStorage.setItem(storageKey, ref); } catch { /* storage can be disabled */ }
     } else if (requestedRef) {
-      try { window.sessionStorage.removeItem(storageKey); } catch { /* storage can be disabled */ }
+      // An invalid later ref never replaces a valid attribution already held
+      // by this tab. The proxy also strips the invalid query before navigation.
+      try {
+        const stored = window.sessionStorage.getItem(storageKey);
+        if (stored && Object.hasOwn(partners, stored)) ref = stored;
+      } catch { /* storage can be disabled */ }
     } else if (!requestedRef) {
       try {
         const stored = window.sessionStorage.getItem(storageKey);
@@ -110,9 +119,11 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
       if (entity === 'unknown') { selectedEntity = ''; refreshWhatsAppLinks(); }
       if (action && trackedActions.has(action) && hasConsent()) {
         const entityEvent = action === 'whatsapp_click' || action === 'entidad_asisa' || action === 'entidad_adeslas';
-        trackEvent(`isfas_${action}`, eventParams(entityEvent && selectedEntity ? { entity: selectedEntity } : {}));
+        const payload = eventParams(entityEvent && selectedEntity ? { entity: selectedEntity } : {});
+        trackEvent(`isfas_${action}`, Object.fromEntries(Object.entries(payload).filter(([key]) => allowedEventFields.has(key))));
         if (action === 'emergency_click' && anchor.href.startsWith('tel:')) {
-          trackEvent('isfas_phone_click', eventParams({ purpose: 'emergency' }));
+          const payload = eventParams({ purpose: 'emergency' });
+          trackEvent('isfas_phone_click', Object.fromEntries(Object.entries(payload).filter(([key]) => allowedEventFields.has(key))));
         }
       }
     };

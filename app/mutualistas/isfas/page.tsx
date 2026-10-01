@@ -91,7 +91,7 @@ export default function IsfasPage() {
           </nav>
           <nav className={styles.heroUtility} aria-label="Accesos directos">
             <a href="#buscar-medico"><Search aria-hidden="true" size={19} /> Cuadro médico ASISA / Adeslas</a>
-            <a href="#autorizaciones" data-isfas-track="authorization_click"><ClipboardCheck aria-hidden="true" size={19} /> Autorizaciones</a>
+            <a href="#autorizaciones"><ClipboardCheck aria-hidden="true" size={19} /> Autorizaciones</a>
             <a href="#urgencias" data-isfas-track="emergency_click"><HeartPulse aria-hidden="true" size={19} /> Urgencias</a>
           </nav>
           <p className={styles.disclosure}>Valentín Protección Integral no es ISFAS. Los trámites oficiales se realizan ante el Instituto. ASISA y Adeslas tienen profesionales de VPI distintos.</p>

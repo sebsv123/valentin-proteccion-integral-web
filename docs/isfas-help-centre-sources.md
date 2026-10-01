@@ -1,6 +1,6 @@
 # ISFAS — auditoría editorial pre-publicación
 
-Consulta: 23-09-2026. Alcance: `/mutualistas/isfas`. La información general no sustituye la respuesta de ISFAS o la entidad para un caso individual. Prioridad: ISFAS/BOE frente a copy comercial.
+Consulta: 01-10-2026. Alcance: `/mutualistas/isfas`. La información general no sustituye la respuesta de ISFAS o la entidad para un caso individual. Prioridad: ISFAS/BOE frente a copy comercial.
 
 | Claim | Texto publicado (resumen fiel) | Fuente oficial | Fecha | Resultado |
 | --- | --- | --- | --- | --- |
@@ -47,9 +47,9 @@ El WhatsApp precargado va a `34603448765`, punto común de VPI confirmado por el
 
 ## Datos y eventos
 
-`ref=academia-combate` se conserva solo en `sessionStorage` (`vpi_isfas_partner`) durante la sesión de pestaña y se añade al mensaje; no se guarda en servidor ni se acepta texto arbitrario. El proxy quita otros parámetros por 307 antes de cargar scripts. Canonical fijo a `/mutualistas/isfas`.
+`ref=academia-combate` se conserva solo en `sessionStorage` (`vpi_isfas_partner`) durante la sesión de pestaña y se añade al mensaje; no se guarda en servidor ni se acepta texto arbitrario. Un `ref` permitido crea atribución durante la sesión; un `ref` arbitrario nunca se convierte en partner y, si ya existe una atribución válida de la sesión, se conserva. Esta conservación es intencional para no perder atribución por enlaces posteriores malformados. El proxy quita otros parámetros por 307 antes de cargar scripts. Canonical fijo a `/mutualistas/isfas`.
 
-Eventos propios solo tras consentimiento: `isfas_page_view`, `isfas_partner_ref`, `isfas_entidad_asisa`, `isfas_entidad_adeslas`, `isfas_modalidad_desconocida`, `isfas_whatsapp_click`, `isfas_phone_click`, `isfas_official_isfas_click`, `isfas_medical_directory_click`, `isfas_authorization_click`, `isfas_emergency_click`. Campos: `page_path`, `partner_ref` (slug permitido), `entity` (`asisa`/`adeslas`) y `purpose: emergency` en teléfono de urgencias. Ningún mensaje WhatsApp ni texto libre pasa a `trackEvent`. GTM/GA4/Vercel Analytics globales tienen configuración remota no controlada por esta ruta.
+Eventos propios solo tras consentimiento: `isfas_page_view`, `isfas_partner_ref`, `isfas_entidad_asisa`, `isfas_entidad_adeslas`, `isfas_modalidad_desconocida`, `isfas_whatsapp_click`, `isfas_phone_click`, `isfas_official_isfas_click`, `isfas_medical_directory_click`, `isfas_authorization_click`, `isfas_emergency_click`. Campos locales allowlisted: `page_path`, `partner_ref` (slug permitido), `entity` (`asisa`/`adeslas`) y `purpose: emergency` en teléfono de urgencias. Ningún mensaje WhatsApp, href ni texto libre pasa a `trackEvent`. La navegación interna del hero hacia `#autorizaciones` no tiene evento; `isfas_authorization_click` queda reservado al enlace externo de autorización de ASISA/Adeslas. GTM/GA4/Vercel Analytics globales tienen configuración remota no controlada por esta ruta.
 
 V13: el salto interno del hero hacia las entidades no cuenta como `isfas_medical_directory_click`; ese evento se reserva para la salida al cuadro médico oficial. Un clic en un teléfono de urgencias produce deliberadamente `isfas_emergency_click` (contexto) y `isfas_phone_click` (canal telefónico): son dos dimensiones del mismo clic y **no deben sumarse como conversiones independientes** en reporting. Para confirmar una modalidad personal o pedir orientación A1, el destino es [Contacto ISFAS](https://www.defensa.gob.es/isfas/contacto/); la [página de modalidades](https://www.defensa.gob.es/isfas/destacados/ASanitaria/) solo explica los códigos, no consulta el expediente individual.
 
@@ -84,7 +84,7 @@ La fuente enlazada junto a cada respuesta es la principal; cuando una respuesta 
 | ASISA: autorización según prestación y confirmación de entidad | [Autorizaciones mutualistas ASISA](https://www.asisa.es/mutualistas/mutuas-medicas/informacion/autorizaciones-medicas) | 23-09-2026 | No se promete concesión. |
 | ASISA: tarjeta en App y documento provisional | [FAQ ASISA ISFAS](https://www.asisa.es/mutualistas/mutuas-medicas/isfas), [Concierto BOE](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-3596) | 23-09-2026 | El documento provisional depende de alta comunicada a la entidad. |
 | ASISA: receta concertada, privada y farmacia ordinaria | [Receta ISFAS](https://www.defensa.gob.es/isfas/destacados/RecetaE.html), [FAQ ASISA ISFAS](https://www.asisa.es/mutualistas/mutuas-medicas/isfas) | 23-09-2026 | Implantación según incorporación del médico; no se equipara receta privada a oficial. |
-| ASISA: visado y recogida por tercero | [Receta ISFAS](https://www.defensa.gob.es/isfas/destacados/RecetaE.html) | 23-09-2026 | Página ISFAS aún describe circuito de papel para visado; comprobar caso actualizado con Instituto. |
+| ASISA: visado y recogida por tercero | [Receta ISFAS](https://www.defensa.gob.es/isfas/destacados/RecetaE.html) | 01-10-2026 | La fuente vigente describe el circuito actual y la incorporación del visado electrónico; el copy evita afirmar que el papel sea permanente. La recogida por tercero sigue respaldada con DNI y tarjeta/HIP. |
 | ASISA: solicitar cambio ante ISFAS | [Modalidades ISFAS](https://www.defensa.gob.es/isfas/destacados/ASanitaria/) | 23-09-2026 | No decide ASISA ni se garantiza excepción. |
 | Adeslas: cuadro médico ISFAS | [Adeslas ISFAS](https://www.segurcaixaadeslas.es/mutualidades/isfas) | 23-09-2026 | Sin prometer profesional o centro concreto. |
 | Adeslas: solicitud y seguimiento de autorización | [Servicios Adeslas](https://www.segurcaixaadeslas.es/servicios-para-clientes) | 23-09-2026 | Página general: verificar funciones habilitadas para el mutualista. |
@@ -96,3 +96,11 @@ La fuente enlazada junto a cada respuesta es la principal; cuando una respuesta 
 Revisión editorial final: 23 FAQ (12 ISFAS, 6 ASISA, 5 Adeslas). El traslado de la pregunta sobre pruebas no modifica el número total ni crea contenido exclusivo para el schema; HTML visible y FAQPage siguen usando `isfasFaqGroups`/`isfasFaq`. Los CTA de tarjeta y reclamación apuntan ahora a contacto y formulario oficiales de ISFAS, respectivamente.
 
 Control de enlaces: los 14 destinos únicos citados por la FAQ devolvieron HTTP 200 en Chromium local el 23-09-2026, incluidos domicilio, extranjero y prestaciones de ISFAS. Las restricciones de rastreo de `defensa.gob.es` pueden producir fallos intermitentes y no se interpretan por sí solas como baja del recurso. No se modificaron teléfonos ni canales de urgencia.
+
+## V14 — hardening (01-10-2026)
+
+- Se corrigió el tracking del hero: el salto interno a `#autorizaciones` no es una salida oficial y no dispara `isfas_authorization_click`.
+- Adeslas conserva el acceso a su página general de servicios, pero el CTA es ahora `Ver canales de autorización Adeslas`; no se promete que una gestión digital concreta esté disponible para todo mutualista ISFAS.
+- La fuente oficial de receta/visado fue revisada el 01-10-2026. Como todavía combina circuito vigente en papel con la incorporación del visado electrónico, el texto publicado remite al procedimiento vigente con ISFAS y evita una regla categórica atemporal.
+- Analítica demostrada localmente: payload generado, campos allowlisted y ausencia de mensaje WhatsApp. No demostrado: tags remotos, duplicidades entre dataLayer/gtag ni captación automática de href por herramientas externas.
+- Deuda LOW pospuesta: refactor compartido de CSS acumulativo, coFounders por posición y arquitectura común MUFACE/MUGEJU; no forma parte de V14.
