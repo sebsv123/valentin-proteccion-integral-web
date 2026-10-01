@@ -14,10 +14,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
-      },
-      {
-        protocol: "https",
         hostname: "images.pexels.com",
         pathname: "/photos/**",
       },
@@ -132,8 +128,11 @@ const nextConfig: NextConfig = {
     ];
   },
   compiler: {
-    // SWC compiler options for removing console logs in production (helps reduce JS size)
-    removeConsole: process.env.NODE_ENV === 'production',
+    // Keep Preview/local diagnostics while removing routine production noise.
+    // Errors and warnings remain available in Production for incident diagnosis.
+    removeConsole: process.env.VERCEL_ENV === 'production'
+      ? { exclude: ['error', 'warn'] }
+      : false,
   },
   experimental: {
     optimizeCss: true,

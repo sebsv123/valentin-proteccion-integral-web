@@ -2,6 +2,9 @@
   "name": "seguros-integral-landing",
   "version": "0.9.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +13,7 @@
     "lint": "node scripts/lint-production-content.mjs",
     "typecheck": "tsc --noEmit",
     "test:related": "node scripts/validate-foreigners-page.mjs",
+    "test:hardening": "node --conditions=react-server --test scripts/request-body-limit.test.ts scripts/google-reviews.test.ts",
     "test:pilot-kit": "node scripts/ai-visibility/validate-pilot-kit.mjs",
     "prepare:zero-baseline-kit": "node scripts/ai-visibility/prepare-zero-baseline-kit.mjs",
     "test:zero-baseline-kit": "node scripts/ai-visibility/validate-zero-baseline-kit.mjs",
@@ -51,17 +55,17 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^16.2.4",
+    "@next/bundle-analyzer": "16.2.4",
     "@playwright/test": "1.63.0",
-    "@tailwindcss/postcss": "latest",
-    "@types/node": "latest",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "25.3.5",
     "@types/nodemailer": "^8.0.1",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
     "@types/three": "^0.184.1",
-    "postcss": "latest",
+    "postcss": "8.5.8",
     "sharp": "^0.34.5",
-    "tailwindcss": "latest",
+    "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
   }
 }
