@@ -418,7 +418,7 @@ async function run() {
         if (name === 'home-844x390-menu') {
           const menuTrigger = opened.page.locator('button[data-mobile-menu-trigger="true"]:visible').first();
           await menuTrigger.click({ force: true });
-          await wait(350);
+          await wait(2200);
         }
         await opened.page.screenshot({ path: `${outputDir}/screenshots/${name}.png`, fullPage: false });
         result.screenshots.push(`${name}.png`);
