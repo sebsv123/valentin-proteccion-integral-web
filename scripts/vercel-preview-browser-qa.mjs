@@ -217,21 +217,27 @@ async function clickAndReturnContext(page, route) {
   const cta = page.locator('a[data-mobile-primary-cta]').first();
   if (!await cta.count()) return { status: 'not-applicable' };
   const before = page.url();
+  const expectedPath = route.locale === 'EN' ? '/en/contact' : '/contacto';
+  const navigation = page.waitForURL((url) => url.pathname === expectedPath, { timeout: 5000 }).catch(() => null);
   await cta.click({ force: true });
+  await navigation;
   await page.waitForLoadState('domcontentloaded').catch(() => {});
   await wait(250);
   const destination = new URL(page.url());
+  if (destination.pathname !== expectedPath) throw new Error(`CTA on ${route.path} did not navigate to ${expectedPath}`);
   const text = await pageText(page);
   const contextVisible = /Contacto|Contact us|insurance|seguro/i.test(text);
+  const backNavigation = page.waitForURL((url) => url.pathname === route.path, { timeout: 5000 }).catch(() => null);
   await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => {});
+  await backNavigation;
   await wait(200);
   return {
     from: before,
     destination: destination.pathname,
-    expected: route.locale === 'EN' ? '/en/contact' : '/contacto',
+    expected: expectedPath,
     contextVisible,
     rating: contextVisible ? 'PASS' : 'LOW',
-    backReturned: page.url().endsWith(route.path),
+    backReturned: new URL(page.url()).pathname === route.path,
   };
 }
 
@@ -249,13 +255,26 @@ async function stickyWhatsappCheck(browser, baseUrl, approvedHost, token, path, 
   await inline.scrollIntoViewIfNeeded();
   await wait(350);
   const compact = await sticky.locator('a').evaluate((element) => element.className.includes('w-12'));
-  const firstBox = await sticky.boundingBox();
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  const beforeWidth = await page.locator('main').evaluate((element) => element.getBoundingClientRect().width);
+  await page.evaluate(() => {
+    const nodes = [...document.querySelectorAll('main a[href*="wa.me"]')];
+    const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    let candidate = max;
+    for (let y = 0; y <= max; y += 100) {
+      const clear = nodes.every((node) => {
+        const top = node.getBoundingClientRect().top + window.scrollY;
+        const bottom = top + node.getBoundingClientRect().height;
+        return bottom < y || top > y + window.innerHeight;
+      });
+      if (clear) { candidate = y; break; }
+    }
+    window.scrollTo({ top: candidate, behavior: 'instant' });
+  });
   await wait(350);
   const restored = await sticky.locator('a').evaluate((element) => !element.className.includes('w-12'));
-  const secondBox = await sticky.boundingBox();
+  const afterWidth = await page.locator('main').evaluate((element) => element.getBoundingClientRect().width);
   await context.close();
-  return { path, compact, restored, layoutShift: Boolean(firstBox && secondBox && Math.abs(firstBox.width - secondBox.width) > 1), runtime };
+  return { path, compact, restored, layoutShift: Math.abs(beforeWidth - afterWidth) > 1, runtime };
 }
 
 async function menuCheck(browser, baseUrl, approvedHost, token, size) {
@@ -280,8 +299,13 @@ async function menuCheck(browser, baseUrl, approvedHost, token, size) {
     backgroundInterception: false,
   };
   await close.click({ force: true });
-  await wait(250);
-  result.close = await page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').count() === 0;
+  await page.waitForFunction(() => {
+    const button = document.querySelector('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]');
+    return !button || button.getAttribute('aria-expanded') === 'false';
+  }, null, { timeout: 3000 }).catch(() => {});
+  await wait(350);
+  result.close = await page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').count() === 0
+    || await page.locator('button[aria-label="Cerrar menú"], button[aria-label="Close menu"]').first().getAttribute('aria-expanded') === 'false';
   result.scrollRestored = await page.evaluate(() => getComputedStyle(document.body).overflow !== 'hidden');
   await context.close();
   return { viewport: `${size.width}x${size.height}`, ...result, runtime };
