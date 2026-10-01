@@ -13,6 +13,7 @@ import SchemaFAQ from '@/components/seo/schema-faq';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { getLocalizedProduct, getLocalizedSubpage, localizedProductPath, localizedSubpagePath } from '@/lib/product-locales';
+import { ProductEarlyFitSummary } from '@/components/product-early-fit-summary';
 
 export function generateStaticParams() {
   return subpages.map((subpage) => ({ slug: subpage.parent, subslug: subpage.slug }));
@@ -69,7 +70,14 @@ export async function ProductSubpagePageView({ parent, subpage: originalSubpage,
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Insurance' : 'Seguros', href: locale === 'en' ? '/en/insurance' : '/seguros' }, { label: product.label, href: locale === 'en' ? localizedProductPath(product.slug, 'en') : `/seguros/${product.slug}` }, { label: subpage.label }]} />
         </div>
-        <SubpageHero subpage={subpage} showActions={!isComprehensive && !isReimbursement && !isFamilies} />
+        <SubpageHero
+          subpage={subpage}
+          showActions={!isComprehensive && !isReimbursement && !isFamilies}
+          earlyAction={isFamilies ? (locale === 'en' ? 'Review my family situation' : 'Revisar mi caso familiar') : isComprehensive ? (locale === 'en' ? 'Review whether I need hospital cover' : 'Revisar si necesito hospitalización') : isReimbursement ? (locale === 'en' ? 'Review whether reimbursement fits me' : 'Revisar si el reembolso encaja conmigo') : undefined}
+        />
+        {isFamilies ? <ProductEarlyFitSummary kind="families" locale={locale} /> : null}
+        {isComprehensive ? <ProductEarlyFitSummary kind="comprehensive" locale={locale} /> : null}
+        {isReimbursement ? <ProductEarlyFitSummary kind="reimbursement" locale={locale} /> : null}
         {isComprehensive ? <HealthComprehensiveGuidance locale={locale} /> : isReimbursement ? <HealthReimbursementGuidance locale={locale} /> : isFamilies ? <HealthFamiliesGuidance locale={locale} /> : <ProductDecisionGrid product={product} locale={locale} />}
         <ProductFaqSection product={faqProduct} locale={locale} contextualLinks={!isComprehensive && !isReimbursement && !isFamilies} />
         <GoogleReviewsWidget title={locale === 'en' ? `Reviews of our ${reviewLabel} guidance` : `Opiniones sobre nuestro asesoramiento en ${reviewLabel}`} />

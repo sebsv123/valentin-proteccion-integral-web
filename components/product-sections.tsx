@@ -222,7 +222,7 @@ export function ProductFaqSection({ product, locale: explicitLocale, contextualL
   );
 }
 
-export function SubpageHero({ subpage, showActions = true }: { subpage: ProductSubpage; showActions?: boolean }) {
+export function SubpageHero({ subpage, showActions = true, earlyAction }: { subpage: ProductSubpage; showActions?: boolean; earlyAction?: string }) {
   const en = useLocale() === 'en';
   return (
     <section className="section-pad pt-6 md:pt-10 bg-white-pure relative overflow-hidden">
@@ -238,6 +238,7 @@ export function SubpageHero({ subpage, showActions = true }: { subpage: ProductS
                   <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary">{en ? 'Ask for guidance' : 'Solicitar orientación'}</Link>
                   <a href={buildWhatsAppHref(subpage.whatsappMessage)} className="btn-whatsapp"><WhatsAppIcon className="h-4 w-4" /> {en ? 'No-obligation enquiry' : 'Consulta sin compromiso'}</a>
                 </div>}
+                {earlyAction ? <Link href={en ? '/en/contact' : '/contacto'} className="btn-primary mt-6 inline-flex min-h-11 items-center gap-2 px-5" data-mobile-primary-cta>{earlyAction}<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link> : null}
                 <div className="mt-7 grid gap-3">
                   {subpage.bullets.map((item, idx) => (
                     <RevealLight 

@@ -95,20 +95,18 @@ export async function ProductPageView({ slug, locale = 'es' }: { slug: string; l
         </div>
       </div>
 
-      <main>
+      <main className="overflow-x-clip">
         <div className="container-shell pt-6 md:pt-8">
           <Breadcrumbs items={[{ label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' }, { label: en ? 'Insurance' : 'Seguros', href: en ? '/en/insurance' : '/seguros' }, { label: en ? product.name : product.label }]} />
         </div>
         <ProductHero product={product} locale={locale} />
-        {product.slug === 'salud' && <AnswerFirstSection
+        {product.slug === 'salud' ? <><HealthModalitiesSection /><HealthSectionsTransition /><AnswerFirstSection
           eyebrow={en ? 'Start with the right page' : 'Empieza por el producto adecuado'}
           title={en ? 'Health insurance depends on the type of care and the person it is for' : 'El seguro de salud depende del tipo de asistencia y de para quién sea'}
           answer={en ? 'This is the general health hub. It links to narrower pages for comprehensive cover, senior health, reimbursement and immigration processes so that each page can explain its own conditions.' : 'Este es el hub general de salud. Desde aquí enlazamos a páginas específicas de salud completa, senior, reembolso y extranjería para que cada una explique sus propias condiciones.'}
           facts={en ? ['Outpatient and comprehensive plans do not cover the same needs.', 'Copayments and waiting periods depend on the plan.', 'Immigration-related health insurance has its own canonical product page.', 'Review policy conditions before choosing by price alone.'] : ['Las modalidades ambulatorias y completas no cubren las mismas necesidades.', 'Los copagos y las carencias dependen de la modalidad.', 'La salud para extranjería tiene su propia página canónica.', 'Conviene revisar las condiciones antes de elegir sólo por precio.']}
           links={en ? [{ label: 'Health for foreigners', href: '/en/insurance/health/foreigners' }, { label: 'Senior health', href: '/en/insurance/health-insurance/senior' }, { label: 'Reimbursement', href: '/en/insurance/health-insurance/reimbursement' }] : [{ label: 'Salud para extranjeros', href: '/seguros/salud-extranjeros' }, { label: 'Salud senior', href: '/seguros/salud/senior' }, { label: 'Salud con reembolso', href: '/seguros/salud/reembolso' }]}
-        />}
-
-        {product.slug === 'salud' ? <><HealthSectionsTransition /><HealthModalitiesSection /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
+        /><HealthCopaymentSection /><HealthDecisionGuideSection /><HealthNetworkSection /></> : <ProductTabs slug={product.slug} locale={locale} />}
         {product.slug === 'salud' ? <><HealthSwitchingGuidance /><HealthUseGuidance /></> : <CoverageHighlights product={product} locale={locale} />}
 
         {/* Sección Comparativa de Salud — Tracción de Landings */}
