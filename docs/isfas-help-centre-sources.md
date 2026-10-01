@@ -2,6 +2,8 @@
 
 Consulta: 01-10-2026. Alcance: `/mutualistas/isfas`. La información general no sustituye la respuesta de ISFAS o la entidad para un caso individual. Prioridad: ISFAS/BOE frente a copy comercial.
 
+Modelo de orientación VPI: la página ofrece orientación transversal y guía práctica sobre ISFAS. Sebastián Valentín mantiene su relación individual de agente exclusivo con ASISA y Rosa Valentín la suya con SegurCaixa Adeslas; VPI deriva al profesional exclusivo correspondiente según la entidad. La página no presenta a VPI como entidad neutral, corredor independiente ni comparador entre ASISA y Adeslas.
+
 | Claim | Texto publicado (resumen fiel) | Fuente oficial | Fecha | Resultado |
 | --- | --- | --- | --- | --- |
 | Modalidades completas | A1 pública, A2 SegurCaixa Adeslas, A5 ASISA | [ISFAS: modalidades](https://www.defensa.gob.es/isfas/destacados/ASanitaria/) | 23-09-2026 | Confirmado; no implica cambio libre en cualquier momento. |

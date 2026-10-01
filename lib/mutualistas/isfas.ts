@@ -2,9 +2,22 @@
 import { siteConfig } from '@/lib/site-config';
 import { isfasPartners } from '@/lib/mutualistas/partners';
 
+const reviewedOn = '2026-10-01' as const;
+
+function formatEditorialDate(isoDate: string) {
+  const [year, month, day] = isoDate.split('-').map(Number);
+  return new Intl.DateTimeFormat('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
 export const isfasGuide = {
   path: '/mutualistas/isfas',
-  reviewedOn: '2026-10-01',
+  reviewedOn,
+  reviewedOnLabel: formatEditorialDate(reviewedOn),
   official: {
     home: 'https://www.defensa.gob.es/isfas/',
     affiliation: 'https://www.defensa.gob.es/isfas/afiliacion/titulares/',

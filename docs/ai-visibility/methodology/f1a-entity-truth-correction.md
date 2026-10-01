@@ -43,14 +43,15 @@ with Rosa and is not used to infer a founder hierarchy.
 - `app/seguros/page.tsx` and `app/seguros/[slug]/page.tsx`: removes
   whole-market-comparison implications from the reviewed service copy.
 - Residual pass: corrected the remaining public blog claims that implied
-  whole-market comparison, made product CTAs use a neutral bilingual team
-  label instead of the legal responsible-person alias, and restored an
-  explicit homepage OpenGraph description aligned with the metadata.
+  whole-market comparison, made product CTAs identify the relevant VPI
+  professional channel instead of the legal responsible-person alias, and
+  restored an explicit homepage OpenGraph description aligned with the
+  metadata.
 - Compliance microfix: removed plural DGSFP-registration wording from public
   badges and editorial copy where Sebastián's individual registration is not
-  verified. The same neutral wording was applied to remaining public location,
-  product, hero and editorial surfaces. Rosa-specific legal/disclosure
-  references remain unchanged.
+  verified. The same VPI professional-channel wording was applied to remaining
+  public location, product, hero and editorial surfaces. Rosa-specific
+  legal/disclosure references remain unchanged.
 
 ## Deliberately untouched legal fields
 

@@ -5,12 +5,14 @@ const guidePath = 'lib/mutualistas/isfas.ts';
 const interactionsPath = 'components/mutualistas/isfas-interactions.tsx';
 const partnersPath = 'lib/mutualistas/partners.ts';
 const proxyPath = 'proxy.ts';
+const sitemapPath = 'app/sitemap.ts';
 
 const page = readFileSync(pagePath, 'utf8');
 const guide = readFileSync(guidePath, 'utf8');
 const interactions = readFileSync(interactionsPath, 'utf8');
 const partners = readFileSync(partnersPath, 'utf8');
 const proxy = readFileSync(proxyPath, 'utf8');
+const sitemap = readFileSync(sitemapPath, 'utf8');
 
 const failures = [];
 function check(name, condition, detail = '') {
@@ -70,9 +72,16 @@ check('12 tracking local allowlist y separación de navegación/salida', hasAll(
   'isfas_phone_click',
 ]) && !page.includes('href="#autorizaciones" data-isfas-track="authorization_click"') && count(page, 'track="authorization_click"') === 1 && !interactions.includes("trackEvent('isfas_whatsapp_click', eventParams({ message"));
 
+// 13. Editorial review date has one ISO source for visible copy, JSON-LD and sitemap.
+check('13 fecha editorial única', hasAll(guide, [
+  "const reviewedOn = '2026-10-01' as const",
+  'reviewedOn,',
+  'reviewedOnLabel: formatEditorialDate(reviewedOn)',
+]) && page.includes('isfasGuide.reviewedOnLabel') && page.includes('dateModified: isfasGuide.reviewedOn') && sitemap.includes('lastModified: isfasGuide.reviewedOn') && !page.includes('23 de septiembre de 2026') && !sitemap.includes('2026-09-23'));
+
 if (failures.length) {
   console.error(`ISFAS hardening checks failed (${failures.length}):\n- ${failures.join('\n- ')}`);
   process.exit(1);
 }
 
-console.log('ISFAS hardening checks passed (12 controls).');
+console.log('ISFAS hardening checks passed (13 controls).');
