@@ -12,4 +12,12 @@ jobs:
         env:
           VERCEL_WEEKLY_REBUILD_HOOK: ${{ secrets.VERCEL_WEEKLY_REBUILD_HOOK }}
         run: |
-          curl -X POST "$VERCEL_WEEKLY_REBUILD_HOOK"
+          set -euo pipefail
+          if [ -z "$VERCEL_WEEKLY_REBUILD_HOOK" ]; then
+            echo "VERCEL_WEEKLY_REBUILD_HOOK is not configured." >&2
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error \
+            --retry 2 --retry-delay 2 --retry-max-time 30 \
+            --request POST --output /dev/null \
+            "$VERCEL_WEEKLY_REBUILD_HOOK"
