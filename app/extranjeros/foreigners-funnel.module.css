@@ -1,0 +1,156 @@
+.heroReassurance {
+  max-width: 38rem;
+  margin-top: 0.75rem;
+  border-left: 2px solid var(--green);
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.heroGrid {
+  display: grid;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.heroMedia {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 24px 70px rgba(18, 59, 104, 0.14);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.selectorGrid {
+  align-items: stretch;
+}
+
+.situationCard {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.situationBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.situationAction {
+  margin-top: auto;
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--blue-deep);
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--blue) 30%, transparent);
+  text-underline-offset: 0.25rem;
+}
+
+.processCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+.processCtaButton {
+  min-height: 3.25rem;
+  padding: 0 2rem;
+}
+
+.processCtaMicrocopy {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.finalActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.finalCard {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1.75rem;
+  background: var(--blue-deep);
+  padding: 1.75rem;
+  color: white;
+}
+
+.finalActions {
+  min-width: 15rem;
+}
+
+.finalActions :global(.btn-primary),
+.finalActions :global(.btn-whatsapp) {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 4rem;
+  }
+
+  .heroMedia {
+    height: 520px;
+  }
+
+  .heroImage {
+    height: 100%;
+    object-position: 68% center;
+  }
+
+  .finalCard {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+    padding: 2rem 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroMedia {
+    height: 530px;
+  }
+}
+
+@media (max-width: 767px) {
+  .processCta {
+    align-items: stretch;
+  }
+
+  .processCtaButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .finalCard {
+    padding: 1.35rem;
+  }
+
+  .finalActions {
+    min-width: 0;
+  }
+}

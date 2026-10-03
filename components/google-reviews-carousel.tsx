@@ -50,7 +50,7 @@ function ReviewerAvatar({ review }: { review: GoogleReview }) {
   );
 }
 
-function ReviewCard({ review }: { review: GoogleReview }) {
+function ReviewCard({ review, locale }: { review: GoogleReview; locale: 'es' | 'en' }) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
       <StarRating rating={review.rating} />
@@ -61,7 +61,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
         <ReviewerAvatar review={review} />
         <div>
           <p className="text-sm font-semibold text-gray-900">{review.author_name}</p>
-          <p className="text-xs text-gray-400">{review.relative_time_description}</p>
+          <p className="text-xs text-gray-600">{locale === 'en' ? review.relative_time_description_en ?? review.relative_time_description : review.relative_time_description}</p>
         </div>
       </div>
     </article>
@@ -76,7 +76,8 @@ export function GoogleReviewsCarousel({
   locale = 'es',
 }: GoogleReviewsCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const count = reviews.length;
+  const usableReviews = reviews.filter((review) => review.text.trim().length > 0);
+  const count = usableReviews.length;
 
   useEffect(() => {
     if (count === 0) return undefined;
@@ -91,9 +92,9 @@ export function GoogleReviewsCarousel({
   if (count === 0) return null;
 
   const visibleReviews = [
-    reviews[activeIndex % count],
-    reviews[(activeIndex + 1) % count],
-    reviews[(activeIndex + 2) % count],
+    usableReviews[activeIndex % count],
+    usableReviews[(activeIndex + 1) % count],
+    usableReviews[(activeIndex + 2) % count],
   ];
 
   return (
@@ -127,12 +128,12 @@ export function GoogleReviewsCarousel({
             <motion.div
               key={`${activeIndex}-${index}`}
               className="h-full"
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
+              exit={{ opacity: 1, y: -16 }}
               transition={{ duration: 0.4, delay: 0.08 * index }}
             >
-              <ReviewCard review={review} />
+            <ReviewCard review={review} locale={locale} />
             </motion.div>
           ))}
         </AnimatePresence>
@@ -142,12 +143,12 @@ export function GoogleReviewsCarousel({
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
-            initial={{ opacity: 0, x: 40 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
+            exit={{ opacity: 1, x: -40 }}
             transition={{ duration: 0.35 }}
           >
-            <ReviewCard review={reviews[activeIndex]} />
+            <ReviewCard review={usableReviews[activeIndex]} locale={locale} />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -164,16 +165,16 @@ export function GoogleReviewsCarousel({
           </svg>
         </button>
         <div className="flex items-center gap-2">
-          {reviews.map((review, index) => (
+          {usableReviews.map((review, index) => (
             <button
               key={`${review.author_name}-${index}`}
               type="button"
               onClick={() => setActiveIndex(index)}
               aria-label={locale === 'en' ? `View review ${index + 1}` : `Ver reseña ${index + 1}`}
-              className={`h-2 w-2 origin-center rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'scale-x-[2.5] bg-blue-600' : 'bg-gray-300 opacity-60 hover:opacity-80'
-              }`}
-            />
+              className="flex h-11 w-11 items-center justify-center rounded-full"
+            >
+              <span aria-hidden="true" className={`block h-2 w-2 origin-center rounded-full transition-all duration-300 ${index === activeIndex ? 'scale-x-[2.5] bg-blue-600' : 'bg-gray-300 opacity-60 hover:opacity-80'}`} />
+            </button>
           ))}
         </div>
         <button

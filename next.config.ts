@@ -7,6 +7,7 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [70, 75],
     deviceSizes: [390, 414, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Cachear imágenes procesadas 30 días — evita reprocesar PNGs pesados en cada cold start
@@ -74,11 +75,11 @@ const nextConfig: NextConfig = {
         destination: '/autonomos',
         permanent: true,
       },
-      {
-        source: '/seguros/health-insurance-foreigners-spain',
-        destination: '/en/insurance/health/foreigners',
-        permanent: true,
-      },
+      // Consolidación de landings antiguas de extranjeros en el hub comercial bilingüe.
+      { source: '/seguros/salud/extranjeros', destination: '/extranjeros', statusCode: 301 },
+      { source: '/seguros/salud-extranjeros', destination: '/extranjeros', statusCode: 301 },
+      { source: '/en/insurance/health/foreigners', destination: '/en/foreigners', statusCode: 301 },
+      { source: '/seguros/health-insurance-foreigners-spain', destination: '/en/foreigners', statusCode: 301 },
     ];
   },
   async headers() {

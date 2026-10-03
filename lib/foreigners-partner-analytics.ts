@@ -25,7 +25,7 @@ const isKnownAction = (action: string): action is ForeignersPartnerAction =>
   FOREIGNERS_PARTNER_ACTIONS.includes(action as ForeignersPartnerAction);
 
 const professionalLabels = ['partner', 'colaboradores', 'b2b', 'professional', 'form'];
-const particularLabels = ['particulares', 'profile_', 'iberia_journey', 'final_cta'];
+const particularLabels = ['particulares', 'profile_', 'iberia_journey', 'hero_quote', 'quick_answer_quote', 'process_quote', 'final_quote', 'final_cta'];
 
 function resolveAudience(label?: string) {
   const normalized = label ?? '';
