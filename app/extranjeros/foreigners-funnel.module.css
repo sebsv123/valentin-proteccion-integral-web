@@ -1,0 +1,290 @@
+.page {
+  --orange: #b85d00;
+}
+
+.page :global(.btn-whatsapp) {
+  background: #117a6e;
+}
+
+.heroSectionBackdrop {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse 46% 64% at 82% 48%, rgba(93, 196, 190, 0.075) 0%, rgba(140, 205, 227, 0.045) 42%, transparent 76%);
+}
+
+.heroSectionBackdrop::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 54%;
+  background-image: radial-gradient(circle, rgba(20, 92, 121, 0.2) 0.65px, transparent 0.8px);
+  background-size: 20px 20px;
+  content: '';
+  opacity: 0.12;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at 72% 48%, #000 0%, rgba(0, 0, 0, 0.72) 38%, transparent 76%);
+  mask-image: radial-gradient(ellipse at 72% 48%, #000 0%, rgba(0, 0, 0, 0.72) 38%, transparent 76%);
+}
+
+.heroSectionBackdrop > :global(.container-shell) {
+  position: relative;
+  z-index: 1;
+}
+
+.heroReassurance {
+  max-width: 38rem;
+  margin-top: 0.75rem;
+  border-left: 2px solid var(--green);
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.heroGrid {
+  display: grid;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.heroMediaFrame {
+  position: relative;
+  min-width: 0;
+}
+
+.heroMedia {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 24px 70px rgba(18, 59, 104, 0.14);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.heroValentin {
+  position: absolute;
+  z-index: 2;
+  bottom: 4rem;
+  left: -0.875rem;
+  width: auto;
+  height: 120px;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 14px rgba(18, 59, 104, 0.14));
+  user-select: none;
+}
+
+.selectorGrid {
+  align-items: stretch;
+}
+
+.situationCard {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.situationBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.situationAction {
+  margin-top: auto;
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--blue-deep);
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--blue) 30%, transparent);
+  text-underline-offset: 0.25rem;
+}
+
+.processCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+.processGrid {
+  position: relative;
+  isolation: isolate;
+}
+
+.processCard {
+  --process-accent: #247f78;
+  --process-wash: rgba(36, 127, 120, 0.065);
+  position: relative;
+  z-index: 1;
+  background-image: radial-gradient(circle at 6% 0%, var(--process-wash), transparent 43%);
+  border-color: color-mix(in srgb, var(--process-accent) 20%, var(--border));
+  box-shadow:
+    0 12px 30px rgba(18, 59, 104, 0.065),
+    inset 0 2px 0 color-mix(in srgb, var(--process-accent) 45%, transparent);
+}
+
+.processCard[data-step='2'] {
+  --process-accent: #276d9d;
+  --process-wash: rgba(39, 109, 157, 0.06);
+}
+
+.processCard[data-step='3'] {
+  --process-accent: #c96a1d;
+  --process-wash: rgba(201, 106, 29, 0.065);
+}
+
+.processNumber {
+  background: var(--process-accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--process-accent) 10%, transparent);
+}
+
+.processCtaButton {
+  min-height: 3.25rem;
+  padding: 0 2rem;
+}
+
+.processCtaMicrocopy {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.finalActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.finalCard {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1.75rem;
+  background: var(--blue-deep);
+  padding: 1.75rem;
+  color: white;
+}
+
+.finalActions {
+  min-width: 15rem;
+}
+
+.finalActions :global(.btn-primary),
+.finalActions :global(.btn-whatsapp) {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 4rem;
+  }
+
+  .heroMedia {
+    height: 520px;
+  }
+
+  .heroImage {
+    height: 100%;
+    object-position: 68% center;
+  }
+
+  .heroValentin {
+    bottom: 4.5rem;
+    left: -1.75rem;
+    height: 190px;
+  }
+
+  .finalCard {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+    padding: 2rem 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .processGrid::before {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    right: calc(33.333% - 29px);
+    left: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(36, 127, 120, 0.32), rgba(39, 109, 157, 0.28) 52%, rgba(201, 106, 29, 0.3));
+    content: '';
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroSectionBackdrop {
+    background-image:
+      radial-gradient(ellipse 48% 68% at 82% 48%, rgba(93, 196, 190, 0.116) 0%, rgba(140, 205, 227, 0.067) 42%, transparent 76%);
+  }
+
+  .heroSectionBackdrop::before {
+    opacity: 0.15;
+  }
+
+  .heroMedia {
+    height: 530px;
+  }
+
+  .heroValentin {
+    bottom: 4.75rem;
+    left: -2.75rem;
+    height: 260px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroValentin {
+    bottom: 4.5rem;
+    left: -1.5rem;
+    height: 190px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSectionBackdrop {
+    background-image:
+      radial-gradient(ellipse 72% 42% at 100% 74%, rgba(93, 196, 190, 0.045) 0%, transparent 78%);
+  }
+
+  .heroSectionBackdrop::before {
+    inset-inline-start: 76%;
+    opacity: 0.055;
+  }
+
+  .processCta {
+    align-items: stretch;
+  }
+
+  .processCtaButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .finalCard {
+    padding: 1.35rem;
+  }
+
+  .finalActions {
+    min-width: 0;
+  }
+}
