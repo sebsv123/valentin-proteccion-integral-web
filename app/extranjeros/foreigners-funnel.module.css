@@ -85,6 +85,17 @@
   align-items: stretch;
 }
 
+.benefitsValentin {
+  display: none;
+}
+
+.benefitsValentinImage {
+  display: block;
+  width: auto;
+  height: clamp(157px, 15.3vw, 220px);
+  object-fit: contain;
+}
+
 .situationCard {
   display: flex;
   height: 100%;
@@ -191,6 +202,12 @@
 }
 
 @media (min-width: 1024px) {
+  .benefitsValentin {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+
   .heroGrid {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
     gap: 4rem;

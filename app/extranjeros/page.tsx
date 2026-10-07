@@ -208,6 +208,16 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersInta
               <div>
                 <p className="kicker">{copy.benefitsEyebrow}</p>
                 <h2 className="mt-3 section-title">{copy.benefitsTitle}</h2>
+                <div className={styles.benefitsValentin} aria-hidden="true">
+                  <Image
+                    src="/brand/valentin/valentin-por-que-vpi.png"
+                    alt=""
+                    width={1374}
+                    height={1145}
+                    sizes="(min-width: 1280px) 264px, (min-width: 1024px) 188px, 0px"
+                    className={styles.benefitsValentinImage}
+                  />
+                </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {copy.benefits.map((benefit) => (
