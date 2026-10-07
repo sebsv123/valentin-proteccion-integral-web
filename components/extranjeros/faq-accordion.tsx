@@ -1,36 +1,61 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { type KeyboardEvent, useId, useState } from 'react';
 import { ChevronDown, CircleHelp } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { getHomeContent, type HomeLocale } from '@/components/home-content';
 
 export function FAQAccordion({ items, contextualLinks = false, locale = 'es' }: { items: readonly { q: string; a: string }[]; contextualLinks?: boolean; locale?: HomeLocale }) {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
+  const accordionId = useId();
   const copy = getHomeContent(locale).faq;
+
+  const toggleItem = (index: number) => {
+    setOpen((current) => (current === index ? null : index));
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if ((event.key === ' ' || event.key === 'Spacebar') && !event.repeat) {
+      event.preventDefault();
+      toggleItem(index);
+    }
+  };
 
   return (
     <div className="grid gap-4">
       {items.map((item, index) => {
         const active = open === index;
+        const buttonId = `${accordionId}-button-${index}`;
+        const panelId = `${accordionId}-panel-${index}`;
         return (
           <div key={item.q} className="soft-card overflow-hidden">
-            <button onClick={() => setOpen(active ? null : index)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left md:px-8 md:py-6">
+            <button
+              id={buttonId}
+              type="button"
+              aria-expanded={active}
+              aria-controls={panelId}
+              onClick={() => toggleItem(index)}
+              onKeyDown={(event) => handleKeyDown(event, index)}
+              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-[rgba(15,94,156,0.3)] md:px-8 md:py-6"
+            >
               <div className="flex items-start gap-4">
                 <span className={`mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full ${active ? 'bg-[rgba(79,175,78,0.14)] text-[var(--green)]' : 'bg-[rgba(15,94,156,0.08)] text-[var(--blue)]'}`}>
-                  <CircleHelp className="h-5 w-5" />
+                  <CircleHelp className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
                   <p className="font-heading text-lg font-semibold text-[var(--text)] md:text-xl">{item.q}</p>
-                  <p className="mt-1 text-sm text-[var(--muted)]">{copy.expand}</p>
                 </div>
               </div>
-              <ChevronDown className={`h-5 w-5 shrink-0 text-[var(--blue)] transition ${active ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-5 w-5 shrink-0 text-[var(--blue)] transition ${active ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
             {/* SEO-friendly: texto siempre en DOM, colapsado visualmente con max-height */}
             <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              aria-hidden={!active}
               className="overflow-hidden transition-all duration-300 ease-in-out"
               style={{ maxHeight: active ? '1000px' : '0', opacity: active ? 1 : 0 }}
             >

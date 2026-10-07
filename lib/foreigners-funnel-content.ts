@@ -113,7 +113,7 @@ const es: ForeignersFunnelCopy = {
   faqTitle: 'Antes de empezar',
   faqDescription: 'Información inicial para orientarte. Los detalles finales dependen de la modalidad, la aseguradora y el trámite concreto.',
   faq: [
-    { q: '¿Necesito tener NIE o TIE para empezar?', a: 'Algunas modalidades pueden iniciarse con pasaporte, según el producto y los requisitos de la aseguradora. Lo confirmamos antes de avanzar.' },
+    { q: '¿Puedo empezar con mi pasaporte si todavía no tengo NIE o TIE?', a: 'En algunas modalidades sí. La contratación puede iniciarse con pasaporte, dependiendo del producto y de los requisitos de la aseguradora. Antes de avanzar, revisamos contigo qué documentación necesitas en tu caso.' },
     { q: '¿Quién emite el certificado del seguro?', a: 'La aseguradora emite la póliza y el certificado correspondiente. VPI te orienta durante el proceso.' },
     { q: '¿El seguro garantiza que acepten mi expediente?', a: 'No. La administración o el consulado decide si la documentación cumple los requisitos aplicables a tu trámite.' },
     { q: '¿Dónde puedo consultar requisitos más concretos?', a: 'En las guías de visado y requisitos consulares de VPI, que deben contrastarse con la oficina competente y su información vigente.' },
