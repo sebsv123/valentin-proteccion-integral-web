@@ -1,11 +1,26 @@
 .viewport {
   --rail-gap: clamp(1rem, 2vw, 2rem);
+  --rail-edge-fade: clamp(40px, 4vw, 64px);
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   touch-action: auto;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-edge-fade),
+    #000 calc(100% - var(--rail-edge-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-edge-fade),
+    #000 calc(100% - var(--rail-edge-fade)),
+    transparent 100%
+  );
 }
 
 .viewport:focus-visible {
@@ -70,6 +85,10 @@
 }
 
 @media (max-width: 767px) {
+  .viewport {
+    --rail-edge-fade: 16px;
+  }
+
   .logoItem {
     width: 210px;
     height: 112px;
