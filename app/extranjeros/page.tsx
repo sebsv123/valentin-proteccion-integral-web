@@ -13,14 +13,15 @@ import { GoogleReviewsCarousel } from '@/components/extranjeros/google-reviews-c
 import { Header } from '@/components/header';
 import { StickyWhatsApp } from '@/components/sticky-whatsapp';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
-import { googleReviews, googleReviewsSummary } from '@/lib/extranjeros/google-reviews';
 import { foreignersFunnelContent } from '@/lib/foreigners-funnel-content';
 import { foreignersPartnerLogos } from '@/lib/foreigners-partners';
 import { getForeignersIntakePath, type ForeignersIntakeLocale } from '@/lib/foreigners-intake';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import { getGoogleReviews } from '@/lib/server/google-reviews';
 import styles from './foreigners-funnel.module.css';
 
 const esCopy = foreignersFunnelContent.es;
+const googleReviewsUrl = 'https://search.google.com/local/reviews?placeid=ChIJM_JBwmqbQQ0R-9vVnwTsuRA';
 
 export const metadata: Metadata = {
   title: esCopy.metaTitle,
@@ -81,13 +82,16 @@ function buildSchemas(locale: ForeignersIntakeLocale) {
     },
   ];
 }
-export function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersIntakeLocale } = {}) {
+export async function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersIntakeLocale } = {}) {
   const copy = foreignersFunnelContent[locale];
   const en = locale === 'en';
   const intakeHref = getForeignersIntakePath(locale);
   const personalWhatsApp = buildWhatsAppHref(en ? 'Hello, I would like guidance about health insurance for my process in Spain.' : 'Hola, quiero orientación sobre un seguro médico para mi trámite en España.');
   const professionalWhatsApp = buildWhatsAppHref(en ? 'Hello, I work with international students or clients and would like to discuss a referral partnership.' : 'Hola, trabajo con estudiantes o clientes extranjeros y quiero consultar una posible colaboración.');
-  const reviewCount = googleReviewsSummary.user_ratings_total;
+  const googleReviewsData = await getGoogleReviews();
+  const hasGoogleReviews = Boolean(
+    googleReviewsData?.reviews.some((review) => review.text.trim().length > 0),
+  );
 
   return (
     <>
@@ -234,14 +238,24 @@ export function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersInta
 
         <ForeignersPartnerNetwork locale={locale} logos={foreignersPartnerLogos} />
 
-        <section className="section-pad bg-white" data-foreigners-section="opiniones" aria-labelledby="foreigners-reviews-title">
+        <section
+          className={`${hasGoogleReviews ? 'section-pad' : 'py-10 md:py-12'} bg-white`}
+          data-foreigners-section="opiniones"
+          aria-labelledby="foreigners-reviews-title"
+        >
           <div className="container-shell">
             <div className="mx-auto max-w-3xl text-center">
               <p className="kicker">{copy.reviewsEyebrow}</p>
               <h2 id="foreigners-reviews-title" className="mt-3 section-title text-3xl md:text-4xl">{copy.reviewsTitle}</h2>
             </div>
-            <div className="mt-8">
-              <GoogleReviewsCarousel reviews={googleReviews} rating={googleReviewsSummary.rating} user_ratings_total={reviewCount} allReviewsUrl={googleReviewsSummary.allReviewsUrl} locale={locale} />
+            <div className={hasGoogleReviews ? 'mt-8' : 'mt-4'}>
+              <GoogleReviewsCarousel
+                reviews={googleReviewsData?.reviews ?? []}
+                rating={googleReviewsData?.rating ?? null}
+                user_ratings_total={googleReviewsData?.user_ratings_total ?? null}
+                allReviewsUrl={googleReviewsUrl}
+                locale={locale}
+              />
             </div>
           </div>
         </section>

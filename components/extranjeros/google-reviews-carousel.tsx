@@ -3,12 +3,20 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { type FocusEvent, useEffect, useRef, useState } from 'react';
 import { trackForeignersPartner } from '@/lib/extranjeros/foreigners-partner-analytics';
-import type { GoogleReview } from '@/lib/extranjeros/google-reviews';
+
+type GoogleReview = {
+  author_name: string;
+  rating: number;
+  text: string;
+  relative_time_description: string;
+  profile_photo_url?: string;
+  time?: number;
+};
 
 type GoogleReviewsCarouselProps = {
   reviews: GoogleReview[];
-  rating: number;
-  user_ratings_total: number;
+  rating: number | null;
+  user_ratings_total: number | null;
   allReviewsUrl: string;
   locale?: 'es' | 'en';
 };
@@ -50,7 +58,64 @@ function ReviewerAvatar({ review }: { review: GoogleReview }) {
   );
 }
 
+function formatRelativeTime(time: number, locale: 'es' | 'en') {
+  const elapsedSeconds = Math.max(0, Math.floor(Date.now() / 1000 - time));
+  const elapsedDays = Math.floor(elapsedSeconds / 86_400);
+
+  let value: number;
+  let unit: 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
+
+  if (elapsedSeconds < 3_600) {
+    value = Math.max(1, Math.floor(elapsedSeconds / 60));
+    unit = 'minute';
+  } else if (elapsedSeconds < 86_400) {
+    value = Math.max(1, Math.floor(elapsedSeconds / 3_600));
+    unit = 'hour';
+  } else if (elapsedDays < 7) {
+    value = Math.max(1, elapsedDays);
+    unit = 'day';
+  } else if (elapsedDays < 30) {
+    value = Math.max(1, Math.floor(elapsedDays / 7));
+    unit = 'week';
+  } else if (elapsedDays < 365) {
+    value = Math.max(1, Math.floor(elapsedDays / 30));
+    unit = 'month';
+  } else {
+    value = Math.max(1, Math.floor(elapsedDays / 365));
+    unit = 'year';
+  }
+
+  const units = {
+    es: {
+      minute: ['un minuto', 'minutos'],
+      hour: ['una hora', 'horas'],
+      day: ['un día', 'días'],
+      week: ['una semana', 'semanas'],
+      month: ['un mes', 'meses'],
+      year: ['un año', 'años'],
+    },
+    en: {
+      minute: ['A minute', 'minutes'],
+      hour: ['An hour', 'hours'],
+      day: ['A day', 'days'],
+      week: ['A week', 'weeks'],
+      month: ['A month', 'months'],
+      year: ['A year', 'years'],
+    },
+  } as const;
+
+  const [singular, plural] = units[locale][unit];
+  if (locale === 'es') return `Hace ${value === 1 ? singular : `${value} ${plural}`}`;
+  return `${value === 1 ? singular : `${value} ${plural}`} ago`;
+}
+
 function ReviewCard({ review, locale }: { review: GoogleReview; locale: 'es' | 'en' }) {
+  const relativeTime = typeof review.time === 'number'
+    ? formatRelativeTime(review.time, locale)
+    : locale === 'es'
+      ? review.relative_time_description
+      : null;
+
   return (
     <article className="relative flex h-full flex-col overflow-hidden rounded-[20px] border border-slate-200/80 bg-white p-6 shadow-[0_14px_34px_-28px_rgba(15,42,77,0.55)] before:pointer-events-none before:absolute before:right-5 before:top-1 before:font-heading before:text-7xl before:leading-none before:text-blue-950/[0.045] before:content-['“']">
       <StarRating rating={review.rating} />
@@ -61,7 +126,7 @@ function ReviewCard({ review, locale }: { review: GoogleReview; locale: 'es' | '
         <ReviewerAvatar review={review} />
         <div>
           <p className="text-sm font-bold text-slate-900">{review.author_name}</p>
-          <p className="mt-0.5 text-xs text-slate-500">{locale === 'en' ? review.relative_time_description_en ?? review.relative_time_description : review.relative_time_description}</p>
+          {relativeTime ? <p className="mt-0.5 text-xs text-slate-500">{relativeTime}</p> : null}
         </div>
       </div>
     </article>
@@ -103,7 +168,7 @@ export function GoogleReviewsCarousel({
   }, []);
 
   useEffect(() => {
-    if (count === 0 || !isVisible || isHovered || isFocusWithin || prefersReducedMotion) return undefined;
+    if (count <= 1 || !isVisible || isHovered || isFocusWithin || prefersReducedMotion) return undefined;
 
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % count);
@@ -116,13 +181,26 @@ export function GoogleReviewsCarousel({
     if (!event.currentTarget.contains(event.relatedTarget)) setIsFocusWithin(false);
   };
 
-  if (count === 0) return null;
+  if (count === 0 || rating === null || user_ratings_total === null) {
+    return (
+      <div className="flex justify-center py-1">
+        <a
+          href={allReviewsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackForeignersPartner({ action: 'google_reviews_click', label: 'reviews_carousel' })}
+          className="text-sm font-semibold text-blue-600 underline decoration-blue-300 underline-offset-4 transition hover:text-blue-800"
+        >
+          {locale === 'en' ? 'View all on Google →' : 'Ver todas en Google →'}
+        </a>
+      </div>
+    );
+  }
 
-  const visibleReviews = [
-    usableReviews[activeIndex % count],
-    usableReviews[(activeIndex + 1) % count],
-    usableReviews[(activeIndex + 2) % count],
-  ];
+  const visibleReviews = Array.from(
+    { length: Math.min(3, count) },
+    (_, index) => usableReviews[(activeIndex + index) % count],
+  );
 
   return (
     <div
@@ -143,7 +221,7 @@ export function GoogleReviewsCarousel({
             ))}
           </div>
           <span className="text-xs font-medium text-slate-600 sm:text-sm">
-            · {user_ratings_total} {locale === 'en' ? 'Google reviews' : 'opiniones en Google'}
+            · {user_ratings_total}+ {locale === 'en' ? 'verified reviews on Google' : 'opiniones verificadas en Google'}
           </span>
           <a
             href={allReviewsUrl}
@@ -188,7 +266,7 @@ export function GoogleReviewsCarousel({
         </AnimatePresence>
       </div>
 
-      <div className="mt-8 flex items-center justify-center gap-4">
+      {count > 1 ? <div className="mt-8 flex items-center justify-center gap-4">
         <button
           type="button"
           onClick={() => setActiveIndex((current) => (current - 1 + count) % count)}
@@ -222,7 +300,7 @@ export function GoogleReviewsCarousel({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
-      </div>
+      </div> : null}
     </div>
   );
 }

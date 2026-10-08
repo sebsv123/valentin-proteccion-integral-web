@@ -9,6 +9,7 @@ export type GoogleReviewsData = {
     text: string;
     relative_time_description: string;
     profile_photo_url: string;
+    time?: number;
   }>;
   rating: number;
   user_ratings_total: number;
@@ -45,12 +46,14 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
         text: string;
         relative_time_description: string;
         profile_photo_url: string;
+        time?: number;
       }) => ({
         author_name: review.author_name,
         rating: review.rating,
         text: review.text,
         relative_time_description: review.relative_time_description,
         profile_photo_url: review.profile_photo_url,
+        ...(typeof review.time === 'number' ? { time: review.time } : {}),
       }));
 
     return {
