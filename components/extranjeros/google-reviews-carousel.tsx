@@ -158,7 +158,7 @@ export function GoogleReviewsCarousel({
       </div>
 
       <div className="hidden grid-cols-3 gap-6 md:grid">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           {visibleReviews.map((review, index) => (
             <motion.div
               key={`${activeIndex}-${index}`}
