@@ -13,6 +13,42 @@
     radial-gradient(ellipse 46% 64% at 82% 48%, rgba(93, 196, 190, 0.075) 0%, rgba(140, 205, 227, 0.045) 42%, transparent 76%);
 }
 
+.reviewsSection {
+  position: relative;
+  isolation: isolate;
+}
+
+.reviewsContent {
+  position: relative;
+  z-index: 1;
+}
+
+.reviewsValentin {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .reviewsValentin {
+    display: block;
+    height: 125px;
+    left: max(18px, calc(50% - 494px));
+    top: 54px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .reviewsValentin {
+    height: 168px;
+    left: max(28px, calc(50% - 690px));
+    top: 48px;
+  }
+}
+
 .heroSectionBackdrop::before {
   position: absolute;
   z-index: 0;

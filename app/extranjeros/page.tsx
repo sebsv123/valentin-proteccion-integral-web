@@ -239,11 +239,21 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
         <ForeignersPartnerNetwork locale={locale} logos={foreignersPartnerLogos} />
 
         <section
-          className={`${hasGoogleReviews ? 'section-pad' : 'py-10 md:py-12'} bg-white`}
+          className={`${styles.reviewsSection} ${hasGoogleReviews ? 'section-pad' : 'py-10 md:py-12'} bg-white`}
           data-foreigners-section="opiniones"
           aria-labelledby="foreigners-reviews-title"
         >
-          <div className="container-shell">
+          {hasGoogleReviews ? (
+            <Image
+              src="/brand/valentin/valentin-reviews-gala.png"
+              alt=""
+              width={1254}
+              height={1254}
+              className={styles.reviewsValentin}
+              aria-hidden="true"
+            />
+          ) : null}
+          <div className={`container-shell ${styles.reviewsContent}`}>
             <div className="mx-auto max-w-3xl text-center">
               <p className="kicker">{copy.reviewsEyebrow}</p>
               <h2 id="foreigners-reviews-title" className="mt-3 section-title text-3xl md:text-4xl">{copy.reviewsTitle}</h2>
