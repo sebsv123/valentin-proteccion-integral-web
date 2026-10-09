@@ -140,9 +140,10 @@ export default function SobreNosotrosPage() {
                     Valentín Protección Integral es una marca comercial y proyecto de mediación de
                     seguros, no una compañía aseguradora ni una correduría independiente. Rosa y
                     Sebastián son cofundadores al mismo nivel y mantienen sus relaciones
-                    individuales de distribución separadas de la marca. La responsable legal de la
-                    actividad publicada es Rosa Isabel Valentín González, cuya inscripción puede
-                    consultarse en el registro público de la DGSFP. Orientamos entre los productos
+                    individuales de distribución separadas de la marca. La responsabilidad de la
+                    actividad publicada corresponde a Rosa Isabel Valentín González y Sebastián
+                    Sifontes Valentín, cuyas inscripciones pueden consultarse en el registro público
+                    de la DGSFP. Orientamos entre los productos
                     que podemos distribuir.
                   </p>
                   <div className="mt-4">

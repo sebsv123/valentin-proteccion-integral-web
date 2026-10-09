@@ -10,6 +10,7 @@ import { CookieAwareMap } from './cookie-aware-map';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
+  const [rosaActivityResponsible, sebastianActivityResponsible] = siteConfig.activityResponsiblePersons;
   const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', (href === '/contacto' ? '/contact' : href === '/internacional' ? '/international' : href === '/extranjeros' ? '/foreigners' : href === '/seguros' ? '/insurance' : href === '/seguros/salud' ? '/insurance/health' : href === '/seguros/salud-extranjeros' ? '/insurance/health/foreigners' : href) as '/' | '/international' | '/contact' | '/foreigners' | '/insurance' | '/insurance/health' | '/insurance/health/foreigners') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/autonomos': '/en/for/self-employed', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href : href;
   const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', Seguros: 'Insurance', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
@@ -79,19 +80,12 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
         </div>
         <div className="mt-6 border-t border-[var(--border)] pt-6 text-sm leading-7 text-[var(--muted)]">
           <p>
-            <strong>{siteConfig.brand.name}</strong> {isEnglish ? 'is a commercial insurance intermediary brand; it is not an insurer. Activity responsible person:' : 'es una marca comercial de mediación de seguros; no es una compañía aseguradora. Responsable de la actividad:'}{' '}
-            <strong>{siteConfig.responsiblePerson.fullName}</strong>, {isEnglish ? 'insurance agent with tax ID' : 'agente de seguros con NIF'}{' '}
-            {siteConfig.responsiblePerson.nif} {isEnglish ? 'and registered with the DGSFP under no.' : 'e inscripción en la DGSFP nº'}{' '}
-            {siteConfig.responsiblePerson.dgsfpCode} ({isEnglish ? 'checkable in the' : 'comprobable en el'}{' '}
-            <a
-              href={siteConfig.responsiblePerson.dgsfpRegistryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-[var(--blue)]"
-            >
-              {isEnglish ? 'public DGSFP register' : 'registro público de la DGSFP'}
-            </a>
-            ). {isEnglish ? 'Insurers are third parties: risk acceptance, cover and benefit payments are governed by each insurer according to the policy conditions, limits, exclusions and waiting periods.' : 'Las aseguradoras son entidades terceras: la aceptación del riesgo, las coberturas y el pago de prestaciones corresponden a cada aseguradora según las condiciones, límites, exclusiones y carencias de la póliza.'}
+            <strong>{siteConfig.brand.name}</strong>{' '}
+            {isEnglish ? (
+              <>is a commercial insurance mediation brand; it is not an insurance company. The persons responsible for the activity are <strong>{rosaActivityResponsible.fullName}</strong>, an exclusive insurance agent for SegurCaixa Adeslas, with tax ID {rosaActivityResponsible.nif} and DGSFP registration no. {rosaActivityResponsible.dgsfpCode}, and <strong>{sebastianActivityResponsible.fullName}</strong>, an exclusive insurance agent for ASISA, with tax ID {sebastianActivityResponsible.nif} and DGSFP registration no. {sebastianActivityResponsible.dgsfpCode}. Insurers are third parties; risk acceptance, cover and benefit payments are governed by each insurer according to the policy conditions, limits, exclusions and waiting periods.</>
+            ) : (
+              <>es una marca comercial de mediación de seguros; no es una compañía aseguradora. Responsables de la actividad: <strong>{rosaActivityResponsible.fullName}</strong>, {rosaActivityResponsible.insurerRelationship}, con NIF {rosaActivityResponsible.nif} e inscripción en la DGSFP nº {rosaActivityResponsible.dgsfpCode}, y <strong>{sebastianActivityResponsible.fullName}</strong>, {sebastianActivityResponsible.insurerRelationship}, con NIF {sebastianActivityResponsible.nif} e inscripción en la DGSFP nº {sebastianActivityResponsible.dgsfpCode}. Las aseguradoras son entidades terceras; la aceptación del riesgo, las coberturas y el pago de prestaciones corresponden a cada aseguradora según las condiciones, límites, exclusiones y carencias de la póliza.</>
+            )}
           </p>
           <p className="mt-4 text-center">
             © {new Date().getFullYear()} {site.name}. {isEnglish ? 'All rights reserved.' : 'Todos los derechos reservados.'}

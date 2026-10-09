@@ -39,6 +39,21 @@ const coFounders = [
   },
 ] as const;
 
+const activityResponsiblePersons = [
+  {
+    fullName: 'Rosa Isabel Valentín González',
+    nif: '79234434D',
+    insurerRelationship: 'agente exclusiva de seguros de SegurCaixa Adeslas',
+    dgsfpCode: 'C012479234434D',
+  },
+  {
+    fullName: 'Sebastián Sifontes Valentín',
+    nif: '72295271S',
+    insurerRelationship: 'agente exclusivo de seguros de ASISA',
+    dgsfpCode: 'C046172295271S',
+  },
+] as const;
+
 export const siteConfig = {
   brand: {
     name: 'Valentín Protección Integral',
@@ -58,6 +73,9 @@ export const siteConfig = {
 
   /** Compatibilidad para disclosures legales existentes; no usar como grafo corporativo. */
   responsiblePerson: legalOwner,
+
+  /** Responsables de la actividad de mediación; no confundir con titularidad ni protección de datos. */
+  activityResponsiblePersons,
 
   /** Relaciones profesionales individuales; no atribuirlas a la marca. */
   professionalRelationships: coFounders.map(({ fullName, insurerRelationship, dgsfpCode }) => ({ fullName, insurerRelationship, dgsfpCode })),
