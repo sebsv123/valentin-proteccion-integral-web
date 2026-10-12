@@ -51,11 +51,48 @@ img { max-width: 100%; height: auto; }
 .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: .82rem; font-weight: 700; color: var(--blue); }
 .nav-link { font-size: 1.12rem; font-weight: 600; color: var(--blue-deep); }
 
-@media (min-width: 1850px) and (max-width: 2199px) {
-  .header-primary-nav {
-    --pill-pad-x: 8px;
-    --pill-gap: 2px;
+@media (min-width: 1280px) and (max-width: 1849px) {
+  .header-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 4px;
+    padding-block: 0.5rem;
   }
+
+  .header-lockup img { width: 300px; }
+  .header-desktop-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+  }
+  .header-rentals-link { padding-inline: 0.5rem; font-size: 0.75rem; }
+  .header-insurance-trigger { padding-inline: 0.5rem; font-size: 0.75rem; }
+  .header-business-trigger { padding-inline: 0.5rem; font-size: 0.75rem; }
+  .header-primary-nav { --pill-pad-x: 6px; --pill-gap: 1px; }
+  .header-primary-nav .pill-label,
+  .header-primary-nav .pill-label-hover { font-size: 0.75rem; }
+  .header-desktop-actions { gap: 0.25rem; }
+  .header-desktop-actions > a[href^="tel:"] { gap: 0.25rem; padding: 0.5rem; font-size: 0.75rem; }
+  .header-desktop-actions > .btn-whatsapp { gap: 0.3rem; padding: 0.5rem 0.65rem !important; font-size: 0.75rem !important; }
+  .header-desktop-actions > a[aria-label*="Instagram"] { width: 2.25rem; height: 2.25rem; }
+  .header-mega-menu { top: 6.25rem; }
+}
+
+@media (min-width: 1850px) and (max-width: 2199px) {
+  .header-lockup img { width: 320px; }
+  .header-desktop-nav { gap: 0; }
+  .header-rentals-link { padding-inline: 0.6rem; font-size: 0.8rem; }
+  .header-insurance-trigger { padding-inline: 0.5rem; font-size: 0.8rem; }
+  .header-business-trigger { padding-inline: 0.55rem; font-size: 0.8rem; }
+  .header-primary-nav { --pill-pad-x: 5px; --pill-gap: 1px; }
+  .header-primary-nav .pill-label,
+  .header-primary-nav .pill-label-hover { font-size: 0.75rem; }
+  .header-desktop-actions { gap: 0.25rem; }
+  .header-desktop-actions > a[href^="tel:"] { gap: 0.25rem; padding: 0.5rem; font-size: 0.8rem; }
+  .header-desktop-actions > .btn-whatsapp { gap: 0.3rem; padding: 0.5rem 0.65rem !important; font-size: 0.8rem !important; }
+  .header-desktop-actions > a[aria-label*="Instagram"] { width: 2.25rem; height: 2.25rem; }
 }
 
 .soft-card { border-radius: 32px; background: rgba(255,255,255,0.96); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(18, 59, 104, 0.08); }
