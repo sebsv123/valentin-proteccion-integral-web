@@ -63,7 +63,7 @@ export function IndiaHandoff({ content }: { content: IndiaContent['handoff'] }) 
             <div className={styles.sideContent}>
               <div className={styles.sideHead}>
                 <span className={styles.vpiMark}>
-                  <Image src="/brand/isotipo-valentin.png" alt="Isotipo de Valentín Protección Integral" width={52} height={40} />
+                  <Image src="/brand/vpi/VPI_G2_symbol_master.svg" alt="Isotipo de Valentín Protección Integral" width={52} height={40} />
                 </span>
                 <span className={styles.originLabelVpi}>ESPAÑA</span>
               </div>

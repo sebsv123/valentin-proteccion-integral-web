@@ -32,7 +32,7 @@ export default function ArticleSchema({
       "url": "https://valentinproteccionintegral.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://valentinproteccionintegral.com/brand/logo-vpi.png"
+        "url": "https://valentinproteccionintegral.com/brand/vpi/logo-horizontal.png"
       }
     },
     ...(imageUrl ? {

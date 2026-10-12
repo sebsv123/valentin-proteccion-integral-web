@@ -32,7 +32,7 @@ export default function SchemaLocalBusiness({ cityName, postcode, locale = 'es' 
     "telephone": site.phone,
     "email": "contacto@valentinproteccionintegral.com",
     "image": "https://valentinproteccionintegral.com/og-image.webp",
-    "logo": "https://valentinproteccionintegral.com/favicon-192.png",
+    "logo": "https://valentinproteccionintegral.com/brand/vpi/logo-horizontal.png",
     "priceRange": "€",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",

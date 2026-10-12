@@ -47,13 +47,13 @@ export const metadata: Metadata = {
       "Salud para equipos y ciberprotección para empresas, explicadas con claridad.",
     url: `${site.domain}/empresas`,
     type: "website",
-    images: [{ url: `${site.domain}/brand/logo-vpi.jpeg`, alt: site.name }],
+    images: [{ url: `${site.domain}/brand/vpi/logo-horizontal.png`, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Soluciones para empresas | Valentín Protección Integral",
     description: "Salud para equipos y ciberprotección para empresas.",
-    images: [`${site.domain}/brand/logo-vpi.jpeg`],
+    images: [`${site.domain}/brand/vpi/logo-horizontal.png`],
   },
 };
 

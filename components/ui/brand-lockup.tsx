@@ -13,48 +13,27 @@ type BrandLockupProps = {
 export function BrandLockup({
   variant = 'light',
   size = 'default',
-  showDescriptor = true,
   className = '',
   priority = false,
   href = '/',
 }: BrandLockupProps) {
   const compact = size === 'compact';
-  const primaryColor = variant === 'light' ? 'text-white' : 'text-[var(--blue-deep)]';
-  const secondaryColor = variant === 'light' ? 'text-white/85' : 'text-[var(--blue-deep)]/75';
 
   return (
     <Link
       href={href}
       aria-label="Valentín Protección Integral"
-      className={`inline-flex shrink-0 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${compact ? 'gap-2.5' : 'gap-3'} ${className}`}
+      className={`inline-flex w-fit max-w-full shrink-0 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${className}`}
     >
-      <span
-        aria-hidden="true"
-        className={`relative shrink-0 ${compact ? 'h-9 w-[42px] max-[349px]:h-8 max-[349px]:w-[37px]' : 'h-11 w-[51px]'}`}
-      >
-        <Image
-          src="/brand/isotipo-valentin.png"
-          alt=""
-          fill
-          sizes={compact ? '42px' : '51px'}
-          className="object-contain"
-          priority={priority}
-        />
-      </span>
-      <span className="flex min-w-0 flex-col items-start leading-none">
-        <span
-          className={`font-heading font-bold tracking-[-0.025em] ${primaryColor} ${compact ? 'text-[20px] max-[349px]:text-[19px]' : 'text-[23px]'}`}
-        >
-          Valentín
-        </span>
-        {showDescriptor ? (
-          <span
-            className={`mt-1 whitespace-nowrap font-semibold tracking-[0.025em] ${secondaryColor} ${compact ? 'text-[10px] max-[349px]:hidden' : 'text-[11px]'}`}
-          >
-            Protección Integral
-          </span>
-        ) : null}
-      </span>
+      <Image
+        src={variant === 'light' ? '/brand/vpi/logo-horizontal-light.png' : '/brand/vpi/logo-horizontal.png'}
+        alt="Valentín Protección Integral"
+        width={2508}
+        height={627}
+        sizes={compact ? '(max-width: 359px) 200px, (max-width: 1279px) 240px, 270px' : '(max-width: 767px) 280px, 320px'}
+        className={`block h-auto ${compact ? 'w-[220px] max-[359px]:w-[200px] sm:w-[250px] 2xl:w-[270px]' : 'w-[300px] max-w-full'}`}
+        priority={priority}
+      />
     </Link>
   );
 }

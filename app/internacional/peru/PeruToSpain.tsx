@@ -73,7 +73,7 @@ export function PeruToSpain({ content = peruContent.es.toSpain }: { content?: Pe
           <div className={styles.endpointDestination}>
             <span className={styles.endpointLabel}>{content.destination}</span>
             <span className={styles.vpiMedallion}>
-                <Image src="/brand/vpi-isotipo.png" alt={content.vpiAlt} width={70} height={70} />
+                <Image src="/brand/vpi/VPI_G2_symbol_master.svg" alt={content.vpiAlt} width={70} height={70} />
             </span>
             <span className={styles.endpointNote}>{content.destinationNote}</span>
           </div>

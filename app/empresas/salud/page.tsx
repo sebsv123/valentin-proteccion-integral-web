@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   description: 'Compara seguros de salud para empresas desde dos asegurados, con opciones ambulatorias, hospitalización, reembolso y ventajas fiscales según contratación.',
   alternates: { canonical: `${site.domain}/empresas/salud` },
   robots: { index: true, follow: true },
-  openGraph: { title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, con hospitalización, reembolso, asistencia en viajes y distintas formas de asumir el coste.', url: `${site.domain}/empresas/salud`, type: 'website', images: [{ url: `${site.domain}/brand/logo-vpi.jpeg`, alt: site.name }] },
-  twitter: { card: 'summary_large_image', title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, explicadas con claridad.', images: [`${site.domain}/brand/logo-vpi.jpeg`] },
+  openGraph: { title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, con hospitalización, reembolso, asistencia en viajes y distintas formas de asumir el coste.', url: `${site.domain}/empresas/salud`, type: 'website', images: [{ url: `${site.domain}/brand/vpi/logo-horizontal.png`, alt: site.name }] },
+  twitter: { card: 'summary_large_image', title: 'Seguro de salud para empresas y autónomos', description: 'Coberturas para pequeños equipos y empresas, explicadas con claridad.', images: [`${site.domain}/brand/vpi/logo-horizontal.png`] },
 };
 
 export default function BusinessHealthPage() {

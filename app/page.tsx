@@ -84,7 +84,7 @@ export function HomePageView({ content, locale }: { content?: unknown; locale?: 
             "description": currentLocale === 'en' ? home.meta.description : "Asesora de seguros en Madrid especializada en salud, vida, mascotas, dental, viaje, accidentes, protección jurídica y negocios. Más de 10 años de experiencia.",
             "url": currentLocale === 'en' ? "https://valentinproteccionintegral.com/en" : "https://valentinproteccionintegral.com",
             "inLanguage": currentLocale,
-            "logo": "https://valentinproteccionintegral.com/brand/logo-vpi.webp",
+            "logo": "https://valentinproteccionintegral.com/brand/vpi/logo-horizontal.png",
             "sameAs": ["https://www.instagram.com/segurosvalentin/"],
             "telephone": "+34-603-44-87-65",
             "address": {

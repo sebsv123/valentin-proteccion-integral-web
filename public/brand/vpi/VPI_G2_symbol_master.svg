@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 160" role="img" aria-labelledby="title">
+  <title id="title">VPI G2 symbol</title>
+  
+  
+  <path d="M32 67
+           C45 43, 75 39, 96 56"
+        fill="none" stroke="#0B2E6B" stroke-width="16"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M160 56
+           C181 39, 211 43, 224 67"
+        fill="none" stroke="#0B2E6B" stroke-width="16"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 72
+           C134 72, 153 82, 158 87
+           C161 90, 161 94, 158 97
+           L134 119
+           C130 123, 126 123, 122 119
+           L98 97
+           C95 94, 95 90, 98 87
+           C103 82, 122 72, 128 72 Z"
+        fill="#FF7A3D"/>
+
+</svg>
