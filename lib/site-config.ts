@@ -61,7 +61,7 @@ export const siteConfig = {
     // Naturaleza jurídica pública de la marca
     nature: 'Marca comercial de mediación de seguros',
     isInsurer: false,
-    logo: '/brand/logo-vpi.webp',
+    logo: '/brand/vpi/logo-horizontal.png',
     domain: process.env.NEXT_PUBLIC_SITE_URL || 'https://valentinproteccionintegral.com',
   },
 

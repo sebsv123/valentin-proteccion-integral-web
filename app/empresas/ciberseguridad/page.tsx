@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   description: 'Soluciones de ciberprotección para autónomos y empresas frente a ransomware, phishing, fraude, brechas de datos e interrupciones de actividad.',
   alternates: { canonical: 'https://valentinproteccionintegral.com/empresas/ciberseguridad' },
   robots: { index: true, follow: true },
-  openGraph: { title: 'Ciberseguridad para Empresas | Valentín Protección Integral', description: 'Soluciones de ciberprotección para autónomos y empresas frente a ransomware, phishing, fraude, brechas de datos e interrupciones de actividad.', url: 'https://valentinproteccionintegral.com/empresas/ciberseguridad', type: 'website', images: [{ url: `${site.domain}/brand/logo-vpi.jpeg`, alt: site.name }] },
-  twitter: { card: 'summary_large_image', title: 'Ciberseguridad para Empresas | Valentín Protección Integral', description: 'Soluciones de ciberprotección para autónomos y empresas frente a incidentes e interrupciones de actividad.', images: [`${site.domain}/brand/logo-vpi.jpeg`] },
+  openGraph: { title: 'Ciberseguridad para Empresas | Valentín Protección Integral', description: 'Soluciones de ciberprotección para autónomos y empresas frente a ransomware, phishing, fraude, brechas de datos e interrupciones de actividad.', url: 'https://valentinproteccionintegral.com/empresas/ciberseguridad', type: 'website', images: [{ url: `${site.domain}/brand/vpi/logo-horizontal.png`, alt: site.name }] },
+  twitter: { card: 'summary_large_image', title: 'Ciberseguridad para Empresas | Valentín Protección Integral', description: 'Soluciones de ciberprotección para autónomos y empresas frente a incidentes e interrupciones de actividad.', images: [`${site.domain}/brand/vpi/logo-horizontal.png`] },
 };
 
 export default function CybersecurityPage() {

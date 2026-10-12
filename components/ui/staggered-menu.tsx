@@ -45,7 +45,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = '/brand/logo-vpi.webp',
+  logoUrl = '/brand/vpi/logo-horizontal.png',
   brand,
   menuButtonColor = '#002244',
   openMenuButtonColor = '#002244',
