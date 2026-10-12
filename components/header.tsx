@@ -140,10 +140,10 @@ export function Header() {
     <>
       <header className={`sticky top-0 z-[100] transition-all ${scrolled ? 'border-b border-white/10 bg-[#002244] text-white backdrop-blur-xl shadow-[0_14px_42px_rgba(0,0,0,0.3)]' : 'border-transparent bg-[#002244]/95 text-white backdrop-blur-md'}`}>
         <div className="header-shell">
-          <div className="flex items-center justify-between gap-3 py-3 2xl:gap-4 2xl:py-4">
+          <div className="flex items-center justify-between gap-3 py-3 max-[639px]:gap-2 2xl:gap-4 2xl:py-4">
             <BrandLockup variant="light" size="compact" priority href={localeHref('/')} />
 
-            <nav className="hidden min-w-0 items-center gap-0.5 min-[1850px]:flex">
+            <nav className="hidden min-w-0 items-center gap-0.5 min-[2200px]:flex">
               <Link
                 href={localeHref('/extranjeros/alquileres')}
                 className="inline-flex h-[42px] items-center rounded-full border border-white/20 bg-white/10 px-4 text-sm font-semibold text-white/90 transition-colors hover:bg-white/15 hover:text-white"
@@ -230,7 +230,7 @@ export function Header() {
               </div>
             </nav>
 
-            <div className="hidden shrink-0 items-center justify-end gap-1.5 min-[1850px]:flex">
+            <div className="hidden shrink-0 items-center justify-end gap-1.5 min-[2200px]:flex">
               <LanguageSwitcher />
               <a
                 href={`tel:${site.phoneHref}`}
@@ -261,12 +261,19 @@ export function Header() {
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
-            <div className="flex items-center gap-2 min-[1850px]:hidden">
+            <div className="flex items-center gap-2 max-[639px]:gap-1 min-[2200px]:hidden">
             <LanguageSwitcher />
+            <a
+              href={`tel:${site.phoneHref}`}
+              className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-[14px] border border-white/20 px-3 py-2.5 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10 min-[1850px]:inline-flex min-[2200px]:hidden"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {site.phone}
+            </a>
             <button
               className="flex min-h-[44px] items-center gap-2 text-white/90 hover:text-white
                          px-4 py-2.5 rounded-[14px] text-sm hover:bg-white/10
-                         max-[360px]:gap-1 max-[360px]:px-2
+                         max-[639px]:gap-1 max-[639px]:px-2
                          transition-colors font-semibold border border-white/20 shrink-0"
               onClick={() => setMobileOpen((open) => !open)}
               aria-label={mobileOpen ? (locale === 'en' ? 'Close menu' : 'Cerrar menú') : (locale === 'en' ? 'Open menu' : 'Abrir menú')}

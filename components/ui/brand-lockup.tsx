@@ -26,12 +26,12 @@ export function BrandLockup({
       className={`inline-flex w-fit max-w-full shrink-0 items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current ${className}`}
     >
       <Image
-        src={variant === 'light' ? '/brand/vpi/logo-horizontal-light.png' : '/brand/vpi/logo-horizontal.png'}
+        src={variant === 'light' ? '/brand/vpi/logo-horizontal-light-trim.png' : '/brand/vpi/logo-horizontal-trim.png'}
         alt="Valentín Protección Integral"
-        width={2508}
-        height={627}
-        sizes={compact ? '(max-width: 359px) 200px, (max-width: 1279px) 240px, 270px' : '(max-width: 767px) 280px, 320px'}
-        className={`block h-auto ${compact ? 'w-[220px] max-[359px]:w-[200px] sm:w-[250px] 2xl:w-[270px]' : 'w-[300px] max-w-full'}`}
+        width={2229}
+        height={174}
+        sizes={compact ? '(max-width: 639px) calc(100vw - 208px), (max-width: 1023px) calc(50vw - 100px), 416px' : '(max-width: 767px) 280px, 320px'}
+        className={`block h-auto ${compact ? 'w-[max(7.5rem,calc(100vw-13rem))] max-[639px]:max-w-[220px] min-[640px]:w-[clamp(13.75rem,calc(50vw-100px),26rem)]' : 'w-[300px] max-w-full'}`}
         priority={priority}
       />
     </Link>
