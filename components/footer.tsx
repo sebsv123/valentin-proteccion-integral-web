@@ -5,8 +5,8 @@ import { useLocale } from 'next-intl';
 import { localizedPath } from '@/i18n/navigation';
 import { localizedProductPath } from '@/lib/product-locales';
 import { WhatsAppButton } from './whatsapp-button';
-import { BrandLockup } from './ui/brand-lockup';
 import { CookieAwareMap } from './cookie-aware-map';
+import { VpiBrandLockup } from './vpi-brand-lockup';
 
 export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
   const isEnglish = useLocale() === 'en';
@@ -20,7 +20,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
         <div className="grid gap-8 xl:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="space-y-3">
-              <BrandLockup variant="dark" size="default" href={linkHref('/')} />
+              <VpiBrandLockup href={linkHref('/')} size="footer" />
               <p className="text-[var(--muted)]">{isEnglish ? 'Insurance explained clearly' : healthVariant ? 'Seguros explicados con claridad' : site.brandLine}</p>
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">{isEnglish ? 'Valentín Protección Integral offers clear insurance guidance and support before and after you buy.' : healthVariant ? 'Te ayudamos a entender qué contratas y seguimos a tu lado cuando necesitas utilizar tu seguro.' : 'Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.'}</p>

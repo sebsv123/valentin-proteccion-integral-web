@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { HomePageView } from '@/app/page';
+import { HomePageView } from '@/components/home-page-view';
 import { routing } from '@/i18n/routing';
 import { getHomeContent } from '@/components/home-content';
 

@@ -1,16 +1,16 @@
-// Server Component — Hero SSR para LCP óptimo
-// HeroImage se renderiza en el servidor (visible en View Source)
-// El contenido con animaciones es client-only
+// Server component for the approved home hero scene.
 
-import { HeroImageServer } from '@/components/hero-server';
 import { HeroContentClient, HeroLeadForm } from '@/components/hero-content-client';
 import { StatsSection } from '@/components/stats-section-client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { BadgeCheck, Flower2, HeartPulse, PawPrint, Plane, Stethoscope } from 'lucide-react';
 import { products } from '@/lib/products';
 import { getHomeContent, type HomeLocale } from './home-content';
 import { localizedPath } from '@/i18n/navigation';
 import { localizedProductPath } from '@/lib/product-locales';
+import styles from './home-hero.module.css';
+import { HomeHeader } from '@/components/home-header';
 export { StatsSection };
 
 const heroProductSlugs = ['salud', 'mascotas', 'dental', 'accidentes', 'viaje', 'decesos'];
@@ -24,20 +24,33 @@ const heroProductIcons = {
 };
 
 // Hero completo — imagen SSR + contenido cliente
-export function HeroLeadSection({ locale = 'es' }: { locale?: HomeLocale } = {}) {
+export function HeroLeadSection() {
   return (
-    <section id="hero" aria-labelledby="hero-title" className="overflow-hidden bg-white py-5 md:py-8">
-      <div className="container-shell hero-grid items-stretch gap-6 lg:gap-8">
-        <div className="relative isolate min-h-[620px] overflow-hidden rounded-[28px] border border-white/50 px-6 py-9 shadow-2xl sm:px-10 md:px-12 md:py-12 xl:px-14">
-          <div className="absolute inset-0">
-            <HeroImageServer />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(248,250,252,0.96)_0%,rgba(248,250,252,0.91)_45%,rgba(248,250,252,0.64)_72%,rgba(248,250,252,0.12)_100%)]" />
-          </div>
-          <div className="relative z-10 h-full">
-            <HeroContentClient />
-          </div>
+    <section id="hero" aria-labelledby="hero-title" className={styles.hero}>
+      <HomeHeader />
+      <Image
+        src="/brand/home/vpi-home-hero-desktop.webp"
+        alt=""
+        priority
+        sizes="100vw"
+        fill
+        className={styles.scene}
+        aria-hidden="true"
+      />
+      <div className="relative z-10 px-5 pt-[108px] sm:px-8 sm:pt-[122px] md:pt-[126px]">
+        <HeroContentClient />
+      </div>
+    </section>
+  );
+}
+
+export function HomeLeadFormSection() {
+  return (
+    <section aria-label="Formulario de orientación" className="bg-white pb-8 pt-8 md:pb-12 md:pt-10">
+      <div className="container-shell">
+        <div className="mx-auto max-w-[622px]">
+          <HeroLeadForm />
         </div>
-        <HeroLeadForm />
       </div>
     </section>
   );

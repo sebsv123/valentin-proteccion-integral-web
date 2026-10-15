@@ -1,0 +1,243 @@
+.section {
+  overflow: hidden;
+  background: transparent;
+  padding: 1rem 0 clamp(3rem, 5vw, 4.5rem);
+}
+
+.proofRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 0;
+  list-style: none;
+}
+
+.partnerHeading {
+  margin: clamp(2.25rem, 4vw, 3rem) auto 0;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.partnerHeading h3 {
+  margin: 0.65rem 0 0;
+  color: var(--blue-deep);
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 1.75vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.partnerCopy {
+  margin: 0.55rem auto 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.proofItem {
+  min-width: 0;
+  padding: 0.25rem clamp(0.75rem, 1.8vw, 1.75rem);
+  text-align: center;
+}
+
+.proofItem + .proofItem {
+  border-left: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+}
+
+.proofValue {
+  margin: 0;
+  color: var(--blue-deep);
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.proofCopy {
+  margin: 0.45rem auto 0;
+  max-width: 17rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.viewport {
+  --rail-gap: clamp(2.5rem, 5vw, 5.5rem);
+  --rail-edge-fade: clamp(2rem, 5vw, 5rem);
+  margin-top: 1.25rem;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  touch-action: auto;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-edge-fade),
+    #000 calc(100% - var(--rail-edge-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-edge-fade),
+    #000 calc(100% - var(--rail-edge-fade)),
+    transparent 100%
+  );
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.viewport:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: home-partner-marquee var(--home-partner-marquee-duration, 46s) linear infinite;
+  will-change: transform;
+}
+
+.sequence {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--rail-gap);
+  padding-right: var(--rail-gap);
+}
+
+.logoItem {
+  display: flex;
+  width: clamp(9.5rem, 14vw, 12.5rem);
+  height: 5.25rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoSurface,
+.darkSurface {
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.darkSurface {
+  border-radius: 0.5rem;
+  background: #111827;
+  padding: 0.65rem 0.85rem;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.logoLarge {
+  max-height: 4.1rem;
+}
+
+.logoStandard {
+  max-height: 3.35rem;
+}
+
+.logoCompact {
+  max-height: 2.7rem;
+}
+
+@keyframes home-partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 0.75rem 0 2.75rem;
+  }
+
+  .viewport {
+    --rail-gap: 2.25rem;
+    --rail-edge-fade: 1rem;
+    margin-top: 1rem;
+  }
+
+  .proofRow {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .proofItem {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0.25rem;
+    text-align: left;
+  }
+
+  .proofItem + .proofItem {
+    border-top: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+    border-left: 0;
+  }
+
+  .proofValue {
+    flex: none;
+    font-size: 1.08rem;
+  }
+
+  .partnerHeading {
+    margin-top: 2rem;
+  }
+
+  .partnerHeading h3 {
+    font-size: 1.3rem;
+  }
+
+  .partnerCopy {
+    font-size: 0.88rem;
+  }
+
+  .proofCopy {
+    margin: 0;
+    max-width: 14rem;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .logoItem {
+    width: 9.5rem;
+    height: 4.75rem;
+  }
+}
+
+@media (hover: hover) {
+  .viewport:hover .track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    transform: none;
+  }
+
+  .duplicate {
+    display: none;
+  }
+}

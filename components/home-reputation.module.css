@@ -1,0 +1,30 @@
+.intro {
+  padding-inline: 1.25rem;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.introCopy {
+  margin-inline: auto;
+  max-width: 60rem;
+}
+
+.introCopy h2 {
+  max-width: 58rem;
+  margin: 1.25rem auto 0;
+}
+
+.reviewsArea :global(.flex.flex-wrap.items-center.justify-center.gap-3.mb-10) {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+  .intro {
+    padding: 2.75rem 1rem 0;
+  }
+
+  .introCopy h2 {
+    font-size: clamp(2rem, 8vw, 2.55rem);
+    line-height: 1.04;
+  }
+}
