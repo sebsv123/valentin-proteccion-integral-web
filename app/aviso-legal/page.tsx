@@ -16,7 +16,7 @@ export const dynamic = 'force-static';
 export default function AvisoLegalPage() {
   return (
     <>
-      <Header />
+      <Header variant="solid" />
       <main className="section-pad pt-6 md:pt-10">
         <div className="container-shell">
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Aviso Legal' }]} />

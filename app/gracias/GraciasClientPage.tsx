@@ -44,7 +44,7 @@ export default function GraciasClientPage() {
 
   return (
     <>
-      <Header />
+      <Header variant="solid" />
       <main className="section-pad min-h-[60vh] pt-10">
         <div className="container-shell">
           <div className="soft-card mx-auto max-w-2xl p-8 text-center md:p-12">

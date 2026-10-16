@@ -81,7 +81,7 @@ export function ContactoPageView({ locale = 'es' }: { locale?: 'es' | 'en' } = {
           })
         }}
       />
-      <Header />
+      <Header variant="solid" />
       <main id="contacto-main" aria-labelledby="contact-h1" className="section-pad pt-6 md:pt-10">
         <div className="container-shell">
           <Breadcrumbs items={[{ label: copy.home, href: en ? '/en' : '/' }, { label: copy.crumb }]} />

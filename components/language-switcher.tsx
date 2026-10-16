@@ -41,10 +41,19 @@ function toInternalPath(pathname: string) {
   return localizedPathToInternal[pathname] ?? localizedPathToInternal[withoutLocale] ?? withoutLocale;
 }
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?: 'dark' | 'light'; appearance?: 'pill' | 'plain' }) {
   const locale = useLocale() as BlogLocale;
   const pathname = usePathname();
   const t = useTranslations('common');
+  const mutedText = tone === 'light' ? 'text-white/50' : 'text-[#0b2e6b]/50';
+  const activeText = tone === 'light' ? 'text-white' : 'text-[#0b2e6b]';
+  const controlStyle = tone === 'light'
+    ? 'border-white/20 text-white/90 hover:bg-white/10'
+    : 'border-[#0b2e6b]/15 text-[#0b2e6b] hover:bg-[#0b2e6b]/[0.05]';
+  const controlClassName = appearance === 'plain'
+    ? `inline-flex min-h-10 shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full px-2.5 text-xs font-bold transition-colors hover:bg-white/55 ${tone === 'light' ? 'text-white' : 'text-[#0b2e6b]'}`
+    : `inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border px-3 py-2 text-xs font-bold transition-colors ${controlStyle}`;
+  const languageText = (active: boolean) => appearance === 'plain' || active ? activeText : mutedText;
   // next-intl exposes a locale-independent pathname. Use it consistently for
   // hard loads and client navigation so route-pair mapping cannot fall back to
   // the language home page.
@@ -56,27 +65,27 @@ export function LanguageSwitcher() {
   const supported = supportedPathnames.has(effectivePathname) || blogEquivalent;
 
   if (!supported || localeUnavailable) {
-    return <span className="inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold text-white/45" title="English version not available for this page" aria-disabled="true">ES / EN</span>;
+    return <span className={`inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold ${tone === 'light' ? 'text-white/45' : 'text-[#0b2e6b]/45'}`} title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
   if (effectivePathname === '/blog') {
-    return <a href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"><span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span><span className="text-white/35">/</span><span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span></a>;
+    return <a href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (blogPost?.slug.en) {
     const targetHref = targetLocale === 'en' ? `/en/blog/${blogPost.slug.en}` : `/blog/${blogPost.slug.es}`;
-    return <a href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"><span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span><span className="text-white/35">/</span><span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span></a>;
+    return <a href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (effectivePathname === '/') {
     return (
       <a
         href={targetLocale === 'en' ? '/en' : '/'}
         aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
-        className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
+        className={controlClassName}
       >
-        <span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span>
-        <span className="text-white/35">/</span>
-        <span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span>
+        <span className={languageText(locale === 'es')}>ES</span>
+        <span className={appearance === 'plain' ? activeText : mutedText}>/</span>
+        <span className={languageText(locale === 'en')}>EN</span>
       </a>
     );
   }
@@ -87,11 +96,11 @@ export function LanguageSwitcher() {
     <a
       href={targetHref}
       aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
-      className="inline-flex min-w-[62px] shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-white/20 px-3 py-2 text-xs font-bold text-white/90 transition-colors hover:bg-white/10"
+      className={controlClassName}
     >
-      <span className={locale === 'es' ? 'text-white' : 'text-white/50'}>ES</span>
-      <span className="text-white/35">/</span>
-      <span className={locale === 'en' ? 'text-white' : 'text-white/50'}>EN</span>
+      <span className={languageText(locale === 'es')}>ES</span>
+      <span className={appearance === 'plain' ? activeText : mutedText}>/</span>
+      <span className={languageText(locale === 'en')}>EN</span>
     </a>
   );
 }

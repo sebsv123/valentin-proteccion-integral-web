@@ -95,7 +95,7 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
 
   return (
     <>
-      <Header />
+      <Header variant="translucent-light" />
       <ForeignersPartnerTracking />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchemas(locale)) }} />
 
@@ -143,7 +143,7 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
           </div>
         </section>
 
-        <section id="situacion" className="section-pad bg-white" data-foreigners-section="selector">
+        <section id="situacion" className="scroll-mt-[7.5rem] section-pad bg-white" data-foreigners-section="selector">
           <div className="container-shell">
             <div className="max-w-3xl">
               <p className="kicker">{copy.selectorEyebrow}</p>
@@ -270,7 +270,7 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
           </div>
         </section>
 
-        <section id="profesionales" className="scroll-mt-24 bg-[var(--blue-deep)] py-12 text-white md:py-14" data-foreigners-section="profesionales">
+        <section id="profesionales" className="scroll-mt-[7.5rem] bg-[var(--blue-deep)] py-12 text-white md:py-14" data-foreigners-section="profesionales">
           <div className="container-shell">
             <div className="mx-auto flex max-w-4xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
               <div>

@@ -13,7 +13,7 @@ export const metadata = {
 export default function NotFound() {
   return (
     <>
-      <Header />
+      <Header variant="solid" />
       <main className="min-h-[85vh] flex items-center justify-center section-pad bg-premium-glow">
         <div className="container-shell">
           <div className="soft-card glass max-w-4xl mx-auto overflow-hidden shadow-2xl border-white/40">

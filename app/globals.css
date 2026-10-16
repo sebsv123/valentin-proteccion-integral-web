@@ -39,12 +39,16 @@ body::before {
   pointer-events: none;
 }
 * { box-sizing: border-box; }
+:root {
+  --z-site-header: 150;
+  --z-site-header-dropdown: 180;
+  --z-site-header-drawer: 220;
+}
 h1, h2, h3, h4, h5, h6, .font-heading { font-family: var(--font-heading), sans-serif; }
 a { text-decoration: none; }
 img { max-width: 100%; height: auto; }
 
 .container-shell { width: min(100%, 1820px); margin-inline: auto; padding-inline: clamp(1rem, 2.2vw, 2.4rem); }
-.header-shell { width: min(100%, 2200px); margin-inline: auto; padding-inline: clamp(1rem, 2.2vw, 2.4rem); }
 .section-pad { padding-block: clamp(3.5rem, 6vw, 6.25rem); }
 .section-title { font-family: var(--font-heading), sans-serif; font-size: clamp(2.35rem, 3.2vw, 4rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; color: var(--blue-deep); }
 .section-copy { max-width: 72ch; font-size: clamp(1rem, 1.15vw, 1.16rem); line-height: 1.9; color: var(--muted); }
@@ -52,19 +56,9 @@ img { max-width: 100%; height: auto; }
 .nav-link { font-size: 1.12rem; font-weight: 600; color: var(--blue-deep); }
 
 @media (min-width: 1280px) and (max-width: 1849px) {
-  .header-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    row-gap: 4px;
-    padding-block: 0.5rem;
-  }
-
-  .header-lockup img { width: 300px; }
   .header-desktop-nav {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-start;
     gap: 2px;
   }
   .header-rentals-link { padding-inline: 0.5rem; font-size: 0.75rem; }
@@ -78,10 +72,14 @@ img { max-width: 100%; height: auto; }
   .header-desktop-actions > .btn-whatsapp { gap: 0.3rem; padding: 0.5rem 0.65rem !important; font-size: 0.75rem !important; }
   .header-desktop-actions > a[aria-label*="Instagram"] { width: 2.25rem; height: 2.25rem; }
   .header-mega-menu { top: 6.25rem; }
+  [data-header-nav-placement="below"] .header-desktop-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+  }
 }
 
 @media (min-width: 1850px) and (max-width: 2199px) {
-  .header-lockup img { width: 320px; }
   .header-desktop-nav { gap: 0; }
   .header-rentals-link { padding-inline: 0.6rem; font-size: 0.8rem; }
   .header-insurance-trigger { padding-inline: 0.5rem; font-size: 0.8rem; }
