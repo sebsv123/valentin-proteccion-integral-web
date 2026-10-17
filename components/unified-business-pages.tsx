@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Script from 'next/script';
-import { ArrowRight, BriefcaseBusiness, Building2, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowDown, ArrowRight, BriefcaseBusiness, Building2, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { BusinessHealthLeadFormSection } from '@/components/business-health-lead-form-section';
 import { buildWhatsAppHref, site } from '@/lib/products';
+import businessHeroStyles from './business-hero.module.css';
 
 type Locale = 'es' | 'en';
 
@@ -112,15 +114,62 @@ function JsonLd({ locale, type }: { locale: Locale; type: 'branch' | 'health' | 
   const name = type === 'branch' ? (en ? 'Solutions for businesses and self-employed professionals' : 'Soluciones para empresas y autónomos') : type === 'health' ? (en ? 'Health insurance for self-employed professionals and SMEs' : 'Seguro de salud para autónomos y pymes') : (en ? 'Insurance and solutions for self-employed professionals' : 'Seguros y soluciones para autónomos');
   return <Script id={`unified-business-${type}-${locale}-jsonld`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': type === 'audience' ? 'WebPage' : type === 'branch' ? 'CollectionPage' : 'Service', name, url, provider: { '@id': `${site.domain}/#organization` }, isPartOf: { '@id': `${site.domain}/#website` } }) }} />;
 }
-function Shell({ children, locale, crumb }: { children: React.ReactNode; locale: Locale; crumb: string }) {
+function Shell({ children, locale, crumb, hideBreadcrumbs = false }: { children: React.ReactNode; locale: Locale; crumb: string; hideBreadcrumbs?: boolean }) {
   const c = copy[locale];
-  return <><Header /><main className="min-h-screen bg-white"><div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos', href: locale === 'en' ? '/en/business' : '/empresas' }, ...(crumb ? [{ label: crumb }] : [])]} /></div>{children}</main><Footer /></>;
+  return <><Header /><main className="min-h-screen bg-white">{!hideBreadcrumbs ? <div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos', href: locale === 'en' ? '/en/business' : '/empresas' }, ...(crumb ? [{ label: crumb }] : [])]} /></div> : null}{children}</main><Footer /></>;
 }
 
 export function BusinessBranchPage({ locale }: { locale: Locale }) {
   const c = copy[locale];
   const en = locale === 'en';
-  return <Shell locale={locale} crumb=""><JsonLd locale={locale} type="branch" /><section className="container-shell py-16 md:py-24"><p className="mb-4 text-sm font-semibold tracking-[0.18em] text-indigo-700">{c.branchLabel}</p><h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">{c.branchTitle}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{c.branchIntro}</p><div className="mt-12 grid gap-6 md:grid-cols-2"><article className="rounded-3xl border border-slate-200 bg-slate-50 p-8"><Building2 className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.healthLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.healthTitle}</h2><p className="mt-4 leading-7 text-slate-600">{en ? 'A shared health path for self-employed professionals, teams and SMEs, with the modality and composition reviewed case by case.' : 'Una ruta común de salud para autónomos, equipos y pymes, revisando la modalidad y la composición caso por caso.'}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/health-insurance' : '/empresas/salud'}>{en ? 'Review business health' : 'Revisar salud para empresas y autónomos'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article><article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"><ShieldCheck className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.cyberLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.cyberTitle}</h2><p className="mt-4 leading-7 text-slate-600">{c.cyberText}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/cybersecurity' : '/empresas/ciberseguridad'}>{en ? 'Review cybersecurity' : 'Revisar ciberseguridad'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article></div><div className="mt-10 rounded-2xl border border-indigo-100 bg-indigo-50 p-6 text-slate-700"><p className="font-semibold text-slate-950">{en ? 'Need help choosing the right path?' : '¿No sabes por dónde empezar?'}</p><p className="mt-2">{c.branchIntro}</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-indigo-700" href={buildWhatsAppHref(en ? 'Hello, I would like guidance on business and self-employed solutions.' : 'Hola, quiero orientación sobre soluciones para empresas y autónomos.')}>{c.branchCta} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></div></section></Shell>;
+  const options = <>
+    <div id={!en ? 'business-solutions' : undefined} className={`${en ? 'mt-12 ' : ''}grid gap-6 md:grid-cols-2`} style={!en ? { scrollMarginTop: '2rem' } : undefined}>
+      <article className="rounded-3xl border border-slate-200 bg-slate-50 p-8"><Building2 className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.healthLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.healthTitle}</h2><p className="mt-4 leading-7 text-slate-600">{en ? 'A shared health path for self-employed professionals, teams and SMEs, with the modality and composition reviewed case by case.' : 'Una ruta común de salud para autónomos, equipos y pymes, revisando la modalidad y la composición caso por caso.'}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/health-insurance' : '/empresas/salud'}>{en ? 'Review business health' : 'Revisar salud para empresas y autónomos'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article>
+      <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"><ShieldCheck className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.cyberLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.cyberTitle}</h2><p className="mt-4 leading-7 text-slate-600">{c.cyberText}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/cybersecurity' : '/empresas/ciberseguridad'}>{en ? 'Review cybersecurity' : 'Revisar ciberseguridad'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article>
+    </div>
+    <div className="mt-10 rounded-2xl border border-indigo-100 bg-indigo-50 p-6 text-slate-700"><p className="font-semibold text-slate-950">{en ? 'Need help choosing the right path?' : '¿No sabes por dónde empezar?'}</p><p className="mt-2">{c.branchIntro}</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-indigo-700" href={buildWhatsAppHref(en ? 'Hello, I would like guidance on business and self-employed solutions.' : 'Hola, quiero orientación sobre soluciones para empresas y autónomos.')}>{c.branchCta} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></div>
+  </>;
+
+  return <Shell locale={locale} crumb="" hideBreadcrumbs={!en}>
+    <JsonLd locale={locale} type="branch" />
+    {en ? (
+      <section className="container-shell py-16 md:py-24">
+        <p className="mb-4 text-sm font-semibold tracking-[0.18em] text-indigo-700">{c.branchLabel}</p>
+        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">{c.branchTitle}</h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{c.branchIntro}</p>
+        {options}
+      </section>
+    ) : (
+      <>
+        <BusinessHero />
+        <section className="container-shell py-12 md:py-16">{options}</section>
+      </>
+    )}
+  </Shell>;
+}
+
+function BusinessHero() {
+  return (
+    <section className={businessHeroStyles.hero} aria-labelledby="business-hero-title">
+      <div className={businessHeroStyles.scene} aria-hidden="true">
+        <Image src="/images/business/vpi-business-hero.webp" alt="" fill priority sizes="100vw" className={businessHeroStyles.sceneImage} />
+      </div>
+      <div className={businessHeroStyles.inner}>
+        <div className={businessHeroStyles.breadcrumbs}>
+          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Empresas y Autónomos', href: '/empresas' }]} />
+        </div>
+        <div className={businessHeroStyles.copy}>
+          <p className={businessHeroStyles.eyebrow}>EMPRESAS Y AUTÓNOMOS</p>
+          <h1 id="business-hero-title">Soluciones para empresas y autónomos</h1>
+          <p className={businessHeroStyles.intro}>Protegemos contigo lo que hace avanzar tu negocio: tu equipo, tu actividad y su continuidad.</p>
+          <div className={businessHeroStyles.actions}>
+            <Link href="/contacto" className={businessHeroStyles.primaryCta}>Cuéntanos qué necesitas</Link>
+            <a href="#business-solutions" className={businessHeroStyles.secondaryLink}>Explorar soluciones <ArrowDown aria-hidden="true" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function TaxBlock({ locale }: { locale: Locale }) {
