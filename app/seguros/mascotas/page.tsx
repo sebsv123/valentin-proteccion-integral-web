@@ -8,10 +8,9 @@ import { buildWhatsAppHref } from "@/lib/products";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { FAQChat } from "@/components/faq-chat";
-import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GarantiasSection from "@/components/GarantiasSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp, Phone } from "lucide-react";
+import { Sparkles, CheckCircle2, Clock, Shield, Heart, Stethoscope, Syringe, Pill, Home, PawPrint, Award, TrendingUp } from "lucide-react";
 import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export const metadata: Metadata = {
@@ -135,78 +134,46 @@ export default function MascotasPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* HERO — Blanco cálido, mascota protagonista */}
-        <section className="relative pt-20 pb-16 bg-orange-50/30 overflow-hidden">
-          {/* Halo cálido suave */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-amber-100/50 via-orange-50/30 to-transparent blur-3xl pointer-events-none" />
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left: Content */}
-              <div>
-                {/* Guarantee Badge */}
-                <div className="mb-8">
-                  <GuaranteeBadge type="mascotas" />
-                </div>
-                
-                {/* H1 emocional */}
-                <h1 className="text-[48px] sm:text-[56px] lg:text-[64px] font-bold text-stone-800 leading-[0.95] tracking-tight mb-6">
-                  Tu mascota protegida desde mañana.
-                  <br />
-                  <span className="text-amber-600">Sin burocracia.</span>
-                </h1>
-                
-                {/* Subheadline cálida */}
-                <p className="text-2xl text-stone-600 leading-relaxed mb-8 max-w-lg">
-                  Cobertura veterinaria y protección para tu mascota, sin burocracia y con explicación clara desde el principio.
-                </p>
-                
-                {/* CTAs */}
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <WhatsAppButton 
-                    href={wCotiza}
-                    location="mascotas-hero"
-                    className="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:-translate-y-0.5"
-                  >
-                    Cotizar WhatsApp
-                  </WhatsAppButton>
-                  <a 
-                    href="tel:603448765"
-                    className="inline-flex items-center gap-2 bg-white text-stone-700 px-8 py-4 rounded-xl text-lg font-medium border border-stone-200 hover:border-amber-300 hover:bg-amber-50/30 transition-all"
-                  >
-                    <Phone className="w-5 h-5" />
-                    📞 603 44 87 65
-                  </a>
-                </div>
-                
-                {/* Trust pills */}
-                <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
-                    Perros y gatos
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200 text-stone-600 text-sm">
-                    <Heart className="w-4 h-4 text-amber-500" />
-                    Orientación clara
-                  </span>
-                </div>
-              </div>
-              
-              {/* Right: Mascota protagonista */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 to-orange-50/20 rounded-3xl blur-2xl transform scale-95" />
-                <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-stone-200/50 border border-stone-100">
-                  <Image
-                    src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Perro y gato felices protegidos"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto object-cover object-top"
-                    priority
-                  />
-                </div>
-              </div>
+        {/* HERO — escena completa de Mascotas */}
+        <section className="pets-hero relative isolate overflow-hidden bg-[#fffaf2] lg:min-h-[660px]">
+          <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col px-5 pb-0 pt-5 sm:px-8 lg:min-h-[660px] lg:justify-center lg:px-12 lg:py-8">
+            <nav aria-label="breadcrumb" className="mb-7 flex flex-wrap items-center gap-2 text-xs text-[#526476] sm:text-sm lg:mb-8">
+              <Link href="/" className="transition-colors hover:text-[#102b45]">Inicio</Link>
+              <span aria-hidden="true" className="opacity-55">/</span>
+              <Link href="/seguros" className="transition-colors hover:text-[#102b45]">Seguros</Link>
+              <span aria-hidden="true" className="opacity-55">/</span>
+              <span aria-current="page" className="font-medium text-[#33485c]">Mascotas</span>
+            </nav>
+
+            <div className="max-w-[600px] pb-0 lg:max-w-[410px] lg:pb-8 xl:max-w-[530px]">
+              <p className="mb-4 text-xs font-bold tracking-[0.17em] text-[#b75c23] sm:text-sm">SEGURO DE MASCOTAS</p>
+              <h1 className="mb-5 max-w-[590px] font-serif text-[42px] font-semibold leading-[0.99] tracking-[-0.035em] text-[#102b45] sm:text-[54px] lg:text-[48px] xl:text-[64px]">
+                Tu mascota protegida desde mañana. <span className="text-[#c76c2b]">Sin burocracia.</span>
+              </h1>
+              <p className="mb-7 max-w-[540px] text-base leading-7 text-[#435467] sm:text-lg sm:leading-8">
+                Asistencia veterinaria, responsabilidad civil y coberturas pensadas para su bienestar, con un proceso claro y sencillo.
+              </p>
+              <Link
+                href="/contacto"
+                className="inline-flex min-h-14 w-full items-center justify-center rounded-full bg-[#e77b32] px-7 py-4 text-base font-semibold text-white shadow-[0_8px_22px_rgba(192,94,37,0.2)] transition-colors hover:bg-[#cf6828] sm:w-auto sm:min-w-[230px]"
+              >
+                Solicitar orientación
+              </Link>
+              <p className="mt-5 max-w-[540px] text-[13px] leading-6 text-[#586777] sm:text-sm xl:text-[15px]">
+                Perros y gatos <span aria-hidden="true" className="px-1.5 text-[#bd7441]">·</span> Asistencia veterinaria <span aria-hidden="true" className="px-1.5 text-[#bd7441]">·</span> RC para perros
+              </p>
             </div>
+          </div>
+
+          <div className="relative mx-[-20px] mt-5 aspect-[1672/941] overflow-hidden sm:mx-[-32px] lg:absolute lg:inset-0 lg:z-0 lg:m-0 lg:aspect-auto">
+            <Image
+              src="/images/pets/vpi-pets-hero.webp"
+              alt="Una pareja disfruta en casa con su perro, su gato y Valentín, la mascota de VPI"
+              fill
+              priority
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 100vw, 1440px"
+              className="object-cover object-center lg:object-contain lg:object-left xl:object-cover"
+            />
           </div>
         </section>
 
@@ -536,7 +503,7 @@ export default function MascotasPage() {
 
       </main>
       <Footer />
-      <StickyWhatsApp />
+      <StickyWhatsApp mobileAvoidSelector=".pets-hero" />
     </>
   );
 }
