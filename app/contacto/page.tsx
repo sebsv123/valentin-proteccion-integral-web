@@ -8,7 +8,6 @@ import { LeadForm } from '@/components/lead-form';
 import { buildWhatsAppHref, site } from '@/lib/products';
 import SchemaBreadcrumb from '@/components/seo/schema-breadcrumb';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import HowItWorksSection from '@/components/HowItWorksSection';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { AdeslasAgentLink } from '@/components/adeslas-agent-link';
 
@@ -136,7 +135,6 @@ export function ContactoPageView({ locale = 'es' }: { locale?: 'es' | 'en' } = {
           </div>
         </div>
       </main>
-      <HowItWorksSection />
       <Footer />
       <StickyWhatsApp />
     </>

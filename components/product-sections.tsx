@@ -10,10 +10,11 @@ import { FAQAccordion } from './faq-accordion';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { EditorialProductHero } from './editorial-product-hero';
 import { useLocale } from 'next-intl';
+import type { ReactNode } from 'react';
 
-export function ProductHero({ product, locale }: { product: Product; locale?: 'es'|'en' }) {
+export function ProductHero({ product, locale, breadcrumbs }: { product: Product; locale?: 'es'|'en'; breadcrumbs?: ReactNode }) {
   const en = locale ? locale === 'en' : useLocale() === 'en';
-  if (product.slug === 'salud') return <EditorialProductHero product={product} />;
+  if (product.slug === 'salud') return <EditorialProductHero product={product} breadcrumbs={breadcrumbs} />;
   const subpages = getSubpagesForProduct(product.slug);
   const advisor = product.customAdvisor || {
     name: site.advisorName[en ? 'en' : 'es'],

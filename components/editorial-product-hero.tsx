@@ -2,18 +2,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, Check, ChartNoAxesColumnIncreasing, HeartPulse, ListChecks, MessageCircle, Scale, ShieldCheck, Users, UsersRound } from 'lucide-react';
 import type { Product } from '@/lib/products';
+import type { ReactNode } from 'react';
 import { buildWhatsAppHref } from '@/lib/products';
 import styles from './editorial-product-hero.module.css';
 import { useLocale } from 'next-intl';
 
 const reviewItems = ['Copagos', 'Hospitalización', 'Cuadro médico', 'Reembolso'];
 
-export function EditorialProductHero({ product }: { product: Product }) {
+export function EditorialProductHero({ product, breadcrumbs }: { product: Product; breadcrumbs?: ReactNode }) {
   const en = useLocale() === 'en';
+  if (!en) return <HealthEditorialHero breadcrumbs={breadcrumbs} />;
   return (
     <section className={styles.hero} aria-labelledby="salud-hero-title">
       <div className={styles.backdrop} aria-hidden="true"><span className={styles.dotField} /><span className={styles.orbitOne} /><span className={styles.orbitTwo} /></div>
       <div className={`container-shell ${styles.shell}`}>
+        {breadcrumbs ? <div className={styles.healthBreadcrumbRow}>{breadcrumbs}</div> : null}
         <div className={styles.layout}>
           <div className={styles.copy}>
             <p className={styles.eyebrow}>{en ? 'HEALTH INSURANCE · MEDICAL CARE' : 'SEGUROS DE SALUD · ASISTENCIA MÉDICA'}</p>
@@ -36,6 +39,27 @@ export function EditorialProductHero({ product }: { product: Product }) {
           </div>
         </div>
         <div className={styles.trustRow} aria-label={en ? 'Experience and trust' : 'Experiencia y confianza'}><p><span aria-hidden="true"><ShieldCheck /></span><strong>{en ? '+10 years' : '+10 años'}</strong> {en ? 'of experience' : 'de experiencia'}</p><p><span aria-hidden="true"><Users /></span><strong>+1.200</strong> {en ? 'families protected' : 'familias protegidas'}</p><p><span aria-hidden="true"><BadgeCheck /></span>{en ? 'Officially registered insurance guidance' : 'Orientación de seguros con registro oficial'}</p></div>
+      </div>
+    </section>
+  );
+}
+
+function HealthEditorialHero({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
+  return (
+    <section className={styles.healthHero} aria-labelledby="salud-hero-title">
+      <div className={styles.healthScene}>
+        <Image src="/images/health/vpi-health-hero.webp" alt="Una familia conversa con su doctora junto a Valentín, la mascota de VPI" fill priority sizes="100vw" className={styles.healthSceneImage} />
+      </div>
+      {breadcrumbs ? <div className={`container-shell ${styles.healthBreadcrumbRow}`}>{breadcrumbs}</div> : null}
+      <div className={`container-shell ${styles.healthContent}`}>
+        <div className={styles.healthCopy}>
+          <p className={styles.healthEyebrow}>SEGUROS DE SALUD</p>
+          <h1 id="salud-hero-title">Elige tu seguro de<br />salud sin decidir<br />a ciegas.</h1>
+          <p className={styles.healthIntro}>Comparamos contigo copagos, hospitalización, cuadro médico y reembolso para que entiendas las diferencias antes de elegir.</p>
+          <Link href="/contacto" className={`btn-primary ${styles.healthCta}`}>Solicitar orientación</Link>
+          <Link href="/empresas/salud" className={styles.businessLink}>¿Eres empresa o autónomo? Ver opciones <ArrowRight aria-hidden="true" /></Link>
+          <p className={styles.healthCriteria}>Copagos <span>·</span> Hospitalización <span>·</span> Cuadro médico <span>·</span> Reembolso</p>
+        </div>
       </div>
     </section>
   );

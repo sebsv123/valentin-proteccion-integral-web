@@ -1,23 +1,16 @@
 "use client";
 
-import Link from 'next/link';
 import { useId, useState } from 'react';
-import { ArrowRight, BedDouble, ChevronDown, GraduationCap, MessageCircle, RefreshCw, Scale } from 'lucide-react';
-import { buildWhatsAppHref } from '@/lib/products';
+import { ChevronDown, GraduationCap, RefreshCw } from 'lucide-react';
 import styles from './health-faq-section.module.css';
 import { useLocale } from 'next-intl';
 import { healthContent } from '@/app/seguros/health-content';
 
-const questions = [
-  { question: '¿Todos los seguros de SALUD incluyen hospitalización?', answer: 'No. Las modalidades básicas se centran en medicina ambulatoria, como consultas, especialistas y pruebas. Si buscas cobertura de ingreso y cirugía, debes optar por una modalidad completa.', Icon: BedDouble },
-  { question: '¿Qué diferencia hay entre copago y reembolso?', answer: 'El copago es una cantidad que abonas al utilizar determinados servicios médicos. El reembolso permite acudir, según la modalidad contratada, a profesionales externos al cuadro médico y recuperar una parte de la factura dentro de los límites establecidos.', Icon: Scale },
-  { question: '¿Sirve este seguro para residencia o estudios?', answer: 'Existen seguros específicos para estudios y residencia en España. La modalidad adecuada depende del trámite, la duración, la edad, las fechas de cobertura y la documentación exigida en cada caso.', Icon: GraduationCap },
-  { question: '¿Puedo cambiar de modalidad más adelante?', answer: 'El cambio puede depender del producto, el momento de la solicitud y las condiciones de contratación. Antes de modificar una modalidad conviene revisar coberturas, carencias, cuestionario de salud y fecha de efecto.', Icon: RefreshCw },
-];
+const questionIcons = [GraduationCap, RefreshCw] as const;
 
-export function HealthFaqSection({ whatsappMessage }: { whatsappMessage: string }) {
+export function HealthFaqSection() {
   const en = useLocale() === 'en';
-  const visibleQuestions = (en ? healthContent.en.faq : healthContent.es.faq).map((item, index) => ({ ...item, Icon: questions[index].Icon }));
+  const visibleQuestions = (en ? healthContent.en.faq : healthContent.es.faq).map((item, index) => ({ ...item, Icon: index === 0 ? questionIcons[0] : questionIcons[1] }));
   const [openIndex, setOpenIndex] = useState(0);
   const baseId = useId();
   return <section className={styles.section} aria-labelledby="salud-faq-title">
@@ -36,7 +29,7 @@ export function HealthFaqSection({ whatsappMessage }: { whatsappMessage: string 
             const panelId = `${baseId}-panel-${index}`;
             return <article key={question} className={`${styles.item} ${isOpen ? styles.open : ''}`}>
               <h3><button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenIndex(isOpen ? -1 : index)}><span className={styles.icon}><Icon aria-hidden="true" /></span><span>{question}</span><ChevronDown aria-hidden="true" className={styles.chevron} /></button></h3>
-              <div id={panelId} role="region" aria-label={question} className={styles.answer} hidden={!isOpen}><div><p>{answer}</p>{index === 0 ? <div className={styles.answerActions}><Link href={en ? '/en/contact' : '/contacto'}>{en ? 'Ask for guidance' : 'Pedir orientación'} <ArrowRight aria-hidden="true" /></Link><a href={buildWhatsAppHref(en ? 'Hello, I would like guidance about health insurance.' : whatsappMessage)}><MessageCircle aria-hidden="true" />{en ? 'Message us on' : 'Escríbenos por'} <strong>WhatsApp</strong></a></div> : null}</div></div>
+              <div id={panelId} role="region" aria-label={question} className={styles.answer} hidden={!isOpen}><div><p>{answer}</p></div></div>
             </article>;
           })}
         </div>

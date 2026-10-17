@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Globe2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -25,7 +25,6 @@ export function InternationalPageView({ content, locale }: { content: Internatio
           {content.destinations.map((destination) => { const href = locale === 'en' && destination.englishPath ? destination.englishPath : destination.fallbackPath; return <Link href={href} className={`${styles.destinationFeature} ${destination.key === 'australia' ? styles.destinationFeatureAustralia : destination.key === 'india' ? styles.destinationFeatureIndia : destination.key === 'peru' ? styles.destinationFeaturePeru : ''}`} key={destination.key}><div className={styles.destinationPhoto}><Image src={destination.image} alt={destination.imageAlt} fill sizes="(max-width: 900px) 100vw, 48vw" /></div><div className={styles.destinationCopy}><div className={styles.flagLine}>{destination.flag ? <Image src={destination.flag} alt={destination.flagAlt ?? ''} width={42} height={28} /> : <i className={`${styles.flagMark} ${destination.key === 'india' ? styles.flagMarkIndia : styles.flagMarkPeru}`} aria-hidden="true" />}<span>{destination.name}</span></div><h3>{destination.title[0]}<br /><em>{destination.title[1]}</em></h3><p>{destination.copy}</p><span className={styles.destinationCta}>{destination.cta} <ArrowRight aria-hidden="true" /></span></div></Link>; })}
         </div></section>
         <section className={styles.growingSection} aria-labelledby="upcoming-title"><div className={styles.upcomingInner}><p className={styles.eyebrow}>{content.upcomingEyebrow}</p><h2 id="upcoming-title">{content.upcomingTitle}</h2><p className={styles.upcomingLead}>{content.upcomingLead}</p><div className={styles.upcomingList} aria-label={content.upcomingAria}>{content.upcoming.map((destination, index) => <div className={styles.upcomingDestination} key={destination}><span>0{index + 1}</span><strong>{destination}</strong></div>)}</div></div></section>
-        <section className={styles.growingSection} aria-labelledby="growing-title"><div className="container-shell"><Globe2 aria-hidden="true" className={styles.growingIcon} /><p className={styles.eyebrow}>{content.growingEyebrow}</p><h2 id="growing-title">{content.growingTitle}</h2></div></section>
       </main>
       <Footer /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>

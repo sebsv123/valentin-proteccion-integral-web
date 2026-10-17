@@ -11,7 +11,7 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { getVpiNavigation, getVpiRoute, type VpiNavItem } from '@/components/vpi-navigation-config';
 
 export function VpiDesktopNavigation({ locale }: { locale: 'es' | 'en' }) {
-  const [open, setOpen] = useState<'solutions' | 'resources' | 'business' | null>(null);
+  const [open, setOpen] = useState<'solutions' | 'resources' | null>(null);
   const navRef = useRef<HTMLElement>(null);
   useEffect(() => {
     const onPointerDown = (event: MouseEvent) => {
@@ -45,17 +45,8 @@ export function VpiDesktopNavigation({ locale }: { locale: 'es' | 'en' }) {
     </div>
   );
   return <nav ref={navRef} className="flex min-w-0 items-center justify-center gap-0.5 whitespace-nowrap" aria-label={isEnglish ? 'Main navigation' : 'Navegación principal'}>
-    {dropdown('solutions', isEnglish ? 'Solutions' : 'Soluciones', [...nav.solutions, ...nav.solutionDetails])}
-    {nav.primary.map((item) => item.label === (isEnglish ? 'Businesses & Self-employed' : 'Empresas y Autónomos') ? (
-      <div key={item.href} className="relative flex shrink-0 items-center">
-        <Link href={item.href} className="inline-flex min-h-11 items-center whitespace-nowrap rounded-l-full pl-3 pr-1 text-[13px] font-semibold text-current hover:bg-white/55">{item.label}</Link>
-        <button type="button" onClick={() => setOpen((current) => current === 'business' ? null : 'business')} aria-label={isEnglish ? 'More business solutions' : 'Más soluciones para empresas'} aria-expanded={open === 'business'} aria-controls="vpi-business-menu" className="inline-flex min-h-11 items-center rounded-r-full pl-1 pr-2 text-current hover:bg-white/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current/35"><ChevronDown className={`h-3.5 w-3.5 transition-transform ${open === 'business' ? 'rotate-180' : ''}`} aria-hidden="true" /></button>
-        <div id="vpi-business-menu" className={`absolute left-0 top-[calc(100%+8px)] z-[var(--z-site-header-dropdown,180)] w-72 rounded-2xl border border-[#0b2e6b]/10 bg-white/95 p-2 text-[#0b2e6b] shadow-[0_18px_50px_rgba(11,46,107,0.14)] backdrop-blur-lg transition ${open === 'business' ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}>
-          <Link href={item.href} onClick={() => setOpen(null)} className="block rounded-xl px-3 py-2 text-[13px] font-semibold hover:bg-[#edf7ff]">{item.label}</Link>
-          {nav.businessSolutions.map((solution) => <Link key={solution.href} href={solution.href} onClick={() => setOpen(null)} className="block rounded-xl px-3 py-2 text-[13px] font-semibold hover:bg-[#edf7ff]">{solution.label}</Link>)}
-        </div>
-      </div>
-    ) : <Link key={item.href} href={item.href} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full px-3 text-[13px] font-semibold text-current hover:bg-white/55">{item.label}</Link>)}
+    {dropdown('solutions', isEnglish ? 'Solutions' : 'Soluciones', nav.solutions)}
+    {nav.primary.map((item) => <Link key={item.href} href={item.href} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full px-3 text-[13px] font-semibold text-current hover:bg-white/55">{item.label}</Link>)}
     {dropdown('resources', isEnglish ? 'Resources' : 'Recursos', nav.resources)}
   </nav>;
 }
@@ -87,10 +78,7 @@ export function VpiMobileNavigation({ id, open, locale, onClose, trackingLocatio
         <p className={sectionTitle}>{isEnglish ? 'Solutions' : 'Soluciones'}</p>
         {nav.solutions.map((item) => <Link key={item.href} href={item.href} onClick={onClose} className={linkClass}>{item.label}</Link>)}
         <div className="my-3 h-px bg-[#0b2e6b]/10" />
-        {nav.primary.map((item) => <div key={item.href} className="grid">
-          <Link href={item.href} onClick={onClose} className={linkClass}>{item.label}</Link>
-          {item.label === (isEnglish ? 'Businesses & Self-employed' : 'Empresas y Autónomos') && nav.businessSolutions.map((solution) => <Link key={solution.href} href={solution.href} onClick={onClose} className="py-1 pl-3 text-sm font-medium text-[#35527d] hover:text-[#1268c4]">{solution.label}</Link>)}
-        </div>)}
+        {nav.primary.map((item) => <Link key={item.href} href={item.href} onClick={onClose} className={linkClass}>{item.label}</Link>)}
         <p className={`${sectionTitle} mt-4`}>{isEnglish ? 'Resources' : 'Recursos'}</p>
         {nav.resources.map((item) => <Link key={item.href} href={item.href} onClick={onClose} className={linkClass}>{item.label}</Link>)}
       </nav>

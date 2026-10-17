@@ -9,7 +9,7 @@ import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GuaranteeBadge from "@/components/GuaranteeBadge";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import GarantiasSection from "@/components/GarantiasSection";
-import { Globe, CheckCircle2, ArrowRight, Quote, Plane, Shield, Clock, Users } from "lucide-react";
+import { Globe, CheckCircle2, ArrowRight, Plane, Shield, Clock, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Seguro Viaje Temporal Madrid | Desde Salida Aeropuerto",
@@ -200,49 +200,6 @@ export default function ViajePage() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </section>
-
-        {/* EXPERIENCIAS VIAJES */}
-        <section className="bg-[#F7F8F9] py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-4xl">
-            <h2 className="text-3xl font-bold text-center text-[#163300] mb-12">
-              Experiencias Reales de Viajeros
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Testimonial 1 */}
-              <div className="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
-                <p className="text-[#163300] text-lg leading-relaxed mb-6">
-                  "Accidente taxi aeropuerto cubierto día 1. Ningún otro seguro lo hubiera pagado."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
-                    A
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#163300]">Ana</p>
-                    <p className="text-sm text-[#4B5563]">Canarias→EEUU</p>
-                  </div>
-                </div>
-              </div>
-              {/* Testimonial 2 */}
-              <div className="bg-white rounded-2xl p-8 border border-[#E5E7EB] shadow-sm">
-                <Quote className="w-8 h-8 text-[#2E7D32] mb-4" />
-                <p className="text-[#163300] text-lg leading-relaxed mb-6">
-                  "Demora vuelo + hospital 100% reembolsado. La cobertura desde casa salvó mi viaje."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#163300] text-white flex items-center justify-center font-bold">
-                    C
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#163300]">Carlos</p>
-                    <p className="text-sm text-[#4B5563]">Madrid→México</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
