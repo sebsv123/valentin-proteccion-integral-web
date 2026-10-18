@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { B2BHomePage } from '@/components/b2b/b2b-pages';
 import { BusinessBranchPage } from '@/components/unified-business-pages';
 
 export const metadata: Metadata = {
@@ -9,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function EmpresasPage() {
-  return <BusinessBranchPage locale="es" />;
+  return <BusinessBranchPage locale="es" restoredContent={(currentRoutes) => <B2BHomePage locale="es" showHero={false} standalone={false} includeResources={false} routeCards={currentRoutes} />} />;
 }

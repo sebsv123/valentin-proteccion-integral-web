@@ -119,16 +119,17 @@ function Shell({ children, locale, crumb, hideBreadcrumbs = false }: { children:
   return <><Header /><main className="min-h-screen bg-white">{!hideBreadcrumbs ? <div className="container-shell pt-6 md:pt-8"><Breadcrumbs items={[{ label: locale === 'en' ? 'Home' : 'Inicio', href: locale === 'en' ? '/en' : '/' }, { label: locale === 'en' ? 'Businesses & Self-employed' : 'Empresas y Autónomos', href: locale === 'en' ? '/en/business' : '/empresas' }, ...(crumb ? [{ label: crumb }] : [])]} /></div> : null}{children}</main><Footer /></>;
 }
 
-export function BusinessBranchPage({ locale }: { locale: Locale }) {
+export function BusinessBranchPage({ locale, restoredContent }: { locale: Locale; restoredContent?: (currentRoutes: React.ReactNode) => React.ReactNode }) {
   const c = copy[locale];
   const en = locale === 'en';
   const options = <>
-    <div id={!en ? 'business-solutions' : undefined} className={`${en ? 'mt-12 ' : ''}grid gap-6 md:grid-cols-2`} style={!en ? { scrollMarginTop: '2rem' } : undefined}>
+    <div className={`${en ? 'mt-12 ' : ''}grid gap-6 md:grid-cols-2`}>
       <article className="rounded-3xl border border-slate-200 bg-slate-50 p-8"><Building2 className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.healthLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.healthTitle}</h2><p className="mt-4 leading-7 text-slate-600">{en ? 'A shared health path for self-employed professionals, teams and SMEs, with the modality and composition reviewed case by case.' : 'Una ruta común de salud para autónomos, equipos y pymes, revisando la modalidad y la composición caso por caso.'}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/health-insurance' : '/empresas/salud'}>{en ? 'Review business health' : 'Revisar salud para empresas y autónomos'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article>
       <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"><ShieldCheck className="h-8 w-8 text-indigo-700" aria-hidden="true" /><p className="mt-6 text-sm font-semibold tracking-[0.16em] text-indigo-700">{c.cyberLabel}</p><h2 className="mt-3 text-2xl font-semibold text-slate-950">{c.cyberTitle}</h2><p className="mt-4 leading-7 text-slate-600">{c.cyberText}</p><Link className="mt-7 inline-flex items-center gap-2 font-semibold text-indigo-700" href={en ? '/en/business/cybersecurity' : '/empresas/ciberseguridad'}>{en ? 'Review cybersecurity' : 'Revisar ciberseguridad'} <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></article>
     </div>
-    <div className="mt-10 rounded-2xl border border-indigo-100 bg-indigo-50 p-6 text-slate-700"><p className="font-semibold text-slate-950">{en ? 'Need help choosing the right path?' : '¿No sabes por dónde empezar?'}</p><p className="mt-2">{c.branchIntro}</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-indigo-700" href={buildWhatsAppHref(en ? 'Hello, I would like guidance on business and self-employed solutions.' : 'Hola, quiero orientación sobre soluciones para empresas y autónomos.')}>{c.branchCta} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></div>
   </>;
+  const currentRoutes = <section id="business-solutions" className="container-shell py-12 md:py-16">{options}</section>;
+  const help = <div className="mt-10 rounded-2xl border border-indigo-100 bg-indigo-50 p-6 text-slate-700"><p className="font-semibold text-slate-950">{en ? 'Need help choosing the right path?' : '¿No sabes por dónde empezar?'}</p><p className="mt-2">{c.branchIntro}</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-indigo-700" href={buildWhatsAppHref(en ? 'Hello, I would like guidance on business and self-employed solutions.' : 'Hola, quiero orientación sobre soluciones para empresas y autónomos.')}>{c.branchCta} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></div>;
 
   return <Shell locale={locale} crumb="" hideBreadcrumbs={!en}>
     <JsonLd locale={locale} type="branch" />
@@ -142,7 +143,7 @@ export function BusinessBranchPage({ locale }: { locale: Locale }) {
     ) : (
       <>
         <BusinessHero />
-        <section className="container-shell py-12 md:py-16">{options}</section>
+        {restoredContent ? restoredContent(currentRoutes) : <section className="container-shell py-12 md:py-16">{options}{help}</section>}
       </>
     )}
   </Shell>;
