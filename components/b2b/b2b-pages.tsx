@@ -108,6 +108,7 @@ function ProposalSection({ locale, need = '' }: { locale: Locale; need?: string 
 export function B2BHomePage({ locale = 'es', showHero = true, standalone = true, includeResources = true, routeCards }: { locale?: Locale; showHero?: boolean; standalone?: boolean; includeResources?: boolean; routeCards?: React.ReactNode }) {
   const en = locale === 'en';
   const content = <>
+    {!standalone ? <B2BPageView page={en ? 'business-en' : 'business-es'} enabled /> : null}
     {showHero ? <Hero locale={locale} /> : null}
     {routeCards}
     <HowItWorks locale={locale} />

@@ -166,3 +166,15 @@ export function trackFormSubmit(formId: string, success: boolean): void {
     success,
   });
 }
+
+/**
+ * Track the B2B journey without sending personal data.
+ * Event names mirror the B2B information architecture so an existing
+ * GA4/GTM setup can consume them without adding a provider.
+ */
+export function trackB2BEvent(eventName: string, params?: Record<string, unknown>): void {
+  trackEvent(eventName, {
+    area: 'b2b',
+    ...params,
+  });
+}

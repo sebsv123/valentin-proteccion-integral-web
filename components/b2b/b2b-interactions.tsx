@@ -2,12 +2,15 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowRight, BriefcaseBusiness, Building2, Check, Euro, HeartPulse, Loader2, Plane, UsersRound } from 'lucide-react';
+import { trackB2BEvent } from '@/lib/analytics';
 import styles from './b2b-pages.module.css';
 
 type Locale = 'es' | 'en';
 
-export function B2BPageView({ page }: { page: string }) {
-  void page;
+export function B2BPageView({ page, enabled = false }: { page: string; enabled?: boolean }) {
+  useEffect(() => {
+    if (enabled) trackB2BEvent('b2b_solution_viewed', { page });
+  }, [enabled, page]);
   return null;
 }
 
@@ -81,7 +84,7 @@ export function B2BProposalForm({ locale = 'es', preselectedNeed = '' }: { local
       setError(en ? 'Complete the required fields and consent so we can reply.' : 'Completa los campos obligatorios y el consentimiento para poder responderte.');
       return;
     }
-    setStatus('sending'); setError('');
+    setStatus('sending'); setError(''); trackB2BEvent('b2b_proposal_started', { profile: values.profile, team_size: values.teamSize });
     try {
       const message = [
         `Origen: ${window.location.pathname}`,
@@ -92,11 +95,11 @@ export function B2BProposalForm({ locale = 'es', preselectedNeed = '' }: { local
       ].join('\n');
       const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: 'b2b-proposal-form', name: values.name, phone: values.phone, email: values.email, interest: 'salud-empresas-autonomos', message, consent: true, website: '', pageUrl: window.location.href, referrer: document.referrer || '', metadata: { profile: values.profile, teamSize: values.teamSize, need: values.need } }) });
       if (!response.ok) throw new Error(en ? 'We could not send your request. Please try WhatsApp.' : 'No hemos podido enviar la solicitud. Puedes escribirnos por WhatsApp.');
-      setStatus('success');
+      setStatus('success'); trackB2BEvent('b2b_proposal_submitted', { profile: values.profile, team_size: values.teamSize });
     } catch (submissionError) { setStatus('error'); setError(submissionError instanceof Error ? submissionError.message : (en ? 'Unexpected error.' : 'Ha ocurrido un error inesperado.')); }
   };
   const field = (key: keyof FormValues, label: string, input: React.ReactNode, wide = false) => <div className={`${styles.field} ${wide ? styles.fieldWide : ''}`}><label htmlFor={`b2b-${key}`}>{label}</label>{input}</div>;
-  const select = (key: keyof FormValues, options: string[]) => <select id={`b2b-${key}`} className={styles.input} value={String(values[key])} onChange={(event) => update(key, event.target.value)}><option value="">{en ? 'Select an option' : 'Selecciona una opción'}</option>{options.map((option) => <option key={option} value={option}>{option}</option>)}</select>;
+  const select = (key: keyof FormValues, options: string[]) => <select id={`b2b-${key}`} className={styles.input} value={String(values[key])} onFocus={() => trackB2BEvent('b2b_proposal_started', { field: key })} onChange={(event) => { update(key, event.target.value); if (key === 'profile') trackB2BEvent('b2b_segment_selected', { segment: event.target.value }); }}><option value="">{en ? 'Select an option' : 'Selecciona una opción'}</option>{options.map((option) => <option key={option} value={option}>{option}</option>)}</select>;
   return <div className={styles.formCard}>
     <h3>{en ? 'Request a proposal' : 'Solicitar propuesta'}</h3>
     <p className={styles.formIntro}>{en ? 'A short first step. We will help you clarify the case before discussing products.' : 'Un primer paso breve. Te ayudamos a ordenar el caso antes de hablar de productos concretos.'}</p>
