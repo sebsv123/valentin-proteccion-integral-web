@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import { ArrowRight, BriefcaseBusiness, Building2, Check, Euro, HeartPulse, Loader2, Plane, UsersRound } from 'lucide-react';
 import { trackB2BEvent } from '@/lib/analytics';
 import styles from './b2b-pages.module.css';
@@ -123,6 +123,7 @@ export function B2BProposalForm({ locale = 'es', preselectedNeed = '' }: { local
 
 export function B2BAbsenceCalculator({ locale = 'es' }: { locale?: Locale }) {
   const en = locale === 'en';
+  const calculatorId = useId();
   const [employees, setEmployees] = useState(12);
   const [salary, setSalary] = useState(28000);
   const [absenceRate, setAbsenceRate] = useState(5);
@@ -133,7 +134,7 @@ export function B2BAbsenceCalculator({ locale = 'es' }: { locale?: Locale }) {
     return { days, directCost, perEmployee: directCost / Math.max(employees, 1) };
   }, [employees, salary, absenceRate, workingDays]);
   const money = new Intl.NumberFormat(en ? 'en-GB' : 'es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
-  const range = (label: string, value: number, min: number, max: number, step: number, setValue: (value: number) => void, format: (value: number) => string) => <div className={styles.rangeField}><label><span>{label}</span><output>{format(value)}</output></label><input type="range" min={min} max={max} step={step} value={value} onChange={(event) => setValue(Number(event.target.value))} /></div>;
+  const range = (label: string, value: number, min: number, max: number, step: number, setValue: (value: number) => void, format: (value: number) => string) => <div className={styles.rangeField}><label htmlFor={`${calculatorId}-${label.replace(/\s+/g, '-')}`}><span>{label}</span><output>{format(value)}</output></label><input id={`${calculatorId}-${label.replace(/\s+/g, '-')}`} type="range" min={min} max={max} step={step} value={value} onChange={(event) => setValue(Number(event.target.value))} /></div>;
   return <div className={styles.calculator}>
     <div className={styles.calculatorGrid}>
       <div className={styles.calculatorControls}><p className={styles.eyebrow}>{en ? 'B2B TOOL' : 'HERRAMIENTA B2B'}</p><h3>{en ? 'Make the impact visible' : 'Haz visible el impacto'}</h3><p>{en ? 'An indicative estimate of direct salary cost linked to absence.' : 'Una estimación orientativa del coste salarial directo asociado al absentismo.'}</p>
