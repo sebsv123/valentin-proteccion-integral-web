@@ -1,0 +1,77 @@
+/* Approved editorial direction. Fonts and overrides are scoped to chapters; coverage is excluded. */
+.editorial{--editorial-ink:#132f40;--editorial-blue:#1554d1}
+.editorial .chapter{--font-body:var(--font-editorial-body);--font-heading:var(--font-editorial-heading);font-family:var(--font-editorial-body),sans-serif;color:var(--editorial-ink);background:#fffdf7}
+.editorial section.chapter :is(h1,h2,h3,h4){font-family:var(--font-editorial-heading),sans-serif;font-weight:800;text-wrap:initial}
+.editorial .chapter :is(a,button,input,select,textarea){font-family:var(--font-editorial-body),sans-serif}
+.editorial .chapter em{font-style:normal}
+.editorial .eyebrow{font-size:11px;font-weight:700;letter-spacing:.13em;line-height:1.5}
+.editorial .chapter a:focus-visible{outline:3px solid #e97931;outline-offset:6px}
+.editorial .primary{display:inline-flex;gap:30px;align-items:center;justify-content:space-between;background:#183eeb;color:white;font-size:16px;font-weight:700;padding:19px 25px;border-radius:8px;text-decoration:none;min-height:60px;transition:background .2s,transform .2s}
+.editorial .primary:hover{background:#0b2caa;transform:translateY(-2px)}
+.editorial .secondary{display:inline-flex;align-items:center;gap:20px;font-size:14px;text-underline-offset:5px;color:inherit}
+.editorial .hero{position:relative;padding-top:54px}.editorial .heroTop{padding:0 5%;position:relative;z-index:2}.editorial .eyebrow{font-size:11px;font-weight:700;letter-spacing:.13em;line-height:1.5}.editorial .hero h1{font-size:clamp(75px,7.65vw,120px);line-height:1.01;max-width:1280px;margin:24px 0 0}.editorial .hero h1 span{color:#1554d1}.editorial .heroScene{position:relative;margin-top:38px;display:grid;grid-template-columns:36% 64%;padding-left:5%;min-height:475px;isolation:isolate}.editorial .heroScene:before{content:"";position:absolute;z-index:-2;right:0;bottom:0;width:64%;height:82%;background:#1554d1;border-radius:200px 0 0 0}.editorial .heroCopy{padding:22px 42px 40px 0;z-index:2}.editorial .lead{font-size:20px;line-height:1.55;max-width:345px}.editorial .primary{display:inline-flex;gap:30px;align-items:center;justify-content:space-between;background:#183eeb;color:white;font-size:16px;font-weight:700;padding:19px 25px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s}.editorial .primary:hover{background:#0b2caa;transform:translateY(-2px)}.editorial .heroCopy .primary{margin-top:25px}.editorial .primary span{font-size:23px;line-height:1}.editorial .micro{margin-top:12px;font-size:13px;line-height:1.5;color:#526570;max-width:310px}.editorial .secondary{display:inline-flex;align-items:center;gap:20px;font-size:14px;text-underline-offset:5px}.editorial .heroCopy .secondary{margin-top:30px}.editorial .heroPhoto{position:relative;align-self:stretch;border-radius:210px 0 0 0;overflow:hidden;margin-right:0;min-height:475px;margin-left:30px}.editorial .heroPhoto>img{width:100%;height:475px;object-position:44% 48%}.editorial .heroPhoto figcaption{position:absolute;bottom:0;left:0;right:0;background:#f9b77d;color:#132f40;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:18px;font-weight:600}.editorial .heroPhoto figcaption span{font-size:10px;font-weight:400;max-width:195px}.editorial .brandLine{position:absolute;z-index:3;width:135px;right:calc(64% - 65px);top:245px;color:#ed8e43;transform:rotate(-14deg);pointer-events:none}.editorial .heroEnd{display:flex;justify-content:space-between;gap:32px;margin:0 5%;padding:24px 0 28px;border-bottom:1px solid #cbd5d6;font-size:13px;color:#4d616b}.editorial .heroEnd>span:last-child{font-size:10px;letter-spacing:.07em}.editorial .benefits{padding:105px 5% 0;display:grid;grid-template-columns:53% 47%;column-gap:0;background:#fffdf7}.editorial .benefitHeading h2{font-size:clamp(42px,4.1vw,64px);line-height:1.09;margin-top:22px;max-width:650px}.editorial .benefitHeading h2 span{color:#1554d1}.editorial .benefitBody{padding-left:35px;padding-top:0}.editorial .intro{font-size:21px;line-height:1.5;max-width:450px;margin-bottom:24px}.editorial .benefitRow{display:grid;grid-template-columns:35px 1fr;gap:13px;border-top:1px solid #c9d4d4;padding:21px 0}.editorial .number{font-size:12px;color:#1554d1;font-weight:700;padding-top:4px}.editorial .benefitRow h3{font-size:20px;letter-spacing:-.035em;line-height:1.3}.editorial .benefitRow p{font-size:16px;line-height:1.6;color:#4c606b;margin-top:7px;max-width:450px}.editorial .coverageBridge{grid-column:1/-1;padding:44px 0 36px;border-bottom:1px solid #cbd5d6;margin-top:38px;display:flex;align-items:center;justify-content:space-between;font-size:16px}.editorial .coverageBridge p{font-weight:600}.editorial .coverageBridge a{text-decoration:none;color:#1554d1}.editorial .coverageBridge span{margin-left:28px}.editorial .protectedPreview{background:#fffdf7}.editorial .heroTop,.editorial .heroPhoto{animation:enter .42s ease-out both}.editorial .heroPhoto{animation-delay:.1s}@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media(min-width:1600px){.editorial .heroPhoto>img{height:520px}.editorial .heroScene{min-height:520px}}
+@media(max-width:1050px){.editorial .heroScene:before{width:58%}.editorial .hero h1{font-size:8.1vw}.editorial .heroScene{grid-template-columns:42% 58%;min-height:440px}.editorial .heroPhoto{margin-left:0;border-radius:160px 0 0 0}.editorial .heroPhoto>img{height:440px;object-position:40% 50%}.editorial .lead{font-size:18px}.editorial .heroCopy{padding-right:30px}.editorial .brandLine{right:calc(58% - 45px);width:105px;top:265px}.editorial .heroPhoto figcaption{display:block;font-size:17px;padding:12px 20px}.editorial .heroPhoto figcaption span{display:block;max-width:none;margin-top:4px}.editorial .benefitHeading h2{font-size:44px}.editorial .benefits{grid-template-columns:50% 50%}.editorial .intro{font-size:19px}}
+@media(max-width:650px){.editorial .hero{padding-top:34px}.editorial .heroTop{padding:0 22px}.editorial .eyebrow{font-size:9px;letter-spacing:.1em}.editorial .hero h1{font-size:clamp(43px,12.4vw,70px);line-height:1.06;letter-spacing:-.065em;margin-top:18px}.editorial .hero h1 span{display:block}.editorial .heroScene{display:flex;flex-direction:column;margin-top:25px;min-height:0;padding-left:0}.editorial .heroCopy{padding:0 22px 30px}.editorial .lead{font-size:17px;line-height:1.55;max-width:345px}.editorial .heroCopy .primary{margin-top:22px;padding:17px 21px;font-size:15px;min-height:56px}.editorial .micro{font-size:12px;max-width:320px;margin-top:10px}.editorial .heroCopy .secondary{margin-top:20px;font-size:13px}.editorial .heroPhoto{margin:0 0 0 22px;min-height:0;border-radius:115px 0 0 0}.editorial .heroPhoto>img{height:285px;object-position:38% 45%}.editorial .heroPhoto figcaption{position:relative;padding:13px 19px;font-size:16px;line-height:1.2}.editorial .heroPhoto figcaption span{font-size:9px;margin-top:7px;line-height:1.4}.editorial .heroScene:before{bottom:0;height:265px;width:100%;border-radius:0}.editorial .brandLine{width:75px;right:auto;left:4px;top:auto;bottom:48px;transform:rotate(-13deg);color:#e98c35}.editorial .heroEnd{margin:0 22px;padding:22px 0;font-size:12px;line-height:1.6;max-width:none}.editorial .heroEnd>span:last-child{display:none}.editorial .benefits{padding:58px 22px 0;display:block}.editorial .benefitHeading h2{font-size:36px;line-height:1.15;letter-spacing:-.055em;margin-top:17px}.editorial .desktopBreak{display:none}.editorial .benefitBody{padding:26px 0 0}.editorial .intro{font-size:18px;line-height:1.5;margin-bottom:24px}.editorial .benefitRow{gap:5px;grid-template-columns:29px 1fr;padding:20px 0}.editorial .benefitRow h3{font-size:19px;letter-spacing:-.04em}.editorial .benefitRow p{font-size:15px;line-height:1.6}.editorial .coverageBridge{margin-top:12px;padding:27px 0;display:block;font-size:14px;line-height:1.6}.editorial .coverageBridge a{display:block;margin-top:7px}.editorial .coverageBridge span{margin-left:10px}}
+@media(prefers-reduced-motion:reduce){.editorial html{scroll-behavior:auto}.editorial *,.editorial .chapter *:before,.editorial .chapter *:after{animation:none!important;transition:none!important;transform:none!important}}
+
+/* The remaining chapters carry the same type and voice without changing their mechanics. */
+.editorial .chapter :is(h2){font-size:clamp(42px,4.2vw,62px);line-height:1.09;letter-spacing:-.06em}
+.editorial .benefits h2{font-size:clamp(42px,4.1vw,64px)}
+.editorial .study{background:#132f40;color:#fffdf7}
+.editorial .study :is(h2) em{color:#f9b77d}
+.editorial .study :global([class*="studyHeading"])>p{font-size:17px;line-height:1.6;max-width:430px}
+.editorial .study :global([class*="studyTabs"]) strong{font-size:15px;font-weight:600;line-height:1.5}
+.editorial .study :global([class*="studyPanel"]) h3{font-size:39px;line-height:1.12;font-weight:800;letter-spacing:-.055em}
+.editorial .study :global([class*="studyPanel"])>p{font-size:15px;line-height:1.6}
+.editorial .study :global([class*="studyPanel"]) li{font-size:14px;line-height:1.6}
+.editorial .study :global([class*="studyPanels"]){min-height:665px}
+.editorial .study :global([class*="readingRows"]) dd{font-size:17px}
+.editorial .study :global([class*="readingRows"]) dd em{font-family:var(--font-editorial-heading);font-weight:700;font-size:24px}
+.editorial .study :global([class*="studySignature"]){font-family:var(--font-editorial-heading);font-size:21px;font-weight:700}
+.editorial .study :global([class*="studyMargin"]){font-family:var(--font-editorial-heading);font-style:normal;font-size:24px;font-weight:700;transform:none;margin-top:665px}
+.editorial .study :global([class*="studyScope"]){font-size:12px;line-height:1.7}
+.editorial .study :global([class*="studyClosing"])>p{font-size:16px;line-height:1.6}
+.editorial .chapter :global([class*="chapterHeading"])>p,.editorial .chapter :global([class*="trustHeading"])>p{font-size:17px;line-height:1.6}
+.editorial .finance [data-contribution-scenarios] button{font-size:15px;font-weight:600}
+.editorial .finance [data-contribution-scenarios] button small{font-size:12px}
+.editorial .finance [data-contribution-controls]>label{font-size:15px;font-weight:600}
+.editorial .finance [data-contribution-context]{font-size:15px;line-height:1.6!important}
+.editorial .finance [data-contribution-scope]{font-size:12px!important;line-height:1.7!important}
+.editorial .finance [data-contribution-results] span{font-size:12px}
+.editorial .finance [data-contribution-results] strong{font-weight:700}
+.editorial .finance :global([class*="financeFactors"]){font-size:13px;line-height:1.7}
+.editorial .finance :global([class*="fundingModels"]) summary h3{font-size:17px}
+.editorial .trust,.editorial .conversation{background:#f7ead9}
+.editorial .trust :global([class*="trustNames"]){font-family:var(--font-editorial-heading);font-size:38px;font-weight:800}
+.editorial .trust :global([class*="trustCopy"])>p:not(:global([class*="trustNames"])){font-size:17px;line-height:1.65}
+.editorial .trust :global([class*="serviceLine"])>span{font-size:12px}
+.editorial .trust blockquote{font-size:15px;line-height:1.7}
+.editorial .conversation :global([class*="formIntroduction"])>p:not(:global([class*="eyebrow"])){font-size:17px;line-height:1.65}
+.editorial .conversation :global([class*="startLine"]){font-size:14px!important}
+.editorial .conversation :global([class*="formStage"]) label{font-size:14px}
+.editorial .conversation :global([class*="formStage"]) button{font-size:15px;font-weight:600}
+.editorial .conversation :global([class*="afterContact"]) li{font-size:14px}
+.editorial .conversation :global([class*="formNote"]){font-size:12px;line-height:1.7}
+.editorial .chapter :global([class*="quietLink"]),.editorial .chapter :global([class*="lightButton"]){font-size:15px;font-weight:600}
+@media(max-width:1050px){.editorial .study :global([class*="studyPanels"]){min-height:670px}.editorial .study :global([class*="studyMargin"]){margin-top:0}.editorial .chapter :is(h2){font-size:46px}.editorial .benefits h2{font-size:44px}}
+@media(max-width:767px){
+.editorial .chapter :is(h2){font-size:37px;line-height:1.14;letter-spacing:-.055em}
+.editorial .benefits h2{font-size:36px;line-height:1.15}
+.editorial .study :global([class*="studyHeading"])>p,.editorial .chapter :global([class*="chapterHeading"])>p,.editorial .chapter :global([class*="trustHeading"])>p{font-size:16px;line-height:1.6}
+.editorial .study :global([class*="studyTabs"]) strong{font-size:12px}
+.editorial .study :global([class*="studyTabs"])>label{min-height:100px}
+.editorial .study :global([class*="studyPanel"]) h3{font-size:31px}
+.editorial .study :global([class*="studyPanel"])>p{font-size:14px}
+.editorial .study :global([class*="studyPanel"]) li{font-size:13px}
+.editorial .study :global([class*="studyPanels"]){min-height:635px}
+.editorial .study :global([class*="readingRows"]) dd{font-size:15px}
+.editorial .study :global([class*="readingRows"]) dd em{font-size:21px}
+.editorial .study :global([class*="studyMargin"]){font-size:22px;margin-top:35px}
+.editorial .study :global([class*="studyClosing"])>p{font-size:15px}
+.editorial .trust :global([class*="trustNames"]){font-size:30px}
+.editorial .trust :global([class*="trustCopy"])>p:not(:global([class*="trustNames"])){font-size:16px}
+.editorial .conversation :global([class*="formIntroduction"])>p:not(:global([class*="eyebrow"])){font-size:16px}
+.editorial .conversation :global([class*="formStage"]) label{font-size:13px}
+}
+
+.editorial .heroPhoto>img{display:block;max-width:100%;object-fit:cover}
