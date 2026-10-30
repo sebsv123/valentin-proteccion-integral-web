@@ -30,6 +30,12 @@ jobs:
       - name: ISFAS regression tests
         run: npm run test:isfas
 
+      - name: Monetary input regression tests
+        run: npm run test:health-money
+
+      - name: Metadata contract negative tests
+        run: npm run test:related:contract
+
       - name: Related validation
         run: npm run test:related
 
@@ -41,3 +47,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Rendered foreigners metadata contract
+        run: npm run test:related:rendered
