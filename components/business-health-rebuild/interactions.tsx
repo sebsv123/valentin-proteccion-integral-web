@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowRight, ArrowLeft, Check, Loader2, CheckCircle2 } from 'lucide-react';
 import { businessHealthSchema, buildBusinessHealthLeadPayload, isBusinessHealthLeadSuccess, type BusinessHealthValues } from '@/lib/business-health-lead';
 import { trackB2BEvent } from '@/lib/analytics';
+import { parseMonthlyPremium, splitContributionCents } from '@/lib/business-health-money';
 import { plans } from './content';
 import s from './styles.module.css';
 import { CoverageScene } from './scenes';
@@ -58,10 +59,16 @@ export function ContributionCalculator() {
   const [premium, setPremium] = useState('');
   const [share, setShare] = useState(70);
   const last = useRef('');
-  const value = Number(premium);
-  const valid = /^\d+(?:\.\d{1,2})?$/.test(premium) && value > 0 && value <= 100000;
-  const cents = valid ? Math.round(value * 100) : 0;
-  const employer = Math.round(cents * share / 100);
+  const [touched, setTouched] = useState(false);
+  const parsed = parseMonthlyPremium(premium);
+  const valid = parsed.ok;
+  const cents = parsed.ok ? parsed.cents : 0;
+  const { employer, employee } = valid ? splitContributionCents(cents, share) : { employer: 0, employee: 0 };
+  const inputError = !parsed.ok && (premium !== '' || touched)
+    ? parsed.reason === 'empty' ? 'Introduce una prima mensual conocida para ver el reparto.'
+      : parsed.reason === 'range' ? 'Introduce un importe mayor que cero y de hasta 100.000 € (100000,00).'
+      : 'Usa un importe como 65,50 o 65.50, sin símbolos ni separadores de miles y con hasta dos decimales.'
+    : '';
   const euro = (v: number) => (v / 100).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
   function recordFor(nextShare: number) { const key = `${premium}|${nextShare}`; if (valid && key !== last.current) { last.current = key; trackB2BEvent('b2b_resource_clicked', { location: 'health-contribution', employer_share: nextShare }); } }
   function record() { recordFor(share); }
@@ -73,13 +80,14 @@ export function ContributionCalculator() {
     <div className={s.contributionWorkbench} data-contribution-workbench>
       <div className={s.contributionWheel} data-contribution-wheel aria-hidden="true"><svg viewBox="0 0 200 200" focusable="false"><defs><linearGradient id="vpi-share-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#287ce4"/><stop offset="100%" stopColor="#1554ba"/></linearGradient><linearGradient id="vpi-share-orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#e8b68a"/><stop offset="100%" stopColor="#bf7b46"/></linearGradient></defs><circle cx="100" cy="100" r="70" fill="none" stroke="url(#vpi-share-orange)" strokeWidth="20" /><circle cx="100" cy="100" r="70" fill="none" stroke="url(#vpi-share-blue)" strokeWidth="20" strokeDasharray={`${circumference*share/100} ${circumference}`} transform="rotate(-90 100 100)" /><text x="100" y="101" textAnchor="middle">{share}<tspan>%</tspan></text><text x="100" y="123" textAnchor="middle" className={s.wheelCaption}>empresa</text></svg><span>El reparto que estás probando</span></div>
       <div className={s.contributionControls} data-contribution-controls>
-        <label className={s.amountLabel} htmlFor="health-premium">Prima mensual por persona</label><div className={s.amountInput}><input id="health-premium" type="number" inputMode="decimal" min="0.01" max="100000" step="0.01" placeholder="Introduce tu importe" value={premium} onChange={e => setPremium(e.target.value)} onBlur={record} aria-invalid={premium !== '' && !valid} aria-describedby="health-calculator-scope" /><span>€ / mes</span></div>
+        <label className={s.amountLabel} htmlFor="health-premium">Prima mensual por persona</label><div className={s.amountInput}><input id="health-premium" type="text" inputMode="decimal" data-currency-input autoComplete="off" spellCheck={false} placeholder="Introduce tu importe" value={premium} onChange={e => setPremium(e.target.value)} onBlur={() => { setTouched(true); record(); }} aria-invalid={Boolean(inputError)} aria-describedby={`health-calculator-scope${inputError ? ' health-premium-error' : ''}`} /><span>€ / mes</span></div>
+        {inputError ? <p id="health-premium-error" className={s.fieldError} role="status">{inputError}</p> : null}
         <div className={s.shareLabels}><label htmlFor="health-share">Empresa <strong>{share} %</strong></label><span>Empleado <strong>{100 - share} %</strong></span></div><input className={s.shareSlider} style={{ '--employer-share': `${share}%` } as CSSProperties} id="health-share" aria-valuetext={`${share} % empresa, ${100-share} % empleado`} type="range" min="0" max="100" value={share} onChange={e => setShare(Number(e.target.value))} onPointerUp={record} onKeyUp={record} />
       </div>
     </div>
     <p className={s.contributionContext} data-contribution-context>{share === 100 ? 'La empresa asume el importe introducido por persona.' : share === 0 ? 'El trabajador asume el importe introducido. La forma de pago se confirma con la contratación.' : `La empresa aporta el ${share} %; el empleado completa el ${100-share} %. Ajusta el reparto para estudiar otras opciones.`}</p>
-    <div className={s.splitResults} data-contribution-results aria-live="polite" aria-atomic="true"><div><span>Empresa / persona / mes</span><strong data-health-result="company">{valid ? euro(employer) : '—'}</strong></div><div><span>Empleado / persona / mes</span><strong data-health-result="employee">{valid ? euro(cents - employer) : '—'}</strong></div></div>
-    <p className={s.calculatorScope} data-contribution-scope id="health-calculator-scope">Solo repartimos tu cifra, redondeada al céntimo. No calculamos una prima ni efectos fiscales. El importe y las condiciones reales dependen de la propuesta.</p>{premium && !valid ? <p className={s.fieldError} role="status">Introduce un importe mayor que cero, hasta 100.000 €, con un máximo de dos decimales.</p> : null}
+    <div className={s.splitResults} data-contribution-results aria-live="polite" aria-atomic="true"><div><span>Empresa / persona / mes</span><strong data-health-result="company">{valid ? euro(employer) : '—'}</strong></div><div><span>Empleado / persona / mes</span><strong data-health-result="employee">{valid ? euro(employee) : '—'}</strong></div></div>
+    <p className={s.calculatorScope} data-contribution-scope id="health-calculator-scope">Solo repartimos tu cifra, redondeada al céntimo. No calculamos una prima ni efectos fiscales. El importe y las condiciones reales dependen de la propuesta.</p>
   </div>;
 }
 

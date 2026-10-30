@@ -24,8 +24,6 @@ const requiredSnippets = [
   ['success state', files.form, "'success'"],
   ['error state', files.form, "'error'"],
   ['generic event', files.analytics, 'foreigners_partner'],
-  ['production title', files.page, 'Seguro médico para extranjeros en España | Valentín Protección Integral'],
-  ['production description', files.page, 'Seguro médico para estudios, visado, residencia o renovación en España.'],
   ['canonical', files.page, 'site.domain}/extranjeros'],
   ['webpage schema', files.page, "'@type': 'WebPage'"],
   ['breadcrumb schema', files.page, "'@type': 'BreadcrumbList'"],
@@ -82,4 +80,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log('Foreigners page related checks passed.');
+console.log('Foreigners source safety checks passed. Rendered title/description are required after build via npm run test:related:rendered.');

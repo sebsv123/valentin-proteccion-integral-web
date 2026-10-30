@@ -2,33 +2,26 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { AuroraStaticBackground } from './aurora-static-background';
 
 export default function AuroraBackground() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [animate, setAnimate] = useState(() => typeof window !== 'undefined' &&
+    !window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches && !document.hidden);
 
   useEffect(() => {
-    setMounted(true);
-    // Detect mobile on mount and resize
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const media = window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)');
+    const update = () => setAnimate(!media.matches && !document.hidden);
+    update();
+    media.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
+    return () => {
+      media.removeEventListener('change', update);
+      document.removeEventListener('visibilitychange', update);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Static gradient for mobile (no animation to reduce TBT)
-  if (mounted && isMobile) {
-    return (
-      <div 
-        className="fixed inset-0 -z-10 overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f0f9ff 100%)'
-        }}
-      />
-    );
-  }
+  // Unmount motion nodes: CSS-only overrides would leave their JS loop running.
+  if (!animate) return <AuroraStaticBackground />;
 
   // Animated version for desktop only
   return (
