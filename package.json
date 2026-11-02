@@ -12,6 +12,7 @@
     "submit:indexnow": "node scripts/submit-indexnow.mjs",
     "lint": "node scripts/lint-production-content.mjs",
     "typecheck": "tsc --noEmit",
+    "test:health-money": "node --test scripts/business-health-money.test.ts",
     "test:isfas": "node scripts/test-isfas.mjs",
     "test:related": "node scripts/validate-foreigners-page.mjs",
     "test:hardening": "node --conditions=react-server --test scripts/request-body-limit.test.ts scripts/google-reviews.test.ts",
@@ -19,7 +20,9 @@
     "prepare:zero-baseline-kit": "node scripts/ai-visibility/prepare-zero-baseline-kit.mjs",
     "test:zero-baseline-kit": "node scripts/ai-visibility/validate-zero-baseline-kit.mjs",
     "test:leads": "NODE_ENV=test LEAD_DELIVERY_CONTEXT=test node --conditions=react-server --test scripts/lead-email.test.ts scripts/lead-regression.test.ts && NODE_ENV=test LEAD_DELIVERY_CONTEXT=test node --conditions=react-server scripts/lead-realsend.check.ts",
-    "start:test-safe": "NODE_ENV=test LEAD_DELIVERY_CONTEXT=test next dev"
+    "start:test-safe": "NODE_ENV=test LEAD_DELIVERY_CONTEXT=test next dev",
+    "test:related:contract": "node --test scripts/foreigners-metadata-contract.test.mjs",
+    "test:related:rendered": "node scripts/validate-foreigners-rendered.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

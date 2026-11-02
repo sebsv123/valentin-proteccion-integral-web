@@ -181,12 +181,14 @@ export function CookieBanner() {
                   className="
                     inline-flex items-center justify-center gap-2
                     min-h-11 px-4 py-2 rounded-full
-                    bg-[var(--orange)] text-white
+                    bg-[var(--orange)] text-[var(--blue-deep)]
                     font-semibold text-sm
                     shadow-lg shadow-orange-500/25
                     hover:shadow-xl hover:shadow-orange-500/30
                     hover:-translate-y-0.5
                     active:translate-y-0
+                    focus-visible:outline focus-visible:outline-2
+                    focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-deep)]
                     transition-all duration-200
                   "
                 >
