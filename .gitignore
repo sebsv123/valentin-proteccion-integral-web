@@ -104,5 +104,7 @@ htmlcov/
 design-references/
 *.txt
 !public/1b1763f6cf5cabcbfbeaf2b49f07a528.txt
+!public/static/fonts/vpi-global/Montserrat-OFL.txt
+!public/static/fonts/vpi-global/Playfair-Display-OFL.txt
 scrape_*
 reclassify_*

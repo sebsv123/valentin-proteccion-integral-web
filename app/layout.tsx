@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { getLocale, getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import { Playfair_Display, Montserrat } from 'next/font/google';
+import { RouteFontPreloads } from '@/components/route-font-preloads';
 import { site } from '@/lib/products';
 import './globals.css';
 
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-heading', weight: ['600', '700', '800'], display: 'swap', preload: true });
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'], display: 'swap', preload: true });
 
 const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 // Meta Pixel ID desde variable de entorno — evita hardcode en producción
@@ -60,13 +58,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale}>
       <head>
+        <RouteFontPreloads />
         {/* Preconnect to Google Fonts CDN for faster font loading */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Preconnect only to origins that load immediately */}
         <link rel="ai-content-declaration" href="/llms.txt" />
         <link rel="ai-content-declaration" href="/llms-full.txt" />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} antialiased font-sans pb-16 sm:pb-0`}>
+      <body className="antialiased font-sans pb-16 sm:pb-0">
         <BackgroundWrapper />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SchemaLocalBusiness locale={locale} />

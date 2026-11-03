@@ -1,0 +1,5 @@
+/* Delivery subset of brand-art.module.css. Original visual rules and legacy source preserved. */
+.taxReading{display:flex;align-items:center;gap:11px;flex-wrap:wrap;font-size:.64rem;line-height:1.8;padding:17px 0;color:#496272}
+.taxReading>strong{font-weight:600;color:#17645c}
+.taxReading>span:nth-child(even){color:#8d623c}
+@media(max-width:500px){.taxReading{font-size:.6rem;gap:7px 9px;padding:15px 0}.taxReading>span:first-child{font-weight:500}}

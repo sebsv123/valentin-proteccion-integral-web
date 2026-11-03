@@ -1,0 +1,24 @@
+/* Current Salud delivery subset. Legacy prototype styles remain in premium.module.css. */
+.premium{--premium-navy:#12344a;--premium-blue:#1554ba;--premium-paper:#fffdf8;--premium-muted:#496272;--premium-orange:#d98e50}
+@keyframes typeArrive{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes imageSettle{from{transform:translateY(10px)}to{transform:none}}
+.financeLegal{border-top:1px solid #c5d3db;margin-top:30px;padding-top:10px}
+.financeLegal>div{width:100%;padding:18px 0 0;margin-top:0;border:0}
+.premium [data-editorial-reveal=waiting]{opacity:0;transform:translateY(16px)}
+.premium [data-editorial-reveal=shown]{opacity:1;transform:none;transition:opacity 500ms ease,transform 650ms cubic-bezier(.22,1,.36,1)}
+@media(max-width:767px){.financeLegal{margin-top:26px;padding-top:5px}.financeLegal>div{padding-top:21px}
+}
+@media(prefers-reduced-motion:reduce){.premium [data-editorial-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+.reviewsNative{margin-top:25px}.ratingBar{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:35px}.ratingBar>div{display:flex;align-items:center;gap:22px}.ratingBar>div>strong{font-size:4.25rem;line-height:1;letter-spacing:-.07em;font-weight:500;color:#12344a}.ratingBar>div>span{display:flex;flex-direction:column;gap:9px;font-size:.7rem;color:#496272}.ratingStars{display:flex;gap:3px;color:#9b6b15}.ratingBar>a{display:flex;align-items:center;gap:12px;font-size:.73rem;color:#1554ba;text-decoration:none;min-height:44px}
+.reviewRail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#b5b9b8 transparent;padding-block:8px 18px;align-items:start}
+.reviewVoice{scroll-snap-align:start;padding:0 25px 0 0;border-right:1px solid #c7bba9;display:flex;flex-direction:column;min-width:0;min-height:280px}
+.reviewStars{display:flex;gap:2px;color:#9b6b15;margin-bottom:20px}.premium .reviewBody,.premium .reviewBodyExpanded{font-size:.91rem;line-height:1.9;letter-spacing:-.01em;margin:0;color:#12344a;overflow-wrap:anywhere}.reviewBody{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}.reviewBodyExpanded{display:block}
+.readReview{align-self:flex-start;margin-top:11px;font-size:.63rem;background:transparent;border:0;padding:9px 0;min-height:40px;color:#1554ba;text-decoration:underline;text-underline-offset:4px}
+.reviewPerson{display:flex;align-items:center;gap:11px;margin-top:auto;padding-top:22px}.reviewAvatar{width:38px;height:38px;flex-shrink:0;display:grid;place-items:center;background:#e0d5c6;border-radius:50%;overflow:hidden;font-size:.76rem;color:#12344a}.reviewAvatar img{width:100%;height:100%;object-fit:cover}.reviewPerson>div{min-width:0}.reviewPerson strong{font-size:.66rem;font-weight:600;line-height:1.7;display:block;overflow-wrap:anywhere}.reviewPerson>div>span{font-size:.58rem;line-height:1.8;color:#496272;display:block;margin-top:4px}
+.reviewNavigation{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:22px}.reviewNavigation>span{font-size:.6rem;color:#496272;line-height:1.8}.reviewNavigation>div{display:flex;gap:10px}.reviewNavigation button{width:43px;height:43px;display:grid;place-items:center;border:1px solid #bcb4a6;background:transparent;color:#12344a;border-radius:50%;transition:background 180ms,color 180ms}.reviewNavigation button:hover{background:#12344a;color:white}
+@media(max-width:1024px){.reviewRail{grid-auto-columns:calc((100% - 24px)/2)}.premium .reviewBody,.premium .reviewBodyExpanded{font-size:.84rem}.ratingBar>div>strong{font-size:3.7rem}}
+@media(max-width:767px){.ratingBar{display:block;margin-bottom:26px}.ratingBar>div{gap:20px}.ratingBar>div>strong{font-size:3.75rem}.ratingBar>a{font-size:.7rem;margin-top:17px;min-height:40px}.ratingBar>div>span{font-size:.65rem}.reviewRail{grid-auto-columns:90%;gap:20px;padding-top:7px;padding-bottom:15px}.reviewVoice{padding-right:22px;min-height:290px}.premium .reviewBody,.premium .reviewBodyExpanded{font-size:.88rem;line-height:1.9}.reviewStars{margin-bottom:18px}.reviewPerson strong{font-size:.67rem}.reviewPerson>div>span{font-size:.59rem}.readReview{font-size:.65rem}.reviewNavigation{align-items:start;gap:25px;margin-top:20px}.reviewNavigation>span{max-width:200px;font-size:.58rem;line-height:1.85}.reviewNavigation button{width:43px;height:43px}}
+@media(prefers-reduced-motion:reduce){.reviewRail{scroll-behavior:auto}.reviewNavigation button{transition:none}}
+.premium .readReview{font-size:.75rem;font-weight:500;line-height:1.7}
+.reviewPerson strong{font-size:.75rem}.reviewPerson>div>span{font-size:.63rem}
+@media(max-width:767px){.reviewPerson strong{font-size:.72rem}.reviewPerson>div>span{font-size:.62rem}}

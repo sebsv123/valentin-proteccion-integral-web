@@ -7,15 +7,14 @@ import { getGoogleReviews, type GoogleReviewsData } from '@/lib/server/google-re
 import { buildWhatsAppHref } from '@/lib/products';
 import { HealthJourney, CoverageExplorer, ContributionCalculator, HealthProposalForm } from './interactions';
 import { questions, googleUrl } from './content';
-import s from './styles.module.css';
-import { TaxReading } from './brand-art';
+import s from './styles-delivery.module.css';
+import { TaxReading } from './tax-reading-delivery';
 import { BodyStudy } from './body-scenes';
 import b from './body.module.css';
 import { PremiumMotion } from './premium-motion';
-import p from './premium.module.css';
-import h from './hybrid.module.css';
+import p from './premium-delivery.module.css';
 import localFont from 'next/font/local';
-import e from './editorial.module.css';
+import e from './editorial-delivery.module.css';
 
 const heading = localFont({ src: '../../public/fonts/vpi-editorial/manrope.woff2', variable: '--font-editorial-heading', weight: '700 800', display: 'swap' });
 const body = localFont({ src: '../../public/fonts/vpi-editorial/dm-sans.woff2', variable: '--font-editorial-body', weight: '400 700', display: 'swap' });
@@ -36,12 +35,12 @@ export async function BusinessHealthExperience() {
   return <div className={s.page}>
     <a className={s.skip} href="#salud-contenido">Ir al contenido de salud para empresas</a><Header />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
-    <HealthJourney><PremiumMotion><main id="salud-contenido" tabIndex={-1} className={`${p.premium} ${h.hybrid} ${e.editorial} ${heading.variable} ${body.variable}`}>
+    <HealthJourney><PremiumMotion><main id="salud-contenido" tabIndex={-1} className={`${p.premium} ${e.editorial} ${heading.variable} ${body.variable}`}>
       <section className={`${e.chapter} ${e.hero}`} aria-labelledby="health-title" data-health-hero>
         <div className={e.heroTop}><p className={e.eyebrow}>SEGURO DE SALUD · PYMES Y AUTÓNOMOS</p><h1 id="health-title">Cuida a tu equipo.<br /><span>Elige con criterio.</span></h1></div>
         <div className={e.heroScene}>
           <div className={e.heroCopy}><p className={e.lead}>Un seguro de salud que encaje con vosotros. VPI te ayuda a entender las opciones y decidir qué merece la pena contratar.</p><a className={e.primary} href="#solicitar-estudio" data-health-cta="hero">Quiero estudiar mi caso <ArrowRight size={22} aria-hidden="true" /></a><p className={e.micro}>Empezamos por cuántos sois y qué queréis cubrir.</p><a className={e.secondary} href="#beneficios">Qué puede aportar a tu equipo <span aria-hidden="true">↓</span></a></div>
-          <figure className={e.heroPhoto}><Image src="/images/business-health-hybrid/team-everyday.webp" alt="Dos profesionales colaboran en un espacio de trabajo luminoso. Fotografía representativa de biblioteca." width={1800} height={1183} sizes="(max-width: 650px) 100vw, 65vw" loading="eager" fetchPriority="high" /><figcaption>Cada equipo tiene su forma de trabajar.<span>Fotografía representativa · Ketut Subiyanto / Pexels</span></figcaption></figure>
+          <figure className={e.heroPhoto}><Image src="/images/business-health-hybrid/team-everyday.webp" alt="Dos profesionales colaboran en un espacio de trabajo luminoso. Fotografía representativa de biblioteca." width={1800} height={1183} sizes="(max-width: 650px) 100vw, 65vw" loading="eager" fetchPriority="auto" /><figcaption>Cada equipo tiene su forma de trabajar.<span>Fotografía representativa · Ketut Subiyanto / Pexels</span></figcaption></figure>
           <div className={e.brandLine} aria-hidden="true"><svg viewBox="0 0 200 160" fill="none"><path d="M5 130C28 130 12 20 70 26C118 32 63 149 129 137C164 131 151 57 191 55" stroke="currentColor" strokeWidth="5" strokeLinecap="round" /><path d="m172 42 20 12-8 22" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
         </div>
         <div className={e.heroEnd}><span>Para ti, si trabajas por tu cuenta. Para vosotros, si ya sois un equipo.</span><span aria-hidden="true">01 / ELEGIR BIEN EMPIEZA AQUÍ</span></div>
