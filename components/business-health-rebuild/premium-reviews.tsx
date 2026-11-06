@@ -3,7 +3,7 @@ import { useRef, useState, type KeyboardEvent } from 'react';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import type { GoogleReviewsData } from '@/lib/server/google-reviews';
 import { googleUrl } from './content';
-import p from './premium.module.css';
+import p from './premium-delivery.module.css';
 
 /** Page-local presentation only. Original Google data/source/cache remain untouched. */
 export function PremiumReviews({ data }: { data: GoogleReviewsData }) {

@@ -1,0 +1,239 @@
+{
+  "base": "0a876909d5815b831306f6f1ef18f9b9ac917a07",
+  "branch": "codex/salud-release-b-final-readiness-20261102",
+  "sourceFileCount": 32,
+  "documentationFileCount": 6,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "category": "Prueba automatizada",
+      "bytes": 1163,
+      "sha256": "186f45a54393d9403561da459209013e0a5b942f1c9ade1fc41eb22f4a808c77"
+    },
+    {
+      "path": ".gitignore",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 1709,
+      "sha256": "992402bda7ff7dd9723ad9e40cc8766491497a7d05c9a63e8dc820d38df293ad"
+    },
+    {
+      "path": "app/globals.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 15430,
+      "sha256": "bbf37b4bbca8c7e3ee71719606db6f6c98fc22016a47fc8aec4ca950a2bd3d0a"
+    },
+    {
+      "path": "app/layout.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 3607,
+      "sha256": "136d2801e20b0c9466319de6720fb90d99e91ebfc3caafc854456ceb1f5192a3"
+    },
+    {
+      "path": "app/root-fonts.css",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 10178,
+      "sha256": "53f48a1b163ea0f25bd8706672cb9fa1f12305dd1e6021549a110fb9bf7ac304"
+    },
+    {
+      "path": "components/business-health-rebuild/coverage-scene-delivery.module.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 1327,
+      "sha256": "08b844eed7eea7ca7fa797fc566abaf7893455ae71cee98b02da4b2ad034537a"
+    },
+    {
+      "path": "components/business-health-rebuild/coverage-scene-delivery.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 764,
+      "sha256": "7272b80b4a9dd969534c79dd3bfa5e45a9ce3f1d1f8b00c83322461d4dd657ab"
+    },
+    {
+      "path": "components/business-health-rebuild/editorial-delivery.module.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 6971,
+      "sha256": "f10192918b92e85952111e1ec0dbf1dce331f9a9434fe1bb07da93f167c0d899"
+    },
+    {
+      "path": "components/business-health-rebuild/experience.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 15827,
+      "sha256": "24f12743c6db18393a35c6a93f87e31403f25349428aee5749135ab0aa0af5ff"
+    },
+    {
+      "path": "components/business-health-rebuild/interactions.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 19832,
+      "sha256": "3df976ff7e2f7887227196015aa8d6f9f9ab42cb6e2b381c070852749a820f80"
+    },
+    {
+      "path": "components/business-health-rebuild/premium-delivery.module.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 4848,
+      "sha256": "7b94b07b34103e0b69c85bc8f08c4463b90e5b433d3b4f014a0facdb46118e5a"
+    },
+    {
+      "path": "components/business-health-rebuild/premium-reviews.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 3520,
+      "sha256": "049e47f5416ce36f5052a494620273a8dbed0999c39ec0a3994c6974f7f54f1d"
+    },
+    {
+      "path": "components/business-health-rebuild/styles-delivery.module.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 35496,
+      "sha256": "c1b816b81ef09f1c7becd6d154637402422e5133dde98b062b55b1cf8a4f95c4"
+    },
+    {
+      "path": "components/business-health-rebuild/tax-reading-delivery.module.css",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 453,
+      "sha256": "18cf670452b8d9c0f89fcbc3bc7b46947ed39e4e85075430efca183e131709d0"
+    },
+    {
+      "path": "components/business-health-rebuild/tax-reading-delivery.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 384,
+      "sha256": "684cb1788b29d32bbf17e0f05c416c10c0251aa38086b89dac2dd679e318e8fd"
+    },
+    {
+      "path": "components/route-font-preloads.tsx",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 543,
+      "sha256": "e546033f7afe3a0acfa4ec95dca25ace4d4140b1ce0441d278e6eef04fb6b193"
+    },
+    {
+      "path": "lib/root-fonts.ts",
+      "category": "Optimización de rendimiento necesaria",
+      "bytes": 630,
+      "sha256": "1cea3dcdf824ae11daf6a6c80d30cc6c56dde473d703733401545d33c97ab582"
+    },
+    {
+      "path": "package.json",
+      "category": "Prueba automatizada",
+      "bytes": 2850,
+      "sha256": "7e7fc821a7c4ff665f5acd723ffa95459e136daad08285bd2516cdddc403182d"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/14e23f9b59180572-s.9c448f3c.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 9056,
+      "sha256": "8fa67d5f0ab2a1d0b924729a0411a069b384d7a236edd96a6767ef342a6d048f"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/2a65768255d6b625-s.p.d19752fb.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 38460,
+      "sha256": "5d91eb5d522a03081946c44c8ca17c902230dfed5f0f9b5014262135d47b15b2"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/2b402d8aebffd579-s.ec7e94a5.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 10620,
+      "sha256": "9e2672d100bc36a37073fb250abfaa7394f5151bf5dda3f4d5fc281345eb391b"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/44fac91e6f2d2b1b-s.0a39a854.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 21492,
+      "sha256": "0b00fbd6edcc84cd5f77364bbeb06b75ed263c740061eba34511f1e2ac1a82d3"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/65c558afe41e89d6-s.e2c8389a.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 21144,
+      "sha256": "d7f9db9b1034978ebebdf7312aa4aee55dff3ef6039e7ff71413780bd4a05558"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/8298327da6d5bcce-s.fb2d5852.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 24072,
+      "sha256": "744830a0e77dd14dd543a4230d6e3ce67ca961634074b5d536ebafc66c732301"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/ASSET_MANIFEST.json",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 3416,
+      "sha256": "d0e3d3a91c7fb1c8edc4e1be159dc04fb4dcd44813d00d415c0ff816a759a3a6"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/Montserrat-OFL.txt",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 4400,
+      "sha256": "861d64229728cd65a98d119612c12769582574d1a092f0b63c8b0fd474e7065f"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/Playfair-Display-OFL.txt",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 4448,
+      "sha256": "0bb2b43ffd21233963b5d0c0eb6f1abffa776ec53c56131b5818708f2730ffd6"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/a88409fdd7dc121c-s.62b55a98.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 68224,
+      "sha256": "920711de9ae96c18970fa4faca73cd302b93ac5ed57ebeb6bfec2ddeff930082"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/b49b0d9b851e4899-s.4f3fa681.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 20980,
+      "sha256": "5628567856d60d714e7a35bcac9e3de08b336d63b12138f61b970990a1ee9547"
+    },
+    {
+      "path": "public/static/fonts/vpi-global/e8f2fbee2754df70-s.p.9b7a96b4.woff2",
+      "category": "Recurso tipográfico y licencia",
+      "bytes": 35508,
+      "sha256": "6438d7b8ea9c7c3992d5e2fd2afdb1ff948570a3ef0bedae76247b51632960ba"
+    },
+    {
+      "path": "scripts/business-health-delivery.test.ts",
+      "category": "Prueba automatizada",
+      "bytes": 2570,
+      "sha256": "64cf95b3802a20e098396c7981fd4afb672a6f15c1860e9af5f315cd1490bc67"
+    },
+    {
+      "path": "scripts/root-font-assets.test.ts",
+      "category": "Prueba automatizada",
+      "bytes": 2876,
+      "sha256": "03a02b7d589d0572e0b134f8caac8a61c7f3e4dbe76b0938b1cee65fb3b8d1bc"
+    },
+    {
+      "path": "docs/salud-pymes-rebuild/release-b-final-readiness/APPROVAL_REPORT.md",
+      "category": "Documentación necesaria",
+      "bytes": 6929,
+      "sha256": "5652f11863b807fd09af9002812bd1eeafaf1c0aae11174b9ac6ffaf2c2fc02b"
+    },
+    {
+      "path": "docs/salud-pymes-rebuild/release-b-final-readiness/FILE_AUDIT.md",
+      "category": "Documentación necesaria",
+      "bytes": 8140,
+      "sha256": "2c02348a8bf1b5ee7a06db04eb304767b890626cbd7b5df1a31c0badecb0b3ab"
+    },
+    {
+      "path": "docs/salud-pymes-rebuild/release-b-final-readiness/PERFORMANCE_REVIEW.md",
+      "category": "Documentación necesaria",
+      "bytes": 10196,
+      "sha256": "d08663d6cd582c988070418f7f6a4956a538da36f678c525a1ad07d23c44220b"
+    },
+    {
+      "path": "docs/salud-pymes-rebuild/release-b-final-readiness/RELEASE_PLAN.md",
+      "category": "Documentación necesaria",
+      "bytes": 4546,
+      "sha256": "93f74e78e8aa060d79676013f21389872bb2de877b5009bcbc6576d27af5c66f"
+    },
+    {
+      "path": "docs/salud-pymes-rebuild/release-b-final-readiness/VALIDATION.md",
+      "category": "Documentación necesaria",
+      "bytes": 6659,
+      "sha256": "196f9888df079d1fe10c6d01a346425179943b7e8743539aafcbfd6692af8cb4"
+    }
+  ],
+  "manifestPath": "docs/salud-pymes-rebuild/release-b-final-readiness/MANIFEST.json",
+  "manifestHashPolicy": "El manifiesto se incluye en el patch; su SHA se registra en el informe externo para evitar autorreferencia.",
+  "excluded": [
+    "components/business-health-rebuild/hybrid-delivery.module.css",
+    "docs/salud-pymes-rebuild/release-b-lcp-final/**",
+    "capturas, trazas, informes HTML/JSON de Lighthouse y otros experimentos"
+  ],
+  "externalEvidence": "/home/_sebastian/VPI_RELEASE_B_FINAL_READINESS_20261102",
+  "authorization": "Local preparation only. No commit/push/merge/deploy."
+}

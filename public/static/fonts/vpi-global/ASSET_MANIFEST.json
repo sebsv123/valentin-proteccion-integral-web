@@ -1,0 +1,106 @@
+{
+  "referenceCommit": "afbc8617251e72509281725db313555957b2c3f3",
+  "sourceCssSha256": "032677982cfd5301c8bdbd167e9ae63353f20f30197ec0152a8bf0292fb993bd",
+  "variables": {
+    "--font-heading": "\"Playfair Display\",\"Playfair Display Fallback\"",
+    "--font-body": "\"Montserrat\",\"Montserrat Fallback\""
+  },
+  "fontFaceCount": 34,
+  "assets": [
+    {
+      "file": "65c558afe41e89d6-s.e2c8389a.woff2",
+      "families": [
+        "Playfair Display"
+      ],
+      "bytes": 21144,
+      "sha256": "d7f9db9b1034978ebebdf7312aa4aee55dff3ef6039e7ff71413780bd4a05558",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/65c558afe41e89d6-s.e2c8389a.woff2"
+    },
+    {
+      "file": "14e23f9b59180572-s.9c448f3c.woff2",
+      "families": [
+        "Playfair Display"
+      ],
+      "bytes": 9056,
+      "sha256": "8fa67d5f0ab2a1d0b924729a0411a069b384d7a236edd96a6767ef342a6d048f",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/14e23f9b59180572-s.9c448f3c.woff2"
+    },
+    {
+      "file": "b49b0d9b851e4899-s.4f3fa681.woff2",
+      "families": [
+        "Playfair Display"
+      ],
+      "bytes": 20980,
+      "sha256": "5628567856d60d714e7a35bcac9e3de08b336d63b12138f61b970990a1ee9547",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/b49b0d9b851e4899-s.4f3fa681.woff2"
+    },
+    {
+      "file": "2a65768255d6b625-s.p.d19752fb.woff2",
+      "families": [
+        "Playfair Display"
+      ],
+      "bytes": 38460,
+      "sha256": "5d91eb5d522a03081946c44c8ca17c902230dfed5f0f9b5014262135d47b15b2",
+      "preload": true,
+      "url": "/static/fonts/vpi-global/2a65768255d6b625-s.p.d19752fb.woff2"
+    },
+    {
+      "file": "8298327da6d5bcce-s.fb2d5852.woff2",
+      "families": [
+        "Montserrat"
+      ],
+      "bytes": 24072,
+      "sha256": "744830a0e77dd14dd543a4230d6e3ce67ca961634074b5d536ebafc66c732301",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/8298327da6d5bcce-s.fb2d5852.woff2"
+    },
+    {
+      "file": "44fac91e6f2d2b1b-s.0a39a854.woff2",
+      "families": [
+        "Montserrat"
+      ],
+      "bytes": 21492,
+      "sha256": "0b00fbd6edcc84cd5f77364bbeb06b75ed263c740061eba34511f1e2ac1a82d3",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/44fac91e6f2d2b1b-s.0a39a854.woff2"
+    },
+    {
+      "file": "2b402d8aebffd579-s.ec7e94a5.woff2",
+      "families": [
+        "Montserrat"
+      ],
+      "bytes": 10620,
+      "sha256": "9e2672d100bc36a37073fb250abfaa7394f5151bf5dda3f4d5fc281345eb391b",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/2b402d8aebffd579-s.ec7e94a5.woff2"
+    },
+    {
+      "file": "a88409fdd7dc121c-s.62b55a98.woff2",
+      "families": [
+        "Montserrat"
+      ],
+      "bytes": 68224,
+      "sha256": "920711de9ae96c18970fa4faca73cd302b93ac5ed57ebeb6bfec2ddeff930082",
+      "preload": false,
+      "url": "/static/fonts/vpi-global/a88409fdd7dc121c-s.62b55a98.woff2"
+    },
+    {
+      "file": "e8f2fbee2754df70-s.p.9b7a96b4.woff2",
+      "families": [
+        "Montserrat"
+      ],
+      "bytes": 35508,
+      "sha256": "6438d7b8ea9c7c3992d5e2fd2afdb1ff948570a3ef0bedae76247b51632960ba",
+      "preload": true,
+      "url": "/static/fonts/vpi-global/e8f2fbee2754df70-s.p.9b7a96b4.woff2"
+    }
+  ],
+  "fontFaceSignature": "7728abe7104945392440cce600fa5378f91eeba6b733db99b97075c402cdf111",
+  "licenses": [
+    "Montserrat-OFL.txt",
+    "Playfair-Display-OFL.txt"
+  ]
+}

@@ -33,6 +33,9 @@ jobs:
       - name: Monetary input regression tests
         run: npm run test:health-money
 
+      - name: LCP delivery and font identity regression tests
+        run: npm run test:lcp-delivery
+
       - name: Metadata contract negative tests
         run: npm run test:related:contract
 

@@ -8,8 +8,8 @@ import { businessHealthSchema, buildBusinessHealthLeadPayload, isBusinessHealthL
 import { trackB2BEvent } from '@/lib/analytics';
 import { parseMonthlyPremium, splitContributionCents } from '@/lib/business-health-money';
 import { plans } from './content';
-import s from './styles.module.css';
-import { CoverageScene } from './scenes';
+import s from './styles-delivery.module.css';
+import { CoverageScene } from './coverage-scene-delivery';
 
 const HealthContext = createContext<{ coverage: string; setCoverage: (v: string) => void } | null>(null);
 export function HealthJourney({ children }: { children: ReactNode }) {

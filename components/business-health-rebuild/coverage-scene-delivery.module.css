@@ -1,0 +1,12 @@
+/* Delivery subset of scenes.module.css. Original visual rules and legacy source preserved. */
+@keyframes sceneSettle{from{transform:translate3d(14px,8px,0) scale(.985)}to{transform:none}}
+@keyframes noteArrive{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes lineDraw{from{transform:scaleX(.12)}to{transform:scaleX(1)}}
+.coverageScene{position:relative;aspect-ratio:4/3;min-width:0;overflow:hidden;isolation:isolate;background:#f8f5ed}
+.careFrame{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 280ms ease,transform 360ms cubic-bezier(.22,1,.36,1),visibility 280ms}
+.careFrame[data-active=true]{opacity:1;visibility:visible;transform:none;z-index:1}
+.careFrame img{object-fit:cover;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 3%,#000 93%,transparent);mask-composite:intersect}
+.sceneScope{position:absolute;left:23px;bottom:12px;color:#12344a;font-size:.57rem;line-height:1.7;z-index:2;background:#f8f5ede6;padding:3px 7px}
+@media(max-width:800px){.sceneScope{font-size:.55rem;left:15px;bottom:10px;max-width:90%}}
+@media(max-width:500px){.sceneScope{font-size:.49rem;bottom:8px;padding:3px 5px}}
+@media(prefers-reduced-motion:reduce){.careFrame{transition:none}}

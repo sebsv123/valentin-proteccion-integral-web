@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "./root-fonts.css";
+/* Audit captures and prototypes are not application templates. */
+@source not "../docs";
+@source not "../public/static/fonts";
 
 :root {
   --blue: #003366;
