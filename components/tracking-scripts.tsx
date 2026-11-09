@@ -1,46 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useCookieConsent } from "@/components/use-cookie-consent";
+import { providerPermissions, readConsent } from "@/lib/cookie-consent";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
-type ConsentState = "accepted" | "rejected" | null;
+declare global {
+  interface Window { clarity?: (...args: unknown[]) => void }
+}
 
 type TrackingScriptsProps = {
   clarityId?: string;
   metaPixelId?: string;
 };
 
-function readConsent(): ConsentState {
-  if (typeof window === "undefined") return null;
-  const value = window.localStorage.getItem("cookie-consent");
-  return value === "accepted" || value === "rejected" ? value : null;
-}
-
 export function TrackingScripts({ clarityId, metaPixelId }: TrackingScriptsProps) {
-  const [consent, setConsent] = useState<ConsentState>(null);
-
+  const consent = useCookieConsent();
+  const permissions = providerPermissions(consent);
   useEffect(() => {
-    setConsent(readConsent());
-
-    const handleStorage = () => setConsent(readConsent());
-    const handleConsentUpdate = () => setConsent(readConsent());
-
-    window.addEventListener("storage", handleStorage);
-    window.addEventListener("cookie-consent-updated", handleConsentUpdate);
-
-    return () => {
-      window.removeEventListener("storage", handleStorage);
-      window.removeEventListener("cookie-consent-updated", handleConsentUpdate);
-    };
-  }, []);
-
-  if (consent !== "accepted") return null;
+    if (permissions.clarity && window.clarity) {
+      window.clarity('consentv2', {
+        analytics_Storage: 'granted',
+        ad_Storage: permissions.marketing ? 'granted' : 'denied',
+      });
+    }
+  }, [permissions.clarity, permissions.marketing]);
 
   return (
     <>
-      <Analytics />
-      <Script id="gtm-consented" strategy="afterInteractive">
+      {permissions.vercel ? <Analytics beforeSend={(event) => readConsent()?.analytics ? event : null} /> : null}
+      {permissions.gtm ? <Script id="gtm-consented" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){
             w[l]=w[l]||[];
@@ -52,9 +42,9 @@ export function TrackingScripts({ clarityId, metaPixelId }: TrackingScriptsProps
             f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TNB5FR4W');
         `}
-      </Script>
+      </Script> : null}
 
-      {metaPixelId ? (
+      {permissions.meta && metaPixelId ? (
         <Script id="meta-pixel-consented" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
@@ -71,11 +61,12 @@ export function TrackingScripts({ clarityId, metaPixelId }: TrackingScriptsProps
         </Script>
       ) : null}
 
-      {clarityId ? (
+      {permissions.clarity && clarityId ? (
         <Script id="clarity-consented" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              c[a]('consentv2', { analytics_Storage: 'granted', ad_Storage: '${permissions.marketing ? 'granted' : 'denied'}' });
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "${clarityId}");
