@@ -282,7 +282,7 @@ export function CookieBanner() {
       </div>}
 
       {storageError && !showSettings && <p role="alert" className="fixed bottom-20 left-4 right-4 z-[301] rounded-xl bg-white p-4 text-sm text-red-700">
-        {isEnglish ? 'Preferences could not be saved. Enable site storage and try again; no new permission has been granted.' : 'No se han podido guardar las preferencias. Permite el almacenamiento del sitio y vuelve a intentarlo; no se ha concedido ningún permiso nuevo.'}
+        {isEnglish ? 'Preferences could not be saved. Check your device date, enable site storage and try again; no new permission has been granted.' : 'No se han podido guardar las preferencias. Revisa la fecha del dispositivo, permite el almacenamiento del sitio y vuelve a intentarlo; no se ha concedido ningún permiso nuevo.'}
       </p>}
 
       {/* Settings Modal */}
@@ -496,7 +496,7 @@ export function CookieBanner() {
               </button>
             </div>
             <p className="mt-3 text-xs text-[var(--muted)]">{isEnglish ? 'Turning off a previously enabled purpose reloads this page to stop its scripts.' : 'Al desactivar una finalidad previamente activada se recarga esta página para detener sus scripts.'}</p>
-            {storageError && <p role="alert" className="mt-3 text-sm text-red-700">{isEnglish ? 'Preferences could not be saved. Enable site storage and try again.' : 'No se han podido guardar las preferencias. Permite el almacenamiento del sitio y vuelve a intentarlo.'}</p>}
+            {storageError && <p role="alert" className="mt-3 text-sm text-red-700">{isEnglish ? 'Preferences could not be saved. Check your device date, enable site storage and try again.' : 'No se han podido guardar las preferencias. Revisa la fecha del dispositivo, permite el almacenamiento del sitio y vuelve a intentarlo.'}</p>}
           </div>
         </div>
       )}

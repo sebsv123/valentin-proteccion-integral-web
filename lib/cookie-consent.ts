@@ -1,19 +1,57 @@
 export const CONSENT_KEY = 'cookie-consent';
 export const CONSENT_EVENT = 'cookie-consent-updated';
 export const CONSENT_FOCUS_KEY = 'vpi-cookie-preferences-focus';
-export type CookieConsent = { version: 1; necessary: true; analytics: boolean; marketing: boolean };
-export const NO_OPTIONAL_CONSENT: CookieConsent = { version: 1, necessary: true, analytics: false, marketing: false };
+// This identifier binds the candidate policy text; publication remains gated by
+// approval of that text and the provider inventory (see implementation report).
+export const CONSENT_POLICY_VERSION = 'vpi-cookies-20261109-730d-r1';
+export const CONSENT_MAX_AGE_MS = 730 * 24 * 60 * 60 * 1000;
+export const CONSENT_NOT_BEFORE = Date.UTC(2026, 10, 9);
+export type ConsentPurposes = { necessary: true; analytics: boolean; marketing: boolean };
+export type ConsentDecision = ConsentPurposes & {
+  version: 2; policyVersion: string; decidedAt: number; expiresAt: number;
+};
+export type LegacyRejection = { version: 1; necessary: true; analytics: false; marketing: false };
+export type CookieConsent = ConsentDecision | LegacyRejection;
+// Legacy denials have no invented decision date and can never grant a purpose.
+export const NO_OPTIONAL_CONSENT: LegacyRejection = { version: 1, necessary: true, analytics: false, marketing: false };
 
-export function parseConsent(raw: string | null): CookieConsent | null {
-  // A historical global acceptance never becomes a new granular permission.
+const clockOrigin = Date.now();
+const monotonicOrigin = typeof performance === 'undefined' ? 0 : performance.now();
+let lastObservedTime = clockOrigin;
+function consentTime() {
+  const elapsed = typeof performance === 'undefined' ? 0 : Math.max(0, performance.now() - monotonicOrigin);
+  // A backwards clock adjustment cannot extend grants in this document.
+  lastObservedTime = Math.max(lastObservedTime, Date.now(), clockOrigin + elapsed);
+  return Math.floor(lastObservedTime);
+}
+
+export function createConsentDecision(analytics: boolean, marketing: boolean, now = consentTime()): ConsentDecision {
+  if (!Number.isSafeInteger(now) || now < CONSENT_NOT_BEFORE || !Number.isSafeInteger(now + CONSENT_MAX_AGE_MS)) {
+    throw new Error('Invalid device time');
+  }
+  return { version: 2, policyVersion: CONSENT_POLICY_VERSION, decidedAt: now,
+    expiresAt: now + CONSENT_MAX_AGE_MS, necessary: true, analytics, marketing };
+}
+
+export function parseConsent(raw: string | null, now = consentTime()): CookieConsent | null {
   if (raw === 'rejected') return { ...NO_OPTIONAL_CONSENT };
   if (!raw) return null;
   try {
     const value: unknown = JSON.parse(raw);
     if (typeof value !== 'object' || value === null) return null;
-    const record = value as Record<string, unknown>;
-    if (record.version !== 1 || record.necessary !== true || typeof record.analytics !== 'boolean' || typeof record.marketing !== 'boolean') return null;
-    return { version: 1, necessary: true, analytics: record.analytics, marketing: record.marketing };
+    const r = value as Record<string, unknown>;
+    if (r.version === 1 && r.necessary === true && r.analytics === false && r.marketing === false) {
+      return { ...NO_OPTIONAL_CONSENT };
+    }
+    if (r.version !== 2 || r.policyVersion !== CONSENT_POLICY_VERSION || r.necessary !== true ||
+        typeof r.analytics !== 'boolean' || typeof r.marketing !== 'boolean' ||
+        !Number.isSafeInteger(now) || now < CONSENT_NOT_BEFORE ||
+        typeof r.decidedAt !== 'number' || !Number.isSafeInteger(r.decidedAt) ||
+        typeof r.expiresAt !== 'number' || !Number.isSafeInteger(r.expiresAt) ||
+        r.decidedAt < CONSENT_NOT_BEFORE || r.decidedAt > now ||
+        r.expiresAt <= r.decidedAt || r.expiresAt - r.decidedAt > CONSENT_MAX_AGE_MS || now >= r.expiresAt) return null;
+    return { version: 2, policyVersion: CONSENT_POLICY_VERSION, decidedAt: r.decidedAt,
+      expiresAt: r.expiresAt, necessary: true, analytics: r.analytics, marketing: r.marketing };
   } catch { return null; }
 }
 
@@ -23,7 +61,7 @@ export function readConsent(): CookieConsent | null {
   catch { return null; }
 }
 
-export function providerPermissions(consent: CookieConsent | null) {
+export function providerPermissions(consent: ConsentPurposes | null) {
   const analytics = consent?.analytics === true;
   const marketing = consent?.marketing === true;
   return {
@@ -37,16 +75,16 @@ export function providerPermissions(consent: CookieConsent | null) {
   };
 }
 
-export function permissionReduced(previous: CookieConsent | null, next: CookieConsent | null) {
+export function permissionReduced(previous: ConsentPurposes | null, next: ConsentPurposes | null) {
   return !!((previous?.analytics && !next?.analytics) || (previous?.marketing && !next?.marketing));
 }
 
 // Executed scripts survive React unmounts. Remember grants for the lifetime of
 // this document, rather than relying on a banner effect's current closure.
 export function createConsentLifetime() {
-  let granted: CookieConsent = { ...NO_OPTIONAL_CONSENT };
+  let granted: ConsentPurposes = { ...NO_OPTIONAL_CONSENT };
   return {
-    observe(consent: CookieConsent | null) {
+    observe(consent: ConsentPurposes | null) {
       if (permissionReduced(granted, consent)) return true;
       granted = {
         ...NO_OPTIONAL_CONSENT,
@@ -61,23 +99,40 @@ export function createConsentLifetime() {
 const documentLifetime = createConsentLifetime();
 let withdrawalReloadRequested = false;
 let documentMonitoringStarted = false;
+let expiryTimer: number | undefined;
+
+function refreshConsentDocument() {
+  synchronizeConsentDocument(readConsent());
+  window.dispatchEvent(new Event(CONSENT_EVENT));
+}
 
 export function synchronizeConsentDocument(consent: CookieConsent | null) {
   if (typeof window === 'undefined') return;
   if (!documentMonitoringStarted) {
     documentMonitoringStarted = true;
-    // React may disconnect effects while retaining the document and executed
-    // SDKs. This listener therefore intentionally lasts until page unload.
+    // Executed SDKs outlive React consumers. Keep these until document unload.
     window.addEventListener('storage', (event) => {
-      if (event.key === CONSENT_KEY || event.key === null) {
-        synchronizeConsentDocument(readConsent());
-      }
+      if (event.key === CONSENT_KEY || event.key === null) refreshConsentDocument();
     });
     window.addEventListener(CONSENT_EVENT, () => synchronizeConsentDocument(readConsent()));
+    window.addEventListener('focus', refreshConsentDocument);
+    window.addEventListener('pageshow', refreshConsentDocument);
+    document.addEventListener('visibilitychange', refreshConsentDocument);
+  }
+  if (expiryTimer !== undefined) window.clearTimeout(expiryTimer);
+  expiryTimer = undefined;
+  if (consent === null) {
+    // Invalid/expired positive records must not revive after a clock correction.
+    try { if (window.localStorage.getItem(CONSENT_KEY) !== null) window.localStorage.removeItem(CONSENT_KEY); } catch { /* still denied */ }
   }
   if (documentLifetime.observe(consent)) {
     clearDeniedStorage(consent);
     reloadAfterWithdrawal();
+  }
+  if (!withdrawalReloadRequested && consent?.version === 2) {
+    // Recheck wall-clock changes and avoid the ~24.8-day native timer overflow.
+    const delay = Math.min(60_000, Math.max(0, consent.expiresAt - consentTime()));
+    expiryTimer = window.setTimeout(refreshConsentDocument, delay);
   }
 }
 
@@ -126,8 +181,9 @@ export function reloadAfterWithdrawal() {
 
 export function saveConsent(analytics: boolean, marketing: boolean): boolean {
   const previous = readConsent();
-  const next: CookieConsent = { version: 1, necessary: true, analytics, marketing };
+  let next: ConsentDecision;
   try {
+    next = createConsentDecision(analytics, marketing);
     window.localStorage.setItem(CONSENT_KEY, JSON.stringify(next));
     if (window.localStorage.getItem(CONSENT_KEY) !== JSON.stringify(next)) return false;
   } catch { return false; }

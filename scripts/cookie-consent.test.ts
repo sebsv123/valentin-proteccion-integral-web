@@ -3,18 +3,18 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import ts from 'typescript';
-import { createConsentLifetime, isOptionalStorageKey, NO_OPTIONAL_CONSENT, parseConsent, permissionReduced, providerPermissions } from '../lib/cookie-consent.ts';
+import { createConsentDecision, createConsentLifetime, isOptionalStorageKey, NO_OPTIONAL_CONSENT, parseConsent, permissionReduced, providerPermissions } from '../lib/cookie-consent.ts';
 
 test('document monitor stops executed SDKs even without mounted React consumers', () => {
-  let stored = JSON.stringify({ ...NO_OPTIONAL_CONSENT, analytics: true, marketing: true });
+  let stored = JSON.stringify(createConsentDecision(true, true));
   let reloads = 0;
   const listeners = new Map<string, ((event: { key: string }) => void)[]>();
   const exports: { synchronizeConsentDocument?: (consent: unknown) => void } = {};
   const code = ts.transpileModule(readFileSync(new URL('../lib/cookie-consent.ts', import.meta.url), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
   }).outputText;
-  runInNewContext(code, { exports, document: { cookie: '' }, window: {
-    localStorage: { getItem: () => stored }, sessionStorage: { setItem: () => {} },
+  runInNewContext(code, { exports, Event, document: { cookie: '', addEventListener: () => {} }, window: {
+    localStorage: { getItem: () => stored, removeItem: () => {} }, setTimeout: () => 1, clearTimeout: () => {}, dispatchEvent: () => {}, sessionStorage: { setItem: () => {} },
     location: { hostname: 'localhost', pathname: '/', reload: () => reloads++ },
     addEventListener: (type: string, handler: (event: { key: string }) => void) => {
       listeners.set(type, [...(listeners.get(type) || []), handler]);
@@ -62,7 +62,7 @@ for (const raw of [null, 'accepted', '', '{}', '{', 'true', 'null', '{"version":
 test('legacy rejection remains a rejection', () => assert.deepEqual(parseConsent('rejected'), NO_OPTIONAL_CONSENT));
 for (const analytics of [false, true]) for (const marketing of [false, true]) {
   test(`purpose matrix ${Number(analytics)}${Number(marketing)} and round trip`, () => {
-    const consent = { ...NO_OPTIONAL_CONSENT, analytics, marketing };
+    const consent = createConsentDecision(analytics, marketing);
     assert.deepEqual(parseConsent(JSON.stringify(consent)), consent);
     assert.deepEqual(providerPermissions(consent), { analytics, marketing, vercel: analytics, clarity: analytics, meta: marketing, gtm: analytics && marketing, maps: analytics && marketing });
   });
