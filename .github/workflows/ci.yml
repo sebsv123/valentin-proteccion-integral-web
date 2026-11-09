@@ -48,6 +48,9 @@ jobs:
       - name: Lead safety tests
         run: npm run test:leads
 
+      - name: Native image security regression tests
+        run: npm run test:security-images
+
       - name: Build
         run: npm run build
 

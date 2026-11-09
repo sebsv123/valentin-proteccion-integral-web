@@ -136,7 +136,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    cssChunking: 'strict',
+    // Next 16.4 rejects webpack-only strict chunking in Turbopack. Keep the
+    // default Turbopack strategy and preserve strict ordering for webpack.
+    cssChunking: process.env.TURBOPACK ? true : 'strict',
     optimizePackageImports: [
       'framer-motion', 
       'lucide-react'

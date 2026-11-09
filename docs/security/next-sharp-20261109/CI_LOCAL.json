@@ -1,0 +1,165 @@
+[
+  {
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "seconds": 2.56,
+    "date": "2026-11-09T13:13:42Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exitCode": 0,
+    "seconds": 0.19,
+    "date": "2026-11-09T13:13:42Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:isfas"
+    ],
+    "exitCode": 0,
+    "seconds": 0.17,
+    "date": "2026-11-09T13:13:42Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:health-money"
+    ],
+    "exitCode": 0,
+    "seconds": 0.2,
+    "date": "2026-11-09T13:13:42Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:lcp-delivery"
+    ],
+    "exitCode": 0,
+    "seconds": 0.4,
+    "date": "2026-11-09T13:13:43Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:related:contract"
+    ],
+    "exitCode": 0,
+    "seconds": 0.16,
+    "date": "2026-11-09T13:13:43Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:related"
+    ],
+    "exitCode": 0,
+    "seconds": 0.1,
+    "date": "2026-11-09T13:13:43Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:hardening"
+    ],
+    "exitCode": 0,
+    "seconds": 0.22,
+    "date": "2026-11-09T13:13:43Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:leads"
+    ],
+    "exitCode": 0,
+    "seconds": 0.33,
+    "date": "2026-11-09T13:13:44Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:security-images"
+    ],
+    "exitCode": 0,
+    "seconds": 0.23,
+    "date": "2026-11-09T13:13:44Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "seconds": 12.96,
+    "date": "2026-11-09T13:13:57Z"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "test:related:rendered"
+    ],
+    "exitCode": 0,
+    "seconds": 0.65,
+    "date": "2026-11-09T13:13:57Z"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "seconds": 0.43,
+    "date": "2026-11-09T13:13:58Z"
+  },
+  {
+    "command": [
+      "npm",
+      "ls",
+      "next",
+      "sharp",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.26,
+    "date": "2026-11-09T13:13:58Z"
+  },
+  {
+    "command": [
+      "npm",
+      "ls",
+      "--depth=0",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.22,
+    "date": "2026-11-09T13:13:58Z"
+  },
+  {
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "exitCode": 1,
+    "seconds": 1.6,
+    "date": "2026-11-09T13:14:00Z"
+  }
+]
