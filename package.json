@@ -24,7 +24,8 @@
     "test:related:contract": "node --test scripts/foreigners-metadata-contract.test.mjs",
     "test:related:rendered": "node scripts/validate-foreigners-rendered.mjs",
     "test:font-assets": "node --test scripts/root-font-assets.test.ts",
-    "test:lcp-delivery": "node --test scripts/business-health-delivery.test.ts scripts/root-font-assets.test.ts"
+    "test:lcp-delivery": "node --test scripts/business-health-delivery.test.ts scripts/root-font-assets.test.ts",
+    "test:leadform": "node --conditions=react-server --test scripts/lead-form.test.ts scripts/lead-form-route.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

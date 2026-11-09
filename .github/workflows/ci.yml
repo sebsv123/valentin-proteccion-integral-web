@@ -48,6 +48,9 @@ jobs:
       - name: Lead safety tests
         run: npm run test:leads
 
+      - name: Cycle 1 leadform regression tests
+        run: npm run test:leadform
+
       - name: Build
         run: npm run build
 
