@@ -25,6 +25,7 @@
     "test:related:rendered": "node scripts/validate-foreigners-rendered.mjs",
     "test:font-assets": "node --test scripts/root-font-assets.test.ts",
     "test:lcp-delivery": "node --test scripts/business-health-delivery.test.ts scripts/root-font-assets.test.ts",
+    "test:security-images": "node --test scripts/next-sharp-security.test.ts",
     "test:consent": "node --test scripts/cookie-consent.test.ts"
   },
   "dependencies": {
@@ -39,7 +40,7 @@
     "googleapis": "^171.4.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.453.0",
-    "next": "16.1.6",
+    "next": "16.4.5",
     "next-intl": "^4.14.1",
     "next-seo": "^6.5.0",
     "nodemailer": "^9.0.1",
@@ -58,7 +59,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "16.2.4",
+    "@next/bundle-analyzer": "16.4.5",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "25.3.5",
     "@types/nodemailer": "^8.0.1",
@@ -66,7 +67,7 @@
     "@types/react-dom": "19.2.3",
     "@types/three": "^0.184.1",
     "postcss": "8.5.8",
-    "sharp": "^0.34.5",
+    "sharp": "0.35.5",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
   }
