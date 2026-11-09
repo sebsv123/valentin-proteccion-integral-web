@@ -41,6 +41,46 @@ export function permissionReduced(previous: CookieConsent | null, next: CookieCo
   return !!((previous?.analytics && !next?.analytics) || (previous?.marketing && !next?.marketing));
 }
 
+// Executed scripts survive React unmounts. Remember grants for the lifetime of
+// this document, rather than relying on a banner effect's current closure.
+export function createConsentLifetime() {
+  let granted: CookieConsent = { ...NO_OPTIONAL_CONSENT };
+  return {
+    observe(consent: CookieConsent | null) {
+      if (permissionReduced(granted, consent)) return true;
+      granted = {
+        ...NO_OPTIONAL_CONSENT,
+        analytics: granted.analytics || consent?.analytics === true,
+        marketing: granted.marketing || consent?.marketing === true,
+      };
+      return false;
+    },
+  };
+}
+
+const documentLifetime = createConsentLifetime();
+let withdrawalReloadRequested = false;
+let documentMonitoringStarted = false;
+
+export function synchronizeConsentDocument(consent: CookieConsent | null) {
+  if (typeof window === 'undefined') return;
+  if (!documentMonitoringStarted) {
+    documentMonitoringStarted = true;
+    // React may disconnect effects while retaining the document and executed
+    // SDKs. This listener therefore intentionally lasts until page unload.
+    window.addEventListener('storage', (event) => {
+      if (event.key === CONSENT_KEY || event.key === null) {
+        synchronizeConsentDocument(readConsent());
+      }
+    });
+    window.addEventListener(CONSENT_EVENT, () => synchronizeConsentDocument(readConsent()));
+  }
+  if (documentLifetime.observe(consent)) {
+    clearDeniedStorage(consent);
+    reloadAfterWithdrawal();
+  }
+}
+
 export function isOptionalStorageKey(name: string, category: 'analytics' | 'marketing') {
   return category === 'analytics'
     ? /^(_ga(?:_|$)|_gid$|_gat(?:_|$)|_clck$|_clsk$|CLID$)/.test(name)
@@ -77,6 +117,8 @@ export function clearDeniedStorage(consent: CookieConsent | null) {
 }
 
 export function reloadAfterWithdrawal() {
+  if (withdrawalReloadRequested) return;
+  withdrawalReloadRequested = true;
   try { window.sessionStorage.setItem(CONSENT_FOCUS_KEY, '1'); } catch { /* optional focus restoration */ }
   // Unmounting React cannot stop third-party JS already executed in this document.
   window.location.reload();

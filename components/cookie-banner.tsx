@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Cookie, X, Settings } from 'lucide-react';
 import { useLocale } from 'next-intl';
-import { clearDeniedStorage, CONSENT_EVENT, CONSENT_FOCUS_KEY, CONSENT_KEY, permissionReduced, readConsent, reloadAfterWithdrawal, saveConsent } from '@/lib/cookie-consent';
+import { clearDeniedStorage, CONSENT_EVENT, CONSENT_FOCUS_KEY, CONSENT_KEY, readConsent, saveConsent, synchronizeConsentDocument } from '@/lib/cookie-consent';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +18,8 @@ export function CookieBanner() {
   const isEnglish = useLocale() === 'en';
 
   useEffect(() => {
-    let previous = readConsent();
+    const previous = readConsent();
+    synchronizeConsentDocument(previous);
     clearDeniedStorage(previous);
     setAnalyticsEnabled(previous?.analytics ?? false);
     setMarketingEnabled(previous?.marketing ?? false);
@@ -32,11 +33,7 @@ export function CookieBanner() {
     } catch { /* Storage can be disabled. */ }
     const refresh = () => {
       const next = readConsent();
-      if (permissionReduced(previous, next)) {
-        clearDeniedStorage(next);
-        reloadAfterWithdrawal();
-      }
-      previous = next;
+      synchronizeConsentDocument(next);
       setAnalyticsEnabled(next?.analytics ?? false);
       setMarketingEnabled(next?.marketing ?? false);
       setIsVisible(next === null);
