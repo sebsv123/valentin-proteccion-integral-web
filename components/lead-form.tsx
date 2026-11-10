@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { formSchema, type FormValues } from '@/lib/lead-form-schema';
 import { Loader2, ShieldCheck } from 'lucide-react';
 import { buildWhatsAppHref } from '@/lib/products';
 import { captureUTMs, getStoredUTMs, trackLeadFormSubmit } from '@/lib/analytics';
@@ -13,22 +13,18 @@ import { useLocale } from 'next-intl';
 const CONTACT_EMAIL = 'contacto@valentinproteccionintegral.com';
 const FORM_DELIVERY_ERROR = `No hemos podido enviar el formulario. Escríbenos por WhatsApp o a ${CONTACT_EMAIL}.`;
 
-const formSchema = (isEnglish: boolean) => z.object({
-  fullName: z.string().min(2, isEnglish ? 'Please enter your name' : 'Indícanos tu nombre'),
-  phone: z.string().min(6, isEnglish ? 'Please enter a valid phone number' : 'Añade un teléfono válido'),
-  productInterest: z.string().min(2, isEnglish ? 'Choose a category' : 'Selecciona una categoría'),
-  notes: z.string().optional(),
-  consent: z.boolean().refine((value) => value, isEnglish ? 'We need your consent to reply' : 'Necesitamos tu consentimiento para responderte'),
-  website: z.string().optional(),
-});
-
-type FormValues = z.infer<ReturnType<typeof formSchema>>;
-
 export function LeadForm({ defaultProduct = 'salud', compact = false, homeVariant = false }: { defaultProduct?: string; compact?: boolean; homeVariant?: boolean }) {
   const router = useRouter();
   const isEnglish = useLocale() === 'en';
+  const formId = useId();
+  const pending = useRef(false);
+  const errorRef = useRef<HTMLDivElement>(null);
+  const deliveryError = isEnglish ? `We could not send the form. Write to us on WhatsApp or at ${CONTACT_EMAIL}.` : FORM_DELIVERY_ERROR;
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
+  useEffect(() => {
+    if (serverError) errorRef.current?.focus();
+  }, [serverError]);
 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>({
     resolver: zodResolver(formSchema(isEnglish)),
@@ -36,6 +32,8 @@ export function LeadForm({ defaultProduct = 'salud', compact = false, homeVarian
   });
 
   const onSubmit = async (values: FormValues) => {
+    if (pending.current) return;
+    pending.current = true;
     setServerMessage(null);
     setServerError(null);
 
@@ -62,7 +60,7 @@ export function LeadForm({ defaultProduct = 'salud', compact = false, homeVarian
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error(FORM_DELIVERY_ERROR);
+      if (!response.ok) throw new Error(deliveryError);
 
       trackLeadFormSubmit({
         product_slug: values.productInterest,
@@ -77,8 +75,10 @@ export function LeadForm({ defaultProduct = 'salud', compact = false, homeVarian
 
       reset({ fullName: '', phone: '', productInterest: defaultProduct, notes: '', consent: false, website: '' });
       router.push('/gracias');
-    } catch (error) {
-      setServerError(error instanceof Error ? error.message : isEnglish ? `We could not send the form. Write to us on WhatsApp or at ${CONTACT_EMAIL}.` : FORM_DELIVERY_ERROR);
+    } catch {
+      setServerError(deliveryError);
+    } finally {
+      pending.current = false;
     }
   };
 
@@ -114,27 +114,26 @@ export function LeadForm({ defaultProduct = 'salud', compact = false, homeVarian
         </a>.
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4" noValidate>
+      <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4" noValidate aria-busy={isSubmitting}>
         <input type="hidden" {...register('website')} />
 
         <div className={compact ? 'grid gap-4 md:grid-cols-2' : 'grid gap-4'}>
           <div>
-            <label className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Full name' : 'Nombre y apellidos'}</label>
-            <input className="input-ui" placeholder={isEnglish ? 'Your name' : 'Tu nombre'} {...register('fullName')} />
-            {errors.fullName ? <p className="mt-2 text-sm text-red-600">{errors.fullName.message}</p> : null}
+            <label htmlFor={`${formId}-fullName`} className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Full name' : 'Nombre y apellidos'}</label>
+            <input id={`${formId}-fullName`} type="text" autoComplete="name" required aria-invalid={!!errors.fullName} aria-describedby={errors.fullName ? `${formId}-fullName-error` : undefined} className="input-ui scroll-mt-24" placeholder={isEnglish ? 'Your name' : 'Tu nombre'} {...register('fullName')} />
+            {errors.fullName ? <p id={`${formId}-fullName-error`} role="alert" className="mt-2 text-sm text-red-600">{errors.fullName.message}</p> : null}
           </div>
           <div>
-            <label className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Phone' : 'Teléfono'}</label>
-            <input className="input-ui" placeholder={isEnglish ? 'e.g. 603 448 765' : 'Ej. 603 448 765'} {...register('phone')} />
-            {errors.phone ? <p className="mt-2 text-sm text-red-600">{errors.phone.message}</p> : null}
+            <label htmlFor={`${formId}-phone`} className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Phone' : 'Teléfono'}</label>
+            <input id={`${formId}-phone`} type="tel" inputMode="tel" autoComplete="tel" required aria-invalid={!!errors.phone} aria-describedby={errors.phone ? `${formId}-phone-error` : undefined} className="input-ui scroll-mt-24" placeholder={isEnglish ? 'e.g. +44 20 7946 0958' : 'Ej. +34 603 448 765'} {...register('phone')} />
+            {errors.phone ? <p id={`${formId}-phone-error`} role="alert" className="mt-2 text-sm text-red-600">{errors.phone.message}</p> : null}
           </div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="productInterest" className="sr-only">{isEnglish ? 'Choose insurance' : 'Elige un seguro'}</label>
-            <label htmlFor="productInterest" className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Product' : 'Producto'}</label>
-            <select id="productInterest" className="select-ui" {...register('productInterest')}>
+            <label htmlFor={`${formId}-productInterest`} className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Product' : 'Producto'}</label>
+            <select id={`${formId}-productInterest`} required aria-invalid={!!errors.productInterest} aria-describedby={errors.productInterest ? `${formId}-productInterest-error` : undefined} className="select-ui scroll-mt-24" {...register('productInterest')}>
               <option value="salud">{isEnglish ? 'HEALTH (Basic, Senior, Reimbursement...)' : 'SALUD (Básico, Senior, Reembolso...)'}</option>
               <option value="vida">{isEnglish ? 'LIFE' : 'VIDA'}</option>
               <option value="negocio">{isEnglish ? 'BUSINESS / SME' : 'NEGOCIO / PYME'}</option>
@@ -146,29 +145,30 @@ export function LeadForm({ defaultProduct = 'salud', compact = false, homeVarian
               <option value="decesos">{isEnglish ? 'FUNERAL' : 'DECESOS'}</option>
               <option value="viaje">{isEnglish ? 'TRAVEL' : 'VIAJE'}</option>
             </select>
-            {errors.productInterest ? <p className="mt-2 text-sm text-red-600">{errors.productInterest.message}</p> : null}
+            {errors.productInterest ? <p id={`${formId}-productInterest-error`} role="alert" className="mt-2 text-sm text-red-600">{errors.productInterest.message}</p> : null}
           </div>
           <div>
-            <label className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Useful detail' : 'Detalle útil'}</label>
-            <input className="input-ui" placeholder={isEnglish ? 'Family, self-employed, pet, one-off trip...' : 'Familia, autónomo, mascota, viaje puntual...'} {...register('notes')} />
+            <label htmlFor={`${formId}-notes`} className="mb-2 block text-sm font-semibold text-[var(--text)]">{isEnglish ? 'Useful detail' : 'Detalle útil'}</label>
+            <input id={`${formId}-notes`} type="text" className="input-ui scroll-mt-24" placeholder={isEnglish ? 'Family, self-employed, pet, one-off trip...' : 'Familia, autónomo, mascota, viaje puntual...'} {...register('notes')} />
           </div>
         </div>
 
-        <label className="mt-2 flex items-start gap-3 rounded-[22px] bg-[var(--bg)] p-4 text-sm leading-6 text-[var(--muted)] md:text-base">
-          <input type="checkbox" className="mt-1 h-4 w-4 rounded border-[var(--border)]" {...register('consent')} />
+        <label htmlFor={`${formId}-consent`} className="mt-2 flex items-start gap-3 rounded-[22px] bg-[var(--bg)] p-4 text-sm leading-6 text-[var(--muted)] md:text-base">
+          <input id={`${formId}-consent`} type="checkbox" required aria-invalid={!!errors.consent} aria-describedby={errors.consent ? `${formId}-consent-error` : undefined} className="scroll-mt-24 mt-1 h-4 w-4 rounded border-[var(--border)]" {...register('consent')} />
           <span>{isEnglish ? 'I agree that my data may be used to answer my enquiry and guide me towards suitable options.' : 'Acepto que mis datos se utilicen para responder a mi consulta y orientarme sobre opciones que puedan encajar conmigo.'}</span>
         </label>
-        {errors.consent ? <p className="text-sm text-red-600">{errors.consent.message}</p> : null}
+        {errors.consent ? <p id={`${formId}-consent-error`} role="alert" className="text-sm text-red-600">{errors.consent.message}</p> : null}
 
         <div className="mt-2">
           <button type="submit" disabled={isSubmitting} className="btn-primary w-full">
-            {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-            {isEnglish ? 'Request guidance' : 'Solicitar orientación'}
+            {isSubmitting ? <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" /> : null}
+            {isSubmitting ? (isEnglish ? 'Sending…' : 'Enviando…') : (isEnglish ? 'Request guidance' : 'Solicitar orientación')}
           </button>
         </div>
 
-        {serverMessage ? <div className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">{serverMessage}</div> : null}
-        {serverError ? <div className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-700">{serverError}</div> : null}
+        <span className="sr-only" role="status">{isSubmitting ? (isEnglish ? 'Sending your enquiry' : 'Enviando tu consulta') : ''}</span>
+        {serverMessage ? <div role="status" className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">{serverMessage}</div> : null}
+        {serverError ? <div ref={errorRef} role="alert" tabIndex={-1} className="scroll-mt-24 rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-700">{serverError}</div> : null}
       </form>
     </div>
   );

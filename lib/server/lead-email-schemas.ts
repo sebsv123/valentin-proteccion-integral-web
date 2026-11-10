@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isReasonablePhone } from "../contact-phone.ts";
 
 const textField = (fieldName: string, max = 500) =>
   z
@@ -30,7 +31,9 @@ export const leadEmailSchema = z
     // contacto (teléfono o email) mediante el refine inferior. Los formularios
     // existentes siguen enviando teléfono, por lo que la compatibilidad se
     // mantiene.
-    phone: z.string().trim().max(80, "Teléfono demasiado largo.").optional().default(""),
+    phone: z.string().trim().max(80, "Teléfono demasiado largo.")
+      .refine((value) => value === "" || isReasonablePhone(value), "Indica un teléfono válido, con prefijo de país si es internacional.")
+      .optional().default(""),
     email: z.string().trim().email("Email no válido.").max(180).optional().or(z.literal("")).default(""),
     interest: textField("Interés", 180),
     message: optionalTextField(1500),
@@ -49,7 +52,7 @@ export const leadEmailSchema = z
       .optional()
       .default({}),
   })
-  .refine((data) => Boolean((data.phone && data.phone.length >= 6) || data.email), {
+  .refine((data) => Boolean(isReasonablePhone(data.phone) || data.email), {
     message: "Indica un teléfono o un email de contacto.",
     path: ["phone"],
   });
