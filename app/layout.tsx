@@ -74,7 +74,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
           <CookieBanner />
           <ChatWidget />
-          <TrackingScripts clarityId={clarityId} metaPixelId={META_PIXEL_ID} />
+          <TrackingScripts />
         </NextIntlClientProvider>
       </body>
     </html>

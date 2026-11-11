@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { trackEvent } from '@/lib/analytics';
+import { readConsent } from '@/lib/cookie-consent';
 
 const storageKey = 'vpi_isfas_partner';
 const pagePath = '/mutualistas/isfas';
@@ -81,10 +82,7 @@ export function IsfasInteractions({ partners, whatsappNumber }: Props) {
     };
     refreshWhatsAppLinks();
 
-    const hasConsent = () => {
-      try { return window.localStorage.getItem('cookie-consent') === 'accepted'; }
-      catch { return false; }
-    };
+    const hasConsent = () => readConsent()?.analytics === true;
     let pageViewSent = false;
     let partnerSent = false;
     const sendPageView = () => {

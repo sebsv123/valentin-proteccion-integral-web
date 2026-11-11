@@ -23,134 +23,37 @@ export default function CookiesPage() {
           <div className="soft-card p-8 md:p-12 prose prose-slate max-w-none">
             <p className="kicker">Legal</p>
             <h1 className="mt-3 section-title">Política de Cookies</h1>
-            <p className="section-copy mt-2">Última actualización: abril de 2026</p>
+            <p className="section-copy mt-2">Versión propuesta: 11 de noviembre de 2026</p>
 
-            <h2>1. ¿Qué son las cookies?</h2>
-            <p>
-              Las cookies son pequeños archivos de texto que los sitios web almacenan en tu
-              dispositivo cuando los visitas. Sirven para que el sitio funcione correctamente,
-              para recordar tus preferencias y para recopilar información estadística sobre el uso.
-            </p>
+            <h2>1. ¿Qué son las cookies y el almacenamiento local?</h2>
+            <p>Las cookies y el almacenamiento local son mecanismos que un sitio puede utilizar para guardar información en el dispositivo. En este sitio, el almacenamiento local recuerda la elección de preferencias para aplicarla en visitas posteriores. Las preferencias se conservan durante un máximo de 730 días desde la decisión expresa; las visitas y recargas no amplían ese plazo.</p>
 
-            <h2>2. Cookies y servicios que utiliza esta web</h2>
-            <p>
-              Este sitio puede utilizar cookies y recursos externos vinculados a los siguientes
-              servicios. Las cookies no necesarias solo se instalarán cuando prestes tu consentimiento
-              mediante el panel de configuración.
-            </p>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-[var(--bg)] text-left">
-                    <th className="p-3 border border-[var(--border)] font-semibold">Nombre</th>
-                    <th className="p-3 border border-[var(--border)] font-semibold">Proveedor</th>
-                    <th className="p-3 border border-[var(--border)] font-semibold">Tipo</th>
-                    <th className="p-3 border border-[var(--border)] font-semibold">Finalidad</th>
-                    <th className="p-3 border border-[var(--border)] font-semibold">Duración</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="p-3 border border-[var(--border)]">GTM / Google tags</td>
-                    <td className="p-3 border border-[var(--border)]">Google LLC</td>
-                    <td className="p-3 border border-[var(--border)]">Analítica</td>
-                    <td className="p-3 border border-[var(--border)]">
-                      Gestión de etiquetas y medición de eventos de navegación tras consentimiento.
-                    </td>
-                    <td className="p-3 border border-[var(--border)]">Según configuración de Google</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 border border-[var(--border)]">va_* (Vercel Analytics)</td>
-                    <td className="p-3 border border-[var(--border)]">Vercel Inc.</td>
-                    <td className="p-3 border border-[var(--border)]">Analítica</td>
-                    <td className="p-3 border border-[var(--border)]">
-                      Métricas de rendimiento y visitas agregadas del sitio web.
-                      Diseñado para ser respetuoso con la privacidad (sin cookies de
-                      seguimiento entre sitios).
-                    </td>
-                    <td className="p-3 border border-[var(--border)]">Sesión</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 border border-[var(--border)]">_clck, _clsk</td>
-                    <td className="p-3 border border-[var(--border)]">Microsoft Clarity</td>
-                    <td className="p-3 border border-[var(--border)]">Analítica</td>
-                    <td className="p-3 border border-[var(--border)]">
-                      Mapas de calor y grabaciones de sesión para mejorar la usabilidad del sitio,
-                      solo si está configurado y aceptado.
-                    </td>
-                    <td className="p-3 border border-[var(--border)]">1 año / sesión</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 border border-[var(--border)]">_fbp y similares</td>
-                    <td className="p-3 border border-[var(--border)]">Meta Platforms Ireland Ltd.</td>
-                    <td className="p-3 border border-[var(--border)]">Marketing</td>
-                    <td className="p-3 border border-[var(--border)]">
-                      Medición de campañas y eventos de conversión cuando la variable de Meta Pixel
-                      está configurada y has prestado consentimiento.
-                    </td>
-                    <td className="p-3 border border-[var(--border)]">Según configuración de Meta</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 border border-[var(--border)]">Recursos de Google Maps</td>
-                    <td className="p-3 border border-[var(--border)]">Google LLC</td>
-                    <td className="p-3 border border-[var(--border)]">Funcional / externo</td>
-                    <td className="p-3 border border-[var(--border)]">
-                      Visualización del mapa de ubicación mediante iframe en el pie de página.
-                    </td>
-                    <td className="p-3 border border-[var(--border)]">Según configuración de Google</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <h2>2. Preferencias de cookies</h2>
+            <p>El panel distingue entre almacenamiento necesario para recordar y aplicar tus preferencias y analítica opcional de visitas mediante Vercel Web Analytics. La analítica solo se habilita si la aceptas. Puedes rechazarla, aceptarla o cambiar tu elección en cualquier momento desde el control permanente de preferencias.</p>
+            <p>Si la elección no existe, ha vencido, no puede validarse o corresponde a una versión de política incompatible, las finalidades opcionales permanecen desactivadas hasta que elijas de nuevo. Retirar la autorización impide futuras cargas de analítica desde el sitio. No borra información que un proveedor ya hubiera recibido.</p>
 
-            <h2>3. Base legal</h2>
-            <p>
-              Las cookies analíticas se instalan bajo tu <strong>consentimiento</strong>{' '}
-              (Art. 6.1.a RGPD y Art. 22 LSSI-CE). Las cookies no necesarias solo se instalarán
-              cuando prestes tu consentimiento mediante el panel de configuración. Puedes aceptar,
-              rechazar o configurar su uso en cualquier momento.
-            </p>
+            <h2>3. Analítica de visitas</h2>
+            <p>Vercel Web Analytics se carga únicamente después de autorizar la finalidad analítica. La integración transmite eventos de navegación para generar estadísticas de uso. Según la documentación pública de Vercel, el servicio puede utilizar un identificador temporal de visitante derivado mediante hash; la documentación también describe que no utiliza cookies de terceros para este servicio. Estas descripciones del proveedor no identifican por sí mismas todos los datos que pudiera contener una solicitud concreta del sitio.</p>
+            <p>La ventana de informes indica durante cuánto tiempo los datos están garantizados como disponibles para consulta, no un plazo máximo de eliminación. La información disponible del plan Hobby indica una ventana de informes de un mes y que Vercel puede conservar datos durante más tiempo. No se afirma aquí un plazo efectivo de borrado.</p>
+            <p><a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noreferrer">Información de privacidad de Vercel Analytics</a> · <a href="https://vercel.com/docs/analytics/limits-and-pricing" target="_blank" rel="noreferrer">Ventanas de informes y precios</a>.</p>
 
-            <h2>4. Cómo gestionar o eliminar las cookies</h2>
-            <p>
-              Puedes configurar tu navegador para rechazar o eliminar las cookies en cualquier
-              momento. Ten en cuenta que deshabilitar ciertas cookies puede afectar a la
-              funcionalidad del sitio.
-            </p>
+            <h2>4. Enlaces externos</h2>
+            <p>La ubicación se ofrece mediante un enlace externo para abrir Google Maps. El sitio no carga un mapa incrustado automáticamente. Al abrir el enlace, Google trata la solicitud conforme a sus propias condiciones y políticas.</p>
+
+            <h2>5. Responsable y privacidad</h2>
+            <p>La información sobre los responsables del tratamiento y el ejercicio de derechos se encuentra en nuestra <a href="/privacidad">Política de privacidad</a>.</p>
+
+            <h2>6. Gestión y retirada</h2>
+            <p>Puedes rechazar la analítica desde el panel, modificar la preferencia con el control permanente del sitio o retirar una autorización previamente concedida. También puedes borrar el almacenamiento del sitio desde tu navegador; en ese caso volveremos a solicitar tu elección. La retirada no elimina datos que ya se hayan transmitido a un proveedor.</p>
             <ul>
-              <li>
-                <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">
-                  Google Chrome
-                </a>
-              </li>
-              <li>
-                <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noreferrer">
-                  Mozilla Firefox
-                </a>
-              </li>
-              <li>
-                <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noreferrer">
-                  Safari
-                </a>
-              </li>
-              <li>
-                <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noreferrer">
-                  Microsoft Edge
-                </a>
-              </li>
+              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer">Google Chrome</a></li>
+              <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noreferrer">Mozilla Firefox</a></li>
+              <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noreferrer">Safari</a></li>
+              <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noreferrer">Microsoft Edge</a></li>
             </ul>
-            <p>
-              Para inhabilitar específicamente Microsoft Clarity, visita:{' '}
-              <a href="https://privacy.microsoft.com/es-es/privacystatement" target="_blank" rel="noreferrer">
-                Privacidad de Microsoft
-              </a>.
-            </p>
 
-            <h2>5. Actualizaciones de esta política</h2>
-            <p>
-              Podemos revisar esta política cuando añadamos o eliminemos herramientas que usen
-              cookies. La fecha indicada al inicio refleja siempre la versión vigente.
-            </p>
+            <h2>7. Actualizaciones</h2>
+            <p>Podemos actualizar esta política cuando cambien las funciones o servicios descritos. La fecha indicada al inicio identifica la versión vigente.</p>
           </div>
         </div>
       </main>
