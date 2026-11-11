@@ -26,7 +26,7 @@
     "test:font-assets": "node --test scripts/root-font-assets.test.ts",
     "test:lcp-delivery": "node --test scripts/business-health-delivery.test.ts scripts/root-font-assets.test.ts",
     "test:security-images": "node --test scripts/next-sharp-security.test.ts",
-    "test:consent": "node --test scripts/cookie-consent.test.ts scripts/cookie-consent-time.test.ts",
+    "test:consent": "node --test scripts/cookie-consent.test.ts scripts/cookie-consent-time.test.ts scripts/analytics-event.test.ts",
     "test:leadform": "node --conditions=react-server --test scripts/lead-form.test.ts scripts/lead-form-route.test.ts"
   },
   "dependencies": {

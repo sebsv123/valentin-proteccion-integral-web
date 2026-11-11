@@ -23,7 +23,7 @@ export default function CookiesPage() {
           <div className="soft-card p-8 md:p-12 prose prose-slate max-w-none">
             <p className="kicker">Legal</p>
             <h1 className="mt-3 section-title">Política de Cookies</h1>
-            <p className="section-copy mt-2">Última actualización: abril de 2026</p>
+            <p className="section-copy mt-2">Versión propuesta: 11 de noviembre de 2026</p>
 
             <h2>1. ¿Qué son las cookies y el almacenamiento local?</h2>
             <p>Las cookies y el almacenamiento local son mecanismos que un sitio puede utilizar para guardar información en el dispositivo. En este sitio, el almacenamiento local recuerda la elección de preferencias para aplicarla en visitas posteriores. Las preferencias se conservan durante un máximo de 730 días desde la decisión expresa; las visitas y recargas no amplían ese plazo.</p>
