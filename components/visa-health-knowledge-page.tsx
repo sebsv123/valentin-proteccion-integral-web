@@ -4,6 +4,8 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { visaKnowledgeLastVerified, visaKnowledgePages, type VisaKnowledgePage, type VisaKnowledgePageKey } from '@/lib/visa-health-knowledge';
 import { trackerFieldLabels, visaTrackerRecords, visaTypeLabels, type VisaType } from '@/lib/visa-health-tracker';
+import { getForeignersIntakePath, type ForeignersIntakeSituation } from '@/lib/foreigners-intake';
+import { buildWhatsAppHref } from '@/lib/products';
 
 const base = 'https://valentinproteccionintegral.com';
 const relatedLinks = {
@@ -86,6 +88,11 @@ function Tracker({ locale }: { locale: 'es' | 'en' }) {
 function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey }) {
   const en = locale === 'en';
   const current = page.path[locale];
+  const situation: ForeignersIntakeSituation | undefined = pageKey === 'student' ? 'studies' : pageKey === 'nonLucrative' || pageKey === 'digitalNomad' ? 'residence' : undefined;
+  const quoteHref = getForeignersIntakePath(locale, situation);
+  const whatsAppHref = buildWhatsAppHref(en
+    ? `Hello, I would like advice about health insurance for ${page.title.en}.`
+    : `Hola, quisiera asesoramiento sobre un seguro médico para ${page.title.es}.`);
   const breadcrumb = [
     { label: en ? 'Home' : 'Inicio', href: en ? '/en' : '/' },
     { label: en ? 'Visa health insurance' : 'Seguro médico para visados', href: getPath('hub', locale) },
@@ -128,6 +135,15 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
             <p className="mt-6 rounded-xl border-l-4 border-[var(--green)] bg-slate-50 p-5 text-lg leading-relaxed text-slate-800">{page.answer[locale]}</p>
             <p className="mt-3 text-sm text-slate-600">{en ? 'Last reviewed:' : 'Última revisión:'} <time dateTime={visaKnowledgeLastVerified}>{new Date(`${visaKnowledgeLastVerified}T12:00:00Z`).toLocaleDateString(en ? 'en-GB' : 'es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time></p>
           </header>
+
+          <div className="mt-6 flex flex-wrap gap-3" aria-label={en ? 'Enquiry options' : 'Opciones de consulta'}>
+            <Link href={quoteHref} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--blue-deep)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
+              {en ? 'Request a quote' : 'Solicitar una propuesta'}
+            </Link>
+            <a href={whatsAppHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[var(--blue)] px-6 py-3 font-semibold text-[var(--blue-deep)] transition-colors hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
+              {en ? 'Ask on WhatsApp' : 'Consultar por WhatsApp'}
+            </a>
+          </div>
 
           {pageKey === 'tracker' ? <Tracker locale={locale} /> : (
             <div className="mt-10 grid gap-5 md:grid-cols-2">
