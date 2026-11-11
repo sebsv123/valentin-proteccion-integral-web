@@ -134,7 +134,7 @@ export default function DentalPage() {
               {/* Hero image */}
               <div className="relative max-w-4xl mx-auto mt-8">
                 <Image
-                  src="https://images.pexels.com/photos/3845816/pexels-photo-3845816.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src="/images/dental/hero-dental.jpg"
                   alt="Sonrisa dental profesional Madrid"
                   width={900}
                   height={500}

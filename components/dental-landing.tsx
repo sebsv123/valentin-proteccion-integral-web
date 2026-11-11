@@ -310,7 +310,7 @@ export function DentalLanding() {
 
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border shadow-2xl bg-muted">
               <Image
-                src="https://images.pexels.com/photos/5355915/pexels-photo-5355915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="/images/dental/asesora-seguros.jpg"
                 alt="Asesora de seguros dentales"
                 fill
                 className="object-cover"
@@ -328,7 +328,7 @@ export function DentalLanding() {
           <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center bg-accent/20 rounded-[3rem] p-8 md:p-16 border shadow-inner">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg bg-muted">
               <Image
-                src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="/images/dental/familia-salud.jpg"
                 alt="Familia feliz con salud completa"
                 fill
                 className="object-cover"
