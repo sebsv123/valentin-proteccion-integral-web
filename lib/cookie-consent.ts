@@ -3,7 +3,7 @@ export const CONSENT_EVENT = 'cookie-consent-updated';
 export const CONSENT_FOCUS_KEY = 'vpi-cookie-preferences-focus';
 // This identifier binds the candidate policy text; publication remains gated by
 // approval of that text and the provider inventory (see implementation report).
-export const CONSENT_POLICY_VERSION = 'vpi-cookies-20261109-730d-r1';
+export const CONSENT_POLICY_VERSION = 'vpi-cookies-20261110-730d-candidate1';
 export const CONSENT_MAX_AGE_MS = 730 * 24 * 60 * 60 * 1000;
 export const CONSENT_NOT_BEFORE = Date.UTC(2026, 10, 9);
 export type ConsentPurposes = { necessary: true; analytics: boolean; marketing: boolean };
@@ -30,7 +30,7 @@ export function createConsentDecision(analytics: boolean, marketing: boolean, no
     throw new Error('Invalid device time');
   }
   return { version: 2, policyVersion: CONSENT_POLICY_VERSION, decidedAt: now,
-    expiresAt: now + CONSENT_MAX_AGE_MS, necessary: true, analytics, marketing };
+    expiresAt: now + CONSENT_MAX_AGE_MS, necessary: true, analytics, marketing: false };
 }
 
 export function parseConsent(raw: string | null, now = consentTime()): CookieConsent | null {
@@ -44,14 +44,14 @@ export function parseConsent(raw: string | null, now = consentTime()): CookieCon
       return { ...NO_OPTIONAL_CONSENT };
     }
     if (r.version !== 2 || r.policyVersion !== CONSENT_POLICY_VERSION || r.necessary !== true ||
-        typeof r.analytics !== 'boolean' || typeof r.marketing !== 'boolean' ||
+        typeof r.analytics !== 'boolean' || r.marketing !== false ||
         !Number.isSafeInteger(now) || now < CONSENT_NOT_BEFORE ||
         typeof r.decidedAt !== 'number' || !Number.isSafeInteger(r.decidedAt) ||
         typeof r.expiresAt !== 'number' || !Number.isSafeInteger(r.expiresAt) ||
         r.decidedAt < CONSENT_NOT_BEFORE || r.decidedAt > now ||
         r.expiresAt <= r.decidedAt || r.expiresAt - r.decidedAt > CONSENT_MAX_AGE_MS || now >= r.expiresAt) return null;
     return { version: 2, policyVersion: CONSENT_POLICY_VERSION, decidedAt: r.decidedAt,
-      expiresAt: r.expiresAt, necessary: true, analytics: r.analytics, marketing: r.marketing };
+      expiresAt: r.expiresAt, necessary: true, analytics: r.analytics, marketing: false };
   } catch { return null; }
 }
 
@@ -65,13 +65,12 @@ export function providerPermissions(consent: ConsentPurposes | null) {
   const analytics = consent?.analytics === true;
   const marketing = consent?.marketing === true;
   return {
-    analytics, marketing,
+    analytics, marketing: false,
     vercel: analytics,
-    clarity: analytics,
-    meta: marketing,
-    // The external GTM container and Maps embed have no verified purpose split.
-    gtm: analytics && marketing,
-    maps: analytics && marketing,
+    clarity: false,
+    meta: false,
+    gtm: false,
+    maps: false,
   };
 }
 

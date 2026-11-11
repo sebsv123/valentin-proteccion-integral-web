@@ -32,7 +32,7 @@ test('legacy acceptances cannot migrate to grants; denials retain no optional pe
  for(const raw of ['rejected',JSON.stringify(NO_OPTIONAL_CONSENT)]){assert.deepEqual(parseConsent(raw,time),NO_OPTIONAL_CONSENT);assert.equal('decidedAt' in parseConsent(raw,time)!,false)}
 });
 for(const a of[false,true])for(const m of[false,true])test(`dated purpose matrix ${+a}${+m}`,()=>{
- const parsed=parseConsent(JSON.stringify(createConsentDecision(a,m,time)),time);assert.deepEqual(providerPermissions(parsed),{analytics:a,marketing:m,vercel:a,clarity:a,meta:m,gtm:a&&m,maps:a&&m});
+ const parsed=parseConsent(JSON.stringify(createConsentDecision(a,m,time)),time);assert.deepEqual(providerPermissions(parsed),{analytics:a,marketing:false,vercel:a,clarity:false,meta:false,gtm:false,maps:false});
  assert.ok(Object.values(providerPermissions(parseConsent(JSON.stringify(createConsentDecision(a,m,time)),time+CONSENT_MAX_AGE_MS))).every(x=>x===false));
 });
 

@@ -60,11 +60,17 @@ for (const raw of [null, 'accepted', '', '{}', '{', 'true', 'null', '{"version":
   });
 }
 test('legacy rejection remains a rejection', () => assert.deepEqual(parseConsent('rejected'), NO_OPTIONAL_CONSENT));
-for (const analytics of [false, true]) for (const marketing of [false, true]) {
-  test(`purpose matrix ${Number(analytics)}${Number(marketing)} and round trip`, () => {
-    const consent = createConsentDecision(analytics, marketing);
+test('old policy grants and forged marketing grants are rejected', () => {
+ const now = Date.now(); const current = createConsentDecision(true, false, now);
+ assert.equal(parseConsent(JSON.stringify({...current, policyVersion:'vpi-cookies-20261109-730d-r1'}), now), null);
+ assert.equal(parseConsent(JSON.stringify({...current, marketing:true}), now), null);
+ assert.equal(createConsentDecision(true, true, now).marketing, false);
+});
+for (const analytics of [false, true]) {
+  test(`analytics-only purpose matrix ${Number(analytics)} and round trip`, () => {
+    const consent = createConsentDecision(analytics, true);
     assert.deepEqual(parseConsent(JSON.stringify(consent)), consent);
-    assert.deepEqual(providerPermissions(consent), { analytics, marketing, vercel: analytics, clarity: analytics, meta: marketing, gtm: analytics && marketing, maps: analytics && marketing });
+    assert.deepEqual(providerPermissions(consent), { analytics, marketing: false, vercel: analytics, clarity: false, meta: false, gtm: false, maps: false });
   });
 }
 test('every reduction requires a new document, upgrades do not', () => {

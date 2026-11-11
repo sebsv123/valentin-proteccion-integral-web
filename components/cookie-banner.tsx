@@ -9,7 +9,6 @@ export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-  const [marketingEnabled, setMarketingEnabled] = useState(false);
   const [ready, setReady] = useState(false);
   const [storageError, setStorageError] = useState(false);
   const settingsCloseRef = useRef<HTMLButtonElement>(null);
@@ -22,7 +21,6 @@ export function CookieBanner() {
     synchronizeConsentDocument(previous);
     clearDeniedStorage(previous);
     setAnalyticsEnabled(previous?.analytics ?? false);
-    setMarketingEnabled(previous?.marketing ?? false);
     setIsVisible(previous === null);
     setReady(true);
     try {
@@ -35,7 +33,6 @@ export function CookieBanner() {
       const next = readConsent();
       synchronizeConsentDocument(next);
       setAnalyticsEnabled(next?.analytics ?? false);
-      setMarketingEnabled(next?.marketing ?? false);
       setIsVisible(next === null);
     };
     const storage = (event: StorageEvent) => {
@@ -131,7 +128,7 @@ export function CookieBanner() {
   };
 
   const handleAccept = () => {
-    updateConsent(true, true);
+    updateConsent(true, false);
   };
 
   const handleReject = () => {
@@ -147,7 +144,6 @@ export function CookieBanner() {
   const openSettings = () => {
     const current = readConsent();
     setAnalyticsEnabled(current?.analytics ?? false);
-    setMarketingEnabled(current?.marketing ?? false);
     setStorageError(false);
     setShowSettings(true);
   };
@@ -217,7 +213,7 @@ export function CookieBanner() {
                 {isEnglish ? 'Your privacy matters' : 'Tu privacidad importa'}
               </h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
-                {isEnglish ? 'We use necessary cookies to make the website work. Analytics and marketing cookies are only installed if you accept or configure them.' : 'Utilizamos cookies necesarias para que la web funcione. Las cookies analíticas o de marketing solo se instalarán si las aceptas o las configuras.'}
+                {isEnglish ? 'We use necessary cookies to make the website work. Optional analytics is used only if you enable it.' : 'Utilizamos cookies necesarias para que la web funcione. La analítica opcional solo se utiliza si la activas.'}
               </p>
 
               {/* Buttons */}
@@ -424,49 +420,15 @@ export function CookieBanner() {
                 </div>
               </div>
 
-              {/* Marketing */}
-              <div
-                className="
-                  flex items-center justify-between p-4 rounded-xl
-                  border border-[var(--border)]
-                  hover:border-[var(--blue)]/30
-                  transition-colors duration-200
-                "
-              >
-                <div>
-                  <h4 className="font-semibold text-[var(--text)] text-sm">
-                    {isEnglish ? 'Marketing cookies' : 'Cookies de marketing'}
-                  </h4>
-                  <p className="text-xs text-[var(--muted)] mt-0.5">
-                    {isEnglish ? 'Personalise ads and content.' : 'Personalizan anuncios y contenido.'}
-                  </p>
-                </div>
-                <div className="relative">
-                  <input
-                    type="checkbox"
-                    checked={marketingEnabled}
-                    aria-label={isEnglish ? 'Marketing cookies' : 'Cookies de marketing'}
-                    onChange={(event) => setMarketingEnabled(event.target.checked)}
-                    className="
-                      w-11 h-6 rounded-full appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-deep)]
-                      bg-[var(--border)] cursor-pointer
-                      checked:bg-[var(--blue)]
-                      checked:after:translate-x-5
-                      after:content-[''] after:absolute after:top-0.5 after:left-0.5
-                      after:w-5 after:h-5 after:rounded-full after:bg-white
-                      after:transition-transform
-                      transition-colors duration-200
-                    "
-                  />
-                </div>
-              </div>
             </div>
+
+
 
             {/* Modal actions */}
             <div className="flex gap-2">
               <button
                 onClick={() => {
-                  updateConsent(analyticsEnabled, marketingEnabled);
+                  updateConsent(analyticsEnabled, false);
                 }}
                 className="
                   flex-1 inline-flex items-center justify-center gap-2
