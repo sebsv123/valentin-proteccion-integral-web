@@ -44,7 +44,7 @@ export function DentalFAQ() {
             <h2 className="text-3xl font-bold sm:text-6xl mb-6 text-center">Preguntas frecuentes</h2>
             <div className="relative aspect-square rounded-3xl overflow-hidden border bg-muted">
               <Image 
-                src="https://images.pexels.com/photos/3845623/pexels-photo-3845623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="/images/dental/cuidado-dental.jpg"
                 alt="Cuidado dental profesional" 
                 fill 
                 className="object-cover"
