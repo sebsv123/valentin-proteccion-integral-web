@@ -3,22 +3,47 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Cookie, X, Settings } from 'lucide-react';
 import { useLocale } from 'next-intl';
+import { clearDeniedStorage, CONSENT_EVENT, CONSENT_FOCUS_KEY, CONSENT_KEY, readConsent, saveConsent, synchronizeConsentDocument } from '@/lib/cookie-consent';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-  const [marketingEnabled, setMarketingEnabled] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [storageError, setStorageError] = useState(false);
   const settingsCloseRef = useRef<HTMLButtonElement>(null);
   const settingsTriggerRef = useRef<HTMLButtonElement>(null);
   const settingsDialogRef = useRef<HTMLDivElement>(null);
   const isEnglish = useLocale() === 'en';
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setIsVisible(true);
-    }
+    const previous = readConsent();
+    synchronizeConsentDocument(previous);
+    clearDeniedStorage(previous);
+    setAnalyticsEnabled(previous?.analytics ?? false);
+    setIsVisible(previous === null);
+    setReady(true);
+    try {
+      if (sessionStorage.getItem(CONSENT_FOCUS_KEY)) {
+        sessionStorage.removeItem(CONSENT_FOCUS_KEY);
+        requestAnimationFrame(() => settingsTriggerRef.current?.focus());
+      }
+    } catch { /* Storage can be disabled. */ }
+    const refresh = () => {
+      const next = readConsent();
+      synchronizeConsentDocument(next);
+      setAnalyticsEnabled(next?.analytics ?? false);
+      setIsVisible(next === null);
+    };
+    const storage = (event: StorageEvent) => {
+      if (event.key === CONSENT_KEY || event.key === null) refresh();
+    };
+    window.addEventListener(CONSENT_EVENT, refresh);
+    window.addEventListener('storage', storage);
+    return () => {
+      window.removeEventListener(CONSENT_EVENT, refresh);
+      window.removeEventListener('storage', storage);
+    };
   }, []);
 
   useEffect(() => {
@@ -91,31 +116,48 @@ export function CookieBanner() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [showSettings, closeSettings]);
 
-  const updateConsent = (value: 'accepted' | 'rejected') => {
-    localStorage.setItem('cookie-consent', value);
-    window.dispatchEvent(new Event('cookie-consent-updated'));
+  const updateConsent = (analytics: boolean, marketing: boolean) => {
+    if (!saveConsent(analytics, marketing)) {
+      setStorageError(true);
+      return;
+    }
+    setStorageError(false);
     setIsVisible(false);
     setShowSettings(false);
+    window.requestAnimationFrame(() => settingsTriggerRef.current?.focus());
   };
 
   const handleAccept = () => {
-    updateConsent('accepted');
+    updateConsent(true, false);
   };
 
   const handleReject = () => {
-    updateConsent('rejected');
+    updateConsent(false, false);
   };
 
   const handleClose = () => {
     handleReject();
   };
 
-  if (!isVisible) return null;
+  if (!ready) return null;
+
+  const openSettings = () => {
+    const current = readConsent();
+    setAnalyticsEnabled(current?.analytics ?? false);
+    setStorageError(false);
+    setShowSettings(true);
+  };
 
   return (
     <>
+      {!isVisible && <button ref={settingsTriggerRef} onClick={openSettings}
+        className="fixed bottom-4 left-4 z-[100] flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-white text-[var(--blue-deep)] shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        aria-haspopup="dialog" aria-expanded={showSettings} title={isEnglish ? 'Cookie preferences' : 'Preferencias de cookies'}>
+        <Cookie className="h-5 w-5" aria-hidden="true" />
+        <span className="sr-only">{isEnglish ? 'Cookie preferences' : 'Preferencias de cookies'}</span>
+      </button>}
       {/* Main Cookie Banner */}
-      <div
+      {isVisible && <div
         className={`
           fixed right-4 left-4 md:left-auto md:w-[420px] z-[100]
           animate-in slide-in-from-bottom-4 fade-in duration-500 overflow-y-auto
@@ -171,7 +213,7 @@ export function CookieBanner() {
                 {isEnglish ? 'Your privacy matters' : 'Tu privacidad importa'}
               </h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
-                {isEnglish ? 'We use necessary cookies to make the website work. Analytics and marketing cookies are only installed if you accept or configure them.' : 'Utilizamos cookies necesarias para que la web funcione. Las cookies analíticas o de marketing solo se instalarán si las aceptas o las configuras.'}
+                {isEnglish ? 'We use necessary cookies to make the website work. Optional analytics is used only if you enable it.' : 'Utilizamos cookies necesarias para que la web funcione. La analítica opcional solo se utiliza si la activas.'}
               </p>
 
               {/* Buttons */}
@@ -216,7 +258,9 @@ export function CookieBanner() {
               {/* Settings link */}
               <button
                 ref={settingsTriggerRef}
-                onClick={() => setShowSettings(true)}
+                onClick={openSettings}
+                aria-haspopup="dialog"
+                aria-expanded={showSettings}
                 className="
                   inline-flex min-h-11 items-center gap-1.5 mt-3
                   text-sm font-medium text-[var(--blue)]
@@ -231,7 +275,11 @@ export function CookieBanner() {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
+
+      {storageError && !showSettings && <p role="alert" className="fixed bottom-20 left-4 right-4 z-[301] rounded-xl bg-white p-4 text-sm text-red-700">
+        {isEnglish ? 'Preferences could not be saved. Check your device date, enable site storage and try again; no new permission has been granted.' : 'No se han podido guardar las preferencias. Revisa la fecha del dispositivo, permite el almacenamiento del sitio y vuelve a intentarlo; no se ha concedido ningún permiso nuevo.'}
+      </p>}
 
       {/* Settings Modal */}
       {showSettings && (
@@ -277,10 +325,10 @@ export function CookieBanner() {
                 </div>
                 <div>
                   <h3 id="cookie-preferences-title" className="font-heading font-bold text-[var(--blue-deep)] text-lg">
-                    Preferencias
+                    {isEnglish ? 'Preferences' : 'Preferencias'}
                   </h3>
                   <p className="text-sm text-[var(--muted)]">
-                    Gestiona tus cookies
+                    {isEnglish ? 'Manage your cookies' : 'Gestiona tus cookies'}
                   </p>
                 </div>
               </div>
@@ -311,19 +359,20 @@ export function CookieBanner() {
               >
                 <div>
                   <h4 className="font-semibold text-[var(--text)] text-sm">
-                    Cookies necesarias
+                    {isEnglish ? 'Necessary cookies' : 'Cookies necesarias'}
                   </h4>
                   <p className="text-xs text-[var(--muted)] mt-0.5">
-                    Siempre activas. Necesarias para el funcionamiento del sitio.
+                    {isEnglish ? 'Always active. Required for the website to work.' : 'Siempre activas. Necesarias para el funcionamiento del sitio.'}
                   </p>
                 </div>
                 <div className="relative">
                   <input
                     type="checkbox"
+                    aria-label={isEnglish ? 'Necessary cookies' : 'Cookies necesarias'}
                     checked
                     disabled
                     className="
-                      w-11 h-6 rounded-full appearance-none
+                      w-11 h-6 rounded-full appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-deep)]
                       bg-[var(--green)] cursor-not-allowed
                       checked:after:translate-x-5
                       after:content-[''] after:absolute after:top-0.5 after:left-0.5
@@ -345,19 +394,20 @@ export function CookieBanner() {
               >
                 <div>
                   <h4 className="font-semibold text-[var(--text)] text-sm">
-                    Cookies analíticas
+                    {isEnglish ? 'Analytics cookies' : 'Cookies analíticas'}
                   </h4>
                   <p className="text-xs text-[var(--muted)] mt-0.5">
-                    Nos ayudan a mejorar el sitio web.
+                    {isEnglish ? 'Help us improve the website.' : 'Nos ayudan a mejorar el sitio web.'}
                   </p>
                 </div>
                 <div className="relative">
                   <input
                     type="checkbox"
                     checked={analyticsEnabled}
+                    aria-label={isEnglish ? 'Analytics cookies' : 'Cookies analíticas'}
                     onChange={(event) => setAnalyticsEnabled(event.target.checked)}
                     className="
-                      w-11 h-6 rounded-full appearance-none
+                      w-11 h-6 rounded-full appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-deep)]
                       bg-[var(--border)] cursor-pointer
                       checked:bg-[var(--blue)]
                       checked:after:translate-x-5
@@ -370,48 +420,15 @@ export function CookieBanner() {
                 </div>
               </div>
 
-              {/* Marketing */}
-              <div
-                className="
-                  flex items-center justify-between p-4 rounded-xl
-                  border border-[var(--border)]
-                  hover:border-[var(--blue)]/30
-                  transition-colors duration-200
-                "
-              >
-                <div>
-                  <h4 className="font-semibold text-[var(--text)] text-sm">
-                    Cookies de marketing
-                  </h4>
-                  <p className="text-xs text-[var(--muted)] mt-0.5">
-                    Personalizan anuncios y contenido.
-                  </p>
-                </div>
-                <div className="relative">
-                  <input
-                    type="checkbox"
-                    checked={marketingEnabled}
-                    onChange={(event) => setMarketingEnabled(event.target.checked)}
-                    className="
-                      w-11 h-6 rounded-full appearance-none
-                      bg-[var(--border)] cursor-pointer
-                      checked:bg-[var(--blue)]
-                      checked:after:translate-x-5
-                      after:content-[''] after:absolute after:top-0.5 after:left-0.5
-                      after:w-5 after:h-5 after:rounded-full after:bg-white
-                      after:transition-transform
-                      transition-colors duration-200
-                    "
-                  />
-                </div>
-              </div>
             </div>
+
+
 
             {/* Modal actions */}
             <div className="flex gap-2">
               <button
                 onClick={() => {
-                  updateConsent(analyticsEnabled || marketingEnabled ? 'accepted' : 'rejected');
+                  updateConsent(analyticsEnabled, false);
                 }}
                 className="
                   flex-1 inline-flex items-center justify-center gap-2
@@ -425,7 +442,7 @@ export function CookieBanner() {
                   transition-all duration-200
                 "
               >
-                Guardar preferencias
+                {isEnglish ? 'Save preferences' : 'Guardar preferencias'}
               </button>
               <button
                 onClick={closeSettings}
@@ -437,9 +454,11 @@ export function CookieBanner() {
                   transition-all duration-200
                 "
               >
-                Cancelar
+                {isEnglish ? 'Cancel' : 'Cancelar'}
               </button>
             </div>
+            <p className="mt-3 text-xs text-[var(--muted)]">{isEnglish ? 'Turning off a previously enabled purpose reloads this page to stop its scripts.' : 'Al desactivar una finalidad previamente activada se recarga esta página para detener sus scripts.'}</p>
+            {storageError && <p role="alert" className="mt-3 text-sm text-red-700">{isEnglish ? 'Preferences could not be saved. Check your device date, enable site storage and try again.' : 'No se han podido guardar las preferencias. Revisa la fecha del dispositivo, permite el almacenamiento del sitio y vuelve a intentarlo.'}</p>}
           </div>
         </div>
       )}
