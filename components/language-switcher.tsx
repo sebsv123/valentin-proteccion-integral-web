@@ -1,10 +1,23 @@
 'use client';
 
+import type { MouseEvent } from 'react';
+import { withCommercialAttribution } from '@/lib/commercial-attribution';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { productPathnames, unavailableLocalePathnames } from '@/lib/product-locales';
 import { getBlogPostBySlug } from '@/lib/blog-catalog';
 import type { BlogLocale } from '@/lib/blog-catalog';
+
+// Read only at activation; no tracking storage or navigation subscription.
+function preserveAttribution(event: MouseEvent<HTMLAnchorElement>) {
+  const params = new URLSearchParams(window.location.search);
+  const incoming: Record<string, string | string[]> = {};
+  for (const key of params.keys()) {
+    const values = params.getAll(key);
+    incoming[key] = values.length === 1 ? values[0] : values;
+  }
+  event.currentTarget.href = withCommercialAttribution(event.currentTarget.getAttribute('href') ?? '/', incoming);
+}
 
 const supportedPathnames = new Set(['/', '/blog', '/autonomos', '/contacto', '/extranjeros', '/extranjeros/alquileres', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros', '/internacional', '/internacional/peru', '/internacional/australia', '/internacional/india', '/internacional/corea-del-sur', '/como-te-ayudamos', '/sobre-nosotros', '/opiniones', '/aviso-legal', '/privacidad', '/cookies', '/empresas', '/empresas/salud', '/empresas/ciberseguridad', '/para/autonomos', '/para/familias', '/para/jovenes-profesionales', '/para/seniors', ...Object.keys(productPathnames)]);
 
@@ -70,15 +83,16 @@ export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
   if (effectivePathname === '/blog') {
-    return <a href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
+    return <a onClick={preserveAttribution} href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (blogPost?.slug.en) {
     const targetHref = targetLocale === 'en' ? `/en/blog/${blogPost.slug.en}` : `/blog/${blogPost.slug.es}`;
-    return <a href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
+    return <a onClick={preserveAttribution} href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (effectivePathname === '/') {
     return (
       <a
+        onClick={preserveAttribution}
         href={targetLocale === 'en' ? '/en' : '/'}
         aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
         className={controlClassName}
@@ -94,6 +108,7 @@ export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?
     : ({ '/para/autonomos': '/autonomos', '/contacto': '/contacto', '/extranjeros': '/extranjeros', '/extranjeros/alquileres': '/extranjeros/alquileres', '/seguros': '/seguros', '/seguros/salud': '/seguros/salud', '/seguros/salud-extranjeros': '/seguros/salud-extranjeros', '/internacional': '/internacional', '/internacional/peru': '/internacional/peru', '/internacional/australia': '/internacional/australia', '/internacional/india': '/internacional/india', '/internacional/corea-del-sur': '/internacional/corea-del-sur', '/como-te-ayudamos': '/como-te-ayudamos', '/sobre-nosotros': '/sobre-nosotros', '/opiniones': '/opiniones', '/aviso-legal': '/aviso-legal', '/privacidad': '/privacidad', '/cookies': '/cookies', '/empresas': '/empresas', '/empresas/salud': '/empresas/salud', '/empresas/ciberseguridad': '/empresas/ciberseguridad', '/para/familias': '/para/familias', '/para/jovenes-profesionales': '/para/jovenes-profesionales', '/para/seniors': '/para/seniors', ...Object.fromEntries(Object.keys(productPathnames).map((path) => [path, path])) } as Record<string, string>)[effectivePathname] ?? '/';
   return (
     <a
+      onClick={preserveAttribution}
       href={targetHref}
       aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
       className={controlClassName}

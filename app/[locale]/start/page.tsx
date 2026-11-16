@@ -1,3 +1,4 @@
+import { readCommercialAttribution } from '@/lib/commercial-attribution';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { ForeignersIntakeStart } from '@/components/extranjeros/foreigners-intake-start';
@@ -8,7 +9,7 @@ export const metadata: Metadata = { title: 'Start your enquiry | VPI', robots: {
 export default async function EnglishStartPage({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<{ partner?: string }> }) {
   const { locale } = await params;
   if (locale !== 'en') notFound();
-  const { partner } = await searchParams;
+  const { partner } = readCommercialAttribution(await searchParams);
   const destination = getForeignersIntakeUrl('en');
   if (destination) redirect(destination);
   return <ForeignersIntakeStart locale="en" partner={partner} />;
