@@ -1,3 +1,4 @@
+import { withCommercialAttribution, type AttributionSearchParams } from '@/lib/commercial-attribution';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -82,10 +83,10 @@ function buildSchemas(locale: ForeignersIntakeLocale) {
     },
   ];
 }
-export async function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersIntakeLocale } = {}) {
+export async function ExtranjerosPageView({ locale = 'es', attribution = {} }: { locale?: ForeignersIntakeLocale; attribution?: AttributionSearchParams } = {}) {
   const copy = foreignersFunnelContent[locale];
   const en = locale === 'en';
-  const intakeHref = getForeignersIntakePath(locale);
+  const intakeHref = withCommercialAttribution(getForeignersIntakePath(locale), attribution);
   const personalWhatsApp = buildWhatsAppHref(en ? 'Hello, I would like guidance about health insurance for my process in Spain.' : 'Hola, quiero orientación sobre un seguro médico para mi trámite en España.');
   const professionalWhatsApp = buildWhatsAppHref(en ? 'Hello, I work with international students or clients and would like to discuss a referral partnership.' : 'Hola, trabajo con estudiantes o clientes extranjeros y quiero consultar una posible colaboración.');
   const googleReviewsData = await getGoogleReviews();
@@ -157,10 +158,10 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
                   <div className={`${styles.situationBody} p-5`}>
                     <h3 className="font-heading text-2xl font-bold leading-tight text-[var(--blue-deep)]">{situation.title}</h3>
                     <p className="mt-3 min-h-14 text-base leading-7 text-[var(--muted)]">{situation.description}</p>
-                    <ForeignersTrackedLink href={getForeignersIntakePath(locale, situation.key)} action="cta_click" label={situation.key === 'renewal-family' ? 'situation_renewal_family' : `situation_${situation.key}`} className={styles.situationAction}>
+                    <ForeignersTrackedLink href={withCommercialAttribution(getForeignersIntakePath(locale, situation.key), attribution)} action="cta_click" label={situation.key === 'renewal-family' ? 'situation_renewal_family' : `situation_${situation.key}`} className={styles.situationAction}>
                       {situation.primaryLabel} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </ForeignersTrackedLink>
-                    <Link href={situation.evidenceHref} className="mt-4 inline-flex text-sm font-semibold text-[var(--blue)] underline decoration-[var(--blue)]/25 underline-offset-4">{situation.evidenceLabel} →</Link>
+                    <Link href={withCommercialAttribution(situation.evidenceHref, attribution)} className="mt-4 inline-flex text-sm font-semibold text-[var(--blue)] underline decoration-[var(--blue)]/25 underline-offset-4">{situation.evidenceLabel} →</Link>
                   </div>
                 </article>
               ))}
@@ -320,6 +321,6 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
   );
 }
 
-export default function ExtranjerosPage() {
-  return <ExtranjerosPageView locale="es" />;
+export default async function ExtranjerosPage({ searchParams }: { searchParams: Promise<AttributionSearchParams> }) {
+  return <ExtranjerosPageView locale="es" attribution={await searchParams} />;
 }

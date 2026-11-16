@@ -1,3 +1,4 @@
+import { withCommercialAttribution, type AttributionSearchParams } from '@/lib/commercial-attribution';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/header';
@@ -85,7 +86,7 @@ function Tracker({ locale }: { locale: 'es' | 'en' }) {
   );
 }
 
-function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey }) {
+function VisaPageBody({ page, locale, pageKey, attribution }: { attribution: AttributionSearchParams; page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey }) {
   const en = locale === 'en';
   const current = page.path[locale];
   const situation: ForeignersIntakeSituation | undefined = pageKey === 'student' ? 'studies' : pageKey === 'nonLucrative' || pageKey === 'digitalNomad' ? 'residence' : undefined;
@@ -127,7 +128,7 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
       <main className="section-pad min-h-screen bg-white pt-28">
         <div className="container-shell max-w-5xl">
           <nav aria-label={en ? 'Breadcrumb' : 'Migas de pan'} className="mb-5 text-sm text-slate-600">
-            {breadcrumb.map((item, index) => <span key={item.href}>{index > 0 && ' / '}<Link href={item.href} className="underline underline-offset-4">{item.label}</Link></span>)}
+            {breadcrumb.map((item, index) => <span key={item.href}>{index > 0 && ' / '}<Link href={withCommercialAttribution(item.href, attribution)} className="underline underline-offset-4">{item.label}</Link></span>)}
           </nav>
           <header className="max-w-4xl">
             <p className="kicker">{en ? 'SPAIN VISA · HEALTH COVER' : 'VISADOS EN ESPAÑA · SEGURO MÉDICO'}</p>
@@ -137,7 +138,7 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
           </header>
 
           <div className="mt-6 flex flex-wrap gap-3" aria-label={en ? 'Enquiry options' : 'Opciones de consulta'}>
-            <Link href={quoteHref} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--blue-deep)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
+            <Link href={withCommercialAttribution(quoteHref, attribution)} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--blue-deep)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
               {en ? 'Request a quote' : 'Solicitar una propuesta'}
             </Link>
             <a href={whatsAppHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[var(--blue)] px-6 py-3 font-semibold text-[var(--blue-deep)] transition-colors hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
@@ -165,7 +166,7 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
             <section className="mt-8" aria-labelledby="visa-route-guides">
               <h2 id="visa-route-guides" className="text-xl font-bold text-[var(--blue-deep)]">{en ? 'Choose the immigration route' : 'Elige el trámite'}</h2>
               <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                {(['student', 'nonLucrative', 'digitalNomad'] as const).map((key) => <Link key={key} href={getPath(key, locale)} className="rounded-xl border border-slate-200 p-4 font-semibold text-[var(--blue)] underline underline-offset-4">{visaKnowledgePages[key].title[locale]} →</Link>)}
+                {(['student', 'nonLucrative', 'digitalNomad'] as const).map((key) => <Link key={key} href={withCommercialAttribution(getPath(key, locale), attribution)} className="rounded-xl border border-slate-200 p-4 font-semibold text-[var(--blue)] underline underline-offset-4">{visaKnowledgePages[key].title[locale]} →</Link>)}
               </div>
             </section>
           )}
@@ -190,9 +191,9 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
           </section>
 
           <nav aria-label={en ? 'Related pages' : 'Páginas relacionadas'} className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-slate-200 py-6">
-            {relatedLinks[locale].map((link) => <Link key={link.href} href={link.href} className="font-semibold text-[var(--blue)] underline underline-offset-4">{link.label} →</Link>)}
-            {pageKey !== 'tracker' && <Link href={getPath('tracker', locale)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Open consulate tracker' : 'Abrir tracker consular'} →</Link>}
-            {pageKey === 'tracker' && <Link href={getPath('hub', locale)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Visa-health hub' : 'Hub de seguro para visados'} →</Link>}
+            {relatedLinks[locale].map((link) => <Link key={link.href} href={withCommercialAttribution(link.href, attribution)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{link.label} →</Link>)}
+            {pageKey !== 'tracker' && <Link href={withCommercialAttribution(getPath('tracker', locale), attribution)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Open consulate tracker' : 'Abrir tracker consular'} →</Link>}
+            {pageKey === 'tracker' && <Link href={withCommercialAttribution(getPath('hub', locale), attribution)} className="font-semibold text-[var(--blue)] underline underline-offset-4">{en ? 'Visa-health hub' : 'Hub de seguro para visados'} →</Link>}
           </nav>
         </div>
       </main>
@@ -201,6 +202,6 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
   );
 }
 
-export function VisaHealthKnowledgePage({ pageKey, locale }: { pageKey: VisaKnowledgePageKey; locale: 'es' | 'en' }) {
-  return <VisaPageBody page={visaKnowledgePages[pageKey]} locale={locale} pageKey={pageKey} />;
+export function VisaHealthKnowledgePage({ pageKey, locale, attribution = {} }: { attribution?: AttributionSearchParams; pageKey: VisaKnowledgePageKey; locale: 'es' | 'en' }) {
+  return <VisaPageBody page={visaKnowledgePages[pageKey]} locale={locale} pageKey={pageKey} attribution={attribution} />;
 }

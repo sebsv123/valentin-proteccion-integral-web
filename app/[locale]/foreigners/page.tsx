@@ -1,3 +1,4 @@
+import type { AttributionSearchParams } from '@/lib/commercial-attribution';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ExtranjerosPageView } from '@/app/extranjeros/page';
@@ -9,8 +10,8 @@ export const metadata: Metadata = {
   openGraph: { title: 'Health insurance for foreigners in Spain | VPI', description: 'Health insurance guidance for studies, visas, residence and renewals in Spain. Some plans may be arranged using a passport before you have an NIE or TIE, depending on the product and insurer.', url: 'https://valentinproteccionintegral.com/en/foreigners', locale: 'en_GB', type: 'website' },
 };
 
-export default async function EnglishForeigners({ params }: { params: Promise<{ locale: string }> }) {
+export default async function EnglishForeigners({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<AttributionSearchParams> }) {
   const { locale } = await params;
   if (locale !== 'en') notFound();
-  return <ExtranjerosPageView locale="en" />;
+  return <ExtranjerosPageView locale="en" attribution={await searchParams} />;
 }

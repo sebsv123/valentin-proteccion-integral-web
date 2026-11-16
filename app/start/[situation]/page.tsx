@@ -1,3 +1,4 @@
+import { readCommercialAttribution } from '@/lib/commercial-attribution';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { ForeignersIntakeStart } from '@/components/extranjeros/foreigners-intake-start';
@@ -7,7 +8,7 @@ export const metadata: Metadata = { title: 'Iniciar consulta | VPI', robots: { i
 
 export default async function StartSituationPage({ params, searchParams }: { params: Promise<{ situation: string }>; searchParams: Promise<{ partner?: string }> }) {
   const { situation: slug } = await params;
-  const { partner } = await searchParams;
+  const { partner } = readCommercialAttribution(await searchParams);
   const situation = getForeignersSituationFromSlug('es', slug);
   if (!situation) notFound();
 

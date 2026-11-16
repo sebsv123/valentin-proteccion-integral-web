@@ -26,7 +26,9 @@
     "test:font-assets": "node --test scripts/root-font-assets.test.ts",
     "test:lcp-delivery": "node --test scripts/business-health-delivery.test.ts scripts/root-font-assets.test.ts",
     "test:security-images": "node --test scripts/next-sharp-security.test.ts",
-    "test:leadform": "node --conditions=react-server --test scripts/lead-form.test.ts scripts/lead-form-route.test.ts"
+    "test:leadform": "node --conditions=react-server --test scripts/lead-form.test.ts scripts/lead-form-route.test.ts",
+    "test:attribution": "node --test scripts/commercial-attribution.test.ts",
+    "test:attribution:rendered": "node scripts/validate-commercial-attribution.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
