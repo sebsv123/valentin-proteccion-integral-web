@@ -1,3 +1,5 @@
+import { trackCommercialCta } from './commercial-cta-analytics.ts';
+
 export const FOREIGNERS_PARTNER_EVENT = 'foreigners_partner' as const;
 
 export const FOREIGNERS_PARTNER_ACTIONS = [
@@ -38,7 +40,6 @@ function resolveEventName(action: ForeignersPartnerAction, label?: string) {
   if (action === 'form_start') return 'foreigners_partner_form_start';
   if (action === 'form_submit' || action === 'form_submit_success') return 'foreigners_partner_form_submit_success';
   if (action === 'form_submit_error') return 'foreigners_partner_form_submit_error';
-  if (action === 'whatsapp_click') return 'foreigners_whatsapp_click';
   if (action === 'google_reviews_click') return 'foreigners_google_reviews_click';
   if (action === 'cta_click') {
     return resolveAudience(label) === 'professional'
@@ -51,6 +52,10 @@ function resolveEventName(action: ForeignersPartnerAction, label?: string) {
 
 export function trackForeignersPartner({ action, label, section }: ForeignersPartnerParams) {
   if (typeof window === 'undefined' || !isKnownAction(action)) return;
+  if (action === 'whatsapp_click') {
+    trackCommercialCta('whatsapp');
+    return;
+  }
 
   const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
   if (!gtag) return;
@@ -66,7 +71,6 @@ export function trackForeignersPartner({ action, label, section }: ForeignersPar
     ...(section ? { cta_location: section } : {}),
     ...(audienceType ? { audience_type: audienceType } : {}),
     ...(action.startsWith('form_') ? { form_type: 'professional_referral' } : {}),
-    ...(action === 'whatsapp_click' ? { destination: 'whatsapp' } : {}),
     ...(action === 'google_reviews_click' ? { destination: 'google_reviews' } : {}),
   });
 }
