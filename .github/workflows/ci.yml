@@ -59,3 +59,6 @@ jobs:
 
       - name: Rendered foreigners metadata contract
         run: npm run test:related:rendered
+
+      - name: English foreigners commercial copy and schema contract
+        run: npm run test:en-foreigners:rendered
