@@ -10,10 +10,10 @@ const products = {
     { name: 'ASISA Health Residents Premium', forWho: 'Personas que ya tienen residencia o visado y necesitan esta modalidad.', copay: 'Sin copagos', waiting: 'Con carencias', term: 'Un año; renovación automática según las condiciones aplicables.' },
   ],
   en: [
-    { name: 'ASISA Health Students', forWho: 'Student visas and study stays.', copay: 'No co-payments', waiting: 'No waiting periods', term: '2 months to 1 year; initial product is non-renewable.' },
-    { name: 'ASISA Health Residents', forWho: 'Residence or long-stay visa processes.', copay: 'No co-payments', waiting: 'No waiting periods', term: 'One year; renewal conditions depend on the product.' },
-    { name: 'ASISA Health Premium', forWho: 'Visa or residence situations requiring another plan.', copay: 'No co-payments', waiting: 'No waiting periods', term: '2 months to 1 year; initial product is non-renewable.' },
-    { name: 'ASISA Health Residents Premium', forWho: 'People who already have residence or a visa and need this plan.', copay: 'No co-payments', waiting: 'Waiting periods apply', term: 'One year; automatic renewal subject to the applicable conditions.' },
+    { name: 'For study stays', forWho: 'Students preparing an application and their stay in Spain.', copay: 'Check the cover required by your study procedure.', waiting: 'Review any waiting periods against the applicable requirements.', term: 'Confirm cover dates, renewal and payment conditions before purchase.' },
+    { name: 'For residence applications', forWho: 'Applicants arranging insurance for a specific residence or long-stay process.', copay: 'Review the policy against the relevant consular instructions.', waiting: 'Confirm that the selected policy meets the requirements for your procedure.', term: 'The individual offer must confirm dates, documents and payment terms.' },
+    { name: 'For people already resident', forWho: 'People already authorised to live in Spain who are reviewing everyday health cover.', copay: 'Some policies may have co-payments.', waiting: 'Some policies may have waiting periods.', term: 'Monthly or instalment payments may be available; this does not automatically make the plan suitable for an initial visa.' },
+    { name: 'For applicants over 70', forWho: 'Senior applicants who need an individual insurance review.', copay: 'Cover depends on the eligible product and the procedure.', waiting: 'Underwriting, health assessment and policy conditions may apply.', term: 'Confirm the actual maximum entry age and an offer suitable for your application; availability is not guaranteed.' },
   ],
 } as const;
 
@@ -21,15 +21,15 @@ export function ForeignersProductComparison({ locale }: ForeignersProductCompari
   const en = locale === 'en';
   const copy = en ? {
     eyebrow: 'Decision guide',
-    title: 'Which ASISA plan may fit your process?',
-    intro: 'These are product-level distinctions from the ASISA 2026 manual. They are not an automatic eligibility or immigration decision: we review your process and the selected policy conditions before arranging cover.',
+    title: 'Choose insurance around your situation',
+    intro: 'We review the insurance solutions we can arrange for your circumstances, comparing requirements, cover and price. These starting points guide our conversation; they are not automatic eligibility or acceptance decisions.',
     forWho: 'Designed for',
     copay: 'Co-payments',
     waiting: 'Waiting periods',
     term: 'Duration and renewal',
-    note: 'The insurer issues the certificate. Travel assistance, repatriation, refund conditions and advance contracting depend on the named product and policy.',
+    note: 'The insurer issues the policy and certificate. Payment options, travel assistance, refund terms and advance contracting depend on the selected policy. We explain the conditions before you buy.',
     decision: 'A simple starting point',
-    steps: ['Student visa or study context → start with Students.', 'Residence or long-stay process → review Residents and its conditions.', 'Need a broader or different structure → ask about the Premium options.', 'Before buying, confirm dates, certificate and conditions for your process.'],
+    steps: ['Tell us your procedure and relevant dates.', 'Compare available cover and price with personal advice.', 'Ask about monthly payments or age eligibility where relevant.', 'Confirm the selected policy and documents before buying.'],
     cta: 'Ask which plan fits my process',
     contact: '/en/contact',
   } : {

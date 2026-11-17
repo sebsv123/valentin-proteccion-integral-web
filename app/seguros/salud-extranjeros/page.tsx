@@ -7,7 +7,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { Shield, CheckCircle2, Phone, Globe, FileCheck, Check, FileText, Heart, Users, Scale, MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
-import { healthForeignersContent } from '@/app/seguros/health-foreigners-content';
+import { healthForeignersContent, englishForeignersDetails } from '@/app/seguros/health-foreigners-content';
 import { AnswerFirstSection } from '@/components/answer-first-section';
 import { ForeignersProductComparison } from '@/components/foreigners-product-comparison';
 import { googleReviewsSummary } from '@/lib/google-reviews';
@@ -114,9 +114,9 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
     inLanguage: 'en',
     url: 'https://valentinproteccionintegral.com/en/insurance/health/foreigners',
     name: 'Valentín Protección Integral',
-    description: 'Health insurance guidance for study visas, residence and long-stay processes in Spain where cover is required.',
+    description: 'Personal health insurance advice in fluent English and Spanish from exclusive insurance agents, with cover reviewed for the specific visa or residence procedure.',
   } : { ...localBusinessSchema, inLanguage: 'es' };
-  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { '@id': 'https://valentinproteccionintegral.com/#organization' }, name: 'Health-insurance guidance for visas and residence in Spain - Valentín Protección Integral', description: 'VPI provides guidance around insurance options and the insurance process; the insurer provides and issues the insurance product.' } : { ...serviceSchema, inLanguage: 'es' };
+  const localizedService = en ? { ...serviceSchema, inLanguage: 'en', provider: { '@id': 'https://valentinproteccionintegral.com/#organization' }, name: 'Health-insurance guidance for visas and residence in Spain - Valentín Protección Integral', description: 'Exclusive insurance agents provide personal advice in fluent English and Spanish, reviewing available cover and payment options for the applicant’s procedure. Eligibility and policy conditions apply; the insurer issues the policy and certificate.' } : { ...serviceSchema, inLanguage: 'es' };
   const localizedFaq = { ...faqSchema, inLanguage: locale, mainEntity: c.faqs.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) };
 
 
@@ -261,7 +261,7 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
                   <div className="relative">
                     <div className="relative bg-white p-2 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/40 overflow-hidden">
                       <Image
-                        src="/images/premium/certificado-oficial.png"
+                        src={en ? "/images/rosa_y_sebastian.jpeg" : "/images/premium/certificado-oficial.png"}
                         alt={c.documentAlt}
                         width={600}
                         height={800}
@@ -285,14 +285,14 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
 
         <AnswerFirstSection
           eyebrow={en ? 'Product differences' : 'Diferencias entre productos'}
-          title={en ? 'Students, Residents and Residents Premium are not interchangeable' : 'Students, Residents y Residents Premium no son intercambiables'}
-          answer={en ? 'ASISA Health Students and ASISA Health Residents are described in the 2026 product manual as no-copayment, no-waiting-period products for different immigration situations. ASISA Health Residents Premium is intended for people who already have residence or a visa: it has no copayments but does have waiting periods.' : 'El manual de producto 2026 describe ASISA Health Students y ASISA Health Residents como productos sin copagos ni carencias para situaciones migratorias distintas. ASISA Health Residents Premium está pensado para personas que ya tienen residencia o visado: no tiene copagos, pero sí periodos de carencia.'}
-          facts={en ? ['Students: student visa, 2 months to 1 year, non-renewable initial product.', 'Residents: residence or long-stay visa, one year; renewal conditions apply.', 'Health Premium: visa/residence, 2 months to 1 year, non-renewable.', 'Certificate, refund, travel assistance and repatriation depend on the named product and policy.'] : ['Students: visado de estudiante, de 2 meses a 1 año y producto inicial no renovable.', 'Residents: residencia o visado de larga estancia, un año y renovación condicionada.', 'Health Premium: visado/residencia, de 2 meses a 1 año y no renovable.', 'Certificado, devolución, asistencia y repatriación dependen del producto y la póliza.']}
+          title={en ? englishForeignersDetails.optionsTitle : 'Students, Residents y Residents Premium no son intercambiables'}
+          answer={en ? englishForeignersDetails.optionsAnswer : 'El manual de producto 2026 describe ASISA Health Students y ASISA Health Residents como productos sin copagos ni carencias para situaciones migratorias distintas. ASISA Health Residents Premium está pensado para personas que ya tienen residencia o visado: no tiene copagos, pero sí periodos de carencia.'}
+          facts={en ? [...englishForeignersDetails.optionsFacts] : ['Students: visado de estudiante, de 2 meses a 1 año y producto inicial no renovable.', 'Residents: residencia o visado de larga estancia, un año y renovación condicionada.', 'Health Premium: visado/residencia, de 2 meses a 1 año y no renovable.', 'Certificado, devolución, asistencia y repatriación dependen del producto y la póliza.']}
         />
 
         <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-6 text-slate-600">
           {en ? (
-            <>For visa and consulate evidence, see the <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/en/visa-health-insurance">Spain visa health-insurance guide</Link>.</>
+            <>For visa and consulate evidence, see the <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/en/visa-health-insurance">Spain visa health-insurance guide</Link>, including <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/en/visa-health-insurance/student-visa">student visas</Link> and <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/en/visa-health-insurance/non-lucrative-residence">non-lucrative residence</Link>.</>
           ) : (
             <>Para consultar las fuentes sobre visados y requisitos consulares, revisa la <Link className="font-semibold text-[var(--blue)] underline underline-offset-4" href="/visados/seguro-medico">guía de seguro médico para visados en España</Link>.</>
           )}
@@ -300,49 +300,59 @@ export function SaludExtranjerosPageView({ locale = 'es' }: { locale?: 'es' | 'e
 
         <section className="mx-auto max-w-4xl px-4 py-10 text-slate-700">
           <h2 className="mb-6 text-2xl font-bold text-slate-900">
-            {en ? 'Arranging ASISA Health Students before you arrive' : 'Contratar ASISA Health Students antes de llegar a España'}
+            {en ? englishForeignersDetails.planningTitle : 'Contratar ASISA Health Students antes de llegar a España'}
           </h2>
           <div className="space-y-5">
             <div>
               <h3 className="font-semibold text-slate-900">
-                {en ? 'Can I arrange ASISA Health Students before travelling to Spain?' : '¿Puedo contratar ASISA Health Students antes de viajar a España?'}
+                {en ? englishForeignersDetails.planningQuestions[0].q : '¿Puedo contratar ASISA Health Students antes de viajar a España?'}
               </h3>
               <p className="mt-1 leading-6">
                 {en
-                  ? 'Yes. ASISA currently states that Health Students can be contracted online from abroad before travelling to Spain. VPI can guide you through the insurance process before your move.'
+                  ? englishForeignersDetails.planningQuestions[0].a
                   : 'Sí. ASISA indica actualmente que Health Students puede contratarse online desde el extranjero antes de viajar a España. VPI puede orientarte durante el proceso del seguro antes de tu traslado.'}
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-900">
-                {en ? 'Do I need a NIE or a Spanish bank account to arrange it?' : '¿Necesito NIE o una cuenta bancaria española para contratarlo?'}
+                {en ? englishForeignersDetails.planningQuestions[1].q : '¿Necesito NIE o una cuenta bancaria española para contratarlo?'}
               </h3>
               <p className="mt-1 leading-6">
                 {en
-                  ? 'For ASISA Health Students, ASISA currently states that neither a NIE nor a Spanish bank account is required for the online contracting process. Product and identity requirements must still be checked for the specific application.'
+                  ? englishForeignersDetails.planningQuestions[1].a
                   : 'Para ASISA Health Students, ASISA indica actualmente que no se necesita NIE ni cuenta bancaria española para la contratación online. Los requisitos del producto y de identificación deben comprobarse para cada caso concreto.'}
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-900">
-                {en ? 'Who issues the insurance certificate for the visa application?' : '¿Quién emite el certificado del seguro para el visado?'}
+                {en ? englishForeignersDetails.planningQuestions[2].q : '¿Quién emite el certificado del seguro para el visado?'}
               </h3>
               <p className="mt-1 leading-6">
                 {en
-                  ? 'ASISA is the insurer and issues the policy and corresponding certificate after contracting. VPI does not issue the insurance certificate.'
+                  ? englishForeignersDetails.planningQuestions[2].a
                   : 'ASISA es la aseguradora y emite la póliza y el certificado correspondiente tras la contratación. VPI no emite el certificado del seguro.'}
               </p>
             </div>
           </div>
-          <p className="mt-5 text-sm leading-6 text-slate-600">
-            {en ? 'Product source: ' : 'Fuente del producto: '}
+          {!en && <p className="mt-5 text-sm leading-6 text-slate-600">
+            {'Fuente del producto: '}
             <a className="font-semibold text-[var(--blue)] underline underline-offset-4" href="https://www.asisa.es/seguros-medicos/extranjeros/estudios">
               ASISA Health Students
             </a>
-          </p>
+          </p>}
         </section>
 
         <ForeignersProductComparison locale={locale} />
+
+        {en && (
+          <section className="py-16 bg-white border-b border-slate-100" aria-labelledby="foreigners-seniors-title">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 id="foreigners-seniors-title" className="text-2xl sm:text-3xl font-bold text-slate-900">{englishForeignersDetails.seniorsTitle}</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">{englishForeignersDetails.seniorsIntro}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{englishForeignersDetails.seniorsConditions}</p>
+            </div>
+          </section>
+        )}
 
         {/* SECCIÓN PERFILES — ¿Para quién es este seguro? */}
         <section className="py-16 bg-white border-b border-slate-100">
