@@ -5,6 +5,7 @@ const files = {
   form: readFileSync('components/foreigners-partner-form.tsx', 'utf8'),
   api: readFileSync('app/api/professional-referral/route.ts', 'utf8'),
   analytics: readFileSync('lib/foreigners-partner-analytics.ts', 'utf8'),
+  ctaAnalytics: readFileSync('lib/commercial-cta-analytics.ts', 'utf8'),
 };
 
 const requiredSnippets = [
@@ -24,6 +25,8 @@ const requiredSnippets = [
   ['success state', files.form, "'success'"],
   ['error state', files.form, "'error'"],
   ['generic event', files.analytics, 'foreigners_partner'],
+  ['shared WhatsApp dispatch', files.analytics, "trackCommercialCta('whatsapp')"],
+  ['commercial CTA event', files.ctaAnalytics, "event: 'vpi_cta_click'"],
   ['canonical', files.page, 'site.domain}/extranjeros'],
   ['webpage schema', files.page, "'@type': 'WebPage'"],
   ['breadcrumb schema', files.page, "'@type': 'BreadcrumbList'"],
@@ -50,7 +53,6 @@ const requiredActions = [
 const requiredEvents = [
   'foreigners_particular_cta_click',
   'foreigners_partner_cta_click',
-  'foreigners_whatsapp_click',
   'foreigners_google_reviews_click',
   'foreigners_partner_form_start',
   'foreigners_partner_form_submit_success',

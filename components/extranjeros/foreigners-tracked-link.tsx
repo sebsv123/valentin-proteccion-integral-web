@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { isGoogleFormsIntakePath, trackCommercialCta } from '@/lib/commercial-cta-analytics';
 import type { ReactNode } from 'react';
 import type { ForeignersPartnerAction } from '@/lib/extranjeros/foreigners-partner-analytics';
 import { trackForeignersPartner } from '@/lib/extranjeros/foreigners-partner-analytics';
@@ -15,7 +16,13 @@ type ForeignersTrackedLinkProps = {
 };
 
 export function ForeignersTrackedLink({ href, action, label, className, children, external = false }: ForeignersTrackedLinkProps) {
-  const onClick = () => trackForeignersPartner({ action, label });
+  const onClick = () => {
+    if (isGoogleFormsIntakePath(href)) {
+      trackCommercialCta('google_forms');
+    } else {
+      trackForeignersPartner({ action, label });
+    }
+  };
 
   if (href.startsWith('#') || href.startsWith('/')) {
     return (

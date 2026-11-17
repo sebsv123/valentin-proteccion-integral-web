@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WhatsAppLink } from '@/components/whatsapp-link';
+import { ForeignersTrackedLink } from '@/components/extranjeros/foreigners-tracked-link';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { visaKnowledgeLastVerified, visaKnowledgePages, type VisaKnowledgePage, type VisaKnowledgePageKey } from '@/lib/visa-health-knowledge';
@@ -137,12 +139,12 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
           </header>
 
           <div className="mt-6 flex flex-wrap gap-3" aria-label={en ? 'Enquiry options' : 'Opciones de consulta'}>
-            <Link href={quoteHref} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--blue-deep)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
+            <ForeignersTrackedLink href={quoteHref} action="cta_click" label="visa_quote" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--blue-deep)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
               {en ? 'Request a quote' : 'Solicitar una propuesta'}
-            </Link>
-            <a href={whatsAppHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[var(--blue)] px-6 py-3 font-semibold text-[var(--blue-deep)] transition-colors hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
+            </ForeignersTrackedLink>
+            <WhatsAppLink href={whatsAppHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[var(--blue)] px-6 py-3 font-semibold text-[var(--blue-deep)] transition-colors hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)]">
               {en ? 'Ask on WhatsApp' : 'Consultar por WhatsApp'}
-            </a>
+            </WhatsAppLink>
           </div>
 
           {pageKey === 'tracker' ? <Tracker locale={locale} /> : (

@@ -1,6 +1,7 @@
 'use client';
 
-import { MouseEvent, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { trackCommercialCta } from '@/lib/commercial-cta-analytics';
 
 interface WhatsAppLinkProps {
   href: string;
@@ -19,15 +20,7 @@ export function WhatsAppLink({
   rel,
   'aria-label': ariaLabel,
 }: WhatsAppLinkProps) {
-  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'Contactar', {
-        event_category: 'engagement',
-        event_label: 'whatsapp_click',
-      });
-    }
-    // Let the default navigation happen naturally
-  };
+  const handleClick = () => trackCommercialCta('whatsapp');
 
   return (
     <a

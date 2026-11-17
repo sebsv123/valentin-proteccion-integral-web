@@ -1,3 +1,5 @@
+import { trackCommercialCta } from './commercial-cta-analytics.ts';
+
 /**
  * Helper functions for Google Analytics 4 and GTM tracking
  */
@@ -31,14 +33,12 @@ export function trackEvent(eventName: string, params?: Record<string, unknown>):
 }
 
 /**
- * Track WhatsApp click conversion
+ * Track WhatsApp CTA intent through the existing GTM data layer
  * @param location - Where the button was clicked (e.g., 'hero', 'niveles', 'cta-final')
  */
-export function trackWhatsAppClick(location: string): void {
-  trackEvent('Contactar', {
-    method: 'WhatsApp',
-    location: location,
-  });
+export function trackWhatsAppClick(_location: string): void {
+  // Keep callers compatible; free-form location labels are not sent.
+  trackCommercialCta('whatsapp');
 }
 
 /** Track clicks to Rosa's official SegurCaixa Adeslas agent-search channel. No PII is sent. */
