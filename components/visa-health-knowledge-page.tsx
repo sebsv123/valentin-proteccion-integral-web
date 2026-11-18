@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { BlueprintReferralProvider, ReferralLink as Link } from '@/components/extranjeros/blueprint-referral';
+import { blueprintWhatsAppMessage, type BlueprintPartner } from '@/lib/blueprint-referral';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { visaKnowledgeLastVerified, visaKnowledgePages, type VisaKnowledgePage, type VisaKnowledgePageKey } from '@/lib/visa-health-knowledge';
@@ -85,12 +86,12 @@ function Tracker({ locale }: { locale: 'es' | 'en' }) {
   );
 }
 
-function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey }) {
+function VisaPageBody({ page, locale, pageKey, partner }: { page: VisaKnowledgePage; locale: 'es' | 'en'; pageKey: VisaKnowledgePageKey; partner?: BlueprintPartner }) {
   const en = locale === 'en';
   const current = page.path[locale];
   const situation: ForeignersIntakeSituation | undefined = pageKey === 'student' ? 'studies' : pageKey === 'nonLucrative' || pageKey === 'digitalNomad' ? 'residence' : undefined;
   const quoteHref = getForeignersIntakePath(locale, situation);
-  const whatsAppHref = buildWhatsAppHref(en
+  const whatsAppHref = buildWhatsAppHref(partner ? blueprintWhatsAppMessage(locale) : en
     ? `Hello, I would like advice about health insurance for ${page.title.en}.`
     : `Hola, quisiera asesoramiento sobre un seguro médico para ${page.title.es}.`);
   const breadcrumb = [
@@ -177,6 +178,19 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
             </section>
           )}
 
+          {!partner && (pageKey === 'hub' || pageKey === 'nonLucrative') && (
+            <section className="mt-8 rounded-2xl border border-slate-200 p-5" aria-labelledby="relocation-support">
+              <h2 id="relocation-support" className="text-xl font-bold text-[var(--blue-deep)]">{en ? 'Planning the rest of your move' : 'Preparar el resto del traslado'}</h2>
+              <p className="mt-2 leading-relaxed text-slate-700">{en ? 'Insurance is one part of a move to Spain. For separate relocation and residence support, you can explore ' : 'El seguro es una parte del traslado a España. Para apoyo independiente con el traslado y la residencia, puedes consultar ' }<a href="https://blueprint-spain.com/" className="font-semibold text-[var(--blue)] underline">Blueprint Spain</a>{en ? ', a VPI collaborator. Confirm the scope, fees and suitability of their services directly with them. VPI provides insurance advice as a commercial brand of exclusive insurance agents; administrative decisions remain with the competent authority.' : ', colaborador de VPI. Confirma directamente el alcance, los honorarios y la adecuación de sus servicios. VPI presta asesoramiento asegurador como marca comercial de agentes exclusivos; las decisiones administrativas corresponden a la autoridad competente.'}</p>
+            </section>
+          )}
+          {!partner && pageKey === 'nonLucrative' && (
+            <section className="mt-8 rounded-2xl border border-slate-200 p-5" aria-labelledby="us-background-checks">
+              <h2 id="us-background-checks" className="text-xl font-bold text-[var(--blue-deep)]">{en ? 'US background checks: separate from insurance' : 'Antecedentes estadounidenses: un trámite distinto del seguro'}</h2>
+              <p className="mt-2 leading-relaxed text-slate-700">{en ? 'If your application requires an FBI Identity History Summary, use the ' : 'Si tu solicitud exige un certificado de antecedentes del FBI, consulta las '}<a href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks" className="font-semibold text-[var(--blue)] underline">{en ? 'official FBI instructions' : 'instrucciones oficiales del FBI'}</a>{en ? ' and your competent consulate’s checklist for authentication and translation requirements. For practical help obtaining fingerprints while in Madrid, consider ' : ' y la lista de tu consulado competente sobre autenticación y traducción. Para ayuda práctica con la toma de huellas en Madrid, puedes consultar el '}<a href="https://blueprint-spain.com/madrid-fbi-background-fingerprints" className="font-semibold text-[var(--blue)] underline">{en ? 'Blueprint Spain’s Madrid fingerprinting service' : 'servicio de huellas en Madrid de Blueprint Spain'}</a>{en ? '. Check availability, scope and fees directly. This is a private service; the FBI issues the summary and the authority assesses your application.' : '. Confirma disponibilidad, alcance y honorarios directamente. Es un servicio privado: el FBI emite el certificado y la autoridad evalúa el expediente.'}</p>
+            </section>
+          )}
+
           <section className="mt-8 rounded-2xl border border-slate-200 p-5" aria-labelledby="official-sources">
             <h2 id="official-sources" className="text-xl font-bold text-[var(--blue-deep)]">{en ? 'Official sources' : 'Fuentes oficiales'}</h2>
             <ul className="mt-3 space-y-3">{page.sources.map((source) => <li key={source.url} className="leading-relaxed"><a className="font-semibold text-[var(--blue)] underline underline-offset-4" href={source.url} target="_blank" rel="noreferrer">{source.label}</a><span className="block text-sm text-slate-600">{source.scope}</span></li>)}</ul>
@@ -196,11 +210,11 @@ function VisaPageBody({ page, locale, pageKey }: { page: VisaKnowledgePage; loca
           </nav>
         </div>
       </main>
-      <Footer />
+      <Footer partner={partner} />
     </>
   );
 }
 
-export function VisaHealthKnowledgePage({ pageKey, locale }: { pageKey: VisaKnowledgePageKey; locale: 'es' | 'en' }) {
-  return <VisaPageBody page={visaKnowledgePages[pageKey]} locale={locale} pageKey={pageKey} />;
+export function VisaHealthKnowledgePage({ pageKey, locale, partner }: { pageKey: VisaKnowledgePageKey; locale: 'es' | 'en'; partner?: BlueprintPartner }) {
+  return <BlueprintReferralProvider partner={partner}><VisaPageBody page={visaKnowledgePages[pageKey]} locale={locale} pageKey={pageKey} partner={partner} /></BlueprintReferralProvider>;
 }

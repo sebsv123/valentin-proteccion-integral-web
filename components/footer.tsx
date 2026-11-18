@@ -1,3 +1,5 @@
+import { withBlueprintReferral, blueprintWhatsAppMessage, type BlueprintPartner } from '@/lib/blueprint-referral';
+import { getForeignersIntakePath } from '@/lib/foreigners-intake';
 import Link from 'next/link';
 import { buildWhatsAppHref, mainNav, products, site } from '@/lib/products';
 import { siteConfig } from '@/lib/site-config';
@@ -8,10 +10,11 @@ import { WhatsAppButton } from './whatsapp-button';
 import { CookieAwareMap } from './cookie-aware-map';
 import { VpiBrandLockup } from './vpi-brand-lockup';
 
-export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
+export function Footer({ healthVariant = false, partner }: { healthVariant?: boolean; partner?: BlueprintPartner }) {
   const isEnglish = useLocale() === 'en';
   const [rosaActivityResponsible, sebastianActivityResponsible] = siteConfig.activityResponsiblePersons;
-  const linkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', (href === '/contacto' ? '/contact' : href === '/internacional' ? '/international' : href === '/extranjeros' ? '/foreigners' : href === '/seguros' ? '/insurance' : href === '/seguros/salud' ? '/insurance/health' : href === '/seguros/salud-extranjeros' ? '/insurance/health/foreigners' : href) as '/' | '/international' | '/contact' | '/foreigners' | '/insurance' | '/insurance/health' | '/insurance/health/foreigners') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/autonomos': '/en/for/self-employed', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href : href;
+  const baseLinkHref = (href: string) => ['/', '/internacional', '/contacto', '/extranjeros', '/seguros', '/seguros/salud', '/seguros/salud-extranjeros'].includes(href) ? localizedPath(isEnglish ? 'en' : 'es', (href === '/contacto' ? '/contact' : href === '/internacional' ? '/international' : href === '/extranjeros' ? '/foreigners' : href === '/seguros' ? '/insurance' : href === '/seguros/salud' ? '/insurance/health' : href === '/seguros/salud-extranjeros' ? '/insurance/health/foreigners' : href) as '/' | '/international' | '/contact' | '/foreigners' | '/insurance' | '/insurance/health' | '/insurance/health/foreigners') : isEnglish ? ({ '/como-te-ayudamos': '/en/how-we-help', '/sobre-nosotros': '/en/about-us', '/opiniones': '/en/reviews', '/aviso-legal': '/en/legal-notice', '/privacidad': '/en/privacy', '/cookies': '/en/cookies', '/empresas': '/en/business', '/empresas/salud': '/en/business/health-insurance', '/empresas/ciberseguridad': '/en/business/cybersecurity', '/autonomos': '/en/for/self-employed', '/para/autonomos': '/en/for/self-employed', '/para/familias': '/en/for/families', '/para/jovenes-profesionales': '/en/for/young-professionals', '/para/seniors': '/en/for/seniors', '/extranjeros/alquileres': '/en/foreigners/rentals' } as Record<string, string>)[href] ?? href : href;
+  const linkHref = (href: string) => withBlueprintReferral(partner && href === '/contacto' ? getForeignersIntakePath(isEnglish ? 'en' : 'es') : baseLinkHref(href), partner);
   const footerLabel = (label: string) => isEnglish ? ({ Inicio: 'Home', Internacional: 'International', Seguros: 'Insurance', 'Cómo te ayudamos': 'How we help', 'Sobre nosotros': 'About us', Opiniones: 'Reviews', Zonas: 'Areas', Contacto: 'Contact' } as Record<string, string>)[label] ?? label : label;
   const productLabel = (label: string) => isEnglish ? ({ SALUD: 'HEALTH', MASCOTAS: 'PETS', DENTAL: 'DENTAL', ACCIDENTES: 'ACCIDENTS', VIAJE: 'TRAVEL', DECESOS: 'FUNERAL' } as Record<string, string>)[label] ?? label : label;
   return (
@@ -25,7 +28,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
             </div>
             <p className="max-w-xl text-base leading-8 text-[var(--muted)]">{isEnglish ? 'Valentín Protección Integral offers clear insurance guidance and support before and after you buy.' : healthVariant ? 'Te ayudamos a entender qué contratas y seguimos a tu lado cuando necesitas utilizar tu seguro.' : 'Valentín Protección Integral ofrece orientación cercana en seguros y acompañamiento antes y después de contratar.'}</p>
             <div className="flex flex-wrap gap-3">
-              <WhatsAppButton href={buildWhatsAppHref(isEnglish ? 'Hello, I would like to speak with Valentín Protección Integral on WhatsApp.' : 'Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
+              <WhatsAppButton href={buildWhatsAppHref(partner ? blueprintWhatsAppMessage(isEnglish ? 'en' : 'es') : isEnglish ? 'Hello, I would like to speak with Valentín Protección Integral on WhatsApp.' : 'Hola, quiero hablar por WhatsApp con Valentín Protección Integral.')} location="footer-cta" className="btn-whatsapp !px-5 !py-3">WhatsApp</WhatsAppButton>
               <Link href={linkHref('/contacto')} className="btn-ghost !px-5 !py-3">{isEnglish ? 'Contact form' : 'Formulario'}</Link>
             </div>
           </div>
@@ -66,7 +69,7 @@ export function Footer({ healthVariant = false }: { healthVariant?: boolean }) {
               <a href="mailto:contacto@valentinproteccionintegral.com" className="block hover:text-[var(--blue)] text-sm">contacto@valentinproteccionintegral.com</a>
               <p className="font-medium text-[var(--blue-deep)] text-sm">Boadilla del Monte, Madrid</p>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--blue)] text-sm">@segurosvalentin</a>
-              <WhatsAppButton href={buildWhatsAppHref(isEnglish ? 'Hello, I would like clear insurance guidance.' : 'Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)] text-sm">{isEnglish ? 'Open WhatsApp' : 'Abrir WhatsApp'}</WhatsAppButton>
+              <WhatsAppButton href={buildWhatsAppHref(partner ? blueprintWhatsAppMessage(isEnglish ? 'en' : 'es') : isEnglish ? 'Hello, I would like clear insurance guidance.' : 'Hola, quiero una orientación sobre seguros.')} location="footer-contacto" className="block hover:text-[var(--blue)] text-sm">{isEnglish ? 'Open WhatsApp' : 'Abrir WhatsApp'}</WhatsAppButton>
             </div>
             <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] shadow-sm">
               <CookieAwareMap />

@@ -1,5 +1,7 @@
 'use client';
 
+import { useBlueprintPartner } from '@/components/extranjeros/blueprint-referral';
+import { withBlueprintReferral } from '@/lib/blueprint-referral';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { productPathnames, unavailableLocalePathnames } from '@/lib/product-locales';
@@ -42,6 +44,7 @@ function toInternalPath(pathname: string) {
 }
 
 export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?: 'dark' | 'light'; appearance?: 'pill' | 'plain' }) {
+  const partner = useBlueprintPartner();
   const locale = useLocale() as BlogLocale;
   const pathname = usePathname();
   const t = useTranslations('common');
@@ -62,19 +65,23 @@ export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?
   const blogSlug = effectivePathname.startsWith('/blog/') ? effectivePathname.slice('/blog/'.length) : undefined;
   const blogPost = blogSlug ? getBlogPostBySlug(locale, blogSlug) : undefined;
   const blogEquivalent = effectivePathname === '/blog' || Boolean(blogPost?.slug.en);
-  const supported = supportedPathnames.has(effectivePathname) || blogEquivalent;
+  const visaPath = effectivePathname.startsWith('/visa-health-insurance') || effectivePathname.startsWith('/visados/seguro-medico');
+  const visaPairs = [['/visados/seguro-medico', '/en/visa-health-insurance'], ['/visados/seguro-medico/estudios', '/en/visa-health-insurance/student-visa'], ['/visados/seguro-medico/residencia-no-lucrativa', '/en/visa-health-insurance/non-lucrative-residence'], ['/visados/seguro-medico/teletrabajo-internacional', '/en/visa-health-insurance/digital-nomad'], ['/visados/seguro-medico/requisitos-consulares', '/en/visa-health-insurance/consulate-requirements']];
+  const visaPair = partner ? visaPairs.find((pair) => pair.includes(pathname) || pair.includes(`/en${effectivePathname}`)) : undefined;
+  const supported = (visaPath && Boolean(visaPair)) || supportedPathnames.has(effectivePathname) || blogEquivalent;
 
   if (!supported || localeUnavailable) {
     return <span className={`inline-flex min-w-[62px] shrink-0 justify-center whitespace-nowrap text-xs font-semibold ${tone === 'light' ? 'text-white/45' : 'text-[#0b2e6b]/45'}`} title="English version not available for this page" aria-disabled="true">ES / EN</span>;
   }
 
   const targetLocale = locale === 'es' ? 'en' : 'es';
+  if (visaPair) return <a href={withBlueprintReferral(visaPair[targetLocale === 'en' ? 1 : 0], partner)} className={controlClassName} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}>ES / EN</a>;
   if (effectivePathname === '/blog') {
     return <a href={targetLocale === 'en' ? '/en/blog' : '/blog'} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (blogPost?.slug.en) {
     const targetHref = targetLocale === 'en' ? `/en/blog/${blogPost.slug.en}` : `/blog/${blogPost.slug.es}`;
-    return <a href={targetHref} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
+    return <a href={withBlueprintReferral(targetHref, partner)} aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`} className={controlClassName}><span className={languageText(locale === 'es')}>ES</span><span className={appearance === 'plain' ? activeText : mutedText}>/</span><span className={languageText(locale === 'en')}>EN</span></a>;
   }
   if (effectivePathname === '/') {
     return (
@@ -94,7 +101,7 @@ export function LanguageSwitcher({ tone = 'dark', appearance = 'pill' }: { tone?
     : ({ '/para/autonomos': '/autonomos', '/contacto': '/contacto', '/extranjeros': '/extranjeros', '/extranjeros/alquileres': '/extranjeros/alquileres', '/seguros': '/seguros', '/seguros/salud': '/seguros/salud', '/seguros/salud-extranjeros': '/seguros/salud-extranjeros', '/internacional': '/internacional', '/internacional/peru': '/internacional/peru', '/internacional/australia': '/internacional/australia', '/internacional/india': '/internacional/india', '/internacional/corea-del-sur': '/internacional/corea-del-sur', '/como-te-ayudamos': '/como-te-ayudamos', '/sobre-nosotros': '/sobre-nosotros', '/opiniones': '/opiniones', '/aviso-legal': '/aviso-legal', '/privacidad': '/privacidad', '/cookies': '/cookies', '/empresas': '/empresas', '/empresas/salud': '/empresas/salud', '/empresas/ciberseguridad': '/empresas/ciberseguridad', '/para/familias': '/para/familias', '/para/jovenes-profesionales': '/para/jovenes-profesionales', '/para/seniors': '/para/seniors', ...Object.fromEntries(Object.keys(productPathnames).map((path) => [path, path])) } as Record<string, string>)[effectivePathname] ?? '/';
   return (
     <a
-      href={targetHref}
+      href={withBlueprintReferral(targetHref, partner)}
       aria-label={`${t('language')}: ${targetLocale === 'en' ? t('english') : t('spanish')}`}
       className={controlClassName}
     >

@@ -1,3 +1,4 @@
+import { getBlueprintPartner } from '@/lib/blueprint-referral';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { ForeignersIntakeStart } from '@/components/extranjeros/foreigners-intake-start';
@@ -12,7 +13,7 @@ export default async function EnglishStartSituationPage({ params, searchParams }
   const situation = getForeignersSituationFromSlug('en', slug);
   if (!situation) notFound();
 
-  const destination = getForeignersIntakeUrl('en', situation);
+  const destination = getForeignersIntakeUrl('en', situation, getBlueprintPartner(partner));
   if (destination) redirect(destination);
   return <ForeignersIntakeStart locale="en" situation={situation} partner={partner} />;
 }

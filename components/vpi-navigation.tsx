@@ -1,6 +1,8 @@
 "use client";
 
-import Link from 'next/link';
+import { ReferralLink as Link, useBlueprintPartner } from '@/components/extranjeros/blueprint-referral';
+import { blueprintWhatsAppMessage } from '@/lib/blueprint-referral';
+import { getForeignersIntakePath } from '@/lib/foreigners-intake';
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Instagram, Phone, X } from 'lucide-react';
 import { site, buildWhatsAppHref, WHATSAPP_MESSAGE_DEFAULT } from '@/lib/products';
@@ -53,18 +55,20 @@ export function VpiDesktopNavigation({ locale }: { locale: 'es' | 'en' }) {
 
 export function VpiHeaderActions({ locale, trackingLocation }: { locale: 'es' | 'en'; trackingLocation: string }) {
   const isEnglish = locale === 'en';
-  const whatsappHref = buildWhatsAppHref(isEnglish ? 'Hello, I would like help choosing insurance.' : WHATSAPP_MESSAGE_DEFAULT);
+  const partner = useBlueprintPartner();
+  const whatsappHref = buildWhatsAppHref(partner ? blueprintWhatsAppMessage(locale) : isEnglish ? 'Hello, I would like help choosing insurance.' : WHATSAPP_MESSAGE_DEFAULT);
   return <div className="flex items-center justify-end gap-1 whitespace-nowrap">
     <LanguageSwitcher tone="dark" appearance="plain" />
     <a href={whatsappHref} target="_blank" rel="noreferrer" onClick={() => trackWhatsAppClick(trackingLocation)} className="inline-flex min-h-10 items-center gap-1 rounded-full px-2 text-[11px] font-bold text-current hover:bg-white/55" aria-label="WhatsApp"><WhatsAppIcon className="h-4 w-4 text-[#128c7e]" />WhatsApp</a>
-    <Link href={getVpiRoute(locale, 'contact')} className="inline-flex min-h-10 items-center justify-center rounded-full bg-[#1268c4] px-3 text-center text-[11px] font-bold text-white shadow-[0_8px_22px_rgba(18,104,196,0.2)] transition hover:bg-[#0e58a7] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1268c4] focus-visible:ring-offset-2">{isEnglish ? 'Tell us what you need' : 'Cuéntanos qué necesitas'}</Link>
+    <Link href={partner ? getForeignersIntakePath(locale) : getVpiRoute(locale, 'contact')} className="inline-flex min-h-10 items-center justify-center rounded-full bg-[#1268c4] px-3 text-center text-[11px] font-bold text-white shadow-[0_8px_22px_rgba(18,104,196,0.2)] transition hover:bg-[#0e58a7] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1268c4] focus-visible:ring-offset-2">{isEnglish ? 'Tell us what you need' : 'Cuéntanos qué necesitas'}</Link>
   </div>;
 }
 
 export function VpiMobileNavigation({ id, open, locale, onClose, trackingLocation }: { id: string; open: boolean; locale: 'es' | 'en'; onClose: () => void; trackingLocation: string }) {
   const isEnglish = locale === 'en';
   const nav = getVpiNavigation(locale);
-  const whatsappHref = buildWhatsAppHref(isEnglish ? 'Hello, I would like help choosing insurance.' : WHATSAPP_MESSAGE_DEFAULT);
+  const partner = useBlueprintPartner();
+  const whatsappHref = buildWhatsAppHref(partner ? blueprintWhatsAppMessage(locale) : isEnglish ? 'Hello, I would like help choosing insurance.' : WHATSAPP_MESSAGE_DEFAULT);
   const linkClass = 'rounded-xl py-2 text-lg font-semibold text-[#0b2e6b] hover:text-[#1268c4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1268c4]/40';
   const sectionTitle = 'mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[#1268c4]';
   return <div id={id} role="dialog" aria-modal="true" aria-label={isEnglish ? 'Navigation menu' : 'Menú de navegación'} aria-hidden={!open} inert={!open}

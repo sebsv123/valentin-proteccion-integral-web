@@ -54,6 +54,9 @@ jobs:
       - name: Native image security regression tests
         run: npm run test:security-images
 
+      - name: Blueprint referral contracts
+        run: npm run test:blueprint
+
       - name: Build
         run: npm run build
 
@@ -62,3 +65,6 @@ jobs:
 
       - name: English foreigners commercial copy and schema contract
         run: npm run test:en-foreigners:rendered
+
+      - name: Blueprint referral navigation and redirects
+        run: npm run test:blueprint:rendered

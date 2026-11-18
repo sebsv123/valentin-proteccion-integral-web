@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation';
 import { WhatsAppIcon } from './ui/whatsapp-icon';
 import { buildWhatsAppHref, getWhatsAppMessage } from '@/lib/products';
 import { trackWhatsAppClick } from '@/lib/analytics';
+import { useBlueprintPartner } from '@/components/extranjeros/blueprint-referral';
+import { blueprintWhatsAppMessage } from '@/lib/blueprint-referral';
 import { useLocale } from 'next-intl';
 
 type StickyWhatsAppProps = {
@@ -17,6 +19,7 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
   const [inlineVisible, setInlineVisible] = useState(false);
   const pathname = usePathname();
   const locale = useLocale();
+  const partner = useBlueprintPartner();
   const isEnglish = locale === 'en';
 
   useEffect(() => {
@@ -75,7 +78,7 @@ export function StickyWhatsApp({ mobileVariant = 'bar', mobileAvoidSelector }: S
     }, 200);
   };
 
-  const message = isEnglish ? 'Hello, I would like clear insurance guidance.' : getWhatsAppMessage(pathname);
+  const message = partner ? blueprintWhatsAppMessage(isEnglish ? 'en' : 'es') : isEnglish ? 'Hello, I would like clear insurance guidance.' : getWhatsAppMessage(pathname);
   const desktopHref = buildWhatsAppHref(message);
   const mobileHref = buildWhatsAppHref(message);
   const compactMobile = inlineVisible && mobileVariant === 'bar' && !hideMobile;
