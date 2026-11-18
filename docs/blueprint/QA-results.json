@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-11-18",
+  "environment": "local production build",
+  "results": [
+    {
+      "device": "desktop",
+      "actualQuoteCTAClick": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "welcome": true,
+      "canonical": true,
+      "noOverflow": true,
+      "allIntakeCTAsAttributed": true,
+      "whatsapp": true,
+      "guideNavigation": true,
+      "languageSwitch": true,
+      "genericUnchanged": true,
+      "browserErrors": []
+    },
+    {
+      "device": "mobile",
+      "actualQuoteCTAClick": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "welcome": true,
+      "canonical": true,
+      "noOverflow": true,
+      "allIntakeCTAsAttributed": true,
+      "whatsapp": true,
+      "guideNavigation": true,
+      "languageSwitch": true,
+      "genericUnchanged": true,
+      "browserErrors": []
+    },
+    {
+      "publicFormStatus": 200,
+      "quoteConsentVisible": true,
+      "submission": false
+    }
+  ]
+}

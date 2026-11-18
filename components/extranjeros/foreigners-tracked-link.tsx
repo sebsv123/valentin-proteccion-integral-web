@@ -1,6 +1,6 @@
 "use client";
 
-import Link from 'next/link';
+import { ReferralLink as Link } from './blueprint-referral';
 import type { ReactNode } from 'react';
 import type { ForeignersPartnerAction } from '@/lib/extranjeros/foreigners-partner-analytics';
 import { trackForeignersPartner } from '@/lib/extranjeros/foreigners-partner-analytics';

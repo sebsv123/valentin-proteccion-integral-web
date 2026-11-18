@@ -1,6 +1,7 @@
+import { BlueprintReferralProvider, ReferralLink as Link } from '@/components/extranjeros/blueprint-referral';
+import { getBlueprintPartner, withBlueprintReferral, blueprintWhatsAppMessage, type BlueprintPartner } from '@/lib/blueprint-referral';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { AnswerFirstSection } from '@/components/extranjeros/answer-first-section';
 import { FAQAccordion } from '@/components/extranjeros/faq-accordion';
@@ -82,11 +83,11 @@ function buildSchemas(locale: ForeignersIntakeLocale) {
     },
   ];
 }
-export async function ExtranjerosPageView({ locale = 'es' }: { locale?: ForeignersIntakeLocale } = {}) {
+export async function ExtranjerosPageView({ locale = 'es', partner }: { locale?: ForeignersIntakeLocale; partner?: BlueprintPartner } = {}) {
   const copy = foreignersFunnelContent[locale];
   const en = locale === 'en';
-  const intakeHref = getForeignersIntakePath(locale);
-  const personalWhatsApp = buildWhatsAppHref(en ? 'Hello, I would like guidance about health insurance for my process in Spain.' : 'Hola, quiero orientación sobre un seguro médico para mi trámite en España.');
+  const intakeHref = withBlueprintReferral(getForeignersIntakePath(locale), partner);
+  const personalWhatsApp = buildWhatsAppHref(partner ? blueprintWhatsAppMessage(locale) : en ? 'Hello, I would like guidance about health insurance for my process in Spain.' : 'Hola, quiero orientación sobre un seguro médico para mi trámite en España.');
   const professionalWhatsApp = buildWhatsAppHref(en ? 'Hello, I work with international students or clients and would like to discuss a referral partnership.' : 'Hola, trabajo con estudiantes o clientes extranjeros y quiero consultar una posible colaboración.');
   const googleReviewsData = await getGoogleReviews();
   const hasGoogleReviews = Boolean(
@@ -94,7 +95,7 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
   );
 
   return (
-    <>
+    <BlueprintReferralProvider partner={partner}>
       <Header variant="translucent-light" />
       <ForeignersPartnerTracking />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchemas(locale)) }} />
@@ -105,6 +106,17 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
             <div className={styles.heroGrid}>
               <div className="max-w-3xl">
                 <p className="kicker">{copy.heroEyebrow}</p>
+                {partner && (
+                  <div className={styles.blueprintWelcome} data-blueprint-welcome>
+                    <div className={styles.blueprintLogo}>
+                      <Image src="/partners/blueprint-spain.png" alt="Blueprint Spain" width={311} height={64} sizes="120px" className="h-auto w-[120px] object-contain" />
+                    </div>
+                    <div>
+                      <p className={styles.blueprintLabel}>{en ? 'Recommended by Blueprint Spain' : 'Recomendado por Blueprint Spain'}</p>
+                      <p className={styles.blueprintMessage}>{en ? "Welcome from Blueprint Spain. Our VPI team will personally help you with your insurance enquiry in English or Spanish." : "Bienvenido desde Blueprint Spain. El equipo de VPI te atenderá personalmente para tu consulta de seguros en español o inglés."}</p>
+                    </div>
+                  </div>
+                )}
                 <h1 className="mt-5 font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--blue-deep)] md:text-7xl">{copy.heroTitle}</h1>
                 <p className="section-copy mt-6 text-lg md:text-xl">{copy.heroDescription}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -236,7 +248,7 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
           </div>
         </section>
 
-        <ForeignersPartnerNetwork locale={locale} logos={foreignersPartnerLogos} />
+        <ForeignersPartnerNetwork locale={locale} logos={partner ? foreignersPartnerLogos.filter((logo) => logo.name !== 'Blueprint Spain') : foreignersPartnerLogos} />
 
         <section
           className={`${styles.reviewsSection} ${hasGoogleReviews ? 'section-pad' : 'py-10 md:py-12'} bg-white`}
@@ -314,12 +326,13 @@ export async function ExtranjerosPageView({ locale = 'es' }: { locale?: Foreigne
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer partner={partner} />
       <StickyWhatsApp mobileVariant="floating" mobileAvoidSelector={'[data-foreigners-section="selector"], [data-foreigners-section="quick-answer"], [data-foreigners-section="proceso"], [data-foreigners-section="profesionales"], [data-foreigners-section="faq"], [data-foreigners-section="cierre"]'} />
-    </>
+    </BlueprintReferralProvider>
   );
 }
 
-export default function ExtranjerosPage() {
-  return <ExtranjerosPageView locale="es" />;
+export default async function ExtranjerosPage({ searchParams }: { searchParams: Promise<{ partner?: string | string[] }> }) {
+  const query = await searchParams;
+  return <ExtranjerosPageView locale="es" partner={getBlueprintPartner(query.partner)} />;
 }

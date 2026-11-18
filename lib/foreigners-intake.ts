@@ -1,10 +1,12 @@
+import { blueprintQuoteForm, type BlueprintPartner } from './blueprint-referral.ts';
 export type ForeignersIntakeLocale = 'es' | 'en';
 export type ForeignersIntakeSituation = 'studies' | 'residence' | 'renewal-family';
 
 /**
- * The only public Google Forms destination used by the client foreigners funnel.
+ * Default public Google Forms destinations for the client foreigners funnel.
  * Keep these responder URLs here; landing-page CTAs must only point to the
  * internal /start routes below so the destination remains replaceable.
+ * Blueprint uses its separately verified quote form, selected explicitly below.
  */
 export const foreignersIntakeForms: Record<ForeignersIntakeLocale, string> = {
   es: 'https://docs.google.com/forms/d/e/1FAIpQLSfgJ8nTRnvW8onuF0Mq_1fBKyUb2z-of5a5yIXnxpc39ROv9g/viewform',
@@ -54,8 +56,9 @@ export function getForeignersSituationFromSlug(locale: ForeignersIntakeLocale, s
 export function getForeignersIntakeUrl(
   locale: ForeignersIntakeLocale,
   _situation?: ForeignersIntakeSituation,
+  partner?: BlueprintPartner,
 ) {
-  return safeConfiguredUrl(foreignersIntakeForms[locale])?.toString() ?? null;
+  return safeConfiguredUrl(partner === 'blueprint' ? blueprintQuoteForm : foreignersIntakeForms[locale])?.toString() ?? null;
 }
 
 export function getMissingForeignersIntakeVariables(locale: ForeignersIntakeLocale) {
