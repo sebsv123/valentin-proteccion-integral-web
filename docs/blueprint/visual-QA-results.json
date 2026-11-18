@@ -1,0 +1,215 @@
+{
+  "base": "http://127.0.0.1:3145",
+  "browser": "153.0.8010.12",
+  "noExternalSubmissions": true,
+  "pages": [
+    {
+      "device": "desktop",
+      "name": "blueprint-landing",
+      "path": "/en/foreigners?partner=blueprint",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440,
+        "height": 6870
+      },
+      "images": 3,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "name": "ordinary-landing",
+      "path": "/en/foreigners",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440,
+        "height": 6748
+      },
+      "images": 2,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "name": "fbi-article",
+      "path": "/en/blog/fbi-background-check-spain",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440,
+        "height": 8013
+      },
+      "images": 1,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "name": "moving-article",
+      "path": "/en/blog/moving-usa-spain-documents-insurance",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440,
+        "height": 8469
+      },
+      "images": 1,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "name": "blueprint-landing",
+      "path": "/en/foreigners?partner=blueprint",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390,
+        "height": 11764
+      },
+      "images": 1,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "name": "ordinary-landing",
+      "path": "/en/foreigners",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390,
+        "height": 11586
+      },
+      "images": 0,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "name": "fbi-article",
+      "path": "/en/blog/fbi-background-check-spain",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390,
+        "height": 13461
+      },
+      "images": 0,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "name": "moving-article",
+      "path": "/en/blog/moving-usa-spain-documents-insurance",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390,
+        "height": 13963
+      },
+      "images": 0,
+      "errors": [],
+      "failures": [],
+      "violations": []
+    }
+  ],
+  "links": [
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/visa-health-insurance/non-lucrative-residence",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/foreigners",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/blog/moving-usa-spain-documents-insurance",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/blog/fbi-background-check-spain",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance/student-visa",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance/non-lucrative-residence",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/foreigners",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/visa-health-insurance/non-lucrative-residence",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/foreigners",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/fbi-background-check-spain",
+      "link": "/en/blog/moving-usa-spain-documents-insurance",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/blog/fbi-background-check-spain",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance/student-visa",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/visa-health-insurance/non-lucrative-residence",
+      "status": 200
+    },
+    {
+      "from": "/en/blog/moving-usa-spain-documents-insurance",
+      "link": "/en/foreigners",
+      "status": 200
+    }
+  ],
+  "referral": {
+    "articleRecommendationsHidden": true,
+    "insuranceLinkRetainsCode": true,
+    "startStatus": 307,
+    "formOpened": false
+  }
+}

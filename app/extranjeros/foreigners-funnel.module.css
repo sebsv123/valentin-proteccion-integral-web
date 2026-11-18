@@ -400,3 +400,24 @@
       radial-gradient(circle at 100% 100%, rgba(36, 127, 120, 0.08), transparent 42%);
   }
 }
+
+/* Only rendered for the approved Blueprint referral. */
+.blueprintWelcome {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(0, 51, 102, .12);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 18px 18px 0;
+  background: rgba(255, 255, 255, .85);
+  box-shadow: 0 6px 22px rgba(0, 34, 68, .035);
+}
+.blueprintLogo { flex-shrink: 0; padding-right: 1rem; border-right: 1px solid rgba(0, 51, 102, .12); }
+.blueprintLabel { color: var(--blue-deep); font-size: .79rem; font-weight: 750; line-height: 1.5; }
+.blueprintMessage { margin-top: .3rem; color: var(--muted); font-size: .79rem; line-height: 1.65; }
+@media (max-width: 540px) {
+  .blueprintWelcome { align-items: flex-start; flex-direction: column; gap: .7rem; padding: 1rem; }
+  .blueprintLogo { padding-right: 0; border-right: 0; }
+}

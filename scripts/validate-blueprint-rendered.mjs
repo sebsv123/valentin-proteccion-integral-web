@@ -31,7 +31,9 @@ try {
     assert(referred.includes('data-blueprint-welcome'));
     assert.match(referred, new RegExp(`<link rel="canonical" href="https://valentinproteccionintegral.com${landing}"`));
     assert(!referred.includes('href="https://blueprint-spain.com/"'));
-    assert(!referred.includes('alt="Blueprint Spain"'), 'no partner promotion inside its own funnel');
+    assert(referred.includes('alt="Blueprint Spain"'), 'official welcome logo');
+    assert(referred.includes('/partners/blueprint-spain.png') || referred.includes('%2Fpartners%2Fblueprint-spain.png'));
+    assert(!ordinary.includes('data-blueprint-welcome'), 'normal welcome remains absent; existing partner network stays intact');
     for (const slug of ['', ...(lang === 'en' ? ['/studies', '/residence', '/renewal-family'] : ['/estudios', '/residencia', '/renovacion-familia'])]) {
       const start = `${lang === 'en' ? '/en' : ''}/start${slug}`;
       assert(referred.includes(`href="${start}?partner=blueprint"`), start);

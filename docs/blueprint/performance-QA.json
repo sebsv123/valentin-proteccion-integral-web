@@ -1,0 +1,115 @@
+{
+  "tool": "Lighthouse",
+  "version": "13.6.0",
+  "environment": "Local production build; simulated mobile; external network blocked; single run per URL; not field/Core Web Vitals evidence",
+  "results": [
+    {
+      "path": "/en/blog/fbi-background-check-spain",
+      "score": 100,
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1235.1337,
+          "display": "1.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1235.1337,
+          "display": "1.2 s"
+        },
+        "total-blocking-time": {
+          "value": 89.49999999999977,
+          "display": "90 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 1768.1205418861068,
+          "display": "1.8 s"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "/en/blog/moving-usa-spain-documents-insurance",
+      "score": 100,
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1214.3255,
+          "display": "1.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1214.3255,
+          "display": "1.2 s"
+        },
+        "total-blocking-time": {
+          "value": 26.5,
+          "display": "30 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 1214.3255,
+          "display": "1.2 s"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "/en/foreigners?partner=blueprint",
+      "score": 100,
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1360.04,
+          "display": "1.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1360.04,
+          "display": "1.4 s"
+        },
+        "total-blocking-time": {
+          "value": 28,
+          "display": "30 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 1360.04,
+          "display": "1.4 s"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "path": "/en/foreigners",
+      "score": 100,
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1358.3912,
+          "display": "1.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1358.3912,
+          "display": "1.4 s"
+        },
+        "total-blocking-time": {
+          "value": 27.5,
+          "display": "30 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "speed-index": {
+          "value": 1358.3912,
+          "display": "1.4 s"
+        }
+      },
+      "warnings": []
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 import type { Metadata } from 'next';
+import { getBlueprintEditorialDraft, editorialMetadata, editorialSchema } from '@/lib/blueprint-editorial';
+import { EditorialArticle } from '@/components/editorial-article';
+import { BlueprintReferralProvider } from '@/components/extranjeros/blueprint-referral';
+import { getBlueprintPartner } from '@/lib/blueprint-referral';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -15,14 +19,26 @@ export const dynamic = 'force-dynamic';
 
 export function generateStaticParams() { return getPublishedEnglishPosts().map((post) => ({ slug: post.slug.en })); }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params; const entry = getBlogPostBySlug('en', slug); const post = entry && toLegacyBlogPost(entry, 'en');
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const draft = locale === 'en' ? getBlueprintEditorialDraft(slug) : undefined;
+  if (draft) return editorialMetadata(draft);
+  const entry = getBlogPostBySlug('en', slug); const post = entry && toLegacyBlogPost(entry, 'en');
   if (!entry || !post) return {};
   return { title: post.metaTitle, description: post.metaDescription, alternates: { canonical: `https://valentinproteccionintegral.com/en/blog/${slug}`, languages: { es: `https://valentinproteccionintegral.com/blog/${entry.slug.es}`, en: `https://valentinproteccionintegral.com/en/blog/${slug}`, 'x-default': `https://valentinproteccionintegral.com/blog/${entry.slug.es}` } }, openGraph: { title: post.metaTitle, description: post.metaDescription, type: 'article', locale: 'en_GB', url: `https://valentinproteccionintegral.com/en/blog/${slug}`, images: [{ url: `https://valentinproteccionintegral.com${post.image}`, alt: post.imageAlt }] } };
 }
 
-export default async function EnglishBlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; const entry = getBlogPostBySlug('en', slug); const post = entry && toLegacyBlogPost(entry, 'en');
+export default async function EnglishBlogArticlePage({ params, searchParams }: { params: Promise<{ slug: string; locale: string }>; searchParams: Promise<{ partner?: string | string[] }> }) {
+  const { slug, locale } = await params;
+  const draft = locale === 'en' ? getBlueprintEditorialDraft(slug) : undefined;
+  if (draft) {
+    const partner = getBlueprintPartner((await searchParams).partner);
+    return <BlueprintReferralProvider partner={partner}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialSchema(draft)).replace(/</g, '\\u003c') }} />
+      <Header /><main><div className="container-shell py-5"><Breadcrumbs items={[{ label: 'Home', href: '/en' }, { label: 'Blog', href: '/en/blog' }, { label: draft.title }]} /></div><EditorialArticle post={draft} referred={Boolean(partner)} /></main><Footer />
+    </BlueprintReferralProvider>;
+  }
+  const entry = getBlogPostBySlug('en', slug); const post = entry && toLegacyBlogPost(entry, 'en');
   if (!entry || !post) notFound();
   const imageUrl = post.image.startsWith('/images/') ? post.image : await getPexelsImage(entry.slug.es);
   const related = getLocalizedRelatedPosts(entry.id, 'en').map((item) => toLegacyBlogPost(item, 'en')).filter((item): item is NonNullable<typeof item> => Boolean(item));

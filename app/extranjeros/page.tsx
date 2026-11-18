@@ -106,7 +106,17 @@ export async function ExtranjerosPageView({ locale = 'es', partner }: { locale?:
             <div className={styles.heroGrid}>
               <div className="max-w-3xl">
                 <p className="kicker">{copy.heroEyebrow}</p>
-                {partner && <p className="mt-4 text-sm font-semibold text-[var(--blue)]" data-blueprint-welcome>{en ? "Welcome from Blueprint Spain. Our VPI team will personally help you with your insurance enquiry in English or Spanish." : "Bienvenido desde Blueprint Spain. El equipo de VPI te atenderá personalmente para tu consulta de seguros en español o inglés."}</p>}
+                {partner && (
+                  <div className={styles.blueprintWelcome} data-blueprint-welcome>
+                    <div className={styles.blueprintLogo}>
+                      <Image src="/partners/blueprint-spain.png" alt="Blueprint Spain" width={311} height={64} sizes="120px" className="h-auto w-[120px] object-contain" />
+                    </div>
+                    <div>
+                      <p className={styles.blueprintLabel}>{en ? 'Recommended by Blueprint Spain' : 'Recomendado por Blueprint Spain'}</p>
+                      <p className={styles.blueprintMessage}>{en ? "Welcome from Blueprint Spain. Our VPI team will personally help you with your insurance enquiry in English or Spanish." : "Bienvenido desde Blueprint Spain. El equipo de VPI te atenderá personalmente para tu consulta de seguros en español o inglés."}</p>
+                    </div>
+                  </div>
+                )}
                 <h1 className="mt-5 font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--blue-deep)] md:text-7xl">{copy.heroTitle}</h1>
                 <p className="section-copy mt-6 text-lg md:text-xl">{copy.heroDescription}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">

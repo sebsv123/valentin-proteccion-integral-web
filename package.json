@@ -29,7 +29,8 @@
     "test:leadform": "node --conditions=react-server --test scripts/lead-form.test.ts scripts/lead-form-route.test.ts",
     "test:en-foreigners:rendered": "node scripts/validate-en-foreigners-copy.mjs",
     "test:blueprint": "node --test scripts/blueprint-referral.test.ts",
-    "test:blueprint:rendered": "node scripts/validate-blueprint-rendered.mjs"
+    "test:blueprint:rendered": "node scripts/validate-blueprint-rendered.mjs",
+    "test:blueprint:editorial": "node scripts/validate-blueprint-editorial.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

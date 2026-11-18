@@ -5,6 +5,8 @@ Base limpia: `main` / `ad4c017158b14ebed278ac5a4cf4265d2e4f451a`.
 Rama: `codex/blueprint-spain-collaboration`.
 Comprobaciones: 18 de noviembre de 2026.
 
+La entrega visual y editorial actual se documenta en [EDITORIAL-REVIEW.md](EDITORIAL-REVIEW.md), con capturas completas, URLs previstas, modo local de revisión, SEO, licencias y pruebas.
+
 ## Cambios
 
 | Cambio | Motivo | Evidencia |
@@ -14,9 +16,9 @@ Comprobaciones: 18 de noviembre de 2026.
 | `/start` elige el formulario exclusivo para `blueprint` | No mezclar la primera consulta con contratación o con formularios genéricos | URL pública y consentimiento comprobados en lectura |
 | WhatsApp de consulta, cabecera, pie y botón flotante identifica Blueprint | Facilitar identificación por el equipo receptor | Inspección de enlaces; ningún mensaje enviado |
 | Recomendaciones editoriales en las guías generales de visado/residencia | Apoyo de traslado y antecedentes de EEUU en contexto, sin directorio | Dos destinos externos comprobados; ocultos con `partner=blueprint` |
-| Dos artículos originales en Markdown | Revisar contenido antes de publicarlo | Fuera de rutas, catálogo de blog y sitemap |
+| Dos artículos web completos y copias Markdown para revisión | Revisar contenido y diseño antes de publicarlo | Solo preview local explícita; 404 por defecto, fuera del catálogo y sitemap |
 
-La estructura, diseño y textos comerciales de la landing se conservan. El logo de Blueprint se omite del carrusel en su propio recorrido. La recomendación general y el enlace de huellas se muestran en contenido general, no en el recorrido referido. No se han cambiado los archivos de producto revisados en PR #24 ni las PR #16/#21/#22/#23.
+La estructura y textos comerciales de la landing se conservan; solo se mejora la bienvenida condicional con el logo oficial de Blueprint. El logo de Blueprint se omite del carrusel en su propio recorrido. La recomendación general y el enlace de huellas se muestran en contenido general, no en el recorrido referido. No se han cambiado los archivos de producto revisados en PR #24 ni las PR #16/#21/#22/#23.
 
 ## Formulario exclusivo verificado
 
