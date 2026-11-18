@@ -8,7 +8,7 @@ const chromeLauncher=await import(require.resolve('chrome-launcher'));
 // Local-only lab measurement. Install lighthouse outside the repo and set VPI_QA_MODULES.
 
 const base='http://127.0.0.1:3146';
-const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port','3146'],{env:{...process.env,VPI_EDITORIAL_PREVIEW:'1',VERCEL:'',VERCEL_ENV:'',LEAD_DELIVERY_CONTEXT:'test'},stdio:'ignore'});
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port','3146'],{env:{...process.env,VERCEL:'',VERCEL_ENV:'',LEAD_DELIVERY_CONTEXT:'test'},stdio:'ignore'});
 let chrome;const results=[];
 try{
  for(let i=0;;i++){try{await fetch(base+'/robots.txt');break;}catch{if(i>100)throw new Error('No local server');await new Promise(r=>setTimeout(r,100));}}

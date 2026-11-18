@@ -1,9 +1,10 @@
 ---
-status: draft-for-sebastian-review
+status: published
 language: en
 reviewed_sources: 2026-11-18
-publication: not-authorised
-planned_url: /en/blog/moving-usa-spain-documents-insurance
+publication: authorised-by-sebastian
+date_published: 2026-11-18
+url: /en/blog/moving-usa-spain-documents-insurance
 meta_title: "Moving USA to Spain: Documents & Health Insurance | VPI"
 meta_description: "Organise your move from the USA to Spain: a practical checklist for residence documents, authentication, translations and health-insurance evidence."
 hero: /images/editorial/moving-to-madrid.webp
@@ -27,7 +28,7 @@ A useful relocation checklist connects each document to an issuer, an owner and 
 
 Studying, non-lucrative residence, working and joining family are different processes. Identify the route and the office responsible for your application before paying for certificates or insurance. Your citizenship alone does not determine every requirement; your circumstances and the place where you apply also matter.
 
-For example, the [Spanish Consulate in Los Angeles publishes its non-lucrative residence checklist](https://exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx) for its own jurisdiction. Use it as an example of a procedure-specific source, not a checklist for every American moving to Spain. Locate the equivalent current instructions for your own office.
+For example, the [Spanish Ministry’s non-lucrative residence information sheet](https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-no-lucrativa) explains that procedure’s requirements and documentation. Use it as a route-specific starting point, then check the current filing instructions of the consular office responsible for your application. It is not a checklist for every American moving to Spain.
 
 > **One nationality does not mean one checklist**
 > The route, family circumstances, residence history and receiving office can change what you need.
@@ -48,7 +49,7 @@ If a criminal-record certificate is required, establish which record is needed a
 
 For FBI records, follow the [FBI’s request instructions](https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks). Where needed, plan the federal apostille separately using the [Department of State’s official guidance](https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html). State-issued civil records follow a different authentication route. Check the document issuer before selecting a service.
 
-Where the checklist calls for a sworn Spanish translation, verify the translator in the [Spanish Ministry’s official search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx). Confirm the required translation scope rather than assuming the certificate and its authentication are interchangeable.
+Where the checklist calls for a sworn Spanish translation, verify the translator in the [official guidance on Spain’s sworn-translator register](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519). Confirm the required translation scope rather than assuming the certificate and its authentication are interchangeable.
 
 If an FBI record is part of your file, see our [document coordination guide](/en/blog/fbi-background-check-spain) for a parallel plan covering the record and insurance evidence. It complements the official instructions and keeps each task with the appropriate provider.
 
@@ -105,10 +106,10 @@ VPI is the commercial brand of exclusive insurance agents. Policy availability a
 
 ## Official sources
 
-- [Spain · Los Angeles non-lucrative residence checklist (jurisdiction-specific example)](https://exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx)
+- [Spain · Ministry guidance on initial non-lucrative residence](https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-no-lucrativa)
 - [FBI · Request an Identity History Summary](https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks)
 - [US Department of State · Criminal records abroad](https://travel.state.gov/en/international-travel/living-abroad/criminal-records.html)
 - [US Department of State · Apostille certificates](https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html)
-- [Spain · Official sworn-translator search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx)
+- [Spain · Sworn-translator register (BOE, Article 6)](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519)
 
-<!-- Review snapshot of lib/blueprint-editorial-content.ts. Not in the published catalogue or sitemap. Local-only preview requires VPI_EDITORIAL_PREVIEW=1 and is disabled on Vercel. Publication requires Sebastián’s approval. Spanish consular checklist and translator search confirmed through official indexed results; direct automated retrieval returned 403. Recheck directly before publication. -->
+<!-- Published content snapshot of lib/blueprint-editorial-content.ts. Publication approved by Sebastián. Spanish references replaced with directly verified Ministry and BOE sources; see docs/blueprint/RELEASE.md. -->

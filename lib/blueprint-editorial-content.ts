@@ -1,14 +1,14 @@
-/** Review-only content. Deliberately excluded from the published blog catalogue. */
-export type EditorialDraft = {
+/** Approved editorial content, published through the existing blog catalogue. */
+export type EditorialArticleContent = {
  slug: string; title: string; intro: string; eyebrow: string;
  metaTitle: string; metaDescription: string; image: string; imageAlt: string;
- imageCredit: string; socialImage: string; readTime: string; reviewed: string;
+ imageCredit: string; socialImage: string; readTime: string; reviewed: string; published: string;
  summary: string; summaryText: string; process: string[][];
  checklistTitle: string; checklist: string[][];
  sections: {id: string; heading: string; content: string[]}[];
  callouts: Record<number, string[]>; faqs: {q: string; a: string}[]; sources: string[][];
 };
-export const blueprintEditorialDrafts: EditorialDraft[] = [
+export const blueprintEditorialArticles: EditorialArticleContent[] = [
   {
     "slug": "fbi-background-check-spain",
     "intro": "If your Spanish residence procedure requires an FBI Identity History Summary, plan it as one part of a wider document file. Confirm the receiving authority’s checklist first, then coordinate fingerprints, any required apostille and translation, and the separate health-insurance evidence. This guide helps you organise those dependencies while you are in Spain.",
@@ -43,7 +43,7 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
         "id": "step-4",
         "heading": "Confirm translation and document freshness",
         "content": [
-          "A translation is another distinct task. Where a sworn Spanish translation is required, use Spain’s [official translator search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx) to check the professional’s language and accreditation. Confirm with the receiving office which parts of the document package must be translated.",
+          "A translation is another distinct task. Where a sworn Spanish translation is required, use Spain’s [official guidance on the sworn-translator register](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519) to check the professional’s language and accreditation. Confirm with the receiving office which parts of the document package must be translated.",
           "There is no single document-age rule to assume across every procedure. Work backwards from the current checklist and your appointment, allowing room for fingerprint problems, shipping, authentication and translation. Do not treat a provider’s estimated turnaround as a government deadline or a promise of acceptance.",
           "Use one shared planning calendar, with separate entries for the record request, any authentication, the translator and the insurance start date. If your filing date changes, recheck document freshness and policy conditions rather than assuming everything can move automatically."
         ]
@@ -154,12 +154,13 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
         "https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html"
       ],
       [
-        "Spain · Official sworn-translator search",
-        "https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx"
+        "Spain · Sworn-translator register (BOE, Article 6)",
+        "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519"
       ]
     ],
     "reviewed": "2026-11-18",
-    "socialImage": "/images/editorial/fbi-background-check-spain-social.jpg"
+    "socialImage": "/images/editorial/fbi-background-check-spain-social.jpg",
+    "published": "2026-11-18"
   },
   {
     "slug": "moving-usa-spain-documents-insurance",
@@ -170,7 +171,7 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
         "heading": "Start with the procedure and the responsible office",
         "content": [
           "Studying, non-lucrative residence, working and joining family are different processes. Identify the route and the office responsible for your application before paying for certificates or insurance. Your citizenship alone does not determine every requirement; your circumstances and the place where you apply also matter.",
-          "For example, the [Spanish Consulate in Los Angeles publishes its non-lucrative residence checklist](https://exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx) for its own jurisdiction. Use it as an example of a procedure-specific source, not a checklist for every American moving to Spain. Locate the equivalent current instructions for your own office."
+          "For example, the [Spanish Ministry’s non-lucrative residence information sheet](https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-no-lucrativa) explains that procedure’s requirements and documentation. Use it as a route-specific starting point, then check the current filing instructions of the consular office responsible for your application. It is not a checklist for every American moving to Spain."
         ]
       },
       {
@@ -189,7 +190,7 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
         "content": [
           "If a criminal-record certificate is required, establish which record is needed and whether your residence history creates additional requirements. The [US Department of State’s criminal-record guidance](https://travel.state.gov/en/international-travel/living-abroad/criminal-records.html) explains the distinction between local records and FBI summaries, and the possibility of authentication for use abroad.",
           "For FBI records, follow the [FBI’s request instructions](https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks). Where needed, plan the federal apostille separately using the [Department of State’s official guidance](https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html). State-issued civil records follow a different authentication route. Check the document issuer before selecting a service.",
-          "Where the checklist calls for a sworn Spanish translation, verify the translator in the [Spanish Ministry’s official search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx). Confirm the required translation scope rather than assuming the certificate and its authentication are interchangeable.",
+          "Where the checklist calls for a sworn Spanish translation, verify the translator in the [official guidance on Spain’s sworn-translator register](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519). Confirm the required translation scope rather than assuming the certificate and its authentication are interchangeable.",
           "If an FBI record is part of your file, see our [document coordination guide](/en/blog/fbi-background-check-spain) for a parallel plan covering the record and insurance evidence. It complements the official instructions and keeps each task with the appropriate provider."
         ]
       },
@@ -299,8 +300,8 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
     ],
     "sources": [
       [
-        "Spain · Los Angeles non-lucrative residence checklist (jurisdiction-specific example)",
-        "https://exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx"
+        "Spain · Ministry guidance on initial non-lucrative residence",
+        "https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-no-lucrativa"
       ],
       [
         "FBI · Request an Identity History Summary",
@@ -315,11 +316,12 @@ export const blueprintEditorialDrafts: EditorialDraft[] = [
         "https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html"
       ],
       [
-        "Spain · Official sworn-translator search",
-        "https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx"
+        "Spain · Sworn-translator register (BOE, Article 6)",
+        "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519"
       ]
     ],
     "reviewed": "2026-11-18",
-    "socialImage": "/images/editorial/moving-usa-spain-documents-insurance-social.jpg"
+    "socialImage": "/images/editorial/moving-usa-spain-documents-insurance-social.jpg",
+    "published": "2026-11-18"
   }
 ];

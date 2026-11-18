@@ -1,9 +1,10 @@
 ---
-status: draft-for-sebastian-review
+status: published
 language: en
 reviewed_sources: 2026-11-18
-publication: not-authorised
-planned_url: /en/blog/fbi-background-check-spain
+publication: authorised-by-sebastian
+date_published: 2026-11-18
+url: /en/blog/fbi-background-check-spain
 meta_title: "FBI Check for Spanish Residence: Documents & Insurance | VPI"
 meta_description: "Plan an FBI background check from Spain alongside apostille, translation and residence health insurance. A practical document checklist, with official sources."
 hero: /images/editorial/fingerprint-preparation.webp
@@ -53,7 +54,7 @@ Check the receiving authority’s requirements before arranging an apostille. Ke
 
 ## Confirm translation and document freshness
 
-A translation is another distinct task. Where a sworn Spanish translation is required, use Spain’s [official translator search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx) to check the professional’s language and accreditation. Confirm with the receiving office which parts of the document package must be translated.
+A translation is another distinct task. Where a sworn Spanish translation is required, use Spain’s [official guidance on the sworn-translator register](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519) to check the professional’s language and accreditation. Confirm with the receiving office which parts of the document package must be translated.
 
 There is no single document-age rule to assume across every procedure. Work backwards from the current checklist and your appointment, allowing room for fingerprint problems, shipping, authentication and translation. Do not treat a provider’s estimated turnaround as a government deadline or a promise of acceptance.
 
@@ -105,6 +106,6 @@ VPI is the commercial brand of exclusive insurance agents. Policy availability a
 - [FBI · Fingerprint and request FAQs](https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks/identity-history-summary-checks-faqs)
 - [US Department of State · Criminal records abroad](https://travel.state.gov/en/international-travel/living-abroad/criminal-records.html)
 - [US Department of State · Federal apostilles](https://travel.state.gov/en/replace-certify/authenticate-documents/apostille-certificate.html)
-- [Spain · Official sworn-translator search](https://exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Buscador-STIJ.aspx)
+- [Spain · Sworn-translator register (BOE, Article 6)](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-4519)
 
-<!-- Review snapshot of lib/blueprint-editorial-content.ts. Not in the published catalogue or sitemap. Local-only preview requires VPI_EDITORIAL_PREVIEW=1 and is disabled on Vercel. Publication requires Sebastián’s approval. Spanish consular checklist and translator search confirmed through official indexed results; direct automated retrieval returned 403. Recheck directly before publication. -->
+<!-- Published content snapshot of lib/blueprint-editorial-content.ts. Publication approved by Sebastián. Spanish references replaced with directly verified Ministry and BOE sources; see docs/blueprint/RELEASE.md. -->

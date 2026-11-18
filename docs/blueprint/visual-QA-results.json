@@ -41,7 +41,7 @@
       "dimensions": {
         "width": 1440,
         "scroll": 1440,
-        "height": 8013
+        "height": 7941
       },
       "images": 1,
       "errors": [],
@@ -56,7 +56,7 @@
       "dimensions": {
         "width": 1440,
         "scroll": 1440,
-        "height": 8469
+        "height": 8396
       },
       "images": 1,
       "errors": [],
@@ -101,7 +101,7 @@
       "dimensions": {
         "width": 390,
         "scroll": 390,
-        "height": 13461
+        "height": 13429
       },
       "images": 0,
       "errors": [],
@@ -116,9 +116,9 @@
       "dimensions": {
         "width": 390,
         "scroll": 390,
-        "height": 13963
+        "height": 14022
       },
-      "images": 0,
+      "images": 1,
       "errors": [],
       "failures": [],
       "violations": []
@@ -210,6 +210,7 @@
     "articleRecommendationsHidden": true,
     "insuranceLinkRetainsCode": true,
     "startStatus": 307,
+    "exclusiveFormDestinationMatches": true,
     "formOpened": false
   }
 }

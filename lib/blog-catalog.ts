@@ -1,3 +1,4 @@
+import { blueprintEditorialArticles } from '@/lib/blueprint-editorial-content';
 import type { BlogPost } from '@/lib/blog';
 import { blogPosts } from '@/lib/blog';
 import { blogEnglishContent } from '@/lib/blog-en-content';
@@ -16,7 +17,7 @@ export type BlogInternalLink =
 
 export type BlogCatalogEntry = {
   id: string;
-  slug: { es: string; en?: string };
+  slug: { es?: string; en?: string };
   shared: {
     date: string;
     dateModified?: string;
@@ -27,7 +28,7 @@ export type BlogCatalogEntry = {
     googleWriteReviewUrl?: string;
   };
   content: { es: BlogContent | null; en?: BlogContent };
-  renderer: 'shared' | 'explicit';
+  renderer: 'shared' | 'explicit' | 'editorial';
   internalLinks?: BlogInternalLink[];
   sitemap: { indexableEs: boolean; priority: number };
 };
@@ -177,6 +178,19 @@ const explicitEntries: BlogCatalogEntry[] = [
 export const blogCatalog: BlogCatalogEntry[] = [
   ...blogPosts.filter((post) => !explicitEntries.some((entry) => entry.slug.es === post.slug)).map(fromBlogPost),
   ...explicitEntries,
+  ...blueprintEditorialArticles.map((post): BlogCatalogEntry => ({
+    id: `blog-${post.slug}`,
+    slug: { en: post.slug },
+    shared: { date: post.published, dateModified: post.reviewed, readTime: post.readTime, category: 'consejos' },
+    content: { es: null, en: {
+      title: post.title, excerpt: post.intro, image: post.image, imageAlt: post.imageAlt,
+      metaTitle: post.metaTitle, metaDescription: post.metaDescription,
+      sections: post.sections, tips: [post.summaryText],
+      faqs: post.faqs.map(({q, a}) => ({question: q, answer: a})),
+    } },
+    renderer: 'editorial',
+    sitemap: { indexableEs: false, priority: 0.6 },
+  })),
 ];
 
 export function getBlogPostBySlug(locale: BlogLocale, slug: string) {
@@ -225,20 +239,21 @@ export function getLocalizedRelatedPosts(id: string, locale: BlogLocale, count =
 export function getLocalizedBlogPath(id: string, locale: BlogLocale) {
   const post = blogCatalog.find((candidate) => candidate.id === id);
   const slug = post?.slug[locale];
-  return slug ? (locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`) : undefined;
+  return slug && (post?.content[locale] || post?.renderer === 'explicit') ? (locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`) : undefined;
 }
 
 export function toLegacyBlogPost(post: BlogCatalogEntry, locale: BlogLocale): BlogPost | undefined {
   const content = post.content[locale];
-  if (!content) return undefined;
-  return { ...content, ...post.shared, slug: post.slug[locale] ?? post.slug.es };
+  const slug = post.slug[locale];
+  if (!content || !slug) return undefined;
+  return { ...content, ...post.shared, slug };
 }
 
 export function getBlogSitemapEntries(locale: 'es') {
   return blogCatalog
     .filter((post) => post.sitemap.indexableEs && post.slug[locale])
     .map((post) => ({
-      slug: post.slug[locale],
+      slug: post.slug[locale]!,
       enSlug: post.slug.en,
       date: post.shared.date,
       priority: post.sitemap.priority,
@@ -250,17 +265,22 @@ export function validateBlogCatalog() {
   const slugs = new Set<string>();
   for (const post of blogCatalog) {
     if (ids.has(post.id)) throw new Error(`Duplicate blog id: ${post.id}`);
-    if (slugs.has(post.slug.es)) throw new Error(`Duplicate ES blog slug: ${post.slug.es}`);
-    if (!post.id || !post.slug.es) throw new Error('Blog catalog entries require an id and ES slug');
+    if (post.slug.es && slugs.has(post.slug.es)) throw new Error(`Duplicate ES blog slug: ${post.slug.es}`);
+    if (!post.id || (!post.slug.es && !post.slug.en)) throw new Error('Blog catalog entries require an id and a localized slug');
     ids.add(post.id);
-    slugs.add(post.slug.es);
+    if (post.slug.es) slugs.add(post.slug.es);
+    if (post.slug.en) {
+      const key = `en:${post.slug.en}`;
+      if (slugs.has(key)) throw new Error(`Duplicate EN blog slug: ${post.slug.en}`);
+      slugs.add(key);
+    }
     if (post.slug.en && !hasCompleteContent(post.content.en)) throw new Error(`EN slug without complete EN content: ${post.slug.en}`);
   }
   const englishSlugEntries = blogCatalog.filter((post) => post.slug.en);
   const publishedEnglish = getPublishedEnglishPosts();
-  if (blogCatalog.length !== 32) throw new Error('Expected 32 blog catalog entries, found ' + blogCatalog.length);
-  if (englishSlugEntries.length !== 29 || publishedEnglish.length !== 29) {
-    throw new Error('Expected exactly 29 complete EN blog entries, found ' + englishSlugEntries.length + ' slugs and ' + publishedEnglish.length + ' published');
+  if (blogCatalog.length !== 34) throw new Error('Expected 34 blog catalog entries, found ' + blogCatalog.length);
+  if (englishSlugEntries.length !== 31 || publishedEnglish.length !== 31) {
+    throw new Error('Expected exactly 31 complete EN blog entries, found ' + englishSlugEntries.length + ' slugs and ' + publishedEnglish.length + ' published');
   }
   if (blogCatalog.length - publishedEnglish.length !== 3) {
     throw new Error('Expected 3 Spanish-only blog entries, found ' + (blogCatalog.length - publishedEnglish.length));

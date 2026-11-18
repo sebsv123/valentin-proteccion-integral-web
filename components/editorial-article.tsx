@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ArrowRight, Check, Clock, FileCheck2, Lightbulb, TriangleAlert } from 'lucide-react';
 import { ReferralLink as Link } from '@/components/extranjeros/blueprint-referral';
 import { FAQAccordion } from '@/components/faq-accordion';
-import type { EditorialDraft } from '@/lib/blueprint-editorial-content';
+import type { EditorialArticleContent } from '@/lib/blueprint-editorial-content';
 import styles from './editorial-article.module.css';
 
 /** Limited, escaped inline markup from our own editorial content; no raw HTML. */
@@ -14,18 +14,17 @@ function Inline({ text }: { text: string }) {
   })}</>;
 }
 
-export function EditorialArticle({ post, referred = false }: { post: EditorialDraft; referred?: boolean }) {
+export function EditorialArticle({ post, referred = false }: { post: EditorialArticleContent; referred?: boolean }) {
   return <article className={styles.article}>
     <header className={styles.hero}>
       <div className="container-shell">
-        <p className={styles.preview}>Editorial preview · Draft for Sebastián’s approval · Not published</p>
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
             <p className="kicker">{post.eyebrow}</p>
             <h1>{post.title}</h1>
             <p className={styles.intro}>{post.intro}</p>
             <div className={styles.byline}><span>VPI editorial team</span><span><Clock size={15} aria-hidden="true" /> {post.readTime} read</span></div>
-            <p className={styles.reviewDate}>Sources reviewed <time dateTime={post.reviewed}>18 November 2026</time></p>
+            <p className={styles.reviewDate}>Published <time dateTime={post.published}>18 November 2026</time> · Sources reviewed <time dateTime={post.reviewed}>18 November 2026</time></p>
           </div>
           <figure className={styles.heroFigure}>
             <Image src={post.image} alt={post.imageAlt} width={1600} height={1067} sizes="(max-width: 900px) 100vw, 48vw" priority className={styles.heroImage} />
@@ -69,7 +68,7 @@ export function EditorialArticle({ post, referred = false }: { post: EditorialDr
             <Link href="/en/foreigners" className="btn-primary">Discuss health insurance with VPI <ArrowRight size={18} aria-hidden="true" /></Link>
             <p className={styles.ctaFine}>VPI is the commercial brand of exclusive insurance agents. Policy availability and conditions depend on the product and insurer. The competent authority decides your application.</p>
           </section>
-          <section id="sources" className={styles.sources}><h2>Official sources & further reading</h2><p>Reviewed 18 November 2026. Check the current instructions again before purchase or submission. The Los Angeles checklist, where cited, applies to its own jurisdiction.</p><ul>{post.sources.map(([label, href]) => <li key={href}><a href={href}>{label} <span aria-hidden="true">↗</span></a></li>)}</ul></section>
+          <section id="sources" className={styles.sources}><h2>Official sources & further reading</h2><p>Reviewed 18 November 2026. Check the current instructions again before purchase or submission. Requirements and filing instructions depend on your procedure and competent office.</p><ul>{post.sources.map(([label, href]) => <li key={href}><a href={href}>{label} <span aria-hidden="true">↗</span></a></li>)}</ul></section>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 # VPI × Blueprint — revisión visual y editorial
 
+> Informe histórico de preparación. La autorización y el estado de publicación actuales se documentan en [RELEASE.md](RELEASE.md). La revisión del formulario ya no es un bloqueo y Forms/Sheets quedan fuera del alcance por instrucción expresa de Sebastián.
+
 Estado: **listo para revisión; publicación no autorizada**. Rama `codex/blueprint-spain-collaboration`, misma PR #25. No merge ni despliegue. La desactivación de despliegues automáticos en `vercel.json` permanece intacta.
 
 ## Resultado

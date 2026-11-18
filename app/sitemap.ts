@@ -128,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.shared.date,
       changeFrequency: 'monthly' as const,
       priority: post.sitemap.priority,
-      alternates: { languages: { es: `${base}/blog/${post.slug.es}`, en: `${base}/en/blog/${post.slug.en}`, 'x-default': `${base}/blog/${post.slug.es}` } },
+      ...(post.slug.es ? { alternates: { languages: { es: `${base}/blog/${post.slug.es}`, en: `${base}/en/blog/${post.slug.en}`, 'x-default': `${base}/blog/${post.slug.es}` } } } : {}),
     })),
 
     // CONTACTO

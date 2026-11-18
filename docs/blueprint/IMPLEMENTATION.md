@@ -1,5 +1,7 @@
 # Blueprint Spain × VPI — revisión de implementación
 
+> Informe histórico de preparación. La autorización y el estado de publicación actuales se documentan en [RELEASE.md](RELEASE.md). La revisión del formulario ya no es un bloqueo y Forms/Sheets quedan fuera del alcance por instrucción expresa de Sebastián.
+
 Estado: PR Draft; sin autorización para integrar, desplegar ni publicar artículos.
 Base limpia: `main` / `ad4c017158b14ebed278ac5a4cf4265d2e4f451a`.
 Rama: `codex/blueprint-spain-collaboration`.

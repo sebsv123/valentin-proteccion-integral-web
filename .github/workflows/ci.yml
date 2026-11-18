@@ -69,5 +69,5 @@ jobs:
       - name: Blueprint referral navigation and redirects
         run: npm run test:blueprint:rendered
 
-      - name: Blueprint editorial publication gate
+      - name: Blueprint published editorial contract
         run: npm run test:blueprint:editorial
